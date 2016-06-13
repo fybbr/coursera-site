@@ -1,0 +1,698 @@
+1
+00:00:00,000 --> 00:00:05,381
+In this video, I'll talk about why it's
+difficult to learn sigmoid belief nets.
+
+2
+00:00:05,381 --> 00:00:10,624
+And then in the following two videos, I'll
+describe two different methods we
+
+3
+00:00:10,624 --> 00:00:13,660
+discovered that allow us to do the
+learning.
+
+4
+00:00:13,660 --> 00:00:18,911
+The good news about learning in sigmoid
+belief nets is that unlike Boltzmann
+
+5
+00:00:18,911 --> 00:00:21,912
+machines, we don't need two different
+phases.
+
+6
+00:00:21,912 --> 00:00:26,619
+We just need what in a Boltzmann machine
+would be the positive phase.
+
+7
+00:00:26,619 --> 00:00:32,075
+That's because sigmoid belief nets are
+what is called locally normalized models.
+
+8
+00:00:32,075 --> 00:00:36,850
+So we don't have to deal with a partition
+function or its derivatives.
+
+9
+00:00:36,850 --> 00:00:42,476
+Another piece of good news about Sigma
+belief nets, is that if we could get
+
+10
+00:00:42,476 --> 00:00:48,253
+unbiased samples from the posterior
+distribution over the hidden units, given
+
+11
+00:00:48,253 --> 00:00:51,554
+the data vector, Then learning would be
+easy.
+
+12
+00:00:51,554 --> 00:00:57,406
+That is, we could follow the gradient
+specified by maximum likelihood learning,
+
+13
+00:00:57,406 --> 00:01:02,733
+in a mini batch stochastic kind of way.
+The problem is that it's hard to get
+
+14
+00:01:02,733 --> 00:01:08,060
+unbiased samples, from the posterior
+distribution over the hidden units.
+
+15
+00:01:08,580 --> 00:01:14,302
+This is largely due to a phenomenon that
+Judeo Po calls explaining away.
+
+16
+00:01:14,302 --> 00:01:20,900
+And I'll explain, explaining away in this
+video and it's important to understand it.
+
+17
+00:01:21,300 --> 00:01:26,960
+Now, I'm going to talk about why it's
+difficult to learn sigmoid belief nets.
+
+18
+00:01:27,400 --> 00:01:32,589
+As we've seen, it's easy to generate an
+unbiased sample, once you've done the
+
+19
+00:01:32,589 --> 00:01:36,071
+learning.
+That is, once we've decided on the weights
+
+20
+00:01:36,071 --> 00:01:41,602
+and the network, we can easily see the
+kinds of things the network believes in by
+
+21
+00:01:41,602 --> 00:01:46,518
+generating samples from this model.
+This is done top down, one layer at a
+
+22
+00:01:46,518 --> 00:01:51,501
+time.
+It's easy, because it's a causal model.
+
+23
+00:01:51,501 --> 00:01:58,193
+However, even if we know the weights, it's
+hard to infer the posterior distribution
+
+24
+00:01:58,193 --> 00:02:02,682
+over hidden causes when we observe the
+visible effects.
+
+25
+00:02:02,682 --> 00:02:09,212
+The reason for this is that the number of
+possible patterns of hidden causes is
+
+26
+00:02:09,212 --> 00:02:16,330
+exponential in the number of hidden nodes.
+It's hard even to get a sample from the
+
+27
+00:02:16,330 --> 00:02:21,500
+posterior, which is what we need if we're
+going to do stochastic gradient descent.
+
+28
+00:02:21,760 --> 00:02:25,250
+So given this difficulty in sampling from
+the posterior.
+
+29
+00:02:25,250 --> 00:02:30,236
+It's hard to see how we can learn sigmoid
+belief nets with millions of parameters,
+
+30
+00:02:30,236 --> 00:02:34,662
+Which is what we'd like to do.
+This is a very different regime from the
+
+31
+00:02:34,662 --> 00:02:39,711
+one normally used with graphical models.
+There they have interpretable models, and
+
+32
+00:02:39,711 --> 00:02:43,637
+they're trying to learn dozens or maybe
+hundreds of parameters.
+
+33
+00:02:43,637 --> 00:02:47,440
+They're not typically trying to learn
+millions of parameters.
+
+34
+00:02:48,100 --> 00:02:53,164
+Now before I go into ways in which we can
+try and get samples from the posterior
+
+35
+00:02:53,164 --> 00:02:56,603
+distribution.
+I just want to tell you what the learning
+
+36
+00:02:56,603 --> 00:03:02,507
+rule is, if we could get those samples.
+So, if we can get an unbiased sample from
+
+37
+00:03:02,507 --> 00:03:07,222
+the posterior distribution of hidden
+states, given the observed data, then
+
+38
+00:03:07,222 --> 00:03:12,100
+learning is easy.
+So here's part of a sigmoid belief net,
+
+39
+00:03:12,380 --> 00:03:17,893
+and we're going to suppose that for every
+node we have a binary value.
+
+40
+00:03:17,893 --> 00:03:24,302
+So, for node J, that binary value is SJ.
+And that vector binary value is a global
+
+41
+00:03:24,302 --> 00:03:29,240
+configuration for the node, which is the
+sample from the posterior distribution.
+
+42
+00:03:29,880 --> 00:03:36,373
+In order to do maximum likelihood
+learning, all we have to do is maximize
+
+43
+00:03:36,373 --> 00:03:44,445
+the law of probability, that the inferred
+binary state of unit, I would be generated
+
+44
+00:03:44,445 --> 00:03:48,680
+from the inferred binary states of its
+parents.
+
+45
+00:03:49,080 --> 00:03:57,500
+So the learning rule is local and simple.
+The probability that the parents of I
+
+46
+00:03:57,500 --> 00:04:04,843
+would turn I on, is given by a logistic
+function that involves the binary states
+
+47
+00:04:04,843 --> 00:04:09,768
+of the parents.
+And what we need to do is make that
+
+48
+00:04:09,768 --> 00:04:16,119
+probability be similar to the actually
+observed binary value of I and although
+
+49
+00:04:16,119 --> 00:04:21,708
+I'm not going to derive it here,
+The maximum likelihood learning rule for
+
+50
+00:04:21,708 --> 00:04:28,482
+the weight WJI is simply to change it in
+proportion to the state of J times the
+
+51
+00:04:28,482 --> 00:04:35,595
+difference between the binary state of I
+and the probability that the binary states
+
+52
+00:04:35,595 --> 00:04:39,660
+of I's parents would turn it on.
+So to summarize,
+
+53
+00:04:39,960 --> 00:04:45,758
+If we have an assignment of binary states
+to all the hidden nodes, then it's easy to
+
+54
+00:04:45,758 --> 00:04:49,969
+do maximum likelihood learning in our
+typical stochastic way.
+
+55
+00:04:49,969 --> 00:04:55,491
+Where we sample from the posterior, and
+then we update the weights based on that
+
+56
+00:04:55,491 --> 00:04:58,666
+sample.
+And we average that update over a mini
+
+57
+00:04:58,666 --> 00:05:03,603
+batch of samples.
+So, let's go back to the issue of why it's
+
+58
+00:05:03,603 --> 00:05:10,010
+hard to sample from the posterior.
+The reason it's hard to get an unbiased
+
+59
+00:05:10,010 --> 00:05:15,943
+sample from the posterior over the hidden
+nodes, given an observed data factor at
+
+60
+00:05:15,943 --> 00:05:19,899
+the leaf nodes, is a phenomenon called
+explaining away.
+
+61
+00:05:19,899 --> 00:05:25,906
+So if you look at this little sigma B leaf
+net chair, it has two hidden causes and
+
+62
+00:05:25,906 --> 00:05:30,375
+one observed effect.
+And if you look at the biases, you'll see
+
+63
+00:05:30,375 --> 00:05:36,528
+that the observed effect of a high stress
+jumping is very unlikely to happen unless
+
+64
+00:05:36,528 --> 00:05:41,337
+one of those causes is true.
+But if one of those causes has happened,
+
+65
+00:05:41,337 --> 00:05:45,750
+the twenty cancels the minus twenty, and
+neither house will jump with the
+
+66
+00:05:45,750 --> 00:05:51,286
+probability of a half.
+Each of the causes is itself rather
+
+67
+00:05:51,286 --> 00:05:56,740
+unlikely but not nearly as unlikely as a
+host spontaneously jumping.
+
+68
+00:05:57,460 --> 00:06:03,142
+So if you see the house jump, one
+plausible explanation is that a truck hit
+
+69
+00:06:03,142 --> 00:06:07,240
+the house.
+A different plausible explanation, is that
+
+70
+00:06:07,240 --> 00:06:11,570
+it was an earthquake.
+And each of those has a probability of
+
+71
+00:06:11,570 --> 00:06:15,555
+about E to the minus ten.
+Whereas the house jumping spontaneously
+
+72
+00:06:15,555 --> 00:06:18,560
+has a probability of about E to the minus
+twenty.
+
+73
+00:06:19,560 --> 00:06:25,139
+However, if you assume both hidden causes,
+that has a probability of E to the
+
+74
+00:06:25,139 --> 00:06:29,764
+-twenty, so that's extremely unlikely,
+even if the house did jump.
+
+75
+00:06:29,764 --> 00:06:35,270
+So assuming there was an earthquake,
+reduces the probability that the house
+
+76
+00:06:35,270 --> 00:06:41,560
+jumped because the truck hit it.
+And we get an anti-correlation between the
+
+77
+00:06:41,560 --> 00:06:45,703
+two hidden causes when we've observed the
+house jumping.
+
+78
+00:06:45,703 --> 00:06:51,768
+Notice in the model itself, in the prior
+for the model, these two hidden causes are
+
+79
+00:06:51,768 --> 00:06:56,740
+quite independent.
+So if the house jumps.
+
+80
+00:06:57,640 --> 00:07:01,841
+This basically an even chunks that was
+because of the truck or because of the
+
+81
+00:07:01,841 --> 00:07:04,750
+earthquake.
+The posterior actually look something like
+
+82
+00:07:04,750 --> 00:07:08,714
+this.
+There's four possible patterns of hidden
+
+83
+00:07:08,714 --> 00:07:13,348
+causes, given that the house jumped.
+Two of them are extremely unlikely.
+
+84
+00:07:13,348 --> 00:07:17,584
+Namely that the truck hit the house, and
+there was an earthquake.
+
+85
+00:07:17,584 --> 00:07:22,880
+Or that neither of those things happened.
+The other two combinations are equally
+
+86
+00:07:22,880 --> 00:07:26,455
+probable, and you'll notice they form an
+exclusive all.
+
+87
+00:07:26,455 --> 00:07:31,420
+We have two likely patterns of causes
+which are just the opposites of each
+
+88
+00:07:31,420 --> 00:07:33,340
+other.
+That's explaining away.
+
+89
+00:07:33,780 --> 00:07:38,420
+Now that we've understood explaining away,
+let's consider,
+
+90
+00:07:38,680 --> 00:07:43,240
+Let's go back to the issue of learning a
+deep sigmoid belief net.
+
+91
+00:07:44,180 --> 00:07:47,511
+So we're going to have multiple layers of
+hidden variables.
+
+92
+00:07:47,511 --> 00:07:50,900
+They're going to give rise to some data in
+our causal model.
+
+93
+00:07:51,280 --> 00:07:55,827
+And we want to learn those weights, W,
+between the first layer of hidden
+
+94
+00:07:55,827 --> 00:07:59,733
+variables in the data.
+And let's see what it takes to learn W.
+
+95
+00:07:59,733 --> 00:08:04,921
+First of all, the posterior distribution
+over the first layer of hidden variables
+
+96
+00:08:04,921 --> 00:08:09,340
+is not going to be a factorial.
+They're not independent in the posterior.
+
+97
+00:08:09,820 --> 00:08:13,854
+And that's because of explaining away.
+So, even if we just had that layer of
+
+98
+00:08:13,854 --> 00:08:18,049
+hidden variables, once we've seen the
+data, they wouldn't be independent of one
+
+99
+00:08:18,049 --> 00:08:20,918
+another.
+But because we have higher layers of
+
+100
+00:08:20,918 --> 00:08:24,805
+hidden variables, they're not even
+independent in the prior.
+
+101
+00:08:24,805 --> 00:08:30,143
+This hidden variables in the laser bath
+created prior, and that prior itself will
+
+102
+00:08:30,143 --> 00:08:34,294
+cause correlations between the hidden
+variables in first layer.
+
+103
+00:08:34,294 --> 00:08:39,632
+To learn W, we need to learn the posteria
+in the first hidden layer were least in
+
+104
+00:08:39,632 --> 00:08:43,981
+the approximation to it.
+And even if you are only approximating it
+
+105
+00:08:43,981 --> 00:08:49,055
+we need to know all of the weights in
+higher layers in order to compute that
+
+106
+00:08:49,055 --> 00:08:52,599
+prior term.
+In fact it's even worse than that.
+
+107
+00:08:52,599 --> 00:08:57,670
+Because to compute that prior term, we
+need to integrate out all the hidden
+
+108
+00:08:57,670 --> 00:09:02,336
+variables and higher layers.
+That is we need to consider all possible
+
+109
+00:09:02,336 --> 00:09:05,312
+patterns of activity in these higher
+layers.
+
+110
+00:09:05,312 --> 00:09:10,721
+And combine them all to compute the prior
+that the higher levels create for the
+
+111
+00:09:10,721 --> 00:09:14,914
+first hidden layer.
+Computing that prior is a very complicated
+
+112
+00:09:14,914 --> 00:09:18,003
+thing.
+So these three problems suggest that it's
+
+113
+00:09:18,003 --> 00:09:21,453
+gonna be extremely difficult to learn
+those weights W.
+
+114
+00:09:21,453 --> 00:09:26,819
+And in particular, we're not gonna be able
+to learn them without doing a lot of work
+
+115
+00:09:26,819 --> 00:09:32,122
+in the higher layers to compute the prior.
+So now we're gonna consider some methods
+
+116
+00:09:32,122 --> 00:09:36,594
+for learning deep belief mets.
+The first one is the Monte Carlo method
+
+117
+00:09:36,594 --> 00:09:40,683
+used by Radford Neal.
+And that Monte Carlo method basically does
+
+118
+00:09:40,683 --> 00:09:43,941
+all the work.
+That is, if we go back to the previous
+
+119
+00:09:43,941 --> 00:09:48,350
+slide, it considers patents activity over
+all of the hidden variables.
+
+120
+00:09:48,350 --> 00:09:53,389
+And it runs a mark off chain that takes a
+long time to settle down, given the data
+
+121
+00:09:53,389 --> 00:09:56,344
+factor.
+And once it's settled down, to thermal
+
+122
+00:09:56,344 --> 00:10:01,060
+equilibrium, you get a sample from the
+posterior, but it's a lot of work.
+
+123
+00:10:01,340 --> 00:10:06,340
+So, in large deep belief nets, this
+methods pretty slow.
+
+124
+00:10:07,900 --> 00:10:13,359
+In the 1990's people developed much faster
+methods for learning deep belief nets,
+
+125
+00:10:13,359 --> 00:10:18,482
+which we call variational methods.
+In fact this is where variational methods
+
+126
+00:10:18,482 --> 00:10:22,324
+came from at least the artificial
+intelligence community.
+
+127
+00:10:22,324 --> 00:10:28,120
+The variational methods give up on getting
+unbiased sound post from the posterior and
+
+128
+00:10:28,120 --> 00:10:33,715
+they content themselves with just getting
+approximate samples that is samples from
+
+129
+00:10:33,715 --> 00:10:37,490
+some other distribution that approximates
+the posterior.
+
+130
+00:10:37,490 --> 00:10:42,982
+Now as we saw before, if we have samples
+from the posterior, maximum likelihood
+
+131
+00:10:42,982 --> 00:10:47,368
+learning is simple.
+If we have samples from some other
+
+132
+00:10:47,368 --> 00:10:52,579
+distribution, we could still use the
+maximum likelihood learning rule, but it's
+
+133
+00:10:52,579 --> 00:10:57,462
+not clear what will happen.
+On the face of it, crazy things might
+
+134
+00:10:57,462 --> 00:11:01,341
+happen if we're using the wrong
+distribution to get our samples.
+
+135
+00:11:01,341 --> 00:11:05,220
+There doesn't seem to be any guarantee
+that things will improve.
+
+136
+00:11:05,840 --> 00:11:09,859
+In fact there is a guarantee that
+something will improve.
+
+137
+00:11:09,859 --> 00:11:14,654
+It's not the log probability that the
+model would generate the data.
+
+138
+00:11:14,654 --> 00:11:19,168
+But it is related to that.
+In fact it's a lower band on that log
+
+139
+00:11:19,168 --> 00:11:22,835
+probability.
+And by pushing up the lower band, we can
+
+140
+00:11:22,835 --> 00:11:25,374
+usually push up the log probability.

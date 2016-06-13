@@ -1,0 +1,179 @@
+1
+00:00:00,000 --> 00:00:04,995
+In this final video, I was tempted to 
+make some predictions about the future of 
+
+2
+00:00:04,995 --> 00:00:09,295
+research on neural networks. 
+Instead, I'm going to explain to you why 
+
+3
+00:00:09,295 --> 00:00:13,785
+it would be extremely foolish to try to 
+make any long term predictions. 
+
+4
+00:00:13,785 --> 00:00:19,034
+I'm going to try and explain why we can't 
+predict the long term future by using an 
+
+5
+00:00:19,034 --> 00:00:22,560
+analogy. 
+Imagine you're driving a car at night, 
+
+6
+00:00:22,560 --> 00:00:27,160
+and you're looking at the taillights of 
+the car in front. 
+
+7
+00:00:27,160 --> 00:00:31,696
+The number of photons that you receive 
+from the taillights of the car in front 
+
+8
+00:00:31,696 --> 00:00:36,460
+falls off at one over d squared, where d 
+is the distance to the car in front. 
+
+9
+00:00:36,460 --> 00:00:42,180
+That's assuming that the air is clear but 
+now suppose there's fog. 
+
+10
+00:00:42,180 --> 00:00:47,603
+Over short ranges, the number of photons 
+you get from the tail lights in front of 
+
+11
+00:00:47,603 --> 00:00:52,224
+you, still falls off as one over d^2. 
+Because over a short range, the fog 
+
+12
+00:00:52,224 --> 00:00:56,576
+hardly absorbs any light. 
+But for large distances, it falls off as 
+
+13
+00:00:56,576 --> 00:01:00,125
+E to the -D. 
+And that's because fog has an exponential 
+
+14
+00:01:00,125 --> 00:01:03,138
+effect. 
+Fog absorbs a certain fraction of the 
+
+15
+00:01:03,138 --> 00:01:07,780
+photons per unit distance. 
+So for small distances, fog looks very 
+
+16
+00:01:07,780 --> 00:01:12,120
+transparent, but for large distances, it 
+looks very opaque. 
+
+17
+00:01:12,120 --> 00:01:16,639
+So, the car in front of us becomes 
+completely invisible at a distance at 
+
+18
+00:01:16,639 --> 00:01:21,597
+which our short range model, the one of a 
+discreet model, predicts it will be very 
+
+19
+00:01:21,597 --> 00:01:25,276
+visible. 
+That causes people to drive into the back 
+
+20
+00:01:25,276 --> 00:01:27,400
+of cars in fog. 
+It kills people. 
+
+21
+00:01:27,400 --> 00:01:31,510
+The development of technology is also 
+typically exponential. 
+
+22
+00:01:31,510 --> 00:01:35,103
+So over the short term, things appear to 
+change fairly slowly. 
+
+23
+00:01:35,103 --> 00:01:39,463
+And it's easy to predict progress. 
+All of us, for example, can probably make 
+
+24
+00:01:39,463 --> 00:01:42,762
+quite good guesses about what will be in 
+the iPhone six. 
+
+25
+00:01:42,762 --> 00:01:47,358
+But in the longer run, our perception of 
+the future hits a wall, just like with 
+
+26
+00:01:47,358 --> 00:01:49,656
+fog. 
+So the long term future of machine 
+
+27
+00:01:49,656 --> 00:01:52,601
+learning in neural nets is really a total 
+mystery. 
+
+28
+00:01:52,601 --> 00:01:55,960
+We have no idea what's going to happen in 
+30 years' time. 
+
+29
+00:01:55,960 --> 00:01:59,452
+There's just no way to predict it from 
+what we know now. 
+
+30
+00:01:59,452 --> 00:02:02,259
+Because we're going to get exponential 
+progress. 
+
+31
+00:02:02,259 --> 00:02:07,311
+In the short run however, in a period of 
+say three to ten years, we can predict it 
+
+32
+00:02:07,311 --> 00:02:10,552
+fairly well. 
+And it seems obvious to me that over the 
+
+33
+00:02:10,552 --> 00:02:14,509
+next five years or so. 
+Big deep neural networks, you are going 
+
+34
+00:02:14,509 --> 00:02:18,233
+to do amazing things. 
+I'd like to congratulate all of you who 
+
+35
+00:02:18,233 --> 00:02:23,254
+stuck it out long enough to get this far. 
+I hope you've enjoyed the course and good 
+
+36
+00:02:23,254 --> 00:02:24,822
+luck with the final test. 
+
