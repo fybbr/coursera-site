@@ -1,0 +1,898 @@
+1
+00:00:00,800 --> 00:00:02,890
+Next section is evaluating limits.
+
+2
+00:00:04,640 --> 00:00:06,764
+So I'll start off by just pointing out
+
+3
+00:00:06,764 --> 00:00:09,050
+working with the definition is not very
+fun.
+
+4
+00:00:10,370 --> 00:00:13,690
+So luckily there are a lot of rules that
+you can use.
+
+5
+00:00:13,690 --> 00:00:17,030
+I'm just pretty much here just going to
+try and list them off.
+
+6
+00:00:17,030 --> 00:00:19,029
+These slides are more meant to be a
+reference.
+
+7
+00:00:20,144 --> 00:00:25,906
+you probably would be able to find these
+know, I, I just Google for stuff most of
+
+8
+00:00:25,906 --> 00:00:27,254
+the time.
+
+9
+00:00:27,254 --> 00:00:30,600
+but, it would be in the first year
+calculus text book.
+
+10
+00:00:30,600 --> 00:00:32,540
+That I think that's where I found most of
+these rules.
+
+11
+00:00:34,920 --> 00:00:40,660
+So, I'm going to suppose that C is a real
+valued constant.
+
+12
+00:00:40,660 --> 00:00:44,340
+And that the limits, as X goes to A of F
+of X.
+
+13
+00:00:44,340 --> 00:00:49,100
+And as X goes to A of G of X, both exist.
+
+14
+00:00:49,100 --> 00:00:51,740
+So, they don't necessarily need to be
+finite, but they
+
+15
+00:00:51,740 --> 00:00:53,870
+need to be something that I can make sense
+of.
+
+16
+00:00:53,870 --> 00:00:57,910
+So they can't be 0 divided by 0.
+Infinity divided by 0.
+
+17
+00:00:57,910 --> 00:01:00,460
+Infinity divided by infinity, things like
+that.
+
+18
+00:01:02,820 --> 00:01:05,570
+Then, so we have a linearity property.
+
+19
+00:01:07,080 --> 00:01:09,960
+So if I have a function that I can see is,
+you
+
+20
+00:01:09,960 --> 00:01:13,240
+know, made up of two sub functions, so f
+of x plus
+
+21
+00:01:13,240 --> 00:01:16,520
+g of x, and I'm looking at the limit of
+that, and
+
+22
+00:01:16,520 --> 00:01:19,889
+the limit of a sum is equal to the sum of
+the limits.
+
+23
+00:01:21,830 --> 00:01:27,910
+Similarly if I scale my function, so here
+my function is f of x, I'm going to
+
+24
+00:01:27,910 --> 00:01:32,480
+multiply that by my constant c, so c could
+be anything.
+
+25
+00:01:32,480 --> 00:01:38,288
+It could, if I want to double function it
+would be to 2 f of x and so on.
+
+26
+00:01:38,288 --> 00:01:42,730
+the limit as x goes to a of c times f of
+x.
+
+27
+00:01:42,730 --> 00:01:47,994
+Is just c times the limit of oops, c times
+the limit of f of
+
+28
+00:01:47,994 --> 00:01:53,264
+x as x goes to a.
+So I think most of these are pretty
+
+29
+00:01:53,264 --> 00:01:57,449
+intuitive, but they are all things that
+are proved in
+
+30
+00:01:57,449 --> 00:02:02,370
+a calculus textbook so, you know, you can
+use them.
+
+31
+00:02:02,370 --> 00:02:07,044
+The limit of a product, the limit as X
+goes to A of F
+
+32
+00:02:07,044 --> 00:02:12,070
+of X times G of X is equal to the product
+of the limit.
+
+33
+00:02:12,070 --> 00:02:15,220
+So, here I have the limit of F of X as X
+
+34
+00:02:15,220 --> 00:02:18,475
+goes to A and the limit of G of X as X
+goes
+
+35
+00:02:18,475 --> 00:02:19,060
+to A.
+
+36
+00:02:19,060 --> 00:02:21,580
+And I'm going to multiply those two
+numbers
+
+37
+00:02:21,580 --> 00:02:24,028
+together and that's going to be the same
+as
+
+38
+00:02:24,028 --> 00:02:29,028
+the limit of the product of these
+functions going when as x goes to a.
+
+39
+00:02:29,028 --> 00:02:34,370
+also works for rational functions.
+So,
+
+40
+00:02:34,370 --> 00:02:39,650
+the limit as x goes to a of f of x divided
+by g of x is just going
+
+41
+00:02:39,650 --> 00:02:45,000
+to be equal to the limit of f of x divided
+by the limit.
+
+42
+00:02:45,000 --> 00:02:51,206
+Of g of x as x goes to a, we have to make
+one, one little copy it here
+
+43
+00:02:51,206 --> 00:02:57,525
+So the, oops, so the limit as x goes to a
+of g of x can't be equal to 0.
+
+44
+00:03:01,790 --> 00:03:06,214
+And then finally
+
+45
+00:03:06,214 --> 00:03:11,270
+So here this little
+
+46
+00:03:11,270 --> 00:03:16,330
+thing here is an n.
+
+47
+00:03:16,330 --> 00:03:21,511
+So if it was square root, that would be a
+
+48
+00:03:21,511 --> 00:03:27,041
+two, three would be a cube root and so on.
+
+49
+00:03:27,041 --> 00:03:31,100
+And then if P(x) and Q(x) are polynomials
+and
+
+50
+00:03:31,100 --> 00:03:34,976
+c is a real constant that's greater than
+one.
+
+51
+00:03:34,976 --> 00:03:38,736
+So by, by polynomial I just mean this is
+equal to
+
+52
+00:03:38,736 --> 00:03:43,716
+something like P(x) would be ax squared
+plus bx plus c.
+
+53
+00:03:43,716 --> 00:03:48,360
+but it can be arbitrarily large orders, so
+you know
+
+54
+00:03:48,360 --> 00:03:53,004
+the first one could be x to the thousand
+or something
+
+55
+00:03:53,004 --> 00:03:54,159
+like that.
+
+56
+00:03:54,159 --> 00:04:02,692
+Then the limit as X goes to infinity of
+any polynomial divided by c to the x.
+
+57
+00:04:02,692 --> 00:04:07,392
+And I could also write that as the limit
+of any polynomial
+
+58
+00:04:07,392 --> 00:04:11,430
+times c to the negative x is going to be
+equal to 0.
+
+59
+00:04:11,430 --> 00:04:14,260
+So it doesn't matter how big the order of
+this polynomial is.
+
+60
+00:04:14,260 --> 00:04:18,404
+Even if I have x to the thousandth, if I'm
+dividing it by a constant
+
+61
+00:04:18,404 --> 00:04:22,854
+raise to some power.
+That's eventually
+
+62
+00:04:22,854 --> 00:04:27,434
+going to go to 0.
+And then kind of a, a similar result If I
+
+63
+00:04:27,434 --> 00:04:32,738
+take the log of the absolute value -- so I
+need the absolute value just because of
+
+64
+00:04:32,738 --> 00:04:37,730
+how log is defined know, it's not going to
+work very well if I give it a negative
+
+65
+00:04:37,730 --> 00:04:43,658
+number.
+the log of any polynomial divided
+
+66
+00:04:43,658 --> 00:04:46,670
+by any polynomial.
+
+67
+00:04:46,670 --> 00:04:50,095
+If I take the limit as x goes to infinity,
+that's also going to be 0.
+
+68
+00:04:52,370 --> 00:04:57,949
+And so, just some, some examples.
+If I had x squared times e to the minus x.
+
+69
+00:04:59,010 --> 00:05:01,285
+Now x squared is something that would grow
+
+70
+00:05:01,285 --> 00:05:03,755
+arbitrarily large as x goes to infinity,
+but
+
+71
+00:05:03,755 --> 00:05:05,705
+e to the minus x is something that's
+
+72
+00:05:05,705 --> 00:05:08,930
+going to be getting smaller as x goes to
+infinity.
+
+73
+00:05:08,930 --> 00:05:13,374
+But, because this, this part of the
+product has the
+
+74
+00:05:13,374 --> 00:05:17,515
+x in the exponent, but here, it's in the
+base,
+
+75
+00:05:17,515 --> 00:05:23,640
+this term is going to dominate and so the,
+the limit is going to go to 0.
+
+76
+00:05:23,640 --> 00:05:24,900
+[BLANK_AUDIO]
+
+77
+00:05:24,900 --> 00:05:31,200
+And then as an example of, of the second
+result if I have the log of x cubed
+
+78
+00:05:31,200 --> 00:05:36,790
+and here the cubed doesn't really matter.
+I put any power here.
+
+79
+00:05:36,790 --> 00:05:38,780
+I could put 1,000, 10,000.
+
+80
+00:05:38,780 --> 00:05:43,470
+Eventually, as x goes, you know, as x gets
+large, as x goes to infinity, this
+
+81
+00:05:43,470 --> 00:05:49,090
+x in the denominator is going to dominate
+because of the logarithm on the top here.
+
+82
+00:05:49,090 --> 00:05:49,930
+And this limit
+
+83
+00:05:49,930 --> 00:05:50,775
+will go to 0.
+
+84
+00:05:54,300 --> 00:05:56,550
+And I'm going to add a little bit more
+notation.
+
+85
+00:05:56,550 --> 00:06:01,650
+So If I instead of using my arrow, my goes
+to arrow, as just a horizontal
+
+86
+00:06:01,650 --> 00:06:06,790
+arrow, so that means goes to a value but I
+don't care how I get there.
+
+87
+00:06:06,790 --> 00:06:08,140
+I just have to be getting closer.
+
+88
+00:06:08,140 --> 00:06:11,730
+But I could be bouncing from side to side
+if I wanted to, to get there.
+
+89
+00:06:12,770 --> 00:06:17,083
+If I use this down arrow, I'm going to
+mean that x goes to 0.
+
+90
+00:06:18,930 --> 00:06:19,325
+With X
+
+91
+00:06:19,325 --> 00:06:21,774
+always being greater then 0 so it can
+
+92
+00:06:21,774 --> 00:06:24,697
+bounce around a little bit but I'm
+starting
+
+93
+00:06:24,697 --> 00:06:26,751
+only on one side of the value and
+
+94
+00:06:26,751 --> 00:06:30,350
+moving towards my limiting point from only
+one side.
+
+95
+00:06:31,350 --> 00:06:36,047
+And also just encase you never seen this
+notation before the K followed by
+
+96
+00:06:36,047 --> 00:06:40,970
+a exclamation point is read K factorial
+and it just means k times k minus1.
+
+97
+00:06:40,970 --> 00:06:44,454
+Sorry, it's defined for integer values,
+positive integer
+
+98
+00:06:44,454 --> 00:06:45,250
+values of k.
+
+99
+00:06:45,250 --> 00:06:52,290
+It means k times k minus 1 times k minus 2
+and so on, times two, times one.
+
+100
+00:06:53,340 --> 00:06:57,340
+And then one factorial and zero factorial
+are both equal to one.
+
+101
+00:06:57,340 --> 00:06:58,348
+[BLANK_AUDIO]
+
+102
+00:06:58,348 --> 00:07:03,100
+And then again, we'll, let's see the
+positive constant.
+
+103
+00:07:06,460 --> 00:07:09,212
+Then if I look at C to the 1 over X, so,
+
+104
+00:07:09,212 --> 00:07:14,590
+you can sort of think of, kind of
+intuitively what's going to happen here.
+
+105
+00:07:14,590 --> 00:07:18,749
+1 over X as X gets large is going to get
+closer and closer to 0.
+
+106
+00:07:19,940 --> 00:07:23,220
+And c to a 0 should be anything to the 0.
+
+107
+00:07:23,220 --> 00:07:24,590
+Power should be 1.
+
+108
+00:07:24,590 --> 00:07:29,904
+So it makes sense that this this function,
+it's limit should be going to 1.
+
+109
+00:07:29,904 --> 00:07:32,114
+also x to the
+
+110
+00:07:32,114 --> 00:07:34,120
+1 over x.
+
+111
+00:07:34,120 --> 00:07:38,830
+So even if my base is getting bigger
+linearly.
+
+112
+00:07:38,830 --> 00:07:42,150
+The limit of this as x goes to inifity is
+still going to be equal to one.
+
+113
+00:07:44,510 --> 00:07:49,315
+And then if x goes down to 0, x to the x
+
+114
+00:07:49,315 --> 00:07:54,610
+power, this limit is also equal to one.
+
+115
+00:07:58,250 --> 00:07:58,660
+[COUGH]
+
+116
+00:07:58,660 --> 00:08:02,104
+If k is a positive integer, and if c is
+greater than
+
+117
+00:08:02,104 --> 00:08:06,122
+0, or if c is greater than 0 is a positive
+constant, then
+
+118
+00:08:06,122 --> 00:08:08,992
+k to the 1 over k, so this is just a the
+same
+
+119
+00:08:08,992 --> 00:08:14,659
+thing as a in the second bullet point just
+re expressed using integers.
+
+120
+00:08:21,140 --> 00:08:23,762
+So the only difference between the, the
+second set and
+
+121
+00:08:23,762 --> 00:08:26,042
+the top set is just now I'm sort of
+restricting k
+
+122
+00:08:26,042 --> 00:08:28,550
+to be integer values, so it makes sense
+that we would
+
+123
+00:08:28,550 --> 00:08:31,091
+get the same, same sort of result that we
+got above.
+
+124
+00:08:31,091 --> 00:08:35,900
+And then al so what this is
+
+125
+00:08:35,900 --> 00:08:41,396
+telling us is this factorial
+
+126
+00:08:41,396 --> 00:08:46,205
+function defined here,
+
+127
+00:08:46,205 --> 00:08:52,860
+this is getting big very quickly.
+
+128
+00:08:52,860 --> 00:08:57,380
+It's getting bigger faster.
+Then a constant to an exponentail power.
+
+129
+00:08:57,380 --> 00:09:02,348
+So, you know, our previous record holder
+for how could something get big fast was
+
+130
+00:09:02,348 --> 00:09:08,280
+this exponential function.
+But that's dominated by this factorial.
+
+131
+00:09:08,280 --> 00:09:10,820
+So somehow this factorial's growing even
+faster than that.
+
+132
+00:09:15,790 --> 00:09:18,570
+So I have two examples in the slides.
+
+133
+00:09:18,570 --> 00:09:23,939
+I'll just go through the first one and
+then the second one you can take a
+
+134
+00:09:23,939 --> 00:09:30,320
+look at one your own because I need to
+speed up this session a little bit.
+
+135
+00:09:30,320 --> 00:09:35,689
+So I want to evaluate this limit 1 over
+the square root of x squared
+
+136
+00:09:35,689 --> 00:09:40,861
+minus 4x plus 1 and then minus x.
+And so basically the
+
+137
+00:09:40,861 --> 00:09:44,956
+strategy you use to evaluate a limit like
+this you want to get the square root out
+
+138
+00:09:44,956 --> 00:09:49,147
+of the, out of the denominator.
+So the first step I'm going to take.
+
+139
+00:09:49,147 --> 00:09:54,607
+If I have minus X here And
+
+140
+00:09:54,607 --> 00:10:01,159
+then I'm going to get minus X,
+
+141
+00:10:01,159 --> 00:10:06,892
+oops, minus X times this
+
+142
+00:10:06,892 --> 00:10:11,533
+square root and then
+
+143
+00:10:11,533 --> 00:10:16,174
+also, oops, plus X
+
+144
+00:10:16,174 --> 00:10:22,190
+times that square root.
+
+145
+00:10:22,190 --> 00:10:23,940
+So I've got minus something plus the same
+
+146
+00:10:23,940 --> 00:10:26,720
+thing and they're going to cancel each
+other out.
+
+147
+00:10:26,720 --> 00:10:30,010
+And then in the last bit, I'll have minus
+x times postive X.
+
+148
+00:10:30,010 --> 00:10:31,880
+So that's going to give me a minus x
+squared.
+
+149
+00:10:31,880 --> 00:10:37,550
+And then I'll pick, pick up this thing in
+the numerator of, of my fraction.
+
+150
+00:10:37,550 --> 00:10:44,390
+And now I have x squared minus x xquared.
+
+151
+00:10:46,140 --> 00:10:48,070
+So get rid of that.
+
+152
+00:10:48,070 --> 00:10:50,050
+Oops, I was supposed to put a little pause
+here.
+
+153
+00:10:52,550 --> 00:10:54,906
+So on the bottom I just have the plus 1
+
+154
+00:10:54,906 --> 00:10:57,718
+minus 4x, and to help me make a little bit
+of
+
+155
+00:10:57,718 --> 00:11:00,682
+sense out of that, what I'm going to do is
+just
+
+156
+00:11:00,682 --> 00:11:04,690
+multiply the top and the bottom by 1
+divided by x.
+
+157
+00:11:04,690 --> 00:11:07,428
+And that's a safe thing to do, because I'm
+
+158
+00:11:07,428 --> 00:11:10,650
+looking at the limit as x goes to
+infinity.
+
+159
+00:11:10,650 --> 00:11:13,688
+So infinity is a long way from 0, and
+
+160
+00:11:13,688 --> 00:11:18,098
+the only time I would have trouble
+dividing something
+
+161
+00:11:18,098 --> 00:11:20,580
+by x, is when x is equal to 0.
+
+162
+00:11:20,580 --> 00:11:24,480
+And so this 1 over x is going to get
+multiplied by x here, and then
+
+163
+00:11:24,480 --> 00:11:28,920
+it's going to show up as a 1 over x
+squared under this square root sign.
+
+164
+00:11:30,740 --> 00:11:34,700
+So what I end up with is the x squared,
+square root of x
+
+165
+00:11:34,700 --> 00:11:39,950
+squared, or x squared times 1 over x
+squared, that gives me the 1.
+
+166
+00:11:39,950 --> 00:11:43,140
+The minus 4x becomes 4 divided by
+
+167
+00:11:43,140 --> 00:11:50,030
+x, and then the positive 1 becomes 1 over,
+1 over x squared.
+
+168
+00:11:50,030 --> 00:11:54,730
+And then my x gets multiplied by one over
+x, just give me a one.
+
+169
+00:11:54,730 --> 00:11:58,240
+And then in the denominator I get a one
+over x and a minus 4.
+
+170
+00:11:58,240 --> 00:12:03,350
+And now what I'm going to do, this is sort
+of
+
+171
+00:12:03,350 --> 00:12:08,526
+two steps in one.
+So, I can take
+
+172
+00:12:08,526 --> 00:12:12,597
+this limit And because this is a rational
+function
+
+173
+00:12:12,597 --> 00:12:15,350
+Ii can put the limit on the top and
+bottom.
+
+174
+00:12:15,350 --> 00:12:18,446
+And then also because I have the square
+root
+
+175
+00:12:18,446 --> 00:12:21,890
+I can put this limit inside my square root
+sign.
+
+176
+00:12:23,360 --> 00:12:26,390
+And then it should be pretty clear what's
+going to happen.
+
+177
+00:12:26,390 --> 00:12:31,510
+When I look at this as x gets bigger, 1
+over x squared is going get very small.
+
+178
+00:12:31,510 --> 00:12:33,850
+4 over x is going to get very small,
+
+179
+00:12:33,850 --> 00:12:36,980
+but this 1 is always going to stay the
+same.
+
+180
+00:12:36,980 --> 00:12:40,550
+So this is going to become 1, square root
+of 1.
+
+181
+00:12:40,550 --> 00:12:44,138
+And on the bottom, my 1 over x is going to
+get very
+
+182
+00:12:44,138 --> 00:12:48,790
+small, but my negative 4 is always going
+to stay the same.
+
+183
+00:12:50,780 --> 00:12:53,419
+So I'm going to get 1 plus 1 divided
+
+184
+00:12:53,419 --> 00:12:57,470
+by negative 4, which is equal to negative
+1/2.
+
+185
+00:12:57,470 --> 00:12:59,484
+And then just this
+
+186
+00:12:59,484 --> 00:13:04,680
+is almost exactly the same example so,
+here I had minus x.
+
+187
+00:13:06,250 --> 00:13:09,770
+Oops, which I can't seem to select for
+some reason.
+
+188
+00:13:11,750 --> 00:13:13,580
+Here I have minus x plus 2.
+
+189
+00:13:13,580 --> 00:13:18,926
+But if you go through that and I'm doing
+exactly the same trick in
+
+190
+00:13:18,926 --> 00:13:24,668
+this case just by adding this little plus
+two here has made the value of
+
+191
+00:13:24,668 --> 00:13:28,460
+the limit divergent now.
+So it goes to minus infinity.
+

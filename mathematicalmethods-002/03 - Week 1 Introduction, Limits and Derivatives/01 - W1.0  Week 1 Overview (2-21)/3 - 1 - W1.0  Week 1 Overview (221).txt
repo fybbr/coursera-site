@@ -1,0 +1,71 @@
+The topic for week one is limits and
+derivatives.
+And the topics we're going to cover are,
+so
+I'll start of with a concept called
+present value,
+and this is just a way to decide how
+much a future stream of payments is worth
+today.
+And then I'm going to use the idea of
+present value to motivate a mathematical
+idea called a limit.
+And a limit is just,
+it's the value of a sequence of functions
+or
+a sequence of numbers as you just keep
+going.
+So it's something that you can never
+actually
+arrive at, but it's something you can
+approximate.
+In section four, we'll talk about
+evaluating limits, so
+this is a very a very common mathematical
+operation.
+Section five, I'll introduce a concept
+called continuity, and so you can think of
+a continuous function as just one that you
+could draw without lifting up your pen.
+Mathematically, the way I would say that
+is that
+a continuous function is a function where
+the limit
+of a function as I approach a certain
+value
+is just equal to the function evaluated at
+that value.
+In section six, I am going to then apply
+the limit to a.
+To an estimate of the slope of a function.
+And then when I take the limit I end up
+with something called a derivative, so
+that's, going to be differentiation.
+And on the rest of the lecture, is
+just going to be methods for evaluating
+derivatives.
+So we'll talk about something called the
+product rule and the chain rule.
+So this is when I have
+a, a complicated function, a function
+that's made up of smaller functions.
+I can express the derivative of my
+function
+in terms of the derivatives of those
+smaller functions.
+I can do higher derivatives, so a higher
+derivative
+is just a derivative of a derivative of a
+function.
+And then, I'll give an example using a
+concept called Duration Of A Bond.
+And then, finally, finish this week with
+L'Hopital's Rule.
+And L'Hopital's Rule is a way of
+evaluating a limit
+that's undefined.
+So, I could end up with a limit of, of
+something like 0 divided by 0.
+I can actually use derivatives to make
+sense of a limit like that.
+

@@ -1,0 +1,71 @@
+Let's begin this lesson with a look at
+a common single player game called eight
+puzzle.
+Eight puzzle is a sliding tile game.
+The game board is a three by three square,
+with number tiles in all but one of the
+cells.
+The state of the game is modified by
+sliding
+number tiles into the empty space from
+adjacent cells.
+Thus moving the empty space to a new
+location.
+there are four possible moves in, at most
+four possible moves.
+Moving empty space up, down, left or
+right.
+Obviously not all these moves are possible
+on all states.
+States shown on the left and right here
+illustrate
+the possible moves from the state shown in
+the center.
+The tile could be moved down.
+The emp, I'm sorry, the empty cell can be
+moved
+down, the empty cell can be moved to the
+right.
+The ultimate objective of the game is to
+place the tiles in order,
+and position the empty square in the lower
+right cell, as shown here.
+the game terminates after 8 moves or when
+all of
+the tiles are in their right positions,
+whichever comes first.
+In some versions of the game, partial
+credit
+is given for states that approximate the
+ultimate goal.
+With ten points being allocated for each
+numbered tile in the correct position,
+and 20 points being allocated for having
+the empty tile in the correct position.
+For example, the first state shown here is
+worth 40 points, since
+four of the cells, the ones colored green
+are in their correct positions.
+And the second stage on here is worth a
+hundred points since all of the tiles
+are in their correct positions, and the
+empty
+cell is in the lower right hand corner.
+Now as with other games, it is possible to
+describe eight puzzle in GDL.
+Here are the rules for three puzzle, its a
+version of
+eight puzzle in a two by two board without
+partial credit.
+Rules for eight puzzle with partial credit
+are, are very much the same,
+except they're a little more verbose, and
+wouldn't easily fit on a page.
+We won't go through the details of either
+rule set in
+this lesson, but it may be worth your
+while to pause and
+look over the rules and be sure you
+understand them.
+[BLANK_AUDIO]
+

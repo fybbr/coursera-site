@@ -1,0 +1,443 @@
+So the last topic for today is Lagrange's
+method plus Newton's method.
+So I want to revisit.
+Okay, I guess I'll remind everybody what
+Lagrange's method was.
+So, it was a method for solving
+constrained optimization problems.
+And the way we approached it, well we had
+to make this function called a
+Lagrangian that had the, the objective
+function, as
+well as these Lagrange multipliers times
+the constraints.
+And then, I know that the extreme values
+of the constrained
+optimization problem are going to occur at
+critical points of the Langragian.
+So what I need to be able to do is take
+the gradient of the
+Lagrangian, set that eqaul to zero, and
+solve that.
+So that's exactly, well, sometimes, like
+in the case of the minimum
+variance portfolio, that was easy, because
+that was just solving a linear system.
+When the system is non-linear it can be
+more difficult, so the maximum expected
+return portfolio.
+This ends up, because the constraints now
+have this
+quadratic form in it, it ends up being
+more difficult.
+I have to solve a non-linear function to
+find the maximum expected return.
+So I'm going to revisit the example from
+the slides for Lagrange method.
+So I was trying to find the minimum or the
+maximum of 4x2 minus 2x3.
+Subject to these two constraints.
+[COUGH]
+And so what I did is I wrote
+down the Lagrangian so that's just the
+objective function.
+This is the, the function that I want to
+find the maximum value of.
+And then I add lambda one times the
+first constraint and lambda two times the
+second constraint.
+And I want to think of this as a function
+of five variables now.
+So there's three that come from the x, and
+two that come from
+the lambda.
+So, it's a function of five variables.
+So, when I take the gradient of this
+function Gm, then I get
+that's a row vector with five entries and
+I want to find the inputs.
+So, that's x1, x2, x3, lambda 1 and lambda
+2
+So that this gradient vector is equal to
+the zero vector.
+And so when I try to solve this in the, in
+the Lagrange, Langrange
+method slides, I ended up coming up with
+these five partial derivatives.
+I set them equal to zero.
+And then it wasn't exactly easy to solve
+but you could do it, and I think we found
+that, well we got lambda 1 for free
+because of this equation, and then you
+found that lambda 2 was plus or minus 1,
+and then
+that was enough to determine the values of
+x1, x2, and x3.
+So in that case at least it was possible
+to solve it exactly.
+[COUGH]
+And the nice thing about having done that
+already
+is we also know that it has two critical
+points.
+So it turned out the non-linear equa, the
+non-linear equation that I
+need to solve, so I already know just from
+looking at this.
+The value of lambda 1.
+So, I'm going to not bother solving for
+that one.
+So, that means I am solving just F of x
+comma lambda 2
+this time and sort of the a function of
+four variables with four outputs.
+And just by looking.
+So, I have to take the the partial
+derivatives of each entry here.
+So, that will be four partial derivatives.
+So, that's what's going to give me my
+gradient matrix.
+So, this has a partial derivative with
+respect to x1 this is
+the only term with an x1 in it, so that's
+2 lambda.
+So I put a two lambda here.
+There's no x2, no x3, so both of these get
+zero.
+And
+I'm going to take the derivative of this
+term
+with respect to lambda two, I get 2x1.
+So I just continue that process for each
+Each of these
+four functions that are making up my
+vector valued function capital F.
+And that gives me the the gradient matrix.
+And so if I want to use Newton's method
+for
+this, I'm going to need some R functions
+for evaluating this.
+So Here, instead of writing out x as x1,
+x2, x3, and lambda 2,
+I've just decided to call all four of
+those things one vector-valued argument x.
+And so, all I'm going to do is make
+this function F, it's just going to return
+a vector of
+length four that has the four pieces in it
+from
+the previous lines, if you if you want to
+compare
+on your own time it's basically, I've just
+rewritten this vector valued function
+in R, and then I did the same thing for
+the gradient matrix here.
+So, here I have tried to keep that at
+least a little bit so so it will be
+human readable, so you can see this is 2
+lambda 2, 0, 0, and then 2x1.
+So that
+was the first row of the gradient I had on
+the previous slide and
+so if I'm going to enter the values like
+this, remember R wants to create matrices.
+By putting things into columns, so it
+fills up the
+first column first, then the second column
+then the third column.
+So if I want to put things in by row, so
+that I can have it equal to
+what I'm writing out here, I have to put
+this optional argument at the end by row
+equals true.
+So this ma, this function matrix is going
+to take this vector of 16 values, turn
+that
+into a four by four matrix by filling
+in the rows rather than filling in the
+columns.
+And so this is going to be a function DF,
+given the four inputs, x1,
+x2, x3, and lambda 2 just creates the the
+gradient matrix
+so then I need a starting point.
+So, again, I have no particularly good
+idea what the starting point should be.
+So I just chose a vector of ones.
+So I need a vector of length 4.
+So this command just repeats.
+It repeats the first argument the
+second argument number of times, so this
+is going to make a vector of length 4.
+Where each element
+is a one.
+Then this time am going to do 15 newton
+iterations.
+And again now the newton iteration the
+code for this is actually pretty simple.
+Once you have the function for the
+gradient
+and for evaluating the function, this is
+all
+the the newton stuff is ever going to look
+like so I just taking x, I'm subtracting
+my update to x And I'm storing that again
+in x.
+And then if I repeat that, my x is going
+to follow my sequence of Newton steps.
+Hopefully closer to the value x star that
+I'm looking for.
+So, code for Newton iteration's very
+simple.
+And, what I've done here, so these were
+the solutions that we came up with.
+In the Lagrange method slides.
+So there was lambda 1, that was fixed,
+equal to negative 2.
+And then we found that lambda 2 could be
+either negative 1 or positive 1.
+And then the rest of the solution's, just
+the
+sign of them was determined by the sign of
+lambda.
+So I'd get negative
+2,3, negative 7.
+And 2 negative 3 7, so it's the first 3
+are just
+multiplied by negative 1 to get the first
+3 of the other solution.
+And what this big R matrix is showing so,
+it's
+showing the values for x1 x2 x3 and lambda
+2.
+So some side I got the lambda 1 for free.
+I didn't bother putting that in here, but
+I could have it, just what have made
+things a bit more complicated.
+What each row is showing is the value
+after that many iterations.
+So remember I said my starting point was
+going to be the vector 1, 1, 1, 1.
+So after zero iterations, my x0 is 1, 1,
+1, 1.
+After one
+iteration
+I end up at 6.25, 1.25, 11.25 and negative
+3.25.
+And so what we're seeing is, each time I
+do
+an iteration it's changing what the values
+of these things are.
+And for the first few steps, nothing very
+extreme happens.
+And then all of a sudden in step 3 I went
+from 1.62 to negative 247,
+you know I went from 5 to 81 from about
+negative 2 to negative
+500 and something but then after that they
+get better Until finally
+after, so this is the reason why I chose,
+there's nothing magical about
+me choosing 15 or anything about this
+problem that suggested me choosing 15.
+I just happened to get exact convergence
+to, you know,
+within the numbers that the computer's
+capable of displaying after 15
+steps and also I couldn't fit anymore
+lines on this slide.
+[COUGH]
+So from a starting point of 1, 1, 1, 1, I
+ended up getting
+to within the sort of numerical precision
+that the computer is capable of of doing,
+the solution that we found theoretically.
+So, the solution corresponding to lambda 2
+equal to negative 1.
+And so this is something we have to be
+aware of as there are two solutions.
+I know there are two solutions.
+But, Newton's methods, if it converges,
+it's only
+ever going to converge to one of those.
+I can't run it a little bit longer and
+hope that it then tells me what another
+solution is.
+>> Were different in initial values
+[INAUDIBLE]?
+>> Yeah.
+Well, that might be on the next slide
+[LAUGH].
+>>
+[LAUGH]
+>> first though, I guess, I just made
+some plots of.
+So this is.
+I couldn't figure out how to, how to put
+the vector length.
+Symbol over here.
+So I just use absolute value.
+But what I mean here is xk minus x star.
+So since I have this theoretical result, I
+knew what the real answer was.
+So I just mean the length of the vector,
+so the, how
+far away I am from the point that I'm
+trying to estimate.
+And you see at the beginning I with my
+initial
+guess of 1, 1, 1, 1 didn't do too bad.
+And, then all of a sudden it bumps way up
+to here, but then, it takes me pretty
+quickly back down.
+And, so after about 10, you know, I can't
+see anything on this scale anymore.
+So, I plotted this.
+On the log scale.
+So that's exactly the same plot except now
+instead
+of putting the, the actual scale I'm just
+putting the
+log of the number that was on the y axis.
+And so again you see in the first few
+steps nothing very exciting happened, then
+it got much worse.
+And then on the log scale it sort of has
+this linear bit.
+And then it really starts to drop off
+after that and so somewhere around here is
+one
+this quadratic convergence that I was
+talking about, that's
+where that kicks in, and you can see for,
+you know, for this step and this step.
+You can think of the scale here is roughly
+the number of significant digits.
+So when I go, ops, when I go from this
+step to this
+step, I'm getting an increase of about
+it's going to be about one significant
+digit.
+Here I'm going to get an increase of one
+significant digit.
+And then after the next step after that, I
+get an increase of maybe two or three
+significant digits.
+And if I were to keep going, You know,
+that's just getting better and better.
+So, some observations about this.
+So, from a given starting point, Newton's
+method converges, you
+know, if it converges, to a single value x
+star.
+So, in this case, there are actually two
+values
+that it could converge to, if it were
+working.
+And it, just because of this initial
+condition that
+I gave it, it converged to one of them.
+And so, starting at the point 1, 1, 1, 1,
+I got this answer.
+So, here I've just dropped out the value
+of lambda 1.
+But I know there's two critical points.
+And so I'm just going to kind of guess
+that if
+I start from all 1s and this ends up being
+a negative 1, maybe if I multiply this
+starting vector
+by negative 1, that's just going to flip
+everything around and
+this will be a positive 1.
+So let's try doing that.
+So I just put a, a negative sign here.
+And so that's going to make my initial
+vector a
+vector of minus 1s, instead of a vector of
+1s.
+The code for doing the Newton iterations
+stays exactly the same.
+And so this is the solution I'm hoping to
+get.
+Oh no, sorry.
+That's the solution I actually get after
+this, which is,
+this solution divided by negative 1, which
+is what I was expecting to get.
+So yeah, if you try different solutions,
+but the problem is
+in general, we're not going to know the
+number of critical points.
+So it, in this case, I knew that I got one
+of them.
+And I knew what the other one was.
+So that gave me some idea.
+So for instance, using negative 1, that
+might lead me to that other critical
+point.
+in general,
+that's not going to be the case.
+So usually what you
+can do is you can get some additional
+information about the problem.
+So you can study the problem a bit more.
+I, if you read the Lagrange chapter in
+textbook, he talks about how to classify a
+critical point as a minimum or a maximum,
+so you might know that your solution has
+or that
+the problem you're trying to solve only
+has two critical points.
+So this is the case in a maximum expected
+return portfolio.
+You actually get two answers, a maximum
+expected return and a minimum expected
+return.
+And so, if you can classify the point that
+you found
+as a maximum, then you know that you've
+found what you want.
+So sometimes, that allows you to use this
+to,
+to get an answer to the problem that you
+want.
+And if you can't do that, the very best
+you
+can do is just try to use multiple
+starting points.
+So Really, what you would do here is use
+some sort of random number generator to
+just choose problems.
+you want to be a little bit smart about
+it.
+So, you want to choose things that are on
+the same scale.
+I guess another thing I should point out
+here is the starting value that I chose.
+And that might go a long way to explaining
+why we get this huge jump here.
+The starting point that I chose doesn't
+actually satisfy the constraints
+of the, of the, Lagrange method problem
+that I'm trying to solve.
+So, I think what sort of happened here is
+it kind of meandered around, until
+it managed to get into the space
+of points, where the constraints were
+actually satisfied.
+And then that's when we go this much nicer
+looking behavior.
+It's a converging towards
+towards the value that I wanted.
+So unfortunately if you, if you don't know
+anything else about your problem
+that's a about the best you can do is just
+try starting points randomly.
+Hopefully they'll converge to more than
+one solution.
+And then you can look at the value at that
+solution and decide
+if you've got you know, at least a local
+minimum or a local maximum.
+

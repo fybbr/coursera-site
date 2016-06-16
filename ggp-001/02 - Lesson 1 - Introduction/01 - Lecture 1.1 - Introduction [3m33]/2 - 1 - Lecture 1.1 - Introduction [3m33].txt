@@ -1,0 +1,31 @@
+Playing a strategy game like chess or checkers couples intellectual activity with competition.
+By playing games we can often exercise and improve our intellectual skills.
+The competition adds excitement and allows us to compare our skills to those of others.
+Same motivation accounts for interest in computer game playing as a testbed for artificial intelligence.
+Programs that think better should be able to win more games and so we can use competition as an evaluation technique for intelligent systems.
+Unfortunately, building programs to play specific games has limited value in artificial intelligence.
+To begin with, specialized game players are very narrow.
+They are often good at one game but not so good at others.
+Deep Blue for example might have beaten the wolrd chess champion, but it has no clue how to play checkers and cannot even balance a checkbook.
+A second problem with specialized game playing is that such systems do only part of the work:
+most of the interesting analysis and design is done in advance by their programmers
+system themselves might just as well be teleoperated.
+However all is not lost.
+Many believe that the idea of game playing can be used to good effects to inspire and evaluate good work in artificial intelligence,
+but it requires moving more of the mental work to the computer itself.
+This can be done by focusing on general game playing.
+General game players are systems able to play arbitrary games effectively based solely on formal descriptions supplied at runtime.
+In a typical general game playing session, the players know nothing about the game in advance.
+Once the game begins, they receive a game description and based solely on this description they must figure out how to play the game legally and effectively.
+Furthermore they have to deal with uncertainty in the form of actions of the other players and usually ressource bounds limitations as well in the form of a game clock that limits their computation time.
+Given this arrangement, general game players cannot rely on algorithms designed in advance for specific games.
+General game playing expertise depends on intelligence on the part of the game player and not just intelligence of the programmer of the game player.
+In order to perform well, general game players typically incorporate ideas from multiple subareas of artificial intelligence such as knowledge representation, reasoning, rational decision making and so forth.
+The upshot of this is that general game players are able to play different kinds of games.
+They can play simple games like tic-tac-toe and complex games like chess.
+Games with simultaneous play like Diplomacy and games with alternating play like Risk.
+Gales with complete information or games with incomplete information such as Battleships.
+Games with different numbers of players.
+Games with or without communication among the players.
+Zero-sum games, cooperative games and so forth.
+

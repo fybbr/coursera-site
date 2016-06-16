@@ -1,0 +1,162 @@
+1
+00:00:05,770 --> 00:00:11,440
+We start our in-depth tour of general game
+playing by looking at single player games.
+
+2
+00:00:11,440 --> 00:00:19,560
+Such as Sudoku, or sliding tile puzzles,
+Rubik's cube, and so forth.
+
+3
+00:00:19,560 --> 00:00:22,540
+In the game playing community, these are
+often called puzzles, rather than games.
+
+4
+00:00:22,540 --> 00:00:25,010
+And the process of solving such puzzles is
+
+5
+00:00:25,010 --> 00:00:28,180
+often called problem solving rather than
+game playing.
+
+6
+00:00:29,960 --> 00:00:31,100
+Puzzles are simpler
+
+7
+00:00:31,100 --> 00:00:33,280
+than multiple player games because
+everything's
+
+8
+00:00:33,280 --> 00:00:35,850
+under the control of a single player.
+
+9
+00:00:35,850 --> 00:00:38,950
+World static, except when the player acts,
+and changes to the world
+
+10
+00:00:38,950 --> 00:00:42,040
+are determined entirely by the current
+state and the actions of the player.
+
+11
+00:00:45,030 --> 00:00:48,600
+In this lesson, as in most of the course
+we
+
+12
+00:00:48,600 --> 00:00:51,019
+assume that the player has complete
+information abut the puzzle.
+
+13
+00:00:52,360 --> 00:00:54,210
+Assume that it knows the initial state.
+
+14
+00:00:54,210 --> 00:00:57,060
+You know that, it knows its legal actions
+in every state.
+
+15
+00:00:57,060 --> 00:00:59,820
+It knows the effects of its actions in
+every state.
+
+16
+00:00:59,820 --> 00:01:01,680
+For every state, it knows its reward, and
+for
+
+17
+00:01:01,680 --> 00:01:03,620
+every state, it knows whether or not it's
+terminal.
+
+18
+00:01:06,830 --> 00:01:10,420
+In this lesson, we also assume the games
+are small.
+
+19
+00:01:10,420 --> 00:01:14,520
+That is the player has sufficient space
+and time to search the entire game tree.
+
+20
+00:01:15,810 --> 00:01:18,730
+This guarantees that the player can find
+optimal actions to perform.
+
+21
+00:01:20,590 --> 00:01:23,910
+Now that said, as we'll see, it's
+sometimes possible to
+
+22
+00:01:23,910 --> 00:01:27,379
+find optimal actions even without
+searching the entire game tree.
+
+23
+00:01:30,730 --> 00:01:35,150
+Despite these strong assumptions, just one
+player, complete information,
+
+24
+00:01:35,150 --> 00:01:38,240
+availability of adequate time to search
+the game tree.
+
+25
+00:01:39,290 --> 00:01:41,110
+The study of single player games is a good
+
+26
+00:01:41,110 --> 00:01:43,000
+place to start our look at general game
+playing.
+
+27
+00:01:44,330 --> 00:01:45,860
+First of all, many real world problems can
+be
+
+28
+00:01:45,860 --> 00:01:48,410
+cast as single player games with these
+same restrictions.
+
+29
+00:01:48,410 --> 00:01:51,360
+Su, such as finding possible protein
+
+30
+00:01:51,360 --> 00:01:53,515
+foldings as suggested by the illustration
+here.
+
+31
+00:01:53,515 --> 00:01:54,940
+[COUGH]
+
+32
+00:01:54,940 --> 00:01:57,530
+More importantly for us, as we'll see.
+
+33
+00:01:57,530 --> 00:01:59,880
+The techniques we examine later can be
+viewed as
+
+34
+00:01:59,880 --> 00:02:02,570
+more elaborate versions of the basic
+techniques introduced here.
+

@@ -1,0 +1,115 @@
+Now while, bounded minimax helps avoid
+some wasted work, we can do even better.
+Consider the game tree shown here.
+In this case, unlike the earlier examples,
+there are
+many terminal nodes that are neither zero
+or 100.
+Determining the maximum score for the top
+node of this tree a
+minimax player, even a bounded minimax
+player wouldn't examine the entire tree.
+However not all of this
+work is necessary.
+So as an example, consider the fourth
+terminal node on the lower-left.
+Even before that node is examined the
+player knows that his opponent can keep it
+to at most 10 points.
+And on that branch, based on the third
+node, it, all, and it already has a move
+of it's own that gets it 11 points.
+Sporing the fourth node can only decrease
+the mid nodes score.
+And, the player's not going to choose it
+anyway since it can get 11 points
+somewhere else.
+So there's not point in examining it.
+In this case, the saving is only one node.
+But in other cases it can allow a player
+to
+prune whole subtrees, as we'll see in just
+a bit.
+Alpha-Beta Search is a variation of
+Bounded Minimax that eliminate such
+wasted work, by computing balance
+dynamically
+and passing them along as parameters.
+One bound called Alpha is the best score
+the players seen thus far.
+Another bound called Beta is the worst
+score the player has seen.
+In examining new nodes, Alpha-Beta Search,
+uses these
+bounds to decide whether to look at
+further nodes.
+So partial resulted in
+min node, is less than alpha, then
+there's no point in examining any other
+descendants
+of that node since it can only decrease
+its fame player will not take that choice.
+Given that it has a higher value
+elsewhere.
+And, analogously, if the partial result of
+the max node is greater than Beta,
+then there's no point in considering other
+options since that can only increase the
+score.
+And, the player's opponent would not allow
+that since they know
+that they can keep the value to no more
+than Beta.
+So, here's the implementation of maxscore
+and minscore for a Alpha Beta player.
+In computing the maxscore of a max node,
+the player takes the max, maximum, of
+alpha
+and the minscore of the node obtained by
+performing an illegal action in the
+corresponding state.
+And symmetrically, to compute the minscore
+of a
+node, the player takes the minimum of beta
+and
+the maxscore of the node for the state
+obtained
+by executing the joint move for any
+illegal action.
+Now let's apply this procedure, to the
+tree shown earlier.
+with initial values 0 and 100 for alpha
+and beta.
+In the tree shown here, we have written in
+the values produced
+by the alpha-beta procedure in this case,
+and left the other nodes blank.
+So as you can see, we suse, we pruned
+away that fourth node at the bottom of the
+tree.
+But we also pruned away quite a few
+others.
+It's just not a insubstantial savings.
+In this particular case it was modest,
+however, in general
+alpha-beta search can,can save significant
+amount of work over full
+[UNKNOWN].
+In fact, in the best case, given a tree
+with branching factor B, and depth D,
+alpha-beta search needs to examine at
+most, order of B to the D over
+2 nodes, to find the maximum score instead
+of order of B to the D.
+This means that an alpha-beta player can
+look ahead twice as
+far as a mini-max player in the same
+amount of time.
+Or looked at another way, the effective
+branching factor in
+this game is the square root of B instead
+of B.
+It would be the equivalent of searching a
+tree with just five moves instead of 25
+moves.
+

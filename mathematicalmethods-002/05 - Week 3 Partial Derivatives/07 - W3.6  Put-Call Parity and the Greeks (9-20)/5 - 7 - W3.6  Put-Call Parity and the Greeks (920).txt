@@ -1,0 +1,239 @@
+OK, so lesson six is going to be, called
+Put-Call Parity and The Greeks.
+This will be a pretty quick lesson.
+I just want to introduce a couple of
+concepts
+that I'll use than in the next four
+lessons.
+So I'll start off.
+By naming V to be the value
+of a portfolio of derivative securities
+all based on one underlying asset.
+So this could be, you know, more than one
+option based on the same underyling asset.
+Really, for, for what we're going to be
+doing this week, it's going to
+be just a single thing, either one call
+option or one put option.
+And then the rates of change of the value
+V with respect to
+the pricing parameter, so that would be
+the asset price S, the volatility sigma.
+These are going to be things that are
+useful for hedging.
+And these rates or chains are called the
+Greeks of the portfolio and they're.
+They're basically just the different
+derivatives you
+can take of the Black-Scholes pricing
+formula.
+So we're going to consider a portfolio
+containing a single European call option.
+And basically, this week's going to work,
+if you've looked at the homework already.
+I'm going to go through the examples of
+how
+to compute the Greeks using a call option.
+It'll be very similar, but just, a little
+different, to do it for a put option.
+And so the homework is going to be a put
+option.
+But you should be able to refer to the
+calculations for the call option, and up
+to just to a few things being reordered
+and some different signs, it will be very
+similiar.
+And there's also, well I'll get to this in
+a second,
+first I'm just going to remind you about
+the Black-Scholes formula.
+So the inputs to the Black-Scholes formula
+Where the asset price, s.
+And so this is going to quite often in,
+in these slides also have a t associated
+with it.
+And that just means the, the price at a
+certain time t.
+If there's no t, we kind of mean the, the
+price right now.
+And sigma is going to be the volatility.
+K is the strike price.
+So this is the, the exercise price of the
+option.
+Little r is a continuously compounded
+risk-free interest rate.
+Capital T is the maturity date.
+Q is a, asset dividend rate, and this is
+a, continuously compounded rate at well.
+And then little t is going to be time, so
+you can think of that as current, the
+current time.
+And really, the way capital T and little t
+are going to
+show up in the pricing formula is, capital
+T minus little t.
+And so that means some date in the future
+minus today.
+And so, that quantity, capital T minus
+little
+t, you can think of that as the time
+left until the maturity of the, of the
+contract.
+So the Black Shoals formula for a European
+call option
+So I'm using the same notation that is
+used in
+the text book and so, this is for some
+reason
+treated as a function, just of two
+variables, S and T.
+But it's really, has several more has all
+of the variables that I had
+on the previous slide in it, so you have
+the, dividend rate, you have.
+Maturity, current time, strike price and
+risk free interest rate.
+And then we also have this function
+capital Fi, and that's just defined
+as the integral from minus infinity Up to
+z of
+e to the minus x squared over 2dx and then
+normalized
+by this factor of 1 over the square root
+of 2 pi.
+We have a function d plus, which is also a
+function of all of the arguments of the
+pricing formula.
+And essentially it's not necessary to, to
+write d-plus
+as a separate function and put it in here.
+I could actually just write the whole
+thing out, but
+again it just gets kind of unwieldy to do
+that.
+And now that we have tools, like the
+product rule and the chain rule,
+it's actually more convenient.
+To treat functions of functions separately
+like this.
+So we had a, a d plus in the first term of
+the pricing formula.
+We have a d minus in the second term of
+the pricing formula.
+And these two functions are very similar.
+And where, where they differ is just that
+d plus.
+Has a plus sigma, oops, okay, I can't, I
+can't highlight that,
+but has a plus sigma squared over two in
+this part here.
+And d minus is actually equal to d plus
+minus sigma times the square root of T
+minus
+t And all that that changes is that this
+plus sign here becomes a minus sign in d
+minus.
+So the, the plus and minus subscript on
+the d here just
+refers to whether this should be a plus
+operation, or a minus operation.
+Then there's a relationship between the
+price of a
+Put option and the price of a Call option.
+So If I let C of T be the price of a
+European Call option, and P of T be
+the price of a European Put option on the
+same
+asset, with the same maturity date and the
+same strike price.
+Then the following relation holds, and
+this is called Put-Call parity
+And it just says that the price of the Put
+option plus s
+times S times E to the minus QT minus T.
+So, it's basically this is just what the
+asset's going to be worth.
+If it's paying some dividends, it's
+going to be a little bit more.
+Then, minus the value of the call option
+has
+to be equal to the discounted value.
+Of the strike price.
+And so what we're really trying to do here
+is relate the Put price and the Call
+price.
+And so in the homework I've asked you to
+do two things.
+So I'm going to show you how to calculate
+the derivatives of the Call price.
+And then I'm
+going to ask you to calculate the
+derivatives of the put price.
+And so what I want you to actually, in
+the homework, compute those by taking
+derivatives of the formula.
+But you can check that you got the right
+answer by taking derivatives of this put
+call parity relationship.
+And then just plugging in, so if I took
+the derivative of this, for instance, with
+respect to s.
+This term would just be dcds.
+That's going
+to be something that I show you how to
+calculate today.
+And so you'll end up with an expression
+for the derivative
+of the put price with respect to S, these
+two other
+terms and something that we already know,
+and so that'll give
+you an easy way to verify that you've got
+the correct answer.
+And the Greeks are, and they just
+the different derivatives of the, the
+pricing formula.
+But they all have names that are Greek
+letters.
+So that's why they're called the Greeks,
+it has
+nothing actually to do with the country of
+Greece
+So the rate of change of c, so it's rate
+of change in general of the value of
+the portfolio but since for today's
+lecture I'm considering
+my portfolio just to be a single call
+option.
+I'm just going to say c is the value of my
+portfolio.
+So the rate of change with C with respect
+to S, is called Delta
+and that's just going to be the partial
+derivative of C with respect to S.
+Second one is called Gamma which is the
+rate of change of Delta with respect to S.
+And since, so partial derivative of delta
+again, with respect to s.
+And since delta was the partial derivative
+of c with respect to s, gamma
+can also be the second partial derivative
+of c with respect to s squared.
+Then we have theta, which is the rate of
+change of c with respect to t.
+And so that'll just be the partial
+derivative of c with respect to t.
+Row, which is the rate of change of c with
+respect to the risk free interest rate r.
+So it's the partial derivative of c with
+respect
+to r And then, vega, which I'm not sure
+this
+is actually a real Greek letter, but it
+sounds kind of Greek.
+So I guess they threw it in with the, with
+the group.
+Which is the rate of change of C with
+respect to sigma.
+So partial of C with respect to sigma.
+

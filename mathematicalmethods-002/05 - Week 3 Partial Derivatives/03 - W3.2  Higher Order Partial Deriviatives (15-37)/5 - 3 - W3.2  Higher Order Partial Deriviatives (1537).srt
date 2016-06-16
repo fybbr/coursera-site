@@ -1,0 +1,1150 @@
+1
+00:00:00,860 --> 00:00:03,590
+So, now we'll look at higher order partial
+derivatives.
+
+2
+00:00:06,620 --> 00:00:13,240
+So, remember for a function of a single
+variable I could say d squared by dx
+
+3
+00:00:13,240 --> 00:00:19,659
+squared of f of x when I wanted to talk
+about the second derivative of f of x.
+
+4
+00:00:21,770 --> 00:00:26,900
+And what I meant, what I mean by this
+notation is take the
+
+5
+00:00:26,900 --> 00:00:31,480
+derivative of f of x with respect to x one
+time, the thing
+
+6
+00:00:31,480 --> 00:00:35,610
+in the square brackets here, that's going
+to be another function of x
+
+7
+00:00:35,610 --> 00:00:38,569
+and then I'm going to take the derivative
+of that, again with respect to x.
+
+8
+00:00:41,570 --> 00:00:43,820
+And then I can also use the notation.
+
+9
+00:00:43,820 --> 00:00:48,190
+So, the derivative of x with respect to x
+I can call, sorry.
+
+10
+00:00:48,190 --> 00:00:48,330
+Yeah.
+
+11
+00:00:48,330 --> 00:00:52,380
+Derivative of x with respect to x.
+So, I'll call that f prime.
+
+12
+00:00:52,380 --> 00:00:56,739
+And if I take the derivative of that
+again, we use the notation f double prime.
+
+13
+00:01:01,520 --> 00:01:05,520
+So for a function of several variables,
+I'm going to do
+
+14
+00:01:05,520 --> 00:01:08,470
+pretty much the same thing, except just
+with partial derivatives.
+
+15
+00:01:08,470 --> 00:01:12,230
+So for instance, if I wanted to take the
+derivative with respect to x so the
+
+16
+00:01:12,230 --> 00:01:15,510
+second derivative with respect to x,
+second partial
+
+17
+00:01:15,510 --> 00:01:17,950
+derivative with respect to x of a
+function.
+
+18
+00:01:19,070 --> 00:01:20,810
+E to the xy.
+
+19
+00:01:20,810 --> 00:01:22,660
+So, maybe highlight that part at least.
+
+20
+00:01:23,720 --> 00:01:26,650
+What I mean is take the derivative take
+the partial
+
+21
+00:01:26,650 --> 00:01:28,540
+with respect to x of e to the xy.
+
+22
+00:01:28,540 --> 00:01:32,660
+That's going to give me another function
+of x and y.
+
+23
+00:01:32,660 --> 00:01:36,180
+And then take the partial derivative of
+that function with respect to x again.
+
+24
+00:01:37,930 --> 00:01:42,890
+And so if I just go ahead and evaluate
+that, I'm going to end up with y
+
+25
+00:01:42,890 --> 00:01:47,970
+times e to the xy, by taking the
+derivative of this with respect to x once.
+
+26
+00:01:47,970 --> 00:01:51,800
+And then another y will pop out when I
+take the second derivative,
+
+27
+00:01:51,800 --> 00:01:55,550
+so I end up with y squared e to the xy So
+there's a bad
+
+28
+00:01:55,550 --> 00:01:59,645
+example of how not to do the chain rule,
+by just doing it all explicitly.
+
+29
+00:01:59,645 --> 00:02:02,490
+Hm-mmm.
+
+30
+00:02:02,490 --> 00:02:06,540
+And then similarly if I want to take the
+second partial,
+
+31
+00:02:06,540 --> 00:02:10,260
+second partial derivative of e to the xy
+with respect to y.
+
+32
+00:02:10,260 --> 00:02:12,880
+I'm going to do exactly the same thing,
+except I'm just
+
+33
+00:02:12,880 --> 00:02:16,960
+going to have partial y's in the
+denominator And in this
+
+34
+00:02:16,960 --> 00:02:20,420
+case, this is such a simple function I
+could just
+
+35
+00:02:20,420 --> 00:02:23,740
+relabel the x and y, so we can kind of
+skip
+
+36
+00:02:23,740 --> 00:02:26,330
+the computation and just see that the
+output is going to
+
+37
+00:02:26,330 --> 00:02:29,800
+be, in this case, x squared times e to the
+xy.
+
+38
+00:02:34,110 --> 00:02:37,260
+But for functions of several variables
+there's now also
+
+39
+00:02:37,260 --> 00:02:41,110
+the The possibility of something called a
+mixed partial derivative.
+
+40
+00:02:42,890 --> 00:02:46,400
+So I'm going to keep the same idea as I,
+as I had in middle
+
+41
+00:02:46,400 --> 00:02:49,960
+section of the slide where I take the
+derivative with respect say the partial
+
+42
+00:02:49,960 --> 00:02:54,590
+derivative of my function with respect to
+one of the variables and repeat except
+
+43
+00:02:54,590 --> 00:02:59,190
+when I repeat I can take the partial
+derivative With respect to a different
+
+44
+00:02:59,190 --> 00:03:00,060
+one of the variables.
+
+45
+00:03:00,060 --> 00:03:04,270
+So in this case, I'm going to take the
+partial derivative,
+
+46
+00:03:04,270 --> 00:03:07,990
+first with respect to y, and then with
+respect to x.
+
+47
+00:03:07,990 --> 00:03:10,990
+So you can kind of think of this thing
+here as an operator.
+
+48
+00:03:10,990 --> 00:03:15,020
+And so, it's going to do something to this
+function.
+
+49
+00:03:16,380 --> 00:03:19,269
+And the part that's closest to the
+function that's going to happen first.
+
+50
+00:03:21,760 --> 00:03:21,760
+[INAUDIBLE]
+
+51
+00:03:21,760 --> 00:03:21,760
+.
+
+52
+00:03:21,760 --> 00:03:24,820
+So if I were to write this out using
+slightly longer form.
+
+53
+00:03:24,820 --> 00:03:28,770
+When I say partial squared, partial x,
+partial y.
+
+54
+00:03:28,770 --> 00:03:33,210
+I mean, first take the partial derivative
+with respect to y of my function.
+
+55
+00:03:33,210 --> 00:03:36,120
+That's going to give me another function
+of x and y.
+
+56
+00:03:36,120 --> 00:03:38,450
+And I'm going to take the partial
+derivative
+
+57
+00:03:38,450 --> 00:03:40,430
+with respect to x of that function.
+
+58
+00:03:41,900 --> 00:03:46,820
+So, here, I've just evaluated the first
+partial with respect to y.
+
+59
+00:03:46,820 --> 00:03:48,710
+So we got the same thing we got up here.
+
+60
+00:03:50,210 --> 00:03:52,650
+But now, this time, it's going to be
+slightly more complicated.
+
+61
+00:03:52,650 --> 00:03:56,780
+Because I'm going to take the derivative
+of this now with respect to x.
+
+62
+00:03:56,780 --> 00:03:59,860
+So now this is a product of two functions
+of x.
+
+63
+00:03:59,860 --> 00:04:00,360
+So.
+
+64
+00:04:01,620 --> 00:04:06,480
+X is the first function, and then e to the
+x y
+
+65
+00:04:06,480 --> 00:04:08,960
+is my second function, so I have to use
+the product rule.
+
+66
+00:04:11,520 --> 00:04:13,650
+And so again just to make this all fit
+
+67
+00:04:13,650 --> 00:04:17,320
+on one slide, I've skipped, probably some
+essential work.
+
+68
+00:04:17,320 --> 00:04:19,960
+But I hope it's, I hope it's correct.
+
+69
+00:04:19,960 --> 00:04:22,970
+So I have the derivative of the first
+function times the second function.
+
+70
+00:04:22,970 --> 00:04:25,320
+So the derivative of x is going to just be
+one.
+
+71
+00:04:25,320 --> 00:04:30,150
+So the first term in the product rule is
+going to to be e to the xy.
+
+72
+00:04:30,150 --> 00:04:33,410
+And plus the first funtion times the
+derivative of the second.
+
+73
+00:04:33,410 --> 00:04:36,910
+So I'm going to take X times the partial
+with respect
+
+74
+00:04:36,910 --> 00:04:40,800
+to x, of e to the x y.
+We already worked that out above, too.
+
+75
+00:04:40,800 --> 00:04:44,690
+So I have e to the x y plus x y e to the x
+y.
+
+76
+00:04:48,330 --> 00:04:49,970
+Oops, going to write down here.
+
+77
+00:04:53,830 --> 00:04:55,789
+Okay, my arrow's not working anymore.
+
+78
+00:04:58,860 --> 00:04:59,360
+There it goes.
+
+79
+00:05:01,960 --> 00:05:05,360
+And somehow this is going to probably
+bring up the question what
+
+80
+00:05:05,360 --> 00:05:09,960
+is the relationship between, so here I'm
+doing the mixed partial.
+
+81
+00:05:10,960 --> 00:05:13,800
+Taking the partial derivative with respect
+to y
+
+82
+00:05:13,800 --> 00:05:16,050
+and then the partial derivative with
+respect to x.
+
+83
+00:05:16,050 --> 00:05:17,250
+X.
+
+84
+00:05:17,250 --> 00:05:19,310
+And here it's just the other way around.
+
+85
+00:05:19,310 --> 00:05:22,810
+First, with respect to x and then with
+respect to y.
+
+86
+00:05:25,950 --> 00:05:33,170
+So we already saw that if I did it y first
+then x, this is the function that I got.
+
+87
+00:05:33,170 --> 00:05:33,170
+[INAUDIBLE]
+
+88
+00:05:33,170 --> 00:05:33,670
+.
+And
+
+89
+00:05:35,440 --> 00:05:39,460
+now let's look at what happens when I do
+it with respect to x first.
+
+90
+00:05:39,460 --> 00:05:41,030
+And then with respect to y.
+
+91
+00:05:42,270 --> 00:05:44,870
+So first, I'm going to take the partial
+derivative
+
+92
+00:05:44,870 --> 00:05:47,270
+with respect to x of e to the xy.
+
+93
+00:05:48,400 --> 00:05:51,780
+And that's just going to give me y times e
+to the xy.
+
+94
+00:05:51,780 --> 00:05:54,860
+And now again I have to use the product
+rule to take the derivative of this.
+
+95
+00:05:54,860 --> 00:05:57,770
+So it's, the derivative of the first
+function,
+
+96
+00:05:57,770 --> 00:06:00,740
+so the derivative of y with respect to y,
+
+97
+00:06:00,740 --> 00:06:05,390
+is just one, times the second function, so
+that's where this e to the xy comes from.
+
+98
+00:06:06,930 --> 00:06:11,330
+Plus, the first function, so that's my y
+here.
+
+99
+00:06:11,330 --> 00:06:13,530
+Times the derivative of the second
+function.
+
+100
+00:06:13,530 --> 00:06:19,740
+And we've already worked this out, this
+was just x times e to the xy.
+
+101
+00:06:19,740 --> 00:06:25,960
+So I end up with e to the xy plus xye to
+the xy, which is what
+
+102
+00:06:25,960 --> 00:06:27,100
+we got for the first one.
+
+103
+00:06:31,970 --> 00:06:34,300
+And so when I have this.
+
+104
+00:06:34,300 --> 00:06:38,700
+Sort of, very symmetric with respect to
+differentiation function.
+
+105
+00:06:38,700 --> 00:06:40,980
+I find that the mixed partials are equal.
+
+106
+00:06:40,980 --> 00:06:46,970
+So, it doesn't matter if I do dx dy, or dy
+dx, I get the same, same result.
+
+107
+00:06:48,610 --> 00:06:51,770
+So, but this function that I chose, it was
+
+108
+00:06:51,770 --> 00:06:54,130
+easy to work with in terms of taking its
+derivatives.
+
+109
+00:06:54,130 --> 00:06:57,140
+But, because of this symmetry, maybe we
+should try it with a, a little
+
+110
+00:06:57,140 --> 00:06:59,249
+bit more complicated function to see what
+happens.
+
+111
+00:07:01,780 --> 00:07:06,440
+So I think I chose this function from the,
+from the text book.
+
+112
+00:07:06,440 --> 00:07:08,630
+it was not fun to take the derivatives of
+this.
+
+113
+00:07:11,780 --> 00:07:16,189
+So to get the second partial with respect
+to y and then respect to
+
+114
+00:07:16,189 --> 00:07:20,643
+x, first I'll start out by taking the
+derivative of this with respect to y.
+
+115
+00:07:22,160 --> 00:07:23,210
+So let's see.
+
+116
+00:07:23,210 --> 00:07:25,540
+So the first thing I'm going to do is make
+my
+
+117
+00:07:25,540 --> 00:07:31,550
+u substitution, just to avoid making
+mistakes with the chain rule.
+
+118
+00:07:31,550 --> 00:07:34,340
+Usually what, what gets me is the minus
+sign up here, because
+
+119
+00:07:34,340 --> 00:07:37,400
+that's, if there's a minus sign here and a
+minus sign here,
+
+120
+00:07:37,400 --> 00:07:41,830
+for some reason I tend to have about a 50%
+chance of missing one of those.
+
+121
+00:07:41,830 --> 00:07:43,170
+We're getting it wrong I suppose.
+
+122
+00:07:43,170 --> 00:07:43,670
+[SOUND]
+
+123
+00:07:47,870 --> 00:07:48,400
+So,
+
+124
+00:07:50,750 --> 00:07:54,080
+I also did the partial derivative with
+respect to y
+
+125
+00:07:54,080 --> 00:07:56,450
+of the first term here just because it was
+easy.
+
+126
+00:07:56,450 --> 00:07:58,900
+So by the power rule the y is just y to
+the zero.
+
+127
+00:07:58,900 --> 00:08:01,910
+So I have x squared.
+
+128
+00:08:01,910 --> 00:08:06,100
+Plus the partial derivative with respect
+to y of e to the u.
+
+129
+00:08:06,100 --> 00:08:08,790
+So that begs for the chain rule.
+
+130
+00:08:10,180 --> 00:08:12,840
+And so that's just going to be the
+derivative of e
+
+131
+00:08:12,840 --> 00:08:15,900
+to the u with respect to u, which luckily
+is ease,
+
+132
+00:08:15,900 --> 00:08:20,690
+e to the u, times the partial derivative
+of u with respect to y, which
+
+133
+00:08:20,690 --> 00:08:22,780
+I'm going to get just exactly like the
+first
+
+134
+00:08:22,780 --> 00:08:25,220
+example by taking the derivative of my
+substitution.
+
+135
+00:08:28,130 --> 00:08:29,860
+So let's see what I end up with here.
+
+136
+00:08:34,890 --> 00:08:40,790
+So I have x squared minus 3 xy squared e
+to the minus xy cubed.
+
+137
+00:08:41,860 --> 00:08:44,190
+And in fact since we've already taken the
+derivative of this
+
+138
+00:08:44,190 --> 00:08:46,360
+a few slides ago, I didn't have to do this
+bit.
+
+139
+00:08:46,360 --> 00:08:49,320
+I could've just used the derivative I'd
+already computed.
+
+140
+00:08:51,950 --> 00:08:53,460
+And so now I want to take the derivative
+
+141
+00:08:53,460 --> 00:08:57,020
+of this guy, the partial derivative with
+respect to x.
+
+142
+00:08:57,020 --> 00:08:59,210
+So again I'll do the, the first term,
+
+143
+00:08:59,210 --> 00:09:01,860
+just because the derivative of x squared
+is easy.
+
+144
+00:09:01,860 --> 00:09:03,090
+By the power rule I just get two x.
+
+145
+00:09:03,090 --> 00:09:08,440
+And then this minus is going to appear
+here.
+
+146
+00:09:08,440 --> 00:09:12,340
+And then I'll take the derivative of this
+term by treating it as two functions.
+
+147
+00:09:12,340 --> 00:09:17,450
+3 x y squared, and e to the minus x y
+cubed.
+
+148
+00:09:19,970 --> 00:09:22,959
+And so I'm taking the derivative now with
+respect to x.
+
+149
+00:09:24,850 --> 00:09:27,800
+So, the derivative of the first term,
+that's easy.
+
+150
+00:09:27,800 --> 00:09:32,580
+That just got x to the 1 so the x is going
+to go away so I end up with 3y squared
+
+151
+00:09:34,350 --> 00:09:39,030
+times the second function.
+And plus the first function so there's my
+
+152
+00:09:39,030 --> 00:09:44,190
+3xy squared times the derivative of the
+second function
+
+153
+00:09:50,240 --> 00:09:50,240
+[SOUND]
+
+154
+00:09:50,240 --> 00:09:54,170
+And so, just, plugging all of this in and
+distributing this minus sign,
+
+155
+00:09:54,170 --> 00:09:57,850
+gives me this, and now all I have to do is
+plug in, what
+
+156
+00:09:57,850 --> 00:10:03,210
+u is, and what partial derivative of u
+with respect to x is, which I got just
+
+157
+00:10:03,210 --> 00:10:09,820
+Again, by taking the derivative with
+respect to x this time.
+
+158
+00:10:13,970 --> 00:10:19,410
+And so, I end up with this somewhat
+unhappy looking formula here.
+
+159
+00:10:19,410 --> 00:10:21,090
+But, at least it's something that doesn't
+look
+
+160
+00:10:21,090 --> 00:10:22,810
+like it's going to have a lot of symmetry.
+
+161
+00:10:22,810 --> 00:10:25,700
+Like if I changed the x and y, they
+shouldn't be the same.
+
+162
+00:10:28,660 --> 00:10:31,160
+And so now we'll repeat the same
+calculation,
+
+163
+00:10:31,160 --> 00:10:33,320
+but here I'm going to use x first.
+
+164
+00:10:33,320 --> 00:10:38,650
+So this time the last time I did y first,
+and now this time I'll do x first.
+
+165
+00:10:40,660 --> 00:10:44,330
+So again the first term's going to be
+pretty easy to do, so we'll just do that.
+
+166
+00:10:44,330 --> 00:10:47,000
+Second term I'm going to make my u
+substitution,
+
+167
+00:10:47,000 --> 00:10:49,290
+so I can see myself using the chain rule.
+
+168
+00:10:50,440 --> 00:10:53,150
+So I'll let u equal minus x y cubed,
+again.
+
+169
+00:10:55,180 --> 00:10:58,360
+So the first part, I'm treating y as a
+constant, and then
+
+170
+00:10:58,360 --> 00:11:01,540
+taking the derivative of x squared, so the
+power rule just says
+
+171
+00:11:01,540 --> 00:11:04,940
+that's going to be 2x, and then times y,
+and then I need
+
+172
+00:11:04,940 --> 00:11:08,290
+to take the derivative with respect to x
+of e to the u.
+
+173
+00:11:09,290 --> 00:11:11,140
+So by the chain rule, that's going to be e
+to
+
+174
+00:11:11,140 --> 00:11:15,510
+the u, times the partial derivative of u
+with respect to x.
+
+175
+00:11:15,510 --> 00:11:18,700
+Which again, I get just by taking the
+derivative of my substitution.
+
+176
+00:11:18,700 --> 00:11:19,200
+And
+
+177
+00:11:23,090 --> 00:11:26,610
+now I need to take the partial derivative
+of this with respect to y.
+
+178
+00:11:28,050 --> 00:11:30,270
+So again the first term is going to be
+easy, that's
+
+179
+00:11:30,270 --> 00:11:33,640
+just y to the one, so that's going to be
+two x.
+
+180
+00:11:33,640 --> 00:11:37,490
+And the second term I'm going to need to
+use the product rule,
+
+181
+00:11:37,490 --> 00:11:40,490
+so the functions will be y cubed and e to
+the u.
+
+182
+00:11:44,560 --> 00:11:48,010
+So, the product rule says it's derivative
+of the first function,
+
+183
+00:11:48,010 --> 00:11:50,690
+so this is the derivative of Y cubed by
+the power rule.
+
+184
+00:11:52,200 --> 00:11:55,380
+Times the second function, plus the first
+
+185
+00:11:55,380 --> 00:11:58,060
+function times the derivative of the
+second function.
+
+186
+00:12:00,130 --> 00:12:03,020
+And so we've done this several times
+already, so
+
+187
+00:12:03,020 --> 00:12:06,180
+just skip this line and just plug in the
+results.
+
+188
+00:12:07,250 --> 00:12:08,460
+Oops, two times.
+
+189
+00:12:10,690 --> 00:12:15,050
+And so we get another Sort of unhappy
+looking formula.
+
+190
+00:12:15,050 --> 00:12:18,040
+But I think on the next slide I put them
+
+191
+00:12:18,040 --> 00:12:21,190
+together, and those were actually the same
+formulas both ways.
+
+192
+00:12:22,460 --> 00:12:25,090
+So that sort of gives us some hope that,
+probably these
+
+193
+00:12:25,090 --> 00:12:29,110
+things are equal, regardless of what order
+you take the derivative.
+
+194
+00:12:29,110 --> 00:12:30,370
+And.
+
+195
+00:12:30,370 --> 00:12:34,040
+If you take a more serious math class, you
+can actually prove this.
+
+196
+00:12:34,040 --> 00:12:35,750
+I'm just going to give the, the statement
+of
+
+197
+00:12:35,750 --> 00:12:37,010
+the theorem.
+
+198
+00:12:37,010 --> 00:12:40,500
+So, if all of the partial derivatives of
+order k.
+
+199
+00:12:40,500 --> 00:12:43,500
+So, order k means how many times I've
+taken a derivative.
+
+200
+00:12:43,500 --> 00:12:45,520
+So, if if I take the second
+
+201
+00:12:45,520 --> 00:12:48,019
+partial derivative, that's a derivative of
+order two.
+
+202
+00:12:49,510 --> 00:12:53,240
+Of the function f of x exist and are
+continuous.
+
+203
+00:12:53,240 --> 00:12:58,810
+Then the order in which the partial
+derivatives of f of x of order at most k.
+
+204
+00:12:58,810 --> 00:13:01,360
+So, as long as I don't try to go beyond k.
+
+205
+00:13:02,960 --> 00:13:05,580
+Then the order that I do those derivatives
+doesn't matter.
+
+206
+00:13:05,580 --> 00:13:07,460
+I'm going to get the same mixed partial.
+
+207
+00:13:12,150 --> 00:13:15,770
+And so, just like I made an array to hold,
+the first
+
+208
+00:13:15,770 --> 00:13:19,870
+derivatives, I need to make an array now
+to hold, the second derivatives.
+
+209
+00:13:21,380 --> 00:13:23,740
+And this array is going to be called the
+Hessian
+
+210
+00:13:23,740 --> 00:13:27,720
+of f of x, and we can use the notation.
+
+211
+00:13:27,720 --> 00:13:29,550
+D squared so that two just
+
+212
+00:13:29,550 --> 00:13:33,100
+means essentially just take the derivative
+twice.
+
+213
+00:13:33,100 --> 00:13:34,910
+But in this case because we're talking
+about
+
+214
+00:13:34,910 --> 00:13:38,100
+functions, you know, so the first one has
+
+215
+00:13:38,100 --> 00:13:41,920
+n inputs, then I end up with the gradient
+which
+
+216
+00:13:41,920 --> 00:13:46,250
+has n outputs, so that's a, a function
+that has n
+
+217
+00:13:48,460 --> 00:13:52,050
+When I evaluate the gradient at one point
+I get n results.
+
+218
+00:13:52,050 --> 00:13:54,080
+And then I'm going to take the derivative
+of that again so
+
+219
+00:13:54,080 --> 00:13:59,010
+I'm going to get an n by n array of mixed
+partial derivatives.
+
+220
+00:14:00,080 --> 00:14:03,360
+And so down the, the diagonal of the
+array, so the diagonal for
+
+221
+00:14:03,360 --> 00:14:06,880
+some reason, when people say that, they
+mean top left to bottom right.
+
+222
+00:14:07,930 --> 00:14:10,640
+this going up bottom left to top right.
+
+223
+00:14:10,640 --> 00:14:14,100
+It's also a diagonal but nobody means that
+when they say diagonal.
+
+224
+00:14:15,870 --> 00:14:19,220
+So the diagonal elements are just going to
+be taking the derivative,
+
+225
+00:14:19,220 --> 00:14:23,900
+the partial derivative of the function
+with respect to the same variable twice.
+
+226
+00:14:23,900 --> 00:14:28,200
+So In that case, I can kind of compact
+this notation.
+
+227
+00:14:28,200 --> 00:14:30,960
+This means partial x one, partial x one.
+
+228
+00:14:30,960 --> 00:14:33,100
+But it's the same thing, so I just write
+it as squared.
+
+229
+00:14:33,100 --> 00:14:36,060
+And then in the off-diagonal elements
+
+230
+00:14:36,060 --> 00:14:36,560
+[COUGH],
+
+231
+00:14:38,000 --> 00:14:42,540
+the, the first row, I take the derivative
+with respect to x one.
+
+232
+00:14:42,540 --> 00:14:45,076
+The partial derivative with respect to x
+one first.
+
+233
+00:14:45,076 --> 00:14:48,410
+So the x one is going on the right side,
+here.
+
+234
+00:14:48,410 --> 00:14:53,590
+And then I take the partial derivative
+with respect to x whatever column I'm in.
+
+235
+00:14:53,590 --> 00:14:58,630
+So if I'm in the second column, I take the
+partial derivative with respect to x two.
+
+236
+00:14:58,630 --> 00:15:02,570
+If it's the nth column, I take the partial
+derivative with respect to x n.
+
+237
+00:15:05,380 --> 00:15:05,880
+And,
+
+238
+00:15:09,050 --> 00:15:11,090
+remember, because of the theorem that I
+had on
+
+239
+00:15:11,090 --> 00:15:15,040
+the last slide, this function here and
+this function here,
+
+240
+00:15:17,300 --> 00:15:22,010
+so this is x1x2 and this is x2x1, so
+
+241
+00:15:22,010 --> 00:15:26,115
+if this function is well behaved, then
+these two terms will be
+
+242
+00:15:26,115 --> 00:15:36,115
+equal.
+

@@ -1,0 +1,381 @@
+So we'll get started with functions of
+several variables.
+So there's two types roughly that
+we can talk about, and it just has to do
+with what the output of the function is.
+So I'm going to start out with the
+simplest one which is the scalar valued
+function.
+Under a Scalar Valued Function just takes
+values in the real numbers.
+So you put in if it's of several variables
+two or
+more inputs and you get one number out
+and some would call that a Scalar Valued
+Function.
+And the notation I'm going to use for that
+is
+f', that's the name of my function from rn
+into r.
+So rn just means that there are n real
+numbers that are taken as input, so
+this is a function of n variables.
+And output is a real number so it's a,
+a single variable output, a scalar
+function.
+And so you can think of that just as this.
+So I have inputs x1, x2, up to xn.
+Each one of the x's is a real number.
+And then the output y is a real number.
+And so the example I'm going to use, for,
+for this week's
+lectures is, Black Scholes pricing formula
+for a European call option.
+And so hopefully when we look at this with
+all of its
+pieces finally, it's going to, sort of,
+become more apparent why we
+had to spend so much time learning how to
+take derivatives of
+little indefinite integrals, things like
+that, product rule, chain rule and so on.
+So the inputs for this formula.
+Are going to be s, which is the price of
+the stock.
+Sigma which is the volatility of the
+stock.
+K is the strike price, so this is, you
+know, what
+I'm going to be able to get for my if I
+decide to exercise my option in the future
+R is the
+risk-free interest rate, so that's
+risk-free interest rate just on money.
+T is the maturity, and this is, the way to
+think about
+capital T, and there, there'll be a little
+t somewhere here, too.
+they're both dates,
+so.
+You know, this could be next Tuesday and
+little
+t, generally we're going to think of that
+as today.
+And then q is continuous dividend rate.
+If the, if the asset pays dividends then
+you want to
+take those dividends and figure out what
+the continuous rate would be.
+And q is going to represent that number.
+And then this is the formula so, generally
+the, the inputs
+you think of it as a function with two
+main inputs.
+So the, the price of the asset s, and then
+the current time t.
+And, generally, you can almost think of
+this as one
+input because at a certain time, like
+right now, I can
+look at the market and see what the price
+of
+the asset is so these, these are, sort of,
+tied together
+in, in a certain sense.
+And, so, the formula then is s times e to
+the minus q capital T minus little t.
+And so this is where it becomes important
+to think of the t's as dates.
+So, if I say next Tuesday is capital t and
+right now is little t.
+So, that would be eight days in the
+future.
+So, when I do capital t next Tuesday minus
+today that's going to give me eight.
+So, This quantity, capital T minus little
+T, you can think about that as the time
+left in chill maturity, and as time moves
+forward, that's actually getting shorter.
+And then you can see that this formula is
+going to simplify a bit
+if you have a non-dividend paying asset,
+this q is just going to be zero.
+And so you'll have e to the zero.
+And this whole piece that I have
+highlighted will disappear.
+It'll just become one.
+[COUGH].
+So I'm
+going to multiply that times Fi.
+And remember, Fi was this function we
+defined as the integral
+of the standard normal density from minus
+infinity up to its argument.
+So this value here.
+So Fi of d1 of st.
+So d1 is going to be another function that
+we have to evaluate.
+And then I'm going to subtract k times, so
+here r is the interest rate, the risk free
+interest rate times the time left until
+maturity times Fi.
+Again and now we have another function d 2
+of st
+and the, the form of d1 and d2 are down
+here.
+Again and now we have another function d2
+of st.
+And the form of d1 and d2 are down here so
+I'll
+have to wait until my slide disappears so
+they're not exactly simple.
+So the, the reason we want to write this
+as Fi of d1 And fi of d2 is just if,
+if I start plugging this whole expression
+into these parenthesis the, the thing gets
+quite unwildy.
+And then d2 is just
+equal to d1 minus sigma times the square
+root of capital T minus little t.
+And if you write down what that looks
+like, if you plug in
+this formula on the left for d1, all that
+ends up changing is,
+this plus here becomes a minus.
+So that quite often, derivatives of d1 and
+d2 are very similar to each other, they
+differ
+by a sign or not at all, depending on
+what What you're taking the derivative
+with respect to.
+So in order to take a derivative of a
+function of several
+variables we, we have to define a new
+concept called a partial derivative.
+So I have a function from Rn into R.
+And the partial derivative of F with
+respect to the Jth, input, I'm going to
+denote that as partial of F with respect
+to Xj.
+And that's
+also going to be a function of N
+variables.
+[INAUDIBLE]
+.
+And we're going to define the partial
+derivative, then, just
+to be this limit on the right hand side.
+And if you look closely, all I'm doing is
+I'm treating
+everything except for x sub j as if it
+were a constant.
+So, I am leaving those the same, and then
+I am using
+just on the one variable I am interested
+in so x of j.
+I am going to use the definition of the
+derivative
+on that one particular p.
+So, add h to that and then add then I will
+subtract r, local our, our initial points.
+So, this is the point where I am trying to
+find the derivative.
+And then I'm going to divide by h.
+And then take the limit as h goes to zero.
+And then we say that this has a derivative
+if this limit exists, and is finite.
+And in practice, the way we're going to
+compute these.
+we're just going to fix xk for every x
+that's not equal to j.
+So remember, I'm trying to compute the,
+the jth partial derivative.
+So I'm just going to treat xk, any other
+variable, as if it's a constant.
+And then just to differentiate f as if it
+were a
+function of one variable, and that one
+var, variable being xj.
+So, for example, if I let my function, so
+I'm going to choose a function of two
+variables and I have x squared y plus e to
+the minus xy cubed.
+And I want to take the derivative of this
+function now.
+I guess I should mention a little bit here
+about notations so, when we are taking
+a complete derivative with a function of
+one
+variable and I take its derivative I've
+just
+been using 'd by dx' And when I'm taking a
+partial derivative, I use this funnier
+symbol that it looks kind of like a twisty
+D that' I'm just going to read as partial.
+And so, because this is a sum of
+two functions, I still have a linearity
+property.
+So, I can.
+The, the derivative of a sum is the sum of
+the derivative.
+So this is going to be equal to the
+derivative of
+the first term plus the derivative of the
+second term.
+And then to take the derivative of this
+piece
+here with respect to x, I'm going to make
+a substitution.
+So I'm going to say minus xy cubed.
+I'm going to call that U, I think that's
+what I decided to do.
+Yep.
+So I can rewrite this like this.
+So if I look at what happened in the first
+term, since I'm taking the
+partial derivative with respect to X, my
+rule was treat Y like it's a constant.
+So if Y is a constant, I can use my
+formula that says.
+C times x squared.
+The derivative of that is equal to c times
+the derivative of x squared.
+So in this case, now, y is my constant.
+So I can just say that's equal to y times
+the derivative.
+Sorry, y times the partial with respect to
+x, of x squared.
+And then, for the term on the right.
+I'm taking the partial derivative of a
+function of u, so partial derivative with
+respect
+to x of a function of x, so I have to use
+the chain rule here.
+And so the chain rule says that the
+derivative of this is going to be the
+derivative of my function of u times the
+derivative of u with respect to x.
+[INAUDIBLE]
+.
+So the derivative of e to the u is just e
+to the u.
+And then I still have to calculate this
+partial u, partial x.
+And I'll do that just by taking the
+derivative of my substitution here with
+respect to x.
+And then, for the, for the first term,
+that was pretty easy.
+I just used the power rule to say
+that the derivative, derivative of x
+squared was 2x.
+So I end up with 2xy.
+So the
+partial derivative of my substitution with
+respect to
+x is just going to be minus y cubed.
+So that's just minus y cubed times x and
+using the power rule,
+and then I just have to reverse my
+substitution.
+So I am going to replace this u.
+Right here with minus x y cubed
+and I end up with 2 xy minus y cubed times
+e to the minus xy cubed.
+[COUGH]
+So that was the derivative with respect to
+x.
+We can repeat now for the derivative with
+respect to y.
+So I'm going to set this up exactly the
+same way.
+Use the linearity property to write.
+This is two, the sum of two derivatives.
+Make the same substitution.
+But this time, when I look at the, the
+first
+term, now I'm taking the derivative with
+respect to y.
+So it's the x squared I can bring out.
+So I have x squared times the partial with
+respect to y of just y.
+And then on the right hand term I have
+partial with respect to y of e to the u.
+So by the change rule I'm going to have to
+multiply the
+derivative of e to the u, times partial u
+partial y
+And again I am just going to take the
+derivative,
+but this time with respect to y of my
+substitution.
+So that gives me my chain rule derivative,
+so I have du dy equals minus 3 xy
+squared, so that's here just treating x as
+a
+constant and taking the derivative of
+minus y cubed.
+Using the power rule.
+And then I just have to plug everything
+back in and I
+get the partial derivative of F of X with
+respect to Y.
+And so essentially what we're going to
+have to do to get a full idea of
+what the derivative of F of X Looks like
+is where we need every partial derivative
+and so if f is a function of n variables
+with one output.
+So the output is a real number then I
+am going to define something called the
+gradient of a F.
+Which is denoted sometimes by capital d
+times f of x.
+So here we think of capital d kind of the
+same way I think of d by dx.
+It's a operator, so it means take
+the gradient of the function f of x.
+And the gradient is just going to be an
+array of the partial derivatives of f of
+x.
+So each one of these terms, so each one of
+these elements
+of the array df Dx 1, or partial F partial
+X one, that's a function of N variables.
+Partial F partial X two, that's also a
+function of N variables.
+And
+then one last thing that we might have to
+deal with is a function of one
+or more variables That takes values in a
+multidimensional space is called a vector
+value function.
+And so in this case what I'm after is, I
+have, say, two inputs, and my function
+gives me two outputs.
+And so in this case, I'm going to use the
+function, sorry, the notation, F from Rn
+into Rm.
+And so this just means that f is the
+function that takes n arguments.
+So there are n inputs to this function.
+And then there are m outputs to this
+function.
+And the way to think about this is, you
+have f of my n inputs
+I can have m a different sort of
+sub-functions, each one of them returns
+the well, element one, two, three up to m
+of the vector of outputs.
+And so in this case, when we try and make
+the gradient.
+We're going to have, instead of just an
+array that only has one row, we're
+going to have,
+one row with n columns for each for each
+element of the output.
+So now my gradient is going to end up
+being an array with m rows and n columns.
+So there are N times N first order partial
+derivatives, which is a lot to work with.
+

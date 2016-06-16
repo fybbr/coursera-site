@@ -1,0 +1,371 @@
+1
+00:00:00,348 --> 00:00:07,283
+[BLANK_AUDIO]
+
+2
+00:00:07,283 --> 00:00:09,168
+In our last lesson, we saw various
+
+3
+00:00:09,168 --> 00:00:11,850
+approaches to incomplete search of game
+trees.
+
+4
+00:00:13,128 --> 00:00:16,690
+In each appre, approach, the evaluation of
+states
+
+5
+00:00:16,690 --> 00:00:18,535
+is based on local properties of those
+states.
+
+6
+00:00:18,535 --> 00:00:22,610
+Now that means properties that do not
+depend on the game tree as a whole.
+
+7
+00:00:25,020 --> 00:00:27,940
+In many games, there's no correlation
+between these local properties
+
+8
+00:00:27,940 --> 00:00:30,950
+and the likelihood of success in
+completing a game successfully.
+
+9
+00:00:32,630 --> 00:00:34,120
+So in this lesson, we're going to look at
+some
+
+10
+00:00:34,120 --> 00:00:38,559
+alternative methods, based on statistical
+analysis of game trees.
+
+11
+00:00:39,980 --> 00:00:44,360
+First examine a simple approach based on
+what's called Monte Carlo game simulation.
+
+12
+00:00:45,690 --> 00:00:49,598
+And then we look at a more sophisticated
+variation, called Monte Carlo Tree Search.
+
+13
+00:00:49,598 --> 00:00:56,080
+Or sometimes, UCT.
+
+14
+00:00:56,080 --> 00:00:58,910
+The basic idea of Monte Carlo search is
+simple.
+
+15
+00:00:58,910 --> 00:01:02,070
+As with depth limited search, we explore
+the game tree to some fixed depth.
+
+16
+00:01:04,290 --> 00:01:06,015
+In order to estimate the value of any
+
+17
+00:01:06,015 --> 00:01:08,970
+non-terminal state at this depth, we make
+some
+
+18
+00:01:08,970 --> 00:01:10,570
+probes from that state to the end of
+
+19
+00:01:10,570 --> 00:01:13,500
+the game by selecting random moves for the
+players.
+
+20
+00:01:13,500 --> 00:01:15,980
+To sum up the total rewards for all such
+probes, and divide
+
+21
+00:01:15,980 --> 00:01:19,350
+by the number of probes to obtain an
+estimated utility for that state.
+
+22
+00:01:19,350 --> 00:01:22,780
+And then we use these expected utilities
+in comparing states and selecting actions.
+
+23
+00:01:24,830 --> 00:01:27,406
+So I was just mentioning the expansion
+phase is the same
+
+24
+00:01:27,406 --> 00:01:31,157
+as depth-limited search that treats
+explore to some fixed step, as before.
+
+25
+00:01:31,157 --> 00:01:34,400
+And then the pro, we enter a probe phase
+where we have
+
+26
+00:01:34,400 --> 00:01:39,210
+an exploration from each of the fringe
+states reached in this expansion process.
+
+27
+00:01:39,210 --> 00:01:42,380
+For each making random probes from there
+to a terminal state.
+
+28
+00:01:45,130 --> 00:01:48,950
+The values produced from each of these
+probes are then added up, and divided by
+
+29
+00:01:48,950 --> 00:01:52,280
+the number of possibilities number of
+probes
+
+30
+00:01:52,280 --> 00:01:54,450
+for each state to obtain an expected
+utility.
+
+31
+00:01:54,450 --> 00:01:57,290
+For example, in the case on the left, we
+made four
+
+32
+00:01:57,290 --> 00:02:00,660
+probes, got 1 100th, the sum total of the
+four probes
+
+33
+00:02:00,660 --> 00:02:05,180
+is 100, divide by 4 is 25 The second case,
+2
+
+34
+00:02:05,180 --> 00:02:08,970
+100s, 2 zeros, total of 200 divide by 4,
+we get 50.
+
+35
+00:02:09,990 --> 00:02:14,230
+so these utilities are then compared to
+determine the relative utilities
+
+36
+00:02:14,230 --> 00:02:16,490
+of the fringe states produced at the end
+of the expansion phase.
+
+37
+00:02:16,490 --> 00:02:18,974
+Much better than making an assumption of,
+
+38
+00:02:18,974 --> 00:02:23,080
+conservative assumption of zero utility
+for non-terminal states.
+
+39
+00:02:25,960 --> 00:02:30,100
+Simple implementation of max score for
+Monte Carlo search is shown here.
+
+40
+00:02:30,100 --> 00:02:33,080
+It's a method that's exactly the same as
+ordinary fixed depth heuristic
+
+41
+00:02:33,080 --> 00:02:38,200
+search, except that the player uses the
+Monte Carlo routine to evaluate states.
+
+42
+00:02:39,460 --> 00:02:43,530
+And Monte Carlo is definite, one
+definition
+
+43
+00:02:43,530 --> 00:02:45,260
+of Monte Carlo shown here, takes a state
+
+44
+00:02:45,260 --> 00:02:48,140
+as argument, returns the average utility
+obtained from
+
+45
+00:02:48,140 --> 00:02:51,230
+set of n probes, here called depth
+charges.
+
+46
+00:02:51,230 --> 00:02:53,630
+Or ends the value of some global parameter
+count.
+
+47
+00:02:55,180 --> 00:02:57,040
+Now, the depth charge subroutine, shown at
+
+48
+00:02:57,040 --> 00:02:59,535
+the bottom first checks at a state's
+terminal.
+
+49
+00:02:59,535 --> 00:03:02,230
+If so, it returns that value, otherwise it
+forms a
+
+50
+00:03:02,230 --> 00:03:06,150
+joint move by taking random legal actions
+of all the players.
+
+51
+00:03:07,420 --> 00:03:13,070
+That simulates this joint move, and calls
+itself recursively until
+
+52
+00:03:13,070 --> 00:03:14,893
+it gets to a terminal state, and returns
+the result.
+
+53
+00:03:14,893 --> 00:03:22,270
+Well, one downside on the Monte
+
+54
+00:03:22,270 --> 00:03:26,250
+Carlo method is that it can be optimistic.
+It seems all players are playing randomly.
+
+55
+00:03:26,250 --> 00:03:29,870
+When in fact, it's possible that they know
+exactly what they are doing.
+
+56
+00:03:29,870 --> 00:03:31,840
+It doesn't help if most of the probes from
+
+57
+00:03:31,840 --> 00:03:34,100
+a position in chess lead to success, if
+one
+
+58
+00:03:34,100 --> 00:03:35,710
+leads to a state in which one's player is
+
+59
+00:03:35,710 --> 00:03:37,940
+checkmated, and the other player sees how
+to do that.
+
+60
+00:03:39,270 --> 00:03:40,300
+This issue is addressed
+
+61
+00:03:40,300 --> 00:03:43,365
+below to some extent in the UCT method
+that we'll describe shortly.
+
+62
+00:03:46,310 --> 00:03:48,230
+Another drawback of Monte Carlo is it
+doesn't
+
+63
+00:03:48,230 --> 00:03:50,330
+really take into account the structure of
+a game.
+
+64
+00:03:50,330 --> 00:03:52,240
+For example it may not recognize
+symmetries or
+
+65
+00:03:52,240 --> 00:03:55,510
+independences that could substantially
+decrease the cost of search.
+
+66
+00:03:55,510 --> 00:03:58,942
+Now for that matter, it doesn't even
+recognize boards, or pieces, or piece
+
+67
+00:03:58,942 --> 00:04:00,658
+count; or any other feature that might
+
+68
+00:04:00,658 --> 00:04:02,692
+form the basis of game specific
+heuristics.
+
+69
+00:04:06,660 --> 00:04:09,660
+Still, even with these drawbacks, the
+Monte Carlo method is quite powerful.
+
+70
+00:04:09,660 --> 00:04:15,320
+It's fast, and consumes very little space,
+and it's surprisingly effective.
+
+71
+00:04:15,320 --> 00:04:19,760
+prior to its use, general game players
+were at best interesting novelties.
+
+72
+00:04:19,760 --> 00:04:23,620
+But once players start using Monte Carlo,
+the improvement in game play was dramatic.
+
+73
+00:04:23,620 --> 00:04:26,650
+Suddenly automatic general game players
+began to perform at a very high level.
+
+74
+00:04:26,650 --> 00:04:31,520
+And using a variation of this technique,
+Cadia Player won the International General
+
+75
+00:04:31,520 --> 00:04:34,430
+Game Playing Cos, Competition three times.
+
+76
+00:04:34,430 --> 00:04:35,920
+And almost every general game playing
+program
+
+77
+00:04:35,920 --> 00:04:37,930
+today includes some version of Monte
+Carlo's search.
+

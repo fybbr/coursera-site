@@ -1,0 +1,1096 @@
+1
+00:00:01,230 --> 00:00:03,750
+The next section is higher derivatives.
+
+2
+00:00:08,092 --> 00:00:10,640
+I'm going to start out with just a little
+motivation
+
+3
+00:00:10,640 --> 00:00:12,990
+of the type of problem we're, we're trying
+to solve.
+
+4
+00:00:14,030 --> 00:00:18,900
+So, a utility function and this is a
+special type of
+
+5
+00:00:18,900 --> 00:00:24,250
+function that shows up in economics Is a
+real value function, u of x.
+
+6
+00:00:24,250 --> 00:00:29,840
+So I'm just going to call it u, because
+it's a utility, defined for real numbers.
+
+7
+00:00:29,840 --> 00:00:33,390
+And the idea is, it's going to help us
+compare wealth levels.
+
+8
+00:00:36,260 --> 00:00:43,410
+And so basically, if If U of x is greater
+than u of y, so x and y
+
+9
+00:00:43,410 --> 00:00:45,970
+are some sort of wealth, so you could
+think
+
+10
+00:00:45,970 --> 00:00:49,710
+of that as maybe income, maybe a payment
+from something.
+
+11
+00:00:51,410 --> 00:00:53,810
+Then u of x is preferred.
+
+12
+00:00:54,810 --> 00:00:58,800
+And so it's basically kind of telling me
+Let's see.
+
+13
+00:00:58,800 --> 00:01:01,420
+Well, I have some pictures and that, that
+will hopefully make it a bit
+
+14
+00:01:01,420 --> 00:01:02,010
+more clear.
+
+15
+00:01:03,060 --> 00:01:08,280
+So, some common utility functions are
+exponential utility.
+
+16
+00:01:08,280 --> 00:01:12,900
+So, it has a parameter A is greater than
+0.
+
+17
+00:01:12,900 --> 00:01:16,970
+Logarithmic utility, so it's just the log
+of my wealth level.
+
+18
+00:01:19,010 --> 00:01:22,680
+power rule, so that it's b times x to the
+b.
+
+19
+00:01:22,680 --> 00:01:28,265
+So it's sort of a, like a polynomial
+function.
+
+20
+00:01:28,265 --> 00:01:37,570
+And quadratic, which is defined to be x
+minus bx for some number b greater than 0.
+
+21
+00:01:37,570 --> 00:01:41,222
+And just to sort of help visualize, this
+is what they look like.
+
+22
+00:01:41,222 --> 00:01:45,360
+So the, the actual value of the utility
+isn't important.
+
+23
+00:01:45,360 --> 00:01:48,320
+But what's, what is important is just how
+I'm
+
+24
+00:01:48,320 --> 00:01:50,980
+going to compare things that are on this
+curve.
+
+25
+00:01:50,980 --> 00:01:56,380
+So if I look, for instance, at this
+logarithmic utility here.
+
+26
+00:01:57,790 --> 00:02:02,810
+And if I'm over on the left side, just a
+small increase
+
+27
+00:02:02,810 --> 00:02:08,740
+in, in the x variable is going to give me
+a pretty big increase in utility.
+
+28
+00:02:08,740 --> 00:02:10,400
+Whereas if I looked at say the
+
+29
+00:02:10,400 --> 00:02:12,010
+right side of this power rule
+
+30
+00:02:14,740 --> 00:02:18,765
+You know, the same size increase in x is
+
+31
+00:02:18,765 --> 00:02:21,660
+going to give me a much smaller increase
+in my utility.
+
+32
+00:02:22,750 --> 00:02:24,280
+So where these things pop up is if
+
+33
+00:02:24,280 --> 00:02:27,780
+you're trying to do something like
+planning for retirement.
+
+34
+00:02:27,780 --> 00:02:30,340
+You know, having enough money just to
+survive every
+
+35
+00:02:30,340 --> 00:02:32,870
+year in retirement that gets you the most
+utility.
+
+36
+00:02:32,870 --> 00:02:34,950
+You have to be able to pay for your house,
+pay for
+
+37
+00:02:34,950 --> 00:02:39,890
+your food, pay your bills that's You know,
+if you don't have
+
+38
+00:02:39,890 --> 00:02:42,670
+that, you're going to have a really bad
+retirement.
+
+39
+00:02:42,670 --> 00:02:44,270
+You know, if you get up on the right hand
+
+40
+00:02:44,270 --> 00:02:46,050
+side where you start to have a lot of
+wealth.
+
+41
+00:02:46,050 --> 00:02:48,938
+You know, you already have a boat, do you
+really need an air strip too?
+
+42
+00:02:48,938 --> 00:02:50,990
+You know, you already have a boat, do you
+really need an Air strip too?
+
+43
+00:02:50,990 --> 00:02:53,140
+You know, you already have a boat, do you
+really need an Airstream too?
+
+44
+00:02:53,140 --> 00:02:56,990
+And so, the particular utility function
+that I'm going to, to
+
+45
+00:02:56,990 --> 00:03:01,300
+consider for the rest of this little
+lesson, is the quadratic utility.
+
+46
+00:03:01,300 --> 00:03:03,470
+And so normally when you're looking at
+utility
+
+47
+00:03:03,470 --> 00:03:06,080
+functions you want them to be non
+decreasing.
+
+48
+00:03:06,080 --> 00:03:09,680
+So you don't ever want to get to a point
+like I've drawn here.
+
+49
+00:03:09,680 --> 00:03:12,410
+Where if I was on this little bit of the
+quadratic
+
+50
+00:03:12,410 --> 00:03:17,170
+utility function, I actually add more
+wealth and I'm somehow worse off.
+
+51
+00:03:18,570 --> 00:03:22,850
+And so what you need to do is be able to
+find the maximum of this function.
+
+52
+00:03:22,850 --> 00:03:24,610
+And I, I suppose, you know, maybe if
+
+53
+00:03:27,660 --> 00:03:29,340
+you know, maybe if I was at a restaurant
+or
+
+54
+00:03:29,340 --> 00:03:32,520
+something and I was putting food on the x
+axis.
+
+55
+00:03:32,520 --> 00:03:35,020
+There would be some point were I was
+pretty happy.
+
+56
+00:03:35,020 --> 00:03:37,990
+And then if I continued to eat I probably
+would be less happy.
+
+57
+00:03:39,190 --> 00:03:44,500
+maybe that would be a good example of this
+quadratic function, but generally From
+
+58
+00:03:44,500 --> 00:03:47,690
+from just a purely economic point of view,
+you want them to be non-decreasing.
+
+59
+00:03:47,690 --> 00:03:50,250
+So what you would want to do with this
+quadratic one is
+
+60
+00:03:50,250 --> 00:03:53,030
+you would want to find out where it gets
+to the very top.
+
+61
+00:03:53,030 --> 00:03:55,680
+And then, probably at that point, just say
+beyond
+
+62
+00:03:55,680 --> 00:03:58,220
+that, the utility is just constant at that
+level.
+
+63
+00:03:58,220 --> 00:03:58,720
+Oops.
+
+64
+00:04:00,650 --> 00:04:04,410
+So.
+Oh, so what is the derivative telling us?
+
+65
+00:04:04,410 --> 00:04:06,608
+And that's what I was trying to get at a
+little bit before when.
+
+66
+00:04:06,608 --> 00:04:08,290
+You know If this curve is steep.
+
+67
+00:04:08,290 --> 00:04:12,880
+So the derivative is telling us what is
+the slope of this curve at a point.
+
+68
+00:04:12,880 --> 00:04:16,310
+So if the derivative is large it means the
+curve is steep, it
+
+69
+00:04:16,310 --> 00:04:20,440
+means that a little bit more wealth gives
+us a lot more utility.
+
+70
+00:04:20,440 --> 00:04:26,050
+Whereas, if I'm over here a little bit
+more wealth, hardly gives me any utility.
+
+71
+00:04:26,050 --> 00:04:29,530
+So that's the, the derivatives is I'm
+going to give me sort of
+
+72
+00:04:31,840 --> 00:04:36,018
+the relative change in utility for one
+more dollar worth of wealth.
+
+73
+00:04:36,018 --> 00:04:41,860
+And so now if I go back to my,
+
+74
+00:04:41,860 --> 00:04:48,650
+my quadratic utility, I want to find a
+point where I'm at the top of this thing.
+
+75
+00:04:48,650 --> 00:04:51,350
+And so, the way I'm going to know I'm at
+the top, you know, if I'm walking
+
+76
+00:04:51,350 --> 00:04:55,920
+up a hill, I walk up the hill and as I get
+closer to the top.
+
+77
+00:04:55,920 --> 00:04:56,990
+You know, it gets less steep,
+
+78
+00:04:56,990 --> 00:05:00,050
+less steep, until all of a sudden, I'm
+going down the hill.
+
+79
+00:05:00,050 --> 00:05:02,480
+And so, at one point, I'm going up.
+
+80
+00:05:02,480 --> 00:05:03,860
+Later, I'm going down.
+
+81
+00:05:03,860 --> 00:05:07,120
+Somewhere in the middle, it must have been
+flat.
+
+82
+00:05:07,120 --> 00:05:12,220
+And so where it's flat, the slope of that
+tangent line is going to be equal to zero.
+
+83
+00:05:12,220 --> 00:05:16,020
+So that means I want to find a point a so
+that the derivative,
+
+84
+00:05:16,020 --> 00:05:19,440
+the derivative is the slope of my tangent
+line, is going to be zero.
+
+85
+00:05:19,440 --> 00:05:22,000
+And I'm going to call
+
+86
+00:05:22,000 --> 00:05:23,139
+that point a critical point.
+
+87
+00:05:26,590 --> 00:05:31,595
+And if my function has a local minimum.
+So that means it either has a hump or a
+
+88
+00:05:31,595 --> 00:05:38,039
+trough out of point a, then a is always
+going to be a critical point.
+
+89
+00:05:41,960 --> 00:05:47,290
+And so if I, if I sort of zoom in on my
+quadratic utility, so my u of x here is
+
+90
+00:05:47,290 --> 00:05:53,890
+now the quadratic utility function.
+I find this point a where it's flat here.
+
+91
+00:05:53,890 --> 00:05:56,480
+Well, I can also take the derivative of u
+of x and
+
+92
+00:05:56,480 --> 00:06:00,990
+that's this descending line here that I've
+called U prime of X.
+
+93
+00:06:00,990 --> 00:06:07,350
+And where that line crosses 0, that's
+where this point is, where the critical
+
+94
+00:06:07,350 --> 00:06:08,050
+point is going to be.
+
+95
+00:06:08,050 --> 00:06:10,330
+That's where the tangent line's going to
+be flat.
+
+96
+00:06:10,330 --> 00:06:14,640
+So, where this line is above 0, I have an
+upward sloping curve.
+
+97
+00:06:17,230 --> 00:06:19,910
+When the derivative is less than 0, so
+below
+
+98
+00:06:19,910 --> 00:06:22,290
+the X axis, I have a downward sloping
+curve.
+
+99
+00:06:24,520 --> 00:06:26,720
+And then, you can do exactly the same
+thing.
+
+100
+00:06:26,720 --> 00:06:31,580
+If it were this is just some arbitrary
+function that now has a local minimum.
+
+101
+00:06:33,538 --> 00:06:38,390
+And so now where it's downward sloping I
+have a derivative of less than zero.
+
+102
+00:06:38,390 --> 00:06:42,170
+Where it's upward sloping.
+I have a derivative greater than zero,.
+
+103
+00:06:42,170 --> 00:06:44,700
+And where this derivative actually hits
+the x axis,
+
+104
+00:06:44,700 --> 00:06:46,480
+that's where my critical point is going to
+be.
+
+105
+00:06:50,390 --> 00:06:53,490
+And so the lesson we want to take away
+from this is.
+
+106
+00:06:53,490 --> 00:06:57,600
+If f prime of x is decreasing at a, so
+here
+
+107
+00:06:57,600 --> 00:07:00,860
+f prime of x is going down at the point a.
+
+108
+00:07:02,280 --> 00:07:04,720
+Then I have a local maximum.
+
+109
+00:07:04,720 --> 00:07:08,210
+So the funtion looks like the top of a
+hill.
+
+110
+00:07:11,200 --> 00:07:13,440
+If it's increasing, so here, the
+derivitive
+
+111
+00:07:13,440 --> 00:07:16,330
+is increasing when I hit the critical
+point.
+
+112
+00:07:16,330 --> 00:07:17,530
+Then I have a local minimum.
+
+113
+00:07:21,990 --> 00:07:25,190
+And so most of the time what's going to
+happen when you're taking derivatives.
+
+114
+00:07:25,190 --> 00:07:28,760
+You take a derivative of a function f of x
+and
+
+115
+00:07:28,760 --> 00:07:31,900
+you get f prime of x and that's also a
+function.
+
+116
+00:07:31,900 --> 00:07:35,669
+And most of the time f prime of x is also
+going to be a differentiable function.
+
+117
+00:07:37,020 --> 00:07:38,980
+And so you could again take its
+derivative.
+
+118
+00:07:38,980 --> 00:07:43,100
+And so we're going to denote that by f
+double prime of
+
+119
+00:07:43,100 --> 00:07:46,510
+x, which is just the derivative of f prime
+of x.
+
+120
+00:07:48,030 --> 00:07:51,420
+And f double prime is called the second
+derivative of f of x.
+
+121
+00:07:55,030 --> 00:07:58,560
+And I can also write it in Liebniz
+notation, so
+
+122
+00:07:58,560 --> 00:08:02,490
+Now I take the first derivative of f of x.
+
+123
+00:08:02,490 --> 00:08:05,140
+I think of this thing in the square
+brackets as a function.
+
+124
+00:08:05,140 --> 00:08:09,140
+And I take that function's derivative one
+more time with respect to x.
+
+125
+00:08:11,540 --> 00:08:15,290
+I can write, this d squared over dx
+squared to
+
+126
+00:08:15,290 --> 00:08:18,870
+mean take the derivative, take the second
+derivative in one step.
+
+127
+00:08:19,920 --> 00:08:24,870
+And I can also use this notation d squared
+f over dx squared
+
+128
+00:08:24,870 --> 00:08:29,170
+to mean the function that is the second
+derivative of f of x.
+
+129
+00:08:32,710 --> 00:08:36,820
+And sometimes you'll also see this so you,
+you just use a
+
+130
+00:08:36,820 --> 00:08:41,760
+capital letter d, so df of x would be the
+first derivative of f of x.
+
+131
+00:08:41,760 --> 00:08:49,270
+D squared f of x is the second derivative.
+And then there's no reason to stop at two.
+
+132
+00:08:49,270 --> 00:08:52,660
+So you can have as many higher derivatives
+as you want.
+
+133
+00:08:54,390 --> 00:08:58,400
+some notation that seems to be pretty
+common as you have f
+
+134
+00:08:58,400 --> 00:09:02,830
+to the n but the n is in parentheses.
+So that just means the nth derivative of
+
+135
+00:09:02,830 --> 00:09:07,060
+the function f of x.
+just like we had d
+
+136
+00:09:07,060 --> 00:09:11,580
+squared dx here, we can have d to the n, d
+x to the n of f of
+
+137
+00:09:11,580 --> 00:09:16,560
+x.
+Or this capital letter D to the n of x.
+
+138
+00:09:18,210 --> 00:09:23,460
+But that's only going to work if the one
+before that so f n minus
+
+139
+00:09:23,460 --> 00:09:25,839
+1 of x is a differentiable function.
+
+140
+00:09:27,030 --> 00:09:30,430
+So as long as the derivative is a
+differentiable function itself,
+
+141
+00:09:30,430 --> 00:09:32,960
+you can then take the derivative again
+and, and keep going.
+
+142
+00:09:37,080 --> 00:09:41,870
+And so if we go back to our local maximum
+and local minimum
+
+143
+00:09:41,870 --> 00:09:47,440
+picture, if I plot the first derivative I
+get this decreasing line.
+
+144
+00:09:47,440 --> 00:09:49,610
+If I plot the second derivative, that's
+just
+
+145
+00:09:49,610 --> 00:09:52,100
+going to be the slope of the first
+derivative.
+
+146
+00:09:52,100 --> 00:09:56,030
+But the derivative is already a line, so
+its slope is going to be constant.
+
+147
+00:09:56,030 --> 00:09:58,900
+So I just get a constant value here, u
+double prime of x.
+
+148
+00:10:01,380 --> 00:10:06,798
+And so, f of x equals 0, sorry f prime of
+x equals 0, so I have a
+
+149
+00:10:06,798 --> 00:10:12,440
+critical point at a here.
+And f double prime of x.
+
+150
+00:10:12,440 --> 00:10:15,400
+So th, these, I really ought to have put A
+in here.
+
+151
+00:10:18,520 --> 00:10:21,360
+So if I evaluate f double prime at a as
+well.
+
+152
+00:10:21,360 --> 00:10:25,520
+So if I look at a, and go down to f double
+prime, that's less than zero.
+
+153
+00:10:25,520 --> 00:10:27,510
+Then that corresponds to a local maximum.
+
+154
+00:10:27,510 --> 00:10:31,520
+So allow, that allows me to classify this
+critical point as a maximum.
+
+155
+00:10:33,670 --> 00:10:37,900
+Where if f prime of a were equal to 0, so
+here
+
+156
+00:10:37,900 --> 00:10:40,780
+I have, now I'm talking about the graph on
+the right hand side.
+
+157
+00:10:41,990 --> 00:10:46,470
+I have a critical point, because the
+derivative is equal to zero.
+
+158
+00:10:46,470 --> 00:10:51,800
+But here f of x, f prime of x is upward
+sloping.
+
+159
+00:10:52,860 --> 00:10:56,120
+So f double prime of x is going to be a
+positive constant.
+
+160
+00:10:57,280 --> 00:10:58,700
+So f double prime of a,
+
+161
+00:10:58,700 --> 00:11:01,560
+in particular, is going to be greater than
+0.
+
+162
+00:11:01,560 --> 00:11:04,640
+And that's going to correspond to a local
+minimum.
+
+163
+00:11:04,640 --> 00:11:07,840
+So these are called first and second order
+condition.
+
+164
+00:11:07,840 --> 00:11:11,600
+The first order condition says the
+derivative has to be equal to zero.
+
+165
+00:11:11,600 --> 00:11:14,860
+Second order condition says second
+derivative less than zero.
+
+166
+00:11:14,860 --> 00:11:16,450
+And that gives me a local minimum.
+
+167
+00:11:16,450 --> 00:11:19,520
+And then if the second derivative is
+greater than zero,
+
+168
+00:11:19,520 --> 00:11:24,910
+sorry, second derivative less than zero
+gives me a local maximum.
+
+169
+00:11:24,910 --> 00:11:27,690
+Second derivative greater than zero gives
+me a local minimmum.
+
+170
+00:11:29,950 --> 00:11:32,360
+So for functions like this it's not too
+bad, you
+
+171
+00:11:32,360 --> 00:11:34,590
+can just draw a picture and it's usually
+pretty clear.
+
+172
+00:11:34,590 --> 00:11:37,170
+But things get you know can get a little
+bit more
+
+173
+00:11:37,170 --> 00:11:42,630
+complicated and then especially if the
+function has several critical points.
+
+174
+00:11:42,630 --> 00:11:46,649
+And you're looking for a maximum, you
+might want to wait till we
+
+175
+00:11:46,649 --> 00:11:46,660
+[INAUDIBLE]
+
+176
+00:11:46,660 --> 00:11:47,390
+the local minimum.
+
+177
+00:11:50,420 --> 00:11:55,210
+So for a financial example of this suppose
+I have a certain
+
+178
+00:11:55,210 --> 00:11:58,610
+amount of money, and I want to divide it
+into two assets.
+
+179
+00:11:59,940 --> 00:12:03,960
+And my goal is to, so that, that is
+something called a portfolio.
+
+180
+00:12:03,960 --> 00:12:05,570
+And I want to choose how much I'm going to
+
+181
+00:12:05,570 --> 00:12:08,960
+put into each asset to maximize my
+expected return.
+
+182
+00:12:12,970 --> 00:12:15,840
+And so basically what I want to do is I am
+
+183
+00:12:15,840 --> 00:12:18,450
+suppose I'm not allowed to short sell
+either one of those.
+
+184
+00:12:18,450 --> 00:12:22,570
+So short sell means to sell something that
+I don't actually own.
+
+185
+00:12:22,570 --> 00:12:24,920
+If I'm not allowed to do that, I have to
+put some amount
+
+186
+00:12:24,920 --> 00:12:28,300
+of money into asset A and some amount of
+money into asset B.
+
+187
+00:12:28,300 --> 00:12:30,870
+And those two amounts have to both be
+greater than 0.
+
+188
+00:12:30,870 --> 00:12:34,700
+And sum up to my total amount of money.
+
+189
+00:12:34,700 --> 00:12:38,600
+So the way I'm going to simplify that is
+just say f
+
+190
+00:12:38,600 --> 00:12:41,880
+of x is going to be defined on the
+interval 01.
+
+191
+00:12:41,880 --> 00:12:45,050
+And x is just going to be the ratio.
+
+192
+00:12:45,050 --> 00:12:48,460
+Or the, the fraction of money that goes
+into asset 1.
+
+193
+00:12:48,460 --> 00:12:52,940
+So asset 1 get's x.
+Asset 2 get's 1 minus x.
+
+194
+00:12:52,940 --> 00:12:55,300
+And if I only consider x on the interval
+
+195
+00:12:55,300 --> 00:12:57,529
+0 1, then both of those are going to be
+positive.
+
+196
+00:13:01,110 --> 00:13:04,440
+more generally, you can do this on an
+interval AB,
+
+197
+00:13:04,440 --> 00:13:07,640
+but 01 will work for what I want to show
+off here.
+
+198
+00:13:09,150 --> 00:13:15,610
+So, if I want to find all of the minimum
+and maximum values of this function on 01.
+
+199
+00:13:15,610 --> 00:13:18,425
+The approach I'm going to use is first
+find all
+
+200
+00:13:18,425 --> 00:13:22,720
+of the critical points on the open
+interval 0 1.
+
+201
+00:13:22,720 --> 00:13:23,220
+And
+
+202
+00:13:25,590 --> 00:13:27,840
+I'm just going to evaluate f of x there.
+
+203
+00:13:30,940 --> 00:13:35,780
+And I also need to evaluate f of x at a
+and b.
+
+204
+00:13:35,780 --> 00:13:37,330
+so a and b are the end points.
+
+205
+00:13:37,330 --> 00:13:40,063
+So I need to evaluate f of 0 and f of 1.
+
+206
+00:13:43,300 --> 00:13:44,900
+And then the global maximum.
+
+207
+00:13:44,900 --> 00:13:48,660
+So I can say what the global maximum is
+going to be because I
+
+208
+00:13:48,660 --> 00:13:53,920
+know all of the points where that could
+occur on this interval 0 1.
+
+209
+00:13:53,920 --> 00:13:58,380
+It's just going to be the maximum of all
+the points I find in steps 1 and 2.
+
+210
+00:13:58,380 --> 00:14:01,290
+And then the minimum is going to be The
+minimum
+
+211
+00:14:01,290 --> 00:14:03,640
+of all the ones I find in steps one and
+two.
+
+212
+00:14:03,640 --> 00:14:09,890
+And really it's step two that I'm trying
+to to harp on here because
+
+213
+00:14:09,890 --> 00:14:11,890
+this is what could happen.
+
+214
+00:14:11,890 --> 00:14:15,440
+So suppose this little tick over here is
+meant to be 1.
+
+215
+00:14:15,440 --> 00:14:22,520
+If I have an expected return that looks
+something like this, I would find Just
+
+216
+00:14:22,520 --> 00:14:26,520
+by using calculus, maybe these two orange
+points, which are the critical points.
+
+217
+00:14:28,420 --> 00:14:31,770
+And then I would see well this one's
+positive, and this one's negative.
+
+218
+00:14:31,770 --> 00:14:35,140
+And, if I'm investing, I certainly don't
+want to invest in something that has
+
+219
+00:14:35,140 --> 00:14:40,330
+a negative expected return, so I would
+probably choose this point here.
+
+220
+00:14:40,330 --> 00:14:44,610
+But it turns out that in this particular
+example, the best choice would just be to
+
+221
+00:14:44,610 --> 00:14:50,700
+put all of my money in asset one and none
+of my money in asset two.
+
+222
+00:14:50,700 --> 00:14:52,930
+And so this is actually a pretty common
+interview question.
+
+223
+00:14:52,930 --> 00:14:55,920
+They'll set up some sort of payment off
+scheme like this where
+
+224
+00:14:55,920 --> 00:14:59,029
+if you don't check the end points, you're
+going to get the wrong answer.
+
+225
+00:15:00,910 --> 00:15:07,320
+And then another step you can do is
+calculate the second derivative of f of x.
+
+226
+00:15:07,320 --> 00:15:09,820
+And evaluate it at the two critical
+points.
+
+227
+00:15:09,820 --> 00:15:13,630
+And that would allow you classify those as
+local minimum or local maximum.
+

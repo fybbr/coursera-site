@@ -1,0 +1,75 @@
+[BLANK_AUDIO]
+Having discussed single player games,
+let's turn now to multiple player
+games.
+Such as chess and Othello, and Go,
+and Chinese checkers, and so forth.
+In most cases, the other players in
+these games are general game playing
+programs themselves.
+Or in some cases, humans.
+However in some cases, the other players
+represent uncertainty
+in the game.
+For example, it's common to model some
+card games by representing a
+randomly shuffled deck of cards as an
+additional player in the game.
+One that deals, or reveals, cards as the
+game progresses.
+Before proceeding, it's worth emphasizing
+that multiple
+player games need not be fixed sum.
+In a fixed sum game, the total number of
+points is fixed.
+When this number is zero, such games are
+often said to be zero sum.
+In order for one player to get
+more points, some other player must lose
+points.
+For this reason fixed sum games are
+necessarily competitive.
+In general game playing there's no such
+restriction.
+Some games are competitive, most games are
+competitive, but some are cooperative.
+It may be that the only way for one player
+to get a
+higher reward is to help the other players
+to get higher rewards as well.
+This is sometimes called variable sum
+games.
+In this lesson, as in the preceding
+lesson, we look at settings
+in which there's sufficient time for
+players to search the entire game tree.
+That said, as in single player games it's
+sometimes possible
+to find optimal actions even without
+searching the entire game tree.
+Now the small size does rule out some
+interesting
+games like chess and Othello, which
+require more complicated techniques.
+And we'll discuss some of those later.
+However, again, the more
+complicated techniques can be viewed as
+variations on the simple techniques
+described here.
+Begin this lesson with a procedure called
+minimax,
+and a more efficient version called
+bounded minimax.
+We then turn it to an even more efficient
+procedure called alpha-beta search.
+Which produces the same results, but
+eliminates much
+of the needless computation of minimax and
+bounded minimax.
+There's also an analog to sequential
+planning called conditional planning.
+However it's a little complicated and it's
+not used
+all that often, so we'll bypass that for
+now.
+

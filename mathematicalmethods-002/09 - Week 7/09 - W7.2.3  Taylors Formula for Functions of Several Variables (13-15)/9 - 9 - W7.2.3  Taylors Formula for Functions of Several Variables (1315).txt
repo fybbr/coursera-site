@@ -1,0 +1,316 @@
+So moving on, part 3 is going to
+be Taylor's formula for functions of
+several variables.
+So last time f was just a function of a
+single variable, x.
+And now I'm going to let x be a vector.
+So you can think of x as x1, x2 up to xn.
+And f is still going to be a, a real
+valued
+function, so whatever it comes out is I'm
+assuming is scalar.
+[COUGH].
+And a, a linear approximation of f around
+a point a.
+So a has to be, has to live in the same
+space as x now.
+So if x has n components, then a has to
+have n components as well.
+So if it was a point in the plane you'd
+need a x con, an x coordinate and a y
+coordinate.
+And for x, then you'd need a x coordinate
+and a y coordinate for the point a as
+well.
+And then linear approximation around the
+point a, it looks a lot like the
+Taylor polynomial for the function of a
+single variable, so I have.
+One point, f of a, where I know what the
+function
+value is and then I'm just going to add a
+linear approximation.
+So, for each of the directions, I just
+multiply the distance in that direction,
+so that's xi minus a, times the partial
+derivative.
+So the slope in that direction, which is
+the
+partial derivative of f with respect to
+that direction.
+And then evaluate it at the point a.
+And again, we end up with the result that,
+if the second order
+partial derivatives are continuous.
+Then we have a second
+order approximation.
+So, if I make this linear approximation,
+linear, so, order 1 Taylor polynomial for
+a function of two or more
+variables.
+Then f of x, so this is the thing
+that I'm trying to approximate.
+Is equal to my approximation.
+Plus, a term that behaves and now I have
+to
+be a little bit more careful about how I
+write quadratics.
+So, what I'm looking at here is x is a
+vector and a is a vector.
+This symbol, the two parallel, vertical
+parallel lines on each side, that just
+meant the length of the vector, so the
+Euclidean length of the vector.
+And because that length is squared, this
+is big O of x squared, essentially.
+As x is going to a.
+So I still have the same quadratic
+sort of error property for this linear
+approximation
+that I had when I had a linear
+approximation for a function of a single
+variable.
+And it also turns out.
+That because this big O is kind of taking
+care of any it's taking care of these
+constants of proportionality.
+You can also think about this as just the
+sum of the individual components, squared.
+And also for the, for the quadratic
+approximation, so
+now that this is getting a bit more
+complicated.
+So I have f of a is my constant, so that's
+the one point where I know what the true
+function value is.
+I have the linear approximation that's the
+same as in my linear approximation up
+here.
+And now I have to do all of the mixed
+partial derivatives to get my quadratic
+term.
+So, if I have a function of n variables, I
+have to sum i equals 1 to n and
+j equals 1 to n, and then all of the
+mixed partials times the distance in each
+of those directions.
+And then we see, have because of just the
+definition of the
+Taylor Polynomial, I have to have this one
+over two factorial here.
+And so, hopefully you're starting to
+recognize that when I see big ugly
+sums like this I can benefit from using
+vectors and matrices for my notation.
+So hopefully that's what's on the next
+slide.
+Oh, good guess.
+So lets let d of f of x, so this is the
+gradient of my function f
+and it's going to be a function that I can
+evaluate at a point x.
+And it's just
+defined to be the first partial
+derivative, the second
+partial derivative and so on in a row
+vector.
+And so it ends up being for a function,
+a scalar function, a scaler value function
+of n variables.
+I end up with a row vector with n elements
+in it as the gradient.
+And then if I define, if i define x minus
+a, so remember for vector
+addition, we can do we can do the addition
+element wise.
+So x minus a is just going to mean this
+vector.
+So I can actually just do that addition,
+and
+this, this is a vector of, a column
+vector.
+So it's got 1 column and n rows.
+And then I end
+up with anyone remember what this is
+called?
+Hessian, good, okay.
+the Hessian of x, which is.
+So I take the gradient and I kind of
+imaginarily put that
+across the top row.
+And then I just take the
+derivatives with respect to the x in in
+each column, or sorry,
+in each row.
+And that gives me now a matrix of partial
+derivatives.
+So the
+[COUGH]
+next partial derivatives of the function f
+of x, and now that
+big ugly formula I had at the bottom of
+the last slide.
+I can now write that as, so I have to
+evaluate my function at, at the point
+where I know, still.
+And then since the gradient is a row
+vector.
+I'll write a row times a column, so
+basically
+it's just be, become the dot product of
+this
+with this, but I can write that out using
+matrix notation because I've made the
+gradient a row vector.
+and that's a order of big O of x squared
+approximation.
+Then I can also write the quadratic Taylor
+approximation, so
+the first two terms are just what I had
+above.
+And then it turns out that that big, ugly
+sum can be expressed in matrix vector
+notation.
+As x minus a transpose, so that's this
+vector here that's transposed.
+So I want it to be 1 row times n columns.
+Then I'm going to multiply it by an n by n
+matrix.
+And then finally, I'm going to multiply it
+by a column vector.
+So that's an n by 1 matrix.
+So this whole thing is going to end up
+being a one by one quantity, so it's a
+scalar quantity, and what's left over is
+going to behave like x cubed.
+So as x is getting closer and closer to a.
+My, quality of my approximation is, is
+getting better at a cubic rate.
+And so just as an example lets consider a
+function of two variables.
+So I want to make a linear approximation
+of a function
+f, with two variables, so x and y, around
+a point
+a,b and so all I end up having to do, I
+have.
+Whoops, I think I wrote this backwards.
+oh no.
+Sorry.
+It's one thing at a time.
+So, here x is actually
+the number x.
+It's no longer the vector like it was on
+the last slide.
+And.
+B and y are also just numbers.
+So all I'm doing to get a linear Taylor
+polynomial, I'm taking
+the function at the point where I know the
+true function value a,b.
+That I'm making a linear approximation by
+the change
+in the x direction, so how far away x is
+from a.
+So that's x minus a.
+Times the partial derivative of f with
+respect to x, evaluated at a, b.
+So that's the slope in the f, x direction.
+So that's just a linear approximation in
+the x direction.
+And then I do exactly the same thing here,
+but in the y direction.
+So this is how far away is y, how far away
+y is from b.
+Times the slope
+in the y direction.
+And then what I'm going to end up with
+when I look at the convergence properties
+here.
+It's a quadratic, it has quadratic
+convergence properties.
+So, as x is getting closer to a and y is
+getting closer to b, the
+error term is big O of x minus a squared
+and big O of y minus b squared.
+And in matrix notation I can just write
+this out.
+So remember the gradient here is a row
+vector
+times a column vector, so those are
+conforming dimensions.
+So this, I just have to do matrix
+multiplication
+but it's the same thing as a dot product.
+And then I still have my error term, but
+at least
+I kind of understand it's not a bound but
+I understand.
+It's property, as I'm getting closer and
+closer to the point a,b.
+And if I want to add a quadratic term
+to my approximation, so this is getting
+pretty yucky here.
+so the first row here
+is just the linear
+approximation I had from
+the previous slide.
+That I need to
+split up the, so there's going to be four
+possibilities,
+but the, the cross term which I have on
+the third bit here.
+Let me see.
+Oh dear, I forgot one of my derivatives in
+the fraction.
+so I have x minus a squared, divided by 2
+factorial.
+So I need to have this 2 factorial in the
+denominator,
+because this is the, that's the definition
+of the Taylor polynomial.
+And then I need to multiply that by the
+second
+derivative of f with respect to x,
+evaluated at the point a, b.
+For the cross term, I have x minus a times
+y minus b.
+So this partial with respect to y.
+We're supposed to be in the denominator
+here, but I think
+I, I missed a, a bracket when I was
+typesetting this.
+So this is supposed to be the mixed
+partial derivative evaluated at
+a,b again, and there's no two factorial in
+the denominator here because
+this one shows up twice.
+So I actually have an x minus a times y
+minus b plus a y minus b times
+x minus a, but I, because that's a
+symmetric
+term, I have two of those divided by 2.
+So that knocks out the 2 factorial that
+you would expect to find in the
+denominator here.
+And then finally, I have the y term, so y
+minus b squared divided by 2 factorial.
+Times the partial derivative of f, the
+second partial derivative of
+f with respect to y evaluated at the point
+a, b.
+And then what's left, oops, okay, what's
+left over should be order x cubed terms.
+So, as I've added one more term to my
+approximation,
+then the error is now behaving as a, a
+cubic.
+And I can write this in matrix vector
+notation, so it simplifies quite a bit.
+I have f of a,b so that's just my function
+again.
+The oops, the linear term.
+Then the quadratic term and then again
+these things should have been to the third
+power for the cubic error term.
+

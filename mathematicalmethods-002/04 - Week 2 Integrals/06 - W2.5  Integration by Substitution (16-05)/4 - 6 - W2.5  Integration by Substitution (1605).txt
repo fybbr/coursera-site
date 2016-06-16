@@ -1,0 +1,367 @@
+So, last section for today.
+integration by substitution.
+So we did integration by parts, and that
+was the product rule running backwards.
+Integration by substitution we can think
+of
+as just working the chain rule backwards.
+So I'm going to start out by letting
+capital F of x just be the
+antiderivative of little f of x.
+And
+then I'm going to think of x as being a
+function of another variable, u.
+Then by the chain rule, if I took the
+derivative of capital F of g of u,
+I would end up with f prime evaluated at g
+of u.
+And then the chain rule then says I have
+to take this function
+on the inside and multiply by its
+derivative to, so I end up with.
+A g prime of u showing up on the outside.
+And then because of the way I've defined
+little f of x to be the, the
+derivative of capital F or rather a
+capital
+F to be an anti derivative of little f.
+I can
+write that as F of g of u times g prime of
+u.
+[SOUND].
+And then if I integrate both sides with
+respect to u.
+Well, on this side, I, I just had d of u.
+d by du.
+So the derivative with respect to u of f
+of g of u.
+So that's going to be the complementary
+operation to my anti derivative.
+So that's just going to be f capital f of
+g of u.
+Is going to be equal to the integral
+of little f of g of u times g prime of u
+du.
+And so my rule for integration by
+substitution then, is if x, f of
+x is an integrable function and g
+of x is invertible and continuously
+differentiable.
+Then I can make the substitution x equals
+g of u.
+And it's going to change my integral in
+the following way.
+So if I replace the variable x in my
+function f of x with g of u,
+then I have to multiply by g prime of u in
+order to get the same answer.
+And so I think the easiest way to see how
+this is going to, work is just to try an
+example.
+So if I look at this, I see
+the top of this fraction as the
+exponential function.
+And then, the argument to that exponential
+function is the square root of x.
+So, I don't know how to integrate this
+function just looking at that.
+I'm not going to make any progress if I
+keep it in terms of x.
+But, it would be easier to integrate.
+If, instead of having a square root in the
+exponent here, I just had a single letter.
+So if this was, say, e to the u, for
+instance.
+So, the way I can do that, is make a
+substitution.
+I'm going to define u to be the square
+root of x.
+And then if I do that, I could also think
+of it as x being equal to u squared.
+And then if I were to take the derivative
+of
+that, I would find that dx is equal to 2u
+du.
+And so let's see what happens when I
+start.
+Plugging in these these substitutions
+into, into my integral.
+So on the bottom, I can write square root
+of x, so this square root of x in the
+denominator just becomes a u.
+In the numerator my e to the square root
+of x.
+That's going to be e to the u, and then my
+dx term over here
+this is going to be the part that sort of
+picks up my bit from the chain roll.
+dx is equal to 2udu So I'm going to put
+that right here in place of the dx.
+And then what's going to happen that's
+very convenient,
+is that this u here and the u
+in the denominator, they're going to
+cancel each other out.
+And then because 2 is a constant, I can
+use my,
+my scaling property just to move that 2
+outside of the integral.
+And so I can rewrite this as 2 times the
+indefinite integral of e to the u d u.
+And
+now since I'm integrating, this d u tells
+me the variable that I'm integrating with.
+This e to the u is going to be a very easy
+function to integrate with respect to u,
+because it's its own antiderivative.
+So I end up with 2 e to the u plus c but
+that's not quite finished yet,
+because the answer to the question that I
+asked, should be
+given in terms of x because this is a
+function of x.
+But I know that u is equal to the square
+root
+of x so all I have to do in my final step.
+Is just replaced this u with the square
+root of x.
+So this would be in, in my opinion
+probably the simplest way to write down
+the answers.
+So to have 2 times e to the
+square root of x plus an arbitrary
+constant.
+If you take the derivative of that, you're
+going to get this e
+to the square root of x divided by the
+square root of x.
+and here I've assumed that x is greater
+than 0 just
+because I want to be able to take the
+square root of it.
+So now let's consider trying a little bit
+more complicated function.
+So this, this doesn't really look very,
+very much like it's a, a function
+that I'm going to be able to write down as
+a function of another function,
+but it is something that I can still use
+this rule to, to simplify quite a bit.
+So, suppose I define u to be e to the x
+minus e to the minus x.
+So it's going to be the denominator as my
+integrand.
+So integrand is just a word that means the
+function that I'm trying to integrate.
+Well, if I take the derivative of this
+function with respect to, with respect to
+x, I'm going to get du is equal to e to
+the x, and then this
+one, by the chain rule, I'm going to have
+a minus sign pop down, so this, oh, sorry.
+This side, when I take its derivative, I'm
+going to get e to the minus x times
+the derivative of the exponent.
+The derivative of minus x is negative 1,
+so that's going to have that's going
+to have the effect of just changing this
+minus sign into a plus sign.
+So that's just a little application of the
+chain rule here.
+And
+now if I go ahead and make these
+substitutions,
+I end up with e to the x plus e to the
+minus x times dx.
+But that's just what I've said, that's my
+du.
+And I have 1 over e to the x minus e to
+the minus x.
+And that's what I've called my, that's the
+variable I've chosen fort my substitution.
+So this whole thing simplifies into just
+finding the anti-derivative of 1
+over u du.
+And that again was in my little dictionary
+of anti-derivatives.
+So that's the log of u.
+And then to be finished I have to
+substitute back
+so u is equal to e to the x minus x.
+So the value of this anti-derivative here
+is going to be log of e
+to the x minus e to the minus x plus an
+arbitrary constant.
+And then there's one more trick we can use
+with integration by substitution when
+we're working with definite integrals.
+So by the Fundamental Theorem of Calculus,
+let's see, if I get to where I used that.
+When
+I integrate, oops.
+When I
+integrate f of x, I should just have
+capital f of x evaluated at its upper and
+lower endpoints.
+But if I'm going to change from x into u,
+so I'm going to make some
+sort of substitution, the endpoints have
+to
+change, too, because what I'm really
+saying.
+When I write these limits, oops, the
+limits of integration,
+so from a to b, I'm talking about values
+of x.
+So I'm talking about x equals a to x
+equals b.
+When there's only one variable generally
+you don't write
+this notation just because there's no, no
+possibility of ambiguity.
+Because there's only one variable that
+you're talking about.
+But when I make my substitution, so when I
+want to use the
+integration by substitution formula.
+Here my
+intergram is now a function of u.
+So the limits on
+my integral also need to be in terms of u,
+rather than in terms of x.
+So I need to take g inverse.
+So that's the, if I have u
+is equal to g of x.
+then I need to use that function backwards
+to get what my limits should
+be once I've changed from sort of
+integrating in x space into u space.
+And so if we just follow this calculation
+all the way through, what
+we're eventually going to end up with, so
+I used my integration by substitution
+formula.
+Then once I have this guy here, I can
+run the chain rule backwards which gives
+me this.
+The integral and the derivative.
+So I, if I take the antiderivative of a
+derivative, I just end up with the same
+function.
+So I have
+f of g of u.
+I've defined my limits.
+To be g inverse b and g inverse of a so
+when I evaluate
+this g of u at g inverse of b and g
+inverse of a.
+So that it's getting kind of sloppy here,
+but g and g
+inverse their functions that sort of undo
+whatever the first function did.
+So g of g inverse of x is just equal to x.
+So all this is really going to end up
+being is f of b minus f of a.
+Which is what we were after in the first
+place.
+And so, this ends up being the
+integration by substitution rule, for a
+definite integral.
+And then I'll go through a quick example
+of, of using this guy.
+[INAUDIBLE]
+.
+>>
+[INAUDIBLE].
+>> Yeah.
+So it's, it's essentially a shortcut that
+avoids you having to go back.
+So you could just compute the anti
+derivative.
+>> Right.
+>> And once you have the
+anti-derivative.
+Derivative.
+That's all you need.
+It's just a trick to get you the
+anti-derivative.
+But if you change the limits, you don't
+have to substitute
+backwards cause you already have limits
+in, in the right numbers.
+Or in, in the right scale I suppose for
+the right variable.
+>> Right.
+>> So suppose I
+want to integrate
+and suppose I want to do this by
+substitution.
+Because if I looked at this, I would
+probably just do the multiplication.
+And then use the anti power rule.
+But,
+what I'm going to do is recognize that the
+derivative
+of this, is going to have an x squared in
+it.
+So I could make some sort of substitution
+for this x cubed minus a constant piece.
+So I'm going to let u equals, equal x
+cubed minus 1.
+Then du is going to be 3x squared dx.
+So I already have an x squared d x here,
+so to get a three I just need
+to multiply by one, use the very clever
+choice of one of being
+one third times three, and that's going to
+give me one
+third, oops.
+There are supposed to be a fourth power up
+here which made it a little bit more
+complicated.
+so I'm going to put my 3x squared dx over
+on the right hand side.
+And that's going to be just equal to the
+derivative of my substitution.
+In order to put this 3 here I had to
+introduce a 1 3rd,
+but because that's a constant value I can
+move that out of the integral sign.
+And then I'll go ahead and make my
+substitution,
+but I'm also going to change the, the
+limits when I
+do this too, so, when I look at the lower
+limit.
+When I put negative 1 into here, I have
+negative 1 cubed.
+Is minus 1 times minus 1 is 1 times minus
+1 again is negative 1.
+Minus 1.
+So that becomes negative 2.
+And then 0 cubed is obviously going to be
+0.
+Minus
+1.
+So that gets me at negative one up here.
+Because the 3 X squared
+is what I can replace
+by the, by the chain rule backwards.
+Becomes my D U term.
+And so I can use my anti-power rule to
+figure
+out what an anti-derivative for u to the
+fourth is.
+And then I just end up with 1 15th times
+negative 1 to the fifth power.
+Oops.
+What have I done here?
+Yeah, so this should be a 1 15th too, boy.
+Lots of typos on these slides.
+I don't know what happened this time
+around.
+at the bottom limit squared.
+And if you do the math, you end up with 31
+over 15.
+Sorry, minus 31 over 15.
+

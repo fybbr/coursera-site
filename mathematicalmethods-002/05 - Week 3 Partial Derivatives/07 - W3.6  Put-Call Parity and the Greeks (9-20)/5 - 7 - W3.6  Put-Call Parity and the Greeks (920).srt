@@ -1,0 +1,631 @@
+1
+00:00:00,960 --> 00:00:05,420
+OK, so lesson six is going to be, called
+Put-Call Parity and The Greeks.
+
+2
+00:00:05,420 --> 00:00:07,130
+This will be a pretty quick lesson.
+
+3
+00:00:09,470 --> 00:00:11,700
+I just want to introduce a couple of
+concepts
+
+4
+00:00:11,700 --> 00:00:14,030
+that I'll use than in the next four
+lessons.
+
+5
+00:00:18,230 --> 00:00:26,210
+So I'll start off.
+By naming V to be the value
+
+6
+00:00:26,210 --> 00:00:32,510
+of a portfolio of derivative securities
+all based on one underlying asset.
+
+7
+00:00:32,510 --> 00:00:37,630
+So this could be, you know, more than one
+option based on the same underyling asset.
+
+8
+00:00:38,910 --> 00:00:43,260
+Really, for, for what we're going to be
+doing this week, it's going to
+
+9
+00:00:43,260 --> 00:00:47,880
+be just a single thing, either one call
+option or one put option.
+
+10
+00:00:51,780 --> 00:00:55,160
+And then the rates of change of the value
+V with respect to
+
+11
+00:00:55,160 --> 00:00:59,890
+the pricing parameter, so that would be
+the asset price S, the volatility sigma.
+
+12
+00:00:59,890 --> 00:01:02,360
+These are going to be things that are
+useful for hedging.
+
+13
+00:01:06,360 --> 00:01:09,600
+And these rates or chains are called the
+Greeks of the portfolio and they're.
+
+14
+00:01:09,600 --> 00:01:11,660
+They're basically just the different
+derivatives you
+
+15
+00:01:11,660 --> 00:01:16,580
+can take of the Black-Scholes pricing
+formula.
+
+16
+00:01:16,580 --> 00:01:21,580
+So we're going to consider a portfolio
+containing a single European call option.
+
+17
+00:01:21,580 --> 00:01:25,180
+And basically, this week's going to work,
+if you've looked at the homework already.
+
+18
+00:01:26,990 --> 00:01:29,270
+I'm going to go through the examples of
+how
+
+19
+00:01:29,270 --> 00:01:31,460
+to compute the Greeks using a call option.
+
+20
+00:01:31,460 --> 00:01:37,560
+It'll be very similar, but just, a little
+different, to do it for a put option.
+
+21
+00:01:37,560 --> 00:01:40,090
+And so the homework is going to be a put
+option.
+
+22
+00:01:40,090 --> 00:01:44,770
+But you should be able to refer to the
+calculations for the call option, and up
+
+23
+00:01:44,770 --> 00:01:46,760
+to just to a few things being reordered
+
+24
+00:01:46,760 --> 00:01:49,630
+and some different signs, it will be very
+similiar.
+
+25
+00:01:49,630 --> 00:01:52,230
+And there's also, well I'll get to this in
+a second,
+
+26
+00:01:54,190 --> 00:01:58,120
+first I'm just going to remind you about
+the Black-Scholes formula.
+
+27
+00:01:58,120 --> 00:02:02,910
+So the inputs to the Black-Scholes formula
+Where the asset price, s.
+
+28
+00:02:04,660 --> 00:02:07,440
+And so this is going to quite often in,
+
+29
+00:02:07,440 --> 00:02:10,290
+in these slides also have a t associated
+with it.
+
+30
+00:02:10,290 --> 00:02:14,350
+And that just means the, the price at a
+certain time t.
+
+31
+00:02:14,350 --> 00:02:18,080
+If there's no t, we kind of mean the, the
+price right now.
+
+32
+00:02:20,230 --> 00:02:25,320
+And sigma is going to be the volatility.
+K is the strike price.
+
+33
+00:02:25,320 --> 00:02:28,000
+So this is the, the exercise price of the
+option.
+
+34
+00:02:30,110 --> 00:02:35,930
+Little r is a continuously compounded
+risk-free interest rate.
+
+35
+00:02:35,930 --> 00:02:38,110
+Capital T is the maturity date.
+
+36
+00:02:40,238 --> 00:02:45,590
+Q is a, asset dividend rate, and this is
+a, continuously compounded rate at well.
+
+37
+00:02:46,630 --> 00:02:48,930
+And then little t is going to be time, so
+
+38
+00:02:48,930 --> 00:02:52,370
+you can think of that as current, the
+current time.
+
+39
+00:02:52,370 --> 00:02:54,710
+And really, the way capital T and little t
+are going to
+
+40
+00:02:54,710 --> 00:02:59,230
+show up in the pricing formula is, capital
+T minus little t.
+
+41
+00:02:59,230 --> 00:03:03,230
+And so that means some date in the future
+minus today.
+
+42
+00:03:03,230 --> 00:03:05,370
+And so, that quantity, capital T minus
+little
+
+43
+00:03:05,370 --> 00:03:07,120
+t, you can think of that as the time
+
+44
+00:03:07,120 --> 00:03:10,020
+left until the maturity of the, of the
+contract.
+
+45
+00:03:12,790 --> 00:03:15,870
+So the Black Shoals formula for a European
+call option
+
+46
+00:03:17,510 --> 00:03:20,350
+So I'm using the same notation that is
+used in
+
+47
+00:03:20,350 --> 00:03:22,890
+the text book and so, this is for some
+reason
+
+48
+00:03:22,890 --> 00:03:26,220
+treated as a function, just of two
+variables, S and T.
+
+49
+00:03:28,260 --> 00:03:32,230
+But it's really, has several more has all
+of the variables that I had
+
+50
+00:03:32,230 --> 00:03:37,330
+on the previous slide in it, so you have
+the, dividend rate, you have.
+
+51
+00:03:37,330 --> 00:03:43,250
+Maturity, current time, strike price and
+risk free interest rate.
+
+52
+00:03:45,940 --> 00:03:52,300
+And then we also have this function
+capital Fi, and that's just defined
+
+53
+00:03:53,370 --> 00:03:58,980
+as the integral from minus infinity Up to
+z of
+
+54
+00:03:58,980 --> 00:04:02,530
+e to the minus x squared over 2dx and then
+normalized
+
+55
+00:04:02,530 --> 00:04:04,820
+by this factor of 1 over the square root
+of 2 pi.
+
+56
+00:04:08,330 --> 00:04:12,260
+We have a function d plus, which is also a
+
+57
+00:04:12,260 --> 00:04:15,700
+function of all of the arguments of the
+pricing formula.
+
+58
+00:04:17,160 --> 00:04:22,670
+And essentially it's not necessary to, to
+write d-plus
+
+59
+00:04:22,670 --> 00:04:25,940
+as a separate function and put it in here.
+
+60
+00:04:25,940 --> 00:04:28,090
+I could actually just write the whole
+thing out, but
+
+61
+00:04:28,090 --> 00:04:30,150
+again it just gets kind of unwieldy to do
+that.
+
+62
+00:04:30,150 --> 00:04:33,410
+And now that we have tools, like the
+product rule and the chain rule,
+
+63
+00:04:33,410 --> 00:04:35,130
+it's actually more convenient.
+
+64
+00:04:35,130 --> 00:04:37,960
+To treat functions of functions separately
+like this.
+
+65
+00:04:40,660 --> 00:04:43,830
+So we had a, a d plus in the first term of
+the pricing formula.
+
+66
+00:04:43,830 --> 00:04:49,600
+We have a d minus in the second term of
+the pricing formula.
+
+67
+00:04:49,600 --> 00:04:51,240
+And these two functions are very similar.
+
+68
+00:04:51,240 --> 00:04:54,659
+And where, where they differ is just that
+d plus.
+
+69
+00:04:56,230 --> 00:05:00,870
+Has a plus sigma, oops, okay, I can't, I
+can't highlight that,
+
+70
+00:05:00,870 --> 00:05:05,890
+but has a plus sigma squared over two in
+this part here.
+
+71
+00:05:05,890 --> 00:05:09,450
+And d minus is actually equal to d plus
+
+72
+00:05:09,450 --> 00:05:13,230
+minus sigma times the square root of T
+minus
+
+73
+00:05:13,230 --> 00:05:16,810
+t And all that that changes is that this
+
+74
+00:05:16,810 --> 00:05:20,650
+plus sign here becomes a minus sign in d
+minus.
+
+75
+00:05:20,650 --> 00:05:24,300
+So the, the plus and minus subscript on
+the d here just
+
+76
+00:05:24,300 --> 00:05:28,950
+refers to whether this should be a plus
+operation, or a minus operation.
+
+77
+00:05:33,420 --> 00:05:36,070
+Then there's a relationship between the
+price of a
+
+78
+00:05:36,070 --> 00:05:38,940
+Put option and the price of a Call option.
+
+79
+00:05:40,260 --> 00:05:46,380
+So If I let C of T be the price of a
+European Call option, and P of T be
+
+80
+00:05:46,380 --> 00:05:49,340
+the price of a European Put option on the
+same
+
+81
+00:05:49,340 --> 00:05:54,910
+asset, with the same maturity date and the
+same strike price.
+
+82
+00:05:54,910 --> 00:05:58,629
+Then the following relation holds, and
+this is called Put-Call parity
+
+83
+00:05:58,629 --> 00:06:03,644
+And it just says that the price of the Put
+option plus s
+
+84
+00:06:03,644 --> 00:06:08,880
+times S times E to the minus QT minus T.
+
+85
+00:06:08,880 --> 00:06:12,590
+So, it's basically this is just what the
+asset's going to be worth.
+
+86
+00:06:12,590 --> 00:06:15,378
+If it's paying some dividends, it's
+going to be a little bit more.
+
+87
+00:06:15,378 --> 00:06:23,930
+Then, minus the value of the call option
+has
+
+88
+00:06:23,930 --> 00:06:28,680
+to be equal to the discounted value.
+Of the strike price.
+
+89
+00:06:29,770 --> 00:06:32,960
+And so what we're really trying to do here
+
+90
+00:06:32,960 --> 00:06:38,080
+is relate the Put price and the Call
+price.
+
+91
+00:06:39,080 --> 00:06:41,420
+And so in the homework I've asked you to
+do two things.
+
+92
+00:06:41,420 --> 00:06:47,480
+So I'm going to show you how to calculate
+the derivatives of the Call price.
+
+93
+00:06:48,680 --> 00:06:48,980
+And then I'm
+
+94
+00:06:48,980 --> 00:06:52,400
+going to ask you to calculate the
+derivatives of the put price.
+
+95
+00:06:52,400 --> 00:06:54,340
+And so what I want you to actually, in
+
+96
+00:06:54,340 --> 00:06:59,070
+the homework, compute those by taking
+derivatives of the formula.
+
+97
+00:06:59,070 --> 00:07:00,510
+But you can check that you got the right
+
+98
+00:07:00,510 --> 00:07:04,950
+answer by taking derivatives of this put
+call parity relationship.
+
+99
+00:07:04,950 --> 00:07:07,170
+And then just plugging in, so if I took
+
+100
+00:07:07,170 --> 00:07:10,450
+the derivative of this, for instance, with
+respect to s.
+
+101
+00:07:10,450 --> 00:07:12,590
+This term would just be dcds.
+
+102
+00:07:13,630 --> 00:07:14,310
+That's going
+
+103
+00:07:14,310 --> 00:07:16,730
+to be something that I show you how to
+calculate today.
+
+104
+00:07:16,730 --> 00:07:22,940
+And so you'll end up with an expression
+for the derivative
+
+105
+00:07:22,940 --> 00:07:26,140
+of the put price with respect to S, these
+two other
+
+106
+00:07:26,140 --> 00:07:29,640
+terms and something that we already know,
+and so that'll give
+
+107
+00:07:29,640 --> 00:07:32,109
+you an easy way to verify that you've got
+the correct answer.
+
+108
+00:07:35,970 --> 00:07:38,520
+And the Greeks are, and they just
+
+109
+00:07:38,520 --> 00:07:41,230
+the different derivatives of the, the
+pricing formula.
+
+110
+00:07:41,230 --> 00:07:45,500
+But they all have names that are Greek
+letters.
+
+111
+00:07:45,500 --> 00:07:47,500
+So that's why they're called the Greeks,
+it has
+
+112
+00:07:47,500 --> 00:07:49,590
+nothing actually to do with the country of
+Greece
+
+113
+00:07:52,140 --> 00:07:58,010
+So the rate of change of c, so it's rate
+of change in general of the value of
+
+114
+00:07:58,010 --> 00:08:01,290
+the portfolio but since for today's
+lecture I'm considering
+
+115
+00:08:01,290 --> 00:08:05,230
+my portfolio just to be a single call
+option.
+
+116
+00:08:05,230 --> 00:08:09,310
+I'm just going to say c is the value of my
+portfolio.
+
+117
+00:08:09,310 --> 00:08:13,410
+So the rate of change with C with respect
+to S, is called Delta
+
+118
+00:08:13,410 --> 00:08:16,780
+and that's just going to be the partial
+derivative of C with respect to S.
+
+119
+00:08:19,790 --> 00:08:25,330
+Second one is called Gamma which is the
+rate of change of Delta with respect to S.
+
+120
+00:08:25,330 --> 00:08:29,610
+And since, so partial derivative of delta
+again, with respect to s.
+
+121
+00:08:29,610 --> 00:08:33,320
+And since delta was the partial derivative
+of c with respect to s, gamma
+
+122
+00:08:33,320 --> 00:08:39,120
+can also be the second partial derivative
+of c with respect to s squared.
+
+123
+00:08:42,690 --> 00:08:47,660
+Then we have theta, which is the rate of
+change of c with respect to t.
+
+124
+00:08:49,440 --> 00:08:54,200
+And so that'll just be the partial
+derivative of c with respect to t.
+
+125
+00:08:55,690 --> 00:09:00,380
+Row, which is the rate of change of c with
+respect to the risk free interest rate r.
+
+126
+00:09:01,470 --> 00:09:03,740
+So it's the partial derivative of c with
+respect
+
+127
+00:09:03,740 --> 00:09:07,730
+to r And then, vega, which I'm not sure
+this
+
+128
+00:09:07,730 --> 00:09:10,710
+is actually a real Greek letter, but it
+sounds kind of Greek.
+
+129
+00:09:10,710 --> 00:09:13,630
+So I guess they threw it in with the, with
+the group.
+
+130
+00:09:13,630 --> 00:09:16,900
+Which is the rate of change of C with
+respect to sigma.
+
+131
+00:09:16,900 --> 00:09:19,400
+So partial of C with respect to sigma.
+

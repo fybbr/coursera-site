@@ -1,0 +1,465 @@
+So, the next thing we're going to learn
+about
+is how to change variables in double
+integrals.
+So changing variables, when we did this
+in, in Week 2,
+I just called this the substitution method
+or integration by substitution.
+And so I'm going to, just to do a, a quick
+review of that.
+So suppose that x is a continuous function
+and then g of x is a continuously
+differentiable and invertible function.
+Differentiable, I think I even spelled it
+right.
+So continuously differential just mean I
+can take its derivative and the derivative
+is a continuous function.
+Invertible means that if I say x
+is equal to g of s, so I have an s, I use
+g to get an x.
+Then there's another function g inverse,
+so that I can
+take g inverse of x and get my s back.
+And that has to give me the same s that I
+started with.
+So,
+something like a linear function is
+invertible, but if I
+had a parabola, so if I had y equals x
+squared.
+If I gave you x is equal to negative 3,
+then
+my function would give you, so negative 3
+squared would be 9.
+B but then if I, if I looked at 9, I
+couldn't tell you if you
+started out with a negative 3 or a
+positive 3, so that would be a
+non-invertible function.
+So the
+key thing here for g of s is that I have
+to be able to
+go back to the, back to where I started
+from, back to my original s.
+So this implies that g of s
+is either strictly increasing or strictly
+decreasing.
+Although I guess it could have a flat spot
+but then it
+would have to immediately pick up again
+right after the flat spot.
+and so what I'm going to use g of s to do
+then
+is to map an interval c, d into an
+interval a, b.
+So if I have a variable s that lives in an
+interval c, d then
+I can find x by evaluating g of s, and
+that's going to give me a point in a, b.
+And the way I want to set this up is x has
+to be able to take every value in a,
+b.
+And for every value x in a, b, there's
+g-inverse of x that gives me a value in
+c,d.
+And then the same property has to hold the
+other direction.
+So for every s in c, d, I have to be able
+to get a g of s in a, b.
+So that's a, sometimes you hear the phrase
+one-to-one and onto.
+So it means for every s, there's a unique
+x and
+everyone in this interval goes to one in
+this interval.
+So there's for every point in a, b, I can
+find in s in c, d that gives me that
+point.
+And for every point in c, d, I can find an
+x in a, b so that g-inverse gives me that
+s.
+So then, integration by substitution says
+that I can then switch
+switch variables here.
+So, I started out having a function of x
+and this gives me a rule for changing that
+into a function of s so
+that these two integrals, these two
+definite
+integrals are going to have the same
+value.
+And so now, change your variables in two
+dimensions.
+I'd want to do the same thing.
+But now, I have functions that are in
+well, functions of more than one variable.
+So let's let f of x, y be a continuous
+function.
+And I want to compute the double integral
+over some domain D of f of x, y.
+And so, when I was doing this in the
+single variable case, I had
+an integral a b for my first inter
+interval a, b for my first integral.
+And then I had an interval c, d
+for the second integral, for the
+transformed integral.
+Now, I'm going to start out with an, a
+domain D for the original integral.
+And a domain
+omega for the transformed integral.
+And now, I just have to have two
+functions.
+So, I have a, a function x of s, t.
+So, given s and t, this gives me a value x
+and a function y of s, t.
+So, given s and t, this gives me value y.
+So, basically what I'm trying to do, I
+have a 2-variable problem in x and y.
+And I want to change it to two
+different variables, s and t that are
+functions so
+that x and y are functions of s and t.
+And then again, I need this relationship
+to be one-to-one and onto.
+That means for every point in omega, there
+has to be a point in
+d so that this relationship gives me gives
+me the point in omega.
+And then for every point
+in D, there has to be a point in omega
+so that this change of variables gives me
+that point.
+So it has to go backwards and forwards
+giving
+me, so I can always get my one point back.
+And there has to be a one-to-one
+correspondent so
+one point in each interval corresponding
+to the other.
+And we also need this x of s, t and y of
+s, t to be continuously differentiable.
+And so the,
+the thing I just tried to describe so
+every point
+s, t, and omega has to correspond to a
+point x, y and D and vice versa.
+This is just a just a way of writing that
+down.
+So that's what this, that's what I mean by
+this double arrow here.
+And so now what I want to be able to do is
+I want to be able to find a function h of
+s, t.
+So that if I integrate f of x, y dx dy
+over the domain D, I get the same answer,
+I get the same value as if I integrate h
+of s, t ds dt over this new domain omega.
+And so I want to think about this as fof
+x, y is equal to f, oops,
+of x of s, t, y of s, t.
+So basically I mean, this seems like a
+sensible thing to do.
+If I can get y in terms of s and t and I
+can
+get x in terms of s and t and I'll just
+make my new function.
+I'll write my function f of x, y as a
+function of s and
+t by first calculating x and y and then
+plugging them in to f of x, y.
+But we know this isn't going to get us all
+the way, because this function of x and
+y could be just 0 times y, in which case
+it would just be a function of x.
+And we already know that this does,
+doesn't quite work for just
+a function of x, I need to multiply it by
+a derivative.
+And so, we'll have to do some sort of
+rescaling so
+that we, we get the same value.
+So in the single variable case, so if I
+had x is equal to g of s then when I took
+the derivative of both sides, I got dx is
+equal
+to g prime of s times ds, by the Chain
+Rule.
+And in the 2-variable case, I need to do
+something analogous and unfortunately,
+it's it's a bit more complicated.
+So, it's complicated enough for even two
+variables.
+and you can just imagine what it's
+going to look
+like if you were trying to do three or
+four.
+[COUGH]
+So in the 2-variable case, I have each
+point x, y is a point, so
+x of s, t, y of s, t.
+And it's a vector-valued function.
+So it has two inputs, s and t and it has
+two outputs, x and y.
+And so the gradient of this
+transformation, so this two valued,
+vector-valued function is going to be a
+two by two array.
+So remember, we used the notation capital
+D for for the gradient.
+And it's just the partial derivative of
+the
+first function with respect to s and t so
+that makes up the top row of the gradient
+and then the partial derivative of the
+second function.
+So the partial derivative of y of s t with
+respect to s and then with respect to t.
+So that becomes the second row of my
+gradient.
+So it's a two by two array containing all
+of the first order partial derivatives of
+a vector-valued function.
+So then, the two-variable equivalent of
+this operation here
+is going to be dx dy equals and I take the
+sort of the diagonals of this matrix.
+So, I'm going to take the main diagonal
+which
+is this direction and then subtract the
+other diagonal.
+So it's the product of the main diagonal
+minus the
+product of the other diagonal so that's
+just dx ds
+dy dt.
+So, dx ds and dy dt so main diagonal
+and then minus the product of the other
+two terms.
+So that's this thing in the, the square
+brackets here.
+And I'm going to take the absolute value
+of that times ds dt.
+And that's going to be, if I, if I
+multiply, so when
+I, when I make the change of variables so
+I replace f of x, y with f of
+x of s, t, y of s, t then I have to
+replace the dx dy with
+this thing on the right-hand side.
+And then those two integrals are still
+going to evaluate to the same real value.
+And so then this quantity inside the
+square brackets here, this is called
+the Jacobian of the change of variables or
+the Jacobian of the transformation.
+And so that gives me this 2 dimensional
+change of variables formula.
+So my original integral was an integral
+over a domain D, a double integral over a
+domain d of f of x, y dx dy.
+And then I can change that into a double
+integral over a domain omega,
+which is the, the same domain but
+expressed in terms of s and
+t rather than in terms of x and y.
+Then, I'm going to evaluate my function at
+x of s, t
+and y of s, t multiplied by the absolute
+value of the
+Jacobian and then I can put ds dt here
+rather than dx
+dy I want to evaluate these two integrals,
+I'll get the same number.
+So, let's look at the example.
+So here, I have my
+domain is my diamond again so this is
+absolute value of x
+plus absolute value of y, it has to be
+less than or equal to 1.
+And I want to do the, the same integral
+over again.
+And so, this is what I did last time.
+And so I'd, I'd integrated first with
+respect to y and then with respect to x.
+And so now, I'm going to consider changing
+variables.
+So instead of using x and y, I want to use
+s and t and I'm going to define s
+and t so that s is equal to x plus y and t
+is equal to x minus y.
+And then remember, I need to calculate
+this Jacobian and also, well, in this
+particular case, one doesn't depend too
+much on the particular values of x and y.
+But I'm going to need, in general, for a
+function of x and y, I need to know what x
+and are in terms of s and t so I have to
+first solve for x and y.
+So just a, a little bit of Algebra
+and substitution will get you to these two
+formulas.
+Then I can compute the partial derivatives
+of
+all of these so everything is 1 half
+except
+for dy dt, which is going to be negative 1
+half because it's a minus t here.
+And
+then I'll compute the Jacobian, so I have
+the dx ds
+dy dt so it's the product of the, the main
+diagonal.
+So that's 1 half times negative 1 half.
+So dx ds is 1 half dy dt negative 1 half.
+Then I'm going to subtract the product of
+the other two terms so 1 half and 1 half.
+So that gives me negative 1 4th minus
+1 4th, which is equal to negative 1 half.
+So the Jacobian of this particular
+transformation s equals x plus y and t
+equals x minus y is negative 1 half.
+And then I can plug that into my original
+integral.
+So my original integral was f of x, y
+equals 1 over the domain D.
+Then I can rewrite that as double integral
+over a domain omega of
+1 times the absolute value of the Jacobian
+times ds dt.
+And so the Jacobian was equal to negative
+1 half.
+The absolute
+value of the Jacobian will be positive 1
+half.
+So, this gives me the double integral over
+omega of 1 half ds dt.
+So that's the easy part.
+The tricky part now is what is this new
+domain omega.
+So I'm looking for values of s and t that
+describe this diamond.
+And these are the two functions I have.
+So I have t is equal to x minus y and I
+have s is equal to x plus y.
+And so if I just, right now I'm going to
+pretend they're 0 so t is 0 and s is 0.
+And that just gets me y equals x, which is
+this line here through the origin.
+And x plus y or y equals minus x,
+so that's just this line here through the
+origin again.
+So I have a line through the origin with
+slope
+1 and a line through the origin with slope
+minus 1.
+And now let's look at s equals x plus y
+first.
+So what's going to happen is I take
+different values of s.
+So in this, in this picture,
+s is just going to be the y-intercept.
+So by using larger values of
+s, I'm just going to move this line up.
+But the slope will stay the same.
+And if I take negative values of s, that's
+just going to move this line down.
+But the slope is still going to be the
+same because nothing's
+changing on the right-hand side, which is
+where the slope is determined.
+And so if I want to cover this entire
+rectangle with
+s equals x plus y, I would want to go from
+sort
+of the, the line here, the x plus y line
+that
+gives me this side of the rectangle up to
+the x
+plus y line that gives me this side of the
+rectangle.
+And so that's going to correspond to the
+y-intercept of this line here
+is negative 1 and the y- intercept of this
+line here is positive 1.
+So s can range between negative 1 and
+positive 1, and that just shifts this line
+here
+from this lower left edge of the diamond
+up to the upper right edge of the diamond.
+And then the same thing is going to happen
+with t equals x minus y.
+I want to go from negative 1 which will be
+this lower right side of the
+diamond up to positive 1 which will be the
+upper right side of the diamond.
+So the limit on
+s and t are going to be minus 1 and
+positive 1 for both variables.
+So that gives me my domain of integration.
+So it's now, I have taken this diamond
+shape
+in the original, in the original integral
+and turned it
+into a rectangle, in this, in this case a
+square so it'll be easier to to do the
+integration.
+And so this is what I had the first time
+so I had to split the integral up into two
+parts.
+But if I decide to integrate in my, with
+my change of variables now, I have an
+integral over omega of just 1 half ds dt
+but I can replace that.
+So, I can use Fubini's Theorem again with
+ds
+and dt just like I could with dx and dy.
+So, I could replace this dA with ds dt and
+now it's going to be a lot easier because
+the, the integrals for, sorry, limits for
+s so the inside integral, they don't
+depend anymore on, on t.
+So here, I can just do this as a, a single
+integration problem.
+And so just conceptually, what I'm going
+to do is integrate 1 half over
+minus 1, 1, so that's a rectangle of width
+2 and height 1 half.
+So that's going to give me 1 dt.
+And now I'm trying to integrate 1 over the
+interval minus 1 to 1.
+So that's a rectangle of width 2 and
+height 1.
+So that just gives me 2 again.
+And so, well to me, doing it this way was
+a lot easier than doing it this way.
+And we got the same answer.
+So that's the idea of changing variables.
+So the, the reason, let me make sure I
+don't have another slide there, yeah.
+So the reason you would want to change
+variables are a, it's going to make
+the integrand something that's easier to
+integrate
+or it's going to make the domain
+something.
+So if you can turn a odd shaped domain
+into
+a rectangle, that's going to make the
+integration problem easier.
+Or if you can,
+by this change of variables, use the
+Jacobian to introduce something
+that you could then use in a, in a
+substitution method.
+you know, if you, if you want to use the
+Chain Rule backwards you need the
+derivative of your transformation.
+And so sometimes you can use the, the
+Jacobian to introduce that derivative of
+your transformation and give your, give
+yourself
+an integrand that's easier to work with.
+

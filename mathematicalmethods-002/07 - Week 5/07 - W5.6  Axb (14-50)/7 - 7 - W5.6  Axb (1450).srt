@@ -1,0 +1,1039 @@
+1
+00:00:00,950 --> 00:00:06,320
+Last time, I talked about elimination and
+then I wanted to be able to do that
+
+2
+00:00:06,320 --> 00:00:11,320
+using matrices and I used that to motivate
+my rule for matrix multiplication.
+
+3
+00:00:12,860 --> 00:00:15,890
+And now, I want to sort of try and put
+everything together.
+
+4
+00:00:15,890 --> 00:00:19,519
+So really what we did in Topics 3, 4, and
+5.
+
+5
+00:00:19,519 --> 00:00:26,360
+And I have one specific example of trying
+to solve this problem Ax equals b.
+
+6
+00:00:26,360 --> 00:00:32,665
+So I have a, a square matrix A, an unknown
+vector x, and a right-hand side b.
+
+7
+00:00:35,490 --> 00:00:38,490
+So where this comes from is a system of
+equations.
+
+8
+00:00:38,490 --> 00:00:42,410
+So I want to try and solve this system of
+equations on the left here.
+
+9
+00:00:42,410 --> 00:00:46,570
+So, 2x1 plus 4x2 minus 2x3 equals 2, and
+so
+
+10
+00:00:49,960 --> 00:00:50,200
+on.
+
+11
+00:00:50,200 --> 00:00:54,870
+And I'm going to start by first writing
+this out in matrix notation.
+
+12
+00:00:54,870 --> 00:00:59,920
+So I have, just, so what I'm going to do
+is something kind of
+
+13
+00:00:59,920 --> 00:01:03,161
+like the idea of place value when I, when
+I want to write down a number.
+
+14
+00:01:03,161 --> 00:01:06,689
+Just where these numbers are tells you a
+lot about what they means.
+
+15
+00:01:06,689 --> 00:01:10,532
+So, for instance, I don't need to have
+the, the variables x3 in here anymore.
+
+16
+00:01:10,532 --> 00:01:12,737
+Because I know if I write it organized
+like
+
+17
+00:01:12,737 --> 00:01:15,131
+this, where the third variable is always
+in the
+
+18
+00:01:15,131 --> 00:01:17,525
+third column, the second variable is
+always in
+
+19
+00:01:17,525 --> 00:01:20,171
+the second column, first variable's always
+in the
+
+20
+00:01:20,171 --> 00:01:23,994
+first column then it's clear what each of
+
+21
+00:01:23,994 --> 00:01:28,930
+these numbers means without having the
+little x there.
+
+22
+00:01:28,930 --> 00:01:32,870
+So all that's important are the
+coefficients
+
+23
+00:01:32,870 --> 00:01:34,900
+and, and then these pluses and minuses
+
+24
+00:01:34,900 --> 00:01:37,960
+are just going to show up as the sign of
+the number in the matrix.
+
+25
+00:01:38,980 --> 00:01:40,300
+So I can represent this thing
+
+26
+00:01:40,300 --> 00:01:45,100
+here as a coefficient matrix times this
+unknown vector
+
+27
+00:01:45,100 --> 00:01:48,450
+x, that components of x are x1, x2, x3.
+
+28
+00:01:50,190 --> 00:01:52,840
+And then I'm going to take the equalities,
+
+29
+00:01:52,840 --> 00:01:55,700
+so the numbers on the right-hand side
+here,
+
+30
+00:01:55,700 --> 00:01:58,560
+and put those in a vector and put that on
+the right-hand side over here.
+
+31
+00:01:58,560 --> 00:01:59,870
+So that becomes my vector B.
+
+32
+00:02:02,910 --> 00:02:02,910
+[COUGH]
+
+33
+00:02:02,910 --> 00:02:03,410
+And
+
+34
+00:02:05,750 --> 00:02:08,880
+now I want to be able to do elimination.
+
+35
+00:02:08,880 --> 00:02:11,700
+I don't want to have to be carrying two
+things all the time.
+
+36
+00:02:11,700 --> 00:02:14,700
+So really what I'm trying to do is
+introduce
+
+37
+00:02:14,700 --> 00:02:18,290
+zeros in these elements that are below the
+diagonal.
+
+38
+00:02:20,050 --> 00:02:23,200
+But I also need to be, and, and I want to
+do
+
+39
+00:02:23,200 --> 00:02:27,760
+that by adding and subtracting multiples
+of one row from another.
+
+40
+00:02:31,101 --> 00:02:33,609
+But I also have to keep in mind that every
+time I do one
+
+41
+00:02:33,609 --> 00:02:37,530
+of those steps, that's going to have some
+effect on this right-hand side as well.
+
+42
+00:02:37,530 --> 00:02:41,870
+So one approach to dealing with that is I
+can make something called an augmented
+
+43
+00:02:41,870 --> 00:02:47,910
+matrix and I'll call that A with a little
+prime next to it, so A prime.
+
+44
+00:02:47,910 --> 00:02:51,140
+It's nothing to do with the derivative,
+it's just to distinguish it from A.
+
+45
+00:02:52,700 --> 00:02:56,510
+And that's going to be the matrix formed
+by taking the coefficient
+
+46
+00:02:56,510 --> 00:03:01,160
+matrix and binding this right-hand side
+vector b to it.
+
+47
+00:03:02,500 --> 00:03:03,720
+And so that just looks like this.
+
+48
+00:03:03,720 --> 00:03:07,730
+And so this is really all I need when I
+want to do elimination.
+
+49
+00:03:07,730 --> 00:03:12,200
+I don't need these xs anymore because just
+the position of these numbers
+
+50
+00:03:12,200 --> 00:03:17,100
+in the matrix tells me what equation and
+what variable they correspond to.
+
+51
+00:03:18,920 --> 00:03:21,670
+And now I'm going to do elimination on
+this
+
+52
+00:03:21,670 --> 00:03:24,480
+augmented matrix, A prime and see if
+
+53
+00:03:24,480 --> 00:03:27,640
+I can't solve this system of linear
+equations.
+
+54
+00:03:30,130 --> 00:03:33,872
+And so, the strategy that I'm going to
+use, I want to do elimination and
+
+55
+00:03:33,872 --> 00:03:37,120
+I want to design each of my elimination
+
+56
+00:03:37,120 --> 00:03:40,510
+steps to introduce the 0 below the
+diagonal.
+
+57
+00:03:40,510 --> 00:03:46,640
+So to get this into upper triangular form,
+the diagonal elements, so it gets a
+
+58
+00:03:46,640 --> 00:03:48,030
+little bit trickier now when I have a
+
+59
+00:03:48,030 --> 00:03:51,990
+rectangular, a non-square matrix, what
+does diagonal mean?
+
+60
+00:03:51,990 --> 00:03:55,380
+Because I would sort of think it should go
+from top left to bottom right
+
+61
+00:03:55,380 --> 00:03:57,990
+but then it's going to miss a whole bunch
+of stuff.
+
+62
+00:03:57,990 --> 00:03:59,760
+So, the diagonal elements of a matrix
+
+63
+00:03:59,760 --> 00:04:03,220
+are always the elements where the indices
+match.
+
+64
+00:04:03,220 --> 00:04:07,690
+So, this is the first row and the first
+column, this is the second
+
+65
+00:04:07,690 --> 00:04:11,290
+row and the second column, and this is the
+third row and the third column.
+
+66
+00:04:11,290 --> 00:04:15,340
+So that's the diagonal regardless how many
+columns and rows the matrix has.
+
+67
+00:04:15,340 --> 00:04:15,840
+And
+
+68
+00:04:17,620 --> 00:04:22,980
+what I want to do is choose pivots and and
+then
+
+69
+00:04:22,980 --> 00:04:29,080
+elimination steps to introduce the zero
+here, then here, and then here.
+
+70
+00:04:29,080 --> 00:04:31,660
+And then once I have this in as an upper
+triangular
+
+71
+00:04:31,660 --> 00:04:36,220
+system, I can use the back substitution
+algorithm to solve this easily.
+
+72
+00:04:42,070 --> 00:04:44,270
+And this time, I, I want to do this with
+matrices.
+
+73
+00:04:44,270 --> 00:04:47,820
+So I'm going to sort of go through this in
+all of its gory detail just
+
+74
+00:04:47,820 --> 00:04:52,190
+one time and hopefully it should be clear
+what this algorithm is trying to do.
+
+75
+00:04:54,130 --> 00:04:57,740
+So I start out with my matrix A prime.
+
+76
+00:04:57,740 --> 00:04:59,103
+I guess I should highlight it down here.
+
+77
+00:04:59,103 --> 00:05:02,161
+I have my matrix A prime here and I want
+to
+
+78
+00:05:02,161 --> 00:05:06,820
+introduce, I want to find a pivot in the
+first row.
+
+79
+00:05:06,820 --> 00:05:09,400
+So that's going to be the, the definition
+of a
+
+80
+00:05:09,400 --> 00:05:12,896
+pivot is the first non-zero value in a
+row.
+
+81
+00:05:12,896 --> 00:05:15,660
+So if I, I start with the first row, if
+this
+
+82
+00:05:15,660 --> 00:05:18,460
+value is not zero then that's going to be
+my pivot.
+
+83
+00:05:18,460 --> 00:05:23,550
+In this case, it's a two, it's not zero so
+I choose it as my pivot and I make it red.
+
+84
+00:05:25,240 --> 00:05:31,960
+Then I'm going to design an elimination
+matrix that subtracts twice the first
+
+85
+00:05:31,960 --> 00:05:34,000
+row from the second row.
+
+86
+00:05:36,980 --> 00:05:41,500
+So in the case, what I, what I look at is
+my pivot is 2.
+
+87
+00:05:41,500 --> 00:05:46,650
+This is the row doing the elimination,
+this is the value I want to eliminate.
+
+88
+00:05:46,650 --> 00:05:51,030
+So my multiplier was this 4 divided by the
+pivot so I get
+
+89
+00:05:51,030 --> 00:05:55,340
+a multiplier of 2.
+And then an elimination matrix says, I
+
+90
+00:05:55,340 --> 00:06:02,040
+have to take an identity matrix and then
+the 1, the, the correct index below
+
+91
+00:06:02,040 --> 00:06:03,900
+it, so in this case, 2 1.
+
+92
+00:06:03,900 --> 00:06:06,710
+I take minus the multiplier and I put that
+in there.
+
+93
+00:06:10,440 --> 00:06:12,020
+And we know what this is suppose to do.
+
+94
+00:06:12,020 --> 00:06:15,820
+This is suppose to subtract twice the
+first row from the second.
+
+95
+00:06:15,820 --> 00:06:19,310
+So if you see what I ended up with over
+here, the first row stays the same
+
+96
+00:06:21,360 --> 00:06:26,420
+and then the second row, I have 4 minus 2,
+that's going to be equal to 0.
+
+97
+00:06:26,420 --> 00:06:28,190
+And you always know you're going to get a
+
+98
+00:06:28,190 --> 00:06:30,400
+0 here because that's how you're choosing
+the multiplier.
+
+99
+00:06:30,400 --> 00:06:34,450
+I'm choosing my multiplier specifically to
+make this one number 0.
+
+100
+00:06:34,450 --> 00:06:37,780
+And then I have to sort of suffer the
+
+101
+00:06:37,780 --> 00:06:40,850
+consequences of that decision with the
+rest of the matrix.
+
+102
+00:06:42,320 --> 00:06:46,570
+So, this 9, I'm taking this row minus
+twice
+
+103
+00:06:46,570 --> 00:06:47,200
+the first row.
+
+104
+00:06:47,200 --> 00:06:53,540
+So it'll be 9 minus 2 times 4, 9 minus 8
+and that'll give me a 1.
+
+105
+00:06:53,540 --> 00:06:57,180
+Then a negative 3 minus 2 times negative
+2, so it
+
+106
+00:06:57,180 --> 00:06:59,740
+gets a little tricky when you have minus
+signs in here.
+
+107
+00:07:00,820 --> 00:07:05,190
+that's actually going to be minus 3 plus 4
+so I end up with a 1 in this position.
+
+108
+00:07:06,830 --> 00:07:12,790
+And then, 8 minus 2 times 2 gives me 4.
+So that's my first elimination step.
+
+109
+00:07:12,790 --> 00:07:16,765
+And it was represented by this matrix E1.
+
+110
+00:07:16,765 --> 00:07:21,970
+And this isn't a, a standard notation,
+it's just something I kind of made up
+
+111
+00:07:21,970 --> 00:07:27,480
+because this was getting a bit too
+complicated to, to keep following through.
+
+112
+00:07:27,480 --> 00:07:33,400
+But essentially what I'm trying to do is I
+have my first elimination matrix,
+
+113
+00:07:33,400 --> 00:07:38,100
+well, operate on my original augmented
+matrix and
+
+114
+00:07:38,100 --> 00:07:39,310
+give me this matrix A1.
+
+115
+00:07:41,110 --> 00:07:45,940
+So this is A1 on the right over here and
+it's got this 0 where I wanted it.
+
+116
+00:07:46,970 --> 00:07:48,810
+And then what I want to do is now come up
+with
+
+117
+00:07:48,810 --> 00:07:54,330
+an elimination matrix E2 that's going to
+turn this value into a 0.
+
+118
+00:07:54,330 --> 00:08:03,321
+So let's see how I do that.
+So, I look at my matrix A1, oops, my pivot
+
+119
+00:08:03,321 --> 00:08:09,030
+is still a 2 and the number I want to get
+
+120
+00:08:09,030 --> 00:08:14,730
+rid of is a negative 2 so I want to, I
+have a multiplier of negative 1.
+
+121
+00:08:14,730 --> 00:08:17,860
+And that means I actually end up adding
+the third
+
+122
+00:08:17,860 --> 00:08:20,720
+row sorry, adding the first row to the
+third row.
+
+123
+00:08:20,720 --> 00:08:24,000
+So in the elimination matrix, this ends up
+being positive this time.
+
+124
+00:08:26,270 --> 00:08:30,280
+And then I can either think of this as an
+elimination step, like I did last time
+
+125
+00:08:31,330 --> 00:08:35,480
+or I could just, well, I probably wouldn't
+do it, I'd just use a computer to do it.
+
+126
+00:08:35,480 --> 00:08:42,580
+But you could just do the matrix
+multiplication E2 times A1 and that's
+
+127
+00:08:42,580 --> 00:08:46,820
+going to give you this matrix that I've
+called A2 on the right hand over here.
+
+128
+00:08:46,820 --> 00:08:49,760
+And it has exactly what I wanted to
+happen.
+
+129
+00:08:49,760 --> 00:08:52,840
+So I, I had this 0 here already and
+
+130
+00:08:52,840 --> 00:08:56,060
+now I've constructed an elimination to
+give me a 0 here.
+
+131
+00:08:58,380 --> 00:09:00,910
+And to get this into upper triangular
+form, the last thing
+
+132
+00:09:00,910 --> 00:09:03,130
+I need to do is get rid of this one here.
+
+133
+00:09:04,870 --> 00:09:07,400
+And so, I've already sort of used up this
+
+134
+00:09:07,400 --> 00:09:11,800
+pivot, this 2 here because everything
+below it is 0.
+
+135
+00:09:11,800 --> 00:09:15,180
+So sort of, I'm happy with this column.
+
+136
+00:09:15,180 --> 00:09:19,960
+So I'm going to switch to the next row and
+in
+
+137
+00:09:19,960 --> 00:09:22,340
+the second position, so the first number
+is a 0.
+
+138
+00:09:22,340 --> 00:09:23,790
+So my definition of a pivot
+
+139
+00:09:23,790 --> 00:09:27,500
+says first non-zero number in the row is
+going to be the pivot.
+
+140
+00:09:27,500 --> 00:09:29,540
+So now, it's this 1 that's going to be the
+pivot.
+
+141
+00:09:34,090 --> 00:09:35,620
+So I want to find the pivot in the
+
+142
+00:09:35,620 --> 00:09:38,308
+second row and then eliminate the values
+below it.
+
+143
+00:09:38,308 --> 00:09:41,040
+So introduce zeros, so if I introduce a
+
+144
+00:09:41,040 --> 00:09:43,400
+zero below this one, then I'll be
+finished.
+
+145
+00:09:43,400 --> 00:09:45,180
+The matrix will be an upper triangular
+
+146
+00:09:45,180 --> 00:09:47,150
+form, so it'll be an upper triangular
+system.
+
+147
+00:09:50,380 --> 00:09:53,400
+So I'm going to do that with an
+elimination matrix E3, 2.
+
+148
+00:09:53,400 --> 00:09:56,740
+And this has a multiplier of 1, that's
+
+149
+00:09:56,740 --> 00:09:58,850
+pretty easy because it's just 1 divided by
+1.
+
+150
+00:09:58,850 --> 00:10:03,950
+And that says my elimination matrix, so
+note that the 3, 2 here is
+
+151
+00:10:03,950 --> 00:10:09,880
+telling me what position to put this
+multiplier in.
+
+152
+00:10:09,880 --> 00:10:12,530
+And then the, because it's an elimination
+matrix I
+
+153
+00:10:12,530 --> 00:10:16,070
+want to subtract so that's going to be
+minus
+
+154
+00:10:16,070 --> 00:10:19,590
+the multiplier goes into the 3, 2 element
+
+155
+00:10:19,590 --> 00:10:23,460
+and otherwise this matrix is just an
+identity matrix.
+
+156
+00:10:27,580 --> 00:10:33,390
+So this matrix says I should subtract the
+second row from the third row.
+
+157
+00:10:35,350 --> 00:10:37,740
+And so I can then either think of this as
+an elimination
+
+158
+00:10:37,740 --> 00:10:42,040
+step or I can just do the matrix
+multiplication E3 times A2.
+
+159
+00:10:42,040 --> 00:10:46,217
+And that's going to give me my a, matrix
+
+160
+00:10:46,217 --> 00:10:49,130
+A3 and it's done exactly what I wanted
+again.
+
+161
+00:10:49,130 --> 00:10:53,230
+So, this was a 1, I've eliminated it with
+this elimination
+
+162
+00:10:53,230 --> 00:10:57,870
+matrix E3 and gotten myself in upper
+triangular matrix.
+
+163
+00:11:00,360 --> 00:11:05,770
+And then just to be complete, so I, I
+picked this two in the first row, as
+
+164
+00:11:05,770 --> 00:11:10,180
+my first pivot.
+Once I'd eliminated the 0 eliminated the
+
+165
+00:11:10,180 --> 00:11:16,900
+numbers below it, then I picked this
+element that became my second pivot.
+
+166
+00:11:16,900 --> 00:11:19,980
+And even though there's still, there's
+nothing left to do,
+
+167
+00:11:19,980 --> 00:11:23,780
+there still is a pivot in the third row as
+well.
+
+168
+00:11:23,780 --> 00:11:26,010
+So it's just the first non-zero number
+
+169
+00:11:26,010 --> 00:11:27,310
+in the row becomes the pivot.
+
+170
+00:11:29,950 --> 00:11:34,530
+And so in this, in this case, we had three
+rows and each row has
+
+171
+00:11:34,530 --> 00:11:38,300
+a pivot but I'll, I'll mention a little
+bit later that's not always the case.
+
+172
+00:11:40,780 --> 00:11:45,990
+So now, it's easy to use back substitution
+to solve for the values of x1, x2, and
+
+173
+00:11:45,990 --> 00:11:51,650
+x3.
+So here, this just means 4x3, so it's
+
+174
+00:11:51,650 --> 00:11:55,800
+in the, it's in the 4th, sorry, the 3rd
+column, the column that corresponds to x3.
+
+175
+00:11:55,800 --> 00:12:02,140
+And then it's equal to 8 because this 8
+over here is the, the vector I sort of
+
+176
+00:12:02,140 --> 00:12:05,980
+bound on when I made the augmented matrix.
+So that tells me x3
+
+177
+00:12:05,980 --> 00:12:07,285
+has to be equal to 2.
+
+178
+00:12:09,780 --> 00:12:15,650
+Then my second row tells me x2 plus x3 has
+to be equal to 4.
+
+179
+00:12:15,650 --> 00:12:21,120
+So I already know what x3 is so I plug
+that in and then
+
+180
+00:12:21,120 --> 00:12:26,780
+solve for x2, and that tells me that x2 is
+also equal to 2.
+
+181
+00:12:26,780 --> 00:12:30,330
+And then my top row tells me that 2x1 plus
+
+182
+00:12:30,330 --> 00:12:34,224
+4x2 minus 2x3 has to be equal to 2 as
+well.
+
+183
+00:12:34,224 --> 00:12:34,224
+[COUGH]
+
+184
+00:12:34,224 --> 00:12:40,270
+But I know x2 and x3 so I'll plug those
+values in,
+
+185
+00:12:40,270 --> 00:12:44,185
+and then I find x1 has to be equal to
+negative 1.
+
+186
+00:12:49,260 --> 00:12:52,564
+And so the solution x is equal to minus 1,
+
+187
+00:12:52,564 --> 00:12:55,470
+2, 2 so this is why it's called back
+substitution.
+
+188
+00:12:55,470 --> 00:12:57,390
+If you notice, I ended up with this things
+in
+
+189
+00:12:57,390 --> 00:13:00,923
+the backwards order so I got 3 then 2 then
+1.
+
+190
+00:13:02,230 --> 00:13:09,560
+So the solution is x is the, the column
+vector minus 1, 2, 2 and that solves
+
+191
+00:13:09,560 --> 00:13:14,350
+also the original system Ax equals b.
+And then there's two
+
+192
+00:13:14,350 --> 00:13:19,320
+caveats and since I'm just trying to do a
+quick overview of, of
+
+193
+00:13:19,320 --> 00:13:22,679
+Linear Algebra here, I'm not going to go
+into these kind of corner cases.
+
+194
+00:13:24,150 --> 00:13:26,130
+But suppose when I started doing
+
+195
+00:13:26,130 --> 00:13:28,640
+elimination, I could still have a
+perfectly
+
+196
+00:13:28,640 --> 00:13:33,564
+valid equation that just happened to have
+a 0 on the x1 coefficient.
+
+197
+00:13:34,750 --> 00:13:36,940
+And in that case, this two here would've
+been
+
+198
+00:13:36,940 --> 00:13:39,490
+a zero and I couldn't have used that value
+
+199
+00:13:39,490 --> 00:13:42,980
+as a pivot because I have to divide by my
+pivot and obviously, I'm
+
+200
+00:13:42,980 --> 00:13:45,625
+not going to be able to get anywhere if I
+have to divide by a 0.
+
+201
+00:13:45,625 --> 00:13:49,810
+So sometimes, you know, there's no
+particular
+
+202
+00:13:49,810 --> 00:13:51,680
+reason why the columns have to be in
+
+203
+00:13:51,680 --> 00:13:57,430
+any particular order or sorry, why the
+rows have to be in any particular order.
+
+204
+00:13:57,430 --> 00:14:01,260
+So you can move the rows around to get
+yourself out of
+
+205
+00:14:01,260 --> 00:14:04,630
+this problem, so you would just pick a row
+that has a non-zero
+
+206
+00:14:04,630 --> 00:14:07,456
+value here and use that as the first
+pivot.
+
+207
+00:14:07,456 --> 00:14:10,740
+And so that's called making a row swap.
+
+208
+00:14:10,740 --> 00:14:13,610
+So sometimes you have to swap rows during
+elimination.
+
+209
+00:14:15,950 --> 00:14:18,580
+And then the other thing is sometimes
+there
+
+210
+00:14:18,580 --> 00:14:20,780
+will be zeros that you can't get rid of.
+
+211
+00:14:20,780 --> 00:14:22,890
+You need a pivot and there's only zeros.
+
+212
+00:14:24,180 --> 00:14:27,360
+so for instance, if you had a row that was
+all zeros that would have
+
+213
+00:14:27,360 --> 00:14:31,097
+no pivot in it and in that case, you say
+that the system is singular.
+
+214
+00:14:31,097 --> 00:14:35,650
+And so either you will have an infinite
+number of solutions so
+
+215
+00:14:35,650 --> 00:14:39,330
+that would, you could imagine just two
+equations for the same line.
+
+216
+00:14:39,330 --> 00:14:41,700
+So one row is just a, a multiple
+
+217
+00:14:41,700 --> 00:14:46,320
+of the other or you could have something
+like 0 times
+
+218
+00:14:46,320 --> 00:14:49,700
+y has to equal 4, in which case, there's
+no solution.
+

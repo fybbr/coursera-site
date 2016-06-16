@@ -1,0 +1,374 @@
+This'll be the second half of my lectures
+on integration.
+So last time we just talked a little bit
+about
+what integration was, the problem it was
+trying to solve.
+we talked about the fundamental theorem of
+calculus, which
+is a tool that lets us actually evaluate
+definite integrals.
+one over a little bit of application of
+integrals and then I started talking about
+techniques
+of integration.
+So I cover something called integration by
+parts which was just the product all
+backwards and then something called
+integration by
+substitution or the substitution method
+which was
+just the general kind of running backwards
+Today I'm going to do one more technique
+of integration called completing the
+square for
+those of you who are taking 461.
+You're going to use this when we try to
+transform a normal distribution into
+something called the log normal
+distribution.
+And then I'm going to talk about
+differentiating definite integrals so a
+function can
+have, could be defined with integral and
+having the variable in the limit.
+So in that case you n actually think of
+that as a, a function you can
+[INAUDIBLE]
+the derivative off.
+I'll talk about improper integrals so
+these are either integrals of functions
+that take infinite values in either the x
+or, or y direction.
+And the, differentiating improper
+integrals.
+Okay, So, I'm going to get started with my
+completing the square.
+And I'll, I'll introduce this just by
+trying
+to remind everybody of something called
+the Quadratic Formula.
+And so, a quadratic function.
+Is just a function, it's a polynomial of
+degree two, so it's a times x
+squared plus b times x plus c, or a b and
+c are real valued constants.
+And we have to add the extra condition
+that a is not equal to zero.
+Because if it were equal to zero this
+would just be a linear function, bx plus
+c.
+And suppose I'm interested in finding the
+value or values
+of x that make my quadratic function equal
+to zero.
+I think everybody remembers from high
+school algebra the
+quadratic formula, so it's x is equal to
+minus b plus or minus
+the square root of b squared minus 4 ac
+all over 2 a, and that's
+going to give you the, the values of x
+that will make this function be equal to
+zero.
+And the way we actually come up with this
+formula is the same technique
+that we will use in integration for
+completing the square.
+So suppose I want to solve my quadratic
+function, I use
+this notation to say I'm setting it equal
+to zero so its
+not defined to be equal to zero, its me
+I'm choosing a certain level and now
+once I've done that these x's aren't
+vairable anymore, they are sort of
+fixed numbers.
+And I want to find out what they are.
+So the first thing I'm going to do is just
+divide every term by a.
+So I multiply both sides of this by one
+over a,
+and I'm allowed to do that because one of
+my conditions
+on my quadratic function was the a is not
+equal to zero.
+So as long as a is not equal to zero, I
+can divide by a.
+And so I get this new form.
+So it doesn't look too exciting yet.
+And then what I'm going to try and do.
+So this is sort of the, the meat and
+potatoes of completing the square.
+I want to add zero to this.
+But I want to choose a particularly
+smart choice of zero.
+So I'm going to, first of all,
+write b over a as 2 times b over 2 a.
+So, that should be still b over a.
+And then I want to add something here, and
+I want to subtract something over here.
+And I want to choose the thing that I'm
+going to add over here.
+So that the first
+three terms can be written as x plus
+something squared.
+So lets just look really quickly at, what
+I would want to have so that the
+something is going to be b over 2 a and so
+if I look at x plus b over 2 a squared.
+Well on the first term.
+So I I use a trick to remind myself called
+foil, which is first,
+outer, inner, last.
+So the first two terms are going to be x
+times x, which gives me x squared.
+And then I'm going to have outer, so x
+times b over 2 a.
+And then inner, b over 2 a times x so
+that's why I get two of these guys.
+And then last will just be the last term
+squared.
+So this is what I'm going to choose for my
+blank here.
+And so my intelligent value of 0 is going
+to be b
+squared over 4 a squared minus b squared
+over 4 a squared.
+So I'm going to, oops, stick that into
+these blanks here.
+And now these first three terms that I
+have here, I can
+replace that by x plus b over two a, that
+quantity squared.
+And I've done two things in this line, so
+I'm also going to
+move these last two terms to the other
+side of the equals sign.
+Oh, and, what, I must have done a little
+bit more here.
+Okay, I also multiplied the c over a by 4
+a over
+4 a so that's where this 4, oops 4 a c
+over a
+squared comes from what, what did I do.
+Think.
+And so then I'm going to take the square
+root of both sides, so I get x
+plus b over 2 a is equal to and, we're
+going to end up with two
+solutions now because, providing that this
+value here
+is greater than zero I'm going to end
+up with a positive value of the square
+root and a negative value of the square
+root.
+And then the rest of it is just isolating
+the x and making it look
+pretty so I'll just move the b over two a
+to the other side and then.
+A square root of a fraction, I can think
+of that as a square root
+of the top divided by the square root of
+the bottom so I'll just go
+ahead and do the square root of the bottom
+because 4 a squared has a
+nice square root and it also happens to
+be the same denominator as a half-up
+frontier.
+And so that gives me the Quadratic
+Formula, so X is equal
+to minus b plus or minus the square root
+of b squared minus 4 a c all over 2 a.
+So now let's look at I've sort of taken
+the important
+part out of the integral you're going to
+have to, to solve.
+In 461 when I ask you to find the expected
+value and the variance of a log normal
+random variable.
+So, I want to compute the integral from
+zero to infinity of e to the, so
+it's a minus fraction here, and then I
+have log of y minus Mu, that whole
+quantity squared Divided by two sigma
+squared.
+And here, mu and sigma are going to be
+real valued constants.
+you can think of them as just the
+mean and the standard deviation of a
+statistical distribution.
+So, I'm going to use my integration by
+substitution trick from, from last time.
+And this thing, the log of y minus mu,
+that
+looks like something I wouldn't be
+particularly happy to have.
+So I'd like to get rid of that and just
+replace it by a single value u.
+So if I do that then I can solve for y in
+terms
+of u, and I get e to the u times e to the
+mu.
+And then if I take the derivative of y, I
+just end up with
+y du, which is, I'll put that as my value
+of y, but in
+this particular case it's going to cancel
+out nicely.
+So now I make my substitution.
+So lat time I told you for definite
+integrals, I can also change the limits
+here.
+So this is going to be a case where
+probably
+be nicer if you the limits just into u.
+Rather than remember that this is u equals
+something, and
+then try and switch back to y at the end.
+And so it turns out if the mu doesn't
+really matter, since I'm going from zero
+to infinity.
+if I, if I have log of zero, that's
+going to be minus infinity.
+And if I have log of infinity, that's
+going to be plus infinity.
+So the limits on u are going to be minus
+infinity to infinity.
+And then I go ahead and substitute in
+everything
+that I worked out in the, the, second
+bullet-point here.
+And then replace
+My y by e to the u e to the Mu and
+now one of the, the nice things that's
+going to happen remember Mu is
+a constant so I can, that's just scaling
+my integral so one
+of my properties allows me to pull that
+outside of the integral sign.
+And so now I end up with e to the Mu, e to
+the Mu integral
+and I have e to some power of u times e to
+the u.
+So really whats going to end up happening
+here.
+If I have e to a power times e to a power
+I
+can also think of that as e to the sum of
+those two powers.
+So, I'm going to pause for a second and
+say take a look at the intergrand.
+So, inter-grand is just this thing.
+It's the function that I'm integrating.
+And so if I give them both a common
+denominator then I can go ahead and do the
+sum and now I'm starting to see something
+sort
+of like what I had, when I was looking
+at the completing the square when i was,
+so the same problem that
+I needed the solve when I wanted to solve
+a quadratic equation.
+And so here, it turns out that the,
+the intelligent value to add is
+sigma to the fourth and then I can
+write this in this form here.
+And
+this thing here is just going
+to be u minus sigma squared.
+So I have u minus.
+Sorry, not e minus sigma squared.
+I have to say that twice.
+So it's u minus sigma squared.
+And that
+whole quantity is squared as well so that
+if you, if you
+expanded this out you just get the thing
+that's in parentheses here.
+And so now I have, so here when I had Two
+functions raise to an exponent multiplied
+together so e to one
+power times e to another power I was able
+to add
+those powers together and just write it as
+a single exponential.
+And now I'm just going to do the same
+thing but backwards.
+So I'm integrating with respect to you.
+So that means this Sigma
+to the fourth over two sigma squared,
+that's just going to be a constant number.
+So I'm going to rewrite this as e to the
+minus quantity u minus sigma squared,
+squared divided by two sigma squared times
+e to the sigma squared over two.
+But now this is just another number that I
+could
+bring outside of my integral sign if I
+wanted to.
+So let's go back now that, now that I have
+this little intermediate result.
+And look at the function I'm trying to
+integrate again.
+So I can replace the inter-grand now with
+this function that I've this
+transformation of it that I've, so all
+I've done is taken what used to be there
+and replaced it with this value.
+And now I can also bring this, this part
+of the product out in
+front of the integral sign because it, it
+doesn't depend on you any more as,
+as far as I'm concerned its just a, a
+scalar quantity so I can write it like
+this.
+So now I have e to the Mu times sigma
+squared over 2.
+Integral from minus infinity to infinity.
+And then, sooner or later, you're going to
+learn to recognize this form.
+Here, I just had to make a hint.
+Sort of one of the problems with
+mathematics, it's all sort of intertwined.
+So when you try to put it in order, so
+that I can give them
+in sequential lectures, eventually you
+want to
+use something that you haven't talked
+about yet.
+And so I stuck that in a little gray box
+here.
+But it turns out that this integral, so if
+I have e
+to the u minus something, so it doesn't
+matter what number is there.
+In this particular case it happens to be
+sigma squared, which is
+the same value down here, but that's just
+because I was lucky.
+So if I have e to the minus, and then my
+variable u minus something, that quantity
+squared, divided by two sigma squared.
+This is something called the normal
+density function.
+if I integrate that from minus infinity to
+infinity,
+we get the square root of two pi sigma.
+And then so this is something in, in
+fourth week,
+we'll, we'll talk about how to actually
+evaluate this integral.
+But if I look back up here that's exactly
+the integral I have on
+the right hand side so I can just replace
+that with 2 pi sigma.
+So I end up with 2 pi sigma e to the u
+plus sigma squared over 2.
+So, that probably doesn't seem like the
+most useful example, until you get to
+the homework in 461, where you have to do
+this again for the first time.
+And then I think you'll find these two
+slides very, very useful.
+

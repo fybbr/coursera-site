@@ -1,0 +1,172 @@
+Compulsive deliberation is wasteful, in
+that it's computations are repeated
+unnecessarily.
+Once a player is able to find a path to a
+terminal state
+with maximum reward, he should not have to
+repeat that computation on every step.
+Sequential planning, which we're going to
+be seeing in this lesson,
+is the antithesis of compulsive
+deliberation,
+in which no work is repeated.
+Once a sequential planner finds a good
+path,
+it simply saves the sequence of actions
+along
+that path, and then executes those
+actions.
+Step by step until the game is done
+without any further deliberation.
+So, sequential planner's one that produces
+an optimal sequential plan usually during
+the
+start clock and then executesd the step of
+that plan during game play.
+Sequential planning has multiple benefits
+relative to compulsive deliberation.
+First of all, it's not as wasteful since
+it searches the game tree just once.
+The start clock's sufficiently long, the
+planning
+can be done entirely during the start
+clock.
+And after that, the execution time is very
+low, since all the player needs to do
+on a step is to look up the
+action for that step, without doing any
+search whatsoever.
+Note that although the planning is usually
+done during the start up
+period of the game, it can also be done
+during regular game play.
+And it's also possible to mix sequential
+planning with other techniques.
+For example in the case of large games, a
+player
+might randomly search during the initial
+part of the game.
+And then switch the sequential planning
+once the game
+tree becomes small enough to produce the
+sequential plan.
+Of course in the last case the player's
+abilities
+exceed depends in the strategy used before
+sequential planning begins.
+Okay, let's start our look at sequential
+planning with a couple of definitions.
+A sequential plan, for a single player
+game, is a sequence of actions that
+leads from the initial state of the game
+to a terminal state.
+Such that, every action in the sequence is
+legal in the state in which the action's
+performed.
+And 2, none of the intermediate states
+produced during the execution is terminal.
+The sequential plan's optimal if and only
+if
+no other sequential plan produces a
+greater final reward.
+Here are some examples of sequential plans
+for
+eight puzzle.
+Now, the first play prescribes a move to
+the right Followed by a
+move down, followed by another move to the
+right, and another move down.
+And this clearly leads to a state in which
+all the tiles
+are in their goal positions, and the empty
+cells in the lower right.
+And so the value for this stage is 100.
+However this is not the only plan that
+works.
+The player could also move right, move
+down, move left, move right,
+move right, move down, and arrive at the
+same state, after a couple more steps.
+Or, it could move right, down, left,
+right, left,
+right, right, and down to get there as
+well.
+Now agreed, these later two plans are
+longer than they need to be.
+but they're both optimal in that they
+produce a terminal state with the maximal
+value.
+By contrast, the sequential plan,
+right, left, right, left, right, left,
+right, left is not optimal.
+It leads to a terminal state since any
+plan with eight steps is terminal.
+However, the resulting reward is only 40
+points.
+And there are other plans that produce
+higher values.
+Implementation of sequential planner is,
+again, similar to that for
+a previous system, method that we've seen,
+namely compulsive deliberation.
+We set up a couple of additional global
+variables in this case.
+One to hold the plan, and the other to
+keep track of the current step.
+During the start clock, the player uses
+the
+best plan subroutine to produce a
+sequential plan.
+And has to reverse the plan, as we'll see
+since, best plan builds the plan backward.
+the plan's then stored in the plan
+variable,
+and the step counter is initialized to
+zero.
+Finally, the play handler in each step
+simply
+reads off the action corresponding to that
+step,
+updates the step counter, and returns the
+action for that step.
+Okay, so the workhorse of this is clearly
+the best plan subroutine.
+Not surprisingly it's an analogous to Mac
+Score.
+Takes a state as argument, but instead of
+returning a simple score, returns
+a pair consisting of a score and a plan to
+achieve that score.
+Alright, let's see how this works.
+As in Mac Score, first step is to check
+whether
+the state is terminal if so then the
+procedure simply computes
+the player's reward for that state, and
+returns that score paired with an empty
+plan.
+That is, an empty list of actions,
+otherwise it computes all legal actions
+for the specified state.
+It computes the next state corresponding
+to the first of these actions
+and computes the best score and best plan
+for that successor state.
+And
+it then searches the remaining possible
+actions to
+see if it can find a better one.
+For each it computes the next state, gets
+the best score and best plan for that
+state.
+And it compares the score to the best
+score it's seen so far.
+If the score is better, then it saves that
+score and the corresponding plan.
+Now with the action that got it there
+appended to the end.
+After all the actions are executed, best
+plan turns
+a pair of the best score and the best
+plan.
+

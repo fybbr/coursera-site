@@ -1,0 +1,406 @@
+So, I've just finish up with the eight set
+of lectures today.
+I finished the, the last one with this
+idea of
+using Lagrange Method, followed by
+Newton's Method to find the
+critical point, and so I'm basically just
+going to do two
+more examples of that with just slightly
+more complicated problems.
+So this one actually builds on one of the
+questions you just did for homework.
+So Homework 7, we asked, why was it
+difficult to find
+the critical points of the Lagrangian for
+the, this optimization problem?
+And so the, what made this one tricky is
+now, the objective function
+is linear, so it's just, you know,
+coefficient times x1, coefficient
+times x2, coefficient times x3,
+coefficient times x4.
+But the constraints are quadratic.
+So when I make the Lagrangian, I end up
+with this lambda 1 times something with
+quadratic terms in it, and lambda 2 times
+something with quadratic terms in it.
+And so, when I take the gradient of
+Lagrangian, these last two, the, the two
+elements of this vector that correspond to
+the, to the constraints that I put
+into the Lagrangian, they now have
+quadratic terms in them.
+So I, I can't write this as a linear
+system to solve,
+like I could when I was trying to do the
+minimum variance portfolio.
+And so, now I need to do this numerically,
+so I'm going to use Newton's Method to do
+this.
+And one sort of annoying thing that I, I
+found here is,
+for some reason, we decide to write the
+gradient as a row.
+But generally, when I talk about a
+function with, of n variables,
+into n variables, I want to think of that
+as a column vector.
+So I'm using this notation
+just to say, I'm taking the transpose of
+the gradient, and then I'm relabeling
+that G just so that I'm using the same
+notation that's in the textbook.
+And so, it's not very pretty, but I can
+write down the gradient of G.
+And so, all I'm doing here, I'm looking at
+the
+first element of my six valued function G,
+and I'm taking
+the derivative of this with each of the
+variables.
+So, the variables here are x1, x2, x3, x4,
+and then lambda 1 and then lambda 2.
+And then since I have six functions, and
+I'm taking six derivatives of each one,
+I'm going to get a 6 by 6 matrix.
+And this is the gradient of G.
+And because all of these functions are
+continuous, you can kind
+of also think of it as the Hessian of the
+Lagrangian.
+So I got, I got this vector here by taking
+derivatives of the Lagrangian, and
+then I got this gradient here by taking
+derivatives of this thing which was
+already a derivative.
+And so, in a sense these are second
+derivatives.
+But I'm trying to find where this function
+G of x lambda is equal to 0.
+So I, I don't want to think of this as a
+Hessian, I
+want to think of this as the gradient of G
+of x lambda.
+So I can make functions to compute these,
+they're not particularly pretty.
+But I made a function G and all it's
+doing is evaluating this function here.
+So you can see, the first element
+is just going to be 3 plus 6 times lambda
+2, times x1, it's one way.
+And so the first element of this function
+is just 3, oops plus 6.
+And now, I'm going to treat this as a
+function of just one variable, x.
+So x is a vector with six elements.
+So you
+just have to kind of remember, that the
+first four of them correspond to the
+x up here, and the elements five and six
+correspond to lambda 1 and lambda 2.
+So x6 is referring to this x here.
+x6 is lambda 2.
+And then x1 is actually x1.
+And so, then I have the second element,
+third element, fourth element,
+so on, fifth element, sixth element.
+And all this function is doing is just
+computing these six values,
+and then it's using this R function,
+little c, that concatenates them together.
+So it's just going to return a vector of
+these six values.
+And then similarly, it's even less pretty,
+but
+I can take, so this big matrix down here.
+Thankfully, it's got a lot of 0's in it
+which makes it a bit easier to fill in.
+So, what I'm going to do to write an R
+function for that, I, I'm going to
+call my function DG, so it's for the
+gradient of the specter value function G.
+It's also going to be a function of the
+same six values that were
+up here in the function G.
+So this is a vector with six elements.
+The first four correspond to x1, x2, x3,
+x4 from G.
+And then element five and six are lambda 1
+and 2 again.
+And the way it's going to work, I make
+a matrix called grad using the matrix
+function.
+So the syntax here is, this is the value
+that goes into the
+matrix, and then the second argument is
+the number of
+rose, and the third argument is the number
+of columns.
+So this command is going to make a 6 by 6
+matrix that has only 0's in it.
+And I'm just going to go row by row
+through it.
+I don't know if this was the best way to
+do it, but
+it was the easiest way to make the
+function fit on the slide.
+And so, I'm just replacing.
+So in the first
+instance, row number one.
+And the second instance, row number
+two, and so on.
+And so, the first one, I'm replacing the
+first element with 6 times x6, so that
+would be 6 Lambda 2 then 0, 0, 0, 0.
+And then the last element is 6 times x1.
+And so, if I pop back, that's just what I
+wanted to have here.
+6 lambda 2, four 0's, and then 6 times x1.
+And so, if I didn't make any
+mistakes, I did the same thing for each of
+the remaining rows up to 6.
+And then I want to, when my function
+finishes,
+I want to return this 6 by 6 matrix.
+So I just, on the last line of my
+function, I just put grad,
+which is my 6 by 6 matrix, except I've
+filled in all of these entries now.
+And then I finish my function.
+So I have a function to compute G, so this
+vector valued function G.
+And then I have a function to compute,
+this matrix valued gradient of G.
+And so, if I want to use Newton's Method,
+I need a starting point.
+So I am going to choose from my starting
+point
+1, negative 1, 1, negative 1, 1, negative
+1.
+again, no particularly good reason for why
+I chose this
+actually stole this from from the
+textbook.
+And this is the starting point he used.
+So, it's not, not all of me.
+And then again, the Newton iterations are
+very easy to write,
+so I just have to put the matrix here.
+So this is solving
+the linear system.
+So I have, what I want to,
+what I want to solve is xk plus 1 equals
+xk minus the inverse of
+the gradient times the vector valued
+function at the point xk.
+But since I don't want to actually have to
+convert, compute the inverse
+of this matrix, I'm just going to set it
+of as a linear system.
+This function solves, solves that linear
+system, and
+that tells me what my sort of improvements
+that
+should be to get from xk to xk plus 1.
+And then instead of saving all of the xk's
+along the way, I am just
+going to write xk plus 1 into the same
+piece of memory that was holding the xk.
+And then this is so for loop, so it says
+for i in 1 colon 25.
+So, it's just going to repeat this line 25
+times.
+And each time hopefully, this, this
+approximation
+of the, of the value x, where
+the function G should be equal to 0, is
+going to get better and better.
+And so, after 25 iterations, this is the
+value that I've computed.
+So the first line.
+This is, this is on this same scale as the
+inputs
+to this function G, and here to the
+functions G and DG.
+So the first four correspond to x1, x2,
+x3, x4,
+and then the last two values correspond to
+the Lagrange multiplier.
+So this one is lambda 1 and this one is
+lambda 2.
+And so, I can write that a little bit more
+cleanly
+like this.
+And so, all I know is that this point here
+is a critical point of the Lagrangian.
+But what I'd really like to know is, is it
+a maximum or a minimum.
+So, have to figure out how we're going to
+deal with that.
+So I want to ask the question, does the
+point xc, lambda c.
+So this is just that vector of six values
+that I had on the previous screen.
+Does this correspond
+to a minimum or a maximum?
+And so one thing you might do is just.
+This is the original function, so
+the objective function from my
+optimization problem.
+And so you can just evaluate that at xc.
+So this should correspond to one of
+the constrained minimum, or the contained
+maximum.
+And that's equal to 12.
+It still doesn't really tell us.
+So if, if we were able to find all of
+the critical points, this would be a way
+to find the
+minimum and the maximum.
+If there were say four critical points, I
+could just
+evaluate this function f at each of the
+four critical points.
+And I'm going to get four values.
+And one of those hopefully is going to be
+the biggest, otherwise there could just be
+ties.
+But if one of them is the biggest, then
+that's going to be the maximum.
+One of them will be the smallest, that one
+would be the minimum.
+But here I only have one, so I can't do
+that.
+And
+I'm not certain how many critical points
+this is actually is going to have.
+So, my numerical method, it's from a
+starting
+point, is going to sort of, you can think
+of it, if it's looking for a maximum, it's
+kind of going up to the nearest critical
+point.
+If it's finding a minimum, it's going down
+to the nearest critical point.
+But once it gets there, it doesn't tell me
+anything else about how many critical
+points there are.
+Or you know, I need to try from different
+starting points or, or use some
+other knowledge about the problem to
+figure
+out how many critical points there will
+be.
+But one thing I can do is try and classify
+this
+at least as locally a minimum value or
+locally a maximum value.
+And so, one of the ways I can try doing
+that.
+If I look at this value f of x.
+So I'm saying for feasible x, and so when
+I
+say feasible, this means values of x that
+satisfy the constraints.
+And so for feasible x, I can say little f
+of x, is equal to.
+And now what I've done I, I haven't put x
+sub c here, so I'm saying any feasible
+value of x.
+But I'm going to plug in the computed
+Lagrange multipliers.
+So I can rewrite out the Lagrangian, so I
+still have the objective function here.
+But now I have the computed value
+of Lambda 1 times the first constraint,
+plus the
+computed value of Lambda 2 times the 2nd
+constraint.
+And the reason I'm saying this are equal,
+is when a point x is feasible,
+this constraint, because I've written it G
+of x is equal to 0.
+So for feasible x, this thing that I have
+highlighted is 0.
+And also this constraint is equal to 0.
+So that means capital F of x comma lambda
+to c is just going to be equal to this.
+So, a constrained minimum or maximum is
+going to of little
+f of x is going to correspond to the
+minimum and maximum.
+The unconstrained minimum and maximum of
+this function f,
+capital F x, but with these Lagrange
+multipliers plugged in.
+And I already know that x sub c is going
+to be
+a critical point of this, because that
+was, that was my condition.
+That's how I found x sub c.
+And we had second order conditions.
+So now this is a, this is an unconstrained
+optimization problem.
+So we had second order conditions for
+functions of more than one variable.
+And that was that x sub c would correspond
+to a minimum of the
+objective function if the Hessian is
+positive definite at x sub c.
+And it
+would correspond to a maximum if the
+Hessian were negative definite at this
+point x sub c.
+So, positive definite, I just meant that,
+so this just going to be a matrix.
+I take its eigenvalues.
+Positive definite means all of the
+eigenvalues are greater than 0.
+Negative definite means all of the
+eigenvalues are less than 0.
+And if you think carefully about what
+we've done, we actually already
+have this matrix because it's just this
+matrix of partial derivatives.
+And that's just a subset, a small, it's a
+block of this matrix
+the gradient of the function G that I was
+trying to set equal to 0.
+So it's actually, let's see, I think I
+figured out a way to do this.
+Almost got it.
+So it's the top left four by four block.
+This is the, going to be the gradient of
+this function F evaluated at the point x
+sub c.
+And remember, when I wanted to do an
+eigenvector, eigenvalue
+decomposition, I want, I was trying to
+diagonalize the matrix.
+And so this one is kind of cheating,
+because it's already in a diagonal format.
+So, if you have a diagonal matrix
+like this, the diagonal entries are the
+eigenvalues.
+So, in this case, I have everything off
+the diagonal here is
+equal to 0, and all of the diagonal
+entries are less than 0.
+So this matrix is negative definite, and
+that tells
+me that x sub c corresponds to a maximum.
+So this matrix is negative definite, and
+that tells
+me that x sub c corresponds to a maximum.
+So this matrix is negative definite, and
+that tells me that x sub c corresponds
+to a maximum.
+And I can go back then and say,
+for the constrained optimization problem
+I'm looking at, this
+point x sub c corresponds to a constrained
+optimum of the objective function little f
+of x.
+So, x sub c is a maximum.
+

@@ -1,0 +1,61 @@
+We start our in-depth tour of general game
+playing by looking at single player games.
+Such as Sudoku, or sliding tile puzzles,
+Rubik's cube, and so forth.
+In the game playing community, these are
+often called puzzles, rather than games.
+And the process of solving such puzzles is
+often called problem solving rather than
+game playing.
+Puzzles are simpler
+than multiple player games because
+everything's
+under the control of a single player.
+World static, except when the player acts,
+and changes to the world
+are determined entirely by the current
+state and the actions of the player.
+In this lesson, as in most of the course
+we
+assume that the player has complete
+information abut the puzzle.
+Assume that it knows the initial state.
+You know that, it knows its legal actions
+in every state.
+It knows the effects of its actions in
+every state.
+For every state, it knows its reward, and
+for
+every state, it knows whether or not it's
+terminal.
+In this lesson, we also assume the games
+are small.
+That is the player has sufficient space
+and time to search the entire game tree.
+This guarantees that the player can find
+optimal actions to perform.
+Now that said, as we'll see, it's
+sometimes possible to
+find optimal actions even without
+searching the entire game tree.
+Despite these strong assumptions, just one
+player, complete information,
+availability of adequate time to search
+the game tree.
+The study of single player games is a good
+place to start our look at general game
+playing.
+First of all, many real world problems can
+be
+cast as single player games with these
+same restrictions.
+Su, such as finding possible protein
+foldings as suggested by the illustration
+here.
+[COUGH]
+More importantly for us, as we'll see.
+The techniques we examine later can be
+viewed as
+more elaborate versions of the basic
+techniques introduced here.
+

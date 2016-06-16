@@ -1,0 +1,484 @@
+1
+00:00:02,500 --> 00:00:05,900
+A legal player, is one of the simplest
+types of game players.
+
+2
+00:00:05,900 --> 00:00:06,450
+You need to stay.
+
+3
+00:00:06,450 --> 00:00:09,472
+A legal player selects an action based
+solely
+
+4
+00:00:09,472 --> 00:00:13,030
+on its legality, without consideration of
+the consequences whatsoever.
+
+5
+00:00:14,800 --> 00:00:17,760
+Typically, the choice of action is
+consistent, and selects the
+
+6
+00:00:17,760 --> 00:00:20,499
+same action every time it finds itself in
+the same state.
+
+7
+00:00:23,230 --> 00:00:26,860
+Using the basic sub-routines provided in
+the GDP
+
+8
+00:00:26,860 --> 00:00:30,190
+starter pack, building a legal player is
+simple.
+
+9
+00:00:30,190 --> 00:00:31,780
+Here we see the entire implementation.
+
+10
+00:00:33,180 --> 00:00:35,260
+And throughout this course, we use
+JavaScript
+
+11
+00:00:35,260 --> 00:00:37,210
+for computer code, as I mentioned earlier.
+
+12
+00:00:38,300 --> 00:00:41,190
+This is a compromise between Lisp and
+Java.
+
+13
+00:00:42,444 --> 00:00:44,940
+Lisp is a powerful language, it's highly
+efficient
+
+14
+00:00:44,940 --> 00:00:47,520
+and it's easy to use in building players.
+
+15
+00:00:47,520 --> 00:00:48,339
+However, it's not very
+
+16
+00:00:48,339 --> 00:00:48,860
+widely known.
+
+17
+00:00:50,450 --> 00:00:53,590
+Building programs in Java is slightly more
+difficult, but
+
+18
+00:00:53,590 --> 00:00:55,550
+the language is familiar to more people
+these days.
+
+19
+00:00:56,830 --> 00:00:59,880
+Java script has a flexibility of Lisp, and
+
+20
+00:00:59,880 --> 00:01:01,769
+at the same time it's easily converted to
+Java.
+
+21
+00:01:02,790 --> 00:01:05,650
+It can also be used directly to implement
+players,
+
+22
+00:01:05,650 --> 00:01:08,030
+either in web browsers or in stand alone
+applications.
+
+23
+00:01:09,150 --> 00:01:10,580
+Let's walk through this implementation.
+
+24
+00:01:13,100 --> 00:01:15,010
+We start by setting up some global
+variables
+
+25
+00:01:15,010 --> 00:01:18,430
+to maintain state, while a match is in
+progress.
+
+26
+00:01:18,430 --> 00:01:21,960
+That's a variable to hold the game rule
+set, a
+
+27
+00:01:21,960 --> 00:01:25,610
+variable to hold the player's role in that
+game, a
+
+28
+00:01:25,610 --> 00:01:27,700
+variable to hold a list of all the roles
+in
+
+29
+00:01:27,700 --> 00:01:30,980
+the game, and a variable to hold the
+current state.
+
+30
+00:01:32,740 --> 00:01:35,050
+And now, properly we should create a data
+structure
+
+31
+00:01:35,050 --> 00:01:38,230
+for each separate match, and we should
+attach these values
+
+32
+00:01:38,230 --> 00:01:39,850
+to this data structure, so the player can
+
+33
+00:01:39,850 --> 00:01:41,830
+actually play multiple matches at the same
+time.
+
+34
+00:01:42,960 --> 00:01:45,640
+However, in this presentation we're
+striving for simplicity, and so
+
+35
+00:01:45,640 --> 00:01:47,860
+we'll be treating these as global
+variables and what follows.
+
+36
+00:01:51,340 --> 00:01:53,970
+Okay, next we define a handler for each
+type of message.
+
+37
+00:01:53,970 --> 00:01:57,420
+The info handler, does nothing at all and
+simply returns ready.
+
+38
+00:02:00,420 --> 00:02:03,762
+The start event handler, assigns values to
+the rule
+
+39
+00:02:03,762 --> 00:02:07,380
+set and role variables, based on the
+incoming start message.
+
+40
+00:02:08,990 --> 00:02:15,140
+It, it initializes roles and the state
+variable, and then returns ready.
+
+41
+00:02:19,990 --> 00:02:24,380
+The play event handler, takes a match
+identifier and a move his arguments.
+
+42
+00:02:25,580 --> 00:02:32,880
+If the move is not nil, it uses nexts to
+find nexts, to compute
+
+43
+00:02:32,880 --> 00:02:36,760
+the state resulting from them preceding
+state and the action supplied in the move.
+
+44
+00:02:38,420 --> 00:02:40,420
+Once the player has the latest state, he
+
+45
+00:02:40,420 --> 00:02:44,390
+uses legalx, findlegalx, to compute a
+legal move.
+
+46
+00:02:48,600 --> 00:02:51,270
+The stop event handler for a legal player
+does nothing.
+
+47
+00:02:51,270 --> 00:02:55,158
+Ignores the inputs, and simply returns
+done, as required by the GGP protocol.
+
+48
+00:02:55,158 --> 00:02:59,650
+And like the stop message handler, the
+abort message handler
+
+49
+00:02:59,650 --> 00:03:03,862
+for a player, also does nothing and it
+simply returns done.
+
+50
+00:03:03,862 --> 00:03:06,730
+Okay, just to be clear on how this
+
+51
+00:03:06,730 --> 00:03:10,200
+works, lets work through a short
+tic-tac-toe match.
+
+52
+00:03:11,340 --> 00:03:13,830
+When the players initialized, it sets up
+data structures to hold
+
+53
+00:03:13,830 --> 00:03:17,930
+the game description, the role, roles, and
+the state.
+
+54
+00:03:17,930 --> 00:03:19,440
+These are all initially empty.
+
+55
+00:03:19,440 --> 00:03:25,268
+Players not retain start clock and play
+clock, since it does not need to do
+
+56
+00:03:25,268 --> 00:03:30,936
+extensive computation for those li, how
+limits are irrelevant.
+
+57
+00:03:30,936 --> 00:03:35,847
+[BLANK_AUDIO]
+
+58
+00:03:35,847 --> 00:03:38,601
+Okay, let's assume that player reads the
+start, receives the
+
+59
+00:03:38,601 --> 00:03:41,910
+start message from the game manager, as
+sort shown here.
+
+60
+00:03:41,910 --> 00:03:44,238
+Match identifiers in 23.
+
+61
+00:03:44,238 --> 00:03:49,269
+The player is told to be the white player.
+There are the usual axioms of tic-tac-toe.
+
+62
+00:03:51,290 --> 00:03:53,810
+The start clock and play clock are both
+set to ten seconds.
+
+63
+00:03:55,390 --> 00:03:58,930
+On receipt of the message, the player code
+calls start handler.
+
+64
+00:04:00,200 --> 00:04:02,850
+This records the game description and the
+rule set
+
+65
+00:04:02,850 --> 00:04:06,560
+variable, and the player's role in the
+role variable.
+
+66
+00:04:08,350 --> 00:04:12,480
+Then computes roles from the game
+description,and the initial state.
+
+67
+00:04:16,960 --> 00:04:19,300
+Returned values ready, which is then sent
+back
+
+68
+00:04:19,300 --> 00:04:21,279
+to the game manager by the listener loop.
+
+69
+00:04:25,130 --> 00:04:27,660
+Okay, now play begins after all the
+players have responded,
+
+70
+00:04:27,660 --> 00:04:30,670
+or after the start clock has expired,
+whichever comes first.
+
+71
+00:04:33,610 --> 00:04:35,100
+Once the game manager's ready, it sends a
+
+72
+00:04:35,100 --> 00:04:37,477
+suitable play message to all of the
+players.
+
+73
+00:04:37,477 --> 00:04:41,790
+Here we see a request for the player to
+choose an action from match m 23.
+
+74
+00:04:41,790 --> 00:04:42,700
+Excuse me.
+
+75
+00:04:42,700 --> 00:04:45,470
+The value nil signifies that this is the
+first step of the match.
+
+76
+00:04:48,410 --> 00:04:51,050
+On receipt of this message, the player
+code invokes the play
+
+77
+00:04:51,050 --> 00:04:53,720
+handler with the arguments passed to it by
+the game manager.
+
+78
+00:04:54,770 --> 00:04:58,290
+Since the move argument is nil, no changes
+are made to the data structures at all.
+
+79
+00:05:00,330 --> 00:05:03,380
+And using the state together with the role
+in the role description,
+
+80
+00:05:03,380 --> 00:05:06,920
+associated with this match, the player
+then computes the first legal move.
+
+81
+00:05:06,920 --> 00:05:10,110
+In this case mark (1,1), and it returns
+that as the answer.
+
+82
+00:05:13,730 --> 00:05:16,900
+Game manager checks that the actions of
+all the players are
+
+83
+00:05:16,900 --> 00:05:20,880
+legal, and simulates their effects, and
+updates the state of the game.
+
+84
+00:05:20,880 --> 00:05:23,890
+And then sends play messages to the
+players to solicit their next actions.
+
+85
+00:05:23,890 --> 00:05:27,566
+In this case, the player will receive the
+message shown here.
+
+86
+00:05:27,566 --> 00:05:29,960
+Mark (1, 1), from the white player, and no
+
+87
+00:05:29,960 --> 00:05:31,960
+opt the only legal move for the black
+player.
+
+88
+00:05:35,040 --> 00:05:36,760
+Again, the player invokes its play handler
+with
+
+89
+00:05:36,760 --> 00:05:39,110
+the arguments passed to it by the game
+manager.
+
+90
+00:05:39,110 --> 00:05:41,156
+And this time the move is not nil, and so
+
+91
+00:05:41,156 --> 00:05:44,049
+the player uses find next, to compute the
+next state.
+
+92
+00:05:45,400 --> 00:05:46,460
+There are two differences.
+
+93
+00:05:46,460 --> 00:05:50,730
+There's now an x in cell (1, 1), and
+control is switched from white to black.
+
+94
+00:05:55,550 --> 00:05:58,550
+Using this state, the player then computes
+the first legal action in this state.
+
+95
+00:05:58,550 --> 00:06:04,230
+Its, its only legal action, there's no up,
+and returns that as answer.
+
+96
+00:06:04,230 --> 00:06:07,510
+Okay, this processing repeats until the
+end of the game.
+
+97
+00:06:07,510 --> 00:06:10,670
+When the game's over the player receives a
+message like the one shown here.
+
+98
+00:06:13,700 --> 00:06:17,860
+While some players are able to make use of
+the information in a stop message,
+
+99
+00:06:17,860 --> 00:06:20,720
+our legal player simply ignores this
+information,
+
+100
+00:06:20,720 --> 00:06:23,889
+returns done, terminating its activity on
+this match.
+
+101
+00:06:23,889 --> 00:06:25,452
+[SOUND]
+

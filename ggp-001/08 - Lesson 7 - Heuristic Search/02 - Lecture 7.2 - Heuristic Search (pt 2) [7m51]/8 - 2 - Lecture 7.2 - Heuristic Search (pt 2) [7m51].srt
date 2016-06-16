@@ -1,0 +1,669 @@
+1
+00:00:04,790 --> 00:00:09,930
+One way of dealing with this conservative
+nature of depth limited search
+
+2
+00:00:09,930 --> 00:00:13,950
+is to improve upon the arbitrary zero
+value return for non terminal states.
+
+3
+00:00:15,160 --> 00:00:17,050
+In heuristic search this is accomplished
+by
+
+4
+00:00:17,050 --> 00:00:22,160
+applying a heuristic evaluation function
+to non-terminal states.
+
+5
+00:00:22,160 --> 00:00:24,250
+Such functions are based on features of
+states, and so
+
+6
+00:00:24,250 --> 00:00:26,813
+they can be computed without examining the
+entire game tree.
+
+7
+00:00:28,720 --> 00:00:29,860
+The implementation
+
+8
+00:00:29,860 --> 00:00:33,270
+of fixed depth heuristic search is easy.
+
+9
+00:00:33,270 --> 00:00:34,210
+Now at the top here, we have the
+
+10
+00:00:34,210 --> 00:00:37,040
+implementation of simple depth-limited
+search that we saw earlier.
+
+11
+00:00:38,140 --> 00:00:38,930
+And at the bottom, we have
+
+12
+00:00:38,930 --> 00:00:43,020
+the implementation of heuristic
+fixed-depth search.
+
+13
+00:00:43,020 --> 00:00:44,490
+The only difference is that we've replaced
+
+14
+00:00:44,490 --> 00:00:47,310
+the default value, zero, with the result
+of
+
+15
+00:00:47,310 --> 00:00:51,510
+calling the evaluation subroutine,
+evalfun, on the
+
+16
+00:00:51,510 --> 00:00:53,970
+state being considered whenever the depth
+limit's exceeded.
+
+17
+00:00:55,650 --> 00:00:56,850
+Tough part of the implementation is
+
+18
+00:00:56,850 --> 00:00:59,169
+figuring out how to evaluate non-terminal
+states.
+
+19
+00:01:01,960 --> 00:01:05,400
+Fortunately, examples of heuristic
+functions are bound.
+
+20
+00:01:05,400 --> 00:01:08,630
+For example, in chess, we often use piece
+count to compare states.
+
+21
+00:01:08,630 --> 00:01:11,360
+With the idea that in the absence of
+immediate threats,
+
+22
+00:01:11,360 --> 00:01:15,400
+having more material is generally better
+than having less material.
+
+23
+00:01:15,400 --> 00:01:18,240
+And similarly, we sometimes use board
+control, with
+
+24
+00:01:18,240 --> 00:01:20,450
+the idea that having control of the center
+
+25
+00:01:20,450 --> 00:01:22,300
+of the board is more valuable than
+controlling
+
+26
+00:01:22,300 --> 00:01:23,850
+the edges or the corners of the board.
+
+27
+00:01:26,040 --> 00:01:27,750
+The downside of using heuristic functions
+is
+
+28
+00:01:27,750 --> 00:01:30,650
+that they're not necessarily guaranteed to
+be successful.
+
+29
+00:01:30,650 --> 00:01:33,970
+They may work in many cases, but they can
+occasionally fail.
+
+30
+00:01:33,970 --> 00:01:35,755
+That happens, for example, in chess, when
+a player is
+
+31
+00:01:35,755 --> 00:01:38,620
+check-mated, even though he has more
+material and better board control.
+
+32
+00:01:40,080 --> 00:01:43,350
+Still, games often admit heuristics that
+are useful in
+
+33
+00:01:43,350 --> 00:01:46,490
+a sense that they, work more often than
+not.
+
+34
+00:01:47,910 --> 00:01:51,180
+while for specific games such as chess,
+programmers are able to build
+
+35
+00:01:51,180 --> 00:01:53,590
+in these value evaluation functions.
+
+36
+00:01:53,590 --> 00:01:55,960
+This is unfortunately not possible for
+general game playing,
+
+37
+00:01:55,960 --> 00:01:57,370
+since the rules of the game are not known
+
+38
+00:01:57,370 --> 00:02:01,490
+in advance, rather the game player itself
+must analyze
+
+39
+00:02:01,490 --> 00:02:05,150
+the game in order to find useful
+evaluation functions.
+
+40
+00:02:06,510 --> 00:02:10,680
+Now in an upcoming lesson, we'll discuss
+how to find such heuristics automatically.
+
+41
+00:02:10,680 --> 00:02:13,240
+That said, there are some heuristics for
+game
+
+42
+00:02:13,240 --> 00:02:16,480
+playing that have arguable merit across
+all games.
+
+43
+00:02:16,480 --> 00:02:18,219
+And in this section, we're going to
+examine some of these heuristics.
+
+44
+00:02:19,420 --> 00:02:21,210
+And along the way, we'll show how to
+
+45
+00:02:21,210 --> 00:02:23,600
+build a game player that utilizes these
+heuristics.
+
+46
+00:02:26,525 --> 00:02:29,090
+Okay, mobility is one such heuristic.
+
+47
+00:02:29,090 --> 00:02:31,680
+Mobility is a measure of the number of
+things a player can do.
+
+48
+00:02:31,680 --> 00:02:35,860
+This could be the number of actions
+available in a given state,
+
+49
+00:02:35,860 --> 00:02:39,100
+or the number of actions available in
+steps away from the given state.
+
+50
+00:02:40,640 --> 00:02:42,500
+Or it could be the number of states
+
+51
+00:02:42,500 --> 00:02:45,970
+reachable within n steps, from the given
+state.
+
+52
+00:02:45,970 --> 00:02:47,920
+I that, that can be different from the
+number of actions since
+
+53
+00:02:47,920 --> 00:02:51,940
+sometimes different actions can refer,
+can, can lead to the same state.
+
+54
+00:02:55,834 --> 00:02:58,980
+a simple limitation of the mobility
+heuristic is shown here.
+
+55
+00:02:58,980 --> 00:03:02,450
+the method simply computes the number of
+actions that are legal in the given state.
+
+56
+00:03:02,450 --> 00:03:06,380
+And returns as value the percentage of all
+possible actions represented by
+
+57
+00:03:06,380 --> 00:03:09,000
+this set of legal actions, that's all
+possible actions in all states.
+
+58
+00:03:12,760 --> 00:03:17,660
+Focus is another heuristic.
+It's the opposite of mobility.
+
+59
+00:03:17,660 --> 00:03:20,340
+It's a measure of the narrowness of the
+search base.
+
+60
+00:03:20,340 --> 00:03:22,430
+Sometimes it's good to focus, to cut down
+
+61
+00:03:22,430 --> 00:03:24,870
+on the number of possibilities to be
+considered.
+
+62
+00:03:26,400 --> 00:03:30,430
+Usually it's better to restrict an
+opponent's moves, rather than keeping
+
+63
+00:03:30,430 --> 00:03:33,000
+one's own, rather so that one keeps one's
+own options open.
+
+64
+00:03:34,450 --> 00:03:38,465
+And a simple limitation of the focus
+heuristic can be implemented
+
+65
+00:03:38,465 --> 00:03:39,470
+as shown here.
+
+66
+00:03:39,470 --> 00:03:41,530
+It's a dual of mobility, again we divide
+the the
+
+67
+00:03:41,530 --> 00:03:44,000
+number of legal actions in a state by the
+total number
+
+68
+00:03:44,000 --> 00:03:46,640
+of actions available in any state but,
+rather than returning
+
+69
+00:03:46,640 --> 00:03:53,450
+that percentage as a, as result, we
+subtract it from 100.
+
+70
+00:03:53,450 --> 00:03:58,460
+Goal proximity is another heuristic, a
+
+71
+00:03:58,460 --> 00:04:00,070
+little bit different from the previous
+two.
+
+72
+00:04:00,070 --> 00:04:01,600
+It's a measure of how similar a given
+
+73
+00:04:01,600 --> 00:04:04,840
+state is to a desirable goal terminal
+state.
+
+74
+00:04:04,840 --> 00:04:06,280
+Now, there are various ways this can be
+computed.
+
+75
+00:04:07,410 --> 00:04:11,240
+One common method is to count how many
+propositions are true in the
+
+76
+00:04:11,240 --> 00:04:15,350
+current state and are also true in a
+terminal state with sufficient utility.
+
+77
+00:04:16,630 --> 00:04:19,740
+The difficulty of implementing this method
+unfortunately is that
+
+78
+00:04:19,740 --> 00:04:24,100
+is it is obtaining the set of desirable
+terminal states.
+
+79
+00:04:24,100 --> 00:04:26,040
+With which the current state can be
+compared.
+
+80
+00:04:26,040 --> 00:04:26,740
+It's not so easy.
+
+81
+00:04:29,280 --> 00:04:31,650
+Another alternative is to use the goal
+value of
+
+82
+00:04:31,650 --> 00:04:33,990
+a state as a measure of progress toward
+the goal.
+
+83
+00:04:33,990 --> 00:04:37,210
+With the idea being that the goal value of
+a non-terminal state, even though it's
+
+84
+00:04:37,210 --> 00:04:42,439
+not terminal, however the higher it is,
+the closer one is to the actual goal.
+
+85
+00:04:44,910 --> 00:04:46,340
+of course, this is not always true.
+
+86
+00:04:46,340 --> 00:04:49,350
+However, many game, games, the goal values
+are indeed monotonic.
+
+87
+00:04:49,350 --> 00:04:52,820
+Meaning that the values do increase with
+proximity to the goal.
+
+88
+00:04:52,820 --> 00:04:55,630
+If you're trying to get out of a cave, and
+you
+
+89
+00:04:55,630 --> 00:04:57,980
+see some light down one corridor, and not
+down the other.
+
+90
+00:04:57,980 --> 00:04:59,700
+You might want to go to the one that has
+light.
+
+91
+00:05:01,380 --> 00:05:03,060
+Moreover, it's sometimes possible to
+compute this
+
+92
+00:05:03,060 --> 00:05:05,880
+by simple examination of the game
+description.
+
+93
+00:05:05,880 --> 00:05:08,830
+Using methods which we can describe in
+later lessons.
+
+94
+00:05:11,000 --> 00:05:12,850
+Now, none of these heuristics is
+guaranteed to work
+
+95
+00:05:12,850 --> 00:05:15,570
+in all games, but all have strengths in
+some games.
+
+96
+00:05:16,850 --> 00:05:21,830
+To deal with this fact, some designers of
+GGP players, have opted
+
+97
+00:05:21,830 --> 00:05:25,069
+to use a weighted combination of
+heuristics in place of a single heuristic.
+
+98
+00:05:26,370 --> 00:05:28,750
+Equation shown here is a typical formula.
+
+99
+00:05:28,750 --> 00:05:32,570
+Each fi here is a heuristic function such
+as your mobility
+
+100
+00:05:32,570 --> 00:05:36,260
+or focus or goal proximity, and wi is the
+corresponding weight.
+
+101
+00:05:36,260 --> 00:05:39,980
+Of course, there's no way of knowing in
+advance
+
+102
+00:05:39,980 --> 00:05:42,000
+what the weight should be, but sometimes,
+playing a few
+
+103
+00:05:42,000 --> 00:05:44,280
+instances of the game, for example, during
+the start clock
+
+104
+00:05:44,280 --> 00:05:47,009
+of the game, can suggest weights for the
+various heuristics.
+
+105
+00:05:51,600 --> 00:05:55,240
+As mentioned earlier, depth-limited search
+is not guaranteed to succeed in all cases.
+
+106
+00:05:56,240 --> 00:05:58,750
+Failing is never good, however, it's
+particularly
+
+107
+00:05:58,750 --> 00:06:01,170
+embarrassing in situations where just a
+little
+
+108
+00:06:01,170 --> 00:06:03,570
+more search would have revealed
+significant changes
+
+109
+00:06:03,570 --> 00:06:06,131
+in the player's circumstances for better
+or worse.
+
+110
+00:06:06,131 --> 00:06:09,170
+In the research literature this is often
+called a horizon problem.
+
+111
+00:06:09,170 --> 00:06:13,504
+So an example, consider, chess, a
+
+112
+00:06:13,504 --> 00:06:16,860
+situation, and a situation where the
+players
+
+113
+00:06:16,860 --> 00:06:21,290
+are exchanging pieces, with white
+capturing black's pieces and vice versa.
+
+114
+00:06:21,290 --> 00:06:25,690
+Now, imagine cutting off the search at an
+arbitrary depth, say at two captures each.
+
+115
+00:06:25,690 --> 00:06:29,992
+At this point, white might believe it has
+an advantage, since it has more material.
+
+116
+00:06:29,992 --> 00:06:31,800
+However, if the very next move by black is
+a
+
+117
+00:06:31,800 --> 00:06:34,810
+capture of the white queen, this
+evaluation could be misleading.
+
+118
+00:06:36,910 --> 00:06:40,158
+A common solution to this problem is to
+forgo the fixed depth planet in
+
+119
+00:06:40,158 --> 00:06:43,890
+favor of one that is itself dependent on
+the current state of the affairs.
+
+120
+00:06:43,890 --> 00:06:47,170
+Searching deeper in some areas of the
+tree, searching less deep in other areas.
+
+121
+00:06:47,170 --> 00:06:47,790
+Of the tree.
+
+122
+00:06:49,660 --> 00:06:50,680
+Here's an implementation of the
+
+123
+00:06:50,680 --> 00:06:54,110
+variable, what's called variable-depth
+heuristic search.
+
+124
+00:06:54,110 --> 00:06:58,290
+this version of maxscore differs from
+fixed depth heuristic search in
+
+125
+00:06:58,290 --> 00:07:02,240
+that there is a subroutine here called
+expfun that is called
+
+126
+00:07:02,240 --> 00:07:07,089
+to determine whether the current state and
+or depth meets in appropriate condition.
+
+127
+00:07:08,660 --> 00:07:11,040
+If so the tree expansion continues,
+
+128
+00:07:11,040 --> 00:07:12,760
+otherwise the player terminates the
+expansion and
+
+129
+00:07:12,760 --> 00:07:15,585
+simply returns the resulting, result of
+applying
+
+130
+00:07:15,585 --> 00:07:17,710
+its evaluation function to the
+non-terminal state.
+
+131
+00:07:20,870 --> 00:07:22,780
+the challenge in variable depth search
+
+132
+00:07:22,780 --> 00:07:26,660
+is finding an appropriate definition for
+expfun.
+
+133
+00:07:26,660 --> 00:07:30,280
+One common technique is to focus on
+differentials of heuristic functions.
+
+134
+00:07:30,280 --> 00:07:32,730
+For example, a significant change in
+mobility
+
+135
+00:07:32,730 --> 00:07:34,920
+or goal proximity might indicate that
+further search
+
+136
+00:07:34,920 --> 00:07:37,050
+is warranted whereas actions that do not
+
+137
+00:07:37,050 --> 00:07:40,000
+lead to dramatic changes might be less
+important.
+
+138
+00:07:40,000 --> 00:07:43,362
+In chess, a good example of this is to
+look for what's called quiescence.
+
+139
+00:07:43,362 --> 00:07:45,460
+It is a state where there are no immediate
+captures.
+

@@ -1,0 +1,336 @@
+Lesson 7 is A Culturally Important
+Integral.
+So the first time I saw this integral, the
+professor who taught
+me how to evaluate this called it an A
+Culturally Important Integral.
+I think it's taken probably ten years but
+now I, I fully agree with him.
+So, hopefully if it doesn't seem all that
+culturally important to
+you after a few years of experience and
+I'll improve a bit.
+So, I'm going to look at a function called
+the standard normal density.
+This is the little phi that's been showing
+up in the, in the Black-Scholes Pricing
+Formula.
+And it's defined to be 1 over the square
+root
+of 2 pi e to the minus x squared over two.
+And we also, oops, so little phi is not
+actually in the Black-Scholes Pricing
+Formula, it's this capital phi that's in
+the Black-Scholes Pricing Formula.
+I guess this showed up in the in the
+homework when we were looking at the
+derivatives of the
+Black-Scholes Pricing Formula.
+The capital phi is
+defined as the integral from minus
+infinity up to x of little phi of t dt.
+And so when I saw this the first
+time, now a few questions immediately
+popped into mind.
+So I, I called this 2 and a half.
+So where does the 1 over the square roots
+of 2 pi come from, that
+just seem sort of like a strange thing to
+stick in front of a function here.
+Two, why not use a closed-form expression
+for this capital phi?
+And so it turns out
+this is a function that somebody actually
+proved does not have,
+so this function here, someone has proved
+this does not have antiderivative.
+So there is no way to write down
+a closed-form expression for this function
+capital phi,
+by closed form, I just mean, you know,
+like 1 minus the square root of something
+else.
+They gives you the value of this capital
+phi function.
+If you wanted to write down the
+function, you would have to keep just
+writing and writing.
+You need an infinite number of terms in
+order to write it down.
+And so then, the 2 and a half question was
+where did this 1 over 2 pi come
+from because the whole reason it's here is
+that
+I want this to be a probability density
+function?
+So the different, part of one of the
+conditions,
+but there are two conditions, it has to be
+greater
+than zero, greater than or equal to zero
+for all real numbers.
+So this satisfies that.
+It's actually greater than zero for all
+real numbers.
+And it has to integrate to one when
+I integrate it from minus infinity to
+infinity.
+And so the reason this 1 over the square
+root of 2 pi is
+here is because this function here
+integrates to the square root of 2 pi.
+So, if I wanted to integrate to one, I
+need to divide by 1
+over the square root of 2 pi, so those
+will cancel each other out.
+And when I do this integral, I'll have 1.
+But, yeah?
+>> I know this is a weird question
+but if I don't have a closed-form
+expression for big phi how do we know
+when we integrate it from negative
+infinity to infinity that it's equal to 1?
+>> Well, big phi doesn't have that
+property.
+The little one, the little one does.
+And so that's actually what this whole
+lesson will be about.
+So, kind of, in particular, I need to know
+exactly what you just asked.
+If I knew the, the capital phi if I could
+write
+down that function and just take the limit
+as it goes to
+negative infinity and the limit as it goes
+to positive infinity,
+then I would be able to evaluate the area
+under that curve.
+And I would be able to tell you
+you know, I'd be able to tell you what it
+is, I'd
+be able to tell you that's the square root
+of 2 pi.
+Then I would say well if that is the
+square root of 2 pi, if
+I divide by the square root of 2 pi,
+that'll make it equal to 1.
+And so the rest of this lesson is to find
+out where this square root of 2 pi comes
+from.
+So, since phi is a probability density
+function, the
+integral of phi over the real line, so I
+don't
+know why I put it twice here but it still
+integrates to 1 even if you do it twice.
+And this implies that e to the minus x
+squared over
+2 dx has to equal the square root of 2 pi.
+And you can make a change of variables to
+just have a, a slightly simpler version of
+the
+function without the squared minus x
+squared divided by
+2 just to have e to the minus x squared.
+And so this is actually what I'm going to
+try and show.
+That the integral of e to the minus x
+squared from
+minus infinity to infinity is equal to the
+square root of pi.
+And like I said before if e to the minus
+x squared over 2 doesn't have an
+antiderivative, then this
+isn't going to either because I was able
+to get
+this with just a simple change of just a
+simple substitution.
+So this is actually going to use a trick
+very similar to what we used in
+the very first lesson, when I was trying
+to come up with the value of an annuity.
+I'm going to pretend like I know what the
+answer
+is and say that it's equal to the value of
+this
+definite integral on the right-hand side
+and that I'm going
+to mess around with this m as well as the
+integral.
+So I want to show that m is equal to the
+square root of 2 pi.
+And I could also write m as the integral
+from minus
+infinity to infinity of e to the minus y
+squared dy.
+So it doesn't matter what I call my
+variable.
+The value of this integral is going to be
+the same.
+So I'm going to have m defined in terms of
+x and m
+defined in terms of y but they're going to
+be the same number.
+And now what I'd like to do is to show
+that M squared is equal to pi.
+So if I can show that M squared is equal
+to pi then that is
+the same thing as showing that M is equal
+to the square root of pi.
+And if you recall the Separable Integral
+Lesson, so this now looks
+like what I would want to get from a
+function that's separable.
+But I can use that result backwards as
+well, so I, I'm going
+to start out by just trying to unseparate
+this and see what happens.
+So that's just the double integral of a
+separable function.
+And I'll start unseparating the integral.
+So there's M squared again and
+then I'll take the, let's see, so I've
+taken the y integral and
+kind of plucked it into here, which I can
+do because it's a constant.
+And then I'll get rid of my, my brackets.
+And now, notice that e to the minus x,
+oops, e to the minus
+x squared, that's also a constant with
+respect to this integral on the right-hand
+side.
+And it looks like my dx disappeared from
+this line, but it showed up again here.
+So, everything is okay.
+And so what I'm going to end up with is e
+to
+the minus x squared times e to the minus y
+squared.
+And by the properties of the exponential
+function, I can write
+that as e to the minus quantity x squared
+plus y squared.
+And then when you see x squared plus y
+squared, that's usually a pretty good
+hint that this might be something that
+would be simplified by switching to polar
+coordinates.
+So, let's see what happens when I try and
+switch this into polar coordinates.
+so all I have to do to switch to
+polar coordinates, I replace the
+x by r cosine theta and the y by r sin
+theta.
+And then, my dx dy becomes r dr d theta.
+So, the r was the Jacobian.
+If I use the same transformation, if I use
+the same change of variables
+over and over and over again, the Jacobian
+is always going to be the same.
+So for the change to polar coordinates,
+the dy dx or dx dy is always going to
+become r dr d theta.
+So now, I can write my M squared as the
+integral from zero to 2 pi integral from
+zero to infinity of, well, this guy is
+going to get easier in just a second.
+So, let's,
+so all I've done here is I've factored out
+the r squares the negative r squared.
+And what's left inside the square brackets
+here
+is cosine squared theta plus sin squared
+theta.
+This is equal to 1.
+So I have e to the minus r squared.
+And then luckily, this little r that
+showed up, thanks to the Jacobian, is
+exactly what I need to be able to do a
+substitution, to be able to integrate e to
+the minus r squared.
+And again, this is separable, so I can
+also
+take advantage of the fact that there's no
+theta
+in this part of the function so I can
+move the integral with respect to theta
+out in front.
+And then, I have minus 1 half that I'm
+going to introduce here just
+so I can introduce some minus 2 here, so
+minus 2 will cancel out the minus 1
+half.
+If I make the substitution, u equals minus
+r squared then du is going to be
+minus 2r dr.
+So, I've made this, put this in,
+in brackets here.
+So, I have e to the u after I make my u
+substitution.
+This bit in the, in the parentheses is
+going to be du.
+And then if u is equal to minus r squared,
+the limits on
+u, they're going to start at 0 because
+negative 0 squared is still 0.
+And it will go to u equals negative
+infinity.
+The first first integral is trivial so
+that just becomes theta
+integrate evaluated at two pi so this will
+just be two pi.
+This is, oops, this is e to the u du.
+So that's a special function that it's a,
+it's its own derivative.
+So I end up with minus 1 half e to the u
+evaluated at minus infinity and at 0.
+And so,
+I have to be a little bit careful here.
+I can't just plug infinity in.
+But what I end up having is minus 1 half
+so
+e to the, I'm going to replace u with t so
+this
+is just e to the u evaluated at t and then
+take the limit as that go, as t goes to
+minus infinity.
+And then, I have to subtract the lower
+endpoint.
+So that's just going to be e to the u with
+u equals zero substituted in.
+That will be e to the 0, and anything to
+the zero
+power is equal to 1.
+Or anything not 0 to the 0 power is equal
+to 1.
+So then I have minus 1 half
+times this, the limit as, of e to the t as
+t goes to negative infinity.
+This is if I, it gets smaller and smaller.
+So in the limit that's just going to be 0.
+So I end up with 0 minus 1, so negative
+1 times negative 1 half, and that gives me
+a half.
+This first bit is 2 pi so 1 half times 2
+pi gives me pi.
+And I've been writing all of these equal
+signs here.
+So the whole long string of e qualities is
+showing me that M squared is eventually
+equal to pi.
+And this is the thing that I set out to
+prove in the first place.
+So, in summary, I started out with M equal
+to this integral
+that I couldn't find an antiderivative of.
+So it was difficult to evaluate.
+I was showed I was able to show that M
+squared was
+equal to pi so M is equal to the square
+root of pi.
+And that gives us the result that we
+wanted, that this integral from minus
+infinity to
+infinity of e to the minus x squared dx is
+equal to the square root of pi.
+

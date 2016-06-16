@@ -1,0 +1,114 @@
+Propnets are an alternative to GDL for
+expressing the dynamics of games.
+With a few additional provisions, it's
+possible to convert any
+GDL game description into a propositional
+net, with the same dynamics.
+As an example of this, consider the simple
+game shown here.
+It's just one role, white.
+There's just one base proposition, and
+there are two actions.
+The two actions are always legal.
+The player gets 100 points if S is true,
+otherwise the player gets zero points, and
+the game ends if Q ever becomes true.
+Notice the dynamics: if A is performed
+and S is true then P becomes true.
+If P is false Q becomes true.
+If Q is true R becomes true and if Y
+performs B then R becomes true as well.
+Now, let's build a prop net for this game.
+We start with the game's physics.
+The base proposition's in the prop net
+consist of the propositions
+defined in the base relation in the game
+description, namely S.
+The input propositions correspond to the
+actions defined by the
+input relation in the game description,
+namely A and B.
+We use the next relation to capture the
+dynamics of
+the game, starting with the base and input
+propositions, where we
+add links for each rule, using inverters
+for the negations,
+and gates for multiple conditions, and or
+gates for multiple rules.
+And so doing, we augment the propos-,
+prop net with additional new propositions
+as necessary.
+The result is the prop net shown here
+which is
+exactly the same as the one introduced in
+the previous segment.
+Okay now, we have more things to model to
+complete our game description.
+First of all termination.
+Model terminate in the prop net by adding
+a special node for termination.
+In this case, terminal corresponds exactly
+to q.
+Remember, the game is over if q ever
+becomes true.
+So, we could just use q as our terminal
+node.
+However, for the sake of clarity we can
+also add a new
+node, t, as shown here, and insert a
+connection from q to t.
+Note that I've used an one-input and gate.
+I could equally have used a two-input and
+gate with both inputs supplied
+by q, but this is simpler and the behavior
+is exactly the same.
+Rewards are handled analogously.
+We create a new node for each reward value
+and we
+use the definitions for these values to
+extend the prop net further.
+In this case, Goal of white being one
+hundred corresponds exactly to S,
+so we don't really need to add a new node
+for that case.
+However for clarity in our example again
+we have added
+a new node for this case and labeled it
+100.
+And then we've also added a node for zero
+which is the true
+in exactly the opp, the rema, other cases
+from the case where the goal is
+100.
+Legality is by far the trickiest part.
+Of for input in, in encoding GDL in prop
+nets.
+There are various ways we can do this.
+The simplest method conceptually is to
+simply
+add one legality proposition for each
+possible
+action, and extend the prop net to say
+that when these nodes are true.
+In this case, we would add two new
+propositions, la
+and lb, for the legality of a and legality
+of b.
+In this case there always true, actions
+can always be performed, to model
+this we add a self loop for each of these
+legality propositions, and
+then we initialize that proposition to
+true, of course because of the dynamics
+of transitions the propositions remain
+true indefinitely
+meaning that those actions are always
+legal.
+And that's it.
+Once this is done, we have a prop net
+that reflects the game described in the
+given GDL.
+In the next section, we discuss how to use
+this prop net to play games.
+

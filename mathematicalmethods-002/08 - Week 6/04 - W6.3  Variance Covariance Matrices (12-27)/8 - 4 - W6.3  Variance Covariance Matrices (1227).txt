@@ -1,0 +1,319 @@
+The next topic is Variance Covariance
+Matrices.
+[COUGH]
+So this is tool that you use to, if you're
+building an, sorry, if you're
+building, portfolio of assets, you sort of
+want to know how risky they are.
+You have a measure of risk for each asset.
+But what also ends up being useful is the
+measure of risk between assets.
+So sometimes you'll see if you have assets
+in
+the same sector, so if you have two
+technologies stocks.
+So, for instance, like Oracle or
+Microsoft.
+If technology stocks are doing good, they
+both go up together.
+Not exactly the same amount, but when one
+of them goes up,
+the other one is much more likely to go up
+than go down.
+And and vice versa for when they go down.
+sometimes you have things that are
+negatively correlated, so I'm trying to
+think.
+There were all sorts of good ex examples
+of this one.
+You know, in 2007,
+2008, you had things like McDonald's and
+Spam going up.
+And more expensive types of food going
+down.
+So when you had a shock that made.
+Say, I don't know, what's an expensive
+type of food?
+[LAUGH]
+Lobster.
+Yeah, lobster maybe.
+Maybe lobster goes down.
+that would be an indication that maybe you
+should buy McDonalds.
+The stock, not the food.
+[LAUGH]
+[COUGH]
+So I'll start off with some concepts from
+statistics something
+called the sample mean, I hope everybody's
+aware of.
+So if I have a vector x and it's got m
+elements, m
+components in it, and I want to just find
+the average value of those.
+What I'm going to do is just, so this
+notation
+means, sum, so I'm going to sum all of
+those up.
+So add all m of these values together and
+divide by m, I'm
+going to call that x bar and that's going
+to be called the sample mean.
+The sample variance of the elements in x,
+I'm going to get by, so
+I need my sample mean from step one, or
+from part one up here.
+I subtract that from each element of my
+vector, x.
+I square that, that difference.
+And then I add up all of the squared
+differences.
+And this time I have to divide by m minus
+1.
+And that I'm going
+to call the sample variance of my vector
+x.
+And then suppose y is also a vector of
+length m.
+That I can define something called the
+sample covariance of x and y.
+So looks kind of like the variance except
+instead of having
+this thing squared, I just have x oops x
+minus its mean.
+Times y minus its mean.
+I form that product and then I sum up over
+all so over each of the m components.
+And then again for that I have to divide
+by m minus 1.
+So these things are sample means, sample
+variants, sample covariants.
+And so now let's look.
+So let's let e be a column vector of m1,
+so this is just, you
+know, 11111 down a column, so what if I do
+e transpose x?
+This is the same thing as e.x, that would
+be one times
+x1 plus one times x2 plus one times x3 and
+so on.
+So that's another way of writing the sum
+of all
+of the elements, all of the components in
+this vector x.
+And then m is a scaler, so putting this
+over m is,
+this is just going to give me another way
+to write x bar.
+So this is sort of my way of writing dark
+product that is 1 times x1,
+1 times x2 and so on, and then 1 over m,
+so I divide by m.
+And that was just the definition of the
+sample mean I had on the previous slide.
+So I can also write the sample mean as e
+transpose x divided by m.
+And x bar is going to be a scaler.
+So when I do this a dot product gives me
+scaler and then I'm dividing that by m,
+which is scaler.
+So this is just going to be oops, a single
+real number.
+And then I can make a column vector with x
+bar in each position just by multiplying e
+by x bar.
+Normally, I would want to write this with
+the, the scalar value times
+the vector, but I'm going to write it as
+the vector times the scalar value.
+I mean the same thing, but it's just
+going to be a little bit nicer
+when I try and use some other calculations
+later if it comes in this order.
+So this will be a column vector.
+Where each element is x bar.
+So now I want to make a new vector that
+I'm going to call x tilda, and
+that's going to be equal to x, so that was
+my original vector, minus,
+now remember this thing.
+This fraction here, that's just x bar.
+And then I'm going to multiply that times
+this column vector of 1's e.
+So that's going to give me x minus ex bar,
+so if I look at that, that vector
+difference now, the first element is
+going to be x1 minus x bar, the second
+element is going to be x2 minus x bar.
+And so on.
+And so the i'th element is x tilde i, is
+xi minus x bar.
+And so now if I go back and look at my
+sample variance formula,
+I have xi minus x bar.
+Well, that's just x tilde i.
+I can't highlight.
+So I can replace that, this square
+difference
+with just xi squared or x tilde i squared.
+But another way of writing that is x tilda
+transpose x
+tilda and now I'm dividing that still by m
+minus 1.
+And again, this is just a dot product, so
+this is, what I do x transpose x where x
+is a column vector, that's going to be a
+scalar
+value, so that's just the matrix notation
+for dot product.
+And then, I'm dividing that by scalar n
+minus 1 and
+that's going to be the number that's the
+sample variance of x.
+And another way I could write that, is
+this is the length squared of x divided
+by m minus 1.
+So really what I'm kind of trying to do
+here is, show
+that there are lots of different ways to
+approach the same problem.
+And then what we'll do later on is we're
+going to pick the
+way that makes it easiest to get to the
+answer that we want.
+So I can do the same thing now for the,
+the sample covariance.
+So I'll make, oops.
+e transpose y is just going to be the sum
+of all of the elements in my vector y.
+Divided by m, that's going to give me the
+mean value,
+the sample mean of the elements of my
+vector y.
+So, y tilde is just going to be y, minus
+its mean.
+And the sample covariance then.
+So I have x minus its mean, y minus its
+mean.
+That's just x tilde I, y tilda I, and I
+can write that
+as x tilde transpose y tilda divided by m
+minus 1.
+So this again is a dot product or an inner
+product divided by a scalar.
+So it's a scalar divided by a scalar, so
+that's the
+number that gives me the sample covariance
+of x and y.
+And so I started out in, in this section,
+I don't know if
+everybody remembered from the, from the
+outline
+I called this a variance covariance
+matrix.
+and that's basically because the variance
+of x
+goes, ends up being down the, the
+diagonal.
+So if I have x and y, if y is equal to x,
+I
+get a variance and if y is different than
+x, I get a covariance.
+I'm just going to think now of the
+variance
+of x as being the covariance of x with
+itself.
+And then only call this thing a
+co-variance matrix from now
+on, because it gets really difficult to
+pronounce variance, co-variance matrix.
+Also it makes the slides wider than they
+need to be.
+So the Cov x,x that's going to give the,
+the
+variance but from now on I'm just going to
+think of
+this whole structure as a covariance
+structure, and sometimes I
+just end up calculating covariances of x
+with itself, okay.
+So now let's suppose that x and y, I could
+put those in the columns of a matrix r.
+So here r, I chose r just because it's a
+rectangular matrix.
+So we have m rows and 2 columns.
+The first row is my vector x, second row
+is my vector y.
+I can now make a matrix called r tilde.
+So I know how to subtract off the sample
+mean from each element of
+my vector now, and that gives me these
+vectors x tilda and y tilda.
+So why don't I put those in a matrix and
+call that r tilda?
+And sample variance covariance matrix.
+So that the notation, remember I'm just
+going to
+call this a covariance matrix, kind of,
+after this set of slides.
+So I'll write Cov of r, where r is this
+matrix here, is going to be the, on
+the diagonal so I have, I think of this
+column, the first column as being the x
+column.
+The second column as being the y column,
+and the first row
+as being the x row and second row as being
+the y row.
+And then where each
+of those intersect that tells me what I'm
+going to put in the.
+In that element of the matrix, so here, I
+have the x
+row intersecting the x column, so I put
+covariance of x, x.
+Here, I have the x row intersecting the y
+column, so I put covariance of x, y.
+Here, I have the y row intersecting the x
+column, so I get Co of y, x.
+And then Cov y, y for the, for the bottom
+right slot.
+And another way I can write this now, I've
+already said that Cov x, x,
+that was just x tilda transpose x tilde
+divided by 1 over m minus 1.
+And so I'm just going to fill in these.
+I'll replace these Covs with these.
+products divided by 1 over m minus 1.
+But then I can factor that 1 over m minus
+1 out, and just stick that in front of my
+matrix.
+And so it turns out that this matrix is
+also just the matrix product.
+r tilde transpose, r tilda.
+So if I take this matrix r tilde, if I
+take the transpose of it, then I'm
+going to get one row that's equal to the
+vector x, and the second row equal to the.
+Err, sorry, first row equal to x tilde,
+second row
+equal to y tilde, and then when I do r
+transpose
+r, these are the elements of that 2 by 2
+matrix I'll end up with.
+And then because I have to divide by this
+m minus
+1, I'll have r transpose r divided by m
+minus 1.
+And so this is a sort of more
+matrixy expression for the covariance
+structure of this matrix.
+[INAUDIBLE]
+r that has column x and column y.
+And I'm going to say that this matrix is
+symmetric.
+So that would imply that x tilda transpose
+y
+tilda is equal to y tilda transpose x
+tilda.
+

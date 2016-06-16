@@ -1,0 +1,571 @@
+Okay, so we've seen that propositional
+nets can
+be used to advantage in searching game
+trees.
+The other main use of propnets is in
+analyzing games.
+For example, by analyzing the propnet for
+a
+game, it's sometimes possible for a player
+to
+detect structure that allows him to
+actually decrease
+the size of the game tree in significant
+ways.
+Game decomposition, or so-called
+factoring, is a good example of this.
+A compound game is a single game
+consisting
+of two or more individual games glued
+together.
+The state of the compound game is a
+composition of the states of the
+individual games.
+On each step of a compound game the
+players perform actions in each of the
+individual games.
+The compound game is over when either one
+or all of the individual games are over.
+Depending on the type of the compound
+game.
+Now using the techniques we have seen thus
+far, compound games can be quite expensive
+to play.
+Unless a player recognizes that there are
+independent subgames involved, it's likely
+to search a game tree that's far larger
+than it needs to be.
+For example, if one subgame has branching
+factor a,
+and a second has branching factor b, then
+the
+branching factor of the joint game is a
+times
+b, one choice of each of the b actions
+for each of the a actions.
+Then the fringe of the game tree at depth
+d is likely
+to be something like (a x b) raised to the
+power d.
+Now this is wasteful if the two games are
+truly independent, in that case there are
+two trees, one
+with branching factor a and one with
+branching factor b
+and the total size of the fringe of these
+trees.
+At depth d, should be only a to the d plus
+b to the d, significantly smaller.
+Double Tic Tac Toe is an example.
+On each move, players play on one of the
+two boards.
+First to win on either board wins the
+overall game.
+If the game is left unfactored, the
+branching factors are quite large.
+There are 81 possibilities in that first
+move.
+Nine for each board, and then they're 64
+in a second and so forth.
+However, the games are factored, the
+branching factors are much more modest.
+Game factoring is the process of
+discovering independent games inside of
+larger games.
+Once discovered, game players can use
+these factors
+to play the individual games independently
+of each other.
+And those cut down on the combinatory cost
+of playing such games.
+Turns out that it's often easier to
+discover independent subgames
+using the propnet representation for
+games, rather than other representations.
+Now in this segment, we'll look at
+some elementary techniques for factoring
+games using propnets.
+We'll first talk about discovering factors
+with completely independent subgames.
+We'll then talk about factoring with
+interdependent termination and rewards.
+And after that, we talk about factoring
+with interdependent actions as well.
+And finally we'll discuss briefly the
+conditional factors.
+That is factors that appear only
+in certain states of the games but not in
+all states.
+Okay, so let's begin our discussion of
+factoring
+with a simple case of a compound game.
+consisting of multiple and completely
+independent subgames.
+Only one of which is relevant to the
+overall game.
+Without factoring, the player is likely to
+consider actions of
+all of the subgames, when only one of
+those subgames matters.
+Now, okay, now this is admittedly a very
+special case.
+It doesn't arise often,
+and it can be solved by means other than
+factoring.
+But not by the method we've seen thus far.
+Nevertheless, it's worth considering
+because of it prepares
+us for factoring more complicated sorts of
+games.
+Okay, Multiple Buttons and Lights is an
+example of a game of this sort.
+The overall game consists of multiple
+copies of mul-, buttons and lights, and
+each copy of buttons and lights, there are
+three base propositions for lights.
+And three actions,
+the buttons.
+Pushing the first button in each group
+toggles the first light in that group.
+Pushing the second button in each group
+interchanges
+the first and second lights in that group.
+And pushing the third button in each group
+interchanges the second and third lights
+in that group.
+Initially, all of the lights are off.
+The goal is to turn on all of the lights
+in the middle group.
+The setting of the others doesn't matter.
+Now here's a propnet for the game.
+Notice that there are three disjoined
+parts of the propnet.
+One portion for the first group of buttons
+and lights, a second
+portion for the second group, and a third
+portion for the third group.
+And note that the goal and termination
+conditions for the overall
+game are based entirely on the lights in
+the second group.
+Looking at the propnet for this game, it's
+easy to
+see that the game is of this very special
+structure.
+The propnet consists entirely of three
+completely disconnected subnets, one for
+each subgame.
+Finding factors in situations like this is
+really easy, it can
+be computed in time that's polynomial in
+the size of the propnet.
+And having found these factors, the
+solution is really simple.
+The player just keeps the essential
+component and discards the other two.
+Now, note that this technique can be
+applied equally well to multiple player
+games.
+For example, Multiple Tic Tac Toe, that is
+three games of
+Tic Tac Toe glued together, in which only
+the middle game matters.
+Propnet from Multiple Tic Tac Toe is
+similar
+to the propnet from Multiple Buttons and
+Lights.
+And it's possible to find the structure in
+Multiple Tic
+Tac Toe just as easily as from Multiple
+Buttons and Lights.
+Okay, now let's consider a slightly more
+complicated case.
+Namely, compound games with interdependent
+termination.
+We can assume interdependent goals as well
+but I'm going
+to ignore goals for now and just focus on
+termination.
+As with the case of independent subgames,
+entirely independent subgames actions are
+petitioned over distinct subgames and
+there
+are no incoming connections between those
+subgames.
+The main difference is that the
+termination condition for the overall game
+can depend on more than one and perhaps
+all of the subgames.
+Now in games of this sort, the termination
+of the overall game
+can be defined as any boolean combination
+of conditions in the individual games.
+In the case where the combinations are
+disjunction
+then the game is said to be disjunctive.
+In the case where the combinations is
+conjunct the game is said to be
+conjunctive.
+As a simple example of a factorable game
+with disjunctive termination, consider
+Best Buttons and Lights.
+In multiple buttons and lights, only one
+group of buttons and lights matters.
+In Best Buttons and Lights, the compound
+games
+terminate, compound game terminates,
+whenever any group terminates.
+Not just the one in the middle.
+This gives the player the freedom to play
+whichever subgame
+it likes and rest assured that if it
+succeeds on
+that subgame, it succeeds on the overall
+game with the same score.
+Okay here's a propnet for Best Buttons and
+Lights.
+It's similar to the propnet for Multiple
+Buttons and Lights, except that the goals
+and termination are based disjunctively on
+all three subgames.
+The good news is that we can
+extend the technique, this discussed, in
+just discussed.
+Let's consider the simply disjunctive
+case.
+If the connective leading to a termination
+is a disjunction as it is
+in this case with its inputs, in terms
+supplied by nodes in different subgames,
+and we simply cut off the overall
+termination condition, and and, and make
+the termination of each of the individual
+subnets a termination condition for that
+subnet.
+And we
+can repeat this process as long as we only
+encounter disjunctions.
+If the game is truly disjunctive, this
+will eventually
+lead to a separable propnet like the ones
+shown here.
+Now, if the process does succeed in
+factoring the propnet in this way, then
+the
+player simply picks one of the subgames,
+and
+proceeds as with the case of independent
+subgames.
+Alternatively and better, the player tries
+playing all of
+the subgames, and picks the one with the
+best score.
+Or, at least that's the basic idea.
+Unfortunately, it's not quite that simple.
+There's a problem that does not arise
+in the case of completely independent
+subgames.
+The player may choose one subgame, find
+a winning strategy, and begin executing
+that strategy.
+Unfortunately in the course of execution
+on the
+chosen subgame, one of the other subgames
+may terminate.
+Terminating the game as a whole before
+the strategy in the chosen subgame is
+complete.
+This can lead to a lower
+score than a player might have otherwise
+expected.
+The solution to this problem is to check
+each of the
+subgames for terminations when no actions
+are played in that subgame.
+The player takes the shortest time period
+and
+plays each of the other subgames with that
+as a step limit and takes the one
+that provides the best result within that
+step limit.
+For the subgame with the shortest
+termination, if there are no
+other subgames with that step limit, the
+player tries the next
+shortest step limit and so forth.
+Although in this approach the player
+searches all of the sub-games more than
+once, this is usually a lot less expensive
+that searching the game tree with
+the unfactored game because it's not, not
+cross multiply the branching factors of
+the independent games as it would if it
+did not use the game's factors.
+And once again, it's possible to extend
+this technique to
+multi-player games, but this has to be
+done with some care.
+Okay, finally, let's look at compound
+games with interdependent actions,
+interdependent, interdependent actions.
+By interdependence of actions, we mean
+those actions have effects
+on more than one of the subgames of the
+compound game.
+Okay, now, at first blush, it might seem
+that
+games of this sort are just plain not
+factorable.
+However, that's not necessarily true.
+Under certain circumstances, even with
+interdependent
+actions, it's possible to identify factors
+and use those factors to
+search the game tree more efficiently then
+without considering the factors.
+Okay here's an example, this is called
+Joint Buttons and Lights.
+As with the other buttons and lights
+variants
+that we've seen so far, lights in this
+game
+are organized in terms of three, however
+unlike the
+previous variance, buttons are not
+associated in specific groups,
+instead each button has effects on all
+three groups.
+Button aaa toggles the first light in each
+group.
+Button aab toggles the first light in the
+first group and the first light in the
+second
+group and interchanges the values of the
+first and
+second light in the third group, and so
+forth.
+So we have all possible combinations of
+the actions.
+In the preceding games.
+Although all of the buttons in this game
+affect all of the subgames.
+And the game is still factorable with just
+three actions per factor.
+The reason is that there's one button in
+the compound
+game for each combination of actions in
+the other two subgames.
+Thus the game trees for each subgame can
+be searched independently of each other
+and the actions chosen can be reassembled
+into overall actions of the compound game.
+For example, if action a is
+chosen in the first and second subgames,
+and action c is chosen in
+the third subgame, then action aac can be
+performed in the compound game.
+Okay, now recognizing when this can be
+done is not easy.
+But it is doable.
+There are just basically two steps, and
+the first step the
+player groups actions into equivalence
+classes of actions for each subgame.
+And in the second step, the player
+determines whether these
+equivalence classes satisfy what is called
+the lossless join condition.
+Finding equivalence classes is done by
+looking at the propnet for each subgame.
+Two actions are equivalent if they are
+used
+in the same way in the propnet for that
+subgame.
+For example, if each action is input to an
+and gate
+with a same other input, and if the
+outputs are connected by
+an or gate, then the effects of one action
+can not be
+distinguished from the effects of the
+other action, hence they are equivalent.
+The process of finding equivalence classes
+is repeated for each potential subgame.
+In general, the equivalence classes for
+each subgame will be different.
+In fact, as we'll see, in order for
+the game to be factorable, they must be
+different.
+Once a player has equivalence classes for
+each potential subgame, and
+then checks whether those equivalence
+classes are independent of each other.
+Criterion is simple.
+Each equivalence class in one potential
+subgame must have a
+non-empty intersection with each
+equivalence
+class of every other potential subgame.
+If this is true, then these
+partitions pass the so-called lossless
+join criterion.
+More details in the notes.
+If
+a player finds equivalence classes for
+various two for potential subgames.
+And they pass this lossless join tests.
+And the player can factor the games into
+subgames.
+In order to benefit from the factoring,
+the player must modify each propnet so
+that the individual actions are replaced
+with
+the equivalence classes of which they are
+members.
+This cuts down on the number of possible
+actions to consider, otherwise the
+branching factor of the
+game trees for the subgames will be just
+as
+large as the branching factor for the
+overall game.
+Once this is done, the player can then
+search the game trees
+for the different subgames to select
+actions to perform in each subgame.
+They can then find an action in the
+compound game for the particular
+combination of subgame actions.
+This is always doable provided that the
+partitioning of action satisfies that
+lossless joins property.
+the player then performs any action in the
+intersection of the equivalence classes
+chosen in this process.
+Okay, again, check out the notes for more
+details on, on factoring games with
+interdependent actions.
+Finally, let's look at one more case,
+namely, conditional factoring.
+That is factoring in cases where a game is
+not factorable to start out, but over time
+becomes factorable.
+Here's an example.
+It's called Linked Tic Tac Toe.
+Two games of Tic Tac Toe connect,
+connected by
+a single square that, that connects the
+two subgames.
+The goal of the game as a whole is for the
+player to get two lines a row, column, or
+diagonal of that player's mark, with at
+least two of
+the marks residing in a specific Tic Tac
+Toe domain.
+Diagonals through the middle, don't count,
+diagonals don't count.
+When in each turn the player in control
+can place two marks either one in each, in
+each distinct Tic Tac Toe domain, or one
+mark in the Tic Tac Toe domain, and one
+in the center square.
+Now suppose the state of the game is as
+shown here.
+Once it is not possible like this to
+achieve
+a row utilizing the center square, the
+only possible
+solution lie in the domains of the Tic Tac
+Toe games that are conjoined by the center
+square.
+The states of these two Tic Tac Toe games
+can be considered
+independently to find the remaining
+optimal
+moves for the duration of the game.
+Only the game trees for each
+Tic Tac Toe game, modular the center
+square, need
+to be searched to determine the remaining
+optimal moves.
+Given the current state, the game can best
+be factored into two independent subgames
+at this point.
+However, for the initial state, this game
+cannot
+be factored into sub, independent games
+because the shared
+middle square intertwines the two domains
+as it's
+relevant to the satisfaction goals in the,
+both subgames.
+While this game is not factorable, in
+general, it is factorable
+contingent upon entering a state in which
+no
+row through the middle is possible for
+either player.
+So the game is s-, said to be contingently
+factorable since it
+reduces to independent simultaneous
+subgames, given
+that it enters in this certain state.
+It's contingent upon this state.
+The raw computational benefit acquired
+from recognizing contingent factors like
+these is less than that of recognizing
+initial factors because
+it requires that the game be in a specific
+state.
+However, the re-, relative computational
+savings are still
+the same because the number of accessible
+fringe nodes
+reduces to the sum of the remaining
+accessible fringe
+nodes of the individual games rather than
+their product.
+Okay, at this point in time, there
+are no established techniques for
+discovering and exploiting
+cases of contingent, conditional
+independence, although there is
+some work that is being done right now.
+However, it seems likely that some of
+these techniques
+that we have already discussed can be
+further adapted
+or these new techniques that are being
+discussed may
+turn out to have power in finding
+conditional factors.
+Okay, game factoring is complicated, as
+you
+probably have guessed but it is really
+worthwhile.
+You can significantly decrease the cost of
+game playing.
+Or not the only source of propnet based
+game analysis that is worthwhile.
+For example, propnets can be used to find
+bottlenecks.
+That is, games structured in a series
+where the
+player must win the first game before
+playing subsequent games.
+Propnets can be used to eliminate dead
+states, that
+is states that cannot lead to an
+acceptable solution.
+And which can, therefore, be pruned from
+further consideration.
+And propnets can also be used to detect
+certain kinds of monotonicities, that is,
+cases where
+higher goal values on non-terminal states
+correlate with
+progress toward terminal states with
+acceptable goal values.
+And there's a lot more research to be done
+in this area.
+

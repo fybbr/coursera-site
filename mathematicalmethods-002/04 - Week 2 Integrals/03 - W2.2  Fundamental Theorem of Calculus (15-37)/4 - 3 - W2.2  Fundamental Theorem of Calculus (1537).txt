@@ -1,0 +1,406 @@
+So there're very, very few functions where
+you're going to be able to just look
+at it and see what the area is and use
+that to evaluate the integral.
+So clearly, we need something a bit better
+than that.
+So the fundamental theorem of calculus,
+really gives us
+the rule that's going to allow us to
+evaluate that,
+[INAUDIBLE]
+most integrals.
+So I'll start off by defining, something
+called an anti-derivative.
+So if f as a function is an integrable
+function, then the
+anti-derivative of f, so I use f from my
+original function.
+I'm in use the capital F, to mean the
+anti-derivative
+Of my function, is a function that
+satisfies this property.
+So capital f is the anti derivative of f
+of x, if and only if, f prime.
+So capital f prime of x is equal to f of
+x.
+So what I want to find is a function
+capital f that has the property
+That when I take its derivative, it gives
+me the function I started out with.
+And this, so when I, when I, write the
+integral
+symbol without limits on it, so notice it
+doesn't have and
+a, and a, b here.
+I'm not talking about evaluating the
+integral and trying to come up
+with a number I'm just putting that symbol
+in front of a function.
+That's My symbol for take the
+antiderivative.
+Sometimes also called an indefinite
+integral.
+And one of the problems we're going to
+run into is that antiderivative, is not
+unique.
+So I can
+Add any constant, any arbitrary constant I
+want to, to my
+anti derivative and when I take the
+derivative of that function.
+The derivative of the constant is going to
+be zero, and if f of
+x capital f of x here is the anti
+derivative of my little f function.
+Than the derivative of this quantity, is
+also
+going to be a valid antiderivative for my
+function.
+So this means in particular if I ever say
+what is the indefinite integral.
+Or what is the anti derivative of, to be
+correct you have to add a constant
+after you've figured what the kind of the
+core of the function is.
+And the trick now of the fundamental
+theorem of
+calculus, is when a closed form of the
+antiderivative
+exists then we can use the following
+theorem to evaluate a definite integral.
+So I'm going to put some conditions on my
+function f, f of x
+has to be continuous on the interval where
+I'd like to integrate it.
+Then the integral of little f of x dx over
+the integral of ab is
+just equal To the anti=derivative of
+little f(x), evaluated
+at b minus the anti-derivative of little f
+evaluated at a.
+And the trick here is this is true for
+every single anti-derivative?
+So, if I look up, here you might
+think what's going to happen to the c.
+But essentially, if I added a c on here,
+I'm going to get c times b minus
+a, and it has to be the same
+anti-derivative for both the upper and
+lower endpoint.
+So I end up with c times b minus a, minus
+c times b minus a, and so it doesn't
+matter what constant I choose, that That
+amount is always going to
+cancel itself out, so you might as well
+choose the C
+that is easiest, and for me the easiest
+one is usually zero.
+And so this is going to be our rule for
+evaluating integrals, the
+bulk of the work is going to be finding
+the antiderivative, capital F
+>> And then, I just need to evaluate it
+at the upper
+end point and at the lower end point and
+take the difference.
+>>
+[INAUDIBLE]
+>> The, the constant
+makes it non-unique.
+So you know, I could have, if I found a
+function F of f
+that has the property that when I take its
+derivative,
+I get f of x.
+Then I could also
+add I could say F of f plus 1, and when I
+take the derivative of that, I get the
+derivative of f of x plus the derivative
+of 1,
+which would just be the derivative of f of
+x.
+>> Which is my little F of X.
+So, the little F of, differentiation has a
+unique answer, but the anti-derivative has
+a non-unique answer.
+But, you can understand it by adding, just
+it's only
+every going to be off by a constant.
+So, for example, suppose capital F of x is
+equal to one-half of x squared.
+So here I'm going to cheat a little bit.
+I still haven't talked about how we're
+going to find anti-derivatives.
+So I'm just going to start out with the
+anti-derivative,
+and then get my little f of x by
+differentiating.
+Then by the power rule, I just take 2
+times 1/2 x
+to the 2 minus 1, so that's just going to
+be x.
+So the Fundamental Theorem of Calculus
+says the area under
+the curve f of x equals x from 0 to b.
+So that's my integral of little f of x
+from 0 to
+b, is going to be capital F of b minus
+capital F of 0.
+And I know what capital F is, because
+that's where I started.
+So I get 1/2 b squared minus 1/2 0
+squared.
+So this second term is obviously just
+going to disappear.
+And so that tells me, that the area under
+the curve little
+f of x equals x is just from zero to b is
+1/2 b squared.
+And so I think if I draw a picture of
+this, it's pretty obvious that's just the
+area of a triangle.
+And so we know the formula for the area of
+a triangle.
+So area of a triangle
+should be one half base times height.
+And we get exactly the same thing by
+solving this question with integration.
+So that, that's a very good thing to do
+when you're.
+Trying out you know, new mathematical
+methods.
+This probably seems like a very easy
+operation.
+But if it's not giving you the right
+answer,
+you know, it's you don't want to go a
+lot further and find out it's not working,
+and
+that you could've seen that at the very
+first step.
+So you want to check it on the, on the
+obvious examples.
+So evaluating definite integrals basically
+boils down to finding anti derivatives.
+And unfortunately this isn't as
+straightforward as differentiation so at
+differentiation.
+We, we, have a set of rules, and it was
+pretty clear
+how you could use those rules to compute
+the derivative of a function.
+Essentially for finding an anti-derivative
+we're going to use the
+same rules but just try, and use them
+backwards.
+So we're going to be looking for things
+that we
+recognize as the derivatives of functions
+that we know.
+And then once we've identified that, we
+can then go ahead and replace that
+with the, with the function that would
+have that at its, as its derivative.
+So the easiest one of these is just
+going to be
+the, the power rule so I've decided to
+call the
+indefinite integral of x to the n the
+anti-power rule.
+I Googled that I don't think anybody else
+has used
+that word yet so this might be unique to
+this class.
+the technique is definitely not unique.
+and I think this was probably the first
+type of antiderivative anybody figured out
+how to compute.
+So, if I want to find a antiderivative of
+x to the
+n, while I know that the power must have
+been n plus 1.
+And then if I was going to take the
+derivative of x to the n plus 1,
+I know that an n plus 1 would pop out in
+the front by the power rule.
+So I better divide by 1 over n plus 1 so I
+can cancel that out.
+And so I end up with this function here.
+And if you take the
+derivative of that, I just have n plus 1
+times 1 over n plus 1.
+So that gets rid of the coefficient.
+And then I'd have x to the n plus 1 minus
+1, or x to the n.
+And then just to be complete, I add an
+arbitrary constant to this
+because when I take the derivative of
+that, that's going to always be 0.
+And after that essentially, what we need
+to do is just come up with a dictionary
+of functions that we know.
+And what they're derivatives are, and then
+we'll
+be able to try and use that backwards.
+So some common functions are if I have
+a, a function that's equal to zero
+everywhere,
+it's derivative is equal to zero because
+it's
+a constant and the derivative of that is
+zero,
+If I have just a constant then I can use
+my anti power
+rule trick, I can just pretend that's c
+times x to the 0.
+Define that the antiderivative of a
+constant is just c times x.
+And then some important functions e to the
+x.
+Remember this was a special function where
+it was equal to its own
+derivative so here it's also going to do
+that backwards it's going to
+be a special function where it's, it's own
+anti-derivative except in this column
+we should have a c an arbitrary constant
+could be added to that.
+1/x.
+So you might look at this and think,
+that's just
+x to the -1, that probably came from the
+power rule.
+Except if you try that, you'll realize
+that
+this won't work backwards for that one
+particular case.
+And it turns out that the antiderivative
+of
+1/x is actually equal to the logarithm of
+x.
+And then here we had before.
+I, I think this was the one that I asked
+my phone for.
+the derivative of sine is cosine.
+So the anti-derivative of cosine is sine
+and then again for
+all of these we could always add an
+arbitrary constant to that.
+The capital f.
+Colon.
+And then also the anti-derivative of
+sin(x) then -cos(x).
+And so these are things where you can
+either look in one of those big fat
+calculus textbooks to find tables of
+integrals and
+they get a lot more complicated than this.
+You can use computer algebra software, or
+you can just try
+using something like Wolfram|Alpha to try
+to find the answer to these.
+And so just some quick examples that, some
+simple examples
+again, of using some of the properties I
+went through
+in the last set of slides, and then And
+then
+some of these anti-derivative rules that
+I've just shown now.
+Let's consider evaluating the definite
+integral over the interval from two
+to five of three x squared plus two x plus
+one.
+So the first property I'm going to use is
+linearity property so I can split
+this up into three separate integrals and
+then I can use the, my anti-power rule.
+3 times.
+And so because of the way I've written
+this
+down, these are all just derivatives of
+powers of x.
+So 3x squared is the derivative of x
+cubed.
+2x the derivative of x.
+And dx is the derivative of X.
+And then I need to evaluate these each
+term.
+Evaluated at the upper endpoint and
+subtracted at the lower endpoint.
+So here my function is x cubed.
+So I'm going to evaluate it at the upper
+endpoint.
+I get 5 cubed.
+And then subtract that function evaluated
+at the lower endpoint.
+I get 2 cubed.
+Then I repeat for the x squared term and I
+repeat for the x to the first power term.
+And then I skipped some of the messy
+calculations and that ended being 141.
+If I want to evaluate
+the integral of 2 Sin x over the interval
+of 0 to pi
+I can treat that as a constant times a
+function I know how to integrate.
+So I can move the 2 outside of the
+integral sign.
+And then in my little dictionary on the
+last
+slide, I had an antiderivative for sine of
+x.
+So that's just going to be equal to two
+times minus cosign of x evaluated
+between zero and pie so that's just
+going to be two times minus cosign
+x of pie minus, oh let me just show you,
+minus cosign of zero
+Oops, and I've done something silly
+here.
+So cosign
+of pi is equal to 1 not
+equal to 0.
+So if you imagine what a cosine looks
+like, For you it's going to start at 1.
+It's going to drop, hit 0 at pi
+over 2, and it's going to hit negative 1
+at pi.
+So this actually should have been a
+negative 1 here.
+So I would have had negative 1 minus 1.
+So I would have had minus 2.
+Times minus 2 and that would have been
+equal to 4.
+Yeah, so little typo there.
+So this is going to be an easy one.
+So the integral of the exponential
+function from minus 1 to 1.
+>> So, the exponential functions, it's
+own antiderivative.
+So, I'm going to get E to the first power
+minus E
+to the minus 1, which is just E minus 1
+over E.
+And that's equal to about 2.35.
+And then the final example.
+I'm just going to try and integrate, so
+this is shorthand, when I type dx over x.
+The function f of x is equal to 1/x, and
+then because it's
+an integral, I have this dx at the end,
+but I multiply those together.
+And I just write this as D X divided by X.
+And so, in my little table of anti
+derivatives, we saw
+that the anti derivative of one over X was
+equal to log X.
+So the value of this integral is just
+going to be log x evaluated at 4 minus
+log x evaluated at 1.
+So log of 4 minus log of 1 which
+is just equal to log of 4 because of 1 is
+0 and
+that's equal to about 1.39.
+

@@ -1,0 +1,608 @@
+So now I want to start talking about
+something called the limit.
+So in the, in the previous section we, we
+came up with this
+formula for, for a perpetuity which I'm
+receiving an infinite stream of payments.
+But that has a, a finite value, so you
+know
+that, value of this thing it's approaching
+something called a limit.
+but I want to sort of give you another
+example where that's not going to work to
+motivate
+why we need to have a rigorous
+mathematical definition
+for what's going on here for, for our
+limit.
+So suppose, instead you know, I receive a
+dollar in year one,
+I pay a dollar in year two, receive a
+dollar in year three and so on.
+And I want to say what's the, what's the
+present value of this sort of future
+stream of payments.
+So that's, that's kind of trying to couch
+it
+in the same terms I was using before, but
+let's
+just think of this as calculating the sum
+of
+one minus one plus one minus one, and so
+on.
+And so one way you could approach this is,
+you could just draw parentheses around
+every one minus one, and there would still
+be an infinite number of these groups.
+So I'm going to have plus one minus one.
+So each one of these quantities is
+going to be zero.
+so then I'm just summing from k equals one
+to infinity, the number zero.
+And so, hopefully that would be equal to
+zero but I, I've put, question marks about
+some
+of these equality signs because I want to
+say that doing this might be kind of
+dubious.
+So if I could re-write it this way, then I
+could.
+So, this way I mean that.
+So if I re-write it as plus one, minus one
+as a quantity and then take the
+sum of that.
+If I could use the, the normal rules for
+addition I could just split this sum up as
+an infinite sum of positive ones
+and an infinite sum of negative ones, and
+rewrite it like this.
+And so then again, you would think that,
+you know, if you agree that this thing
+up here is equal to zero, you should
+probably agree that this here is equal to
+zero.
+But
+now I can do something a bit tricky, so I
+want to
+use this same idea of you know, sort of
+popping a few
+terms off of my sum that I used last time
+to, to
+figure out what the value of an annuity or
+a perpetuity is.
+So in if I write this infinite sum of ones
+well I'm just going to pop off the first
+three say.
+So I have one plus one plus one.
+Plus the sum from k equals four to
+infinity of one.
+But it doesn't really matter what I use as
+my index here.
+It's just an infinite stream of ones.
+So I'm going to replace this k with j.
+But it's just going to be, you know, it's
+a different name for the same thing.
+It's a different index but it's just
+going to start at one again.
+So I have one plus one plus one and an
+infinite stream of ones.
+And so if I plug that in, I'm just trying
+to
+do the same trick that I did last time, of
+subtraction.
+So, I'll plug that in for the first one,
+so my sum of positive ones
+becomes this guy here and then I still
+have my infinite stream of negative ones.
+And now I have my sum of positive ones
+minus
+oops, sum of positive ones minus my sum of
+negative ones.
+So that should be zero but I've got these
+three extra ones sticking out in front.
+So now I get the value of this thing is
+equal to three.
+And so by using this trick I can make it
+equal to anything I want to.
+So you're not going to be able to do any
+sort of arithmetic trick like I did last
+time that's going to help you out trying
+to
+figure out what this thing is equal to
+here.
+Oops,
+[INAUDIBLE]
+, there we go.
+So like I said I can make v equal to any
+integer value by just choosing how many
+ones I want to pop
+off or if I want to to be negative I just
+pop
+off some of the negative ones from, from
+this part right here.
+And so, we want to try and think a little
+bit about
+[UNKNOWN]
+what's different.
+So, if we go back my, my formula for
+the annuity or for the perpetuity, you
+know, those
+are in all sorts of investment science
+textbooks, Econ
+101 textbooks, so clearly they're probably
+the right thing.
+so what's different about that, then what
+I've done here, when I've used exactly
+the same trick to try and figure out what
+this stream is equal to.
+So first I'm going to start out with a
+little
+bit of notation.
+So this is the notation that gets used
+in the the textbook we Dan's Definica
+textbook.
+So, oops, r here is, set to real numbers.
+So, real numbers
+are just every single number that you can
+write down using a decimal expansion.
+This z with a funny little, type setting
+is the set of integers.
+So that's just whole numbers, but also
+zero and, and negative numbers.
+This symbol means in, so when I, when I
+talk about
+the real numbers and the integers, I'm
+thinking of them as sets.
+And a set is kind of a special
+construction with one operation.
+So something can be either in a set or not
+in a set.
+And that's all there is to sets.
+And so this is the symbol I'm going to use
+to say something is in a set.
+[COUGH]
+.
+This upside down a is for all.
+So if I want to say, you know, this result
+holds for all combinations of the inputs.
+This is the symbol I'm going to use.
+backwards e means there exists
+and arrow means goes to.
+So, here we, we see the arrow.
+This notation means a function g that
+takes an argument that's a real number
+and gives you an answer that's also a real
+number, so g takes r to r.
+So the, the notation here are these things
+on the left and right of the x.
+And they mean the floor.
+So we think of x as a real number.
+And then the floor is just going to be the
+largest integer that's less than or equal
+to x.
+You know if x was three point five, then
+the floor of three point five would just
+be three.
+And then you know hopefully this should be
+pretty self explanatory after that.
+If I turn these guys around we get
+something called the ceiling so
+that's just going to be the smallest
+integer that's greater than or equal to x.
+So again if I had three point three, the
+ceiling of three point five is going to be
+four.
+And
+then if I use this slash that's just
+going to be not.
+So if I wanted to say that x is not
+in the set of intergers I would just write
+this here.
+So the z is the set of integers, the
+kind of funny looking epsilon thing means
+in, the
+slash through it means not in and then x
+is the number that I'm making a statement
+about.
+So x could be three point five, three
+point five is not in the integers.
+Okay, so for our definition of a limit, so
+g is a function
+that takes a real number and gives me a
+real value to answer.
+And that this notation just means that the
+input can be
+any real number, and the output is also a
+real number.
+It doesn't mean that I can get every real
+number as an output of that function.
+So even if I took, my function being x
+squared, I'm not going to be able to get a
+negative numbers out of that.
+But its still every real number can go in
+and
+every number that comes out is also a real
+number.
+So that's what I'm giving up with this
+notation here.
+Okay.
+So this is the definition of a limit from
+from the textbook.
+So the limit of g of x.
+As x goes to x zero so when I say x goes
+to x zero I'm thinking of x zero as one
+particular point
+and then I'm thinking of x as another as a
+variable
+and I'm moving that variable closer and
+closer to this fixed point x zero.
+So the limit of g of x as x goes to x zero
+exists and
+is finite and equal to, that's a l, kind
+of in my strange projector font.
+So it's equal to l if and only if for any
+epsilon greater than zero, so
+you generally in mathematics, when you use
+the
+letter epsilon you're talking about a very
+small number.
+But I want to say for any epsilon greater
+than zero, but think of
+this as small, there exists a delta also
+greater than zero
+so that the absolute difference between
+the function value at x
+and this limit, is less than epsilon, so
+this is just
+saying I can make my function very close
+to this limit.
+For
+every value of x that's going to fall in
+this
+interval, x not minus delta, and x not
+plus delta.
+So that means there's a point, x not,
+there' s a little interval around that x
+not.
+And for every x in that interval, my
+function, is going to be
+within epsilon of the limit value.
+And so basically,
+what, if I can find for any given epsilon,
+so really what I want
+to able to do, is find this number delta
+as a function of epsilon.
+And if I can say, then, for any epsilon
+greater than zero, I can tell you the
+delta, that makes the function, you know,
+arbitrarily
+close to the limit when it's within this
+interval.
+Then we're going to say that that value,
+l, is
+the limit of the function as I go to this
+point x zero.
+And then here is exactly the same
+definition, sort of using all
+of the short hand that, that shows up in
+the text book.
+So we have the limit.
+So this lim is the abbreviation for limit
+as x goes to x zero of g of x
+equals l, this iff means if and only if,
+so it's just an abbreviation for, oops,
+this thing up here.
+If and only if, for, so a,
+upside-down a, for all, if and only if,
+for epsilon
+greater than zero, there exists a delta
+greater than
+zero, st is such that, and the
+distance between g of x and l is
+less than epsilon for all x that's
+within delta
+of x zero.
+And then
+similarly we're going to say, so here
+we're talking about limits in
+the first definition that are finite so
+that means they go
+to something else than infinity.
+You know, if the limit is 100 the limit is
+one, something like that.
+There's some thing like if I say, what's
+the limit of x as
+x goes to infinity, obviously that's just
+going to keep getting bigger and bigger.
+So we also want to have a limit, a
+definition,
+for what we mean if, if a limit diverges.
+So I'm going to set the limit as x goes to
+x zero of g of x
+is infinite if and only if, and now we're
+just going to kind of flip this around.
+So what I, what I was trying to say for
+the first definition of
+a limit, for when it's getting close to
+something finite, is I want to get.
+You know, within a certain neighborhood,
+so that when
+I'm in that neighborhood I'm within
+epsolon of my limit.
+I'm just going to flip that around and say
+now
+there has to be some c greater than zero.
+And now
+this c is supposed to be a really, really
+big number.
+Then I'm going to say there exists some
+delta greater than zero.
+Such that g of x is greater than c.
+So c is a big number.
+You know, any big number, so as big as you
+want.
+And I'm going to say now there's some
+neighbourhood around x zero.
+So a neighbourhood, so it's x zero minus
+delta to x zero plus delta.
+And if I'm in that neighbourhood, every
+single point in that neighbourhood when
+I evaluate g of x, I'm going to get a
+number bigger than c.
+And, what's going to happen is suppose I
+find a c and I find a delta and now I say,
+no I want it bigger, so I just take an
+even bigger value for c, so say two c.
+And my neighbourhood's going to get a
+little bit smaller.
+But there's still going to be a
+neighbourhood that gives me values
+greater than c.
+And if I can find a function that has that
+property, then I'm going to say that
+g of x, the limit of g of x as x goes to x
+zero, is infinite.
+That means I can make g of x bigger than
+any real number
+that you choose just by choosing a value
+close enough to x zero.
+And this is, oops, this is exactly the
+same statement but with some of the
+things turned around, so now we have for
+all
+c less than zero and it's going to
+negative infinity.
+It's exactly the same thing I can now make
+my function
+value smaller than any real number, so you
+give me any
+real number, and I tell you, you choose a
+neighbourhood of
+this width and it will be less than that
+real number.
+If I can do that then we're going to say
+that the limit as x goes to x zero of
+g of x is equal to minus infinity.
+And so the, this notation also tends to
+give
+some people trouble when you say exists,
+and is finite.
+So exists means you get something, well,
+okay.
+It's kind of circular, but that exists.
+So infinity and minus infinity, these
+still count as exists.
+If you have something, and it tends to
+show up more when you have a fraction.
+But if you have something that's going to
+zero divided by zero, or infinity divided
+by infinity.
+Those are things that don't exist.
+So, that's the difference why you need to
+say exists and is finite.
+Most of the time, when people say exists,
+they also mean it's finite.
+So it's just something to be aware of if
+you're
+reading, reading a paper, and it doesn't
+really make sense.
+the exists probably also means
+the limit is finite.
+And then we also need to be able to
+make sense of limits when x is going to
+infinity.
+So this is kind of what we had to do with
+with calculating the perpetuity.
+We wanted to say as n is getting bigger
+and bigger,
+you know, I can't say as x is going to x
+not.
+When, because I can't make this
+neighbourhood of with delta around
+infinity.
+So we have to
+have a slightly different definition for
+this.
+And basically, the way I'm going to, I'm
+going to define this.
+So the limit of g of x as x goes to
+infinity is equal to l.
+If and only if, for every epsilon greater
+than zero,
+there exists some number b.
+So this is the same condition on sort of
+the range of my function.
+You know, the, the value of my function
+has to be within epsilon of l.
+And that's going to hold for every x
+greater than b.
+So basically what I'm going to do is just
+keep
+looking at bigger and bigger and bigger
+numbers b.
+Until I finally get to a number b where I
+can say,
+for every number greater than b, this
+condition here is going to be true.
+If I can do that, then I say that this
+limit exists and is equal to l.
+And so, we can use our pricing formula as
+a little exercise to see how this is
+going to work.
+So we had for an annuity that had a fixed
+number of payments.
+We had a pricing formula I'm going to call
+it v sub n.
+So it's a value of annuity based on n
+payments.
+And we're just looking at what happens to
+this as n gets bigger and bigger.
+And kind of intuitively, you should think
+that, well
+if I just look at the, the limit as
+n goes to infinity, we probably should get
+the same thing, that we got for the
+perpetuity.
+And so that's the question I'm going to
+try and answer.
+And so the way I'm going to set this
+up, is I want to say, for some number,
+epsilon.
+So this is the way you start out every one
+of these arguments.
+You say given epsilon greater than zero.
+That'll be worth one point on the homework
+assignment.
+Find N such that the difference between
+the
+annuity and the perpetuity is less than
+epsilon.
+Whenever little n is
+bigger than this value big n.
+So what I want to do is find a value big n
+say
+its 1,000 then I know that if you know
+little n is 1,001,
+1,002, 1,003 this v sub n minus v is going
+to be
+the absolute value of that difference is
+going to be less than epsilon.
+So I just start out by writing down the
+difference.
+And so v sub n Is given by, I can't
+highlight this whole thing I guess, well
+the first term here.
+And then the v is just the, the minus a
+over r here.
+And then if you look at this, you're
+going to see that
+you have a over r times one minus a over
+r.
+Or so, I guess I, I did the math here.
+And you end up with just this thing in the
+middle.
+But we're taking the absolute value of
+that
+so the minus sign is going to go away.
+And so this is an expression for the
+absolute value
+of the difference between my annuity
+formula and my perpetuity formula.
+And now what I want to do is solve for a
+big N.
+And this big N has
+to be an integer that has the property
+that,
+for any little n greater than that big N.
+This condition holds, and basically the
+only reason I'm dividing epsilon
+by two is I need to have it strictly less
+than epsilon.
+And so the easiest way to do that is to
+say, if I can make
+it less than or equal to epsilon over
+two, epsilon over two is certainly
+strictly less.
+Then epsilon, so that's just going to get
+my definition you
+know, without having to worry about these
+kind of corner cases.
+So now it just becomes an algebra
+exercise, you know, I'm looking for n here
+so I'll just move the a and the r over to
+the right hand side.
+Then I'm going to take the logarithm of
+each side.
+And we have this property of the logarithm
+that the
+log of something to a power is oops, that
+power.
+So in this case, n times the logarithm of
+the base.
+And then divide through by one plus r.
+And then you have to be a little bit
+careful here because, on
+the left hand side, this n, I want that to
+be an integer.
+But on the right hand side, I think you're
+going to be hard pressed to
+find values of a, epsilon and r, that are
+going to make this an integer.
+and it needs to be true in general
+anyways.
+So, this is why we're going to use our
+ceiling operator.
+So I'm going to
+choose my capital N.
+Just to be the, the next biggest integer
+after this things that we found here.
+And then for any n greater than capital N.
+Well I've chosen this n so that this thing
+holds.
+Oops, the middle part holds.
+this less than or equals to I guess I was
+just
+being a little sloppy when I made this
+slide, that's actually equality.
+We've shown, you know, that the only way
+that we could have the equality here is
+on the off chance that I did pick a, r and
+epsilon, so, this exactly an integer.
+so I've used epsilon over two here to
+solve for n.
+And that's going to be strictly less than
+epsilon, so I'm able to show
+that regardless of what value of epsilon
+you tell me, I can tell you a value
+of n that's going to make my annuity
+formula and my perpetuity formula less
+than epsilon apart.
+And so in that case, we're going to say
+that the
+limit of the annuity formula as n goes to
+infinity
+is equal to capital N, or sorry, is equal
+to the perpetuity formula, is equal to
+capital V.
+Okay, so summary for our limits, thing.
+Our limits section.
+So, given epsilon greater than zero, we
+can find we can find
+capital N such that this difference is
+always, the absolute value
+of this difference is always less than
+epsilon for any epsilon that you tell me.
+So that way I can say, that the limit of V
+sub n as n goes to
+infinite, is equal to V.
+And then, again, this is, our definition
+of the limit, so the limit as x
+goes to x zero of g of x is equal to l if
+and only if.
+For every epsilon greater than zero, there
+exists a delta greater than zero, such
+that the absolute value of the difference
+of g of x and the, the limit
+is less than or, is less than epsilon
+whenever x is within delta of x zero.
+

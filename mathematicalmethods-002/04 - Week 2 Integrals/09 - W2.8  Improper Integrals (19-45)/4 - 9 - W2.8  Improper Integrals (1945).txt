@@ -1,0 +1,502 @@
+So next section is improper integrals.
+An improper integral is just above the,
+let's
+see, I guess I should go to my slide.
+and an improper integral comes in two
+types.
+So, you might be interested in integrating
+a function over an unbounded interval
+so that would be an interval where at
+least one of the end points is infinite.
+Or the function
+could be unbounded, so I might be
+integrating something like 1
+over x and one of the end points would be
+zero.
+So, the limit as my function approaches
+zero is going to be infinite.
+And so these are going to be the
+conditions
+where we can make sense of integrals like
+that.
+So we'll start by considering the first
+type, so I want to integrate a function f
+of x over either the inter, interval minus
+infinity b or the interval a to infinity.
+And if I want to integrate a function over
+the entire
+real line so minus infinity to infinity I
+just think
+of it as I pick some point in the middle
+and go up to there and then finish the
+rest.
+The improper integral of f of x over a
+infinity Exists if and only if the limit,
+so
+basically all I'm going to do, I want to
+have an infinite, infinity up in the top
+here.
+But if I actually plugged in an infinity,
+most of the time something's going to go
+wrong.
+So I want to consider this as a limit.
+I'll evaluate this integral using a and t,
+and then take
+the limit of the resulting function as t
+goes to infinity.
+If that limit exists and it's finite, then
+we say
+that the improper integral of f of x over
+(a, infinity)
+exists.
+So now it's getting a bit trickier, so our
+definition of existing means the limit
+exists and it's finite.
+And so in particular, that means that if
+this
+integral, you know, as I take the limit as
+t goes to infinity, if I get infinity,
+Then
+f of x is not integrable over this this
+interval.
+And then we do exactly the same thing
+except now I have a t on the
+bottom so when I want the, the lower limit
+to be able to go to minus infinity.
+I'm just going to put t in the bottom and
+take the limit as t goes to minus
+infinity.
+And the condition has to be the same.
+For this to be well-defined, I need this
+limit to
+exist, and I need it to be a finite value.
+And so when those limits exist and they're
+finite, then I'm going
+to define the improper integral of f of x
+dx over a infinity.
+To be the value of this limit, so the, the
+limit s t
+goes to infinity integral from a to t of f
+of x d x.
+And then the, sort of the complementary
+piece for
+the lower limit, so I'm going to define
+the improper
+integral from minus infinity to b of f of
+x d x.
+To be the value of this limit, as t goes
+to minus
+infinite, the integral of t to b of f of x
+d x.
+So you can also add and subtract improper
+integrals, so all I'm doing here.
+Is I'm considering b greater than a so
+this is a normal
+way of setting up an integral if I think
+of if I think
+of an interval I have a lower end point of
+a and an
+upper end point of b so b has to be
+greater than a.
+And so if I intergrate.
+f of x, from a to infinity.
+The integral of f of x from b to infinity
+has to sort of fit inside of that.
+So what I've done, is I've said is a to
+infity.
+and then b to infinity.
+And if I do this subtraction, all I
+want to think about
+is, I'm taking a to infinity, infinnity is
+way over there.
+And b to infinity and I'm just sort of
+chopping of
+the tail at b, and so probably just as you
+would
+expect what's left is just going to be the
+integral of f of x from a to
+b, and then I can do exactly the same
+thing with the other tail.
+So if I have the integral from minus
+infinity up
+to b, so remember b is bigger than a, so
+this integral, minus infinity up to a of f
+of
+x, that's if you imagine what the area
+looks like,
+that's just going to fit in the first, the
+first area.
+And so what I did.
+When I do this subtraction, essentially
+all I'm
+doing is just chopping off the tail at
+a, and again I'm left with the integral
+from a to b of f of x dx.
+Okay.
+And now I want to be able to also
+make sensitive integral over the entire
+real line.
+So like I mentioned before, the integral
+from minus infinity to infinity of
+f of x, this is going to exist if and only
+if there's a point a such that both.
+The integral from minus infinity up to a,
+and the integral from
+a to infinity of f of x exists so in
+particular both those
+need to be finite.
+And then if that integral exists We're
+just going to define its value.
+So I, I'm just splitting up the real line
+out of point
+a so I have numbers bigger than a and
+numbers smaller than a.
+The value of this integral is just
+going to be the sum
+of these two integrals that we know how to
+compute already.
+And so I just wrote down the, the
+definitions down below, and the reason
+we need to be able to split this thing in
+the
+middle, you know, why, why not just define
+our limit like this
+so i take the limit as t goes to infinity
+of
+the integral from minus t to t of f of x
+dx.
+So that, that seems like it should work
+its going to get the whole real line but
+the problem we are running into, is I
+could do something like this, so what,
+what I'm doing here just imagining a line
+with
+a slop of 45 degrees so for positive
+values of
+x that's going to be above the x axis, for
+negative
+values of x it's going to be below the x
+axis.
+So if I integrate that from t to t, I'm
+always going to get zero.
+But if I split it up anywhere in the
+middle, I
+would end up getting a minus infinity and
+a plus infinity.
+And kind of like we saw in the first
+lecture when we're looking
+at this series of 1 minus 1 plus 1 minus 1
+you know.
+If I have something that I can express as
+infinity
+minus infinity, I can't really make any
+sense out of that.
+Another good way to imagine what's
+happening
+with this is, I could also get an intergal
+from minus infinity to
+infinity by putting a 2t up here but then
+that would mean that.
+All of these integrals here, instead of
+integrating
+to zero, they would integrate to some,
+let's see.
+Well this one would depend on t, but
+if you're clever about the choice, you can
+make
+these all integrate to some non-zero
+value, so as you
+take the limit, then you can get any
+answer you want to.
+So if I, if I defined it this way, I would
+have the limit from minus t to
+t being 0, but then I'm not going to have
+the property, so I wanted to be
+able to do addition and subtraction with
+my indefinite integrals.
+And so now If I try to do that, if, if I
+want to add
+two together, I need to be able to break
+it up somewhere in the middle.
+And that's gona give me, so if I take a
+being zero for
+instance, I'm going to get minus infinity
+plus infinity and that's not defined.
+On the other hand, if you know for some
+reason, so for instance
+if you know that f of x belongs to a
+family of function.
+So I'm thinking of probability density
+functions, where this integral does exist.
+Then you're free to evaluate it however
+you like.
+So if you know that this integral exist
+basically what that's
+telling you is if you evaluated correctly
+and get an answer.
+That's going to be the correct answer.
+So you can evaluate it however you like,
+you'll get the same answer.
+So you can evaluate it however you like.
+So this formula if it was useful, you
+could use it to evaluate an improper
+integral.
+Okay, so now This is probably going to be
+a little bit strange for some of you.
+But, I want to, for my example, show that
+for an
+integer value of alpha, that's greater
+than or equal to zero,
+this integral, so the integral from zero
+to infinity, of x
+to the alpha, times e to the minus x
+squared exists.
+And so what's going to happen with, with
+this particular
+argument if I'm pretty sure the way you
+would
+actually evaluate this, if you wanted to
+get if
+you wanted to get a number for an answer.
+You need to use integration by parts.
+And when you use integration by parts,
+you're going to
+end up with an integral where alpha is 1
+smaller.
+And so if alpha
+was, say, 10, you would need to use
+integration by parts ten times.
+but I want to get a result that's valid
+for any alpha that's greater than zero.
+And so this is kind of a strange
+situation.
+Well remember, I said this integral exists
+if the limit is finite.
+So I can show that the limit is finite,
+without actually finding out what that
+limit is specifically.
+But if I can say whatever limit it
+is, it's less than a finite number, then I
+can say that this integral exists.
+This indefinite integral exists.
+So, what I want to show, is that if I
+integrate this function from zero to t.
+And then I take the limit as t goes to
+infinity.
+I have to get a finite number.
+And so another sort of shorthand for
+finite
+is you just write strictly less than
+infinity.
+So that means some real number.
+some finite real number.
+So, we can recall form the, from the first
+lecture when I was talking about limits.
+If p of x is a poloynomial and e to the x
+is the exponential function.
+Then if I take the limit of this as x goes
+to infinity I get 0.
+So in particular, I have this minus x
+squared here.
+So if I have
+e to a negative power I can also write
+that as 1 over e to that power.
+So I can rewrite the integrand here as x
+to the alpha Divided by e to the x
+squared.
+And so, by using those rules of limits,
+you can also show that this is
+going to the limit of this as x goes to
+infinity is also going to be 0.
+And so, you might
+wonder why this plus 2 is up there,
+because there's no plus 2 in the intregran
+And the answer is you know I just put it
+there because I want it
+there.
+So it, it'll pop out later on.
+And so often when you're trying to work
+these things out, so I know
+how to solve this problem already, so I
+can put the plus 2 there.
+Otherwise I wouldn't have put the plus
+2 there, I would have done more work.
+I would have realized, hey, it would be
+really
+handy if there's another x squared in this
+equation.
+So then I would have gone backwards to
+this line.
+I would have added 2 to this exponent.
+But the point is, it's not it's not meant
+to be equal to this.
+It's basically, what's going to end up
+happening is that
+I can now Write this as something times x
+squared and
+have my limit here, or, my integrand here.
+And so
+this, the, if, if I consider a sequence as
+the x goes to
+infinity, this is going to be equal to 0.
+And so because
+I know that limits equal to 0, I can now
+use the
+definition to say that there is a value M
+so capital
+M such that, so this is my, my integrand
+again this value is
+less than 1 whenever x is greater than M,
+so this is basically
+this epsilon delta argument except you
+know, for
+the, for the, for the sequence that is
+going to infinity.
+So the epsilon is 1 and then that
+means because I know the limit exists,
+there must
+be some value such that when I'm beyond
+that value I'm within epsilon of what I
+want
+it to be and so I'm going to choose 1, I
+can choose any number I want to by the
+definition of the limit but I'm going to
+choose 1 because its easy to work with.
+So generally when
+you are free to choose a number, if you
+choose anything other
+than zero or one, you better have a really
+good reason for it.
+So now it should be clear why I wanted
+this x
+squared here, so if this quantity has to
+be less 1
+one then I can just divide both sides by x
+squared
+and so I'm considering the limit as x goes
+to infinity.
+you know, at some point this M is going to
+be
+a number bigger than zero.
+And x, you know, I'm looking at values of
+x greater than that M.
+So x is not going to be 0.
+So I can divide by x as many times as I
+want to.
+So I'm going to divide by x twice.
+So my alpha over 2 becomes an alpha.
+And my 1 becomes a 1 over x squared.
+And so the important thing that I've done
+here is I've taken the integrand and I've
+bounded it by one over x squared.
+So that means for every value of x greater
+than M, this thing is going to be less
+than one over x squared.
+And what that's going to let me do.
+Is now if I consider values of t that are
+greater than M, I'm
+going to split my integral so my integral
+zero to t into a piece
+from zero to M
+[COUGH]
+and another piece from M up to t.
+And now what can I say about the, the
+first term here?
+Though it's not pretty, but 0 is a
+constant and M is a
+constant, so whatever, you know whatever
+number this is it's going to be constant.
+And so, t is the only thing that's
+changing now,
+this is the, what I'm taking to be the
+limit.
+So I can just rewrite this as a constant.
+It's no longer really important.
+If it's constant, it's finite.
+And I'll I'm trying to do, is show that
+this
+thing is not going to be infinite.
+And also I have said that this integrand
+can be bounded by 1 over x squared.
+So if I were to replace this with 1
+over x squared, like I've done in the
+second line.
+It means it's everywhere for t bigger then
+M, x squared is bigger than that.
+So c, this thing, plus the integral from m
+to t.
+You remember one of the properties of the
+integral was if I
+had to functions and one of those
+functions was always bigger than
+the other function, If I integrate both of
+those functions over the
+same integral, then whichever function is
+always bigger, it's integral is also
+bigger.
+So that allows me to bound this integral
+by some constant,
+and a func, and the integral of one over x
+squared.
+And now one over x squares,
+that's something that is actually easy to
+integrate.
+So that just becomes minus 1 over x so 1
+over x
+squared, I can think of that as x to the
+minus 2 power
+and I can use my anti-power rule and that
+just means its going
+to come from, its the derivative of minus
+x to the minus 1.
+So I get minus x to the minus 1 here
+evaluated at from M to t.
+So again
+I can rewrite that now as a constant minus
+this thing here.
+So this is just to summarize what I've
+done on the other slide.
+I now have bounded this integral from zero
+to t of this very unhappy looking
+integrand, by this expression over here
+that's a much simpler expression of t.
+And so I have c plus 1 over M so these are
+just constant.
+And now remember what I was trying to do
+is show that the limit
+of this guy over here as t goes to
+infinity is approaching a finite value.
+And so 1 over t, for t is positive.
+So, this can never be, this can
+never be bigger than c plus 1 over M.
+So, I can make an upper bound of c.
+So, that's the integral of my integrand
+from 0 to M.
+That's a constant value, so, it's going to
+be finite.
+And then M is a really big number, and I
+have 1 over
+M, so I have to add just a little bit more
+to my constant.
+And that gets me an upper bound, for no
+matter what value of t
+I choose, this is it's going to be smaller
+c plus 1 over M.
+So that means I can say that the limit as
+t goes to infinity Of the
+integral from 0 to t of x to the alpha, e
+to the minus x squared.
+That's going to be less than c plus 1 over
+M.
+And that's going to be a finite number.
+So I write less than infinity.
+And so without actually evaluating this
+integral, and finding out
+the, the number, I was able to show that,
+let's see.
+That this indefinite integral, from 0 to
+infinity, of x
+to the alpha, e to the minus x squared,
+dx.
+This exists.
+

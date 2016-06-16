@@ -1,0 +1,896 @@
+1
+00:00:01,030 --> 00:00:04,280
+Lesson 7 is A Culturally Important
+Integral.
+
+2
+00:00:06,240 --> 00:00:09,490
+So the first time I saw this integral, the
+professor who taught
+
+3
+00:00:09,490 --> 00:00:13,100
+me how to evaluate this called it an A
+Culturally Important Integral.
+
+4
+00:00:15,400 --> 00:00:19,198
+I think it's taken probably ten years but
+now I, I fully agree with him.
+
+5
+00:00:19,198 --> 00:00:23,470
+So, hopefully if it doesn't seem all that
+culturally important to
+
+6
+00:00:23,470 --> 00:00:27,450
+you after a few years of experience and
+I'll improve a bit.
+
+7
+00:00:27,450 --> 00:00:33,350
+So, I'm going to look at a function called
+the standard normal density.
+
+8
+00:00:33,350 --> 00:00:35,560
+This is the little phi that's been showing
+
+9
+00:00:35,560 --> 00:00:40,450
+up in the, in the Black-Scholes Pricing
+Formula.
+
+10
+00:00:40,450 --> 00:00:43,090
+And it's defined to be 1 over the square
+root
+
+11
+00:00:43,090 --> 00:00:46,380
+of 2 pi e to the minus x squared over two.
+
+12
+00:00:46,380 --> 00:00:55,887
+And we also, oops, so little phi is not
+actually in the Black-Scholes Pricing
+
+13
+00:00:55,887 --> 00:00:59,160
+Formula, it's this capital phi that's in
+the Black-Scholes Pricing Formula.
+
+14
+00:00:59,160 --> 00:01:01,480
+I guess this showed up in the in the
+
+15
+00:01:01,480 --> 00:01:04,268
+homework when we were looking at the
+derivatives of the
+
+16
+00:01:04,268 --> 00:01:10,500
+Black-Scholes Pricing Formula.
+The capital phi is
+
+17
+00:01:10,500 --> 00:01:16,810
+defined as the integral from minus
+infinity up to x of little phi of t dt.
+
+18
+00:01:20,110 --> 00:01:21,690
+And so when I saw this the first
+
+19
+00:01:21,690 --> 00:01:25,210
+time, now a few questions immediately
+popped into mind.
+
+20
+00:01:25,210 --> 00:01:27,330
+So I, I called this 2 and a half.
+
+21
+00:01:29,010 --> 00:01:33,070
+So where does the 1 over the square roots
+of 2 pi come from, that
+
+22
+00:01:33,070 --> 00:01:36,660
+just seem sort of like a strange thing to
+stick in front of a function here.
+
+23
+00:01:38,030 --> 00:01:42,640
+Two, why not use a closed-form expression
+for this capital phi?
+
+24
+00:01:43,931 --> 00:01:45,181
+And so it turns out
+
+25
+00:01:45,181 --> 00:01:49,508
+this is a function that somebody actually
+proved does not have,
+
+26
+00:01:49,508 --> 00:01:54,030
+so this function here, someone has proved
+this does not have antiderivative.
+
+27
+00:01:54,030 --> 00:01:56,592
+So there is no way to write down
+
+28
+00:01:56,592 --> 00:01:59,734
+a closed-form expression for this function
+capital phi,
+
+29
+00:01:59,734 --> 00:02:01,814
+by closed form, I just mean, you know,
+
+30
+00:02:01,814 --> 00:02:04,910
+like 1 minus the square root of something
+else.
+
+31
+00:02:04,910 --> 00:02:08,605
+They gives you the value of this capital
+phi function.
+
+32
+00:02:08,605 --> 00:02:10,230
+If you wanted to write down the
+
+33
+00:02:10,230 --> 00:02:12,960
+function, you would have to keep just
+writing and writing.
+
+34
+00:02:12,960 --> 00:02:16,620
+You need an infinite number of terms in
+order to write it down.
+
+35
+00:02:17,970 --> 00:02:23,180
+And so then, the 2 and a half question was
+where did this 1 over 2 pi come
+
+36
+00:02:23,180 --> 00:02:27,550
+from because the whole reason it's here is
+that
+
+37
+00:02:27,550 --> 00:02:30,450
+I want this to be a probability density
+function?
+
+38
+00:02:30,450 --> 00:02:32,925
+So the different, part of one of the
+conditions,
+
+39
+00:02:32,925 --> 00:02:35,330
+but there are two conditions, it has to be
+greater
+
+40
+00:02:35,330 --> 00:02:39,120
+than zero, greater than or equal to zero
+for all real numbers.
+
+41
+00:02:39,120 --> 00:02:40,730
+So this satisfies that.
+
+42
+00:02:40,730 --> 00:02:42,940
+It's actually greater than zero for all
+real numbers.
+
+43
+00:02:44,040 --> 00:02:46,420
+And it has to integrate to one when
+
+44
+00:02:46,420 --> 00:02:48,850
+I integrate it from minus infinity to
+infinity.
+
+45
+00:02:50,140 --> 00:02:54,560
+And so the reason this 1 over the square
+root of 2 pi is
+
+46
+00:02:54,560 --> 00:03:00,220
+here is because this function here
+integrates to the square root of 2 pi.
+
+47
+00:03:00,220 --> 00:03:03,750
+So, if I wanted to integrate to one, I
+need to divide by 1
+
+48
+00:03:03,750 --> 00:03:07,100
+over the square root of 2 pi, so those
+will cancel each other out.
+
+49
+00:03:07,100 --> 00:03:08,972
+And when I do this integral, I'll have 1.
+
+50
+00:03:08,972 --> 00:03:14,240
+But, yeah?
+>> I know this is a weird question
+
+51
+00:03:14,240 --> 00:03:19,560
+but if I don't have a closed-form
+expression for big phi how do we know
+
+52
+00:03:19,560 --> 00:03:24,760
+when we integrate it from negative
+infinity to infinity that it's equal to 1?
+
+53
+00:03:24,760 --> 00:03:27,350
+>> Well, big phi doesn't have that
+property.
+
+54
+00:03:27,350 --> 00:03:28,810
+The little one, the little one does.
+
+55
+00:03:28,810 --> 00:03:31,590
+And so that's actually what this whole
+lesson will be about.
+
+56
+00:03:33,820 --> 00:03:41,620
+So, kind of, in particular, I need to know
+exactly what you just asked.
+
+57
+00:03:41,620 --> 00:03:44,460
+If I knew the, the capital phi if I could
+write
+
+58
+00:03:44,460 --> 00:03:46,970
+down that function and just take the limit
+as it goes to
+
+59
+00:03:46,970 --> 00:03:49,770
+negative infinity and the limit as it goes
+to positive infinity,
+
+60
+00:03:49,770 --> 00:03:53,700
+then I would be able to evaluate the area
+under that curve.
+
+61
+00:03:53,700 --> 00:03:54,920
+And I would be able to tell you
+
+62
+00:03:58,600 --> 00:04:00,000
+you know, I'd be able to tell you what it
+is, I'd
+
+63
+00:04:00,000 --> 00:04:02,660
+be able to tell you that's the square root
+of 2 pi.
+
+64
+00:04:02,660 --> 00:04:06,070
+Then I would say well if that is the
+square root of 2 pi, if
+
+65
+00:04:06,070 --> 00:04:11,130
+I divide by the square root of 2 pi,
+that'll make it equal to 1.
+
+66
+00:04:11,130 --> 00:04:13,450
+And so the rest of this lesson is to find
+
+67
+00:04:13,450 --> 00:04:16,130
+out where this square root of 2 pi comes
+from.
+
+68
+00:04:19,030 --> 00:04:23,560
+So, since phi is a probability density
+function, the
+
+69
+00:04:23,560 --> 00:04:27,590
+integral of phi over the real line, so I
+don't
+
+70
+00:04:27,590 --> 00:04:32,450
+know why I put it twice here but it still
+integrates to 1 even if you do it twice.
+
+71
+00:04:36,020 --> 00:04:39,610
+And this implies that e to the minus x
+squared over
+
+72
+00:04:39,610 --> 00:04:42,750
+2 dx has to equal the square root of 2 pi.
+
+73
+00:04:46,160 --> 00:04:48,262
+And you can make a change of variables to
+
+74
+00:04:48,262 --> 00:04:50,830
+just have a, a slightly simpler version of
+the
+
+75
+00:04:50,830 --> 00:04:53,850
+function without the squared minus x
+squared divided by
+
+76
+00:04:53,850 --> 00:04:56,740
+2 just to have e to the minus x squared.
+
+77
+00:04:56,740 --> 00:04:58,650
+And so this is actually what I'm going to
+try and show.
+
+78
+00:04:58,650 --> 00:05:01,520
+That the integral of e to the minus x
+squared from
+
+79
+00:05:01,520 --> 00:05:04,360
+minus infinity to infinity is equal to the
+square root of pi.
+
+80
+00:05:08,020 --> 00:05:11,800
+And like I said before if e to the minus
+
+81
+00:05:11,800 --> 00:05:14,950
+x squared over 2 doesn't have an
+antiderivative, then this
+
+82
+00:05:14,950 --> 00:05:17,480
+isn't going to either because I was able
+to get
+
+83
+00:05:17,480 --> 00:05:21,460
+this with just a simple change of just a
+simple substitution.
+
+84
+00:05:24,660 --> 00:05:28,080
+So this is actually going to use a trick
+very similar to what we used in
+
+85
+00:05:28,080 --> 00:05:32,320
+the very first lesson, when I was trying
+to come up with the value of an annuity.
+
+86
+00:05:33,950 --> 00:05:36,270
+I'm going to pretend like I know what the
+answer
+
+87
+00:05:36,270 --> 00:05:39,350
+is and say that it's equal to the value of
+this
+
+88
+00:05:39,350 --> 00:05:42,570
+definite integral on the right-hand side
+and that I'm going
+
+89
+00:05:42,570 --> 00:05:45,480
+to mess around with this m as well as the
+integral.
+
+90
+00:05:49,010 --> 00:05:52,100
+So I want to show that m is equal to the
+square root of 2 pi.
+
+91
+00:05:55,540 --> 00:05:58,820
+And I could also write m as the integral
+from minus
+
+92
+00:05:58,820 --> 00:06:02,100
+infinity to infinity of e to the minus y
+squared dy.
+
+93
+00:06:02,100 --> 00:06:05,410
+So it doesn't matter what I call my
+variable.
+
+94
+00:06:05,410 --> 00:06:08,230
+The value of this integral is going to be
+the same.
+
+95
+00:06:08,230 --> 00:06:13,010
+So I'm going to have m defined in terms of
+x and m
+
+96
+00:06:13,010 --> 00:06:16,270
+defined in terms of y but they're going to
+be the same number.
+
+97
+00:06:20,370 --> 00:06:23,970
+And now what I'd like to do is to show
+that M squared is equal to pi.
+
+98
+00:06:23,970 --> 00:06:27,250
+So if I can show that M squared is equal
+to pi then that is
+
+99
+00:06:27,250 --> 00:06:30,110
+the same thing as showing that M is equal
+to the square root of pi.
+
+100
+00:06:34,510 --> 00:06:40,280
+And if you recall the Separable Integral
+Lesson, so this now looks
+
+101
+00:06:40,280 --> 00:06:43,330
+like what I would want to get from a
+function that's separable.
+
+102
+00:06:44,500 --> 00:06:47,720
+But I can use that result backwards as
+well, so I, I'm going
+
+103
+00:06:47,720 --> 00:06:51,450
+to start out by just trying to unseparate
+this and see what happens.
+
+104
+00:06:54,560 --> 00:06:57,160
+So that's just the double integral of a
+separable function.
+
+105
+00:06:58,990 --> 00:07:02,460
+And I'll start unseparating the integral.
+
+106
+00:07:02,460 --> 00:07:04,030
+So there's M squared again and
+
+107
+00:07:06,260 --> 00:07:11,190
+then I'll take the, let's see, so I've
+taken the y integral and
+
+108
+00:07:11,190 --> 00:07:15,270
+kind of plucked it into here, which I can
+do because it's a constant.
+
+109
+00:07:18,800 --> 00:07:21,630
+And then I'll get rid of my, my brackets.
+
+110
+00:07:21,630 --> 00:07:25,960
+And now, notice that e to the minus x,
+oops, e to the minus
+
+111
+00:07:25,960 --> 00:07:28,470
+x squared, that's also a constant with
+
+112
+00:07:28,470 --> 00:07:30,770
+respect to this integral on the right-hand
+side.
+
+113
+00:07:33,868 --> 00:07:37,790
+And it looks like my dx disappeared from
+this line, but it showed up again here.
+
+114
+00:07:37,790 --> 00:07:39,090
+So, everything is okay.
+
+115
+00:07:40,540 --> 00:07:42,300
+And so what I'm going to end up with is e
+to
+
+116
+00:07:42,300 --> 00:07:45,230
+the minus x squared times e to the minus y
+squared.
+
+117
+00:07:45,230 --> 00:07:48,800
+And by the properties of the exponential
+function, I can write
+
+118
+00:07:48,800 --> 00:07:53,170
+that as e to the minus quantity x squared
+plus y squared.
+
+119
+00:07:57,850 --> 00:08:01,630
+And then when you see x squared plus y
+squared, that's usually a pretty good
+
+120
+00:08:01,630 --> 00:08:03,560
+hint that this might be something that
+
+121
+00:08:03,560 --> 00:08:07,230
+would be simplified by switching to polar
+coordinates.
+
+122
+00:08:07,230 --> 00:08:11,218
+So, let's see what happens when I try and
+switch this into polar coordinates.
+
+123
+00:08:11,218 --> 00:08:16,834
+so all I have to do to switch to
+
+124
+00:08:16,834 --> 00:08:23,152
+polar coordinates, I replace the
+
+125
+00:08:23,152 --> 00:08:30,940
+x by r cosine theta and the y by r sin
+theta.
+
+126
+00:08:30,940 --> 00:08:36,614
+And then, my dx dy becomes r dr d theta.
+So, the r was the Jacobian.
+
+127
+00:08:36,614 --> 00:08:43,380
+If I use the same transformation, if I use
+the same change of variables
+
+128
+00:08:43,380 --> 00:08:46,600
+over and over and over again, the Jacobian
+is always going to be the same.
+
+129
+00:08:46,600 --> 00:08:48,544
+So for the change to polar coordinates,
+
+130
+00:08:48,544 --> 00:08:54,598
+the dy dx or dx dy is always going to
+become r dr d theta.
+
+131
+00:08:58,450 --> 00:09:04,950
+So now, I can write my M squared as the
+integral from zero to 2 pi integral from
+
+132
+00:09:04,950 --> 00:09:11,040
+zero to infinity of, well, this guy is
+going to get easier in just a second.
+
+133
+00:09:11,040 --> 00:09:12,140
+So, let's,
+
+134
+00:09:15,010 --> 00:09:21,030
+so all I've done here is I've factored out
+the r squares the negative r squared.
+
+135
+00:09:21,030 --> 00:09:23,538
+And what's left inside the square brackets
+here
+
+136
+00:09:23,538 --> 00:09:27,600
+is cosine squared theta plus sin squared
+theta.
+
+137
+00:09:27,600 --> 00:09:29,370
+This is equal to 1.
+
+138
+00:09:29,370 --> 00:09:34,850
+So I have e to the minus r squared.
+And then luckily, this little r that
+
+139
+00:09:34,850 --> 00:09:40,470
+showed up, thanks to the Jacobian, is
+exactly what I need to be able to do a
+
+140
+00:09:40,470 --> 00:09:43,630
+substitution, to be able to integrate e to
+the minus r squared.
+
+141
+00:09:48,550 --> 00:09:51,470
+And again, this is separable, so I can
+also
+
+142
+00:09:51,470 --> 00:09:54,580
+take advantage of the fact that there's no
+theta
+
+143
+00:09:54,580 --> 00:09:57,910
+in this part of the function so I can
+
+144
+00:09:57,910 --> 00:10:00,550
+move the integral with respect to theta
+out in front.
+
+145
+00:10:03,490 --> 00:10:08,260
+And then, I have minus 1 half that I'm
+going to introduce here just
+
+146
+00:10:08,260 --> 00:10:12,814
+so I can introduce some minus 2 here, so
+minus 2 will cancel out the minus 1
+
+147
+00:10:12,814 --> 00:10:18,030
+half.
+If I make the substitution, u equals minus
+
+148
+00:10:18,030 --> 00:10:23,290
+r squared then du is going to be
+
+149
+00:10:23,290 --> 00:10:28,610
+minus 2r dr.
+So, I've made this, put this in,
+
+150
+00:10:28,610 --> 00:10:29,640
+in brackets here.
+
+151
+00:10:29,640 --> 00:10:33,640
+So, I have e to the u after I make my u
+substitution.
+
+152
+00:10:33,640 --> 00:10:37,180
+This bit in the, in the parentheses is
+going to be du.
+
+153
+00:10:41,410 --> 00:10:45,120
+And then if u is equal to minus r squared,
+the limits on
+
+154
+00:10:45,120 --> 00:10:49,170
+u, they're going to start at 0 because
+negative 0 squared is still 0.
+
+155
+00:10:49,170 --> 00:10:52,370
+And it will go to u equals negative
+infinity.
+
+156
+00:10:56,990 --> 00:11:00,568
+The first first integral is trivial so
+that just becomes theta
+
+157
+00:11:00,568 --> 00:11:04,710
+integrate evaluated at two pi so this will
+just be two pi.
+
+158
+00:11:07,230 --> 00:11:12,120
+This is, oops, this is e to the u du.
+
+159
+00:11:12,120 --> 00:11:15,780
+So that's a special function that it's a,
+it's its own derivative.
+
+160
+00:11:15,780 --> 00:11:21,410
+So I end up with minus 1 half e to the u
+evaluated at minus infinity and at 0.
+
+161
+00:11:21,410 --> 00:11:21,910
+And so,
+
+162
+00:11:24,610 --> 00:11:27,840
+I have to be a little bit careful here.
+I can't just plug infinity in.
+
+163
+00:11:30,670 --> 00:11:35,260
+But what I end up having is minus 1 half
+so
+
+164
+00:11:35,260 --> 00:11:38,690
+e to the, I'm going to replace u with t so
+this
+
+165
+00:11:38,690 --> 00:11:41,490
+is just e to the u evaluated at t and then
+
+166
+00:11:41,490 --> 00:11:45,150
+take the limit as that go, as t goes to
+minus infinity.
+
+167
+00:11:45,150 --> 00:11:48,820
+And then, I have to subtract the lower
+endpoint.
+
+168
+00:11:48,820 --> 00:11:53,040
+So that's just going to be e to the u with
+u equals zero substituted in.
+
+169
+00:11:53,040 --> 00:11:55,830
+That will be e to the 0, and anything to
+the zero
+
+170
+00:11:55,830 --> 00:12:00,930
+power is equal to 1.
+Or anything not 0 to the 0 power is equal
+
+171
+00:12:00,930 --> 00:12:07,270
+to 1.
+So then I have minus 1 half
+
+172
+00:12:07,270 --> 00:12:14,070
+times this, the limit as, of e to the t as
+t goes to negative infinity.
+
+173
+00:12:14,070 --> 00:12:17,853
+This is if I, it gets smaller and smaller.
+So in the limit that's just going to be 0.
+
+174
+00:12:20,420 --> 00:12:23,720
+So I end up with 0 minus 1, so negative
+
+175
+00:12:23,720 --> 00:12:27,350
+1 times negative 1 half, and that gives me
+a half.
+
+176
+00:12:29,730 --> 00:12:34,880
+This first bit is 2 pi so 1 half times 2
+pi gives me pi.
+
+177
+00:12:35,950 --> 00:12:38,540
+And I've been writing all of these equal
+signs here.
+
+178
+00:12:38,540 --> 00:12:41,760
+So the whole long string of e qualities is
+
+179
+00:12:41,760 --> 00:12:45,980
+showing me that M squared is eventually
+equal to pi.
+
+180
+00:12:45,980 --> 00:12:48,410
+And this is the thing that I set out to
+prove in the first place.
+
+181
+00:12:50,050 --> 00:12:55,000
+So, in summary, I started out with M equal
+to this integral
+
+182
+00:12:55,000 --> 00:13:02,570
+that I couldn't find an antiderivative of.
+So it was difficult to evaluate.
+
+183
+00:13:02,570 --> 00:13:06,137
+I was showed I was able to show that M
+squared was
+
+184
+00:13:06,137 --> 00:13:09,500
+equal to pi so M is equal to the square
+root of pi.
+
+185
+00:13:10,990 --> 00:13:12,430
+And that gives us the result that we
+
+186
+00:13:12,430 --> 00:13:14,980
+wanted, that this integral from minus
+infinity to
+
+187
+00:13:14,980 --> 00:13:18,720
+infinity of e to the minus x squared dx is
+equal to the square root of pi.
+

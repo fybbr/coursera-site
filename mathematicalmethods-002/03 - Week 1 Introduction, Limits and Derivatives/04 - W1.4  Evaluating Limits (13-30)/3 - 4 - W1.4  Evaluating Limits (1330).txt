@@ -1,0 +1,326 @@
+Next section is evaluating limits.
+So I'll start off by just pointing out
+working with the definition is not very
+fun.
+So luckily there are a lot of rules that
+you can use.
+I'm just pretty much here just going to
+try and list them off.
+These slides are more meant to be a
+reference.
+you probably would be able to find these
+know, I, I just Google for stuff most of
+the time.
+but, it would be in the first year
+calculus text book.
+That I think that's where I found most of
+these rules.
+So, I'm going to suppose that C is a real
+valued constant.
+And that the limits, as X goes to A of F
+of X.
+And as X goes to A of G of X, both exist.
+So, they don't necessarily need to be
+finite, but they
+need to be something that I can make sense
+of.
+So they can't be 0 divided by 0.
+Infinity divided by 0.
+Infinity divided by infinity, things like
+that.
+Then, so we have a linearity property.
+So if I have a function that I can see is,
+you
+know, made up of two sub functions, so f
+of x plus
+g of x, and I'm looking at the limit of
+that, and
+the limit of a sum is equal to the sum of
+the limits.
+Similarly if I scale my function, so here
+my function is f of x, I'm going to
+multiply that by my constant c, so c could
+be anything.
+It could, if I want to double function it
+would be to 2 f of x and so on.
+the limit as x goes to a of c times f of
+x.
+Is just c times the limit of oops, c times
+the limit of f of
+x as x goes to a.
+So I think most of these are pretty
+intuitive, but they are all things that
+are proved in
+a calculus textbook so, you know, you can
+use them.
+The limit of a product, the limit as X
+goes to A of F
+of X times G of X is equal to the product
+of the limit.
+So, here I have the limit of F of X as X
+goes to A and the limit of G of X as X
+goes
+to A.
+And I'm going to multiply those two
+numbers
+together and that's going to be the same
+as
+the limit of the product of these
+functions going when as x goes to a.
+also works for rational functions.
+So,
+the limit as x goes to a of f of x divided
+by g of x is just going
+to be equal to the limit of f of x divided
+by the limit.
+Of g of x as x goes to a, we have to make
+one, one little copy it here
+So the, oops, so the limit as x goes to a
+of g of x can't be equal to 0.
+And then finally
+So here this little
+thing here is an n.
+So if it was square root, that would be a
+two, three would be a cube root and so on.
+And then if P(x) and Q(x) are polynomials
+and
+c is a real constant that's greater than
+one.
+So by, by polynomial I just mean this is
+equal to
+something like P(x) would be ax squared
+plus bx plus c.
+but it can be arbitrarily large orders, so
+you know
+the first one could be x to the thousand
+or something
+like that.
+Then the limit as X goes to infinity of
+any polynomial divided by c to the x.
+And I could also write that as the limit
+of any polynomial
+times c to the negative x is going to be
+equal to 0.
+So it doesn't matter how big the order of
+this polynomial is.
+Even if I have x to the thousandth, if I'm
+dividing it by a constant
+raise to some power.
+That's eventually
+going to go to 0.
+And then kind of a, a similar result If I
+take the log of the absolute value -- so I
+need the absolute value just because of
+how log is defined know, it's not going to
+work very well if I give it a negative
+number.
+the log of any polynomial divided
+by any polynomial.
+If I take the limit as x goes to infinity,
+that's also going to be 0.
+And so, just some, some examples.
+If I had x squared times e to the minus x.
+Now x squared is something that would grow
+arbitrarily large as x goes to infinity,
+but
+e to the minus x is something that's
+going to be getting smaller as x goes to
+infinity.
+But, because this, this part of the
+product has the
+x in the exponent, but here, it's in the
+base,
+this term is going to dominate and so the,
+the limit is going to go to 0.
+[BLANK_AUDIO]
+And then as an example of, of the second
+result if I have the log of x cubed
+and here the cubed doesn't really matter.
+I put any power here.
+I could put 1,000, 10,000.
+Eventually, as x goes, you know, as x gets
+large, as x goes to infinity, this
+x in the denominator is going to dominate
+because of the logarithm on the top here.
+And this limit
+will go to 0.
+And I'm going to add a little bit more
+notation.
+So If I instead of using my arrow, my goes
+to arrow, as just a horizontal
+arrow, so that means goes to a value but I
+don't care how I get there.
+I just have to be getting closer.
+But I could be bouncing from side to side
+if I wanted to, to get there.
+If I use this down arrow, I'm going to
+mean that x goes to 0.
+With X
+always being greater then 0 so it can
+bounce around a little bit but I'm
+starting
+only on one side of the value and
+moving towards my limiting point from only
+one side.
+And also just encase you never seen this
+notation before the K followed by
+a exclamation point is read K factorial
+and it just means k times k minus1.
+Sorry, it's defined for integer values,
+positive integer
+values of k.
+It means k times k minus 1 times k minus 2
+and so on, times two, times one.
+And then one factorial and zero factorial
+are both equal to one.
+[BLANK_AUDIO]
+And then again, we'll, let's see the
+positive constant.
+Then if I look at C to the 1 over X, so,
+you can sort of think of, kind of
+intuitively what's going to happen here.
+1 over X as X gets large is going to get
+closer and closer to 0.
+And c to a 0 should be anything to the 0.
+Power should be 1.
+So it makes sense that this this function,
+it's limit should be going to 1.
+also x to the
+1 over x.
+So even if my base is getting bigger
+linearly.
+The limit of this as x goes to inifity is
+still going to be equal to one.
+And then if x goes down to 0, x to the x
+power, this limit is also equal to one.
+[COUGH]
+If k is a positive integer, and if c is
+greater than
+0, or if c is greater than 0 is a positive
+constant, then
+k to the 1 over k, so this is just a the
+same
+thing as a in the second bullet point just
+re expressed using integers.
+So the only difference between the, the
+second set and
+the top set is just now I'm sort of
+restricting k
+to be integer values, so it makes sense
+that we would
+get the same, same sort of result that we
+got above.
+And then al so what this is
+telling us is this factorial
+function defined here,
+this is getting big very quickly.
+It's getting bigger faster.
+Then a constant to an exponentail power.
+So, you know, our previous record holder
+for how could something get big fast was
+this exponential function.
+But that's dominated by this factorial.
+So somehow this factorial's growing even
+faster than that.
+So I have two examples in the slides.
+I'll just go through the first one and
+then the second one you can take a
+look at one your own because I need to
+speed up this session a little bit.
+So I want to evaluate this limit 1 over
+the square root of x squared
+minus 4x plus 1 and then minus x.
+And so basically the
+strategy you use to evaluate a limit like
+this you want to get the square root out
+of the, out of the denominator.
+So the first step I'm going to take.
+If I have minus X here And
+then I'm going to get minus X,
+oops, minus X times this
+square root and then
+also, oops, plus X
+times that square root.
+So I've got minus something plus the same
+thing and they're going to cancel each
+other out.
+And then in the last bit, I'll have minus
+x times postive X.
+So that's going to give me a minus x
+squared.
+And then I'll pick, pick up this thing in
+the numerator of, of my fraction.
+And now I have x squared minus x xquared.
+So get rid of that.
+Oops, I was supposed to put a little pause
+here.
+So on the bottom I just have the plus 1
+minus 4x, and to help me make a little bit
+of
+sense out of that, what I'm going to do is
+just
+multiply the top and the bottom by 1
+divided by x.
+And that's a safe thing to do, because I'm
+looking at the limit as x goes to
+infinity.
+So infinity is a long way from 0, and
+the only time I would have trouble
+dividing something
+by x, is when x is equal to 0.
+And so this 1 over x is going to get
+multiplied by x here, and then
+it's going to show up as a 1 over x
+squared under this square root sign.
+So what I end up with is the x squared,
+square root of x
+squared, or x squared times 1 over x
+squared, that gives me the 1.
+The minus 4x becomes 4 divided by
+x, and then the positive 1 becomes 1 over,
+1 over x squared.
+And then my x gets multiplied by one over
+x, just give me a one.
+And then in the denominator I get a one
+over x and a minus 4.
+And now what I'm going to do, this is sort
+of
+two steps in one.
+So, I can take
+this limit And because this is a rational
+function
+Ii can put the limit on the top and
+bottom.
+And then also because I have the square
+root
+I can put this limit inside my square root
+sign.
+And then it should be pretty clear what's
+going to happen.
+When I look at this as x gets bigger, 1
+over x squared is going get very small.
+4 over x is going to get very small,
+but this 1 is always going to stay the
+same.
+So this is going to become 1, square root
+of 1.
+And on the bottom, my 1 over x is going to
+get very
+small, but my negative 4 is always going
+to stay the same.
+So I'm going to get 1 plus 1 divided
+by negative 4, which is equal to negative
+1/2.
+And then just this
+is almost exactly the same example so,
+here I had minus x.
+Oops, which I can't seem to select for
+some reason.
+Here I have minus x plus 2.
+But if you go through that and I'm doing
+exactly the same trick in
+this case just by adding this little plus
+two here has made the value of
+the limit divergent now.
+So it goes to minus infinity.
+

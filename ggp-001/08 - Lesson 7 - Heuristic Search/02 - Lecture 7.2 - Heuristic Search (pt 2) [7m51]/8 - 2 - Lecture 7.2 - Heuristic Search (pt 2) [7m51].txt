@@ -1,0 +1,253 @@
+One way of dealing with this conservative
+nature of depth limited search
+is to improve upon the arbitrary zero
+value return for non terminal states.
+In heuristic search this is accomplished
+by
+applying a heuristic evaluation function
+to non-terminal states.
+Such functions are based on features of
+states, and so
+they can be computed without examining the
+entire game tree.
+The implementation
+of fixed depth heuristic search is easy.
+Now at the top here, we have the
+implementation of simple depth-limited
+search that we saw earlier.
+And at the bottom, we have
+the implementation of heuristic
+fixed-depth search.
+The only difference is that we've replaced
+the default value, zero, with the result
+of
+calling the evaluation subroutine,
+evalfun, on the
+state being considered whenever the depth
+limit's exceeded.
+Tough part of the implementation is
+figuring out how to evaluate non-terminal
+states.
+Fortunately, examples of heuristic
+functions are bound.
+For example, in chess, we often use piece
+count to compare states.
+With the idea that in the absence of
+immediate threats,
+having more material is generally better
+than having less material.
+And similarly, we sometimes use board
+control, with
+the idea that having control of the center
+of the board is more valuable than
+controlling
+the edges or the corners of the board.
+The downside of using heuristic functions
+is
+that they're not necessarily guaranteed to
+be successful.
+They may work in many cases, but they can
+occasionally fail.
+That happens, for example, in chess, when
+a player is
+check-mated, even though he has more
+material and better board control.
+Still, games often admit heuristics that
+are useful in
+a sense that they, work more often than
+not.
+while for specific games such as chess,
+programmers are able to build
+in these value evaluation functions.
+This is unfortunately not possible for
+general game playing,
+since the rules of the game are not known
+in advance, rather the game player itself
+must analyze
+the game in order to find useful
+evaluation functions.
+Now in an upcoming lesson, we'll discuss
+how to find such heuristics automatically.
+That said, there are some heuristics for
+game
+playing that have arguable merit across
+all games.
+And in this section, we're going to
+examine some of these heuristics.
+And along the way, we'll show how to
+build a game player that utilizes these
+heuristics.
+Okay, mobility is one such heuristic.
+Mobility is a measure of the number of
+things a player can do.
+This could be the number of actions
+available in a given state,
+or the number of actions available in
+steps away from the given state.
+Or it could be the number of states
+reachable within n steps, from the given
+state.
+I that, that can be different from the
+number of actions since
+sometimes different actions can refer,
+can, can lead to the same state.
+a simple limitation of the mobility
+heuristic is shown here.
+the method simply computes the number of
+actions that are legal in the given state.
+And returns as value the percentage of all
+possible actions represented by
+this set of legal actions, that's all
+possible actions in all states.
+Focus is another heuristic.
+It's the opposite of mobility.
+It's a measure of the narrowness of the
+search base.
+Sometimes it's good to focus, to cut down
+on the number of possibilities to be
+considered.
+Usually it's better to restrict an
+opponent's moves, rather than keeping
+one's own, rather so that one keeps one's
+own options open.
+And a simple limitation of the focus
+heuristic can be implemented
+as shown here.
+It's a dual of mobility, again we divide
+the the
+number of legal actions in a state by the
+total number
+of actions available in any state but,
+rather than returning
+that percentage as a, as result, we
+subtract it from 100.
+Goal proximity is another heuristic, a
+little bit different from the previous
+two.
+It's a measure of how similar a given
+state is to a desirable goal terminal
+state.
+Now, there are various ways this can be
+computed.
+One common method is to count how many
+propositions are true in the
+current state and are also true in a
+terminal state with sufficient utility.
+The difficulty of implementing this method
+unfortunately is that
+is it is obtaining the set of desirable
+terminal states.
+With which the current state can be
+compared.
+It's not so easy.
+Another alternative is to use the goal
+value of
+a state as a measure of progress toward
+the goal.
+With the idea being that the goal value of
+a non-terminal state, even though it's
+not terminal, however the higher it is,
+the closer one is to the actual goal.
+of course, this is not always true.
+However, many game, games, the goal values
+are indeed monotonic.
+Meaning that the values do increase with
+proximity to the goal.
+If you're trying to get out of a cave, and
+you
+see some light down one corridor, and not
+down the other.
+You might want to go to the one that has
+light.
+Moreover, it's sometimes possible to
+compute this
+by simple examination of the game
+description.
+Using methods which we can describe in
+later lessons.
+Now, none of these heuristics is
+guaranteed to work
+in all games, but all have strengths in
+some games.
+To deal with this fact, some designers of
+GGP players, have opted
+to use a weighted combination of
+heuristics in place of a single heuristic.
+Equation shown here is a typical formula.
+Each fi here is a heuristic function such
+as your mobility
+or focus or goal proximity, and wi is the
+corresponding weight.
+Of course, there's no way of knowing in
+advance
+what the weight should be, but sometimes,
+playing a few
+instances of the game, for example, during
+the start clock
+of the game, can suggest weights for the
+various heuristics.
+As mentioned earlier, depth-limited search
+is not guaranteed to succeed in all cases.
+Failing is never good, however, it's
+particularly
+embarrassing in situations where just a
+little
+more search would have revealed
+significant changes
+in the player's circumstances for better
+or worse.
+In the research literature this is often
+called a horizon problem.
+So an example, consider, chess, a
+situation, and a situation where the
+players
+are exchanging pieces, with white
+capturing black's pieces and vice versa.
+Now, imagine cutting off the search at an
+arbitrary depth, say at two captures each.
+At this point, white might believe it has
+an advantage, since it has more material.
+However, if the very next move by black is
+a
+capture of the white queen, this
+evaluation could be misleading.
+A common solution to this problem is to
+forgo the fixed depth planet in
+favor of one that is itself dependent on
+the current state of the affairs.
+Searching deeper in some areas of the
+tree, searching less deep in other areas.
+Of the tree.
+Here's an implementation of the
+variable, what's called variable-depth
+heuristic search.
+this version of maxscore differs from
+fixed depth heuristic search in
+that there is a subroutine here called
+expfun that is called
+to determine whether the current state and
+or depth meets in appropriate condition.
+If so the tree expansion continues,
+otherwise the player terminates the
+expansion and
+simply returns the resulting, result of
+applying
+its evaluation function to the
+non-terminal state.
+the challenge in variable depth search
+is finding an appropriate definition for
+expfun.
+One common technique is to focus on
+differentials of heuristic functions.
+For example, a significant change in
+mobility
+or goal proximity might indicate that
+further search
+is warranted whereas actions that do not
+lead to dramatic changes might be less
+important.
+In chess, a good example of this is to
+look for what's called quiescence.
+It is a state where there are no immediate
+captures.
+

@@ -1,0 +1,393 @@
+Topic two is Vector Length and Planes.
+So I'll start out with length.
+And the length of a vector, w, is just
+going to be defined.
+so length of w, I'll use this notation to
+mean length.
+So it's just these two vertical bars, sort
+of like a double absolute value, and it'll
+just
+be the dot product of the vector with
+itself, and I'm going to take the square
+root.
+And so if you think about the reason for
+the square root, if w or something
+that was actually measured in units.
+Then when I did this dot product, I'm
+going to have W times W.
+So whatever unit that would be, would be
+squared.
+And so if I want to talk about the length
+of W, if W was measured
+in feet, I want this length to come back
+in feet, not in squared feet.
+So the square root will get rid of that.
+And In the plane, you can think about this
+as just the standard
+Euclidean distance between the origin and
+the point described by W.
+So for example, if W was a vector of four
+components, then
+the length of W is just the dot product of
+W with itself.
+That's just going to be the sum of the
+squared components.
+And then I'm going to take the square
+root.
+And the length of a vector is going to be
+positive, except for the zero vector.
+So remember the zero vector was a special
+vector where every component was equal to
+0.
+And the length of 0 will be exactly equal
+to
+0 and any non 0 vector has to have
+positive length.
+And then there's a special vector that
+useful
+in a lot of situations that's called, unit
+vector.
+And this is just a vector whose length is
+equal to 1.
+And so if the dot product of two vectors
+is equal
+to one, then I don't have to take the
+square root.
+So I can just describe that as u dot u is
+equal to one.
+And usually that the reason the unit
+vector is going to be useful is it,
+is it captures the direction of a
+vector without capturing the length of
+that vector.
+So if I have any non-zero vector, I can
+find a unit vector.
+So here I imagined w as a non-zero vector.
+W with a little tilde above
+it is going to be a vector that points in
+the same direction but has unit length,
+and I can turn any vector into that type
+of unit vector, just by dividing it by its
+length.
+So W is a vector here, the length of W is
+a scalar, so I'm just
+using my property that one over the length
+of W times W, that's also a vector.
+Then this idea of length can be
+generalized using something called a norm.
+And so a norm is a function, I'm going to
+use
+the same notation here, that assigns a
+length to a vector.
+Here, I've put lengths in italics, because
+the font that I use for these
+slides doesn't really make italics stand
+out that much I also put it in quotes.
+So it's some quantity
+that you can interpret like a length.
+But it's not necessarily going to be the
+euclidian
+length of the, of the point from the
+origin.
+So a norm, to be a norm, this function has
+to satisfy the following three conditions.
+So,
+a norm has to be, has to assign this
+length quantity.
+That's greater than or equal to zero.
+And, it can be zero only for the zero
+vector.
+So, for a non zero vector, it has to
+assign a positive length.
+The norm of a sum of two vectors has to be
+less than or equal to the norms of each of
+those vectors.
+And then if I scale a vector by a real
+number
+A, so remember if I have a scalar A and I
+multiply that by a vector that gives me a
+new vector
+that just has A times the length of the
+original vector.
+And that is actually a condition that the
+norm is going to enforce.
+So A times X, the norm of that vector has
+to be equal to the absolute value of A,
+times the same norm, of X.
+And
+then important class of norms, are called
+the, the p norms And the definition.
+So, if I just use this notation.
+So, and X or any vector with the two bars
+on either side.
+I'm ging to mean the, the standard vector
+norm.
+Which is just the uclidian distance
+between the origin and the point.
+If I put a subscript here,
+that's how I'm going to communicate that I
+want this norm to be some different
+function.
+So if I put a subscript p, what I'm going
+to
+mean is this expression here, so x i,
+these are the components of my vector x.
+I take the absolute value of those to the
+p power and I sum them up.
+And then I pick the pith root of that.
+So one over p is the same thing as taking
+the pith root.
+And the standard vector norm Is just going
+to be the 2-norm, in this notation.
+So if I put a 2 here, I would be
+squaring each component, so I wouldn't
+need the absolute values anymore.
+So that would be the sum of the squared
+components, to the
+one-half power, which would be the same
+thing as the square root.
+So, putting p equals 2 just gives me back
+the, the regular norm.
+Using
+P different value can sometimes be useful
+for solving different problems.
+You can also define something called the
+infinity norm,
+where if you take the limit of this as P
+goes to infinity, what it ends of giving
+you
+is just the maximum of the Elements of the
+vector.
+And, then there's also something called
+the 1 norm.
+Which is just going to be the sum of
+the absolute values of the elements of the
+vector.
+And, this is, so, in statistics, this is
+sometimes called the Manhattan distance.
+So, if you imagine, so, Manhattan.
+Is a city that's got a grid for its
+streets.
+it can be any city I suppose that has a
+nice square grid for its streets.
+And so if you wanted to describe how to
+get from one address to another address
+you'd have
+to think of going sort of so many avenues
+east and west and so many streets north
+and south.
+Where, you know, the euclidean distance
+would be if I
+just wanted to walk straight at where I
+want to go.
+you know, in New York city, the buildings
+are all very tall,
+so generally you can't walk the straight
+direction where you want to go.
+Okay.
+And
+we can also talk about the angle Between
+two vectors.
+So the dot product has a nice property,
+that when two vectors are perpendicular.
+So for instance if I thought of the vector
+(1,0)
+that would just be a vector pointing in
+the X direction.
+I could think of the vector 0,1, which
+should be a vector pointing in the Y
+direction.
+If I took their product I would get 1
+times 0 plus 0 times 1.
+So, that's 0 plus 0 which is 0.
+So, if I have 2 vectors.
+So, this property
+holds in general.
+So, if I have 2 vectors that are
+perpendicular,
+when I take the dot product I get 0.
+And then another little bit of knowledge
+is if I define a vector V.
+To be cosign phi, sign phi or some angle
+phi.
+Then this is always going to be a unit
+vector.
+And so I can see that just by computing
+the length of V.
+So I have cosine times cosine plus sine
+times sine, and cosine squared plus sine
+squared
+is equal to 1, and when I take the square
+root of that, I just get 1.
+So the length of this vector V is equal to
+1.
+[SOUND]
+So
+I couldn't make all of this pop-up in
+sequence like I normally like to.
+So I had to just put it all on the slide
+at the same time.
+So if I define a vector U to be the vector
+(1,4), so that's this black vector.
+Pointing up here.
+Then if I
+find a unit vector pointing in the same
+direction, so I can get that just by
+dividing u by its length.
+[COUGH]
+Then the components of that unit vector
+are
+going to be the cosine of beta, sin beta.
+So this angle here is beta.
+And then I can do the same thing with w.
+So here I'm just going to turn w into a
+unit vector.
+And then the components of that unit
+vector are just going to be.
+Cosine alpha,
+sin alpha, so this blue angle here is
+alpha.
+And then if I look at the angle between
+those two vectors, so the
+angle between w and u, the cosine of that
+angle, so here's I've defined that
+to be this red angle, theta, the cosine of
+that angle, is equal to
+the dot product Of these two unit vectors,
+the u tilde and the w tilde.
+And then another nice property that I will
+refer to later on, is called the Schwarz
+inequality.
+So it tells me that the dot product of
+these two vectors u and
+w, so these are the actual u and w, not
+the unit vector any more.
+This has to be less than or equal to the
+length of u times the length of w.
+And so remember when I, when I don't put
+any subscript on
+this norm operator, I mean the actual
+Euclidean length of the vector.
+OK, so now onto the second piece which was
+planes.
+So, so far, all of my examples have been
+in two dimensions and that's mostly just
+for convenience.
+If it's two dimensional, I can draw a
+picture of it,
+and it also doesn't take up too much space
+on the slide.
+But everything, so dot products, lengths,
+angle between two vectors All of
+that's going to work in higher dimensions
+too, using the same formula.
+So a plane is a, so, when I was talking
+about a plane, so
+I had the XY plane and I had things that
+lived in that plane.
+They were lines and points.
+Now, if I'm talking about three
+dimensions, I could have a line
+or a point or a plane that lives in my
+three dimensional space.
+So, a plane is just going to be a
+2 dimensional sheet that lives in a 3
+dimensional space.
+So a simple example would, if I had, you
+know x,
+y and then z vertical.
+I could think of x, y as defining a plane.
+But there's no reason it needs to be flat,
+you know, I could tilt
+my plane like that or that, I could shift
+my plane up and down.
+So there can be a whole lot of planes
+living in three dimensions.
+And the way I'm going to describe a plane
+in three dimensions, I'm going to pick a
+vector n.
+So this vector n is called a normal
+vector, and I'm going to define my plane
+to be all of the vectors that are
+perpendicular to this normal vector n.
+So, often normal means the same thing as
+perpendicular in linear algebra.
+And so if I have a vector, v, just
+representing a point in my plane, p.
+So, p is my plane.
+And it has a normal vector, n, so there's
+a, a plane,
+and then there's a vector perpendicular to
+that plane that's called n.
+And if I took any vector in that plane and
+I took the
+dot product with the normal vector, then
+by definition I should get zero.
+Because if the vector is normal because
+it's perpendicular to all the vectors in
+the
+plane, then my condition for a dot
+product being zero was the vectors were
+perpendicular.
+And if I also allow 0 to be in the plane,
+so this plane contains the origin,
+so we'll generalize on that in a moment,
+but
+right now it's a plane going through the
+origin.
+Then I would have n dot 0 equal to 0.
+And then if I had a plane now passing
+through (x0, y0, z0), so this is just some
+point
+in space and I have a plane perpendicular
+to this
+vector n and it has to go through this
+point.
+Then, this is the equation you end up
+with.
+So, this is n dot v minus that point.
+And, I can just write that out.
+So, that's the first component of n
+times x minus x,0.
+Second component of n times y minus y,0.
+And third component of n times z minus
+z,0.
+And that has to equal zero.
+And so then what I'm going to do is just
+move all of the- so the x,0,
+y,0 and z,0 parts of this to the other
+side of the equal sign.
+And, when I add those up, so, nothing is
+changing here.
+The x0, y0, z0, that's a fixed, there are
+three fixed numbers.
+The normal vector has to stay the same,
+so, n dot x0 y0
+z0, that's just going to be a sum constant
+which I called d.
+And, so I end up with this equation.
+So, some coefficient times x plus some
+coefficient times
+y plus some coefficient times z is equal
+to d.
+So, that's going to be the equation of a
+plane with normal vector n.
+And then, different values of d.
+So if, if the planes are perpendicular to
+the same vector, they're going to be
+parallel.
+So different values of d just shift the
+planes
+up and down, but they're never going to
+intersect.
+So the distance between those planes will
+stay the same.
+Oh wait, sorry.
+Not the distance between the.
+The distance between the planes is what's
+changing.
+Sort of the, the slope of the planes is
+what's staying the same.
+And then if I choose d equal to 0, that
+gives me the plane through the origin.
+

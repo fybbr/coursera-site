@@ -1,0 +1,399 @@
+Today, I'm going to finish up my lectures
+on linear algebra.
+I'll start off by going over, or
+introducing something called an orthogonal
+matrix, and then, I'm going to talk
+about three different factorizations, so
+you can.
+Factor a, a matrix into something called a
+single singular value factorization.
+You can also write it as product of
+eigenvectors and eigenvalues.
+And then there's a, a third factorization
+called QR factorization and I'm going to
+use that
+to show you how you can or show you how
+you can solve these squares problems.
+Using the q r factorization..
+And all of those factorization's basically
+involve splitting a matrix
+up into an orthogonal matrix or, or one or
+more orthogonal matrices.
+And then one other matrix that's designed
+to have a special property.
+So I'm going to go back to the Talking
+just about vectors for a second.
+So, suppose I have 2 vectors q and w.
+They're orthogonal, so they're
+perpendicular to one another.
+If the inner product of q and w is equal
+to 0.
+So now let's suppose I have a set, so here
+a set of M vectors.
+So here, Q1 is not an element of Q.
+Q1 is actually a vector.
+So I have Q1 up to QM.
+And remember these are vectors.
+I am still referring to the same vectors
+from the
+first line so they are in an m dimensional
+space.
+So, these are vectors of m elements, and I
+have m of them, and this notation
+here means they live in m dimensional
+space minus zero.
+So, this is the set minus operation.
+So I'm just trying to say there that the
+zero vector is not allowed to be in the
+set because that sort of trivially
+orthogonal to everything,
+because anything times 0 is going to be 0.
+[COUGH]
+So I have a set of m vectors, where the
+zero vector is not allowed.
+And then I want to assume that every pair
+of these vectors.
+So any, you know, for any i and any j
+Where i and j are different numbers
+between one and m.
+If I take the inner product of those two
+vectors I'm going to get 0.
+So that means every pair of vectors is
+orthogonal.
+So every pair of vectors is perpendicular.
+And then I'm going to define a vector so
+for each q j I'm going to divide q j
+by the length of q j and I'm going to call
+that oops call that q tilda j.
+And so if I take a vector and I divide by
+its length, I end up with something
+called a unit vector which points in the
+same
+direction as the original vector, but it
+has length one.
+So it doesn't matter.
+If, if QJ, if it was a really short
+vector, then dividing
+by its length is going to make it longer
+so that it's equal
+to 1, and if it's a really long vector,
+dividing by its
+length is going to make it shorter, so the
+length is equal to 1.
+So for any non zero vector this is going
+to give me a vector
+that points in the same direction but that
+has length one.
+And I'm going to call this new set of
+vectors so
+q, I assume this little a was meant to be
+a one.
+I don't know how I would have made that
+typo.
+So q tilde one up to q tilde m are called
+orthonormal fecta vectors.
+So orthogonal means that any pair of them
+has a right angle in between them.
+And then when they
+also have length one.
+They get this extra little word, normal,
+here.
+So orthonormal means a set of vectors who
+are
+mutually perpendicular, and each vector
+has to have length one.
+And now I want to make a matrix Q.
+That has these orthonormal vectors as its
+columns.
+And think about what happens when I
+consider
+product q, q transpose, or q transpose q.
+So the easier one is going to be q
+transpose q.
+And what I'm going to have, is, in the
+first row.
+So when I take the transpose of a matrix,
+turns the columns into the rows.
+So q transpose has these orthonormal
+vectors as its rows,
+and the original q has these orthonormal
+vectors as its columns.
+Then when I make this product q transpose
+q, what's going to happen?
+The first element, the, the 1,1 entry of
+the product is going to
+end up being q 1 transpose, q tilde 1
+transpose times q tilde 1.
+So that's just going to be the squared
+length of this vector.
+But since the length is one, that's going
+to be one.
+And then, for any other product in the
+first row, I'd have q tilde 1 transposed
+times
+q tilde some other index, and because
+these
+are orthogonal, that's going to be equal
+to 0.
+So, what ends up happening, when I, I make
+these products, in the
+off diagonal entries, I have qi Q tilde i
+transpose q tilde j.
+And because
+those are orthogonal, that's how I, I made
+this set of vectors,
+that's going to be 0, Except on the
+diagonal where these vectors hit
+themselves.
+So I have q tilde 1 transpose q tilde 1.
+And because it's an ortho normal set of
+vectors, that's
+going to have, that's going to be equal to
+1.
+So, what I end up with is the identity
+matrix.
+So,
+I've found this matrix if I take this
+ortho normal set of vectors, make this
+product q
+transposed q, then I end up with these dot
+products down the diagonal which are just
+the length.
+Of the vectors, and then the mixed stock
+products are
+going to be 0, so I, I get the identity
+matrix.
+So in orthogonal an orthonormal set of
+vectors when
+I put it into a matrix Q, has this
+property that q transpose q is the
+identity matrix.
+And that holds for qq transpose as well.
+And so, what I'm trying to do here is, I,
+I've now found a family of matrices.
+So, if this matrix has orthonormal
+columns, then, q transpose is equal to q
+inverse, because I, I have a matrix where,
+if I multiply either q transpose q,
+or q q transpose, I end up with the
+identity matrix.
+So the reason that these orthogonal
+matrices
+are going to be nice is because I can
+compute inverses just by taking the
+transpose,
+so just by swapping the rows and columns.
+And so, this matrix has a, a special name,
+so a square matrix
+q, so it has to be square, same number of
+rows and columns.
+Is orthogonal if q transpose q is the
+identity
+matrix and q q transpose is also the
+identity matrix.
+And so it's a little bit strange the way
+these got named.
+So vectors can be an orthogonal set as
+long as all of their, you know, their
+pairwise
+dot products for two different vectors R
+equals to
+zero, but it doesn't say anything about
+the length.
+Orthonormal factors have their
+parallelized
+perpendicular and have length one.
+But for some reason when we put those into
+a matrix, the
+matrix we get isn't called the orthonormal
+matrix it's called a orthogonal matrix.
+But it also has this condition.
+That it's not a diagonal matrix that I'm
+getting.
+I'm getting actually the identity matrix.
+So the columns of q have to have length 1.
+And it turns out that if you, if you
+actually think about what these are doing
+in space,
+so it's easiest just to, to deal with the
+2 by 2 case Orthogonal matrices represent
+rotations and reflections.
+So if I, if I have a matrix, you know.
+I, I think I, I've shown you guys
+a rotation matrix already.
+[COUGH]
+So it turns out that if I, if I
+rotate the vector, that counts as an
+orthogonal transformation.
+That's something that I can write.
+As an orthogonal matrix times a vector.
+And I can rotate that vector through a
+certain angle.
+Also if I have a line, I can reflect
+a vector across that line using an
+orthogonal matrix.
+So for example, let's Define Q to just be
+this matrix.
+So cosine, negative sine, sine, cosine.
+And this rotates a vector in the xy plane
+through an angle theta.
+And so you can see that this is going to
+be an ortho, or you
+can check that this is an orthogonal
+matrix
+just by making this product q transpose q.
+So q transpose, I'm just going to take the
+first row of this, of q and put
+that in the first column of q transpose
+and
+then the second row goes in the second
+column.
+And then when I do the matrix
+multiplication on
+the diagonal elements I'm going to get
+cosign times
+cosign, so cosign squared Plus sine times
+sine, so sine squared.
+So, it's a bit complicated, so on the
+diagonal elements, I end up
+with cosine squared plus sine squared, and
+on the off diagonal elements, it ends
+up being minus consine sine plus sine
+cosine, so that cancels, each term cancels
+the other one out for every value of
+theta, so this is always going
+to be equal to 0.
+And then I get a symmetric thing on the
+other off-diagonal element.
+So cosine squared plus sine squared we all
+know that's equal to 1.
+And this is 0 and this is 0.
+So this is going to give me the identity
+matrix.
+So I had enough space at the bottom
+right-hand corner to fit one more I in.
+And we also want to check that, so a q
+transpose q equals qq transpose equals I.
+This was my condition for an orthogonal
+matrix, but that implies that q inverse is
+equal to q transpose because that's also
+the definition for the inverse of a
+matrix.
+So we need to check the q transpose is
+actually the inverse of q.
+And so this is going to use a result, on
+something called even and
+odd functions, so an even function is, if
+I put in an minus Theta.
+I get the same value back.
+So in this case, cosine, if you think
+about
+what that looks like, if I go a little bit
+positive, so I go to positive x or I go
+the other way a little bit to negative x.
+Because that's a symmetric function around
+0, I'm going to
+get the same value as long as I'm x away
+from 0,
+and it doesn't matter which way I go,
+positive direction or negative direction.
+So that means I could write cosine of
+theta as cosine of minus theta.
+Both of those numbers are going to have
+the same value.
+And sine is something that's called an odd
+function.
+So, oops, did I mess this up?
+so sine, if you think it's going to do
+exactly the opposite.
+So when I put in sine of, if I have sine
+of theta.
+when I put in minus theta, I should get
+minus sine of theta.
+Because it's, it's something that sort of
+flipped over
+the origin rather than just reflected
+across the y axis,
+so let me just check what I did So
+q should have the minus sign in the top
+right.
+And so, when I put in the minus theta
+here that should've taken away this minus
+sign here.
+So let's see if I got it right.
+Here okay these typos are killing me but
+essentially what I'm, what I'm trying to
+show here is that q transpose is the same
+thing as q just with a minus theta put in.
+[COUGH]
+And so what that's going to do is Q
+rotates something through an
+angle theta, Q transpose rotates it
+through an angle minus theta.
+So if I rotate through theta and though
+minus
+theta I end up back at the same point
+and staying at the same point is exactly
+what
+would've happened had I multiplied
+something by the identity matrix.
+Okay.
+The other nice property that an Orthogonal
+Matrix has is that
+it preserves dot products.
+So if I have a dot product, x
+and y, and I multiply both x and y by an
+orthogonal matrix, q.
+So I have qx .qy.
+Or if I write that using
+matrix and vector notation rather than as
+a .product.y
+I can write that as QX.product.quantity
+transposed times the quantity QY.
+And then, I have a rule for how I can deal
+with transposers of products of matrices.
+I take the transpose, transpose of each
+element,
+and I put them in the opposite order, so
+the quantity Qx transposed becomes x
+transposed Q transposed,
+and then I have, Qy just stays the same.
+And now what I end up with in the middle
+here
+is this q transpose q which is equal to
+the identity matrix.
+So I can just imaginary imagine,
+multiplying either a Y
+by the identity matrix or X transpose
+times the identity matrix.
+Either way it's going to give me Y or x
+transpose back.
+And I end up with x transpose y.
+Which is exactly the definition of the dot
+product of x and y.
+And the reason this is going to be really
+useful is because
+the length of a vector would just be the
+square root.
+Of, say, x dot x.
+So
+that means that if I multiply x by an
+orthogonal matrix
+q, so q is, q has to have, for, for this
+multiplication to work.
+X is a vector of day M elements, Q has to
+be an M by N, M by M matrix.
+So the product Qx is also going to be a
+vector of M elements and
+the length of that vector is equal to the
+length of the original vector X.
+And this makes sense
+again if you just think about it in terms
+of a rotation matrix.
+Because if I rotate a vector, the length
+is staying the same.
+If I take this and I just rotate it up
+here, it's the distance from this
+point down to the origin is going to be
+the same as for the vector I started with.
+

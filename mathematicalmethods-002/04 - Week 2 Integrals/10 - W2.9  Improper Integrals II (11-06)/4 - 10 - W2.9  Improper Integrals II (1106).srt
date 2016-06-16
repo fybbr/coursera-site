@@ -1,0 +1,742 @@
+1
+00:00:00,970 --> 00:00:05,010
+Okay so now we'll talk a little bit about
+the next type.
+
+2
+00:00:05,010 --> 00:00:13,220
+So that was improper integrals where I was
+looking at an infinite infinite interval.
+
+3
+00:00:13,220 --> 00:00:17,610
+The other possibility is that the
+integrand f
+
+4
+00:00:17,610 --> 00:00:20,430
+of x is unbounded at either a or b.
+
+5
+00:00:20,430 --> 00:00:23,229
+So a or b are the end points of the
+interval where I want to integrate.
+
+6
+00:00:25,090 --> 00:00:25,940
+And so,
+
+7
+00:00:25,940 --> 00:00:29,610
+if I say it's unbounded at a, what I mean
+is that the limit
+
+8
+00:00:29,610 --> 00:00:35,030
+as x goes down to a of f of x is plus or
+minus infinity,
+
+9
+00:00:35,030 --> 00:00:38,990
+so it either goes up to positive infinity
+or it goes down to minus infinity,
+
+10
+00:00:38,990 --> 00:00:43,850
+and then just the same thing at at the
+upper end point of the limit.
+
+11
+00:00:43,850 --> 00:00:48,210
+So if x is increasing towards b, if the
+limit of f
+
+12
+00:00:48,210 --> 00:00:51,160
+of x goes to either, so if the function
+blows up and
+
+13
+00:00:51,160 --> 00:00:53,610
+goes to infinity or it goes down to minus
+infinity.
+
+14
+00:01:00,640 --> 00:01:02,400
+And so were going to define this in
+exactly
+
+15
+00:01:02,400 --> 00:01:04,770
+the same way, so instead of having an
+infinite
+
+16
+00:01:04,770 --> 00:01:09,840
+value in the limit were just going to
+define to be the limit as so for the lower
+
+17
+00:01:09,840 --> 00:01:15,020
+endpoint as t goes down to a, the integral
+from t to b of f of x,
+
+18
+00:01:15,020 --> 00:01:20,260
+or the integral goes up to b, of the
+integral from a to t of f of x.
+
+19
+00:01:20,260 --> 00:01:25,475
+If those limits again exist and they're
+finite, then are going to say that,
+
+20
+00:01:25,475 --> 00:01:32,590
+oops didn't want that bit yet.
+that this integral exists,
+
+21
+00:01:32,590 --> 00:01:37,480
+and the value of this integral is equal to
+the value of this limit, or this limit.
+
+22
+00:01:38,650 --> 00:01:45,650
+And so this third point, is if you're
+truly unlucky and it's unbounded at both
+
+23
+00:01:45,650 --> 00:01:49,570
+endpoints, what you need to do is just
+choose a point somewhere in the middle.
+
+24
+00:01:49,570 --> 00:01:50,710
+And go both ways.
+
+25
+00:01:53,700 --> 00:01:55,950
+So, what you'd be doing is splitting the
+interval up into
+
+26
+00:01:55,950 --> 00:01:58,770
+two intervals and then integrating over
+each one of those separately.
+
+27
+00:02:02,690 --> 00:02:08,120
+So, as a quick example of this guy,
+imagine trying to integrate the function.
+
+28
+00:02:08,120 --> 00:02:12,370
+1 over the square root of x dx from 0 to
+1.
+
+29
+00:02:12,370 --> 00:02:16,930
+And so the problem is as I move towards
+zero, 1 over the
+
+30
+00:02:16,930 --> 00:02:20,740
+square root of x is going to get bigger
+and bigger and bigger.
+
+31
+00:02:20,740 --> 00:02:24,090
+And in the limit it's going to be
+infinite.
+
+32
+00:02:26,350 --> 00:02:31,160
+But I'm going to try and replace the zero
+in the lower end point with
+
+33
+00:02:31,160 --> 00:02:34,700
+t so t in this case has to be some number
+greater than zero.
+
+34
+00:02:34,700 --> 00:02:40,580
+So I'll integrate from t to one and then
+it'll be easier to
+
+35
+00:02:40,580 --> 00:02:43,930
+integrate, I can use my anti power rule,
+if I just write it.
+
+36
+00:02:43,930 --> 00:02:47,804
+1 over the square root of x has x to the
+minus one half power.
+
+37
+00:02:50,430 --> 00:02:54,980
+And so I'll go ahead and do this integral.
+And then I'll take the limit of
+
+38
+00:02:54,980 --> 00:02:59,700
+that as x goes down to 0.
+
+39
+00:02:59,700 --> 00:03:06,152
+So evaluating my integral, I just have.
+
+40
+00:03:06,152 --> 00:03:08,326
+2 x to the one half.
+
+41
+00:03:08,326 --> 00:03:12,770
+So that's anti-derivative of x to the
+minus one half.
+
+42
+00:03:12,770 --> 00:03:15,710
+And you can verify that just by taking one
+half times 2
+
+43
+00:03:15,710 --> 00:03:17,840
+is 1.
+Which is the coefficient here.
+
+44
+00:03:18,850 --> 00:03:21,740
+X to the one half minus 1, so x to the
+minus one half.
+
+45
+00:03:21,740 --> 00:03:24,500
+And then I need to evaluate that at the
+upper end
+
+46
+00:03:24,500 --> 00:03:28,380
+point and subtract and evaluate it at the
+lower end point.
+
+47
+00:03:28,380 --> 00:03:34,250
+So that's going to give me 2 minus 2 times
+the square root of t.
+
+48
+00:03:38,060 --> 00:03:39,970
+And now I'm going to take the limit of
+
+49
+00:03:39,970 --> 00:03:44,370
+this expression here as t deceases to
+zero.
+
+50
+00:03:46,880 --> 00:03:49,830
+And so, essentially the, the second term
+that has the t
+
+51
+00:03:49,830 --> 00:03:51,910
+in it, that's just going to get smaller,
+and smaller and smaller.
+
+52
+00:03:51,910 --> 00:03:55,760
+So, in the limit, that's just going to end
+up being equal to two.
+
+53
+00:03:55,760 --> 00:03:59,460
+So, even though this function takes on
+arbitrarily
+
+54
+00:03:59,460 --> 00:04:02,500
+large values in the interval where I'm
+interested
+
+55
+00:04:02,500 --> 00:04:07,940
+in integrating it, I can still come up
+with a finite number For the area of it.
+
+56
+00:04:07,940 --> 00:04:08,440
+Okay,
+
+57
+00:04:10,430 --> 00:04:13,180
+and so this is this is a picture of what
+it looks like.
+
+58
+00:04:14,190 --> 00:04:20,190
+So in this lower square here from 0, 0 to
+1, 1 square,
+
+59
+00:04:20,190 --> 00:04:24,160
+that's half of the area, and then the area
+where it's got this
+
+60
+00:04:24,160 --> 00:04:28,380
+curved side here, all the way up to
+infinity, so, it's difficult to
+
+61
+00:04:28,380 --> 00:04:32,095
+draw something that goes all the way to
+infinity so I stopped at six.
+
+62
+00:04:33,480 --> 00:04:35,570
+but that has the same area so
+
+63
+00:04:35,570 --> 00:04:38,130
+above the line, y equals 1, the yellow
+
+64
+00:04:38,130 --> 00:04:41,460
+region has the same area as this unit
+square.
+
+65
+00:04:41,460 --> 00:04:41,960
+Here.
+
+66
+00:04:46,450 --> 00:04:49,983
+And then we can also combine both types of
+improper integrals.
+
+67
+00:04:51,890 --> 00:04:55,640
+So for instance, suppose I wanted to try
+to compute the integral from zero to
+
+68
+00:04:55,640 --> 00:05:00,630
+infinity of 1 over the square root of the
+absolute value of x
+
+69
+00:05:00,630 --> 00:05:05,620
+minus 1.
+So it has an infinity in the
+
+70
+00:05:07,230 --> 00:05:12,640
+it has infinitely long interval.
+And also
+
+71
+00:05:12,640 --> 00:05:16,960
+when x is equal to 1, I'm going to end up
+dividing by 0 and that's
+
+72
+00:05:16,960 --> 00:05:18,980
+going to be a point that's in the interior
+
+73
+00:05:18,980 --> 00:05:21,860
+of the interval where I'm trying to
+integrate.
+
+74
+00:05:21,860 --> 00:05:25,710
+So the function is not only unbounded in
+the positive
+
+75
+00:05:25,710 --> 00:05:28,920
+x direction it's also unbounded in the
+positive y direction.
+
+76
+00:05:31,980 --> 00:05:36,234
+And so this is actually what it, what it's
+going to look like.
+
+77
+00:05:36,234 --> 00:05:42,350
+so at, at zero it has a point of
+discontinuity, it's basically the limit
+
+78
+00:05:42,350 --> 00:05:47,390
+of this function as I move towards one in
+either direction is positive infinity.
+
+79
+00:05:51,120 --> 00:05:53,660
+And so, basically my approach to doing
+this
+
+80
+00:05:53,660 --> 00:05:55,270
+is, I'm just going to split up the
+interval.
+
+81
+00:05:55,270 --> 00:05:57,330
+So I'm going to considering integrating
+this function from
+
+82
+00:05:57,330 --> 00:06:01,230
+zero to one, and then from one to two.
+
+83
+00:06:01,230 --> 00:06:05,290
+And I'll use the second type of improper
+integral there
+
+84
+00:06:05,290 --> 00:06:09,450
+because that's going to help me handle
+this unbounded y direction.
+
+85
+00:06:09,450 --> 00:06:14,710
+And then I'll add on the integral from two
+to positive infinity.
+
+86
+00:06:14,710 --> 00:06:16,912
+And that'll be an indefinite
+
+87
+00:06:16,912 --> 00:06:20,710
+yeah indefinite integral of the first
+type.
+
+88
+00:06:22,740 --> 00:06:27,370
+So, this is just me writing that out, so
+all I'm doing is
+
+89
+00:06:27,370 --> 00:06:31,470
+splitting this up into the, so, it's the
+integral from 0 to infinity.
+
+90
+00:06:31,470 --> 00:06:34,482
+I'm going to think of that as, integral
+from
+
+91
+00:06:34,482 --> 00:06:38,660
+zero to one, integral from one to two.
+
+92
+00:06:38,660 --> 00:06:40,690
+And then integral from two to infinity.
+
+93
+00:06:40,690 --> 00:06:43,973
+But I'm going to replace all those with
+the limit definitions.
+
+94
+00:06:46,020 --> 00:06:48,980
+So if this integral exists,
+
+95
+00:06:51,340 --> 00:06:57,308
+or for this integral to exist all three of
+these limits have to exist and be finite.
+
+96
+00:06:57,308 --> 00:07:03,284
+So lets just tackle them one at a time.
+
+97
+00:07:03,284 --> 00:07:08,240
+So for the first one if I'm
+
+98
+00:07:08,240 --> 00:07:13,390
+considering values in the interval 0, 1
+then 1 minus x.
+
+99
+00:07:13,390 --> 00:07:15,760
+So remember I use to have a absolute value
+down there.
+
+100
+00:07:15,760 --> 00:07:21,390
+1 minus x is going to be positive already
+so I don't need the absolute value.
+
+101
+00:07:21,390 --> 00:07:22,720
+So I've gotten rid of those
+
+102
+00:07:24,970 --> 00:07:29,671
+and now this is just going to be 1 minus x
+to the negative one half power.
+
+103
+00:07:29,671 --> 00:07:33,970
+And when I find the anti-derivative of
+that, have to remember to use
+
+104
+00:07:33,970 --> 00:07:37,640
+the chain rule because I have a negative x
+inside my function here.
+
+105
+00:07:39,540 --> 00:07:42,460
+I end up finding out that that's equal to
+two.
+
+106
+00:07:42,460 --> 00:07:45,880
+So hopefully that's what we would expect,
+because that's what we just did.
+
+107
+00:07:49,820 --> 00:07:52,100
+So if you noticed this, this shape here is
+just
+
+108
+00:07:52,100 --> 00:07:54,360
+exactly the same one we had last time,
+turned around.
+
+109
+00:07:55,590 --> 00:08:00,190
+Then, I'm going to look at the, the next
+bit.
+
+110
+00:08:00,190 --> 00:08:03,740
+So it's actually symmetric about one.
+
+111
+00:08:03,740 --> 00:08:07,120
+So it's not surprising that I, I end up
+getting the same value, but
+
+112
+00:08:07,120 --> 00:08:12,090
+to be to be more rigorous about it, we can
+go through the steps again.
+
+113
+00:08:12,090 --> 00:08:14,950
+So this time, if x is greater
+
+114
+00:08:14,950 --> 00:08:22,500
+than 1, then x minus 1 did I write this
+backwards the second time?
+
+115
+00:08:26,700 --> 00:08:29,930
+So x minus 1 is going to be the way to get
+a positive number.
+
+116
+00:08:29,930 --> 00:08:34,310
+So if x is greater than 1, so for instance
+if it's 2, 2 minus 1 is greater than 0.
+
+117
+00:08:34,310 --> 00:08:36,820
+So I just flip the order around of these
+guys
+
+118
+00:08:36,820 --> 00:08:39,420
+and that let's me get rid of the absolute
+value.
+
+119
+00:08:41,320 --> 00:08:43,200
+And then I just take that anti-derivative.
+
+120
+00:08:43,200 --> 00:08:45,700
+So this time, I don't get the minus sign,
+because
+
+121
+00:08:45,700 --> 00:08:49,680
+here I had a negative x underneath my
+square root.
+
+122
+00:08:49,680 --> 00:08:52,170
+Here I have a positive x underneath my
+square root.
+
+123
+00:08:52,170 --> 00:08:56,510
+So it's going to be positive.
+And then I just end up,
+
+124
+00:08:58,780 --> 00:09:02,100
+once I evaluate my limit at two and t.
+
+125
+00:09:02,100 --> 00:09:05,690
+I get 2 minus 2 times the square root of t
+minus 1.
+
+126
+00:09:05,690 --> 00:09:08,720
+I'm taking the limit as t goes to one.
+
+127
+00:09:08,720 --> 00:09:11,870
+So when t goes to 1 t minus 1 is
+
+128
+00:09:11,870 --> 00:09:15,430
+going to 0 so the second term is getting
+arbitrarily small.
+
+129
+00:09:15,430 --> 00:09:17,470
+So in the limit I can just say that's
+going to
+
+130
+00:09:17,470 --> 00:09:20,930
+be zero and I just end up with this two
+again.
+
+131
+00:09:23,020 --> 00:09:24,100
+So, so far so good.
+
+132
+00:09:26,560 --> 00:09:33,310
+But now when I try and integrate my third
+integral, I have
+
+133
+00:09:33,310 --> 00:09:39,100
+the same, the same integrand as the second
+one so the first step is is pretty easy.
+
+134
+00:09:42,020 --> 00:09:44,160
+And now I'm going to evaluate it at the
+upper end point.
+
+135
+00:09:44,160 --> 00:09:47,870
+And subtract, subtract this, evaluated at
+the lower endpoint.
+
+136
+00:09:47,870 --> 00:09:54,200
+And that gives me this expression here.
+But now, I have a, a t.
+
+137
+00:09:54,200 --> 00:09:56,310
+I'm, I'm no longer dividing by t.
+
+138
+00:09:56,310 --> 00:09:59,150
+The, the power of the term containing the
+t.
+
+139
+00:09:59,150 --> 00:10:02,109
+So, t minus 1 is to a power greater than
+zero.
+
+140
+00:10:03,190 --> 00:10:07,700
+And so this is going to get bigger as t
+gets bigger and in an unbounded way.
+
+141
+00:10:07,700 --> 00:10:11,730
+So if t is going to infinity, then the
+
+142
+00:10:11,730 --> 00:10:14,390
+square root of t is also going to
+infinity.
+
+143
+00:10:16,510 --> 00:10:21,070
+And so when I take the limit of this
+expression.
+
+144
+00:10:21,070 --> 00:10:23,313
+Oops, this expression, as t goes to
+infinity.
+
+145
+00:10:24,410 --> 00:10:28,730
+I get infinity, and so the conclusion I'm
+going to
+
+146
+00:10:28,730 --> 00:10:31,170
+make from this is that the integral from
+zero to
+
+147
+00:10:31,170 --> 00:10:34,590
+infinity of d x over the square root of
+
+148
+00:10:34,590 --> 00:10:38,160
+the absolute value of x minus 1 does not
+exist.
+
+149
+00:10:39,690 --> 00:10:41,580
+Because when I split it up into these
+
+150
+00:10:41,580 --> 00:10:46,930
+pieces one of them was not finite.
+And so then in particular, that means that
+
+151
+00:10:46,930 --> 00:10:52,790
+if I took the limit of this as the upper
+end point goes to infinity.
+
+152
+00:10:52,790 --> 00:10:54,820
+That's not going to be finite either.
+
+153
+00:10:54,820 --> 00:10:58,190
+And our definition for an indefinite
+integral existing
+
+154
+00:10:58,190 --> 00:11:00,490
+required that the value has to be finite.
+
+155
+00:11:00,490 --> 00:11:05,200
+So if this is not finite, this integral,
+this indefinite integral does not exist.
+

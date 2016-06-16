@@ -1,0 +1,599 @@
+Topic two, vector spaces and subspaces.
+So the space RN, so you'll think of to get started, if I had R1 you can think of that as just a real number lines, so that would be any one real number, or what I've been calling a scalar value R2.
+I, I've been using that when I mean points
+in the planes, I mean
+it's a point in XY plane that I could
+write this to say like 1,3.
+And in general, you have a space called RN
+which is just the space.
+That I can get.
+So if I have a vector with N components,
+then I can describe points in RN.
+So the first, just like, so in R2, I need
+the first component
+to give me the X, the X coordinate.
+And I need the second component to give me
+the y coordinate.
+If it was R3 I'd need the third component
+to give me the Z coordinate in RN.
+It's gets very difficult to visualize but
+you know r or
+m can often be medium sized 100s or
+thousand or millions.
+But everything we're doing still actually
+works and sometimes it's actually easier.
+Then think about the problem got even
+though it's 1 million dimensional space,
+to think about this in this column space
+rather than in the, the row space.
+So RN is generally going to be the whole
+space, so that's everything you
+can possibly write down, every point you
+could possibly write down using n
+components.
+So R3 would just be what we think of as
+space.
+So there is no point in space that I
+couldn't describe If I knew where
+the origin was and I knew what direction x
+axis was and the y axis.
+Well then just those two then I also know
+the
+z axis and I could assign any point in
+space.
+Three numbers that would describe that
+point, so
+a vector with three components fill up a
+space
+that we generally would call 3 dimensional
+space.
+The space R2 is just going to be the x, y
+plane.
+So once I have an origin.
+I can describe any point in the plane by
+go, I guess I need an origin and
+an x axis and then from that I can
+pick the perpendicular direction to get a
+y axis.
+And once I have those two axis, then I can
+describe
+any point in the plane just with a single
+x coordinate and
+a single y coordinate and those would then
+be all of the vectors.
+I could draw with Putting the tail at 0 0
+and the head at that point, x comma y.
+In the two essential vector operations go
+on inside the vector space so right
+now it seems kind of strange because I've
+just said, well we have this whole space.
+And so every operation that I've already
+talked about gives,
+you know, if I have a vector of three
+elements,
+or three components, and I add it to a
+vector
+of three components, then I get a vector
+with three components.
+So it means a vector
+in 3 dimensional space plus a vector in 3
+dimensional
+space has an answer that's also in 3
+dimensional space.
+Can add any two vectors in RN.
+What can multiply a vector in RN by a
+scalar, And that's
+always going to give me a vector back that
+is still in RN.
+So the result lies in the same vector
+space at the thing
+that I started out with or the things that
+I started at with.
+So a subset, or a subspace of a vector
+space, is a set of vectors,
+so including the zero vector.
+So zero vector always has
+to be in a subspace.
+That satisfy two requirements.
+So if U and w are vectors in the subspace,
+and C is
+any scalar value, then U plus W has to
+also be in
+the subspace, and C times W has to also be
+in the subspace.
+And so the way you want to think of this
+is
+if I was, so we live in three dimensional
+space.
+But you could have say a piece of graph
+paper that you could imagine is the x, y
+plane.
+And so if you have two vectors that you
+draw on your
+graph paper.
+I'm supposing you are the top of your desk
+had z coordinate 0 then those vectors
+could also be written with three
+components but the z would always be a 0.
+So there's still vectors in three
+dimensional space.
+But if I add anything you can draw on your
+graph paper, if I draw
+any two graph, or any two vectors on that
+sheet of graph paper, the answer.
+I'm always
+also going to be able to draw on that
+piece of graph paper.
+So that's, that graph paper you could
+think of as a subspace
+of three dimensional, so it's a
+two dimensional subspace of three
+dimensional space.
+And so, kind of, there are a few more, so
+any line through the
+origin, so for instance the x axis would
+be a substance of three dimensional space.
+Any plane through the origin, so I was
+using the
+xy plane as my example but you could take
+any plane.
+I could take this plane and tilt it a bit.
+I guess rotating it keeps in in the same
+plane.
+Tilt it this way, tilt it that way.
+As long as it contains the origin, that's
+also
+going to be a subspace of 3 dimensional
+space.
+Yeah?
+>> What would be a
+[UNKNOWN]
+example of a subspace
+[UNKNOWN]
+that contains vectors that would not
+follow these rules?
+[CROSSTALK]
+This is how, this is how I'm defining a
+subspace, so you can't have a subspace
+that doesn't define--
+>> So what would be, an example I guess,
+of, a region, or I, I guess I can't
+imagine a, an area in two
+or three dimensions that wouldn't, meet
+these requirements.
+I guess, sort of the point is, so remember
+I'm imagining I'm living
+in three-dimensional space, which isn't
+really that hard,
+because I live in three-dimensiional
+space, and I'm thinking of my
+piece of graph paper as a sub-space.
+And I can make
+the vectors in my graph paper vectors of
+three components by just
+always taking the z to be zero.
+So a vector that wouldn't be in that
+subspace would be the z axis.
+You know if I took the vector 0, 0,
+1, that would point directly out of my
+graph paper.
+So that's, I can't write the z axis as the
+sum
+of vectors that live in my graph paper
+because it would
+always, if I made a linear combination it
+would always be
+something times zero plus something times
+zero in the z coordinate.
+So that's kind of what you're, you're
+decomposing three dimensional
+space into the x y plane and the z axis.
+That, yeah, the, I, I guess that it's not
+something that's easy to visualize, but
+what you're after,
+>>
+[INAUDIBLE]
+zero, zero, one, and, or, or something
+similar, and does he mention
+[INAUDIBLE]
+exists in your subspace, or
+>> Right and.
+>> Maybe I'm missing the point.
+The point is that it's a really exhaustive
+and specific definition
+[UNKNOWN].
+>> The, the point is that's the easiest
+one is the X Y plain.
+But imagine if I tilted the plain.
+Now you have points where everything's
+still has to live in a plain
+but you can have points in that plain that
+have X Y and Z all non-zero.
+But there's no way.
+Because there's no vector in my, in that
+subspace perpendicular to the plane.
+There's no way for me to get off of the
+plane.
+So that, that's kind of I need I use the
+xy plane because it's an easy example.
+But you know what I want is really all
+possible planes that could
+be you know, they could exist in three
+dimensions that contain the origin.
+And I, I think really what we're after,
+cause that's, that's kind
+of is, the highest dimensional thing you
+can even really, reasonably understand.
+what I'll want to be able to do later on
+Is you know these vectors
+will be in say like a seven dimensional
+subspace of ten dimensional space.
+So it's not something you can really
+visualize.
+but I'm just trying
+to give you an idea of what it means you
+know.
+So you're sort of stuck in the things.
+Like, you only need, if you're in a plane,
+you only ever need two numbers.
+To describe where you are.
+If you are in three, like, full,
+three-dimensional space, now I need three
+numbers.
+>> Mm-hm.
+>> And so that, that's how it's going to
+show up later on.
+So, for instance, in in the x-y plane, if
+z is always zero, then I only ever need
+to know x and y to know where I am in my
+subspace.
+so being in that subspace is giving me a
+constraint that allows
+me to get me the first two components of
+that vector that
+allows me to figure out what the third one
+has to be
+and so that's the property that is going
+to be useful later one.
+And also the whole space, so if
+I'm talking about Three dimensional space.
+All of three dimensional space is also
+going to satisfy my definition of a
+subspace.
+And the zero vector, so this is a
+particularly easy one.
+There's only one vector in the zero vector
+subspace, so
+if I add it to itself, I still get zero.
+And if I multiply it by any number, I
+still get this zero vector.
+So that also,
+it seems like kind of a strange one to
+have, but
+it's, a vector that satisfies those two
+properties, so it's a subspace.
+Okay.
+So one subspace It's particularly useful
+in statistics
+is that column space of a matrix a.
+And so this ends up being all of the
+linear combinations I can write using the
+columns of a.
+So, the way I get a linear combination of
+columns
+of a matrix is I multiply it by a vector.
+So this is.
+When I, when I want to think
+about what are the vectors that live in
+the column space of A.
+That's every vector I can write as A times
+X.
+So A is an M by N matrix, that means X has
+to be a vector with N components.
+[COUGH]
+And, it's going to give me a linear
+combination then of the columns
+of A, and for every vector X that I pick,
+I can get
+a different output from that, and those
+vectors are going to fill
+up a space, and that's called the column
+space of a matrix A.
+Okay, so the, yeah, linear combinations
+are things that I can write as ax.
+And so remember when we were looking at
+solving this problem ax equals b.
+Well, this is, according to this
+definition of this column space, this is
+only going to be solvable if b is in the
+column space of a.
+So I think in, in the homework, and I also
+gave a few quick examples
+of, you know, sometimes you're not able to
+solve a x equals b.
+Or sometimes you end up with an infinite
+numbers of solutions.
+And so when you're not able to solve ax
+equals b,
+so you end up getting something like zero
+times y equals eight
+when you're doing your elimination, that
+means that for that particular case,
+for that particular a, the b that you are
+trying to solve.
+in this equation here is not in the
+column space of A, so you're not going to
+be able to find an answer for that.
+So if A is an M by N matrix then the
+columns of A have M components.
+So the columns live.
+In a subspace that they live in the whole
+space, r m.
+And so the column space has to be a
+subspace of r m.
+So if a was, if n was equal to m,
+that is possible that a can fill up the
+whole space.
+if there are fewer so for instance if you
+just
+think of a as being the identity matrix,
+and what
+the identity matrix really is the first
+row or first
+column is 1, 0,0 that's a vector that just
+points
+along the x axis it points 1 in the x
+direction, 0
+in the y direction, 0 in the x direction
+The second column is
+zero, one, zero, so that's a vector that
+points in the y direction,
+and the third one is a vector that points
+in the z direction.
+And so then when I take A times x, so if I
+take i times
+x, the reason that's equal to x is it's
+just how I would write the,
+you know, the point xyz.
+In terms of, go so much in the X
+direction, so much in the Y
+direction, and so much in the Z direction,
+it's a linear combination of my coordinate
+axes.
+If I only had the first two columns, I
+could never get in the Z direction.
+So, even though my vectors are still
+length three, so I'd have
+one, zero, zero and zero, one, zero Now,
+since I only have
+these two vectors, I can't fill up the
+whole of the space anymore.
+I can only fill up a plane.
+I can only get to points in the x-y plane.
+And then, just a bit of notation.
+So, for some reason, they call the column
+space the range
+of a matrix, so that the notation is r of
+a.
+So I think R is going to get used quite
+often as a variable or a function here, so
+in case when I write it like this, R of a
+matrix, I mean the range of the matrix.
+And that's the subspace of vectors that I
+can write as linear combinations
+of the columns of A.
+So R stands for range.
+Okay.
+Then, another space that's, will show up
+as being important in statistics is called
+the nullspace of a.
+And this consists of all of the solutions.
+So here I'm looking at solutions x to the
+equation a x equals zero.
+So remember, I said the zero vector, was,
+it's own subspace.
+So you always get that one for free.
+If I put in
+zero for X, then i'm going to get A times
+zero
+is equal to zero, so zero is always in the
+nullspace.
+[COUGH]
+The nullspace of A is denoted by.
+N of A so we had R of A for the column
+space and then N of A
+for the nullspace and so again remember
+when I
+was talking about using the identity
+matrix as my matrix
+A if I took off the third column then
+the points I couldn't get to are the
+points that
+are on the Z axis so that would mean the Z
+axis could be the nullspace of that matrix
+And the column space would be the xy
+plane.
+And where you're going to end up with a
+nullspace
+is if you have a matrix where when you do
+elimination.
+So for this case I'm going to subtract two
+times the first row from the second row.
+That's going to give me; 0, 0, 2.
+Now I'll subtract three times the first
+row from the third
+row, and that's also going to give me 0,
+0, 2.
+So when I look at this
+matrix here, there's no pivot for me in
+the second column, so
+I have to go to the third column to find
+the pivot.
+And then when I subtract the second row
+from the
+third row I end up with a row that's all
+zeros.
+So I end up with pivot only in the first
+and third column,.
+So I get variables in x1 and x3.
+And I, and I'm going to call the variable
+x2 a free variable.
+And essentially what free variable means
+is I can pick that, and then
+I can solve for the other two in terms of
+whatever I pick there.
+So you can think of that as just sort of,
+like y equals a function of x.
+You have a dependent variable and an
+independent variable.
+So I can choose any value I want of the
+independent variable, but once I've picked
+that, I now have a function that gives
+me a specific value of the dependent
+variable.
+And so if I, you know normally what I
+expect
+to do, what I expect to get when I have
+three equations and three unknowns, I
+expect to be able
+to solve that and get an answer, a single
+point.
+If I end up with when I, when I've done
+eliminations, something like
+this, now it's telling me is that I, I
+sort of have zero times X2 can be zero.
+So that means I can choose any value I
+want for X2 and
+then I'm going to have, you know, based on
+This equation
+here I have someway of getting X X1 and X3
+from
+whatever value I choose for X2, and so I
+am going to use that
+to, to define kind of 1, 1 last important
+property of
+a matrix which should be the rank of a
+matrix And so the rank
+of the matrix is going to be the number of
+pivots of that matrix.
+And so in this case, since I have, I have
+a pivot here
+and a pivot here, this matrix that I
+started out with has rank two.
+If on the other hand, if, if I got the
+nice elimitation picture
+where have non-zeros down the diagonal,
+Then it would be a rank three matrix.
+>> What is the null space then?
+>> That's a, that, we have to take a
+linear algebra class for.
+It's, it's not really clear, from this,
+exactly what the null space is.
+But you can see that it has a, so it,
+if you only have x equals 0, as the null
+space
+That's kind of a trivial null space.
+It's sort of like saying anything times
+zero is zero.
+Here because I have this free variable I
+don't have enough pivots.
+It means I have a non-trivial null space.
+It means I can actually, sorry, I can
+actually find non zero vectors,
+x, that are going to give, that are going
+to satisfy this equation.
+Okay, then I think the final concept for
+this topic will be
+linear independance.
+So suppose I have a sequence of vectors,
+v 1 up to v n.
+And I'm going to call that linearly
+independent if and only if the only linear
+combination that gives
+the zero vector is 0 times v1 plus 0 times
+v2, basically 0
+times each one of these vectors.
+So that's the only way to write the zero
+vector.
+So that columns of A are independent, so
+linearly independent, if
+and if the solution to Ax equals 0 is the
+zero vector.
+So that's just a, another way of stating
+the same thing.
+So this is the, the vector definition of
+linearly independent.
+This is sort of the Matrix definition of
+linearly independent.
+And so this is going to be true so that
+the columns of A are going to
+be linearly independent if when I do
+elimination
+on A, I don't have any free variables.
+So that means I have to end up with a full
+set of pivots as I'm doing elimination.
+And in that case, the rank a is going to
+be equal to
+n, so I'm going to get a pivot in every,
+in each column.
+And if I have a pivot in each column,
+there won't be any
+free variables, so the null space of a
+will contain only the zero vector.
+Okay.
+And then I'll say a set of vectors spans
+a space if their linear combinations fill
+that space.
+So for instance, if I look at the identity
+matrix, so's to
+say three by three identity matrix I can
+write any point in three-dimensional
+space as x times the first column of the
+identity matrix plus y
+times the second column of the identity
+matrix plus z times the third
+column of the identity matrix.
+So I'll say that the columns of the
+identity matrix span the space r3.
+So any point in that space.
+Can be written as a linear combination of
+the vectors that span that space.
+And then a basis for a vector space is
+going
+to be a sequence of vectors so same thing
+as this.
+They need to be one linearly independent.
+And two, they need to span the space.
+And so again this is something like my, my
+columns of the identity matrix would,
+would solve this.
+they're linearly independent and they span
+the
+space and, that's a very trivial example
+but that's kind of what you're trying to
+say, so it's the columns Of your
+matrix, give you a way, so I can write
+every point in r3 as some
+linear combination of the columns of that
+matrix and then the identity matrix is
+obviously
+just the easiest way to do that, which is
+why that's what everybody uses.
+Then the dimension of a vector space.
+Is going to be the number of vectors in
+the basis.
+And so since every basis has to have the
+same number of
+vectors we say it's the, it's the number
+of vectors in every basis.
+And so again if I'm talking about R three
+I need
+the columns of the three by three identity
+matrix to span that.
+That's also going to be a basis for R
+three.
+And so the dimension is just going to be
+the number of vectors which
+is the number of columns of the three by
+three identity matrix which is three.
+

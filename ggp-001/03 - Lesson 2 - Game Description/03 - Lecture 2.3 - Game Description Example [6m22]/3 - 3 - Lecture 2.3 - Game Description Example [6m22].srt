@@ -1,0 +1,468 @@
+1
+00:00:04,190 --> 00:00:07,256
+Let's look at GDL in the context of a
+specific game.
+
+2
+00:00:07,256 --> 00:00:11,230
+namely Tic-tac-toe.
+
+3
+00:00:11,230 --> 00:00:15,340
+As fundamental entities, we include white
+and black, the roles of the game.
+
+4
+00:00:18,080 --> 00:00:21,340
+we also include 1, 2, and 3, which are
+the.
+
+5
+00:00:21,340 --> 00:00:25,202
+We will use this indices for rows and
+columns of the Tic-tac-toe board.
+
+6
+00:00:27,240 --> 00:00:31,090
+And we'll use x, o and b, meaning blank,
+as
+
+7
+00:00:31,090 --> 00:00:34,770
+marks that go in the cells of the
+Tic-tac-toe board.
+
+8
+00:00:37,632 --> 00:00:40,790
+we'll use the ternary function constant.
+
+9
+00:00:40,790 --> 00:00:46,090
+Cell together with a row index and a
+column index and a mark to designate the
+
+10
+00:00:46,090 --> 00:00:48,850
+proposition that the cell in the specified
+row
+
+11
+00:00:48,850 --> 00:00:51,230
+and column contains the specified mark or
+blank.
+
+12
+00:00:52,280 --> 00:00:57,512
+For example the data cell 2, 3, o, says
+that there's
+
+13
+00:00:57,512 --> 00:01:01,040
+an o in the cell in row 2 and column 3.
+
+14
+00:01:03,290 --> 00:01:04,640
+We use the unary
+
+15
+00:01:06,680 --> 00:01:10,730
+function constant control to say whose
+turn it is to mark a cell.
+
+16
+00:01:10,730 --> 00:01:14,060
+For example, the proposition control of
+white denotes
+
+17
+00:01:14,060 --> 00:01:16,340
+the proposition that it's white's turn to
+play.
+
+18
+00:01:18,800 --> 00:01:21,360
+In Tic-tac-toe, there are only two types
+of actions a player can perform.
+
+19
+00:01:21,360 --> 00:01:23,560
+It can either mark a cell or it can do
+nothing, which
+
+20
+00:01:23,560 --> 00:01:25,710
+is what a player does when it's not his
+turn to play.
+
+21
+00:01:27,000 --> 00:01:31,230
+The binary relation con, binary function
+constant
+
+22
+00:01:31,230 --> 00:01:33,540
+mark, together with a row and a column,
+
+23
+00:01:33,540 --> 00:01:38,240
+and designates the action of playing,
+placing a mark in row m and column n.
+
+24
+00:01:39,480 --> 00:01:41,360
+Mark place there depends on who does the
+action.
+
+25
+00:01:43,330 --> 00:01:43,530
+And fi,
+
+26
+00:01:43,530 --> 00:01:46,640
+going back to the object constants, we
+have noop
+
+27
+00:01:46,640 --> 00:01:48,960
+which refers to the act of doing nothing
+at all.
+
+28
+00:01:50,670 --> 00:01:53,180
+Finally, we have some helper vocabulary.
+
+29
+00:01:53,180 --> 00:01:58,490
+row, column, diagonal, line, open.
+whose purpose will become clear soon.
+
+30
+00:02:00,750 --> 00:02:06,420
+The state of the game of Tic-tac-toe was
+an arbitrary subset of the propositions.
+
+31
+00:02:06,420 --> 00:02:08,930
+Propositions in a state are assumed to be
+true whenever the game
+
+32
+00:02:08,930 --> 00:02:11,520
+is in that state and all others are
+assumed to be false.
+
+33
+00:02:11,520 --> 00:02:15,260
+For example, we can just describe the
+Tic-tac-toe state shown here
+
+34
+00:02:15,260 --> 00:02:17,549
+on the left with the set of propositions
+shown on the right.
+
+35
+00:02:18,650 --> 00:02:23,510
+cell 1, 1, contains an x, cell 2, 2,
+contains an o, cell 3, 3, contains an x.
+
+36
+00:02:23,510 --> 00:02:25,780
+The other cells are all blank.
+
+37
+00:02:25,780 --> 00:02:27,220
+And it's black's turn to play.
+
+38
+00:02:31,250 --> 00:02:33,705
+Using this conceptualization of states, we
+can define the game of
+
+39
+00:02:33,705 --> 00:02:37,500
+Tic-tac-toe with a small set of logical
+sentences, as shown here.
+
+40
+00:02:37,500 --> 00:02:39,020
+The game has thousands of states.
+
+41
+00:02:39,020 --> 00:02:41,510
+And it can be described by just one page
+of rules.
+
+42
+00:02:43,040 --> 00:02:45,210
+A similar parsimony is possible for other
+games.
+
+43
+00:02:45,210 --> 00:02:46,570
+For example, chess is more than 10 to the
+30
+
+44
+00:02:46,570 --> 00:02:46,876
+[INAUDIBLE]
+
+45
+00:02:46,876 --> 00:02:47,210
+states.
+
+46
+00:02:47,210 --> 00:02:50,560
+And yet, it can be described in about four
+pages of rules with this search on here.
+
+47
+00:02:52,420 --> 00:02:54,579
+let's look at each of these groups of
+rules in more detail.
+
+48
+00:02:56,998 --> 00:02:59,477
+we first of, identified the two roles in
+the
+
+49
+00:02:59,477 --> 00:03:02,820
+game, namely white and black, using the
+role relation.
+
+50
+00:03:06,380 --> 00:03:08,920
+Next, we define the propositions in the
+game.
+
+51
+00:03:08,920 --> 00:03:11,390
+Since there are only 29 propositions, we
+could
+
+52
+00:03:11,390 --> 00:03:16,160
+do this by writing out 29 ground atoms,
+however.
+
+53
+00:03:16,160 --> 00:03:18,320
+we can do this more economically by
+writing just
+
+54
+00:03:18,320 --> 00:03:21,550
+two rules, as shown here, together with
+some ground atoms.
+
+55
+00:03:22,860 --> 00:03:26,597
+Now, the first rule says that an
+expression
+
+56
+00:03:26,597 --> 00:03:30,114
+of the form cell of x,y,w is true.
+
+57
+00:03:30,114 --> 00:03:32,086
+if x is an index, and
+
+58
+00:03:32,086 --> 00:03:37,074
+y is an index, and w is a filler, that is
+we'll
+
+59
+00:03:37,074 --> 00:03:42,400
+see x over b.
+And an index there is 1, 2, or 3.
+
+60
+00:03:42,400 --> 00:03:47,056
+The second rule says that a player, every
+player
+
+61
+00:03:47,056 --> 00:03:47,870
+[INAUDIBLE],
+
+62
+00:03:47,870 --> 00:03:50,170
+that there is a proposition of the form
+control of
+
+63
+00:03:50,170 --> 00:03:52,560
+w for each of the two roles in the game.
+
+64
+00:03:56,430 --> 00:03:59,760
+Now we can do the same for actions and
+expression mark of x, y is an action
+
+65
+00:03:59,760 --> 00:04:04,280
+for w if w is a role and x is an index and
+y is an index.
+
+66
+00:04:04,280 --> 00:04:07,190
+And noop is a possible action for either
+of the two players.
+
+67
+00:04:11,960 --> 00:04:14,380
+Okay, here we characterize the initial
+state by writing
+
+68
+00:04:14,380 --> 00:04:17,260
+all relevant propositions that are true in
+the initial state.
+
+69
+00:04:17,260 --> 00:04:20,060
+In this case all cells are blank and the x
+player has control.
+
+70
+00:04:24,100 --> 00:04:25,700
+Next, we then have to find legality.
+
+71
+00:04:26,890 --> 00:04:30,890
+Player may mark a cell if that cell is
+blank, and it has control.
+
+72
+00:04:30,890 --> 00:04:32,835
+Otherwise, the only legal action is noop.
+
+73
+00:04:38,000 --> 00:04:40,280
+Next, we look at the update rules for the
+game.
+
+74
+00:04:40,280 --> 00:04:42,360
+In other words it's physics.
+
+75
+00:04:42,360 --> 00:04:43,260
+It's dynamics.
+
+76
+00:04:46,420 --> 00:04:48,980
+First rule here says that a cell is marked
+with an
+
+77
+00:04:48,980 --> 00:04:52,260
+x or an o if the appropriate player marks
+that cell.
+
+78
+00:04:53,410 --> 00:04:56,370
+And the second rule handles the other
+player.
+
+79
+00:04:56,370 --> 00:05:00,130
+If a cell is blank and is not, not marked
+on that step then it remains blank.
+
+80
+00:05:02,190 --> 00:05:03,280
+The cell contains a mark.
+
+81
+00:05:03,280 --> 00:05:05,230
+It retains that mark on the subsequent
+state.
+
+82
+00:05:06,940 --> 00:05:08,770
+Finally, control alternates on each play.
+
+83
+00:05:18,310 --> 00:05:21,540
+Before we get to rewards and termination,
+here's some supporting concepts.
+
+84
+00:05:21,540 --> 00:05:23,325
+A row of marks means that there are
+
+85
+00:05:23,325 --> 00:05:24,570
+[UNKNOWN].
+
+86
+00:05:24,570 --> 00:05:27,100
+three marks all with the same first
+coordinate.
+
+87
+00:05:30,070 --> 00:05:32,320
+The column and diagonal relations are
+defined analgously.
+
+88
+00:05:32,320 --> 00:05:36,526
+A line is a row of marks of the same type
+or column or a diagonal.
+
+89
+00:05:38,270 --> 00:05:42,319
+Finally a game is open provided there is
+some cell containing a blank.
+
+90
+00:05:47,000 --> 00:05:48,700
+Alright, here we have the definition of
+goals.
+
+91
+00:05:48,700 --> 00:05:51,100
+A white player gets 100 points, since
+there's a
+
+92
+00:05:51,100 --> 00:05:53,340
+line of x marks, and no line of o marks.
+
+93
+00:05:56,430 --> 00:05:59,899
+If there are no lines of either sort,
+white gets 50 points.
+
+94
+00:06:01,305 --> 00:06:06,270
+There's a line of o marks and no line of x
+marks then white gets zero, zero points.
+
+95
+00:06:06,270 --> 00:06:08,680
+The rewards for black are analogous.
+
+96
+00:06:08,680 --> 00:06:09,590
+The final is termination.
+
+97
+00:06:09,590 --> 00:06:12,620
+The game terminates whenever either player
+has a line of marks
+
+98
+00:06:12,620 --> 00:06:14,710
+of the appropriate type or if the board is
+not open.
+
+99
+00:06:14,710 --> 00:06:16,540
+That is, there are no cells containing
+blanks.
+

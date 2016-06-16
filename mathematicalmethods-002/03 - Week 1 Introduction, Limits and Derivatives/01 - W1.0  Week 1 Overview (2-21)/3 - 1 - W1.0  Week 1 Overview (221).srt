@@ -1,0 +1,190 @@
+1
+00:00:01,230 --> 00:00:04,590
+The topic for week one is limits and
+derivatives.
+
+2
+00:00:04,590 --> 00:00:09,980
+And the topics we're going to cover are,
+so
+
+3
+00:00:09,980 --> 00:00:13,950
+I'll start of with a concept called
+present value,
+
+4
+00:00:13,950 --> 00:00:16,050
+and this is just a way to decide how
+
+5
+00:00:16,050 --> 00:00:19,490
+much a future stream of payments is worth
+today.
+
+6
+00:00:19,490 --> 00:00:20,880
+And then I'm going to use the idea of
+
+7
+00:00:20,880 --> 00:00:25,070
+present value to motivate a mathematical
+idea called a limit.
+
+8
+00:00:25,070 --> 00:00:27,070
+And a limit is just,
+
+9
+00:00:27,070 --> 00:00:29,450
+it's the value of a sequence of functions
+or
+
+10
+00:00:29,450 --> 00:00:33,220
+a sequence of numbers as you just keep
+going.
+
+11
+00:00:33,220 --> 00:00:34,850
+So it's something that you can never
+actually
+
+12
+00:00:34,850 --> 00:00:38,240
+arrive at, but it's something you can
+approximate.
+
+13
+00:00:40,840 --> 00:00:43,970
+In section four, we'll talk about
+evaluating limits, so
+
+14
+00:00:43,970 --> 00:00:47,470
+this is a very a very common mathematical
+operation.
+
+15
+00:00:50,040 --> 00:00:54,560
+Section five, I'll introduce a concept
+called continuity, and so you can think of
+
+16
+00:00:54,560 --> 00:00:59,210
+a continuous function as just one that you
+could draw without lifting up your pen.
+
+17
+00:00:59,210 --> 00:01:01,760
+Mathematically, the way I would say that
+is that
+
+18
+00:01:01,760 --> 00:01:05,470
+a continuous function is a function where
+the limit
+
+19
+00:01:05,470 --> 00:01:08,920
+of a function as I approach a certain
+value
+
+20
+00:01:08,920 --> 00:01:11,740
+is just equal to the function evaluated at
+that value.
+
+21
+00:01:14,180 --> 00:01:17,648
+In section six, I am going to then apply
+the limit to a.
+
+22
+00:01:18,860 --> 00:01:21,280
+To an estimate of the slope of a function.
+
+23
+00:01:21,280 --> 00:01:23,560
+And then when I take the limit I end up
+
+24
+00:01:23,560 --> 00:01:28,630
+with something called a derivative, so
+that's, going to be differentiation.
+
+25
+00:01:28,630 --> 00:01:31,420
+And on the rest of the lecture, is
+
+26
+00:01:31,420 --> 00:01:34,060
+just going to be methods for evaluating
+derivatives.
+
+27
+00:01:34,060 --> 00:01:37,760
+So we'll talk about something called the
+product rule and the chain rule.
+
+28
+00:01:37,760 --> 00:01:39,280
+So this is when I have
+
+29
+00:01:39,280 --> 00:01:43,500
+a, a complicated function, a function
+that's made up of smaller functions.
+
+30
+00:01:43,500 --> 00:01:46,340
+I can express the derivative of my
+function
+
+31
+00:01:46,340 --> 00:01:48,750
+in terms of the derivatives of those
+smaller functions.
+
+32
+00:01:50,500 --> 00:01:53,070
+I can do higher derivatives, so a higher
+derivative
+
+33
+00:01:53,070 --> 00:01:55,740
+is just a derivative of a derivative of a
+function.
+
+34
+00:01:56,840 --> 00:02:01,690
+And then, I'll give an example using a
+concept called Duration Of A Bond.
+
+35
+00:02:02,710 --> 00:02:04,410
+And then, finally, finish this week with
+
+36
+00:02:04,410 --> 00:02:04,920
+L'Hopital's Rule.
+
+37
+00:02:04,920 --> 00:02:08,540
+And L'Hopital's Rule is a way of
+evaluating a limit
+
+38
+00:02:10,960 --> 00:02:12,040
+that's undefined.
+
+39
+00:02:12,040 --> 00:02:16,990
+So, I could end up with a limit of, of
+something like 0 divided by 0.
+
+40
+00:02:16,990 --> 00:02:20,270
+I can actually use derivatives to make
+sense of a limit like that.
+

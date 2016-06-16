@@ -1,0 +1,209 @@
+Picking up where we left off last time,
+we're
+on lesson number five, double integrals of
+separable functions.
+This really was meant to follow up part
+four,
+where we had a function, I did a change
+of variables, and then it wasn't that much
+easier
+to integrate after I did the change of
+variables.
+But there was a trick that we missed, and
+so that's what this
+section will, will cover.
+So if we look back at what we did last
+time.
+We had this integral here, which this is
+what the function was.
+This was just x, and then we transformed
+into s and t.
+So this is what x got transformed into.
+And then we had oops, the absolute value
+of the Jacobian here, and then ds dt.
+And then I'll rewrite that
+in this more power rule slash anti-power
+rule friendly
+form of just each each variable to a
+power.
+And
+now, if you look at where I've put the
+square brackets here.
+oops, so this is, this is the way we tried
+to do it last time.
+So I just pretended this is a function of
+s and t.
+I'm going to inter, I going to do the
+partial integral of this with respect to
+s first, evaluated at s equals 2 and
+subtract it evaluated at s equals 1.
+But, if we look at this a little
+bit closer, any function of t, since we're
+doing
+a, a partial integral, any function of t
+is going to be constant with respect to s.
+So I can move, I have this integral
+sign here corresponds to integration with
+respect to s.
+So the inside integral sign and the inside
+variable here,
+the, they correspond to one another.
+And anything, and, and these are
+corresponding to the variable s,
+anything that's not an s is constant with
+respect to this integral.
+So I can move that across the integral
+sign, and
+I'll get what I have on the right-hand
+side here.
+So I, I get the t to the minus 3
+halves, that's constant with respect to
+this integral in here.
+So I'm going to bring it out front.
+And now I have something that only depends
+on s here.
+And so what this is going to allow me to
+do is express this integral
+as the product of two definite integrals
+that are integrals of single variable
+functions.
+So I have here an integral, oops.
+just of s alone.
+And then multiplied by an integral on the,
+on the right of t alone.
+And so the reason I was able to do that
+is, if I look at his function here, that I
+can't
+seem to highlight right now, just get a
+little bit
+or it so people can see where the mouse
+pointer is.
+Everything in this set of square brackets,
+I can do
+that integral and that's just going to be
+a real number.
+And so, I can just treat the whole thing,
+whether I evaluate it and get the real
+number.
+Or I just keep it in these square
+brackets.
+It's constant, so I can bring that across
+this integral sign here.
+And now, this is going to be obviously,
+quite a bit easier,
+because I can do each one of these
+integrals independently now.
+So here I've just computed the
+anti-derivative
+of the first function, anti derivative of
+the second function, then I'll have to
+to evaluate them at their limits and
+subtract.
+so I'm just using the fundamental theorem
+of calculus Independently now.
+Once for this function of s and once for
+this function of t.
+And let's see.
+So the rest of it is just a little bit of
+algebra.
+And I don't suppose anybody remembers the
+thing I told you to remember on Monday.
+But it was, so last time it was negative 6
+plus 5 root 2 over 3.
+This time it's 5 root 2 minus 6 over 3.
+but because we're able to separate this
+integral, I, well
+at least for me I felt it was a lot for
+me to evaluate it this way than it was to
+evaluate it trying to integrate it twice
+as an iterated integral.
+And so, in general, this is going to work
+only when we have a rectangular domain of
+integration.
+So this isn't going to work if the limits
+of one of the integral depend on the
+value in the other integral.
+because then, I'm not, it's still going to
+have
+some dependence on the, the first partial
+integral
+will have some dependence, not in the
+function,
+not in the integrand, but in the limits.
+So I won't be able to move that across the
+other
+I won't be able to remove that across the
+other integral.
+So I have to have a rectangular domain of
+integration.
+And
+then I have to be able to take the
+integrand, this is the function I'm trying
+to integrate.
+And I need to be able to write that as a
+product of
+a function of the first variable times a
+function of the second variable.
+And then I can express the double integral
+of f
+over r as the product of these two single
+variable integrals.
+So the double integral of f over r becomes
+the integral.
+So remember, this is f, but now I'm
+going to use the fact that I
+can separate it into a product of g of x
+and h of y.
+And then the ab limits correspond to
+integration with respect to x.
+And the cd limits correspond to
+integration with respect to y.
+And then because h of y, this is going
+to be constant when I'm integrating with
+respect to x.
+So I can bring that out in front of the
+integral sign.
+The dx integral sign.
+And now inside the square brackets, I have
+something
+that I could just integrate and replace
+with a constant.
+And so, since this quantity inside the
+square brackets
+is constant, I can move that out in front
+of my dy integral.
+And so what I'm left with is a product of
+a definite integral
+with resp g of x dx, and another definite
+integral, h of y dy.
+And so this was this was an
+example of kind of the forward use of, of
+this property.
+So I had a function of s and t that I
+could accept, it was a function of s times
+the function
+of t, so I was able to separate that.
+It got easier when I did the change of
+variables, because
+I took my diamond, and I turned it into a
+rectangle.
+So that allowed me then to, to use this
+property.
+the other thing that will seem kind of
+strange is that I can also use this
+backwards.
+So it, sometimes.
+And in fact, we're going to have a lesson
+on that in a little bit.
+if I have two integrals of this form.
+So an integral a
+single variable function times the
+integral of a
+single variable function that I'm not able
+to compute.
+So each of these, this side and this side.
+I'm not able to do When I multiply them
+together, I am able to evaluate it.
+So that'll give me a sort of a interesting
+way to solve one particular problem.
+

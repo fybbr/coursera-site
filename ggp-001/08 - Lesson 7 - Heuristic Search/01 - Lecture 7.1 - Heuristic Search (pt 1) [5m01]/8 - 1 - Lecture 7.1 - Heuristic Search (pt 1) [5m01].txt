@@ -1,0 +1,141 @@
+In the last two lessons, we looked at
+approaches to playing small games, those
+games for which there is sufficient time
+for a complete search of the game tree.
+Unfortunately, most games are not so
+small.
+Incomplete search is usually impractical.
+In this lesson, we'll look at a variety of
+techniques for incomplete search.
+We'll begin with simple Depth-Limited
+Search, and after that,
+we turn to two variations.
+First, Fixed-Depth Heuristic and then
+Variable-Depth Heuristic Search.
+And in the next lesson, we examine
+statistical methods for dealing with
+incomplete search.
+Simplest way of dealing with games, which
+is too little time to
+search the entire game tree, is to limit
+the search in some way.
+In depth-limited search, player explores
+the game tree to a given depth.
+Legal player is a special case of depth
+limited search in
+fact, as is a random player, where the
+depth is effectively zero.
+The imp, implementation of depth limited
+search is a small variation
+on the implementation of the minimax
+player described in the preceding lesson.
+The only difference is the addition of a
+level parameter to maxscore and minscore.
+Parameters incremented in minscore on each
+recursive call to maxscore, as we see here
+at the bottom.
+and it's the level of any particular
+non-terminal
+state in the entry exceeds a predetermined
+depth limit.
+rather than expanding, maxscore simply
+returns zero for that state, which
+is a quite conservative lower bound on the
+utility of the state.
+Here
+is an example of depth limited search.
+By limiting the depth of players not need
+to explore the entire tree,
+it is still able to find a solution that
+nets at 80 points.
+Not as good as 100 points that it might
+get if we were able to go
+deeper into the tree, but it's better than
+50 and, and a lot better than zero.
+The most obvious problem with
+depth-limited search is that the, is the
+conservative estimate of zero for
+non-terminal
+states is really not very informative.
+In the worst case, none of the states at
+the given depths
+may be terminal, in which case the search
+provides no real value.
+You just get zero everywhere.
+And we're going to discuss some ways of
+dealing with this
+problem in the next segment, and again, in
+the next lesson.
+It also the opposite problem that.
+The depth maybe set a too greater level,
+forcing the pair to surge
+deep into the tree before finding an
+answer that exists at a shallow level.
+This probes that's, ssss, is serious, if
+along the way that
+run, the player as out of time before
+encountering the shallow solution.
+One solution to this problem is to
+use Breadth-First Search rather than
+Depth-First Search.
+Start off at the root,
+expand one level, chec, checking each node
+for termination, then we, ho.
+If we halt if we ever encounter a terminal
+state with sufficiently large value.
+And if time expires before this happened,
+we simply choose
+a branch that leads to a node with highest
+terminal value.
+Breadth-First Search has the merit that it
+finds the shortest path to a maximal goal.
+And has the disadvantage that it consumes
+space that's
+proportional to the size of the expanding
+game tree,
+which can be exponential in depth.
+Using this approach in some cases, the
+player can run out of memory and crash.
+An
+alternative solution to the problem is to
+use what is called iterative deepening.
+Exploring the entire game tree repeatedly
+at increasing depths until time runs out.
+We search the tree to depth one, and then
+we search the entire tree to depth two and
+we search it again to depth three, and so
+forth, using depth-limited search on each
+of these iterations.
+The primary disadvantage of this approach
+is that it requires space.
+Primarily advantage, I'm sorry if this
+person requires place that
+linear in a depth that you export portion
+of the tree.
+The entire sub tree does not need to be
+stored,
+yet it still finds the shortest path to an
+optimal solution.
+And the primary disadvantage is that
+portions
+of the tree may me explored multiple
+times.
+However, it's usual with iterative
+deepening, this waste
+is usually bounded by a small constant
+factor.
+Now why is that?
+the size of the fringe of the tree is
+approximately
+the same as the size of the tree above the
+fringe.
+So searching the entire tree in additional
+time requires only the same amount of time
+as you would need to expend, to,
+to explore the fringe to another level
+anyway.
+This means the ex, the extra there is
+extra work, but it is bounded by a simple
+constant factor that you can factor two or
+three.
+

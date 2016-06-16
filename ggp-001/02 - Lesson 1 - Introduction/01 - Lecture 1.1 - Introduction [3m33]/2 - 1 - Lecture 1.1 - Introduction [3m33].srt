@@ -1,0 +1,120 @@
+1
+00:00:09,100 --> 00:00:14,980
+Playing a strategy game like chess or checkers couples intellectual activity with competition.
+
+2
+00:00:15,990 --> 00:00:20,900
+By playing games we can often exercise and improve our intellectual skills.
+
+3
+00:00:21,310 --> 00:00:25,230
+The competition adds excitement and allows us to compare our skills to those of others.
+
+4
+00:00:26,720 --> 00:00:33,860
+Same motivation accounts for interest in computer game playing as a testbed for artificial intelligence.
+
+5
+00:00:34,290 --> 00:00:41,130
+Programs that think better should be able to win more games and so we can use competition as an evaluation technique for intelligent systems.
+
+6
+00:00:42,410 --> 00:00:48,760
+Unfortunately, building programs to play specific games has limited value in artificial intelligence.
+
+7
+00:00:49,780 --> 00:00:52,380
+To begin with, specialized game players are very narrow.
+
+8
+00:00:53,400 --> 00:00:55,870
+They are often good at one game but not so good at others.
+
+9
+00:00:56,700 --> 00:01:03,580
+Deep Blue for example might have beaten the wolrd chess champion, but it has no clue how to play checkers and cannot even balance a checkbook.
+
+10
+00:01:05,250 --> 00:01:11,880
+A second problem with specialized game playing is that such systems do only part of the work:
+
+11
+00:01:12,640 --> 00:01:18,000
+most of the interesting analysis and design is done in advance by their programmers
+
+12
+00:01:18,410 --> 00:01:20,960
+system themselves might just as well be teleoperated.
+
+13
+00:01:22,300 --> 00:01:23,470
+However all is not lost.
+
+14
+00:01:25,000 --> 00:01:33,680
+Many believe that the idea of game playing can be used to good effects to inspire and evaluate good work in artificial intelligence,
+
+15
+00:01:34,040 --> 00:01:38,310
+but it requires moving more of the mental work to the computer itself.
+
+16
+00:01:39,150 --> 00:01:42,220
+This can be done by focusing on general game playing.
+
+17
+00:01:44,160 --> 00:01:55,080
+General game players are systems able to play arbitrary games effectively based solely on formal descriptions supplied at runtime.
+
+18
+00:01:56,140 --> 00:02:01,240
+In a typical general game playing session, the players know nothing about the game in advance.
+
+19
+00:02:01,840 --> 00:02:09,570
+Once the game begins, they receive a game description and based solely on this description they must figure out how to play the game legally and effectively.
+
+20
+00:02:10,340 --> 00:02:22,910
+Furthermore they have to deal with uncertainty in the form of actions of the other players and usually ressource bounds limitations as well in the form of a game clock that limits their computation time.
+
+21
+00:02:24,950 --> 00:02:31,790
+Given this arrangement, general game players cannot rely on algorithms designed in advance for specific games.
+
+22
+00:02:32,640 --> 00:02:41,770
+General game playing expertise depends on intelligence on the part of the game player and not just intelligence of the programmer of the game player.
+
+23
+00:02:42,850 --> 00:02:55,030
+In order to perform well, general game players typically incorporate ideas from multiple subareas of artificial intelligence such as knowledge representation, reasoning, rational decision making and so forth.
+
+24
+00:02:57,140 --> 00:03:02,040
+The upshot of this is that general game players are able to play different kinds of games.
+
+25
+00:03:02,870 --> 00:03:07,610
+They can play simple games like tic-tac-toe and complex games like chess.
+
+26
+00:03:08,430 --> 00:03:15,010
+Games with simultaneous play like Diplomacy and games with alternating play like Risk.
+
+27
+00:03:15,620 --> 00:03:21,170
+Gales with complete information or games with incomplete information such as Battleships.
+
+28
+00:03:22,020 --> 00:03:23,320
+Games with different numbers of players.
+
+29
+00:03:24,430 --> 00:03:27,450
+Games with or without communication among the players.
+
+30
+00:03:28,270 --> 00:03:32,090
+Zero-sum games, cooperative games and so forth.
+

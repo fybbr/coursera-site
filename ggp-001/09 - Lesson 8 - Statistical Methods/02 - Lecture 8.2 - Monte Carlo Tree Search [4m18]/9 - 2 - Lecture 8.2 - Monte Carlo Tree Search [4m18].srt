@@ -1,0 +1,348 @@
+1
+00:00:04,660 --> 00:00:09,840
+Monte Carlo Tree Search is a more
+sophisticated variation of Monte
+
+2
+00:00:09,840 --> 00:00:12,870
+Carlo Search, that tackles some of the
+weaknesses of the simpler method.
+
+3
+00:00:14,600 --> 00:00:16,740
+both methods build up a game tree
+incrementally,
+
+4
+00:00:16,740 --> 00:00:19,520
+and both rely on random simulation of
+games.
+
+5
+00:00:19,520 --> 00:00:21,700
+But they differ in the way the tree is
+expanded.
+
+6
+00:00:22,870 --> 00:00:27,040
+MCS, Monte Carlo Search uniformly expands
+the partial game tree during
+
+7
+00:00:27,040 --> 00:00:30,700
+it's expansion phase, and then simulates
+games starting at the state,
+
+8
+00:00:30,700 --> 00:00:32,260
+states on the fringe of the expanded tree.
+
+9
+00:00:32,260 --> 00:00:36,280
+MCTS, Monte Carlo Tree Search, uses a more
+sophisticated approach, in which
+
+10
+00:00:36,280 --> 00:00:40,186
+the, the processes of expansion in the
+simulation are kind of interleaved.
+
+11
+00:00:43,550 --> 00:00:47,350
+MCTS processes the game tree in cycles of
+4 steps each.
+
+12
+00:00:47,350 --> 00:00:48,910
+And after each cycle's complete, it
+repeats
+
+13
+00:00:48,910 --> 00:00:50,840
+the steps, so long as there's time
+remaining.
+
+14
+00:00:50,840 --> 00:00:52,300
+At which point, it selects an action based
+
+15
+00:00:52,300 --> 00:00:54,410
+on the statistics its accumulated to that
+point.
+
+16
+00:00:56,120 --> 00:00:59,290
+On the selection step, the player
+traverses the tree produced
+
+17
+00:00:59,290 --> 00:01:02,620
+thus far, to select an unexpanded node of
+the tree.
+
+18
+00:01:02,620 --> 00:01:06,300
+Making choices based on visit counts and
+utilities stored on nodes of the tree.
+
+19
+00:01:06,300 --> 00:01:09,090
+We'll see how that
+
+20
+00:01:09,090 --> 00:01:10,900
+happens a little bit later.
+
+21
+00:01:10,900 --> 00:01:13,240
+During expansion, the successes of the
+state chosen
+
+22
+00:01:13,240 --> 00:01:15,010
+during the selection phase are added to
+the tree.
+
+23
+00:01:16,040 --> 00:01:18,830
+The player then simulates the game
+starting
+
+24
+00:01:18,830 --> 00:01:21,010
+at the node chosen during the selection
+phase.
+
+25
+00:01:21,010 --> 00:01:22,700
+In so doing, it chooses actions at random
+
+26
+00:01:22,700 --> 00:01:24,900
+until a terminal state is encountered, as
+with MCS.
+
+27
+00:01:24,900 --> 00:01:29,780
+And finally, the value of the terminal
+state is propagated back along the
+
+28
+00:01:29,780 --> 00:01:31,340
+path to the root node, and the
+
+29
+00:01:31,340 --> 00:01:33,670
+visit counts and utilities are updated
+accordingly.
+
+30
+00:01:35,950 --> 00:01:39,510
+Here's an implementation of the MCTS
+selection procedure.
+
+31
+00:01:39,510 --> 00:01:41,984
+If the initial state has not been seen
+before, not
+
+32
+00:01:41,984 --> 00:01:45,343
+with zero visits, has not been seen
+before, then hit selected.
+
+33
+00:01:46,902 --> 00:01:49,840
+Otherwise, a procedure search is the
+successors of the node.
+
+34
+00:01:49,840 --> 00:01:53,210
+If any of them have not been seen, then
+one of the unseen nodes is selected.
+
+35
+00:01:53,210 --> 00:01:55,420
+If all of the successors have been seen
+before, then
+
+36
+00:01:55,420 --> 00:01:59,050
+procedure uses the select fin subroutine,
+which we'll talk about.
+
+37
+00:01:59,050 --> 00:02:01,080
+The fine values for those nodes, and
+chooses
+
+38
+00:02:01,080 --> 00:02:02,900
+the one that maximizes this value.
+
+39
+00:02:05,090 --> 00:02:07,760
+Okay, one of the most common ways of
+implementing selection fun, is
+
+40
+00:02:07,760 --> 00:02:14,690
+what's called UCT which is short for upper
+confidence bounds applied to trees.
+
+41
+00:02:14,690 --> 00:02:17,820
+A typical UCT formula is shown here.
+
+42
+00:02:17,820 --> 00:02:21,530
+Vi plus the square root of log n p over
+ni.
+
+43
+00:02:21,530 --> 00:02:25,700
+Vi's the average reward for that state,
+that it's seen so far.
+
+44
+00:02:25,700 --> 00:02:29,990
+Np is the total number of times the
+parent's, state's parent was picked.
+
+45
+00:02:29,990 --> 00:02:32,830
+Ni is the number of times this particular
+state was picked.
+
+46
+00:02:34,320 --> 00:02:37,255
+Course, there are other ways that, that
+one can evaluate states.
+
+47
+00:02:37,255 --> 00:02:41,590
+The form here is based on combination of
+what's called exploitation exploration.
+
+48
+00:02:41,590 --> 00:02:45,190
+Exploitation here means that results use
+of results on
+
+49
+00:02:45,190 --> 00:02:49,560
+previously explored states, which is the
+first term, vi.
+
+50
+00:02:49,560 --> 00:02:53,160
+Exploration means expansion of as yet
+unexplored states,
+
+51
+00:02:53,160 --> 00:02:55,500
+a measure of which is the second term.
+
+52
+00:02:56,970 --> 00:02:58,180
+And at the bottom of the slide, we have
+
+53
+00:02:58,180 --> 00:03:01,379
+simply implementation of the formula shown
+at the top.
+
+54
+00:03:04,630 --> 00:03:07,390
+Expansion in MCTS is basically the same as
+that for MCS.
+
+55
+00:03:07,390 --> 00:03:09,861
+An implementation for a single player is
+shown here.
+
+56
+00:03:09,861 --> 00:03:12,511
+On large games with large time bounds,
+it's possible that the
+
+57
+00:03:12,511 --> 00:03:15,660
+space consumed as process could exceed the
+memory available to a player.
+
+58
+00:03:15,660 --> 00:03:18,560
+In such cases, it's common to use a
+variation of the selection procedure, in
+
+59
+00:03:18,560 --> 00:03:21,779
+which no additional states are added to
+the tree, and just probes are used.
+
+60
+00:03:25,930 --> 00:03:29,960
+Simulation for MCTS is essentially the
+same as simulation for MCS.
+
+61
+00:03:29,960 --> 00:03:33,290
+So the same procedure, exact procedure can
+be used in both methods.
+
+62
+00:03:35,640 --> 00:03:38,270
+And MCTS however, has a different
+
+63
+00:03:38,270 --> 00:03:41,420
+procedure for recording the results,
+called backpropagation.
+
+64
+00:03:42,790 --> 00:03:48,190
+At the selected node, the method records a
+visit count and a utility.
+
+65
+00:03:48,190 --> 00:03:52,993
+A visit count in this case is one, since
+it, it's a newly-processed state.
+
+66
+00:03:52,993 --> 00:03:55,370
+The utility is the result of the
+simulation.
+
+67
+00:03:56,756 --> 00:03:59,419
+the procedure then propagates to ancestors
+of this node.
+
+68
+00:03:59,419 --> 00:04:00,875
+In the case of a single-player
+
+69
+00:04:00,875 --> 00:04:04,347
+game, the procedure simply adds one to the
+visit count of each ancestor,
+
+70
+00:04:04,347 --> 00:04:09,000
+and it augments its total utility by the
+utility obtained on the latest simulation.
+
+71
+00:04:09,000 --> 00:04:11,340
+In the case of a multi-player game, the
+propagated value
+
+72
+00:04:11,340 --> 00:04:14,174
+is the minimum of the values for all
+opponent actions.
+

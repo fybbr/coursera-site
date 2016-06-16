@@ -1,0 +1,483 @@
+So the seventh week of lectures, is
+going to be split into two separate slide
+decks.
+So this one I've labeled 7.1, and it'll be
+on Lagrange Method.
+So I'll start off talking about the idea
+of an
+investment portfolio, and then how you
+might want to optimize that.
+So a portfolio, just, you know, if I buy
+several
+assets, put them all in one folder, that's
+called a portfolio.
+And then the decision I have is, well,
+it's sort of two parts.
+Is A, what am I going to buy?
+And I'm going to sort of assume that
+that's already been answered for us.
+And then B is going to be, how much of
+each thing should I buy?
+And, so, if you have investment goals, you
+can choose exactly
+how much you want to buy of each thing, to
+satisfy them.
+So, that's what I'll be talking about, so
+to setting up
+the problem I want to solve in the first
+group of slides.
+Then I'll talk about finding.
+So it's, labeled Relative Extrema of
+Functions of Several Variables.
+So we talked about first and second order
+conditions, for maximizing a function of a
+single variable.
+And now that we've done some linear
+algebra, I can tell
+you what the conditions are for functions
+of more than one variable.
+And then we'll look at Lagrange Method,
+which is essentially
+trying to do number two, except it also
+has some constraints.
+So it says I want to maximize this
+function,
+subject to another function being
+satisfied.
+in the fourth bit, I'll given example of
+that.
+And then in the fifth bit, I'll go back to
+one of the
+concepts I'm going to introduce in the
+first bit, called a Minimum Variance
+Portfolio.
+And just go through the calculation of
+finding that, using the Lagrange Method.
+We'll get started with Optimal Investment
+Portfolios.
+So like I, like I just said, a portfolio
+is just a collection of n assets.
+So n is going to be some positive integer.
+portfolio just means a folder.
+So in the old days I think you, you know,
+if I went and bought some
+stock, I actually got paper certificates
+that represented
+those assets, and I put them in a folder.
+And so then my folder full of all of my
+stocks became known as a portfolio,
+and so the folders are gone but the, the
+word has stuck around.
+And I'm going make a vector w where, so i
+is going to run from one up to n.
+So n's the total number of assets.
+And then w sub i is going to be the
+proportion of the portfolio.
+So value wise, that's invested in each of
+the assets.
+So if I made it equally weighted
+portfolio, w i would
+be equal to 1 over n for every asset in
+the portfolio.
+but there
+are a lot of other ways you could do that.
+You know, I could say well, I think I'm
+going to
+make more money on a certain, like in
+technology stocks.
+So I might buy technology stocks in a
+higher proportion.
+So those w's would be higher, than the w's
+for the rest of the assets in the
+portfolio.
+And I'll end up the constraint that, so if
+w i is proportions, all of the wi's have
+to sum up to one, so I have one portfolio.
+And so you can think about you know, if
+you wanted to make this into dollars.
+This one isn't a very useful number, but
+you can
+think about it as maybe a thousand or a
+million.
+So I have a million dollars to invest, or
+I have a thousand dollars to invest.
+And then the Wi would be, the amount of
+money invested in each of the assets.
+And just to normalize that, we divide by
+the
+total value of the portfolio.
+So you always end up with one on this
+side, and proportions on this side.
+And we're also going to say for, to make
+the, the problem
+mathematically more easy, we can do
+something called take long and short
+positions.
+So, a long position in an asset, is
+something everybody is familiar with.
+You go to a market, you buy something, and
+now you have the something.
+A short position is sort of a strange
+invention, where I can go to a market,
+I can sell something I don't have, I can
+take the money, but I have to promise
+that later on I'm going to give the, the
+person one of these things back.
+And the way that's going to manifest
+itself mathematically, is
+it just means there's no constraints on
+each individual Wi.
+So even though they have to sum up to 1,
+I could have one Wi greater than 1, and
+then I
+would also have to have some negative Wi's
+to balance
+that out, so that this sum is still equal
+to 1.
+Then I'm going to have mu IB, something
+called the expected rate of return on an
+asset.
+And so there will be one of these for each
+asset.
+So that's why it get's a little subscript
+i.
+So different assets in my portfolio.
+Some are going to have higher expected
+rates of return, than others.
+and generally, those are going to be the
+ones that are more risky, too.
+[COUGH]
+So you can think of sigma i squared then.
+So ui is the expected rate of return.
+Sigma i squared, is going to be the risk
+of asset i.
+And there's also a kind of related
+quantity,
+just sigma sub i, which I'll call the
+volatility.
+So you can think of this as sort of a
+variance
+like quantity, and then sigma is a
+standard deviation like quantity.
+And so again, I get one of these for each
+asset.
+Then, there'll also be row ij.
+So this is going to be the correlation
+between the returns on the different
+assets,
+and I'm going to end up with one row ij
+for every pair of assets.
+So that means that row ij is equal to row
+ji.
+[COUGH]
+And then once I have all of these inputs,
+I can make the expected return for the
+entire portfolio.
+It's just going to be a weigted, so a
+linear combination with the,
+the weights, from w of my expected returns
+on each of the assets.
+And the risk has this more slightly
+complicated formula.
+So you have the weight squared,
+times the risk of each asset.
+But then, you
+also have to add in, sort of those extra
+contributions to the risk that are
+coming from, from the correlation between
+all of the different assets.
+So, well I guess if just looking at this
+thing, it's not a very pretty formula.
+So then, first thing I want to do is see,
+is there a nicer way I can write this
+down?
+So I'll try doing the same thing using
+matrix notation.
+So now instead of having all the, you
+know, w1 up
+to wn, I'll just think about that as, as a
+single vector.
+And remember when I put a row like this
+in, in parentheses, I mean column vector.
+So I'll
+do one vector with the weights in it.
+A second vector with the expected returns
+in it.
+So I have a weight for each asset, and an
+expected return for each asset.
+Then I can write the expected return, for
+the entire portfolio.
+So that's what's on the left-hand side
+here, expected return here for the entire
+portfolio.
+And the previous slide, that was just the
+sum of Wi times mu i.
+But in matrix vector notation, I can just
+write this as W transpose mu.
+The risk, it turns out, that that sum that
+I had, that kind of ugly sum on the
+previous slide, can be expressed quite
+simply at just W transpose sigma W.
+And here this sigma, so this is not
+singular values,
+this is the covariance matrix for the
+returns of the assets.
+And so that's going to look like this.
+So on the diagonal, I have the, the risk
+of each individual asset.
+And then in the off diagonal entries, I
+end up with the volatility for here, for
+instance,
+the volatility of asset 1 times the
+volatility of
+asset 2 times the correlation between
+those two assets.
+And that's what's going to give me my
+covariance terms.
+And if you look back at that sum, I have
+this sort of strange notation of
+1, less than or equal to i, strictly less
+than j, less than or equal to n.
+And essentially what that's doing, I'm
+just
+trying to sum up over the lower triangle.
+So all of the values that are strictly
+below the main diagonal.
+And then I have a 2 in front of that,
+and that's just because this matrix is
+going to be symmetric.
+So if I, I have sigma12 row 12, it's the
+same as sigma 21 row 21.
+And so I'm basically, I'm summing the main
+diagonal, and then 2 times the lower
+triangle.
+And so that, that's what my formula is
+giving me.
+And so I, when I'd have this as a, a
+vector of
+weight times a variance, covariance matrix
+it, it gets a lot more
+compact notation.
+Okay.
+So if I want to use these two formulas
+I've come up with now.
+The, the mu and the Sigma, these are
+going to
+be properties of the assets that I'm
+looking at.
+There, there's something that generally,
+the, you know,
+generally the investor doesn't have any
+control over.
+You just have to look at historical data
+and say, you know, Boeing
+has been producing a return of so much for
+the last two years.
+You know, I think it'll probably
+stay about that for the next six months.
+but it's not something, I can't go to
+Boeing, for instance,
+and say be less risky to get this number
+to go down.
+you know, you're stuck with whatever you
+can, you can find out from the market.
+The thing you can select, are the weights
+in your portfolio.
+So the investor can select, you know, how
+much of Boeing am I going to buy?
+How much of Starbucks am I going to buy?
+How much of Microsoft am I going to buy?
+And, once they've decided on a particular,
+vector of weights w, then you can
+figure out what the portfolio return, and
+the portfolio risk are going to be.
+And so, how should you go about picking w.
+So we have two notions of optimality that
+I'm going to talk about, now, and later
+I'll
+show you, and so in the fifth session I'll
+show you how to solve one of these.
+Then hopefully at the end of week eight,
+we'll get around to solving the other one.
+So, I can try and design a portfolio to
+have a specific expected
+return.
+And then, once I have, once I've decided
+I want to have this specific expected
+return, then I, I choose w.
+So there going to be a whole bunch of
+choices, that will give me that one
+expected return.
+And among all of those, I would want to
+choose the portfolio that's going
+to have the minimum amount of risk.
+And so that'll, that'll give me an
+optimization
+problem, that I can use to find w.
+So I want to choose w so that the risk of
+the portfolio is minimum, given a certain
+level of expected return.
+And then I can solve sort of a related
+problem of, I could instead of targeting
+the expected return level, I could say, I
+want to have this much risk.
+So if, for some reason, I, you know,
+said, I, I want a very conservative
+portfolio, or I want a high-growth
+portfolio.
+I can communicate, you know, some number
+of
+some level of risk I'm willing to
+tolerate.
+And so if I can tolerate a certain level
+of risk, then I want to choose w so that
+my portfolio gives me the highest level of
+expected
+return, that I can get at that level of
+risk.
+And so both of these turn out
+to be something called constrained
+optimization problems.
+So the constraint, is I'm not trying to
+maximize the expected return.
+So that would be an unconstrained
+optimization problem.
+But I want to maximize my expected return,
+subject to
+a constraint oops, sorry I want to
+minimize my portfolio risk.
+So in the first one I want to minimize my
+risk, subject to the constraint that I'm
+hitting my target expected return.
+And in the second, the second task.
+So I have a target level of risk.
+So my constraint is, I want a certain
+level of risk in my portfolio.
+And now I want to maximize the expected
+return,
+that I can get at that level of risk.
+So they're optimization problems.
+I'm trying
+to find a minimum or a maximum, but I'm
+subject to a certain constraint.
+And then there's actually one more
+constraint, that's hanging over from a
+previous slide, is that the w vector has
+to sum up to 1.
+So, there's two constraints for each of
+these.
+So, the first one has expected return, has
+to be equal to
+some value, and my portfolio weights have
+to sum up to 1.
+And, satisfy those two constraints.
+And then find the one that has the minimum
+risk.
+And, and then sort of, related problem for
+the second goal.
+And see, generally the way I like to write
+these things down.
+So I have a, a minimum variance
+optimization.
+So, what I'm trying to do.
+This, this turns out to be something
+called the portfolio variance.
+I'm calling it risk,
+because that's a, it's a mathematical
+concept, that can be used to
+describe sort of, how spread out the
+return from my portfolio will be.
+So how, how far away from the expected
+return, do I expect it to be?
+So I want to minimize this quantity.
+So this is minimizing the variance or
+minimizing the risk.
+And then I write below that, subject to,
+and
+the I just list the constraints that I
+have.
+So
+I've been using e to be a vector of all
+one's.
+So e transposed w.
+That just means that the sum of w, has to
+be equal to 1.
+So my first constraint is that the weights
+sum up to 1.
+So I, I spend exactly the amount of money
+I have to invest.
+And then the second constraint.
+So this, I argued before was the expected
+return on my portfolio.
+And I'm trying to minimize the variance,
+at at given level of expected return.
+So I have to choose an expected level of,
+of a level of expected
+return, that I'm calling mu p, so that's
+the expected return for the portfolio.
+And I'm limiting myself to vectors w,
+that satisfy this linear equation here.
+So this is the n asset case.
+So, you can write it all out just, using
+matrices and vectors.
+And we know this doesn't get any more
+complicated, as n gets bigger.
+It's just the matrices and the vectors are
+getting bigger, but writing it down stays
+pretty compact.
+you can already see what this looks like
+just for the two asset case.
+And this is
+actually trivial because, if I look at
+the, the two constraints, I have
+two equations and two unknowns.
+So there's only one point that's going to
+satisfy the, the constraints here.
+So there's actually no minimization to do.
+There's just one one portfolio that I
+would have here.
+So, I just wanted to show what it looks
+like written out.
+So this a quadratic form, and it's just
+equal
+to what w transpose sigma w would look
+like, if you did the, did the matrix
+multiplication.
+And then my few constraints, are just the
+sum of the w's has to be 1.
+And the expected return of the portfolio,
+has
+to equal my pre-specified level of
+expected return.
+So then the other possibility, was to
+maximize the expected return of the
+portfolio.
+So, this was my expression for the
+expected return.
+So now I'm going to say maximize, and put
+the
+quantity that I want to maximize on the
+first line.
+And my constraints are going to be, well,
+I still
+have to have my vector w summing up to 1.
+But now I have to choose a target level of
+risk.
+So I have to, have to say who ever is
+going to do this portfolio
+optimization problem, you know, this is
+the risk level that I would like to have.
+And that's then going to give this
+quadratic form, as the constraint now.
+So I'm, I'm limited to choosing from
+vectors, that
+are going to give me this level of risk.
+And so if I write that out pretty much all
+that happens is the, the constraint here,
+or the, the objective here, the thing I'm
+trying to minimize, becomes a constraint.
+I still have the constraint w1 plus w2
+equals 1.
+And now, it's just my expected return that
+I'm trying to optimize.
+

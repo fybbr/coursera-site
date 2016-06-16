@@ -1,0 +1,635 @@
+1
+00:00:00,970 --> 00:00:04,440
+Welcome to Mathematical Methods For
+Quantitative Finance.
+
+2
+00:00:04,440 --> 00:00:06,290
+For this first video, I'm just going to do
+a
+
+3
+00:00:06,290 --> 00:00:08,790
+quick overview of what you can expect
+during this course.
+
+4
+00:00:12,660 --> 00:00:15,130
+So, I'm your instructor Kjell Konis.
+
+5
+00:00:15,130 --> 00:00:19,360
+First name rhymes with cello, so cello
+without the o.
+
+6
+00:00:20,590 --> 00:00:23,944
+For evaluation for this course, this is
+something
+
+7
+00:00:23,944 --> 00:00:27,730
+I can't do really well in a massive
+setting.
+
+8
+00:00:27,730 --> 00:00:31,910
+So what I've come up with are discussion
+questions.
+
+9
+00:00:31,910 --> 00:00:35,070
+And so, at the end of each video, there
+will be a discussion question.
+
+10
+00:00:35,070 --> 00:00:37,680
+It should be something that if you've
+understood the
+
+11
+00:00:37,680 --> 00:00:41,800
+video that you'll be able to answer just
+within a few minutes.
+
+12
+00:00:41,800 --> 00:00:46,468
+And then you're encouraged to share your
+solution on on the forum.
+
+13
+00:00:46,468 --> 00:00:50,166
+And so hopefully, sort of just
+organically,
+
+14
+00:00:50,166 --> 00:00:54,100
+there'll be some correct crowd sourced
+solutions.
+
+15
+00:00:54,100 --> 00:00:56,790
+And additionally, there'll be weekly
+homework assignments.
+
+16
+00:00:56,790 --> 00:01:00,531
+And these will be something, these will be
+more difficult problems.
+
+17
+00:01:00,531 --> 00:01:02,806
+So the idea will be that you watch all of
+the
+
+18
+00:01:02,806 --> 00:01:05,276
+videos for one particular week, and then
+you
+
+19
+00:01:05,276 --> 00:01:07,920
+should be able to do the homework
+assignment.
+
+20
+00:01:07,920 --> 00:01:10,708
+It should take you probably 3 or 4 hours,
+about
+
+21
+00:01:10,708 --> 00:01:14,630
+the same amount of time as the videos take
+to watch.
+
+22
+00:01:14,630 --> 00:01:16,670
+And then there will be a due date for
+these
+
+23
+00:01:16,670 --> 00:01:20,939
+homework assignments, and after the due
+date, I will post solutions.
+
+24
+00:01:20,939 --> 00:01:23,695
+And again, because it's a mathematics
+course, it's going
+
+25
+00:01:23,695 --> 00:01:26,950
+to be something that's difficult for me to
+actually grade.
+
+26
+00:01:26,950 --> 00:01:28,189
+So, you'll be expected
+
+27
+00:01:28,189 --> 00:01:30,890
+to just go through the solutions and grade
+yourself.
+
+28
+00:01:32,900 --> 00:01:35,528
+And then one last thing I, I want to
+mention
+
+29
+00:01:35,528 --> 00:01:39,500
+at the very beginning, is Wolfram/Alpha,
+this is a website.
+
+30
+00:01:39,500 --> 00:01:41,363
+It's a lot like Google, except
+
+31
+00:01:41,363 --> 00:01:44,690
+it's for asking and answering mathematics
+questions.
+
+32
+00:01:45,980 --> 00:01:49,085
+A lot of what would normally be in a first
+year calculus
+
+33
+00:01:49,085 --> 00:01:53,420
+course or a first year linear algebra
+course is some rote memorization.
+
+34
+00:01:53,420 --> 00:01:55,955
+So there're just certain functions where
+you
+
+35
+00:01:55,955 --> 00:01:58,360
+have to memorize this is the derivative
+
+36
+00:01:58,360 --> 00:01:58,900
+of that.
+
+37
+00:02:00,180 --> 00:02:02,630
+I don't really want to concentrate so much
+
+38
+00:02:02,630 --> 00:02:06,250
+on just having you memorize things like
+this.
+
+39
+00:02:06,250 --> 00:02:08,666
+So you can, and there are a lot of tools
+on line now.
+
+40
+00:02:08,666 --> 00:02:11,230
+So my favorite right now is Wolfram Alpha.
+
+41
+00:02:11,230 --> 00:02:16,058
+And so, for simple functions, things like
+sine, cosine, logarithm, you can
+
+42
+00:02:16,058 --> 00:02:20,270
+just ask Wolfram Alpha, and just type into
+the, into the search bar.
+
+43
+00:02:20,270 --> 00:02:23,515
+You know, what is the derivative of the
+logarithm and it'll think for
+
+44
+00:02:23,515 --> 00:02:25,930
+a couple seconds, and it'll give you the
+answer.
+
+45
+00:02:32,020 --> 00:02:33,670
+So what the course is going to cover.
+
+46
+00:02:34,850 --> 00:02:39,580
+So, the numbers on the left here, these
+correspond to the weeks of the course.
+
+47
+00:02:39,580 --> 00:02:41,030
+So this will be an eight week course.
+
+48
+00:02:42,320 --> 00:02:45,610
+The first week is going to be a review of
+limits and derivatives.
+
+49
+00:02:47,430 --> 00:02:49,510
+The second week will be integration.
+
+50
+00:02:49,510 --> 00:02:53,118
+So, this is going to be essentially a two
+week review
+
+51
+00:02:53,118 --> 00:02:57,660
+of what you would normally learn in a
+first year calculus course.
+
+52
+00:03:01,050 --> 00:03:03,410
+And then, we'll move onto partial
+derivatives.
+
+53
+00:03:04,440 --> 00:03:07,290
+And so, partial derivative is something
+you
+
+54
+00:03:07,290 --> 00:03:09,765
+can take using the same techniques that
+
+55
+00:03:09,765 --> 00:03:15,008
+we'll cover in week one, but it's defined
+for a function of several variables.
+
+56
+00:03:15,008 --> 00:03:20,166
+And then multiple integrals, week 4, is
+the same idea except for integration.
+
+57
+00:03:20,166 --> 00:03:22,470
+So, it's basically how you can make sense
+
+58
+00:03:22,470 --> 00:03:25,580
+of integrals of functions that take
+several variables.
+
+59
+00:03:26,690 --> 00:03:29,801
+And the reason these topics are, are sort
+of divided into two
+
+60
+00:03:29,801 --> 00:03:34,060
+bunch, bunches, so we have one through
+four and then five through eight.
+
+61
+00:03:34,060 --> 00:03:37,354
+What I'm really aiming for with the first
+four weeks is I want, I
+
+62
+00:03:37,354 --> 00:03:38,635
+want you to be able to take
+
+63
+00:03:38,635 --> 00:03:41,610
+the derivatives of the Black Shoal's
+pricing formula.
+
+64
+00:03:41,610 --> 00:03:44,290
+And since this is a math class, really
+what I'm
+
+65
+00:03:44,290 --> 00:03:47,200
+going to be focusing on is the mathematics
+of this.
+
+66
+00:03:47,200 --> 00:03:53,067
+So, the Black Shoals formula is just
+function of many variables.
+
+67
+00:03:53,067 --> 00:03:55,309
+And so, if you understand the, the
+concepts
+
+68
+00:03:55,309 --> 00:03:57,551
+that are, that we're going to cover in
+these
+
+69
+00:03:57,551 --> 00:03:59,793
+first 4 weeks, then you're going to be
+able
+
+70
+00:03:59,793 --> 00:04:02,399
+to take the derivative of the Black Shoals
+formula.
+
+71
+00:04:02,399 --> 00:04:07,838
+And these derivatives are something that's
+commonly known as the Greeks.
+
+72
+00:04:07,838 --> 00:04:13,754
+The second set of lectures is going to be
+on linear algebra, Legrange
+
+73
+00:04:13,754 --> 00:04:17,983
+multipliers and numerical methods.
+And the,
+
+74
+00:04:17,983 --> 00:04:23,373
+the problem I'm looking at in this second
+set of the course
+
+75
+00:04:23,373 --> 00:04:28,555
+is something called minimum variance
+portfolio.
+
+76
+00:04:28,555 --> 00:04:32,181
+And so it'll turn out is, when we look at
+linear algebra,
+
+77
+00:04:32,181 --> 00:04:34,993
+we're really going to be concerning
+ourselves
+
+78
+00:04:34,993 --> 00:04:37,779
+with solving systems of linear equations.
+
+79
+00:04:37,779 --> 00:04:40,754
+Lagrange multipliers is going to give us
+the
+
+80
+00:04:40,754 --> 00:04:43,650
+tools we need to calculate the minimum.
+
+81
+00:04:43,650 --> 00:04:48,866
+So we want to find a portfolio of assets
+that has the minimum variance.
+
+82
+00:04:48,866 --> 00:04:52,454
+And then it's going to turn out that when
+we use this Lagrange multiplier approach,
+
+83
+00:04:52,454 --> 00:04:55,760
+it's going to give us a system of linear
+equations that need to be solved.
+
+84
+00:04:56,800 --> 00:04:59,880
+So, we'll have done that already in weeks
+five and six.
+
+85
+00:05:01,070 --> 00:05:03,135
+And then finally in week 8, I'm going to
+
+86
+00:05:03,135 --> 00:05:07,050
+start using something called the R
+Environment for Statistical Computing.
+
+87
+00:05:07,050 --> 00:05:08,662
+It's, software program
+
+88
+00:05:08,662 --> 00:05:10,956
+for working with vectors and matrices, and
+
+89
+00:05:10,956 --> 00:05:14,570
+also, for it's also a programming
+language.
+
+90
+00:05:14,570 --> 00:05:16,420
+It's something very similar to MATLAB, if
+
+91
+00:05:16,420 --> 00:05:18,870
+you already have some experience with
+that.
+
+92
+00:05:18,870 --> 00:05:23,562
+And we'll actually try and solve some
+problems using a computer to do that.
+
+93
+00:05:23,562 --> 00:05:28,749
+So there's one recommended textbook for
+this
+
+94
+00:05:28,749 --> 00:05:34,069
+course, it's Primer for the Mathematics
+
+95
+00:05:34,069 --> 00:05:39,210
+of Financial Engineering by Dan Stefanica.
+
+96
+00:05:39,210 --> 00:05:44,570
+This is a very a much more general book
+than, than this course will be.
+
+97
+00:05:44,570 --> 00:05:48,637
+So this book contains several mathematical
+topics as
+
+98
+00:05:48,637 --> 00:05:53,370
+well as the financial applications of
+those topics.
+
+99
+00:05:53,370 --> 00:05:56,226
+I'm going to just choose a few of the
+mathematical topics and
+
+100
+00:05:56,226 --> 00:05:59,250
+I'm going to focus much more on just the
+mathematics and not so much
+
+101
+00:05:59,250 --> 00:06:01,260
+on the, on the financial applications.
+
+102
+00:06:03,280 --> 00:06:07,032
+And the idea being that after you do this
+course, you'll be a lot ready, better
+
+103
+00:06:07,032 --> 00:06:08,600
+prepared to go on to a course where
+
+104
+00:06:08,600 --> 00:06:11,500
+they're going to focus more on the
+finance.
+
+105
+00:06:11,500 --> 00:06:15,820
+And it'll be sort of like you, you sort of
+learn one thing first and then the other.
+
+106
+00:06:15,820 --> 00:06:18,403
+And the idea being that will be a bit
+easier for you
+
+107
+00:06:18,403 --> 00:06:22,150
+than trying to learn both the mathematics
+and the finance in tandem.
+
+108
+00:06:23,850 --> 00:06:26,034
+And one thing that's nice about this
+course,
+
+109
+00:06:26,034 --> 00:06:28,610
+is there's also a solutions manual which
+has detailed
+
+110
+00:06:28,610 --> 00:06:31,490
+solutions for all of the homework
+assignments in this book.
+
+111
+00:06:32,620 --> 00:06:34,972
+And so, I, I recommend if you, if you can
+get your
+
+112
+00:06:34,972 --> 00:06:38,880
+hands on the textbook, that you also try
+and get the solutions manual.
+
+113
+00:06:38,880 --> 00:06:41,376
+And then on your own time, try and work
+
+114
+00:06:41,376 --> 00:06:45,420
+through some of the, the exercises in in
+the textbook.
+
+115
+00:06:45,420 --> 00:06:47,562
+And then use the solutions manual to make
+sure that
+
+116
+00:06:47,562 --> 00:06:50,380
+you're using the right approach and
+getting the right answer.
+
+117
+00:06:54,250 --> 00:06:57,420
+And the last recommended book that I
+wanted to mention.
+
+118
+00:06:58,690 --> 00:07:00,578
+So this is the first year calculus book
+
+119
+00:07:00,578 --> 00:07:02,960
+that they use at the University of
+Washington.
+
+120
+00:07:04,310 --> 00:07:08,120
+And so that's why I've put it on this
+slide and have a picture of it.
+
+121
+00:07:08,120 --> 00:07:10,616
+But really any first year calculus book
+will be
+
+122
+00:07:10,616 --> 00:07:13,710
+sufficient, and this one is over a
+thousand pages long.
+
+123
+00:07:13,710 --> 00:07:17,960
+And really what you're looking for is just
+sort of and encyclopedia of calculus.
+
+124
+00:07:17,960 --> 00:07:19,276
+So that when you have questions,
+
+125
+00:07:19,276 --> 00:07:20,876
+you have somewhere to go and look it up.
+
+126
+00:07:20,876 --> 00:07:26,008
+So, Calculus, Early Transcendentals by
+James Stewart.
+
+127
+00:07:26,008 --> 00:07:28,816
+pretty much any edition would be
+sufficient,
+
+128
+00:07:28,816 --> 00:07:31,240
+or any other first year calculus book.
+
+129
+00:07:31,240 --> 00:07:33,880
+But if you get your hands on a book like
+that, that is going
+
+130
+00:07:33,880 --> 00:07:37,225
+to be a valuable resource for doing some
+of the exercises in this class.
+
+131
+00:07:37,225 --> 00:07:39,990
+Okay?
+
+132
+00:07:39,990 --> 00:07:41,830
+So that's all I have for the introduction,
+and
+
+133
+00:07:41,830 --> 00:07:43,350
+I hope you enjoy the rest of the course.
+

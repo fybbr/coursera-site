@@ -1,0 +1,128 @@
+Having a formal description of a game is
+one thing.
+Being able to use that description to
+play the game effectively is something
+else entirely.
+In this lesson, we discuss strategies for
+building general game
+players and some of the difficulties that
+need to be handled.
+Since game descriptions are written in
+logic, it's obviously necessary
+for a game player to do some amount of
+automated reasoning.
+Now, there are two extremes here.
+One possibility is for the game player
+to process the description interpretively
+throughout a game.
+The second possibility is for a player to
+use the description to
+devise a specialized program and then use
+that program to play the game.
+This is effectively automatic programming.
+In this lesson, we're going to discuss the
+first possibility and leave it
+to you to think about the second possibil,
+bility and various hybrid approaches.
+We discuss this second approach later in
+the course.
+We begin the lesson by talking about
+some infrastructure that frames the
+problem more precisely.
+We then consider a couple of search free
+uses
+of this instra, infrastructure, namely
+legal players and random players.
+In lessons five through eight, we look at
+complete search strategies which are
+appropriate for small game trees and
+incomplete search strategies which are
+necessary for large game trees.
+In lessons nine through 12, we examine
+some game playing techniques based on
+the properties of states rather than
+properties of states rather than
+monolithic states.
+And finally, in lessons 13 through 16, we
+show ways that game descriptions can
+be used to deduce general properties of
+games without enumerating states or
+properties of those.
+Game players typically implement
+it as a web service.
+As soon as it begins running, the player
+enters
+a loop, listening for messages from the
+game manager.
+Upon receipt of a message, the player
+calls
+an appropriate handler for that type of
+message.
+When the handler is finished, player sends
+the return value to the game manager.
+Given this architecture, building a game
+player
+means writing event handlers for the
+different types
+of messages in the GGP communication
+protocol.
+There's typically one handler for each
+type of message.
+Info, start, play, stop and abort.
+So, that means writing five event
+handlers.
+In order to make the implementation of
+these message handlers a little easier,
+the GGP
+a code base available in the course
+website contains definitions for the
+subroutines shown here.
+there's subroutines for computing the key
+components of a game.
+For example, findrules produces a list of
+role find
+findroles, produces a list of roles in the
+game.
+Findinits gives a list of sentences true
+in the initial state.
+There are also some utility routines to
+make our job easier.
+For example, doesify takes a list of roles
+and
+a list of actions as argument, produces a
+list of
+sentences stating that each role specified
+in the roles
+argument executes the corresponding action
+specified in the actions argument.
+And then undoesify reverses this process.
+You'll see how that plays into the
+definitions a little later.
+Now,
+your job in building a player as I
+mentioned earlier is to
+use the subroutines provided to write the
+handlers called by the message handler.
+In these next two segments, we're going to
+look
+at a couple of simple approaches for doing
+this.
+Now, we're going to present the
+definitions in JavaScript.
+Yeah, you can use these yourself if
+you're building your player directly in
+JavaScript or
+you can adjust them as appropriate to
+implement in a Java based version for
+example.
+Alternatively,
+you can click the appropriate box in the
+parametric player to select from among
+different approaches.
+In the slider case you don't need to type
+in any code at all, but you'd look
+at the code that we present so that you
+know what's going on when you make your
+selections.
+[SOUND]
+

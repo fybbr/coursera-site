@@ -1,0 +1,1084 @@
+1
+00:00:01,580 --> 00:00:05,150
+So, for the third topic, we'll look at
+Newton's method, which it's trying
+
+2
+00:00:05,150 --> 00:00:08,810
+to solve exactly the same problem that the
+Bisection method is trying to solve.
+
+3
+00:00:12,040 --> 00:00:14,860
+And it's probably that those are very
+commonly used
+
+4
+00:00:14,860 --> 00:00:18,329
+method for solving nonlinear equations,
+maybe the most commonly used.
+
+5
+00:00:20,380 --> 00:00:23,740
+And the idea is, so in general, I want to
+find a
+
+6
+00:00:23,740 --> 00:00:28,545
+value x star so that f of x star is equal
+to 0.
+
+7
+00:00:32,950 --> 00:00:36,490
+And so the Bisection method, that was
+nice, because all I needed to
+
+8
+00:00:36,490 --> 00:00:40,680
+assume was that my function was
+continuous, and that I knew an interval.
+
+9
+00:00:40,680 --> 00:00:44,200
+So that it was positive at one side and
+negative at the other.
+
+10
+00:00:44,200 --> 00:00:48,050
+I need a little bit more in the way of
+assumptions for Newton method.
+
+11
+00:00:48,050 --> 00:00:52,120
+So for Newton's method, I need to assume
+that f of x is differentiable.
+
+12
+00:00:54,740 --> 00:00:57,760
+The other thing I need is a starting
+point.
+
+13
+00:00:57,760 --> 00:01:02,800
+So I need to have some point that's
+reasonably close to x star.
+
+14
+00:01:08,760 --> 00:01:12,730
+And the idea underlying Newton's method is
+I want to make
+
+15
+00:01:12,730 --> 00:01:18,330
+an approximation of my function using a
+first order Taylor polynomial.
+
+16
+00:01:19,540 --> 00:01:21,620
+Around a point xk.
+
+17
+00:01:22,800 --> 00:01:28,300
+So what Newton's method is going to do,
+it's from this starting point x0, so
+
+18
+00:01:28,300 --> 00:01:33,810
+that's sort of, you can think of that as
+xk with k equal to 0, it's just going
+
+19
+00:01:33,810 --> 00:01:37,920
+to allow, I want to have some sort of rule
+to get a sequence of points.
+
+20
+00:01:37,920 --> 00:01:39,110
+So I'm going to, from x0.
+
+21
+00:01:40,510 --> 00:01:42,680
+I want to have a rule that gives me x1.
+
+22
+00:01:42,680 --> 00:01:46,890
+And then I can plug that value x1 back
+into my rule and
+
+23
+00:01:46,890 --> 00:01:50,300
+that's going to give me x2 and the idea is
+I want to
+
+24
+00:01:50,300 --> 00:01:55,290
+build the sequence of points x1, x2, x3
+and so on, it's getting
+
+25
+00:01:55,290 --> 00:01:58,700
+closer and closer to this point x star
+that I'm trying to calculate.
+
+26
+00:02:02,870 --> 00:02:06,600
+So the idea for Newton's method is, I'll
+take this function f of
+
+27
+00:02:06,600 --> 00:02:12,120
+x and I'm going to make a Taylor
+polynomial around the point xk.
+
+28
+00:02:12,120 --> 00:02:16,180
+So I just evaluate the function at xk, so
+this is the point that
+
+29
+00:02:16,180 --> 00:02:21,992
+I know, and then I have x minus xk times
+the slope of the function.
+
+30
+00:02:21,992 --> 00:02:26,600
+So the derivative of f evaluated at the
+point xk.
+
+31
+00:02:26,600 --> 00:02:27,940
+So f prime of xk.
+And
+
+32
+00:02:29,990 --> 00:02:34,640
+then I want this, I want to find a point f
+of x that's equal to 0.
+
+33
+00:02:34,640 --> 00:02:37,585
+So I'm just going to set this equal to 0.
+
+34
+00:02:43,760 --> 00:02:48,370
+So I want to sort of pretend that this
+function would be straight enough
+
+35
+00:02:48,370 --> 00:02:52,710
+that if I plugged in xk plus 1, it would
+be equal to 0.
+
+36
+00:02:52,710 --> 00:02:55,450
+And so the linear function's actually
+going to do that for me, and
+
+37
+00:02:57,730 --> 00:03:01,440
+what I'm going to end up with is f of
+
+38
+00:03:01,440 --> 00:03:04,780
+xk, so this is just my Taylor polynomial
+again.
+
+39
+00:03:05,960 --> 00:03:12,300
+Then xk plus 1 minus xk times f prime of
+xk,
+
+40
+00:03:12,300 --> 00:03:17,030
+that's my, well that's an expression for f
+of xk plus 1.
+
+41
+00:03:17,030 --> 00:03:20,220
+And that's supposed to be an approximation
+for f of x.
+
+42
+00:03:20,220 --> 00:03:22,800
+And I want f of x to equal 0.
+So I'm
+
+43
+00:03:22,800 --> 00:03:25,200
+going to say that's sort of approximately
+0.
+
+44
+00:03:25,200 --> 00:03:29,410
+So I'll just set that equal to 0 and use
+that as my approximation.
+
+45
+00:03:31,010 --> 00:03:35,500
+And then what I'm going to do is solve for
+xk plus 1.
+
+46
+00:03:35,500 --> 00:03:38,610
+And that's going to give me this recursive
+formula.
+
+47
+00:03:38,610 --> 00:03:45,070
+So if I, if I just take this, set it equal
+to 0 and solve for xk plus 1.
+
+48
+00:03:45,070 --> 00:03:48,160
+I end up with xk plus
+
+49
+00:03:48,160 --> 00:03:54,230
+1 is equal to xk minus the function
+evaluated
+
+50
+00:03:54,230 --> 00:03:59,340
+at xk divided by the, the slope of the
+function.
+
+51
+00:03:59,340 --> 00:04:01,975
+So the derivative of the function,
+evaluated at
+
+52
+00:04:01,975 --> 00:04:04,140
+xk, and again, I made a picture of this,
+
+53
+00:04:04,140 --> 00:04:07,195
+so I think it will be easier to see what's
+going on if I just draw it.
+
+54
+00:04:07,195 --> 00:04:10,980
+[COUGH]
+
+55
+00:04:10,980 --> 00:04:16,050
+So, starting from this point, x0, I want
+to build the sequence x1,
+
+56
+00:04:16,050 --> 00:04:21,200
+x2, x3.
+It's going to converge and so this,
+
+57
+00:04:21,200 --> 00:04:26,740
+the curve here is my function f of x and
+I'm looking for this point x star
+
+58
+00:04:26,740 --> 00:04:31,395
+that I made in blue where f of x is equal
+to 0.
+
+59
+00:04:37,590 --> 00:04:41,837
+And so what I'm doing if, if you think
+about this recursive formula.
+
+60
+00:04:41,837 --> 00:04:46,892
+I'm taking f of x0,
+
+61
+00:04:46,892 --> 00:04:52,920
+oops, f of x0, and I'm dividing by the
+slope of this
+
+62
+00:04:52,920 --> 00:04:58,390
+tangent line 2f that goes through f of x0,
+x0 comma f of x0.
+
+63
+00:04:58,390 --> 00:04:59,480
+So this line right here.
+
+64
+00:05:01,870 --> 00:05:07,410
+And remember slope is rise over run.
+So basically, what I know from
+
+65
+00:05:07,410 --> 00:05:12,960
+f of x0, that's the distance from the x
+axis up to this point.
+
+66
+00:05:12,960 --> 00:05:14,230
+So, that's the rise.
+
+67
+00:05:15,340 --> 00:05:20,410
+And what I want, I want to get from x0 to
+x1, so, I want the run.
+
+68
+00:05:20,410 --> 00:05:23,380
+So, all I've done is just sort of
+rearrange things so
+
+69
+00:05:23,380 --> 00:05:28,460
+that I'm solving for the run in terms of
+x0 and rise.
+
+70
+00:05:31,890 --> 00:05:38,250
+And each time I evaluate this, so I move
+from x0, so I take x0
+
+71
+00:05:38,250 --> 00:05:44,940
+minus f of x0 divided by the derivative.
+So, f prime of x0.
+
+72
+00:05:44,940 --> 00:05:48,730
+And that gets me this point, x1.
+Then, I'm going to take,
+
+73
+00:05:51,340 --> 00:05:57,290
+to get myself from x1 to x2, I'm going to
+take x1 minus f of x1.
+
+74
+00:05:58,870 --> 00:06:01,130
+Okay, I guess I can't select that one,
+minus f
+
+75
+00:06:01,130 --> 00:06:03,730
+of x1, divided by the slope of this line
+here.
+
+76
+00:06:05,800 --> 00:06:10,540
+And that's going to take me to x2.
+And so I'm building up this sort
+
+77
+00:06:10,540 --> 00:06:15,250
+of set of steps that's getting me closer
+and closer to this point x star.
+
+78
+00:06:17,040 --> 00:06:21,030
+And the nice thing, just because of the
+way I've drawn this function.
+
+79
+00:06:23,090 --> 00:06:27,400
+You should be able to see that no matter
+where I put a point on the
+
+80
+00:06:27,400 --> 00:06:30,950
+right side of x star, this linear
+approximation
+
+81
+00:06:30,950 --> 00:06:32,900
+is always going to be greater than x star.
+
+82
+00:06:34,690 --> 00:06:37,390
+So the, because the, the slope of the.
+
+83
+00:06:37,390 --> 00:06:41,830
+The dotted line, it's always going to be a
+little bit steeper than the curve to the
+
+84
+00:06:41,830 --> 00:06:48,210
+left of wherever I make the approximation.
+So just looking at the size of these steps
+
+85
+00:06:48,210 --> 00:06:49,700
+you can see that the next one, it's going
+
+86
+00:06:49,700 --> 00:06:51,790
+to get us pretty close to this pretty
+quickly.
+
+87
+00:06:57,170 --> 00:07:01,160
+The reason that Newton's method is really
+popular is,
+
+88
+00:07:01,160 --> 00:07:05,370
+once we get within a certain neighborhood
+of x star,
+
+89
+00:07:05,370 --> 00:07:08,960
+we get a very nice theoretical property
+for how fast
+
+90
+00:07:08,960 --> 00:07:12,760
+Newton's method will converge to the true
+value x star.
+
+91
+00:07:12,760 --> 00:07:15,070
+So I'll, I'll go through that quickly
+here.
+
+92
+00:07:15,070 --> 00:07:15,570
+So
+
+93
+00:07:17,640 --> 00:07:22,730
+all I've done here, so I, I've said 0 is
+equal to f of x star.
+
+94
+00:07:24,890 --> 00:07:29,170
+So I'm making a Taylor polynomial, a
+Taylor approximation,
+
+95
+00:07:31,390 --> 00:07:35,962
+around the point xk.
+4x star.
+
+96
+00:07:35,962 --> 00:07:40,420
+So I'm building a Taylor polynomial out of
+point xk.
+
+97
+00:07:40,420 --> 00:07:42,720
+These are the points I know, because these
+are the sequence of
+
+98
+00:07:42,720 --> 00:07:44,170
+points that are coming out of
+
+99
+00:07:44,170 --> 00:07:47,930
+my algorithm, my Taylor's Newton's method
+algorithm.
+
+100
+00:07:49,880 --> 00:07:52,300
+And then I don't know what this is, but if
+I did
+
+101
+00:07:52,300 --> 00:07:55,750
+know what it is, this would be a, a Taylor
+polynomial for it.
+
+102
+00:07:55,750 --> 00:07:56,670
+And I've also put
+
+103
+00:07:56,670 --> 00:08:02,290
+the derivative form for the, the error.
+So I actually have a true equality here.
+
+104
+00:08:02,290 --> 00:08:04,410
+This isn't an approximation.
+
+105
+00:08:04,410 --> 00:08:08,340
+And the only problem is I need this, this
+c.
+
+106
+00:08:08,340 --> 00:08:09,320
+So this is some point.
+
+107
+00:08:09,320 --> 00:08:13,010
+And I've drawn this interval for the
+picture
+
+108
+00:08:13,010 --> 00:08:15,588
+in the, in the last, on the last slide.
+
+109
+00:08:15,588 --> 00:08:21,920
+So this c just has to be a point in
+between x star and xk
+
+110
+00:08:21,920 --> 00:08:24,270
+but I have just assumed that xk is greater
+than x
+
+111
+00:08:24,270 --> 00:08:27,120
+star just to make the notation here a
+little bit simpler.
+
+112
+00:08:33,120 --> 00:08:34,540
+And so what did I do here.
+
+113
+00:08:36,240 --> 00:08:41,028
+So I just divided both sides by f prime of
+xk and
+
+114
+00:08:41,028 --> 00:08:45,369
+so the, the right hand side it's oh, I
+guess I also
+
+115
+00:08:45,369 --> 00:08:50,670
+moved some stuff to the other side of the
+equal sign the
+
+116
+00:08:50,670 --> 00:08:53,490
+right hand side looks like it's getting a
+little bit more complicated.
+
+117
+00:08:54,640 --> 00:08:58,210
+But the left hand side starting to look a
+little bit like the
+
+118
+00:08:58,210 --> 00:09:02,650
+Newton's method iteration.
+So let's see what happens if I keep going.
+
+119
+00:09:05,620 --> 00:09:11,833
+So what I've ended up with, I have
+
+120
+00:09:11,833 --> 00:09:17,400
+xk here
+
+121
+00:09:17,400 --> 00:09:21,960
+and f of xk divided by f prime of xk.
+So this is actually just going
+
+122
+00:09:21,960 --> 00:09:26,560
+to become xk minus 1 and there's, it's
+negative because
+
+123
+00:09:26,560 --> 00:09:31,530
+there is a minus 1 in front.
+So it should be positive xk minus this.
+
+124
+00:09:31,530 --> 00:09:36,830
+But actually have minus xk plus this, so
+that ends up being a minus xk plus 1 here.
+
+125
+00:09:39,140 --> 00:09:44,334
+And that is equal to this somewhat ugly
+looking thing on the right-hand side.
+
+126
+00:09:44,334 --> 00:09:45,550
+[COUGH]
+
+127
+00:09:45,550 --> 00:09:51,020
+But if I think about this, what is that?
+That's the distance between The
+
+128
+00:09:51,020 --> 00:09:56,220
+most recent value in my Newton's method
+sequence, and the true value.
+
+129
+00:09:56,220 --> 00:09:58,570
+So I'm going to think about that as the
+air, so
+
+130
+00:09:58,570 --> 00:10:01,160
+I'll call this epsilon sub k plus 1, so
+it's
+
+131
+00:10:01,160 --> 00:10:04,050
+the difference between the thing I'm
+trying to get to
+
+132
+00:10:04,050 --> 00:10:06,640
+and where I'm at right now in k plus 1
+steps.
+
+133
+00:10:06,640 --> 00:10:10,440
+And then if I look at the right hand side.
+
+134
+00:10:10,440 --> 00:10:11,978
+This is exactly the same thing.
+
+135
+00:10:11,978 --> 00:10:17,490
+It's the distance from where I, where I am
+in the kth steps.
+
+136
+00:10:17,490 --> 00:10:23,270
+So one step before the left hand side, but
+this time it's squared.
+
+137
+00:10:23,270 --> 00:10:25,320
+So if I replace these for something
+outside I
+
+138
+00:10:25,320 --> 00:10:28,320
+am going to use an epsilon just for that
+error.
+
+139
+00:10:31,680 --> 00:10:34,630
+I see that the error after k plus 1 steps
+
+140
+00:10:36,160 --> 00:10:39,840
+is a function of the error after k steps
+squared.
+
+141
+00:10:42,180 --> 00:10:46,140
+And so then what we want to find is with
+once we're sort of within
+
+142
+00:10:46,140 --> 00:10:50,210
+a certain.
+Neighborhood of the true value x
+
+143
+00:10:50,210 --> 00:10:54,780
+star, we'll be able to find what the
+maximum value of this thing is.
+
+144
+00:10:56,240 --> 00:11:03,530
+So, I'll let capital M be just the biggest
+I can make this thing in absolute terms,
+
+145
+00:11:05,990 --> 00:11:10,020
+then the size of my error after k plus 1
+steps.
+
+146
+00:11:10,020 --> 00:11:19,190
+Is going to be less than or equal to the
+size of my error after k steps squared.
+
+147
+00:11:19,190 --> 00:11:24,150
+And so this means, when I have the size of
+my error is getting small and if I
+
+148
+00:11:24,150 --> 00:11:29,780
+have 0.01, that means my next step is
+going to be 0.01 squared.
+
+149
+00:11:29,780 --> 00:11:31,300
+So, I've gone from
+
+150
+00:11:31,300 --> 00:11:36,680
+having 2 zeros to having, I think that
+ends up being 5 zeros and then a 1.
+
+151
+00:11:38,400 --> 00:11:42,100
+so I'm getting significant digits very,
+very quickly after a certain point.
+
+152
+00:11:47,800 --> 00:11:50,070
+And so we'll say that because the error is
+getting
+
+153
+00:11:50,070 --> 00:11:54,110
+smaller at a quadratic rate, we'll say
+Newton's method converges quadratically.
+
+154
+00:11:59,230 --> 00:12:03,330
+So a few things we need to be careful
+about with this though.
+
+155
+00:12:03,330 --> 00:12:08,090
+So the quadratic convergence for Newton's
+method is not guaranteed.
+
+156
+00:12:08,090 --> 00:12:11,780
+So we have to be within, we have to first
+somehow get
+
+157
+00:12:11,780 --> 00:12:15,370
+ourselves into this interval where the
+quadratic convergence is going to happen.
+
+158
+00:12:18,630 --> 00:12:21,040
+And that means, you need to have a good
+starting point.
+
+159
+00:12:21,040 --> 00:12:24,610
+So you can imagine functions, where.
+
+160
+00:12:24,610 --> 00:12:28,730
+You might take a step and just step over
+that interval completely.
+
+161
+00:12:28,730 --> 00:12:30,070
+And then maybe take a step the other
+
+162
+00:12:30,070 --> 00:12:32,720
+direction and again step over that
+interval completely.
+
+163
+00:12:32,720 --> 00:12:34,380
+And you might have to do that for a
+
+164
+00:12:34,380 --> 00:12:37,940
+very long time before you finally get into
+that interval.
+
+165
+00:12:37,940 --> 00:12:40,540
+But once you are in that interval, it's
+going to maybe take
+
+166
+00:12:40,540 --> 00:12:43,656
+just two or three more iterations for you
+get to the number
+
+167
+00:12:43,656 --> 00:12:44,493
+that you're looking for.
+
+168
+00:12:46,970 --> 00:12:49,390
+So that's what I mean when I say you need
+a good starting point.
+
+169
+00:12:49,390 --> 00:12:53,180
+Sometimes there's some extra theory that
+comes with whatever problem you're
+
+170
+00:12:53,180 --> 00:12:56,540
+trying to solve that's going to suggest
+what are good starting points.
+
+171
+00:12:56,540 --> 00:13:00,210
+So you know, maybe you can make an
+approximation for what you're looking for.
+
+172
+00:13:00,210 --> 00:13:02,802
+And then you just want to use Newton's
+method to refine that.
+
+173
+00:13:02,802 --> 00:13:06,100
+And then it's going to, it's going to
+everything will happen very quickly.
+
+174
+00:13:08,610 --> 00:13:12,772
+The first bullet point was quadratic
+convergence is not guaranteed.
+
+175
+00:13:12,772 --> 00:13:14,006
+And then my second bullet point
+
+176
+00:13:14,006 --> 00:13:14,922
+[INAUDIBLE]
+
+177
+00:13:14,922 --> 00:13:18,150
+IT gets worse, which is convergence is not
+even guaranteed.
+
+178
+00:13:21,250 --> 00:13:26,640
+So in particular, the algorithm can cycle.
+And so what I mean
+
+179
+00:13:26,640 --> 00:13:32,050
+by cycling, is supposed that, it's best
+just to show off with an example.
+
+180
+00:13:32,050 --> 00:13:35,360
+So suppose I'm trying to find out where
+sin x is
+
+181
+00:13:35,360 --> 00:13:39,190
+equal to 0, between minus pi over 2 and pi
+over 2.
+
+182
+00:13:39,190 --> 00:13:39,690
+So
+
+183
+00:13:42,130 --> 00:13:45,090
+does everybody knows that it's at 0,
+right?
+
+184
+00:13:45,090 --> 00:13:48,310
+Okay, so this is something we shouldn't
+have to solve numerically, I'm just
+
+185
+00:13:48,310 --> 00:13:51,580
+using it as an example of what can go
+wrong if you did.
+
+186
+00:13:53,560 --> 00:14:02,440
+So there's actually a point, x sub k, so
+when I do my, my update, I'd have x sub k.
+
+187
+00:14:02,440 --> 00:14:07,300
+And now when I take the derivative, the
+derivative of sine is
+
+188
+00:14:07,300 --> 00:14:12,700
+negative cosine, oops.
+Have I done this backwards?
+
+189
+00:14:14,360 --> 00:14:15,430
+Yeah, I have this upside down.
+
+190
+00:14:17,400 --> 00:14:20,380
+yeah.
+So this should be a minus sign, boy.
+
+191
+00:14:21,440 --> 00:14:21,960
+Embarassing.
+
+192
+00:14:24,000 --> 00:14:25,210
+so that should be a minus sign.
+
+193
+00:14:26,310 --> 00:14:28,430
+But the idea is still going to be the
+same.
+
+194
+00:14:28,430 --> 00:14:30,730
+I'm going to do one step.
+
+195
+00:14:30,730 --> 00:14:32,320
+And because I have this thing that has
+this
+
+196
+00:14:32,320 --> 00:14:34,890
+kind of odd symmetry so when I say odd
+
+197
+00:14:34,890 --> 00:14:39,190
+here, I mean odd as in a function can be
+even or odd, not as in it's strange.
+
+198
+00:14:41,470 --> 00:14:47,880
+I'm going to update my xk, and I'm going
+to get exactly the same value
+
+199
+00:14:47,880 --> 00:14:51,500
+but on the other side of 0, so I'm
+going to get negative x sub k.
+
+200
+00:14:51,500 --> 00:14:54,110
+[COUGH]
+
+201
+00:14:54,110 --> 00:14:59,660
+And then what's going to happen is.
+
+202
+00:15:01,670 --> 00:15:05,080
+When I plug in x sub k plus 1 that's
+
+203
+00:15:05,080 --> 00:15:08,450
+exactly the same thing as plugging in x
+sub minus k.
+
+204
+00:15:08,450 --> 00:15:11,070
+It's going to create a step so the sine
+
+205
+00:15:11,070 --> 00:15:14,600
+is going to flip sines because it's an odd
+function.
+
+206
+00:15:14,600 --> 00:15:19,450
+But the cosine is going to just ignore the
+sine on the x sub k.
+
+207
+00:15:19,450 --> 00:15:20,820
+Because it's an even function.
+
+208
+00:15:20,820 --> 00:15:26,210
+So f of, so cosine of minus x is equal to
+cosine of x.
+
+209
+00:15:26,210 --> 00:15:26,850
+So that's going
+
+210
+00:15:26,850 --> 00:15:34,610
+to mean that I'm going to step back, oops,
+to exactly the point where I started from.
+
+211
+00:15:34,610 --> 00:15:36,799
+So if I ever happen to hit this number.
+
+212
+00:15:38,070 --> 00:15:40,780
+I'm now just going to be going back and
+forth
+
+213
+00:15:40,780 --> 00:15:43,240
+between those two numbers for the rest of
+the algorithm.
+
+214
+00:15:43,240 --> 00:15:48,000
+So, when you see implementations of
+Newton's method, it always has a parameter
+
+215
+00:15:48,000 --> 00:15:52,492
+called maxiter or something like that, and
+that means maximum number of iterations.
+
+216
+00:15:52,492 --> 00:15:55,170
+And so because it has this property that
+
+217
+00:15:55,170 --> 00:15:57,160
+when it does converge, when you do get
+into
+
+218
+00:15:57,160 --> 00:16:00,510
+this sort of small interval or you get
+
+219
+00:16:00,510 --> 00:16:03,310
+into this interval where you have the
+quadratic convergence.
+
+220
+00:16:03,310 --> 00:16:05,080
+It's going to converge very fast.
+
+221
+00:16:06,090 --> 00:16:10,220
+It means that it's either going to
+converge in about 25
+
+222
+00:16:10,220 --> 00:16:14,250
+or 50 steps or it's not going to converge
+at all.
+
+223
+00:16:14,250 --> 00:16:17,620
+So there's no point, if it's run 50 steps,
+there's no real point
+
+224
+00:16:17,620 --> 00:16:18,778
+in letting it keep going.
+
+225
+00:16:18,778 --> 00:16:22,860
+In a say, you're just in a area where it's
+not going to give you a solution.
+
+226
+00:16:24,850 --> 00:16:28,620
+And so generally you put something like
+that in just to protect yourself,
+
+227
+00:16:30,800 --> 00:16:33,560
+protect yourself against this this
+cycling.
+

@@ -1,0 +1,136 @@
+1
+00:00:03,110 --> 00:00:06,110
+A random player is similar to legal
+player.
+
+2
+00:00:06,110 --> 00:00:09,300
+That it maintains a state and selects an
+action for each state
+
+3
+00:00:09,300 --> 00:00:13,685
+based solely on its legality in that state
+without consideration of the consequences.
+
+4
+00:00:13,685 --> 00:00:16,550
+A random player differs from a legal
+player
+
+5
+00:00:16,550 --> 00:00:18,974
+is not simply take the first legal move
+
+6
+00:00:18,974 --> 00:00:21,590
+it finds but rather selects randomly from
+among
+
+7
+00:00:21,590 --> 00:00:24,680
+all of the legal actions available in that
+state.
+
+8
+00:00:24,680 --> 00:00:26,720
+Usually choosing a different move on
+different occasions.
+
+9
+00:00:28,360 --> 00:00:31,060
+The implementation of a random player's
+almost
+
+10
+00:00:31,060 --> 00:00:32,850
+identical to the implementation of a legal
+player.
+
+11
+00:00:32,850 --> 00:00:34,700
+In fact it's hard to see the difference
+here.
+
+12
+00:00:34,700 --> 00:00:36,360
+The only difference is in the play
+handler.
+
+13
+00:00:37,420 --> 00:00:41,325
+In the legal player the play handler
+simply returns the first legal move.
+
+14
+00:00:41,325 --> 00:00:45,630
+In a random player the play handler first
+computes all legal moves
+
+15
+00:00:45,630 --> 00:00:49,820
+using find legals and then selects one at
+random from this list.
+
+16
+00:00:53,330 --> 00:00:55,730
+Random players are no smarter than legal
+players,
+
+17
+00:00:55,730 --> 00:00:58,870
+however they often appear more interesting
+because they're unpredictable.
+
+18
+00:01:00,310 --> 00:01:03,080
+Also sometimes they avoid tracks, traps
+
+19
+00:01:03,080 --> 00:01:05,830
+that befall consistent players like legal,
+which
+
+20
+00:01:05,830 --> 00:01:08,520
+sometimes can ma, maneuver themselves into
+corners
+
+21
+00:01:08,520 --> 00:01:09,740
+from which they are unable to escape.
+
+22
+00:01:11,300 --> 00:01:14,450
+Random players are also used as standards
+to show that
+
+23
+00:01:14,450 --> 00:01:17,460
+general game players as specific methods
+perform better than chance.
+
+24
+00:01:20,510 --> 00:01:24,270
+now one downside on a random player is it
+consumes slightly more compute time than
+
+25
+00:01:24,270 --> 00:01:26,030
+a legal player, since it must compute
+
+26
+00:01:26,030 --> 00:01:29,080
+all legal moves rather than computing just
+one.
+
+27
+00:01:29,080 --> 00:01:31,280
+Now, for most games, this is not a problem
+but for games
+
+28
+00:01:31,280 --> 00:01:34,130
+with a large number of possible actions
+the difference can be noticeable.
+

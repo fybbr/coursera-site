@@ -1,0 +1,209 @@
+So now I'll go through a quick example
+of solving a optimization problem using
+the Lagrange method.
+So suppose I want to find the minimum
+and maximum values of the function 4x2
+minus 2x3.
+So this is this is a function of three
+variables, x1, x2, x3, but
+the first one in the objective function it
+just has a zero multiplied by it.
+So I'm going to simplify it just to say
+4x2 minus 2x3.
+Then subject to the constraint, 2x1 minus
+x2 minus x3 equals 0.
+So I've written the constraints.
+Equal to 0.
+and constrained to x 1 plus, x 1
+squared plus x 2 squared minus 13 also has
+to be equal to 0.
+So the first step is just to write down
+the Lagrangian,
+so If I have two constraints, the form of
+the Lagrangian is going to be
+objective function plus lambda 1, times
+the first
+constraint, plus lambda 2 times the second
+constraint.
+And then I just have to substitute these
+things
+in, so f of x is my objective function.
+That's 4 x 2 minus 2 x 3.
+So that's what I've put here.
+Then minus lambda
+1 times the first constraint.
+sorry, plus lambda 1 times the first
+constraint, plus lambda 2 times the second
+constraint.
+And then I need to also check my necessary
+condition.
+So, if I look at the gradient, the
+gradient of the
+first constraint is going to be 2 minus 1,
+minus 1.
+And the gradient of the second constraint
+is going to be,
+2 X 1 plus, two X one, 2 X 2, and 0.
+And so you have to just look at this a
+little
+bit and convince yourself that it's always
+going to have pivots.
+So one way this could not have a pivot is
+if
+x1 was equal to 0 and x2 was equal to 0.
+But if that were the case, I wouldn't be,
+I wouldn't satisfy this constraint
+because negative 13 would not be equal to
+0, and then if x1 and x2
+are any other values and I were to, I get
+this 2 as a pivot for free
+If I did any sort of row operation with
+this row, I would turn this 0 into
+something else.
+So, if I had to do a row operation to
+get a pivot, here, this zero would become
+non zero.
+So, it's a, it's a little bit of a, you
+have to make a little more of an argument.
+It's not something you can always, just
+see very clearly.
+That that this condition is going to be
+satisfied.
+But you should well I guess it would be a
+good habit to, to check.
+Okay, so, start off with Lagrangian that I
+had on the previous slide
+And I'll compute the gradient of the
+Lagrangian, so
+I'm not going to do the matrix vector
+notation.
+I just, this is a function of five
+variables, so I'm just
+going to do the five partial derivitives,
+one by one, by hand.
+And just to make it fit on a slide.
+It was too wide as a row vector so
+I wrote it as a column vector, and then
+transposed.
+And to find the critical points
+of the Lagrangian, I now have to solve for
+Lambda 1, Lambda
+2, X1, X2, and X3 to make this vector
+equal to zero.
+So, sometimes you get a little bit of
+help.
+So, I can look and I, I find the middle
+row here, row number three, if I set this
+equal
+to 0 there's only going to be one value of
+lambda 1 that's going to make that equal
+to 0.
+So I get one of the one's for free, but
+now I'm going to have
+to do some, some work to get the, get the
+rest of the values.
+So I get Lambda 1 equals negative 2 for
+free.
+And then I have to take the other rows,
+and set them equal to zero.
+So, once I set these equal to 0, then I
+have four equations and four unknowns.
+They're not linear anymore, so there might
+be multiple solutions to this.
+So, for instance, the, the last equation
+is has
+X squared and X1 squared and X2 squared in
+it.
+but I can do some simplification because I
+know these lambda 1s.
+They're going to be equal to negative two,
+so I can put a, I can
+substitute in a negative two, to get
+myself out of a little bit of work.
+But I have to find lamba two, X1, X2, and
+X3, that are going to solve this.
+And the other tricky part is I not only
+have to find
+The solution but I have to find all of the
+solutions because
+the only guarantee that I get is that the
+optimal val, the
+critical points are going to include the
+extreme values, it doesn't tell me
+that the, you know, once I have once of
+those critical points, whether
+it's a maximum or a minimum, and so if I
+find one solution.
+When I'm looking for a maximum, and that
+one just happens to correspond to
+a minimum, then instead of solving the
+problem I've actually found the worst
+possible solution
+for, you know, any other, any other vector
+would be better.
+So you have to not only find the solution
+to this
+but you have to find all of the possible
+solutions to this.
+And so, if you do a little algebra, which
+I decided
+to skip in the interest of brevity, you
+can solve for
+X1, X2 and X3, in terms of lambda two, and
+so
+you end up with these three expressions
+for X1, X2, and X3.
+And I got those just from the first three
+equations.
+And then I'm going to combine that with
+the fact that
+I know x1 squared plus x2 squared is equal
+to 13.
+So
+I can plug x1, so 2 over lambda 2, in for
+x1 here, and minus 3 over lambda 2 in for
+x2 here.
+And what I end up getting is 13 divided by
+lambda
+2 squared, is equal to 13, and so that
+tells me
+that lambda 2 squared has to be equal to
+1, and
+that lambda 2 is then going to be plus or
+minus 1.
+And now because x1, x2,
+and x3, they're functions of lambda 2, It
+means
+I'm going to end up with this, so the
+Lambda one.
+That's fixed at negative 2, that will
+always be negative 2.
+Then my other critical points are going to
+be
+Lambda 2 equals positive 1, x2 equals 2.
+Sorry, x1 equals 2, x2 equals negative 3,
+and x3 equals 7.
+Or, lambda 2 equals
+negative 1.
+And then I'm going to get negative 2,
+positive 3, and
+negative 7 for my x 1, x 2, x 3.
+So, these are the, the two critical
+points.
+And then if you evaluate f at this
+critical point.
+So, this lambda kind of wants I'm using
+that as a crutch
+to get myself to here, but once I've got
+the critical point
+for the x's, those are actually the ones I
+want to evaluate because
+I'm trying to find the maximum and minimum
+value of this function f.
+So then I just have to evaluate f at all
+of those critical points that I found.
+And then whichever one is the biggest,
+that's the maximum, and
+whichever one is the smallest, that's
+going to be the minimum.
+

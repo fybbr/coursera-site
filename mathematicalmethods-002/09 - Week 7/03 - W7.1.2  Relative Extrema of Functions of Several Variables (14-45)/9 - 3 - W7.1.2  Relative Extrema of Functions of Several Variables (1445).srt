@@ -1,0 +1,965 @@
+1
+00:00:01,040 --> 00:00:06,910
+So the next topic is going to be relative
+extrema of functions of several variables.
+
+2
+00:00:06,910 --> 00:00:11,629
+A local minimum, so basically this holds
+
+3
+00:00:11,629 --> 00:00:16,469
+for a minimum and maximum, but today I'm
+going to
+
+4
+00:00:16,469 --> 00:00:21,900
+be aiming at minimizing, minimizing risk.
+
+5
+00:00:21,900 --> 00:00:26,184
+So I'm going to talk about local minimum
+of
+
+6
+00:00:26,184 --> 00:00:33,114
+a function, f, is a point x0 that has the
+property that f of x zero
+
+7
+00:00:33,114 --> 00:00:40,170
+is less than or equal to f of x in some
+neighborhood around x0, so.
+
+8
+00:00:41,940 --> 00:00:44,900
+Epsilon is just some value greater than
+zero.
+
+9
+00:00:44,900 --> 00:00:51,566
+And so I'm making an interval here that's
+centered on x0, and at every point
+
+10
+00:00:51,566 --> 00:00:56,414
+in that interval, so every point x in that
+interval, x,
+
+11
+00:00:56,414 --> 00:01:00,130
+f of x, is greater than or equal to f of
+x0.
+
+12
+00:01:00,130 --> 00:01:05,010
+And if that's true, I'm going to call f of
+x0 a local minimum.
+
+13
+00:01:05,010 --> 00:01:07,650
+And so this is, I think everybody has a
+good idea
+
+14
+00:01:07,650 --> 00:01:10,890
+of what a minimum or a maximum of a
+function is.
+
+15
+00:01:10,890 --> 00:01:13,760
+This is just a way to say the same thing
+mathematically.
+
+16
+00:01:16,840 --> 00:01:21,020
+And then this word extrema just means that
+a point is either a local
+
+17
+00:01:21,020 --> 00:01:25,910
+minimum or a local maximum, so it's a
+kind of extreme value of the function.
+
+18
+00:01:30,330 --> 00:01:37,450
+If f is twice differentiable, so the
+function f has two derivatives.
+
+19
+00:01:37,450 --> 00:01:42,124
+And if the second derivative is
+continuous,
+
+20
+00:01:42,124 --> 00:01:47,340
+then any local extremum is a critical
+point of f.
+
+21
+00:01:47,340 --> 00:01:52,785
+So that means that f prime evaluated at x0
+is going to be equal to 0.
+
+22
+00:01:56,310 --> 00:01:58,690
+And then we can also use this second
+derivative test.
+
+23
+00:01:58,690 --> 00:02:02,914
+So this is the second-order condition to
+classify a
+
+24
+00:02:02,914 --> 00:02:06,560
+critical point as either a minimum or a
+maximum.
+
+25
+00:02:09,330 --> 00:02:10,540
+And so I.
+
+26
+00:02:10,540 --> 00:02:12,599
+If I have a f prime of x0, strictly
+
+27
+00:02:12,599 --> 00:02:15,680
+less than zero, that's going to be a local
+maximum.
+
+28
+00:02:18,430 --> 00:02:22,300
+If f prime so, if the, oops.
+That should be double primes.
+
+29
+00:02:23,516 --> 00:02:26,207
+so if the second derivative evaluated at
+x0 is
+
+30
+00:02:26,207 --> 00:02:29,419
+greater than zero, that's going to be a
+local minimum.
+
+31
+00:02:30,660 --> 00:02:34,770
+And if it's equal to zero, then anything
+is possible.
+
+32
+00:02:34,770 --> 00:02:38,190
+So, either of these two, or it can be
+neither.
+
+33
+00:02:41,930 --> 00:02:47,450
+So that's a brief review of how this works
+for single variable functions.
+
+34
+00:02:47,450 --> 00:02:50,239
+Now, let's think about a function of n
+variables.
+
+35
+00:02:52,880 --> 00:02:55,830
+So, a local minimum of a function of n
+variables.
+
+36
+00:02:55,830 --> 00:03:00,648
+So, remember that's what this notation
+means, that f is a function that goes
+
+37
+00:03:00,648 --> 00:03:05,155
+from an n dimensional space to a single
+value, to a single real number.
+
+38
+00:03:05,155 --> 00:03:05,750
+[COUGH]
+
+39
+00:03:05,750 --> 00:03:14,485
+So, local minimum is a point x0 in that n
+dimensional space And it's exactly
+
+40
+00:03:14,485 --> 00:03:19,930
+the same criteria as before, except now,
+x0 is going to be a vector of n values.
+
+41
+00:03:19,930 --> 00:03:23,330
+It's all n of the inputs to this function
+f.
+
+42
+00:03:23,330 --> 00:03:26,730
+x is also a vector of n values.
+
+43
+00:03:26,730 --> 00:03:30,590
+And I'm just going to make a.
+So in two dimensions, you know,
+
+44
+00:03:30,590 --> 00:03:32,350
+this would just be a circle.
+Alright?
+
+45
+00:03:32,350 --> 00:03:36,270
+So all the points that have distance from
+x0 less than epsilon, so
+
+46
+00:03:36,270 --> 00:03:40,490
+a circle and all the points inside it, so
+I guess technically, a disc.
+
+47
+00:03:41,910 --> 00:03:46,060
+it becomes a, sort of a ball in
+higher-dimensional spaces.
+
+48
+00:03:46,060 --> 00:03:50,670
+So if X is within epsilon of X naught.
+
+49
+00:03:50,670 --> 00:03:55,530
+Then the smallest I can make that function
+is F of X0,
+
+50
+00:03:55,530 --> 00:04:00,870
+so if that's true I'm going to call F of
+X0 a local minimum.
+
+51
+00:04:04,180 --> 00:04:07,950
+And again every local extremum is going to
+be a critical point.
+
+52
+00:04:09,220 --> 00:04:12,895
+So, if I take the gradient of my function
+f
+
+53
+00:04:12,895 --> 00:04:17,380
+and evaluate that at x0, I'm going to get
+zero.
+
+54
+00:04:17,380 --> 00:04:19,891
+If f is twice differentiable and
+
+55
+00:04:19,891 --> 00:04:24,390
+has continuous second order partial
+derivatives then.
+
+56
+00:04:27,480 --> 00:04:31,190
+So remember that was my condition for
+being able to exchange the
+
+57
+00:04:31,190 --> 00:04:36,370
+order of taking partial derivatives, so
+this matrix, the hessian, so the matrix
+
+58
+00:04:36,370 --> 00:04:40,640
+of second partial derivatives, evaluated
+at the point x naught, so you
+
+59
+00:04:40,640 --> 00:04:44,840
+have to compute the hessian first, and
+then evaluate it at x naught.
+
+60
+00:04:45,860 --> 00:04:48,709
+That's going to be a symmetric matrix, and
+
+61
+00:04:48,709 --> 00:04:52,482
+the remember from out linear algebra
+lectures a symmetric
+
+62
+00:04:52,482 --> 00:04:54,520
+matrix has real eigenvalues.
+
+63
+00:04:57,720 --> 00:05:03,621
+So the second order condition then for a
+function of N variables is going to be.
+
+64
+00:05:03,621 --> 00:05:05,539
+If all of the eigenvalues.
+
+65
+00:05:07,670 --> 00:05:10,150
+Of the Hessian evaluated at x naught.
+
+66
+00:05:10,150 --> 00:05:14,020
+So I, I compute the Hessian, that gives me
+this matrix of functions.
+
+67
+00:05:14,020 --> 00:05:16,906
+I evaluate each of those functions at the
+point
+
+68
+00:05:16,906 --> 00:05:20,920
+x naught, then I find the eigenvalues of
+that matrix.
+
+69
+00:05:20,920 --> 00:05:24,900
+If all of the eigenvalues are strictly
+greater than zero.
+
+70
+00:05:24,900 --> 00:05:26,820
+Then that corresponds to a local minimum.
+
+71
+00:05:28,870 --> 00:05:32,032
+If all the eigenvalues are strictly less
+
+72
+00:05:32,032 --> 00:05:36,000
+than zero, that corresponds to a local
+maximum.
+
+73
+00:05:41,690 --> 00:05:44,810
+If it has positive eigenvalues and
+negative eigenvalues
+
+74
+00:05:44,810 --> 00:05:47,450
+then you have something called a saddle
+point.
+
+75
+00:05:47,450 --> 00:05:52,208
+And what that looks like is, imagine if
+you have plane, and then the
+
+76
+00:05:52,208 --> 00:05:57,450
+a function of two variables is going to be
+a surface above that plane.
+
+77
+00:05:57,450 --> 00:06:01,600
+A saddle point is something where if I go
+this way, I go over a hill like that.
+
+78
+00:06:01,600 --> 00:06:05,790
+So going straight ahead, it looks like a
+maximum to me.
+
+79
+00:06:05,790 --> 00:06:06,926
+And then going left
+
+80
+00:06:06,926 --> 00:06:09,600
+to right the function goes like that.
+
+81
+00:06:09,600 --> 00:06:12,970
+So if you were going this direction it
+would look like a minimum.
+
+82
+00:06:12,970 --> 00:06:16,340
+And if your going this direction it would
+look like a maximum.
+
+83
+00:06:16,340 --> 00:06:20,260
+And that looks like looks like a saddle.
+
+84
+00:06:20,260 --> 00:06:23,371
+Which if anybody doesn't know what that
+is, that's just like
+
+85
+00:06:23,371 --> 00:06:26,116
+the chair you put on a horse before you
+ride it.
+
+86
+00:06:26,116 --> 00:06:27,439
+which kind of has that shape.
+
+87
+00:06:28,940 --> 00:06:31,750
+It's more comfortable than sitting on a
+local maximum, I guess.
+
+88
+00:06:36,200 --> 00:06:40,336
+And then the fourth possibility is that
+the, so when
+
+89
+00:06:40,336 --> 00:06:45,820
+I, I compute the Hessian evaluated at the
+point x naught.
+
+90
+00:06:45,820 --> 00:06:48,088
+I end up with a, a singular matrix so this
+is
+
+91
+00:06:48,088 --> 00:06:51,830
+going to be a matrix that has one or more
+zero eigenvalues.
+
+92
+00:06:51,830 --> 00:06:54,020
+And this is going to be the same thing as
+
+93
+00:06:54,020 --> 00:06:57,690
+what happens when I had the second
+derivative being zero.
+
+94
+00:06:57,690 --> 00:06:59,060
+So now anything can happen.
+
+95
+00:06:59,060 --> 00:07:01,348
+I can have a saddle point, I can have a
+minimum or I can
+
+96
+00:07:01,348 --> 00:07:02,120
+have a maximum.
+
+97
+00:07:04,810 --> 00:07:08,142
+So it's basically, when I say anything can
+happen, what
+
+98
+00:07:08,142 --> 00:07:10,862
+I really mean is if you have a singular
+matrix for
+
+99
+00:07:10,862 --> 00:07:13,786
+your hessian, then you are not able to
+classify the
+
+100
+00:07:13,786 --> 00:07:17,140
+critical point as a minimum or maximum or
+a saddle point.
+
+101
+00:07:21,640 --> 00:07:24,360
+So let's go through some quick examples
+here.
+
+102
+00:07:24,360 --> 00:07:30,000
+So suppose I make my function f of x y, x
+squared plus xy plus y squared.
+
+103
+00:07:31,920 --> 00:07:33,450
+I can compute the gradient of that.
+
+104
+00:07:33,450 --> 00:07:38,739
+I get 2x plus y and x plus 2y.
+And you can see right away
+
+105
+00:07:38,739 --> 00:07:44,780
+that if I evaluate that at 0,0, that's
+going to give me a critical point.
+
+106
+00:07:44,780 --> 00:07:47,060
+So the, the origin is a critical point.
+
+107
+00:07:52,970 --> 00:07:57,940
+When I compute the Hessian, there's no X's
+or Y's left so this isn't the Hessian
+
+108
+00:07:57,940 --> 00:08:03,430
+evaluated at a particular point, evaluated
+at 0,0, this is the Hessian everywhere.
+
+109
+00:08:03,430 --> 00:08:08,390
+So it's also if I put, If I put in 0, 0
+here I'll get the same matrix.
+
+110
+00:08:10,550 --> 00:08:11,610
+And.
+
+111
+00:08:11,610 --> 00:08:14,958
+Sort of in our linear algebra lectures I
+skipped actually how you
+
+112
+00:08:14,958 --> 00:08:19,474
+compute eigenvalues, so I'm just going to
+use r to compute these things.
+
+113
+00:08:19,474 --> 00:08:22,210
+probably not worth even trying to do by
+hand
+
+114
+00:08:22,210 --> 00:08:25,180
+if there's a three by three matrix or
+bigger.
+
+115
+00:08:27,460 --> 00:08:36,390
+So first thing I'm going to do is just
+make a matrix A That has 2, 1, 1, 2 in it.
+
+116
+00:08:36,390 --> 00:08:38,370
+Eigen is the function that computes
+
+117
+00:08:38,370 --> 00:08:42,620
+an eigenvector, eigenvalue decomposition,
+or factorization.
+
+118
+00:08:42,620 --> 00:08:44,390
+And then, it returns a list.
+
+119
+00:08:44,390 --> 00:08:46,610
+And I'm going to use this dollar sign
+operator
+
+120
+00:08:46,610 --> 00:08:49,059
+to pluck only the values element off that
+list.
+
+121
+00:08:50,570 --> 00:08:52,520
+And it turns out the eigenvalues are
+
+122
+00:08:52,520 --> 00:08:55,920
+three and one, so they're both strictly
+greater than zero.
+
+123
+00:08:57,400 --> 00:09:02,150
+So since both eigenvalues are greater than
+zero; 0, 0 is a local minimum.
+
+124
+00:09:07,320 --> 00:09:07,820
+Okay.
+
+125
+00:09:09,670 --> 00:09:11,040
+And so hopefully if.
+
+126
+00:09:13,620 --> 00:09:18,092
+If x squared plus xy plus y squared had a
+local minimum
+
+127
+00:09:18,092 --> 00:09:21,620
+if I just put a minus sign in front of
+each term.
+
+128
+00:09:21,620 --> 00:09:25,400
+That's basically doing exactly the same
+problem but upside down.
+
+129
+00:09:25,400 --> 00:09:28,010
+So this really ought to have a local
+maximum.
+
+130
+00:09:30,340 --> 00:09:32,660
+So, I'll first compute the.
+
+131
+00:09:32,660 --> 00:09:36,211
+First, compute the gradient, and again,
+that's trivial to
+
+132
+00:09:36,211 --> 00:09:39,100
+see that 0, 0 is the point that satisfies
+that.
+
+133
+00:09:39,100 --> 00:09:41,570
+So 0, 0 is the critical point.
+
+134
+00:09:43,700 --> 00:09:48,130
+This time when I the Hessian I get the
+negative of the previous Hessian.
+
+135
+00:09:49,950 --> 00:09:55,280
+Use R again to compute the eigenvalues.
+And now I get negative one negative three.
+
+136
+00:09:56,360 --> 00:09:59,400
+And so both of these are strictly less
+than zero.
+
+137
+00:10:00,820 --> 00:10:03,784
+So since both eigenvalues are less than
+zero,
+
+138
+00:10:03,784 --> 00:10:06,610
+0, 0 now corresponds to a local maximum.
+
+139
+00:10:09,600 --> 00:10:14,136
+And then third and final example If I now
+let
+
+140
+00:10:14,136 --> 00:10:19,440
+my function be X squared plus 3XY plus Y
+squared.
+
+141
+00:10:19,440 --> 00:10:23,640
+My my gradient is going to be 2X plus 3Y,
+3X plus 2Y, and
+
+142
+00:10:23,640 --> 00:10:29,330
+again, it should be obvious that 0, 0 is
+going to be the critical point.
+
+143
+00:10:29,330 --> 00:10:33,505
+So it's just 2 times 0 plus 3 times 0 is
+going to be 0.
+
+144
+00:10:33,505 --> 00:10:35,210
+0,0 is our critical point.
+
+145
+00:10:38,570 --> 00:10:44,410
+But now the, the matrix, so you can sort
+of see when you look at these for awhile.
+
+146
+00:10:44,410 --> 00:10:49,000
+If this value is greater than what's on
+the diagonal, then
+
+147
+00:10:49,000 --> 00:10:53,429
+it's not going to have kind of the nice
+properties that we like.
+
+148
+00:10:55,210 --> 00:10:58,650
+So this, for instance, can never happen
+with a variance covariance matrix.
+
+149
+00:10:58,650 --> 00:11:01,135
+If you look at a value on the off
+diagonal,
+
+150
+00:11:01,135 --> 00:11:03,975
+and then you look down at what's on the
+diagonal
+
+151
+00:11:03,975 --> 00:11:07,430
+in that column, and what's on the diagonal
+in that row.
+
+152
+00:11:07,430 --> 00:11:11,775
+If you multiply those two things multiply
+the square roots of
+
+153
+00:11:11,775 --> 00:11:15,700
+those two things together, it has to be
+bigger than this.
+
+154
+00:11:15,700 --> 00:11:19,348
+So now I'm going to use R again to compute
+
+155
+00:11:19,348 --> 00:11:24,630
+the eigenvalues, and now I get five and
+negative one.
+
+156
+00:11:26,840 --> 00:11:29,341
+And so that I have one eigenvalue that's
+greater
+
+157
+00:11:29,341 --> 00:11:32,240
+than zero, and one eigenvalue that's less
+than zero.
+
+158
+00:11:33,770 --> 00:11:37,020
+And so, now this point 0,0 is going to be
+a saddle point,
+
+159
+00:11:37,020 --> 00:11:40,980
+so that means you can go in one direction,
+you go over like that.
+
+160
+00:11:40,980 --> 00:11:44,850
+And going perpendicular direction, you
+drop and go back up like that.
+
+161
+00:11:52,130 --> 00:11:55,994
+Okay and now, so the those three were,
+were pretty simple because
+
+162
+00:11:55,994 --> 00:12:00,680
+everything was just a degree two term when
+I was taking derivatives.
+
+163
+00:12:00,680 --> 00:12:05,280
+The the Hessian ended up being constant.
+
+164
+00:12:05,280 --> 00:12:07,200
+And so I just want to go through one quick
+
+165
+00:12:07,200 --> 00:12:10,930
+example of how, exactly how this works
+when it's not.
+
+166
+00:12:10,930 --> 00:12:13,951
+So now I'm going to put something to the
+three halves power here,
+
+167
+00:12:13,951 --> 00:12:17,257
+so that's not ever going to disappear when
+I take deriv, it's not ever
+
+168
+00:12:17,257 --> 00:12:19,949
+going to become constant when I'm taking
+derivatives.
+
+169
+00:12:22,160 --> 00:12:26,748
+So the first order condition says I have
+to compute the gradient of F of XY,
+
+170
+00:12:26,748 --> 00:12:31,670
+and then find the point X, Y that makes
+the gradient equal to the zero vector.
+
+171
+00:12:33,210 --> 00:12:35,910
+So the gradient is two Y, and then two X
+plus
+
+172
+00:12:35,910 --> 00:12:39,240
+three Y times the square root of one minus
+Y squared.
+
+173
+00:12:40,990 --> 00:12:46,600
+But if you notice, this just has a y in
+it, and this has an x in it and a y in it.
+
+174
+00:12:47,690 --> 00:12:52,310
+And so, if I put in 0, 0 again, I'm
+going to get 2 times 0, plus
+
+175
+00:12:52,310 --> 00:12:57,460
+2 times 2 times 0 here, then 2 times 0
+plus 3 times 0 times 1.
+
+176
+00:12:57,460 --> 00:12:59,840
+So again, zero zero's going to be the
+critical point.
+
+177
+00:13:05,450 --> 00:13:06,810
+The second order condition.
+
+178
+00:13:06,810 --> 00:13:11,690
+So now I end up with a Hessian that's 0,
+2, 2.
+
+179
+00:13:11,690 --> 00:13:14,771
+And now I have kind of a complicated
+function of
+
+180
+00:13:14,771 --> 00:13:17,689
+Y for my, my two, two entry in my Hessian.
+
+181
+00:13:19,240 --> 00:13:23,595
+And so this is something I, y'know,
+there's no way I could tell R to take the
+
+182
+00:13:23,595 --> 00:13:25,873
+eigen values of this, so what you have to
+
+183
+00:13:25,873 --> 00:13:28,720
+remember is it's a test at the critical
+points.
+
+184
+00:13:28,720 --> 00:13:30,680
+So to figure out what matrix I want
+
+185
+00:13:30,680 --> 00:13:32,710
+to take the eigen values of, I have
+
+186
+00:13:32,710 --> 00:13:36,150
+to evaluate the Hessian at the critical
+point.
+
+187
+00:13:36,150 --> 00:13:37,473
+So I need to take 0, 0.
+
+188
+00:13:37,473 --> 00:13:41,627
+Plug in those values here, and that's
+going to give me then a matrix that's
+
+189
+00:13:41,627 --> 00:13:46,270
+just numbers and that's something I can go
+ahead and compute the eigenvalues of.
+
+190
+00:13:49,740 --> 00:13:54,064
+So, if I have 0,0 and I plug in zero for
+y, I'm going to
+
+191
+00:13:54,064 --> 00:13:58,294
+get 3 minus 0, divided by the square root
+of 1 minus
+
+192
+00:13:58,294 --> 00:14:02,737
+0, so 3 divided by 1.
+So this is my Hessian at the point,
+
+193
+00:14:02,737 --> 00:14:10,130
+evaluated at the point 0, 0.
+So I'll just use, I'll use R again.
+
+194
+00:14:10,130 --> 00:14:11,520
+Did I skip it here?
+
+195
+00:14:11,520 --> 00:14:13,490
+Oh, no I just made it a little bit
+smaller.
+
+196
+00:14:13,490 --> 00:14:14,744
+So here I- to
+
+197
+00:14:14,744 --> 00:14:21,530
+make it fit on the slide I kind of packed
+it all into one command so.
+
+198
+00:14:21,530 --> 00:14:23,220
+This command that I have highlighted here.
+
+199
+00:14:23,220 --> 00:14:28,570
+This is what was creating the matrix, so
+this is just a matrix of 0, 3, 3, 2.
+
+200
+00:14:28,570 --> 00:14:34,040
+Oops, so it was supposed to be 0, 2, 2, 3.
+when you take
+
+201
+00:14:34,040 --> 00:14:39,270
+the eigenvalues of this, you get one
+positive and one negative.
+
+202
+00:14:41,550 --> 00:14:44,300
+And so this has a saddle point as a
+critical point.
+

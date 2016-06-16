@@ -1,0 +1,855 @@
+1
+00:00:00,980 --> 00:00:05,214
+The next topic is Variance Covariance
+Matrices.
+
+2
+00:00:05,214 --> 00:00:05,594
+[COUGH]
+
+3
+00:00:05,594 --> 00:00:10,990
+So this is tool that you use to, if you're
+building an, sorry, if you're
+
+4
+00:00:10,990 --> 00:00:16,910
+building, portfolio of assets, you sort of
+want to know how risky they are.
+
+5
+00:00:16,910 --> 00:00:18,840
+You have a measure of risk for each asset.
+
+6
+00:00:18,840 --> 00:00:22,250
+But what also ends up being useful is the
+measure of risk between assets.
+
+7
+00:00:22,250 --> 00:00:24,606
+So sometimes you'll see if you have assets
+in
+
+8
+00:00:24,606 --> 00:00:27,730
+the same sector, so if you have two
+technologies stocks.
+
+9
+00:00:27,730 --> 00:00:30,750
+So, for instance, like Oracle or
+Microsoft.
+
+10
+00:00:30,750 --> 00:00:34,170
+If technology stocks are doing good, they
+both go up together.
+
+11
+00:00:34,170 --> 00:00:37,110
+Not exactly the same amount, but when one
+of them goes up,
+
+12
+00:00:37,110 --> 00:00:40,600
+the other one is much more likely to go up
+than go down.
+
+13
+00:00:40,600 --> 00:00:43,676
+And and vice versa for when they go down.
+
+14
+00:00:43,676 --> 00:00:46,112
+sometimes you have things that are
+
+15
+00:00:46,112 --> 00:00:50,080
+negatively correlated, so I'm trying to
+think.
+
+16
+00:00:50,080 --> 00:00:53,410
+There were all sorts of good ex examples
+of this one.
+
+17
+00:00:53,410 --> 00:00:55,090
+You know, in 2007,
+
+18
+00:00:55,090 --> 00:00:59,396
+2008, you had things like McDonald's and
+Spam going up.
+
+19
+00:00:59,396 --> 00:01:03,257
+And more expensive types of food going
+down.
+
+20
+00:01:03,257 --> 00:01:05,894
+So when you had a shock that made.
+
+21
+00:01:05,894 --> 00:01:08,429
+Say, I don't know, what's an expensive
+type of food?
+
+22
+00:01:08,429 --> 00:01:08,984
+[LAUGH]
+
+23
+00:01:08,984 --> 00:01:11,630
+Lobster.
+Yeah, lobster maybe.
+
+24
+00:01:11,630 --> 00:01:13,140
+Maybe lobster goes down.
+
+25
+00:01:14,218 --> 00:01:17,860
+that would be an indication that maybe you
+should buy McDonalds.
+
+26
+00:01:17,860 --> 00:01:20,444
+The stock, not the food.
+
+27
+00:01:20,444 --> 00:01:20,939
+[LAUGH]
+
+28
+00:01:20,939 --> 00:01:21,434
+[COUGH]
+
+29
+00:01:21,434 --> 00:01:27,176
+So I'll start off with some concepts from
+statistics something
+
+30
+00:01:27,176 --> 00:01:31,950
+called the sample mean, I hope everybody's
+aware of.
+
+31
+00:01:31,950 --> 00:01:35,150
+So if I have a vector x and it's got m
+elements, m
+
+32
+00:01:35,150 --> 00:01:40,340
+components in it, and I want to just find
+the average value of those.
+
+33
+00:01:40,340 --> 00:01:43,448
+What I'm going to do is just, so this
+notation
+
+34
+00:01:43,448 --> 00:01:47,110
+means, sum, so I'm going to sum all of
+those up.
+
+35
+00:01:47,110 --> 00:01:50,854
+So add all m of these values together and
+divide by m, I'm
+
+36
+00:01:50,854 --> 00:01:55,370
+going to call that x bar and that's going
+to be called the sample mean.
+
+37
+00:01:59,330 --> 00:02:03,785
+The sample variance of the elements in x,
+I'm going to get by, so
+
+38
+00:02:03,785 --> 00:02:08,830
+I need my sample mean from step one, or
+from part one up here.
+
+39
+00:02:08,830 --> 00:02:13,220
+I subtract that from each element of my
+vector, x.
+
+40
+00:02:14,490 --> 00:02:17,610
+I square that, that difference.
+
+41
+00:02:17,610 --> 00:02:19,960
+And then I add up all of the squared
+differences.
+
+42
+00:02:19,960 --> 00:02:23,010
+And this time I have to divide by m minus
+1.
+
+43
+00:02:23,010 --> 00:02:24,642
+And that I'm going
+
+44
+00:02:24,642 --> 00:02:28,360
+to call the sample variance of my vector
+x.
+
+45
+00:02:31,010 --> 00:02:33,859
+And then suppose y is also a vector of
+length m.
+
+46
+00:02:35,430 --> 00:02:39,610
+That I can define something called the
+sample covariance of x and y.
+
+47
+00:02:39,610 --> 00:02:44,020
+So looks kind of like the variance except
+instead of having
+
+48
+00:02:44,020 --> 00:02:48,860
+this thing squared, I just have x oops x
+minus its mean.
+
+49
+00:02:48,860 --> 00:02:50,970
+Times y minus its mean.
+
+50
+00:02:50,970 --> 00:02:57,170
+I form that product and then I sum up over
+all so over each of the m components.
+
+51
+00:02:57,170 --> 00:02:59,750
+And then again for that I have to divide
+by m minus 1.
+
+52
+00:03:01,010 --> 00:03:08,580
+So these things are sample means, sample
+variants, sample covariants.
+
+53
+00:03:08,580 --> 00:03:09,830
+And so now let's look.
+
+54
+00:03:12,120 --> 00:03:17,067
+So let's let e be a column vector of m1,
+so this is just, you
+
+55
+00:03:17,067 --> 00:03:22,300
+know, 11111 down a column, so what if I do
+e transpose x?
+
+56
+00:03:23,550 --> 00:03:27,420
+This is the same thing as e.x, that would
+be one times
+
+57
+00:03:27,420 --> 00:03:31,690
+x1 plus one times x2 plus one times x3 and
+so on.
+
+58
+00:03:31,690 --> 00:03:34,186
+So that's another way of writing the sum
+of all
+
+59
+00:03:34,186 --> 00:03:37,260
+of the elements, all of the components in
+this vector x.
+
+60
+00:03:38,370 --> 00:03:41,937
+And then m is a scaler, so putting this
+over m is,
+
+61
+00:03:41,937 --> 00:03:45,840
+this is just going to give me another way
+to write x bar.
+
+62
+00:03:47,420 --> 00:03:51,752
+So this is sort of my way of writing dark
+product that is 1 times x1,
+
+63
+00:03:51,752 --> 00:03:55,520
+1 times x2 and so on, and then 1 over m,
+so I divide by m.
+
+64
+00:03:56,550 --> 00:04:00,090
+And that was just the definition of the
+sample mean I had on the previous slide.
+
+65
+00:04:00,090 --> 00:04:03,760
+So I can also write the sample mean as e
+transpose x divided by m.
+
+66
+00:04:06,070 --> 00:04:07,790
+And x bar is going to be a scaler.
+
+67
+00:04:09,350 --> 00:04:11,520
+So when I do this a dot product gives me
+
+68
+00:04:11,520 --> 00:04:14,600
+scaler and then I'm dividing that by m,
+which is scaler.
+
+69
+00:04:14,600 --> 00:04:18,540
+So this is just going to be oops, a single
+real number.
+
+70
+00:04:22,660 --> 00:04:25,630
+And then I can make a column vector with x
+
+71
+00:04:25,630 --> 00:04:30,120
+bar in each position just by multiplying e
+by x bar.
+
+72
+00:04:30,120 --> 00:04:33,837
+Normally, I would want to write this with
+the, the scalar value times
+
+73
+00:04:33,837 --> 00:04:37,862
+the vector, but I'm going to write it as
+the vector times the scalar value.
+
+74
+00:04:37,862 --> 00:04:41,307
+I mean the same thing, but it's just
+going to be a little bit nicer
+
+75
+00:04:41,307 --> 00:04:45,440
+when I try and use some other calculations
+later if it comes in this order.
+
+76
+00:04:46,700 --> 00:04:49,100
+So this will be a column vector.
+
+77
+00:04:49,100 --> 00:04:51,260
+Where each element is x bar.
+
+78
+00:04:54,690 --> 00:04:59,725
+So now I want to make a new vector that
+I'm going to call x tilda, and
+
+79
+00:04:59,725 --> 00:05:05,235
+that's going to be equal to x, so that was
+my original vector, minus,
+
+80
+00:05:05,235 --> 00:05:10,420
+now remember this thing.
+This fraction here, that's just x bar.
+
+81
+00:05:10,420 --> 00:05:15,900
+And then I'm going to multiply that times
+this column vector of 1's e.
+
+82
+00:05:17,050 --> 00:05:19,888
+So that's going to give me x minus ex bar,
+
+83
+00:05:19,888 --> 00:05:24,962
+so if I look at that, that vector
+difference now, the first element is
+
+84
+00:05:24,962 --> 00:05:31,120
+going to be x1 minus x bar, the second
+element is going to be x2 minus x bar.
+
+85
+00:05:31,120 --> 00:05:31,730
+And so on.
+
+86
+00:05:33,480 --> 00:05:38,760
+And so the i'th element is x tilde i, is
+xi minus x bar.
+
+87
+00:05:40,690 --> 00:05:45,535
+And so now if I go back and look at my
+sample variance formula,
+
+88
+00:05:45,535 --> 00:05:49,400
+I have xi minus x bar.
+Well, that's just x tilde i.
+
+89
+00:05:50,620 --> 00:05:51,480
+I can't highlight.
+
+90
+00:05:54,120 --> 00:05:58,449
+So I can replace that, this square
+difference
+
+91
+00:05:58,449 --> 00:06:02,400
+with just xi squared or x tilde i squared.
+
+92
+00:06:07,080 --> 00:06:10,996
+But another way of writing that is x tilda
+transpose x
+
+93
+00:06:10,996 --> 00:06:14,930
+tilda and now I'm dividing that still by m
+minus 1.
+
+94
+00:06:17,340 --> 00:06:21,695
+And again, this is just a dot product, so
+this is, what I do x transpose x where x
+
+95
+00:06:21,695 --> 00:06:24,295
+is a column vector, that's going to be a
+scalar
+
+96
+00:06:24,295 --> 00:06:28,770
+value, so that's just the matrix notation
+for dot product.
+
+97
+00:06:28,770 --> 00:06:31,762
+And then, I'm dividing that by scalar n
+minus 1 and
+
+98
+00:06:31,762 --> 00:06:35,500
+that's going to be the number that's the
+sample variance of x.
+
+99
+00:06:37,340 --> 00:06:42,844
+And another way I could write that, is
+this is the length squared of x divided
+
+100
+00:06:42,844 --> 00:06:43,890
+by m minus 1.
+
+101
+00:06:47,670 --> 00:06:50,134
+So really what I'm kind of trying to do
+here is, show
+
+102
+00:06:50,134 --> 00:06:54,340
+that there are lots of different ways to
+approach the same problem.
+
+103
+00:06:54,340 --> 00:06:57,124
+And then what we'll do later on is we're
+going to pick the
+
+104
+00:06:57,124 --> 00:06:59,970
+way that makes it easiest to get to the
+answer that we want.
+
+105
+00:07:03,490 --> 00:07:06,930
+So I can do the same thing now for the,
+the sample covariance.
+
+106
+00:07:10,050 --> 00:07:11,960
+So I'll make, oops.
+
+107
+00:07:13,250 --> 00:07:19,370
+e transpose y is just going to be the sum
+of all of the elements in my vector y.
+
+108
+00:07:19,370 --> 00:07:22,494
+Divided by m, that's going to give me the
+mean value,
+
+109
+00:07:22,494 --> 00:07:25,320
+the sample mean of the elements of my
+vector y.
+
+110
+00:07:26,800 --> 00:07:32,070
+So, y tilde is just going to be y, minus
+its mean.
+
+111
+00:07:36,860 --> 00:07:38,550
+And the sample covariance then.
+
+112
+00:07:38,550 --> 00:07:41,780
+So I have x minus its mean, y minus its
+mean.
+
+113
+00:07:43,810 --> 00:07:49,390
+That's just x tilde I, y tilda I, and I
+can write that
+
+114
+00:07:49,390 --> 00:07:54,633
+as x tilde transpose y tilda divided by m
+minus 1.
+
+115
+00:07:56,060 --> 00:08:02,080
+So this again is a dot product or an inner
+product divided by a scalar.
+
+116
+00:08:02,080 --> 00:08:04,896
+So it's a scalar divided by a scalar, so
+that's the
+
+117
+00:08:04,896 --> 00:08:07,810
+number that gives me the sample covariance
+of x and y.
+
+118
+00:08:13,150 --> 00:08:15,646
+And so I started out in, in this section,
+I don't know if
+
+119
+00:08:15,646 --> 00:08:17,830
+everybody remembered from the, from the
+outline
+
+120
+00:08:17,830 --> 00:08:19,829
+I called this a variance covariance
+matrix.
+
+121
+00:08:21,034 --> 00:08:24,074
+and that's basically because the variance
+of x
+
+122
+00:08:24,074 --> 00:08:27,100
+goes, ends up being down the, the
+diagonal.
+
+123
+00:08:27,100 --> 00:08:30,664
+So if I have x and y, if y is equal to x,
+I
+
+124
+00:08:30,664 --> 00:08:35,980
+get a variance and if y is different than
+x, I get a covariance.
+
+125
+00:08:35,980 --> 00:08:38,680
+I'm just going to think now of the
+variance
+
+126
+00:08:38,680 --> 00:08:41,554
+of x as being the covariance of x with
+itself.
+
+127
+00:08:41,554 --> 00:08:45,004
+And then only call this thing a
+co-variance matrix from now
+
+128
+00:08:45,004 --> 00:08:50,530
+on, because it gets really difficult to
+pronounce variance, co-variance matrix.
+
+129
+00:08:50,530 --> 00:08:52,990
+Also it makes the slides wider than they
+need to be.
+
+130
+00:08:57,220 --> 00:09:00,352
+So the Cov x,x that's going to give the,
+the
+
+131
+00:09:00,352 --> 00:09:03,832
+variance but from now on I'm just going to
+think of
+
+132
+00:09:03,832 --> 00:09:08,617
+this whole structure as a covariance
+structure, and sometimes I
+
+133
+00:09:08,617 --> 00:09:13,250
+just end up calculating covariances of x
+with itself, okay.
+
+134
+00:09:15,590 --> 00:09:20,360
+So now let's suppose that x and y, I could
+put those in the columns of a matrix r.
+
+135
+00:09:21,730 --> 00:09:25,310
+So here r, I chose r just because it's a
+rectangular matrix.
+
+136
+00:09:25,310 --> 00:09:28,000
+So we have m rows and 2 columns.
+
+137
+00:09:28,000 --> 00:09:31,780
+The first row is my vector x, second row
+is my vector y.
+
+138
+00:09:34,360 --> 00:09:36,970
+I can now make a matrix called r tilde.
+
+139
+00:09:36,970 --> 00:09:40,998
+So I know how to subtract off the sample
+mean from each element of
+
+140
+00:09:40,998 --> 00:09:46,250
+my vector now, and that gives me these
+vectors x tilda and y tilda.
+
+141
+00:09:46,250 --> 00:09:49,418
+So why don't I put those in a matrix and
+call that r tilda?
+
+142
+00:09:49,418 --> 00:09:57,220
+And sample variance covariance matrix.
+
+143
+00:09:57,220 --> 00:09:59,500
+So that the notation, remember I'm just
+going to
+
+144
+00:09:59,500 --> 00:10:02,840
+call this a covariance matrix, kind of,
+after this set of slides.
+
+145
+00:10:02,840 --> 00:10:08,668
+So I'll write Cov of r, where r is this
+matrix here, is going to be the, on
+
+146
+00:10:08,668 --> 00:10:11,676
+the diagonal so I have, I think of this
+
+147
+00:10:11,676 --> 00:10:15,590
+column, the first column as being the x
+column.
+
+148
+00:10:15,590 --> 00:10:19,526
+The second column as being the y column,
+and the first row
+
+149
+00:10:19,526 --> 00:10:23,590
+as being the x row and second row as being
+the y row.
+
+150
+00:10:23,590 --> 00:10:24,518
+And then where each
+
+151
+00:10:24,518 --> 00:10:28,290
+of those intersect that tells me what I'm
+going to put in the.
+
+152
+00:10:28,290 --> 00:10:32,117
+In that element of the matrix, so here, I
+have the x
+
+153
+00:10:32,117 --> 00:10:37,360
+row intersecting the x column, so I put
+covariance of x, x.
+
+154
+00:10:37,360 --> 00:10:42,660
+Here, I have the x row intersecting the y
+column, so I put covariance of x, y.
+
+155
+00:10:42,660 --> 00:10:47,430
+Here, I have the y row intersecting the x
+column, so I get Co of y, x.
+
+156
+00:10:47,430 --> 00:10:50,470
+And then Cov y, y for the, for the bottom
+right slot.
+
+157
+00:10:53,890 --> 00:10:59,350
+And another way I can write this now, I've
+already said that Cov x, x,
+
+158
+00:10:59,350 --> 00:11:04,629
+that was just x tilda transpose x tilde
+divided by 1 over m minus 1.
+
+159
+00:11:04,629 --> 00:11:07,540
+And so I'm just going to fill in these.
+
+160
+00:11:07,540 --> 00:11:10,270
+I'll replace these Covs with these.
+
+161
+00:11:10,270 --> 00:11:13,470
+products divided by 1 over m minus 1.
+
+162
+00:11:13,470 --> 00:11:15,714
+But then I can factor that 1 over m minus
+
+163
+00:11:15,714 --> 00:11:18,600
+1 out, and just stick that in front of my
+matrix.
+
+164
+00:11:21,800 --> 00:11:26,230
+And so it turns out that this matrix is
+also just the matrix product.
+
+165
+00:11:27,970 --> 00:11:30,530
+r tilde transpose, r tilda.
+
+166
+00:11:30,530 --> 00:11:35,330
+So if I take this matrix r tilde, if I
+take the transpose of it, then I'm
+
+167
+00:11:35,330 --> 00:11:40,750
+going to get one row that's equal to the
+vector x, and the second row equal to the.
+
+168
+00:11:40,750 --> 00:11:44,006
+Err, sorry, first row equal to x tilde,
+second row
+
+169
+00:11:44,006 --> 00:11:46,892
+equal to y tilde, and then when I do r
+transpose
+
+170
+00:11:46,892 --> 00:11:51,140
+r, these are the elements of that 2 by 2
+matrix I'll end up with.
+
+171
+00:11:52,560 --> 00:11:55,290
+And then because I have to divide by this
+m minus
+
+172
+00:11:55,290 --> 00:11:58,350
+1, I'll have r transpose r divided by m
+minus 1.
+
+173
+00:11:58,350 --> 00:12:00,638
+And so this is a sort of more
+
+174
+00:12:00,638 --> 00:12:06,565
+matrixy expression for the covariance
+structure of this matrix.
+
+175
+00:12:06,565 --> 00:12:07,186
+[INAUDIBLE]
+
+176
+00:12:07,186 --> 00:12:09,080
+r that has column x and column y.
+
+177
+00:12:14,050 --> 00:12:17,630
+And I'm going to say that this matrix is
+symmetric.
+
+178
+00:12:19,830 --> 00:12:22,710
+So that would imply that x tilda transpose
+y
+
+179
+00:12:22,710 --> 00:12:25,710
+tilda is equal to y tilda transpose x
+tilda.
+

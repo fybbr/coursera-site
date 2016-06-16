@@ -1,0 +1,565 @@
+This, last section, so the last for
+today is the R Environment for Statistical
+Computing.
+So this isn't going to be so much of how
+to do stuff.
+It's basically I just want you to try
+doing some of these things with a computer
+ones because that's really the only way
+that this is going to be practical.
+so what is R?
+This is sort of the programming language
+that's been adapted by the CFNRM
+department.
+So R is a language and environment for
+statistical computing and graphics.
+Luckily, statistical computing ends up
+being very, very similar to
+scientific computing, so, that's mostly
+just solving things with matrices.
+So
+R offers, and this is not an exhaustive
+list data handling and storage, a
+suite of operators for calculations on a
+raise and in particular matrices.
+So this is the bullet point that we will
+be making the most use of.
+It's also, a complete programming
+language.
+So, there are some questions you can solve
+just by, or some problems
+you're going to be able to solve just by
+using, Matrices and
+vectors, but if you need to do something
+more general or if
+you want to verify that you've gotten the
+correct solution, you can
+actually write something just like it was
+C or any other programming language.
+And also a good thing for us is that it's
+free
+software, so if you just click on this
+link, so it's www.r-project.org.
+you can download a copy on the University
+network.
+It should take you about a minute between
+clicking
+this link and having it installed on your
+computer.
+And so when you load up R it's going to
+look something like this.
+So this is a picture for Windows on a
+Macintosh
+or on Linux, it's going to look a bit
+different.
+But, the important thing is there will
+always be
+this one window in the front called the R
+console.
+And, this little prompt here, I call it a
+Carrot.
+I don't know if that symbol actually has a
+name.
+It's just, sort of, R's way of telling you
+it's
+ready to do something, and you need to
+type a command in.
+So, you type in a command, and you
+press Return, and it's going to do
+something for you.
+And, I guess I should apologize for those
+of you taking 461.
+This'll seem a bit redundant.
+[COUGH]
+So, you can think of R as a calculator.
+And so the commands are going to look like
+what,
+in my slides, the commands are going to
+look like this.
+So this is the little carrot that you're
+going to see in the R command window.
+And then, this, oops.
+This is the input that you're going to
+type in.
+And then when you hit Enter, oops.
+This isn't actually running R, so I have
+to hit Down Arrow.
+the output will look like this.
+This is just sort of placeholder to tell
+you that
+this is the first element of a vector, so
+the
+answer is not the thing in the square
+brackets, the
+answer is the thing that comes after the
+square brackets.
+And so when you do this in R, it's just
+going to look like this.
+You see the prompt.
+You type in 1 plus 1.
+You hit Return, and it types out 2.
+So, hopefully, that's pretty clear.
+That's the answer I expected anyways.
+One sort of useful thing to know right
+from the very beginning is
+if you need help with a function, you can
+use a function called help.
+So I type the name of a function, open
+parenthesis.
+The thing inside the parenthesis is called
+the Argument.
+And the Argument to the help function is
+just
+the name of a function that I want help
+with.
+So in this case there's a function called
+little c, and
+I want to see the help file for this
+little c.
+Then there's also this gate sign or pound
+symbol or number symbol.
+It's just got a lot of names.
+and this is what you use in R to comment
+your code.
+So, this is one line that I could type
+into the R command prompt.
+The R is going to see this symbol and
+it's just going to ignore everything that
+comes after it.
+So, I could say, I can leave myself
+messages
+and you won't do this so often in the
+console.
+But, if you're making a script file that
+you're going to cut and paste in the
+console,
+you might want to leave yourself messages
+for
+what each line of that script is doing.
+And so here my message is saying that
+question mark c is going to do
+the same thing as just saying help and
+then giving it the argument c.
+So I can do help c and that'll give me the
+help page for
+the c function, or I can do question mark
+c and that'll give me the same thing.
+So the first thing we're going to want to
+be able to do is make vectors.
+So, this little c function that I was
+talking about,
+this takes values and puts them together
+into a vector.
+So this is going to put the values 34, 12,
+65, 24 and 15 into a vector in this order.
+And so the output of that just looks looks
+like this.
+So again, I get this 1 in square brackets.
+All that's telling
+me is that this 34, the thing right next
+to it, is the first element of this
+vector.
+I can also use this colon to get sequences
+of, of values,
+that differ by 1.
+So, generally, the only way this makes
+sense is if I say an integer value colon
+another integer value.
+So if I do negative 3 colon 7, that's just
+going to be, give me
+negative 3, negative 2, negative 1, and so
+on up to 7.
+If you want a little bit more control,
+there's a function
+called seq which stands for sequence, and
+so I can give it
+multiple arguments to find out what all
+the possible arguments are
+you have to look at the help file for the
+function seq.
+So here what I'm telling it I want it to
+start at 0 I want
+it to go to 1 and I want it to take steps
+of size 0.05.
+So when I run this, it prints something
+like this out.
+So the first one is 0.
+Then in steps of 0.05, it goes up to the
+number 1.
+And so now you can see, it's a little bit
+more clear what this one is here for.
+So, it's telling me that 0.00 is the first
+element of this vector.
+You know, then I have, two,
+three, four, five, six, seven, eight,
+nine, and
+then 0.45 is the 10th element of this
+vector.
+So, its just the little aid so you can
+kind of figure out about where you
+are in a vector when it has to
+be split across multiple multiple lines in
+the output.
+>> You
+[UNKNOWN],
+assuming a row vector, or?
+>> So, a vector doesn't really have row
+or column by itself.
+It's only when you start to talk about
+matrices
+that it has a, a row and column format.
+And so, R actually, I think, most of the
+time, I, If I have a vector, and I need
+to put it into something with two indices,
+so I
+need to put it into a equation with a
+matrix.
+I think of every vector as a column
+vector, and if I want
+it to be a row, I put a little t next to
+it.
+And I'll talk about that in, in, next
+time.
+here are actually, well, I'll get to an
+example
+that'll hopefully be a little bit more
+clear about that.
+So then another useful thing you can do in
+R is you
+can save the result from one computation
+to use in another one.
+So, here I'm going to make
+a vector that has elements 24, 30, 41, 16,
+and 8.
+And then I'm going to store that in a
+variable called x.
+And so when I do this now there's no
+output.
+Because instead of taking that output and
+printing it on the screen
+R is just going to put that output into
+the variable x instead.
+So if I want to see what x is, I can now
+just
+type x at the command line and hit Enter,
+and now this prints
+out what's stored in this variable x, so
+it's the vector that I
+created in the first command here, so 24,
+30, 41, 16, and 8.
+And, once I've created a vector, then I
+can manipulate it.
+So, this is my, my vector that I created
+on the previous slide.
+And I called x.
+And I use square brackets to get at the
+individual elements of x.
+So here x[3] is going to refer to the
+third element of x.
+So if I run this on the command line, I
+just end up getting a 41.
+Everything in R is treated as a vector,
+so, this 3, even though you think it looks
+like a scalar, you know, internally R is
+treating that as a vector of length 1.
+So I can also subset on vectors, and
+that's going to probably have the
+predictable result.
+So if I give a vector of indices, this is
+going to refer to the first, second, and
+fourth elements of the vector X, so that's
+going to be 24, 30, and 16.
+And so when I do that on the command line
+I get 24, 30, 16.
+So I can get a subset of the elements out
+by putting,
+giving a vector argument to this, to these
+square brackets.
+And then I can also use this subsetting
+for assignment.
+So suppose I have my vector x and I
+want to
+replace the first, second and fourth
+elements with negative 1.
+Well, this was a, a subset that took those
+elements out.
+So, it somehow refers to those places in
+the vector.
+I can use my assignment operator, this
+little
+arrow symbol.
+To put a negative 1 into those places in
+x.
+So if I, if I have x currently as holding
+this, when I run this command it's
+going to replace those entries.
+So the first second and fourth entries
+with a negative 1.
+And so now when I look at my value x
+I end up with negative, negative, negative
+1, negative 1, 41,
+negative 1 8.
+So the, the first, second and fourth
+entries have been replaced by a negative
+1.
+[COUGH]
+I can do Vector Arithmetic.
+So, remember when I talked about adding
+two vectors, they were added element vise.
+So, I just sort of made up a new vector x.
+My vector y is just integer values from 1
+to 8, so x has length 8.
+So I can use x plus y to add those
+together.
+And so this just ends up being 1 plus 6 is
+7,
+2 plus 12 is 14, 3 plus 4 is 7, and so on.
+And, plus, minus, multiply, and divide are
+all implemented this way in R.
+So it just happened element wise.
+And the vectors have to be equal length.
+And a lot of other functions in R also
+work that way.
+So for instance the logarithm.
+It says log, log is log with base e not
+base 10 so R, R treats this as a natural
+logarithm.
+and that's just going to return, so this
+first element is the natural logarithm of
+six.
+Second element of the logarithm of 12 and
+so on.
+And then I can also scale and shift a
+vector.
+So if I have a vector of length one, or
+I'm going to think of it as a scalar,
+and I use a star, so multiplication, this
+is
+going to be interpreted as 2 times each
+element of x.
+And then when I subtract a vector of
+length
+1, that's going to be the same as
+subtracting a scalar.
+So I think of this as 2 times each element
+of x, and then each of those
+elements minus 3, so if I run this command
+I'm going to get 9, and that's just
+2 times 6 minus 3.
+21 is 2 times 12 minus 3, and so on.
+And now that's, that's sort of my brief
+introduction of vectors.
+And then I can create matrices using a, a
+function called matrix.
+So I'll first start by making a vector x
+that just has numbers 1 through 16 in it.
+And then I'm going to use the matrix
+function to
+turn that vector x into a 4 by 4 matrix.
+So the first number here is the number of
+rows, the second number is the number of
+columns.
+Oops,
+[COUGH]
+and that's just going to give me a matrix
+that looks like this.
+So it's 4 by 4 and it's put the vector
+into the column.
+So, let's put the first four elements in
+the first column, the second four
+elements in the second column, third four
+in third and fourth four in fourth.
+If want to instead go by row, you can give
+the matrix function this optional
+by row equals TRUE argument.
+And now instead of filling this in column
+by column,
+it's going to fill it in row by row, so I
+get one, two, three, four in the first
+row, five,
+six, seven, eight in the second row, and
+so on.
+So, for manipulating matrices, suppose I
+have a 3 by 3 matrix,
+so I'm kind of combining more and more
+commands into one line here.
+So here, I'm creating a vector that has
+numbers 1 through 9 in it, and
+then I'm using the matrix function to turn
+that into a 3 by 3 matrix.
+So, I get 1, 2, 3, 4, 5, 6, 7, 8, 9.
+To get out the individual elements, I can
+use square
+brackets now.
+.
+But, because I have a matrix it's got a
+number of rows and
+a number of columns I have to use two
+arguments with my square brackets.
+And so if I say A 2, 3 that's going to be
+second row,
+third column, and so I get an 8, and
+that's what I see here.
+[COUGH]
+You can also select multiple rows and
+multiple columns by giving vector
+arguments here.
+So this will take the first two rows of A
+and the second two columns of A.
+And so we end up with, so remember the
+first row oops.
+First 2 row, or first column was 1, 2, 3,
+but
+I haven't selected that so that, oops,
+that dropped off over here.
+Then the second column was 4, 5, 6 and the
+third column was 7, 8, 9.
+But I've only asked for the first two rows
+here so I get 4, 5 and 7, 8.
+And then I can also leave an argument
+empty to mean I want everything.
+So instead of being forced you know, if I
+wanted all 3 columns here, instead of
+being forced
+to write 1 colon 3.
+I can just write comma and leave that
+space blank and R is
+going to interpret that as select the
+first two rows and all of the columns.
+So I end up with the first two rows of my
+matrix A.
+Then I can also use the t function to take
+the transpose of a matrix.
+This is something I'll actually, I'll talk
+about on Wednesday.
+But if such, this is just I made the
+transpose of a
+matrix is just a matrix whose rows are the
+columns of the argument.
+So the rows of A transpose are just going
+to be the columns of A.
+And so that takes the first column of a,
+which was 1,
+2, 3, and makes that the first row of a
+transpose and so on.
+So I have to start this section out with a
+warning.
+So R always considers a single star to be
+component-wise multiplication.
+So suppose x and y are vectors of n
+components.
+So here, I chose n equals 4.
+And I say x is 4, 3, 2, 1, and y is 1, 2,
+3, 4.
+And, you might think, because x and y are
+vectors, that if
+I multiplied them together, what I'd be
+getting is the dot product.
+But actually, what I get is just the
+element wise product.
+So this is 4 times 1, 2 times 3, 3 times
+2,
+and 4, 1 times 4.
+So I think I might have screwed that up,
+but you get the idea, I hope.
+[COUGH]
+Yeah.
+[LAUGH]
+so for the dot product you have to use
+this symbol here.
+So, it's percent star percent.
+And that means to do multiplication using
+sort
+of the multiplication rule appropriate for
+the type.
+And so since x is a vector and y is
+a vector, this will be interpreted as x
+dot y.
+And so if I do that, I end up getting
+twenty.
+And the dot product will actually
+have just been the sum of these elements
+here.
+So if you look at that, 4 and 6 and 6 and
+4 are both 10 and 10 and 10 are 20.
+And you can do a little sanity check to
+use the sum function to
+sum those up for you, and that also is
+going to give me 20.
+So now we can think about Matrix-Vector
+and Matrix-Matrix Multiplication,
+so I've sort of theoretically have a, a
+vector of n components.
+And let's let A be an n by n matrix, and B
+an n by p matrix,
+and so I'm choosing a different letter
+here because
+I want it to actually be a different
+number.
+So the operation x percent star percent A,
+this is going to treat
+X as a row vector, so this is sort of your
+question, Bill.
+so it recognizes that if I want to
+pre-multiply by A because of my
+multiplication rules,
+whatever is over here has to have the same
+number of columns as A has rows.
+So if this is a vector, if x is a
+vector, it's going to make that into
+something with several columns.
+And then if that has the right size,
+it will then go ahead and do this
+multiplication.
+And then, if I put x on the right side,
+now x has to
+be a column vector, so R is going to treat
+this as a column vector.
+And it is possible, with the matrix
+function, if you
+tell it to create a matrix with one row or
+one column, you can force x to be a row
+vector or a column vector.
+And in that case, if x were forced to be a
+row, sorry, forced
+to be a column vector, so it's actually a
+matrix with just one column.
+Then, when I do this, it's not going to
+work.
+The operation A percent star percent B,
+that's
+just going to give me the matrix product
+AB.
+And that'll work because the number of
+columns of
+A is equal to the number of rows of B.
+On the other hand, if I try to do B times
+A, so B matrix product A.
+That's going to give an error, because the
+dimensions of A and B, of B and A are not
+conformable for multiplication, so I can't
+do B times A, because p is not equal to n.
+And then one last thing.
+So recall, I had this system, so this is
+the system from the first quiz.
+And we found that the answer was, sorry
+not the first quiz, it's from the first
+set of slides today, we found the
+answer was minus 1, 2, 2, and I had solved
+that by elimination.
+And so we can also do this in R just using
+the solve function.
+So this is actually a very common problem
+that you want to be able
+to solve, so there's a function built in
+that's going to do this for you.
+So I can first make my coefficient matrix
+A, and I did it here just by typing it in.
+Then I make a vector b that just has 2, 8,
+10 in it.
+And then I just call the solve function,
+the syntax is the coefficient matrix and
+then the right-hand side
+vector, and that just prints out the
+answer, minus 1, 2, 2.
+

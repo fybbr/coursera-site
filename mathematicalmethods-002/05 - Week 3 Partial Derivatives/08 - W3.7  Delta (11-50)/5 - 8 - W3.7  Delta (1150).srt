@@ -1,0 +1,848 @@
+1
+00:00:01,060 --> 00:00:05,070
+Now we get to the, the fun part which is
+actually taking derivitaives.
+
+2
+00:00:05,070 --> 00:00:08,420
+So we'll start off by calculating delta.
+
+3
+00:00:09,860 --> 00:00:15,550
+So the delta of a European call option is
+the rate of change, oops.
+
+4
+00:00:15,550 --> 00:00:20,330
+Of c of s t, so again remember this is the
+actual Black-Scholes pricing formula.
+
+5
+00:00:20,330 --> 00:00:22,850
+So, even though I've written it here as c
+of s
+
+6
+00:00:22,850 --> 00:00:26,350
+comma t it's really a function of all of
+the seven variables
+
+7
+00:00:26,350 --> 00:00:28,900
+that I had on the, the first set of
+slides.
+
+8
+00:00:31,190 --> 00:00:32,610
+And I'm going to take that, it says the
+rate
+
+9
+00:00:32,610 --> 00:00:35,130
+of change with respect to the asset price
+s.
+
+10
+00:00:35,130 --> 00:00:39,270
+So, how how much does the value of the
+call option change?
+
+11
+00:00:39,270 --> 00:00:41,760
+As the price of the underlying asset
+changes.
+
+12
+00:00:45,660 --> 00:00:50,080
+And so mathematically I can write that
+just as, delta is equal to the partial
+
+13
+00:00:50,080 --> 00:00:52,484
+derivative with respect to s of the
+
+14
+00:00:52,484 --> 00:00:56,560
+Black-Scholes pricing formula for a
+European call option.
+
+15
+00:01:02,630 --> 00:01:05,980
+And so this is the pricing formula for a
+European
+
+16
+00:01:05,980 --> 00:01:08,210
+call option that I had in the first set of
+slides.
+
+17
+00:01:11,000 --> 00:01:14,560
+And, I'm just going to go ahead and start
+using the rules we've
+
+18
+00:01:14,560 --> 00:01:18,360
+been developing er, earlier in this course
+to start taking the dcerivative here.
+
+19
+00:01:18,360 --> 00:01:19,799
+So the first thing I'll, I'll notice.
+
+20
+00:01:21,185 --> 00:01:24,320
+Is that the pricing formula has two terms.
+
+21
+00:01:24,320 --> 00:01:26,740
+So I can use the linearity property of the
+derivative to
+
+22
+00:01:26,740 --> 00:01:31,030
+write this as the, so this is a, a sum
+essentially.
+
+23
+00:01:31,030 --> 00:01:33,780
+And so the derivative of a sum is the sum
+of the derivatives.
+
+24
+00:01:37,460 --> 00:01:41,570
+And then I'm also in, in this one step
+going to combine the.
+
+25
+00:01:41,570 --> 00:01:46,900
+Scaling properties, so when I'm taking the
+derivative with respect to s.
+
+26
+00:01:46,900 --> 00:01:50,140
+So, I am taking a partial derivative with
+respect to s.
+
+27
+00:01:50,140 --> 00:01:53,250
+Anything that isn't a function of s, I can
+treat as
+
+28
+00:01:53,250 --> 00:01:57,218
+a constant, and any constant I can move
+across the derivative operator.
+
+29
+00:02:00,440 --> 00:02:06,480
+So, in the first case here.
+This part the e to the minus qt minus t.
+
+30
+00:02:06,480 --> 00:02:08,660
+That doesn't depend on s so I'm going to
+take
+
+31
+00:02:08,660 --> 00:02:12,180
+that out and I end up with e to the minus
+
+32
+00:02:12,180 --> 00:02:16,140
+qt minus t times the partial derivative
+with respect to
+
+33
+00:02:16,140 --> 00:02:20,699
+s of the product s times capital phi of d
+plus.
+
+34
+00:02:22,580 --> 00:02:25,590
+And on, on the right hand side I'm
+going to do the same thing, except here
+
+35
+00:02:25,590 --> 00:02:28,480
+I have two parts that don't depend on s,
+
+36
+00:02:28,480 --> 00:02:30,860
+so I can take those across the derivative
+operator.
+
+37
+00:02:30,860 --> 00:02:33,760
+If I have minus ke to the r.
+
+38
+00:02:33,760 --> 00:02:34,120
+Sorry.
+
+39
+00:02:34,120 --> 00:02:37,190
+Minus ke to the minus rt minus t, times
+the
+
+40
+00:02:37,190 --> 00:02:40,620
+partial derivative with respect to s of
+phi of d minus.
+
+41
+00:02:43,530 --> 00:02:47,940
+And so, the next step here is both phi of
+d plus.
+
+42
+00:02:47,940 --> 00:02:50,180
+D plus depends on all of the arguments
+
+43
+00:02:50,180 --> 00:02:53,310
+of the Black Scholes pricing formula
+including s.
+
+44
+00:02:53,310 --> 00:02:55,380
+And so does d minus.
+
+45
+00:02:55,380 --> 00:02:56,680
+So, this is, I'm going to look at it
+
+46
+00:02:56,680 --> 00:02:59,040
+and say, that's the product of two
+functions of s.
+
+47
+00:02:59,040 --> 00:03:02,440
+That's s, which is a very simple function
+of s.
+
+48
+00:03:02,440 --> 00:03:05,450
+And phi of capitol d plus.
+
+49
+00:03:05,450 --> 00:03:07,510
+So I'll have to use the product rule on
+the first term.
+
+50
+00:03:12,340 --> 00:03:15,030
+And so the product rule says if I have the
+product of two
+
+51
+00:03:15,030 --> 00:03:19,270
+functions, I take the derivative of the
+first function times the second function.
+
+52
+00:03:19,270 --> 00:03:25,800
+So that gives me just a capital phi of d
+plus Plus the first function, s.
+
+53
+00:03:25,800 --> 00:03:28,240
+So this s comes from right here.
+
+54
+00:03:28,240 --> 00:03:30,560
+Times the derivative of the second
+function.
+
+55
+00:03:30,560 --> 00:03:35,289
+So times the derivative with respect to s
+of capital phi of d plus.
+
+56
+00:03:43,470 --> 00:03:46,070
+So now I have a pretty complicated formula
+so what
+
+57
+00:03:46,070 --> 00:03:48,950
+I'm going to do is kind of attack pieces
+of it
+
+58
+00:03:48,950 --> 00:03:50,660
+and then we'll be able to put all of those
+
+59
+00:03:50,660 --> 00:03:54,110
+together to get an expression for delta in
+the end.
+
+60
+00:03:54,110 --> 00:03:56,761
+So the first thing I'm going to look at.
+
+61
+00:03:56,761 --> 00:04:02,250
+Are we have these partial derivatives with
+respect to s of phi of, and
+
+62
+00:04:02,250 --> 00:04:03,920
+so I've used this plus, minus sign
+
+63
+00:04:03,920 --> 00:04:06,720
+here just because the functions are very
+similar.
+
+64
+00:04:06,720 --> 00:04:09,170
+So quite often when
+
+65
+00:04:09,170 --> 00:04:11,740
+I take derivatives of that I'm going to
+get the same answer.
+
+66
+00:04:13,040 --> 00:04:15,040
+if not, I'll put a plus, minus.
+
+67
+00:04:15,040 --> 00:04:17,290
+And where it's important, and then if I'm
+just talking
+
+68
+00:04:17,290 --> 00:04:20,480
+about d plus, you'd think of this as a
+plus.
+
+69
+00:04:20,480 --> 00:04:23,450
+If I'm talking about d minus, you think
+about this as a minus.
+
+70
+00:04:26,740 --> 00:04:32,970
+So the chain rule says that if I want to
+take the derivative of capital phi of d
+
+71
+00:04:32,970 --> 00:04:35,310
+plus with respect to s, that's going to be
+
+72
+00:04:35,310 --> 00:04:40,080
+equal to the derivative with respect to
+its argument.
+
+73
+00:04:40,080 --> 00:04:46,720
+So with respect to this d plus or minus,
+of fee of d plus or minus,
+
+74
+00:04:46,720 --> 00:04:51,350
+times the partial derivative of d with
+respect to s.
+
+75
+00:04:53,920 --> 00:04:54,420
+And
+
+76
+00:04:56,970 --> 00:04:59,250
+now remember the definition of capital
+fee.
+
+77
+00:05:00,270 --> 00:05:03,010
+As just we were integrating from minus
+infinity up to
+
+78
+00:05:03,010 --> 00:05:07,360
+d of this function, lower case phi of x,
+dx,
+
+79
+00:05:09,550 --> 00:05:11,770
+and so, I, I like to use the shorthand
+
+80
+00:05:11,770 --> 00:05:14,930
+notation little phi of x for this function
+here.
+
+81
+00:05:14,930 --> 00:05:16,880
+Just it saves me writing some stuff.
+
+82
+00:05:16,880 --> 00:05:19,270
+Also, it's less likely that I'm going to
+make a
+
+83
+00:05:19,270 --> 00:05:21,810
+mistake if I just have to write that down
+rather than.
+
+84
+00:05:21,810 --> 00:05:22,620
+This whole expression.
+
+85
+00:05:25,060 --> 00:05:27,810
+And we saw in the, in the second week how
+
+86
+00:05:27,810 --> 00:05:30,280
+I could take the derivative of, of
+something like that.
+
+87
+00:05:30,280 --> 00:05:33,790
+So it's just the derivative of an
+indefinite integral.
+
+88
+00:05:40,840 --> 00:05:44,170
+And so, again, I'm just, I'm doing the
+same calculation two times.
+
+89
+00:05:44,170 --> 00:05:46,540
+So it's either, I'm treating it as phi of
+x.
+
+90
+00:05:46,540 --> 00:05:48,070
+Or I'm treating it as.
+
+91
+00:05:48,070 --> 00:05:50,000
+The actual expression for that function,
+and
+
+92
+00:05:51,350 --> 00:05:53,280
+then when I evaluate these it turns out
+
+93
+00:05:55,450 --> 00:05:57,900
+that the derivative is either, is just
+lower
+
+94
+00:05:57,900 --> 00:06:00,480
+case phi of either d plus or d minus.
+
+95
+00:06:01,660 --> 00:06:04,550
+And then it has this functional form on
+the right hand side here.
+
+96
+00:06:05,860 --> 00:06:08,230
+So that gets me this part the derivative.
+
+97
+00:06:08,230 --> 00:06:11,670
+The partial derivative of capital phi with
+respect to s.
+
+98
+00:06:15,120 --> 00:06:18,430
+So, what I have so far, I have this
+expression for delta,
+
+99
+00:06:22,760 --> 00:06:27,090
+and then we just evaluated this thing here
+and this thing here.
+
+100
+00:06:29,560 --> 00:06:33,020
+So I have this expression for the
+derivative of capital fee,
+
+101
+00:06:36,560 --> 00:06:39,800
+and I still need this part here so the
+derivative of,
+
+102
+00:06:39,800 --> 00:06:43,340
+the partial derivative of d plus or minus
+with respect to s.
+
+103
+00:06:43,340 --> 00:06:43,840
+So
+
+104
+00:06:49,890 --> 00:06:53,020
+I have the first term here, is this guy.
+
+105
+00:06:53,020 --> 00:06:57,106
+And now to get the full derivative I still
+need to evaluate the
+
+106
+00:06:57,106 --> 00:07:00,030
+derivative of phi plus, that kind of came
+out by the chain rule.
+
+107
+00:07:02,300 --> 00:07:06,590
+So, I'll move one step ahead with our
+formula.
+
+108
+00:07:06,590 --> 00:07:09,900
+So I'm going to substitute this result
+here.
+
+109
+00:07:09,900 --> 00:07:10,520
+Oops.
+
+110
+00:07:10,520 --> 00:07:12,780
+This result in the second line, into the
+
+111
+00:07:12,780 --> 00:07:16,400
+first line, to update my expression for
+delta.
+
+112
+00:07:16,400 --> 00:07:19,800
+But I still have this partial of d plus
+with respect
+
+113
+00:07:19,800 --> 00:07:23,410
+to s, and partial of d minus with respect
+to s.
+
+114
+00:07:23,410 --> 00:07:25,620
+So that's what I'm going to do in the next
+slide.
+
+115
+00:07:25,620 --> 00:07:27,580
+So I need to compute the partial
+derivatives
+
+116
+00:07:27,580 --> 00:07:29,010
+of d plus and d minus.
+
+117
+00:07:32,320 --> 00:07:34,510
+So remember from the, from the first set
+of slides
+
+118
+00:07:34,510 --> 00:07:37,010
+I said, I gave definitions for what d plus
+and
+
+119
+00:07:37,010 --> 00:07:38,840
+minus look like and so now I can write
+them
+
+120
+00:07:38,840 --> 00:07:44,270
+as, just one, formula, using this plus
+minus notation, so.
+
+121
+00:07:44,270 --> 00:07:47,870
+The only difference between d plus and d
+minus was this plus
+
+122
+00:07:47,870 --> 00:07:51,240
+or minus sign here, so I've just replaced
+it with this little placeholder.
+
+123
+00:07:51,240 --> 00:07:56,080
+And now I want to take the derivative of
+this with respect to s.
+
+124
+00:08:01,660 --> 00:08:06,560
+And so I'm going to make a little
+simplification here, so If I have a sum in
+
+125
+00:08:06,560 --> 00:08:12,860
+the numerator, I can write this as log of
+s over k divided by
+
+126
+00:08:12,860 --> 00:08:18,589
+sigma times the square root of t minus t,
+so that'll be one fraction, and then plus.
+
+127
+00:08:19,870 --> 00:08:23,560
+R minus q plus or minus sigma squared over
+2 times
+
+128
+00:08:23,560 --> 00:08:26,860
+t minus t divided by sigma, square root of
+t minus t.
+
+129
+00:08:26,860 --> 00:08:30,060
+So that's a second fraction, I'm just
+adding those two fractions together.
+
+130
+00:08:32,330 --> 00:08:36,750
+And so the reason I'm going to want to do
+that is because after, this
+
+131
+00:08:36,750 --> 00:08:40,070
+s here only appears in the, in the first
+one of those fractions.
+
+132
+00:08:40,070 --> 00:08:42,030
+So what I'm going to end up with is.
+
+133
+00:08:42,030 --> 00:08:48,330
+I'll want to take the partial derivative
+of the leftover part with respect to s but
+
+134
+00:08:48,330 --> 00:08:51,500
+there is no s's in this part so I can
+treat that as a constant.
+
+135
+00:08:52,590 --> 00:08:55,680
+So this term in the right hand side that's
+just
+
+136
+00:08:55,680 --> 00:08:58,500
+going to go away that will be equal to
+zero.
+
+137
+00:08:58,500 --> 00:09:03,400
+And then I'm left with 1 over sigma times
+the square root of t minus
+
+138
+00:09:03,400 --> 00:09:07,610
+t, times the partial derivative with
+respect to s of the log of s over k.
+
+139
+00:09:10,350 --> 00:09:14,880
+So I'll do a little substitution here.
+So I'll let u equal s over k.
+
+140
+00:09:16,540 --> 00:09:20,050
+Then I can rewrite this Here, as the
+partial
+
+141
+00:09:20,050 --> 00:09:24,500
+derivative of, with respect to s, of log
+of u.
+
+142
+00:09:25,820 --> 00:09:28,010
+And so by the chain rule, that's going to
+be the derivative
+
+143
+00:09:28,010 --> 00:09:31,900
+of the log times the derivative of u with
+respect to s.
+
+144
+00:09:34,090 --> 00:09:38,290
+So, the derivative of log of u is just 1
+over u.
+
+145
+00:09:38,290 --> 00:09:40,610
+And then I have this partial u, partial s.
+
+146
+00:09:41,980 --> 00:09:44,620
+And I'm going to calculate that just by
+taking the
+
+147
+00:09:44,620 --> 00:09:48,800
+partial derivative with respect to s of u
+here.
+
+148
+00:09:48,800 --> 00:09:50,780
+So, that's going to be 1 over k.
+
+149
+00:09:53,700 --> 00:09:58,700
+So what I'm left with is 1 over sigma,
+square root of t minus t.
+
+150
+00:09:58,700 --> 00:10:00,440
+K over s.
+
+151
+00:10:00,440 --> 00:10:01,980
+So, u was s over k.
+
+152
+00:10:01,980 --> 00:10:05,800
+If I take one over that, I get k over s.
+
+153
+00:10:05,800 --> 00:10:09,790
+And then times 1 over k, which is just
+this partial derivative, partial
+
+154
+00:10:09,790 --> 00:10:13,300
+u, partial s, which I, which popped out
+because of the chain rule.
+
+155
+00:10:15,160 --> 00:10:17,760
+So, we'll see that the k's are going to
+cancel here.
+
+156
+00:10:20,000 --> 00:10:25,360
+And I end up with partial derivative with
+respect to s of either d plus or d
+
+157
+00:10:25,360 --> 00:10:31,070
+minus is just 1 over s times sigma times
+the square root of t minus t.
+
+158
+00:10:31,070 --> 00:10:33,819
+So in this case I was able to get both of
+those calculations.
+
+159
+00:10:34,860 --> 00:10:38,070
+Because the, the plus or minus bit didn't
+depend on
+
+160
+00:10:38,070 --> 00:10:40,360
+s, so that ended up being zero, so it
+wouldn't
+
+161
+00:10:40,360 --> 00:10:42,780
+matter if I was taking the derivative of d
+plus
+
+162
+00:10:42,780 --> 00:10:44,740
+or d minus, I'm going to get the same
+expression here.
+
+163
+00:10:47,280 --> 00:10:53,660
+So, putting everything together, all I'm ,
+all I need to do now is, I have this.
+
+164
+00:10:53,660 --> 00:10:56,960
+This is my most up to date expression for
+delta, but it still
+
+165
+00:10:56,960 --> 00:11:01,080
+has this partial derivative of d plus and
+d minus with respect to s.
+
+166
+00:11:02,350 --> 00:11:05,720
+But that's exactly what we calculated on
+the previous slide here, so I just
+
+167
+00:11:05,720 --> 00:11:10,020
+have to put a 1 over S sigma squared to t
+minus t into here.
+
+168
+00:11:12,770 --> 00:11:14,400
+Oops, I guess I had it on the next line.
+
+169
+00:11:15,860 --> 00:11:18,640
+And so, that's going to give the following
+expression for delta.
+
+170
+00:11:18,640 --> 00:11:19,140
+So,
+
+171
+00:11:20,810 --> 00:11:26,090
+I'm going to get e to the minus q, t minus
+t, times capital phi of d plus.
+
+172
+00:11:26,090 --> 00:11:28,760
+And I have the rest of this in light gray,
+because
+
+173
+00:11:28,760 --> 00:11:32,320
+if you look in the text book, this is the
+entire.
+
+174
+00:11:32,320 --> 00:11:34,620
+Oops, maybe I got it backwards.
+Nope.
+
+175
+00:11:36,550 --> 00:11:40,070
+just the part in the dark black is the
+entire expression for delta.
+
+176
+00:11:40,070 --> 00:11:42,890
+But we still have these other terms left
+over.
+
+177
+00:11:44,560 --> 00:11:46,130
+And so in the next set of slides
+
+178
+00:11:46,130 --> 00:11:49,770
+I'm going to go through an argument about
+why that's going to be equal to zero.
+

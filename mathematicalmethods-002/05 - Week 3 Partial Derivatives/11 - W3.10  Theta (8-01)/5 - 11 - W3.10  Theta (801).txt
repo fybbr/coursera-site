@@ -1,0 +1,218 @@
+So the last Greek that I want to go
+through the calculation through is theta,
+and so theta is the rate of change of
+the value of the portfolio with respect to
+time t.
+And again, our portfolio that we're
+considering
+just contains a single call option, so the
+price of our portfolio is going to be
+the Black-Scholes price for a European
+call option.
+And we just start by taking he partial
+derivative of the Black Scholes
+price formula with respect to t and that's
+what we're going to call theta.
+And so here its going to be a little bit
+more complicated.
+Because now have this e to the minus qt
+minus t.
+That terms has a t in it.
+E to the minus or rt minus t, that has
+term in it, sorry has a t in it.
+Phi of d plus is a function of d plus and
+d plus depends on t.
+And so does d minus.
+So I have to use the product rule on each
+term here.
+So what I'll, I'll get is the derivative
+of the first term.
+So here is where the minus signs cancel
+out, that
+I confused myself with in the last set of
+slides.
+So here, it's minus.
+I really should have done this with a
+substitution.
+I'm even confusing myself now.
+So, what's going to happen, I have a minus
+sign here, that's going to pop
+out in front, and a minus sign here,
+that's going to also pop out in front.
+And I think maybe the easiest way to look
+at this
+is I have e to the minus q times capital
+t.
+That doesn't depend on little t.
+And then, I have e to the minus q times
+minus t.
+So, when I take the derivative, it's e to
+the qt that's kind of.
+Playing the important part of that.
+So I just get a q popping out in front.
+So it's q times t.
+And there really is no minus sign here.
+It's just because of the actual way the
+formula's
+written down that it looks like there's
+two minus signs.
+But with respect to the variable I'm
+taking
+the derivative of, there's, it's e to the
+qt.
+So what I'm going to end up with is
+derivative of the first function times the
+second function.
+Plus derivative of the second function.
+So that's going to be the partial
+derivative with
+respect to t of phi of d plus.
+Times the first function, that's just the
+product rule.
+And then this subtraction is coming from
+here just because it's
+the, the first term minus the second term
+in the pricing formula.
+And
+then the same thing is going to happen.
+This really is e to the rt times e to the
+minus r capitol t.
+So when I take the derivative, it's just
+going to be one little r that pops out.
+So I have derivative of the first term,
+times the second term,
+plus derivative of the second term, sorry,
+second function, times the first function.
+So it's just the product rule again, on
+the second term.
+Of the pricing formula.
+And so now I'm going to, look at this and,
+maybe we can squeeze
+just a little bit more mileage out of our,
+our, kind of intermediate result.
+but what I want to do is, right now I
+have d minuses in the square brackets, and
+d pluses.
+In, in the first line.
+And that result ended up working out well,
+when I had
+an s in one term, and a k in the second
+term.
+So, what I'm going to do is just rewrite
+these so that I have the, the two q's.
+Now which ones are together, plus, plus,
+minus, minus.
+Phi to d t.
+So when I have the two
+functions that have the partial derivative
+with respect to
+t of the phi, those will go in one group.
+And then the other two will go in the
+second group.
+So I end up with this expression here.
+And
+now I have this.
+Oops.
+So, now, it's this one that I can get rid
+of.
+So, I have a way to replace this with
+something that depends on s.
+So, actually something that's going to be
+equal to this again.
+So, let's see.
+So, here I'm just working on the, the part
+in the square brackets.
+So, here I've used the chain rule so the
+derivative, with respect to t of capital
+phi of
+d plus, that's become lower case phi of d
+plus times partial d plus with respect to
+t.
+And, then, the same thing with the second
+term the.
+Derivative with respect to t of capital
+phi has become
+lowercase phi of d minus times the partial
+of d
+minus with respect to t.
+And
+now I can do the same trick that I had
+done before.
+I have now partial derivative.
+So I can replace this guy here
+with this.
+That was that intermediate result that I
+had before.
+And so I can rewrite this bit in the
+square brackets like this.
+And now last time I had.
+The derivative with respect to sigma, this
+time it's
+the derivative with respect to t, but I'm
+still going
+to have this d, d plus minus d minus,
+which is going to simplify that expression
+quite a bit.
+So I'm going to look at this quantity in a
+little bit closer detail.
+So I can rewrite that again as the partial
+derivative
+with respect to t just a d plus minus d
+minus.
+And so in, in light gray here just, I tend
+to confuse
+myself if I try to take a derivative of
+something with a square
+root just Like when I have a, a rational
+function, if I have
+1 over sigma, I'd rather write that as
+Sigma to the minus one.
+Here I have square root of t minus t, I'd
+rather
+write that as the quantity t minus t to
+the one half.
+And so now I'm set up to use the power
+rule to take the derivative here.
+So what I'm going to end up with, I have
+one half.
+So that's where this two comes from.
+Then I'll have the quantity, t minus t to
+the negative one half.
+That's going to be where the 1 over square
+root of t minus t comes from.
+And then I have this sigma left over in
+front.
+And that's where the sigma in the top
+comes from.
+And then by the chain rule, so the
+derivative
+that I'm taking here is with respect to t,
+and
+in the inside function, t is negative, so
+I have
+to multiply this by negative one by the
+chain rule.
+So if I'd made a u substitution, and said
+u is equal to capital t
+minus little t, then when I took the
+derivative of u, I would get minus one.
+And so this is the expression for theta
+that I had before.
+So, it's the second term that I'm going to
+be able to simplify using my, my trick.
+And I now have an expression for this
+here, which is just
+minus sigma divided by 2 times the square
+root of t minus t.
+And so that's going to finally give me my
+expression for theta.
+So this one, unfortunately, doesn't
+simplify much further than this.
+And so all I've done is just substitute
+the
+expression we had last time into the first
+term here.
+And then left the other two terms alone.
+[BLANK_AUDIO]
+.
+

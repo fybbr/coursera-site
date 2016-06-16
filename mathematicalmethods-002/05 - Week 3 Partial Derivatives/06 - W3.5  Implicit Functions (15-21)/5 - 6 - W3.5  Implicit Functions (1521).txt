@@ -1,0 +1,421 @@
+Okay and last section for today is on
+implicit functions.
+So, so far we've been expressing functions
+of
+one variable in terms, so.
+Functions.
+What did I write here?
+Functions have expressed one variable in
+terms of another.
+Or, or, several, like we just started
+today.
+So, we had something like y is equal to f
+of x, which is equal to.
+1 minus x squared.
+So this is sort of the, the nicest way of,
+of presenting a function.
+It's like, you give
+me a value of x, I know exactly how to
+tell you the corresponding value of y.
+So I have this, so I have something like y
+equals sine x divided by x.
+So I have, oops, I have y on the left side
+of the,
+of the equation and only x's on the right
+side of the equation.
+So, an implicit function is defined by
+a more general relationship between the
+variables.
+So I could say something, so this is the
+equation of a circle.
+So I say, x squared plus y squared equals
+1.
+And this is if I'm on a circle of radius
+one.
+This is going to be true for every point
+that's on that circle,
+and it's going to be false for every point
+that's not on that circle.
+And this one, if you, if you think about
+what I've done up here, it at least has
+kind
+of an easy way to go between the old
+or the, the, you know, specific,
+definition of a function.
+So this is, you know, in high school, I
+had to do something called the vertical
+line test.
+So, if I have a function, and I find the
+intersection
+of that function with any vertical line,
+it can have at
+most one point where they cross.
+If it, if it's like a circle, and it
+crosses twice, then it's not a function.
+So, for a given x, there has to be a
+unique value y.
+The circle's not going to have that
+property
+except for two points one at either end.
+But it's not that bad either, it's very
+easy to fix.
+I can just chop it into a top circle and a
+bottom circle.
+this one we're going to see is not quite
+so well behaved.
+So in some cases, you can just solve for
+one function as another in any, any one
+of these functions, any function I can
+write f of x equals, some expression of x.
+I could just move all of that to one side
+of the equals sign and say it's an
+implicit function.
+and the way we're actually going to define
+this is I'm going to say that, f of xyz
+is a function of three variables, and the
+set of points that satisfy f of xyz.
+So I just choose x, y and z, it could be
+just x and y.
+Or it could be many, many more variables
+this is just kind of an example with
+three.
+So, in this case, the implicit
+function is going to be the set of points
+that satisfy f of
+xyz equals 0.
+And in that case, I'm going to call that
+set of points where this condition holds.
+The locus defined by f.
+So it sort of like I mentioned before if I
+have the
+equation of a circle, a x squared plus y
+squared equals 1.
+If I on this circle, then this statement
+is going to be true.
+So any point on this circle of radius one.
+Is going to satisfy this equation exactly.
+If I'm inside the circle x squared plus y
+squared going to be less than 1.
+And if I'm outside the circle it's going
+to be greater than 1.
+And I have this one set of points that
+satisfies this.
+And so that's going to be my locus.
+It's got infinitely many points in it.
+because this is, it's a line, it's
+continuous.
+For any two points on the circle, I can
+find in between them that's also on the
+circle.
+But, in this case, I can fix it pretty
+easily.
+So I can say y equals 1 minus x, square
+root of 1 minus x squared.
+That gives me the blue curve which is the
+top semi circle and then I can say minus
+square
+root of 1 minus x squared, and that gives
+me
+the red curve, which is the bottom of the
+semicircle.
+This one on the other hand has a locus
+that looks like this.
+And so this is more difficult.
+you know, maybe there's some hope that on
+the left side of the y axis, so
+over here you can solve for, you know,
+at least here it passes the vertical line
+test.
+So, maybe you could solve this and get an
+expression y equals something.
+Well not maybe you can, but it's not very
+much fun.
+on the right side, until you get to this
+point over here
+where this little loop ends, it doesn't
+pass the vertical line test.
+So here for instance, a vertical line
+would intersect the function three times.
+But we might still want to be able to take
+a derivative of either of these functions.
+So suppose I want to find the slope of a
+tangent line to the unit circle, so, that
+circle I
+just had a picture of that has radius one,
+that's
+called the unit circle, because the radius
+is one unit.
+So I have to split this up, if I want to
+do this using Regular functions.
+I have to split this up into two cases.
+I have to consider the top semicircle and
+the bottom semicircle independently.
+But I can use the chain rule to sort of
+help me out here.
+So what I'm going to do is take the
+derivative.
+I have y equals.
+The square root of 1 minus x squared.
+And I'll take the derivative of both sides
+of that equation with respect to x.
+And by the chain rule, when I'm taking the
+derivative
+of y with respect to x, I have to
+multiply.
+So I'm going to take the derivative of y.
+But that's just going to be
+1, so there's kind of an invisible one
+over here that I didn't bother to write
+down.
+Times the derivative of y with respect to
+x
+and remember this is what I'm trying to
+find.
+This is the, the derivative and on the
+right hand side I'm now going to take the
+derivative with respect to x and this
+should be
+pretty easy because it's just a function
+of x.
+So I'll rewrite the square root as
+quantity to the one
+half power, so it's easier to use the
+power rule.
+And then, cheat a little bit with the
+chain rule again.
+So here, the derivative of the inside of
+this quantity.
+The derivative of one is zero because it's
+a constant.
+The derivative of minus x squared is going
+to be minus 2 x.
+So the chain rule pops that minus 2x out
+here
+and if I simplify so the two is going to
+cancel
+out the one half that popped out here
+because of the power rule.
+So I end up with minus x divided by this
+square root of 1 minus x squared.
+And then case two is going to be very
+similar
+except there's going to be a minus sign
+here.
+So I'll just skip down to the bottom.
+And we get exactly the same thing except
+now I have the minus sign down here.
+And when I don't bother cancelling out a
+minus
+sign, it's because I have something clever
+for you coming in the future.
+So just keep this bit in mind.
+That this is minus x divided by the square
+root of 1 minus x squared.
+And this is minus x, divided by minus the
+square root of 1 minus x squared.
+[COUGH]
+And
+so, now I'm going to try doing this using
+the idea of an implicit function.
+So.
+If I take the, derivative of a function of
+y squared, by the chain rule, I can take
+the derivative of this with respect to y
+and then multiply by dy, dy.
+So, this is the same thing I did on
+the previous slide, except now, I have a y
+squared
+here instead of a y.
+So, it doesn't just go away.
+So instead of having my invisible one, I
+end up
+with the derivative of this, 2 y times dy
+dx.
+let's see what I'm going to get down here.
+Oh, okay.
+So this is my little result.
+And now I'm going to try and take the
+derivative of.
+The equation of a circle.
+The implicit equation of a circle, with
+respect to x.
+So, I still have the linearity property.
+So here I want to do
+the derivative of a sum, so that's just
+going to be
+the sum of the derivatives.
+And on the right hand side I'm just
+going to take the derivative
+of one, one is a constant so hopefully we
+get zero for there.
+And we do.
+And when I split this sum up into two
+terms I
+end up with the derivative with respect to
+x of x squared
+so that's going to be easy to do because I
+have, I've
+got my function already in the right
+units, in the right variable.
+And then when I
+want to take the derivative of y squared
+with res-, with respect to x, that's when
+I'm going to have to, oops, use this
+result that I, I went through up here.
+So I'm going just end up with 2y, dy dx.
+So I end up with this expression here, 2x
+plus 2y, times dy dx.
+But remember I'm trying to find the
+derivative for this tangent line touching
+the circle.
+And d y d x is going to be the slope of
+that tangent line.
+So d y d x is what I'm trying to get.
+So I'm just going to solve for d y d x
+now.
+So I subtract 2 x from both sides, and
+then divide by 2 y.
+So I end up with minus x over y.
+And now remember when I did my two cases,
+I had
+to have the top half of the circle, that
+was y
+equals the square root of 1 minus x, and
+so when
+y is greater then zero, this is what I
+would get.
+And when y is less than zero I get the,
+the bottom half.
+But in both
+cases, oops I guess I can't highlight just
+the denominator here, in both cases the
+denominator is just the value of y
+appropriate for where I am on the circle.
+So if I don't insist on getting rid of Y
+entirely I can actually
+express both of these as this one formula,
+dy, dx equals minus x divided by y.
+And so that the only caveat,
+the, so the thing you have to be careful
+of, is that this is
+only going to hold four points in the
+locus So, you know, I can still
+evaluate this at the point 1,1 and get
+negative one but that has no
+interpretation for what I've done because
+the point 1,1 is not on the circle.
+Okay, and then just for fun I did this, so
+this.
+Funny shaped thing with the, the loop in
+it is called a Folium which I
+guess is Latin for leaf and somebody
+thought
+that that little loop looked like a leaf.
+So here it's going to be a little bit
+trickier, but we're still going to
+use all of the properties exactly the way
+that we had been doing it.
+So I'm just going to take the derivative
+of
+both sides Of this equation with respect
+to x.
+Since here I have a project.
+So it's x times y.
+I'm going to have to, woops.
+Yeah.
+So I need to treat x and y.
+So I'm kind of imagining y is a function
+of x.
+Even though I can't actually write it down
+that way.
+So what I did here I on the left hand side
+I just use linearity
+to write the sum as a derivative of a sum
+as the sum of the derivative
+and on the right hand side I had to use
+the product rule so I used 6x times y.
+And so I get the derivative of the first
+function with respect
+to x is 6 times y, so that's where this
+came from.
+And then I'm also going to take the
+derivative of the second function,
+which is y, so I'm going to take
+derivative with respect to x.
+Of y times the first function which is 6
+x.
+So that's where this sec, second term
+comes from.
+It's just the product rule.
+But the derivative of y with respect to x,
+so that's, that's what I'm looking for.
+Again, that's d y d x.
+So technically it's The chain rule, so I
+take the derivative of y with respect
+to y times dy dx, but really, you can just
+think of this as going straight to dy dx.
+But now I've got this dy dx on both sides.
+But I'm just going to use algebra to
+move both of those terms to one side of
+the equation, and everything else to the
+other side.
+So I'm going to end up with, so here I had
+a positive 3y squared.
+That's where this came from.
+And then I had a 6x on this side, but when
+I move it to the other side it'll become
+minus 6x.
+So I have 3y squared minus 6x times dy dx,
+and then everything
+else, so 6y minus 3x squared on the right
+hand side.
+And, then, I'm just going to divide both
+sides by 3y square minus 6x and
+that gives me an expression for my
+derivative.
+And, again, so I think, okay, let's see,
+2y minus x so, you have to be a little bit
+careful with this again because, again,
+it's only going to be defined when I'm On
+the curve, so if I take any other point,
+I'll still be able to evaluate this, and
+it will give me a number, but that
+number has no interpretation for what I've
+just done.
+This only gives me the derivative for
+points that are on this curve.
+And then there's still some, one small
+problem so if you look at
+Where the curves cross I actually should
+have two derivatives somehow here.
+I have one flat derivative and one
+infinitely steep
+derivative and so the way you're going to,
+capture that
+is that's at the origin so that's at x
+equals zero, y equals zero.
+And if x and y are equal to 0, then this
+is zero and this is zero.
+So I get one of these numbers that do not
+exist.
+And so,
+in that case you just have to examine the
+function
+and try and figure out what its behavior
+is here.
+But since it's crossing the derivative
+it's
+not going to be differential at that
+point.
+Is that the whole idea doesn't really make
+any sense.
+So it's, you know, I couldn't say
+you know, if I wanted to add h to this.
+You know, would it be h going up this way
+or would it be h going out that way?
+I, I can't do that with just one h so
+you'd have to
+do something more complicated if you
+wanted to extend the idea of a derivative.
+To this one point where the curves cross.
+

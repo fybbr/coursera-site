@@ -1,0 +1,414 @@
+So the next topic is, a Change of
+Variables Example,
+so a slightly more complicated version of
+what we just did.
+And this one I, I took from the textbook.
+And I found it when I was reading the book
+getting ready to do this class I found it.
+I thought sort of too complicated, so I
+thought it would be a good
+thing to go through step by step just to
+make sure everybody understands it.
+So I want to evaluate the double integral
+over
+domain D of x dx dy, where this domain D
+is going to
+be points in the xy plane, where x is
+greater than or equal
+to zero, then the product x and y is in
+between 1 and 2.
+And then y divided by x is also between 1
+and 2.
+And so it turns out we can assume that x
+is greater than zero.
+I wrote assume here.
+You don't really have to assume.
+You can actually see that it's greater
+than zero.
+[COUGH]
+So it's easier if you rewrite the domain
+so solve for one of the variables.
+So generally I like to see y as a function
+of x.
+That's what I'm most comfortable plotting.
+So if I solve for y, if I can isolate y,
+then I can just say y equals 1 over x.
+That has to be kind of a lower bound in
+some sense.
+And y less than or equal
+to 2 over x.
+So y equals 2 over x.
+That's going to be kind of an upper bound.
+And then the same thing is going to happen
+with the second set of limits.
+So I have.
+x less than or equal to y.
+That's just the line y equals x, and the
+function, the
+domain has to be above that because it's y
+greater than x.
+And then there's also going to be a line y
+equals 2x, and that has to
+be kind of an upper bound, because it says
+that y has to be below that.
+And so once you've gotten this far, what
+you want to do next.
+Is, just draw a picture.
+So, I tried my artistic skills here.
+And, so, the second condition, y has to be
+greater than x.
+So, the bottom side of this blue region is
+the line y equal x.
+In the top side of the blue region is the
+line y equals 2x.
+And this just says y has to be in between
+those two lines.
+So to be in my domain I have to be in my
+blue region.
+And then 1 over x so y has to be greater
+than 1 over x.
+So this line, the bottom of the yellow
+reason is this line 1 over x.
+The top of this yellow regions is 2 over
+x.
+So this is 2 over x up here.
+And so to be in the domain I also have to
+be in the yellow region.
+So I have to be in the blue region and I
+have to be in the yellow region.
+And if I remember my primary school
+art class correctly, yellow and blue make
+green.
+So that tells me that this green shape is
+the domain that they're talking about.
+So this is, this description this set, if
+I
+want to draw a picture of it looks like
+this.
+[COUGH]
+And so what do I have next?
+So it
+turns out that the points here's.
+This
+point at the bottom is, let's see, what
+did I
+do?
+dx last, so this has this point at the
+left most side of the green region in the
+x coordinate is one, then I get this point
+here, oh oops.
+Not 1, it's
+the square root of 2 over 2, then this
+point is going to
+be 1.
+And so that makes sense, because y equals
+x gives me the point 1 equals 1, and y
+equals 1 over x also gives me the point
+1 equals 1.
+So this bottom point of the green
+[COUGH]
+green region is the point 1,1.
+This point over here is root 2 over 2.
+And so you just find those by figuring out
+where each of these lines intersects the
+other one.
+And then on the right hand side I guess we
+get root 2.
+And, it turns out that we're pretty lucky.
+That this point at the very top of
+the green region, too, also has x
+coordinate 1.
+So, it's exactly above this bottom point.
+And, so the reason that that's going to be
+handy is that means that
+instead of having to split this up into a
+whole bunch of pieces.
+I can just split it up into two pieces.
+So I can go from the leftmost endpoint,
+which was root 2 over 2, up to 1.
+And I'm going to
+kind of try and get this bit over here.
+Oh, I could have used another color.
+And then I want to go from 1.
+So that's kind of this line dividing the
+green region in half up to root 2.
+And that's going to be my second integral,
+but the point is
+in the first integral, given x, I can find
+an upper bound.
+So, I can find an upper limit and a lower
+limit as functions
+g of x, so g one of x and g two of x.
+So, the upper limit, given
+x, will be 2x, and the lower limit will be
+one over x.
+Then, when I'm on the right hand side of
+the x equals 1 line, the upper limit
+will be 2 over x, so that's this line up
+here, and the lower limit will just be
+x.
+So y equals x, and so those,
+I guess, are the limits that
+I've plugged in here and
+here, and here, and here.
+So, I think the rest, most of this slide,
+you can tell it's going to be
+bad because I didn't have enough space to
+even put the, the title up at the top.
+I needed, you know, more space to put the
+calculations.
+You can actually evaluate this it just
+sort of
+becomes an exercise in bookkeeping which I
+did for you.
+So, just to point out some good habits.
+So, first I'm going to integrate with
+respect to y.
+So that means my limits have to be y
+equals functions of x and so
+then when I, once I find an anti
+derivative.
+So when I integrate x with respect to y
+that's going to come from the function xy.
+If I took the derivative of that, the
+partial derivative of
+xy with respect to y that would just give
+me x.
+And then just to remind myself which
+direction
+I'm going, I said I'm going to evaluate
+that at y equals 2x and then 1 equals 1
+over x and take the difference.
+And then I'm going to do the same thing
+for
+my integral on the right hand side as
+well.
+And so at this first step I get the same
+antiderivative.
+I don't suppose I can make that go away.
+Maybe if I click
+on details and then quit.
+We are going to have to edit this out of
+the video I think.
+Okay, good.
+So hopefully I don't get some terrible
+virus in the next 12 minutes.
+So in the first step we're going to get
+the first
+anti-derivative, but once I evaluate this
+at the limit, so
+the, the limits in the y direction are
+different in
+the first integral than they are in the
+second integral.
+So I'm going to have a different integral
+when I
+come to doing the second step of my
+interation.
+And so this is what I end up with, an
+integral
+from root 2 over 2 to one of 2x square
+minus 1.
+And then the integral from 1 to root 2 of
+2 minus x squared.
+Now it's just a regular old single
+variable problem, so you can
+look through the slide on your own time if
+you want to.
+Just trust that I did it correctly.
+Again, big exercise in bookkeeping, but if
+you don't
+make any sign mistakes you will eventually
+arrive at
+the correct answer, which is this minus 6
+plus 5 times the square root of 2 over 3.
+And so just let's keep that
+in mind.
+So minus 6 plus 5 root 2 over 3.
+And now let's consider the change of
+variables.
+So s equals xy, and t equals y over x.
+So, hopefully seems familiar.
+This was my domain in, for the original
+integral.
+And it turns out, if I define these
+variables this way, it's
+actually pretty easy to figure out what
+the, the transformed domain should be.
+So here I have x y has to be in between 1
+and 2.
+So that's going to tell me that s has to
+be in between 1
+and 2, and then t is equal to y over x, so
+this just tells
+me that t also has to be in between 1 and
+2.
+So instead of having this funny shaped
+green interval now,
+I just have a square 1, 2 cross 1, 2.
+So that's my new domain of integration,
+omega.
+And you can sort of use the same reasoning
+that I used to, with the diamond.
+So here if we look at t, is this y over x.
+So if I were to solve this.
+For x I would get y equals t times x.
+So that's saying t is kind of the slope of
+that line.
+And if you think about what's happening in
+this blue region,
+t equals 1 corresponds to the bottom of
+the blue region.
+And t equals 2 corresponds to the top of
+the blue region.
+Just because here I have y equals 1 times
+x.
+Up to y equals 2 times x.
+And in between 1 and 2 if I had t equals 3
+over 2 times
+x, that would just be a line that split
+the blue region right down the middle.
+So you can sort of think of it as this
+bottom line swinging up to the top line.
+So it's pivoting on the origin, just from.
+y equals x up to y
+equals two x and then the same thing for
+this s equals xy.
+I could think of that as y equals s over
+x, and so again there's
+this number 1 going up to 2, oops, going
+up to 2, so s
+equals one just corresponds to the bottom
+of this yellow
+region, the curve making the bottom of the
+yellow region.
+And that curve is just going to shift up
+to the top as s goes from 1 to 2.
+So that's sort of the geometric argument,
+you know making this
+sketch of the domain is usually what
+you'll have to do.
+It turned out this wasn't quite as hard as
+I thought it
+would be the first time I read it, just
+because, I realize
+now the reason that the, the textbook
+defined
+the, defined this domain in such a
+complicated way.
+Is because it makes it easy to see what
+the limits
+on s and t are going to be just because
+this
+is really telling you what the limit of s
+is and
+this is really telling you what the limit
+of t is.
+And so that means I can change my domain
+from d, which is this funny shaped
+green thing, to just t equals 1 to t
+equals 2 and s equals 1 to s equals 2.
+But then I need to use my change of
+variables formula to figure out what I
+need here.
+And so first, to do that we have to do
+what the, the quiz question was last time.
+So I came up with the, the change x equals
+the square root of s over t.
+And y equals the square root of s times t.
+And then, I calculated the partial
+derivatives for the change of variables.
+So I got, 1 over 2 times the square root
+of st.
+Square root of t divided by 2 times the
+square root of st.
+Square root of s.
+Oh, so, minus the square root of s divided
+by 2t to the
+3 halves, but I wrote that as t times the
+square root of t.
+And then, square root of s divided by 2
+times the square root of t, so.
+For me, I, I put this here just because I
+think it looks a little
+prettier, but in terms of doing the
+calculation,
+I find this, this formula far more useful.
+So these are actually the things I would
+plug
+into, that I would plug into the Jacobian
+formula.
+And these, you know, if I write my
+transformations like this, then I can just
+use the power rule to figure out what's
+going on to take the partial derivatives.
+And so the Jacobian for this particular
+change of variables just becomes this,
+and if you cancel everything out so you
+can see it's kind of constructed.
+So stuff cancels out nicely, so the square
+root of t will
+cancel out this square root of t, square
+root of s cancels out.
+This, square root of s.
+And so in both cases, we just get 1 over 2
+times the square root of t.
+Sorry, 1 over 2 times the square root of t
+squared.
+So I get 1 over 4t times 1 over 4t, and
+that's one over 2t.
+Okay, at least one person got the right
+answer on the quiz.
+So now I can plug this into my change of
+variables formula.
+So, this was the original integral over
+the funny-shaped domain d.
+And now I've already worked out what the
+new domain, omega, is.
+It's just the square 1,2 to 1,2.
+I have my function is x and my change of
+variables was
+x is equal to the square root of s divided
+by t.
+So this is, oops see if I can.
+The square root here is just x.
+Then, the absolute value of my Jacobian
+is 1 over 2 times t.
+And since I defined x and y to be greater
+than 0, that
+was part of the definition of my domain,
+then, the Jacobian, so t.
+Is this function of x and y, but it's
+going to be positive
+only when x and y, or it's positive when x
+and y are positive.
+So the absolute values, they're kind of
+invisibly here, but not necessary.
+And then I can change this into an
+integral, ds dt.
+And so now I just have to integrate.
+This function, instead of just x.
+But at least the, the limits are quite a
+lot easier this time.
+So instead of having these complicated
+limits for for
+the first integral, I now just have 1 and
+2.
+And so again, it's just sort of two single
+variable problems one after the other.
+And again, I like to write it in this form
+here, so I can see
+clearly how the power rule or the
+anti-power rule are working.
+And so the rest of it's just sort of an
+exercise
+in keeping track of signs and not screwing
+up too much.
+And, once we get to the end, I end up with
+the same value, so last time
+I had negative 6 plus 5 root 2 over 3.
+the only thing that changed here is
+somehow my negative 6 being ended
+up second but we get the same answer so
+that's a pretty good affirmation.
+

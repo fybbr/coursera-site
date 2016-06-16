@@ -1,0 +1,1034 @@
+1
+00:00:00,990 --> 00:00:03,688
+So we'll get started with functions of
+several variables.
+
+2
+00:00:03,688 --> 00:00:09,690
+So there's two types roughly that
+
+3
+00:00:09,690 --> 00:00:13,920
+we can talk about, and it just has to do
+with what the output of the function is.
+
+4
+00:00:13,920 --> 00:00:14,980
+So I'm going to start out with the
+
+5
+00:00:14,980 --> 00:00:18,500
+simplest one which is the scalar valued
+function.
+
+6
+00:00:18,500 --> 00:00:22,110
+Under a Scalar Valued Function just takes
+values in the real numbers.
+
+7
+00:00:22,110 --> 00:00:26,230
+So you put in if it's of several variables
+two or
+
+8
+00:00:26,230 --> 00:00:28,330
+more inputs and you get one number out
+
+9
+00:00:29,490 --> 00:00:32,340
+and some would call that a Scalar Valued
+Function.
+
+10
+00:00:32,340 --> 00:00:34,845
+And the notation I'm going to use for that
+is
+
+11
+00:00:34,845 --> 00:00:40,650
+f', that's the name of my function from rn
+into r.
+
+12
+00:00:40,650 --> 00:00:45,930
+So rn just means that there are n real
+numbers that are taken as input, so
+
+13
+00:00:45,930 --> 00:00:51,420
+this is a function of n variables.
+And output is a real number so it's a,
+
+14
+00:00:51,420 --> 00:00:53,340
+a single variable output, a scalar
+function.
+
+15
+00:00:56,490 --> 00:01:02,160
+And so you can think of that just as this.
+So I have inputs x1, x2, up to xn.
+
+16
+00:01:03,290 --> 00:01:08,110
+Each one of the x's is a real number.
+And then the output y is a real number.
+
+17
+00:01:10,450 --> 00:01:13,360
+And so the example I'm going to use, for,
+for this week's
+
+18
+00:01:13,360 --> 00:01:17,620
+lectures is, Black Scholes pricing formula
+for a European call option.
+
+19
+00:01:19,120 --> 00:01:21,660
+And so hopefully when we look at this with
+all of its
+
+20
+00:01:21,660 --> 00:01:26,110
+pieces finally, it's going to, sort of,
+become more apparent why we
+
+21
+00:01:26,110 --> 00:01:29,980
+had to spend so much time learning how to
+take derivatives of
+
+22
+00:01:29,980 --> 00:01:35,340
+little indefinite integrals, things like
+that, product rule, chain rule and so on.
+
+23
+00:01:35,340 --> 00:01:37,170
+So the inputs for this formula.
+
+24
+00:01:38,980 --> 00:01:41,810
+Are going to be s, which is the price of
+the stock.
+
+25
+00:01:43,830 --> 00:01:46,390
+Sigma which is the volatility of the
+stock.
+
+26
+00:01:48,470 --> 00:01:51,290
+K is the strike price, so this is, you
+know, what
+
+27
+00:01:51,290 --> 00:01:54,880
+I'm going to be able to get for my if I
+
+28
+00:01:54,880 --> 00:01:58,855
+decide to exercise my option in the future
+R is the
+
+29
+00:01:58,855 --> 00:02:02,480
+risk-free interest rate, so that's
+risk-free interest rate just on money.
+
+30
+00:02:03,990 --> 00:02:07,590
+T is the maturity, and this is, the way to
+think about
+
+31
+00:02:07,590 --> 00:02:10,670
+capital T, and there, there'll be a little
+t somewhere here, too.
+
+32
+00:02:12,080 --> 00:02:14,040
+they're both dates,
+
+33
+00:02:14,040 --> 00:02:15,190
+so.
+
+34
+00:02:15,190 --> 00:02:17,640
+You know, this could be next Tuesday and
+little
+
+35
+00:02:17,640 --> 00:02:19,910
+t, generally we're going to think of that
+as today.
+
+36
+00:02:22,710 --> 00:02:27,010
+And then q is continuous dividend rate.
+
+37
+00:02:27,010 --> 00:02:30,330
+If the, if the asset pays dividends then
+you want to
+
+38
+00:02:30,330 --> 00:02:34,600
+take those dividends and figure out what
+the continuous rate would be.
+
+39
+00:02:34,600 --> 00:02:37,060
+And q is going to represent that number.
+
+40
+00:02:40,510 --> 00:02:45,920
+And then this is the formula so, generally
+the, the inputs
+
+41
+00:02:45,920 --> 00:02:49,030
+you think of it as a function with two
+main inputs.
+
+42
+00:02:49,030 --> 00:02:54,330
+So the, the price of the asset s, and then
+the current time t.
+
+43
+00:02:54,330 --> 00:02:56,460
+And, generally, you can almost think of
+this as one
+
+44
+00:02:56,460 --> 00:03:01,010
+input because at a certain time, like
+right now, I can
+
+45
+00:03:01,010 --> 00:03:02,980
+look at the market and see what the price
+of
+
+46
+00:03:02,980 --> 00:03:06,040
+the asset is so these, these are, sort of,
+tied together
+
+47
+00:03:06,040 --> 00:03:07,220
+in, in a certain sense.
+
+48
+00:03:09,390 --> 00:03:16,460
+And, so, the formula then is s times e to
+the minus q capital T minus little t.
+
+49
+00:03:16,460 --> 00:03:20,030
+And so this is where it becomes important
+to think of the t's as dates.
+
+50
+00:03:20,030 --> 00:03:26,760
+So, if I say next Tuesday is capital t and
+right now is little t.
+
+51
+00:03:26,760 --> 00:03:29,200
+So, that would be eight days in the
+future.
+
+52
+00:03:29,200 --> 00:03:35,100
+So, when I do capital t next Tuesday minus
+today that's going to give me eight.
+
+53
+00:03:35,100 --> 00:03:41,670
+So, This quantity, capital T minus little
+T, you can think about that as the time
+
+54
+00:03:41,670 --> 00:03:46,310
+left in chill maturity, and as time moves
+forward, that's actually getting shorter.
+
+55
+00:03:46,310 --> 00:03:50,620
+And then you can see that this formula is
+going to simplify a bit
+
+56
+00:03:50,620 --> 00:03:55,750
+if you have a non-dividend paying asset,
+this q is just going to be zero.
+
+57
+00:03:55,750 --> 00:03:57,680
+And so you'll have e to the zero.
+
+58
+00:03:57,680 --> 00:04:00,860
+And this whole piece that I have
+highlighted will disappear.
+
+59
+00:04:00,860 --> 00:04:01,740
+It'll just become one.
+
+60
+00:04:01,740 --> 00:04:02,240
+[COUGH].
+
+61
+00:04:03,670 --> 00:04:04,170
+So I'm
+
+62
+00:04:06,510 --> 00:04:08,368
+going to multiply that times Fi.
+
+63
+00:04:08,368 --> 00:04:11,640
+And remember, Fi was this function we
+defined as the integral
+
+64
+00:04:11,640 --> 00:04:15,670
+of the standard normal density from minus
+infinity up to its argument.
+
+65
+00:04:15,670 --> 00:04:17,530
+So this value here.
+
+66
+00:04:17,530 --> 00:04:19,710
+So Fi of d1 of st.
+
+67
+00:04:19,710 --> 00:04:22,840
+So d1 is going to be another function that
+we have to evaluate.
+
+68
+00:04:22,840 --> 00:04:31,730
+And then I'm going to subtract k times, so
+here r is the interest rate, the risk free
+
+69
+00:04:31,730 --> 00:04:37,590
+interest rate times the time left until
+maturity times Fi.
+
+70
+00:04:37,590 --> 00:04:41,110
+Again and now we have another function d 2
+of st
+
+71
+00:04:41,110 --> 00:04:43,650
+and the, the form of d1 and d2 are down
+here.
+
+72
+00:04:43,650 --> 00:04:45,180
+Again and now we have another function d2
+of st.
+
+73
+00:04:45,180 --> 00:04:47,090
+And the form of d1 and d2 are down here so
+I'll
+
+74
+00:04:47,090 --> 00:04:50,970
+have to wait until my slide disappears so
+they're not exactly simple.
+
+75
+00:04:50,970 --> 00:04:56,830
+So the, the reason we want to write this
+as Fi of d1 And fi of d2 is just if,
+
+76
+00:04:56,830 --> 00:05:01,450
+if I start plugging this whole expression
+into these parenthesis the, the thing gets
+
+77
+00:05:01,450 --> 00:05:07,570
+quite unwildy.
+And then d2 is just
+
+78
+00:05:07,570 --> 00:05:13,820
+equal to d1 minus sigma times the square
+root of capital T minus little t.
+
+79
+00:05:14,980 --> 00:05:18,080
+And if you write down what that looks
+like, if you plug in
+
+80
+00:05:18,080 --> 00:05:21,910
+this formula on the left for d1, all that
+ends up changing is,
+
+81
+00:05:21,910 --> 00:05:24,300
+this plus here becomes a minus.
+
+82
+00:05:25,340 --> 00:05:29,130
+So that quite often, derivatives of d1 and
+
+83
+00:05:29,130 --> 00:05:32,450
+d2 are very similar to each other, they
+differ
+
+84
+00:05:32,450 --> 00:05:34,480
+by a sign or not at all, depending on
+
+85
+00:05:34,480 --> 00:05:37,590
+what What you're taking the derivative
+with respect to.
+
+86
+00:05:41,400 --> 00:05:44,400
+So in order to take a derivative of a
+function of several
+
+87
+00:05:44,400 --> 00:05:49,070
+variables we, we have to define a new
+concept called a partial derivative.
+
+88
+00:05:49,070 --> 00:05:52,020
+So I have a function from Rn into R.
+
+89
+00:05:53,700 --> 00:05:59,460
+And the partial derivative of F with
+respect to the Jth, input, I'm going to
+
+90
+00:05:59,460 --> 00:06:05,140
+denote that as partial of F with respect
+to Xj.
+
+91
+00:06:06,260 --> 00:06:06,530
+And that's
+
+92
+00:06:06,530 --> 00:06:09,359
+also going to be a function of N
+variables.
+
+93
+00:06:13,030 --> 00:06:13,030
+[INAUDIBLE]
+
+94
+00:06:13,030 --> 00:06:13,030
+.
+
+95
+00:06:13,030 --> 00:06:15,230
+And we're going to define the partial
+derivative, then, just
+
+96
+00:06:15,230 --> 00:06:18,640
+to be this limit on the right hand side.
+
+97
+00:06:18,640 --> 00:06:22,300
+And if you look closely, all I'm doing is
+I'm treating
+
+98
+00:06:23,630 --> 00:06:29,370
+everything except for x sub j as if it
+were a constant.
+
+99
+00:06:29,370 --> 00:06:32,550
+So, I am leaving those the same, and then
+I am using
+
+100
+00:06:32,550 --> 00:06:36,170
+just on the one variable I am interested
+in so x of j.
+
+101
+00:06:36,170 --> 00:06:38,300
+I am going to use the definition of the
+derivative
+
+102
+00:06:38,300 --> 00:06:39,560
+on that one particular p.
+
+103
+00:06:39,560 --> 00:06:46,120
+So, add h to that and then add then I will
+subtract r, local our, our initial points.
+
+104
+00:06:46,120 --> 00:06:48,370
+So, this is the point where I am trying to
+find the derivative.
+
+105
+00:06:48,370 --> 00:06:54,150
+And then I'm going to divide by h.
+And then take the limit as h goes to zero.
+
+106
+00:06:56,720 --> 00:07:00,900
+And then we say that this has a derivative
+if this limit exists, and is finite.
+
+107
+00:07:02,780 --> 00:07:04,899
+And in practice, the way we're going to
+compute these.
+
+108
+00:07:06,220 --> 00:07:11,790
+we're just going to fix xk for every x
+that's not equal to j.
+
+109
+00:07:11,790 --> 00:07:16,050
+So remember, I'm trying to compute the,
+the jth partial derivative.
+
+110
+00:07:16,050 --> 00:07:21,030
+So I'm just going to treat xk, any other
+variable, as if it's a constant.
+
+111
+00:07:22,590 --> 00:07:25,270
+And then just to differentiate f as if it
+were a
+
+112
+00:07:25,270 --> 00:07:28,890
+function of one variable, and that one
+var, variable being xj.
+
+113
+00:07:31,360 --> 00:07:35,830
+So, for example, if I let my function, so
+I'm going to choose a function of two
+
+114
+00:07:35,830 --> 00:07:41,500
+variables and I have x squared y plus e to
+the minus xy cubed.
+
+115
+00:07:44,290 --> 00:07:48,160
+And I want to take the derivative of this
+function now.
+
+116
+00:07:48,160 --> 00:07:52,040
+I guess I should mention a little bit here
+about notations so, when we are taking
+
+117
+00:07:52,040 --> 00:07:54,210
+a complete derivative with a function of
+one
+
+118
+00:07:54,210 --> 00:07:56,710
+variable and I take its derivative I've
+just
+
+119
+00:07:56,710 --> 00:08:04,143
+been using 'd by dx' And when I'm taking a
+partial derivative, I use this funnier
+
+120
+00:08:04,143 --> 00:08:08,730
+symbol that it looks kind of like a twisty
+D that' I'm just going to read as partial.
+
+121
+00:08:10,260 --> 00:08:13,965
+And so, because this is a sum of
+
+122
+00:08:13,965 --> 00:08:16,280
+two functions, I still have a linearity
+property.
+
+123
+00:08:16,280 --> 00:08:17,840
+So, I can.
+
+124
+00:08:17,840 --> 00:08:20,750
+The, the derivative of a sum is the sum of
+the derivative.
+
+125
+00:08:20,750 --> 00:08:23,390
+So this is going to be equal to the
+derivative of
+
+126
+00:08:23,390 --> 00:08:26,320
+the first term plus the derivative of the
+second term.
+
+127
+00:08:27,690 --> 00:08:29,460
+And then to take the derivative of this
+piece
+
+128
+00:08:29,460 --> 00:08:33,160
+here with respect to x, I'm going to make
+a substitution.
+
+129
+00:08:33,160 --> 00:08:36,840
+So I'm going to say minus xy cubed.
+
+130
+00:08:36,840 --> 00:08:39,480
+I'm going to call that U, I think that's
+what I decided to do.
+
+131
+00:08:39,480 --> 00:08:39,980
+Yep.
+
+132
+00:08:42,540 --> 00:08:44,060
+So I can rewrite this like this.
+
+133
+00:08:44,060 --> 00:08:48,380
+So if I look at what happened in the first
+term, since I'm taking the
+
+134
+00:08:48,380 --> 00:08:53,200
+partial derivative with respect to X, my
+rule was treat Y like it's a constant.
+
+135
+00:08:53,200 --> 00:08:56,890
+So if Y is a constant, I can use my
+formula that says.
+
+136
+00:08:56,890 --> 00:08:58,750
+C times x squared.
+
+137
+00:08:58,750 --> 00:09:02,510
+The derivative of that is equal to c times
+the derivative of x squared.
+
+138
+00:09:02,510 --> 00:09:05,060
+So in this case, now, y is my constant.
+
+139
+00:09:05,060 --> 00:09:08,250
+So I can just say that's equal to y times
+the derivative.
+
+140
+00:09:08,250 --> 00:09:12,520
+Sorry, y times the partial with respect to
+x, of x squared.
+
+141
+00:09:15,260 --> 00:09:17,830
+And then, for the term on the right.
+
+142
+00:09:17,830 --> 00:09:19,910
+I'm taking the partial derivative of a
+
+143
+00:09:19,910 --> 00:09:23,850
+function of u, so partial derivative with
+respect
+
+144
+00:09:23,850 --> 00:09:26,930
+to x of a function of x, so I have to use
+the chain rule here.
+
+145
+00:09:29,930 --> 00:09:33,570
+And so the chain rule says that the
+derivative of this is going to be the
+
+146
+00:09:33,570 --> 00:09:37,479
+derivative of my function of u times the
+derivative of u with respect to x.
+
+147
+00:09:38,490 --> 00:09:38,490
+[INAUDIBLE]
+
+148
+00:09:38,490 --> 00:09:38,490
+.
+
+149
+00:09:38,490 --> 00:09:42,300
+So the derivative of e to the u is just e
+to the u.
+
+150
+00:09:42,300 --> 00:09:44,950
+And then I still have to calculate this
+partial u, partial x.
+
+151
+00:09:44,950 --> 00:09:47,100
+And I'll do that just by taking the
+
+152
+00:09:47,100 --> 00:09:50,540
+derivative of my substitution here with
+respect to x.
+
+153
+00:09:52,070 --> 00:09:54,630
+And then, for the, for the first term,
+that was pretty easy.
+
+154
+00:09:54,630 --> 00:09:56,150
+I just used the power rule to say
+
+155
+00:09:56,150 --> 00:09:59,980
+that the derivative, derivative of x
+squared was 2x.
+
+156
+00:09:59,980 --> 00:10:03,499
+So I end up with 2xy.
+So the
+
+157
+00:10:03,499 --> 00:10:09,070
+partial derivative of my substitution with
+respect to
+
+158
+00:10:09,070 --> 00:10:11,880
+x is just going to be minus y cubed.
+
+159
+00:10:11,880 --> 00:10:15,840
+So that's just minus y cubed times x and
+using the power rule,
+
+160
+00:10:18,760 --> 00:10:21,020
+and then I just have to reverse my
+substitution.
+
+161
+00:10:21,020 --> 00:10:22,660
+So I am going to replace this u.
+
+162
+00:10:23,780 --> 00:10:27,030
+Right here with minus x y cubed
+
+163
+00:10:29,240 --> 00:10:33,640
+and I end up with 2 xy minus y cubed times
+e to the minus xy cubed.
+
+164
+00:10:33,640 --> 00:10:34,140
+[COUGH]
+
+165
+00:10:40,330 --> 00:10:43,820
+So that was the derivative with respect to
+x.
+
+166
+00:10:43,820 --> 00:10:46,790
+We can repeat now for the derivative with
+respect to y.
+
+167
+00:10:49,230 --> 00:10:51,950
+So I'm going to set this up exactly the
+same way.
+
+168
+00:10:51,950 --> 00:10:53,758
+Use the linearity property to write.
+
+169
+00:10:53,758 --> 00:10:58,470
+This is two, the sum of two derivatives.
+Make the same substitution.
+
+170
+00:10:59,900 --> 00:11:03,080
+But this time, when I look at the, the
+first
+
+171
+00:11:03,080 --> 00:11:05,460
+term, now I'm taking the derivative with
+respect to y.
+
+172
+00:11:05,460 --> 00:11:07,550
+So it's the x squared I can bring out.
+
+173
+00:11:07,550 --> 00:11:12,710
+So I have x squared times the partial with
+respect to y of just y.
+
+174
+00:11:14,750 --> 00:11:19,390
+And then on the right hand term I have
+partial with respect to y of e to the u.
+
+175
+00:11:19,390 --> 00:11:21,770
+So by the change rule I'm going to have to
+multiply the
+
+176
+00:11:21,770 --> 00:11:25,150
+derivative of e to the u, times partial u
+partial y
+
+177
+00:11:27,610 --> 00:11:29,660
+And again I am just going to take the
+derivative,
+
+178
+00:11:29,660 --> 00:11:32,310
+but this time with respect to y of my
+substitution.
+
+179
+00:11:34,410 --> 00:11:41,690
+So that gives me my chain rule derivative,
+so I have du dy equals minus 3 xy
+
+180
+00:11:41,690 --> 00:11:44,540
+squared, so that's here just treating x as
+a
+
+181
+00:11:44,540 --> 00:11:47,669
+constant and taking the derivative of
+minus y cubed.
+
+182
+00:11:49,510 --> 00:11:50,750
+Using the power rule.
+
+183
+00:11:53,300 --> 00:11:57,120
+And then I just have to plug everything
+back in and I
+
+184
+00:11:57,120 --> 00:12:01,100
+get the partial derivative of F of X with
+respect to Y.
+
+185
+00:12:06,330 --> 00:12:09,650
+And so essentially what we're going to
+have to do to get a full idea of
+
+186
+00:12:09,650 --> 00:12:14,250
+what the derivative of F of X Looks like
+is where we need every partial derivative
+
+187
+00:12:16,700 --> 00:12:23,270
+and so if f is a function of n variables
+with one output.
+
+188
+00:12:23,270 --> 00:12:25,820
+So the output is a real number then I
+
+189
+00:12:25,820 --> 00:12:28,099
+am going to define something called the
+gradient of a F.
+
+190
+00:12:29,200 --> 00:12:33,600
+Which is denoted sometimes by capital d
+times f of x.
+
+191
+00:12:33,600 --> 00:12:39,270
+So here we think of capital d kind of the
+same way I think of d by dx.
+
+192
+00:12:39,270 --> 00:12:43,420
+It's a operator, so it means take
+
+193
+00:12:43,420 --> 00:12:45,499
+the gradient of the function f of x.
+
+194
+00:12:49,540 --> 00:12:51,630
+And the gradient is just going to be an
+
+195
+00:12:51,630 --> 00:12:55,074
+array of the partial derivatives of f of
+x.
+
+196
+00:12:55,074 --> 00:13:00,910
+So each one of these terms, so each one of
+these elements
+
+197
+00:13:00,910 --> 00:13:06,820
+of the array df Dx 1, or partial F partial
+X one, that's a function of N variables.
+
+198
+00:13:06,820 --> 00:13:10,040
+Partial F partial X two, that's also a
+function of N variables.
+
+199
+00:13:11,590 --> 00:13:12,090
+And
+
+200
+00:13:16,650 --> 00:13:22,200
+then one last thing that we might have to
+deal with is a function of one
+
+201
+00:13:22,200 --> 00:13:25,140
+or more variables That takes values in a
+
+202
+00:13:25,140 --> 00:13:29,020
+multidimensional space is called a vector
+value function.
+
+203
+00:13:29,020 --> 00:13:31,350
+And so in this case what I'm after is, I
+
+204
+00:13:31,350 --> 00:13:35,850
+have, say, two inputs, and my function
+gives me two outputs.
+
+205
+00:13:38,760 --> 00:13:40,240
+And so in this case, I'm going to use the
+
+206
+00:13:40,240 --> 00:13:47,020
+function, sorry, the notation, F from Rn
+into Rm.
+
+207
+00:13:47,020 --> 00:13:51,870
+And so this just means that f is the
+function that takes n arguments.
+
+208
+00:13:51,870 --> 00:13:54,400
+So there are n inputs to this function.
+
+209
+00:13:54,400 --> 00:13:56,870
+And then there are m outputs to this
+function.
+
+210
+00:13:56,870 --> 00:14:03,919
+And the way to think about this is, you
+have f of my n inputs
+
+211
+00:14:04,940 --> 00:14:12,084
+I can have m a different sort of
+sub-functions, each one of them returns
+
+212
+00:14:12,084 --> 00:14:19,020
+the well, element one, two, three up to m
+of the vector of outputs.
+
+213
+00:14:23,390 --> 00:14:26,590
+And so in this case, when we try and make
+the gradient.
+
+214
+00:14:26,590 --> 00:14:28,390
+We're going to have, instead of just an
+
+215
+00:14:28,390 --> 00:14:31,470
+array that only has one row, we're
+going to have,
+
+216
+00:14:33,790 --> 00:14:39,680
+one row with n columns for each for each
+element of the output.
+
+217
+00:14:39,680 --> 00:14:45,219
+So now my gradient is going to end up
+being an array with m rows and n columns.
+
+218
+00:14:47,980 --> 00:14:52,940
+So there are N times N first order partial
+derivatives, which is a lot to work with.
+

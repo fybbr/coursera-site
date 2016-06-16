@@ -1,0 +1,1464 @@
+1
+00:00:00,850 --> 00:00:05,060
+So now onto some more complicated rules
+for taking derivatives.
+
+2
+00:00:05,060 --> 00:00:09,810
+So the first one is going to be the
+product rule.
+
+3
+00:00:12,960 --> 00:00:16,860
+So suppose f of x and g of x are
+differentiable functions.
+
+4
+00:00:16,860 --> 00:00:21,110
+So this is going to be kind of like my
+linearity rule from from the last section.
+
+5
+00:00:22,520 --> 00:00:26,488
+So I'm not going to be given f of x and g
+of x, I'm going to be given a function but
+
+6
+00:00:26,488 --> 00:00:28,472
+as I look at it, I'm going to see that
+
+7
+00:00:28,472 --> 00:00:33,110
+that function is actually composed of two
+simpler functions multiplied together.
+
+8
+00:00:34,520 --> 00:00:37,880
+And if I can take the derivative of each
+of those simpler funtions,
+
+9
+00:00:37,880 --> 00:00:40,040
+then the product rule is going to allow me
+to
+
+10
+00:00:40,040 --> 00:00:43,120
+take the derivative of the product of
+those two functions.
+
+11
+00:00:45,720 --> 00:00:51,115
+So, suppose I'm given a function p of x,
+and I can see a way to write it down as a
+
+12
+00:00:51,115 --> 00:00:53,854
+function of f of x times the function g of
+
+13
+00:00:53,854 --> 00:00:57,015
+x, and I want to take the derivative of p
+of x.
+
+14
+00:00:57,015 --> 00:01:02,867
+So p of x is differentiable and the
+
+15
+00:01:02,867 --> 00:01:09,402
+derivative of p of x, or p prime of x.
+
+16
+00:01:09,402 --> 00:01:10,979
+Ops, so my definition
+
+17
+00:01:10,979 --> 00:01:15,959
+of p of x is just the product of f of x
+and g of x and the product rule says that
+
+18
+00:01:15,959 --> 00:01:21,188
+the derivative of this is going to be the
+derivative of the first function,
+
+19
+00:01:21,188 --> 00:01:26,262
+so f prime of x.
+Times g of x, times g of x
+
+20
+00:01:26,262 --> 00:01:31,392
+plus the first function, so f of x, times
+the
+
+21
+00:01:31,392 --> 00:01:36,387
+derivative of the second function, g prime
+
+22
+00:01:36,387 --> 00:01:37,130
+of x.
+
+23
+00:01:37,130 --> 00:01:39,050
+And so I think the, the best way to
+
+24
+00:01:39,050 --> 00:01:41,669
+deal with this is just to go through some
+examples.
+
+25
+00:01:43,310 --> 00:01:44,610
+Ops.
+
+26
+00:01:44,610 --> 00:01:49,083
+So, in several of my slides I start out
+the slide with a recall just to remind
+
+27
+00:01:49,083 --> 00:01:51,284
+you what the product rule is, so this
+
+28
+00:01:51,284 --> 00:01:54,250
+is just the definition of the product rule
+here.
+
+29
+00:01:57,740 --> 00:02:02,279
+And suppose my function, p of x, is x
+times e to the x.
+
+30
+00:02:06,650 --> 00:02:09,961
+So, right away, I'm going to recognize
+this this is
+
+31
+00:02:09,961 --> 00:02:12,810
+the product of a function f of x equals x.
+
+32
+00:02:12,810 --> 00:02:16,530
+And another function, g of x equals e to
+the x.
+
+33
+00:02:18,030 --> 00:02:21,660
+And I know how to take the derivative of
+both of those functions.
+
+34
+00:02:21,660 --> 00:02:22,160
+So.
+
+35
+00:02:23,410 --> 00:02:25,239
+I'm going to kind of skip in this course
+
+36
+00:02:25,239 --> 00:02:27,960
+all of the rules for taking derivatives of
+functions.
+
+37
+00:02:27,960 --> 00:02:31,740
+These are easy things to look up now, I
+actually brought my phone
+
+38
+00:02:31,740 --> 00:02:37,250
+here, because I found out that Siri, which
+is the voice assistant on an Iphone.
+
+39
+00:02:37,250 --> 00:02:40,290
+One of the things that it asks for sources
+of data
+
+40
+00:02:40,290 --> 00:02:45,030
+is Wolfram Alpha, which is this website
+I've been recommending to you.
+
+41
+00:02:45,030 --> 00:02:50,484
+So I'm going to try an onscreen
+demonstration of this, see what happens.
+
+42
+00:02:50,484 --> 00:02:55,480
+what's the derivative of the exponential
+function?
+
+43
+00:02:59,260 --> 00:03:02,507
+>> Checking on that.
+Here's what I found.
+
+44
+00:03:02,507 --> 00:03:02,730
+>> Okay.
+
+45
+00:03:02,730 --> 00:03:05,960
+So I don't know if the camera is going to
+be able to pick that up.
+
+46
+00:03:05,960 --> 00:03:11,600
+But it shows up this little, I don't know
+what that's suppose to be.
+
+47
+00:03:11,600 --> 00:03:14,498
+Actually that's a dot matrix printer paper
+but it
+
+48
+00:03:14,498 --> 00:03:18,249
+actually has the derivative of the
+exponential function on it.
+
+49
+00:03:19,506 --> 00:03:25,174
+although they used a capital X and I used
+a small x but otherwise
+
+50
+00:03:25,174 --> 00:03:28,390
+it's exactly what I wanted.
+
+51
+00:03:28,390 --> 00:03:30,740
+So the point is and I'm going to remember
+to switch off the ring
+
+52
+00:03:30,740 --> 00:03:31,163
+[INAUDIBLE]
+
+53
+00:03:31,163 --> 00:03:35,650
+otherwise I will get embarrassed.
+you can use a lot of tools.
+
+54
+00:03:35,650 --> 00:03:38,502
+Google would probably find the correct
+answer for this
+
+55
+00:03:40,876 --> 00:03:44,355
+If you have a computer algebra program
+like Mathematica or
+
+56
+00:03:44,355 --> 00:03:48,540
+Maple, you're going to be able to ask it
+questions like that.
+
+57
+00:03:48,540 --> 00:03:51,820
+You can look this up in any number of
+calculus text books.
+
+58
+00:03:51,820 --> 00:03:54,844
+So kind of going through all of these
+rules I'm going to skip
+
+59
+00:03:54,844 --> 00:03:57,679
+that but when you come to a function you
+don't know how
+
+60
+00:03:57,679 --> 00:04:01,585
+to take the derivative of there're lots of
+tools available online or
+
+61
+00:04:01,585 --> 00:04:04,830
+in the library that will help you figure
+out how to do that.
+
+62
+00:04:04,830 --> 00:04:06,054
+So what we just found
+
+63
+00:04:06,054 --> 00:04:09,366
+out from Wolfram Alpha via Siri was that
+the derivative
+
+64
+00:04:09,366 --> 00:04:12,040
+of this function e to the x is just
+itself.
+
+65
+00:04:12,040 --> 00:04:17,279
+So it's a it's a special function that has
+the property that it's own derivative.
+
+66
+00:04:19,380 --> 00:04:23,280
+So this one, will be the easy one to take
+the derivative of.
+
+67
+00:04:23,280 --> 00:04:26,470
+And, this is isn't going to be too hard
+either.
+
+68
+00:04:26,470 --> 00:04:28,940
+You can think of x as just x to the one.
+
+69
+00:04:28,940 --> 00:04:30,320
+And use the power rule.
+
+70
+00:04:30,320 --> 00:04:34,020
+So you get one times x to the one minus
+one, or one.
+
+71
+00:04:36,830 --> 00:04:39,980
+So I'm going to break this up as f of x
+equals x.
+
+72
+00:04:39,980 --> 00:04:42,260
+G of x equals e to the x.
+
+73
+00:04:42,260 --> 00:04:45,500
+And then just, evaluate this.
+
+74
+00:04:45,500 --> 00:04:50,190
+So what I end up is derivative of x is one
+times e to the x.
+
+75
+00:04:50,190 --> 00:04:55,260
+Plus derivative of e to the x, which is
+itself, times x.
+
+76
+00:04:57,770 --> 00:05:00,474
+And then, I'm just going to Do a little
+bit
+
+77
+00:05:00,474 --> 00:05:02,950
+of grouping like this, because I think it
+looks nicer.
+
+78
+00:05:02,950 --> 00:05:06,080
+But either this or this line.
+
+79
+00:05:06,080 --> 00:05:08,780
+These would both be acceptable answers
+for, for the derivative.
+
+80
+00:05:13,650 --> 00:05:16,730
+So, for my second example, I defined p of
+t.
+
+81
+00:05:18,330 --> 00:05:21,040
+So here, there's no real difference
+between using x and t.
+
+82
+00:05:21,040 --> 00:05:24,364
+It's just the variable.
+I can call it anything I want to.
+
+83
+00:05:24,364 --> 00:05:29,090
+a lot of times, t shows up as kind of a
+variable name for time.
+
+84
+00:05:29,090 --> 00:05:32,790
+X shows up for position, You know?
+
+85
+00:05:32,790 --> 00:05:35,363
+S shows up for an asset price.
+
+86
+00:05:35,363 --> 00:05:38,423
+it doesn't matter you do everything
+exactly the same,
+
+87
+00:05:38,423 --> 00:05:41,730
+regardless of how you choose to label the
+parts of your function.
+
+88
+00:05:44,350 --> 00:05:50,890
+And so p of t is defined to be the square
+root of t times the quantity 1 minus t.
+
+89
+00:05:50,890 --> 00:05:53,126
+And so I'm going to look at this, and I'm
+going to say,
+
+90
+00:05:53,126 --> 00:05:55,362
+well that, if I want that to be a product,
+the, the
+
+91
+00:05:55,362 --> 00:05:59,816
+simplest thing Is going to be the square
+root of t,
+
+92
+00:05:59,816 --> 00:06:02,780
+as f of x, and one minus t as g of x.
+
+93
+00:06:03,860 --> 00:06:07,300
+And then to make taking the square root
+possible, I
+
+94
+00:06:07,300 --> 00:06:10,230
+can rewrite that as t to the one half
+power.
+
+95
+00:06:11,690 --> 00:06:15,550
+And so this is just another way to express
+roots.
+
+96
+00:06:15,550 --> 00:06:18,134
+So if I wanted the cube root of t, that
+would be
+
+97
+00:06:18,134 --> 00:06:22,324
+t to the 1 3rd power and so on and it's a
+
+98
+00:06:22,324 --> 00:06:25,996
+lot easier I think to take the derivative
+when it's written like
+
+99
+00:06:25,996 --> 00:06:29,480
+this, it's just very clear that you can
+use the power rule.
+
+100
+00:06:31,630 --> 00:06:34,632
+So now that I've defined my f of t and g
+of t I'm
+
+101
+00:06:34,632 --> 00:06:40,530
+just going to take the derivatives and
+then plug the, plug the pieces into the.
+
+102
+00:06:40,530 --> 00:06:41,160
+Product rule.
+
+103
+00:06:43,748 --> 00:06:48,236
+So the derivative of t to the one half
+that's by the power rule
+
+104
+00:06:48,236 --> 00:06:52,440
+just going to be one half times t to the
+one half minus 1.
+
+105
+00:06:52,440 --> 00:06:58,060
+So one half times t to the negative one
+half then times g of t.
+
+106
+00:06:58,060 --> 00:07:00,790
+So times the quantity 1 minus t.
+
+107
+00:07:00,790 --> 00:07:03,950
+Plus t to the one half, so that my f of t.
+
+108
+00:07:05,650 --> 00:07:08,770
+And then the derivative of 1 minus t, we
+have to
+
+109
+00:07:08,770 --> 00:07:11,422
+sort of, in our head, use the linear ity
+
+110
+00:07:11,422 --> 00:07:15,290
+principal and the power rule at the same
+time.
+
+111
+00:07:15,290 --> 00:07:18,214
+So this says that I can take the
+derivative of g of t,
+
+112
+00:07:18,214 --> 00:07:22,340
+it's going to be the derivative of 1,
+which is a constant so it's zero.
+
+113
+00:07:22,340 --> 00:07:26,150
+And the derivative of minus t, which is
+just going to be negative 1.
+
+114
+00:07:26,150 --> 00:07:33,330
+So that's where this minus 1 comes from.
+It's a derivative of minus t.
+
+115
+00:07:33,330 --> 00:07:33,902
+And then I can
+
+116
+00:07:33,902 --> 00:07:36,292
+do a little bit of simplification.
+
+117
+00:07:36,292 --> 00:07:42,326
+replace the t to the one half with a
+square root of t, if you want to.
+
+118
+00:07:42,326 --> 00:07:47,910
+And maybe mess around with it a little bit
+to make it a bit more pretty.
+
+119
+00:07:47,910 --> 00:07:49,650
+But again, you know, once you are
+
+120
+00:07:49,650 --> 00:07:52,530
+this far, you've successfully taken the
+derivative,
+
+121
+00:07:52,530 --> 00:07:55,960
+and the rest of this is just to make it a
+little bit more presentable.
+
+122
+00:07:59,500 --> 00:08:02,340
+The next rule I want to talk about is
+called the chain rule.
+
+123
+00:08:02,340 --> 00:08:06,560
+This is probably the most important rule,
+and where you will make the most mistakes.
+
+124
+00:08:07,590 --> 00:08:12,466
+So again, we're going to talk about two
+differentiable
+
+125
+00:08:12,466 --> 00:08:15,054
+functions, f of x and g of x.
+
+126
+00:08:15,054 --> 00:08:19,110
+And so last time we we thought about
+multiplying them together.
+
+127
+00:08:19,110 --> 00:08:24,990
+This time we're going to think about
+evaluating, how did I do this,
+
+128
+00:08:24,990 --> 00:08:29,773
+so f of x.
+Taking the result of that and feeding
+
+129
+00:08:29,773 --> 00:08:34,870
+it into g of x.
+And so that's called a composite function.
+
+130
+00:08:34,870 --> 00:08:39,664
+The text book uses this notation, all it
+
+131
+00:08:39,664 --> 00:08:44,881
+means is so g composed with f of x is,
+sorry,
+
+132
+00:08:44,881 --> 00:08:49,993
+g evaluated.
+At f of x, I find it a lot more sensible
+
+133
+00:08:49,993 --> 00:08:53,592
+just to always write it down like this.
+Any time I've
+
+134
+00:08:53,592 --> 00:08:57,176
+tried to write it down like this, I end up
+confusing myself, so I prefer this
+
+135
+00:08:57,176 --> 00:09:01,422
+notation.
+So if f of x and g of x are differentiable
+
+136
+00:09:01,422 --> 00:09:08,552
+functions, then the composite function g
+of f of x is also differentiable
+
+137
+00:09:08,552 --> 00:09:15,337
+and the derivative of this composite
+function is the derivative of the
+
+138
+00:09:15,337 --> 00:09:17,420
+outside function.
+
+139
+00:09:17,420 --> 00:09:23,499
+So the derivative of g of x evaluated at f
+of x times f prime of x.
+
+140
+00:09:29,020 --> 00:09:32,910
+And, so like I said, I really don't like
+this notation of the composite fuction.
+
+141
+00:09:32,910 --> 00:09:34,740
+I, I tend to confuse myself.
+
+142
+00:09:34,740 --> 00:09:38,016
+So, another way you can write this is
+using
+
+143
+00:09:38,016 --> 00:09:43,567
+something called Leibniz Notation, who is
+just another mathematician
+
+144
+00:09:43,567 --> 00:09:48,770
+and so what you do is you think of you
+think of it in sort of two steps.
+
+145
+00:09:48,770 --> 00:09:53,390
+So first I'm going to evaluate f of x and
+that's going to give me a number u.
+
+146
+00:09:54,650 --> 00:09:58,121
+And then I'm going to evaluate g at that
+number
+
+147
+00:09:58,121 --> 00:10:00,849
+u to get my final answer, g of f of x.
+
+148
+00:10:02,290 --> 00:10:06,154
+And the chain rule then says that the
+derivative of
+
+149
+00:10:06,154 --> 00:10:10,846
+g, so the derivative of the outside
+function, with respect
+
+150
+00:10:10,846 --> 00:10:14,710
+to x which is the argument of the inside
+function,
+
+151
+00:10:14,710 --> 00:10:19,310
+is the derivative of just g with respect
+to it's argument,
+
+152
+00:10:19,310 --> 00:10:21,469
+times the derivative of u.
+
+153
+00:10:21,469 --> 00:10:27,123
+So the argument for the outside function
+with respect to x.
+
+154
+00:10:27,123 --> 00:10:30,396
+And I think this will become clear once I
+start doing some examples.
+
+155
+00:10:30,396 --> 00:10:35,108
+So like I said this is called Leibniz
+notation.
+
+156
+00:10:35,108 --> 00:10:42,400
+So first I'll try to do a few using using
+this funny Composite function notation.
+
+157
+00:10:45,840 --> 00:10:51,524
+So if I say g of f of x is equal to the
+square root of x squared plus 1 then I
+
+158
+00:10:51,524 --> 00:10:57,840
+sort of have to look at that and say that
+this has to somehow be two functions.
+
+159
+00:10:57,840 --> 00:11:00,170
+So the two functions I see.
+
+160
+00:11:00,170 --> 00:11:03,550
+Are x squared plus 1, and then the square
+root.
+
+161
+00:11:06,780 --> 00:11:10,775
+And again, just to make this a little bit
+simpler, I'm
+
+162
+00:11:10,775 --> 00:11:14,600
+going to write the square root as this
+quantity to the one
+
+163
+00:11:14,600 --> 00:11:19,700
+half power, and that's going to hopefully
+stop me from making quite
+
+164
+00:11:19,700 --> 00:11:24,970
+so many I suppose typographical errors
+while I'm writing this out.
+
+165
+00:11:27,480 --> 00:11:33,522
+And so the chain rule then says that the
+derivative of g composed with
+
+166
+00:11:33,522 --> 00:11:40,190
+f is going to be the derivative of g so
+that's just going to be one half.
+
+167
+00:11:40,190 --> 00:11:44,170
+Times the quantity x squared plus 1 to the
+one half minus 1.
+
+168
+00:11:44,170 --> 00:11:45,730
+So negative one half.
+
+169
+00:11:45,730 --> 00:11:52,430
+Then times f prime of x.
+So, here the f of x is x squared plus 1.
+
+170
+00:11:52,430 --> 00:11:54,754
+And so, by the power rule I can see
+
+171
+00:11:54,754 --> 00:11:59,020
+that x squared, it's derivative is just
+going to be 2x.
+
+172
+00:11:59,020 --> 00:12:02,100
+Then one is a constant, so it's derivative
+is zero.
+
+173
+00:12:02,100 --> 00:12:05,380
+So I end up multiplying this thing by x,
+and then
+
+174
+00:12:05,380 --> 00:12:09,520
+I can re-write my one half power as a
+square root again.
+
+175
+00:12:09,520 --> 00:12:12,951
+This two over here is going to cancel out
+my one half, and so
+
+176
+00:12:12,951 --> 00:12:16,720
+I get a little bit nicer looking format
+once I simplify a bit.
+
+177
+00:12:20,450 --> 00:12:24,582
+And you can do the same thing this is one
+examples from the text book.
+
+178
+00:12:24,582 --> 00:12:26,962
+it's exactly the same problem as this one
+
+179
+00:12:26,962 --> 00:12:29,614
+up here just with some different numbers
+so, I
+
+180
+00:12:29,614 --> 00:12:31,926
+have something on the inside and then the
+
+181
+00:12:31,926 --> 00:12:36,200
+outside function is that raised to the
+hundredth power.
+
+182
+00:12:36,200 --> 00:12:37,860
+So when I take the derivative of that.
+
+183
+00:12:37,860 --> 00:12:41,799
+First I'm just going to say, 100 times
+the,
+
+184
+00:12:41,799 --> 00:12:45,770
+the quantity to the 100 minus 1, so 99.
+
+185
+00:12:45,770 --> 00:12:49,670
+And then the chain rule says, to get the
+derivative right,
+
+186
+00:12:49,670 --> 00:12:54,220
+I also need to multiply this by the
+derivative of the inside.
+
+187
+00:12:54,220 --> 00:12:57,246
+So that gives me 3x squared over here and
+
+188
+00:12:57,246 --> 00:13:01,289
+if I simplify the sense of being the
+derivative.
+
+189
+00:13:05,670 --> 00:13:10,685
+If instead we, we think about this using
+the Leibniz notation the way I
+
+190
+00:13:10,685 --> 00:13:15,730
+want to set up problems is using something
+called substitution.
+
+191
+00:13:17,210 --> 00:13:21,170
+So suppose I want to compute the
+derivative of the sine of x squared.
+
+192
+00:13:22,700 --> 00:13:24,052
+Well if I just look at that as one
+
+193
+00:13:24,052 --> 00:13:26,288
+function, I don't know how to take the
+derivative
+
+194
+00:13:26,288 --> 00:13:28,004
+of that, but you can see right away that
+
+195
+00:13:28,004 --> 00:13:30,350
+you do know how to take the derivative of
+sine.
+
+196
+00:13:30,350 --> 00:13:30,760
+If you
+
+197
+00:13:30,760 --> 00:13:34,480
+don't you can ask Siri or Google search
+Wolfram Alpha
+
+198
+00:13:34,480 --> 00:13:34,980
+[COUGH].
+
+199
+00:13:38,160 --> 00:13:43,140
+So, what I'm going to do is to find a new
+variable u, that's equal to x squared.
+
+200
+00:13:43,140 --> 00:13:45,092
+And now if I replace x squared with u, I
+
+201
+00:13:45,092 --> 00:13:47,960
+would know how to take the derivative of
+this function.
+
+202
+00:13:50,660 --> 00:13:54,830
+And so that means my function g of u is
+just going to be sin of u.
+
+203
+00:13:54,830 --> 00:13:56,040
+So it's.
+
+204
+00:13:56,040 --> 00:14:01,140
+Sin of x squared, if I replace x squared
+with u, I just get sin of u.
+
+205
+00:14:01,140 --> 00:14:04,752
+And then I'm also going to need this du dx
+over here,
+
+206
+00:14:04,752 --> 00:14:09,180
+so I'm going to get that just by taking
+the derivative of this.
+
+207
+00:14:09,180 --> 00:14:15,699
+So, the derivative of u, is just going to
+be 2x, so du dx is going to equal 2x
+
+208
+00:14:20,630 --> 00:14:26,210
+So if I take the derivative, and this is
+where you have to be a bit careful
+
+209
+00:14:26,210 --> 00:14:30,674
+of not getting variable names confused,
+I'm taking the
+
+210
+00:14:30,674 --> 00:14:33,836
+derivative with respect to x of the sin of
+
+211
+00:14:33,836 --> 00:14:39,695
+u, and so that, what the chain rule is
+telling me is if I want to do this, I can
+
+212
+00:14:39,695 --> 00:14:45,926
+just take the derivative of sin of u with
+respect to u, so that's this first term
+
+213
+00:14:45,926 --> 00:14:48,270
+in the, in the chain rule.
+
+214
+00:14:48,270 --> 00:14:53,780
+And then, I need to multiply that times
+the derivative of my substitution.
+
+215
+00:14:53,780 --> 00:14:57,316
+So here I've substituted u equals x
+squared, so I have to take
+
+216
+00:14:57,316 --> 00:15:01,400
+the derivative of that, and multiply it in
+To whatever I get here.
+
+217
+00:15:04,180 --> 00:15:07,962
+And so now I can just go ahead and start
+evaluating derivatives, so you can
+
+218
+00:15:07,962 --> 00:15:09,731
+look up the derivative for the sine
+
+219
+00:15:09,731 --> 00:15:12,240
+function, you'll find that it's cosine of
+u.
+
+220
+00:15:13,280 --> 00:15:16,688
+And the derivative of u, with respect to
+x, that's easy
+
+221
+00:15:16,688 --> 00:15:20,800
+to get from here, just by using the power
+rule, is 2x.
+
+222
+00:15:20,800 --> 00:15:24,040
+But now I still have a u in my answer
+here, but I can just
+
+223
+00:15:24,040 --> 00:15:29,060
+undo my substitution now by going back and
+saying, well, u is equal to x squared.
+
+224
+00:15:30,600 --> 00:15:30,758
+So
+
+225
+00:15:30,758 --> 00:15:35,920
+I end up getting the correct answer here,
+2x times cosine of x squared.
+
+226
+00:15:41,220 --> 00:15:48,168
+And so another example Suppose I try to
+take the exponential of sin of theta.
+
+227
+00:15:48,168 --> 00:15:50,630
+And I want to take the derivative of this
+with respect to theta.
+
+228
+00:15:52,640 --> 00:15:54,770
+So here I see two functions.
+
+229
+00:15:54,770 --> 00:15:58,820
+The inside function is going to be the
+sine function.
+
+230
+00:15:58,820 --> 00:16:02,079
+And the outside function is going to be
+the exponential function.
+
+231
+00:16:03,930 --> 00:16:08,258
+So what I'm going to do is I'm going to
+let u be the value of the inside function.
+
+232
+00:16:08,258 --> 00:16:11,630
+So I'm going to make the substitution u
+equals sign of theta.
+
+233
+00:16:11,630 --> 00:16:17,730
+And then I'll fill in the rest of the
+pieces like I did in the first example
+
+234
+00:16:17,730 --> 00:16:21,480
+so g of u is then just going to be e to
+the u.
+
+235
+00:16:21,480 --> 00:16:25,120
+So I get that just by looking at my
+original function and making
+
+236
+00:16:25,120 --> 00:16:28,920
+the substitution u equals sin of theta or
+sin of theta equals u.
+
+237
+00:16:28,920 --> 00:16:35,333
+And then I also need the derivative of my
+transformation, or of
+
+238
+00:16:35,333 --> 00:16:41,906
+my substitution so du d theta is just
+going to be cosine of theta.
+
+239
+00:16:43,102 --> 00:16:48,286
+So if I take the derivative of ops, the
+derivative of this here,
+
+240
+00:16:48,286 --> 00:16:53,400
+ops with respect to theta.
+I'm just going to get cosine of theta.
+
+241
+00:16:53,400 --> 00:16:56,740
+And then I just start plugging things into
+the chain rule.
+
+242
+00:16:58,320 --> 00:17:03,110
+So I get the derivative with respect to x.
+Ops, that should be a theta there.
+
+243
+00:17:03,110 --> 00:17:08,390
+So derivative of E to the sin theta with
+respect to theta.
+
+244
+00:17:09,475 --> 00:17:11,820
+Is the derivative of e to the u with
+respect
+
+245
+00:17:11,820 --> 00:17:14,800
+to u times the derivative of u with
+respect to theta.
+
+246
+00:17:16,420 --> 00:17:18,688
+Derivative of e to the u, well we've
+already seen
+
+247
+00:17:18,688 --> 00:17:22,490
+this, this was the special function that's
+its own derivative.
+
+248
+00:17:22,490 --> 00:17:25,550
+So that just stays.
+Where did my mouse go.
+
+249
+00:17:28,210 --> 00:17:30,830
+That, that's not good.
+Okay, there it goes.
+
+250
+00:17:30,830 --> 00:17:32,118
+That just stays e to the u.
+
+251
+00:17:32,118 --> 00:17:36,074
+Du d theta becomes cosine theta and now I
+have to, I have
+
+252
+00:17:36,074 --> 00:17:40,890
+this u here which I don't want anymore,
+because the answer should be in
+
+253
+00:17:40,890 --> 00:17:45,448
+terms of theta, so I just have to
+substitute backwards and I get
+
+254
+00:17:45,448 --> 00:17:50,500
+the, the final answer, cosine of theta
+times e to the sine of theta.
+
+255
+00:17:54,820 --> 00:17:57,770
+And then just one last rule.
+
+256
+00:17:57,770 --> 00:18:02,810
+So if you have an inverse function, so an
+inverse function of a function
+
+257
+00:18:02,810 --> 00:18:07,822
+f of x Is a function f inverse that just
+gives me back
+
+258
+00:18:07,822 --> 00:18:13,250
+the argument, so it sort of undoes
+whatever my function just did.
+
+259
+00:18:13,250 --> 00:18:16,710
+So if I take f inverse of f of x, I just
+get x back.
+
+260
+00:18:16,710 --> 00:18:20,046
+And you have to be a little bit
+
+261
+00:18:20,046 --> 00:18:27,390
+careful here because F has to be sort of a
+function where this is going to work.
+
+262
+00:18:27,390 --> 00:18:29,950
+So if I did something that was periodic,
+like if
+
+263
+00:18:29,950 --> 00:18:33,400
+I looked at a sine function or a cosine
+function.
+
+264
+00:18:33,400 --> 00:18:38,980
+That's very easy to take the x variable
+and get a y variable.
+
+265
+00:18:38,980 --> 00:18:40,778
+But if I just tell you the y variable,
+
+266
+00:18:40,778 --> 00:18:43,790
+there's going to be a whole bunch of x
+variables.
+
+267
+00:18:43,790 --> 00:18:45,120
+That will give you that
+
+268
+00:18:45,120 --> 00:18:46,230
+same y variable.
+
+269
+00:18:46,230 --> 00:18:52,340
+So you have to define it on a region where
+it's one to one both directions.
+
+270
+00:18:52,340 --> 00:18:57,040
+So that I can actually do this and get
+exactly the same x back that I put in.
+
+271
+00:19:00,880 --> 00:19:05,250
+And so f inverse is then just going to be
+a function so f.
+
+272
+00:19:05,250 --> 00:19:08,365
+Takes a point in a b and gives me back a
+point
+
+273
+00:19:08,365 --> 00:19:12,014
+in c d and f inverse is just going to take
+that point
+
+274
+00:19:12,014 --> 00:19:15,129
+in c d and give me back my original point
+in a
+
+275
+00:19:15,129 --> 00:19:19,980
+b and I have to choose these intervals so
+that, that is unique.
+
+276
+00:19:19,980 --> 00:19:23,790
+So that I can go forward and go back and
+get the same answer.
+
+277
+00:19:23,790 --> 00:19:25,788
+For all of the points in the interval a,
+b.
+
+278
+00:19:29,580 --> 00:19:34,810
+So then there's a rule for computing the
+deritivative of the inverse function.
+
+279
+00:19:35,840 --> 00:19:40,870
+And so as long as this thing in the
+denominator, is not equal to zero.
+
+280
+00:19:40,870 --> 00:19:44,095
+Then the derivative of the inverse
+function is just
+
+281
+00:19:44,095 --> 00:19:47,740
+1 divided by f prime evaluated at the
+inverse function.
+
+282
+00:19:50,740 --> 00:19:54,268
+And so just as a quick example, consider
+log of e to
+
+283
+00:19:54,268 --> 00:19:59,150
+the x, so these are functions that are,
+kind of, undo one another.
+
+284
+00:20:01,420 --> 00:20:04,560
+So log of e to the x is always equal to x.
+
+285
+00:20:07,150 --> 00:20:12,467
+So I'm going to say, my function f is e to
+the x.
+
+286
+00:20:12,467 --> 00:20:16,485
+F prime of x, so e to the x is this
+special function
+
+287
+00:20:16,485 --> 00:20:21,389
+that's it's own derivative, so f prime is
+just e to the x.
+
+288
+00:20:23,140 --> 00:20:26,600
+And then, f inverse is going to be the log
+function.
+
+289
+00:20:30,870 --> 00:20:33,910
+And so, if I look at the derivative of log
+of x.
+
+290
+00:20:34,980 --> 00:20:41,480
+It tells me that I should just take 1
+divided by f prime.
+
+291
+00:20:41,480 --> 00:20:43,400
+So that's e to the x.
+
+292
+00:20:43,400 --> 00:20:48,570
+Evaluated at f inverse, so f inverse is
+log x.
+
+293
+00:20:48,570 --> 00:20:56,258
+So it's e to the log x and so just like we
+had log of e to the x was x, here I have
+
+294
+00:20:56,258 --> 00:20:59,190
+e to the log of x is also x.
+
+295
+00:20:59,190 --> 00:21:04,160
+And so that tells me that the derivative
+of the logarithm is 1 over x.
+
+296
+00:21:04,160 --> 00:21:06,306
+And again, you could ask Wolfram Alpha
+
+297
+00:21:06,306 --> 00:21:09,070
+what's the derivative of the logarithmic
+function.
+
+298
+00:21:09,070 --> 00:21:10,825
+And it's going to tell you it's 1 over x.
+
+299
+00:21:10,825 --> 00:21:16,110
+Okay so just a quick summary.
+
+300
+00:21:16,110 --> 00:21:21,220
+We had the, the product rule.
+So that said the product of two functions,
+
+301
+00:21:21,220 --> 00:21:25,880
+f of x and g of x, was just, sorry the
+derivative of a product.
+
+302
+00:21:25,880 --> 00:21:29,015
+Is the derivative of the first function
+times the second function,
+
+303
+00:21:29,015 --> 00:21:32,280
+plus the first function times the
+derivative of the second functin.
+
+304
+00:21:34,210 --> 00:21:35,930
+We had the chain rule.
+
+305
+00:21:35,930 --> 00:21:41,395
+So I like this notation a bit better.
+So it says that the derivative
+
+306
+00:21:41,395 --> 00:21:46,225
+of a function of a function.
+Is the derivative of the outside
+
+307
+00:21:46,225 --> 00:21:49,280
+function times the derivative of the
+inside function.
+

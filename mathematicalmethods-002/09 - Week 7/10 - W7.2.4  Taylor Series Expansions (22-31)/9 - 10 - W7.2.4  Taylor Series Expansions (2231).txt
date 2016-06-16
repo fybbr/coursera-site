@@ -1,0 +1,562 @@
+Now we'll look at something called Taylor
+Series Expansions.
+So before I assumed that my function f was
+differentiatiable
+n times, so if I wanted to make order and
+Taylor polynomial so for a linear
+approximation I just needed
+to assume that it was differentialable at
+least one time.
+most of the functions were going to
+encounter are differentiable
+infinitely many times, and this means
+there so, the key thing to notice
+here is the function zero has a derivative
+that's also zero.
+So any polynomial is derivative,
+defferentiable an infinite number of
+times.
+So if it's say x squared, I take the
+derivative, I get 2x.
+I take the derivative, I get two.
+I take the derivative, I get zero.
+And then I can just continually take
+derivatives and I always have zero after
+that.
+so it's, it's difficult.
+I actually was trying to think up a
+function that I could put on a quiz.
+Or something that wouldn't, that would
+look like a normal
+function, and would not be differentiable
+after a certain point.
+And I couldn't really come up with
+anything that
+was, was pretty easy so there They do
+exist and
+they do show up when you start making,
+kind
+of, more complicated types of functions,
+for instance, these things
+that are defined as limits of other
+functions.
+But, for something you can write down,
+generally, they're going
+to have as many derivatives as you as you
+want.
+So I'm going to make something called a
+Taylor series expansion.
+So I'm going to use a notation t of x to
+mean a Taylor serious expansion, and
+that's just going to
+be the limit as n goes to infinity of the
+Taylor polynomial evaluated at x as n goes
+to infinity.
+And so what I mean by that is just, the
+limit as
+this, limit of this sum as the number of
+terms gets, infinite.
+And it turns out that a Taylor series is
+a special case of something called a Power
+series, so.
+For a Taylor series, we know exactly what
+the, the coefficients are.
+They're determined by the function f that
+I'm trying to approximate.
+So, a Power series is just a coefficient a
+sub k
+[SOUND]
+times the quantity x minus a to the kth
+power.
+And if I look at my definition of the,
+of the Taylor polynomial, it just tells me
+that
+a sub k has to equal the kth derivative of
+f evaluated at a, divided by k factorial.
+And then another little bit of notation
+that
+you're going to start seeing pretty often
+is.
+The limit as n goes to infinity of this
+finite sum.
+So from k equals 0 up to n is going
+to be written the sum from k equals 0 to
+infinity.
+So it's probably what you would have
+guessed it would be anyways, but
+the real definition of what's going on
+here is this means the limit.
+As n goes to infinity of the finite sum
+from k equals 1 to n of this series.
+So the Power series coefficients, a sub k,
+when I'm talking about a Taylor series
+expansion, are
+just the kth derivative of the function
+I'm trying
+to approximate, evaluated at a, divided by
+k factorial.
+And the reason I want to show that the
+Taylor series of expansion is a special
+case
+of Power series, is there a more general
+results for convergence of power series,
+so there's
+convergence results for power series in
+general, and
+those, because of Taylor series, there's a
+special
+case of a power series, we can also
+use those convergence results for a Taylor
+series.
+So the important one, the most important
+one,
+I suppose, is something called the radius
+of convergence.
+And this is going to be a number capital R
+greater than 0, and
+I want to look at my Power series, and if
+this sums up to
+a finite number so when I write less than,
+strictly less than infinity,
+what I mean is that whatever is on the
+less than side, so whatever
+is over here is a finite real number.
+And then I'm going to define S of x just
+to be this
+infinite sum and so if this is, if x, so x
+here is in this
+interval a minus R to a plus R, where R is
+the radius of
+the convergence, so it's giving me and
+interval.
+If I take any point
+in that interval then when I make this
+infinite sum I'm going to get a finite
+number.
+So clearly, If we don't get a finite
+number then
+we really can't, you know it's not going
+to be useful
+for approximation because that's telling
+me as I add more terms,
+my approximation's just getting bigger,
+and bigger, and bigger, and bigger.
+So unless I know that f of x is equal to
+infinity I, I don't
+want to be trying to approximate with
+something that's diverging as I add more
+terms.
+So, the, the whole idea is I want to be
+able to add more terms
+to my Taylor polynomial to get a
+better approximation, not to get a worse
+approximation.
+Let's see so, it also turns out that this
+function
+S of x, we can take derivatives of these
+too.
+So, I can take the derivative of this when
+it's finite.
+And then S of x we're going to say is not
+defined.
+So, if I'm outside of the radius of
+convergence, then I don't know what
+happens to S.
+It, it goes to a infinity.
+So, I'm not really going to make, be
+able to make any meaningful statement
+about its property.
+It's like I certainly couldn't define a
+derivative For something that's equal to
+infinity everywhere.
+And so this is the convergence property
+that comes from Power series
+that I want to also be able to use for
+Taylor series.
+So it turns out, I need, it's, it's going
+to depend on These coefficients a sub k.
+But if the limit as k goes to infinity.
+So I just need to look at these
+coefficients a sub k absolute
+value, to the one over kth power.
+So this is the same thing as taking the
+kth root Of the absolute value of a sub k.
+So if it was one half, that would be the
+square root.
+If it was one third, that would be the
+cube root.
+If it was one over four, that would be the
+fourth root.
+And so on.
+So if you can make sense of that limit, if
+that's a finite value, then I
+can define the radius of convergence to be
+one divided by that limit.
+And now for our Taylor series expansion,
+I know what these a sub k's have to be.
+And you can use a property so the sort of
+annoying thing is that a sub k has this
+k factorial in it and sometimes that's
+going to be
+a pain to try and deal with in the limit.
+So luckily somebody proved this additional
+theorem where
+instead of k factorial, I just have k.
+And so if this limit so it's k divided by.
+This is the kth derivative of f evaluated
+at a
+and then I take the absolute value of that
+to the
+one over kth power so it looks kind of
+like
+this, except I don't have this k factorial
+in there anymore.
+So, somehow the k factorial.
+To the 1 over k has become this k, up in
+the, just this k to with no factorial up
+in the numerator.
+So if this limit exists, then the radius
+of
+convergence, so this is for a Taylor
+series now,
+because I'm defining these coefficients in
+terms of the,
+the derivatives that I'm using to build my
+Taylor polynomials.
+The radius of convergence is 1 divided by
+e times the value of that limit.
+And so far, what we've been able to show
+then is that T of x is a finite number so
+that, that's a good first step but it's
+still not doing what we want to do.
+What we really want to be able to do is to
+use T of x, or, or a polynomial
+that we would build on the way to T of x
+to approximate our function f.
+So if T of x is at least a finite
+number, you know, we're doing a lot better
+than if
+it was infinite, there's still the
+possibility that it would work.
+But what we'd really like to know is if or
+where T of x is equal to
+f of x, because if T of x, so if this
+infinite sum is converging
+To f of x at a point x, then the idea
+would be that I can use some
+of those terms to make an approximation of
+f at that point x.
+So we have a, another theorem.
+And this is, this one's a little bit
+trickier.
+So we need to know what the radius of
+convergence is
+and we can get that from the formula on
+the previous slide.
+So you can use either the formula for the
+Power series in general.
+Or you can use the special case for the
+Taylor's expansion.
+And you, sometimes it's actually easier to
+use the general
+formula even when you're working with the
+Taylor expansion just to, it
+depends on whether when you want this k
+factorial in there or not.
+[COUGH]
+Then once you know what the radius of
+convergence is, so you
+know for what values of x is T of x going
+to at least be finite?
+We can look at this limit.
+So I need to take R to the k, so this is
+some number that's
+going to be inside the, it's going to be
+smaller than the radius of convergence.
+So I take R to the kth power, divided by k
+factorial.
+And then I have to look at the kth
+derivative of f.
+Evaluated at a point z, that's in between
+a minus r and a plus r.
+So I'm making an interval around a of
+width lower case r.
+And I need to find the maximum value of
+the kth derivative on that interval.
+So, once you're done doing this part, that
+should just be a number.
+So it's the maximum value of this
+derivative on
+this interval so, but it might involve
+this number r.
+And then I'm going to look at that, this
+limit as k goes to infinity.
+If that limit is equal to 0, then T of x
+is equal to f of x.
+And so what that's going to tell me is
+that every x.
+That's within r, of my point a, has the
+property that the Taylor series expansion.
+So if I just make this infinitely long
+Taylor polynomial.
+That's going to be exactly equal to the
+function that I'm trying to approximate.
+So let me work through a quick example of
+this.
+So the Taylor series expansion for the
+function f of
+x equals log of 1 plus x around the point
+a equals 0 is going to be, so I can
+either define this just with k equals 0 to
+infinity.
+Or I can think about making Taylor
+polynomials of order n and then taking
+the limit as n goes to infinity, either
+one of these they mean the
+same thing, they're just two different
+ways of communicating
+this same idea.
+But the one on the right hand side is sort
+of the more precise of the two.
+So I'm just going to take x minus a.
+But here, I've said I want to make the
+expansion around the point 0.
+So that's going to be x minus 0 to the kth
+power, divided by k factorial, times f k,
+so the kth derivative of my function f
+evaluated at the point 0.
+So it turns out, if I, if I have log of 1
+plus x, the first
+derivative of that is just going to be 1
+divided by 1 plus
+x, so I can write that as 1 plus x to the
+negative 1.
+And if I were to take another derivative
+of that, I'd have negative
+1 times 1 plus x to the negative 2.
+If I took another derivative of that I
+would
+have negative three times whatever
+coefficient I have out here.
+And because every time I take a derivative
+I'm getting a negative sign.
+the sign of each one of these derivatives
+is going to be alternating.
+So the way I'm going to capture that is
+just put a minus one To a power.
+And then I just choose this power so that
+it's even when I want a positive term and
+odd when I want a negative term.
+So the first derivative, when I have one
+prime here,
+those are the ones that I want to be
+positive.
+So when I have an odd derivative, so first
+derivative, third derivative,
+fifth derivative and so on, I want to have
+a positive expression.
+So I'm just going to put k plus 1 as my
+power on the negative 1,
+and that's going to take care of the flip
+flopping sign as the, as the sum goes
+along.
+And then, every time I take a derivative,
+I'm going to get 1
+and then a two and then a three and then a
+four.
+But, because the first derivative I got
+from
+log I'm actually one behind in my count.
+So I end up with k minus 1 factorial as my
+coeefiecient here.
+And then I have 1 plus x to the minus k.
+So when I take the first derivative, I
+have a minus 1.
+The second derivitive would have a minus 2
+and so on.
+And so this is what I want to plug in
+to this term right here, and I'm going to
+evaluate.
+So this is the kth derivitive at x I
+want to evaluate the kth derivative
+at the point 0, so when I put in 0 in this
+part of the
+expression here, this is the only part
+that actually has an x in it,
+I'm going to get 1 plus 0 to the minus kth
+power, and that's just going to
+be 1 to the minus kth power.
+And 1 to any power is equal to 1.
+So when I evaluate this at 0, this final
+part of the expression is just going to
+drop away.
+So I end up with just this alternating
+sign.
+And then a k minus 1 factorial, for my fk
+of 0 derivatives,
+and now, when I plug this back into my
+Taylor expansion, what
+I end up getting is x minus 0 to the k, so
+that just going to
+be an x to the k in the numerator I have a
+k factorial and then
+this expression fk of 0 that we just
+worked out over here and
+this has a k minus one factorial in it.
+So the k minus one
+factorial time, divided by k factorial is
+just going to give me.
+Why can't I select you?
+Okay I'm not going to try that anymore.
+It's just going to give me this factor of
+k in the denominator.
+So that's k minus one factorial divided by
+k factorial.
+Everything cancels itself out except for
+the k.
+So I divide by k In the numerator, I have
+x to
+the k which came from this x minus 0 to
+the kth power.
+And then I have this flip flopping
+sine term.
+So it turns out that my Taylor series
+expansion is going to
+be x minus x squared over two plus x cubed
+over three.
+Minus x to the 4th over 4 and so on.
+And so now I want to find the radius of
+convergence of that.
+And so first I'll try, because this is a
+Taylor series expansion,
+I'll try using the formula we had for the
+Taylor series expansion.
+So I had the.
+Fk evaluated at the point a.
+So my point a was 0, so I have an
+expression for that.
+But now I have this k minus 1 factorial to
+the 1 over
+kth power in the denominator, and I have a
+k in the numerator.
+And so I don't really know how to make
+sense out of that limit.
+So, I said, hmh.
+But I have another possibility.
+Because this is a special case of a Power
+series, I can
+go back and try the formula for the power
+series as well.
+And so that said that if the limit of
+these coefficients
+existed, then the radius of convergence
+would be one over this limit.
+So let's
+see what happens if I just plug this in.
+So I have minus one to the k plus
+one divided by k as my sequence of
+coefficients.
+And when I take the absolute value of
+that, the whole numerator's just going to
+go away.
+So what I end up with is the limit As k
+goes to infinity of 1 over k to the one
+over kth power, and so notice that
+the power is exactly equal to the thing
+that I am taking the power.
+So I'm going to say this is equal to the
+limit as u of u to the
+uth power, and if one over k if k is going
+to infinity,
+then 1 over k is going to 0.
+So I can just say, this
+is the limit as u goes down to 0 of u to
+the uth power.
+And if you go back to our lectures on
+limits, this
+was one of the things that we said was
+equal to 1.
+So if this limit is equal to 1, the radius
+of convergence is 1 divided by that.
+So that tells me that the radius of
+convergence is equal to 1.
+And then the last thing we have to do is
+see if Or where t of x is equal to the log
+of one plus x.
+So this is my function f of x.
+So I know that the radius of convergence
+is equal to one.
+So I'm looking for some number r that's
+between 0.
+So some number little r that's in between
+0 and one
+and so again, I'm just going to use the
+theorem that I had
+on a few slides ago, and that said that if
+I
+looked at this derivative, but now instead
+of being able to evaluate
+z it at the point 0, I have to evaluate it
+at the point, and
+find out where it's maximum on the
+interval minus r to r.
+And what I end up having here is minus 1
+to the n plus 1.
+So my absolute value is going to take care
+of this flip-flopping sign for me.
+I have an n minus 1 factorial in the
+numerator and then a 1 plus z to the nth
+power in the denominator and I'm trying to
+make this as big as I possibly
+can.
+So I want to make the denominator
+as small as I possibly can.
+So the smallest I can make this is if I
+take one minus r
+And so that gives me is that
+right?
+I must have
+had a missing one
+line in here.
+For what I should do.
+but essentially
+because r, I can't actually make this
+denominator 0,
+because r has to be strictly less than 1.
+And so what I end up with is, I have
+something
+to the n down here, and this r to the n
+here.
+And that actually gives, I can think of
+that as then
+just r times 1, or, r divided by 1 minus
+r.
+To the nth power but I'm taking the limit
+as n goes to infinity,
+and so r divided by 1 minus r, that's just
+a constant.
+And I have, so I have some constant to the
+nth power divided by n
+factorial, and that limit is again one of
+the results we had from the first week.
+That any constant to a power divided by n
+factorial, if I take
+the limit of that as n goes to infinity,
+I'm going to get 0.
+And so that tells me, I can make r as
+close as I want
+to capital R but I can not actually make
+it equal to capital R.
+So it's just turned this sort of open
+interval, this radius
+of convergence of being 1 it goes, it's a
+closed interval its
+now an open interval so our little r can
+be any
+number if it's smaller than 1 but it can't
+actually be 1.
+And so that tells me that T of x is equal
+to f
+of x as long as the absolute value of x is
+less than 1.
+

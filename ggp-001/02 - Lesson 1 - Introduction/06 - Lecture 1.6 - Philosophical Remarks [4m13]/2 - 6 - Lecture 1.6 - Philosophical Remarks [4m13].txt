@@ -1,0 +1,26 @@
+As we shall see, general game playing is an interesting application in its own right.
+It's intellectually engaging and more than a little fun.
+But it's much more than that.
+It serves as an analog for applications of logic in other areas such as business and law, science and engineering, and other areas.
+More fundamentally, it raises questions about the nature of intelligence and serves as a laboratory which through evaluate competing approaches to intelligence.
+Game descriptions provide full information about a world and determine optimal strategies as a baseline for evaluating agent behavior.
+By its nature, the general game playing setting can be used to evaluate problem solving strategies and by extension theories of intelligence
+by taking into account representation, incompleteness of information and ressource bounds.
+The idea of using applications like general game playing for such purposes is not new.
+It was in 1958 that John McCarty invented the concept of the "advice taker".
+The idea was simple: he wanted a machine that he could program by description.
+He would describe the intended environment and the desired goal, and the machine would use that information in determining its behavior.
+There would be no programming in the traditional sense.
+McCarthy presented his concept in a paper that has become a classic in the field of AI. Here is a quote:
+<quote on slide>
+It was an ambitious goal, but those were times of high hopes and grand ambitions.
+The idea caught the imaginations of numerous subsequent researchers, notably Bob Kowalski, the high priest of logic programming, and Ed Feigenbaum, the inventor of knowledge engineering.
+In a paper written in 1974, Feigenbaum gave us the most forceful statement of McCarthy's ideal:
+<quote on slide>
+Okay so one final remark: some have argued that the way to achieve intelligent behavior is through specialization.
+That may work so long as the assumptions one makes in building such a assumptions are true.
+For a general intelligence however, general intellectual capabilities are needed and such systems should be capable of performing well in a wide variety of tasks.
+To paraphrase the words of Robert Heinlein:
+<quote on slide>
+Those of us who are more interested in artificial intelligence than artificial insects agree with Heinlein.
+

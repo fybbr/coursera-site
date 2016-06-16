@@ -1,0 +1,197 @@
+In general game planning, a player may
+choose to make
+assumptions about the actions of the other
+players or not.
+For example, a player might assume that
+the other players are behaving rationally.
+By eliminating irrational actions on the
+part of other players a
+player can decrease the number of
+possibilities it needs to consider.
+Unfortunately, in general game playing, at
+least as currently constituted, no
+player knows the identity of the other
+players or their characteristics.
+The other players might be irrational, or
+they
+might behave the same as the player
+itself.
+Players might even be down, not
+functioning correctly.
+Since there's no information about the
+other players,
+many general game players take a
+pessimistic approach.
+They assume that the other players will
+perform the worst possible actions.
+This pessimistic approach is the basis for
+a game playing technique called minimax.
+Basic idea of minimax is to select moves
+that are guaranteed
+to produce the highest possible return, no
+matter what the opponents do.
+Player tries to maximize its own value and
+assumes that the
+opponents are trying to minimize its
+value, hence the name minimax.
+In
+the case of a one step game, minimax
+chooses
+an action such that the value of the
+resulting state
+for any opponent is greater than or equal
+to
+the value of the resulting state for any
+other action.
+In the case of a multi-step game, minimax
+goes
+to the end of the game, and backs up
+values.
+Generally, we can think about minimax as a
+search of a
+bipartite tree, consisting of alternating
+max nodes, shown here as gray squares.
+And min nodes, show her as beige circles.
+The max nodes represent the choices of the
+player, while
+the min nodes represent the choices of the
+other players.
+Now, in the case of games with more than
+two players, it
+can be multiple layers of min nodes
+between each layer of max nodes.
+One layer for each opponent.
+now, also in looking at this tree, note
+that although
+we've separated the choices of the player
+and its opponents.
+This does not mean that the play
+alternates between
+the opponents or that the opponents know
+the player's action.
+Player and opponents make their choices
+and then simultaneously, with knowledge of
+each others, and, and simultaneously
+without
+the knowledge of each others' choices.
+Okay, the value of a max node for a player
+is the utility the
+goal, the value, the reward at the
+corresponding state, if that state is
+terminal.
+Otherwise, it's the maximum of the values
+of
+the min nodes that result from its legal
+actions.
+The value of a min node is the
+minimum that results for any legal
+opponent action.
+Let's see how this works.
+Following game tree illustrates it.
+The nodes at the bottom of the tree are
+terminal states
+and the values are the player's gold
+values for those states.
+The values shown in the other nodes are
+computed according to the rules we just
+went over.
+For example, the value of the min node at
+the lower left is one because that's
+the minimum of the two values of the max
+nodes below it, namely one and two.
+The value of the min
+node next to that min node is three
+because that's the minimum of the
+value of the, values of the two max nodes
+below it, namely three and four.
+The value of the max node above these two
+min nodes is
+three because that's the maximum of the
+values of the two min nodes.
+And so forth.
+Here's an implementation of a minimax
+player.
+It's identical to the implementations of
+the compulsive deliberation for
+single player games, except that it has a
+different bestmove procedure.
+The main difference between the bestmove
+subroutine for single player games, and
+the bestmove for multiple player games, is
+the way the scores are computed.
+Rather than comparing subsequent states,
+it
+compares the min nodes, as described
+previously.
+The minscore subroutine for minimax takes
+an action and
+a state as arguments, and produces the
+minimum values for
+the given role associated with the given
+player for
+any of the opponents legal actions in the
+given state.
+The maxscore subroutine, which is called
+by minscore, takes state as argument,
+and conducts a recursive exploration of
+the game tree below that state.
+If the state's terminal, the output is
+just the roles reward for that state.
+Otherwise, the output
+is the maximum of the utilities of the min
+nodes
+corresponding to the player's legal
+actions in the given state.
+Now, one disadvantage to the minimax
+procedure is that
+it examines the entire game tree in all
+cases.
+While this is sometimes necessary, there
+are cases where it's possible
+to get the same result without examining
+the entire game tree.
+For example, if in processing a state the
+max score subroutine finds an action that
+produces
+100 points.
+It doesn't need to look at any additional
+actions as it cannot do better.
+Similarly if the minscore subroutine finds
+an action
+that produces zero points for the player
+it
+does not need to look at any additional
+actions, as it cannot get the score any
+lower.
+Bounded minimax is just the minimax
+procedure
+we just saw with two minor changes.
+Rather than processing all actions on
+every node,
+maxscore and minscore, first check for
+these bounds.
+And if they occur in any node, they
+terminate their search, and return the
+corresponding values.
+So here's an example.
+The nodes in this tree with are, are those
+examined by bounded minimax.
+The ones that have numbers on them, are
+examined by bounded minimax.
+The other nodes are not examined at all,
+and they don't need to be examined.
+In this case notice that more than half of
+the tree is pruned from consideration.
+Note that 100 and zero are not the only
+values that can be used here.
+For example, if a player is in a so-called
+satsificing game where it just needs
+to get a certain minimum score, then it
+can use that threshhold rather than 100.
+For example, the player simply wants to
+win and it's a
+fixed sum game, then he can use 51 as the
+threshold.
+Knowing that if he gets this amount it has
+won the game.
+

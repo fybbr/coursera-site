@@ -1,0 +1,1216 @@
+1
+00:00:01,130 --> 00:00:03,520
+The last lesson in this set is
+
+2
+00:00:03,520 --> 00:00:06,509
+Marginal Density of a Bivariate Normal
+Distribution.
+
+3
+00:00:07,620 --> 00:00:11,370
+So this was actually one of the integrals
+that
+
+4
+00:00:11,370 --> 00:00:14,220
+motivated me to have this class in the
+first
+
+5
+00:00:14,220 --> 00:00:18,720
+place because I gave this in Introductory
+Statistics class
+
+6
+00:00:18,720 --> 00:00:22,660
+to people who haven't done Calculus for
+quite some time.
+
+7
+00:00:22,660 --> 00:00:26,700
+And pretty much everybody fell flat on
+their face.
+
+8
+00:00:26,700 --> 00:00:31,600
+So hopefully if we go through this one
+time, I want to just point out some of
+
+9
+00:00:31,600 --> 00:00:33,930
+the tricks that pop up quite often when
+
+10
+00:00:33,930 --> 00:00:40,098
+we're integrating probability distribution
+function, probability density functions.
+
+11
+00:00:40,098 --> 00:00:44,114
+And this a reasonably complicated and
+useful example.
+
+12
+00:00:46,340 --> 00:00:50,450
+So if you thought the Black-Scholes
+formula was difficult
+
+13
+00:00:50,450 --> 00:00:50,475
+[LAUGH]
+
+14
+00:00:50,475 --> 00:00:55,490
+this, this one is it's got the same number
+of
+
+15
+00:00:55,490 --> 00:01:01,480
+variables but they have Greek names or at
+least five of them have Greek names.
+
+16
+00:01:01,480 --> 00:01:03,790
+And so I think that makes people think
+it's more complicated.
+
+17
+00:01:06,670 --> 00:01:09,830
+For the model I want to use, we can
+simplify it a bit.
+
+18
+00:01:09,830 --> 00:01:12,430
+So it, what I would want to use this for,
+its
+
+19
+00:01:12,430 --> 00:01:15,370
+a, for two random variables but
+
+20
+00:01:15,370 --> 00:01:17,780
+rather than being independent, they're
+correlated.
+
+21
+00:01:17,780 --> 00:01:22,750
+And so this last argument that I have here
+is a correlation coefficient.
+
+22
+00:01:22,750 --> 00:01:26,710
+When it's positive, it just means if first
+random variable so if,
+
+23
+00:01:26,710 --> 00:01:32,000
+if x were large and I could observe that
+before observing y
+
+24
+00:01:32,000 --> 00:01:34,160
+then I would expect y to be large as well.
+
+25
+00:01:35,240 --> 00:01:37,450
+If it were zero, then knowing the value of
+
+26
+00:01:37,450 --> 00:01:39,930
+x wouldn't tell me anything about the
+value of y.
+
+27
+00:01:41,120 --> 00:01:44,060
+And if it were negative, then if I knew I
+had a large
+
+28
+00:01:44,060 --> 00:01:48,060
+value of x, that would lead me to expect a
+small value of y.
+
+29
+00:01:50,730 --> 00:01:52,550
+If I want to use this in a financial
+
+30
+00:01:52,550 --> 00:01:56,610
+application, the, the mu, these are sort
+of expected values.
+
+31
+00:01:56,610 --> 00:01:58,800
+So there would be expected return.
+
+32
+00:01:58,800 --> 00:02:00,100
+And I, if I were using this for a
+
+33
+00:02:00,100 --> 00:02:02,970
+single asset, I would sort of say that the
+expected
+
+34
+00:02:02,970 --> 00:02:05,780
+return in this period is probably going to
+be
+
+35
+00:02:05,780 --> 00:02:08,460
+the same as this expected return in the
+next period.
+
+36
+00:02:10,560 --> 00:02:14,280
+And then these sigma x and sigma y are
+
+37
+00:02:14,280 --> 00:02:19,070
+thought of as the, the risk of owning that
+asset.
+
+38
+00:02:19,070 --> 00:02:22,690
+So the sigma x would be the risk in the
+first
+
+39
+00:02:22,690 --> 00:02:26,060
+period, sigma y would be the risk in the
+second period.
+
+40
+00:02:26,060 --> 00:02:30,010
+If the periods are next to each other and
+reasonably short, then
+
+41
+00:02:30,010 --> 00:02:32,920
+you can also get away with just assuming
+that that's the same.
+
+42
+00:02:32,920 --> 00:02:35,720
+So I'm going to rewrite this with
+
+43
+00:02:35,720 --> 00:02:42,660
+sigma x equals sigma y just equals sigma
+and mu x equals mu y just equals mu.
+
+44
+00:02:42,660 --> 00:02:47,190
+And that'll at least make this fraction in
+the right-hand side drop down one level.
+
+45
+00:02:47,190 --> 00:02:51,750
+Because I'll be able to take this, this
+sigma x squared will be
+
+46
+00:02:51,750 --> 00:02:55,010
+the same as this product, sigma x sigma y,
+and the same as this.
+
+47
+00:02:55,010 --> 00:02:56,700
+So I'll be able to write that just down
+here.
+
+48
+00:02:58,780 --> 00:02:59,280
+And
+
+49
+00:03:02,120 --> 00:03:06,470
+then, the thing that I'm trying to compute
+is called a marginal density.
+
+50
+00:03:07,600 --> 00:03:11,930
+So this is the density, you know, in
+
+51
+00:03:11,930 --> 00:03:15,360
+theory I have these two variables that are
+somehow
+
+52
+00:03:15,360 --> 00:03:19,050
+behaving together, but if I don't, if I'm
+in
+
+53
+00:03:19,050 --> 00:03:22,570
+a position where I can't see the other
+variable.
+
+54
+00:03:22,570 --> 00:03:24,990
+So suppose I don't pay attention to what
+happened on
+
+55
+00:03:24,990 --> 00:03:27,250
+the, during the first period and I just
+wonder what's
+
+56
+00:03:27,250 --> 00:03:31,610
+going to happen in the second period,
+that's the marginal density.
+
+57
+00:03:31,610 --> 00:03:35,080
+So, if I don't care about x and I just say
+what, what's the best you can tell
+
+58
+00:03:35,080 --> 00:03:37,740
+me about y given that I'm choosing to
+ignore
+
+59
+00:03:37,740 --> 00:03:43,080
+x, you end up with this thing called
+marginal density.
+
+60
+00:03:43,080 --> 00:03:47,630
+And you get that just by integrating one
+of the variables out.
+
+61
+00:03:47,630 --> 00:03:52,250
+So if I take a functions of x and y and I
+integrate it from negative infinity to
+
+62
+00:03:52,250 --> 00:03:56,770
+infinity with respect to x, I'm going to
+be left with this partial integral.
+
+63
+00:03:56,770 --> 00:03:58,920
+It's going to be a function of y and
+that's going
+
+64
+00:03:58,920 --> 00:04:05,070
+to be called in probability and
+statistics, the marginal density of y.
+
+65
+00:04:05,070 --> 00:04:08,030
+For our, for, you know, for this course,
+I'm just doing one partial integral.
+
+66
+00:04:11,790 --> 00:04:12,390
+So let's see.
+
+67
+00:04:12,390 --> 00:04:14,660
+So that was my, my example was, oops, x
+
+68
+00:04:14,660 --> 00:04:17,570
+and y were returns on an asset in
+consecutive periods.
+
+69
+00:04:19,120 --> 00:04:21,335
+And then the simplification I'm going to
+make is that
+
+70
+00:04:21,335 --> 00:04:24,470
+the expected return on the asset is the
+same in
+
+71
+00:04:24,470 --> 00:04:28,450
+each period and the risk that I'm taking
+on by
+
+72
+00:04:28,450 --> 00:04:31,190
+investing on that asset during that period
+is the same.
+
+73
+00:04:31,190 --> 00:04:33,590
+So I only have one mu and one sigma.
+
+74
+00:04:35,890 --> 00:04:38,444
+And so, I can almost force this onto one
+slide.
+
+75
+00:04:38,444 --> 00:04:44,825
+So the, oh, oops, if I've done it the
+other way around.
+
+76
+00:04:44,825 --> 00:04:46,970
+Yes.
+
+77
+00:04:46,970 --> 00:04:48,710
+So on the first slide, I said I was
+
+78
+00:04:48,710 --> 00:04:52,740
+going to get the marginal density with
+respect to y.
+
+79
+00:04:52,740 --> 00:04:55,600
+Here, I'm doing the same thing with
+respect to x but it's
+
+80
+00:04:55,600 --> 00:04:59,470
+exactly the same operation since it's
+symmetric with respect to x and y.
+
+81
+00:05:02,110 --> 00:05:08,452
+So what I want to do is integrate this big
+ugly bivariate
+
+82
+00:05:08,452 --> 00:05:13,750
+density function from minus infinity to
+infinity with respect to y.
+
+83
+00:05:16,990 --> 00:05:17,980
+And one of the nice things to that,
+
+84
+00:05:17,980 --> 00:05:20,640
+I said this was the normal probability
+density function.
+
+85
+00:05:20,640 --> 00:05:23,750
+It has this nice property that most of the
+time when you
+
+86
+00:05:23,750 --> 00:05:27,350
+do things to it, the answer is a normal
+probability density function.
+
+87
+00:05:29,010 --> 00:05:33,810
+So, a good first step and this happens
+quite often, you can
+
+88
+00:05:33,810 --> 00:05:37,070
+usually make a pretty good guess as to
+what the answer should be.
+
+89
+00:05:38,500 --> 00:05:42,030
+or you can at least guess, you know, what
+it
+
+90
+00:05:42,030 --> 00:05:44,140
+should be if it's going to be easy to do.
+
+91
+00:05:45,740 --> 00:05:48,020
+you might try that and find out it doesn't
+work
+
+92
+00:05:48,020 --> 00:05:49,720
+and then it's not going to be easy to do.
+
+93
+00:05:51,150 --> 00:05:52,850
+but in this particular case, I'm just
+going to
+
+94
+00:05:52,850 --> 00:05:57,600
+guess that the marginal density is just a
+univariate.
+
+95
+00:05:58,764 --> 00:06:01,600
+so this is the, the same, you know, phi
+function.
+
+96
+00:06:01,600 --> 00:06:07,130
+It's just been scaled by a factor sigma
+and shifted by a factor mu, but this
+
+97
+00:06:07,130 --> 00:06:09,650
+is a normal probability density function.
+
+98
+00:06:13,910 --> 00:06:16,910
+And so here, since I'm, oops, since I'm
+
+99
+00:06:16,910 --> 00:06:21,430
+integrating with respect to y, everything
+in this
+
+100
+00:06:21,430 --> 00:06:24,530
+marginal density with respect to x is
+going
+
+101
+00:06:24,530 --> 00:06:26,810
+to be constant with respect to this
+integration.
+
+102
+00:06:26,810 --> 00:06:31,040
+So what I'm going to do is factor all of
+that stuff out
+
+103
+00:06:31,040 --> 00:06:35,400
+of here, move it outs, oops, move it
+outside of my integral sign.
+
+104
+00:06:35,400 --> 00:06:38,790
+Because if, if it's constant with respect
+to y, it can cross the integral sign.
+
+105
+00:06:40,070 --> 00:06:42,330
+And then look at what's left, and hope
+that
+
+106
+00:06:42,330 --> 00:06:44,510
+that's something I can figure out how to
+integrate.
+
+107
+00:06:48,650 --> 00:06:54,500
+So, the idea is that I will end up with
+this marginal density.
+
+108
+00:06:54,500 --> 00:06:56,240
+My guess at what the marginal density
+
+109
+00:06:56,240 --> 00:06:59,900
+function should be, times everything
+that's left.
+
+110
+00:06:59,900 --> 00:07:06,140
+So, this C here is, this, this thing here
+with
+
+111
+00:07:06,140 --> 00:07:08,880
+the 1 over square root of 2 pi sigma
+factored out.
+
+112
+00:07:08,880 --> 00:07:11,572
+I just couldn't fit everything into the
+slide if I did it.
+
+113
+00:07:11,572 --> 00:07:13,720
+And then, I have all of
+
+114
+00:07:13,720 --> 00:07:18,425
+this stuff left over.
+And so I need to somehow show that this
+
+115
+00:07:18,425 --> 00:07:25,120
+integral from minus infinity to infinity,
+this big ugly mess, dy is equal to 1.
+
+116
+00:07:25,120 --> 00:07:30,030
+And so this is, this is what this value of
+C is equal to.
+
+117
+00:07:30,030 --> 00:07:34,630
+So it's if you multiply this by C, you
+just
+
+118
+00:07:34,630 --> 00:07:39,165
+get the scaling factor from the, from the
+bivariate density function.
+
+119
+00:07:39,165 --> 00:07:44,839
+>> Can we go back over this real quick
+
+120
+00:07:44,839 --> 00:07:44,845
+[INAUDIBLE]?
+
+121
+00:07:44,845 --> 00:07:45,375
+>> Yep.
+
+122
+00:07:45,375 --> 00:07:49,396
+>> I'm sorry, so you're taking your
+guess for
+
+123
+00:07:49,396 --> 00:07:49,404
+[INAUDIBLE]
+
+124
+00:07:49,404 --> 00:07:52,930
+would be and multiply it by what we have
+up above?
+
+125
+00:07:52,930 --> 00:07:53,820
+Is that what's going on?
+
+126
+00:07:56,690 --> 00:08:01,740
+>> So, what I've done, I've taken this
+term here or this factor
+
+127
+00:08:01,740 --> 00:08:07,130
+here and I've split it up into this and
+this.
+
+128
+00:08:07,130 --> 00:08:10,600
+Alright, so if I multiply those together,
+I get this thing back.
+
+129
+00:08:12,850 --> 00:08:17,460
+And then, this is what I want to appear
+outside.
+
+130
+00:08:18,670 --> 00:08:21,010
+Oh, and again, this should be an x.
+
+131
+00:08:21,010 --> 00:08:23,720
+It should be the same as this, just with
+the opposite sign.
+
+132
+00:08:26,760 --> 00:08:31,910
+and so if I have a negative 1 here and a
+positive 1 here, that would be e to the 0.
+
+133
+00:08:31,910 --> 00:08:34,340
+So it's basically what I've just done, is
+multiplied this
+
+134
+00:08:34,340 --> 00:08:37,231
+thing by 1, but used a, a clever choice of
+1.
+
+135
+00:08:37,231 --> 00:08:40,279
+>> Thank you.
+
+136
+00:08:40,279 --> 00:08:41,810
+>> Okay.
+
+137
+00:08:41,810 --> 00:08:43,860
+So now what I want to do is look at the
+part that's in the
+
+138
+00:08:43,860 --> 00:08:46,000
+square brackets, so if I go back,
+
+139
+00:08:46,000 --> 00:08:49,510
+I'm looking at this, this square brackets
+here.
+
+140
+00:08:49,510 --> 00:08:51,230
+I just, I want to simplify that.
+
+141
+00:08:55,190 --> 00:08:57,200
+So, this is the bit in the square
+brackets.
+
+142
+00:08:57,200 --> 00:09:03,430
+If I wanted to do this subtraction, then
+I've got 2 sigma squared in the
+
+143
+00:09:03,430 --> 00:09:06,260
+denominator here and 2 sigma squared times
+
+144
+00:09:06,260 --> 00:09:08,500
+1 minus rho squared in the denominator
+here.
+
+145
+00:09:08,500 --> 00:09:10,570
+So I need to multiply those first term by
+
+146
+00:09:10,570 --> 00:09:13,220
+1 minus rho squared over 1 minus rho
+squared.
+
+147
+00:09:15,350 --> 00:09:19,720
+So if I do that, then I can put everything
+over a common denominator.
+
+148
+00:09:19,720 --> 00:09:25,240
+And I have 1 minus rho squared times x
+minus mu squared.
+
+149
+00:09:25,240 --> 00:09:27,360
+And then, what I had originally.
+
+150
+00:09:27,360 --> 00:09:35,140
+And if you look at this carefully, I have
+1 times x minus mu squared
+
+151
+00:09:35,140 --> 00:09:40,990
+minus x minus mu squared.
+So this 1 is going to disappear.
+
+152
+00:09:40,990 --> 00:09:43,350
+This whole term is going to disappear and
+what will be
+
+153
+00:09:43,350 --> 00:09:46,890
+left is negative rho squared times x minus
+mu squared.
+
+154
+00:09:48,130 --> 00:09:50,255
+So let's hope that that's what I've done
+in the next step.
+
+155
+00:09:50,255 --> 00:09:51,160
+Yep.
+
+156
+00:09:51,160 --> 00:09:55,056
+So I have negative rho squared times the
+quantity x minus mu squared.
+
+157
+00:09:55,056 --> 00:10:01,730
+I have everything else still staying the
+same here.
+
+158
+00:10:08,060 --> 00:10:09,400
+And let's see, what have I done?
+
+159
+00:10:09,400 --> 00:10:15,100
+So now I multiplied the numerator by
+negative 1 and then I'm
+
+160
+00:10:15,100 --> 00:10:19,824
+going to cancel that out by multiplying
+the whole fraction also by negative 1.
+
+161
+00:10:21,080 --> 00:10:26,960
+So that made my first term positive,
+second term negative, third term positive.
+
+162
+00:10:28,330 --> 00:10:32,390
+And if you stare at this for a while, it
+should start to look familiar.
+
+163
+00:10:32,390 --> 00:10:33,150
+So if
+
+164
+00:10:33,150 --> 00:10:34,740
+you think back to the Completing the
+
+165
+00:10:34,740 --> 00:10:38,680
+Square Lecture, you'll actually realize
+that this
+
+166
+00:10:38,680 --> 00:10:43,420
+is already in the, the right form, it
+could be written as something squared.
+
+167
+00:10:44,670 --> 00:10:51,116
+And that something is just going to be rho
+x
+
+168
+00:10:51,116 --> 00:10:58,701
+sorry, rho x times the quantity x minus mu
+minus y minus mu squared or
+
+169
+00:10:58,701 --> 00:11:00,950
+sorry, minus y minus mu.
+
+170
+00:11:00,950 --> 00:11:03,430
+Hopefully I'll get it right when I hit the
+Next key.
+
+171
+00:11:05,900 --> 00:11:10,580
+So I have rho times x minus mu.
+When I square that, I'm going to get this.
+
+172
+00:11:12,670 --> 00:11:20,410
+Then I have minus y minus mu.
+When I square that, I'm going to get this.
+
+173
+00:11:20,410 --> 00:11:23,270
+And then the cross terms are going to be
+rho x minus
+
+174
+00:11:23,270 --> 00:11:27,780
+mu y minus mu with a negative sign in
+front of it.
+
+175
+00:11:27,780 --> 00:11:31,290
+I'm going to get two of those from the
+outer and from the inner,
+
+176
+00:11:31,290 --> 00:11:35,649
+and so that's where this middle term is
+coming from or going, I guess.
+
+177
+00:11:39,440 --> 00:11:39,940
+Okay.
+
+178
+00:11:43,630 --> 00:11:45,300
+And then I'm going to write this.
+
+179
+00:11:46,740 --> 00:11:48,110
+So it's exactly the same thing, I've
+
+180
+00:11:48,110 --> 00:11:52,280
+just sort of rearranged where I'm putting
+parenthesis.
+
+181
+00:11:52,280 --> 00:11:53,330
+So I have y
+
+182
+00:11:57,790 --> 00:12:03,670
+minus something and that something is mu
+plus rho times x minus mu.
+
+183
+00:12:03,670 --> 00:12:06,313
+So all I've done here, I had a, a rho
+times
+
+184
+00:12:06,313 --> 00:12:11,250
+x, sorry, a rho times x minus mu and a
+minus y.
+
+185
+00:12:13,946 --> 00:12:17,430
+so I did something that's a bit a bit
+clever here.
+
+186
+00:12:17,430 --> 00:12:22,730
+Since this is squared, I can multiply the
+inside by negative 1.
+
+187
+00:12:22,730 --> 00:12:28,570
+So I can actually write this as y minus
+mu, minus rho times x minus mu.
+
+188
+00:12:28,570 --> 00:12:31,790
+And when I square that, the negative 1
+will go away.
+
+189
+00:12:31,790 --> 00:12:38,176
+So it'll be negative 1 squared times the
+product here.
+
+190
+00:12:38,176 --> 00:12:39,060
+So that lets
+
+191
+00:12:39,060 --> 00:12:42,470
+me put this term in front.
+And this term, second.
+
+192
+00:12:42,470 --> 00:12:49,250
+So I end up with this y, oops, minus this
+mu.
+
+193
+00:12:49,250 --> 00:12:51,590
+So this mu here becomes this mu here.
+
+194
+00:12:53,010 --> 00:12:58,300
+Then, I have minus rho times x minus mu
+but since I'm writing it in these
+
+195
+00:12:58,300 --> 00:13:01,360
+parenthesis here, that minus has to be a
+
+196
+00:13:01,360 --> 00:13:03,270
+plus because that minus is going over
+here.
+
+197
+00:13:03,270 --> 00:13:04,330
+So, I end up with mu
+
+198
+00:13:04,330 --> 00:13:06,485
+plus rho times x minus mu.
+
+199
+00:13:08,360 --> 00:13:12,609
+So, that's mostly just an exercise in
+bookkeeping for science.
+
+200
+00:13:13,630 --> 00:13:15,770
+And then in the denominator, I'm going to
+
+201
+00:13:15,770 --> 00:13:19,680
+write sigma squared times 1 minus rho
+squared.
+
+202
+00:13:20,890 --> 00:13:23,650
+As sigma times the square root of 1 minus
+
+203
+00:13:23,650 --> 00:13:27,130
+rho, I'll put that all in parentheses and
+square that.
+
+204
+00:13:29,240 --> 00:13:31,410
+And now if you look closely at what this
+
+205
+00:13:31,410 --> 00:13:37,280
+is, this is a variable minus a constant
+squared
+
+206
+00:13:40,120 --> 00:13:44,930
+over 2 times another constant squared.
+
+207
+00:13:49,870 --> 00:13:54,670
+And now I'm going to plug this back into
+my square brackets here.
+
+208
+00:13:55,718 --> 00:13:58,810
+So this is what we had at the end of, you
+know, two slides ago.
+
+209
+00:13:58,810 --> 00:14:02,920
+This was the thing where I said, I want to
+show that this integral is equal to 1.
+
+210
+00:14:02,920 --> 00:14:03,420
+And
+
+211
+00:14:06,190 --> 00:14:08,190
+I want to look just at the integrand so
+
+212
+00:14:08,190 --> 00:14:12,260
+that's the C times the thing in the square
+brackets.
+
+213
+00:14:12,260 --> 00:14:14,300
+So on the previous slide I found another
+
+214
+00:14:14,300 --> 00:14:16,440
+expression for what's in the square
+brackets here.
+
+215
+00:14:19,420 --> 00:14:21,150
+And that's, I've plugged in here.
+
+216
+00:14:22,420 --> 00:14:28,100
+And then in my C constant, I'm going to do
+the same thing I did I'm going to write
+
+217
+00:14:28,100 --> 00:14:33,550
+the sigma times the square root of 1 minus
+rho squared in parenthesis.
+
+218
+00:14:34,960 --> 00:14:38,715
+And now this constant here is equal to
+this constant here.
+
+219
+00:14:38,715 --> 00:14:41,081
+And if you think back to what did
+
+220
+00:14:41,081 --> 00:14:44,721
+the standard norm or what did the normal
+density
+
+221
+00:14:44,721 --> 00:14:49,271
+function look like, in the original one
+this was called sigma.
+
+222
+00:14:49,271 --> 00:14:53,800
+I just had a 2 sigma squared over in the
+exponential part of the function.
+
+223
+00:14:53,800 --> 00:14:57,210
+And I had a 1 over square root of 2pi
+times sigma.
+
+224
+00:14:58,650 --> 00:15:00,990
+So this is just a new value for a sigma.
+
+225
+00:15:03,150 --> 00:15:09,597
+And then the numerator of the exponential
+part, I have y minus mu squared and so
+
+226
+00:15:09,597 --> 00:15:16,650
+now, I just had y minus something but it's
+I'm integrating with respect to y.
+
+227
+00:15:16,650 --> 00:15:19,810
+And this doesn't have any ys in it, so
+that's effectively a constant.
+
+228
+00:15:20,940 --> 00:15:24,960
+So this is actually a normal probability
+density function,
+
+229
+00:15:24,960 --> 00:15:28,390
+just with a different mean and a different
+standard deviation.
+
+230
+00:15:28,390 --> 00:15:33,740
+So this, this term down here is the
+standard deviation.
+
+231
+00:15:33,740 --> 00:15:40,390
+And this, this term here is the mean.
+And so, if I let m
+
+232
+00:15:43,480 --> 00:15:49,318
+equal this guy here, which is that.
+And I let
+
+233
+00:15:49,318 --> 00:15:53,615
+s equal sigma times the square root of one
+minus rho squared, which is that.
+
+234
+00:15:53,615 --> 00:15:58,870
+And when I plug those in, I end up with 1
+over the square root of
+
+235
+00:15:58,870 --> 00:16:04,060
+2 pi times s e to the minus y minus m
+squared
+
+236
+00:16:04,060 --> 00:16:09,320
+over 2s squared.
+And this is exactly the normal
+
+237
+00:16:09,320 --> 00:16:15,330
+density with mean m and then standard
+deviation s.
+
+238
+00:16:20,430 --> 00:16:24,840
+And so if I integrate this, so I'm
+integrating
+
+239
+00:16:24,840 --> 00:16:28,540
+this with respect to y from minus infinity
+to infinity.
+
+240
+00:16:28,540 --> 00:16:31,607
+I know it's a density function so this is,
+this is
+
+241
+00:16:31,607 --> 00:16:33,660
+sort of the big trick because I don't
+actually have to do
+
+242
+00:16:33,660 --> 00:16:37,330
+the integral if I can show that it's a
+density function
+
+243
+00:16:37,330 --> 00:16:40,390
+because I know every density function is
+going to integrate to 1.
+
+244
+00:16:40,390 --> 00:16:40,890
+So
+
+245
+00:16:44,440 --> 00:16:47,230
+the integral of this normal density over
+the entire real
+
+246
+00:16:47,230 --> 00:16:51,000
+line, so from minus infinity to infinity
+is equal to 1.
+
+247
+00:16:51,000 --> 00:16:57,290
+And so now if I go back to, so this was
+my, my big ugly formula.
+
+248
+00:16:57,290 --> 00:17:00,140
+I've just been simplifying and simplifying
+the integral.
+
+249
+00:17:00,140 --> 00:17:05,610
+And now I have it oops, looks like the dy
+disappeared off the end of the slide.
+
+250
+00:17:07,470 --> 00:17:10,520
+but the integral of this density
+
+251
+00:17:10,520 --> 00:17:16,200
+over the entire real line is equal to 1.
+So, I get that my
+
+252
+00:17:16,200 --> 00:17:21,480
+marginal density was equal to 1 over the
+square root of 2 pi sigma.
+
+253
+00:17:21,480 --> 00:17:24,720
+This is just the thing that I guessed and
+factored out at the beginning.
+
+254
+00:17:27,350 --> 00:17:31,600
+oops, so, it looks like I switched the xs
+and ys again, so this should be an x.
+
+255
+00:17:32,800 --> 00:17:35,330
+so x minus mu squared divided by 2 sigma
+squared.
+
+256
+00:17:35,330 --> 00:17:42,923
+So I get that the marginal density of x is
+also a a normal distribution.
+

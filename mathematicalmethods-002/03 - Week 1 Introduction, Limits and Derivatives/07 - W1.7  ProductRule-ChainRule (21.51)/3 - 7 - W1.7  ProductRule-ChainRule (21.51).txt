@@ -1,0 +1,544 @@
+So now onto some more complicated rules
+for taking derivatives.
+So the first one is going to be the
+product rule.
+So suppose f of x and g of x are
+differentiable functions.
+So this is going to be kind of like my
+linearity rule from from the last section.
+So I'm not going to be given f of x and g
+of x, I'm going to be given a function but
+as I look at it, I'm going to see that
+that function is actually composed of two
+simpler functions multiplied together.
+And if I can take the derivative of each
+of those simpler funtions,
+then the product rule is going to allow me
+to
+take the derivative of the product of
+those two functions.
+So, suppose I'm given a function p of x,
+and I can see a way to write it down as a
+function of f of x times the function g of
+x, and I want to take the derivative of p
+of x.
+So p of x is differentiable and the
+derivative of p of x, or p prime of x.
+Ops, so my definition
+of p of x is just the product of f of x
+and g of x and the product rule says that
+the derivative of this is going to be the
+derivative of the first function,
+so f prime of x.
+Times g of x, times g of x
+plus the first function, so f of x, times
+the
+derivative of the second function, g prime
+of x.
+And so I think the, the best way to
+deal with this is just to go through some
+examples.
+Ops.
+So, in several of my slides I start out
+the slide with a recall just to remind
+you what the product rule is, so this
+is just the definition of the product rule
+here.
+And suppose my function, p of x, is x
+times e to the x.
+So, right away, I'm going to recognize
+this this is
+the product of a function f of x equals x.
+And another function, g of x equals e to
+the x.
+And I know how to take the derivative of
+both of those functions.
+So.
+I'm going to kind of skip in this course
+all of the rules for taking derivatives of
+functions.
+These are easy things to look up now, I
+actually brought my phone
+here, because I found out that Siri, which
+is the voice assistant on an Iphone.
+One of the things that it asks for sources
+of data
+is Wolfram Alpha, which is this website
+I've been recommending to you.
+So I'm going to try an onscreen
+demonstration of this, see what happens.
+what's the derivative of the exponential
+function?
+>> Checking on that.
+Here's what I found.
+>> Okay.
+So I don't know if the camera is going to
+be able to pick that up.
+But it shows up this little, I don't know
+what that's suppose to be.
+Actually that's a dot matrix printer paper
+but it
+actually has the derivative of the
+exponential function on it.
+although they used a capital X and I used
+a small x but otherwise
+it's exactly what I wanted.
+So the point is and I'm going to remember
+to switch off the ring
+[INAUDIBLE]
+otherwise I will get embarrassed.
+you can use a lot of tools.
+Google would probably find the correct
+answer for this
+If you have a computer algebra program
+like Mathematica or
+Maple, you're going to be able to ask it
+questions like that.
+You can look this up in any number of
+calculus text books.
+So kind of going through all of these
+rules I'm going to skip
+that but when you come to a function you
+don't know how
+to take the derivative of there're lots of
+tools available online or
+in the library that will help you figure
+out how to do that.
+So what we just found
+out from Wolfram Alpha via Siri was that
+the derivative
+of this function e to the x is just
+itself.
+So it's a it's a special function that has
+the property that it's own derivative.
+So this one, will be the easy one to take
+the derivative of.
+And, this is isn't going to be too hard
+either.
+You can think of x as just x to the one.
+And use the power rule.
+So you get one times x to the one minus
+one, or one.
+So I'm going to break this up as f of x
+equals x.
+G of x equals e to the x.
+And then just, evaluate this.
+So what I end up is derivative of x is one
+times e to the x.
+Plus derivative of e to the x, which is
+itself, times x.
+And then, I'm just going to Do a little
+bit
+of grouping like this, because I think it
+looks nicer.
+But either this or this line.
+These would both be acceptable answers
+for, for the derivative.
+So, for my second example, I defined p of
+t.
+So here, there's no real difference
+between using x and t.
+It's just the variable.
+I can call it anything I want to.
+a lot of times, t shows up as kind of a
+variable name for time.
+X shows up for position, You know?
+S shows up for an asset price.
+it doesn't matter you do everything
+exactly the same,
+regardless of how you choose to label the
+parts of your function.
+And so p of t is defined to be the square
+root of t times the quantity 1 minus t.
+And so I'm going to look at this, and I'm
+going to say,
+well that, if I want that to be a product,
+the, the
+simplest thing Is going to be the square
+root of t,
+as f of x, and one minus t as g of x.
+And then to make taking the square root
+possible, I
+can rewrite that as t to the one half
+power.
+And so this is just another way to express
+roots.
+So if I wanted the cube root of t, that
+would be
+t to the 1 3rd power and so on and it's a
+lot easier I think to take the derivative
+when it's written like
+this, it's just very clear that you can
+use the power rule.
+So now that I've defined my f of t and g
+of t I'm
+just going to take the derivatives and
+then plug the, plug the pieces into the.
+Product rule.
+So the derivative of t to the one half
+that's by the power rule
+just going to be one half times t to the
+one half minus 1.
+So one half times t to the negative one
+half then times g of t.
+So times the quantity 1 minus t.
+Plus t to the one half, so that my f of t.
+And then the derivative of 1 minus t, we
+have to
+sort of, in our head, use the linear ity
+principal and the power rule at the same
+time.
+So this says that I can take the
+derivative of g of t,
+it's going to be the derivative of 1,
+which is a constant so it's zero.
+And the derivative of minus t, which is
+just going to be negative 1.
+So that's where this minus 1 comes from.
+It's a derivative of minus t.
+And then I can
+do a little bit of simplification.
+replace the t to the one half with a
+square root of t, if you want to.
+And maybe mess around with it a little bit
+to make it a bit more pretty.
+But again, you know, once you are
+this far, you've successfully taken the
+derivative,
+and the rest of this is just to make it a
+little bit more presentable.
+The next rule I want to talk about is
+called the chain rule.
+This is probably the most important rule,
+and where you will make the most mistakes.
+So again, we're going to talk about two
+differentiable
+functions, f of x and g of x.
+And so last time we we thought about
+multiplying them together.
+This time we're going to think about
+evaluating, how did I do this,
+so f of x.
+Taking the result of that and feeding
+it into g of x.
+And so that's called a composite function.
+The text book uses this notation, all it
+means is so g composed with f of x is,
+sorry,
+g evaluated.
+At f of x, I find it a lot more sensible
+just to always write it down like this.
+Any time I've
+tried to write it down like this, I end up
+confusing myself, so I prefer this
+notation.
+So if f of x and g of x are differentiable
+functions, then the composite function g
+of f of x is also differentiable
+and the derivative of this composite
+function is the derivative of the
+outside function.
+So the derivative of g of x evaluated at f
+of x times f prime of x.
+And, so like I said, I really don't like
+this notation of the composite fuction.
+I, I tend to confuse myself.
+So, another way you can write this is
+using
+something called Leibniz Notation, who is
+just another mathematician
+and so what you do is you think of you
+think of it in sort of two steps.
+So first I'm going to evaluate f of x and
+that's going to give me a number u.
+And then I'm going to evaluate g at that
+number
+u to get my final answer, g of f of x.
+And the chain rule then says that the
+derivative of
+g, so the derivative of the outside
+function, with respect
+to x which is the argument of the inside
+function,
+is the derivative of just g with respect
+to it's argument,
+times the derivative of u.
+So the argument for the outside function
+with respect to x.
+And I think this will become clear once I
+start doing some examples.
+So like I said this is called Leibniz
+notation.
+So first I'll try to do a few using using
+this funny Composite function notation.
+So if I say g of f of x is equal to the
+square root of x squared plus 1 then I
+sort of have to look at that and say that
+this has to somehow be two functions.
+So the two functions I see.
+Are x squared plus 1, and then the square
+root.
+And again, just to make this a little bit
+simpler, I'm
+going to write the square root as this
+quantity to the one
+half power, and that's going to hopefully
+stop me from making quite
+so many I suppose typographical errors
+while I'm writing this out.
+And so the chain rule then says that the
+derivative of g composed with
+f is going to be the derivative of g so
+that's just going to be one half.
+Times the quantity x squared plus 1 to the
+one half minus 1.
+So negative one half.
+Then times f prime of x.
+So, here the f of x is x squared plus 1.
+And so, by the power rule I can see
+that x squared, it's derivative is just
+going to be 2x.
+Then one is a constant, so it's derivative
+is zero.
+So I end up multiplying this thing by x,
+and then
+I can re-write my one half power as a
+square root again.
+This two over here is going to cancel out
+my one half, and so
+I get a little bit nicer looking format
+once I simplify a bit.
+And you can do the same thing this is one
+examples from the text book.
+it's exactly the same problem as this one
+up here just with some different numbers
+so, I
+have something on the inside and then the
+outside function is that raised to the
+hundredth power.
+So when I take the derivative of that.
+First I'm just going to say, 100 times
+the,
+the quantity to the 100 minus 1, so 99.
+And then the chain rule says, to get the
+derivative right,
+I also need to multiply this by the
+derivative of the inside.
+So that gives me 3x squared over here and
+if I simplify the sense of being the
+derivative.
+If instead we, we think about this using
+the Leibniz notation the way I
+want to set up problems is using something
+called substitution.
+So suppose I want to compute the
+derivative of the sine of x squared.
+Well if I just look at that as one
+function, I don't know how to take the
+derivative
+of that, but you can see right away that
+you do know how to take the derivative of
+sine.
+If you
+don't you can ask Siri or Google search
+Wolfram Alpha
+[COUGH].
+So, what I'm going to do is to find a new
+variable u, that's equal to x squared.
+And now if I replace x squared with u, I
+would know how to take the derivative of
+this function.
+And so that means my function g of u is
+just going to be sin of u.
+So it's.
+Sin of x squared, if I replace x squared
+with u, I just get sin of u.
+And then I'm also going to need this du dx
+over here,
+so I'm going to get that just by taking
+the derivative of this.
+So, the derivative of u, is just going to
+be 2x, so du dx is going to equal 2x
+So if I take the derivative, and this is
+where you have to be a bit careful
+of not getting variable names confused,
+I'm taking the
+derivative with respect to x of the sin of
+u, and so that, what the chain rule is
+telling me is if I want to do this, I can
+just take the derivative of sin of u with
+respect to u, so that's this first term
+in the, in the chain rule.
+And then, I need to multiply that times
+the derivative of my substitution.
+So here I've substituted u equals x
+squared, so I have to take
+the derivative of that, and multiply it in
+To whatever I get here.
+And so now I can just go ahead and start
+evaluating derivatives, so you can
+look up the derivative for the sine
+function, you'll find that it's cosine of
+u.
+And the derivative of u, with respect to
+x, that's easy
+to get from here, just by using the power
+rule, is 2x.
+But now I still have a u in my answer
+here, but I can just
+undo my substitution now by going back and
+saying, well, u is equal to x squared.
+So
+I end up getting the correct answer here,
+2x times cosine of x squared.
+And so another example Suppose I try to
+take the exponential of sin of theta.
+And I want to take the derivative of this
+with respect to theta.
+So here I see two functions.
+The inside function is going to be the
+sine function.
+And the outside function is going to be
+the exponential function.
+So what I'm going to do is I'm going to
+let u be the value of the inside function.
+So I'm going to make the substitution u
+equals sign of theta.
+And then I'll fill in the rest of the
+pieces like I did in the first example
+so g of u is then just going to be e to
+the u.
+So I get that just by looking at my
+original function and making
+the substitution u equals sin of theta or
+sin of theta equals u.
+And then I also need the derivative of my
+transformation, or of
+my substitution so du d theta is just
+going to be cosine of theta.
+So if I take the derivative of ops, the
+derivative of this here,
+ops with respect to theta.
+I'm just going to get cosine of theta.
+And then I just start plugging things into
+the chain rule.
+So I get the derivative with respect to x.
+Ops, that should be a theta there.
+So derivative of E to the sin theta with
+respect to theta.
+Is the derivative of e to the u with
+respect
+to u times the derivative of u with
+respect to theta.
+Derivative of e to the u, well we've
+already seen
+this, this was the special function that's
+its own derivative.
+So that just stays.
+Where did my mouse go.
+That, that's not good.
+Okay, there it goes.
+That just stays e to the u.
+Du d theta becomes cosine theta and now I
+have to, I have
+this u here which I don't want anymore,
+because the answer should be in
+terms of theta, so I just have to
+substitute backwards and I get
+the, the final answer, cosine of theta
+times e to the sine of theta.
+And then just one last rule.
+So if you have an inverse function, so an
+inverse function of a function
+f of x Is a function f inverse that just
+gives me back
+the argument, so it sort of undoes
+whatever my function just did.
+So if I take f inverse of f of x, I just
+get x back.
+And you have to be a little bit
+careful here because F has to be sort of a
+function where this is going to work.
+So if I did something that was periodic,
+like if
+I looked at a sine function or a cosine
+function.
+That's very easy to take the x variable
+and get a y variable.
+But if I just tell you the y variable,
+there's going to be a whole bunch of x
+variables.
+That will give you that
+same y variable.
+So you have to define it on a region where
+it's one to one both directions.
+So that I can actually do this and get
+exactly the same x back that I put in.
+And so f inverse is then just going to be
+a function so f.
+Takes a point in a b and gives me back a
+point
+in c d and f inverse is just going to take
+that point
+in c d and give me back my original point
+in a
+b and I have to choose these intervals so
+that, that is unique.
+So that I can go forward and go back and
+get the same answer.
+For all of the points in the interval a,
+b.
+So then there's a rule for computing the
+deritivative of the inverse function.
+And so as long as this thing in the
+denominator, is not equal to zero.
+Then the derivative of the inverse
+function is just
+1 divided by f prime evaluated at the
+inverse function.
+And so just as a quick example, consider
+log of e to
+the x, so these are functions that are,
+kind of, undo one another.
+So log of e to the x is always equal to x.
+So I'm going to say, my function f is e to
+the x.
+F prime of x, so e to the x is this
+special function
+that's it's own derivative, so f prime is
+just e to the x.
+And then, f inverse is going to be the log
+function.
+And so, if I look at the derivative of log
+of x.
+It tells me that I should just take 1
+divided by f prime.
+So that's e to the x.
+Evaluated at f inverse, so f inverse is
+log x.
+So it's e to the log x and so just like we
+had log of e to the x was x, here I have
+e to the log of x is also x.
+And so that tells me that the derivative
+of the logarithm is 1 over x.
+And again, you could ask Wolfram Alpha
+what's the derivative of the logarithmic
+function.
+And it's going to tell you it's 1 over x.
+Okay so just a quick summary.
+We had the, the product rule.
+So that said the product of two functions,
+f of x and g of x, was just, sorry the
+derivative of a product.
+Is the derivative of the first function
+times the second function,
+plus the first function times the
+derivative of the second functin.
+We had the chain rule.
+So I like this notation a bit better.
+So it says that the derivative
+of a function of a function.
+Is the derivative of the outside
+function times the derivative of the
+inside function.
+

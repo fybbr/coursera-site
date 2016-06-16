@@ -1,0 +1,141 @@
+[BLANK_AUDIO]
+In our last lesson, we saw various
+approaches to incomplete search of game
+trees.
+In each appre, approach, the evaluation of
+states
+is based on local properties of those
+states.
+Now that means properties that do not
+depend on the game tree as a whole.
+In many games, there's no correlation
+between these local properties
+and the likelihood of success in
+completing a game successfully.
+So in this lesson, we're going to look at
+some
+alternative methods, based on statistical
+analysis of game trees.
+First examine a simple approach based on
+what's called Monte Carlo game simulation.
+And then we look at a more sophisticated
+variation, called Monte Carlo Tree Search.
+Or sometimes, UCT.
+The basic idea of Monte Carlo search is
+simple.
+As with depth limited search, we explore
+the game tree to some fixed depth.
+In order to estimate the value of any
+non-terminal state at this depth, we make
+some
+probes from that state to the end of
+the game by selecting random moves for the
+players.
+To sum up the total rewards for all such
+probes, and divide
+by the number of probes to obtain an
+estimated utility for that state.
+And then we use these expected utilities
+in comparing states and selecting actions.
+So I was just mentioning the expansion
+phase is the same
+as depth-limited search that treats
+explore to some fixed step, as before.
+And then the pro, we enter a probe phase
+where we have
+an exploration from each of the fringe
+states reached in this expansion process.
+For each making random probes from there
+to a terminal state.
+The values produced from each of these
+probes are then added up, and divided by
+the number of possibilities number of
+probes
+for each state to obtain an expected
+utility.
+For example, in the case on the left, we
+made four
+probes, got 1 100th, the sum total of the
+four probes
+is 100, divide by 4 is 25 The second case,
+2
+100s, 2 zeros, total of 200 divide by 4,
+we get 50.
+so these utilities are then compared to
+determine the relative utilities
+of the fringe states produced at the end
+of the expansion phase.
+Much better than making an assumption of,
+conservative assumption of zero utility
+for non-terminal states.
+Simple implementation of max score for
+Monte Carlo search is shown here.
+It's a method that's exactly the same as
+ordinary fixed depth heuristic
+search, except that the player uses the
+Monte Carlo routine to evaluate states.
+And Monte Carlo is definite, one
+definition
+of Monte Carlo shown here, takes a state
+as argument, returns the average utility
+obtained from
+set of n probes, here called depth
+charges.
+Or ends the value of some global parameter
+count.
+Now, the depth charge subroutine, shown at
+the bottom first checks at a state's
+terminal.
+If so, it returns that value, otherwise it
+forms a
+joint move by taking random legal actions
+of all the players.
+That simulates this joint move, and calls
+itself recursively until
+it gets to a terminal state, and returns
+the result.
+Well, one downside on the Monte
+Carlo method is that it can be optimistic.
+It seems all players are playing randomly.
+When in fact, it's possible that they know
+exactly what they are doing.
+It doesn't help if most of the probes from
+a position in chess lead to success, if
+one
+leads to a state in which one's player is
+checkmated, and the other player sees how
+to do that.
+This issue is addressed
+below to some extent in the UCT method
+that we'll describe shortly.
+Another drawback of Monte Carlo is it
+doesn't
+really take into account the structure of
+a game.
+For example it may not recognize
+symmetries or
+independences that could substantially
+decrease the cost of search.
+Now for that matter, it doesn't even
+recognize boards, or pieces, or piece
+count; or any other feature that might
+form the basis of game specific
+heuristics.
+Still, even with these drawbacks, the
+Monte Carlo method is quite powerful.
+It's fast, and consumes very little space,
+and it's surprisingly effective.
+prior to its use, general game players
+were at best interesting novelties.
+But once players start using Monte Carlo,
+the improvement in game play was dramatic.
+Suddenly automatic general game players
+began to perform at a very high level.
+And using a variation of this technique,
+Cadia Player won the International General
+Game Playing Cos, Competition three times.
+And almost every general game playing
+program
+today includes some version of Monte
+Carlo's search.
+

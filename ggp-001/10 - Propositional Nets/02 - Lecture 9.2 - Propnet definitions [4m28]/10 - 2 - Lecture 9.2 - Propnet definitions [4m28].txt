@@ -1,0 +1,112 @@
+Formally we define a propositional net, or
+prop net, as a directed
+bipartite graph, consisting of
+propositions alternating
+with connectives.
+In this case there are six propositions.
+The round circles labeled a, b, p, q, r,
+and s.
+And there are four connectives.
+The grey and black nodes in the graph
+shown here.
+Basic prop nets, there are four types of
+connectives and they're all present in
+this case.
+There is an and gate on the upper left, an
+inverter in the upper right,
+an or gate on the lower right, and a
+transition on the lower left.
+Propositions are typically partitioned
+into three classes.
+Input propositions, those with, are those
+with no inputs.
+Base propositions are those with incoming
+arcs from transitions.
+And view propositions are those with
+incoming arcs from connectives other than
+transitions.
+In our example here, nodes a and b are
+input propositions.
+Note s is a base proposition, and notes p,
+q, and r are view propositions.
+An input marking, is a function from the
+input propositions of a propositional net
+to boolean values.
+a base marking is a function from the
+base propositions of a propositional net
+boolean values.
+And a view marking is a function from the
+view propositions of a propositional net
+to boolean values.
+And we use the word marking to refer to
+a combination of an input base and view
+marking.
+Now given a prop net, an input marking,
+and a
+base marking, determine a unique view
+marking for that prop net.
+This is based on the types of
+the connectives feeding into the view
+propositions.
+The output of an inverter is true, if and
+only if its input is false, for example.
+The output of an and gate is true if and
+only if all of its inputs are true.
+That's suggested by the second table.
+And the output of an or gate is true if
+and only if at least one of its inputs is
+true.
+Transitions behave just like and gates,
+except,
+that there's a one step time delay.
+The output occurs one step after the
+inputs.
+Here's an example.
+Suppose that we had an input marking that
+assigned the node
+A, the value one, and the node B, the
+value zero.
+That's the node in the upper left and the
+down node in the lower right.
+And suppose we had a base marking that
+assigned s, the value one.
+That's the one in the lower left.
+Then, the output of the and gate would be
+a one.
+The output of the inverter would be a
+zero.
+The output of the or gate would also be a
+zero.
+And at this point, we then have values for
+all of the view propositions in the prop
+net.
+Now let's move on to the next step.
+Supposing once again the input is, is, has
+A being one and B being zero.
+What's the value of our base proposition
+on this step?
+Since it's the output of a transition, its
+value on this step is
+the same as the value of that transitions
+input on the preceding step.
+In this case the transition input was zero
+on that preceding step as
+we just saw, and so the value is zero on
+this new step.
+As before, we can compute the view marking
+corresponding
+to this new input marking and this new
+base marking.
+In this case, since the second input to
+the and gate is now 0, the output is 0.
+The output of the inverter becomes 1, and
+the output of the or gate is 1 as well.
+Now, if we leave the inputs the same, for
+subsequent
+steps, the prop net will go on,
+alternating this way.
+If input A ever becomes false, it will
+stop
+alternating, however the alternation will
+begin again, as soon as it's set to true.
+

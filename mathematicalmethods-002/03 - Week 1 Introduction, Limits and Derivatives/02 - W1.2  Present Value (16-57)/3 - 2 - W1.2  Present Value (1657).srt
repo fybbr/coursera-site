@@ -1,0 +1,1210 @@
+1
+00:00:00,920 --> 00:00:04,570
+So now we get to start with the actual
+content of the course.
+
+2
+00:00:04,570 --> 00:00:07,740
+I'll start with the idea called present
+value.
+
+3
+00:00:13,110 --> 00:00:17,480
+So, we're going to start out with, just
+talking about interest.
+
+4
+00:00:17,480 --> 00:00:19,195
+So you can think about this you know,
+
+5
+00:00:19,195 --> 00:00:21,730
+pretty much everyone has some sort of bank
+account.
+
+6
+00:00:21,730 --> 00:00:23,987
+So if you think of a savings account, you
+put
+
+7
+00:00:23,987 --> 00:00:27,280
+money in your savings account and then
+periodically the bank.
+
+8
+00:00:27,280 --> 00:00:31,300
+Or whoever is holding your savings account
+gives you a little bit as
+
+9
+00:00:31,300 --> 00:00:35,059
+a reward for letting the, letting the bank
+hold on to your money.
+
+10
+00:00:37,000 --> 00:00:38,776
+And so for simple interest,
+
+11
+00:00:38,776 --> 00:00:43,242
+this is the easiest possible way that a
+bank can pay you interest.
+
+12
+00:00:43,242 --> 00:00:48,277
+money is going to accumulate proportional
+to the total time of the
+
+13
+00:00:48,277 --> 00:00:54,540
+investment.
+So here r is my interest rate.
+
+14
+00:00:55,940 --> 00:00:58,740
+So you could think about this as the
+yearly
+
+15
+00:00:58,740 --> 00:01:02,400
+interest rate, so maybe, you know, 4% per
+year.
+
+16
+00:01:02,400 --> 00:01:03,972
+n is the number
+
+17
+00:01:03,972 --> 00:01:13,300
+of periods, and A zero is going to be my
+initial amount that I put in the bank.
+
+18
+00:01:13,300 --> 00:01:15,984
+And so the way this is going to work is,
+it's a single
+
+19
+00:01:15,984 --> 00:01:19,930
+interest payment that just happens at the
+end of whatever agreement I have.
+
+20
+00:01:19,930 --> 00:01:24,162
+So if I, if I said I'm going to put this
+money into a bank
+
+21
+00:01:24,162 --> 00:01:29,130
+account for one year, then I would get 1
+plus r times A 0, out at
+
+22
+00:01:29,130 --> 00:01:30,260
+the very end.
+
+23
+00:01:31,280 --> 00:01:35,275
+If I put it in for two years I would get 1
+plus 2 r times A0
+
+24
+00:01:35,275 --> 00:01:40,790
+at the end of two years, so its a linear
+function here in the number of years.
+
+25
+00:01:43,840 --> 00:01:46,464
+And then compound interest, simple
+interest,
+
+26
+00:01:46,464 --> 00:01:48,960
+I don't think this really happens.
+
+27
+00:01:48,960 --> 00:01:50,600
+Too much anywhere, any more.
+
+28
+00:01:50,600 --> 00:01:53,668
+But you know, back when it was difficult
+to do mathematics before
+
+29
+00:01:53,668 --> 00:01:57,080
+computers, things like that, this, this
+was probably a lot more common.
+
+30
+00:01:58,500 --> 00:02:01,600
+Compound interest is interest paid
+regularly.
+
+31
+00:02:03,180 --> 00:02:07,000
+So let's see if I can understand what my
+slide is here.
+
+32
+00:02:07,000 --> 00:02:08,326
+So basically,
+
+33
+00:02:08,326 --> 00:02:15,058
+what's happening here, v is going to be my
+value in the future, A0 is going to
+
+34
+00:02:15,058 --> 00:02:21,700
+be my initial deposit, 1 plus r times A0,
+that's going to be the values.
+
+35
+00:02:21,700 --> 00:02:25,234
+Oops, that's going to be the value after
+one
+
+36
+00:02:25,234 --> 00:02:29,940
+time period, and notice it's in these red
+brackets here.
+
+37
+00:02:31,310 --> 00:02:33,370
+And so when, when I go to
+
+38
+00:02:33,370 --> 00:02:39,790
+the second time period, I get 1 plus r
+times what's in the red brackets.
+
+39
+00:02:40,930 --> 00:02:44,840
+So that means I'm going to get some
+interest on the interest this time.
+
+40
+00:02:47,150 --> 00:02:52,060
+And so you can sort of see that, oops,
+sort of see that as 1 plus r times A1.
+
+41
+00:02:52,060 --> 00:02:57,530
+So you can pick up A0 is the amount in my
+account is my initial deposit.
+
+42
+00:02:57,530 --> 00:03:02,380
+A1 is the amount after one time period, so
+say one year.
+
+43
+00:03:02,380 --> 00:03:06,510
+Then after two time periods, I'm going to
+have 1 plus r.
+
+44
+00:03:06,510 --> 00:03:09,340
+Times what I had at the end of the first
+period.
+
+45
+00:03:09,340 --> 00:03:12,770
+And the way that's going to end up looking
+mathematically,
+
+46
+00:03:12,770 --> 00:03:16,410
+is just 1 plus r to the nth power times my
+initial investment.
+
+47
+00:03:19,720 --> 00:03:22,790
+And then, you can make this formula a
+little bit more general.
+
+48
+00:03:22,790 --> 00:03:26,790
+So it might, in the second bullet here
+compound
+
+49
+00:03:26,790 --> 00:03:33,210
+interest, I'm just receiving one interest
+payment per year.
+
+50
+00:03:33,210 --> 00:03:37,910
+But quite often the compound interest is
+going to be stated in a year license.
+
+51
+00:03:37,910 --> 00:03:40,514
+So if somebody says you know, the interest
+on this
+
+52
+00:03:40,514 --> 00:03:44,517
+account is 2.5%, they mean you're paying
+2.5% per year.in the.
+
+53
+00:03:44,517 --> 00:03:47,451
+But they might be paying you interest
+monthly.
+
+54
+00:03:47,451 --> 00:03:49,299
+So in every statement, you get a little
+
+55
+00:03:49,299 --> 00:03:52,220
+interest payment that's going into your
+savings account.
+
+56
+00:03:54,080 --> 00:03:57,699
+And so the way we're going to handle that
+is you're just
+
+57
+00:03:57,699 --> 00:04:01,880
+going to have r, which is the yearly
+interest rate, divided by m.
+
+58
+00:04:03,070 --> 00:04:05,230
+So this is going to be the number of
+times.
+
+59
+00:04:05,230 --> 00:04:06,170
+That it gets paid.
+
+60
+00:04:06,170 --> 00:04:10,295
+So the, you know, the key ones are
+probably going to be quarterly,
+
+61
+00:04:10,295 --> 00:04:11,562
+monthly or daily.
+
+62
+00:04:12,730 --> 00:04:15,396
+So in that case you know, if it's
+quarterly n would
+
+63
+00:04:15,396 --> 00:04:17,730
+be 4, if montly, n would be 12 and so on.
+
+64
+00:04:17,730 --> 00:04:21,972
+And then it's basically the same formula
+that you
+
+65
+00:04:21,972 --> 00:04:26,330
+have here, except that I'm just changing r
+to be.
+
+66
+00:04:27,494 --> 00:04:30,480
+in some sort of different units.
+
+67
+00:04:30,480 --> 00:04:35,310
+And then k instead of being now measured
+in years, it's just measured in periods.
+
+68
+00:04:35,310 --> 00:04:39,594
+So if m is dividing the year into 12
+periods then k
+
+69
+00:04:39,594 --> 00:04:44,490
+equals 1 is going to be the value after
+the first month.
+
+70
+00:04:44,490 --> 00:04:47,174
+k equals 2 is the value after the second
+month and so on.
+
+71
+00:04:48,810 --> 00:04:52,059
+And then just so that the slide will be
+useful as a reference when
+
+72
+00:04:52,059 --> 00:04:56,170
+you're trying to think about this later,
+here's all of the terms that I have.
+
+73
+00:04:56,170 --> 00:04:59,930
+So, to make it fit on one line I had to
+say r equals rate.
+
+74
+00:04:59,930 --> 00:05:01,190
+That's the interest rate.
+
+75
+00:05:03,290 --> 00:05:07,120
+And, yeah, so I think everything else
+should be clear there.
+
+76
+00:05:11,910 --> 00:05:18,240
+So, present and future value.
+So, suppose the interest rate is 4%.
+
+77
+00:05:18,240 --> 00:05:21,624
+Then in one years time, if I make an
+initial deposit, if
+
+78
+00:05:21,624 --> 00:05:25,640
+I go to the bank and put $100 in a
+saving's account.
+
+79
+00:05:25,640 --> 00:05:28,230
+After I get my interest payment in one
+year.
+
+80
+00:05:28,230 --> 00:05:30,540
+My savings account is going to have $104
+in it.
+
+81
+00:05:30,540 --> 00:05:34,380
+So one year from now, I have $104.
+
+82
+00:05:34,380 --> 00:05:36,961
+So, kind of in our present value,
+
+83
+00:05:36,961 --> 00:05:43,937
+future value terminology, I would say that
+the future value of my $100 now is $104.
+
+84
+00:05:43,937 --> 00:05:47,740
+And present value I'm going to get just be
+turning that around.
+
+85
+00:05:47,740 --> 00:05:52,130
+So if I know that my $100 now is worth
+$104.
+
+86
+00:05:52,130 --> 00:05:57,128
+A year in the future, but I also know that
+the present value
+
+87
+00:05:57,128 --> 00:06:02,180
+of $104 a year in the future, is worth a
+$100 now.
+
+88
+00:06:02,180 --> 00:06:06,330
+And so without too much trouble you should
+be able to work out this formula.
+
+89
+00:06:06,330 --> 00:06:09,727
+So the future value is just equal to, 1
+plus r times
+
+90
+00:06:09,727 --> 00:06:14,319
+the present value, where r is the interest
+rate for the time period.
+
+91
+00:06:16,190 --> 00:06:17,843
+And ten we can get an expression for
+
+92
+00:06:17,843 --> 00:06:20,500
+the present value just by doing some
+simple algebra.
+
+93
+00:06:20,500 --> 00:06:22,690
+So we get present value is equal to 1
+
+94
+00:06:22,690 --> 00:06:25,500
+divided by 1 plus r times the future
+values.
+
+95
+00:06:27,160 --> 00:06:31,960
+And we're going to call this factor 1
+divided by 1 plus r
+
+96
+00:06:31,960 --> 00:06:36,716
+a discount.
+So what I want to do is, discount
+
+97
+00:06:36,716 --> 00:06:41,039
+a future value to come up with some idea
+of what that's worth now.
+
+98
+00:06:41,039 --> 00:06:46,674
+And I'm going to call that my present
+value, and so will call
+
+99
+00:06:46,674 --> 00:06:52,194
+d1 a discount factor so, because I haven't
+put the over
+
+100
+00:06:52,194 --> 00:06:57,160
+m here this is all on kind of a yearly
+basis.
+
+101
+00:06:57,160 --> 00:07:02,672
+But just like on the last slide, we can
+mess around with this and
+
+102
+00:07:02,672 --> 00:07:07,890
+get a discount for a finer grain of
+interest payments.
+
+103
+00:07:10,170 --> 00:07:13,796
+And then with this discount factor, d sub
+k, we can say the
+
+104
+00:07:13,796 --> 00:07:18,600
+present value of a payment a sub k,
+received after k periods.
+
+105
+00:07:18,600 --> 00:07:25,640
+Is just A sub k discounted by the
+appropriate discount factor d sub k.
+
+106
+00:07:30,330 --> 00:07:35,260
+And now we're going to look at a financial
+product, or a contract, called an annuity.
+
+107
+00:07:35,260 --> 00:07:37,768
+And this is just a contract where I buy it
+
+108
+00:07:37,768 --> 00:07:41,800
+now, and what I'm buying is some future
+stream of payments.
+
+109
+00:07:47,000 --> 00:07:52,796
+And my question is, suppose I want to buy
+an annuity that pays $100 at the end of
+
+110
+00:07:52,796 --> 00:07:58,390
+the year for each of the next ten years,
+and the current interest rate is 4%.
+
+111
+00:07:58,390 --> 00:08:01,460
+So how much would I expect to pay?
+
+112
+00:08:01,460 --> 00:08:05,450
+So you could kind of get an idea of how
+much this thing should be.
+
+113
+00:08:05,450 --> 00:08:07,850
+Just that you know the interest rate is
+never very big.
+
+114
+00:08:07,850 --> 00:08:10,240
+I mean today 4% is extraordinary.
+
+115
+00:08:10,240 --> 00:08:12,151
+My savings account right
+
+116
+00:08:12,151 --> 00:08:16,792
+now pays 1/10th of 1% so it's uh.You know
+if we go much
+
+117
+00:08:16,792 --> 00:08:21,979
+further we might not be even have to learn
+this accounting any more
+
+118
+00:08:21,979 --> 00:08:25,528
+so if I did a discount if I said $100 in a
+year
+
+119
+00:08:25,528 --> 00:08:31,019
+is worth $100 now I'm going to be paid ten
+times $1000 per year.
+
+120
+00:08:31,019 --> 00:08:38,019
+The money now would still be better, but
+but I would be willing to pay something
+
+121
+00:08:38,019 --> 00:08:43,119
+close to, but not, not, never more than
+$1000 for ten
+
+122
+00:08:43,119 --> 00:08:48,750
+yearly payments of $100.
+But if we want to be mathematically
+
+123
+00:08:48,750 --> 00:08:54,158
+correct about this, what we really want to
+do is discount each
+
+124
+00:08:54,158 --> 00:08:59,200
+of the ten future payments, and then sum
+up all of those.
+
+125
+00:08:59,200 --> 00:09:00,998
+And that's going to give me the present
+
+126
+00:09:00,998 --> 00:09:03,376
+value for this stream of payments, so
+receiving
+
+127
+00:09:03,376 --> 00:09:05,370
+$100 a year for the next ten years.
+
+128
+00:09:08,300 --> 00:09:12,160
+So, we just start plugging numbers into
+the formulas on the, on the last slide.
+
+129
+00:09:12,160 --> 00:09:17,720
+And we get the present value of the kth
+payment is just going to be.
+
+130
+00:09:17,720 --> 00:09:25,990
+So d sub k, if m is equal to 1, then 1
+divided by this, oops, 1 divided by that.
+
+131
+00:09:25,990 --> 00:09:27,800
+That's my discount factor.
+
+132
+00:09:27,800 --> 00:09:31,420
+And then the a sub k is always going to be
+100, because I'm always getting $100.
+
+133
+00:09:31,420 --> 00:09:33,536
+So this is the present value
+
+134
+00:09:33,536 --> 00:09:36,420
+of the payment received in period k.
+
+135
+00:09:39,360 --> 00:09:42,890
+Then the value of the whole annuity is
+just going to be the sum of those.
+
+136
+00:09:42,890 --> 00:09:44,970
+And so I get a, a formula that looks like
+this.
+
+137
+00:09:44,970 --> 00:09:47,410
+And that probably doesn't look too
+intimidating.
+
+138
+00:09:47,410 --> 00:09:49,424
+I mean you could stick that into a
+spreadsheet
+
+139
+00:09:49,424 --> 00:09:52,360
+pretty easily and figure out figure out
+what that's worth.
+
+140
+00:09:53,385 --> 00:09:55,717
+But, you know when people were working up
+these
+
+141
+00:09:55,717 --> 00:09:58,530
+formulas in the first place, there were no
+spreadsheets.
+
+142
+00:09:58,530 --> 00:10:01,470
+And some said at maths class, we're going
+to do it the way the old people did.
+
+143
+00:10:03,770 --> 00:10:09,110
+So, we'll start off with, this is just
+what I had on the last line of this slide.
+
+144
+00:10:09,110 --> 00:10:12,920
+So, the value of the annuity is.
+
+145
+00:10:12,920 --> 00:10:16,317
+The sum of these ten payments,
+appropriately
+
+146
+00:10:16,317 --> 00:10:19,200
+discounted for, for being in the future.
+
+147
+00:10:21,180 --> 00:10:25,430
+And so, you know, the one way I could do
+it, just actually write down everything.
+
+148
+00:10:25,430 --> 00:10:29,000
+It's going to take a while, but you will
+get the right answer,
+
+149
+00:10:29,000 --> 00:10:33,440
+but what we want is a short-cut, and so
+the, the trick we use to get that.
+
+150
+00:10:35,660 --> 00:10:40,588
+As I'm, I'm going to multiply v by
+whatever's in the denominator here, but
+
+151
+00:10:40,588 --> 00:10:46,920
+not, not with the power.
+So, just 1 plus 0.04 times v.
+
+152
+00:10:46,920 --> 00:10:50,082
+And what that's going to do is if I, if I
+
+153
+00:10:50,082 --> 00:10:55,028
+multiplied both sides of this thing up
+here by 1.04.
+
+154
+00:10:55,028 --> 00:10:57,764
+Its just going to knock out one of these
+things
+
+155
+00:10:57,764 --> 00:11:00,804
+in the denominator here, and leave me with
+this
+
+156
+00:11:00,804 --> 00:11:02,360
+thing on the left side.
+
+157
+00:11:04,788 --> 00:11:08,454
+So for the, when k is equal to 1 I'm
+going to have 1.04
+
+158
+00:11:08,454 --> 00:11:13,639
+on the bottom here, times 1.04 and that's
+where this 100 comes from.
+
+159
+00:11:14,690 --> 00:11:17,597
+Then I'm going to have the remaining nine
+of these things and
+
+160
+00:11:17,597 --> 00:11:20,290
+the only place, there is a K is down at
+the bottom here.
+
+161
+00:11:20,290 --> 00:11:24,073
+So I'm just going to change this as the
+sum from 1
+
+162
+00:11:24,073 --> 00:11:28,310
+to 9 of 100 divided by 1 plus 0.04 to the
+k.
+
+163
+00:11:29,460 --> 00:11:29,943
+So I hope
+
+164
+00:11:29,943 --> 00:11:32,565
+that's clear how that one worked, but if
+its
+
+165
+00:11:32,565 --> 00:11:35,549
+not just write it down with instead of 10
+here.
+
+166
+00:11:36,610 --> 00:11:40,530
+Write it out without the summation
+notation with 4, maybe 3 or 4 terms.
+
+167
+00:11:40,530 --> 00:11:42,470
+And just do it, and you'll see what's
+happening.
+
+168
+00:11:43,880 --> 00:11:45,320
+And then what I'm going to do is, I'm
+
+169
+00:11:45,320 --> 00:11:47,530
+going to write the original thing we had
+underneath it.
+
+170
+00:11:49,130 --> 00:11:54,820
+So I had the sum from 1 to 10 of 100
+divided by, my discount factor.
+
+171
+00:11:55,990 --> 00:11:58,525
+But instead of write, writing that out as
+just
+
+172
+00:11:58,525 --> 00:12:01,385
+the summation, I'm going to write that out
+as sum from
+
+173
+00:12:01,385 --> 00:12:05,620
+1 to 9, and then just add on what I would
+have put in there for the tenth term.
+
+174
+00:12:06,710 --> 00:12:10,004
+And now I subtract these things, so this,
+this guy over here is a
+
+175
+00:12:10,004 --> 00:12:15,280
+little red subtraction sign, I think
+Manage to put a line in my slide, too.
+
+176
+00:12:15,280 --> 00:12:19,800
+So it's supposed to look like kind of a
+elementary school maths problem.
+
+177
+00:12:19,800 --> 00:12:21,102
+If I now subtract
+
+178
+00:12:21,102 --> 00:12:24,822
+the bottom line from the top line, I'll
+have 1
+
+179
+00:12:24,822 --> 00:12:29,380
+plus 0.04 v minus v, so that's going to be
+0.04 v.
+
+180
+00:12:29,380 --> 00:12:33,970
+100 minus, well, there's nothing behind,
+nothing below that.
+
+181
+00:12:33,970 --> 00:12:35,450
+So there's going to be 100 here.
+
+182
+00:12:36,510 --> 00:12:40,710
+This term here, oops, is the same as this
+term here.
+
+183
+00:12:40,710 --> 00:12:43,290
+So those are going to cancel each other
+out when I do the subtraction.
+
+184
+00:12:43,290 --> 00:12:46,218
+And then I'm going to have minus this
+thing on the right hand
+
+185
+00:12:46,218 --> 00:12:47,120
+side over here.
+
+186
+00:12:50,140 --> 00:12:52,656
+So now I've managed to get an expression
+
+187
+00:12:52,656 --> 00:12:55,790
+involving v, and not involving the sum any
+more.
+
+188
+00:12:55,790 --> 00:13:01,448
+And so, it doesn't matter if I want from 1
+to 10 or 1 to 1,000, basically
+
+189
+00:13:01,448 --> 00:13:07,730
+the information I need to get to recover v
+is kind of somehow contained in just the.
+
+190
+00:13:07,730 --> 00:13:11,930
+You know, the, the very first and very
+last of those terms, if you're clever.
+
+191
+00:13:14,120 --> 00:13:17,043
+And so that is just a little algebra
+exercise
+
+192
+00:13:17,043 --> 00:13:20,300
+to figure out what this annuity should be
+worth.
+
+193
+00:13:20,300 --> 00:13:23,875
+So I ended up coming up with $811.9.
+
+194
+00:13:27,760 --> 00:13:30,298
+So now we're going look at this as the
+number of
+
+195
+00:13:30,298 --> 00:13:33,840
+periods gets longer and so there's
+something called a perpetual annuity.
+
+196
+00:13:35,035 --> 00:13:39,490
+or a perpetuity and this is going to pay
+$100 per time period.
+
+197
+00:13:39,490 --> 00:13:42,800
+So say $100 a year.
+But the payments never stop.
+
+198
+00:13:42,800 --> 00:13:45,340
+It just.
+Just keeps going so, forever.
+
+199
+00:13:47,070 --> 00:13:49,800
+And I actually thought this was something
+that
+
+200
+00:13:49,800 --> 00:13:52,950
+they invented just, you know, for
+economics 101
+
+201
+00:13:52,950 --> 00:13:55,760
+text books to kind of work through this
+example.
+
+202
+00:13:55,760 --> 00:13:57,720
+But apparently they actually exist,
+there's
+
+203
+00:13:57,720 --> 00:14:00,480
+something in the U.K. Called a console.
+
+204
+00:14:00,480 --> 00:14:03,040
+Which, you buy and it pays you forever.
+
+205
+00:14:06,630 --> 00:14:10,220
+And so we'll sort of just try to do the
+same thing that we did last time.
+
+206
+00:14:10,220 --> 00:14:15,710
+So, the only difference is now instead of
+going from one to ten.
+
+207
+00:14:15,710 --> 00:14:18,390
+You know, I'm going from one to infinity.
+
+208
+00:14:18,390 --> 00:14:23,170
+And so when I pop off this first term, so
+when I multiply by the.
+
+209
+00:14:23,170 --> 00:14:26,130
+The 1 plus 0.04.
+
+210
+00:14:26,130 --> 00:14:30,740
+I still have an infinite number of terms
+trailing off in the end.
+
+211
+00:14:30,740 --> 00:14:31,784
+But this hundred does
+
+212
+00:14:31,784 --> 00:14:32,680
+pop out in front.
+
+213
+00:14:35,438 --> 00:14:37,090
+And I'm going to do exactly the same
+thing.
+
+214
+00:14:37,090 --> 00:14:39,130
+Subtract the v.
+
+215
+00:14:39,130 --> 00:14:39,720
+But now.
+
+216
+00:14:40,830 --> 00:14:42,798
+And this is kind of clever, but
+essentially
+
+217
+00:14:42,798 --> 00:14:44,430
+what's happening is, you know, as I go
+
+218
+00:14:44,430 --> 00:14:46,398
+further and further into the future, you
+know,
+
+219
+00:14:46,398 --> 00:14:49,444
+the money that I receive 1000 years from
+now.
+
+220
+00:14:49,444 --> 00:14:52,244
+you know, really this whole exercise seems
+kind of silly to
+
+221
+00:14:52,244 --> 00:14:55,420
+me, because I'm going to be dead in
+probably 60 or 70 years.
+
+222
+00:14:55,420 --> 00:15:00,230
+There's no point in me thinking about
+money I'm going to receive in 1000 years.
+
+223
+00:15:00,230 --> 00:15:00,574
+But it's
+
+224
+00:15:00,574 --> 00:15:03,950
+getting, you know, this discount factor on
+the bottom's getting really, really small.
+
+225
+00:15:05,344 --> 00:15:08,965
+I'm sorry, the discount factor's getting
+really small,
+
+226
+00:15:08,965 --> 00:15:13,120
+the thing in the denominator here is
+getting big.
+
+227
+00:15:13,120 --> 00:15:15,001
+And so that means these future, future
+
+228
+00:15:15,001 --> 00:15:17,810
+payments just their present value's
+effectively zero.
+
+229
+00:15:20,510 --> 00:15:23,550
+So again we do the subtraction, but this
+time
+
+230
+00:15:23,550 --> 00:15:27,230
+I just find out that 0.04, so that's the
+interest
+
+231
+00:15:27,230 --> 00:15:30,270
+rate, times the value of my annuity, is
+then
+
+232
+00:15:30,270 --> 00:15:34,280
+just equal to the payment that I'm
+receiving every year.
+
+233
+00:15:36,520 --> 00:15:40,150
+And so, again, I can just solve that
+simple algebra exercise.
+
+234
+00:15:40,150 --> 00:15:48,510
+And get, 2,500, okay.
+
+235
+00:15:48,510 --> 00:15:51,300
+So a quick summary of, my present value
+slide.
+
+236
+00:15:51,300 --> 00:15:54,190
+So this is the formula for the discount
+factor.
+
+237
+00:15:54,190 --> 00:15:58,060
+So m is the number of periods, r is the
+yearly interest
+
+238
+00:15:58,060 --> 00:16:01,586
+rate and then k is the index for period
+that you are
+
+239
+00:16:01,586 --> 00:16:03,460
+receiving the payment.
+
+240
+00:16:06,830 --> 00:16:10,766
+The value of an annuity that pays a an
+amount annually at an
+
+241
+00:16:10,766 --> 00:16:15,550
+annual interest rate r for n total
+payments is given by this formula.
+
+242
+00:16:15,550 --> 00:16:18,916
+So this is just the same one we had on
+
+243
+00:16:18,916 --> 00:16:23,786
+the previous slide, but with the a over r
+factored out.
+
+244
+00:16:23,786 --> 00:16:28,376
+And then value v of perpetual annuity,
+that pays an
+
+245
+00:16:28,376 --> 00:16:31,976
+amount a annually at an interest rate r,
+is just
+
+246
+00:16:31,976 --> 00:16:32,830
+a over r.
+
+247
+00:16:32,830 --> 00:16:37,012
+And you can kind of see that from this,
+this expression here,
+
+248
+00:16:37,012 --> 00:16:40,630
+you know, the 1 divided by 1 plus r to the
+n.
+
+249
+00:16:40,630 --> 00:16:44,158
+As n gets bigger and bigger this
+denominator is going to get bigger and
+
+250
+00:16:44,158 --> 00:16:47,930
+bigger and so the, the second term is
+getting closer and closer to 0.
+
+251
+00:16:47,930 --> 00:16:50,030
+So, you know, hopefully this v is kind of
+
+252
+00:16:50,030 --> 00:16:53,210
+getting close to, to this v in the bottom
+one.
+
+253
+00:16:53,210 --> 00:16:55,140
+As you let the number of periods increase.
+

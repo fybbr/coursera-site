@@ -1,0 +1,168 @@
+1
+00:00:02,809 --> 00:00:08,381
+Despite the variety of games treated in general game playing, all games share a common abstract structure.
+
+2
+00:00:08,744 --> 00:00:12,770
+Each game takes place in an environment with finitely many states.
+
+3
+00:00:13,530 --> 00:00:16,713
+The one distinguished initial state and one or more terminal states.
+
+4
+00:00:18,058 --> 00:00:21,191
+In addition each game has a fixed finite number of players.
+
+5
+00:00:21,436 --> 00:00:25,953
+Each player has finitely many possible actions in any given game state
+
+6
+00:00:25,974 --> 00:00:29,263
+and each state has an associated goal value for each player.
+
+7
+00:00:30,876 --> 00:00:35,153
+The dynamic model for general games is synchronous update:
+
+8
+00:00:35,610 --> 00:00:40,280
+All players move on all steps, although some moves could be no-ops.
+
+9
+00:00:41,268 --> 00:00:45,610
+And the environment updates only in response to the moves taken by the players.
+
+10
+00:00:48,622 --> 00:00:52,770
+Given this common structure we can think of a game as a state graph like the one shown here.
+
+11
+00:00:53,529 --> 00:00:58,229
+In this case you have a game with one player with 8 states names s1 through s8.
+
+12
+00:00:59,281 --> 00:01:05,366
+There's one initial state, namely s1, and two terminal states, that's s4 and s8.
+
+13
+00:01:07,852 --> 00:01:10,963
+The numbers associated with each state indicate the values of those states
+
+14
+00:01:11,939 --> 00:01:15,207
+and the arcs on the graph capture the transition function for the game.
+
+15
+00:01:15,970 --> 00:01:21,772
+For example, if the game is in state s1 and the player does action a the game will move to state s2.
+
+16
+00:01:22,312 --> 00:01:26,284
+if the player does action b the game will move to state s5, and so forth.
+
+17
+00:01:28,360 --> 00:01:36,431
+In the case of multiple players with simultaneous moves, the arcs become multi-arcs with one arc for each combination of players actions.
+
+18
+00:01:37,238 --> 00:01:40,266
+Here's an example of a simultaneous move game with 2 players.
+
+19
+00:01:40,952 --> 00:01:47,059
+it its state is s1 and both players perform action a, we follow the arc labeled "a / a".
+
+20
+00:01:48,029 --> 00:01:53,511
+If the first player does action b and the second player does action a we follow the arc "b / a".
+
+21
+00:01:54,570 --> 00:02:01,614
+We also have different goals for the different players: for example in state s4 player 1 gets 100 points while player 2 gets 0 points
+
+22
+00:02:02,100 --> 00:02:06,238
+and in state s8 the situation is reversed.
+
+23
+00:02:08,614 --> 00:02:18,091
+State graph captures the essential information about a game, and since all games that we're considering are finite it's possible at least in principle to describe such games in the form of state graphs.
+
+24
+00:02:19,864 --> 00:02:30,978
+Unfortunately such explicit representation are not practical in all cases: even though the number of states and actions a finite, these sets can be extremly large and of course the corresponding graphs can be larger still.
+
+25
+00:02:31,663 --> 00:02:36,886
+For example in chess there are thousands of possible moves and more than 10^30 states.
+
+26
+00:02:38,239 --> 00:02:44,082
+Fortunately we can solve this problem exploiting regularities in the game to produce compact encodings.
+
+27
+00:02:44,625 --> 00:02:52,726
+In practice we rarely think of states as monolithic entities and more frequently characterize states in terms of propositions that are true in those states.
+
+28
+00:02:54,561 --> 00:02:59,279
+Similarly we often think of actions as having some structure as well.
+
+29
+00:02:59,872 --> 00:03:02,926
+This leads to a notion of a structured state machine like the one shown here.
+
+30
+00:03:03,363 --> 00:03:09,675
+The overall structure is the same as in the simple state machine shown earlier but in this case we've revealed the substructure of states.
+
+31
+00:03:10,240 --> 00:03:14,140
+Now by itself this does not help us since the graph is the same size as before.
+
+32
+00:03:14,595 --> 00:03:21,000
+However actions frequently effect only some of the propositions that are true in states and leave others unchanged.
+
+33
+00:03:21,709 --> 00:03:28,958
+By exploiting these limitations on the effects of actions we can encode state graphs compactly by writing logical rules in place of explicit graphs.
+
+34
+00:03:31,210 --> 00:03:35,613
+GDL or Game Description Language is a formal language for encoding games in this way.
+
+35
+00:03:36,181 --> 00:03:38,119
+As we'll see it's based on symbolic logic.
+
+36
+00:03:39,005 --> 00:03:45,819
+It's widely used in the litterature and is used in virtually all general game playing competitions.
+
+37
+00:03:46,722 --> 00:03:57,043
+Moreover its form is the basis for some more expressive variance that have significant value in real-world applications such as enterprise management, computational law.
+
+38
+00:03:59,814 --> 00:04:04,180
+Here's an example of GDL, in this case the rules for the game of tic-tac-toe.
+
+39
+00:04:04,886 --> 00:04:09,595
+We discuss the specifics of GDL in the next lesson, for now the details are unimportant.
+
+40
+00:04:09,595 --> 00:04:16,206
+The one thing to note is that this one page of rules fully describes a game with thousands of states.
+
+41
+00:04:16,909 --> 00:04:19,249
+It's a significant savings over the state graph.
+
+42
+00:04:19,978 --> 00:04:30,771
+The improvement in more complex games can be even more dramatic, for example it's possible to describe the rules of chess with many, many more states in just about 4 pages of rules like these.
+

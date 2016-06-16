@@ -1,0 +1,315 @@
+Now we get to the, the fun part which is
+actually taking derivitaives.
+So we'll start off by calculating delta.
+So the delta of a European call option is
+the rate of change, oops.
+Of c of s t, so again remember this is the
+actual Black-Scholes pricing formula.
+So, even though I've written it here as c
+of s
+comma t it's really a function of all of
+the seven variables
+that I had on the, the first set of
+slides.
+And I'm going to take that, it says the
+rate
+of change with respect to the asset price
+s.
+So, how how much does the value of the
+call option change?
+As the price of the underlying asset
+changes.
+And so mathematically I can write that
+just as, delta is equal to the partial
+derivative with respect to s of the
+Black-Scholes pricing formula for a
+European call option.
+And so this is the pricing formula for a
+European
+call option that I had in the first set of
+slides.
+And, I'm just going to go ahead and start
+using the rules we've
+been developing er, earlier in this course
+to start taking the dcerivative here.
+So the first thing I'll, I'll notice.
+Is that the pricing formula has two terms.
+So I can use the linearity property of the
+derivative to
+write this as the, so this is a, a sum
+essentially.
+And so the derivative of a sum is the sum
+of the derivatives.
+And then I'm also in, in this one step
+going to combine the.
+Scaling properties, so when I'm taking the
+derivative with respect to s.
+So, I am taking a partial derivative with
+respect to s.
+Anything that isn't a function of s, I can
+treat as
+a constant, and any constant I can move
+across the derivative operator.
+So, in the first case here.
+This part the e to the minus qt minus t.
+That doesn't depend on s so I'm going to
+take
+that out and I end up with e to the minus
+qt minus t times the partial derivative
+with respect to
+s of the product s times capital phi of d
+plus.
+And on, on the right hand side I'm
+going to do the same thing, except here
+I have two parts that don't depend on s,
+so I can take those across the derivative
+operator.
+If I have minus ke to the r.
+Sorry.
+Minus ke to the minus rt minus t, times
+the
+partial derivative with respect to s of
+phi of d minus.
+And so, the next step here is both phi of
+d plus.
+D plus depends on all of the arguments
+of the Black Scholes pricing formula
+including s.
+And so does d minus.
+So, this is, I'm going to look at it
+and say, that's the product of two
+functions of s.
+That's s, which is a very simple function
+of s.
+And phi of capitol d plus.
+So I'll have to use the product rule on
+the first term.
+And so the product rule says if I have the
+product of two
+functions, I take the derivative of the
+first function times the second function.
+So that gives me just a capital phi of d
+plus Plus the first function, s.
+So this s comes from right here.
+Times the derivative of the second
+function.
+So times the derivative with respect to s
+of capital phi of d plus.
+So now I have a pretty complicated formula
+so what
+I'm going to do is kind of attack pieces
+of it
+and then we'll be able to put all of those
+together to get an expression for delta in
+the end.
+So the first thing I'm going to look at.
+Are we have these partial derivatives with
+respect to s of phi of, and
+so I've used this plus, minus sign
+here just because the functions are very
+similar.
+So quite often when
+I take derivatives of that I'm going to
+get the same answer.
+if not, I'll put a plus, minus.
+And where it's important, and then if I'm
+just talking
+about d plus, you'd think of this as a
+plus.
+If I'm talking about d minus, you think
+about this as a minus.
+So the chain rule says that if I want to
+take the derivative of capital phi of d
+plus with respect to s, that's going to be
+equal to the derivative with respect to
+its argument.
+So with respect to this d plus or minus,
+of fee of d plus or minus,
+times the partial derivative of d with
+respect to s.
+And
+now remember the definition of capital
+fee.
+As just we were integrating from minus
+infinity up to
+d of this function, lower case phi of x,
+dx,
+and so, I, I like to use the shorthand
+notation little phi of x for this function
+here.
+Just it saves me writing some stuff.
+Also, it's less likely that I'm going to
+make a
+mistake if I just have to write that down
+rather than.
+This whole expression.
+And we saw in the, in the second week how
+I could take the derivative of, of
+something like that.
+So it's just the derivative of an
+indefinite integral.
+And so, again, I'm just, I'm doing the
+same calculation two times.
+So it's either, I'm treating it as phi of
+x.
+Or I'm treating it as.
+The actual expression for that function,
+and
+then when I evaluate these it turns out
+that the derivative is either, is just
+lower
+case phi of either d plus or d minus.
+And then it has this functional form on
+the right hand side here.
+So that gets me this part the derivative.
+The partial derivative of capital phi with
+respect to s.
+So, what I have so far, I have this
+expression for delta,
+and then we just evaluated this thing here
+and this thing here.
+So I have this expression for the
+derivative of capital fee,
+and I still need this part here so the
+derivative of,
+the partial derivative of d plus or minus
+with respect to s.
+So
+I have the first term here, is this guy.
+And now to get the full derivative I still
+need to evaluate the
+derivative of phi plus, that kind of came
+out by the chain rule.
+So, I'll move one step ahead with our
+formula.
+So I'm going to substitute this result
+here.
+Oops.
+This result in the second line, into the
+first line, to update my expression for
+delta.
+But I still have this partial of d plus
+with respect
+to s, and partial of d minus with respect
+to s.
+So that's what I'm going to do in the next
+slide.
+So I need to compute the partial
+derivatives
+of d plus and d minus.
+So remember from the, from the first set
+of slides
+I said, I gave definitions for what d plus
+and
+minus look like and so now I can write
+them
+as, just one, formula, using this plus
+minus notation, so.
+The only difference between d plus and d
+minus was this plus
+or minus sign here, so I've just replaced
+it with this little placeholder.
+And now I want to take the derivative of
+this with respect to s.
+And so I'm going to make a little
+simplification here, so If I have a sum in
+the numerator, I can write this as log of
+s over k divided by
+sigma times the square root of t minus t,
+so that'll be one fraction, and then plus.
+R minus q plus or minus sigma squared over
+2 times
+t minus t divided by sigma, square root of
+t minus t.
+So that's a second fraction, I'm just
+adding those two fractions together.
+And so the reason I'm going to want to do
+that is because after, this
+s here only appears in the, in the first
+one of those fractions.
+So what I'm going to end up with is.
+I'll want to take the partial derivative
+of the leftover part with respect to s but
+there is no s's in this part so I can
+treat that as a constant.
+So this term in the right hand side that's
+just
+going to go away that will be equal to
+zero.
+And then I'm left with 1 over sigma times
+the square root of t minus
+t, times the partial derivative with
+respect to s of the log of s over k.
+So I'll do a little substitution here.
+So I'll let u equal s over k.
+Then I can rewrite this Here, as the
+partial
+derivative of, with respect to s, of log
+of u.
+And so by the chain rule, that's going to
+be the derivative
+of the log times the derivative of u with
+respect to s.
+So, the derivative of log of u is just 1
+over u.
+And then I have this partial u, partial s.
+And I'm going to calculate that just by
+taking the
+partial derivative with respect to s of u
+here.
+So, that's going to be 1 over k.
+So what I'm left with is 1 over sigma,
+square root of t minus t.
+K over s.
+So, u was s over k.
+If I take one over that, I get k over s.
+And then times 1 over k, which is just
+this partial derivative, partial
+u, partial s, which I, which popped out
+because of the chain rule.
+So, we'll see that the k's are going to
+cancel here.
+And I end up with partial derivative with
+respect to s of either d plus or d
+minus is just 1 over s times sigma times
+the square root of t minus t.
+So in this case I was able to get both of
+those calculations.
+Because the, the plus or minus bit didn't
+depend on
+s, so that ended up being zero, so it
+wouldn't
+matter if I was taking the derivative of d
+plus
+or d minus, I'm going to get the same
+expression here.
+So, putting everything together, all I'm ,
+all I need to do now is, I have this.
+This is my most up to date expression for
+delta, but it still
+has this partial derivative of d plus and
+d minus with respect to s.
+But that's exactly what we calculated on
+the previous slide here, so I just
+have to put a 1 over S sigma squared to t
+minus t into here.
+Oops, I guess I had it on the next line.
+And so, that's going to give the following
+expression for delta.
+So,
+I'm going to get e to the minus q, t minus
+t, times capital phi of d plus.
+And I have the rest of this in light gray,
+because
+if you look in the text book, this is the
+entire.
+Oops, maybe I got it backwards.
+Nope.
+just the part in the dark black is the
+entire expression for delta.
+But we still have these other terms left
+over.
+And so in the next set of slides
+I'm going to go through an argument about
+why that's going to be equal to zero.
+

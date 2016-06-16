@@ -1,0 +1,1188 @@
+1
+00:00:01,100 --> 00:00:04,910
+So now I'm going to look at something
+called bond duration.
+
+2
+00:00:07,650 --> 00:00:12,930
+This is just meant to be a little bit more
+involved example of taking a derivative.
+
+3
+00:00:19,260 --> 00:00:23,770
+So a price of a bond is given by a
+following formula.
+
+4
+00:00:24,968 --> 00:00:29,250
+so P oops P is the price of the bond.
+
+5
+00:00:31,390 --> 00:00:33,040
+And if you look at this it looks a lot
+
+6
+00:00:33,040 --> 00:00:37,320
+like what we talked about on tuesday for
+present value.
+
+7
+00:00:37,320 --> 00:00:41,070
+And so what basically the way a bond works
+is or
+
+8
+00:00:41,070 --> 00:00:43,640
+at least the one that I've written down
+the formula for.
+
+9
+00:00:43,640 --> 00:00:47,890
+It has a face value, so let's just pretend
+that's $100.
+
+10
+00:00:47,890 --> 00:00:52,970
+And it has coupon payments, and that's
+going to make n coupon payments.
+
+11
+00:00:52,970 --> 00:00:57,466
+And so the agreement I'm going to enter
+into with somebody
+
+12
+00:00:57,466 --> 00:01:01,200
+is, I sell them the bond.
+So they end up with a piece of paper.
+
+13
+00:01:01,200 --> 00:01:02,496
+I end up with $100.
+
+14
+00:01:02,496 --> 00:01:07,770
+And then every year.
+
+15
+00:01:07,770 --> 00:01:11,314
+So this is, this is sort of set up for
+yearly coupon payments.
+
+16
+00:01:12,600 --> 00:01:16,530
+I'm going, let's see, I have the 100
+dollars, they have the bond.
+
+17
+00:01:17,630 --> 00:01:19,628
+I'm gong to pay them the coupon payment.
+
+18
+00:01:19,628 --> 00:01:22,500
+So that might be say, 5 dollars.
+So
+
+19
+00:01:22,500 --> 00:01:25,440
+I'm borrowing their money, and the price
+of doing that
+
+20
+00:01:25,440 --> 00:01:27,590
+is that I have to give them 5 dollars
+every year.
+
+21
+00:01:28,650 --> 00:01:34,050
+And after N payments, I have to give them
+5 dollars, plus their money back.
+
+22
+00:01:34,050 --> 00:01:35,600
+So they get their 100 dollars back.
+
+23
+00:01:36,660 --> 00:01:39,680
+So, all I'm doing to calculate the price
+of my bond.
+
+24
+00:01:39,680 --> 00:01:44,590
+So I'm taking the face value, and I'm
+discounting that N periods.
+
+25
+00:01:45,850 --> 00:01:47,660
+And then I'm taking this stream
+
+26
+00:01:47,660 --> 00:01:52,980
+of coupon payments And I'm cou, I'm
+discounting the first coupon payment
+
+27
+00:01:52,980 --> 00:01:57,140
+for one year; I'm discounting the second
+coupon payment for two years.
+
+28
+00:01:57,140 --> 00:01:59,510
+Looks like I might have forgotten some
+parentheses
+
+29
+00:01:59,510 --> 00:02:01,710
+around this, but it's better on this side.
+
+30
+00:02:02,920 --> 00:02:05,324
+yeah.
+
+31
+00:02:09,410 --> 00:02:12,590
+And so it's essentially just it's the same
+rules
+
+32
+00:02:12,590 --> 00:02:16,310
+that we had before for doing present value
+calculation.
+
+33
+00:02:16,310 --> 00:02:18,910
+Just applied to this slightly more
+complicated payment
+
+34
+00:02:18,910 --> 00:02:21,440
+scheme of a bond which is what we
+
+35
+00:02:21,440 --> 00:02:25,350
+did with the annuity plus you're going to
+get the, the face value of the bond back.
+
+36
+00:02:27,980 --> 00:02:35,920
+So c is a coupon payment, n is the number
+of periods remaining, f is the face value
+
+37
+00:02:38,570 --> 00:02:42,650
+and then this value lambda, which is sort
+of playing the role of the interest rate
+
+38
+00:02:42,650 --> 00:02:47,240
+from our last calculations.
+For bonds it's called yield to maturity.
+
+39
+00:02:47,240 --> 00:02:52,194
+So, I'm going to
+
+40
+00:02:52,194 --> 00:02:59,010
+make just a small change to that.
+And instead of calling
+
+41
+00:02:59,010 --> 00:03:03,760
+the coupon payments capital C, and having
+them all be the same, I'm going to say
+
+42
+00:03:03,760 --> 00:03:04,810
+C sub little k.
+
+43
+00:03:04,810 --> 00:03:08,330
+And the only real reason I want to do this
+is now I can just say that the.
+
+44
+00:03:10,680 --> 00:03:12,030
+All of the short term ones.
+
+45
+00:03:12,030 --> 00:03:14,570
+So, you know, one up to n minus one are
+
+46
+00:03:14,570 --> 00:03:17,410
+all of, sorry not short term but only
+coupon payments one.
+
+47
+00:03:17,410 --> 00:03:20,020
+Those are all going to be the same c and
+then the
+
+48
+00:03:20,020 --> 00:03:23,660
+last one is just going to be the coupon
+plus the face value.
+
+49
+00:03:23,660 --> 00:03:25,680
+And so that's going to give me my present
+
+50
+00:03:25,680 --> 00:03:28,620
+value for whatever payment I'm going to
+receive in the
+
+51
+00:03:28,620 --> 00:03:28,780
+[UNKNOWN]
+
+52
+00:03:28,780 --> 00:03:29,280
+period.
+
+53
+00:03:33,140 --> 00:03:37,620
+So now I can rewrite my, my bond pretty
+much using the same formula we had last
+
+54
+00:03:37,620 --> 00:03:43,260
+time except that instead of having a
+constant value, so I think I called
+
+55
+00:03:43,260 --> 00:03:48,120
+it A last time, I now have something that
+can be different every time but for
+
+56
+00:03:48,120 --> 00:03:52,550
+this particular type of bond it's going to
+be the same for N minus one periods.
+
+57
+00:03:52,550 --> 00:03:55,910
+And then the last one is just going to be
+face value plus coupon payment.
+
+58
+00:03:55,910 --> 00:03:58,500
+And then I have to divide them by
+
+59
+00:03:58,500 --> 00:04:02,030
+1 plus the yield to maturity to the case
+power, because
+
+60
+00:04:02,030 --> 00:04:05,260
+I need to discount money that I'm going to
+receive in the future.
+
+61
+00:04:08,890 --> 00:04:14,260
+The duration of a bond is a weighted
+average Of
+
+62
+00:04:14,260 --> 00:04:16,710
+the time that these payments are going to
+be made.
+
+63
+00:04:18,490 --> 00:04:25,000
+So I'm going to define, the weights as the
+present value of the payment received
+
+64
+00:04:25,000 --> 00:04:31,200
+in period k, divided by the price, and
+then I'm going to multiply that by k.
+
+65
+00:04:31,200 --> 00:04:34,040
+And so k is just the index here, it's
+going from one up to
+
+66
+00:04:34,040 --> 00:04:37,960
+n, so this is going to be You know, pv1
+divided by p.
+
+67
+00:04:37,960 --> 00:04:39,990
+So that's weight 1 times 1.
+
+68
+00:04:39,990 --> 00:04:43,240
+Pv2 divided by p is going to be weight 2.
+
+69
+00:04:43,240 --> 00:04:49,770
+So it'll be weight 2 times 2 plus weight 3
+times 3 and so on up to n.
+
+70
+00:04:49,770 --> 00:04:56,040
+And when I sum all of those things up, I'm
+going to call that D, which is duration.
+
+71
+00:04:56,040 --> 00:04:59,235
+And if you think about this, what are the
+units of PVK.
+
+72
+00:04:59,235 --> 00:05:02,935
+It's a present value of something, so it's
+going to be made in dollars.
+
+73
+00:05:02,935 --> 00:05:02,935
+>>
+
+74
+00:05:02,935 --> 00:05:03,435
+[INAUDIBLE]
+
+75
+00:05:07,990 --> 00:05:09,050
+present value, of the
+
+76
+00:05:09,050 --> 00:05:09,050
+[INAUDIBLE]
+
+77
+00:05:09,050 --> 00:05:10,457
+made in PDK?
+>> Yeah.
+
+78
+00:05:10,457 --> 00:05:11,470
+>> Okay.
+
+79
+00:05:11,470 --> 00:05:13,454
+>> And then P is just the sum of all of
+them.
+
+80
+00:05:13,454 --> 00:05:14,980
+>> OKAY.
+
+81
+00:05:14,980 --> 00:05:19,812
+>> That's the price of the bond today.
+>> Yeah.
+
+82
+00:05:19,812 --> 00:05:25,210
+And so, what's going to end up happening
+
+83
+00:05:25,210 --> 00:05:28,760
+here is, present value is measured in
+dollars.
+
+84
+00:05:28,760 --> 00:05:31,730
+The price of the bond is also measured in
+dollars.
+
+85
+00:05:31,730 --> 00:05:34,190
+So when I do this division, I have
+something
+
+86
+00:05:34,190 --> 00:05:37,050
+measured in dollars divided by something
+measured in dollars.
+
+87
+00:05:37,050 --> 00:05:38,656
+So, I get a unit less quantity.
+
+88
+00:05:40,630 --> 00:05:43,810
+And, K, this is going to be dates.
+
+89
+00:05:43,810 --> 00:05:47,110
+So, K is actually, has some sort of units
+in time.
+
+90
+00:05:47,110 --> 00:05:52,120
+So, the way I've written this down, this
+is for yearly coupon
+
+91
+00:05:52,120 --> 00:05:58,350
+payment So k is going to be one year, two
+years, three years, four years.
+
+92
+00:05:58,350 --> 00:05:59,470
+So kind of interestingly
+
+93
+00:05:59,470 --> 00:06:02,160
+this quantity duration is measured in
+years.
+
+94
+00:06:05,680 --> 00:06:08,630
+And I guess that will sort of seem a
+little bit more strange
+
+95
+00:06:08,630 --> 00:06:12,480
+once we see how duration's going to get
+used in this bond pricing formula.
+
+96
+00:06:14,520 --> 00:06:17,550
+And so then another thing I can do is just
+take this P
+
+97
+00:06:17,550 --> 00:06:22,930
+out the denominator here and put it on the
+left side of the equation.
+
+98
+00:06:24,040 --> 00:06:28,680
+And I'm just doing this because this sum
+of K times PVK
+
+99
+00:06:28,680 --> 00:06:32,380
+is going to be something that falls out of
+a calculation later.
+
+100
+00:06:32,380 --> 00:06:35,780
+And I'm going to want to be able to
+replace that with duration times price.
+
+101
+00:06:37,540 --> 00:06:39,740
+Yep.
+>> I'm confused
+
+102
+00:06:39,740 --> 00:06:43,715
+why we're waiting payments further into
+the future more heavily.
+
+103
+00:06:43,715 --> 00:06:48,174
+>> the present value of something in the
+future is going to be less.
+
+104
+00:06:48,174 --> 00:06:48,174
+>>
+
+105
+00:06:48,174 --> 00:06:48,178
+[CROSSTALK]
+
+106
+00:06:48,178 --> 00:06:49,378
+Less.
+Yeah.
+
+107
+00:06:49,378 --> 00:06:51,280
+>> Yeah.
+>> so, is that
+
+108
+00:06:51,280 --> 00:06:51,280
+[UNKNOWN]
+
+109
+00:06:51,280 --> 00:06:57,950
+undo that to get the price.
+I mean here it's not really clear.
+
+110
+00:06:57,950 --> 00:07:00,710
+>> Why someone tried to do this in the
+first place.
+
+111
+00:07:00,710 --> 00:07:03,940
+I think, as we go forward you're going to
+see that this
+
+112
+00:07:03,940 --> 00:07:07,650
+sort of pops out as a useful quantity in,
+in the equations.
+
+113
+00:07:12,080 --> 00:07:13,820
+And so I guess yeah, next bullet point.
+
+114
+00:07:13,820 --> 00:07:20,380
+So, sensitivity, Is suppose that this
+yield to maturity rate changes.
+
+115
+00:07:20,380 --> 00:07:22,550
+What's going to happen to the value of the
+bond?
+
+116
+00:07:23,680 --> 00:07:27,250
+So I'm asking said, that's a sensitivity
+if, if that rate
+
+117
+00:07:27,250 --> 00:07:30,010
+changes a little and there's a big change
+in the price, we're
+
+118
+00:07:30,010 --> 00:07:33,010
+going to say that's highly sensitive and
+if the rate changes
+
+119
+00:07:33,010 --> 00:07:36,600
+and the price stays pretty much the same,
+then that's low sensitivity.
+
+120
+00:07:43,650 --> 00:07:48,020
+So the present value of the payment
+received in period k, so here
+
+121
+00:07:49,170 --> 00:07:55,830
+Ck is the nominal payment so that's, you
+know, the $5 or the $105.
+
+122
+00:07:55,830 --> 00:07:59,410
+So I, in period n I'm going to get a
+hundred and five dollars.
+
+123
+00:07:59,410 --> 00:08:02,400
+And every other period I'm going to get
+five dollars.
+
+124
+00:08:02,400 --> 00:08:05,590
+And then this number in the bottom is
+going to be bigger than one.
+
+125
+00:08:05,590 --> 00:08:08,390
+So the present value of that's going be
+getting smaller.
+
+126
+00:08:10,680 --> 00:08:17,440
+And so I can write that as Ck.
+Times 1 plus Lambda to the minus K.
+
+127
+00:08:17,440 --> 00:08:21,710
+So, I'm basically just taking this out of
+the denominator, and writing it like this.
+
+128
+00:08:21,710 --> 00:08:25,000
+So, I've always been doing this when I
+want to take a
+
+129
+00:08:25,000 --> 00:08:27,970
+derivative, so I'm just setting myself up
+to use the Power Rule here.
+
+130
+00:08:30,890 --> 00:08:34,550
+So now, if I want to take the derivative
+of the present value of the Kth
+
+131
+00:08:34,550 --> 00:08:39,450
+payment, with respect to Lambda Well it
+should
+
+132
+00:08:39,450 --> 00:08:42,570
+be pretty straightforward, the power rule
+of linearity.
+
+133
+00:08:42,570 --> 00:08:45,260
+And then you have to be a bit careful
+because the chain rule
+
+134
+00:08:45,260 --> 00:08:49,660
+comes into play here too because I
+actually have a function of a function.
+
+135
+00:08:49,660 --> 00:08:53,130
+But luckily the derivative of this inside
+function is one.
+
+136
+00:08:53,130 --> 00:08:56,200
+So that's a time where you can forget the
+chain rule and
+
+137
+00:08:56,200 --> 00:08:59,600
+still get the right answer.
+not a very safe habit.
+
+138
+00:09:01,590 --> 00:09:05,080
+So this just becomes minus k times C sub
+k,
+
+139
+00:09:07,100 --> 00:09:10,130
+my argument here and then minus k minus 1.
+
+140
+00:09:10,130 --> 00:09:12,720
+So that's just a, the power rule to take
+the derivative.
+
+141
+00:09:12,720 --> 00:09:13,220
+And
+
+142
+00:09:15,840 --> 00:09:18,660
+then I can rewrite it like this.
+
+143
+00:09:18,660 --> 00:09:22,760
+So that's sort of just undoing this
+negative exponent trick.
+
+144
+00:09:22,760 --> 00:09:28,910
+And minus k minus 1 is the same as the
+quantity k plus 1 times negative 1.
+
+145
+00:09:28,910 --> 00:09:32,110
+So that's why we get a power of k plus 1
+down here.
+
+146
+00:09:36,260 --> 00:09:42,100
+And now if you look carefully at this, we
+have C sub k divided
+
+147
+00:09:42,100 --> 00:09:48,870
+by one plus lambda to the k.
+But that was just Where is it?
+
+148
+00:09:48,870 --> 00:09:49,850
+Right here.
+
+149
+00:09:49,850 --> 00:09:51,799
+Our definition of PVK.
+
+150
+00:09:52,850 --> 00:09:55,600
+And then I have this plus 1 down here,
+which
+
+151
+00:09:55,600 --> 00:09:59,730
+gives me 1 extra 1 plus lambda in the
+denominator.
+
+152
+00:09:59,730 --> 00:10:01,430
+And I have a minus k in
+
+153
+00:10:01,430 --> 00:10:01,980
+the numerator.
+
+154
+00:10:01,980 --> 00:10:04,100
+So I end up with minus k over 1
+
+155
+00:10:04,100 --> 00:10:07,530
+plus lambda times the present value of the
+kth payment.
+
+156
+00:10:08,780 --> 00:10:12,709
+And now let's look at, the price.
+
+157
+00:10:14,680 --> 00:10:17,200
+So my goal was to figure out what's the
+
+158
+00:10:17,200 --> 00:10:20,690
+sensity of sensitivity of the price not
+just each payment.
+
+159
+00:10:20,690 --> 00:10:22,650
+So if I want to take the derivative of
+that with
+
+160
+00:10:22,650 --> 00:10:27,020
+respect to lambda I'm going to take the
+derivative so
+
+161
+00:10:27,020 --> 00:10:29,060
+my definition for the price was just the
+
+162
+00:10:29,060 --> 00:10:31,659
+present value of this future stream of
+payments.
+
+163
+00:10:33,090 --> 00:10:35,570
+And by my linearity property of
+derivatives,
+
+164
+00:10:35,570 --> 00:10:38,060
+I can move this derivative inside the sum.
+
+165
+00:10:39,970 --> 00:10:44,020
+So, the derivative of a sum is the sum of
+the derivatives.
+
+166
+00:10:45,490 --> 00:10:47,010
+And we've already computed this.
+
+167
+00:10:47,010 --> 00:10:49,320
+This is what I just did on the last slide,
+the derivative
+
+168
+00:10:49,320 --> 00:10:53,090
+of the present value of decay of payment
+divided with respect to lambda.
+
+169
+00:10:55,760 --> 00:10:59,010
+And so I'm just going to plug my formula
+from the previous slide in here.
+
+170
+00:11:00,280 --> 00:11:01,460
+And I get this guy.
+
+171
+00:11:01,460 --> 00:11:01,960
+And
+
+172
+00:11:06,730 --> 00:11:09,990
+now if you look at that, remember what did
+we say duration was?
+
+173
+00:11:09,990 --> 00:11:14,190
+Duration was k times pvk Summed up.
+
+174
+00:11:17,760 --> 00:11:20,910
+So what I'm going to do is take the
+negative one
+
+175
+00:11:20,910 --> 00:11:24,330
+and the divided one plus lambda out in
+front of the sum.
+
+176
+00:11:24,330 --> 00:11:28,740
+And then I'm left with just the sum of k
+times pvk
+
+177
+00:11:32,390 --> 00:11:34,480
+which is this quanitty duration.
+
+178
+00:11:35,630 --> 00:11:38,590
+That just sort of falls out of us taking
+the derivative.
+
+179
+00:11:38,590 --> 00:11:42,910
+And this, this quantity here, so negative
+1 divided
+
+180
+00:11:42,910 --> 00:11:46,890
+1 plus Lambda times the duration, is
+called, oops.
+
+181
+00:11:46,890 --> 00:11:49,230
+Not the negative, everything but the
+negative.
+
+182
+00:11:49,230 --> 00:11:50,140
+There.
+
+183
+00:11:50,140 --> 00:11:51,809
+Is called Modified Duration.
+
+184
+00:11:53,960 --> 00:11:57,460
+And so the sensitivity, the rate of change
+of the price, with
+
+185
+00:11:57,460 --> 00:12:01,650
+respect to the, you can think of this as
+the interest rate.
+
+186
+00:12:01,650 --> 00:12:05,540
+Is equal to minus the modified duration
+times the price.
+
+187
+00:12:10,090 --> 00:12:12,770
+M'kay, yeah, so dm is modified duration.
+
+188
+00:12:15,520 --> 00:12:17,510
+And so, this is what we've found now.
+
+189
+00:12:17,510 --> 00:12:21,210
+That the derivative of the price which
+repsect to the yield
+
+190
+00:12:21,210 --> 00:12:26,370
+to maturity, is the negative of the
+modified duration times the price.
+
+191
+00:12:29,610 --> 00:12:34,610
+And I'm going to make one more Little
+substitution here, so since the price
+
+192
+00:12:34,610 --> 00:12:40,070
+it's obviously going to be non zero, I can
+divide both sides by price.
+
+193
+00:12:40,070 --> 00:12:44,890
+And now I have the change in price, with
+respect to
+
+194
+00:12:44,890 --> 00:12:48,060
+a change in the yield to maturity, divided
+by the price.
+
+195
+00:12:48,060 --> 00:12:51,050
+So the change in price, That's going to be
+something that's measured in dollars.
+
+196
+00:12:51,050 --> 00:12:54,850
+So if the price changes from $100 down to
+$180, The change
+
+197
+00:12:54,850 --> 00:12:56,649
+in price was negative $20.
+
+198
+00:12:57,970 --> 00:13:02,360
+If I divide that by the price, now I have
+some sort of rate.
+
+199
+00:13:02,360 --> 00:13:04,420
+So, it doesn't matter what the price was.
+
+200
+00:13:04,420 --> 00:13:08,150
+If it, if it went from 100 down to 80 or
+if it went
+
+201
+00:13:08,150 --> 00:13:13,690
+from 1,000 down to 800, this thing on the
+left is going to be the same.
+
+202
+00:13:15,050 --> 00:13:17,880
+And so, that's going to be our
+interpretation.
+
+203
+00:13:17,880 --> 00:13:20,240
+For the
+
+204
+00:13:20,240 --> 00:13:21,580
+modified duration.
+
+205
+00:13:21,580 --> 00:13:23,880
+So it's going to give us some measure of
+the relative
+
+206
+00:13:23,880 --> 00:13:27,390
+change in price as the yield to maturity
+is changing.
+
+207
+00:13:30,660 --> 00:13:35,979
+And kind of in summary, duration then
+which is something measured in years.
+
+208
+00:13:37,490 --> 00:13:39,888
+Is a measure of interest rate sensitivity.
+
+209
+00:13:39,888 --> 00:13:41,380
+Yes?
+>>
+
+210
+00:13:41,380 --> 00:13:41,380
+[INAUDIBLE]
+
+211
+00:13:41,380 --> 00:13:49,700
+sensitivity will price things, will price
+change
+
+212
+00:13:49,700 --> 00:13:49,725
+[INAUDIBLE].
+
+213
+00:13:49,725 --> 00:13:53,753
+>> You mean like that?
+>> Yeah.
+
+214
+00:13:53,753 --> 00:13:54,711
+>> Okay.
+
+215
+00:13:54,711 --> 00:14:01,410
+>> the other question is.
+>> M'kay, and so
+
+216
+00:14:01,410 --> 00:14:05,500
+essentially all we've, we've done here is,
+we've just figured out what this
+
+217
+00:14:06,980 --> 00:14:13,127
+curve.
+So this is that curve in the price-yield
+
+218
+00:14:13,127 --> 00:14:13,160
+[UNKNOWN]
+
+219
+00:14:13,160 --> 00:14:14,632
+space, so it's called a "price-yield
+
+220
+00:14:14,632 --> 00:14:17,560
+curve." And I've calculated the
+derivitives,
+
+221
+00:14:17,560 --> 00:14:19,800
+so it's just going to be the slope of this
+tangent line.
+
+222
+00:14:21,310 --> 00:14:24,260
+And so then, one of the, one of the main
+things
+
+223
+00:14:24,260 --> 00:14:26,880
+you're going to use a derivative for, when
+you can find a
+
+224
+00:14:26,880 --> 00:14:28,790
+tangent line like this is if you, if you
+look at
+
+225
+00:14:28,790 --> 00:14:34,030
+this, maybe between about eight percent
+and maybe twelve or thirteen percent.
+
+226
+00:14:35,230 --> 00:14:37,990
+This tangent line is very, very close to
+the actual curve,
+
+227
+00:14:39,180 --> 00:14:42,130
+and it's going to be easy to evaluate
+points along
+
+228
+00:14:42,130 --> 00:14:44,720
+the tangent line because it's just a
+linear function.
+
+229
+00:14:44,720 --> 00:14:46,620
+It actually can be quite difficult
+
+230
+00:14:46,620 --> 00:14:48,310
+especially, you know, when people were
+trying
+
+231
+00:14:48,310 --> 00:14:50,150
+to do these computations before you had
+
+232
+00:14:50,150 --> 00:14:53,570
+computers, to evaluate points along this
+curve.
+
+233
+00:14:56,480 --> 00:15:03,020
+So one of the ideas of doing this, this
+approximation and finding the tangent line
+
+234
+00:15:03,020 --> 00:15:08,010
+is it gives us a good way to make local
+approximations to our function value.
+
+235
+00:15:10,390 --> 00:15:14,110
+And you can actually improve this so.
+
+236
+00:15:14,110 --> 00:15:16,630
+What we've done here, is just the first
+order of approximation.
+
+237
+00:15:16,630 --> 00:15:19,970
+What we're trying to approximate this
+function
+
+238
+00:15:19,970 --> 00:15:22,850
+with a linera function so a tangenr line.
+
+239
+00:15:22,850 --> 00:15:26,360
+You can use convexity, which is sort of
+how quickly
+
+240
+00:15:26,360 --> 00:15:29,450
+the second derivative so the size of the
+second derivative.
+
+241
+00:15:29,450 --> 00:15:32,920
+It's sort of how quickly this curve is
+changing slope.
+
+242
+00:15:32,920 --> 00:15:35,880
+And that allows us to make an even better
+approximation.
+
+243
+00:15:35,880 --> 00:15:40,370
+And we'll, we'll come to that, in the, the
+second half of this course.
+
+244
+00:15:40,370 --> 00:15:41,430
+So after the midterm.
+
+245
+00:15:42,820 --> 00:15:45,990
+Okay.
+So just a quick summary.
+
+246
+00:15:45,990 --> 00:15:47,930
+This is a formula for duration.
+
+247
+00:15:47,930 --> 00:15:53,130
+You can also multiply the price on the
+left hand side and get this k times PVk.
+
+248
+00:15:54,860 --> 00:15:59,260
+Modified duration is just one divided by
+one plus lambda times duration.
+
+249
+00:16:00,970 --> 00:16:06,400
+And then the price sensitivity formula is,
+so
+
+250
+00:16:06,400 --> 00:16:11,500
+the, the rate of change of the price with
+respect to a change in in interest rate.
+
+251
+00:16:11,500 --> 00:16:14,540
+Is minus the modified duration times the
+price.
+
+252
+00:16:14,540 --> 00:16:14,540
+[BLANK_AUDIO]
+

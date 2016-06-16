@@ -1,0 +1,1344 @@
+1
+00:00:00,900 --> 00:00:03,820
+So next section is improper integrals.
+
+2
+00:00:05,680 --> 00:00:08,320
+An improper integral is just above the,
+let's
+
+3
+00:00:08,320 --> 00:00:11,150
+see, I guess I should go to my slide.
+
+4
+00:00:11,150 --> 00:00:14,190
+and an improper integral comes in two
+types.
+
+5
+00:00:14,190 --> 00:00:19,986
+So, you might be interested in integrating
+a function over an unbounded interval
+
+6
+00:00:19,986 --> 00:00:25,480
+so that would be an interval where at
+least one of the end points is infinite.
+
+7
+00:00:25,480 --> 00:00:26,494
+Or the function
+
+8
+00:00:26,494 --> 00:00:30,706
+could be unbounded, so I might be
+integrating something like 1
+
+9
+00:00:30,706 --> 00:00:33,870
+over x and one of the end points would be
+zero.
+
+10
+00:00:33,870 --> 00:00:37,961
+So, the limit as my function approaches
+zero is going to be infinite.
+
+11
+00:00:39,080 --> 00:00:41,093
+And so these are going to be the
+conditions
+
+12
+00:00:41,093 --> 00:00:43,576
+where we can make sense of integrals like
+that.
+
+13
+00:00:46,260 --> 00:00:52,720
+So we'll start by considering the first
+type, so I want to integrate a function f
+
+14
+00:00:52,720 --> 00:00:59,600
+of x over either the inter, interval minus
+infinity b or the interval a to infinity.
+
+15
+00:01:01,510 --> 00:01:04,408
+And if I want to integrate a function over
+the entire
+
+16
+00:01:04,408 --> 00:01:07,375
+real line so minus infinity to infinity I
+just think
+
+17
+00:01:07,375 --> 00:01:09,514
+of it as I pick some point in the middle
+
+18
+00:01:09,514 --> 00:01:12,000
+and go up to there and then finish the
+rest.
+
+19
+00:01:16,680 --> 00:01:20,100
+The improper integral of f of x over a
+
+20
+00:01:20,100 --> 00:01:24,058
+infinity Exists if and only if the limit,
+so
+
+21
+00:01:24,058 --> 00:01:26,846
+basically all I'm going to do, I want to
+
+22
+00:01:26,846 --> 00:01:30,150
+have an infinite, infinity up in the top
+here.
+
+23
+00:01:32,350 --> 00:01:34,345
+But if I actually plugged in an infinity,
+
+24
+00:01:34,345 --> 00:01:36,592
+most of the time something's going to go
+wrong.
+
+25
+00:01:37,850 --> 00:01:39,720
+So I want to consider this as a limit.
+
+26
+00:01:41,610 --> 00:01:45,306
+I'll evaluate this integral using a and t,
+and then take
+
+27
+00:01:45,306 --> 00:01:49,820
+the limit of the resulting function as t
+goes to infinity.
+
+28
+00:01:49,820 --> 00:01:53,642
+If that limit exists and it's finite, then
+we say
+
+29
+00:01:53,642 --> 00:01:58,010
+that the improper integral of f of x over
+(a, infinity)
+
+30
+00:01:58,010 --> 00:01:59,550
+exists.
+
+31
+00:01:59,550 --> 00:02:02,430
+So now it's getting a bit trickier, so our
+
+32
+00:02:02,430 --> 00:02:06,900
+definition of existing means the limit
+exists and it's finite.
+
+33
+00:02:10,120 --> 00:02:12,856
+And so in particular, that means that if
+this
+
+34
+00:02:12,856 --> 00:02:15,448
+integral, you know, as I take the limit as
+
+35
+00:02:15,448 --> 00:02:19,000
+t goes to infinity, if I get infinity,
+Then
+
+36
+00:02:19,000 --> 00:02:25,020
+f of x is not integrable over this this
+interval.
+
+37
+00:02:25,020 --> 00:02:29,202
+And then we do exactly the same thing
+except now I have a t on the
+
+38
+00:02:29,202 --> 00:02:34,990
+bottom so when I want the, the lower limit
+to be able to go to minus infinity.
+
+39
+00:02:34,990 --> 00:02:36,943
+I'm just going to put t in the bottom and
+
+40
+00:02:36,943 --> 00:02:40,050
+take the limit as t goes to minus
+infinity.
+
+41
+00:02:40,050 --> 00:02:41,770
+And the condition has to be the same.
+
+42
+00:02:41,770 --> 00:02:45,130
+For this to be well-defined, I need this
+limit to
+
+43
+00:02:45,130 --> 00:02:47,990
+exist, and I need it to be a finite value.
+
+44
+00:02:52,460 --> 00:02:57,305
+And so when those limits exist and they're
+finite, then I'm going
+
+45
+00:02:57,305 --> 00:03:01,980
+to define the improper integral of f of x
+dx over a infinity.
+
+46
+00:03:01,980 --> 00:03:05,634
+To be the value of this limit, so the, the
+limit s t
+
+47
+00:03:05,634 --> 00:03:09,620
+goes to infinity integral from a to t of f
+of x d x.
+
+48
+00:03:09,620 --> 00:03:13,568
+And then the, sort of the complementary
+piece for
+
+49
+00:03:13,568 --> 00:03:17,610
+the lower limit, so I'm going to define
+the improper
+
+50
+00:03:17,610 --> 00:03:21,960
+integral from minus infinity to b of f of
+x d x.
+
+51
+00:03:21,960 --> 00:03:25,509
+To be the value of this limit, as t goes
+to minus
+
+52
+00:03:25,509 --> 00:03:28,950
+infinite, the integral of t to b of f of x
+d x.
+
+53
+00:03:28,950 --> 00:03:35,682
+So you can also add and subtract improper
+
+54
+00:03:35,682 --> 00:03:41,840
+integrals, so all I'm doing here.
+
+55
+00:03:43,925 --> 00:03:47,705
+Is I'm considering b greater than a so
+this is a normal
+
+56
+00:03:47,705 --> 00:03:51,905
+way of setting up an integral if I think
+of if I think
+
+57
+00:03:51,905 --> 00:03:55,181
+of an interval I have a lower end point of
+a and an
+
+58
+00:03:55,181 --> 00:03:58,710
+upper end point of b so b has to be
+greater than a.
+
+59
+00:04:01,500 --> 00:04:05,800
+And so if I intergrate.
+f of x, from a to infinity.
+
+60
+00:04:08,350 --> 00:04:13,550
+The integral of f of x from b to infinity
+has to sort of fit inside of that.
+
+61
+00:04:13,550 --> 00:04:16,260
+So what I've done, is I've said is a to
+infity.
+
+62
+00:04:16,260 --> 00:04:17,990
+and then b to infinity.
+
+63
+00:04:17,990 --> 00:04:20,674
+And if I do this subtraction, all I
+want to think about
+
+64
+00:04:20,674 --> 00:04:24,740
+is, I'm taking a to infinity, infinnity is
+way over there.
+
+65
+00:04:24,740 --> 00:04:29,373
+And b to infinity and I'm just sort of
+chopping of
+
+66
+00:04:29,373 --> 00:04:33,780
+the tail at b, and so probably just as you
+would
+
+67
+00:04:33,780 --> 00:04:40,108
+expect what's left is just going to be the
+integral of f of x from a to
+
+68
+00:04:40,108 --> 00:04:46,530
+b, and then I can do exactly the same
+thing with the other tail.
+
+69
+00:04:46,530 --> 00:04:49,611
+So if I have the integral from minus
+infinity up
+
+70
+00:04:49,611 --> 00:04:52,218
+to b, so remember b is bigger than a, so
+
+71
+00:04:52,218 --> 00:04:55,141
+this integral, minus infinity up to a of f
+of
+
+72
+00:04:55,141 --> 00:04:58,933
+x, that's if you imagine what the area
+looks like,
+
+73
+00:04:58,933 --> 00:05:03,360
+that's just going to fit in the first, the
+first area.
+
+74
+00:05:03,360 --> 00:05:04,110
+And so what I did.
+
+75
+00:05:05,230 --> 00:05:08,002
+When I do this subtraction, essentially
+all I'm
+
+76
+00:05:08,002 --> 00:05:10,048
+doing is just chopping off the tail at
+
+77
+00:05:10,048 --> 00:05:13,570
+a, and again I'm left with the integral
+from a to b of f of x dx.
+
+78
+00:05:18,870 --> 00:05:19,370
+Okay.
+
+79
+00:05:23,910 --> 00:05:25,494
+And now I want to be able to also
+
+80
+00:05:25,494 --> 00:05:28,730
+make sensitive integral over the entire
+real line.
+
+81
+00:05:28,730 --> 00:05:34,426
+So like I mentioned before, the integral
+from minus infinity to infinity of
+
+82
+00:05:34,426 --> 00:05:40,140
+f of x, this is going to exist if and only
+if there's a point a such that both.
+
+83
+00:05:41,650 --> 00:05:45,572
+The integral from minus infinity up to a,
+and the integral from
+
+84
+00:05:45,572 --> 00:05:48,976
+a to infinity of f of x exists so in
+particular both those
+
+85
+00:05:48,976 --> 00:05:50,240
+need to be finite.
+
+86
+00:05:57,510 --> 00:06:02,840
+And then if that integral exists We're
+just going to define its value.
+
+87
+00:06:03,910 --> 00:06:06,925
+So I, I'm just splitting up the real line
+out of point
+
+88
+00:06:06,925 --> 00:06:10,720
+a so I have numbers bigger than a and
+numbers smaller than a.
+
+89
+00:06:10,720 --> 00:06:13,098
+The value of this integral is just
+going to be the sum
+
+90
+00:06:13,098 --> 00:06:17,040
+of these two integrals that we know how to
+compute already.
+
+91
+00:06:17,040 --> 00:06:22,713
+And so I just wrote down the, the
+definitions down below, and the reason
+
+92
+00:06:22,713 --> 00:06:25,968
+we need to be able to split this thing in
+the
+
+93
+00:06:25,968 --> 00:06:30,990
+middle, you know, why, why not just define
+our limit like this
+
+94
+00:06:30,990 --> 00:06:34,152
+so i take the limit as t goes to infinity
+of
+
+95
+00:06:34,152 --> 00:06:37,382
+the integral from minus t to t of f of x
+dx.
+
+96
+00:06:37,382 --> 00:06:42,548
+So that, that seems like it should work
+its going to get the whole real line but
+
+97
+00:06:42,548 --> 00:06:47,878
+the problem we are running into, is I
+could do something like this, so what,
+
+98
+00:06:47,878 --> 00:06:51,076
+what I'm doing here just imagining a line
+with
+
+99
+00:06:51,076 --> 00:06:54,274
+a slop of 45 degrees so for positive
+values of
+
+100
+00:06:54,274 --> 00:06:57,636
+x that's going to be above the x axis, for
+negative
+
+101
+00:06:57,636 --> 00:07:00,740
+values of x it's going to be below the x
+axis.
+
+102
+00:07:04,690 --> 00:07:09,070
+So if I integrate that from t to t, I'm
+always going to get zero.
+
+103
+00:07:11,550 --> 00:07:14,362
+But if I split it up anywhere in the
+middle, I
+
+104
+00:07:14,362 --> 00:07:18,380
+would end up getting a minus infinity and
+a plus infinity.
+
+105
+00:07:18,380 --> 00:07:21,916
+And kind of like we saw in the first
+lecture when we're looking
+
+106
+00:07:21,916 --> 00:07:25,050
+at this series of 1 minus 1 plus 1 minus 1
+you know.
+
+107
+00:07:25,050 --> 00:07:29,027
+If I have something that I can express as
+infinity
+
+108
+00:07:29,027 --> 00:07:34,000
+minus infinity, I can't really make any
+sense out of that.
+
+109
+00:07:34,000 --> 00:07:36,964
+Another good way to imagine what's
+happening
+
+110
+00:07:36,964 --> 00:07:41,068
+with this is, I could also get an intergal
+from minus infinity to
+
+111
+00:07:41,068 --> 00:07:45,790
+infinity by putting a 2t up here but then
+that would mean that.
+
+112
+00:07:45,790 --> 00:07:49,750
+All of these integrals here, instead of
+integrating
+
+113
+00:07:49,750 --> 00:07:53,790
+to zero, they would integrate to some,
+let's see.
+
+114
+00:07:53,790 --> 00:07:57,300
+Well this one would depend on t, but
+
+115
+00:07:57,300 --> 00:08:02,097
+if you're clever about the choice, you can
+make
+
+116
+00:08:02,097 --> 00:08:07,479
+these all integrate to some non-zero
+value, so as you
+
+117
+00:08:07,479 --> 00:08:13,019
+take the limit, then you can get any
+answer you want to.
+
+118
+00:08:13,019 --> 00:08:18,297
+So if I, if I defined it this way, I would
+have the limit from minus t to
+
+119
+00:08:18,297 --> 00:08:23,666
+t being 0, but then I'm not going to have
+the property, so I wanted to be
+
+120
+00:08:23,666 --> 00:08:28,936
+able to do addition and subtraction with
+my indefinite integrals.
+
+121
+00:08:28,936 --> 00:08:31,776
+And so now If I try to do that, if, if I
+want to add
+
+122
+00:08:31,776 --> 00:08:36,035
+two together, I need to be able to break
+it up somewhere in the middle.
+
+123
+00:08:36,035 --> 00:08:38,939
+And that's gona give me, so if I take a
+being zero for
+
+124
+00:08:38,939 --> 00:08:43,910
+instance, I'm going to get minus infinity
+plus infinity and that's not defined.
+
+125
+00:08:46,960 --> 00:08:51,200
+On the other hand, if you know for some
+reason, so for instance
+
+126
+00:08:51,200 --> 00:08:54,840
+if you know that f of x belongs to a
+family of function.
+
+127
+00:08:54,840 --> 00:09:00,720
+So I'm thinking of probability density
+functions, where this integral does exist.
+
+128
+00:09:00,720 --> 00:09:03,560
+Then you're free to evaluate it however
+you like.
+
+129
+00:09:03,560 --> 00:09:06,940
+So if you know that this integral exist
+basically what that's
+
+130
+00:09:06,940 --> 00:09:10,930
+telling you is if you evaluated correctly
+and get an answer.
+
+131
+00:09:10,930 --> 00:09:12,730
+That's going to be the correct answer.
+
+132
+00:09:12,730 --> 00:09:16,240
+So you can evaluate it however you like,
+you'll get the same answer.
+
+133
+00:09:16,240 --> 00:09:18,380
+So you can evaluate it however you like.
+
+134
+00:09:23,260 --> 00:09:24,996
+So this formula if it was useful, you
+
+135
+00:09:24,996 --> 00:09:27,290
+could use it to evaluate an improper
+integral.
+
+136
+00:09:29,860 --> 00:09:38,440
+Okay, so now This is probably going to be
+a little bit strange for some of you.
+
+137
+00:09:38,440 --> 00:09:41,720
+But, I want to, for my example, show that
+for an
+
+138
+00:09:41,720 --> 00:09:46,148
+integer value of alpha, that's greater
+than or equal to zero,
+
+139
+00:09:46,148 --> 00:09:50,248
+this integral, so the integral from zero
+to infinity, of x
+
+140
+00:09:50,248 --> 00:09:53,940
+to the alpha, times e to the minus x
+squared exists.
+
+141
+00:09:56,050 --> 00:09:59,622
+And so what's going to happen with, with
+this particular
+
+142
+00:09:59,622 --> 00:10:02,814
+argument if I'm pretty sure the way you
+would
+
+143
+00:10:02,814 --> 00:10:06,158
+actually evaluate this, if you wanted to
+get if
+
+144
+00:10:06,158 --> 00:10:08,890
+you wanted to get a number for an answer.
+
+145
+00:10:10,340 --> 00:10:12,709
+You need to use integration by parts.
+
+146
+00:10:13,820 --> 00:10:16,687
+And when you use integration by parts,
+you're going to
+
+147
+00:10:16,687 --> 00:10:19,290
+end up with an integral where alpha is 1
+smaller.
+
+148
+00:10:20,500 --> 00:10:21,172
+And so if alpha
+
+149
+00:10:21,172 --> 00:10:24,630
+was, say, 10, you would need to use
+integration by parts ten times.
+
+150
+00:10:26,274 --> 00:10:31,400
+but I want to get a result that's valid
+for any alpha that's greater than zero.
+
+151
+00:10:31,400 --> 00:10:33,820
+And so this is kind of a strange
+situation.
+
+152
+00:10:33,820 --> 00:10:38,870
+Well remember, I said this integral exists
+if the limit is finite.
+
+153
+00:10:38,870 --> 00:10:41,014
+So I can show that the limit is finite,
+
+154
+00:10:41,014 --> 00:10:44,670
+without actually finding out what that
+limit is specifically.
+
+155
+00:10:44,670 --> 00:10:46,290
+But if I can say whatever limit it
+
+156
+00:10:46,290 --> 00:10:51,090
+is, it's less than a finite number, then I
+can say that this integral exists.
+
+157
+00:10:51,090 --> 00:10:52,810
+This indefinite integral exists.
+
+158
+00:10:56,080 --> 00:11:03,720
+So, what I want to show, is that if I
+integrate this function from zero to t.
+
+159
+00:11:03,720 --> 00:11:07,670
+And then I take the limit as t goes to
+infinity.
+
+160
+00:11:07,670 --> 00:11:09,830
+I have to get a finite number.
+
+161
+00:11:09,830 --> 00:11:12,314
+And so another sort of shorthand for
+finite
+
+162
+00:11:12,314 --> 00:11:15,170
+is you just write strictly less than
+infinity.
+
+163
+00:11:15,170 --> 00:11:17,502
+So that means some real number.
+
+164
+00:11:17,502 --> 00:11:18,890
+some finite real number.
+
+165
+00:11:23,020 --> 00:11:28,940
+So, we can recall form the, from the first
+lecture when I was talking about limits.
+
+166
+00:11:28,940 --> 00:11:36,510
+If p of x is a poloynomial and e to the x
+is the exponential function.
+
+167
+00:11:36,510 --> 00:11:42,110
+Then if I take the limit of this as x goes
+to infinity I get 0.
+
+168
+00:11:42,110 --> 00:11:47,450
+So in particular, I have this minus x
+squared here.
+
+169
+00:11:47,450 --> 00:11:48,062
+So if I have
+
+170
+00:11:48,062 --> 00:11:51,920
+e to a negative power I can also write
+that as 1 over e to that power.
+
+171
+00:11:53,160 --> 00:11:56,264
+So I can rewrite the integrand here as x
+
+172
+00:11:56,264 --> 00:12:01,660
+to the alpha Divided by e to the x
+squared.
+
+173
+00:12:01,660 --> 00:12:06,764
+And so, by using those rules of limits,
+you can also show that this is
+
+174
+00:12:06,764 --> 00:12:12,140
+going to the limit of this as x goes to
+infinity is also going to be 0.
+
+175
+00:12:12,140 --> 00:12:13,340
+And so, you might
+
+176
+00:12:13,340 --> 00:12:18,430
+wonder why this plus 2 is up there,
+because there's no plus 2 in the intregran
+
+177
+00:12:19,490 --> 00:12:24,566
+And the answer is you know I just put it
+there because I want it
+
+178
+00:12:24,566 --> 00:12:30,330
+there.
+So it, it'll pop out later on.
+
+179
+00:12:30,330 --> 00:12:33,186
+And so often when you're trying to work
+these things out, so I know
+
+180
+00:12:33,186 --> 00:12:37,030
+how to solve this problem already, so I
+can put the plus 2 there.
+
+181
+00:12:37,030 --> 00:12:38,515
+Otherwise I wouldn't have put the plus
+
+182
+00:12:38,515 --> 00:12:40,540
+2 there, I would have done more work.
+
+183
+00:12:40,540 --> 00:12:42,700
+I would have realized, hey, it would be
+really
+
+184
+00:12:42,700 --> 00:12:45,980
+handy if there's another x squared in this
+equation.
+
+185
+00:12:45,980 --> 00:12:48,260
+So then I would have gone backwards to
+this line.
+
+186
+00:12:48,260 --> 00:12:50,210
+I would have added 2 to this exponent.
+
+187
+00:12:52,110 --> 00:12:56,110
+But the point is, it's not it's not meant
+to be equal to this.
+
+188
+00:12:56,110 --> 00:12:59,960
+It's basically, what's going to end up
+happening is that
+
+189
+00:12:59,960 --> 00:13:04,162
+I can now Write this as something times x
+squared and
+
+190
+00:13:04,162 --> 00:13:09,310
+have my limit here, or, my integrand here.
+And so
+
+191
+00:13:09,310 --> 00:13:14,386
+this, the, if, if I consider a sequence as
+the x goes to
+
+192
+00:13:14,386 --> 00:13:19,611
+infinity, this is going to be equal to 0.
+And so because
+
+193
+00:13:19,611 --> 00:13:24,525
+I know that limits equal to 0, I can now
+use the
+
+194
+00:13:24,525 --> 00:13:29,817
+definition to say that there is a value M
+so capital
+
+195
+00:13:29,817 --> 00:13:36,117
+M such that, so this is my, my integrand
+again this value is
+
+196
+00:13:36,117 --> 00:13:42,669
+less than 1 whenever x is greater than M,
+so this is basically
+
+197
+00:13:42,669 --> 00:13:48,465
+this epsilon delta argument except you
+know, for
+
+198
+00:13:48,465 --> 00:13:54,811
+the, for the, for the sequence that is
+going to infinity.
+
+199
+00:13:54,811 --> 00:13:57,241
+So the epsilon is 1 and then that
+
+200
+00:13:57,241 --> 00:14:01,021
+means because I know the limit exists,
+there must
+
+201
+00:14:01,021 --> 00:14:03,991
+be some value such that when I'm beyond
+
+202
+00:14:03,991 --> 00:14:07,321
+that value I'm within epsilon of what I
+want
+
+203
+00:14:07,321 --> 00:14:12,811
+it to be and so I'm going to choose 1, I
+can choose any number I want to by the
+
+204
+00:14:12,811 --> 00:14:18,945
+definition of the limit but I'm going to
+choose 1 because its easy to work with.
+
+205
+00:14:18,945 --> 00:14:20,010
+So generally when
+
+206
+00:14:20,010 --> 00:14:23,631
+you are free to choose a number, if you
+choose anything other
+
+207
+00:14:23,631 --> 00:14:27,397
+than zero or one, you better have a really
+good reason for it.
+
+208
+00:14:27,397 --> 00:14:30,477
+So now it should be clear why I wanted
+this x
+
+209
+00:14:30,477 --> 00:14:34,173
+squared here, so if this quantity has to
+be less 1
+
+210
+00:14:34,173 --> 00:14:37,693
+one then I can just divide both sides by x
+squared
+
+211
+00:14:37,693 --> 00:14:42,233
+and so I'm considering the limit as x goes
+to infinity.
+
+212
+00:14:42,233 --> 00:14:45,149
+you know, at some point this M is going to
+be
+
+213
+00:14:45,149 --> 00:14:47,071
+a number bigger than zero.
+
+214
+00:14:47,071 --> 00:14:51,230
+And x, you know, I'm looking at values of
+x greater than that M.
+
+215
+00:14:51,230 --> 00:14:53,600
+So x is not going to be 0.
+
+216
+00:14:53,600 --> 00:14:56,920
+So I can divide by x as many times as I
+want to.
+
+217
+00:14:56,920 --> 00:15:01,680
+So I'm going to divide by x twice.
+So my alpha over 2 becomes an alpha.
+
+218
+00:15:02,720 --> 00:15:05,780
+And my 1 becomes a 1 over x squared.
+
+219
+00:15:05,780 --> 00:15:10,324
+And so the important thing that I've done
+here is I've taken the integrand and I've
+
+220
+00:15:10,324 --> 00:15:15,792
+bounded it by one over x squared.
+So that means for every value of x greater
+
+221
+00:15:15,792 --> 00:15:21,900
+than M, this thing is going to be less
+than one over x squared.
+
+222
+00:15:21,900 --> 00:15:23,250
+And what that's going to let me do.
+
+223
+00:15:24,870 --> 00:15:30,070
+Is now if I consider values of t that are
+greater than M, I'm
+
+224
+00:15:30,070 --> 00:15:35,374
+going to split my integral so my integral
+zero to t into a piece
+
+225
+00:15:35,374 --> 00:15:36,518
+from zero to M
+
+226
+00:15:36,518 --> 00:15:37,038
+[COUGH]
+
+227
+00:15:37,038 --> 00:15:39,920
+and another piece from M up to t.
+
+228
+00:15:44,830 --> 00:15:48,104
+And now what can I say about the, the
+first term here?
+
+229
+00:15:53,040 --> 00:15:56,280
+Though it's not pretty, but 0 is a
+constant and M is a
+
+230
+00:15:56,280 --> 00:16:01,589
+constant, so whatever, you know whatever
+number this is it's going to be constant.
+
+231
+00:16:02,870 --> 00:16:05,642
+And so, t is the only thing that's
+changing now,
+
+232
+00:16:05,642 --> 00:16:08,280
+this is the, what I'm taking to be the
+limit.
+
+233
+00:16:09,330 --> 00:16:12,060
+So I can just rewrite this as a constant.
+
+234
+00:16:12,060 --> 00:16:15,590
+It's no longer really important.
+If it's constant, it's finite.
+
+235
+00:16:15,590 --> 00:16:18,174
+And I'll I'm trying to do, is show that
+this
+
+236
+00:16:18,174 --> 00:16:20,150
+thing is not going to be infinite.
+
+237
+00:16:24,190 --> 00:16:32,430
+And also I have said that this integrand
+can be bounded by 1 over x squared.
+
+238
+00:16:33,650 --> 00:16:35,694
+So if I were to replace this with 1
+
+239
+00:16:35,694 --> 00:16:39,400
+over x squared, like I've done in the
+second line.
+
+240
+00:16:39,400 --> 00:16:44,670
+It means it's everywhere for t bigger then
+M, x squared is bigger than that.
+
+241
+00:16:44,670 --> 00:16:48,780
+So c, this thing, plus the integral from m
+to t.
+
+242
+00:16:49,790 --> 00:16:52,286
+You remember one of the properties of the
+integral was if I
+
+243
+00:16:52,286 --> 00:16:55,146
+had to functions and one of those
+functions was always bigger than
+
+244
+00:16:55,146 --> 00:16:58,992
+the other function, If I integrate both of
+those functions over the
+
+245
+00:16:58,992 --> 00:17:01,138
+same integral, then whichever function is
+
+246
+00:17:01,138 --> 00:17:03,620
+always bigger, it's integral is also
+bigger.
+
+247
+00:17:05,150 --> 00:17:09,560
+So that allows me to bound this integral
+by some constant,
+
+248
+00:17:09,560 --> 00:17:13,430
+and a func, and the integral of one over x
+squared.
+
+249
+00:17:13,430 --> 00:17:14,833
+And now one over x squares,
+
+250
+00:17:14,833 --> 00:17:17,730
+that's something that is actually easy to
+integrate.
+
+251
+00:17:19,840 --> 00:17:22,956
+So that just becomes minus 1 over x so 1
+over x
+
+252
+00:17:22,956 --> 00:17:26,564
+squared, I can think of that as x to the
+minus 2 power
+
+253
+00:17:26,564 --> 00:17:30,746
+and I can use my anti-power rule and that
+just means its going
+
+254
+00:17:30,746 --> 00:17:34,995
+to come from, its the derivative of minus
+x to the minus 1.
+
+255
+00:17:36,580 --> 00:17:43,070
+So I get minus x to the minus 1 here
+evaluated at from M to t.
+
+256
+00:17:44,280 --> 00:17:44,980
+So again
+
+257
+00:17:44,980 --> 00:17:50,280
+I can rewrite that now as a constant minus
+this thing here.
+
+258
+00:17:55,170 --> 00:17:58,010
+So this is just to summarize what I've
+done on the other slide.
+
+259
+00:17:58,010 --> 00:18:03,652
+I now have bounded this integral from zero
+to t of this very unhappy looking
+
+260
+00:18:03,652 --> 00:18:10,050
+integrand, by this expression over here
+that's a much simpler expression of t.
+
+261
+00:18:12,990 --> 00:18:18,400
+And so I have c plus 1 over M so these are
+just constant.
+
+262
+00:18:18,400 --> 00:18:22,050
+And now remember what I was trying to do
+is show that the limit
+
+263
+00:18:22,050 --> 00:18:26,550
+of this guy over here as t goes to
+infinity is approaching a finite value.
+
+264
+00:18:30,630 --> 00:18:37,838
+And so 1 over t, for t is positive.
+So, this can never be, this can
+
+265
+00:18:37,838 --> 00:18:45,510
+never be bigger than c plus 1 over M.
+So, I can make an upper bound of c.
+
+266
+00:18:45,510 --> 00:18:48,800
+So, that's the integral of my integrand
+from 0 to M.
+
+267
+00:18:50,090 --> 00:18:52,930
+That's a constant value, so, it's going to
+be finite.
+
+268
+00:18:52,930 --> 00:18:55,912
+And then M is a really big number, and I
+have 1 over
+
+269
+00:18:55,912 --> 00:18:59,520
+M, so I have to add just a little bit more
+to my constant.
+
+270
+00:18:59,520 --> 00:19:03,570
+And that gets me an upper bound, for no
+matter what value of t
+
+271
+00:19:03,570 --> 00:19:08,010
+I choose, this is it's going to be smaller
+c plus 1 over M.
+
+272
+00:19:10,690 --> 00:19:15,080
+So that means I can say that the limit as
+t goes to infinity Of the
+
+273
+00:19:15,080 --> 00:19:20,040
+integral from 0 to t of x to the alpha, e
+to the minus x squared.
+
+274
+00:19:20,040 --> 00:19:23,390
+That's going to be less than c plus 1 over
+M.
+
+275
+00:19:23,390 --> 00:19:24,840
+And that's going to be a finite number.
+
+276
+00:19:24,840 --> 00:19:27,270
+So I write less than infinity.
+
+277
+00:19:27,270 --> 00:19:31,146
+And so without actually evaluating this
+integral, and finding out
+
+278
+00:19:31,146 --> 00:19:34,370
+the, the number, I was able to show that,
+let's see.
+
+279
+00:19:36,800 --> 00:19:40,230
+That this indefinite integral, from 0 to
+infinity, of x
+
+280
+00:19:40,230 --> 00:19:43,430
+to the alpha, e to the minus x squared,
+dx.
+
+281
+00:19:43,430 --> 00:19:44,300
+This exists.
+

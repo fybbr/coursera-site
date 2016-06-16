@@ -1,0 +1,208 @@
+Okay, and then I'm going to visit one more
+topic, quickly from the first week.
+So I talked about something called bond
+duration, and
+it turned out that, was just a linear
+approximation.
+So I was using the derivative, to make a
+linear approximation of a yield curve, for
+a bond.
+So this is the, the yield curve for a
+bond.
+The price formula, so the price of a bond
+is the,
+it's essentially, it's just the discounted
+value of the futures stream.
+So, what I'm going to get paid, is the
+face value of the bond, in n periods.
+And then sort of my reward, for giving
+somebody money now, that they're going to
+pay me back in the future, is they're
+going to make coupon payments every every
+month.
+And so, this actually should have had
+parentheses around it.
+And so what, what I'm after here
+is just the discounted value of this
+stream of coupon payments,
+plus the discounted value of the face
+value when the bond matures.
+So I have coupon payment, number of
+periods remaining.
+So N is just how many periods I have to
+wait before I get my money back.
+F is the face value, so that's what I get.
+That's sort of usually it's how much I
+have sold
+the bond for.
+And then I just get, my money back some
+time in the future.
+And then lambda, you can think of this as
+the interest rate.
+But it's, for a bond it's called yield for
+maturity.
+[COUGH]
+And so last time, I said we can make a, a
+linear approximation.
+So I, I introduced this concept called
+duration, but then I, I showed
+that it was basically just a, a simple
+transformation of the first derivative.
+And so I could use that to make a linear
+approximation to my bond.
+And so if I did that at the point 10% and
+100.
+And you can see, you know, maybe between
+8% and 12%, the linear approximation is
+pretty good.
+But you know, if you deviate a long way
+from there, then
+the distance between the actual price and
+the approximation gets pretty big.
+And I said, we could improve this by
+adding a quadratic term.
+And so we'll see that, that quadratic term
+is just, a degree 2 Taylor polynomial.
+So, the quadratic term is called
+convexity.
+And we just have to compute it, by looking
+at the present value of the future stream
+of payments.
+So if I say ak is the amount that I'm
+going to receive after, in the kth period.
+Then I want to find the present value of
+that amount.
+Just by discounting it, by a factor that's
+equal to 1 plus the yield
+to maturity.
+And then I'll say that, the price of the
+current
+price of the bond is just equal to the
+sum.
+Of the present values of all of the future
+payments I'll receive.
+And that's equal to the sum of all of
+these amounts discounted by 1 plus lambda.
+Then the term convexity is defined to be,
+1 over P times the second derivative.
+Of this price formula with respect to
+lambda.
+And, so I said the price was equal to this
+thing over here.
+And, so I'm going to just put 1 over p
+times the price, and instead of having
+this in the denominator, I just think I
+make
+fewer mistakes when I can use the power
+rule.
+So I write that as, 1 minus lambda to the
+minus k instead.
+And then the only thing that has a lambda
+in
+it is this term here.
+So I'm going to move my derivative
+operator across
+the 1 over P and then across the sum.
+So we have this linearity property,
+remember, so the
+derivative of a sum is the sum of the
+derivative.
+And then in 1 step I will take 2
+derivatives, so
+I add this to the minus k, so I get, k
+here, and then a k plus 1, and since I'm
+doing
+it twice, the minus signs are going to
+cancel each other out.
+And then I end up with minus k plus 2 in
+the denominator.
+So the denominator, the power's getting
+smaller.
+And you can write this as 1 over p, so I'm
+going to take this plus
+2 here, and write it as 1 over p times the
+quantity 1 plus lambda squared.
+And then I have inside this sum, k times k
+plus 1 times
+these a sub k divided, so
+that the discounted feature payments again
+essentially.
+And now I need a point, where I can make
+my approximation.
+So I all ready saw that in my graph it was
+the point.
+10% and 100 so that gives me a lambda note
+and a P0,
+so, so some point where I've actually
+evaluated the, the price of the bond.
+Then I have Dm, as something called the
+modified duration and C as the convexity,
+that we calculated on the last slide.
+And so if you look in the investment
+science textbook, you'll find that just,
+the change in price
+of the bond is approximately equal to
+minus the modified
+duration, times the price times the change
+in the interest
+rate, plus 1 half times the price times
+the convexity.
+Times the change in the interest rate
+squared.
+And so let's just try and write this out
+into
+things that look more familiar for, with
+what we've just done.
+So I'll say delta P, that's just going to
+be the difference between P and P0.
+So I'll leave the P on the left, lefthand
+side
+right here, but I'll move the P0 to the
+righthand side,
+so I have P0 minus the modified duration
+times the price times lambda minus lambda
+0.
+So that's delta lambda, I'm just going to
+think of that as lambda minus lambda 0.
+And then 1 half price times convexity
+times lamba minus lambda 0 squared.
+And if I go back and substitute in how
+we got these terms in the first place, the
+modified
+duration time price and price times
+convexity, both of those just came from
+the derivatives of this price formula for
+the bond with respect to lambda.
+So the first one is just dP d-lambda,
+evaluated at P0.
+And then price times convexity, that's the
+same thing as the second derivative of
+P with respect to lambda evaluated at P0.
+So really all we've done,
+when we use modified duration and
+convexity
+to approximate the, the price of a bond.
+we've used order 2 Taylor polynomial to,
+to approximate the same thing.
+And so just to finish up this is the, the
+picture of what that looks like.
+So the, the blue curve is the actual price
+curve, yield curve of the bond.
+[COUGH]
+And the dashed black line is the linear
+approximation, and then
+the red line is the order 2 approximation.
+And so again in
+maybe, maybe a little bit wider now maybe
+6 or 7 to
+about 13 or 14, we have a good
+approximation.
+But then as we get into more extreme
+values, much further away from the point
+we used to build the approximation.
+The the true yield curve is deviating from
+our approximation, and so on
+this side it's higher than the
+approximations, and on this side it's
+lower.
+

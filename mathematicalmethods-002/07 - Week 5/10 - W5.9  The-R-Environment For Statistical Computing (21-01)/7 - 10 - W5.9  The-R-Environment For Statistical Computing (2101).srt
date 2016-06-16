@@ -1,0 +1,1509 @@
+1
+00:00:00,980 --> 00:00:04,305
+This, last section, so the last for
+
+2
+00:00:04,305 --> 00:00:09,450
+today is the R Environment for Statistical
+Computing.
+
+3
+00:00:09,450 --> 00:00:12,200
+So this isn't going to be so much of how
+to do stuff.
+
+4
+00:00:12,200 --> 00:00:17,414
+It's basically I just want you to try
+doing some of these things with a computer
+
+5
+00:00:17,414 --> 00:00:22,470
+ones because that's really the only way
+that this is going to be practical.
+
+6
+00:00:24,690 --> 00:00:25,800
+so what is R?
+
+7
+00:00:25,800 --> 00:00:28,962
+This is sort of the programming language
+
+8
+00:00:28,962 --> 00:00:32,753
+that's been adapted by the CFNRM
+department.
+
+9
+00:00:33,900 --> 00:00:38,000
+So R is a language and environment for
+statistical computing and graphics.
+
+10
+00:00:39,020 --> 00:00:43,430
+Luckily, statistical computing ends up
+being very, very similar to
+
+11
+00:00:43,430 --> 00:00:48,340
+scientific computing, so, that's mostly
+just solving things with matrices.
+
+12
+00:00:49,950 --> 00:00:50,134
+So
+
+13
+00:00:50,134 --> 00:00:56,206
+R offers, and this is not an exhaustive
+list data handling and storage, a
+
+14
+00:00:56,206 --> 00:01:02,220
+suite of operators for calculations on a
+raise and in particular matrices.
+
+15
+00:01:02,220 --> 00:01:05,170
+So this is the bullet point that we will
+be making the most use of.
+
+16
+00:01:07,168 --> 00:01:10,480
+It's also, a complete programming
+language.
+
+17
+00:01:10,480 --> 00:01:15,410
+So, there are some questions you can solve
+just by, or some problems
+
+18
+00:01:15,410 --> 00:01:21,319
+you're going to be able to solve just by
+using, Matrices and
+
+19
+00:01:21,319 --> 00:01:24,210
+vectors, but if you need to do something
+more general or if
+
+20
+00:01:24,210 --> 00:01:27,632
+you want to verify that you've gotten the
+correct solution, you can
+
+21
+00:01:27,632 --> 00:01:32,000
+actually write something just like it was
+C or any other programming language.
+
+22
+00:01:34,308 --> 00:01:37,793
+And also a good thing for us is that it's
+free
+
+23
+00:01:37,793 --> 00:01:43,495
+software, so if you just click on this
+link, so it's www.r-project.org.
+
+24
+00:01:44,988 --> 00:01:48,390
+you can download a copy on the University
+network.
+
+25
+00:01:48,390 --> 00:01:50,700
+It should take you about a minute between
+clicking
+
+26
+00:01:50,700 --> 00:01:53,140
+this link and having it installed on your
+computer.
+
+27
+00:01:56,920 --> 00:01:59,940
+And so when you load up R it's going to
+look something like this.
+
+28
+00:01:59,940 --> 00:02:03,552
+So this is a picture for Windows on a
+Macintosh
+
+29
+00:02:03,552 --> 00:02:07,200
+or on Linux, it's going to look a bit
+different.
+
+30
+00:02:07,200 --> 00:02:09,496
+But, the important thing is there will
+always be
+
+31
+00:02:09,496 --> 00:02:11,870
+this one window in the front called the R
+console.
+
+32
+00:02:12,990 --> 00:02:15,730
+And, this little prompt here, I call it a
+Carrot.
+
+33
+00:02:15,730 --> 00:02:18,826
+I don't know if that symbol actually has a
+name.
+
+34
+00:02:18,826 --> 00:02:22,008
+It's just, sort of, R's way of telling you
+it's
+
+35
+00:02:22,008 --> 00:02:25,950
+ready to do something, and you need to
+type a command in.
+
+36
+00:02:25,950 --> 00:02:27,516
+So, you type in a command, and you
+
+37
+00:02:27,516 --> 00:02:30,200
+press Return, and it's going to do
+something for you.
+
+38
+00:02:31,740 --> 00:02:34,490
+And, I guess I should apologize for those
+of you taking 461.
+
+39
+00:02:34,490 --> 00:02:36,080
+This'll seem a bit redundant.
+
+40
+00:02:36,080 --> 00:02:36,635
+[COUGH]
+
+41
+00:02:36,635 --> 00:02:40,890
+So, you can think of R as a calculator.
+
+42
+00:02:40,890 --> 00:02:42,638
+And so the commands are going to look like
+what,
+
+43
+00:02:42,638 --> 00:02:44,740
+in my slides, the commands are going to
+look like this.
+
+44
+00:02:44,740 --> 00:02:48,340
+So this is the little carrot that you're
+going to see in the R command window.
+
+45
+00:02:49,470 --> 00:02:50,790
+And then, this, oops.
+
+46
+00:02:50,790 --> 00:02:54,200
+This is the input that you're going to
+type in.
+
+47
+00:02:54,200 --> 00:02:56,010
+And then when you hit Enter, oops.
+
+48
+00:02:57,010 --> 00:02:59,849
+This isn't actually running R, so I have
+to hit Down Arrow.
+
+49
+00:02:59,849 --> 00:03:02,330
+the output will look like this.
+
+50
+00:03:03,660 --> 00:03:06,620
+This is just sort of placeholder to tell
+you that
+
+51
+00:03:06,620 --> 00:03:09,358
+this is the first element of a vector, so
+the
+
+52
+00:03:09,358 --> 00:03:12,540
+answer is not the thing in the square
+brackets, the
+
+53
+00:03:12,540 --> 00:03:16,330
+answer is the thing that comes after the
+square brackets.
+
+54
+00:03:17,870 --> 00:03:20,860
+And so when you do this in R, it's just
+going to look like this.
+
+55
+00:03:20,860 --> 00:03:22,300
+You see the prompt.
+
+56
+00:03:22,300 --> 00:03:26,930
+You type in 1 plus 1.
+You hit Return, and it types out 2.
+
+57
+00:03:26,930 --> 00:03:29,240
+So, hopefully, that's pretty clear.
+
+58
+00:03:29,240 --> 00:03:30,870
+That's the answer I expected anyways.
+
+59
+00:03:33,020 --> 00:03:37,048
+One sort of useful thing to know right
+from the very beginning is
+
+60
+00:03:37,048 --> 00:03:41,470
+if you need help with a function, you can
+use a function called help.
+
+61
+00:03:43,350 --> 00:03:47,250
+So I type the name of a function, open
+parenthesis.
+
+62
+00:03:47,250 --> 00:03:50,210
+The thing inside the parenthesis is called
+the Argument.
+
+63
+00:03:50,210 --> 00:03:52,504
+And the Argument to the help function is
+just
+
+64
+00:03:52,504 --> 00:03:54,810
+the name of a function that I want help
+with.
+
+65
+00:03:54,810 --> 00:03:58,476
+So in this case there's a function called
+little c, and
+
+66
+00:03:58,476 --> 00:04:01,329
+I want to see the help file for this
+little c.
+
+67
+00:04:02,500 --> 00:04:06,932
+Then there's also this gate sign or pound
+symbol or number symbol.
+
+68
+00:04:06,932 --> 00:04:07,990
+It's just got a lot of names.
+
+69
+00:04:08,996 --> 00:04:12,440
+and this is what you use in R to comment
+your code.
+
+70
+00:04:12,440 --> 00:04:17,419
+So, this is one line that I could type
+into the R command prompt.
+
+71
+00:04:18,800 --> 00:04:20,627
+The R is going to see this symbol and
+
+72
+00:04:20,627 --> 00:04:23,938
+it's just going to ignore everything that
+comes after it.
+
+73
+00:04:23,938 --> 00:04:26,826
+So, I could say, I can leave myself
+messages
+
+74
+00:04:26,826 --> 00:04:29,800
+and you won't do this so often in the
+console.
+
+75
+00:04:29,800 --> 00:04:31,585
+But, if you're making a script file that
+
+76
+00:04:31,585 --> 00:04:33,472
+you're going to cut and paste in the
+console,
+
+77
+00:04:33,472 --> 00:04:35,410
+you might want to leave yourself messages
+for
+
+78
+00:04:35,410 --> 00:04:38,000
+what each line of that script is doing.
+
+79
+00:04:38,000 --> 00:04:41,536
+And so here my message is saying that
+question mark c is going to do
+
+80
+00:04:41,536 --> 00:04:46,100
+the same thing as just saying help and
+then giving it the argument c.
+
+81
+00:04:46,100 --> 00:04:49,092
+So I can do help c and that'll give me the
+help page for
+
+82
+00:04:49,092 --> 00:04:53,650
+the c function, or I can do question mark
+c and that'll give me the same thing.
+
+83
+00:04:56,610 --> 00:05:00,140
+So the first thing we're going to want to
+be able to do is make vectors.
+
+84
+00:05:00,140 --> 00:05:03,200
+So, this little c function that I was
+talking about,
+
+85
+00:05:03,200 --> 00:05:07,180
+this takes values and puts them together
+into a vector.
+
+86
+00:05:07,180 --> 00:05:15,160
+So this is going to put the values 34, 12,
+65, 24 and 15 into a vector in this order.
+
+87
+00:05:15,160 --> 00:05:17,050
+And so the output of that just looks looks
+like this.
+
+88
+00:05:18,180 --> 00:05:20,420
+So again, I get this 1 in square brackets.
+
+89
+00:05:20,420 --> 00:05:21,763
+All that's telling
+
+90
+00:05:21,763 --> 00:05:24,528
+me is that this 34, the thing right next
+
+91
+00:05:24,528 --> 00:05:27,530
+to it, is the first element of this
+vector.
+
+92
+00:05:30,140 --> 00:05:34,988
+I can also use this colon to get sequences
+of, of values,
+
+93
+00:05:34,988 --> 00:05:39,520
+that differ by 1.
+So, generally, the only way this makes
+
+94
+00:05:39,520 --> 00:05:44,060
+sense is if I say an integer value colon
+another integer value.
+
+95
+00:05:44,060 --> 00:05:49,728
+So if I do negative 3 colon 7, that's just
+going to be, give me
+
+96
+00:05:49,728 --> 00:05:55,340
+negative 3, negative 2, negative 1, and so
+on up to 7.
+
+97
+00:05:55,340 --> 00:05:59,064
+If you want a little bit more control,
+there's a function
+
+98
+00:05:59,064 --> 00:06:02,712
+called seq which stands for sequence, and
+so I can give it
+
+99
+00:06:02,712 --> 00:06:06,968
+multiple arguments to find out what all
+the possible arguments are
+
+100
+00:06:06,968 --> 00:06:10,440
+you have to look at the help file for the
+function seq.
+
+101
+00:06:10,440 --> 00:06:14,856
+So here what I'm telling it I want it to
+start at 0 I want
+
+102
+00:06:14,856 --> 00:06:19,451
+it to go to 1 and I want it to take steps
+of size 0.05.
+
+103
+00:06:20,520 --> 00:06:25,090
+So when I run this, it prints something
+like this out.
+
+104
+00:06:25,090 --> 00:06:27,470
+So the first one is 0.
+
+105
+00:06:27,470 --> 00:06:33,450
+Then in steps of 0.05, it goes up to the
+number 1.
+
+106
+00:06:33,450 --> 00:06:38,700
+And so now you can see, it's a little bit
+more clear what this one is here for.
+
+107
+00:06:38,700 --> 00:06:43,090
+So, it's telling me that 0.00 is the first
+element of this vector.
+
+108
+00:06:43,090 --> 00:06:45,115
+You know, then I have, two,
+
+109
+00:06:45,115 --> 00:06:48,922
+three, four, five, six, seven, eight,
+nine, and
+
+110
+00:06:48,922 --> 00:06:52,620
+then 0.45 is the 10th element of this
+vector.
+
+111
+00:06:52,620 --> 00:06:56,278
+So, its just the little aid so you can
+kind of figure out about where you
+
+112
+00:06:56,278 --> 00:06:57,704
+are in a vector when it has to
+
+113
+00:06:57,704 --> 00:07:00,900
+be split across multiple multiple lines in
+the output.
+
+114
+00:07:02,900 --> 00:07:03,155
+>> You
+
+115
+00:07:03,155 --> 00:07:03,920
+[UNKNOWN],
+
+116
+00:07:03,920 --> 00:07:06,015
+assuming a row vector, or?
+
+117
+00:07:06,015 --> 00:07:11,100
+>> So, a vector doesn't really have row
+or column by itself.
+
+118
+00:07:11,100 --> 00:07:13,540
+It's only when you start to talk about
+matrices
+
+119
+00:07:13,540 --> 00:07:15,750
+that it has a, a row and column format.
+
+120
+00:07:15,750 --> 00:07:21,938
+And so, R actually, I think, most of the
+time, I, If I have a vector, and I need
+
+121
+00:07:21,938 --> 00:07:26,215
+to put it into something with two indices,
+so I
+
+122
+00:07:26,215 --> 00:07:30,390
+need to put it into a equation with a
+matrix.
+
+123
+00:07:30,390 --> 00:07:33,426
+I think of every vector as a column
+vector, and if I want
+
+124
+00:07:33,426 --> 00:07:35,760
+it to be a row, I put a little t next to
+it.
+
+125
+00:07:35,760 --> 00:07:38,680
+And I'll talk about that in, in, next
+time.
+
+126
+00:07:39,932 --> 00:07:42,578
+here are actually, well, I'll get to an
+example
+
+127
+00:07:42,578 --> 00:07:45,730
+that'll hopefully be a little bit more
+clear about that.
+
+128
+00:07:47,440 --> 00:07:50,000
+So then another useful thing you can do in
+R is you
+
+129
+00:07:50,000 --> 00:07:53,430
+can save the result from one computation
+to use in another one.
+
+130
+00:07:53,430 --> 00:07:55,824
+So, here I'm going to make
+
+131
+00:07:55,824 --> 00:08:01,900
+a vector that has elements 24, 30, 41, 16,
+and 8.
+
+132
+00:08:01,900 --> 00:08:04,580
+And then I'm going to store that in a
+variable called x.
+
+133
+00:08:06,110 --> 00:08:09,110
+And so when I do this now there's no
+output.
+
+134
+00:08:09,110 --> 00:08:13,366
+Because instead of taking that output and
+printing it on the screen
+
+135
+00:08:13,366 --> 00:08:17,320
+R is just going to put that output into
+the variable x instead.
+
+136
+00:08:19,560 --> 00:08:22,178
+So if I want to see what x is, I can now
+just
+
+137
+00:08:22,178 --> 00:08:26,028
+type x at the command line and hit Enter,
+and now this prints
+
+138
+00:08:26,028 --> 00:08:30,186
+out what's stored in this variable x, so
+it's the vector that I
+
+139
+00:08:30,186 --> 00:08:35,037
+created in the first command here, so 24,
+30, 41, 16, and 8.
+
+140
+00:08:39,740 --> 00:08:43,290
+And, once I've created a vector, then I
+can manipulate it.
+
+141
+00:08:44,500 --> 00:08:47,970
+So, this is my, my vector that I created
+on the previous slide.
+
+142
+00:08:47,970 --> 00:08:50,190
+And I called x.
+
+143
+00:08:50,190 --> 00:08:53,848
+And I use square brackets to get at the
+individual elements of x.
+
+144
+00:08:53,848 --> 00:08:58,710
+So here x[3] is going to refer to the
+third element of x.
+
+145
+00:08:58,710 --> 00:09:04,020
+So if I run this on the command line, I
+just end up getting a 41.
+
+146
+00:09:04,020 --> 00:09:09,970
+Everything in R is treated as a vector,
+so, this 3, even though you think it looks
+
+147
+00:09:09,970 --> 00:09:15,803
+like a scalar, you know, internally R is
+treating that as a vector of length 1.
+
+148
+00:09:17,970 --> 00:09:20,640
+So I can also subset on vectors, and
+
+149
+00:09:20,640 --> 00:09:24,960
+that's going to probably have the
+predictable result.
+
+150
+00:09:24,960 --> 00:09:30,570
+So if I give a vector of indices, this is
+going to refer to the first, second, and
+
+151
+00:09:30,570 --> 00:09:36,163
+fourth elements of the vector X, so that's
+going to be 24, 30, and 16.
+
+152
+00:09:37,190 --> 00:09:39,960
+And so when I do that on the command line
+I get 24, 30, 16.
+
+153
+00:09:39,960 --> 00:09:43,744
+So I can get a subset of the elements out
+by putting,
+
+154
+00:09:43,744 --> 00:09:48,764
+giving a vector argument to this, to these
+square brackets.
+
+155
+00:09:51,400 --> 00:09:55,200
+And then I can also use this subsetting
+for assignment.
+
+156
+00:09:55,200 --> 00:09:58,528
+So suppose I have my vector x and I
+want to
+
+157
+00:09:58,528 --> 00:10:04,430
+replace the first, second and fourth
+elements with negative 1.
+
+158
+00:10:04,430 --> 00:10:10,310
+Well, this was a, a subset that took those
+elements out.
+
+159
+00:10:10,310 --> 00:10:14,070
+So, it somehow refers to those places in
+the vector.
+
+160
+00:10:14,070 --> 00:10:16,908
+I can use my assignment operator, this
+little
+
+161
+00:10:16,908 --> 00:10:18,570
+arrow symbol.
+
+162
+00:10:18,570 --> 00:10:22,380
+To put a negative 1 into those places in
+x.
+
+163
+00:10:23,730 --> 00:10:26,535
+So if I, if I have x currently as holding
+
+164
+00:10:26,535 --> 00:10:31,350
+this, when I run this command it's
+going to replace those entries.
+
+165
+00:10:31,350 --> 00:10:33,740
+So the first second and fourth entries
+with a negative 1.
+
+166
+00:10:33,740 --> 00:10:36,116
+And so now when I look at my value x
+
+167
+00:10:36,116 --> 00:10:41,396
+I end up with negative, negative, negative
+1, negative 1, 41,
+
+168
+00:10:41,396 --> 00:10:42,680
+negative 1 8.
+
+169
+00:10:42,680 --> 00:10:45,080
+So the, the first, second and fourth
+
+170
+00:10:45,080 --> 00:10:47,950
+entries have been replaced by a negative
+1.
+
+171
+00:10:47,950 --> 00:10:48,620
+[COUGH]
+
+172
+00:10:48,620 --> 00:10:54,196
+I can do Vector Arithmetic.
+So, remember when I talked about adding
+
+173
+00:10:54,196 --> 00:10:59,760
+two vectors, they were added element vise.
+So, I just sort of made up a new vector x.
+
+174
+00:10:59,760 --> 00:11:06,900
+My vector y is just integer values from 1
+to 8, so x has length 8.
+
+175
+00:11:06,900 --> 00:11:11,560
+So I can use x plus y to add those
+together.
+
+176
+00:11:14,500 --> 00:11:17,882
+And so this just ends up being 1 plus 6 is
+7,
+
+177
+00:11:17,882 --> 00:11:22,200
+2 plus 12 is 14, 3 plus 4 is 7, and so on.
+
+178
+00:11:22,200 --> 00:11:27,550
+And, plus, minus, multiply, and divide are
+all implemented this way in R.
+
+179
+00:11:27,550 --> 00:11:31,370
+So it just happened element wise.
+And the vectors have to be equal length.
+
+180
+00:11:34,600 --> 00:11:37,560
+And a lot of other functions in R also
+work that way.
+
+181
+00:11:37,560 --> 00:11:39,230
+So for instance the logarithm.
+
+182
+00:11:39,230 --> 00:11:42,671
+It says log, log is log with base e not
+
+183
+00:11:42,671 --> 00:11:47,690
+base 10 so R, R treats this as a natural
+logarithm.
+
+184
+00:11:49,364 --> 00:11:52,199
+and that's just going to return, so this
+
+185
+00:11:52,199 --> 00:11:55,970
+first element is the natural logarithm of
+six.
+
+186
+00:11:55,970 --> 00:11:58,910
+Second element of the logarithm of 12 and
+so on.
+
+187
+00:12:02,030 --> 00:12:04,720
+And then I can also scale and shift a
+vector.
+
+188
+00:12:04,720 --> 00:12:09,580
+So if I have a vector of length one, or
+I'm going to think of it as a scalar,
+
+189
+00:12:09,580 --> 00:12:12,658
+and I use a star, so multiplication, this
+is
+
+190
+00:12:12,658 --> 00:12:16,540
+going to be interpreted as 2 times each
+element of x.
+
+191
+00:12:17,660 --> 00:12:19,445
+And then when I subtract a vector of
+length
+
+192
+00:12:19,445 --> 00:12:22,560
+1, that's going to be the same as
+subtracting a scalar.
+
+193
+00:12:22,560 --> 00:12:27,063
+So I think of this as 2 times each element
+of x, and then each of those
+
+194
+00:12:27,063 --> 00:12:32,277
+elements minus 3, so if I run this command
+I'm going to get 9, and that's just
+
+195
+00:12:32,277 --> 00:12:37,260
+2 times 6 minus 3.
+21 is 2 times 12 minus 3, and so on.
+
+196
+00:12:42,160 --> 00:12:45,000
+And now that's, that's sort of my brief
+introduction of vectors.
+
+197
+00:12:45,000 --> 00:12:49,099
+And then I can create matrices using a, a
+function called matrix.
+
+198
+00:12:51,880 --> 00:12:57,620
+So I'll first start by making a vector x
+that just has numbers 1 through 16 in it.
+
+199
+00:12:57,620 --> 00:13:00,508
+And then I'm going to use the matrix
+function to
+
+200
+00:13:00,508 --> 00:13:03,150
+turn that vector x into a 4 by 4 matrix.
+
+201
+00:13:03,150 --> 00:13:05,328
+So the first number here is the number of
+
+202
+00:13:05,328 --> 00:13:08,235
+rows, the second number is the number of
+columns.
+
+203
+00:13:08,235 --> 00:13:08,715
+Oops,
+
+204
+00:13:08,715 --> 00:13:09,115
+[COUGH]
+
+205
+00:13:09,115 --> 00:13:13,395
+and that's just going to give me a matrix
+that looks like this.
+
+206
+00:13:13,395 --> 00:13:19,090
+So it's 4 by 4 and it's put the vector
+into the column.
+
+207
+00:13:19,090 --> 00:13:22,354
+So, let's put the first four elements in
+the first column, the second four
+
+208
+00:13:22,354 --> 00:13:26,720
+elements in the second column, third four
+in third and fourth four in fourth.
+
+209
+00:13:26,720 --> 00:13:34,595
+If want to instead go by row, you can give
+the matrix function this optional
+
+210
+00:13:34,595 --> 00:13:37,789
+by row equals TRUE argument.
+
+211
+00:13:39,720 --> 00:13:41,920
+And now instead of filling this in column
+by column,
+
+212
+00:13:41,920 --> 00:13:43,470
+it's going to fill it in row by row, so I
+
+213
+00:13:43,470 --> 00:13:45,720
+get one, two, three, four in the first
+row, five,
+
+214
+00:13:45,720 --> 00:13:47,980
+six, seven, eight in the second row, and
+so on.
+
+215
+00:13:55,170 --> 00:13:59,314
+So, for manipulating matrices, suppose I
+have a 3 by 3 matrix,
+
+216
+00:13:59,314 --> 00:14:03,470
+so I'm kind of combining more and more
+commands into one line here.
+
+217
+00:14:03,470 --> 00:14:07,679
+So here, I'm creating a vector that has
+numbers 1 through 9 in it, and
+
+218
+00:14:07,679 --> 00:14:12,440
+then I'm using the matrix function to turn
+that into a 3 by 3 matrix.
+
+219
+00:14:12,440 --> 00:14:13,550
+So, I get 1, 2, 3, 4, 5, 6, 7, 8, 9.
+
+220
+00:14:13,550 --> 00:14:21,086
+To get out the individual elements, I can
+use square
+
+221
+00:14:21,086 --> 00:14:23,235
+brackets now.
+.
+
+222
+00:14:23,235 --> 00:14:26,499
+But, because I have a matrix it's got a
+number of rows and
+
+223
+00:14:26,499 --> 00:14:30,600
+a number of columns I have to use two
+arguments with my square brackets.
+
+224
+00:14:31,800 --> 00:14:35,283
+And so if I say A 2, 3 that's going to be
+second row,
+
+225
+00:14:35,283 --> 00:14:39,580
+third column, and so I get an 8, and
+that's what I see here.
+
+226
+00:14:39,580 --> 00:14:40,080
+[COUGH]
+
+227
+00:14:43,420 --> 00:14:45,776
+You can also select multiple rows and
+
+228
+00:14:45,776 --> 00:14:49,150
+multiple columns by giving vector
+arguments here.
+
+229
+00:14:49,150 --> 00:14:53,460
+So this will take the first two rows of A
+and the second two columns of A.
+
+230
+00:14:54,780 --> 00:15:01,680
+And so we end up with, so remember the
+first row oops.
+
+231
+00:15:01,680 --> 00:15:04,690
+First 2 row, or first column was 1, 2, 3,
+but
+
+232
+00:15:04,690 --> 00:15:08,851
+I haven't selected that so that, oops,
+that dropped off over here.
+
+233
+00:15:08,851 --> 00:15:14,430
+Then the second column was 4, 5, 6 and the
+third column was 7, 8, 9.
+
+234
+00:15:14,430 --> 00:15:19,890
+But I've only asked for the first two rows
+here so I get 4, 5 and 7, 8.
+
+235
+00:15:19,890 --> 00:15:28,610
+And then I can also leave an argument
+empty to mean I want everything.
+
+236
+00:15:28,610 --> 00:15:30,956
+So instead of being forced you know, if I
+
+237
+00:15:30,956 --> 00:15:33,992
+wanted all 3 columns here, instead of
+being forced
+
+238
+00:15:33,992 --> 00:15:35,310
+to write 1 colon 3.
+
+239
+00:15:35,310 --> 00:15:39,036
+I can just write comma and leave that
+space blank and R is
+
+240
+00:15:39,036 --> 00:15:44,030
+going to interpret that as select the
+first two rows and all of the columns.
+
+241
+00:15:45,420 --> 00:15:48,510
+So I end up with the first two rows of my
+matrix A.
+
+242
+00:15:51,910 --> 00:15:57,070
+Then I can also use the t function to take
+the transpose of a matrix.
+
+243
+00:15:57,070 --> 00:16:00,080
+This is something I'll actually, I'll talk
+about on Wednesday.
+
+244
+00:16:00,080 --> 00:16:03,410
+But if such, this is just I made the
+transpose of a
+
+245
+00:16:03,410 --> 00:16:08,310
+matrix is just a matrix whose rows are the
+columns of the argument.
+
+246
+00:16:08,310 --> 00:16:13,768
+So the rows of A transpose are just going
+to be the columns of A.
+
+247
+00:16:13,768 --> 00:16:17,188
+And so that takes the first column of a,
+which was 1,
+
+248
+00:16:17,188 --> 00:16:21,210
+2, 3, and makes that the first row of a
+transpose and so on.
+
+249
+00:16:28,950 --> 00:16:31,420
+So I have to start this section out with a
+warning.
+
+250
+00:16:31,420 --> 00:16:36,690
+So R always considers a single star to be
+component-wise multiplication.
+
+251
+00:16:39,080 --> 00:16:41,960
+So suppose x and y are vectors of n
+components.
+
+252
+00:16:41,960 --> 00:16:44,380
+So here, I chose n equals 4.
+
+253
+00:16:44,380 --> 00:16:47,980
+And I say x is 4, 3, 2, 1, and y is 1, 2,
+3, 4.
+
+254
+00:16:47,980 --> 00:16:51,680
+And, you might think, because x and y are
+vectors, that if
+
+255
+00:16:51,680 --> 00:16:56,240
+I multiplied them together, what I'd be
+getting is the dot product.
+
+256
+00:16:56,240 --> 00:16:59,090
+But actually, what I get is just the
+element wise product.
+
+257
+00:16:59,090 --> 00:17:03,764
+So this is 4 times 1, 2 times 3, 3 times
+2,
+
+258
+00:17:03,764 --> 00:17:05,860
+and 4, 1 times 4.
+
+259
+00:17:05,860 --> 00:17:08,270
+So I think I might have screwed that up,
+but you get the idea, I hope.
+
+260
+00:17:08,270 --> 00:17:09,130
+[COUGH]
+
+261
+00:17:09,130 --> 00:17:10,170
+Yeah.
+
+262
+00:17:10,170 --> 00:17:11,178
+[LAUGH]
+
+263
+00:17:11,178 --> 00:17:16,340
+so for the dot product you have to use
+this symbol here.
+
+264
+00:17:16,340 --> 00:17:18,670
+So, it's percent star percent.
+
+265
+00:17:18,670 --> 00:17:21,205
+And that means to do multiplication using
+sort
+
+266
+00:17:21,205 --> 00:17:24,800
+of the multiplication rule appropriate for
+the type.
+
+267
+00:17:24,800 --> 00:17:27,140
+And so since x is a vector and y is
+
+268
+00:17:27,140 --> 00:17:31,470
+a vector, this will be interpreted as x
+dot y.
+
+269
+00:17:31,470 --> 00:17:33,700
+And so if I do that, I end up getting
+twenty.
+
+270
+00:17:34,820 --> 00:17:36,696
+And the dot product will actually
+
+271
+00:17:36,696 --> 00:17:39,340
+have just been the sum of these elements
+here.
+
+272
+00:17:39,340 --> 00:17:45,190
+So if you look at that, 4 and 6 and 6 and
+4 are both 10 and 10 and 10 are 20.
+
+273
+00:17:45,190 --> 00:17:48,740
+And you can do a little sanity check to
+use the sum function to
+
+274
+00:17:48,740 --> 00:17:52,335
+sum those up for you, and that also is
+going to give me 20.
+
+275
+00:17:57,680 --> 00:18:03,241
+So now we can think about Matrix-Vector
+and Matrix-Matrix Multiplication,
+
+276
+00:18:03,241 --> 00:18:08,170
+so I've sort of theoretically have a, a
+vector of n components.
+
+277
+00:18:09,670 --> 00:18:12,960
+And let's let A be an n by n matrix, and B
+an n by p matrix,
+
+278
+00:18:12,960 --> 00:18:16,040
+and so I'm choosing a different letter
+here because
+
+279
+00:18:16,040 --> 00:18:18,690
+I want it to actually be a different
+number.
+
+280
+00:18:21,880 --> 00:18:26,872
+So the operation x percent star percent A,
+this is going to treat
+
+281
+00:18:26,872 --> 00:18:31,660
+X as a row vector, so this is sort of your
+question, Bill.
+
+282
+00:18:32,732 --> 00:18:35,243
+so it recognizes that if I want to
+
+283
+00:18:35,243 --> 00:18:39,707
+pre-multiply by A because of my
+multiplication rules,
+
+284
+00:18:39,707 --> 00:18:45,420
+whatever is over here has to have the same
+number of columns as A has rows.
+
+285
+00:18:45,420 --> 00:18:46,920
+So if this is a vector, if x is a
+
+286
+00:18:46,920 --> 00:18:51,020
+vector, it's going to make that into
+something with several columns.
+
+287
+00:18:51,020 --> 00:18:52,880
+And then if that has the right size,
+
+288
+00:18:52,880 --> 00:18:55,550
+it will then go ahead and do this
+multiplication.
+
+289
+00:18:56,970 --> 00:19:00,783
+And then, if I put x on the right side,
+now x has to
+
+290
+00:19:00,783 --> 00:19:06,880
+be a column vector, so R is going to treat
+this as a column vector.
+
+291
+00:19:06,880 --> 00:19:09,805
+And it is possible, with the matrix
+function, if you
+
+292
+00:19:09,805 --> 00:19:11,950
+tell it to create a matrix with one row or
+
+293
+00:19:11,950 --> 00:19:16,100
+one column, you can force x to be a row
+vector or a column vector.
+
+294
+00:19:16,100 --> 00:19:19,364
+And in that case, if x were forced to be a
+row, sorry, forced
+
+295
+00:19:19,364 --> 00:19:23,730
+to be a column vector, so it's actually a
+matrix with just one column.
+
+296
+00:19:23,730 --> 00:19:25,500
+Then, when I do this, it's not going to
+work.
+
+297
+00:19:29,410 --> 00:19:32,198
+The operation A percent star percent B,
+that's
+
+298
+00:19:32,198 --> 00:19:34,780
+just going to give me the matrix product
+AB.
+
+299
+00:19:34,780 --> 00:19:37,384
+And that'll work because the number of
+columns of
+
+300
+00:19:37,384 --> 00:19:39,280
+A is equal to the number of rows of B.
+
+301
+00:19:41,570 --> 00:19:47,070
+On the other hand, if I try to do B times
+A, so B matrix product A.
+
+302
+00:19:47,070 --> 00:19:53,901
+That's going to give an error, because the
+dimensions of A and B, of B and A are not
+
+303
+00:19:53,901 --> 00:20:01,252
+conformable for multiplication, so I can't
+do B times A, because p is not equal to n.
+
+304
+00:20:01,252 --> 00:20:06,614
+And then one last thing.
+So recall, I had this system, so this is
+
+305
+00:20:06,614 --> 00:20:12,082
+the system from the first quiz.
+And we found that the answer was, sorry
+
+306
+00:20:12,082 --> 00:20:17,662
+not the first quiz, it's from the first
+set of slides today, we found the
+
+307
+00:20:17,662 --> 00:20:22,980
+answer was minus 1, 2, 2, and I had solved
+that by elimination.
+
+308
+00:20:25,220 --> 00:20:29,230
+And so we can also do this in R just using
+the solve function.
+
+309
+00:20:29,230 --> 00:20:32,142
+So this is actually a very common problem
+that you want to be able
+
+310
+00:20:32,142 --> 00:20:35,420
+to solve, so there's a function built in
+that's going to do this for you.
+
+311
+00:20:37,010 --> 00:20:43,480
+So I can first make my coefficient matrix
+A, and I did it here just by typing it in.
+
+312
+00:20:43,480 --> 00:20:46,580
+Then I make a vector b that just has 2, 8,
+10 in it.
+
+313
+00:20:46,580 --> 00:20:49,980
+And then I just call the solve function,
+
+314
+00:20:49,980 --> 00:20:55,580
+the syntax is the coefficient matrix and
+then the right-hand side
+
+315
+00:20:55,580 --> 00:21:01,214
+vector, and that just prints out the
+answer, minus 1, 2, 2.
+

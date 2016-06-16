@@ -1,0 +1,1203 @@
+1
+00:00:01,020 --> 00:00:04,845
+So now that we know what sing, what
+orthogonal matrices
+
+2
+00:00:04,845 --> 00:00:09,740
+are I want to introduce something called
+the singular value factorization.
+
+3
+00:00:09,740 --> 00:00:12,979
+So this is a way you can take any matrix
+and write it
+
+4
+00:00:12,979 --> 00:00:15,507
+as a product of an orthagonal matrix,
+
+5
+00:00:15,507 --> 00:00:18,970
+a diagonal matrix and another orthoganol
+matrix.
+
+6
+00:00:23,190 --> 00:00:29,130
+Oh, so far, we have, if Q is orthogonal,
+then Q inverse is equal to Q transpose.
+
+7
+00:00:35,420 --> 00:00:38,640
+I think I've mentioned diagonal matrices
+before, but just to be, sort of.
+
+8
+00:00:39,852 --> 00:00:41,450
+pedantic about it I suppose.
+
+9
+00:00:41,450 --> 00:00:46,105
+A diagonal matrix has non-zero entries, or
+entries that
+
+10
+00:00:46,105 --> 00:00:49,600
+may or may not be zero, down the diagonal.
+
+11
+00:00:49,600 --> 00:00:54,540
+So the diagonal elements are the elements
+where the two subscripts match.
+
+12
+00:00:54,540 --> 00:00:59,560
+So it's the same row as, it's in the same
+row as it is in columns so it would be.
+
+13
+00:00:59,560 --> 00:01:05,765
+D11, D22, D33 and anything where the
+subsequents don't match outstrips, so
+
+14
+00:01:05,765 --> 00:01:08,945
+I is not equal to J, though it has to be
+zero.
+
+15
+00:01:08,945 --> 00:01:09,395
+[COUGH]
+
+16
+00:01:09,395 --> 00:01:14,165
+So a diagonal matrix sort of looks like it
+has nonzero entries,
+
+17
+00:01:14,165 --> 00:01:18,579
+down the main diagonal and everyone else
+it has to be zero.
+
+18
+00:01:20,030 --> 00:01:22,076
+And if I have a diagonal matrix, this is
+
+19
+00:01:22,076 --> 00:01:25,970
+also something that's very easy to compute
+the inverse of.
+
+20
+00:01:25,970 --> 00:01:31,580
+So, D inverse is just going to be the
+inverses of the diagonal elements.
+
+21
+00:01:31,580 --> 00:01:34,577
+So I have 1 over d1, 1 over d2
+
+22
+00:01:34,577 --> 00:01:37,780
+so on down to 1 over dm.
+
+23
+00:01:37,780 --> 00:01:39,967
+And so D inverses is only going to
+
+24
+00:01:39,967 --> 00:01:43,800
+exist if all of these diagonal elements
+are Non-zero.
+
+25
+00:01:48,540 --> 00:01:53,220
+So orthogonal matrices and diagonal
+matrices have nice properties, so that
+
+26
+00:01:53,220 --> 00:01:57,745
+in particular this one nice property that
+they're both easy to invert.
+
+27
+00:01:57,745 --> 00:01:58,340
+[NOISE]
+
+28
+00:01:58,340 --> 00:02:05,123
+And so my idea is wouldn't it be nice if
+any matrix could be expressed
+
+29
+00:02:05,123 --> 00:02:11,255
+as a product of orthogonal matrices and
+diagonal matrices?
+
+30
+00:02:11,255 --> 00:02:11,760
+[COUGH]
+
+31
+00:02:11,760 --> 00:02:16,406
+And it turns out it can and it's called a
+singular value
+
+32
+00:02:16,406 --> 00:02:21,618
+factorization.
+So every m by n matrix a can
+
+33
+00:02:21,618 --> 00:02:26,456
+be factored into.
+So, u is a
+
+34
+00:02:26,456 --> 00:02:31,903
+orthoginal matrix.
+Sigma is a diagnol matrix,
+
+35
+00:02:31,903 --> 00:02:37,009
+and v is a orthoginal matrix and the
+factorization puts
+
+36
+00:02:37,009 --> 00:02:38,369
+v transpose.
+
+37
+00:02:45,340 --> 00:02:48,004
+So this is the picture for m greater than
+n and
+
+38
+00:02:48,004 --> 00:02:51,532
+really the only thing that changes if the
+number of columns
+
+39
+00:02:51,532 --> 00:02:54,916
+is greater than the number of rows then
+this rectangle in
+
+40
+00:02:54,916 --> 00:02:58,453
+the middle turns sideways so it's fatter
+than it is high.
+
+41
+00:02:58,453 --> 00:03:01,260
+And then the V matrix, the V transpose
+matrix.
+
+42
+00:03:01,260 --> 00:03:04,340
+So this star is the same thing as
+transpose.
+
+43
+00:03:06,590 --> 00:03:11,702
+This would just be the bigger matrix, and
+U would be the smaller matrix, because
+
+44
+00:03:11,702 --> 00:03:18,130
+the, the dimensions have to line up still.
+So I can take any rectangular matrix.
+
+45
+00:03:18,130 --> 00:03:20,475
+And factor it into an orthogonal factor,
+
+46
+00:03:20,475 --> 00:03:23,490
+a diagonal factor, and another orthogonal
+factor.
+
+47
+00:03:28,310 --> 00:03:31,344
+And so, just a bit of terminology, so U is
+an m by m
+
+48
+00:03:31,344 --> 00:03:34,230
+orthogonal matrix, and the columns are
+going to
+
+49
+00:03:34,230 --> 00:03:36,900
+be called the left singular vectors of A.
+
+50
+00:03:40,640 --> 00:03:46,390
+Sigma, so this is the matrix in the middle
+here, is an m by n diagonal matrix.
+
+51
+00:03:46,390 --> 00:03:50,624
+So since I'm drawing the picture for m
+greater than n so it's a matrix
+
+52
+00:03:50,624 --> 00:03:56,010
+that has more rows then it has columns,
+the rectangle is skinnier than it is tall.
+
+53
+00:03:58,420 --> 00:04:00,310
+And this dark band, this is meant to
+
+54
+00:04:00,310 --> 00:04:03,271
+be, this is where the non-zero elements
+are allowed,
+
+55
+00:04:03,271 --> 00:04:05,539
+and every where else in this matrix, where
+
+56
+00:04:05,539 --> 00:04:08,460
+it's white, those elements are forced to
+be zero.
+
+57
+00:04:08,460 --> 00:04:09,650
+They're required to be zero.
+
+58
+00:04:10,690 --> 00:04:14,330
+And so even though this matrix just to
+make the dimensions work
+
+59
+00:04:14,330 --> 00:04:17,255
+out, it has to have the same dimensions as
+the matrix A
+
+60
+00:04:19,770 --> 00:04:22,695
+It's only the elements where the indices,
+so the row
+
+61
+00:04:22,695 --> 00:04:26,370
+index equals the column index, that are
+allowed to be non-zero.
+
+62
+00:04:26,370 --> 00:04:30,470
+So, you end up with this rectangular chunk
+of zeros in the bottom here too.
+
+63
+00:04:33,700 --> 00:04:37,690
+And so this matrix contains something
+called the singular values of A.
+
+64
+00:04:40,630 --> 00:04:43,330
+And so, because the whole matrix is called
+
+65
+00:04:43,330 --> 00:04:46,950
+sigma, the singular values are also
+denoted as sigmas.
+
+66
+00:04:47,950 --> 00:04:49,950
+And they actually end up being in sorted
+order.
+
+67
+00:04:49,950 --> 00:04:53,866
+So the top left one here, sigma 1, is the
+biggest,
+
+68
+00:04:53,866 --> 00:04:58,500
+then the one in the 2,2 position here is
+sigma 2.
+
+69
+00:04:58,500 --> 00:05:03,550
+And so on down to sigma n in the n n
+postion here.
+
+70
+00:05:03,550 --> 00:05:06,435
+And the singular values have to be greater
+than or equal to zero.
+
+71
+00:05:06,435 --> 00:05:07,295
+[COUGH]
+
+72
+00:05:07,295 --> 00:05:13,315
+And then finally this matrix v on the
+right
+
+73
+00:05:13,315 --> 00:05:19,520
+hand side is a n by n orthogonal matrix.
+
+74
+00:05:19,520 --> 00:05:22,380
+Whose columns contain the right singular
+vectors of A.
+
+75
+00:05:29,440 --> 00:05:34,899
+And the motivation for this is that
+multiplying any vector that
+
+76
+00:05:34,899 --> 00:05:40,100
+touches the unit circle, so this is a
+vector of length one.
+
+77
+00:05:42,036 --> 00:05:42,900
+that.
+
+78
+00:05:44,660 --> 00:05:48,900
+So this set of vectors of length one is
+called the unit circle.
+
+79
+00:05:48,900 --> 00:05:51,564
+When I multiply that by a two by two
+matrix,
+
+80
+00:05:51,564 --> 00:05:54,820
+it's going to turn that unit circle into
+an ellipse and
+
+81
+00:05:54,820 --> 00:05:58,749
+so I've got this picture that everybody
+shows for this.
+
+82
+00:05:59,980 --> 00:06:03,213
+And what ends up happening is you have
+these two directions that
+
+83
+00:06:03,213 --> 00:06:06,812
+are kind of hidden, they depend on the
+matrix that I'm multiplying by
+
+84
+00:06:06,812 --> 00:06:07,330
+[COUGH].
+
+85
+00:06:09,030 --> 00:06:14,337
+So in this case my matrix A, it's got
+these right singular vectors, V1
+
+86
+00:06:14,337 --> 00:06:20,290
+and V2, and if you imagine what I'm going
+to do if I multiply A times X.
+
+87
+00:06:20,290 --> 00:06:26,653
+What I'm really going to do with this is a
+times x is going to be equal to if I, if
+
+88
+00:06:26,653 --> 00:06:32,900
+I were doing a multiplication stage wise
+I'd have to start on the right.
+
+89
+00:06:32,900 --> 00:06:34,538
+So first I would multiply
+
+90
+00:06:34,538 --> 00:06:36,880
+v transpose times x.
+
+91
+00:06:36,880 --> 00:06:41,590
+Then I would multiply sigma times the
+results of that first multiplication.
+
+92
+00:06:41,590 --> 00:06:46,342
+And that I would multiply u times the
+result of that second
+
+93
+00:06:46,342 --> 00:06:52,700
+multiplication so a times x, it's just
+going to be v transpose times x.
+
+94
+00:06:52,700 --> 00:06:56,370
+Then sigma times that.
+And then u times that.
+
+95
+00:06:58,780 --> 00:07:03,290
+And what's going to happen is for these
+two special directions, v1 and v2
+
+96
+00:07:03,290 --> 00:07:06,990
+Those are going to get rotated to be the
+new x and y axes.
+
+97
+00:07:08,830 --> 00:07:11,620
+So that's what the multiplication by v
+transpose does.
+
+98
+00:07:13,470 --> 00:07:16,770
+Then, when I multiply by sigma, that's
+just going
+
+99
+00:07:16,770 --> 00:07:19,710
+to stretch this thing in the x and y
+direction.
+
+100
+00:07:19,710 --> 00:07:23,926
+So I'm going to stretch.
+The y-values by a factor of sigma
+
+101
+00:07:23,926 --> 00:07:28,770
+2, and I'm going to stretch the x-values
+by a factor of sigma 1.
+
+102
+00:07:28,770 --> 00:07:34,278
+And then finally when I multiply by u,
+it's going to rotate that
+
+103
+00:07:34,278 --> 00:07:39,970
+because an orthogonal matrix, you can
+think of it as a rotation.
+
+104
+00:07:39,970 --> 00:07:42,270
+And so it's going to rotate that back.
+
+105
+00:07:42,270 --> 00:07:49,509
+And so what I end up with are V2 times, or
+A times V2 ends up becoming
+
+106
+00:07:49,509 --> 00:07:56,690
+this vector here and A times V1 ends up
+becoming this vector here.
+
+107
+00:07:59,030 --> 00:08:00,990
+So, I think.
+
+108
+00:08:00,990 --> 00:08:06,270
+I've done all of this down below, so I
+have 8 times v2 is going to be
+
+109
+00:08:06,270 --> 00:08:11,760
+equal to my singular value factorization
+times, of a, times v2.
+
+110
+00:08:11,760 --> 00:08:16,170
+Then when I do the first multiplication,
+so remember I'm
+
+111
+00:08:16,170 --> 00:08:20,910
+doing this to one of the right singular
+vectors, v2.
+
+112
+00:08:20,910 --> 00:08:24,690
+So when I multiply v2 by this matrix v
+transpose,
+
+113
+00:08:24,690 --> 00:08:29,370
+I'll have v1 times v2, but because they're
+orthoginal,
+
+114
+00:08:29,370 --> 00:08:34,360
+that's going to be zero.
+And then I have v2 times v2, and because
+
+115
+00:08:34,360 --> 00:08:39,010
+these are orthonormal vectors, that is
+going to be equal to 1.
+
+116
+00:08:41,010 --> 00:08:45,420
+Then I want to multiply this vector 01 by
+this matrix sigma
+
+117
+00:08:45,420 --> 00:08:49,740
+1 sigma 2, and that's going to give me the
+vector 0 comma
+
+118
+00:08:49,740 --> 00:08:50,580
+sigma 2.
+
+119
+00:08:50,580 --> 00:08:53,886
+And then I'm going to multiply that by u,
+and so
+
+120
+00:08:53,886 --> 00:08:58,300
+I'll have u1 times 0, plus u2 times sigma
+2.
+
+121
+00:08:58,300 --> 00:09:00,940
+And that's sort of the story of how this
+
+122
+00:09:00,940 --> 00:09:04,400
+vector v2 gets turned into this vector
+over here.
+
+123
+00:09:11,400 --> 00:09:14,300
+So just to give another example, so.
+
+124
+00:09:14,300 --> 00:09:16,810
+It's kind of tricky to see what happens
+here.
+
+125
+00:09:16,810 --> 00:09:20,200
+Because this only works for these singular
+vectors.
+
+126
+00:09:20,200 --> 00:09:22,308
+Because those are the ones that are
+going to
+
+127
+00:09:22,308 --> 00:09:24,460
+end up being exactly on the axis again.
+
+128
+00:09:24,460 --> 00:09:28,980
+So I end up with a vector either 1,0 or
+0,1 when I have the singular vector.
+
+129
+00:09:28,980 --> 00:09:31,270
+I pick a vector that's not a singular
+vector.
+
+130
+00:09:32,450 --> 00:09:36,781
+And just to find my matrices like this so
+I made my matrix a just by choosing
+
+131
+00:09:36,781 --> 00:09:40,090
+what I wanted its singular value
+factorization to be.
+
+132
+00:09:43,180 --> 00:09:48,510
+So if I want to visualize this I'll start
+out with choosing x to be a vector that
+
+133
+00:09:48,510 --> 00:09:53,266
+goes up 45 degrees and has length one And
+
+134
+00:09:53,266 --> 00:09:55,870
+then I'm going to multiply that by v
+transposed.
+
+135
+00:09:55,870 --> 00:10:00,010
+So v rotates a vector right by 22 and a
+half degrees.
+
+136
+00:10:01,570 --> 00:10:05,740
+V transposal, then, just rotate it left by
+22 and a half degrees.
+
+137
+00:10:07,290 --> 00:10:08,340
+So, if I start out
+
+138
+00:10:08,340 --> 00:10:12,490
+with this vector, multiplying it by v
+transposed So I'm changing
+
+139
+00:10:12,490 --> 00:10:17,660
+X, here, to be whatever V transposed times
+the original X was.
+
+140
+00:10:17,660 --> 00:10:22,920
+That rotates this vector from here to the
+left, until it's this direction.
+
+141
+00:10:22,920 --> 00:10:24,490
+But notice, it's still the same length.
+
+142
+00:10:27,530 --> 00:10:29,120
+Then I'm going to multiply by sigma.
+
+143
+00:10:29,120 --> 00:10:33,910
+So I'm going to stretch the X coordinate,
+so I'll take this coordinate, here.
+
+144
+00:10:33,910 --> 00:10:38,620
+And multiply that by 1.5 and stretch the y
+coordinate by 2.
+
+145
+00:10:38,620 --> 00:10:40,970
+So stretch the y coordinate.
+
+146
+00:10:40,970 --> 00:10:44,880
+So here, the y coordinate is twice as high
+as it was over here.
+
+147
+00:10:44,880 --> 00:10:47,910
+And the x coordinate is one and a half
+times what it was over here.
+
+148
+00:10:49,290 --> 00:10:52,694
+And then finally, I'm going to multiply
+that
+
+149
+00:10:52,694 --> 00:10:58,820
+by u, and so notice now this gray vector
+Is just the product of A times x.
+
+150
+00:11:00,990 --> 00:11:03,400
+Here, I rotated the vector.
+
+151
+00:11:03,400 --> 00:11:06,209
+Once I've multiplied it by the singular
+values, notice it now
+
+152
+00:11:06,209 --> 00:11:08,660
+has the same length as the vector that I'm
+aiming for.
+
+153
+00:11:10,020 --> 00:11:13,506
+And then U rotates the vector right by 45
+degrees
+
+154
+00:11:13,506 --> 00:11:18,080
+and that ends up putting it exactly over
+the grey vector.
+
+155
+00:11:18,080 --> 00:11:20,680
+So that's just a kind of some idea of what
+this is
+
+156
+00:11:20,680 --> 00:11:25,340
+trying to do, where the idea of a singular
+value decomposition came from.
+
+157
+00:11:25,340 --> 00:11:26,077
+So the idea is
+
+158
+00:11:26,077 --> 00:11:30,432
+you can think of matrix multiplication as
+a rotation then some stretching and
+
+159
+00:11:30,432 --> 00:11:33,246
+the stretching happens in exactly the
+coordinate
+
+160
+00:11:33,246 --> 00:11:35,985
+direction, so that's what makes it useful.
+
+161
+00:11:35,985 --> 00:11:39,929
+Coordinate directions have the easiest
+ones to look in, and then you
+
+162
+00:11:39,929 --> 00:11:44,200
+have to rotate back to get the answer in
+your original coordinate system.
+
+163
+00:11:49,160 --> 00:11:53,735
+So I've made an example of this in R, and
+I think I didn't do this yet but I
+
+164
+00:11:53,735 --> 00:11:56,435
+will put this data set on the course
+website
+
+165
+00:11:56,435 --> 00:12:00,080
+so you can download this, it's just these
+points here.
+
+166
+00:12:03,000 --> 00:12:05,706
+And then there's a package called MASS
+
+167
+00:12:05,706 --> 00:12:09,780
+that has this function in it called
+eqscplot.
+
+168
+00:12:09,780 --> 00:12:12,040
+This just stands for equal scale plot.
+
+169
+00:12:12,040 --> 00:12:14,900
+So all that's happening is, whatever scale
+goes on
+
+170
+00:12:14,900 --> 00:12:18,700
+the y-axis, exactly the same scale goes on
+the x-axis.
+
+171
+00:12:18,700 --> 00:12:23,228
+So the, the y range and the x range are
+the, are the same two numbers.
+
+172
+00:12:23,228 --> 00:12:25,528
+[COUGH]
+
+173
+00:12:25,528 --> 00:12:28,301
+Oops.
+
+174
+00:12:28,301 --> 00:12:30,317
+And then I'm going to use the function in
+
+175
+00:12:30,317 --> 00:12:32,774
+R, so usually in linear algebra class
+they'd
+
+176
+00:12:32,774 --> 00:12:34,853
+spend quite a lot of time explaining how
+
+177
+00:12:34,853 --> 00:12:38,800
+you would actually compute a singular
+value decomposition.
+
+178
+00:12:38,800 --> 00:12:41,764
+I'm just trying to explain a little bit of
+the interpretation
+
+179
+00:12:41,764 --> 00:12:44,120
+so r has a function that will compute it
+for you.
+
+180
+00:12:46,240 --> 00:12:49,507
+It's called svd and I'm going to save the
+
+181
+00:12:49,507 --> 00:12:53,900
+results of this function as something
+called svdr.
+
+182
+00:12:55,540 --> 00:12:57,640
+And this actually a structure in R called
+a
+
+183
+00:12:57,640 --> 00:13:00,100
+list, and you can get at the individual
+elements
+
+184
+00:13:00,100 --> 00:13:02,140
+of those, so the pieces of the list, the
+
+185
+00:13:02,140 --> 00:13:04,970
+things in the list, using the dollar sign
+operator.
+
+186
+00:13:05,970 --> 00:13:11,263
+And so the three things that the singular
+value factorization has are matrix u,
+
+187
+00:13:11,263 --> 00:13:13,470
+the singular vectors.
+
+188
+00:13:13,470 --> 00:13:18,100
+And the matrix v, and so I'm going to in
+these next three steps here, oops.
+
+189
+00:13:19,530 --> 00:13:23,010
+Okay, I guess I can't highlight.
+Oh, I can do it that way, okay.
+
+190
+00:13:23,010 --> 00:13:26,044
+So these three steps, I'm just plucking
+out.
+
+191
+00:13:26,044 --> 00:13:30,330
+Those things that I want from the svd
+output.
+
+192
+00:13:30,330 --> 00:13:37,060
+So the capital U will be the matrix u.
+Here, just to save storage space.
+
+193
+00:13:37,060 --> 00:13:42,541
+If I have an answer that I know is a
+diagonal matrix, usually R is not going to
+
+194
+00:13:42,541 --> 00:13:48,080
+give me back a whole matrix that only has
+the diagonal that's non-zero.
+
+195
+00:13:48,080 --> 00:13:53,260
+So what R actually does is just gives me a
+vector that's equal to the diagonal.
+
+196
+00:13:53,260 --> 00:13:56,072
+So I'm going to use this function diag, to
+make
+
+197
+00:13:56,072 --> 00:13:59,480
+a diagonal matrix using the elements of
+that vector.
+
+198
+00:13:59,480 --> 00:14:02,288
+So S here is going to be the matrix
+
+199
+00:14:02,288 --> 00:14:10,330
+with these diagonal values.
+And then V is going to be.
+
+200
+00:14:12,620 --> 00:14:13,560
+The, the v.
+
+201
+00:14:13,560 --> 00:14:17,440
+So it's not v transpose that comes out of
+the software, It's actually the matrix v.
+
+202
+00:14:18,650 --> 00:14:22,790
+And then to just make sure I got
+everything right, this
+
+203
+00:14:22,790 --> 00:14:26,260
+is just u times s, or this is the sigma
+part.
+
+204
+00:14:26,260 --> 00:14:30,980
+And then times the transpose of v.
+And this function all equal.
+
+205
+00:14:32,100 --> 00:14:37,644
+Returns true if its two arguments, so this
+thing which should all multiply
+
+206
+00:14:37,644 --> 00:14:42,510
+together to be this original matrix, and
+the original matrix.
+
+207
+00:14:42,510 --> 00:14:45,106
+So if those things are, if every element
+of those two
+
+208
+00:14:45,106 --> 00:14:48,000
+matrices is equal than all equal is going
+to return true.
+
+209
+00:14:48,000 --> 00:14:51,180
+So this is just a little check to make
+sure that I did things right.
+
+210
+00:14:53,670 --> 00:14:56,652
+And then what I want to do is look at what
+are the, so
+
+211
+00:14:56,652 --> 00:15:00,983
+B is the right singular vectors, so it's
+kind of hard to see because they
+
+212
+00:15:00,983 --> 00:15:04,888
+are short here, but there is a red vector
+pointing up at about 45
+
+213
+00:15:04,888 --> 00:15:07,728
+degrees, and then this orange vector
+pointing
+
+214
+00:15:07,728 --> 00:15:10,719
+down and right at about negative 45
+degrees.
+
+215
+00:15:11,820 --> 00:15:16,220
+And what I've done is just plotted so
+arrows draws an arrow on the plot.
+
+216
+00:15:17,580 --> 00:15:18,672
+So this is the red
+
+217
+00:15:18,672 --> 00:15:21,246
+arrow goes from 0,0, so it goes from
+
+218
+00:15:21,246 --> 00:15:24,678
+the origin, to the first singular vector
+so that's
+
+219
+00:15:24,678 --> 00:15:27,408
+just how you would draw the first singular
+
+220
+00:15:27,408 --> 00:15:31,240
+vector, and the orange is the second
+singular vector.
+
+221
+00:15:32,570 --> 00:15:38,290
+And so if you see what it's sort of
+showing, when I make this, the plactive of
+
+222
+00:15:38,290 --> 00:15:44,410
+this data set, it kind of has one long
+direction, and one short direction.
+
+223
+00:15:44,410 --> 00:15:46,314
+And so the singular, the right singular
+
+224
+00:15:46,314 --> 00:15:48,700
+vectors are telling me what those
+directors are.
+
+225
+00:15:48,700 --> 00:15:51,780
+So, the first singular director is
+pointing in the long direction.
+
+226
+00:15:51,780 --> 00:15:55,690
+And it also corresponds to the biggest
+singular value.
+
+227
+00:15:55,690 --> 00:15:58,206
+And the orange arrows pointing, what it's
+
+228
+00:15:58,206 --> 00:16:00,722
+actually pointing and here it's going to
+be
+
+229
+00:16:00,722 --> 00:16:03,646
+the shortest direction, but it's pointing
+in the
+
+230
+00:16:03,646 --> 00:16:08,250
+longest direction that's perpendicular to
+the first direction.
+
+231
+00:16:08,250 --> 00:16:09,653
+So, in a two-dimensional
+
+232
+00:16:09,653 --> 00:16:13,890
+plot there's only one direction
+perpendicular to the first direction.
+
+233
+00:16:13,890 --> 00:16:17,433
+In three dimensions, If this were the
+first direction,
+
+234
+00:16:17,433 --> 00:16:20,550
+then I can point to any direction in the
+plane.
+
+235
+00:16:20,550 --> 00:16:26,500
+So, I would get the first direction being
+sort of the most variation in this cloud.
+
+236
+00:16:26,500 --> 00:16:30,920
+The second direction being perpendicular
+to the first one, but then showing
+
+237
+00:16:30,920 --> 00:16:34,728
+the second direction with the most
+variation and then the third one
+
+238
+00:16:34,728 --> 00:16:35,959
+being the smallest.
+
+239
+00:16:39,510 --> 00:16:41,801
+So, right now this is just showing
+
+240
+00:16:41,801 --> 00:16:45,320
+the interpretation of the right singular
+vectors.
+
+241
+00:16:46,650 --> 00:16:49,640
+And now what I can do is also multiply
+them.
+
+242
+00:16:49,640 --> 00:16:55,035
+I need to, to rescale so they get bigger
+based on the number of data points
+
+243
+00:16:55,035 --> 00:17:00,485
+I have.
+So I need to rescale the singular values
+
+244
+00:17:00,485 --> 00:17:05,470
+by the square root of the number of data
+points minus 1.
+
+245
+00:17:05,470 --> 00:17:11,539
+And now, not only does this plot tell you
+what the directions
+
+246
+00:17:11,539 --> 00:17:16,700
+are, so the red direction is sort of the
+length of.
+
+247
+00:17:18,300 --> 00:17:20,808
+The most spread out the data can be and it
+
+248
+00:17:20,808 --> 00:17:24,380
+also gives you the relative length so you
+can compare the
+
+249
+00:17:24,380 --> 00:17:27,420
+length of the red arrow compared to the
+length of
+
+250
+00:17:27,420 --> 00:17:30,460
+the orange arrow to try and get some idea
+of the,
+
+251
+00:17:30,460 --> 00:17:33,196
+the ratio of how things are spread out in
+the
+
+252
+00:17:33,196 --> 00:17:37,740
+red direction versus how their spread out
+in the orange direction.
+

@@ -1,0 +1,302 @@
+1
+00:00:00,025 --> 00:00:01,190
+Hello.
+
+2
+00:00:01,190 --> 00:00:06,260
+Welcome to Week 5 for Mathematical Methods
+for Quantitative Finance.
+
+3
+00:00:06,260 --> 00:00:08,530
+So the first four weeks, we did our review
+of
+
+4
+00:00:08,530 --> 00:00:12,150
+Calculus and now we're going to shift
+focus to Linear Algebra.
+
+5
+00:00:12,150 --> 00:00:13,790
+And this week's menu is going to be
+
+6
+00:00:15,880 --> 00:00:17,190
+Vectors.
+
+7
+00:00:17,190 --> 00:00:20,730
+A vector is just, you can think of it as a
+point in a plane.
+
+8
+00:00:20,730 --> 00:00:23,771
+So it's just a pair of numbers x,y.
+
+9
+00:00:23,771 --> 00:00:28,130
+And then it also can be extended so you
+could think of it as a point in three
+
+10
+00:00:28,130 --> 00:00:30,230
+dimensions, in which case it would be x,
+y,
+
+11
+00:00:30,230 --> 00:00:32,930
+z that would be a vector of length three.
+
+12
+00:00:32,930 --> 00:00:36,680
+a point in the plane x, y would be a
+vector of length two.
+
+13
+00:00:36,680 --> 00:00:41,240
+And so we'll start off just by coming up
+or, or going over the basic addition
+
+14
+00:00:41,240 --> 00:00:44,630
+rules and a few other things for vectors.
+
+15
+00:00:45,680 --> 00:00:49,670
+Then in the second section, I'll go
+through vector length.
+
+16
+00:00:49,670 --> 00:00:53,640
+So unfortunately, one of the things you
+lose when you start to have points in
+
+17
+00:00:53,640 --> 00:00:58,770
+two dimensions is you can no longer say,
+you know, x is less than y.
+
+18
+00:00:58,770 --> 00:01:02,000
+And so, we need another way to compare
+magnitude so
+
+19
+00:01:02,000 --> 00:01:04,480
+we use the length of the vector to do
+that.
+
+20
+00:01:04,480 --> 00:01:06,130
+And then I'll go and,
+
+21
+00:01:06,130 --> 00:01:08,820
+into just a little discussion about a
+plane.
+
+22
+00:01:08,820 --> 00:01:13,910
+So a, a plane is basically just like a
+line, but in three dimensions.
+
+23
+00:01:13,910 --> 00:01:16,970
+So it it ends up having length and width.
+
+24
+00:01:18,320 --> 00:01:21,380
+And then that's going to lead us into
+Systems of Linear Equations.
+
+25
+00:01:21,380 --> 00:01:23,660
+And so in two dimensions, you can think of
+
+26
+00:01:23,660 --> 00:01:26,610
+a System of Linear Equations as just two
+lines.
+
+27
+00:01:26,610 --> 00:01:29,400
+And what you're interested in finding is
+the point where they intersect.
+
+28
+00:01:30,820 --> 00:01:31,330
+In three
+
+29
+00:01:31,330 --> 00:01:33,890
+dimensions, now we have to think of
+planes.
+
+30
+00:01:33,890 --> 00:01:36,660
+So two planes would intersect in a line
+
+31
+00:01:36,660 --> 00:01:38,490
+and then a third plane would intersect
+that
+
+32
+00:01:38,490 --> 00:01:40,520
+line in a point, and that will be
+
+33
+00:01:40,520 --> 00:01:43,620
+the solution to our system of linear
+equations.
+
+34
+00:01:43,620 --> 00:01:44,990
+And then, we're going to start talking
+about
+
+35
+00:01:44,990 --> 00:01:47,270
+how we can solve systems of linear
+equations.
+
+36
+00:01:47,270 --> 00:01:50,160
+And that's going to bring us to bullet
+point 4, Elimination.
+
+37
+00:01:51,260 --> 00:01:56,470
+And following from elimination, we're
+going to end up being able to view the
+
+38
+00:01:56,470 --> 00:01:58,900
+problem we're trying to solve as a matrix
+so a
+
+39
+00:01:58,900 --> 00:02:01,140
+matrix is just going to be a collection of
+vectors.
+
+40
+00:02:03,290 --> 00:02:07,280
+And then we'll look at specifically
+solving the problem Ax equals b.
+
+41
+00:02:07,280 --> 00:02:15,390
+So A is a matrix, x is a vector and x is
+the unknown, and then b is another vector.
+
+42
+00:02:15,390 --> 00:02:19,300
+And I want to find the vector x that
+satisfies this equation.
+
+43
+00:02:20,986 --> 00:02:23,450
+one way to do that is use an inverse
+
+44
+00:02:23,450 --> 00:02:27,410
+matrix, so that's all we'll talk about and
+section 7.
+
+45
+00:02:27,410 --> 00:02:28,540
+And essentially if
+
+46
+00:02:28,540 --> 00:02:31,300
+A is just a number, x were a number, and b
+were a
+
+47
+00:02:31,300 --> 00:02:37,790
+number than solving Ax equals b would
+involve just dividing both sides by A.
+
+48
+00:02:37,790 --> 00:02:40,160
+And so inverse of a matrix, I think of
+that
+
+49
+00:02:40,160 --> 00:02:44,480
+as just A-inverse times A times x will
+equal x.
+
+50
+00:02:44,480 --> 00:02:50,630
+And then whatever's left on the right-hand
+side would be the answer A-inverse b.
+
+51
+00:02:50,630 --> 00:02:53,689
+And it turns out that in solving this a
+nicer way of
+
+52
+00:02:53,689 --> 00:02:56,650
+doing that involves factoring the matrix.
+
+53
+00:02:56,650 --> 00:03:00,020
+And this is going to lead us into next
+week's lectures.
+
+54
+00:03:00,020 --> 00:03:03,100
+So there are a lot of a lot of useful
+factorizations of
+
+55
+00:03:03,100 --> 00:03:07,020
+matrices that will make seemingly
+difficult problems a lot easier to solve.
+
+56
+00:03:07,020 --> 00:03:10,040
+And then I'm going to finish up by talking
+
+57
+00:03:10,040 --> 00:03:13,500
+about something called the R Environment
+for Statistical Computing.
+
+58
+00:03:13,500 --> 00:03:15,340
+And that's just a software program that
+
+59
+00:03:15,340 --> 00:03:18,160
+allows you to manipulate matrices and
+vectors.
+
+60
+00:03:18,160 --> 00:03:18,780
+When we
+
+61
+00:03:18,780 --> 00:03:21,670
+start dealing with this many numbers, it's
+no longer practical to
+
+62
+00:03:21,670 --> 00:03:24,920
+try and do the calculations by hand on a
+piece of paper.
+
+63
+00:03:24,920 --> 00:03:27,850
+So it's really useful to have a little bit
+of experience, at
+
+64
+00:03:27,850 --> 00:03:31,080
+least, with a computer algebra system that
+can do that for you.
+

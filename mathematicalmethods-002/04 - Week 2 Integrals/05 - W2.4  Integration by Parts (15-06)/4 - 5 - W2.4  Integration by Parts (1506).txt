@@ -1,0 +1,372 @@
+Okay, so that was my, my brief overview of
+what
+integration is and two or three problems
+that can be used to to address.
+And I'm going to start talking about
+techniques of integration.
+So these are techniques for finding
+anti-derivatives of functions.
+And the first one is called integration by
+parts.
+So essentially what I'm going to try and
+do to get integration by
+parts is remember, when I was computing
+derivatives, we had certain rules.
+One of them was the product rule which
+was the derivative of the product of two
+functions.
+And so I'm just going to try and use that
+rule backwards to be able to evaluate an
+anti derivative.
+So, let's start out with two functions, f
+of x and g of x.
+And they need to be continuous and
+integrable.
+Then if I looked at the product of their
+anti derivatives,
+and here it's a little bit, a little
+bit trickier what I'm going to do with,
+constant.
+Because if I said f of x, if I
+was allowed, to put in a arbitrary
+constant there.
+And I did the same thing with g of x then
+when
+I multiply these together I would have the
+constant from f of x
+times g of x and the constant from g of x
+times f
+of x, so for this to work I have to choose
+my constant
+to be zero
+[SOUND].
+So I'm going to take the product of these
+two
+anti derivatives, and take its derivative
+using the product rule.
+And what I'm going to end up with is
+the derivative of the first function times
+the second.
+So this guy here.
+Plus the derivative of the second
+function.
+Times the first.
+So then if I take the integral of both
+sides of that, well the
+integral sort of by the fundamental
+theorem
+of calculus that's just undoing my
+derivative
+operation, so I have capital F of x times
+capital G of x
+is just going to be equal to the integrals
+of the two terms on the right-hand side.
+And then I'm just going to rearrange these
+terms
+to get something called the integration by
+parts formula.
+So I'm going to take
+Oops,
+this second term, move it to the left hand
+side of the equation
+and move the other two terms to the right
+hand side of the equation.
+And
+now what this is telling me is that if I
+can
+find, if I can break my function up into a
+function
+that I can integrate, this g of x, and a
+function
+that I can take its, where I can take its
+derivative.
+Then I can use this formula to evaluate
+this integral.
+So generally the idea is going to be to
+choose.
+F of x and little g of x so that
+this final term here is something that's
+easy to compute.
+So I'm starting out over here with a
+capital F of x.
+So the easiest thing that I could ever
+have here would just be an
+x, because if I took the derivative of
+captial X, if capital, sorry capital F.
+If that's
+a constant, then I could just take this
+little f,
+the derivative of a constant, sorry, if
+this was x,
+little f of x is going to be a constant,
+and I can take my constant outside my
+integral sign.
+And then I just have to integrate, oops,
+that should be a little g of x.
+No, sorry, capital G of x never mind.
+so what I'm wanting
+to do is choose these functions so that
+this
+integral is going to be something that's
+easy to evaluate.
+And so since I'm just stumbling over my
+words
+now I probably should just skip ahead to
+an example.
+So here this doesn't even look like it's
+something that
+I'm going to be able to write down as a
+product.
+But you always have a one.
+So if I let my capital F of x just be this
+function here log of 1 plus x.
+And I let my g of x be 1 plus x, then
+my little g of x, that's just going to be
+the derivative of this guy here.
+It's just going to be a constant it's
+going to be one.
+So I can write this function here as
+capital F of x times little g of x.
+So this was my integration by parts
+formula.
+And then I just go ahead and plug these
+functions
+that I've worked out here, into the
+integration by parts formula.
+So, capital F of x is just log of 1 plus
+x, g
+of x is equal to 1 so I didn't bother to
+write that down.
+The anti derivative of that is going to be
+F
+of x, capital F of x times capital G of x.
+So, that's just
+1 plus x times log of 1 plus x minus the
+integral of little f of x.
+So that's going to be the derivative of
+this guy here.
+Times capital g of x which is one plus x.
+So, the capital G of x ends up on top
+here.
+The derivative of the logarithm is just 1
+over the argument.
+So in this case, the argument is 1 plus x.
+So, little f of x is going to be 1 over 1
+plus x.
+And technically I skipped a step here,
+because I also have to use the chain rule.
+But the derivative of 1 plus x,
+we already said, was equal to 1.
+So, it's 1 over 1 plus x, times 1.
+And now if I look at the term on the right
+here, I have 1 plus x, divided by 1 plus
+x.
+So that's just going to cancel each other
+out.
+So I have 1 plus x times the log of 1 plus
+x.
+Minus the integral just of d x.
+And so.
+That integral is very easy to calculate, I
+just end up
+with x being the anti derivative and then
+because I don't have
+limits here I am asking for an
+in-definitive and well just
+a anti derivative so I am adding on a
+arbitrary constant C,
+so generally the bulk of the work in
+using this formula Is looking at the
+original function
+and then trying to identify you know, how
+am I going to write that as a capital F of
+x and a lower case g of x so I want to
+split up that function.
+So that this term that I get on the
+right-hand side, the term that I still
+have to integrate after I use the
+integration
+by parts formula, is going to be easy to
+integrate.
+And unfortunately, there's just not a
+really good way to
+tell you how to do that.
+You just have to practice, and every time
+you do it, you get
+a little bit better at seeing how you
+could break these things up.
+So suppose I want to integrate, I want to
+find
+the anti-derivative for the function x
+squared times log of x.
+So this time it's going to be a little bit
+simpler, I mean this is clearly.
+The product of two functions.
+I have x squared times log of x.
+So, let's just start there by saying log
+of x is going to
+be the f of x and I could also choose to
+make x squared the f of x.
+And log of x to be.
+The, the g of x, but I'm
+going to have to integrate this thing.
+So I want to pick that in a way where it's
+going to be easy to do.
+So the capital F of x, that's something
+I'm going to have to take the derivative
+of.
+And it's going to be easier to take the
+derivative of this than it is to integrate
+it.
+On the other hand, this is just, something
+I can use my anti power rule on.
+So that's going to be something that's
+probably not going to
+be too difficult to find an anti
+derivative of.
+So let's
+choose that to be the part where
+I'm going to have to compute the
+antiderivative.
+So, so if my my capital F of x is log of x
+and my capital G of X is 1 3rd x cubed.
+Then my little g of x is going to be x
+squared.
+And so now we can figure out what the anti
+derivative
+of this function is just by plugging these
+values into the
+integration by parts formula, and hoping
+that we're able to integrate
+the term that's going to end up on the
+right-hand side.
+So, let's see.
+Yeah, got it right this time.
+So the integral of capital F of x, g of x.
+So, just plug everything in.
+So, capital F of x, that was the log of x.
+The g of x is the x squared.
+And so my integration by parts formula
+tells me that I take capital F of x times
+capital G of x.
+So I get one third x cubed times log of x
+minus the integral.
+And now here I have my lowercase x, so
+here
+I just have to take the derivative Of this
+function
+and back in my little dictionary slide I
+have the
+derivative of log of x is just 1 over x,
+so I have 1 over x times capital g of x
+which is one third x cubed and so not
+only does it is it possible to integrate,
+it even
+gets a little simpler since this 1 over x
+is going to
+cancel one of my x's in my g of x
+function.
+So I end up with one third x cubed log x
+minus the integral of one third x squared.
+So I could use the anti power rule to
+evaluate this guy here.
+And add up with one third x cubed times
+log of x, minus one ninth x cubed.
+And then because I haven't put any limits
+on this, I'm asking just for
+an anti derivative, an indefinite
+integral, so
+I have to add an arbitrary constant c.
+And we're also going to be able to.
+Do this for definite integrals.
+And in practice, really, it's not going to
+change anything.
+You just use the trick to find the anti
+derivative.
+But you can actually work though it if you
+want to.
+this will probably be the one and only
+time you do with the limits here.
+So this is exactly the same setup that I
+had before.
+I have the.
+Derivative of capital f of x times capital
+G of
+x and I'm going to integrate that over an
+interval ab.
+So, because the, by the fundamental
+theoreum of calculus, this integration and
+differentiation.
+They are sort of complementary operations.
+This integral is going to cancel out my
+derivative and I just have to
+then evaluate my anti-derivative here at
+its end points and take the difference.
+So that's going to give me capital F of b
+times capital G of b minus capital F of a
+times capital G of a.
+And I can then just rearrange the terms.
+So I can use the linearity property to put
+this integral sign
+in front of this function as well, so I
+can write
+this integral of a sum as the sum of two
+integrals.
+And that gives me.
+The integration by parts formula for a
+definite integral.
+Except I believe, oh no,
+yeah, so we just end up evaluating this
+term here at it's upper and lower end
+point.
+So I think this can be a little bit
+confusing.
+So if you, if you're not getting the
+correct answer the first time you do this.
+you might want to try and use this longer
+formula.
+And see if, that helps you spot your
+mistake.
+And so, one final example.
+I'll try and integrate from one to three
+the function x times e to the x.
+So again I'm going to let the function
+that I'm going to take the derivative of
+be x, because when I take the derivative
+of that I'm just going to get one.
+That will be something easy to work with.
+The function I'm going to have to
+integrate should be oh, e to the x.
+Its anti-derivative is just going to be
+itself.
+So that's going to be an easy choice.
+And so I just have to then go ahead and
+plug these.
+Into the integration by parts formula.
+So remember on the previous slide I'd
+written this as f of
+b times g of b minus f of a times g of a.
+And that's exactly what I mean by this
+notation here.
+So here what I mean is take capital F of
+three times capital G of three.
+Minus capital F of 1 times capital G of 1
+and the rest of
+it should be clear just because the, the
+limits are still on the integral signs.
+And so I'm going to get
+this line just by plugging in.
+The functions I've worked out into this
+formula here.
+And so this is my capital F and my capital
+G.
+And then this one was easy to do, just
+because it's its own anti-derivative.
+So this is 3 times e to the third minus
+1 times e to the 1, so this comes from the
+first term here and then from this
+second term I end up with e cubed minus e.
+And I can do a little bit of
+simplification, and get the, answer 2 e
+cubed.
+

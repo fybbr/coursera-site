@@ -1,0 +1,404 @@
+So, for the third topic, we'll look at
+Newton's method, which it's trying
+to solve exactly the same problem that the
+Bisection method is trying to solve.
+And it's probably that those are very
+commonly used
+method for solving nonlinear equations,
+maybe the most commonly used.
+And the idea is, so in general, I want to
+find a
+value x star so that f of x star is equal
+to 0.
+And so the Bisection method, that was
+nice, because all I needed to
+assume was that my function was
+continuous, and that I knew an interval.
+So that it was positive at one side and
+negative at the other.
+I need a little bit more in the way of
+assumptions for Newton method.
+So for Newton's method, I need to assume
+that f of x is differentiable.
+The other thing I need is a starting
+point.
+So I need to have some point that's
+reasonably close to x star.
+And the idea underlying Newton's method is
+I want to make
+an approximation of my function using a
+first order Taylor polynomial.
+Around a point xk.
+So what Newton's method is going to do,
+it's from this starting point x0, so
+that's sort of, you can think of that as
+xk with k equal to 0, it's just going
+to allow, I want to have some sort of rule
+to get a sequence of points.
+So I'm going to, from x0.
+I want to have a rule that gives me x1.
+And then I can plug that value x1 back
+into my rule and
+that's going to give me x2 and the idea is
+I want to
+build the sequence of points x1, x2, x3
+and so on, it's getting
+closer and closer to this point x star
+that I'm trying to calculate.
+So the idea for Newton's method is, I'll
+take this function f of
+x and I'm going to make a Taylor
+polynomial around the point xk.
+So I just evaluate the function at xk, so
+this is the point that
+I know, and then I have x minus xk times
+the slope of the function.
+So the derivative of f evaluated at the
+point xk.
+So f prime of xk.
+And
+then I want this, I want to find a point f
+of x that's equal to 0.
+So I'm just going to set this equal to 0.
+So I want to sort of pretend that this
+function would be straight enough
+that if I plugged in xk plus 1, it would
+be equal to 0.
+And so the linear function's actually
+going to do that for me, and
+what I'm going to end up with is f of
+xk, so this is just my Taylor polynomial
+again.
+Then xk plus 1 minus xk times f prime of
+xk,
+that's my, well that's an expression for f
+of xk plus 1.
+And that's supposed to be an approximation
+for f of x.
+And I want f of x to equal 0.
+So I'm
+going to say that's sort of approximately
+0.
+So I'll just set that equal to 0 and use
+that as my approximation.
+And then what I'm going to do is solve for
+xk plus 1.
+And that's going to give me this recursive
+formula.
+So if I, if I just take this, set it equal
+to 0 and solve for xk plus 1.
+I end up with xk plus
+1 is equal to xk minus the function
+evaluated
+at xk divided by the, the slope of the
+function.
+So the derivative of the function,
+evaluated at
+xk, and again, I made a picture of this,
+so I think it will be easier to see what's
+going on if I just draw it.
+[COUGH]
+So, starting from this point, x0, I want
+to build the sequence x1,
+x2, x3.
+It's going to converge and so this,
+the curve here is my function f of x and
+I'm looking for this point x star
+that I made in blue where f of x is equal
+to 0.
+And so what I'm doing if, if you think
+about this recursive formula.
+I'm taking f of x0,
+oops, f of x0, and I'm dividing by the
+slope of this
+tangent line 2f that goes through f of x0,
+x0 comma f of x0.
+So this line right here.
+And remember slope is rise over run.
+So basically, what I know from
+f of x0, that's the distance from the x
+axis up to this point.
+So, that's the rise.
+And what I want, I want to get from x0 to
+x1, so, I want the run.
+So, all I've done is just sort of
+rearrange things so
+that I'm solving for the run in terms of
+x0 and rise.
+And each time I evaluate this, so I move
+from x0, so I take x0
+minus f of x0 divided by the derivative.
+So, f prime of x0.
+And that gets me this point, x1.
+Then, I'm going to take,
+to get myself from x1 to x2, I'm going to
+take x1 minus f of x1.
+Okay, I guess I can't select that one,
+minus f
+of x1, divided by the slope of this line
+here.
+And that's going to take me to x2.
+And so I'm building up this sort
+of set of steps that's getting me closer
+and closer to this point x star.
+And the nice thing, just because of the
+way I've drawn this function.
+You should be able to see that no matter
+where I put a point on the
+right side of x star, this linear
+approximation
+is always going to be greater than x star.
+So the, because the, the slope of the.
+The dotted line, it's always going to be a
+little bit steeper than the curve to the
+left of wherever I make the approximation.
+So just looking at the size of these steps
+you can see that the next one, it's going
+to get us pretty close to this pretty
+quickly.
+The reason that Newton's method is really
+popular is,
+once we get within a certain neighborhood
+of x star,
+we get a very nice theoretical property
+for how fast
+Newton's method will converge to the true
+value x star.
+So I'll, I'll go through that quickly
+here.
+So
+all I've done here, so I, I've said 0 is
+equal to f of x star.
+So I'm making a Taylor polynomial, a
+Taylor approximation,
+around the point xk.
+4x star.
+So I'm building a Taylor polynomial out of
+point xk.
+These are the points I know, because these
+are the sequence of
+points that are coming out of
+my algorithm, my Taylor's Newton's method
+algorithm.
+And then I don't know what this is, but if
+I did
+know what it is, this would be a, a Taylor
+polynomial for it.
+And I've also put
+the derivative form for the, the error.
+So I actually have a true equality here.
+This isn't an approximation.
+And the only problem is I need this, this
+c.
+So this is some point.
+And I've drawn this interval for the
+picture
+in the, in the last, on the last slide.
+So this c just has to be a point in
+between x star and xk
+but I have just assumed that xk is greater
+than x
+star just to make the notation here a
+little bit simpler.
+And so what did I do here.
+So I just divided both sides by f prime of
+xk and
+so the, the right hand side it's oh, I
+guess I also
+moved some stuff to the other side of the
+equal sign the
+right hand side looks like it's getting a
+little bit more complicated.
+But the left hand side starting to look a
+little bit like the
+Newton's method iteration.
+So let's see what happens if I keep going.
+So what I've ended up with, I have
+xk here
+and f of xk divided by f prime of xk.
+So this is actually just going
+to become xk minus 1 and there's, it's
+negative because
+there is a minus 1 in front.
+So it should be positive xk minus this.
+But actually have minus xk plus this, so
+that ends up being a minus xk plus 1 here.
+And that is equal to this somewhat ugly
+looking thing on the right-hand side.
+[COUGH]
+But if I think about this, what is that?
+That's the distance between The
+most recent value in my Newton's method
+sequence, and the true value.
+So I'm going to think about that as the
+air, so
+I'll call this epsilon sub k plus 1, so
+it's
+the difference between the thing I'm
+trying to get to
+and where I'm at right now in k plus 1
+steps.
+And then if I look at the right hand side.
+This is exactly the same thing.
+It's the distance from where I, where I am
+in the kth steps.
+So one step before the left hand side, but
+this time it's squared.
+So if I replace these for something
+outside I
+am going to use an epsilon just for that
+error.
+I see that the error after k plus 1 steps
+is a function of the error after k steps
+squared.
+And so then what we want to find is with
+once we're sort of within
+a certain.
+Neighborhood of the true value x
+star, we'll be able to find what the
+maximum value of this thing is.
+So, I'll let capital M be just the biggest
+I can make this thing in absolute terms,
+then the size of my error after k plus 1
+steps.
+Is going to be less than or equal to the
+size of my error after k steps squared.
+And so this means, when I have the size of
+my error is getting small and if I
+have 0.01, that means my next step is
+going to be 0.01 squared.
+So, I've gone from
+having 2 zeros to having, I think that
+ends up being 5 zeros and then a 1.
+so I'm getting significant digits very,
+very quickly after a certain point.
+And so we'll say that because the error is
+getting
+smaller at a quadratic rate, we'll say
+Newton's method converges quadratically.
+So a few things we need to be careful
+about with this though.
+So the quadratic convergence for Newton's
+method is not guaranteed.
+So we have to be within, we have to first
+somehow get
+ourselves into this interval where the
+quadratic convergence is going to happen.
+And that means, you need to have a good
+starting point.
+So you can imagine functions, where.
+You might take a step and just step over
+that interval completely.
+And then maybe take a step the other
+direction and again step over that
+interval completely.
+And you might have to do that for a
+very long time before you finally get into
+that interval.
+But once you are in that interval, it's
+going to maybe take
+just two or three more iterations for you
+get to the number
+that you're looking for.
+So that's what I mean when I say you need
+a good starting point.
+Sometimes there's some extra theory that
+comes with whatever problem you're
+trying to solve that's going to suggest
+what are good starting points.
+So you know, maybe you can make an
+approximation for what you're looking for.
+And then you just want to use Newton's
+method to refine that.
+And then it's going to, it's going to
+everything will happen very quickly.
+The first bullet point was quadratic
+convergence is not guaranteed.
+And then my second bullet point
+[INAUDIBLE]
+IT gets worse, which is convergence is not
+even guaranteed.
+So in particular, the algorithm can cycle.
+And so what I mean
+by cycling, is supposed that, it's best
+just to show off with an example.
+So suppose I'm trying to find out where
+sin x is
+equal to 0, between minus pi over 2 and pi
+over 2.
+So
+does everybody knows that it's at 0,
+right?
+Okay, so this is something we shouldn't
+have to solve numerically, I'm just
+using it as an example of what can go
+wrong if you did.
+So there's actually a point, x sub k, so
+when I do my, my update, I'd have x sub k.
+And now when I take the derivative, the
+derivative of sine is
+negative cosine, oops.
+Have I done this backwards?
+Yeah, I have this upside down.
+yeah.
+So this should be a minus sign, boy.
+Embarassing.
+so that should be a minus sign.
+But the idea is still going to be the
+same.
+I'm going to do one step.
+And because I have this thing that has
+this
+kind of odd symmetry so when I say odd
+here, I mean odd as in a function can be
+even or odd, not as in it's strange.
+I'm going to update my xk, and I'm going
+to get exactly the same value
+but on the other side of 0, so I'm
+going to get negative x sub k.
+[COUGH]
+And then what's going to happen is.
+When I plug in x sub k plus 1 that's
+exactly the same thing as plugging in x
+sub minus k.
+It's going to create a step so the sine
+is going to flip sines because it's an odd
+function.
+But the cosine is going to just ignore the
+sine on the x sub k.
+Because it's an even function.
+So f of, so cosine of minus x is equal to
+cosine of x.
+So that's going
+to mean that I'm going to step back, oops,
+to exactly the point where I started from.
+So if I ever happen to hit this number.
+I'm now just going to be going back and
+forth
+between those two numbers for the rest of
+the algorithm.
+So, when you see implementations of
+Newton's method, it always has a parameter
+called maxiter or something like that, and
+that means maximum number of iterations.
+And so because it has this property that
+when it does converge, when you do get
+into
+this sort of small interval or you get
+into this interval where you have the
+quadratic convergence.
+It's going to converge very fast.
+It means that it's either going to
+converge in about 25
+or 50 steps or it's not going to converge
+at all.
+So there's no point, if it's run 50 steps,
+there's no real point
+in letting it keep going.
+In a say, you're just in a area where it's
+not going to give you a solution.
+And so generally you put something like
+that in just to protect yourself,
+protect yourself against this this
+cycling.
+

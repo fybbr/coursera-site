@@ -1,0 +1,670 @@
+1
+00:00:01,000 --> 00:00:02,390
+Okay, so, moving on.
+
+2
+00:00:02,390 --> 00:00:07,280
+So now, I'll just go over a little bit of
+this using a function of two variables.
+
+3
+00:00:07,280 --> 00:00:11,130
+Just hopefully, that'll help see something
+concrete.
+
+4
+00:00:11,130 --> 00:00:14,710
+This is about as big as it can get while
+it still makes sense on some slides.
+
+5
+00:00:20,160 --> 00:00:24,180
+So a, a function of two variables, we can
+think of it as.
+
+6
+00:00:24,180 --> 00:00:28,020
+F of xy and then, oops, and then, then
+
+7
+00:00:28,020 --> 00:00:30,980
+the notation I, I introduced in the last
+section.
+
+8
+00:00:30,980 --> 00:00:32,970
+I'll just say that's from r two.
+
+9
+00:00:32,970 --> 00:00:36,570
+So, xy would describe a point in the xy
+plane.
+
+10
+00:00:37,740 --> 00:00:40,820
+And then f of xy is going to assign
+
+11
+00:00:40,820 --> 00:00:44,560
+one particular value to each point in the
+xy plane.
+
+12
+00:00:44,560 --> 00:00:45,220
+And so, that,
+
+13
+00:00:45,220 --> 00:00:46,200
+that would be r.
+
+14
+00:00:46,200 --> 00:00:49,340
+So, you could think of it as z maybe
+equals f of xy.
+
+15
+00:00:54,420 --> 00:00:59,510
+The partial derivatives of f are also
+going to be functions of x and y.
+
+16
+00:01:01,540 --> 00:01:07,000
+And so this is how we would define them so
+the partial of f with respect to x.
+
+17
+00:01:07,000 --> 00:01:10,650
+It's a function of x and y so that's why I
+put this xy here.
+
+18
+00:01:12,920 --> 00:01:15,250
+And it's just going to be defined as the
+limit.
+
+19
+00:01:15,250 --> 00:01:19,270
+So here when I'm taking the derivative
+with respect to x, I'm just going
+
+20
+00:01:19,270 --> 00:01:24,880
+to add a bit to the x argument and then
+subtract away the value at
+
+21
+00:01:24,880 --> 00:01:29,240
+my point, divide by h so that the distant
+between the two points where
+
+22
+00:01:29,240 --> 00:01:33,560
+I have evaluated the function and then
+take the limit as h goes to zero.
+
+23
+00:01:33,560 --> 00:01:35,490
+So that's exactly the same as the
+definition of
+
+24
+00:01:35,490 --> 00:01:39,220
+the derivative, except that you just have
+this extra y
+
+25
+00:01:39,220 --> 00:01:39,900
+hanging on here.
+
+26
+00:01:41,020 --> 00:01:42,970
+And then we do exactly the same thing for
+y.
+
+27
+00:01:42,970 --> 00:01:47,960
+So this time I'm just adding the
+perturbation to y.
+
+28
+00:01:47,960 --> 00:01:50,840
+And so that's going to give me the partial
+derivative with respect to y.
+
+29
+00:01:55,340 --> 00:02:01,290
+And then the gradient of f of xy.
+So I could write that as d.
+
+30
+00:02:01,290 --> 00:02:03,270
+So d here is an operator.
+
+31
+00:02:03,270 --> 00:02:06,590
+So the difference between an operator and
+a function
+
+32
+00:02:06,590 --> 00:02:09,580
+is the output of a function is a number.
+
+33
+00:02:11,940 --> 00:02:17,440
+Here the output is going to be a vector of
+two functions.
+
+34
+00:02:17,440 --> 00:02:22,130
+So the output is actually a function of x
+and y.
+
+35
+00:02:22,130 --> 00:02:25,780
+And so instead of calling d a function,
+I'm going to call it an operator.
+
+36
+00:02:25,780 --> 00:02:28,289
+So the output of an operator is a
+function.
+
+37
+00:02:33,120 --> 00:02:35,960
+And then the Hessian is just going to be
+made up of,
+
+38
+00:02:38,360 --> 00:02:39,990
+and yes, I actually did it right.
+
+39
+00:02:41,670 --> 00:02:45,330
+the four sort of mixed partials, although
+the
+
+40
+00:02:45,330 --> 00:02:47,590
+ones on the diagonal are sort of hidden.
+
+41
+00:02:47,590 --> 00:02:49,630
+Are in disguise, because even though
+they're a
+
+42
+00:02:49,630 --> 00:02:52,530
+mixed partial, they're the same thing
+mixed with itself.
+
+43
+00:02:53,820 --> 00:02:57,290
+But they're also each going to be
+functions of x and y.
+
+44
+00:03:01,980 --> 00:03:06,610
+And so now let's look at an example, so
+suppose I define my function to be.
+
+45
+00:03:06,610 --> 00:03:11,510
+X square y cubed, and I just want to
+compute both the gradient.
+
+46
+00:03:11,510 --> 00:03:17,090
+So df is going to be the gradient, and d
+squared f is going to be hessian.
+
+47
+00:03:17,090 --> 00:03:20,810
+And then I want to evaluate em at the
+point 1,2.
+
+48
+00:03:20,810 --> 00:03:22,200
+And so remember, well let's see if I.
+
+49
+00:03:23,380 --> 00:03:27,310
+So if I was going to try and find the
+slope of a function just using
+
+50
+00:03:27,310 --> 00:03:30,690
+a function of one variable When I take
+
+51
+00:03:30,690 --> 00:03:33,310
+the derivative of my function, I get a
+function.
+
+52
+00:03:33,310 --> 00:03:34,760
+So if I have a function of x, and I
+
+53
+00:03:34,760 --> 00:03:38,460
+take the derivative, I also have a
+function of x.
+
+54
+00:03:38,460 --> 00:03:39,650
+So I'd have f prime of x.
+
+55
+00:03:40,660 --> 00:03:46,340
+And then, suppose I want to know what is
+the slope of f of x when x is equal to 3?
+
+56
+00:03:46,340 --> 00:03:50,343
+I just evaluate the derivative at the
+point x equals 3.
+
+57
+00:03:51,840 --> 00:03:52,550
+it's definitely
+
+58
+00:03:52,550 --> 00:03:55,440
+a mistake to evaluate the function at
+three and
+
+59
+00:03:55,440 --> 00:03:58,070
+then take the derivative because you would
+get zero.
+
+60
+00:03:58,070 --> 00:04:00,930
+And so for some reason everybody seems to
+understand
+
+61
+00:04:00,930 --> 00:04:03,150
+that with a single a function of a single
+
+62
+00:04:03,150 --> 00:04:05,600
+variable, but then they go ahead and make
+that
+
+63
+00:04:05,600 --> 00:04:09,470
+mistake very often when they start working
+with multiple.
+
+64
+00:04:09,470 --> 00:04:13,600
+So, for instance When I ask, evaluate.
+
+65
+00:04:13,600 --> 00:04:18,420
+Ask you to evaluate it at the point 1,2.
+They'll calculate the gradient correctly.
+
+66
+00:04:18,420 --> 00:04:20,670
+Evaluate that at the point 1,2.
+
+67
+00:04:20,670 --> 00:04:22,850
+And then try and take the derivative of
+that again.
+
+68
+00:04:22,850 --> 00:04:25,950
+And the moral is, you have to take
+
+69
+00:04:25,950 --> 00:04:28,500
+all of the derivatives before you start
+evaluating.
+
+70
+00:04:31,820 --> 00:04:32,320
+So.
+
+71
+00:04:33,440 --> 00:04:37,910
+Here I have just skipped, most of the
+work, I think I just put the answers here.
+
+72
+00:04:37,910 --> 00:04:39,820
+So some of these are really easy to see.
+
+73
+00:04:39,820 --> 00:04:42,880
+So the partial derivative of x squared y
+cubed with
+
+74
+00:04:42,880 --> 00:04:45,180
+respect to x is just going to be two 2xy
+cubed.
+
+75
+00:04:45,180 --> 00:04:48,930
+It's also easy to see that the partial
+derivative
+
+76
+00:04:48,930 --> 00:04:51,910
+with respect to y will be 3x squared y
+squared.
+
+77
+00:04:51,910 --> 00:04:54,600
+It's just the power rule and treating.
+
+78
+00:04:54,600 --> 00:04:57,540
+The other variable, so in this case y,
+
+79
+00:04:57,540 --> 00:04:59,300
+in this case x, as a constant.
+
+80
+00:05:01,230 --> 00:05:07,530
+And then we have to compute the mixed
+partials.
+
+81
+00:05:07,530 --> 00:05:11,930
+So here I have the partial of f with
+respect to x squared
+
+82
+00:05:15,650 --> 00:05:18,440
+And so I all ready know what the, the
+first partial is
+
+83
+00:05:18,440 --> 00:05:21,340
+with respect to x, so I can just plug that
+in here.
+
+84
+00:05:21,340 --> 00:05:23,050
+And then I need to take its derivative one
+more
+
+85
+00:05:23,050 --> 00:05:25,358
+time with respect to x, so I get 2y cubed.
+
+86
+00:05:27,960 --> 00:05:31,829
+The actual mixed partial, so here dy then
+dx.
+
+87
+00:05:33,850 --> 00:05:38,340
+And again, I've already computed the
+derivative of f.
+
+88
+00:05:38,340 --> 00:05:40,940
+Or the partial derivative of f with
+respect to y.
+
+89
+00:05:40,940 --> 00:05:45,180
+So, I'm just going to recycle that result
+rather than do it all over again.
+
+90
+00:05:45,180 --> 00:05:50,240
+And then, of this function, I'm going to
+take the derivative with respect to x.
+
+91
+00:05:50,240 --> 00:05:55,740
+So, I get 6xy squared.
+And then by the theorem I had.
+
+92
+00:05:55,740 --> 00:05:59,080
+So I hope nobody did both partial
+derivatives for the quiz question,
+
+93
+00:05:59,080 --> 00:06:02,480
+because that was a well-behaved function,
+so you could have just taken one and
+
+94
+00:06:02,480 --> 00:06:05,790
+then said, by the theorem, the other one
+has to be equal to that.
+
+95
+00:06:05,790 --> 00:06:07,280
+So, I'm going to do that here.
+
+96
+00:06:07,280 --> 00:06:10,220
+So, this is a well-behaved function.
+
+97
+00:06:10,220 --> 00:06:13,190
+I can take derivatives of a polynomial
+indefinitely.
+
+98
+00:06:13,190 --> 00:06:15,160
+At some point I hit a constant.
+
+99
+00:06:15,160 --> 00:06:18,250
+And then I take the derivative of that,
+and I get zero.
+
+100
+00:06:18,250 --> 00:06:19,950
+But zero is still a valid function.
+
+101
+00:06:19,950 --> 00:06:23,420
+So I can continue to take the derivative
+of that indefinitely.
+
+102
+00:06:23,420 --> 00:06:24,230
+And it just stays
+
+103
+00:06:24,230 --> 00:06:25,860
+zero, but it's still differentiable.
+
+104
+00:06:28,680 --> 00:06:30,280
+Oops.
+And
+
+105
+00:06:34,310 --> 00:06:38,120
+then I just have to calculate the other
+second order derivative.
+
+106
+00:06:38,120 --> 00:06:39,450
+This time, with respect to y.
+
+107
+00:06:40,820 --> 00:06:45,600
+And again, I'll just recycle the first
+first
+
+108
+00:06:45,600 --> 00:06:48,580
+partial with respect to y that I've
+already computed.
+
+109
+00:06:48,580 --> 00:06:51,320
+Take thats derivative.
+And so, I get 6x squared y.
+
+110
+00:06:55,010 --> 00:06:59,080
+Oh, and I guess I, I put in sort of my
+hidden light to gray color here.
+
+111
+00:06:59,080 --> 00:07:00,280
+That this is equal to the
+
+112
+00:07:00,280 --> 00:07:02,810
+other partial derivatove, other mixed
+partial derivative.
+
+113
+00:07:02,810 --> 00:07:03,310
+[NOISE]
+
+114
+00:07:06,030 --> 00:07:10,920
+So now I'm just going to plug these into
+the gradient.
+
+115
+00:07:10,920 --> 00:07:14,040
+So the definition of the gradient is just
+a partial of the function
+
+116
+00:07:14,040 --> 00:07:17,050
+with respect to x and the partial the
+function with respect to y.
+
+117
+00:07:18,060 --> 00:07:20,170
+So I can just plug in those two partial
+
+118
+00:07:20,170 --> 00:07:22,280
+of derivatives that I computed on the
+previous slide.
+
+119
+00:07:22,280 --> 00:07:22,780
+And
+
+120
+00:07:25,040 --> 00:07:30,180
+then if I want to evaluate the gradient at
+the point 1, 2 so here I have 2 times x
+
+121
+00:07:30,180 --> 00:07:35,648
+times y cubed so this is 2 times 1, so
+that's just this one right here.
+
+122
+00:07:35,648 --> 00:07:39,420
+Times 2 cubed; so that's just this two
+here.
+
+123
+00:07:39,420 --> 00:07:41,160
+And then 3 x squared, y squared.
+
+124
+00:07:41,160 --> 00:07:45,370
+So, 3 times 1 squared times 2 squared.
+And easy enough, 16, 12.
+
+125
+00:07:45,370 --> 00:07:50,240
+And then, I"ll do exactly the same thing
+for the gradient.
+
+126
+00:07:50,240 --> 00:07:53,360
+Sorry, for the Hessian.
+So, first I'll just.
+
+127
+00:07:53,360 --> 00:07:56,390
+Plug in the formulas that I computed on
+the previous slide, and remember
+
+128
+00:07:56,390 --> 00:08:00,910
+we get this symmetry of the off-diagonal
+entries in the, in the Hessian.
+
+129
+00:08:00,910 --> 00:08:05,556
+And then when I want to evaluate the
+Hessian of the point
+
+130
+00:08:05,556 --> 00:08:08,367
+1,2, I just plug in one for x and two for
+y.
+
+131
+00:08:10,380 --> 00:08:13,990
+And so this gives me the actual value at,
+of the Hessian.
+
+132
+00:08:13,990 --> 00:08:16,360
+But only specifically at the point 1, 2.
+
+133
+00:08:16,360 --> 00:08:21,510
+If I move away from 1, 2, then these
+numbers here are going to change.
+
+134
+00:08:26,630 --> 00:08:27,330
+And so, I guess.
+
+135
+00:08:28,690 --> 00:08:32,380
+Where we're going to be using this when we
+get to solving problems numerically.
+
+136
+00:08:33,990 --> 00:08:36,820
+we'll be computing the gradient and the
+Hessian.
+
+137
+00:08:36,820 --> 00:08:41,410
+And then that's going to give our
+algorithm some idea.
+
+138
+00:08:41,410 --> 00:08:45,920
+So based on what these numbers actually
+are at a certain point.
+
+139
+00:08:45,920 --> 00:08:48,230
+We're going to try to move to another
+point so we'll
+
+140
+00:08:48,230 --> 00:08:52,310
+move maybe from 1, 2 to 1, 1 and the way
+we're
+
+141
+00:08:52,310 --> 00:08:54,940
+going to choose where we're going to move
+is going to
+
+142
+00:08:54,940 --> 00:08:58,210
+be a function of these actual numbers that
+appear in here.
+

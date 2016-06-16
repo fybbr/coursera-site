@@ -1,0 +1,1207 @@
+1
+00:00:00,970 --> 00:00:05,150
+So the last topic for today is Lagrange's
+method plus Newton's method.
+
+2
+00:00:06,430 --> 00:00:08,640
+So I want to revisit.
+
+3
+00:00:08,640 --> 00:00:11,590
+Okay, I guess I'll remind everybody what
+Lagrange's method was.
+
+4
+00:00:11,590 --> 00:00:15,379
+So, it was a method for solving
+constrained optimization problems.
+
+5
+00:00:19,350 --> 00:00:22,750
+And the way we approached it, well we had
+to make this function called a
+
+6
+00:00:22,750 --> 00:00:27,140
+Lagrangian that had the, the objective
+function, as
+
+7
+00:00:27,140 --> 00:00:30,280
+well as these Lagrange multipliers times
+the constraints.
+
+8
+00:00:31,290 --> 00:00:35,300
+And then, I know that the extreme values
+of the constrained
+
+9
+00:00:35,300 --> 00:00:40,674
+optimization problem are going to occur at
+critical points of the Langragian.
+
+10
+00:00:40,674 --> 00:00:44,410
+So what I need to be able to do is take
+the gradient of the
+
+11
+00:00:44,410 --> 00:00:47,870
+Lagrangian, set that eqaul to zero, and
+solve that.
+
+12
+00:00:47,870 --> 00:00:51,630
+So that's exactly, well, sometimes, like
+in the case of the minimum
+
+13
+00:00:51,630 --> 00:00:55,440
+variance portfolio, that was easy, because
+that was just solving a linear system.
+
+14
+00:00:58,920 --> 00:01:01,030
+When the system is non-linear it can be
+
+15
+00:01:01,030 --> 00:01:05,460
+more difficult, so the maximum expected
+return portfolio.
+
+16
+00:01:05,460 --> 00:01:08,215
+This ends up, because the constraints now
+have this
+
+17
+00:01:08,215 --> 00:01:11,650
+quadratic form in it, it ends up being
+more difficult.
+
+18
+00:01:11,650 --> 00:01:16,750
+I have to solve a non-linear function to
+find the maximum expected return.
+
+19
+00:01:20,070 --> 00:01:25,660
+So I'm going to revisit the example from
+the slides for Lagrange method.
+
+20
+00:01:25,660 --> 00:01:32,670
+So I was trying to find the minimum or the
+maximum of 4x2 minus 2x3.
+
+21
+00:01:32,670 --> 00:01:35,085
+Subject to these two constraints.
+
+22
+00:01:35,085 --> 00:01:37,416
+[COUGH]
+
+23
+00:01:39,180 --> 00:01:40,470
+And so what I did is I wrote
+
+24
+00:01:40,470 --> 00:01:45,820
+down the Lagrangian so that's just the
+objective function.
+
+25
+00:01:45,820 --> 00:01:48,900
+This is the, the function that I want to
+find the maximum value of.
+
+26
+00:01:50,120 --> 00:01:52,460
+And then I add lambda one times the
+
+27
+00:01:52,460 --> 00:01:57,208
+first constraint and lambda two times the
+second constraint.
+
+28
+00:01:57,208 --> 00:02:00,302
+And I want to think of this as a function
+of five variables now.
+
+29
+00:02:00,302 --> 00:02:04,180
+So there's three that come from the x, and
+two that come from
+
+30
+00:02:04,180 --> 00:02:06,800
+the lambda.
+So, it's a function of five variables.
+
+31
+00:02:06,800 --> 00:02:10,880
+So, when I take the gradient of this
+function Gm, then I get
+
+32
+00:02:10,880 --> 00:02:15,100
+that's a row vector with five entries and
+I want to find the inputs.
+
+33
+00:02:15,100 --> 00:02:19,500
+So, that's x1, x2, x3, lambda 1 and lambda
+2
+
+34
+00:02:19,500 --> 00:02:23,690
+So that this gradient vector is equal to
+the zero vector.
+
+35
+00:02:26,990 --> 00:02:32,920
+And so when I try to solve this in the, in
+the Lagrange, Langrange
+
+36
+00:02:32,920 --> 00:02:39,200
+method slides, I ended up coming up with
+these five partial derivatives.
+
+37
+00:02:39,200 --> 00:02:40,700
+I set them equal to zero.
+
+38
+00:02:41,850 --> 00:02:46,240
+And then it wasn't exactly easy to solve
+but you could do it, and I think we found
+
+39
+00:02:46,240 --> 00:02:52,060
+that, well we got lambda 1 for free
+because of this equation, and then you
+
+40
+00:02:52,060 --> 00:02:55,960
+found that lambda 2 was plus or minus 1,
+and then
+
+41
+00:02:55,960 --> 00:02:59,980
+that was enough to determine the values of
+x1, x2, and x3.
+
+42
+00:03:01,540 --> 00:03:04,390
+So in that case at least it was possible
+to solve it exactly.
+
+43
+00:03:05,600 --> 00:03:06,086
+[COUGH]
+
+44
+00:03:06,086 --> 00:03:08,300
+And the nice thing about having done that
+already
+
+45
+00:03:08,300 --> 00:03:10,430
+is we also know that it has two critical
+points.
+
+46
+00:03:12,850 --> 00:03:17,120
+So it turned out the non-linear equa, the
+non-linear equation that I
+
+47
+00:03:17,120 --> 00:03:20,660
+need to solve, so I already know just from
+looking at this.
+
+48
+00:03:20,660 --> 00:03:22,158
+The value of lambda 1.
+
+49
+00:03:22,158 --> 00:03:24,610
+So, I'm going to not bother solving for
+that one.
+
+50
+00:03:24,610 --> 00:03:30,526
+So, that means I am solving just F of x
+comma lambda 2
+
+51
+00:03:30,526 --> 00:03:36,669
+this time and sort of the a function of
+four variables with four outputs.
+
+52
+00:03:40,640 --> 00:03:42,160
+And just by looking.
+
+53
+00:03:42,160 --> 00:03:47,400
+So, I have to take the the partial
+derivatives of each entry here.
+
+54
+00:03:47,400 --> 00:03:49,308
+So, that will be four partial derivatives.
+
+55
+00:03:49,308 --> 00:03:51,476
+So, that's what's going to give me my
+gradient matrix.
+
+56
+00:03:51,476 --> 00:03:56,840
+So, this has a partial derivative with
+respect to x1 this is
+
+57
+00:03:56,840 --> 00:03:59,600
+the only term with an x1 in it, so that's
+2 lambda.
+
+58
+00:03:59,600 --> 00:04:01,550
+So I put a two lambda here.
+
+59
+00:04:01,550 --> 00:04:05,678
+There's no x2, no x3, so both of these get
+zero.
+
+60
+00:04:05,678 --> 00:04:05,749
+And
+
+61
+00:04:05,749 --> 00:04:07,270
+I'm going to take the derivative of this
+term
+
+62
+00:04:07,270 --> 00:04:10,310
+with respect to lambda two, I get 2x1.
+
+63
+00:04:10,310 --> 00:04:14,780
+So I just continue that process for each
+Each of these
+
+64
+00:04:14,780 --> 00:04:18,660
+four functions that are making up my
+vector valued function capital F.
+
+65
+00:04:18,660 --> 00:04:20,819
+And that gives me the the gradient matrix.
+
+66
+00:04:23,530 --> 00:04:25,620
+And so if I want to use Newton's method
+for
+
+67
+00:04:25,620 --> 00:04:28,793
+this, I'm going to need some R functions
+for evaluating this.
+
+68
+00:04:30,820 --> 00:04:37,260
+So Here, instead of writing out x as x1,
+x2, x3, and lambda 2,
+
+69
+00:04:37,260 --> 00:04:43,640
+I've just decided to call all four of
+those things one vector-valued argument x.
+
+70
+00:04:43,640 --> 00:04:45,440
+And so, all I'm going to do is make
+
+71
+00:04:45,440 --> 00:04:48,180
+this function F, it's just going to return
+a vector of
+
+72
+00:04:48,180 --> 00:04:53,390
+length four that has the four pieces in it
+from
+
+73
+00:04:53,390 --> 00:04:55,830
+the previous lines, if you if you want to
+compare
+
+74
+00:04:55,830 --> 00:05:00,860
+on your own time it's basically, I've just
+rewritten this vector valued function
+
+75
+00:05:02,310 --> 00:05:07,460
+in R, and then I did the same thing for
+the gradient matrix here.
+
+76
+00:05:08,800 --> 00:05:14,630
+So, here I have tried to keep that at
+least a little bit so so it will be
+
+77
+00:05:14,630 --> 00:05:20,370
+human readable, so you can see this is 2
+lambda 2, 0, 0, and then 2x1.
+
+78
+00:05:20,370 --> 00:05:21,330
+So that
+
+79
+00:05:21,330 --> 00:05:25,030
+was the first row of the gradient I had on
+the previous slide and
+
+80
+00:05:25,030 --> 00:05:30,690
+so if I'm going to enter the values like
+this, remember R wants to create matrices.
+
+81
+00:05:30,690 --> 00:05:33,450
+By putting things into columns, so it
+fills up the
+
+82
+00:05:33,450 --> 00:05:36,780
+first column first, then the second column
+then the third column.
+
+83
+00:05:36,780 --> 00:05:41,500
+So if I want to put things in by row, so
+that I can have it equal to
+
+84
+00:05:41,500 --> 00:05:43,930
+what I'm writing out here, I have to put
+
+85
+00:05:43,930 --> 00:05:47,050
+this optional argument at the end by row
+equals true.
+
+86
+00:05:48,140 --> 00:05:50,900
+So this ma, this function matrix is going
+
+87
+00:05:50,900 --> 00:05:54,650
+to take this vector of 16 values, turn
+that
+
+88
+00:05:54,650 --> 00:05:57,940
+into a four by four matrix by filling
+
+89
+00:05:57,940 --> 00:06:00,280
+in the rows rather than filling in the
+columns.
+
+90
+00:06:00,280 --> 00:06:06,823
+And so this is going to be a function DF,
+given the four inputs, x1,
+
+91
+00:06:06,823 --> 00:06:13,240
+x2, x3, and lambda 2 just creates the the
+gradient matrix
+
+92
+00:06:13,240 --> 00:06:15,240
+so then I need a starting point.
+
+93
+00:06:15,240 --> 00:06:19,900
+So, again, I have no particularly good
+idea what the starting point should be.
+
+94
+00:06:19,900 --> 00:06:24,500
+So I just chose a vector of ones.
+So I need a vector of length 4.
+
+95
+00:06:24,500 --> 00:06:30,452
+So this command just repeats.
+It repeats the first argument the
+
+96
+00:06:30,452 --> 00:06:36,186
+second argument number of times, so this
+is going to make a vector of length 4.
+
+97
+00:06:36,186 --> 00:06:38,570
+Where each element
+
+98
+00:06:38,570 --> 00:06:39,476
+is a one.
+
+99
+00:06:39,476 --> 00:06:44,834
+Then this time am going to do 15 newton
+iterations.
+
+100
+00:06:44,834 --> 00:06:50,810
+And again now the newton iteration the
+code for this is actually pretty simple.
+
+101
+00:06:50,810 --> 00:06:53,190
+Once you have the function for the
+gradient
+
+102
+00:06:53,190 --> 00:06:57,642
+and for evaluating the function, this is
+all
+
+103
+00:06:57,642 --> 00:07:04,470
+the the newton stuff is ever going to look
+like so I just taking x, I'm subtracting
+
+104
+00:07:04,470 --> 00:07:08,790
+my update to x And I'm storing that again
+in x.
+
+105
+00:07:08,790 --> 00:07:13,900
+And then if I repeat that, my x is going
+to follow my sequence of Newton steps.
+
+106
+00:07:13,900 --> 00:07:16,870
+Hopefully closer to the value x star that
+I'm looking for.
+
+107
+00:07:19,540 --> 00:07:21,880
+So, code for Newton iteration's very
+simple.
+
+108
+00:07:23,950 --> 00:07:28,079
+And, what I've done here, so these were
+the solutions that we came up with.
+
+109
+00:07:29,170 --> 00:07:31,620
+In the Lagrange method slides.
+
+110
+00:07:31,620 --> 00:07:37,040
+So there was lambda 1, that was fixed,
+equal to negative 2.
+
+111
+00:07:37,040 --> 00:07:41,380
+And then we found that lambda 2 could be
+either negative 1 or positive 1.
+
+112
+00:07:41,380 --> 00:07:45,690
+And then the rest of the solution's, just
+the
+
+113
+00:07:45,690 --> 00:07:48,160
+sign of them was determined by the sign of
+lambda.
+
+114
+00:07:48,160 --> 00:07:49,728
+So I'd get negative
+
+115
+00:07:49,728 --> 00:07:51,040
+2,3, negative 7.
+
+116
+00:07:51,040 --> 00:07:55,110
+And 2 negative 3 7, so it's the first 3
+are just
+
+117
+00:07:55,110 --> 00:07:58,880
+multiplied by negative 1 to get the first
+3 of the other solution.
+
+118
+00:08:00,520 --> 00:08:04,150
+And what this big R matrix is showing so,
+it's
+
+119
+00:08:04,150 --> 00:08:08,950
+showing the values for x1 x2 x3 and lambda
+2.
+
+120
+00:08:08,950 --> 00:08:11,530
+So some side I got the lambda 1 for free.
+
+121
+00:08:11,530 --> 00:08:14,750
+I didn't bother putting that in here, but
+I could have it, just what have made
+
+122
+00:08:14,750 --> 00:08:16,150
+things a bit more complicated.
+
+123
+00:08:18,660 --> 00:08:23,540
+What each row is showing is the value
+after that many iterations.
+
+124
+00:08:23,540 --> 00:08:27,990
+So remember I said my starting point was
+going to be the vector 1, 1, 1, 1.
+
+125
+00:08:27,990 --> 00:08:31,860
+So after zero iterations, my x0 is 1, 1,
+1, 1.
+
+126
+00:08:31,860 --> 00:08:33,230
+After one
+
+127
+00:08:35,690 --> 00:08:36,610
+iteration
+
+128
+00:08:39,830 --> 00:08:45,186
+I end up at 6.25, 1.25, 11.25 and negative
+3.25.
+
+129
+00:08:45,186 --> 00:08:47,910
+And so what we're seeing is, each time I
+do
+
+130
+00:08:47,910 --> 00:08:53,140
+an iteration it's changing what the values
+of these things are.
+
+131
+00:08:53,140 --> 00:08:57,220
+And for the first few steps, nothing very
+extreme happens.
+
+132
+00:08:57,220 --> 00:09:04,160
+And then all of a sudden in step 3 I went
+from 1.62 to negative 247,
+
+133
+00:09:04,160 --> 00:09:10,640
+you know I went from 5 to 81 from about
+negative 2 to negative
+
+134
+00:09:10,640 --> 00:09:17,130
+500 and something but then after that they
+get better Until finally
+
+135
+00:09:17,130 --> 00:09:20,700
+after, so this is the reason why I chose,
+there's nothing magical about
+
+136
+00:09:20,700 --> 00:09:25,480
+me choosing 15 or anything about this
+problem that suggested me choosing 15.
+
+137
+00:09:25,480 --> 00:09:29,160
+I just happened to get exact convergence
+to, you know,
+
+138
+00:09:29,160 --> 00:09:32,960
+within the numbers that the computer's
+capable of displaying after 15
+
+139
+00:09:32,960 --> 00:09:36,230
+steps and also I couldn't fit anymore
+lines on this slide.
+
+140
+00:09:36,230 --> 00:09:38,980
+[COUGH]
+
+141
+00:09:38,980 --> 00:09:44,650
+So from a starting point of 1, 1, 1, 1, I
+ended up getting
+
+142
+00:09:44,650 --> 00:09:49,860
+to within the sort of numerical precision
+that the computer is capable of of doing,
+
+143
+00:09:51,950 --> 00:09:54,760
+the solution that we found theoretically.
+
+144
+00:09:56,820 --> 00:10:00,670
+So, the solution corresponding to lambda 2
+equal to negative 1.
+
+145
+00:10:00,670 --> 00:10:05,710
+And so this is something we have to be
+aware of as there are two solutions.
+
+146
+00:10:05,710 --> 00:10:07,140
+I know there are two solutions.
+
+147
+00:10:08,670 --> 00:10:11,500
+But, Newton's methods, if it converges,
+it's only
+
+148
+00:10:11,500 --> 00:10:13,260
+ever going to converge to one of those.
+
+149
+00:10:13,260 --> 00:10:15,240
+I can't run it a little bit longer and
+
+150
+00:10:15,240 --> 00:10:18,570
+hope that it then tells me what another
+solution is.
+
+151
+00:10:18,570 --> 00:10:20,922
+>> Were different in initial values
+
+152
+00:10:20,922 --> 00:10:21,867
+[INAUDIBLE]?
+
+153
+00:10:21,867 --> 00:10:23,394
+>> Yeah.
+Well, that might be on the next slide
+
+154
+00:10:23,394 --> 00:10:23,649
+[LAUGH].
+
+155
+00:10:23,649 --> 00:10:23,649
+>>
+
+156
+00:10:23,649 --> 00:10:25,604
+[LAUGH]
+
+157
+00:10:25,604 --> 00:10:28,300
+>> first though, I guess, I just made
+some plots of.
+
+158
+00:10:28,300 --> 00:10:30,830
+So this is.
+
+159
+00:10:30,830 --> 00:10:33,670
+I couldn't figure out how to, how to put
+the vector length.
+
+160
+00:10:34,970 --> 00:10:35,850
+Symbol over here.
+
+161
+00:10:35,850 --> 00:10:39,850
+So I just use absolute value.
+But what I mean here is xk minus x star.
+
+162
+00:10:39,850 --> 00:10:43,520
+So since I have this theoretical result, I
+knew what the real answer was.
+
+163
+00:10:44,620 --> 00:10:47,580
+So I just mean the length of the vector,
+so the, how
+
+164
+00:10:47,580 --> 00:10:50,750
+far away I am from the point that I'm
+trying to estimate.
+
+165
+00:10:50,750 --> 00:10:54,384
+And you see at the beginning I with my
+initial
+
+166
+00:10:54,384 --> 00:10:58,530
+guess of 1, 1, 1, 1 didn't do too bad.
+
+167
+00:10:58,530 --> 00:11:00,940
+And, then all of a sudden it bumps way up
+
+168
+00:11:00,940 --> 00:11:04,710
+to here, but then, it takes me pretty
+quickly back down.
+
+169
+00:11:06,450 --> 00:11:10,260
+And, so after about 10, you know, I can't
+see anything on this scale anymore.
+
+170
+00:11:10,260 --> 00:11:13,170
+So, I plotted this.
+On the log scale.
+
+171
+00:11:13,170 --> 00:11:15,750
+So that's exactly the same plot except now
+instead
+
+172
+00:11:15,750 --> 00:11:19,540
+of putting the, the actual scale I'm just
+putting the
+
+173
+00:11:19,540 --> 00:11:22,300
+log of the number that was on the y axis.
+
+174
+00:11:22,300 --> 00:11:23,620
+And so again you see in the first few
+
+175
+00:11:23,620 --> 00:11:27,500
+steps nothing very exciting happened, then
+it got much worse.
+
+176
+00:11:27,500 --> 00:11:30,950
+And then on the log scale it sort of has
+this linear bit.
+
+177
+00:11:30,950 --> 00:11:32,610
+And then it really starts to drop off
+
+178
+00:11:32,610 --> 00:11:35,078
+after that and so somewhere around here is
+one
+
+179
+00:11:35,078 --> 00:11:37,800
+this quadratic convergence that I was
+talking about, that's
+
+180
+00:11:37,800 --> 00:11:40,600
+where that kicks in, and you can see for,
+
+181
+00:11:41,740 --> 00:11:43,614
+you know, for this step and this step.
+
+182
+00:11:44,890 --> 00:11:49,890
+You can think of the scale here is roughly
+the number of significant digits.
+
+183
+00:11:49,890 --> 00:11:52,400
+So when I go, ops, when I go from this
+step to this
+
+184
+00:11:52,400 --> 00:11:55,402
+step, I'm getting an increase of about
+
+185
+00:11:55,402 --> 00:11:59,698
+it's going to be about one significant
+digit.
+
+186
+00:11:59,698 --> 00:12:02,270
+Here I'm going to get an increase of one
+significant digit.
+
+187
+00:12:02,270 --> 00:12:03,960
+And then after the next step after that, I
+
+188
+00:12:03,960 --> 00:12:07,260
+get an increase of maybe two or three
+significant digits.
+
+189
+00:12:07,260 --> 00:12:11,430
+And if I were to keep going, You know,
+that's just getting better and better.
+
+190
+00:12:16,780 --> 00:12:18,480
+So, some observations about this.
+
+191
+00:12:18,480 --> 00:12:22,290
+So, from a given starting point, Newton's
+method converges, you
+
+192
+00:12:22,290 --> 00:12:26,350
+know, if it converges, to a single value x
+star.
+
+193
+00:12:26,350 --> 00:12:28,490
+So, in this case, there are actually two
+values
+
+194
+00:12:28,490 --> 00:12:31,540
+that it could converge to, if it were
+working.
+
+195
+00:12:33,130 --> 00:12:35,398
+And it, just because of this initial
+condition that
+
+196
+00:12:35,398 --> 00:12:37,000
+I gave it, it converged to one of them.
+
+197
+00:12:39,122 --> 00:12:43,770
+And so, starting at the point 1, 1, 1, 1,
+I got this answer.
+
+198
+00:12:43,770 --> 00:12:48,820
+So, here I've just dropped out the value
+of lambda 1.
+
+199
+00:12:48,820 --> 00:12:51,795
+But I know there's two critical points.
+
+200
+00:12:51,795 --> 00:12:55,090
+And so I'm just going to kind of guess
+that if
+
+201
+00:12:55,090 --> 00:12:57,900
+I start from all 1s and this ends up being
+
+202
+00:12:57,900 --> 00:13:01,270
+a negative 1, maybe if I multiply this
+starting vector
+
+203
+00:13:01,270 --> 00:13:05,620
+by negative 1, that's just going to flip
+everything around and
+
+204
+00:13:05,620 --> 00:13:09,970
+this will be a positive 1.
+So let's try doing that.
+
+205
+00:13:09,970 --> 00:13:11,939
+So I just put a, a negative sign here.
+
+206
+00:13:13,340 --> 00:13:15,200
+And so that's going to make my initial
+vector a
+
+207
+00:13:15,200 --> 00:13:17,753
+vector of minus 1s, instead of a vector of
+1s.
+
+208
+00:13:19,660 --> 00:13:23,200
+The code for doing the Newton iterations
+stays exactly the same.
+
+209
+00:13:25,620 --> 00:13:27,790
+And so this is the solution I'm hoping to
+get.
+
+210
+00:13:31,820 --> 00:13:32,280
+Oh no, sorry.
+
+211
+00:13:32,280 --> 00:13:35,860
+That's the solution I actually get after
+this, which is,
+
+212
+00:13:38,750 --> 00:13:42,830
+this solution divided by negative 1, which
+is what I was expecting to get.
+
+213
+00:13:42,830 --> 00:13:47,300
+So yeah, if you try different solutions,
+but the problem is
+
+214
+00:13:47,300 --> 00:13:50,819
+in general, we're not going to know the
+number of critical points.
+
+215
+00:13:51,930 --> 00:13:54,700
+So it, in this case, I knew that I got one
+of them.
+
+216
+00:13:54,700 --> 00:13:56,100
+And I knew what the other one was.
+
+217
+00:13:56,100 --> 00:13:57,380
+So that gave me some idea.
+
+218
+00:13:57,380 --> 00:14:00,240
+So for instance, using negative 1, that
+
+219
+00:14:00,240 --> 00:14:02,060
+might lead me to that other critical
+point.
+
+220
+00:14:03,160 --> 00:14:03,710
+in general,
+
+221
+00:14:03,710 --> 00:14:07,340
+that's not going to be the case.
+So usually what you
+
+222
+00:14:07,340 --> 00:14:10,890
+can do is you can get some additional
+information about the problem.
+
+223
+00:14:10,890 --> 00:14:16,620
+So you can study the problem a bit more.
+I, if you read the Lagrange chapter in
+
+224
+00:14:16,620 --> 00:14:22,950
+textbook, he talks about how to classify a
+critical point as a minimum or a maximum,
+
+225
+00:14:22,950 --> 00:14:28,790
+so you might know that your solution has
+or that
+
+226
+00:14:28,790 --> 00:14:31,530
+the problem you're trying to solve only
+has two critical points.
+
+227
+00:14:31,530 --> 00:14:35,840
+So this is the case in a maximum expected
+return portfolio.
+
+228
+00:14:35,840 --> 00:14:37,680
+You actually get two answers, a maximum
+
+229
+00:14:37,680 --> 00:14:41,010
+expected return and a minimum expected
+return.
+
+230
+00:14:41,010 --> 00:14:43,590
+And so, if you can classify the point that
+you found
+
+231
+00:14:43,590 --> 00:14:46,720
+as a maximum, then you know that you've
+found what you want.
+
+232
+00:14:46,720 --> 00:14:48,780
+So sometimes, that allows you to use this
+to,
+
+233
+00:14:48,780 --> 00:14:50,510
+to get an answer to the problem that you
+want.
+
+234
+00:14:52,550 --> 00:14:54,660
+And if you can't do that, the very best
+you
+
+235
+00:14:54,660 --> 00:14:57,270
+can do is just try to use multiple
+starting points.
+
+236
+00:14:57,270 --> 00:15:00,360
+So Really, what you would do here is use
+
+237
+00:15:00,360 --> 00:15:04,340
+some sort of random number generator to
+just choose problems.
+
+238
+00:15:04,340 --> 00:15:06,600
+you want to be a little bit smart about
+it.
+
+239
+00:15:06,600 --> 00:15:09,010
+So, you want to choose things that are on
+the same scale.
+
+240
+00:15:10,680 --> 00:15:15,180
+I guess another thing I should point out
+here is the starting value that I chose.
+
+241
+00:15:15,180 --> 00:15:17,600
+And that might go a long way to explaining
+
+242
+00:15:17,600 --> 00:15:20,550
+why we get this huge jump here.
+
+243
+00:15:20,550 --> 00:15:25,300
+The starting point that I chose doesn't
+actually satisfy the constraints
+
+244
+00:15:25,300 --> 00:15:28,450
+of the, of the, Lagrange method problem
+that I'm trying to solve.
+
+245
+00:15:28,450 --> 00:15:33,440
+So, I think what sort of happened here is
+it kind of meandered around, until
+
+246
+00:15:33,440 --> 00:15:35,350
+it managed to get into the space
+
+247
+00:15:35,350 --> 00:15:38,730
+of points, where the constraints were
+actually satisfied.
+
+248
+00:15:38,730 --> 00:15:41,320
+And then that's when we go this much nicer
+looking behavior.
+
+249
+00:15:41,320 --> 00:15:43,000
+It's a converging towards
+
+250
+00:15:44,050 --> 00:15:45,461
+towards the value that I wanted.
+
+251
+00:15:47,740 --> 00:15:51,410
+So unfortunately if you, if you don't know
+anything else about your problem
+
+252
+00:15:51,410 --> 00:15:56,660
+that's a about the best you can do is just
+try starting points randomly.
+
+253
+00:15:56,660 --> 00:16:00,410
+Hopefully they'll converge to more than
+one solution.
+
+254
+00:16:00,410 --> 00:16:03,540
+And then you can look at the value at that
+solution and decide
+
+255
+00:16:03,540 --> 00:16:06,830
+if you've got you know, at least a local
+minimum or a local maximum.
+

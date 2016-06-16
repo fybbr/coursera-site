@@ -1,0 +1,184 @@
+1
+00:00:04,070 --> 00:00:05,310
+Let's begin this lesson with a look at
+
+2
+00:00:05,310 --> 00:00:08,180
+a common single player game called eight
+puzzle.
+
+3
+00:00:09,720 --> 00:00:12,420
+Eight puzzle is a sliding tile game.
+
+4
+00:00:12,420 --> 00:00:15,260
+The game board is a three by three square,
+
+5
+00:00:15,260 --> 00:00:17,880
+with number tiles in all but one of the
+cells.
+
+6
+00:00:17,880 --> 00:00:21,300
+The state of the game is modified by
+sliding
+
+7
+00:00:21,300 --> 00:00:26,670
+number tiles into the empty space from
+adjacent cells.
+
+8
+00:00:26,670 --> 00:00:29,100
+Thus moving the empty space to a new
+location.
+
+9
+00:00:30,860 --> 00:00:35,300
+there are four possible moves in, at most
+four possible moves.
+
+10
+00:00:35,300 --> 00:00:38,569
+Moving empty space up, down, left or
+right.
+
+11
+00:00:39,760 --> 00:00:43,115
+Obviously not all these moves are possible
+on all states.
+
+12
+00:00:43,115 --> 00:00:45,440
+States shown on the left and right here
+illustrate
+
+13
+00:00:45,440 --> 00:00:48,400
+the possible moves from the state shown in
+the center.
+
+14
+00:00:48,400 --> 00:00:50,276
+The tile could be moved down.
+
+15
+00:00:50,276 --> 00:00:52,510
+The emp, I'm sorry, the empty cell can be
+moved
+
+16
+00:00:52,510 --> 00:00:54,250
+down, the empty cell can be moved to the
+right.
+
+17
+00:00:57,250 --> 00:01:01,010
+The ultimate objective of the game is to
+place the tiles in order,
+
+18
+00:01:01,010 --> 00:01:03,910
+and position the empty square in the lower
+right cell, as shown here.
+
+19
+00:01:05,730 --> 00:01:08,130
+the game terminates after 8 moves or when
+all of
+
+20
+00:01:08,130 --> 00:01:11,440
+the tiles are in their right positions,
+whichever comes first.
+
+21
+00:01:15,290 --> 00:01:17,020
+In some versions of the game, partial
+credit
+
+22
+00:01:17,020 --> 00:01:21,020
+is given for states that approximate the
+ultimate goal.
+
+23
+00:01:21,020 --> 00:01:24,760
+With ten points being allocated for each
+numbered tile in the correct position,
+
+24
+00:01:24,760 --> 00:01:28,710
+and 20 points being allocated for having
+the empty tile in the correct position.
+
+25
+00:01:30,020 --> 00:01:33,570
+For example, the first state shown here is
+worth 40 points, since
+
+26
+00:01:33,570 --> 00:01:39,049
+four of the cells, the ones colored green
+are in their correct positions.
+
+27
+00:01:41,158 --> 00:01:45,670
+And the second stage on here is worth a
+hundred points since all of the tiles
+
+28
+00:01:45,670 --> 00:01:47,520
+are in their correct positions, and the
+empty
+
+29
+00:01:47,520 --> 00:01:49,170
+cell is in the lower right hand corner.
+
+30
+00:01:52,350 --> 00:01:55,300
+Now as with other games, it is possible to
+describe eight puzzle in GDL.
+
+31
+00:01:55,300 --> 00:02:00,120
+Here are the rules for three puzzle, its a
+version of
+
+32
+00:02:00,120 --> 00:02:03,200
+eight puzzle in a two by two board without
+partial credit.
+
+33
+00:02:04,330 --> 00:02:07,840
+Rules for eight puzzle with partial credit
+are, are very much the same,
+
+34
+00:02:07,840 --> 00:02:11,010
+except they're a little more verbose, and
+wouldn't easily fit on a page.
+
+35
+00:02:12,530 --> 00:02:14,906
+We won't go through the details of either
+rule set in
+
+36
+00:02:14,906 --> 00:02:17,606
+this lesson, but it may be worth your
+while to pause and
+
+37
+00:02:17,606 --> 00:02:20,039
+look over the rules and be sure you
+understand them.
+
+38
+00:02:20,039 --> 00:02:23,560
+[BLANK_AUDIO]
+

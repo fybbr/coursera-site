@@ -1,0 +1,1232 @@
+1
+00:00:01,100 --> 00:00:04,300
+Then next topic is going to be something
+called Fubini's Theorem.
+
+2
+00:00:08,800 --> 00:00:11,400
+So first of all, I'd like to say, I just
+think, if you have
+
+3
+00:00:11,400 --> 00:00:15,090
+a name this neat, it's really good that
+you attach it to a theorem.
+
+4
+00:00:15,090 --> 00:00:17,230
+So it's just sort of, for me anyway it's
+fun to say.
+
+5
+00:00:17,230 --> 00:00:17,230
+>>
+
+6
+00:00:17,230 --> 00:00:17,230
+[LAUGH]
+
+7
+00:00:17,230 --> 00:00:17,230
+>>
+
+8
+00:00:17,230 --> 00:00:18,520
+[COUGH]
+
+9
+00:00:18,520 --> 00:00:22,680
+And so this function, so remember my big
+question
+
+10
+00:00:22,680 --> 00:00:25,640
+at the end of the last set of slides.
+
+11
+00:00:25,640 --> 00:00:32,290
+If f of x is continuous on the rectangle R
+equals a,b cross c,d
+
+12
+00:00:32,290 --> 00:00:38,370
+so it's just between a and b on the x-axis
+and between c and d on the y-axis.
+
+13
+00:00:38,370 --> 00:00:43,630
+Then Fubini's theorem tells me that the
+double integral over that
+
+14
+00:00:43,630 --> 00:00:49,420
+region over that rectangle is equal to,
+and I can do it either
+
+15
+00:00:49,420 --> 00:00:54,070
+dy dx so I can, it's equal to the value of
+iterated integral.
+
+16
+00:00:54,070 --> 00:00:56,870
+And it doesn't matter which way I do the
+iterated integrals
+
+17
+00:00:56,870 --> 00:01:01,200
+so if I do this dy dx or I do dx dy.
+
+18
+00:01:01,200 --> 00:01:05,370
+And so remember, we have to be a bit
+careful that the ab corresponds
+
+19
+00:01:05,370 --> 00:01:08,940
+to the dx, so they have to be on the
+inside or on the outside,
+
+20
+00:01:08,940 --> 00:01:13,140
+but you can't mix.
+And here, the ab corresponds to the dx.
+
+21
+00:01:15,310 --> 00:01:18,370
+So, the order of iteration does not
+matter.
+
+22
+00:01:18,370 --> 00:01:22,440
+And so in this particular case, when I'm
+talking about a rectangle, it's
+
+23
+00:01:22,440 --> 00:01:26,180
+not going to make too big a deal which way
+you do this first.
+
+24
+00:01:26,180 --> 00:01:29,050
+Later on, you're going to find that you
+look at
+
+25
+00:01:29,050 --> 00:01:31,162
+a, a region, it's not always going to be
+defined
+
+26
+00:01:31,162 --> 00:01:33,100
+just as, you know, this is a, this is b,
+
+27
+00:01:33,100 --> 00:01:36,210
+there's going to be functions that give
+you the region too.
+
+28
+00:01:36,210 --> 00:01:40,446
+For instance, if you wanted to integrate
+over a triangle or
+
+29
+00:01:40,446 --> 00:01:42,730
+a circle or something like that.
+
+30
+00:01:42,730 --> 00:01:47,530
+And it's going to be a lot easier
+generally to do dy dx or dx dy.
+
+31
+00:01:47,530 --> 00:01:51,400
+So one of them is either going to be very
+difficult or impossible.
+
+32
+00:01:51,400 --> 00:01:53,760
+I mean, they both might be very difficult
+or impossible.
+
+33
+00:01:53,760 --> 00:01:57,718
+But sometimes one is very difficult and
+the other one is relatively easy.
+
+34
+00:01:57,718 --> 00:02:02,480
+And so just, just for your own sanity, I
+would recommend doing it the easy way.
+
+35
+00:02:05,910 --> 00:02:08,190
+So, one of the things I like to do when
+
+36
+00:02:08,190 --> 00:02:10,240
+I have a theorem like that is just test it
+out.
+
+37
+00:02:12,230 --> 00:02:14,398
+So, let's try an example and see what
+happens.
+
+38
+00:02:14,398 --> 00:02:21,010
+So, I'm going to define the rectangle to
+be 1, 3 cross 2, 5 so this
+
+39
+00:02:21,010 --> 00:02:26,500
+is just in between 1 and 3 on the x-axis
+and in between 2 and 5 on the y-axis.
+
+40
+00:02:26,500 --> 00:02:31,360
+My function will be 2y minus 3x and I
+want to compute the double integral
+
+41
+00:02:31,360 --> 00:02:32,410
+over that rectangle.
+
+42
+00:02:37,208 --> 00:02:40,540
+So using Fubini's theorem, I can say that
+this double
+
+43
+00:02:40,540 --> 00:02:44,060
+integral is going to be equal to the
+iterated integral.
+
+44
+00:02:45,350 --> 00:02:48,340
+And so in this case, I'll integrate with
+respect to
+
+45
+00:02:48,340 --> 00:02:51,360
+x first, and then I'll integrate with
+respect to y.
+
+46
+00:02:51,360 --> 00:02:57,520
+So again the 1, 3 is here and that's my x
+limits so I have to do dx
+
+47
+00:02:57,520 --> 00:03:02,080
+first if the 1 and 3 are in here and then
+2 and 5 are the limits corresponding to y.
+
+48
+00:03:04,690 --> 00:03:05,800
+And so, the way I'm going to do this
+
+49
+00:03:05,800 --> 00:03:09,112
+inside integral now, I'm integrating with
+respect to x.
+
+50
+00:03:09,112 --> 00:03:12,694
+So, I'm just going to pretend like y is a
+constant.
+
+51
+00:03:12,694 --> 00:03:15,760
+And then I can treat this just as a single
+variable integral.
+
+52
+00:03:18,820 --> 00:03:23,980
+So the first term, this is just a constant
+times dx.
+
+53
+00:03:23,980 --> 00:03:27,300
+So by the anti-Power Rule all that's going
+to happen when
+
+54
+00:03:27,300 --> 00:03:31,310
+I take the antiderivative of that, just an
+x shows up.
+
+55
+00:03:31,310 --> 00:03:34,240
+And if I were to take the partial
+derivative of this term with respect
+
+56
+00:03:34,240 --> 00:03:38,560
+to x, I would just get 2y, which is
+exactly what I started out with.
+
+57
+00:03:40,390 --> 00:03:42,450
+The second term, the minus 3,
+
+58
+00:03:42,450 --> 00:03:48,280
+minus 3x that's the derivative of minus 3x
+squared
+
+59
+00:03:48,280 --> 00:03:50,740
+so if I take the derivative again, partial
+derivative with
+
+60
+00:03:50,740 --> 00:03:53,610
+respect to x but it's easier to miss that,
+it's
+
+61
+00:03:53,610 --> 00:03:56,800
+a partial derivative because there's no y
+in this term.
+
+62
+00:03:56,800 --> 00:04:00,590
+I would take 2 times 3 half to the the,
+times
+
+63
+00:04:00,590 --> 00:04:03,040
+x to the 2 minus 1 which would just be 3x.
+
+64
+00:04:03,040 --> 00:04:03,540
+And
+
+65
+00:04:05,650 --> 00:04:08,660
+now, I can evaluate this at the limits.
+
+66
+00:04:08,660 --> 00:04:14,150
+So I guess I was a bit lazy when I wrote
+the limits here but once I've done
+
+67
+00:04:14,150 --> 00:04:17,340
+this, there's no more dx in here to tell
+
+68
+00:04:17,340 --> 00:04:20,748
+me what variable I've integrated with
+respect to 2.
+
+69
+00:04:20,748 --> 00:04:24,640
+So with 2 it's not too bad, but we can use
+the
+
+70
+00:04:24,640 --> 00:04:28,740
+same idea of iteration to do triple
+integrals, quadruple integrals, and so on.
+
+71
+00:04:28,740 --> 00:04:30,657
+So, it's probably a good habit to
+
+72
+00:04:30,657 --> 00:04:32,929
+remember that this is x equals 3 as the
+
+73
+00:04:32,929 --> 00:04:35,627
+upper limit and x equals 1 as the bottom
+limit.
+
+74
+00:04:35,627 --> 00:04:38,041
+But otherwise, I do it exactly the same
+way
+
+75
+00:04:38,041 --> 00:04:42,019
+that I would've done using the Fundamental
+Theorem of Calculus.
+
+76
+00:04:42,019 --> 00:04:47,225
+So the value of this integral is just the
+antiderivative evaluated at the upper
+
+77
+00:04:47,225 --> 00:04:53,090
+limit minus the antiderivative evaluated
+at the lower limit.
+
+78
+00:04:53,090 --> 00:04:56,310
+This thing is the antiderivative,
+
+79
+00:04:56,310 --> 00:05:01,830
+so all I'm going to do is put in 3 for x
+in the first term and
+
+80
+00:05:01,830 --> 00:05:07,330
+then minus and then substitute 1 for x in
+the second term.
+
+81
+00:05:07,330 --> 00:05:10,840
+And so now, I've integrated out the x,
+there's no longer an x in here
+
+82
+00:05:10,840 --> 00:05:15,900
+but there still are some ys, and so this
+is now my, my partial integral.
+
+83
+00:05:15,900 --> 00:05:17,860
+So it's now a function of y that I
+
+84
+00:05:17,860 --> 00:05:21,860
+can integrate in the second step with
+respect to y.
+
+85
+00:05:21,860 --> 00:05:25,360
+First though I think I probably simplified
+it because
+
+86
+00:05:25,360 --> 00:05:27,920
+addition is going to make this a little
+bit prettier.
+
+87
+00:05:27,920 --> 00:05:33,560
+So it turns out that's just equal to 4y
+minus 12.
+
+88
+00:05:33,560 --> 00:05:35,700
+And so then this is something we should be
+reasonably
+
+89
+00:05:35,700 --> 00:05:37,850
+familiar with now so I'll just go through
+this quickly.
+
+90
+00:05:37,850 --> 00:05:40,460
+So, I get the antiderivative evaluated at
+the top
+
+91
+00:05:40,460 --> 00:05:43,250
+limit and subtract the evaluation at the
+bottom limit.
+
+92
+00:05:44,720 --> 00:05:47,080
+And so that gives me 50 minus 60,
+
+93
+00:05:47,080 --> 00:05:53,090
+so that's negative 10 minus 8 minus 24.
+So tricky again, I know
+
+94
+00:05:53,090 --> 00:05:58,240
+some of us don't like signs and pluses but
+that's minus 10 minus negative 16 which is
+
+95
+00:05:58,240 --> 00:06:04,400
+equal to 6.
+So, in this case, I did the integral.
+
+96
+00:06:04,400 --> 00:06:09,150
+I iterated with the dx integral first and
+then the dy integral.
+
+97
+00:06:10,650 --> 00:06:11,980
+And so let's try that again.
+
+98
+00:06:11,980 --> 00:06:14,430
+But this time, I'm going to do dy first.
+
+99
+00:06:16,730 --> 00:06:21,700
+So I had to, I switched the, switched the
+dy and dx.
+
+100
+00:06:21,700 --> 00:06:24,400
+And then I also had to switch the two
+integral signs.
+
+101
+00:06:24,400 --> 00:06:26,858
+So the, now that the inside limits, the 2
+and
+
+102
+00:06:26,858 --> 00:06:30,960
+the 2, these correspond to Integration
+with respect to y.
+
+103
+00:06:30,960 --> 00:06:32,440
+And the 1 and the 3, the outside
+
+104
+00:06:32,440 --> 00:06:35,200
+integral corresponds to integration with
+respect to x.
+
+105
+00:06:38,040 --> 00:06:43,622
+So again, just to use the anti-Power Rule,
+2y is the
+
+106
+00:06:43,622 --> 00:06:50,370
+anti or 2y is the derivative of y squared
+and then 3x
+
+107
+00:06:50,370 --> 00:06:54,826
+is going to be constant with respect to y.
+So that just becomes 3xy.
+
+108
+00:06:54,826 --> 00:06:59,380
+And then again, I'll just evaluate this at
+y equals 5 and
+
+109
+00:06:59,380 --> 00:07:03,610
+I evaluate it at y equals 2 and I take the
+difference.
+
+110
+00:07:03,610 --> 00:07:07,065
+So this is the, the function evaluated
+when y is equal to
+
+111
+00:07:07,065 --> 00:07:10,750
+5 and this is the function evaluated when
+y is equal to 2.
+
+112
+00:07:10,750 --> 00:07:16,100
+And now I just have a function, the y is
+entirely gone.
+
+113
+00:07:16,100 --> 00:07:18,130
+So I have a function of only x and
+
+114
+00:07:18,130 --> 00:07:22,760
+I'm going to integrate that function from
+1 to 3.
+
+115
+00:07:22,760 --> 00:07:28,790
+So first I'll do some simplification.
+And then the antiderivative is
+
+116
+00:07:28,790 --> 00:07:30,870
+trivial again just with the, the Power
+Rule.
+
+117
+00:07:30,870 --> 00:07:36,170
+So I get 21x minus 9 halves x squared from
+1 to 3,
+
+118
+00:07:36,170 --> 00:07:39,780
+so I evaluate this at 3, I evaluate at 1,
+take the difference.
+
+119
+00:07:44,470 --> 00:07:49,340
+And so it's a, a little bit less pretty
+this time but if I have 63
+
+120
+00:07:49,340 --> 00:07:53,840
+minus 21 that gives me 42.
+
+121
+00:07:53,840 --> 00:07:58,970
+Then I have negative 81 over 2 and then
+
+122
+00:07:58,970 --> 00:08:03,390
+minus, minus 9 over 2.
+So it's the same as negative 81 plus 9
+
+123
+00:08:03,390 --> 00:08:09,790
+over 2, which is 72 over 2, which is 36
+and so I have minus
+
+124
+00:08:09,790 --> 00:08:12,410
+36 and again I get 6.
+
+125
+00:08:12,410 --> 00:08:15,420
+And just for people who weren't paying
+attention on the last slide, that's the
+
+126
+00:08:15,420 --> 00:08:19,460
+same answer we got when we did the
+integral iterated on the other direction.
+
+127
+00:08:19,460 --> 00:08:20,995
+So, that's a, a pretty good check.
+
+128
+00:08:20,995 --> 00:08:23,220
+If I have a, a simple function, at least
+
+129
+00:08:23,220 --> 00:08:26,130
+it works and this actually does work in
+general.
+
+130
+00:08:26,130 --> 00:08:30,080
+So you don't need to check it but I just
+wanted to go through a, a little example.
+
+131
+00:08:33,300 --> 00:08:37,210
+Okay so the next thing, we might want to
+do, so, so
+
+132
+00:08:37,210 --> 00:08:40,740
+far I've just talked about doing a double
+integral over a rectangular region.
+
+133
+00:08:42,620 --> 00:08:45,000
+but now suppose instead of a rectangle, I
+want to
+
+134
+00:08:45,000 --> 00:08:47,640
+have a more general region that I'm
+going to call D.
+
+135
+00:08:47,640 --> 00:08:51,130
+So I've, I've, I think on the first set of
+slides I called the area
+
+136
+00:08:51,130 --> 00:08:53,140
+in the x,y plane that I was integrating
+
+137
+00:08:53,140 --> 00:08:55,740
+above, I called that the domain of
+integration.
+
+138
+00:08:55,740 --> 00:08:58,270
+So that's why I chose D here, it just
+means domain.
+
+139
+00:08:59,680 --> 00:08:59,770
+And
+
+140
+00:08:59,770 --> 00:09:04,220
+I'm going to write this using a set
+notation, so these
+
+141
+00:09:04,220 --> 00:09:09,250
+little squiggly brackets this means I'm
+talking about a set.
+
+142
+00:09:09,250 --> 00:09:13,530
+And set is just a rule to say something is
+in the set or something is not in the set.
+
+143
+00:09:14,850 --> 00:09:20,550
+And so the way you read this is, the set
+consists of points x,y
+
+144
+00:09:20,550 --> 00:09:25,640
+that satisfy x has to be in between a and
+b and
+
+145
+00:09:25,640 --> 00:09:32,360
+then y has to be in between a function of
+x and another function of x.
+
+146
+00:09:32,360 --> 00:09:36,610
+So there's some function of x on the
+bottom and some function of x on the top.
+
+147
+00:09:39,420 --> 00:09:47,620
+And so for a rectangle g1 of x was just
+equal to c and g2 of x was equal to d.
+
+148
+00:09:47,620 --> 00:09:51,360
+And now this is just letting me have a, a
+slightly more general region.
+
+149
+00:09:51,360 --> 00:09:53,950
+So I could have an upward-sloping line and
+then that could
+
+150
+00:09:53,950 --> 00:09:56,560
+be either a trapezoid or a triangle, or
+something like that.
+
+151
+00:09:58,700 --> 00:10:02,170
+And so then when I do my iterated
+integral, I don't really
+
+152
+00:10:02,170 --> 00:10:06,950
+have the freedom to do it dx dy or dy dx
+anymore.
+
+153
+00:10:06,950 --> 00:10:10,160
+So in this case, I have to do the dx last
+
+154
+00:10:11,390 --> 00:10:16,390
+because those are where I have the
+constants in in the limits.
+
+155
+00:10:19,140 --> 00:10:26,490
+So if I find an antiderivative of f of
+x,y, I'm going to evaluate
+
+156
+00:10:26,490 --> 00:10:33,140
+it at y equals some function of x and
+again at y equals this lower bound of x.
+
+157
+00:10:33,140 --> 00:10:38,576
+So after I've done this inside integral,
+I'm going to have a function of x alone
+
+158
+00:10:38,576 --> 00:10:44,930
+and then that's going to be something I
+can integrate in my second integral.
+
+159
+00:10:44,930 --> 00:10:47,100
+But the, the limits on the last integral
+
+160
+00:10:47,100 --> 00:10:49,776
+always have to be real numbers otherwise,
+you
+
+161
+00:10:49,776 --> 00:10:54,620
+know, there's no way for me to integrate
+if I had a, a function of y here.
+
+162
+00:10:54,620 --> 00:10:59,290
+And when I did my antiderivative and then
+plugged in my function of y, I would
+
+163
+00:10:59,290 --> 00:11:00,800
+still have a function of both x and
+
+164
+00:11:00,800 --> 00:11:02,729
+y so it wouldn't be an iterated integral
+anymore.
+
+165
+00:11:05,320 --> 00:11:09,840
+And so this is kind of, this is what I was
+getting at when I said sometimes it's
+
+166
+00:11:09,840 --> 00:11:16,690
+easier or impossible to do an integral you
+know, dx dy or dy dx.
+
+167
+00:11:16,690 --> 00:11:19,770
+You can actually draw a picture of what
+this region
+
+168
+00:11:19,770 --> 00:11:25,320
+looks like And if it's bounded both
+directions you'll always be
+
+169
+00:11:25,320 --> 00:11:27,430
+able to find a way to describe that as a
+
+170
+00:11:27,430 --> 00:11:30,670
+to b with a function making the top and
+another function
+
+171
+00:11:30,670 --> 00:11:32,280
+making the bottom.
+
+172
+00:11:32,280 --> 00:11:35,910
+Or you could think of it as, you know, c
+to d with
+
+173
+00:11:35,910 --> 00:11:40,140
+one function making the left side and one
+function making the right side.
+
+174
+00:11:40,140 --> 00:11:42,610
+And one of those might be easier to do
+than the other.
+
+175
+00:11:42,610 --> 00:11:44,190
+So I think there's an example in the
+
+176
+00:11:44,190 --> 00:11:46,420
+homework of, of how this will work out,
+where
+
+177
+00:11:48,440 --> 00:11:52,310
+one of the limits is basically what you
+
+178
+00:11:52,310 --> 00:11:56,745
+need to be able to do integration by
+substitution in the outside integral.
+
+179
+00:11:56,745 --> 00:12:05,710
+Okay.
+And so this is just the other possibility.
+
+180
+00:12:05,710 --> 00:12:10,290
+So d can either have x having the real
+limit.
+
+181
+00:12:10,290 --> 00:12:14,060
+So x between a and b and then y between
+functions
+
+182
+00:12:14,060 --> 00:12:20,930
+of x or you can have y between c and d and
+then have x in between functions of y.
+
+183
+00:12:24,350 --> 00:12:27,760
+And so all that happens here is you just
+have to integrate.
+
+184
+00:12:27,760 --> 00:12:32,480
+So here I do dy dx first and here I have
+to do dx dy first.
+
+185
+00:12:39,640 --> 00:12:45,340
+So we might see something like this.
+So, if I say x plus y, so
+
+186
+00:12:45,340 --> 00:12:51,440
+absolute value of x plus absolute value of
+y has to be less than or equal to 1.
+
+187
+00:12:51,440 --> 00:12:56,180
+So, this describes a, a diamond that just
+has corners at
+
+188
+00:12:56,180 --> 00:12:58,820
+0 plus or minus 1 and plus or minus 1, 0.
+
+189
+00:12:58,820 --> 00:13:04,030
+So, it's usually helpful to draw a picture
+of what this looks like.
+
+190
+00:13:04,030 --> 00:13:04,650
+Even if it's not
+
+191
+00:13:04,650 --> 00:13:07,930
+a very good picture, it will still help
+you figure out which way
+
+192
+00:13:07,930 --> 00:13:11,570
+is going to be easier whether you want to
+do x first or y first.
+
+193
+00:13:14,580 --> 00:13:17,510
+And then, this is a, a useful check just
+to
+
+194
+00:13:17,510 --> 00:13:20,890
+make sure you've done things first in, in
+getting your region.
+
+195
+00:13:20,890 --> 00:13:26,020
+So if I have, if I define my function, the
+integral of f of x,y just to be constant
+
+196
+00:13:26,020 --> 00:13:28,730
+1 over the entire domain then when I
+integrate
+
+197
+00:13:28,730 --> 00:13:32,030
+that, I'm just going to get the area of my
+domain.
+
+198
+00:13:32,030 --> 00:13:35,890
+So if I have a, an area and I multiplied
+it
+
+199
+00:13:35,890 --> 00:13:39,745
+by one to get a volume then that volume is
+just
+
+200
+00:13:39,745 --> 00:13:40,850
+going to be equal to the area.
+
+201
+00:13:44,160 --> 00:13:48,100
+So my double integral over this diamond,
+
+202
+00:13:50,860 --> 00:13:56,360
+I can write that just as 1 dA.
+And now this is a bit tricky
+
+203
+00:13:56,360 --> 00:14:01,580
+so, it's a good example though of how you
+can split up an integral.
+
+204
+00:14:01,580 --> 00:14:05,790
+So I'm going to integrate with respect to
+x last so
+
+205
+00:14:05,790 --> 00:14:08,700
+that means that the x limits get to be
+real numbers.
+
+206
+00:14:09,820 --> 00:14:12,680
+And conceptually, what I want to do is I
+want to
+
+207
+00:14:12,680 --> 00:14:16,585
+start at negative 1 here and go over to
+positive 1.
+
+208
+00:14:19,220 --> 00:14:25,130
+And just like I could break up the, the
+interval into two sub-intervals.
+
+209
+00:14:25,130 --> 00:14:27,730
+So two integrals that together make the
+
+210
+00:14:27,730 --> 00:14:31,060
+full interval for a single variable
+integration problem.
+
+211
+00:14:31,060 --> 00:14:34,530
+I can split up the domain into pieces so
+
+212
+00:14:34,530 --> 00:14:37,650
+that all of those pieces together make the
+entire domain.
+
+213
+00:14:39,230 --> 00:14:41,560
+And so what I'm going to do is this
+function
+
+214
+00:14:41,560 --> 00:14:44,430
+will be much easier to define if it
+doesn't have this
+
+215
+00:14:44,430 --> 00:14:49,290
+sharp right-hand corner at the top.
+same with the one on the bottom.
+
+216
+00:14:49,290 --> 00:14:55,680
+So I'm going to integrate from negative 1
+to zero and then from zero to positive 1.
+
+217
+00:14:55,680 --> 00:15:00,970
+And then my limits for y are at a certain
+value of x.
+
+218
+00:15:00,970 --> 00:15:05,480
+I'm going to go from, this is actually
+negative 1 plus x.
+
+219
+00:15:05,480 --> 00:15:08,710
+So negative 1 minus x is the point down
+here.
+
+220
+00:15:08,710 --> 00:15:09,450
+So if x were
+
+221
+00:15:09,450 --> 00:15:13,610
+equal to negative 1 half, then y would
+equal negative 1 half as well.
+
+222
+00:15:15,540 --> 00:15:19,010
+And so, what I want to do is just set up
+a, a function.
+
+223
+00:15:19,010 --> 00:15:24,450
+So the, the limits here, minus 1 minus x
+and 1 plus x given
+
+224
+00:15:24,450 --> 00:15:28,220
+x, just tell me how far it is from down
+here to up here.
+
+225
+00:15:29,520 --> 00:15:31,500
+And then, the functions are slightly
+different on
+
+226
+00:15:31,500 --> 00:15:33,630
+the right-hand side, the, the slope just
+changes.
+
+227
+00:15:34,650 --> 00:15:34,810
+So
+
+228
+00:15:34,810 --> 00:15:39,000
+I have just where I had plus x over here,
+I'm going to end
+
+229
+00:15:39,000 --> 00:15:42,050
+up with minus x over here and the same in
+the, in the bottom.
+
+230
+00:15:44,330 --> 00:15:48,252
+And then all that I have to do is start my
+iterated integral.
+
+231
+00:15:50,170 --> 00:15:52,910
+So the integral of 1 with respect to y,
+
+232
+00:15:52,910 --> 00:15:54,830
+that's just going to be the derivative of
+y.
+
+233
+00:15:56,100 --> 00:15:58,590
+So I end up with y evaluated at the
+
+234
+00:15:58,590 --> 00:16:02,260
+top limit minus y evaluated at the bottom
+limit.
+
+235
+00:16:02,260 --> 00:16:04,350
+So what I'm going to do when I evaluate
+this now,
+
+236
+00:16:04,350 --> 00:16:09,590
+I'm going to stick in 1 plus x for y and
+
+237
+00:16:09,590 --> 00:16:12,494
+so, and then the same thing for the, for
+the right-hand integral.
+
+238
+00:16:16,350 --> 00:16:19,950
+And so what I end up with is, top limit
+minus
+
+239
+00:16:19,950 --> 00:16:25,580
+bottom limit for the, for the integral on
+the left term.
+
+240
+00:16:25,580 --> 00:16:28,220
+And then top limit minus bottom limit
+
+241
+00:16:28,220 --> 00:16:30,340
+for the integral that's the, the
+right-hand term.
+
+242
+00:16:30,340 --> 00:16:34,580
+And then I go ahead and simplify that.
+
+243
+00:16:34,580 --> 00:16:37,840
+So I get 2 plus 2x and 2 minus 2x.
+
+244
+00:16:37,840 --> 00:16:42,130
+But now, I have two single variable
+integration problems.
+
+245
+00:16:42,130 --> 00:16:46,790
+And again, they're pretty easy.
+So just use the Power Rule backwards.
+
+246
+00:16:49,860 --> 00:16:55,390
+And we get 1 plus 1 which is 2 and I guess
+I'll flip back to this.
+
+247
+00:16:55,390 --> 00:16:59,520
+So if I were to take this triangle in the
+bottom
+
+248
+00:16:59,520 --> 00:17:04,180
+right side and put it up here, then I'd
+have a square.
+
+249
+00:17:04,180 --> 00:17:07,930
+And if I took this one and put it up here
+I'd have another square.
+
+250
+00:17:07,930 --> 00:17:09,870
+So that would be a rectangle, these two
+squares.
+
+251
+00:17:09,870 --> 00:17:12,380
+So it'd be width 2 and height 1.
+
+252
+00:17:12,380 --> 00:17:15,280
+So the area of this shape should be equal
+to
+
+253
+00:17:17,330 --> 00:17:17,400
+two.
+
+254
+00:17:17,400 --> 00:17:19,888
+And that's what we got when we did our
+integral.
+
+255
+00:17:19,888 --> 00:17:26,498
+So everything is working out so far.
+Oh, and I guess I should
+
+256
+00:17:26,498 --> 00:17:31,802
+mention, so in the first slide
+
+257
+00:17:31,802 --> 00:17:37,769
+when I put Fubini's Theorem up, I
+
+258
+00:17:37,769 --> 00:17:43,800
+said that it was over a rectangle.
+

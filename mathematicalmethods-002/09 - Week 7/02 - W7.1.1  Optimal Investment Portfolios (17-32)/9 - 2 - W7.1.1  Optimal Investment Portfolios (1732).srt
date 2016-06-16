@@ -1,0 +1,1301 @@
+1
+00:00:01,010 --> 00:00:03,350
+So the seventh week of lectures, is
+
+2
+00:00:03,350 --> 00:00:06,440
+going to be split into two separate slide
+decks.
+
+3
+00:00:06,440 --> 00:00:10,580
+So this one I've labeled 7.1, and it'll be
+on Lagrange Method.
+
+4
+00:00:13,810 --> 00:00:16,546
+So I'll start off talking about the idea
+of an
+
+5
+00:00:16,546 --> 00:00:21,570
+investment portfolio, and then how you
+might want to optimize that.
+
+6
+00:00:21,570 --> 00:00:24,194
+So a portfolio, just, you know, if I buy
+several
+
+7
+00:00:24,194 --> 00:00:28,600
+assets, put them all in one folder, that's
+called a portfolio.
+
+8
+00:00:28,600 --> 00:00:32,651
+And then the decision I have is, well,
+it's sort of two parts.
+
+9
+00:00:32,651 --> 00:00:34,350
+Is A, what am I going to buy?
+
+10
+00:00:34,350 --> 00:00:38,892
+And I'm going to sort of assume that
+that's already been answered for us.
+
+11
+00:00:38,892 --> 00:00:43,420
+And then B is going to be, how much of
+each thing should I buy?
+
+12
+00:00:43,420 --> 00:00:48,814
+And, so, if you have investment goals, you
+can choose exactly
+
+13
+00:00:48,814 --> 00:00:53,450
+how much you want to buy of each thing, to
+satisfy them.
+
+14
+00:00:53,450 --> 00:00:55,851
+So, that's what I'll be talking about, so
+to setting up
+
+15
+00:00:55,851 --> 00:00:58,160
+the problem I want to solve in the first
+group of slides.
+
+16
+00:00:59,240 --> 00:01:03,980
+Then I'll talk about finding.
+So it's, labeled Relative Extrema of
+
+17
+00:01:03,980 --> 00:01:06,600
+Functions of Several Variables.
+
+18
+00:01:06,600 --> 00:01:08,742
+So we talked about first and second order
+
+19
+00:01:08,742 --> 00:01:12,123
+conditions, for maximizing a function of a
+single variable.
+
+20
+00:01:12,123 --> 00:01:15,131
+And now that we've done some linear
+algebra, I can tell
+
+21
+00:01:15,131 --> 00:01:18,850
+you what the conditions are for functions
+of more than one variable.
+
+22
+00:01:20,610 --> 00:01:23,790
+And then we'll look at Lagrange Method,
+which is essentially
+
+23
+00:01:23,790 --> 00:01:27,035
+trying to do number two, except it also
+has some constraints.
+
+24
+00:01:27,035 --> 00:01:29,255
+So it says I want to maximize this
+function,
+
+25
+00:01:29,255 --> 00:01:31,670
+subject to another function being
+satisfied.
+
+26
+00:01:33,014 --> 00:01:35,745
+in the fourth bit, I'll given example of
+that.
+
+27
+00:01:35,745 --> 00:01:38,626
+And then in the fifth bit, I'll go back to
+one of the
+
+28
+00:01:38,626 --> 00:01:40,837
+concepts I'm going to introduce in the
+
+29
+00:01:40,837 --> 00:01:43,970
+first bit, called a Minimum Variance
+Portfolio.
+
+30
+00:01:43,970 --> 00:01:47,550
+And just go through the calculation of
+finding that, using the Lagrange Method.
+
+31
+00:01:52,000 --> 00:01:54,810
+We'll get started with Optimal Investment
+Portfolios.
+
+32
+00:01:58,190 --> 00:02:03,701
+So like I, like I just said, a portfolio
+is just a collection of n assets.
+
+33
+00:02:03,701 --> 00:02:09,404
+So n is going to be some positive integer.
+portfolio just means a folder.
+
+34
+00:02:09,404 --> 00:02:13,022
+So in the old days I think you, you know,
+if I went and bought some
+
+35
+00:02:13,022 --> 00:02:16,439
+stock, I actually got paper certificates
+that represented
+
+36
+00:02:16,439 --> 00:02:18,843
+those assets, and I put them in a folder.
+
+37
+00:02:18,843 --> 00:02:22,991
+And so then my folder full of all of my
+stocks became known as a portfolio,
+
+38
+00:02:22,991 --> 00:02:26,700
+and so the folders are gone but the, the
+word has stuck around.
+
+39
+00:02:29,830 --> 00:02:36,389
+And I'm going make a vector w where, so i
+is going to run from one up to n.
+
+40
+00:02:36,389 --> 00:02:40,090
+So n's the total number of assets.
+
+41
+00:02:40,090 --> 00:02:44,798
+And then w sub i is going to be the
+proportion of the portfolio.
+
+42
+00:02:44,798 --> 00:02:48,550
+So value wise, that's invested in each of
+the assets.
+
+43
+00:02:48,550 --> 00:02:51,366
+So if I made it equally weighted
+portfolio, w i would
+
+44
+00:02:51,366 --> 00:02:54,527
+be equal to 1 over n for every asset in
+the portfolio.
+
+45
+00:02:54,527 --> 00:02:55,031
+but there
+
+46
+00:02:55,031 --> 00:02:57,190
+are a lot of other ways you could do that.
+
+47
+00:02:57,190 --> 00:02:59,296
+You know, I could say well, I think I'm
+going to
+
+48
+00:02:59,296 --> 00:03:02,025
+make more money on a certain, like in
+technology stocks.
+
+49
+00:03:02,025 --> 00:03:04,750
+So I might buy technology stocks in a
+higher proportion.
+
+50
+00:03:04,750 --> 00:03:08,782
+So those w's would be higher, than the w's
+for the rest of the assets in the
+
+51
+00:03:08,782 --> 00:03:14,634
+portfolio.
+And I'll end up the constraint that, so if
+
+52
+00:03:14,634 --> 00:03:21,170
+w i is proportions, all of the wi's have
+to sum up to one, so I have one portfolio.
+
+53
+00:03:22,400 --> 00:03:27,380
+And so you can think about you know, if
+you wanted to make this into dollars.
+
+54
+00:03:27,380 --> 00:03:29,922
+This one isn't a very useful number, but
+you can
+
+55
+00:03:29,922 --> 00:03:32,420
+think about it as maybe a thousand or a
+million.
+
+56
+00:03:32,420 --> 00:03:36,030
+So I have a million dollars to invest, or
+I have a thousand dollars to invest.
+
+57
+00:03:37,030 --> 00:03:43,289
+And then the Wi would be, the amount of
+money invested in each of the assets.
+
+58
+00:03:44,780 --> 00:03:47,444
+And just to normalize that, we divide by
+the
+
+59
+00:03:47,444 --> 00:03:49,330
+total value of the portfolio.
+
+60
+00:03:49,330 --> 00:03:52,870
+So you always end up with one on this
+side, and proportions on this side.
+
+61
+00:03:56,460 --> 00:03:59,057
+And we're also going to say for, to make
+the, the problem
+
+62
+00:03:59,057 --> 00:04:00,700
+mathematically more easy, we can do
+
+63
+00:04:00,700 --> 00:04:03,030
+something called take long and short
+positions.
+
+64
+00:04:03,030 --> 00:04:07,100
+So, a long position in an asset, is
+something everybody is familiar with.
+
+65
+00:04:07,100 --> 00:04:11,960
+You go to a market, you buy something, and
+now you have the something.
+
+66
+00:04:11,960 --> 00:04:16,851
+A short position is sort of a strange
+invention, where I can go to a market,
+
+67
+00:04:16,851 --> 00:04:21,596
+I can sell something I don't have, I can
+take the money, but I have to promise
+
+68
+00:04:21,596 --> 00:04:27,270
+that later on I'm going to give the, the
+person one of these things back.
+
+69
+00:04:27,270 --> 00:04:30,503
+And the way that's going to manifest
+itself mathematically, is
+
+70
+00:04:30,503 --> 00:04:33,990
+it just means there's no constraints on
+each individual Wi.
+
+71
+00:04:33,990 --> 00:04:36,465
+So even though they have to sum up to 1,
+
+72
+00:04:36,465 --> 00:04:39,315
+I could have one Wi greater than 1, and
+then I
+
+73
+00:04:39,315 --> 00:04:42,690
+would also have to have some negative Wi's
+to balance
+
+74
+00:04:42,690 --> 00:04:45,713
+that out, so that this sum is still equal
+to 1.
+
+75
+00:04:49,280 --> 00:04:51,830
+Then I'm going to have mu IB, something
+
+76
+00:04:51,830 --> 00:04:54,870
+called the expected rate of return on an
+asset.
+
+77
+00:04:56,420 --> 00:04:58,854
+And so there will be one of these for each
+asset.
+
+78
+00:04:58,854 --> 00:05:01,040
+So that's why it get's a little subscript
+i.
+
+79
+00:05:01,040 --> 00:05:03,112
+So different assets in my portfolio.
+
+80
+00:05:03,112 --> 00:05:07,830
+Some are going to have higher expected
+rates of return, than others.
+
+81
+00:05:07,830 --> 00:05:10,622
+and generally, those are going to be the
+ones that are more risky, too.
+
+82
+00:05:10,622 --> 00:05:11,302
+[COUGH]
+
+83
+00:05:11,302 --> 00:05:20,020
+So you can think of sigma i squared then.
+So ui is the expected rate of return.
+
+84
+00:05:20,020 --> 00:05:23,660
+Sigma i squared, is going to be the risk
+of asset i.
+
+85
+00:05:23,660 --> 00:05:26,507
+And there's also a kind of related
+quantity,
+
+86
+00:05:26,507 --> 00:05:29,750
+just sigma sub i, which I'll call the
+volatility.
+
+87
+00:05:29,750 --> 00:05:32,750
+So you can think of this as sort of a
+variance
+
+88
+00:05:32,750 --> 00:05:37,330
+like quantity, and then sigma is a
+standard deviation like quantity.
+
+89
+00:05:39,210 --> 00:05:41,860
+And so again, I get one of these for each
+asset.
+
+90
+00:05:44,810 --> 00:05:46,471
+Then, there'll also be row ij.
+
+91
+00:05:46,471 --> 00:05:48,385
+So this is going to be the correlation
+
+92
+00:05:48,385 --> 00:05:50,959
+between the returns on the different
+assets,
+
+93
+00:05:50,959 --> 00:05:54,390
+and I'm going to end up with one row ij
+for every pair of assets.
+
+94
+00:05:54,390 --> 00:05:57,685
+So that means that row ij is equal to row
+ji.
+
+95
+00:05:57,685 --> 00:05:58,210
+[COUGH]
+
+96
+00:05:58,210 --> 00:06:01,780
+And then once I have all of these inputs,
+
+97
+00:06:01,780 --> 00:06:07,580
+I can make the expected return for the
+entire portfolio.
+
+98
+00:06:07,580 --> 00:06:11,684
+It's just going to be a weigted, so a
+linear combination with the,
+
+99
+00:06:11,684 --> 00:06:15,700
+the weights, from w of my expected returns
+on each of the assets.
+
+100
+00:06:17,050 --> 00:06:20,140
+And the risk has this more slightly
+complicated formula.
+
+101
+00:06:20,140 --> 00:06:23,704
+So you have the weight squared,
+
+102
+00:06:23,704 --> 00:06:28,710
+times the risk of each asset.
+But then, you
+
+103
+00:06:28,710 --> 00:06:33,980
+also have to add in, sort of those extra
+contributions to the risk that are
+
+104
+00:06:33,980 --> 00:06:39,259
+coming from, from the correlation between
+all of the different assets.
+
+105
+00:06:46,000 --> 00:06:50,070
+So, well I guess if just looking at this
+thing, it's not a very pretty formula.
+
+106
+00:06:50,070 --> 00:06:51,984
+So then, first thing I want to do is see,
+
+107
+00:06:51,984 --> 00:06:54,020
+is there a nicer way I can write this
+down?
+
+108
+00:06:54,020 --> 00:06:57,510
+So I'll try doing the same thing using
+matrix notation.
+
+109
+00:06:57,510 --> 00:07:00,114
+So now instead of having all the, you
+know, w1 up
+
+110
+00:07:00,114 --> 00:07:03,730
+to wn, I'll just think about that as, as a
+single vector.
+
+111
+00:07:03,730 --> 00:07:10,418
+And remember when I put a row like this
+in, in parentheses, I mean column vector.
+
+112
+00:07:10,418 --> 00:07:11,041
+So I'll
+
+113
+00:07:11,041 --> 00:07:14,510
+do one vector with the weights in it.
+
+114
+00:07:14,510 --> 00:07:17,220
+A second vector with the expected returns
+in it.
+
+115
+00:07:17,220 --> 00:07:20,480
+So I have a weight for each asset, and an
+expected return for each asset.
+
+116
+00:07:23,110 --> 00:07:26,220
+Then I can write the expected return, for
+the entire portfolio.
+
+117
+00:07:26,220 --> 00:07:27,970
+So that's what's on the left-hand side
+
+118
+00:07:27,970 --> 00:07:30,400
+here, expected return here for the entire
+portfolio.
+
+119
+00:07:31,610 --> 00:07:35,250
+And the previous slide, that was just the
+sum of Wi times mu i.
+
+120
+00:07:36,280 --> 00:07:40,120
+But in matrix vector notation, I can just
+write this as W transpose mu.
+
+121
+00:07:43,170 --> 00:07:49,058
+The risk, it turns out, that that sum that
+I had, that kind of ugly sum on the
+
+122
+00:07:49,058 --> 00:07:55,780
+previous slide, can be expressed quite
+simply at just W transpose sigma W.
+
+123
+00:07:55,780 --> 00:07:59,470
+And here this sigma, so this is not
+singular values,
+
+124
+00:07:59,470 --> 00:08:03,720
+this is the covariance matrix for the
+returns of the assets.
+
+125
+00:08:07,170 --> 00:08:09,020
+And so that's going to look like this.
+
+126
+00:08:09,020 --> 00:08:14,670
+So on the diagonal, I have the, the risk
+of each individual asset.
+
+127
+00:08:14,670 --> 00:08:17,574
+And then in the off diagonal entries, I
+
+128
+00:08:17,574 --> 00:08:21,446
+end up with the volatility for here, for
+instance,
+
+129
+00:08:21,446 --> 00:08:25,142
+the volatility of asset 1 times the
+volatility of
+
+130
+00:08:25,142 --> 00:08:29,514
+asset 2 times the correlation between
+those two assets.
+
+131
+00:08:29,514 --> 00:08:32,234
+And that's what's going to give me my
+
+132
+00:08:32,234 --> 00:08:34,410
+covariance terms.
+
+133
+00:08:34,410 --> 00:08:38,776
+And if you look back at that sum, I have
+this sort of strange notation of
+
+134
+00:08:38,776 --> 00:08:43,459
+1, less than or equal to i, strictly less
+than j, less than or equal to n.
+
+135
+00:08:43,459 --> 00:08:46,219
+And essentially what that's doing, I'm
+just
+
+136
+00:08:46,219 --> 00:08:48,691
+trying to sum up over the lower triangle.
+
+137
+00:08:48,691 --> 00:08:53,430
+So all of the values that are strictly
+below the main diagonal.
+
+138
+00:08:53,430 --> 00:08:54,930
+And then I have a 2 in front of that,
+
+139
+00:08:54,930 --> 00:08:57,660
+and that's just because this matrix is
+going to be symmetric.
+
+140
+00:08:57,660 --> 00:09:04,730
+So if I, I have sigma12 row 12, it's the
+same as sigma 21 row 21.
+
+141
+00:09:04,730 --> 00:09:08,378
+And so I'm basically, I'm summing the main
+
+142
+00:09:08,378 --> 00:09:12,470
+diagonal, and then 2 times the lower
+triangle.
+
+143
+00:09:13,510 --> 00:09:15,490
+And so that, that's what my formula is
+giving me.
+
+144
+00:09:16,500 --> 00:09:19,046
+And so I, when I'd have this as a, a
+vector of
+
+145
+00:09:19,046 --> 00:09:22,798
+weight times a variance, covariance matrix
+it, it gets a lot more
+
+146
+00:09:22,798 --> 00:09:24,000
+compact notation.
+
+147
+00:09:27,280 --> 00:09:27,780
+Okay.
+
+148
+00:09:30,690 --> 00:09:34,366
+So if I want to use these two formulas
+I've come up with now.
+
+149
+00:09:34,366 --> 00:09:36,886
+The, the mu and the Sigma, these are
+going to
+
+150
+00:09:36,886 --> 00:09:39,850
+be properties of the assets that I'm
+looking at.
+
+151
+00:09:39,850 --> 00:09:43,555
+There, there's something that generally,
+the, you know,
+
+152
+00:09:43,555 --> 00:09:46,790
+generally the investor doesn't have any
+control over.
+
+153
+00:09:46,790 --> 00:09:50,710
+You just have to look at historical data
+and say, you know, Boeing
+
+154
+00:09:50,710 --> 00:09:54,590
+has been producing a return of so much for
+the last two years.
+
+155
+00:09:54,590 --> 00:09:56,098
+You know, I think it'll probably
+
+156
+00:09:56,098 --> 00:09:57,879
+stay about that for the next six months.
+
+157
+00:09:59,670 --> 00:10:03,180
+but it's not something, I can't go to
+Boeing, for instance,
+
+158
+00:10:03,180 --> 00:10:06,300
+and say be less risky to get this number
+to go down.
+
+159
+00:10:06,300 --> 00:10:10,670
+you know, you're stuck with whatever you
+can, you can find out from the market.
+
+160
+00:10:10,670 --> 00:10:16,150
+The thing you can select, are the weights
+in your portfolio.
+
+161
+00:10:16,150 --> 00:10:19,440
+So the investor can select, you know, how
+much of Boeing am I going to buy?
+
+162
+00:10:19,440 --> 00:10:21,180
+How much of Starbucks am I going to buy?
+
+163
+00:10:21,180 --> 00:10:23,080
+How much of Microsoft am I going to buy?
+
+164
+00:10:24,500 --> 00:10:28,922
+And, once they've decided on a particular,
+vector of weights w, then you can
+
+165
+00:10:28,922 --> 00:10:33,340
+figure out what the portfolio return, and
+the portfolio risk are going to be.
+
+166
+00:10:36,280 --> 00:10:39,410
+And so, how should you go about picking w.
+
+167
+00:10:39,410 --> 00:10:41,484
+So we have two notions of optimality that
+
+168
+00:10:41,484 --> 00:10:43,924
+I'm going to talk about, now, and later
+I'll
+
+169
+00:10:43,924 --> 00:10:47,927
+show you, and so in the fifth session I'll
+show you how to solve one of these.
+
+170
+00:10:47,927 --> 00:10:52,160
+Then hopefully at the end of week eight,
+we'll get around to solving the other one.
+
+171
+00:10:56,650 --> 00:11:01,049
+So, I can try and design a portfolio to
+have a specific expected
+
+172
+00:11:01,049 --> 00:11:06,638
+return.
+And then, once I have, once I've decided
+
+173
+00:11:06,638 --> 00:11:12,550
+I want to have this specific expected
+return, then I, I choose w.
+
+174
+00:11:12,550 --> 00:11:14,290
+So there going to be a whole bunch of
+
+175
+00:11:14,290 --> 00:11:17,610
+choices, that will give me that one
+expected return.
+
+176
+00:11:17,610 --> 00:11:21,888
+And among all of those, I would want to
+choose the portfolio that's going
+
+177
+00:11:21,888 --> 00:11:24,020
+to have the minimum amount of risk.
+
+178
+00:11:26,800 --> 00:11:29,638
+And so that'll, that'll give me an
+optimization
+
+179
+00:11:29,638 --> 00:11:31,616
+problem, that I can use to find w.
+
+180
+00:11:31,616 --> 00:11:33,786
+So I want to choose w so that the risk of
+
+181
+00:11:33,786 --> 00:11:37,960
+the portfolio is minimum, given a certain
+level of expected return.
+
+182
+00:11:37,960 --> 00:11:43,875
+And then I can solve sort of a related
+problem of, I could instead of targeting
+
+183
+00:11:43,875 --> 00:11:49,680
+the expected return level, I could say, I
+want to have this much risk.
+
+184
+00:11:49,680 --> 00:11:52,048
+So if, for some reason, I, you know,
+
+185
+00:11:52,048 --> 00:11:54,032
+said, I, I want a very conservative
+
+186
+00:11:54,032 --> 00:11:56,778
+portfolio, or I want a high-growth
+portfolio.
+
+187
+00:11:56,778 --> 00:11:59,286
+I can communicate, you know, some number
+of
+
+188
+00:11:59,286 --> 00:12:02,790
+some level of risk I'm willing to
+tolerate.
+
+189
+00:12:02,790 --> 00:12:07,206
+And so if I can tolerate a certain level
+of risk, then I want to choose w so that
+
+190
+00:12:07,206 --> 00:12:10,173
+my portfolio gives me the highest level of
+expected
+
+191
+00:12:10,173 --> 00:12:12,900
+return, that I can get at that level of
+risk.
+
+192
+00:12:16,810 --> 00:12:18,811
+And so both of these turn out
+
+193
+00:12:18,811 --> 00:12:23,389
+to be something called constrained
+optimization problems.
+
+194
+00:12:23,389 --> 00:12:28,607
+So the constraint, is I'm not trying to
+maximize the expected return.
+
+195
+00:12:28,607 --> 00:12:32,790
+So that would be an unconstrained
+optimization problem.
+
+196
+00:12:32,790 --> 00:12:36,705
+But I want to maximize my expected return,
+subject to
+
+197
+00:12:36,705 --> 00:12:41,840
+a constraint oops, sorry I want to
+minimize my portfolio risk.
+
+198
+00:12:41,840 --> 00:12:46,940
+So in the first one I want to minimize my
+risk, subject to the constraint that I'm
+
+199
+00:12:46,940 --> 00:12:52,780
+hitting my target expected return.
+And in the second, the second task.
+
+200
+00:12:53,820 --> 00:12:55,516
+So I have a target level of risk.
+
+201
+00:12:55,516 --> 00:12:59,510
+So my constraint is, I want a certain
+level of risk in my portfolio.
+
+202
+00:12:59,510 --> 00:13:02,030
+And now I want to maximize the expected
+return,
+
+203
+00:13:02,030 --> 00:13:04,590
+that I can get at that level of risk.
+
+204
+00:13:04,590 --> 00:13:06,280
+So they're optimization problems.
+
+205
+00:13:06,280 --> 00:13:06,940
+I'm trying
+
+206
+00:13:06,940 --> 00:13:11,220
+to find a minimum or a maximum, but I'm
+subject to a certain constraint.
+
+207
+00:13:11,220 --> 00:13:16,030
+And then there's actually one more
+constraint, that's hanging over from a
+
+208
+00:13:16,030 --> 00:13:19,520
+previous slide, is that the w vector has
+to sum up to 1.
+
+209
+00:13:19,520 --> 00:13:22,200
+So, there's two constraints for each of
+these.
+
+210
+00:13:22,200 --> 00:13:25,896
+So, the first one has expected return, has
+to be equal to
+
+211
+00:13:25,896 --> 00:13:29,730
+some value, and my portfolio weights have
+to sum up to 1.
+
+212
+00:13:29,730 --> 00:13:32,370
+And, satisfy those two constraints.
+
+213
+00:13:32,370 --> 00:13:36,350
+And then find the one that has the minimum
+risk.
+
+214
+00:13:36,350 --> 00:13:40,270
+And, and then sort of, related problem for
+the second goal.
+
+215
+00:13:42,080 --> 00:13:45,030
+And see, generally the way I like to write
+these things down.
+
+216
+00:13:46,590 --> 00:13:50,050
+So I have a, a minimum variance
+optimization.
+
+217
+00:13:50,050 --> 00:13:51,500
+So, what I'm trying to do.
+
+218
+00:13:53,080 --> 00:13:56,540
+This, this turns out to be something
+called the portfolio variance.
+
+219
+00:13:56,540 --> 00:13:57,661
+I'm calling it risk,
+
+220
+00:13:57,661 --> 00:14:01,142
+because that's a, it's a mathematical
+concept, that can be used to
+
+221
+00:14:01,142 --> 00:14:05,510
+describe sort of, how spread out the
+return from my portfolio will be.
+
+222
+00:14:05,510 --> 00:14:09,310
+So how, how far away from the expected
+return, do I expect it to be?
+
+223
+00:14:10,580 --> 00:14:12,809
+So I want to minimize this quantity.
+
+224
+00:14:12,809 --> 00:14:16,400
+So this is minimizing the variance or
+minimizing the risk.
+
+225
+00:14:16,400 --> 00:14:18,832
+And then I write below that, subject to,
+and
+
+226
+00:14:18,832 --> 00:14:21,230
+the I just list the constraints that I
+have.
+
+227
+00:14:22,640 --> 00:14:22,776
+So
+
+228
+00:14:22,776 --> 00:14:25,680
+I've been using e to be a vector of all
+one's.
+
+229
+00:14:25,680 --> 00:14:27,760
+So e transposed w.
+
+230
+00:14:27,760 --> 00:14:31,870
+That just means that the sum of w, has to
+be equal to 1.
+
+231
+00:14:31,870 --> 00:14:35,240
+So my first constraint is that the weights
+sum up to 1.
+
+232
+00:14:35,240 --> 00:14:38,780
+So I, I spend exactly the amount of money
+I have to invest.
+
+233
+00:14:41,770 --> 00:14:43,250
+And then the second constraint.
+
+234
+00:14:44,320 --> 00:14:48,290
+So this, I argued before was the expected
+return on my portfolio.
+
+235
+00:14:49,770 --> 00:14:54,189
+And I'm trying to minimize the variance,
+at at given level of expected return.
+
+236
+00:14:54,189 --> 00:14:57,569
+So I have to choose an expected level of,
+of a level of expected
+
+237
+00:14:57,569 --> 00:15:02,290
+return, that I'm calling mu p, so that's
+the expected return for the portfolio.
+
+238
+00:15:03,530 --> 00:15:06,698
+And I'm limiting myself to vectors w,
+
+239
+00:15:06,698 --> 00:15:12,055
+that satisfy this linear equation here.
+So this is the n asset case.
+
+240
+00:15:12,055 --> 00:15:16,578
+So, you can write it all out just, using
+matrices and vectors.
+
+241
+00:15:16,578 --> 00:15:21,170
+And we know this doesn't get any more
+complicated, as n gets bigger.
+
+242
+00:15:21,170 --> 00:15:23,294
+It's just the matrices and the vectors are
+
+243
+00:15:23,294 --> 00:15:26,818
+getting bigger, but writing it down stays
+pretty compact.
+
+244
+00:15:26,818 --> 00:15:31,080
+you can already see what this looks like
+just for the two asset case.
+
+245
+00:15:31,080 --> 00:15:31,728
+And this is
+
+246
+00:15:31,728 --> 00:15:36,192
+actually trivial because, if I look at
+the, the two constraints, I have
+
+247
+00:15:36,192 --> 00:15:40,693
+two equations and two unknowns.
+So there's only one point that's going to
+
+248
+00:15:40,693 --> 00:15:46,852
+satisfy the, the constraints here.
+So there's actually no minimization to do.
+
+249
+00:15:46,852 --> 00:15:49,085
+There's just one one portfolio that I
+would have here.
+
+250
+00:15:49,085 --> 00:15:52,652
+So, I just wanted to show what it looks
+like written out.
+
+251
+00:15:52,652 --> 00:15:56,981
+So this a quadratic form, and it's just
+equal
+
+252
+00:15:56,981 --> 00:16:00,422
+to what w transpose sigma w would look
+
+253
+00:16:00,422 --> 00:16:05,670
+like, if you did the, did the matrix
+multiplication.
+
+254
+00:16:07,020 --> 00:16:11,430
+And then my few constraints, are just the
+sum of the w's has to be 1.
+
+255
+00:16:11,430 --> 00:16:14,277
+And the expected return of the portfolio,
+has
+
+256
+00:16:14,277 --> 00:16:17,700
+to equal my pre-specified level of
+expected return.
+
+257
+00:16:19,990 --> 00:16:22,518
+So then the other possibility, was to
+
+258
+00:16:22,518 --> 00:16:25,790
+maximize the expected return of the
+portfolio.
+
+259
+00:16:26,800 --> 00:16:30,040
+So, this was my expression for the
+expected return.
+
+260
+00:16:30,040 --> 00:16:33,172
+So now I'm going to say maximize, and put
+the
+
+261
+00:16:33,172 --> 00:16:36,942
+quantity that I want to maximize on the
+first line.
+
+262
+00:16:36,942 --> 00:16:40,680
+And my constraints are going to be, well,
+I still
+
+263
+00:16:40,680 --> 00:16:43,770
+have to have my vector w summing up to 1.
+
+264
+00:16:45,280 --> 00:16:48,230
+But now I have to choose a target level of
+risk.
+
+265
+00:16:48,230 --> 00:16:50,933
+So I have to, have to say who ever is
+going to do this portfolio
+
+266
+00:16:50,933 --> 00:16:54,650
+optimization problem, you know, this is
+the risk level that I would like to have.
+
+267
+00:16:55,800 --> 00:16:59,560
+And that's then going to give this
+quadratic form, as the constraint now.
+
+268
+00:16:59,560 --> 00:17:04,022
+So I'm, I'm limited to choosing from
+vectors, that
+
+269
+00:17:04,022 --> 00:17:07,280
+are going to give me this level of risk.
+
+270
+00:17:09,710 --> 00:17:15,260
+And so if I write that out pretty much all
+that happens is the, the constraint here,
+
+271
+00:17:15,260 --> 00:17:20,900
+or the, the objective here, the thing I'm
+trying to minimize, becomes a constraint.
+
+272
+00:17:22,740 --> 00:17:26,120
+I still have the constraint w1 plus w2
+equals 1.
+
+273
+00:17:27,510 --> 00:17:30,480
+And now, it's just my expected return that
+I'm trying to optimize.
+

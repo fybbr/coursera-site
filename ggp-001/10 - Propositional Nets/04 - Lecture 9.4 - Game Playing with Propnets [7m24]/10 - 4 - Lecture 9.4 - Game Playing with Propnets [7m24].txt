@@ -1,0 +1,219 @@
+In our work thus far, we've been
+concentrating on
+game players that process GDL, directly
+during game play.
+This works reasonably well, as we've seen
+in the past.
+But we can do even better.
+As it turns out, it's possible to convert
+an
+arbitrary GDL game description, into an
+equivalent propositional net.
+And then it's possible to use that
+propositional net to determine legality,
+update, termination, and so forth.
+Doing things this way is frequently more
+efficient than interpreting GDL.
+Not always, but frequently.
+Moreover, as we shall see, it facilitates
+the discovery of game structure
+that can dramatically alter the complexity
+of playing many of these games.
+The
+details of using propnets to play games
+are somewhat tedious.
+And I'm not going to try to go through
+them all here.
+If you want to learn more about this you
+should read the notes.
+In this segment, I'm simply going to
+summarize some of the
+main issues, and the benefits of using
+propnets during game play.
+And in the next segment, I'll explore how
+propnets
+can be used offline to restructure games
+in dramatic ways.
+Consider a simple variation on the max
+score subroutine that we saw earlier.
+Subroutine takes a game description as
+argument,
+explores the entire game tree, and returns
+true if and only if, the player has a
+forced win in the specified game.
+Let's consider two implementations.
+The first, called, genwinnerp, uses a GDL
+description of a game.
+And the second,
+called propwinnerp, uses a propnet.
+In order to compare the two, let's
+consider two versions of tic tac toe.
+The first is just our usual encoding in
+GDL.
+The second, which is called tttground, is
+also a GD
+encoding, GDL encoding, but with all
+variables replaced by ground terms.
+I'm including this case, to see whether
+the
+performance using propnets is due the
+elimination of variables,
+or whether it's due to other factors.
+Now let's look at the results.
+In my experiment, I first applied
+genwinnerp
+to tic tac toe, to get a baseline.
+Sure enough, explored 5,478 states.
+All four, all 5,478 states in the game
+tree.
+Took approximately 130 seconds, and used
+142 megabytes of memory.
+Now that's a little slow, but this was
+run sometime ago on a relatively slow
+computer.
+Next, I applied genwinnerp to tttground,
+to
+see whether the elimination of variables
+would help.
+In fact, things got worse.
+Though the program used less memory, the
+run
+time increased almost 600 seconds, that's
+10 minutes.
+Actually, it was not at all surprising.
+By eliminating variables, and grounding
+things out, we increase the number
+of rules that must be checked, and this
+increases the run time.
+Finally, I used a propositional net
+program, propwinnerb.
+On the propositional net description,
+tttpropnet.
+And explored the same 5478 states.
+But this time, the run time decreased just
+over 10 seconds.
+And the memory usage dropped to under 6
+megabytes.
+I think that's a significant saving.
+But guess what?
+We can do even better.
+Propwinnerp, still processes propnets
+interpretativly.
+It does not have to be done this way, but
+that's what it does.
+We could also represent the sate of the
+propnet
+as a list of values, or as a bit vector.
+And we can convert the propnet in this
+interpreter
+to special purpose code, to process these
+representations of state.
+In performing the usual game analysis
+operations.
+This translation can be done entirely
+automatically.
+And moreover, we can then compile the
+resulting programs to get even better
+speed.
+Here for example is an implementation of
+tic tac toe, in which we
+represent the state of the game, as a list
+of 29 boolean values.
+That's 1 bit for x.
+1 bit for o.
+And 1 bit for blank, in each of the 9
+cells.
+Together with 1 bit for control by white,
+and 1 bit for control by black.
+Okay.
+Obviously we can do even better by
+exploiting some mutual exclusions.
+For example, it is not possible for both
+white and black to have control
+at the same time.
+So we really need just one bit for control
+rather than two.
+But the translation from GDL in this way
+is easy.
+And this we'll see.
+We're still going to get plenty of
+benefit.
+Okay, now.
+Given this represen, disrepresentation of
+state, we can define
+operations for testing states and updating
+states, and so forth.
+For example, we can determine whether
+there's an x in cell
+1, 1, by taking the 0th component of our
+list of values.
+We can determine whether there's an o in
+cell 1,1 by taking the first component.
+We can compute update in similar fashion.
+If white does mark 1,1, and there's a
+blank in cell 1, 1.
+Then there will be a x in cell 1, 1 after
+the action is done.
+Symmetrically there will be an o if black
+does mark 1, 1.
+And if the cell is empty, and white and
+black do not do mark 1,1.
+Then the cell will remain blank in the
+next state, and so forth.
+Now, by using propositional bit factors in
+place
+of lists of booleans, we can do even
+better.
+Here, here I've defined an initial bit
+factor 29 bits long.
+and we can then implement our subroutines
+by performing bit operations on these
+vectors.
+Doing things this way allows us to compute
+the entire state
+update in a single operation, rather than
+operations for each proposition.
+And thereby achieves even greater
+efficiency.
+Okay,
+so here are the results.
+a, same as before, 130 seconds for
+geniwinnerp on the GDL description.
+Just over 10 seconds for propwinnerp,
+that's the interpreted version.
+on the corresponding propnet for tic tac
+toe.
+Using the list of values approach, and
+compiling the resulting
+code, we see that the time drops to under
+a second.
+And the memory usage drops
+to just 3 1/2 megabytes.
+In, in fact, this memory usage can, made
+even lower still.
+Moreover, moving to propositional bit
+factors saves us even more.
+We're down to just 234 miliseconds, and
+only 64 bytes of memory.
+It's a lot better than the interpreted
+GDL.
+Now that's pretty impressive, if you ask
+me.
+We're down to, we can play four games
+in one second on this relatively slow
+machine.
+However, it's in principle possible to do
+even better yet.
+One idea is to use so called, Field
+Programable Gate Arrays, FPGAs.
+These are run-time programable arrays of
+hardware gates.
+Given the structure of popnets, it's
+possible
+to use FPGAs for game tree search.
+Now, although nobody's
+yet done this experiment, it seems likely
+that so doing could
+lead to further speeds up of an order
+magnitude or more.
+

@@ -1,0 +1,450 @@
+1
+00:00:04,140 --> 00:00:06,720
+Compulsive deliberation is wasteful, in
+
+2
+00:00:06,720 --> 00:00:09,050
+that it's computations are repeated
+unnecessarily.
+
+3
+00:00:10,380 --> 00:00:12,730
+Once a player is able to find a path to a
+terminal state
+
+4
+00:00:12,730 --> 00:00:16,739
+with maximum reward, he should not have to
+repeat that computation on every step.
+
+5
+00:00:18,700 --> 00:00:21,800
+Sequential planning, which we're going to
+be seeing in this lesson,
+
+6
+00:00:21,800 --> 00:00:23,780
+is the antithesis of compulsive
+deliberation,
+
+7
+00:00:23,780 --> 00:00:25,420
+in which no work is repeated.
+
+8
+00:00:25,420 --> 00:00:27,270
+Once a sequential planner finds a good
+path,
+
+9
+00:00:27,270 --> 00:00:29,350
+it simply saves the sequence of actions
+along
+
+10
+00:00:29,350 --> 00:00:31,560
+that path, and then executes those
+actions.
+
+11
+00:00:31,560 --> 00:00:34,579
+Step by step until the game is done
+without any further deliberation.
+
+12
+00:00:36,370 --> 00:00:38,260
+So, sequential planner's one that produces
+
+13
+00:00:38,260 --> 00:00:40,270
+an optimal sequential plan usually during
+the
+
+14
+00:00:40,270 --> 00:00:43,870
+start clock and then executesd the step of
+that plan during game play.
+
+15
+00:00:45,370 --> 00:00:49,650
+Sequential planning has multiple benefits
+relative to compulsive deliberation.
+
+16
+00:00:49,650 --> 00:00:54,670
+First of all, it's not as wasteful since
+it searches the game tree just once.
+
+17
+00:00:54,670 --> 00:00:57,000
+The start clock's sufficiently long, the
+planning
+
+18
+00:00:57,000 --> 00:00:59,700
+can be done entirely during the start
+clock.
+
+19
+00:00:59,700 --> 00:01:02,840
+And after that, the execution time is very
+low, since all the player needs to do
+
+20
+00:01:02,840 --> 00:01:04,410
+on a step is to look up the
+
+21
+00:01:04,410 --> 00:01:06,800
+action for that step, without doing any
+search whatsoever.
+
+22
+00:01:08,420 --> 00:01:10,570
+Note that although the planning is usually
+done during the start up
+
+23
+00:01:10,570 --> 00:01:13,690
+period of the game, it can also be done
+during regular game play.
+
+24
+00:01:13,690 --> 00:01:18,040
+And it's also possible to mix sequential
+planning with other techniques.
+
+25
+00:01:18,040 --> 00:01:19,930
+For example in the case of large games, a
+player
+
+26
+00:01:19,930 --> 00:01:24,490
+might randomly search during the initial
+part of the game.
+
+27
+00:01:24,490 --> 00:01:26,330
+And then switch the sequential planning
+once the game
+
+28
+00:01:26,330 --> 00:01:29,072
+tree becomes small enough to produce the
+sequential plan.
+
+29
+00:01:29,072 --> 00:01:31,670
+Of course in the last case the player's
+abilities
+
+30
+00:01:31,670 --> 00:01:37,060
+exceed depends in the strategy used before
+sequential planning begins.
+
+31
+00:01:37,060 --> 00:01:40,410
+Okay, let's start our look at sequential
+planning with a couple of definitions.
+
+32
+00:01:40,410 --> 00:01:45,010
+A sequential plan, for a single player
+game, is a sequence of actions that
+
+33
+00:01:45,010 --> 00:01:47,580
+leads from the initial state of the game
+to a terminal state.
+
+34
+00:01:48,680 --> 00:01:51,440
+Such that, every action in the sequence is
+
+35
+00:01:51,440 --> 00:01:53,629
+legal in the state in which the action's
+performed.
+
+36
+00:01:54,790 --> 00:01:59,490
+And 2, none of the intermediate states
+produced during the execution is terminal.
+
+37
+00:02:00,710 --> 00:02:02,880
+The sequential plan's optimal if and only
+if
+
+38
+00:02:02,880 --> 00:02:06,030
+no other sequential plan produces a
+greater final reward.
+
+39
+00:02:07,940 --> 00:02:10,290
+Here are some examples of sequential plans
+for
+
+40
+00:02:10,290 --> 00:02:10,790
+eight puzzle.
+
+41
+00:02:12,340 --> 00:02:16,640
+Now, the first play prescribes a move to
+the right Followed by a
+
+42
+00:02:16,640 --> 00:02:21,190
+move down, followed by another move to the
+right, and another move down.
+
+43
+00:02:21,190 --> 00:02:24,290
+And this clearly leads to a state in which
+all the tiles
+
+44
+00:02:24,290 --> 00:02:27,900
+are in their goal positions, and the empty
+cells in the lower right.
+
+45
+00:02:27,900 --> 00:02:30,532
+And so the value for this stage is 100.
+
+46
+00:02:30,532 --> 00:02:34,629
+However this is not the only plan that
+works.
+
+47
+00:02:35,630 --> 00:02:41,210
+The player could also move right, move
+down, move left, move right,
+
+48
+00:02:41,210 --> 00:02:46,750
+move right, move down, and arrive at the
+same state, after a couple more steps.
+
+49
+00:02:48,030 --> 00:02:53,460
+Or, it could move right, down, left,
+right, left,
+
+50
+00:02:53,460 --> 00:02:56,950
+right, right, and down to get there as
+well.
+
+51
+00:02:59,490 --> 00:03:04,050
+Now agreed, these later two plans are
+longer than they need to be.
+
+52
+00:03:05,400 --> 00:03:06,650
+but they're both optimal in that they
+
+53
+00:03:06,650 --> 00:03:08,860
+produce a terminal state with the maximal
+value.
+
+54
+00:03:10,870 --> 00:03:13,270
+By contrast, the sequential plan,
+
+55
+00:03:15,290 --> 00:03:22,040
+right, left, right, left, right, left,
+right, left is not optimal.
+
+56
+00:03:22,040 --> 00:03:25,570
+It leads to a terminal state since any
+plan with eight steps is terminal.
+
+57
+00:03:25,570 --> 00:03:28,438
+However, the resulting reward is only 40
+points.
+
+58
+00:03:28,438 --> 00:03:30,840
+And there are other plans that produce
+higher values.
+
+59
+00:03:34,170 --> 00:03:38,030
+Implementation of sequential planner is,
+again, similar to that for
+
+60
+00:03:38,030 --> 00:03:42,310
+a previous system, method that we've seen,
+namely compulsive deliberation.
+
+61
+00:03:44,140 --> 00:03:46,615
+We set up a couple of additional global
+variables in this case.
+
+62
+00:03:46,615 --> 00:03:50,419
+One to hold the plan, and the other to
+keep track of the current step.
+
+63
+00:03:54,020 --> 00:03:56,750
+During the start clock, the player uses
+the
+
+64
+00:03:56,750 --> 00:04:00,100
+best plan subroutine to produce a
+sequential plan.
+
+65
+00:04:00,100 --> 00:04:06,480
+And has to reverse the plan, as we'll see
+since, best plan builds the plan backward.
+
+66
+00:04:08,110 --> 00:04:09,990
+the plan's then stored in the plan
+variable,
+
+67
+00:04:09,990 --> 00:04:13,460
+and the step counter is initialized to
+zero.
+
+68
+00:04:13,460 --> 00:04:15,480
+Finally, the play handler in each step
+simply
+
+69
+00:04:15,480 --> 00:04:18,000
+reads off the action corresponding to that
+step,
+
+70
+00:04:19,060 --> 00:04:22,960
+updates the step counter, and returns the
+action for that step.
+
+71
+00:04:26,610 --> 00:04:30,340
+Okay, so the workhorse of this is clearly
+the best plan subroutine.
+
+72
+00:04:30,340 --> 00:04:33,830
+Not surprisingly it's an analogous to Mac
+Score.
+
+73
+00:04:33,830 --> 00:04:38,180
+Takes a state as argument, but instead of
+returning a simple score, returns
+
+74
+00:04:38,180 --> 00:04:42,600
+a pair consisting of a score and a plan to
+achieve that score.
+
+75
+00:04:43,905 --> 00:04:44,870
+Alright, let's see how this works.
+
+76
+00:04:46,300 --> 00:04:48,950
+As in Mac Score, first step is to check
+whether
+
+77
+00:04:48,950 --> 00:04:51,720
+the state is terminal if so then the
+procedure simply computes
+
+78
+00:04:51,720 --> 00:04:53,770
+the player's reward for that state, and
+
+79
+00:04:53,770 --> 00:04:56,430
+returns that score paired with an empty
+plan.
+
+80
+00:04:56,430 --> 00:04:58,130
+That is, an empty list of actions,
+
+81
+00:05:02,850 --> 00:05:05,790
+otherwise it computes all legal actions
+for the specified state.
+
+82
+00:05:07,660 --> 00:05:11,250
+It computes the next state corresponding
+to the first of these actions
+
+83
+00:05:11,250 --> 00:05:14,670
+and computes the best score and best plan
+for that successor state.
+
+84
+00:05:14,670 --> 00:05:15,170
+And
+
+85
+00:05:17,650 --> 00:05:19,630
+it then searches the remaining possible
+actions to
+
+86
+00:05:19,630 --> 00:05:20,780
+see if it can find a better one.
+
+87
+00:05:22,790 --> 00:05:24,645
+For each it computes the next state, gets
+
+88
+00:05:24,645 --> 00:05:26,670
+the best score and best plan for that
+state.
+
+89
+00:05:26,670 --> 00:05:30,340
+And it compares the score to the best
+score it's seen so far.
+
+90
+00:05:30,340 --> 00:05:35,200
+If the score is better, then it saves that
+score and the corresponding plan.
+
+91
+00:05:35,200 --> 00:05:38,770
+Now with the action that got it there
+appended to the end.
+
+92
+00:05:43,770 --> 00:05:46,290
+After all the actions are executed, best
+plan turns
+
+93
+00:05:46,290 --> 00:05:48,540
+a pair of the best score and the best
+plan.
+

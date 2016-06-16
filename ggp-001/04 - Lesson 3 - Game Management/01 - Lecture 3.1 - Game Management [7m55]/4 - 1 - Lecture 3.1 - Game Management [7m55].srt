@@ -1,0 +1,632 @@
+1
+00:00:07,540 --> 00:00:10,150
+This lesson's an overview of Game
+Management.
+
+2
+00:00:11,380 --> 00:00:14,010
+More properly it should be called Match
+Management as the issue
+
+3
+00:00:14,010 --> 00:00:17,450
+is how to manage individual matches of
+games, not the games themselves.
+
+4
+00:00:17,450 --> 00:00:20,860
+We'll start with an overview of the
+general game
+
+5
+00:00:20,860 --> 00:00:25,100
+playing ecosystem, and the central role of
+the game manager.
+
+6
+00:00:25,100 --> 00:00:29,610
+But then discuss the general game playing
+communication protocol, and
+
+7
+00:00:29,610 --> 00:00:31,280
+finally we see how it's used in a simple
+game.
+
+8
+00:00:33,670 --> 00:00:36,694
+Here's a diagram of the typical general
+game-playing ecosystem.
+
+9
+00:00:36,694 --> 00:00:39,450
+At the center is the Game Manager.
+
+10
+00:00:39,450 --> 00:00:41,728
+The Game Manager maintains the database
+
+11
+00:00:41,728 --> 00:00:44,542
+of game descriptions, maintains some
+temporary
+
+12
+00:00:44,542 --> 00:00:49,380
+state for matches while they're running
+and maintains a database of match results.
+
+13
+00:00:51,440 --> 00:00:53,588
+The Game Manager communicates with game
+players using
+
+14
+00:00:53,588 --> 00:00:57,220
+the internet's TCP/IP protocol and more
+specifically HTTP.
+
+15
+00:00:58,760 --> 00:01:01,280
+It also provides a user interface for
+users who want to
+
+16
+00:01:01,280 --> 00:01:05,890
+schedule matches and provides graphics for
+spectators watching matches in progress.
+
+17
+00:01:08,850 --> 00:01:13,430
+In the current GGP communication language
+there are five types of messages.
+
+18
+00:01:14,735 --> 00:01:17,990
+that you use strict communication between
+the game manager and the game players.
+
+19
+00:01:17,990 --> 00:01:21,590
+Mainly, info, start, play, stop, and
+abort.
+
+20
+00:01:21,590 --> 00:01:22,930
+Let's look at each one of these in turn.
+
+21
+00:01:24,880 --> 00:01:28,980
+An info message is used to confirm that a
+player is up and running.
+
+22
+00:01:33,810 --> 00:01:35,940
+The general form is shown here.
+
+23
+00:01:35,940 --> 00:01:38,760
+Upon receipt of an info message, a player
+is expected to return
+
+24
+00:01:38,760 --> 00:01:41,790
+ready, if it is ready to receive messages
+and play a game.
+
+25
+00:01:41,790 --> 00:01:44,950
+Otherwise, it should return nil or busy.
+Of
+
+26
+00:01:46,960 --> 00:01:50,190
+course, if a player is not running, or not
+connected, there'll be no response.
+
+27
+00:01:50,190 --> 00:01:53,450
+So in practice, info messages sometimes
+evoke no reply at all.
+
+28
+00:01:53,450 --> 00:01:53,950
+A
+
+29
+00:01:56,990 --> 00:01:59,550
+start message is used to initialize a
+match.
+
+30
+00:02:00,870 --> 00:02:03,560
+The general form of start message is shown
+here.
+
+31
+00:02:03,560 --> 00:02:04,790
+The messages begins with the keyword
+
+32
+00:02:04,790 --> 00:02:07,790
+start, and that's followed by five
+arguments.
+
+33
+00:02:08,990 --> 00:02:11,360
+namely match identifier is the sequence of
+
+34
+00:02:11,360 --> 00:02:13,830
+alpha numeric characters beginning with a
+lower-case letter.
+
+35
+00:02:15,140 --> 00:02:17,830
+Uniquely distinguishes the match.
+
+36
+00:02:19,200 --> 00:02:22,240
+There's a role for the player to play,
+chosen from among the roles
+
+37
+00:02:22,240 --> 00:02:23,530
+mentioned in the game description
+
+38
+00:02:25,720 --> 00:02:29,290
+a list of game rules, written as sentences
+in prefix
+
+39
+00:02:29,290 --> 00:02:34,070
+gdl, a startclock in seconds, and a
+playclock, also in seconds.
+
+40
+00:02:35,310 --> 00:02:39,170
+Upon receipt of a start message, a player
+should prepare itself to play a match.
+
+41
+00:02:39,170 --> 00:02:42,720
+Once it's done, to reply ready to the game
+manager that it's ready to begin.
+
+42
+00:02:44,860 --> 00:02:46,680
+the ggp protocol requires that the
+
+43
+00:02:46,680 --> 00:02:50,230
+player reply before startclock seconds
+have elapsed.
+
+44
+00:02:50,230 --> 00:02:52,640
+If the game manager has not received a
+reply by this
+
+45
+00:02:52,640 --> 00:02:55,520
+time, it proceeds on the assumption that
+the player is ready.
+
+46
+00:02:55,520 --> 00:02:56,020
+A
+
+47
+00:02:58,860 --> 00:03:02,820
+play message is used to request an action
+from a player.
+
+48
+00:03:02,820 --> 00:03:06,270
+The general forms of a play, message are
+shown here.
+
+49
+00:03:06,270 --> 00:03:08,210
+In each case, there's an identifier for
+the match.
+
+50
+00:03:09,350 --> 00:03:11,130
+On the first request, where there's no
+
+51
+00:03:11,130 --> 00:03:14,060
+preceding move, the second argument is
+nil.
+
+52
+00:03:15,366 --> 00:03:17,860
+In all subsequent requests, the second
+argument is a list
+
+53
+00:03:17,860 --> 00:03:20,520
+of the actions of all the players on the
+preceding step.
+
+54
+00:03:21,785 --> 00:03:24,000
+The order of the deaction in the record is
+the same of the order
+
+55
+00:03:24,000 --> 00:03:25,400
+of the roles in the game description.
+
+56
+00:03:26,710 --> 00:03:28,380
+Note that if a player fails to reply or
+does
+
+57
+00:03:28,380 --> 00:03:31,509
+not reply in time, the Manager substitutes
+a random legal action.
+
+58
+00:03:33,790 --> 00:03:36,400
+Upon receipt of a play message, a player
+uses
+
+59
+00:03:36,400 --> 00:03:39,550
+the move information to update its state
+as necessary.
+
+60
+00:03:40,570 --> 00:03:44,914
+Then computes its next move and returns
+that as answer.
+
+61
+00:03:44,914 --> 00:03:50,015
+the ggb protocol requires that the player
+reply before
+
+62
+00:03:50,015 --> 00:03:52,510
+playclock seconds have elapsed, if the
+Game Manager has
+
+63
+00:03:52,510 --> 00:03:54,530
+not received a reply by this time, or
+receives
+
+64
+00:03:54,530 --> 00:03:57,910
+an illegal action, it substitutes an
+arbitrary legal action.
+
+65
+00:04:01,400 --> 00:04:04,790
+A stop message is used to tell a player
+that a match has reached completion.
+
+66
+00:04:06,030 --> 00:04:10,000
+General form is shown here, there's a
+match ID and a
+
+67
+00:04:10,000 --> 00:04:12,610
+record of the actions of all the players
+on the preceding step.
+
+68
+00:04:14,850 --> 00:04:16,600
+On receipt of a stop message, player can
+clean
+
+69
+00:04:16,600 --> 00:04:18,990
+up after playing the match move his, the
+move
+
+70
+00:04:18,990 --> 00:04:22,610
+is sent along in case the player wants to
+
+71
+00:04:22,610 --> 00:04:25,400
+know the action that, the actions that
+terminated the game.
+
+72
+00:04:27,070 --> 00:04:29,310
+Now after finishing up the player should
+return done.
+
+73
+00:04:32,230 --> 00:04:33,625
+Finally, an abort message is used to
+
+74
+00:04:33,625 --> 00:04:35,810
+tell players that the match has terminated
+abnormally.
+
+75
+00:04:35,810 --> 00:04:39,710
+It differs from a stop message in that the
+match not need be in a terminal state.
+
+76
+00:04:39,710 --> 00:04:44,309
+And upon receipt of an abort message,
+player, can eliminate any data
+
+77
+00:04:44,309 --> 00:04:48,350
+structures that it has set up and return
+to a ready state.
+
+78
+00:04:48,350 --> 00:04:51,270
+And once it's finished, it, should return
+done.
+
+79
+00:04:54,990 --> 00:04:57,630
+Okay, so in summary, a person's running
+match goes as follows.
+
+80
+00:04:57,630 --> 00:05:00,040
+It begins with a receipt of a request to
+run a
+
+81
+00:05:00,040 --> 00:05:05,260
+match from a human who wants to see the
+match run.
+
+82
+00:05:05,260 --> 00:05:07,560
+Game Manager may, at his discretion, send
+info messages
+
+83
+00:05:07,560 --> 00:05:10,140
+to the players to ensure that they're
+ready to play.
+
+84
+00:05:11,380 --> 00:05:13,090
+When it's ready, it sends a start message
+with
+
+85
+00:05:13,090 --> 00:05:15,580
+appropriate arguments to each player to
+initiate the match.
+
+86
+00:05:17,120 --> 00:05:20,110
+Once again, play begins, the manager sends
+play messages to each player
+
+87
+00:05:20,110 --> 00:05:22,330
+to get their plays and it then simulates
+the results.
+
+88
+00:05:24,120 --> 00:05:27,000
+This part of the process repeats until the
+game is over.
+
+89
+00:05:27,000 --> 00:05:28,960
+Manager then sends a stop message to each
+player.
+
+90
+00:05:28,960 --> 00:05:31,330
+Of course, if anything is wrong, the
+manager may send
+
+91
+00:05:31,330 --> 00:05:33,630
+an abort message at any time to terminate
+the match.
+
+92
+00:05:36,560 --> 00:05:40,780
+Okay, now, here's an example of messages
+for a quick game of Tic-Tac-Toe.
+
+93
+00:05:40,780 --> 00:05:45,080
+The game manager initiates the match here
+by sending a start
+
+94
+00:05:45,080 --> 00:05:47,270
+message to all of the players, each with a
+different role.
+
+95
+00:05:49,030 --> 00:05:52,650
+So, Player x is playing white, and Player
+y is playing black.
+
+96
+00:05:54,130 --> 00:05:56,850
+The players then respond with ready.
+
+97
+00:05:56,850 --> 00:05:58,578
+They can respond immediately, or they can
+
+98
+00:05:58,578 --> 00:06:01,100
+wait until the startclock's exhausted
+before responding.
+
+99
+00:06:01,100 --> 00:06:02,149
+That's their discretion.
+
+100
+00:06:05,360 --> 00:06:07,485
+Play begins after all the players have
+responded to the
+
+101
+00:06:07,485 --> 00:06:11,310
+start message, or after the startclock has
+expired, whichever comes first.
+
+102
+00:06:12,710 --> 00:06:14,620
+In this case the manager initiates play by
+
+103
+00:06:14,620 --> 00:06:16,596
+sending a play message to all of the
+players.
+
+104
+00:06:17,630 --> 00:06:19,020
+Since this is the first step and there are
+no
+
+105
+00:06:19,020 --> 00:06:21,810
+previous moves, move argument in the play
+message is nil.
+
+106
+00:06:23,810 --> 00:06:27,310
+In this case, the first player responds
+with the action mark 1 1.
+
+107
+00:06:27,310 --> 00:06:30,400
+One of its nine legal actions, and a
+second player
+
+108
+00:06:30,400 --> 00:06:32,580
+responds with no operages, its only legal
+action.
+
+109
+00:06:35,250 --> 00:06:38,110
+The Game Manager checks that all of these
+actions are legal,
+
+110
+00:06:38,110 --> 00:06:41,770
+simulates their effects and upstates the
+state of the game for itself.
+
+111
+00:06:41,770 --> 00:06:45,260
+And then sends play messages to the
+players to solicit their next actions.
+
+112
+00:06:46,870 --> 00:06:49,000
+Second argument in the play message, in
+this case, is a
+
+113
+00:06:49,000 --> 00:06:52,140
+list of actions received in response to
+the preceding play message.
+
+114
+00:06:52,140 --> 00:06:55,130
+In this case, the first player responds
+with noop, its only
+
+115
+00:06:55,130 --> 00:06:57,400
+legal action, and the second player
+responds with mark 1 2.
+
+116
+00:06:57,400 --> 00:06:59,820
+Not a particularly good choice.
+
+117
+00:07:03,010 --> 00:07:06,442
+Again, the Game Manager checks legality,
+simulates the move and updates
+
+118
+00:07:06,442 --> 00:07:10,460
+its state, and sends play messages
+requesting the players next actions.
+
+119
+00:07:10,460 --> 00:07:14,030
+Fir, first player here takes advantage of
+the situation and
+
+120
+00:07:14,030 --> 00:07:17,072
+plays mark 2 2 while the second player
+does noop.
+
+121
+00:07:17,072 --> 00:07:19,136
+[NOISE]
+
+122
+00:07:19,136 --> 00:07:22,680
+There's not much for the second player
+can, that
+
+123
+00:07:22,680 --> 00:07:25,520
+the second player do at this point to save
+itself.
+
+124
+00:07:25,520 --> 00:07:27,930
+Instead of staving off its immediate loss,
+it plays
+
+125
+00:07:27,930 --> 00:07:30,425
+mark 1 3, while the first player does
+noop.
+
+126
+00:07:33,860 --> 00:07:36,110
+Game manager again simulates updates and
+requests a move.
+
+127
+00:07:36,110 --> 00:07:39,400
+In this case first player goes in for the
+kill playing mark 3 3.
+
+128
+00:07:39,400 --> 00:07:43,310
+With this move, the game's over.
+
+129
+00:07:43,310 --> 00:07:46,230
+As usual in such cases, the Manager lets
+the players know by sending a suitable
+
+130
+00:07:46,230 --> 00:07:48,450
+stop message, and then stores the results
+
+131
+00:07:48,450 --> 00:07:51,670
+in the database for future reference, and
+terminates.
+

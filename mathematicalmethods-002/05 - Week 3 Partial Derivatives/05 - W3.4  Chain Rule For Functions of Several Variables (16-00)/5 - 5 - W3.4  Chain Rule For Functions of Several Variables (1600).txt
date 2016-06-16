@@ -1,0 +1,420 @@
+So now I'll talk about some extensions of
+the chain rule for functions of several
+variables.
+So suppose f of x is a differentiable
+function.
+And so here I'm, I'm starting out again
+just as functions
+of one variable and then we'll try and
+generalize from there.
+And x is equal to g of t, where g of t is
+also a differentiable function.
+And
+I can think of f as a function of t just
+by, you know.
+First I'll calculate x by evaluating g at
+t, and then I'll evaluate f at that
+number.
+And so then by the, this is the, the
+single
+variable chain rule, I have derivative of
+f with respect
+to t is equal to derivative of f with
+respect
+to x times the derivative of x with
+respect to t.
+And so if I want to evaluate the log of
+cosine of t.
+With respect to t, so here, log is playing
+the
+role of f, and cosine is playing the role
+of g.
+So f is equal to log of x, and x is equal
+to cosine of t.
+So x is equal to g of t is equal to cosine
+of t.
+So to take the derivative of this I'm just
+going to,
+it's going to be a straightforward
+application of the chain rule.
+So the derivative of f with respect to x,
+so that's the logarithm.
+The derivative of the logarithm is just
+one over x.
+Oh and I guess this reminds me of
+something, so.
+Somebody asked me after class last time
+what the difference between log and
+natural log?
+And, so for this class I actually
+mean the same thing.
+So when I write log just like this, I mean
+log with a base e.
+If I want it to be a log with a different
+base I'll write sub base, so it will be.
+Log and the subscript ten would be what
+your
+log button on, you know, old calculators
+used to do.
+I'm doing it this way just because later
+in
+the course we'll be using a program called
+R.
+And when you use the log function in R, it
+calculates a natural logger rhythm even
+though it's spelled log.
+Generally, in mathematics when you get
+sort of
+higher, further along, l, o, g means
+natural log.
+And in engineering you have l n for
+natural logarithm.
+So, 1 over x is the derivative of log x,
+when
+the log function is using e as its base.
+So here, when I take the derivative of f,
+I get 1
+over x, and then I have to multiply that
+times dx dt.
+And so here.
+G of t or dx dt is just going to be
+the derivative of cosign of t with respect
+to t.
+So that's minus sine of t.
+So then I end up with minus 1 over cosine
+of t so x
+remember is cosine of t times the sine of
+t and that's equal to.
+So sine of t divided by cosine of t,
+that's the tangent of t and so then it's
+negative, so I get minus tangent of t.
+So now let's see what happens when we have
+a function of two variables.
+So, f of xy,
+it's differentiable again.
+This time I'm going to define x to be a
+function g of t.
+And y to be a function h of t.
+Where g and h are also both differentiable
+functions.
+But in this specific case now, f is a
+function of two variables.
+But g.
+And h are both functions of t, so f of xy
+is
+actually only a function of one variable.
+It's sort of like in the pricing formula I
+had in the
+first set of slides, I have this d one and
+d two.
+They are both functions of the same
+variables.
+I guess that'll be a better example when I
+let,
+g and h be functions of more than one
+variable.
+But essentially what you are sort of doing
+is you're getting to
+a function of t by way of a function of x
+and y.
+And so I can think of f of xy.
+If I evaluate, so if I replace the x just
+by g of t, which gives me my
+x coordinate, and by h of t, y by h of t,
+which gives me my y coordinate.
+Then, this function here is really just a
+function of t, and its derivative.
+So here, I'm getting kind of clever with
+the d' s and the partial symbols.
+So, because f is only a function of one
+variable
+t, I can actually write a complete
+derivative for f.
+But the way I'm going to get that is I'm
+going
+to take the partial derivative of f with
+respect to x.
+So that's going to be a function of x and
+y but
+then by the chain rule I have to multiply
+this by.
+So this is going to be d u d t.
+So g prime of t.
+So whatever gave me this.
+So here it's going to be advantageous to
+use the,
+the other notation, which will be in the
+next line.
+[COUGH]
+And then I'm also going to take the
+partial derivative.
+With respect of f with respect to y,
+that's
+going to be a function of x and y again.
+But then I have to evaluate that I'm sorry
+multiply that by h prime of t.
+So this is, this is the chain rule popping
+out again, but I'm basically, what I'm
+trying to do is capture how f is going to
+react to a change in x.
+And how f is going to react to a change in
+y, and
+then multiply that by how fast those are
+changing with respect to t.
+And when I add those together, that's
+going to be
+giving me my full derivative of F with
+respect to t.
+And this, is not something that you're
+supposed to just look at
+and understand, this is sort of the
+definition of the chain rule.
+When I define a function this way.
+And so it's a little bit more clear when I
+write
+the, when I write out the chain rule using
+this notation.
+So I have df dt, so the full derivative of
+f with respect to t, so I just take
+the partial of f with respect to x and
+multiply
+that times the derivative of x with
+respect to t.
+And then I do the same thing with the
+partial derivative of f with respect to y,
+times the
+partial, times the derivative of y with
+respect to t.
+And so the, the, here, f is a function of
+two variables, so I have to think of doing
+partial derivatives.
+But here, x.
+And y, these are just functions of the
+single variable t, so I get full
+derivatives there.
+So we can do a quick example of this.
+So suppose I let
+f of xy equal x squared plus y plus xy
+cubed,
+and x is equal to e to the 2t, and y is
+equal to t squared.
+So first just to make sure that, you know,
+I'm not selling snake oil I suppose, I'm
+going to do this by direct computation.
+So one way to make this into a function
+of t alone is just to in the function
+itself, replace x.
+By e to the 2 t, and replace all the y's
+by t squareds.
+So if I do that, I get f of t is e to the
+4t.
+So that's just e to the 2t squared.
+T squared, that's, came from my y.
+And then y cubed this going to give me t
+to the sixth
+and the x is going to give me e to the 2t,
+and
+then I will take the derivative of this
+with respect to t.
+So, it's pretty easy.
+I can do the first two just term by term
+so.
+Here I've cheated a little bit with the
+chain rule
+I skipped doing the substitution, but
+that's 4e to the 4t.
+T squared by the power rules just going to
+be 2t.
+And then here I have a function of t times
+another function of
+t so I have to use the product rule.
+So that says derivative of the first
+function so derivative of t to the
+sixth and sixth t to the fifth times the
+second function plus the first function
+[COUGH]
+times the derivative of the second
+function.
+And so that tells me that the derivative
+of
+f with respect to t is this expression
+here.
+Let's see, yeah, so, that's as simple as
+it's going to get so it's not particularly
+pretty.
+But it's also ugly enough that if we get
+the exactly the
+same thing I'm not going to think that it
+just happened by chance.
+So, we'll try this again, this time using
+the chain
+rule So first I'm going to calculate all
+the pieces I need.
+So, I'll need the derivative of f with
+respect to
+x, the partial derivative of f with
+respect to x.
+So, that's pretty easy to see using
+linearity and the power rule.
+And the partial derivative of f with
+respect to y.
+And then I need the derivative of x with
+respect to t, so that's 2e
+to the 2t, and the derivative of y with
+respect to t, so that's just 2t.
+So remember x was equal to e to the 2t,
+and y was equal to t squared.
+And so now my expression for the
+derivative.
+With respect to t of f of xy was the
+partial of f
+with respect to x times the derivative of
+x with respect to t.
+Plus the derivative of f, sorry partial of
+f with respect
+to y times the derivative of y with
+respect to t.
+[COUGH]
+So, I'll just go ahead and from the things
+I've already calculated plug those in.
+So, hopefully, it's clear where all of
+that came
+from, just each one of these shows up
+here.
+And, now, I need to get the answer in
+terms of t so
+I'll just substitute n, the expressions
+for t for, for x and y.
+Okay.
+And then I just threw a little bit of
+simplication,
+and I think, so let's see, I put it in The
+terms with, the polynomial bit descending.
+So I have a t to the sixth term.
+A t to the fifth term.
+A t term, and a t to the zero term.
+Just, that's how I'm going to put these in
+order.
+And so, was that.
+Go back to the last thing.
+So here I had t to the 6th term, 2e to the
+2t,
+t to the 5th term, t term, and t to the 0
+term.
+So,
+so using the chain rule we got the same
+result that we did using the direct
+calculation.
+Okay,
+and so
+now we'll let again, f of xy be a
+differentiable function.
+But now we're going to allow x to be a
+function of
+two other variables.
+And y to be a function of two of them, the
+same two other variables.
+So we can express, we can write s, x as a
+function
+of s and t and y as a function of s and t.
+And here, g and h, so these functions that
+give me
+x and t, x and y, also need to be
+differentiable functions.
+So, then if I re-write the function like
+this, I can
+think of my function f as a function of s
+and t.
+And I can write the derivatives.
+So now because f of x is again, or f is
+again a function of two variables.
+I've just changed variables from x and y
+to s and t.
+I'm going to end up with two partials for
+f, for f.
+So have partial f, partial s.
+And there I'm just going to get that
+by both of these are equivalent, just
+depending on
+whether you want to think of the name of
+the function that gives you x as x or
+if you want to consider it g.
+But essentially, I just have to add up.
+The, the partials that give me my partial
+with respect to S.
+So I take the partial of f with respect
+with s, times, the partial of, sorry,
+partial of f with respect to x times the
+partial of f with respect to s.
+And I'm going to add that to partial to f
+with respect to y times the partial
+of y with respect to s.
+And that sort of captures, all of the
+dependents of my function f, on the
+variable f.
+And then I can do exactly the same thing
+for the variable t.
+[SOUND]
+And so in general If f is a function of n
+variables.
+And for each i and 1 to n, x i.
+So all I'm saying here is
+each one of those variables, is in turn a
+function of m other variables.
+Then the partial derivative of f with
+respect to tj so t
+is one of my, sort of, second level
+variables, is
+given by this formula.
+So it just says the partial of f with
+respect to tj is equal to the sum Of the
+partial of f with respect to
+each argument of f times the partial of
+the argument with respect to t j
+so really what i am trying to do is just
+capture all of the dependence of f on this
+t
+j and add those together and that's
+going to give me
+the partail of f with respect to t sub j.
+And I worked through a very complicated
+example of this as well.
+I think.
+So I'll just let you look at how I'm
+setting it up.
+So I have f is now a function of three
+variables.
+Given by this, again not very pretty
+expression, and then each one of the
+arguments of f, so x1, x2, x3 is in turn a
+function of two variables.
+So that means even though when I want to
+write down F.
+I see three things here.
+There's really only kind of two degrees of
+freedom, there's,
+there's t1 and t2 that are affecting how f
+changes.
+And to calculate the partial, I'm just
+going to take the partial of f, with
+respect to the first argument, times the
+partial of that wirh respect to t1.
+Add that to the same thing for the second
+argument..
+And add that to the same thing for the
+third argument.
+I think I actually did all of this, but
+I'm.
+It's just algebra, so you have it all on
+the slide if you would like to go through
+it.
+It comes from
+the textbook too, so I think the reason I
+chose to
+do this was just I was reading the book
+and thought,
+that's way too complicated To go sort of
+directly from here
+to here, so, now you have an explanation,
+if you need it.
+

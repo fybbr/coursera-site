@@ -1,0 +1,662 @@
+Okay.
+So, we'll do this one more time, looking
+at the maximum expected returns portfolio.
+[COUGH]
+So, just a little bit of a reminder about
+the problem I'm trying to solve.
+I have a vector of portfolio weights W,
+that I think
+of as so I'm, I'm thinking of N assets in
+my portfolio.
+So, W1 is the amount of my portfolio
+invested in asset one.
+W2 is the amount of my portfolio invested
+in asset two, and so on.
+There's n assets in the portfolio.
+And there's a constraint on this factor w,
+that the
+sum of the elements has to be equal to
+one.
+So I sort of have one chunk of money that
+I'm going to use to buy my portfolio.
+And so the, the sum of all the pieces I
+put
+together to make that portfolio will end
+up equaling that one.
+Then, for each of the n assets I'm going
+to put in my
+portfolio, I have a value mu 1 that's the
+expected return of that asset.
+I'm going to put all of those together in
+a vector and call that mu.
+And then I also have a covariance matrix
+for
+the returns of the asset that I'm going to
+call sigma.
+And so this has to be an n by n matrix,
+because it's, needs to tell me the
+variance of each asset.
+So it has to have n diagonal elements.
+And then all of the off-diagonal elements
+are going to
+tell me the co-variance between that
+particular pair of assets.
+So whatever asset corresponds to say,
+row i and column j.
+And this has some special properties, so
+it's symmetric.
+That means sigma is equal to sigma
+transpose.
+And it's positive definite.
+So this means that if I the, take an
+eigenvalue
+decomposition of sigma, all of the
+eigenvalues are greater than 0.
+And
+the problem I want to solve, I want to
+maximize the expected return subject to
+the constraint on risk.
+So, the expected return for each asset is
+mu sub i for asset i.
+And so if I just multiply that by the
+weight of each asset and sum that up,
+so you can think of that as just the dot
+product of mu and my weight vector w,
+which I'll write in matrix notation as mu
+transpose w.
+I want to maximize that quantity.
+So again, this is going to be a linear
+quantity, because these mu's are given to
+me.
+And then the w's are just all to the first
+power, so this is going to be mu
+1 is a coefficient, times w 1, mu 2 is the
+coefficient times w 2, and so on.
+And then I have two constraints.
+So there's the
+linear constraint.
+So e transposed w has to equal 1.
+So remember e is a vector of ones.
+So this is going to be on the final too, I
+use e as a vector of ones.
+So just keep that in mind so e transposed
+turns
+that into a row vector times a column
+vector w.
+That's the same thing as just the dot
+product of e and w.
+And since e is all ones, that's just the
+same thing as the sum of the elements of
+w.
+And that has to equal 1.
+So that's my constraint on the portfolio
+weights.
+And then the second constraint is w
+transpose sigma w.
+And so this is interpreted as the risk of
+the portfolio.
+And the optimization I'm trying to do is
+subject
+to my portfolio having a certain level of
+risk.
+I want to choose w to give me the maximum
+possible expected return.
+So that's what this, this optimization
+problem is asking you to do.
+So we say it has a linear objective.
+So that means all of the, the w's are all
+to the first power.
+And it has linear and quadratic
+constraints, so this is
+the linear constraint and then this is a
+quadratic constraint.
+And I can write out the Lagrangian for
+this, so
+it's going to be a function of w and
+lambda.
+So here lambda, because I have two
+constraints,
+lambda is going to be a vector with two
+elements.
+So I've lambda 1 and lambda 2, the
+Lagrange multipliers.
+And then it's just equal to the, the
+function
+that I'm trying to find the optimal value
+of.
+So that's the objective function.
+Plus lambda 1 times the first constraint,
+plus lambda 2 times the second constraint.
+Then I need to take the gradient of the
+Lagrangian.
+So this is the, this is what I want to set
+equal to 0.
+So I want to find the inputs w and lambda
+that
+are going to make the gradient of the
+Lagrangian equal to 0.
+That's going to give me the critical
+points of the Lagrangian.
+So this is actually a little bit prettier,
+because we can assume some knowledge of
+the problem.
+So in the last problem, I had to write out
+this huge matrix,
+pretty much element by element.
+Here, because I can write everything in
+terms of this mu vector and the
+co-variance matrix, I can, i, it saves me
+a little bit of notation.
+But you have to be careful about the
+dimension
+of things to make sure that they add up.
+So, this is a, a gradient of a function.
+So the Lagrangian is a function of, so
+this
+would be n plus 2 variables.
+And it's a scalar valued function.
+So when I take it's gradient, I'm going to
+get a row with n plus 2 elements.
+So you want to make sure there's n plus 2
+elements over here.
+So this will be the, the first portion of
+the gradient, the second portion, and the
+third portion.
+So what is the dimension of this?
+Well, mu is a vector of expected
+returns, and there's one expected return
+for each asset.
+So mu transpose is just going to be a row
+vector of n elements.
+Then I have lambda 1 is the scaler value
+to
+e transpose, so e is a column vector of n
+ones.
+So e transpose will be a row vector of n
+ones.
+And when I multiply that by lambda
+one, this thing that I have highlighted
+here, that's going to be a row
+vector that just contains the value lambda
+1 n times in a row.
+And so, since this is a row vector with n
+elements, and this
+is a row vector with n elements, I can go
+ahead and add them.
+And then I just need to make sure that the
+last thing here is also a row vector with
+n elements.
+So, 2 lambda 2, that's going to be a
+scalar
+quantity, so I don't have to think about
+that.
+Then I have w transpose sigma.
+So w is a column vector with n elements.
+So if I take its transpose, it's a row
+vector with n elements.
+So its dimensions are 1 by n.
+And sigma is an n by
+n co-variance matrix.
+So if I have a 1 times
+x vector times and n by n matrix, that's
+going to give me a 1 by n output,
+which is again a row vector of n elements.
+So I can sum up these three terms.
+And that's going to give me a 1 row vector
+with n elements.
+Then here for the second part of the
+gradient, I have e transpose w.
+So that's just going to be a dot product.
+This is a single row times a single
+column, so that's a scalar quantity.
+And then when I subtract 1, that's also a
+scalar quantity.
+So this is 1 by 1.
+And
+then w transpose w.
+So, again, this is a bit tricky, but this
+w transpose is 1 by n.
+Sigma is n by n.
+And w is n by 1.
+So it's always the outer dimensions that
+are
+going to determine the dimension of the,
+of the product.
+So this starts with a 1, and this last w
+ends with a 1.
+So this quantity that I have highlighted
+is
+a 1 by 1 quantity.
+So that's just a scalar value.
+And then sigma squared p is the risk of my
+portfolio that I'm stating.
+So that's also a scalar value.
+So this final part of the gradient is
+a scalar value.
+So my gradient is 1 by n plus 2, which
+is exactly what I was shooting for,
+because I have n plus 2 values as inputs
+for my function.
+So, I want to solve to find the critical
+point again.
+So I'm going to define my function G to be
+a function of w and lambda.
+It's just going to be the transpose of
+this function of the gradient of the
+Lagrangian.
+And so I end up with this vector here that
+I want to set equal to 0, but again, it's
+got,
+it's got this quadratic form in it.
+So it's not going to be something that I
+can just solve as a linear system.
+So I need to, so it's going to be a
+nonlinear problem that I need to solve.
+So I'm going to have to approach this with
+Newton's method again.
+And so the first thing I'm going to need
+is this function G.
+And then the second piece to, to be able
+to do
+my Newton iterations is I need the
+gradient of this function G.
+And so again, this is quite a bit easier
+to write down then the previous
+example, because I, I know a little bit
+more about the form going on here.
+So I can just take, the gradient of,
+of this function is going to be the
+derivative of this with respect to w, then
+mu 1, then mu 2, or sorry, w, and then
+lambda
+1, then lambda 2.
+So if take the derivative,
+mu is constant, so when I take this
+derivative with respect to w, I get zero.
+There's no w here, so that also becomes
+zero.
+But there is
+a w here, and so it turns out that when
+you
+take the derivative of this, this is
+actually a, a matrix product.
+So this is
+this is going to be so it has n pieces.
+So it has n rows and one column.
+So, when I take the derivative of that,
+I'm going to end up getting a matrix.
+So this quantity here is 2 times lambda 2
+times sigma.
+So this has the same dimension as the
+matrix sigma,
+so this upper left block is n by n matrix.
+Then when I take the derivative of this
+with
+respect to lambda 1, I'm just going to get
+e.
+So that e is going to go here, except
+remember e is this column vector of n
+ones.
+So at least the dimensions match up.
+This has n rows.
+This has n rows.
+And then, we've also talked about taking
+the derivative of a quadratic form.
+So the derivative of this is 2 times sigma
+times w.
+So this is also going to be a quantity
+with n rows.
+So this top row that I have written here,
+if I were actually to write
+out every single element by itself, this
+would have n rows and n plus 2 columns.
+So that when I take, oops, derivative of
+the second
+line with respect to w, I just gave e
+transpose.
+And since there's no lambdas anymore in
+here, the
+bottom right block is always going to be
+zero.
+And so then again at the bottom here, I
+take the derivative of this quadratic form
+and that's what's
+going in here.
+So, now I have
+I now have the pieces I'm going to go
+through the a, an example from the
+textbook now.
+So they used five asset example with
+expected returns of 0.8
+through 0.20, and the asset return
+co-variance matrix of this.
+So, remember that these things are sort of
+on the order of mu squared.
+So that's why these are going to be so
+much smaller than what's going on here.
+And then the target risk was 25%, so the
+sigma squared p is going to be 0.25
+squared, which is 0.0625.
+So this was the definition of the function
+G of w and lambda.
+And so, I can write an R function to
+compute this.
+So again, I'm going to use this, vector x
+is going
+to be w, and then the last two elements
+are going to be lambda 1 and lambda 2.
+So x, if w has n elements, then x is going
+to have n plus
+2 elements.
+And now, instead of hard-coating the
+values for mu
+and sigma into this function, I want to
+also make
+them arguments to my function, so that if
+I
+wanted to solve another problem with this
+same function.
+Instead of having to rewrite the entire
+function, all I have to do is make
+a new vector mu and a new matrix Sigma,
+and then I can just pass
+those in as arguments as well.
+And then I also need this sigma p2, which
+is, that just
+this value here, which is the constraint
+on the risk of the portfolio.
+And all I'm going to do is just evaluate,
+oops, I'm trying
+to highlight the top line here, but it
+doesn't seem to be working.
+I'm going to just evaluate these three
+pieces one at a
+time and put them into a vector, and then
+return that.
+So that's all the, the function G is going
+to
+do, just return the vector value of this
+function G.
+And so the first is just mu plus, this is
+just going to repeat lambda
+1 n times, which is exactly what this
+second term in the first row is doing.
+And then 2 times lambda 2 plus
+sigma times w, so that's just what the
+third portion of the first line is doing.
+E transpose
+w, that just sums up the values of w.
+So I'm just going to use R as sum function
+to do the same thing.
+And then w transpose sigma w minus sigma
+squared p.
+So there's w is the first n elements.
+So I guess I was a little bit sloppy here.
+The five, I should have used an n, but
+because this is a
+5 by 5 example, I had a 5 in here in the
+first place.
+So I have w times, sorry, w transpose, so
+in R, this t function transposes.
+So w transpose sigma w minus sigma squared
+p.
+And ag, and I'm going to use the C
+function to
+wrap all that up into a vector and return
+it.
+Then similarly for the gradient, so this
+is again
+going to be a little bit messier than the
+last one.
+I'm going to use pretty much the same
+approach I used in the previous example.
+So I'll make grad, which is a matrix of
+zeroes, has dimension n plus 2
+by n plus 2.
+Then, in the top left n by n
+block, I'm going to put 2 lambda 2 sigma.
+So 2 lambda 2 is scalar.
+Sigma is an n by n matrix, so that's why I
+have to assign it into an n by n block of
+this matrix grad.
+And I just have 2 times lambda 2 times
+sigma.
+Another nice feature of R is, if I assign
+a scalar value into a range in a vector.
+So here I'm assigning the number 1 into
+columns, or into
+rows 1 through n of column n plus 1.
+So that's referring to this e up here.
+It's just going to repeat that 1 enough
+times to fill up that range.
+And so the same thing is going to happen
+for this e here when I run this command.
+And then for rows 1 through n in column n
+plus 2, so that's describing this
+portion over here.
+I just need to put 2 times sigma times w.
+So, remember w is the first five elements
+of the input to this function.
+And then again, I, I put mu, sigma, n, the
+constraint in here,
+just so that I can change this anytime I,
+when want to use it to solve a different
+problem.
+So for a different mu and a different
+sigma.
+And I guess this is a little bit
+overparameterized, since I
+don't think mu and the constraint don't
+show up in here.
+But I just wanted to use the same
+arguments as I had for the function G.
+So then, the Newton, so once I'm the bulk
+of the work was
+getting these two functions to make the,
+to compute the gradient of the function.
+Once I've done that, I can just assign
+myself a starting point.
+So I'm going to use 1 half repeated 5
+times, so this is going to
+make a vector just 1 half, 1 half, 1 half,
+1 half, 1 half.
+Then I'm going to put a 1 and a 1 at the
+end of it.
+So my starting point is 1 half for
+x, or for w1 through w5, which, I don't
+know how much sense that makes, because
+the one thing I do know about the w's is
+that they should sum up to 1.
+But at least it works.
+and then I'm using values of 1 as
+a starting point for the two Lagrange
+multipliers.
+So that looks like this.
+My Newton iterations, again, it's, this
+part's almost always going to be the same.
+I just, I compute my gradient and I
+compute my
+function, and then I just need to solve
+that linear system.
+And then I use that to update x.
+So I'm writing the updated x in the same
+piece of memory as x had.
+And I'm going to repeat that 25 times.
+And that gives me this computed solution
+here.
+So I couldn't quite fit the whole w vector
+on the
+first line, so this first five parts
+corresponds to w1 through w5.
+The portfolio weights, or the asset
+weights within the portfolio.
+Then this is the first Lagrange multiplier
+and the second Lagrange multiplier.
+And then I'll do the same thing I did last
+time
+to try and classify this as a minimum or a
+maximum.
+So, one of the nice properties about the
+minimum variance portfolio is because I
+had to
+solve a linear system to get the critical
+point, I know there's only one critical
+point.
+Here, I'm not certain if,
+what critical point I got.
+If you know a little bit more about
+the problem, there should actually be two
+critical points.
+And it turns out that one of them
+corresponds to the portfolio you want, and
+the other one corresponds to the absolute
+worst
+portfolio you can get according to your
+constraint.
+So it is important in this one to be able
+to classify the point you found as the
+actual maximum.
+So, we'll go back and look at the, the
+upper left n by n block
+of the gradient of the function G.
+So this is actually just going to be the
+transpose of the Hessian of this function
+of
+the, of the Lagrangian, so F, except when
+I plug in the computed values lambda c.
+>>
+[INAUDIBLE]
+>> No, you can actually do that.
+So what that corresponds to is something
+called a short sale.
+So what I do is, I pretend like I don't
+have any shares of Starbucks.
+But I borrow some shares of Starbucks from
+some guy who does
+and I give, I sell them to you, so you
+give me money.
+And then, yeah, so there's, a negative
+weight means I owe that guy some
+Starbucks.
+Yeah,
+and I have to buy that back in the future
+to give it back to him.
+So you can actually do that.
+Yeah, the problem gets to be a bit more
+complicated if you put,
+if you start putting extra constraints on
+it like w's have to be positive.
+So, which can be solved, but not in the
+very
+first math class that looks at that sort
+of thing.
+[COUGH]
+Whoops.
+So this this is the matrix.
+So last time, I, I set up the problem, or
+not, not me, but Dan Stefanica, who is
+the author of the course textbook, set up
+the
+problem so that this matrix was diagonal
+no matter what.
+So, he set up the Lagrange the Lagrange,
+the Lagrangian,
+so that the off diagonal element elements
+were always going to be zero.
+Here that's clearly not the case.
+So, since the, the matrix isn't a diagonal
+form,
+you need to compute the eigenvalues of
+this matrix.
+And the computed points, so w sub c, it'll
+correspond to a maximum if this matrix is
+negative definite.
+And it'll correspond to a minimum if this
+matrix is positive definite.
+And so, the way we can check that, because
+this is just
+a matrix, it's just numbers, I can just
+compute the eigenvalues of that.
+So I use eigen to calculate the
+eigenvalues.
+This is just the code to generate this
+matrix here, and then the dollar sign says
+it.
+So the eigenfunction will also give me the
+eigenvectors,
+but I'm not really interested in that
+right now.
+So, if I take just the values out of this
+function, I
+get this vector of five values and they're
+all less than zero.
+So that tells me that this matrix is
+negative definite.
+And that tells me that the computed point,
+x subs er,
+in this case w sub c, corresponds
+to a constrained maximum of the objective
+function.
+And then finally, I can find the computed
+w.
+So that's 0.199.
+And so this is the maximum that I can make
+the expected return for my portfolio,
+subject to having a risk of 0.25 squared.
+Okay.
+So that's all I have.
+Oh.
+Okay.
+Yeah.
+>> How did you know.
+You did 25 iterations, so how
+do you know that you actually have a
+typical value after 25 iterations?
+>> Yeah, just to make this stuff fit on
+the slide, I just, I did that.
+Really, what you should do,
+so remember, this was
+in the section on
+on doing Newton's method with vector
+valued functions.
+This is sort of my update.
+And so what happens is the you know, if it
+works, it's supposed to be converging to a
+certain value.
+So converging means that my current
+estimate is
+close to the thing that I'm trying to get.
+And so when I'm in that situation, if I
+update, I shouldn't move too much.
+And so, what you can do, is you can
+monitor the norm of this vector.
+And when that gets below a certain
+level, and usually you want to do it
+relative to the size of x,
+so you could the norm of this vector
+divided by the norm of x.
+When that's less than say one in a
+million, then you just say
+that this point is so close to x that I'm
+going to stop.
+So you need, you need to kind of think
+about it a little bit.
+But essentially you, you want to define a
+value
+somehow, of what it means to be close
+enough
+to the thing you're trying to get.
+And then you just watch as you're going
+along.
+And when you hit that then you stop.
+But, like I said, you know,
+Newton's method isn't really guaranteed to
+converge.
+So, it's also good to have something like
+this, like you go 50 times until you stop.
+So you'll either stop or you'll hit 50.
+But if you don't put a maximum number of
+times and
+it doesn't converge, you know, it's just
+going to keep going and going and going.
+

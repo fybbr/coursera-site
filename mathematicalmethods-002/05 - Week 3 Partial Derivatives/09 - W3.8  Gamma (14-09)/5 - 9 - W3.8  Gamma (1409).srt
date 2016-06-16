@@ -1,0 +1,945 @@
+1
+00:00:01,040 --> 00:00:03,460
+So moving on for the next lesson.
+
+2
+00:00:03,460 --> 00:00:08,800
+We'll talk about gamma, which is the
+derivative of delta with respect
+
+3
+00:00:08,800 --> 00:00:12,860
+to s, or the second derivative of c with
+respect to s.
+
+4
+00:00:15,540 --> 00:00:18,020
+So gamma is the rate of change of delta.
+
+5
+00:00:20,350 --> 00:00:23,720
+So I can write that as the partial
+derivative with respect to s of delta.
+
+6
+00:00:24,810 --> 00:00:28,710
+And delta is the partial derivative of c
+with respect to s.
+
+7
+00:00:28,710 --> 00:00:32,450
+So this is just the second derivative of c
+with respect to s.
+
+8
+00:00:33,460 --> 00:00:35,092
+But again, the way I'm going to compute
+
+9
+00:00:35,092 --> 00:00:37,680
+it, since I've already computed this
+derivative for delta.
+
+10
+00:00:38,720 --> 00:00:42,160
+I'm going to use that as a starting point
+rather than starting from scratch.
+
+11
+00:00:44,730 --> 00:00:48,080
+So all we have to do, since we already
+have an expression for
+
+12
+00:00:48,080 --> 00:00:51,940
+delta, is just take the derivative with
+respect to s of that again.
+
+13
+00:00:53,300 --> 00:00:57,404
+But that turns out to be pretty difficult,
+because in the last in
+
+14
+00:00:57,404 --> 00:01:02,600
+the last set of slides, we, we had this
+three term expression for s.
+
+15
+00:01:02,600 --> 00:01:04,080
+But luckily, there's a shortcut.
+
+16
+00:01:04,080 --> 00:01:07,104
+So like I mentioned in the previous set,
+if
+
+17
+00:01:07,104 --> 00:01:10,128
+we look at the second two terms in the
+square
+
+18
+00:01:10,128 --> 00:01:14,790
+brackets here, I said that those were
+going to be equal to zero.
+
+19
+00:01:14,790 --> 00:01:18,370
+But that's something that we have to show
+mathematically before we can do it.
+
+20
+00:01:18,370 --> 00:01:19,321
+We did this.
+
+21
+00:01:19,321 --> 00:01:21,369
+I had one example of this before where I
+
+22
+00:01:21,369 --> 00:01:24,825
+had actually plugged in numbers for the
+Black-Scholes pricing
+
+23
+00:01:24,825 --> 00:01:27,321
+formula, and we went through the, the work
+of
+
+24
+00:01:27,321 --> 00:01:30,082
+showing that this part ends up being equal
+to zero.
+
+25
+00:01:30,082 --> 00:01:35,162
+And now we'll do it in general so we never
+have to
+
+26
+00:01:35,162 --> 00:01:36,603
+do it again.
+
+27
+00:01:36,603 --> 00:01:39,879
+So the textbook says that delta is just
+equal to
+
+28
+00:01:39,879 --> 00:01:44,219
+this much simpler expression than what
+we've come up with.
+
+29
+00:01:45,950 --> 00:01:48,984
+And finding an expression for gamma is
+certainly
+
+30
+00:01:48,984 --> 00:01:50,760
+going to be a lot easier if I only
+
+31
+00:01:50,760 --> 00:01:53,498
+have to take the derivative of this,
+rather
+
+32
+00:01:53,498 --> 00:01:56,540
+than taking the derivative of all three
+terms.
+
+33
+00:01:58,090 --> 00:02:00,300
+So what I'd like to do is figure
+
+34
+00:02:00,300 --> 00:02:04,650
+out a way to show that this expression
+here is equal to zero.
+
+35
+00:02:04,650 --> 00:02:08,290
+And so when I, when I write something like
+this, I'm not sure
+
+36
+00:02:08,290 --> 00:02:12,170
+that it's equal to zero, I want to show
+that it's equal to zero.
+
+37
+00:02:12,170 --> 00:02:14,712
+So you don't want to just write down equal
+to zero
+
+38
+00:02:14,712 --> 00:02:18,740
+and then start plugging in things and
+showing that it's true.
+
+39
+00:02:18,740 --> 00:02:24,570
+What I want to do is start with this
+without saying it's equal to zero.
+
+40
+00:02:24,570 --> 00:02:26,010
+And just do algebraic
+
+41
+00:02:26,010 --> 00:02:29,930
+manipulations to it, until it finally is
+equal to zero.
+
+42
+00:02:29,930 --> 00:02:33,680
+And then what we'll have is, a line of
+work that starts
+
+43
+00:02:33,680 --> 00:02:38,160
+out from what I'm given, and ends with
+what I want, basically zero.
+
+44
+00:02:39,790 --> 00:02:43,580
+And that'll be an argument that anytime I
+see this.
+
+45
+00:02:43,580 --> 00:02:48,370
+Expression in a calculation, I can then
+replace that with zero.
+
+46
+00:02:48,370 --> 00:02:51,139
+And that's going to save us a lot of work
+in,
+
+47
+00:02:51,139 --> 00:02:53,103
+the next several lessons.
+
+48
+00:02:55,210 --> 00:03:00,670
+And so the strategy I'm going to use is I
+have a, one term that has
+
+49
+00:03:00,670 --> 00:03:04,910
+a d plus in it and one term that has a d
+minus in it.
+
+50
+00:03:06,490 --> 00:03:09,690
+But remember d minus could be written in
+terms of
+
+51
+00:03:09,690 --> 00:03:12,960
+d plus just by adding a little bit to it.
+
+52
+00:03:12,960 --> 00:03:16,527
+And so what I'm going to do is try and
+manipulate the
+
+53
+00:03:16,527 --> 00:03:20,442
+d minus into a d plus, and then there'll
+be some stuff
+
+54
+00:03:20,442 --> 00:03:21,820
+left over.
+
+55
+00:03:21,820 --> 00:03:26,740
+And hopefully when I factor out the stuff
+that's left over, it's going to.
+
+56
+00:03:26,740 --> 00:03:30,820
+Turn this second term into the first term,
+and if both of those terms are
+
+57
+00:03:30,820 --> 00:03:35,160
+the same, then when I subtract one from
+the other, I'm going to get zero.
+
+58
+00:03:37,950 --> 00:03:45,470
+So phi of d minus is equal to 1 over the
+square root of 2 pi e.
+
+59
+00:03:45,470 --> 00:03:48,275
+So I'm using some different notation here
+just because it,
+
+60
+00:03:48,275 --> 00:03:51,110
+it gets really small if I have everything
+in the exponent.
+
+61
+00:03:51,110 --> 00:03:56,150
+So, exp as a function, so exp and then
+something in parentheses that means
+
+62
+00:03:56,150 --> 00:04:01,600
+exactly the same thing as e to the power
+of what's ever in the parentheses here.
+
+63
+00:04:04,220 --> 00:04:09,575
+So this is 1 over the square root of 2 pi
+Square root of 2 pi times
+
+64
+00:04:09,575 --> 00:04:14,939
+e to the minus d minus squared over 2.
+And that's just the,
+
+65
+00:04:14,939 --> 00:04:19,886
+the exact definition of phi of d minus.
+And
+
+66
+00:04:19,886 --> 00:04:24,926
+now I'm going to replace d minus in that
+expression,
+
+67
+00:04:24,926 --> 00:04:29,270
+with d plus minus.
+Sigma times the square root of t minus t.
+
+68
+00:04:29,270 --> 00:04:31,600
+And that was just my expression for d
+minus.
+
+69
+00:04:33,850 --> 00:04:38,780
+And now I have a, this quadratic, form
+here.
+
+70
+00:04:38,780 --> 00:04:40,400
+So I'm going to expand that.
+
+71
+00:04:41,610 --> 00:04:45,320
+The, the first term, I'm going to end up
+with a d plus squared over 2.
+
+72
+00:04:45,320 --> 00:04:49,840
+So it's pretty clear that that's going to,
+that's going to get me a phi of d plus.
+
+73
+00:04:49,840 --> 00:04:53,870
+And then hopefully the stuff that's left
+over is going to be useful to get this
+
+74
+00:04:53,870 --> 00:04:56,412
+result that I'm after, showing that the
+second
+
+75
+00:04:56,412 --> 00:04:58,670
+term here is actually equal to the first.
+
+76
+00:05:02,630 --> 00:05:06,954
+So this is just what I had on the last bit
+of the, of the previous slide.
+
+77
+00:05:08,480 --> 00:05:13,838
+So now what I'm going to do is just go
+ahead and expand this quadratic
+
+78
+00:05:13,838 --> 00:05:19,290
+form here, and so I'll end up with d plus
+squared minus 2d plus sigma
+
+79
+00:05:19,290 --> 00:05:24,830
+square root of t minus t plus sigma
+squared times t minus t all over 2.
+
+80
+00:05:24,830 --> 00:05:28,834
+And now I'm going to regroup
+
+81
+00:05:28,834 --> 00:05:32,120
+the terms like this.
+
+82
+00:05:32,120 --> 00:05:35,340
+So basically, I'm just taking, ooh, got
+the whole thing that time.
+
+83
+00:05:37,040 --> 00:05:42,590
+I'm just taking this d plus squared over 2
+and putting that by itself.
+
+84
+00:05:42,590 --> 00:05:45,762
+Because this is now an expression, the 1
+over the square root
+
+85
+00:05:45,762 --> 00:05:49,410
+of 2 pi E to the minus d plus squared over
+two.
+
+86
+00:05:49,410 --> 00:05:52,034
+That's just and expression from phi of d
+plus.
+
+87
+00:05:52,034 --> 00:05:54,254
+And then these two terms
+
+88
+00:05:54,254 --> 00:05:59,471
+are what's left over.
+So the middle term that has
+
+89
+00:05:59,471 --> 00:06:04,736
+a two in the numerator and in the
+denominator,
+
+90
+00:06:04,736 --> 00:06:09,770
+so those are going to cancel each other
+out.
+
+91
+00:06:11,342 --> 00:06:13,940
+So I've, I've got from my, oh I can't
+highlight anything.
+
+92
+00:06:15,410 --> 00:06:20,328
+I have my phi of d plus from this portion
+of the previous line.
+
+93
+00:06:20,328 --> 00:06:27,160
+I have e to the d plus times sigma square
+root of t minus t from this portion.
+
+94
+00:06:27,160 --> 00:06:28,909
+And then I have e, this hasn't changed
+
+95
+00:06:28,909 --> 00:06:31,130
+I've just written it a little bit
+differently.
+
+96
+00:06:32,190 --> 00:06:35,670
+e to the minus sigma squared t minus t
+divided by 2.
+
+97
+00:06:35,670 --> 00:06:44,970
+And now, just a quick reminder, of what d
+plus is equal to so what I'm going to.
+
+98
+00:06:44,970 --> 00:06:45,330
+What
+
+99
+00:06:45,330 --> 00:06:48,750
+I have here is d plus times sigma square
+root of
+
+100
+00:06:48,750 --> 00:06:51,990
+t minus t and so all these sigma square
+root t
+
+101
+00:06:51,990 --> 00:06:55,230
+minus t is going to do is cancel out the
+sigma
+
+102
+00:06:55,230 --> 00:07:00,010
+square root of t minus t in the
+denominator of d plus.
+
+103
+00:07:00,010 --> 00:07:05,680
+So I, what I have is E to the numberator
+of the definition of d plus here.
+
+104
+00:07:05,680 --> 00:07:10,590
+So, I'll do that in the next line.
+So, all that's
+
+105
+00:07:10,590 --> 00:07:15,650
+happened is this d plus sigma square root
+of t minus t has
+
+106
+00:07:15,650 --> 00:07:20,750
+just become the numerator of the
+definition of d plus.
+
+107
+00:07:22,460 --> 00:07:24,924
+And then the bit on the right hand term is
+still stayed
+
+108
+00:07:24,924 --> 00:07:28,249
+the same, just sigma squared, t minus t
+over 2 and it's negative.
+
+109
+00:07:35,830 --> 00:07:41,620
+So, what's going to happen, I have e to
+the log of s over k.
+
+110
+00:07:41,620 --> 00:07:43,943
+So the exponential and the logarithm, they
+are.
+
+111
+00:07:44,960 --> 00:07:47,392
+Inverse functions of one another it's the,
+
+112
+00:07:47,392 --> 00:07:50,016
+the exponential undoes what the logarithm
+did,
+
+113
+00:07:50,016 --> 00:07:52,880
+so this is just going to allow me to take
+an s over k out.
+
+114
+00:07:54,630 --> 00:07:57,754
+And then when I have an exponential of a
+sum, that's
+
+115
+00:07:57,754 --> 00:08:00,878
+equal to the, product, so this is the same
+thing as e
+
+116
+00:08:00,878 --> 00:08:02,130
+to the log.
+
+117
+00:08:02,130 --> 00:08:08,190
+S over k times e to the r minus q plus
+sigma squared over 2, t minus t.
+
+118
+00:08:11,040 --> 00:08:16,528
+So this bit here is going to stay in my
+exponential function
+
+119
+00:08:16,528 --> 00:08:21,792
+but I'm going to factor out an s over k
+and then also using
+
+120
+00:08:21,792 --> 00:08:27,690
+the same property So here I had a product
+of exponentials.
+
+121
+00:08:27,690 --> 00:08:30,657
+So this is just going to be the sum of
+this bit that I've
+
+122
+00:08:30,657 --> 00:08:35,360
+got highlighted and what's inside the
+square brackets in the lower right here.
+
+123
+00:08:37,230 --> 00:08:40,428
+So that gives this s over k out of my
+exponential
+
+124
+00:08:40,428 --> 00:08:46,000
+bit, and then leaves me with what's inside
+the exponential bit here.
+
+125
+00:08:46,000 --> 00:08:49,510
+But now look what's happened, so this,
+sigma squared t minus t
+
+126
+00:08:49,510 --> 00:08:53,580
+over two that I've been carrying down the
+right side of my calculation.
+
+127
+00:08:54,670 --> 00:08:57,628
+I have a plus sigma squared over 2 times t
+
+128
+00:08:57,628 --> 00:09:02,040
+minus t minus sigma squared over 2 times t
+minus t.
+
+129
+00:09:02,040 --> 00:09:02,330
+So all
+
+130
+00:09:02,330 --> 00:09:05,530
+of that's going to cancel out, and I'm
+just going to have r minus q.
+
+131
+00:09:05,530 --> 00:09:08,770
+That quantity times t minus t left.
+
+132
+00:09:11,150 --> 00:09:12,650
+And so now I'm going to go back to
+
+133
+00:09:12,650 --> 00:09:16,100
+using the notation of writing this as
+exponential.
+
+134
+00:09:16,100 --> 00:09:21,410
+So, this is e to the r times t minus t.
+
+135
+00:09:21,410 --> 00:09:22,740
+So that's where this bit came from.
+
+136
+00:09:22,740 --> 00:09:29,435
+And then this is e to the minus q.
+Times t minus t, so that's
+
+137
+00:09:29,435 --> 00:09:36,335
+where this bit came from and now I have a,
+an expression for phi of d minus
+
+138
+00:09:36,335 --> 00:09:39,900
+in terms of phi of d plus and this is the
+
+139
+00:09:39,900 --> 00:09:43,465
+expression that I am trying to show is
+
+140
+00:09:43,465 --> 00:09:47,293
+equal to zero again.
+So I am going to substitute.
+
+141
+00:09:47,293 --> 00:09:54,390
+My expression here for phi of d minus into
+the second term
+
+142
+00:09:54,390 --> 00:10:01,356
+here and I get this expression here.
+And so the
+
+143
+00:10:01,356 --> 00:10:06,839
+first term has stayed the same but now I
+have k times e to the minus r t minus t.
+
+144
+00:10:08,770 --> 00:10:13,799
+So that carried over from before, and now
+I have what's
+
+145
+00:10:13,799 --> 00:10:18,828
+coming from my new expression, fee of d
+plus, s divided
+
+146
+00:10:18,828 --> 00:10:23,650
+by k, e to the rt minus t, and e to the
+minus qt minus t.
+
+147
+00:10:24,690 --> 00:10:27,040
+But here I have a k And
+
+148
+00:10:27,040 --> 00:10:30,550
+s over k, so that's going to be just s,
+and I have
+
+149
+00:10:30,550 --> 00:10:34,800
+an s in the numerator, and an s in the
+denominator here.
+
+150
+00:10:34,800 --> 00:10:37,440
+So all of the strike prices, and the, the
+asset
+
+151
+00:10:37,440 --> 00:10:40,350
+prices are going to cancel each other out
+in this term.
+
+152
+00:10:41,940 --> 00:10:47,220
+Then I have e to the minus rt minus t, and
+
+153
+00:10:47,220 --> 00:10:52,086
+e to the rt minus t.
+So when I add those together I have
+
+154
+00:10:52,086 --> 00:10:54,320
+minus rt minus t plus rt minus t.
+
+155
+00:10:54,320 --> 00:10:58,230
+That's the same things as e to the zero
+which is just one.
+
+156
+00:10:58,230 --> 00:11:00,490
+So, those two parts are going to cancel
+each other out.
+
+157
+00:11:03,070 --> 00:11:10,910
+So, all I'm left with Is phi of d plus.
+And e to the minus q t minus t.
+
+158
+00:11:12,190 --> 00:11:14,580
+Which is exactly what I had in the
+numerator over here.
+
+159
+00:11:16,260 --> 00:11:21,500
+And now in the denominator, remember I've
+canceled out this s here with this s here.
+
+160
+00:11:21,500 --> 00:11:23,280
+So I have the same denominator as well.
+
+161
+00:11:26,360 --> 00:11:28,536
+So when I do all of the canceling here,
+
+162
+00:11:28,536 --> 00:11:31,810
+I've made the second term into the first
+term.
+
+163
+00:11:31,810 --> 00:11:35,160
+And I'm subtracting them from one another,
+so I end up having zero.
+
+164
+00:11:35,160 --> 00:11:40,520
+So that means when it's time to actually
+go ahead and calculate gamma.
+
+165
+00:11:41,820 --> 00:11:47,058
+Instead of having to take the derivative
+with respect to s of this
+
+166
+00:11:47,058 --> 00:11:52,005
+great big formula, I can rewrite that as
+just the derivative
+
+167
+00:11:52,005 --> 00:11:57,879
+with respect to s of e to the minus q t
+minus t times capital phi of d plus.
+
+168
+00:12:02,470 --> 00:12:06,270
+And so when I'm taking the partial
+derivative with respect
+
+169
+00:12:06,270 --> 00:12:08,320
+to S, e to the minus q t minus t.
+
+170
+00:12:08,320 --> 00:12:10,950
+There's no S in that, so I can treat that
+as a constant.
+
+171
+00:12:10,950 --> 00:12:13,990
+So I can move that across the derivative
+operator.
+
+172
+00:12:13,990 --> 00:12:15,784
+And so all I need to do is take the
+
+173
+00:12:15,784 --> 00:12:18,899
+derivative with respect to s of capital
+phi of d plus.
+
+174
+00:12:21,440 --> 00:12:23,288
+And I'll go through this again, but we
+
+175
+00:12:23,288 --> 00:12:25,980
+actually did this already when we were
+computing delta.
+
+176
+00:12:27,240 --> 00:12:30,255
+So, I'm taking the derivative of a
+function of d plus
+
+177
+00:12:30,255 --> 00:12:33,770
+with respect to s so I have to use the
+chain rule.
+
+178
+00:12:33,770 --> 00:12:37,700
+And that tells me that I can take the
+derivative of capital phi of d plus.
+
+179
+00:12:37,700 --> 00:12:43,530
+And then I have to multiply that by the
+derivative of d plus with respect to s.
+
+180
+00:12:47,150 --> 00:12:49,880
+And we've all ready calculated that as
+well so.
+
+181
+00:12:51,212 --> 00:12:55,440
+partial derivative of either d plus or d
+minus with respect to s.
+
+182
+00:12:55,440 --> 00:12:58,860
+It's just one over s times sigma times the
+square root of t minus t
+
+183
+00:13:01,360 --> 00:13:05,581
+And then this we've already seen before
+let's say this is the derivative of our
+
+184
+00:13:05,581 --> 00:13:07,912
+indefinite integral so this is just
+going to to
+
+185
+00:13:07,912 --> 00:13:09,855
+be equal to lowercase phi of d plus.
+
+186
+00:13:13,380 --> 00:13:19,340
+So what I'm left with is that e to the
+minus qt minus t that I had out here.
+
+187
+00:13:20,850 --> 00:13:26,240
+The 1 over s times sigma times the square
+root of t minus t that came
+
+188
+00:13:26,240 --> 00:13:31,900
+from the chain rule so that's in the
+denominator in the front here.
+
+189
+00:13:31,900 --> 00:13:34,700
+And, then, the lower case fee of d plus,
+
+190
+00:13:34,700 --> 00:13:37,690
+which was just a derivative that I got
+here.
+
+191
+00:13:41,980 --> 00:13:46,050
+And so, we now have an expression for
+gamma, which is the partial
+
+192
+00:13:46,050 --> 00:13:51,230
+derivative with respect to S of, sorry, of
+delta with respect to S.
+
+193
+00:13:51,230 --> 00:13:53,690
+And this is exactly the same as the line
+above it.
+
+194
+00:13:53,690 --> 00:13:57,810
+I've just replaced phi of d plus with the
+actual definition of phi of d plus.
+
+195
+00:13:57,810 --> 00:14:04,040
+So, it's 1 over the square root of 2 pi.
+E to the minus d plus squared over 2, so.
+
+196
+00:14:04,040 --> 00:14:07,029
+Looks like I missed a little bit because I
+forgot the square
+
+197
+00:14:07,029 --> 00:14:09,667
+there, but this should be d plus squared
+over 2.
+

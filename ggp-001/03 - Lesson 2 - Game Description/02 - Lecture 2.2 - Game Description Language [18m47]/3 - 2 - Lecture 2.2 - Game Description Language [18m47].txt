@@ -1,0 +1,558 @@
+[BLANK_AUDIO].
+A logic program is a collection of
+sentences that define relations.
+Either directly by enumeration, or
+indirectly, in the form of logical rules.
+Here's a simple example.
+And the first four sentences here define
+the parent relation by enumeration.
+Art is parent of Bob, and Amy is the
+parent of Bob.
+Bob is the parent of Coe and Cal.
+The rule in the middle, defines the
+grandparent relation in terms of the
+parent relation.
+X is the grandparent of Z If X is a parent
+of some person Y and Y is a parent of Z.
+So we shall see, given these definitions
+of parenting, grandparent, we can
+conclude that Art and Amy are both the
+grandparents of Cal and Coe.
+As previously mentioned, GDL has a logic
+programming languages, in many
+ways resembles Prolog, the most popular of
+the logic programming languages.
+Moreover, there're several important
+differences.
+First of all, the semantics of GDL is
+purely declarative.
+That is, there's no imperative features,
+such as
+assert and retract and cut, as in Prolog.
+Second, GDL has some restrictions that
+ensure that all pertinent questions are
+decidable.
+In particular, all relations can be
+computed in finite time.
+And finally, there's some reserved words
+which tailor
+the language to the task of defining
+games.
+Despite these restrictions we frequently
+use the phrase logic
+program to refer to a game description in
+GDL.
+Logic programs in GDL are built up from 4
+disjoint classes of symbols.
+Namely, object constants, function
+constants, relation constants and
+variables.
+And what follows, we write such symbols as
+strings of letters,
+digits and a few non alpha numeric
+characters such as underscore.
+Constants must begin with a lowercase
+letter or digit,
+variables must begin with an uppercase
+letter.
+The arity of a function constant or a
+relation constant is the number
+of arguments that can be associated with
+the function or relation when writing
+expressions.
+As we'll see in the example to follow.
+A term is defined as either an
+object constant, a variable, or a
+functional term.
+And by functional term here, I mean an
+expression consisting
+of an N-Ary function constant, and N
+simpler terms.
+And what follows, we write
+functional terms and traditional
+mathematical notation.
+The function constant first, followed by
+its
+arguments, enclosed in parentheses and
+separated by commas.
+Now for example, if F is a unary
+function constant, and G is a binary
+function constant.
+If A and B are both object constants, and
+if X is a variable,
+then f of a is a functional term, and so
+is g of X,b.
+An atom is an expression consisting of n
+re relation
+constant and n terms.
+What follows,
+we write atoms in traditional mathematical
+notation, just like terms.
+The relation constant, in this case.
+Followed by it's arguments,
+enclosed in parentheses, and separated by
+commas.
+For example, if p is a binary relation
+constant.
+And if a and b are object constants, then
+p of ab is an atom.
+A negation is an expression formed using
+the
+negation sign, the tilde character and an
+app.
+For example, not p of ab.
+A
+literal is either an atom or a negation.
+An atom by itself is sometimes called a
+positive
+literal and a negation is sometimes called
+a negative literal.
+Finally we get to rules.
+A rule is an expression consisting of a
+distinguished atom called the head and a
+conjunction of zero or more literals
+called
+the body, separated by the colon minus
+operator.
+Literals in the body are called subgoals.
+Intended meaning, is that an instance of
+the head is true,
+and ever corresponding instances of all of
+the positive subgoals are true.
+And all of the negative subgoals are
+false.
+A logic program in GDL is a finite
+collection of atoms and rules, this for.
+In order to simplify our definitions in
+analysis,
+we occasionally talk about infinite sets
+of rules.
+While these sets are useful, they're not
+themselves logic programs.
+Okay, here are some examples of things
+that are logic programs.
+In this first case, we define the parent
+relation
+p in terms of father f and mother m.
+X is the parent
+of Y if X is a father of Y.
+X is also a parent of Y if X is a mother
+of Y.
+In the second example, we defined
+grandparent
+in terms of parent, as we saw before.
+In the third, we define ancestor in terms
+of parent.
+Note that the definition in this case is
+recursive.
+And finally, we define remote ancestors.
+Any ancestors that is not apparent using
+the not symbol.
+Although every GDL expression's a finite
+set of atoms and rules,
+not every finite set of atoms and rules is
+a GDL description.
+As mentioned earlier, there are some
+restrictions
+to ensure that such descriptions have
+desirable properties.
+The
+first of these restrictions is called
+Safety.
+A rule in a logic program is safe if
+and only if every variable that appears in
+the head,
+or, in any negative literal in the body
+also
+appears in at least one positive literal
+in the body.
+The first rule shown here is safe.
+Variables X and Z appear in the head, and
+Y appears in a negative subgoal.
+Fortunately, all three
+of these variables appear in positive
+subgoals as well.
+And so the rule is safe.
+The second is not safe because variable Z
+appears
+in the head but not in any positive
+subgoal.
+And the third rule is not safe because the
+variable Z appears in a negative subgoal
+but not in a positive subgoal.
+In GDL we require that all rules are safe.
+The next two restrictions in GL have to do
+with recursion.
+The restrictions are best be-defined using
+this notion of dependency graphs
+illustrated here.
+The dependency graph for a set of rules is
+a directed
+graph in which the nodes are the relations
+mentioned in the head.
+And, heads and bodies of the rules.
+And there's an arc from a node p to a node
+q, whenever p occurs with the body
+of a rule in which q is in the head.
+A
+set of rules is recursive if and only if
+its dependency graph contains a cycle, as
+this one does.
+Now we use, we say that a recursion in a
+set of rules is stratified, if and only
+if a variable in a subgoal relation occurs
+in
+a subgoal with a relation at a lower
+stratum.
+The recursion in the first rule shown here
+is
+stratified because all the variables
+involved in the recursion.
+Occurring relations that are not defined
+in terms of r.
+Recursion in the second rule is not
+stratified because the
+variables involved in the recursion do not
+appear in other relations.
+In GDL, we require that all recursions be
+stratified.
+[SOUND].
+Another case is stratified negation.
+A negation in a set of rules is said to be
+stratified, if
+and only if there's no recursive cycle in
+the dependency graph involving a negation.
+For example, the first rule set shown here
+is not
+stratified, because there's a cycle
+involving a negative occurrence of R.
+By contrast, the second of rules,set of
+rules is stratified.
+The set is recursive, but there's no
+negation occurring in a cycle.
+The only negative occurrence of our
+[UNKNOWN]
+definition of T, and that's not part of
+any recursion.
+In GDL, we also require that all negations
+be stratified.
+Okay, now with these three definitions
+behind us we could formalize
+the semantics and in other words the
+meaning of GDL expressions.
+Start with the notion of a Herbrand
+Universe.
+Herbrand Universe is the set of all ground
+terms in the language.
+In case of language without function
+constants, the Herbrand
+Universe is exactly the set of all object
+constants.
+In the presence of function constants, we
+add in the functional terms that can be
+formed using those function constants.
+Since nested functional terms are
+forbidden in
+GDL, the Herbrand universe is always
+finite.
+The Herbrand base for a logic program is
+the set of all ground atoms that can
+be formed from the relation constants in
+the
+language and the elements of a Herbrand
+Universe.
+For example, given the language shown
+here, the Herbrand
+Base consists of six atoms and just six
+atoms.
+P of a.
+P of b.
+Q of aa, q of ab, q of ba, and q of bb.
+That's it, there are no more.
+A Herbrand interpretation is a arbitrary
+subset of the Herbrand Base for a program.
+Dutifully, we can think of the Herbrand
+interpretation as
+a listing of the atoms that are true in
+that interpretation with a sense that
+those that are
+not in the interpretation are considered
+to be false.
+Given the Herbrand Base we just saw, here
+are three different interpretations.
+Since there are six atoms in Herbrand
+Base,
+there're two to the sixth, or 64, distinct
+interpretations.
+Here we've just listed three of them.
+Okay.
+Now, finally, we say that interpretation
+delta satisfies
+an expression, in our language, under the
+following conditions.
+If
+[INAUDIBLE]
+is a ground atom, delta satisfies it, if
+and only if
+[INAUDIBLE]
+is in delta.
+Is a member of that set.
+Delta satisfies not
+[INAUDIBLE]
+if and only if
+[INAUDIBLE]
+is not in delta.
+Delta satisfies
+[INAUDIBLE]
+1 and
+[INAUDIBLE]
+2.
+And so forth, if and only it satisfies
+every
+[INAUDIBLE]
+I.
+Finally, delta satisfies a rule if and
+only if
+it satisfies the head, or fails to satisfy
+the body.
+Or equivalently, delta satisfies a rule if
+and only
+it satisfies a head whenever it satisfies
+the body.
+And finally we say that delta satisfies a
+rule with variables, which
+is a common case, if and only it satisfies
+every ground instance.
+That is, every instance with members
+of the broad universe substituted for
+variables.
+Now, in general a logic program can have
+more than one model.
+Consider the program consisting of p of
+a,b and the rule of q of x,y if p of x,y.
+This program has one model of just p of
+a,b and q of a,b.
+And it has another model with p of a,b and
+q of
+a,b and q of b,a and it has other models
+as well.
+However, it's worth noting that the first
+model is the subset of the second.
+And it's
+clear that p of a and q of a, b must be
+true in any model of this program.
+But q of b, a is optional.
+To eliminate such ambiguities, we usually
+adopt
+a minimal model semantics for logic
+workups.
+A model D, of a program that's minimal, if
+null, if
+no proper subset of D is also a model of
+that program.
+One interesting property of our language
+is that
+every logic program has a unique minimal
+model.
+Also all models are finite.
+Okay, that's it for traditional ordinary
+logic programs.
+logic programs like these are often
+defined as closed in that
+they fix the meaning of all the relations
+in their program.
+In open logic programs, some of the
+relations called the inputs, are left
+undefined.
+And other relations, usually called the
+outputs.
+Are
+[COUGH]
+excuse me, are defined in terms of these.
+the same program can be used with
+different
+input relations yielding different output
+relations in each case.
+So, formally now, we, to find an open
+logic program as a logic
+program, together with a partition of the
+relation constants in these two types.
+Input relations and output relations.
+Output relations can appear anywhere in
+the program, but input relations can
+appear only in the sub roles of rules, not
+in their heads.
+but base for an open logic program is, is
+the set of all atoms that can
+be formed from the base relations of the
+program, and the entities in the programs
+combined.
+Universe.
+An input model is an arbitrary subset of
+its input base.
+The output base for an open logic program
+is the set of all atoms that can
+be formed from the output relations of the
+program and the entities in the program
+around universe.
+And an output model is some subset of its
+output base.
+Even an open logic program.
+P and an input model D, we define the
+overall model for responding to D
+to be the minimum model of P together with
+D, in other words, P union D.
+The output model corresponding to D is the
+intersection
+of the overall model with the program's
+output base.
+In other words, it consists of those
+sentences in
+the overall model that mention only the
+output relations.
+And finally
+we can think of the meaning of open logic
+programs of function
+that maps each input model for the program
+into the corresponding output model.
+for example, the simple logic program
+shown
+here gives different outputs for different
+inputs.
+Given p of a, b and p of b, b, and q of b,
+the output is r of a, b.
+Given just p of a, b and p of b, b,
+without q of
+b, the output is r of a, b and r of b, b
+both.
+Okay, now, with those definitions behind
+us, let's get back to game description.
+As mentioned in the introduction, we can
+conceptualize a game
+as a structured state graph, like the one
+shown here.
+GDL gives us a way of describing such
+graphs in compact form.
+The content of a structured state graph
+can be
+expressed in GDL, using some reserved game
+independent vocabulary.
+The vocabulary is game-independent and the
+same
+words are used in describing all games.
+There are ten game-independent
+relation constants in GDL, anyway the ones
+requested here.
+For example, role of A means that A has a
+role in the game.
+Base of the p, base of proposition means
+that p is a proposition in the game,
+action of a inputs are input of role and a
+means that a is in action in the game 4
+rule, the specified role.
+Init of p means that the proposition p is
+true in the initial state.
+True if p means that the proposition p is
+true in the current state.
+Whatever that happens to be, we'll see
+later.
+Does of r and a means that the player
+performs, r performs action a in the
+current state.
+Again we'll see how that works out later.
+Next of p means that the proposition p is
+true
+in the next state, the one after the
+current state.
+Legal of r and
+a means that it's legal for role r to play
+action a in the current state.
+Goal of r and n means that the player in,
+in the current state has utility n.
+Terminal means that the current state is a
+terminal state, the game is over.
+GDL has no independent, game independent
+function constants.
+However, there are 101 independent, game
+independent object constants in GDL.
+Namely the base ten representations of the
+integers from zero through 100 inclusive.
+0, 1, 2, 3, 4 and so forth, up to 100.
+These are included mostly as utility
+values for game
+states, with zero being low and 100 being
+high.
+the first step in writing a game
+description is to select
+the game specific vocabulary to capture
+the structure of states and actions.
+For example, here we have object constants
+white and
+black as names for the two roles of the
+game.
+We use A, B, and C to refer to primitive
+entities in the game.
+We have names p and q for relationships
+among primitive entities, and we
+have f and g as operations that can be
+performed on these primitive entities.
+Finally, we have some helper relations, r
+and s.
+The propositions comprising states can be
+thought of as either object
+constants or functional terms in our
+language formed using the relationship
+functions.
+similarly, actions can be either object
+constants
+or functional terms form using action
+factions.
+For example, supplying relationships
+functions p and q to primitive
+objects.
+Applying them to primitive
+[INAUDIBLE]
+a, b, and c, we end up with propositions p
+of a and q of b, c.
+And applying operations f and g to these
+objects.
+We end up with actions like f of a and g
+of b,c and so forth.
+The rules in the game description say
+which propositions are
+true, and which actions are performed as
+shown in what follows.
+And specify the results of the performing
+those actions.
+Finally, we define a game description as
+an open logic programming using GDL's game
+independent vocabulary together with the
+game's game
+specific vocabulary subject to a few
+restrictions here.
+True and does our input relations to the
+program.
+The GDL game description must get complete
+definitions for role, action, base, and
+input.
+I'm sorry, an init.
+it must define legal and goal in terms of
+an input relation true.
+It must define next in terms of input true
+and does.
+Since does and true are treated as inputs,
+there, there're must
+not be any rules with either of those
+relations in the head.
+Okay, well, wow.
+That's a lot to digest.
+in the abstract is concepts are difficult
+to
+master, and as presented, they're not
+particularly well-motivated.
+In practice, things are a lot simpler.
+In the next couple of segments, we
+illustrate these notions by looking at,
+Plus games, specific game description and
+see how it's used in simulating a game.
+

@@ -1,0 +1,842 @@
+1
+00:00:01,060 --> 00:00:03,010
+Topic 4 is Elimination.
+
+2
+00:00:07,910 --> 00:00:11,500
+So I'm going to take another look at
+solving a system of equations.
+
+3
+00:00:14,100 --> 00:00:19,493
+So, I have x minus 2y equals 1 and 3x plus
+2y equals 11.
+
+4
+00:00:24,750 --> 00:00:30,150
+And when I was in high school, the way
+they taught me how to solve this is I
+
+5
+00:00:30,150 --> 00:00:36,930
+would take one of these equations and I
+would solve it for one of the variables.
+
+6
+00:00:36,930 --> 00:00:39,935
+Then I would use that expression So if I
+
+7
+00:00:39,935 --> 00:00:42,950
+took this equation, I'm going to solve it
+for x.
+
+8
+00:00:42,950 --> 00:00:47,320
+I'm going to substitute that expression
+for x into the second equation.
+
+9
+00:00:47,320 --> 00:00:49,896
+And that's going to give me a second
+equation that only
+
+10
+00:00:49,896 --> 00:00:51,010
+involves y.
+
+11
+00:00:51,010 --> 00:00:54,600
+So I can solve that and find the actual
+numeric value of y.
+
+12
+00:00:54,600 --> 00:00:57,240
+And then I can go and plug that into my
+expression
+
+13
+00:00:57,240 --> 00:01:00,149
+in the first equation and that gives me my
+value of x.
+
+14
+00:01:02,670 --> 00:01:09,504
+So let's see, I did that x is equal to 2,
+y plus 1 then I put the 2, y plus 1, I
+
+15
+00:01:09,504 --> 00:01:17,025
+substitute that into the second equation.
+I solve for y and I get y equals 1.
+
+16
+00:01:18,480 --> 00:01:21,417
+And then I plug this y equals 1 back into
+
+17
+00:01:21,417 --> 00:01:24,980
+my first equation and that gives me x
+equals 3.
+
+18
+00:01:24,980 --> 00:01:28,040
+So I end up with the 0.31 or the vector
+
+19
+00:01:28,040 --> 00:01:31,770
+31 being the intersection of these two
+lines.
+
+20
+00:01:35,540 --> 00:01:42,520
+So now let's look at a more technical
+approach for solving this problem.
+
+21
+00:01:42,520 --> 00:01:46,039
+So now I've, instead of just calling this
+x, I'm going to put
+
+22
+00:01:46,039 --> 00:01:49,820
+a 1x here and I'm going to introduce a
+little bit of terminology.
+
+23
+00:01:49,820 --> 00:01:55,388
+So a pivot is going to be the first
+non-zero equation in a row that does
+
+24
+00:01:55,388 --> 00:02:00,630
+the elimination.
+So when I do my substitution,
+
+25
+00:02:00,630 --> 00:02:06,280
+I'm using the first equation to eliminate
+the x in the second equation.
+
+26
+00:02:06,280 --> 00:02:09,320
+So that's what I mean by the row or the
+equation.
+
+27
+00:02:10,390 --> 00:02:12,900
+This is the equation that's going to do
+the elimination.
+
+28
+00:02:12,900 --> 00:02:15,149
+I'm going to use this equation to
+eliminate x.
+
+29
+00:02:16,320 --> 00:02:18,242
+And the period is going to be the first
+
+30
+00:02:18,242 --> 00:02:21,650
+non-zero so I'm looking at the, the
+coefficients here.
+
+31
+00:02:21,650 --> 00:02:26,283
+The equation that's going to do the
+elimination
+
+32
+00:02:26,283 --> 00:02:32,385
+is highlighted and the first non-zero
+coefficient is this 1.
+
+33
+00:02:33,470 --> 00:02:36,360
+So that's why I had put a 1 here, just
+that I could highlight it.
+
+34
+00:02:36,360 --> 00:02:37,770
+So that's going to be called the pivot.
+
+35
+00:02:37,770 --> 00:02:43,940
+And then I'm going to use that pivot to
+work out a multiplier.
+
+36
+00:02:44,978 --> 00:02:47,650
+So I want to eliminate a number.
+
+37
+00:02:47,650 --> 00:02:51,170
+So, if I want this equation to no longer
+depend on x,
+
+38
+00:02:51,170 --> 00:02:56,800
+then the number I want to eliminate is 3.
+And my multiplier
+
+39
+00:02:56,800 --> 00:03:02,370
+is just going to be this number that I
+want to eliminate, divided by the pivot.
+
+40
+00:03:05,240 --> 00:03:07,424
+So in this case, my multiplier would be 3
+that
+
+41
+00:03:07,424 --> 00:03:09,733
+I want to eliminate divided by 1, which is
+3.
+
+42
+00:03:13,300 --> 00:03:17,878
+And then if you think about what actually
+happened
+
+43
+00:03:17,878 --> 00:03:22,783
+when I substituted that expression in for
+x, so when I
+
+44
+00:03:22,783 --> 00:03:28,340
+substituted x equals 2y plus 1, this is
+what I was doing.
+
+45
+00:03:28,340 --> 00:03:33,704
+So, I was adding negative 3x.
+
+46
+00:03:33,704 --> 00:03:38,648
+And so that what I'm going to do is to
+take this negative 3,
+
+47
+00:03:38,648 --> 00:03:44,099
+with 3 as multiplier I worked out, when I
+want to eliminate.
+
+48
+00:03:44,099 --> 00:03:48,131
+What I'm going to do is take negative my
+multiplier times
+
+49
+00:03:48,131 --> 00:03:52,730
+the row that's doing my elimination so
+that's this first row.
+
+50
+00:03:52,730 --> 00:03:58,238
+And I'm going to add that to the second
+equation so the equation
+
+51
+00:03:58,238 --> 00:04:03,797
+where I'm trying to eliminate the number.
+And so if you see what
+
+52
+00:04:03,797 --> 00:04:09,995
+happens when I multiply negative 3 times
+1x, that's going to give me minus 3x.
+
+53
+00:04:09,995 --> 00:04:14,479
+And then when I add, 3 plus negative 3 is
+going to give me 0x.
+
+54
+00:04:14,479 --> 00:04:22,642
+So that's what I mean by eliminating in th
+co-efficiency on x in the second equation.
+
+55
+00:04:22,642 --> 00:04:25,454
+And then to keep the equality, I have to
+do the
+
+56
+00:04:25,454 --> 00:04:29,523
+same operation for the rest of the, rest
+of the co-efiecient.
+
+57
+00:04:29,523 --> 00:04:34,671
+So here I'm going to have negative 3 times
+negative 2
+
+58
+00:04:34,671 --> 00:04:39,605
+so I'm going to have 2 plus 6.
+So I have 2y plus 6y
+
+59
+00:04:39,605 --> 00:04:44,435
+gives me 8y and the I have to do the same
+thing to the
+
+60
+00:04:44,435 --> 00:04:49,840
+right hand side so here I have 11 plus
+negative 3 times
+
+61
+00:04:49,840 --> 00:04:54,804
+1 and that gives me 8.
+So one elimination step or some
+
+62
+00:04:54,804 --> 00:04:59,404
+times it's also called an elimentry step
+is just going
+
+63
+00:04:59,404 --> 00:05:04,376
+to be to subtract a multiple of one
+equation from another.
+
+64
+00:05:04,376 --> 00:05:08,146
+So in this case I'm subtracting 3
+
+65
+00:05:08,146 --> 00:05:13,883
+times the first equation from the second
+equation.
+
+66
+00:05:13,883 --> 00:05:15,843
+And the idea is to use elimination
+
+67
+00:05:15,843 --> 00:05:19,820
+to create something called an upper
+triangular system.
+
+68
+00:05:19,820 --> 00:05:27,920
+So, so for a two by two system, we achieve
+that after just doing one elimination.
+
+69
+00:05:27,920 --> 00:05:33,640
+So upper triangular system means that
+every coefficient below the diagonal.
+
+70
+00:05:34,800 --> 00:05:39,784
+So here, you kind of have to imagine that
+there's a matrix but I have
+
+71
+00:05:39,784 --> 00:05:40,229
+[NOISE]
+
+72
+00:05:40,229 --> 00:05:45,120
+when the row is equal to the column,
+that's my diagonal.
+
+73
+00:05:45,120 --> 00:05:47,760
+So 1 and 8 are my diagonal elements.
+
+74
+00:05:47,760 --> 00:05:52,590
+Below the diagonal is just the coefficient
+on this x in the second equation.
+
+75
+00:05:54,630 --> 00:05:56,330
+And if I can make that zero then
+
+76
+00:05:56,330 --> 00:05:59,630
+I'm going to call this system an upper
+triangular system.
+
+77
+00:05:59,630 --> 00:06:06,120
+So it's only coefficients in the triangle
+here that have non-zero coefficients.
+
+78
+00:06:06,120 --> 00:06:09,523
+And if I can do that then it's going to be
+really easy
+
+79
+00:06:09,523 --> 00:06:14,090
+to solve for x and y using an algorithm
+called back substitution.
+
+80
+00:06:16,700 --> 00:06:21,914
+So if a system is upper triangular, then
+whatever equation's on the bottom,
+
+81
+00:06:21,914 --> 00:06:26,090
+it has zeroes in all of the places except
+for the very last one.
+
+82
+00:06:27,260 --> 00:06:30,380
+So if I look at the bottom, I only ever
+have to solve this.
+
+83
+00:06:32,240 --> 00:06:36,157
+And so in this case, I have 8y is equal to
+8 and that gives me y equals 1.
+
+84
+00:06:38,140 --> 00:06:41,785
+And then once I know that y is equal to
+one I can plug that
+
+85
+00:06:41,785 --> 00:06:43,200
+in here.
+
+86
+00:06:43,200 --> 00:06:46,270
+So I, I'll move all of the y's to this
+side.
+
+87
+00:06:46,270 --> 00:06:48,800
+And I just end up with another upper
+triangular system.
+
+88
+00:06:48,800 --> 00:06:50,216
+So this is a, a trivial upper
+
+89
+00:06:50,216 --> 00:06:53,410
+triangular system because there's just x
+equals something.
+
+90
+00:06:55,140 --> 00:06:55,475
+[COUGH]
+
+91
+00:06:55,475 --> 00:06:58,222
+But if there are more variables I'll have
+to
+
+92
+00:06:58,222 --> 00:07:01,300
+do this one time for, sort of, each
+equation.
+
+93
+00:07:01,300 --> 00:07:04,780
+But every time, I have a very simple
+equation to solve.
+
+94
+00:07:04,780 --> 00:07:05,500
+I only ever.
+
+95
+00:07:05,500 --> 00:07:06,800
+Oops.
+
+96
+00:07:06,800 --> 00:07:08,760
+I only ever have to solve something like
+that.
+
+97
+00:07:12,600 --> 00:07:15,600
+So, I solve for y, then use y to solve.
+Oops.
+
+98
+00:07:15,600 --> 00:07:18,480
+Then use y to solve for x, so I thought I
+
+99
+00:07:18,480 --> 00:07:21,900
+was going to actually do it but I guess I
+forgot
+
+100
+00:07:21,900 --> 00:07:28,870
+to, so if I end up with y is equal to, so
+y is equal to 1 is going to solve this.
+
+101
+00:07:28,870 --> 00:07:32,522
+And then I'll move this to the other side
+of the equal
+
+102
+00:07:32,522 --> 00:07:36,430
+sign and plug in my value for y that I
+just found.
+
+103
+00:07:36,430 --> 00:07:37,714
+And I will have
+
+104
+00:07:37,714 --> 00:07:41,570
+1x is equal to 1 plus 2 or x is equal to
+3.
+
+105
+00:07:41,570 --> 00:07:44,700
+So I get the same, same solution that I
+got in the previous slides.
+
+106
+00:07:49,300 --> 00:07:52,054
+And what we're moving towards now is can
+
+107
+00:07:52,054 --> 00:07:56,259
+we elimin can we represent elimination
+using a matrix?
+
+108
+00:07:57,990 --> 00:08:01,320
+So now let's consider a slightly more
+complicated system.
+
+109
+00:08:01,320 --> 00:08:04,130
+So now I have three equations and three
+unknowns.
+
+110
+00:08:04,130 --> 00:08:07,270
+And I want to write that in the form a x
+equals b.
+
+111
+00:08:09,030 --> 00:08:13,900
+So here's my system and I can write that
+in matrix form.
+
+112
+00:08:13,900 --> 00:08:14,348
+So I have
+
+113
+00:08:14,348 --> 00:08:18,444
+a is a coefficient matrix, so you can
+verify that it just has the same numbers
+
+114
+00:08:18,444 --> 00:08:24,112
+as I have coefficients over here.
+The unknowns are this vector
+
+115
+00:08:24,112 --> 00:08:29,351
+x and then the vector b is the right hand
+side, so it's the 2, 8 and 10.
+
+116
+00:08:35,030 --> 00:08:38,730
+Ahead of time, I'll tell you that the
+solution is negative 1, 2, 2.
+
+117
+00:08:44,970 --> 00:08:48,926
+And so now if I think about this as a
+matrix formula A x
+
+118
+00:08:48,926 --> 00:08:54,060
+equals b that's both the row form and the
+column form of the system
+
+119
+00:08:58,310 --> 00:09:00,686
+And so I can either think of this as just
+a.
+
+120
+00:09:00,686 --> 00:09:01,520
+product.
+
+121
+00:09:01,520 --> 00:09:02,288
+So, if I do the.
+
+122
+00:09:02,288 --> 00:09:06,560
+product of each row with this solution
+we'll see that we get 2, 8, 10.
+
+123
+00:09:06,560 --> 00:09:09,008
+And I can also think of this as
+
+124
+00:09:09,008 --> 00:09:13,840
+multiplying A times x as this linear
+combination.
+
+125
+00:09:13,840 --> 00:09:18,292
+So, it's the first element of x times the
+first column of A plus
+
+126
+00:09:18,292 --> 00:09:23,416
+the second element of x times the second
+column of A plus the third element
+
+127
+00:09:23,416 --> 00:09:30,160
+of x times the third column of A.
+And that also gives me 2,8,10.
+
+128
+00:09:30,160 --> 00:09:33,652
+So I can represent the original equation
+as
+
+129
+00:09:33,652 --> 00:09:38,300
+Ax equals b or the original system of
+equations.
+
+130
+00:09:38,300 --> 00:09:41,006
+And, now let's think about what is
+elimination
+
+131
+00:09:41,006 --> 00:09:43,250
+going to look like in terms of a matrix.
+
+132
+00:09:46,220 --> 00:09:48,464
+So, the first thing I want to do, I
+want to
+
+133
+00:09:48,464 --> 00:09:51,640
+subtract 2 times the first equation from
+the second.
+
+134
+00:09:51,640 --> 00:09:53,250
+So, I want to start eliminating.
+
+135
+00:09:56,930 --> 00:09:59,390
+And so, I'll use something called an
+elimination matrix.
+
+136
+00:09:59,390 --> 00:10:05,382
+So, this looks a lot like the identity
+matrix, it's zeros almost
+
+137
+00:10:05,382 --> 00:10:11,510
+everywhere, except for the main diagonal,
+which is equal to 1.
+
+138
+00:10:11,510 --> 00:10:13,952
+So, if I, if this negative 2 here were
+
+139
+00:10:13,952 --> 00:10:17,700
+a 0, then I would just have the identity
+matrix.
+
+140
+00:10:17,700 --> 00:10:21,280
+So mostly it's going to leave my system
+alone.
+
+141
+00:10:21,280 --> 00:10:22,280
+Except here
+
+142
+00:10:22,280 --> 00:10:29,150
+this negative 2 is going to have the
+effect of, so it's in the 2,1 position.
+
+143
+00:10:29,150 --> 00:10:32,050
+So it's in row 2, column 1.
+
+144
+00:10:32,050 --> 00:10:37,130
+And so that's going to subtract whatever
+this value is.
+
+145
+00:10:37,130 --> 00:10:39,238
+So the multiplier in this case is 2.
+
+146
+00:10:39,238 --> 00:10:42,779
+So it's going to subtract 2 times the
+first equation from the second.
+
+147
+00:10:45,940 --> 00:10:47,734
+And so we can see that just by
+
+148
+00:10:47,734 --> 00:10:52,050
+using either one of our matrix vector
+multiplication pictures.
+
+149
+00:10:52,050 --> 00:10:54,490
+So, if I multiply, so here I'm just
+looking at
+
+150
+00:10:54,490 --> 00:10:57,750
+the right-hand side to make the example a
+little bit easier.
+
+151
+00:10:58,930 --> 00:11:05,110
+So, if I have 1, 0, 0.b1, b2, b3 that's
+just going to give me b1.
+
+152
+00:11:05,110 --> 00:11:07,780
+So this matrix leaves the first element
+unchanged.
+
+153
+00:11:10,000 --> 00:11:15,029
+Then if I say, minus 2, 1, 0 times b2, b1,
+b2,
+
+154
+00:11:15,029 --> 00:11:20,230
+b3 that's going to give me 1 times b2
+minus 2 times b1.
+
+155
+00:11:21,820 --> 00:11:24,700
+So it's subtracting twice whatever was in
+the first row.
+
+156
+00:11:26,130 --> 00:11:30,448
+So twice whatever was in the first row
+from the second row.
+
+157
+00:11:30,448 --> 00:11:35,184
+And then 0 0 1 is just going to give me b3
+back, so that leaves the third row or
+
+158
+00:11:35,184 --> 00:11:37,109
+the third element unchanged.
+
+159
+00:11:41,040 --> 00:11:45,076
+And so if I multiply this by 2, 8, 10.
+This is just me plugging in
+
+160
+00:11:45,076 --> 00:11:49,280
+2, 8, 10, for b1, b2, b3.
+That gives me 2, 4, 10.
+
+161
+00:11:49,280 --> 00:11:57,560
+So the identity matrix has ones down the
+diagonal.
+
+162
+00:11:59,600 --> 00:12:03,065
+So in general, an elimination matrix that
+subtracts
+
+163
+00:12:03,065 --> 00:12:06,270
+a multiple, so this is an l right here.
+
+164
+00:12:06,270 --> 00:12:11,856
+A multiple l of row j from row i, it's an
+identity matrix,
+
+165
+00:12:11,856 --> 00:12:18,380
+except it has an additional non-zero entry
+equal to minus l.
+
+166
+00:12:18,380 --> 00:12:24,580
+And it's in the I th, J th position.
+So E 3,1.
+
+167
+00:12:24,580 --> 00:12:29,320
+So this is going to subtract 3 times row 1
+from row 3.
+
+168
+00:12:29,320 --> 00:12:31,190
+Is that right?
+
+169
+00:12:32,970 --> 00:12:37,366
+So I want to subtract a multiple of row j,
+so j is the second index.
+
+170
+00:12:37,366 --> 00:12:43,398
+3 times row 1 from row i so from
+
+171
+00:12:43,398 --> 00:12:49,460
+the first index, from row 3.
+
+172
+00:12:49,460 --> 00:12:52,490
+And so this is just the example I did on
+the previous page.
+
+173
+00:12:53,550 --> 00:12:56,380
+So previously I had written out the whole
+form of the matrix.
+
+174
+00:12:56,380 --> 00:12:59,220
+Here I'm just going to say E 2, 1, so it's
+subtracting.
+
+175
+00:12:59,220 --> 00:13:04,990
+2 times row 1, so 2 times this index from
+this index.
+
+176
+00:13:08,550 --> 00:13:12,740
+And then, remember the identity matrix is
+just leaving a vector unchanged.
+

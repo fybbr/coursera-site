@@ -1,0 +1,741 @@
+1
+00:00:00,970 --> 00:00:04,070
+So, the next section is Big O Notation.
+
+2
+00:00:09,170 --> 00:00:14,340
+So, Big O Notation came from looking at
+polynomials of degree n as
+
+3
+00:00:14,340 --> 00:00:19,604
+x goes to infinity, so now, the n is
+fixed, but it's the argument
+
+4
+00:00:19,604 --> 00:00:24,940
+of the polynomial the that.
+X value, that's going to be getting large.
+
+5
+00:00:27,130 --> 00:00:32,240
+And I want to have a measure of how fast
+this polynomial is getting big.
+
+6
+00:00:35,470 --> 00:00:39,082
+And so it turns out that, so it should be
+as x goes to
+
+7
+00:00:39,082 --> 00:00:43,270
+infinity, the highest order term dominates
+the other.
+
+8
+00:00:45,080 --> 00:00:51,528
+So what, what I can do is locate the limit
+of my polynomial
+
+9
+00:00:51,528 --> 00:00:56,130
+as x goes to infinity divided by x to the
+n.
+
+10
+00:00:56,130 --> 00:01:00,410
+So x to the n is the highest, it's x to
+the highest power.
+
+11
+00:01:00,410 --> 00:01:02,470
+It's x to the degree of the polynomial.
+
+12
+00:01:03,780 --> 00:01:05,793
+So I can write my polynomial like this,
+
+13
+00:01:05,793 --> 00:01:08,111
+it's just the time sum of a coefficient
+times
+
+14
+00:01:08,111 --> 00:01:10,246
+a constant term plus a coefficient times x
+
+15
+00:01:10,246 --> 00:01:13,410
+plus a coefficient times x squared, and so
+on.
+
+16
+00:01:13,410 --> 00:01:18,380
+Up to a coefficient times x to the n, so
+that'll be the last term.
+
+17
+00:01:18,380 --> 00:01:25,316
+So there's one term in the numerator here
+that's a coefficient times x to the n.
+
+18
+00:01:25,316 --> 00:01:25,652
+And
+
+19
+00:01:25,652 --> 00:01:31,252
+I'm going to divide that sum by x to the n
+and what I'm going to get
+
+20
+00:01:31,252 --> 00:01:36,761
+is 1 term that is a sub n times x to the n
+divided by x to the n.
+
+21
+00:01:36,761 --> 00:01:39,677
+So that is just going to be a times
+
+22
+00:01:39,677 --> 00:01:44,105
+x to the n And then each additional term,
+because
+
+23
+00:01:44,105 --> 00:01:47,021
+the term on top is the power to the
+
+24
+00:01:47,021 --> 00:01:51,017
+smaller than, than n The x is going to
+move down
+
+25
+00:01:51,017 --> 00:01:57,821
+to the denominator And so if I take the
+limit of each of these terms as x goes to
+
+26
+00:01:57,821 --> 00:02:04,853
+infinity each of these terms is going to
+get smaller and smaller and smaller.
+
+27
+00:02:04,853 --> 00:02:10,310
+While this a sub n coefficient from the xn
+term is going to remain
+
+28
+00:02:10,310 --> 00:02:16,195
+constant and actually when I take this
+limit what I'm going to end up
+
+29
+00:02:16,195 --> 00:02:17,858
+with is a to the n.
+
+30
+00:02:17,858 --> 00:02:24,064
+And so, Big O Notation is just trying to
+summarise this behaviour in a
+
+31
+00:02:24,064 --> 00:02:30,863
+simpler way And so, I'm going to say the
+polynomial p of x is Big O of x to the n.
+
+32
+00:02:30,863 --> 00:02:36,080
+So the way you can sort of think is if you
+look at x to the n or
+
+33
+00:02:36,080 --> 00:02:41,323
+the polynomial and sort of zoomed out.
+What is this going
+
+34
+00:02:41,323 --> 00:02:42,567
+to look like?
+
+35
+00:02:42,567 --> 00:02:45,167
+So if you had a very small scale
+
+36
+00:02:45,167 --> 00:02:49,590
+so all the terms are going to contribute
+something.
+
+37
+00:02:49,590 --> 00:02:51,630
+So suppose I was looking at x squared plus
+
+38
+00:02:51,630 --> 00:02:54,099
+x plus 1 so each term is contributing
+eaqually.
+
+39
+00:02:54,099 --> 00:02:57,651
+When I evaluate it at the point 1,000,
+
+40
+00:02:57,651 --> 00:03:02,380
+now the x squared term is contributing a
+million.
+
+41
+00:03:02,380 --> 00:03:06,427
+The x term is contributing 1,000, and x,
+er the constant term
+
+42
+00:03:06,427 --> 00:03:08,920
+is contributing just 1.
+
+43
+00:03:08,920 --> 00:03:13,618
+So on kind of a percentage wise bit the
+million is dominating that
+
+44
+00:03:13,618 --> 00:03:17,592
+and so as I zoom out all I'm going to see
+is a parabola.
+
+45
+00:03:17,592 --> 00:03:21,792
+And whatever effect the x and the 1 have,
+at a smaller scale
+
+46
+00:03:21,792 --> 00:03:27,960
+their just going to disappear as I keep
+moving to larger and larger scales.
+
+47
+00:03:27,960 --> 00:03:31,512
+And so because that polynomial would look
+like a parabola
+
+48
+00:03:31,512 --> 00:03:35,240
+as I sort of zoomed out and just continued
+zooming out.
+
+49
+00:03:35,240 --> 00:03:41,120
+I'm going to say that, that would be order
+of x squared or order x to the 2.
+
+50
+00:03:41,120 --> 00:03:46,208
+And so formally the way we're going to
+determine Big O Notation is
+
+51
+00:03:46,208 --> 00:03:51,572
+let f and g functions.
+So the fruncs, functions from
+
+52
+00:03:51,572 --> 00:03:56,984
+the real numbers with a real output and
+then I'll
+
+53
+00:03:56,984 --> 00:04:02,770
+say f of x is big O of g of x as x goes to
+infinity.
+
+54
+00:04:02,770 --> 00:04:03,900
+If they're.
+
+55
+00:04:03,900 --> 00:04:07,780
+Is some constant c, and some constant m
+both greater than 0.
+
+56
+00:04:07,780 --> 00:04:10,212
+So I'm not really concerned with sign
+here,
+
+57
+00:04:10,212 --> 00:04:13,170
+all I'm concerned with is just relative
+magnitude.
+
+58
+00:04:15,060 --> 00:04:17,272
+So if f of x divided by g of x, as x is
+
+59
+00:04:17,272 --> 00:04:22,500
+getting larger and larger and larger, if
+this ratio is bounded by a constant.
+
+60
+00:04:22,500 --> 00:04:25,950
+So, for instance in the last example, it
+was just this
+
+61
+00:04:25,950 --> 00:04:30,130
+coefficient on the highest degree term of
+the polynomial a sub n.
+
+62
+00:04:31,760 --> 00:04:36,530
+whenever x is greater than some fixed real
+number, so that this
+
+63
+00:04:36,530 --> 00:04:41,430
+is just me trying to take advantage of the
+definition of a limit.
+
+64
+00:04:42,680 --> 00:04:48,069
+Then, we'll say that.
+f of x is big O of g of x, so they
+
+65
+00:04:48,069 --> 00:04:53,713
+grow at the same rate after x exceeds some
+
+66
+00:04:53,713 --> 00:04:58,709
+threshold.
+Similarly, we can sort
+
+67
+00:04:58,709 --> 00:05:04,630
+of spin this around for finite points.
+
+68
+00:05:04,630 --> 00:05:06,702
+So generally, when I'm thinking of x going
+
+69
+00:05:06,702 --> 00:05:09,540
+off to infinity, I'm thinking of things
+getting bigger.
+
+70
+00:05:09,540 --> 00:05:13,336
+So the function of x is getting bigger and
+I'm interested in,
+
+71
+00:05:13,336 --> 00:05:16,540
+you know, are f and g growing at the same
+rate?
+
+72
+00:05:16,540 --> 00:05:19,550
+You know, up to a constant of
+proportionality?
+
+73
+00:05:19,550 --> 00:05:23,250
+Or is f growing, you know, at some faster
+rate?
+
+74
+00:05:23,250 --> 00:05:26,898
+Y'know, so if f was a polynomial of degree
+3, and g was a
+
+75
+00:05:26,898 --> 00:05:29,938
+polynomial of degree 2, then there
+wouldn't
+
+76
+00:05:29,938 --> 00:05:32,230
+be a value c that kept this bounded.
+
+77
+00:05:34,460 --> 00:05:37,430
+On the other hand, when I, I look at a
+finite point.
+
+78
+00:05:37,430 --> 00:05:41,420
+So now I'm thinking about x going to a,
+rather than x goes to infinity.
+
+79
+00:05:41,420 --> 00:05:44,230
+So I pick some real number a.
+
+80
+00:05:44,230 --> 00:05:49,010
+And I want to think, how does f of x
+behave as I move closer and closer to a?
+
+81
+00:05:50,550 --> 00:05:54,733
+Then, I still want to have this constant c
+which is sort of
+
+82
+00:05:54,733 --> 00:06:00,409
+my constant of proportionality, but now
+I'm going to have a width, delta.
+
+83
+00:06:00,409 --> 00:06:05,159
+And so I want to say that f of x and g of
+x, so f of x divided by g of
+
+84
+00:06:05,159 --> 00:06:09,244
+x, the ratio of that magnitude is less
+than or equal
+
+85
+00:06:09,244 --> 00:06:14,860
+to this constant of proportionality
+whenever x is within delta of a.
+
+86
+00:06:16,080 --> 00:06:21,539
+So, in some neighbourhood around the point
+a, f of x and g of x have the same.
+
+87
+00:06:22,960 --> 00:06:26,200
+So, when it goes to infinity I say sort of
+growth characteristic here.
+
+88
+00:06:26,200 --> 00:06:30,360
+I, I suppose I should say it shrink
+characteristic or something like that.
+
+89
+00:06:31,590 --> 00:06:36,731
+And so what I'm after in this case with
+the second definition is
+
+90
+00:06:36,731 --> 00:06:42,590
+I want to understand how big the Taylor
+approximation error is.
+
+91
+00:06:42,590 --> 00:06:46,330
+And so I want to understand that, as the
+point where I'm making my
+
+92
+00:06:46,330 --> 00:06:49,254
+approximation, gets closer and closer and
+closer
+
+93
+00:06:49,254 --> 00:06:51,362
+through the point a where I've built
+
+94
+00:06:51,362 --> 00:06:52,550
+my approximation.
+
+95
+00:06:56,970 --> 00:06:59,210
+And now, so if, if.
+
+96
+00:06:59,210 --> 00:07:01,406
+If I'm looking at things getting big, you
+
+97
+00:07:01,406 --> 00:07:03,850
+know, quadratic or cubic that's sort of
+bad.
+
+98
+00:07:03,850 --> 00:07:07,386
+That's saying, well, x is already getting
+big and x squared
+
+99
+00:07:07,386 --> 00:07:10,580
+or x cubed is getting big much, much
+faster than that.
+
+100
+00:07:11,920 --> 00:07:13,270
+And in that case it would be the
+
+101
+00:07:13,270 --> 00:07:16,420
+highest order term that's sort of going to
+dominate.
+
+102
+00:07:16,420 --> 00:07:22,100
+When I look at things getting small, so if
+I take 1 and square it, I get 1.
+
+103
+00:07:22,100 --> 00:07:24,578
+If I take something smaller than 1 and
+square it,
+
+104
+00:07:24,578 --> 00:07:26,960
+I get a number smaller than what I started
+with.
+
+105
+00:07:28,020 --> 00:07:33,500
+And so there it's going to be the smaller
+power that's going to be the dominant one.
+
+106
+00:07:35,310 --> 00:07:37,983
+And so what I'm, what I want to be able to
+
+107
+00:07:37,983 --> 00:07:42,141
+show here, is that the Taylor
+approximation error is big O.
+
+108
+00:07:42,141 --> 00:07:44,793
+So that the distance between the point,
+
+109
+00:07:44,793 --> 00:07:47,913
+where I'm evaluating my Taylor polynomial
+and
+
+110
+00:07:47,913 --> 00:07:51,840
+the point a where I've constructed my
+Taylor polynomial.
+
+111
+00:07:55,040 --> 00:08:00,136
+The larger I can make this number, the
+faster this error is
+
+112
+00:08:00,136 --> 00:08:05,446
+going to get smaller as I move towards a.
+So once I'm sort
+
+113
+00:08:05,446 --> 00:08:11,340
+of within 1 of a, this quantity is going
+to be less than 1.
+
+114
+00:08:11,340 --> 00:08:13,920
+And when I start taking powers of that
+it's going to get small.
+
+115
+00:08:15,260 --> 00:08:18,530
+And then the larger the power I can, I can
+make.
+
+116
+00:08:18,530 --> 00:08:20,420
+The faster this is going to get small,
+
+117
+00:08:20,420 --> 00:08:22,160
+as I move closer and closer to a.
+
+118
+00:08:28,570 --> 00:08:32,820
+So I can also just rewrite this as one of
+the terms in my Taylor
+
+119
+00:08:32,820 --> 00:08:37,460
+polynomial approximation.
+So I've said that.
+
+120
+00:08:37,460 --> 00:08:43,077
+f of x minus the approximation at x is
+order x minus
+
+121
+00:08:43,077 --> 00:08:48,700
+a to the n plus 1.
+And this is again, as x is going to a.
+
+122
+00:08:49,850 --> 00:08:53,620
+So it's not trying to say how bad does the
+approximation get as I move away from
+
+123
+00:08:53,620 --> 00:08:57,680
+a, it's trying to tell me how good does
+the approximation get as I move towards a.
+
+124
+00:08:58,910 --> 00:09:02,210
+And I can just add the polynomial to both
+sides, so I move the
+
+125
+00:09:02,210 --> 00:09:05,240
+p sub n of x over to the right hand side
+of the equality.
+
+126
+00:09:06,910 --> 00:09:10,220
+And then replace that with, the
+definition.
+
+127
+00:09:10,220 --> 00:09:13,356
+And so what you see is here I have a, the
+constant part of the
+
+128
+00:09:13,356 --> 00:09:16,044
+approximation, then I would have the
+linear part
+
+129
+00:09:16,044 --> 00:09:18,668
+of the approximation, the quadratic part
+of the
+
+130
+00:09:18,668 --> 00:09:21,110
+approximation and so on.
+
+131
+00:09:21,110 --> 00:09:27,670
+And I end up with my last term being a
+sort of nth degree approximation term.
+
+132
+00:09:29,600 --> 00:09:33,080
+And then the amount that I missed by is
+going to be
+
+133
+00:09:33,080 --> 00:09:37,080
+on the order on x minus a to the 10 plus
+first power.
+
+134
+00:09:37,080 --> 00:09:39,130
+Again, as a is moving towards x.
+
+135
+00:09:43,510 --> 00:09:47,700
+And what this allows us to say is, for
+instance, the linear approximation.
+
+136
+00:09:47,700 --> 00:09:52,860
+So here's my Taylor polynomial of order 1.
+
+137
+00:09:52,860 --> 00:09:55,320
+So I have a, a constant part of the
+approximation
+
+138
+00:09:55,320 --> 00:09:58,039
+and then I have the linear part of the
+approximation.
+
+139
+00:09:59,210 --> 00:10:05,350
+And then what's left over is big O of x
+minus a squared.
+
+140
+00:10:11,650 --> 00:10:13,810
+The quadratic approximation, then, is
+going
+
+141
+00:10:13,810 --> 00:10:16,076
+to be a third-order approximation,
+because.
+
+142
+00:10:19,050 --> 00:10:22,550
+Both so where this term is coming from is
+from either the
+
+143
+00:10:22,550 --> 00:10:28,270
+derivative form or the or the integral
+form of the Taylor approximation error.
+
+144
+00:10:28,270 --> 00:10:33,690
+So I have the x minus a cubed is the, the
+size of.
+
+145
+00:10:33,690 --> 00:10:36,890
+That's describing the growth of the
+approximation error.
+
+146
+00:10:36,890 --> 00:10:40,120
+How fast it, I suppose, shrinks as x goes
+to a.
+
+147
+00:10:41,590 --> 00:10:44,194
+And I don't really care about the
+
+148
+00:10:44,194 --> 00:10:49,030
+constant of proportionality, I just want
+to know if I use
+
+149
+00:10:49,030 --> 00:10:53,499
+this approximation, and then I move twice
+as close to a.
+
+150
+00:10:53,499 --> 00:10:58,200
+This term is going to get smaller at a, at
+a cubic rate.
+
+151
+00:11:00,810 --> 00:11:04,010
+And so again the, the larger I can make
+this power.
+
+152
+00:11:04,010 --> 00:11:06,710
+So this is just me adding more terms.
+
+153
+00:11:06,710 --> 00:11:09,662
+Then as x goes to a means I'm getting
+closer
+
+154
+00:11:09,662 --> 00:11:14,032
+and closer to the thing that I want to be
+getting.
+
+155
+00:11:14,032 --> 00:11:17,490
+at a faster and faster rate, so as this
+number gets bigger and bigger.
+

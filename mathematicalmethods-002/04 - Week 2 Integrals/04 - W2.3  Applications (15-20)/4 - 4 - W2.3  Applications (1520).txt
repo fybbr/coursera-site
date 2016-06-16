@@ -1,0 +1,375 @@
+So, I think
+hopefully everybody knows the distance
+formula, if
+not I made it just on one slide.
+So, distance equals rate times time.
+This just means if I'm say driving at a
+certain speed say
+30 miles per hour for three hours, I'm
+going to go 90 miles.
+it's actually amazing how often this is
+the correct answer to
+a question, or the corre, correct way to
+solve a question.
+if you can recognize what you're going to
+think of as distance, what you're going
+to think of as rate, and what you're going
+to think of as time.
+This form of the distance formula really
+only works
+when the rate is constant across the
+entire time.
+But now that we can integrate, we're
+going to be
+able to allow that to change a little bit.
+So, it provides intuition for a lot of
+problems, and
+all that we're really doing is imagining
+rate on one
+axis, time on another axis, and then the
+distance you're
+going to cover is going to be equal to
+this area.
+So that's just the definition of the area
+of a rectangle is height times width.
+So let's look at something I call the, the
+job problem, which
+seems to give a lot of people quite a lot
+of trouble.
+so, I take my motivation quite often from
+the Simpsons.
+So, I said if Lenny can do a job in 6
+hours and Carl can do
+the same job in 4 hours, how long does the
+job take if they work together?
+a lot of times when you ask
+people this question, they will say
+something the first
+number that pops into their head is 5
+hours.
+which seems to make sense, because it's
+just the average of 4 and 6.
+But that would actually mean that by
+helping
+out Carl, Lenny is making the job take
+longer.
+So, you know, clearly that's not the right
+way to think about the problem.
+And the right way to think about this
+problem is
+that it's the rates that are additive.
+So, Lenny, if he can do a job in 6 hours,
+he can do 1/6th of the job per hour.
+And Carl, can do 1 quarter of the job per
+hour.
+So if they're working together, their rate
+is going to be 1/6th
+plus 1/4th, and that ends up being 5/12ths
+of the job per hour.
+And so, here, the job is what's going to
+end up
+being the distance and the time is what
+we're asking for.
+How long does it take them to do the job
+if they're working together?
+So, solving for time, I just get distance
+divided by rate.
+And then I've worked out what these
+numbers are, we have one job.
+The rate that they're working is 5 over 12
+jobs per hour.
+I can multiply the top and bottom of that
+by 12 over 5 and get 12/5th.
+So the job is going to take 2 hours and 24
+minutes if they work together.
+But we've still made the assumption, that
+Lenny
+and Carl are working at a constant rate.
+So, suppose instead, that Lenny works at a
+rate L
+of x and Carl works at a rate C of x, then
+my
+condition that I started out with, I could
+rewrite
+this in terms of definite integrals.
+So I know
+that if I let Lenny work for 6 hours, he's
+going to finish one job.
+So that means that the integral of L of x
+from 0
+to 6 has to be equal to 1, and then oops,
+now I've
+confused L's and my C's.
+So I think this should be the C
+and the integral from 0 to 4 of c of x
+should also be equal to 1.
+And that's just the way of mathematically
+writing down the condition, or the
+statement that Lenny can do one job in 6
+hours and Carl can do one job in 4 hours.
+And so now my job question is, can I find
+a capital T,
+so that's a, a time, so that when I add
+these rates together I get 1.
+And
+so now, this is not quite as nice
+a problem, because there are actually a
+whole
+bunch of different rates that I could add
+together that would, that would give me
+this condition.
+So for instance I could just say well, I
+guess I can't.
+So I have some constraints to, so I am
+bound by the constraint that Carl works at
+this rate.
+So the integral of that one has to be over
+0 to
+4 to be 1 and the integral of L of x over
+0 to 6 also has to be 1.
+So I just invented some functions to, to
+try and show, demonstrate this.
+So I chose 12 minus x divided by 54.
+And all this is going to, all this is
+going to do,
+is when we're at time zero.
+So when x is zero, I'm going to have 12
+minus zero divided by 54.
+And at the end of the job, so when x
+is equal to 6, I'm going to have 12 minus
+6, which is going to be 6 divided by 54.
+And we can forget about the bottom,
+because that's the same.
+So at the beginning, we have 12 over
+something
+and at the end, we have six over
+something.
+Six is half of 12,
+so all this is saying is that Lenny is
+working twice as hard
+at the beginning of the time period as he
+is at the end.
+So he gets tired while he's working, so by
+the
+end of the 6 hours, he's going only half
+as fast.
+And then I just have to put this 54 down
+here so that the, the condition,
+the constraint that he finishes the job in
+6 hours is met.
+And then I'm going to do
+exactly the same thing for Carl.
+So initially he's working at 8 over 24, at
+the
+end of his 4 hours, he's working at 4 over
+24.
+So he works faster, so he's also getting
+tired faster.
+And
+now, how long is it going to take them if
+they, if they work together?
+So, would it be more or less than the 2
+hours and 24 minutes?
+So basically what I want to do is find T,
+so that when I integrate this
+function, L of x plus C of x from zero to
+T, I get my one job finished.
+And so I'm just going to start by plugging
+in the two functions.
+So L of x was 12 minus x over 54 and C of
+x was 8 minus x over 24.
+And then I don't like having these numbers
+in the denominator.
+So I'm going to multiply both sides of
+this by 216, that's going to be
+4 times 54.
+So the 4 times 50 is 200, 4 times 4 is 16,
+216.
+Or it'll be 9 times 24.
+You can do that in your head pretty easily
+too, because 10 times 24 would be 240,
+and that's 24 more than 216 so that's got
+to be 9 times 24.
+And so
+that's going to get everything out of the
+denominator.
+So, mostly the reason I wanted to do that,
+it makes
+the lines a little skinnier so it all fits
+on one slide.
+But it also means that I can now add these
+together, so my integral is going to
+simplify itself a bit before I actually
+have to compute an anti-derivative.
+And so what I end up having to compute
+the anti-derivative of is this function
+here, 120 minus 13x.
+So I can just use my anti-power rule to
+get that.
+And that's going to give me 120x minus 13
+over 2 x squared from 0 to T.
+And now, even though the variable T is on
+this side, I, I treat it exactly the
+same way, so I'm just going to evaluate my
+anti deriv, oops, my anti derivative here.
+I evaluate it at T and then subtract it,
+evaluate
+it at 0, so I get 120T minus 13 over
+2 T squared.
+And then luckily on this side, since I've
+got that zero, when I plug in zero to the
+to, to this anti-derivative, I just get 0,
+so that makes things a little bit simpler.
+So I end up with 13 T squared.
+So I, I multiplied both sides of this by,
+by 2 as well, 13T squared minus 240T plus
+216, oops, I
+think I forgot to multiply that bit by 2.
+And
+then you can solve that by using the
+quadratic formula.
+And that gives 57 minutes.
+Although I think it gives 57 minutes for
+this one that
+I forgot to multiply by 2, so I'll have to
+check
+that.
+And then another application where this is
+going to
+turn of for those of you that are taking
+461.
+in the next couple of weeks, we're
+going to
+learn about something called a probability
+density function.
+So, I'm going to denote a probability
+density function for a random variable x.
+It says f sub X, and its argument is going
+be little x, and I'm
+going to use it to assign probabilities to
+a random variable being in an interval.
+So I'm reading this thing on the left hand
+side.
+It's the probability that my random
+variable is in the interval
+[a, b].
+It's just going to be the integral of my
+probability density function over the
+interval [a,b].
+The support of a random variable is just
+going to be
+the, the set of points, so generally it's
+an interval.
+a set of points S, where the probability
+density function is greater
+than or is greater than zero, when x is in
+S.
+And so, some of the profi-, properties of
+a probability density function
+are, if f sub X is a probability, so I'm
+going to eval, abbreviate that
+as pdf, then I have to have f of x is
+greater than or equal to 0 for all real
+numbers.
+And when I integrate this, so sometimes
+instead of
+instead of writing an interval as just
+from a
+to b, I might want to write a set that
+might be made up of more than one
+interval density function.
+And so, in that case, when I've defined S
+to be a set.
+So, here S is the set of points where this
+thing strictly greater than 0.
+I can write the integral sign, and I'll
+just
+put the name of the set at the bottom.
+And the integal has to be equal to 1.
+So the exercise that'll show up quite
+often is, can you
+prove that a certain function is actually
+a probability density function?
+And so I'll go through one example of that
+pretty quick.
+So the PDF of a beta 2-2 distribution, is
+defined to be 6x
+times 1 minus x, when x is in the interval
+[0, 1], and its defined to be 0 otherwise.
+So if I want to verify that f of x is
+greater than or equal to zero, that should
+be pretty straightforward.
+If I have a number between zero and one,
+then it's greater than or equal to zero.
+So 6x has to be greater than or equal to
+zero.
+And one minus x, so the smallest this
+could be
+is when x is equal to 1 and that's zero.
+So, it's pretty easy to verify the first
+condition.
+The, the work is usually verifying that
+the
+PDF is going to integrate is going to
+integrate
+to one over it's support.
+So here going to have the, the integral,
+so S is going to be 0 to 1.
+So, it doesn't actually include the
+endpoints, but
+those end up not mattering for the
+integral.
+So, I'm going to say this is just an
+integral from
+0 to 1 of 6 x times 1 minus x.
+Oops, again that typo.
+dx, so this x, shouldn't be here.
+Hopefully that's going to go away.
+[COUGH]
+And
+so, using some of the properties I've
+listed in the first set of slides.
+I have, I can think of x times 1 minus x
+as
+my f of x, and so I'm just multiplying
+that by a constant.
+So I can take that constant outside of my
+integral sign to make things a
+little bit simpler, and then I'm just
+going to just go ahead and do the
+multiplication.
+So I have x times 1 gives me x.
+And then x times x gives me the x squared
+here.
+And then I can calculate the
+anti-derivative of that, just using my
+anti power rule on each term.
+So the first one came from 1 half x, 1
+half x squared, and the second term came
+from 1/3rd x cubed.
+And now that I've written down my
+anti-derivative here,
+I've moved my limits to the right hand
+side.
+So it means this notation again, just
+means evaluate
+my anti-derivative upper end point and
+subtract
+the anti-derivative evaluated at the lower
+end point.
+So, again, because I have an x in each
+term, the bottom
+endpoint is just going to be zero, that
+simplifies things quite a bit.
+So, I end up with just 1 half minus 1/3rd.
+Oops, and that's equal, so 1 half is, I
+can write that as 3 over 6.
+1/3rd, I could think of as 2 over 6, so 3
+over 6 minus 2 over 6 is 1 over 6.
+And I
+have this 6 out in front and that cancels
+each other out.
+So, I verified that this function here, fx
+of x is a valid probability density
+function.
+

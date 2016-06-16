@@ -1,0 +1,386 @@
+Last time, I talked about elimination and
+then I wanted to be able to do that
+using matrices and I used that to motivate
+my rule for matrix multiplication.
+And now, I want to sort of try and put
+everything together.
+So really what we did in Topics 3, 4, and
+5.
+And I have one specific example of trying
+to solve this problem Ax equals b.
+So I have a, a square matrix A, an unknown
+vector x, and a right-hand side b.
+So where this comes from is a system of
+equations.
+So I want to try and solve this system of
+equations on the left here.
+So, 2x1 plus 4x2 minus 2x3 equals 2, and
+so
+on.
+And I'm going to start by first writing
+this out in matrix notation.
+So I have, just, so what I'm going to do
+is something kind of
+like the idea of place value when I, when
+I want to write down a number.
+Just where these numbers are tells you a
+lot about what they means.
+So, for instance, I don't need to have
+the, the variables x3 in here anymore.
+Because I know if I write it organized
+like
+this, where the third variable is always
+in the
+third column, the second variable is
+always in
+the second column, first variable's always
+in the
+first column then it's clear what each of
+these numbers means without having the
+little x there.
+So all that's important are the
+coefficients
+and, and then these pluses and minuses
+are just going to show up as the sign of
+the number in the matrix.
+So I can represent this thing
+here as a coefficient matrix times this
+unknown vector
+x, that components of x are x1, x2, x3.
+And then I'm going to take the equalities,
+so the numbers on the right-hand side
+here,
+and put those in a vector and put that on
+the right-hand side over here.
+So that becomes my vector B.
+[COUGH]
+And
+now I want to be able to do elimination.
+I don't want to have to be carrying two
+things all the time.
+So really what I'm trying to do is
+introduce
+zeros in these elements that are below the
+diagonal.
+But I also need to be, and, and I want to
+do
+that by adding and subtracting multiples
+of one row from another.
+But I also have to keep in mind that every
+time I do one
+of those steps, that's going to have some
+effect on this right-hand side as well.
+So one approach to dealing with that is I
+can make something called an augmented
+matrix and I'll call that A with a little
+prime next to it, so A prime.
+It's nothing to do with the derivative,
+it's just to distinguish it from A.
+And that's going to be the matrix formed
+by taking the coefficient
+matrix and binding this right-hand side
+vector b to it.
+And so that just looks like this.
+And so this is really all I need when I
+want to do elimination.
+I don't need these xs anymore because just
+the position of these numbers
+in the matrix tells me what equation and
+what variable they correspond to.
+And now I'm going to do elimination on
+this
+augmented matrix, A prime and see if
+I can't solve this system of linear
+equations.
+And so, the strategy that I'm going to
+use, I want to do elimination and
+I want to design each of my elimination
+steps to introduce the 0 below the
+diagonal.
+So to get this into upper triangular form,
+the diagonal elements, so it gets a
+little bit trickier now when I have a
+rectangular, a non-square matrix, what
+does diagonal mean?
+Because I would sort of think it should go
+from top left to bottom right
+but then it's going to miss a whole bunch
+of stuff.
+So, the diagonal elements of a matrix
+are always the elements where the indices
+match.
+So, this is the first row and the first
+column, this is the second
+row and the second column, and this is the
+third row and the third column.
+So that's the diagonal regardless how many
+columns and rows the matrix has.
+And
+what I want to do is choose pivots and and
+then
+elimination steps to introduce the zero
+here, then here, and then here.
+And then once I have this in as an upper
+triangular
+system, I can use the back substitution
+algorithm to solve this easily.
+And this time, I, I want to do this with
+matrices.
+So I'm going to sort of go through this in
+all of its gory detail just
+one time and hopefully it should be clear
+what this algorithm is trying to do.
+So I start out with my matrix A prime.
+I guess I should highlight it down here.
+I have my matrix A prime here and I want
+to
+introduce, I want to find a pivot in the
+first row.
+So that's going to be the, the definition
+of a
+pivot is the first non-zero value in a
+row.
+So if I, I start with the first row, if
+this
+value is not zero then that's going to be
+my pivot.
+In this case, it's a two, it's not zero so
+I choose it as my pivot and I make it red.
+Then I'm going to design an elimination
+matrix that subtracts twice the first
+row from the second row.
+So in the case, what I, what I look at is
+my pivot is 2.
+This is the row doing the elimination,
+this is the value I want to eliminate.
+So my multiplier was this 4 divided by the
+pivot so I get
+a multiplier of 2.
+And then an elimination matrix says, I
+have to take an identity matrix and then
+the 1, the, the correct index below
+it, so in this case, 2 1.
+I take minus the multiplier and I put that
+in there.
+And we know what this is suppose to do.
+This is suppose to subtract twice the
+first row from the second.
+So if you see what I ended up with over
+here, the first row stays the same
+and then the second row, I have 4 minus 2,
+that's going to be equal to 0.
+And you always know you're going to get a
+0 here because that's how you're choosing
+the multiplier.
+I'm choosing my multiplier specifically to
+make this one number 0.
+And then I have to sort of suffer the
+consequences of that decision with the
+rest of the matrix.
+So, this 9, I'm taking this row minus
+twice
+the first row.
+So it'll be 9 minus 2 times 4, 9 minus 8
+and that'll give me a 1.
+Then a negative 3 minus 2 times negative
+2, so it
+gets a little tricky when you have minus
+signs in here.
+that's actually going to be minus 3 plus 4
+so I end up with a 1 in this position.
+And then, 8 minus 2 times 2 gives me 4.
+So that's my first elimination step.
+And it was represented by this matrix E1.
+And this isn't a, a standard notation,
+it's just something I kind of made up
+because this was getting a bit too
+complicated to, to keep following through.
+But essentially what I'm trying to do is I
+have my first elimination matrix,
+well, operate on my original augmented
+matrix and
+give me this matrix A1.
+So this is A1 on the right over here and
+it's got this 0 where I wanted it.
+And then what I want to do is now come up
+with
+an elimination matrix E2 that's going to
+turn this value into a 0.
+So let's see how I do that.
+So, I look at my matrix A1, oops, my pivot
+is still a 2 and the number I want to get
+rid of is a negative 2 so I want to, I
+have a multiplier of negative 1.
+And that means I actually end up adding
+the third
+row sorry, adding the first row to the
+third row.
+So in the elimination matrix, this ends up
+being positive this time.
+And then I can either think of this as an
+elimination step, like I did last time
+or I could just, well, I probably wouldn't
+do it, I'd just use a computer to do it.
+But you could just do the matrix
+multiplication E2 times A1 and that's
+going to give you this matrix that I've
+called A2 on the right hand over here.
+And it has exactly what I wanted to
+happen.
+So I, I had this 0 here already and
+now I've constructed an elimination to
+give me a 0 here.
+And to get this into upper triangular
+form, the last thing
+I need to do is get rid of this one here.
+And so, I've already sort of used up this
+pivot, this 2 here because everything
+below it is 0.
+So sort of, I'm happy with this column.
+So I'm going to switch to the next row and
+in
+the second position, so the first number
+is a 0.
+So my definition of a pivot
+says first non-zero number in the row is
+going to be the pivot.
+So now, it's this 1 that's going to be the
+pivot.
+So I want to find the pivot in the
+second row and then eliminate the values
+below it.
+So introduce zeros, so if I introduce a
+zero below this one, then I'll be
+finished.
+The matrix will be an upper triangular
+form, so it'll be an upper triangular
+system.
+So I'm going to do that with an
+elimination matrix E3, 2.
+And this has a multiplier of 1, that's
+pretty easy because it's just 1 divided by
+1.
+And that says my elimination matrix, so
+note that the 3, 2 here is
+telling me what position to put this
+multiplier in.
+And then the, because it's an elimination
+matrix I
+want to subtract so that's going to be
+minus
+the multiplier goes into the 3, 2 element
+and otherwise this matrix is just an
+identity matrix.
+So this matrix says I should subtract the
+second row from the third row.
+And so I can then either think of this as
+an elimination
+step or I can just do the matrix
+multiplication E3 times A2.
+And that's going to give me my a, matrix
+A3 and it's done exactly what I wanted
+again.
+So, this was a 1, I've eliminated it with
+this elimination
+matrix E3 and gotten myself in upper
+triangular matrix.
+And then just to be complete, so I, I
+picked this two in the first row, as
+my first pivot.
+Once I'd eliminated the 0 eliminated the
+numbers below it, then I picked this
+element that became my second pivot.
+And even though there's still, there's
+nothing left to do,
+there still is a pivot in the third row as
+well.
+So it's just the first non-zero number
+in the row becomes the pivot.
+And so in this, in this case, we had three
+rows and each row has
+a pivot but I'll, I'll mention a little
+bit later that's not always the case.
+So now, it's easy to use back substitution
+to solve for the values of x1, x2, and
+x3.
+So here, this just means 4x3, so it's
+in the, it's in the 4th, sorry, the 3rd
+column, the column that corresponds to x3.
+And then it's equal to 8 because this 8
+over here is the, the vector I sort of
+bound on when I made the augmented matrix.
+So that tells me x3
+has to be equal to 2.
+Then my second row tells me x2 plus x3 has
+to be equal to 4.
+So I already know what x3 is so I plug
+that in and then
+solve for x2, and that tells me that x2 is
+also equal to 2.
+And then my top row tells me that 2x1 plus
+4x2 minus 2x3 has to be equal to 2 as
+well.
+[COUGH]
+But I know x2 and x3 so I'll plug those
+values in,
+and then I find x1 has to be equal to
+negative 1.
+And so the solution x is equal to minus 1,
+2, 2 so this is why it's called back
+substitution.
+If you notice, I ended up with this things
+in
+the backwards order so I got 3 then 2 then
+1.
+So the solution is x is the, the column
+vector minus 1, 2, 2 and that solves
+also the original system Ax equals b.
+And then there's two
+caveats and since I'm just trying to do a
+quick overview of, of
+Linear Algebra here, I'm not going to go
+into these kind of corner cases.
+But suppose when I started doing
+elimination, I could still have a
+perfectly
+valid equation that just happened to have
+a 0 on the x1 coefficient.
+And in that case, this two here would've
+been
+a zero and I couldn't have used that value
+as a pivot because I have to divide by my
+pivot and obviously, I'm
+not going to be able to get anywhere if I
+have to divide by a 0.
+So sometimes, you know, there's no
+particular
+reason why the columns have to be in
+any particular order or sorry, why the
+rows have to be in any particular order.
+So you can move the rows around to get
+yourself out of
+this problem, so you would just pick a row
+that has a non-zero
+value here and use that as the first
+pivot.
+And so that's called making a row swap.
+So sometimes you have to swap rows during
+elimination.
+And then the other thing is sometimes
+there
+will be zeros that you can't get rid of.
+You need a pivot and there's only zeros.
+so for instance, if you had a row that was
+all zeros that would have
+no pivot in it and in that case, you say
+that the system is singular.
+And so either you will have an infinite
+number of solutions so
+that would, you could imagine just two
+equations for the same line.
+So one row is just a, a multiple
+of the other or you could have something
+like 0 times
+y has to equal 4, in which case, there's
+no solution.
+

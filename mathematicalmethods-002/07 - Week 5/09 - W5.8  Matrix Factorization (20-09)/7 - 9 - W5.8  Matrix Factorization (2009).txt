@@ -1,0 +1,522 @@
+Topic 8 is matrix factorization.
+One of the key ideas in linear algebra is
+that we can factor
+matrices into, sort of into pieces,
+and that's going to make thinking about
+problems and solving problems easier.
+So, for starters, I'm going to try, in
+this section,
+I'm going to show that elimination is a
+type of factorization.
+And then
+in the next set of lectures, the ones I've
+cleverly labeled Linear Algebra 2 mostly
+there'll be a little bit of certain types
+of matrices.
+But the, the rest of it will just be on
+different types of problems
+and the kind of matrix factorization that
+are going to allow us to solve those.
+So let's look at elimination closely at
+the 2 x 2 case.
+So I started out with a matrix A, so this
+2 1 6 8 is my matrix A.
+And I want to turn this into an upper
+triangular matrix.
+So I, oops.
+I want to introduce a zero here.
+And so I'm going to choose an elimination
+matrix, E 2 1, with a multiplier of 3.
+And when I pre-multiply A by this
+elimination matrix,
+I'll get the 0 in the position that I
+want.
+So this one elimination step gives me an
+upper triangular system,
+and so because it's upper triangular, I'm
+going to call it U.
+And we could think about what's going to
+happen if I multiply by E inverse.
+So, the inverse, because if I multiply a
+matrix by its inverse, I get the identity.
+You can think, if I think of a matrix as
+operating on another matrix now.
+So, in the first row, I had E21 times A.
+That's reducing it to an upper triangular
+matrix.
+If I wanted
+to do undo that operation, so I could
+multiply E21
+by its inverse.
+Then if I put, if I put this matrix up
+here, that would just be the identity
+matrix times A.
+So that should just give me 2 1 6 8, my
+matrix A back.
+So if I multiply E inverse 2 1 with the
+multiplier 3.
+So here I was subtracting 3 times the
+first
+row from the second, and here it's easy
+to,
+because I know what undoing it is, because
+I can think of it just as, what is the
+opposite elimination step, I know exactly
+how to make
+this inverse matrix without having to do
+any computations.
+So if I say, well now I want to multiply
+my upper
+triangular matrix by this inverse
+elimination
+matrix, that should give me A back.
+And so, you can check
+this if you want to, but take my word for
+it, it does.
+And if you look closely at this e 2 1
+inverse,
+so it's 1, 0, 3, 1, it has is 0 up here.
+So U, I called this an upper triangular
+matrix, because the elements below that
+diagonal are 0.
+Here, I'm going to call this matrix L so
+it's
+a lower triangular matrix because the
+elements above the
+diagonal are going to be 0.
+And so U operates
+on A to give, I'm sorry E21 operates on A
+to give me U.
+And E21 inverse operates on U to give me A
+back.
+And so if I look closely at this, this is
+U and
+this is L so I have this factorization A
+is equal to L,
+so I'm trying to highlight the whole
+matrix but I can't, L times U.
+So, doing elimination is the same thing as
+factoring the matrix A
+into a lower triangular matrix L, and an
+upper triangular matrix U.
+And then for a 3 x 3 matrix, I would just
+end up doing,
+so these are the elimination steps I used
+in my example that was I think it was
+in section 6 today the first one I did
+today, so I had E21
+introduced as a 0 in the second row, E31
+introduced as a 0 in the third row.
+And then E32 introduces a
+0 in the third row in the second column,
+and so this is what I
+needed to do to turn a 3 by 3 matrix into
+an upper triangular matrix.
+And so if I wanted to undo that, so by,
+really what
+I'm trying to do here is multiply by the,
+this set of
+inverses and know it's, it's going to go
+in the opposite order
+because I want E32, it has to undo what I
+did last.
+And so this is why it's very nice that I
+have
+this property that when I take the inverse
+the order switches.
+And so by matrix L
+just it becomes the product of these
+inverses.
+And I guess it's, it's not clear.
+So in, in the 2 by 2 case, it's obvious
+that I'm going to have a 0 here.
+These lower triangular matrices have the
+property that, when
+I multiply them together, the product
+stays lower triangular.
+So we, this is a lower triangular matrix,
+this is
+a lower triangular matrix, and this is a
+lower triangular matrix.
+When I multiply all three of those
+together, I get
+a matrix L that's also going to stay lower
+triangular.
+And it turns out, it's even better than
+that.
+So I labeled my slide here, seems too good
+to be true but is.
+So it turns out that the strict lower
+triangular entries of L are just the
+elimination multipliers.
+So, I say L I J that's just going to be
+the multiplier.
+So I've been writing the multiplier in
+parentheses
+when I write down my elimination matrices.
+So if I called the, the multiplier m sub
+ij, well, that's
+exactly what I'm going to put in the
+entries of this matrix l.
+So l ij gets whatever multiplier I used in
+the ij elimination.
+So if I look back at my elimination
+example
+First, I had E21, so that was subtracting
+twice the first row from the second.
+E31, so subtract minus the first row from
+the third, and
+that's the same as adding the first row to
+the third.
+And then oops, E32 which was to subtract
+the second row from the third.
+And so, I did those three steps.
+That gave me an upper triangular system.
+So, I end up with this matrix.
+when I, when I look at the inverse of
+these.
+So, the elimination matrix, I put a minus
+sign
+in front of this for the inverse of the
+elimination
+matrix I just put exactly the multiplier
+in the, so I put a 2 in the 2 1 position.
+I put a negative one in the three one
+positions.
+So, let's see what shows up next.
+Yeah, so 3rd row, first column
+gets a negative one.
+Oh, no, no that's not right.
+And then, the 3, 2 position.
+So E32 gets a 1.
+And then it turns out, if I compute the
+product of these
+using my matrix multiplication rule, I end
+up with this matrix, L.
+And so, in the L matrix, I don't even have
+to do this.
+You can sort of prove ahead of time that
+if I take the product of these matrices I
+just end up with this 2 in this spot,
+this negative 1 in this spot, and this one
+in this spot.
+And this holds for even higher dimensions.
+So I get this l basically for free as I'm
+doing the elimination step.
+I don't have to do any computation.
+Other than just when I figure out what
+this elimination
+matrix should be, I can write the
+appropriate entry into L.
+So I can start off with L being the
+identity matrix.
+When I do the first elimination step E21,
+I just write a 2 in here.
+Do my second elimination step e 3 1 of
+minus 1.
+I just write minus 1 in here.
+And when I do the final elimination step.
+I write a positive 1
+in the third row, second column.
+So in the 3 2
+position here.
+>>
+[INAUDIBLE]
+>> Thats just what the, what I'm
+defining them to be.
+So if they had a minus sign here.
+so if this was minus 2.
+It would be the elimination matrix.
+>> Right, okay.
+>> And then so if I subtract 2 times the
+first row from the second.
+Then the inverse of that would be to add
+two times the first row to the second.
+So there's no minus sign here.
+>>
+[UNKNOWN]
+.
+>> So if you ask a computer program to
+solve
+ax equals b it's probably going to do it
+in two steps.
+And the steps end up being, first you
+factor A into
+L and U, so you can do this just withe
+matrix A.
+So I don't need to do the augmented
+matrix, like I did in my example.
+And I end up with L and U, so
+my lower triangular factor and my upper
+triangular factor.
+And then I solve the system.
+So what I at first do, is solve Lc equals
+b.
+And so since L is a lower triangular
+matrix, I use,
+it's the same idea as back substitution,
+but now it's forward substitution.
+Just because, in the first row, there's
+only going to be one non-zero
+coefficient, so I use that to solve for
+the first element of c.
+Then I use that, I plug that value in,
+and solve for the second element of c.
+Plug those two values in, solve for the
+third element of c, and so on.
+And then once I know what c is, I
+can solve Ux, so U is my upper triangular
+factor.
+[COUGH]
+And I solve for X by solving the system Ux
+equals c.
+Again this is easy, because U is already
+an upper triangular matrix, so I'm just
+going to solve Ux equals oops, Ux equals
+c, not b by backward substitution.
+And you can see that this is going to give
+you the correct answer.
+Because you can just multiply Ux equals c.
+So the second thing I solve, I'll
+pre-multiply that by L.
+So, I'll start off with Ux equals c.
+Pre-multiplying by L gives me
+LUx equals Lc, but Lc, that's what I got,
+I got that value of c just
+by solving Lc equals b so on the
+right-hand side I'm going to end up with a
+b.
+And then, when I get rid of the
+parentheses
+here, I'm going to have Lu times x equals
+b.
+But L, U is just my factorization of A so
+I end up with LUx equals b or Ax equals b.
+So this is going to give me the x that
+solves Ax equals b.
+So just for a quick example let's try this
+with a 2 x 2 system.
+So, I will try and solve the system that
+is representing in the matrix form.
+By this I will have a times x equals b.
+So, my multipliers going to be a 2.
+So, I want to eliminate this 4 by
+subtracting twice the
+first row from the second and that's going
+to give me.
+So the first row stays the same.
+I know I'm going to get a zero down
+here, because that's how I've constructed
+my elimination step.
+And then this 9 is going to be turned into
+a
+5, because I'm going to subtract 2 times
+this 2 here.
+And then I have to do the same thing.
+[NOISE]
+I have to do the same thing on the
+right-hand side.
+So my 21 is going to get turned into a 5
+because I'm going to subtract 2 times
+8 from 21, so 21 minus 16 gives me 5.
+And so, if you look at what happened on
+the right-hand side,
+that's exactly what I get when I solve my
+lower triangular system here.
+So I have my
+L is going to be my identity matrix and
+then the multiplier from my one
+elimination step.
+So my elimination step you have a
+multiplier of 2
+because I subtracted twice the first row
+from the second.
+So my L matrix is going to be identity
+with the a 2 and the 2, 1 position.
+And then that's going to tell me right
+away so 1 times C1 equals 8.
+I get the 8 here and then I get 1 times C1
+plus 2 times C2 equals 21.
+Oops, sorry, 2 times C1 plus 1 times C2
+equals 21.
+And that tells me that C2 has to be equal
+to 5.
+So that's again 2 times 8 is 16 plus C2
+equals 5.
+16 21 minus 16 is 5.
+And then
+my upper triangular system, now I have the
+8, 5 on the right hand side that I got
+by solving my lower triangular system,
+well that's exactly
+what I wanted to have here in my
+elimination.
+And now, I only have to do the back
+substitution to find that x is equal to 3
+1.
+So it's 5 times x2 is equal to 5.
+That gives me
+the one.
+And then, 2 times x1 plus 2 times x1
+plus 2 because x2 is equal to 2 has to be
+equal
+to 8 so that means 2x1 has to be equal to
+6 or
+x1 has to be equal to 3.
+So LU factorization, sorry,
+elimination factors A into LU.
+So that's what LU factorization is.
+It also turns out that the upper triangle
+U,
+upper triangular U, has the pivots on its
+diagonal.
+And the lower triangle L always is going
+to
+have 1's on it's diagonal because I am
+getting this
+from an identity matrix and then I am just
+plugging in the lower triangular values
+that are my multipliers.
+So, if I know L, always has 1's on the
+diagonal, there is no reason
+for me to store those in memory or even
+keep track of them.
+And if I know that u always has zeroes
+below the main
+diagonal, then I can use those elements
+below the main diagonal for anything
+I want to because if I were writing an
+algorithm, if I know
+something's zero, my algorithm's going to
+be faster if I never touch it.
+So if I know that a value is zero, there's
+no point
+in multiplying something times a value I
+know is zero, and then
+adding it.
+So I just ignore it and it has exactly the
+same effect.
+So L has also these multipliers LJ,
+and if I want to consider what the
+computational cost of
+elimination is, so there's actually costs
+I want to keep in mind.
+One is the number of computations I have
+to do.
+But another sort of equally important one
+in, in my opinion
+actually, so I, I used to be a programmer
+for a while.
+I think this is more important - is to use
+less memory.
+[COUGH]
+So, the computational cost elimination on
+A requires 1
+3rd n cubed multiplications and 1 3rd n
+cubed subtractions.
+This is sort of roughly, What it's
+going to take.
+but suppose I factor A so I have a dense
+matrix A.
+So dense just means that every element is
+non zero or it could be.
+into a lower triangular matrix l so I have
+only zeroes up here.
+I have ones down the diagonal and then
+the, the important
+numbers are only in the lower triangle,
+strictly below the diagonal.
+And upper triangular matrix, that I can
+write with
+the pivots down the diagonal, and then
+some upper triangular entries, but
+I have these three values down here that I
+can kind of use for some other purpose.
+And it turns out I have exactly those
+three values in my matrix L,
+that kind of determine what L is.
+Everything else, the diagonal is
+determined
+and everything above the diagonal, is
+determined.
+So I can actually write this whole thing
+in the
+same space that I would use to store my
+matrix A.
+So if I look at the, the first row, this
+would be the same as the first row of A.
+Because when I do elimination, if, if
+there's
+a nonzero value here that I can use as
+my pivot so this is kind of assuming there
+is then I'm going to leave the first row
+alone.
+So this row stays the same.
+And then I'm going to look at A 2 1, and
+my pivot, A 1 1.
+And I'm going to
+choose a multiplier.
+And as soon as I've chosen that
+multiplier, I know if
+I do an elimination step, this value is
+going to be 0.
+So once I know what the multiplier is, I
+might as well just write that down here.
+So if I was doing this on a chalkboard, I
+figure out what the multiplier is.
+I erase this value, a21, and I write the
+multiplier there.
+Then when I do the elimination, because I
+know that this is going to become a 0.
+Because I've, that's how I constructed the
+multiplier.
+I don't need to do any math on that.
+So it's not going to touch this value of
+l21
+that I've stored in the, in the lower
+triangle.
+And I'll just do the elimination on these
+two elements and that'll give
+me the second pivot and then some other
+number in the upper triangle.
+And then, if I continue in that way, I'm
+going to end up with a LU factor stored in
+exactly the same memory that I started out
+using to store my matrix A.
+So, if you're doing this on a chalkboard,
+you'll only ever
+have to erase one number at a time which
+is different than
+the way you probably had to do the
+exercise in For the
+first quiz today, where you had to write
+out the system every
+time you did the elimination.
+[COUGH]
+And then also you end up doing less
+mathematics, because you're never doing
+the, the operations
+that are, would lead to the zeros that
+would appear down below in this matrix,
+here.
+And so that's actually pretty good because
+I think in
+the, in the two quiz questions you've done
+so far, you've
+probably realized that you're making, even
+when I'm asking you to
+do relatively simple additions and
+multiplications, probably a lot of
+mistakes.
+So, you know, if you're doing things by
+hand,
+it's still a good idea to use less memory,
+and to do the fewest number of
+computations possible,
+because every computation is an
+opportunity to make a mistake.
+And if you're programming a computer, your
+algorithm's just going to be
+faster, if you're not touching memory that
+you don't need to.
+

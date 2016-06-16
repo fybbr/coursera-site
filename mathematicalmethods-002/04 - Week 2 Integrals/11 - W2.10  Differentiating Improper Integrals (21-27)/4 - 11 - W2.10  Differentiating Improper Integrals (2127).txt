@@ -1,0 +1,518 @@
+Okay, and now I think we have sort of the
+the, tools we needed, to get to the the
+important point.
+Which was differentiating improper
+integrals.
+So we're going to start out with a
+function F.
+That's continuous, and we're going to
+assume that the integral of f over
+the entire real number line, so integral
+from minus infinity to infinity, exists.
+So, in particular, that means that it's
+finite.
+And now I want to consider a function b of
+t.
+Its a differentiable function and I am
+going to
+define a new function g of t which is
+going to be the integral of my function f
+from minus infinity up to b of t,
+and I want to be able to compute g prime
+of t.
+And so so, sort of like taking the
+derivative of a definite integral.
+It's actually, doesn't end up being too
+difficult.
+So all we're going to do, because we
+assumed that this integral
+exists, that means that I can pick a point
+somewhere in between.
+And I can write g
+of t as an integral from minus infinity up
+to that
+point plus the integral from that point up
+to b of t.
+And then because I'm free to choose that
+point I might as
+well choose something that's easy to work
+with so I chose 0.
+And so now I just want to take the
+derivative of G of T, but
+since the first term,
+so if I look at this closely now, this is
+a, it's an indefinite integral.
+So the integral from minus infinity up to
+zero.
+But there's no t's in this first term.
+So as far as I'm concerned,
+when I'm taking a derivative with respect
+to the variable t, this is a constant.
+And so, when I take the derivative of that
+with respect to t, when I take its
+derivative.
+I'm just going to get zero.
+So, to compute the derivative with respect
+to t of my function
+g of t, I can just ignore this first term
+and all I
+have to do is compute the derivative with
+respect to t of the
+integral from zero to b of t of my
+function f of x.
+But notice what happened now.
+So the, the problem that we were trying to
+deal
+with is that we had an, we had an improper
+integral.
+But because of this the limits here are
+both finite values.
+So, this is integral that we already know
+how to take the derivative of.
+This is just a, take the, we use exactly
+the same rule
+I talked about in I guess it would be
+number seven today.
+How to take the derivative of a definite
+integral.
+And, on top of that, we're lucky that the
+bottom is
+zero so we only have to use half of the
+formula.
+So, g prime of t is just going to be the
+derivative with respect to t of the
+anti derivative of f evaluated at b of t
+minus the anti derivative of f evaluated
+at zero.
+And this is just the result from
+differentiating.
+a definite integral.
+So I know that that's f of b of t times
+the derivative of b of t.
+So f of b of t times b prime of t.
+And then to do the same thing for the
+lower limit.
+Or we can do the same thing for the lower
+limit.
+So I'm just going to instead of g of t,
+I'm going to have h of t, just exactly the
+same thing, except that now it's my lower
+limits
+that's the function of t rather than the
+upper limit,
+[NOISE].
+And so I'm still going to consider
+integrating this function from a of t to
+zero, and then adding on the integral from
+zero to infinity.
+And then when I take the derivative of
+that, this
+second term now is going to be the
+constant, so that's
+just going to go away so the, the answer
+here
+is just going to be the derivative of this
+first term.
+And so the only difference we're going to
+see, is just because
+when I do this part of the fundamental
+theorem of Calculus.
+Now my function a of t is on the negative
+side, so I get
+the same answer as I got for the, for the
+upper, limit being the function.
+Except now it's just going to be minus.
+F of a of t times a prime of t.
+So now we have a, a very simple
+rule for taking the derivative of an
+indefinite integral.
+And let's see if we can put that to work.
+So,
+[NOISE]
+I'm going to look at something called the
+delta of a European Call Option.
+That I'm going to price using the
+Black-Scholes formula.
+And so the Black-Scholes price, for a
+European call option,
+so this is the simplest possible one to
+look at.
+On a non-dividend paying asset, so this
+could just be
+a stock for instance, with a strike price
+of 1.
+Has a, a volatility of 20%, so this means
+the volatility of
+the returns on my asset, and I'm looking
+at three months to maturity.
+And so again, the reason I'm, I'm putting
+all of these real numbers in
+here is just because the Black-Scholes
+pricing
+formula, it's a function of several
+variables.
+I'm going to make it into a function of a
+single
+variable s which is the, the current price
+of the asset,
+just by plugging in actual numeric values
+to all of the rest of the inputs.
+And so this is the, the pricing formula.
+So I have s.
+Times this function phi, evaluated at d
+1, minus e to the minus 0.01,
+times this function phi again, evaluated
+at d 2.
+Where d 1 of S is just going to equal 10
+times the log of the, the current stock
+price, so 10 times the log of S.
+Plus 0.015.
+D2 of s is equal to d1 of s minus 0.1.
+And this function phi.
+So this is where the, all of the math
+we've been doing
+for the, for the last two lectures is
+going to come into play.
+This function phi.
+Is defined as the integral.
+So this is a, a capital phi, wherein the
+font
+I'm using, it's drawn just with a vertical
+middle line.
+The lowercase phi is its derivative, which
+has a, a slightly slanted line.
+So I'm going to integrate lowercase phi
+from minus infinity up to z.
+And lower case v this is probability
+density function for a
+standard normal distribution and this is
+the mathematical formula it has.
+So in order to calculate the price of my
+European call
+option, I am going to need to be able to
+do mathematics.
+With this function capital phi.
+But this is a function that's sort of
+famous
+for not having an antiderivative.
+So you can't actually write down a formula
+for the value of this integral.
+This is the simplest that I can write it
+down.
+So in order to actually price these
+things, you have
+to use a computer to approximate the value
+of this integral.
+But when we do mathematics with the
+Black-Scholes formula,
+we still want to be able to get analytical
+results.
+You know?
+If, if I try to do everything numerically.
+Then you run into problems of, you have to
+be very careful of, you know?
+As you continue to do calculations, are
+you
+accumulating any round off error in your
+compu
+[INAUDIBLE].
+In your sums things like that, so what we
+would like
+to be able to do is actually compute
+derivatives of the
+Black-Scholes pricing formula and get the
+correct answer theoretically before we
+actually have to start plugging in numbers
+to the to the formula.
+And so, the delta of a European call
+option is just the derivative of the
+price, so the derivative of the pricing
+formula, so in this case c of s with
+respect to the asset price s.
+And it's denoted by
+this Equilateral triangle is capital Greek
+letter delta.
+And so this is the derivative that I'm
+going to try and compute.
+So, it's already kind of complicated and
+it's much, much
+more complicated if I don't plug numbers
+into it, because
+as soon as I plug the numbers into it, I
+can do some math and a lot of them combine
+together.
+but it's still complicated enough that I'm
+going to try
+and compute the derivative of this term by
+term.
+So first I'll look at this term and then
+we'll
+look at this term and we'll try and
+simplify our answers
+as much as we can.
+So for the derivative of the first term I
+have S times a function of S.
+So I'm going to need to use the product
+rule.
+So that's just going to tell me that the
+derivative of this
+function here is going to be the
+derivative of s times this.
+Plus the derivative of this times s.
+So here, I have the derivative of s is
+just, oops.
+Derivative of s is just 1.
+So I just have the second piece here.
+Then plus s times the derivative of, this
+guy.
+And I'm just going to replace that by its
+definition.
+So that's the, the definition of capital
+phi of d one of
+s is the integral from minus infinity up
+to d one of s.
+Of little phi of x.
+And so we have a formula now for
+evaluating this derivative.
+So, if I'm taking the derivative of an
+indefinite
+integral, I know that it's just going to
+be.
+The integrand evaluated at the upper limit
+times the derivative of
+the upper limit, with respect to the
+variable that I'm, I'm computing.
+So I need to use the chain rule here.
+And so I'm going to end up with s, that's
+this
+s here, times lower case phi of d 1 of s.
+So that's this phi evaluated at the upper
+end point of the integral
+and then by the chain rule this is phi of
+d of s.
+So I need to also multiply that by the
+derivative of d1 of s.
+So now remember that d1 of s is equal to
+10 times the log of s.
+Plus 0.015, so the derivative with respect
+to s of d1 of s
+is just going to be 10 divided by s, so 10
+times this here that's just a
+constant so the derivative of the constant
+is zero, the derivative of the log of
+s with respect to s is just 1 over s so I
+end up with
+10 divided by s.
+So that tells me that the derivative of
+the first term now, this capital phi
+of d1 of s plus s times lower-case phi of
+d1 of s,
+times 10 over s, and luckily one of the
+nice things about Black-Scholes is
+usually when you're doing it right stuff
+kind of beneficially cancels out for you.
+So here, the s and 1 over s are going to
+cancel each other out.
+So for the first term, the derivative is
+capital phi of d
+1 of S, plus 10 times little phi of d 1 of
+S.
+Okay.
+So now let's look at the derivative of the
+second term.
+So here it's a little bit easier, so e to
+the minus 0.01.
+Looks complicated but that's just a
+constant.
+[COUGH]
+So I'm going to take that outside of
+my derivative, so the derivative was
+linear remember.
+And I'm left with the derivative of
+capital phi of d2 of s.
+And I'm just going to, so in the square
+brackets is just the definition of that.
+So that's the integral from minus infinity
+to d2 of s, of little phi of x dx.
+And so I'm going to use my pricing rule
+sorry my im.
+Improper integral rule
+again.
+So that's just going to be phi evaluated
+at
+the upper endpoint, and then by the chain
+rule,
+I need to divide that, or, sorry, I need
+to multiply that by the derivative of d2
+of S.
+And so remember, d2 of s was just equal to
+d1 of s minus 0.1.
+So
+this is just a constant, so the derivative
+of d2 with respect
+to s has to be the equal to the derivative
+of d1
+with respect to s, and we already computed
+that, and that was
+10 over s, so we can recycle that result a
+little bit.
+So that's this parked over here I can
+replace with 10 over S and
+that gives me e to the minus 0.01 times
+phi of
+d 2 of S times 10 over S.
+And
+so if I put all of that together.
+The derivative of the first term
+was capital phi of d 1 plus
+10 times lower case phi of d 1 of s.
+And the derivative of the second term so I
+was
+subtracting the second term so it's
+going to be subtracted here.
+I have10 over s.
+E to the minus 0.01 times phi of d 2 of S.
+So sorry, I should, this d 1 is a function
+of
+S, so it should have an S in the
+parentheses, as well.
+I forgot to put that there.
+[COUGH]
+But unfortunately, we're not finished yet.
+So remember that little phi of x is equal
+to 1 over the square root of 2 pi times
+e to the minus x squared over 2.
+So
+what I'd like to do to simplify this.
+Instead of having a d1 and a d2 in here.
+I want to see if I can rewrite, just
+remember d,
+d1 and d2 weren't that different, d2 was
+just d1 minus 0.1.
+So maybe
+I can make this simpler by writing writing
+this term
+in terms of d1 of S rather than d2 of S.
+So I'm just going to start plugging things
+into this definition of lower case phi.
+And so first of all, I'm just going to
+evaluate phi
+at d 2 so I have d 2 of s squared.
+Where they used to just be the argument
+here.
+But I want to have a d 1 there instead.
+So I'm going to replace my d 2 with d 1 of
+S, minus 0.1.
+So I have e to the minus phi 1 of S minus
+0.1, that quantity squared.
+And now I'm going to try and to, to make a
+little bit of sense of this.
+It would be nice if I had this just in
+terms of e to the
+d1 of S squared because that, that would
+allow me to write it in terms
+of phi of d1 of S which would make it
+match what's on in this second term here.
+And so now what I want to do is sort of my
+completing the squares trick backwards,
+so let's just start by doing the math.
+So the first thing I'm going to do is
+expand the, the squared term here.
+So I had.
+D1 of S minus 0.1 squared.
+So that ends up being d1 squared of S
+minus 2 times 0.1 times d1 of S, so I have
+0.2 d1 of S.
+Then,
+plus negative 0.1 squared, so that becomes
+positive 0.01.
+Let's see.
+Did anything change?
+No.
+I think I made a cutting and pasting error
+in this one, so it's hope, hopefully, that
+doesn't last too long.
+Okay, so essentially what was
+supposed to happen in this line,
+and I guess I somehow missed it.
+Here I have 0.01 divided by 2, so that's
+going to be 0.005 and remember when
+I'm adding things together in an exponent,
+I can also think of that as a product
+of e to each one of those terms.
+So what I meant to
+do in this line here, I wanted to have e
+to
+the minus d1 squared over 2.
+That's what's going to end up here.
+I'm going to have minus times minus, so.
+E to the minus, or e to the positive 0.2 d
+one but
+I'm dividing that by two so I get e to the
+0.1 d one.
+And
+then, 0.01 divided by two was 0.05.
+And that was just going to end up also
+over here and remember there's the minus
+sign multiplying it here so I have minus.
+0.01 minus 0.005.
+And that's what gives me this term here.
+So hopefully, that would have been a
+little bit
+more clear if I had, not messed up this
+line.
+But,
+okay.
+And now I've, I've written this bit.
+The one over 2 pi here.
+E to the minus d 1 of s squared over 2,
+well that's exactly what phi of d 1 of s
+would be.
+So hopefully that's starting to look a
+little bit simpler now.
+And now remember I had d 1 was just 10
+times.
+The log of, 10 times the log of S,
+hopefully that'll show
+up here.
+10 times the log of S plus
+0.15.
+And so
+here I have e to the log of S.
+That's just going to be S.
+Because this is a sum I could also think
+of this as e to the positive 0.015
+so that's going to cancel out my e to the
+negative 0.015 or you could also think
+of it as just I'm adding those two numbers
+together getting e to the 0 and that's 1.
+So this bit here is going to cancel out
+this bit here.
+This e to the log of s, that's going to be
+just s, so that's going to cancel out my s
+down here,
+so what I am left with is this second term
+the, the
+magnitude of it being equal to 10 times
+phi of d1 of s.
+[INAUDIBLE]
+.
+So now, let's go back and look at my, my
+formula for the delta of c.
+And so the delta of c was originally phi
+of d1,
+plus 10 times lower-case phi of d1.
+And then minus.
+And we've just showed that this thing, 10
+over s.
+Times e to the minus 0.01 times phi of d2
+of s.
+That was the same thing as
+10 times phi of d1 of s.
+So what
+I end up with is capital phi of d1 plus 10
+lower-case phi minus 10 lower-case phi.
+And in the end we find that the delta for
+this call option, is actually just capital
+phi of D 1.
+

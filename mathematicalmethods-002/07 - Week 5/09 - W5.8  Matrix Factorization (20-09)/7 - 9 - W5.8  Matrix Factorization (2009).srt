@@ -1,0 +1,1406 @@
+1
+00:00:00,980 --> 00:00:03,540
+Topic 8 is matrix factorization.
+
+2
+00:00:06,570 --> 00:00:12,872
+One of the key ideas in linear algebra is
+that we can factor
+
+3
+00:00:12,872 --> 00:00:17,720
+matrices into, sort of into pieces,
+
+4
+00:00:17,720 --> 00:00:22,680
+and that's going to make thinking about
+problems and solving problems easier.
+
+5
+00:00:22,680 --> 00:00:27,950
+So, for starters, I'm going to try, in
+this section,
+
+6
+00:00:27,950 --> 00:00:31,320
+I'm going to show that elimination is a
+type of factorization.
+
+7
+00:00:31,320 --> 00:00:33,220
+And then
+
+8
+00:00:33,220 --> 00:00:38,350
+in the next set of lectures, the ones I've
+cleverly labeled Linear Algebra 2 mostly
+
+9
+00:00:40,660 --> 00:00:43,410
+there'll be a little bit of certain types
+of matrices.
+
+10
+00:00:43,410 --> 00:00:47,120
+But the, the rest of it will just be on
+different types of problems
+
+11
+00:00:47,120 --> 00:00:50,560
+and the kind of matrix factorization that
+are going to allow us to solve those.
+
+12
+00:00:53,660 --> 00:00:58,870
+So let's look at elimination closely at
+the 2 x 2 case.
+
+13
+00:01:00,960 --> 00:01:07,920
+So I started out with a matrix A, so this
+2 1 6 8 is my matrix A.
+
+14
+00:01:07,920 --> 00:01:12,510
+And I want to turn this into an upper
+triangular matrix.
+
+15
+00:01:12,510 --> 00:01:13,550
+So I, oops.
+
+16
+00:01:13,550 --> 00:01:15,310
+I want to introduce a zero here.
+
+17
+00:01:16,460 --> 00:01:21,136
+And so I'm going to choose an elimination
+matrix, E 2 1, with a multiplier of 3.
+
+18
+00:01:21,136 --> 00:01:26,720
+And when I pre-multiply A by this
+elimination matrix,
+
+19
+00:01:26,720 --> 00:01:28,850
+I'll get the 0 in the position that I
+want.
+
+20
+00:01:28,850 --> 00:01:32,590
+So this one elimination step gives me an
+upper triangular system,
+
+21
+00:01:35,440 --> 00:01:38,400
+and so because it's upper triangular, I'm
+going to call it U.
+
+22
+00:01:45,670 --> 00:01:50,430
+And we could think about what's going to
+happen if I multiply by E inverse.
+
+23
+00:01:50,430 --> 00:01:57,790
+So, the inverse, because if I multiply a
+matrix by its inverse, I get the identity.
+
+24
+00:01:57,790 --> 00:02:01,810
+You can think, if I think of a matrix as
+operating on another matrix now.
+
+25
+00:02:01,810 --> 00:02:06,220
+So, in the first row, I had E21 times A.
+
+26
+00:02:06,220 --> 00:02:08,580
+That's reducing it to an upper triangular
+matrix.
+
+27
+00:02:10,180 --> 00:02:10,750
+If I wanted
+
+28
+00:02:10,750 --> 00:02:14,510
+to do undo that operation, so I could
+multiply E21
+
+29
+00:02:17,370 --> 00:02:19,340
+by its inverse.
+
+30
+00:02:19,340 --> 00:02:22,110
+Then if I put, if I put this matrix up
+
+31
+00:02:22,110 --> 00:02:25,270
+here, that would just be the identity
+matrix times A.
+
+32
+00:02:25,270 --> 00:02:28,480
+So that should just give me 2 1 6 8, my
+matrix A back.
+
+33
+00:02:30,030 --> 00:02:35,760
+So if I multiply E inverse 2 1 with the
+multiplier 3.
+
+34
+00:02:35,760 --> 00:02:38,540
+So here I was subtracting 3 times the
+first
+
+35
+00:02:38,540 --> 00:02:42,400
+row from the second, and here it's easy
+to,
+
+36
+00:02:42,400 --> 00:02:46,820
+because I know what undoing it is, because
+I can think of it just as, what is the
+
+37
+00:02:46,820 --> 00:02:51,260
+opposite elimination step, I know exactly
+how to make
+
+38
+00:02:51,260 --> 00:02:54,700
+this inverse matrix without having to do
+any computations.
+
+39
+00:02:55,810 --> 00:03:00,210
+So if I say, well now I want to multiply
+my upper
+
+40
+00:03:00,210 --> 00:03:03,410
+triangular matrix by this inverse
+elimination
+
+41
+00:03:03,410 --> 00:03:06,180
+matrix, that should give me A back.
+
+42
+00:03:06,180 --> 00:03:07,660
+And so, you can check
+
+43
+00:03:07,660 --> 00:03:10,100
+this if you want to, but take my word for
+it, it does.
+
+44
+00:03:15,300 --> 00:03:21,040
+And if you look closely at this e 2 1
+inverse,
+
+45
+00:03:21,040 --> 00:03:24,182
+so it's 1, 0, 3, 1, it has is 0 up here.
+
+46
+00:03:25,800 --> 00:03:28,530
+So U, I called this an upper triangular
+
+47
+00:03:28,530 --> 00:03:32,677
+matrix, because the elements below that
+diagonal are 0.
+
+48
+00:03:33,720 --> 00:03:37,270
+Here, I'm going to call this matrix L so
+it's
+
+49
+00:03:37,270 --> 00:03:40,510
+a lower triangular matrix because the
+elements above the
+
+50
+00:03:40,510 --> 00:03:46,200
+diagonal are going to be 0.
+And so U operates
+
+51
+00:03:46,200 --> 00:03:51,950
+on A to give, I'm sorry E21 operates on A
+to give me U.
+
+52
+00:03:51,950 --> 00:03:55,410
+And E21 inverse operates on U to give me A
+back.
+
+53
+00:03:59,790 --> 00:04:05,510
+And so if I look closely at this, this is
+U and
+
+54
+00:04:05,510 --> 00:04:11,050
+this is L so I have this factorization A
+is equal to L,
+
+55
+00:04:11,050 --> 00:04:16,470
+so I'm trying to highlight the whole
+matrix but I can't, L times U.
+
+56
+00:04:19,210 --> 00:04:24,190
+So, doing elimination is the same thing as
+factoring the matrix A
+
+57
+00:04:24,190 --> 00:04:28,980
+into a lower triangular matrix L, and an
+upper triangular matrix U.
+
+58
+00:04:32,960 --> 00:04:38,490
+And then for a 3 x 3 matrix, I would just
+end up doing,
+
+59
+00:04:38,490 --> 00:04:43,164
+so these are the elimination steps I used
+in my example that was I think it was
+
+60
+00:04:43,164 --> 00:04:48,840
+in section 6 today the first one I did
+today, so I had E21
+
+61
+00:04:48,840 --> 00:04:54,842
+introduced as a 0 in the second row, E31
+introduced as a 0 in the third row.
+
+62
+00:04:54,842 --> 00:04:57,990
+And then E32 introduces a
+
+63
+00:04:57,990 --> 00:05:01,128
+0 in the third row in the second column,
+and so this is what I
+
+64
+00:05:01,128 --> 00:05:05,710
+needed to do to turn a 3 by 3 matrix into
+an upper triangular matrix.
+
+65
+00:05:07,970 --> 00:05:12,640
+And so if I wanted to undo that, so by,
+really what
+
+66
+00:05:12,640 --> 00:05:17,210
+I'm trying to do here is multiply by the,
+this set of
+
+67
+00:05:17,210 --> 00:05:19,700
+inverses and know it's, it's going to go
+in the opposite order
+
+68
+00:05:19,700 --> 00:05:25,140
+because I want E32, it has to undo what I
+did last.
+
+69
+00:05:25,140 --> 00:05:27,470
+And so this is why it's very nice that I
+have
+
+70
+00:05:27,470 --> 00:05:30,230
+this property that when I take the inverse
+the order switches.
+
+71
+00:05:31,858 --> 00:05:33,300
+And so by matrix L
+
+72
+00:05:33,300 --> 00:05:35,459
+just it becomes the product of these
+inverses.
+
+73
+00:05:42,510 --> 00:05:44,000
+And I guess it's, it's not clear.
+
+74
+00:05:44,000 --> 00:05:49,430
+So in, in the 2 by 2 case, it's obvious
+that I'm going to have a 0 here.
+
+75
+00:05:49,430 --> 00:05:52,700
+These lower triangular matrices have the
+property that, when
+
+76
+00:05:52,700 --> 00:05:56,410
+I multiply them together, the product
+stays lower triangular.
+
+77
+00:05:56,410 --> 00:05:59,870
+So we, this is a lower triangular matrix,
+this is
+
+78
+00:05:59,870 --> 00:06:03,270
+a lower triangular matrix, and this is a
+lower triangular matrix.
+
+79
+00:06:03,270 --> 00:06:05,690
+When I multiply all three of those
+together, I get
+
+80
+00:06:05,690 --> 00:06:08,160
+a matrix L that's also going to stay lower
+triangular.
+
+81
+00:06:08,160 --> 00:06:11,452
+And it turns out, it's even better than
+that.
+
+82
+00:06:11,452 --> 00:06:17,860
+So I labeled my slide here, seems too good
+to be true but is.
+
+83
+00:06:17,860 --> 00:06:21,320
+So it turns out that the strict lower
+
+84
+00:06:21,320 --> 00:06:26,130
+triangular entries of L are just the
+elimination multipliers.
+
+85
+00:06:26,130 --> 00:06:30,970
+So, I say L I J that's just going to be
+the multiplier.
+
+86
+00:06:30,970 --> 00:06:34,360
+So I've been writing the multiplier in
+parentheses
+
+87
+00:06:34,360 --> 00:06:36,700
+when I write down my elimination matrices.
+
+88
+00:06:39,430 --> 00:06:43,060
+So if I called the, the multiplier m sub
+ij, well, that's
+
+89
+00:06:43,060 --> 00:06:46,900
+exactly what I'm going to put in the
+entries of this matrix l.
+
+90
+00:06:46,900 --> 00:06:54,100
+So l ij gets whatever multiplier I used in
+the ij elimination.
+
+91
+00:06:57,300 --> 00:06:59,560
+So if I look back at my elimination
+example
+
+92
+00:07:01,700 --> 00:07:08,705
+First, I had E21, so that was subtracting
+twice the first row from the second.
+
+93
+00:07:08,705 --> 00:07:12,160
+E31, so subtract minus the first row from
+the third, and
+
+94
+00:07:12,160 --> 00:07:14,410
+that's the same as adding the first row to
+the third.
+
+95
+00:07:15,570 --> 00:07:20,100
+And then oops, E32 which was to subtract
+the second row from the third.
+
+96
+00:07:20,100 --> 00:07:23,220
+And so, I did those three steps.
+That gave me an upper triangular system.
+
+97
+00:07:25,970 --> 00:07:28,910
+So, I end up with this matrix.
+
+98
+00:07:28,910 --> 00:07:31,150
+when I, when I look at the inverse of
+these.
+
+99
+00:07:31,150 --> 00:07:34,310
+So, the elimination matrix, I put a minus
+sign
+
+100
+00:07:34,310 --> 00:07:38,340
+in front of this for the inverse of the
+elimination
+
+101
+00:07:38,340 --> 00:07:44,780
+matrix I just put exactly the multiplier
+in the, so I put a 2 in the 2 1 position.
+
+102
+00:07:44,780 --> 00:07:47,640
+I put a negative one in the three one
+positions.
+
+103
+00:07:47,640 --> 00:07:48,890
+So, let's see what shows up next.
+
+104
+00:07:48,890 --> 00:07:51,190
+Yeah, so 3rd row, first column
+
+105
+00:07:51,190 --> 00:07:55,940
+gets a negative one.
+Oh, no, no that's not right.
+
+106
+00:07:55,940 --> 00:08:00,720
+And then, the 3, 2 position.
+
+107
+00:08:00,720 --> 00:08:04,350
+So E32 gets a 1.
+
+108
+00:08:05,350 --> 00:08:07,790
+And then it turns out, if I compute the
+product of these
+
+109
+00:08:07,790 --> 00:08:12,060
+using my matrix multiplication rule, I end
+up with this matrix, L.
+
+110
+00:08:13,630 --> 00:08:16,240
+And so, in the L matrix, I don't even have
+
+111
+00:08:16,240 --> 00:08:19,950
+to do this.
+You can sort of prove ahead of time that
+
+112
+00:08:19,950 --> 00:08:25,770
+if I take the product of these matrices I
+just end up with this 2 in this spot,
+
+113
+00:08:25,770 --> 00:08:31,670
+this negative 1 in this spot, and this one
+in this spot.
+
+114
+00:08:31,670 --> 00:08:33,740
+And this holds for even higher dimensions.
+
+115
+00:08:33,740 --> 00:08:38,680
+So I get this l basically for free as I'm
+doing the elimination step.
+
+116
+00:08:38,680 --> 00:08:41,030
+I don't have to do any computation.
+
+117
+00:08:41,030 --> 00:08:43,910
+Other than just when I figure out what
+this elimination
+
+118
+00:08:43,910 --> 00:08:48,030
+matrix should be, I can write the
+appropriate entry into L.
+
+119
+00:08:48,030 --> 00:08:51,930
+So I can start off with L being the
+identity matrix.
+
+120
+00:08:51,930 --> 00:08:57,040
+When I do the first elimination step E21,
+I just write a 2 in here.
+
+121
+00:08:57,040 --> 00:09:00,440
+Do my second elimination step e 3 1 of
+minus 1.
+
+122
+00:09:00,440 --> 00:09:04,910
+I just write minus 1 in here.
+And when I do the final elimination step.
+
+123
+00:09:04,910 --> 00:09:06,130
+I write a positive 1
+
+124
+00:09:06,130 --> 00:09:11,662
+in the third row, second column.
+So in the 3 2
+
+125
+00:09:11,662 --> 00:09:18,960
+position here.
+>>
+
+126
+00:09:18,960 --> 00:09:18,980
+[INAUDIBLE]
+
+127
+00:09:18,980 --> 00:09:22,170
+>> Thats just what the, what I'm
+defining them to be.
+
+128
+00:09:22,170 --> 00:09:24,290
+So if they had a minus sign here.
+
+129
+00:09:24,290 --> 00:09:27,706
+so if this was minus 2.
+It would be the elimination matrix.
+
+130
+00:09:27,706 --> 00:09:28,790
+>> Right, okay.
+
+131
+00:09:28,790 --> 00:09:34,000
+>> And then so if I subtract 2 times the
+first row from the second.
+
+132
+00:09:34,000 --> 00:09:38,050
+Then the inverse of that would be to add
+two times the first row to the second.
+
+133
+00:09:38,050 --> 00:09:39,340
+So there's no minus sign here.
+
+134
+00:09:43,730 --> 00:09:43,730
+>>
+
+135
+00:09:43,730 --> 00:09:43,730
+[UNKNOWN]
+
+136
+00:09:43,730 --> 00:09:43,730
+.
+
+137
+00:09:43,730 --> 00:09:46,630
+>> So if you ask a computer program to
+solve
+
+138
+00:09:46,630 --> 00:09:50,900
+ax equals b it's probably going to do it
+in two steps.
+
+139
+00:09:50,900 --> 00:09:55,040
+And the steps end up being, first you
+factor A into
+
+140
+00:09:55,040 --> 00:09:58,910
+L and U, so you can do this just withe
+matrix A.
+
+141
+00:09:58,910 --> 00:10:02,330
+So I don't need to do the augmented
+matrix, like I did in my example.
+
+142
+00:10:03,540 --> 00:10:06,660
+And I end up with L and U, so
+
+143
+00:10:06,660 --> 00:10:09,530
+my lower triangular factor and my upper
+triangular factor.
+
+144
+00:10:12,300 --> 00:10:14,140
+And then I solve the system.
+
+145
+00:10:14,140 --> 00:10:18,620
+So what I at first do, is solve Lc equals
+b.
+
+146
+00:10:18,620 --> 00:10:22,980
+And so since L is a lower triangular
+matrix, I use,
+
+147
+00:10:22,980 --> 00:10:26,820
+it's the same idea as back substitution,
+but now it's forward substitution.
+
+148
+00:10:26,820 --> 00:10:30,190
+Just because, in the first row, there's
+only going to be one non-zero
+
+149
+00:10:30,190 --> 00:10:33,500
+coefficient, so I use that to solve for
+the first element of c.
+
+150
+00:10:34,630 --> 00:10:37,480
+Then I use that, I plug that value in,
+
+151
+00:10:37,480 --> 00:10:39,250
+and solve for the second element of c.
+
+152
+00:10:39,250 --> 00:10:42,700
+Plug those two values in, solve for the
+third element of c, and so on.
+
+153
+00:10:42,700 --> 00:10:47,670
+And then once I know what c is, I
+
+154
+00:10:47,670 --> 00:10:51,760
+can solve Ux, so U is my upper triangular
+factor.
+
+155
+00:10:51,760 --> 00:10:52,780
+[COUGH]
+
+156
+00:10:52,780 --> 00:10:58,210
+And I solve for X by solving the system Ux
+equals c.
+
+157
+00:10:58,210 --> 00:11:02,930
+Again this is easy, because U is already
+an upper triangular matrix, so I'm just
+
+158
+00:11:02,930 --> 00:11:08,660
+going to solve Ux equals oops, Ux equals
+c, not b by backward substitution.
+
+159
+00:11:11,650 --> 00:11:14,590
+And you can see that this is going to give
+you the correct answer.
+
+160
+00:11:14,590 --> 00:11:17,462
+Because you can just multiply Ux equals c.
+
+161
+00:11:17,462 --> 00:11:23,254
+So the second thing I solve, I'll
+pre-multiply that by L.
+
+162
+00:11:23,254 --> 00:11:29,530
+So, I'll start off with Ux equals c.
+Pre-multiplying by L gives me
+
+163
+00:11:29,530 --> 00:11:36,660
+LUx equals Lc, but Lc, that's what I got,
+I got that value of c just
+
+164
+00:11:36,660 --> 00:11:39,055
+by solving Lc equals b so on the
+
+165
+00:11:39,055 --> 00:11:40,950
+right-hand side I'm going to end up with a
+b.
+
+166
+00:11:42,130 --> 00:11:44,460
+And then, when I get rid of the
+parentheses
+
+167
+00:11:44,460 --> 00:11:48,010
+here, I'm going to have Lu times x equals
+b.
+
+168
+00:11:48,010 --> 00:11:55,980
+But L, U is just my factorization of A so
+I end up with LUx equals b or Ax equals b.
+
+169
+00:11:55,980 --> 00:12:01,590
+So this is going to give me the x that
+solves Ax equals b.
+
+170
+00:12:05,030 --> 00:12:08,752
+So just for a quick example let's try this
+with a 2 x 2 system.
+
+171
+00:12:10,610 --> 00:12:14,190
+So, I will try and solve the system that
+is representing in the matrix form.
+
+172
+00:12:14,190 --> 00:12:16,840
+By this I will have a times x equals b.
+
+173
+00:12:19,680 --> 00:12:21,760
+So, my multipliers going to be a 2.
+
+174
+00:12:21,760 --> 00:12:25,940
+So, I want to eliminate this 4 by
+subtracting twice the
+
+175
+00:12:25,940 --> 00:12:29,660
+first row from the second and that's going
+to give me.
+
+176
+00:12:29,660 --> 00:12:31,760
+So the first row stays the same.
+
+177
+00:12:31,760 --> 00:12:33,690
+I know I'm going to get a zero down
+
+178
+00:12:33,690 --> 00:12:37,350
+here, because that's how I've constructed
+my elimination step.
+
+179
+00:12:37,350 --> 00:12:39,465
+And then this 9 is going to be turned into
+a
+
+180
+00:12:39,465 --> 00:12:42,340
+5, because I'm going to subtract 2 times
+this 2 here.
+
+181
+00:12:42,340 --> 00:12:44,540
+And then I have to do the same thing.
+
+182
+00:12:44,540 --> 00:12:45,040
+[NOISE]
+
+183
+00:12:46,690 --> 00:12:48,740
+I have to do the same thing on the
+right-hand side.
+
+184
+00:12:50,030 --> 00:12:55,590
+So my 21 is going to get turned into a 5
+because I'm going to subtract 2 times
+
+185
+00:12:55,590 --> 00:13:01,120
+8 from 21, so 21 minus 16 gives me 5.
+
+186
+00:13:01,120 --> 00:13:05,920
+And so, if you look at what happened on
+the right-hand side,
+
+187
+00:13:05,920 --> 00:13:10,170
+that's exactly what I get when I solve my
+lower triangular system here.
+
+188
+00:13:10,170 --> 00:13:11,930
+So I have my
+
+189
+00:13:11,930 --> 00:13:15,250
+L is going to be my identity matrix and
+
+190
+00:13:15,250 --> 00:13:18,030
+then the multiplier from my one
+elimination step.
+
+191
+00:13:18,030 --> 00:13:20,522
+So my elimination step you have a
+multiplier of 2
+
+192
+00:13:20,522 --> 00:13:24,530
+because I subtracted twice the first row
+from the second.
+
+193
+00:13:24,530 --> 00:13:33,270
+So my L matrix is going to be identity
+with the a 2 and the 2, 1 position.
+
+194
+00:13:33,270 --> 00:13:37,370
+And then that's going to tell me right
+away so 1 times C1 equals 8.
+
+195
+00:13:37,370 --> 00:13:43,120
+I get the 8 here and then I get 1 times C1
+plus 2 times C2 equals 21.
+
+196
+00:13:43,120 --> 00:13:47,280
+Oops, sorry, 2 times C1 plus 1 times C2
+equals 21.
+
+197
+00:13:47,280 --> 00:13:50,053
+And that tells me that C2 has to be equal
+to 5.
+
+198
+00:13:52,040 --> 00:13:57,472
+So that's again 2 times 8 is 16 plus C2
+equals 5.
+
+199
+00:13:57,472 --> 00:14:02,890
+16 21 minus 16 is 5.
+And then
+
+200
+00:14:02,890 --> 00:14:08,400
+my upper triangular system, now I have the
+8, 5 on the right hand side that I got
+
+201
+00:14:08,400 --> 00:14:11,180
+by solving my lower triangular system,
+well that's exactly
+
+202
+00:14:11,180 --> 00:14:13,290
+what I wanted to have here in my
+elimination.
+
+203
+00:14:13,290 --> 00:14:16,090
+And now, I only have to do the back
+
+204
+00:14:16,090 --> 00:14:19,685
+substitution to find that x is equal to 3
+1.
+
+205
+00:14:19,685 --> 00:14:27,970
+So it's 5 times x2 is equal to 5.
+That gives me
+
+206
+00:14:27,970 --> 00:14:33,802
+the one.
+And then, 2 times x1 plus 2 times x1
+
+207
+00:14:33,802 --> 00:14:40,198
+plus 2 because x2 is equal to 2 has to be
+equal
+
+208
+00:14:40,198 --> 00:14:46,430
+to 8 so that means 2x1 has to be equal to
+6 or
+
+209
+00:14:46,430 --> 00:14:52,680
+x1 has to be equal to 3.
+So LU factorization, sorry,
+
+210
+00:14:52,680 --> 00:14:57,470
+elimination factors A into LU.
+So that's what LU factorization is.
+
+211
+00:15:00,020 --> 00:15:03,020
+It also turns out that the upper triangle
+U,
+
+212
+00:15:03,020 --> 00:15:06,359
+upper triangular U, has the pivots on its
+diagonal.
+
+213
+00:15:08,070 --> 00:15:10,870
+And the lower triangle L always is going
+to
+
+214
+00:15:10,870 --> 00:15:12,850
+have 1's on it's diagonal because I am
+getting this
+
+215
+00:15:12,850 --> 00:15:14,760
+from an identity matrix and then I am just
+
+216
+00:15:14,760 --> 00:15:18,620
+plugging in the lower triangular values
+that are my multipliers.
+
+217
+00:15:19,790 --> 00:15:25,050
+So, if I know L, always has 1's on the
+diagonal, there is no reason
+
+218
+00:15:25,050 --> 00:15:29,340
+for me to store those in memory or even
+keep track of them.
+
+219
+00:15:29,340 --> 00:15:32,620
+And if I know that u always has zeroes
+below the main
+
+220
+00:15:32,620 --> 00:15:36,640
+diagonal, then I can use those elements
+below the main diagonal for anything
+
+221
+00:15:36,640 --> 00:15:39,540
+I want to because if I were writing an
+algorithm, if I know
+
+222
+00:15:39,540 --> 00:15:43,530
+something's zero, my algorithm's going to
+be faster if I never touch it.
+
+223
+00:15:43,530 --> 00:15:46,700
+So if I know that a value is zero, there's
+no point
+
+224
+00:15:46,700 --> 00:15:50,210
+in multiplying something times a value I
+know is zero, and then
+
+225
+00:15:50,210 --> 00:15:51,060
+adding it.
+
+226
+00:15:51,060 --> 00:15:53,630
+So I just ignore it and it has exactly the
+same effect.
+
+227
+00:15:56,730 --> 00:15:59,280
+So L has also these multipliers LJ,
+
+228
+00:16:01,450 --> 00:16:03,930
+and if I want to consider what the
+computational cost of
+
+229
+00:16:03,930 --> 00:16:07,130
+elimination is, so there's actually costs
+I want to keep in mind.
+
+230
+00:16:07,130 --> 00:16:10,270
+One is the number of computations I have
+to do.
+
+231
+00:16:10,270 --> 00:16:14,110
+But another sort of equally important one
+in, in my opinion
+
+232
+00:16:14,110 --> 00:16:16,770
+actually, so I, I used to be a programmer
+for a while.
+
+233
+00:16:16,770 --> 00:16:19,470
+I think this is more important - is to use
+less memory.
+
+234
+00:16:19,470 --> 00:16:19,970
+[COUGH]
+
+235
+00:16:21,820 --> 00:16:27,430
+So, the computational cost elimination on
+A requires 1
+
+236
+00:16:27,430 --> 00:16:30,760
+3rd n cubed multiplications and 1 3rd n
+cubed subtractions.
+
+237
+00:16:30,760 --> 00:16:33,950
+This is sort of roughly, What it's
+going to take.
+
+238
+00:16:37,340 --> 00:16:41,000
+but suppose I factor A so I have a dense
+matrix A.
+
+239
+00:16:41,000 --> 00:16:44,820
+So dense just means that every element is
+non zero or it could be.
+
+240
+00:16:46,260 --> 00:16:50,560
+into a lower triangular matrix l so I have
+only zeroes up here.
+
+241
+00:16:50,560 --> 00:16:54,040
+I have ones down the diagonal and then
+the, the important
+
+242
+00:16:54,040 --> 00:16:58,200
+numbers are only in the lower triangle,
+strictly below the diagonal.
+
+243
+00:16:59,650 --> 00:17:03,110
+And upper triangular matrix, that I can
+write with
+
+244
+00:17:03,110 --> 00:17:09,130
+the pivots down the diagonal, and then
+some upper triangular entries, but
+
+245
+00:17:09,130 --> 00:17:14,320
+I have these three values down here that I
+can kind of use for some other purpose.
+
+246
+00:17:14,320 --> 00:17:18,060
+And it turns out I have exactly those
+three values in my matrix L,
+
+247
+00:17:20,330 --> 00:17:22,590
+that kind of determine what L is.
+
+248
+00:17:22,590 --> 00:17:24,590
+Everything else, the diagonal is
+determined
+
+249
+00:17:24,590 --> 00:17:27,500
+and everything above the diagonal, is
+determined.
+
+250
+00:17:27,500 --> 00:17:31,060
+So I can actually write this whole thing
+in the
+
+251
+00:17:31,060 --> 00:17:34,429
+same space that I would use to store my
+matrix A.
+
+252
+00:17:36,740 --> 00:17:41,350
+So if I look at the, the first row, this
+would be the same as the first row of A.
+
+253
+00:17:41,350 --> 00:17:44,110
+Because when I do elimination, if, if
+there's
+
+254
+00:17:44,110 --> 00:17:46,030
+a nonzero value here that I can use as
+
+255
+00:17:46,030 --> 00:17:47,960
+my pivot so this is kind of assuming there
+
+256
+00:17:47,960 --> 00:17:51,790
+is then I'm going to leave the first row
+alone.
+
+257
+00:17:53,520 --> 00:17:55,840
+So this row stays the same.
+
+258
+00:17:55,840 --> 00:18:01,180
+And then I'm going to look at A 2 1, and
+my pivot, A 1 1.
+
+259
+00:18:01,180 --> 00:18:02,860
+And I'm going to
+
+260
+00:18:02,860 --> 00:18:04,330
+choose a multiplier.
+
+261
+00:18:04,330 --> 00:18:07,740
+And as soon as I've chosen that
+multiplier, I know if
+
+262
+00:18:07,740 --> 00:18:12,050
+I do an elimination step, this value is
+going to be 0.
+
+263
+00:18:12,050 --> 00:18:18,370
+So once I know what the multiplier is, I
+might as well just write that down here.
+
+264
+00:18:18,370 --> 00:18:22,380
+So if I was doing this on a chalkboard, I
+figure out what the multiplier is.
+
+265
+00:18:22,380 --> 00:18:27,260
+I erase this value, a21, and I write the
+multiplier there.
+
+266
+00:18:28,400 --> 00:18:34,010
+Then when I do the elimination, because I
+know that this is going to become a 0.
+
+267
+00:18:34,010 --> 00:18:36,800
+Because I've, that's how I constructed the
+multiplier.
+
+268
+00:18:36,800 --> 00:18:38,720
+I don't need to do any math on that.
+
+269
+00:18:38,720 --> 00:18:40,980
+So it's not going to touch this value of
+l21
+
+270
+00:18:40,980 --> 00:18:44,420
+that I've stored in the, in the lower
+triangle.
+
+271
+00:18:44,420 --> 00:18:48,870
+And I'll just do the elimination on these
+two elements and that'll give
+
+272
+00:18:48,870 --> 00:18:53,400
+me the second pivot and then some other
+number in the upper triangle.
+
+273
+00:18:53,400 --> 00:18:59,050
+And then, if I continue in that way, I'm
+going to end up with a LU factor stored in
+
+274
+00:18:59,050 --> 00:19:05,710
+exactly the same memory that I started out
+using to store my matrix A.
+
+275
+00:19:05,710 --> 00:19:08,020
+So, if you're doing this on a chalkboard,
+you'll only ever
+
+276
+00:19:08,020 --> 00:19:11,130
+have to erase one number at a time which
+is different than
+
+277
+00:19:11,130 --> 00:19:14,550
+the way you probably had to do the
+exercise in For the
+
+278
+00:19:14,550 --> 00:19:18,680
+first quiz today, where you had to write
+out the system every
+
+279
+00:19:18,680 --> 00:19:19,850
+time you did the elimination.
+
+280
+00:19:19,850 --> 00:19:20,350
+[COUGH]
+
+281
+00:19:21,430 --> 00:19:23,690
+And then also you end up doing less
+
+282
+00:19:23,690 --> 00:19:28,360
+mathematics, because you're never doing
+the, the operations
+
+283
+00:19:28,360 --> 00:19:30,700
+that are, would lead to the zeros that
+
+284
+00:19:30,700 --> 00:19:33,830
+would appear down below in this matrix,
+here.
+
+285
+00:19:33,830 --> 00:19:35,720
+And so that's actually pretty good because
+I think in
+
+286
+00:19:35,720 --> 00:19:38,510
+the, in the two quiz questions you've done
+so far, you've
+
+287
+00:19:38,510 --> 00:19:41,950
+probably realized that you're making, even
+when I'm asking you to
+
+288
+00:19:41,950 --> 00:19:43,720
+do relatively simple additions and
+
+289
+00:19:43,720 --> 00:19:46,400
+multiplications, probably a lot of
+mistakes.
+
+290
+00:19:48,620 --> 00:19:50,700
+So, you know, if you're doing things by
+hand,
+
+291
+00:19:50,700 --> 00:19:54,770
+it's still a good idea to use less memory,
+
+292
+00:19:54,770 --> 00:19:57,290
+and to do the fewest number of
+computations possible,
+
+293
+00:19:57,290 --> 00:20:00,970
+because every computation is an
+opportunity to make a mistake.
+
+294
+00:20:00,970 --> 00:20:03,890
+And if you're programming a computer, your
+algorithm's just going to be
+
+295
+00:20:03,890 --> 00:20:07,710
+faster, if you're not touching memory that
+you don't need to.
+

@@ -1,0 +1,81 @@
+The topic for week 4 is Multiple
+integrals.
+So again I'm going to sort of follow the
+same design I used in week two.
+I'll start off just by defining what a
+multiple integral is.
+And because I want to be able to visualize
+this, I'm just going to talk about double
+integrals.
+The second section is something called
+Fubini's theorem.
+And this is sort of like the, the
+fundamental theorem of calculus,
+gave us a way to evaluate an integral, a
+single variable integral.
+Fubini's theorem allows
+us to use something called an iterated
+integral
+to evaluate a double integral or a
+multiple
+integral In section three, I'll talk about
+something
+called the change of variables for double
+integrals.
+So this is if I want to substitute one of
+my variables with an expression,
+how I can modify my integral so that it's
+still evaluates to the same number.
+In section four, I'll just go through and
+extend an example
+of that.
+And in section five, I will show you that
+there
+is a certain class of double integrals
+that are called separable.
+Where without actually doing anti, any
+integration, you can separate them to two
+single variable integrals, and that will
+make the calculation a little bit easier.
+In section six, I will talk about one
+particular
+type of change of variables, which is
+re-expressing the problem
+in polar coordinates.
+So, if the normal, if the original problem
+was described in terms
+of x and y, that would describe a point in
+the plane.
+Polar coordinates allows me to describe a
+point in the plane using r and theta.
+So r is a distance from the origin and
+theta is an angle from the positive x
+axis.
+In section seven, I'll do something called
+a culturally important integral.
+So if you look at the standard normal
+density, you'll notice there's this
+1 over the square root of 2 pi out in the
+front of it.
+And that's because I wanted to integrate
+to one.
+And so I want to go through the argument
+for why the, the
+normalization factor should be 1 over the
+square root of 2 pi.
+So that's what we'll,
+that's what we'll cover in topic seven.
+And then in topic eight, I want to work
+through calculating
+something called the marginal density of a
+bi-variate normal distribution.
+So this is actually just single partial
+integration exercise,
+but it's a very complicated integral to
+look at.
+But again, it has, there are some tricks
+that makes it easier to evaluate, and so
+I want to go through them once in class
+just so you have the opportunity to see
+them.
+

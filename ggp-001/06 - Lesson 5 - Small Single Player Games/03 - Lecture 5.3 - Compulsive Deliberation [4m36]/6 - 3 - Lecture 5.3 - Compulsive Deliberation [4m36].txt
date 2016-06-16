@@ -1,0 +1,132 @@
+Our first approach
+[SOUND]
+to building a player for small single
+[SOUND]
+player games, is called compulsive
+deliberation.
+It's a big name for a relatively simple
+concept.
+In compulsive deliberation on each step
+the
+player examines the then current game tree
+to determine his best move for that step
+and at then makes the move.
+Repeats his process on the next step and
+so forth until the end of the game.
+Now in pure compulsive deliberation, each
+step
+of the computation's independent of every
+other step.
+No data compute, -puted during one step is
+accessible subsequent steps.
+The player treats each step as if it were
+a brand-new game.
+Now this is obviously wasteful, but it
+doesn't really hurt
+so long as there's enough time to do the
+repeated calculations.
+We start with this method because it's
+simple
+to understand and at the same time it
+serves as a template for the more
+sophisticated and much less wasteful
+methods to come.
+Using basic subroutine provided in the GGP
+starter
+pack, building a compulsive deliberation
+player is not difficult.
+The implementation looks like this.
+As shown, it's almost identical to
+our implementation of legal and random
+players.
+The only difference lies in the play
+handler.
+In selecting an action a legal player uses
+find legal
+x, to compute a legal move for a given
+state.
+In compulsive deliberation,
+the play handler instead uses a subroutine
+called bestmove that does a more
+sophisticated computation.
+Before looking at bestmove, let's look
+at slightly simpler subroutine called
+maxscore.
+Maxscore takes up state as argument, and
+returns the best score that
+the player can obtain by any sequence of
+actions in the specified state.
+Let's see how it works.
+As its first step, the procedure checks
+whether the given state is terminal.
+If so, then the pos, best possible score
+is a reward for the specified state.
+Computes this by calling the find reward
+subroutine on
+the goal, role, the state, and the rule
+set.
+If the state's not terminal, then it tries
+each of the actions legal in that state.
+Computes the maximum score for the state
+that results from
+executing that action, and returns the
+best score it finds.
+First step in doing this is to compute a
+list of all legal actions.
+It initializes the variable score to zero,
+then loops over the possible actions.
+Since it generally can be multiple players
+findnexts takes
+as arguments a list of actions of all
+players.
+In this case we have a single player game,
+so the player creates a list of just one
+element.
+The player then uses find next to compute
+the
+next state resulting from this move in the
+current state.
+Then finds the max score for that
+successor state.
+If
+the result is 100, then it simply returns
+that value,
+as there's no way to get more than 100
+points.
+Otherwise, if the result is greater than
+current
+score, it updates the score and goes on.
+And finally, if it has not encountered a
+100 value, and, in the process, it
+returns the current score, which, by
+construction, is
+the maximum score for, for all possible
+actions.
+Okay, now that we have max score, let's
+return to best move.
+The definition uses max score, and is
+actually quite similar to max score.
+There're just a few differences.
+First of all, best move is not itself
+recursive, though it calls max score,
+which is recursive.
+Best move does not need to check whether
+the state is terminal, because it
+would not be called if the gate were, game
+were in a terminal state.
+That's already been checked.
+It initializes a variable called action to
+the first legal action.
+It then behaves pretty much like max
+score, trying each possible action, to see
+if
+it can find one with a higher score than
+any previous action it has seen.
+If it ever encounters a max score
+of 100, it simply returns the
+corresponding action.
+Otherwise, it proceeds until it has tried
+all actions, at which point
+it returns the action with the highest max
+score that it has seen.
+

@@ -1,0 +1,726 @@
+1
+00:00:00,840 --> 00:00:03,615
+So now that we've seen LaGrange method
+
+2
+00:00:03,615 --> 00:00:07,365
+let's take another look at minimum
+variance portfolios,
+
+3
+00:00:07,365 --> 00:00:12,390
+and just see what we have to do to solve
+one of these optimization problems.
+
+4
+00:00:15,890 --> 00:00:17,680
+So a minimum variance portfolio.
+
+5
+00:00:19,540 --> 00:00:22,165
+This was the quantity I was calling risk,
+
+6
+00:00:22,165 --> 00:00:24,960
+which is just the variance of my
+portfolio.
+
+7
+00:00:26,940 --> 00:00:29,028
+And I want to minimize my risk, so I
+
+8
+00:00:29,028 --> 00:00:32,710
+want to minimize the variance, subject to
+two conditions.
+
+9
+00:00:32,710 --> 00:00:35,600
+One, that I hit my target rate of return.
+
+10
+00:00:37,310 --> 00:00:41,288
+And two because this is sort of a more
+realistic like there's
+
+11
+00:00:41,288 --> 00:00:44,250
+no way around this condition.
+
+12
+00:00:44,250 --> 00:00:48,030
+That my money and my portfolio has to all
+be sort of used up.
+
+13
+00:00:48,030 --> 00:00:52,130
+So the proportions of my portfolio, my
+weights, have to all sum up to one.
+
+14
+00:00:55,570 --> 00:00:59,740
+So to set this up.
+For Lagrange method.
+
+15
+00:00:59,740 --> 00:01:05,380
+The objective function, the f, the thing
+that I'm trying to minimize
+
+16
+00:01:05,380 --> 00:01:10,640
+or maximize, is going to be the variance.
+The w transpose sigma w.
+
+17
+00:01:12,800 --> 00:01:14,360
+And the constraints.
+
+18
+00:01:14,360 --> 00:01:18,380
+So g is going to be a function of this
+weights vector.
+
+19
+00:01:18,380 --> 00:01:20,360
+So the weights of my portfolio.
+
+20
+00:01:20,360 --> 00:01:23,610
+It's a vector-valued function with two
+pieces.
+
+21
+00:01:23,610 --> 00:01:27,610
+The first one is just this condition.
+
+22
+00:01:27,610 --> 00:01:30,030
+So I've, here I haven't written them equal
+to 0.
+
+23
+00:01:30,030 --> 00:01:33,423
+So when I write this out in the, and the g
+of x, I
+
+24
+00:01:33,423 --> 00:01:39,190
+have to oh, I guess I swapped them too,
+but that won't make any difference.
+
+25
+00:01:39,190 --> 00:01:42,544
+So instead of saying expected the return
+of the
+
+26
+00:01:42,544 --> 00:01:46,444
+portfolio should be equal to my target
+expected return I'm
+
+27
+00:01:46,444 --> 00:01:49,954
+going to say the expected return of my
+portfolio minus
+
+28
+00:01:49,954 --> 00:01:54,140
+my target expected return has to be equal
+to zero.
+
+29
+00:01:54,140 --> 00:01:57,150
+And that the sum of the weights minus 1
+has to be equal to 0.
+
+30
+00:01:57,150 --> 00:02:04,820
+And then I'll check my necessary
+condition, so If I take the gradient
+
+31
+00:02:04,820 --> 00:02:12,650
+of this, I'm just going to end up with mew
+transposed as the first row.
+
+32
+00:02:13,820 --> 00:02:19,410
+And the second row being all one, and so
+the only way I could get in to trouble is
+
+33
+00:02:19,410 --> 00:02:24,830
+if I manage to pick n assets that all had
+exactly the same expected return.
+
+34
+00:02:24,830 --> 00:02:30,206
+So if one, the vector one, so one in every
+element,
+
+35
+00:02:30,206 --> 00:02:35,540
+that's proportional to any vector.
+That has the same
+
+36
+00:02:35,540 --> 00:02:40,980
+number for every element, so as long as I
+have at least two distinct expected
+
+37
+00:02:40,980 --> 00:02:45,880
+returns among my assets, then this matrix
+is going to be full rank.
+
+38
+00:02:45,880 --> 00:02:48,040
+It's going to have two pivots for two
+rows.
+
+39
+00:02:52,810 --> 00:02:55,340
+And I need a indermediate result.
+
+40
+00:02:55,340 --> 00:02:58,770
+Which is something called the derivative
+of a quadratic form.
+
+41
+00:02:58,770 --> 00:03:01,115
+So I'm going to let A be a symmetric
+matrix,
+
+42
+00:03:01,115 --> 00:03:03,830
+so this is just a two by two example.
+
+43
+00:03:03,830 --> 00:03:06,092
+So I have diagonal entries A and C,
+
+44
+00:03:06,092 --> 00:03:10,650
+and then the off-diagonal elements, they
+have to match.
+
+45
+00:03:10,650 --> 00:03:14,680
+So, for a two by two case, there's only
+one off-diagonal element, B.
+
+46
+00:03:14,680 --> 00:03:17,880
+And so, so I guess it's two, but they have
+to be the same.
+
+47
+00:03:17,880 --> 00:03:21,670
+So the 1, 2 and the 2,1 element are the
+same value.
+
+48
+00:03:21,670 --> 00:03:27,841
+And then I'll define, f of x to be equal
+to, so x is going
+
+49
+00:03:27,841 --> 00:03:33,430
+to be a vector of, of two elements.
+X transpose a x.
+
+50
+00:03:35,960 --> 00:03:41,468
+And when I do that arithmetic what I end
+up with is a x1 squared
+
+51
+00:03:41,468 --> 00:03:46,970
+plus 2b x1x2 plus c x2 squared.
+If I take the
+
+52
+00:03:46,970 --> 00:03:52,218
+derivative of that, so the partial
+derivatives
+
+53
+00:03:52,218 --> 00:03:58,150
+of this, I end up getting 2 x transpose A.
+
+54
+00:03:58,150 --> 00:04:00,870
+So you can kind of see what's, you know,
+
+55
+00:04:00,870 --> 00:04:06,310
+it makes sense because this x transpose A
+x, this is sort of the matrix equivalent
+
+56
+00:04:06,310 --> 00:04:11,560
+of just, what a single variable function
+would have as a x squared.
+
+57
+00:04:11,560 --> 00:04:16,030
+If I take the derivative of a function
+that's equal to a x squared, I get 2 a x.
+
+58
+00:04:17,800 --> 00:04:21,987
+And so, that's pretty much what I've got
+here, except I just
+
+59
+00:04:21,987 --> 00:04:25,937
+have to respect the order of operations,
+so that the, I get
+
+60
+00:04:25,937 --> 00:04:32,742
+the right answer that I want to.
+So the gradient has to be a row vector.
+
+61
+00:04:32,742 --> 00:04:35,292
+So I need to do this as x transpose A so
+
+62
+00:04:35,292 --> 00:04:38,704
+that the answer here is going to be a row
+vector.
+
+63
+00:04:38,704 --> 00:04:42,187
+And then I pick up this factor of 2
+because I, it's
+
+64
+00:04:42,187 --> 00:04:46,215
+sort of the same thing as taking a
+derivative of x squared.
+
+65
+00:04:46,215 --> 00:04:46,775
+[COUGH]
+
+66
+00:04:46,775 --> 00:04:51,927
+And it turns out that in general if a is
+an n by n symmetric
+
+67
+00:04:51,927 --> 00:04:57,710
+matrix,so that's what makes this thing a
+quadratic form.
+
+68
+00:04:57,710 --> 00:05:02,540
+Is if I write this here.
+So x is my vector.
+
+69
+00:05:02,540 --> 00:05:05,330
+It's my, has my variables in it, x1 up to
+xn.
+
+70
+00:05:07,080 --> 00:05:09,320
+And a is a symmetric matrix.
+
+71
+00:05:09,320 --> 00:05:11,450
+Then this thing here is called a quadratic
+form.
+
+72
+00:05:14,350 --> 00:05:17,720
+So the derivative of a quadratic form, so
+that the gradient.
+
+73
+00:05:17,720 --> 00:05:20,860
+Of, of the corresponding function here.
+
+74
+00:05:20,860 --> 00:05:23,760
+You can just write that as two x transpose
+a.
+
+75
+00:05:23,760 --> 00:05:27,576
+So it works for the two by two case like
+this, and if you actually
+
+76
+00:05:27,576 --> 00:05:31,920
+did the same thing but for larger cases,
+three by three or n by n.
+
+77
+00:05:31,920 --> 00:05:34,975
+You'd be doing a whole lot of
+calculations, but in
+
+78
+00:05:34,975 --> 00:05:38,038
+the end you're always going to get two x
+transpose a.
+
+79
+00:05:38,038 --> 00:05:44,020
+That's it, okay.
+So
+
+80
+00:05:44,020 --> 00:05:49,990
+now let's look at the Lagrangian I have
+for my, my minimum variance problem.
+
+81
+00:05:49,990 --> 00:05:55,010
+So I put the variance here, so this is the
+little f.
+
+82
+00:05:55,010 --> 00:06:00,880
+Then I have lambda 1 times constraint 1
+plus lambda 2 times constraint 2.
+
+83
+00:06:05,790 --> 00:06:10,002
+And now I want to take the gradient of the
+lagrangian, so I can do
+
+84
+00:06:10,002 --> 00:06:15,010
+this again doing sort of the x part first
+and then the lambda part second.
+
+85
+00:06:17,260 --> 00:06:22,252
+So what I end up with is the gradient.
+Of the objective function, so
+
+86
+00:06:22,252 --> 00:06:27,294
+the little f.
+Ans so that's, I've just mentioned how I
+
+87
+00:06:27,294 --> 00:06:32,526
+can take the derivative of this quadratic
+form so that's
+
+88
+00:06:32,526 --> 00:06:37,540
+two w transpose sigma and then I'm going
+to have lambda
+
+89
+00:06:37,540 --> 00:06:42,336
+to one times the gradient of g, so the
+gradient of g is
+
+90
+00:06:42,336 --> 00:06:44,030
+going to just be.
+
+91
+00:06:44,030 --> 00:06:49,380
+If I look at the, the gradient here it
+will just be a vector of ones.
+
+92
+00:06:49,380 --> 00:06:51,386
+So it's one times w, and I'm taking the
+
+93
+00:06:51,386 --> 00:06:54,159
+derivatives with respect to each of these
+w's, so each
+
+94
+00:06:54,159 --> 00:06:58,240
+time only one of those terms is going to
+pop out and it's always going to be a one.
+
+95
+00:07:00,420 --> 00:07:02,751
+And then similarly, when I do the same
+thing
+
+96
+00:07:02,751 --> 00:07:05,760
+here, oh and I guess this one is constant.
+
+97
+00:07:05,760 --> 00:07:09,530
+This mu p is constant, so they're going to
+disappear when I take derivatives.
+
+98
+00:07:09,530 --> 00:07:10,960
+And the same thing's going to happen here.
+
+99
+00:07:10,960 --> 00:07:15,060
+When I take the gradient here, I'm just
+going to
+
+100
+00:07:15,060 --> 00:07:18,710
+get mu one, mu two, mu three in a row.
+
+101
+00:07:18,710 --> 00:07:20,486
+Because everything else I, I'm taking the
+
+102
+00:07:20,486 --> 00:07:22,900
+partial derivative with respect to a
+different variable.
+
+103
+00:07:26,690 --> 00:07:29,294
+So I can write that, just as lambda 1
+
+104
+00:07:29,294 --> 00:07:33,110
+times e transpose plus lambda 2 times mu
+transpose.
+
+105
+00:07:35,420 --> 00:07:40,970
+And then, the partial derivatives with
+respect to the lambda here.
+
+106
+00:07:40,970 --> 00:07:45,010
+They are just going to be my constraints
+again.
+
+107
+00:07:45,010 --> 00:07:50,410
+So I end up with e transpose w minus 1,
+and mu transpose w minus mu p.
+
+108
+00:07:55,000 --> 00:07:58,430
+And so I guess we should check that all of
+the dimensions work out here.
+
+109
+00:07:58,430 --> 00:08:01,270
+So w W transposed.
+
+110
+00:08:01,270 --> 00:08:04,010
+W's a column vector with n elements in it.
+
+111
+00:08:05,650 --> 00:08:07,825
+And this is an n by n matrix, so when
+
+112
+00:08:07,825 --> 00:08:11,630
+I take w transpose, that has dimensions 1
+by n.
+
+113
+00:08:11,630 --> 00:08:16,410
+Sigma has dimensions n by n, so when I do
+that product, I'm going to get 1 by n.
+
+114
+00:08:18,620 --> 00:08:22,162
+E transposed, this is this column vector
+of m, sorry n
+
+115
+00:08:22,162 --> 00:08:26,012
+ones, so when I take the transpose of that
+I'm going to get.
+
+116
+00:08:26,012 --> 00:08:30,398
+A vector here that has, it's a row vector
+with n elements and
+
+117
+00:08:30,398 --> 00:08:36,470
+similarly mu transposed is also going to
+be a row vector with n elements.
+
+118
+00:08:36,470 --> 00:08:40,319
+So I can do this sum, and I end up with a
+row vector with n elements.
+
+119
+00:08:42,690 --> 00:08:44,800
+And then these are each scalar values.
+
+120
+00:08:44,800 --> 00:08:51,370
+So I have n elements here and then I have
+two lambdas so I end up with two more.
+
+121
+00:08:52,560 --> 00:08:56,670
+So m more terms here, but in this
+particular case m is equal to 2.
+
+122
+00:09:00,070 --> 00:09:03,470
+And I need to find values now of w.
+
+123
+00:09:03,470 --> 00:09:07,090
+Lambda one and lambda two, that are going
+to make this equal to 0.
+
+124
+00:09:07,090 --> 00:09:10,590
+And so it turns out, you can write
+
+125
+00:09:10,590 --> 00:09:16,520
+that problem down just as solving a linear
+system.
+
+126
+00:09:16,520 --> 00:09:25,146
+So I have 2 Sigma, so that's your 2 Sigma.
+Times w, so this is just the
+
+127
+00:09:25,146 --> 00:09:30,258
+transpose of this so it's kind of more
+convenient to work, with this as a column
+
+128
+00:09:30,258 --> 00:09:36,940
+vector when I want to solve it.
+lambda 1 times e transpose.
+
+129
+00:09:36,940 --> 00:09:39,993
+So that's going to be, if I just take the
+transpose
+
+130
+00:09:39,993 --> 00:09:44,720
+of that, lambda 1 a constant, so That'll
+just become e.
+
+131
+00:09:44,720 --> 00:09:50,350
+And then lambda 2 times u transposed.
+So I end up with mu here.
+
+132
+00:09:50,350 --> 00:09:56,494
+And now if I do the dot product of this
+row and this column,
+
+133
+00:09:56,494 --> 00:10:02,460
+I end up with, 2 sigma w e plus e lambda 1
+plus mu.
+
+134
+00:10:02,460 --> 00:10:06,780
+Lambda 2, which is just the transpose of
+this here.
+
+135
+00:10:06,780 --> 00:10:08,880
+So if I can make this thing equal to
+
+136
+00:10:08,880 --> 00:10:12,330
+zero, then I'm also making this thing
+equal to zero.
+
+137
+00:10:14,490 --> 00:10:20,300
+Then I need e transposed w has to equal 1.
+
+138
+00:10:20,300 --> 00:10:25,291
+So here I have e transposed times w.
+Plus 0 times lambda
+
+139
+00:10:25,291 --> 00:10:30,440
+one plus 0 times lambda 2 equals 1.
+So that gets
+
+140
+00:10:30,440 --> 00:10:35,190
+me this constraint here and then u
+transposed
+
+141
+00:10:35,190 --> 00:10:39,940
+times w, plus 0 times lambda 1 plus 0
+times
+
+142
+00:10:39,940 --> 00:10:45,660
+lambda 2 equals mu p.
+So that gets me this constraint here.
+
+143
+00:10:45,660 --> 00:10:50,396
+So it turns out in the, in the case of
+this minimum variance portfolio, I'm
+
+144
+00:10:50,396 --> 00:10:55,058
+able to find, there's going to just be one
+critical point because this is a
+
+145
+00:10:55,058 --> 00:10:59,572
+linear system, and I'm able to find that
+just by solving this ax equals b
+
+146
+00:10:59,572 --> 00:11:04,740
+problem that we worked on in the, in the
+linear algebra section of the lectures.
+
+147
+00:11:10,250 --> 00:11:13,330
+And so that's it for, for the lecture
+today, there's still
+
+148
+00:11:13,330 --> 00:11:16,480
+one more quiz, but I just wanted to
+mention some further reading.
+
+149
+00:11:16,480 --> 00:11:17,772
+So there is also a, a
+
+150
+00:11:17,772 --> 00:11:21,648
+reasonably complicated second order
+condition for whether
+
+151
+00:11:21,648 --> 00:11:26,750
+a point you find using Lagrange
+multipliers is a maximum or a minimum.
+
+152
+00:11:26,750 --> 00:11:33,638
+And that's described in the course
+textbook, so Theorem 9.2 and Corollary 9.1
+

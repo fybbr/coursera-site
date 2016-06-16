@@ -1,0 +1,53 @@
+The, the defining characteristic of
+General Game Playing is the
+players don't know the rules of games
+before those games begin.
+Game rules are communicated only at
+runtime and the players must be able to
+read and understand the descriptions they
+are
+given in order to play legally and
+effectively.
+This characteristic carries with it the
+requirement
+of a language for writing game rules.
+In general game playing, information about
+games is typically
+communicated to players in the formal
+language called Game Description Language
+or GDL.
+As mentioned in the introduction, GDL is
+widely used in the research literature.
+And it's used in virtually all general
+game-playing competitions.
+Moreover, it forms the basis for some more
+expressive variants that have
+significant value in real-world
+applications such
+as enterprise management and computational
+law.
+As we shall see, GDL is a logic
+programming language.
+Game descriptions are logic programs
+consisting of
+rules that define the key elements of
+games.
+Such as initial conditions, move legality,
+game
+dynamics, rewards and termination and so
+forth.
+This lesson is an overview of GDL.
+We're to begin with a detailed
+introduction to logic programs in GDL.
+We then look at a sample game description
+and we'll look at
+the use of this description in simulating
+a match of the game.
+Finally, we talk about some additional
+requirements
+on games that ensure that they are
+interesting.
+And we summarize the prefix syntax for
+GDL used in most general game playing
+competitions.
+

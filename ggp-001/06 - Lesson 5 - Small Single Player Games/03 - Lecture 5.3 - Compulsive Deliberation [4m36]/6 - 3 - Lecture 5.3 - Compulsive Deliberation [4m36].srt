@@ -1,0 +1,359 @@
+1
+00:00:04,870 --> 00:00:05,715
+Our first approach
+
+2
+00:00:05,715 --> 00:00:06,500
+[SOUND]
+
+3
+00:00:06,500 --> 00:00:09,348
+to building a player for small single
+
+4
+00:00:09,348 --> 00:00:09,932
+[SOUND]
+
+5
+00:00:09,932 --> 00:00:12,680
+player games, is called compulsive
+deliberation.
+
+6
+00:00:14,040 --> 00:00:16,680
+It's a big name for a relatively simple
+concept.
+
+7
+00:00:18,180 --> 00:00:20,880
+In compulsive deliberation on each step
+the
+
+8
+00:00:20,880 --> 00:00:24,290
+player examines the then current game tree
+
+9
+00:00:24,290 --> 00:00:27,520
+to determine his best move for that step
+and at then makes the move.
+
+10
+00:00:29,110 --> 00:00:32,329
+Repeats his process on the next step and
+so forth until the end of the game.
+
+11
+00:00:34,620 --> 00:00:36,790
+Now in pure compulsive deliberation, each
+step
+
+12
+00:00:36,790 --> 00:00:39,100
+of the computation's independent of every
+other step.
+
+13
+00:00:39,100 --> 00:00:43,850
+No data compute, -puted during one step is
+accessible subsequent steps.
+
+14
+00:00:43,850 --> 00:00:46,280
+The player treats each step as if it were
+a brand-new game.
+
+15
+00:00:47,710 --> 00:00:50,440
+Now this is obviously wasteful, but it
+doesn't really hurt
+
+16
+00:00:50,440 --> 00:00:54,490
+so long as there's enough time to do the
+repeated calculations.
+
+17
+00:00:55,970 --> 00:00:57,780
+We start with this method because it's
+simple
+
+18
+00:00:57,780 --> 00:00:59,670
+to understand and at the same time it
+
+19
+00:00:59,670 --> 00:01:01,110
+serves as a template for the more
+
+20
+00:01:01,110 --> 00:01:04,900
+sophisticated and much less wasteful
+methods to come.
+
+21
+00:01:07,888 --> 00:01:10,570
+Using basic subroutine provided in the GGP
+starter
+
+22
+00:01:10,570 --> 00:01:15,090
+pack, building a compulsive deliberation
+player is not difficult.
+
+23
+00:01:15,090 --> 00:01:17,670
+The implementation looks like this.
+
+24
+00:01:17,670 --> 00:01:18,890
+As shown, it's almost identical to
+
+25
+00:01:18,890 --> 00:01:20,810
+our implementation of legal and random
+players.
+
+26
+00:01:21,850 --> 00:01:24,500
+The only difference lies in the play
+handler.
+
+27
+00:01:24,500 --> 00:01:28,020
+In selecting an action a legal player uses
+find legal
+
+28
+00:01:28,020 --> 00:01:31,120
+x, to compute a legal move for a given
+state.
+
+29
+00:01:31,120 --> 00:01:33,400
+In compulsive deliberation,
+
+30
+00:01:33,400 --> 00:01:35,870
+the play handler instead uses a subroutine
+
+31
+00:01:35,870 --> 00:01:39,060
+called bestmove that does a more
+sophisticated computation.
+
+32
+00:01:41,680 --> 00:01:44,690
+Before looking at bestmove, let's look
+
+33
+00:01:44,690 --> 00:01:47,250
+at slightly simpler subroutine called
+maxscore.
+
+34
+00:01:48,395 --> 00:01:52,110
+Maxscore takes up state as argument, and
+returns the best score that
+
+35
+00:01:52,110 --> 00:01:56,640
+the player can obtain by any sequence of
+actions in the specified state.
+
+36
+00:01:56,640 --> 00:01:57,390
+Let's see how it works.
+
+37
+00:02:00,120 --> 00:02:03,490
+As its first step, the procedure checks
+whether the given state is terminal.
+
+38
+00:02:04,770 --> 00:02:09,769
+If so, then the pos, best possible score
+is a reward for the specified state.
+
+39
+00:02:11,260 --> 00:02:15,600
+Computes this by calling the find reward
+subroutine on
+
+40
+00:02:15,600 --> 00:02:18,990
+the goal, role, the state, and the rule
+set.
+
+41
+00:02:22,490 --> 00:02:26,670
+If the state's not terminal, then it tries
+each of the actions legal in that state.
+
+42
+00:02:28,000 --> 00:02:30,830
+Computes the maximum score for the state
+that results from
+
+43
+00:02:30,830 --> 00:02:35,140
+executing that action, and returns the
+best score it finds.
+
+44
+00:02:36,400 --> 00:02:39,130
+First step in doing this is to compute a
+list of all legal actions.
+
+45
+00:02:41,360 --> 00:02:47,870
+It initializes the variable score to zero,
+then loops over the possible actions.
+
+46
+00:02:49,750 --> 00:02:52,365
+Since it generally can be multiple players
+findnexts takes
+
+47
+00:02:52,365 --> 00:02:56,020
+as arguments a list of actions of all
+players.
+
+48
+00:02:56,020 --> 00:02:57,760
+In this case we have a single player game,
+
+49
+00:02:57,760 --> 00:02:59,860
+so the player creates a list of just one
+element.
+
+50
+00:03:03,130 --> 00:03:04,990
+The player then uses find next to compute
+the
+
+51
+00:03:04,990 --> 00:03:07,740
+next state resulting from this move in the
+current state.
+
+52
+00:03:11,010 --> 00:03:13,330
+Then finds the max score for that
+successor state.
+
+53
+00:03:13,330 --> 00:03:13,830
+If
+
+54
+00:03:16,610 --> 00:03:18,810
+the result is 100, then it simply returns
+that value,
+
+55
+00:03:18,810 --> 00:03:21,240
+as there's no way to get more than 100
+points.
+
+56
+00:03:21,240 --> 00:03:23,280
+Otherwise, if the result is greater than
+current
+
+57
+00:03:23,280 --> 00:03:25,360
+score, it updates the score and goes on.
+
+58
+00:03:26,580 --> 00:03:30,048
+And finally, if it has not encountered a
+100 value, and, in the process, it
+
+59
+00:03:30,048 --> 00:03:32,547
+returns the current score, which, by
+construction, is
+
+60
+00:03:32,547 --> 00:03:34,790
+the maximum score for, for all possible
+actions.
+
+61
+00:03:38,250 --> 00:03:41,330
+Okay, now that we have max score, let's
+return to best move.
+
+62
+00:03:42,580 --> 00:03:46,520
+The definition uses max score, and is
+actually quite similar to max score.
+
+63
+00:03:48,690 --> 00:03:50,160
+There're just a few differences.
+
+64
+00:03:50,160 --> 00:03:52,110
+First of all, best move is not itself
+
+65
+00:03:52,110 --> 00:03:53,919
+recursive, though it calls max score,
+which is recursive.
+
+66
+00:03:56,510 --> 00:03:59,640
+Best move does not need to check whether
+the state is terminal, because it
+
+67
+00:03:59,640 --> 00:04:02,800
+would not be called if the gate were, game
+were in a terminal state.
+
+68
+00:04:02,800 --> 00:04:03,690
+That's already been checked.
+
+69
+00:04:07,590 --> 00:04:11,710
+It initializes a variable called action to
+the first legal action.
+
+70
+00:04:11,710 --> 00:04:13,200
+It then behaves pretty much like max
+
+71
+00:04:13,200 --> 00:04:15,170
+score, trying each possible action, to see
+if
+
+72
+00:04:15,170 --> 00:04:19,820
+it can find one with a higher score than
+any previous action it has seen.
+
+73
+00:04:19,820 --> 00:04:21,670
+If it ever encounters a max score
+
+74
+00:04:21,670 --> 00:04:24,040
+of 100, it simply returns the
+corresponding action.
+
+75
+00:04:24,040 --> 00:04:27,250
+Otherwise, it proceeds until it has tried
+all actions, at which point
+
+76
+00:04:27,250 --> 00:04:30,010
+it returns the action with the highest max
+score that it has seen.
+

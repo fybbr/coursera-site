@@ -1,0 +1,325 @@
+Topic three is systems of linear
+equations.
+So what I'm building up to, is I want to
+be able to solve problems like this.
+So I have three equations and three
+unknowns.
+So the unknowns are x, y and z.
+And then each row here is one equation and
+I want to find a, I want to find
+x y and z that simultaneously satisfy all
+three of these equations.
+So there are two ways I can look at this
+if I, if I try and translate this into
+vectors.
+So I can look at something called the row
+picture.
+So that's trying to describe each one of
+these rows, and if I,
+if I do that, what I end up with is the
+dot product.
+So I'd have the dot product of the
+coefficient, so there's an invisible
+1 here, so if I just say X, I really mean
+1 times X.
+That's where this 1 comes from.
+So, the first row is 1, 2, 3 dot X, Y, Z
+is equal to 6.
+Second row is 2, 5, 2 dot X, Y, Z is equal
+to 4 and so on.
+And it turns out I can also do this using
+a column picture.
+So I can also think of this as X times 1,
+2, 6, y as 2 5 minus 3 and z
+times 3, 2, 1, sounds just the same
+numbers are the coefficients here.
+So, I can think of this either as dot
+products, they give me the
+rows or I can think of this as a linear
+combination of the columns of
+my coefficients.
+So the problem this is trying to describe,
+let's see, so
+you can see there is sort of this dark
+point here.
+And each one of these equations in the
+row picture, it's describing one of these
+planes.
+And so it's, it's really difficult to try
+and put three planes onto one picture.
+Even, even this one, I failed miserably
+trying to
+do my own artwork, so I just copied this
+out
+of the book.
+And even there, I still can't really
+convince myself
+what direction this plane is supposed to
+be tilting.
+you know sometimes it goes from looking
+like this to looking like this to me.
+But the point of this is I'm supposed to
+have these two planes.
+And the space where they intersect is
+going to be this black line, here.
+So if I have one point that's kind of like
+this and one point
+that's like this, where they intersect is
+going to be described by a line.
+So the intersection of the first two
+planes will give me a line.
+So I've gone from having sort of
+two-dimensional objects.
+So these two planes, they're
+two-dimensional objects that exist
+in three dimensions.
+When I intersect them, I now have a
+one-dimensional object, so this line that
+exists in three dimensions, and then to
+solve my problem.
+So to finish solving my system of
+equations, I
+need to intersect that line with the third
+plane.
+And so, if I have a plane and one line,
+it's going to hit at just a single point.
+And that point is going to be the value of
+x, y, and z that solves my system of
+equations.
+So, I want to now try so, so that's sort
+of the row picture.
+So remember the rows were giving me
+equations of planes and those planes,
+then, were
+giving me this picture and that was giving
+me one approach for solving this problem.
+And now I'm also going to try and consider
+solving it using the, the column approach.
+So to do that I'm going to start by
+stacking rows, or binding columns.
+So
+I can either think of the, the rows as
+being the coefficients
+from each equation or the columns of being
+the coefficients for each variable.
+So if I stack the rows, I put the
+coefficients for the
+third equation on bottom, second equation
+in the middle, and the third
+equation on top, or I can take all of the
+x coor-,
+x coeffcients and put them in the first
+column, y coefficients go in
+the second column, z coefficients go in
+the third column.
+So, the, the nice thing about this is we
+get a duality.
+So it doesn't matter which approach I
+take, I'm going to get the same answer.
+So, quite often, like in, in statistics,
+it turns out that looking at the columns
+of a matrix makes calculating statistical
+properties of estimators very easy.
+And looking at the rows of the data in a
+matrix makes
+plotting the data.
+So, actually looking at it you know, with
+your eye, very easy.
+So, you can use the rows to make plots,
+and you can use the columns to do
+mathematics.
+But, because you're really doing the same
+thing, regardless of whether
+you try to use the row problem, or the
+column problem.
+both of those are going to be descriptions
+of the same actual problem.
+So if A is my coefficient matrix, then I
+can write my system of three
+equations and three unknowns like this.
+So I have the coefficient matrix.
+Times a, a vector of unknowns and that's
+going
+to equal a vector of the, the right hand
+sine.
+So the, you know these were equations like
+somethi- you know,
+a x plus b y plus c z equals d so these
+are these values d.
+They go on the right hand side here in a
+vector called b.
+And so you can recover pretty easily the
+row picture here, so I just have 1,
+2, 3 dot x, y ,z equals 6, that's going to
+give me the first equation.
+And I can repeat that for the second or
+the third row, or I can say x.
+Times 1, 2,6 Plus y times 2, 5, -3 Plus z
+times 3,2,1
+Equals 6, 4, 2 and that gives me the
+column picture of the problem.
+And so we can think of this as the left
+hand side multiplies a times the unknowns
+v to get v.
+And so what we want to move towards now is
+having some sort of
+multiplication rule for matrices and
+vectors that's
+going to make sense out of this.
+So the, the properties we want it to have
+are it has
+to give this linear combination for the
+column picture, and it needs to
+Give me the row picture, so I need the dot
+product here,uh you
+know that this row of this matrix times
+this column vector of unknowns,
+that needs to be a don't product.
+So I can represent this as Av being just
+row 1 dot v row 2 dot v or row 3 dot v.
+Or the column picture, a times v, that's
+just going to be, so x here was the first
+component of my vector v, y was the second
+component, and z was the third component.
+And so just some examples here, so if I
+have 1, so 1
+0 0.4 5 6 that's going to equal
+4.
+1 0 0.4 5 6
+again is going to equal 4 and 1 0 0.4 5 6
+is going to equal 4.
+So multiplying by this matrix A Just
+plucks
+this first value out and puts that in the
+answer.
+Another matrix- this matrix has a special
+name.
+It's called the identity matrix.
+If I have ones down the diagonal so the
+diagonal is where the row is equal to the
+column.
+So here I'm in the first row and first
+column, here I'm in the second row and
+second column.
+Here, I'm in the first row but the second
+column, so it's not on the diagonal.
+So if I have ones down the diagonal and
+zeroes everywhere else,
+then that's going to give me the same
+vector back.
+So I have one zero zero times four five
+six, that's going to just pluck out this
+four.
+Then 010 times 456.
+That's going to take the 5.
+Then 001, that's
+going to take this 6.
+So suppose I have this system
+of equations.
+So 3x minus Y equals 3.
+X plus Y equals 5.
+I can write that in the matrix form as a
+coefficient
+matrix times an unknown vector XY is equal
+to the vector 35.
+And
+I can draw two pictures of this now.
+So as long as these are, you know,
+two equations and 2 unknowns, it's easy to
+draw.
+So the row picture, this is probably how
+you want to think about this.
+So each one of these rows determines a
+line in the X-Y plane,
+and then the answer is just going to be
+where the two lines intersect.
+So I drew these two lines and I
+intersected at the point 2,3,
+and so you can see, if I put in 2,3 here,
+I get 6 minus 3 is equal to 3, and
+2 plus 3 is equal to 5 so that is actually
+the solution to this system of equations.
+I can also draw the column picture.
+So this one's a little bit trickier to
+see, but the columns are 3 1 so that gives
+me my first column.
+And so then this arrow here, labeled
+column one.
+I go over three and up one.
+So this is column one.
+Column 2 is -1, 1 so that's this vector
+here so -1 1 and
+it's labeled column two.
+And then I'm looking for a linear
+combination, so I'm looking for something
+times column 1 plus something times column
+2 that's going to equal 3,5.
+And so you can visualize that, if I
+want to get,if I have to follow these two
+directions, so either this direction or
+this direction,
+and I want to get to the point 3,5.
+Then what
+I need to do is go 2 times column 1, and
+that gets me to this point.
+And then I'm going to add 3 times column
+2, that gets me up to this point.
+So this point up here, which is 3,5, I can
+describe that as 2 times column 1.
+Plus 3 times column 2.
+So 2 times column 1.
+Plus 3 times column 2.
+So that gives me the vector 6, 2.
+Plus the vector -3, 3.
+So six minus 3 gives me 3.
+And 2, 3 gives me 5 so that gives me the,
+the same answer
+whether I try and do this using the row
+view or the column view.
+And then both of those are representations
+of this matrix
+form of the equation.
+So some properties of systems of equations
+so most of the time If you
+have the same number of equations and
+unknowns, there's going to be one
+solution..
+So, that means, you know, you have a plane
+like this, a plane like this.
+That determines a line and then you maybe
+have a plane like
+this and wherever that line hits the third
+plane, that's your solution.
+But, of course, things can go wrong, so
+you
+could have two planes that are actually
+the same plane.
+So Imagine if I took the equation of a
+plane
+and just multiplied both sides by 2,
+every, every point
+would still be, the, the points that
+satisfy that are
+going to be the points in the same actual
+plane.
+Or I could have two planes that were
+parallel
+and so there would be no intersection
+between those.
+So, there may be no solution.
+So, if two lines are parallel and
+basically the, my interpretation
+of a system of equations is, where do
+these two lines intersect.
+If the two lines are parallel, we will get
+no solution.
+Or if you have two equations that
+look different but are actually describing
+the same
+line in the plane, then you have
+infinitely
+many solutions, so any point on that plane
+will satisfy the equation of both lines.
+Sorry, any point on that line satisfies
+the equation of each line.
+

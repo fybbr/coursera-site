@@ -1,0 +1,1125 @@
+1
+00:00:01,070 --> 00:00:06,260
+Okay and last section for today is on
+implicit functions.
+
+2
+00:00:09,720 --> 00:00:15,210
+So, so far we've been expressing functions
+of
+
+3
+00:00:17,290 --> 00:00:21,990
+one variable in terms, so.
+Functions.
+
+4
+00:00:21,990 --> 00:00:22,750
+What did I write here?
+
+5
+00:00:22,750 --> 00:00:25,860
+Functions have expressed one variable in
+terms of another.
+
+6
+00:00:26,930 --> 00:00:29,730
+Or, or, several, like we just started
+today.
+
+7
+00:00:29,730 --> 00:00:36,610
+So, we had something like y is equal to f
+of x, which is equal to.
+
+8
+00:00:36,610 --> 00:00:37,790
+1 minus x squared.
+
+9
+00:00:37,790 --> 00:00:41,530
+So this is sort of the, the nicest way of,
+of presenting a function.
+
+10
+00:00:41,530 --> 00:00:42,390
+It's like, you give
+
+11
+00:00:42,390 --> 00:00:46,472
+me a value of x, I know exactly how to
+tell you the corresponding value of y.
+
+12
+00:00:46,472 --> 00:00:50,940
+So I have this, so I have something like y
+equals sine x divided by x.
+
+13
+00:00:50,940 --> 00:00:56,130
+So I have, oops, I have y on the left side
+of the,
+
+14
+00:00:56,130 --> 00:00:59,960
+of the equation and only x's on the right
+side of the equation.
+
+15
+00:01:02,390 --> 00:01:05,120
+So, an implicit function is defined by
+
+16
+00:01:05,120 --> 00:01:08,400
+a more general relationship between the
+variables.
+
+17
+00:01:08,400 --> 00:01:12,560
+So I could say something, so this is the
+equation of a circle.
+
+18
+00:01:12,560 --> 00:01:16,140
+So I say, x squared plus y squared equals
+1.
+
+19
+00:01:16,140 --> 00:01:19,490
+And this is if I'm on a circle of radius
+one.
+
+20
+00:01:19,490 --> 00:01:23,060
+This is going to be true for every point
+that's on that circle,
+
+21
+00:01:23,060 --> 00:01:25,820
+and it's going to be false for every point
+that's not on that circle.
+
+22
+00:01:27,700 --> 00:01:29,940
+And this one, if you, if you think about
+
+23
+00:01:29,940 --> 00:01:32,880
+what I've done up here, it at least has
+kind
+
+24
+00:01:32,880 --> 00:01:36,790
+of an easy way to go between the old
+
+25
+00:01:36,790 --> 00:01:41,450
+or the, the, you know, specific,
+definition of a function.
+
+26
+00:01:41,450 --> 00:01:43,010
+So this is, you know, in high school, I
+
+27
+00:01:43,010 --> 00:01:45,780
+had to do something called the vertical
+line test.
+
+28
+00:01:45,780 --> 00:01:49,960
+So, if I have a function, and I find the
+intersection
+
+29
+00:01:49,960 --> 00:01:52,790
+of that function with any vertical line,
+it can have at
+
+30
+00:01:52,790 --> 00:01:54,550
+most one point where they cross.
+
+31
+00:01:54,550 --> 00:01:58,510
+If it, if it's like a circle, and it
+crosses twice, then it's not a function.
+
+32
+00:01:58,510 --> 00:02:02,370
+So, for a given x, there has to be a
+unique value y.
+
+33
+00:02:02,370 --> 00:02:04,130
+The circle's not going to have that
+property
+
+34
+00:02:04,130 --> 00:02:07,140
+except for two points one at either end.
+
+35
+00:02:07,140 --> 00:02:09,740
+But it's not that bad either, it's very
+easy to fix.
+
+36
+00:02:09,740 --> 00:02:12,480
+I can just chop it into a top circle and a
+bottom circle.
+
+37
+00:02:13,830 --> 00:02:16,860
+this one we're going to see is not quite
+so well behaved.
+
+38
+00:02:20,640 --> 00:02:26,740
+So in some cases, you can just solve for
+one function as another in any, any one
+
+39
+00:02:26,740 --> 00:02:33,740
+of these functions, any function I can
+write f of x equals, some expression of x.
+
+40
+00:02:33,740 --> 00:02:35,790
+I could just move all of that to one side
+
+41
+00:02:35,790 --> 00:02:38,580
+of the equals sign and say it's an
+implicit function.
+
+42
+00:02:41,690 --> 00:02:48,150
+and the way we're actually going to define
+this is I'm going to say that, f of xyz
+
+43
+00:02:48,150 --> 00:02:53,950
+is a function of three variables, and the
+set of points that satisfy f of xyz.
+
+44
+00:02:53,950 --> 00:02:57,340
+So I just choose x, y and z, it could be
+just x and y.
+
+45
+00:02:57,340 --> 00:03:02,395
+Or it could be many, many more variables
+this is just kind of an example with
+
+46
+00:03:02,395 --> 00:03:07,450
+three.
+So, in this case, the implicit
+
+47
+00:03:07,450 --> 00:03:12,200
+function is going to be the set of points
+that satisfy f of
+
+48
+00:03:12,200 --> 00:03:17,130
+xyz equals 0.
+And in that case, I'm going to call that
+
+49
+00:03:17,130 --> 00:03:22,630
+set of points where this condition holds.
+The locus defined by f.
+
+50
+00:03:27,100 --> 00:03:29,630
+So it sort of like I mentioned before if I
+have the
+
+51
+00:03:29,630 --> 00:03:34,330
+equation of a circle, a x squared plus y
+squared equals 1.
+
+52
+00:03:34,330 --> 00:03:38,560
+If I on this circle, then this statement
+is going to be true.
+
+53
+00:03:38,560 --> 00:03:41,880
+So any point on this circle of radius one.
+
+54
+00:03:41,880 --> 00:03:44,870
+Is going to satisfy this equation exactly.
+
+55
+00:03:44,870 --> 00:03:49,740
+If I'm inside the circle x squared plus y
+squared going to be less than 1.
+
+56
+00:03:49,740 --> 00:03:52,540
+And if I'm outside the circle it's going
+to be greater than 1.
+
+57
+00:03:52,540 --> 00:03:57,080
+And I have this one set of points that
+satisfies this.
+
+58
+00:03:57,080 --> 00:03:59,710
+And so that's going to be my locus.
+
+59
+00:03:59,710 --> 00:04:01,778
+It's got infinitely many points in it.
+
+60
+00:04:01,778 --> 00:04:04,920
+because this is, it's a line, it's
+continuous.
+
+61
+00:04:04,920 --> 00:04:06,800
+For any two points on the circle, I can
+
+62
+00:04:06,800 --> 00:04:09,120
+find in between them that's also on the
+circle.
+
+63
+00:04:11,410 --> 00:04:14,160
+But, in this case, I can fix it pretty
+easily.
+
+64
+00:04:14,160 --> 00:04:18,760
+So I can say y equals 1 minus x, square
+root of 1 minus x squared.
+
+65
+00:04:18,760 --> 00:04:20,280
+That gives me the blue curve which is the
+
+66
+00:04:20,280 --> 00:04:24,810
+top semi circle and then I can say minus
+square
+
+67
+00:04:24,810 --> 00:04:26,560
+root of 1 minus x squared, and that gives
+me
+
+68
+00:04:26,560 --> 00:04:29,740
+the red curve, which is the bottom of the
+semicircle.
+
+69
+00:04:31,980 --> 00:04:35,969
+This one on the other hand has a locus
+that looks like this.
+
+70
+00:04:37,430 --> 00:04:39,830
+And so this is more difficult.
+
+71
+00:04:39,830 --> 00:04:44,190
+you know, maybe there's some hope that on
+the left side of the y axis, so
+
+72
+00:04:44,190 --> 00:04:46,500
+over here you can solve for, you know,
+
+73
+00:04:46,500 --> 00:04:49,620
+at least here it passes the vertical line
+test.
+
+74
+00:04:49,620 --> 00:04:54,750
+So, maybe you could solve this and get an
+expression y equals something.
+
+75
+00:04:56,850 --> 00:04:59,310
+Well not maybe you can, but it's not very
+much fun.
+
+76
+00:05:00,580 --> 00:05:03,660
+on the right side, until you get to this
+point over here
+
+77
+00:05:03,660 --> 00:05:07,440
+where this little loop ends, it doesn't
+pass the vertical line test.
+
+78
+00:05:07,440 --> 00:05:11,840
+So here for instance, a vertical line
+would intersect the function three times.
+
+79
+00:05:13,310 --> 00:05:17,800
+But we might still want to be able to take
+a derivative of either of these functions.
+
+80
+00:05:21,450 --> 00:05:23,490
+So suppose I want to find the slope of a
+
+81
+00:05:23,490 --> 00:05:26,490
+tangent line to the unit circle, so, that
+circle I
+
+82
+00:05:26,490 --> 00:05:28,480
+just had a picture of that has radius one,
+that's
+
+83
+00:05:28,480 --> 00:05:31,480
+called the unit circle, because the radius
+is one unit.
+
+84
+00:05:33,850 --> 00:05:39,720
+So I have to split this up, if I want to
+do this using Regular functions.
+
+85
+00:05:39,720 --> 00:05:41,450
+I have to split this up into two cases.
+
+86
+00:05:41,450 --> 00:05:45,130
+I have to consider the top semicircle and
+the bottom semicircle independently.
+
+87
+00:05:47,640 --> 00:05:51,090
+But I can use the chain rule to sort of
+help me out here.
+
+88
+00:05:51,090 --> 00:05:53,270
+So what I'm going to do is take the
+derivative.
+
+89
+00:05:53,270 --> 00:05:57,220
+I have y equals.
+The square root of 1 minus x squared.
+
+90
+00:05:57,220 --> 00:06:00,530
+And I'll take the derivative of both sides
+of that equation with respect to x.
+
+91
+00:06:01,760 --> 00:06:05,770
+And by the chain rule, when I'm taking the
+derivative
+
+92
+00:06:05,770 --> 00:06:09,310
+of y with respect to x, I have to
+multiply.
+
+93
+00:06:09,310 --> 00:06:12,650
+So I'm going to take the derivative of y.
+But that's just going to be
+
+94
+00:06:12,650 --> 00:06:14,590
+1, so there's kind of an invisible one
+
+95
+00:06:14,590 --> 00:06:17,380
+over here that I didn't bother to write
+down.
+
+96
+00:06:17,380 --> 00:06:19,970
+Times the derivative of y with respect to
+x
+
+97
+00:06:19,970 --> 00:06:21,920
+and remember this is what I'm trying to
+find.
+
+98
+00:06:21,920 --> 00:06:29,490
+This is the, the derivative and on the
+right hand side I'm now going to take the
+
+99
+00:06:29,490 --> 00:06:32,080
+derivative with respect to x and this
+should be
+
+100
+00:06:32,080 --> 00:06:34,710
+pretty easy because it's just a function
+of x.
+
+101
+00:06:34,710 --> 00:06:37,770
+So I'll rewrite the square root as
+quantity to the one
+
+102
+00:06:37,770 --> 00:06:40,060
+half power, so it's easier to use the
+power rule.
+
+103
+00:06:41,770 --> 00:06:44,390
+And then, cheat a little bit with the
+chain rule again.
+
+104
+00:06:44,390 --> 00:06:48,710
+So here, the derivative of the inside of
+this quantity.
+
+105
+00:06:48,710 --> 00:06:50,910
+The derivative of one is zero because it's
+a constant.
+
+106
+00:06:50,910 --> 00:06:55,140
+The derivative of minus x squared is going
+to be minus 2 x.
+
+107
+00:06:55,140 --> 00:07:00,460
+So the chain rule pops that minus 2x out
+here
+
+108
+00:07:00,460 --> 00:07:02,850
+and if I simplify so the two is going to
+cancel
+
+109
+00:07:02,850 --> 00:07:06,890
+out the one half that popped out here
+because of the power rule.
+
+110
+00:07:06,890 --> 00:07:11,550
+So I end up with minus x divided by this
+square root of 1 minus x squared.
+
+111
+00:07:12,700 --> 00:07:15,230
+And then case two is going to be very
+similar
+
+112
+00:07:15,230 --> 00:07:18,210
+except there's going to be a minus sign
+here.
+
+113
+00:07:18,210 --> 00:07:19,910
+So I'll just skip down to the bottom.
+
+114
+00:07:19,910 --> 00:07:24,080
+And we get exactly the same thing except
+now I have the minus sign down here.
+
+115
+00:07:25,580 --> 00:07:28,240
+And when I don't bother cancelling out a
+minus
+
+116
+00:07:28,240 --> 00:07:31,720
+sign, it's because I have something clever
+for you coming in the future.
+
+117
+00:07:31,720 --> 00:07:33,320
+So just keep this bit in mind.
+
+118
+00:07:33,320 --> 00:07:37,590
+That this is minus x divided by the square
+root of 1 minus x squared.
+
+119
+00:07:37,590 --> 00:07:41,770
+And this is minus x, divided by minus the
+square root of 1 minus x squared.
+
+120
+00:07:41,770 --> 00:07:42,270
+[COUGH]
+
+121
+00:07:46,000 --> 00:07:46,500
+And
+
+122
+00:07:49,280 --> 00:07:57,280
+so, now I'm going to try doing this using
+the idea of an implicit function.
+
+123
+00:07:57,280 --> 00:07:58,550
+So.
+
+124
+00:07:58,550 --> 00:08:04,740
+If I take the, derivative of a function of
+y squared, by the chain rule, I can take
+
+125
+00:08:04,740 --> 00:08:10,640
+the derivative of this with respect to y
+and then multiply by dy, dy.
+
+126
+00:08:10,640 --> 00:08:12,210
+So, this is the same thing I did on
+
+127
+00:08:12,210 --> 00:08:14,340
+the previous slide, except now, I have a y
+squared
+
+128
+00:08:14,340 --> 00:08:17,510
+here instead of a y.
+So, it doesn't just go away.
+
+129
+00:08:17,510 --> 00:08:20,260
+So instead of having my invisible one, I
+end up
+
+130
+00:08:20,260 --> 00:08:24,480
+with the derivative of this, 2 y times dy
+dx.
+
+131
+00:08:28,140 --> 00:08:30,330
+let's see what I'm going to get down here.
+Oh, okay.
+
+132
+00:08:30,330 --> 00:08:32,690
+So this is my little result.
+
+133
+00:08:32,690 --> 00:08:37,360
+And now I'm going to try and take the
+derivative of.
+
+134
+00:08:37,360 --> 00:08:38,520
+The equation of a circle.
+
+135
+00:08:38,520 --> 00:08:41,780
+The implicit equation of a circle, with
+respect to x.
+
+136
+00:08:42,960 --> 00:08:47,460
+So, I still have the linearity property.
+So here I want to do
+
+137
+00:08:47,460 --> 00:08:53,180
+the derivative of a sum, so that's just
+going to be
+
+138
+00:08:53,180 --> 00:08:54,940
+the sum of the derivatives.
+
+139
+00:08:54,940 --> 00:08:57,220
+And on the right hand side I'm just
+going to take the derivative
+
+140
+00:08:57,220 --> 00:09:01,638
+of one, one is a constant so hopefully we
+get zero for there.
+
+141
+00:09:01,638 --> 00:09:02,998
+And we do.
+
+142
+00:09:02,998 --> 00:09:06,780
+And when I split this sum up into two
+terms I
+
+143
+00:09:06,780 --> 00:09:10,700
+end up with the derivative with respect to
+x of x squared
+
+144
+00:09:10,700 --> 00:09:12,790
+so that's going to be easy to do because I
+have, I've
+
+145
+00:09:12,790 --> 00:09:16,650
+got my function already in the right
+units, in the right variable.
+
+146
+00:09:17,710 --> 00:09:18,200
+And then when I
+
+147
+00:09:18,200 --> 00:09:21,990
+want to take the derivative of y squared
+with res-, with respect to x, that's when
+
+148
+00:09:21,990 --> 00:09:25,310
+I'm going to have to, oops, use this
+result that I, I went through up here.
+
+149
+00:09:25,310 --> 00:09:27,766
+So I'm going just end up with 2y, dy dx.
+
+150
+00:09:30,620 --> 00:09:35,480
+So I end up with this expression here, 2x
+plus 2y, times dy dx.
+
+151
+00:09:35,480 --> 00:09:37,080
+But remember I'm trying to find the
+
+152
+00:09:37,080 --> 00:09:40,230
+derivative for this tangent line touching
+the circle.
+
+153
+00:09:40,230 --> 00:09:42,980
+And d y d x is going to be the slope of
+that tangent line.
+
+154
+00:09:42,980 --> 00:09:45,790
+So d y d x is what I'm trying to get.
+
+155
+00:09:45,790 --> 00:09:47,900
+So I'm just going to solve for d y d x
+now.
+
+156
+00:09:47,900 --> 00:09:51,890
+So I subtract 2 x from both sides, and
+then divide by 2 y.
+
+157
+00:09:55,820 --> 00:10:00,020
+So I end up with minus x over y.
+
+158
+00:10:00,020 --> 00:10:05,480
+And now remember when I did my two cases,
+I had
+
+159
+00:10:05,480 --> 00:10:07,660
+to have the top half of the circle, that
+was y
+
+160
+00:10:07,660 --> 00:10:12,310
+equals the square root of 1 minus x, and
+so when
+
+161
+00:10:12,310 --> 00:10:14,750
+y is greater then zero, this is what I
+would get.
+
+162
+00:10:16,300 --> 00:10:20,000
+And when y is less than zero I get the,
+the bottom half.
+
+163
+00:10:20,000 --> 00:10:20,880
+But in both
+
+164
+00:10:20,880 --> 00:10:25,780
+cases, oops I guess I can't highlight just
+the denominator here, in both cases the
+
+165
+00:10:25,780 --> 00:10:31,430
+denominator is just the value of y
+appropriate for where I am on the circle.
+
+166
+00:10:31,430 --> 00:10:37,490
+So if I don't insist on getting rid of Y
+entirely I can actually
+
+167
+00:10:37,490 --> 00:10:43,330
+express both of these as this one formula,
+dy, dx equals minus x divided by y.
+
+168
+00:10:44,560 --> 00:10:45,990
+And so that the only caveat,
+
+169
+00:10:45,990 --> 00:10:49,200
+the, so the thing you have to be careful
+of, is that this is
+
+170
+00:10:49,200 --> 00:10:54,840
+only going to hold four points in the
+locus So, you know, I can still
+
+171
+00:10:54,840 --> 00:10:59,010
+evaluate this at the point 1,1 and get
+negative one but that has no
+
+172
+00:10:59,010 --> 00:11:03,300
+interpretation for what I've done because
+the point 1,1 is not on the circle.
+
+173
+00:11:08,120 --> 00:11:11,150
+Okay, and then just for fun I did this, so
+this.
+
+174
+00:11:11,150 --> 00:11:14,590
+Funny shaped thing with the, the loop in
+it is called a Folium which I
+
+175
+00:11:14,590 --> 00:11:17,470
+guess is Latin for leaf and somebody
+thought
+
+176
+00:11:17,470 --> 00:11:18,990
+that that little loop looked like a leaf.
+
+177
+00:11:20,430 --> 00:11:23,640
+So here it's going to be a little bit
+trickier, but we're still going to
+
+178
+00:11:23,640 --> 00:11:28,030
+use all of the properties exactly the way
+that we had been doing it.
+
+179
+00:11:28,030 --> 00:11:29,820
+So I'm just going to take the derivative
+of
+
+180
+00:11:29,820 --> 00:11:33,470
+both sides Of this equation with respect
+to x.
+
+181
+00:11:34,940 --> 00:11:38,350
+Since here I have a project.
+So it's x times y.
+
+182
+00:11:38,350 --> 00:11:39,720
+I'm going to have to, woops.
+
+183
+00:11:42,070 --> 00:11:44,120
+Yeah.
+So I need to treat x and y.
+
+184
+00:11:44,120 --> 00:11:47,100
+So I'm kind of imagining y is a function
+of x.
+
+185
+00:11:47,100 --> 00:11:49,270
+Even though I can't actually write it down
+that way.
+
+186
+00:11:51,420 --> 00:11:56,820
+So what I did here I on the left hand side
+I just use linearity
+
+187
+00:11:56,820 --> 00:12:01,700
+to write the sum as a derivative of a sum
+as the sum of the derivative
+
+188
+00:12:04,290 --> 00:12:09,900
+and on the right hand side I had to use
+the product rule so I used 6x times y.
+
+189
+00:12:12,080 --> 00:12:15,600
+And so I get the derivative of the first
+function with respect
+
+190
+00:12:15,600 --> 00:12:19,770
+to x is 6 times y, so that's where this
+came from.
+
+191
+00:12:19,770 --> 00:12:24,210
+And then I'm also going to take the
+derivative of the second function,
+
+192
+00:12:24,210 --> 00:12:29,620
+which is y, so I'm going to take
+derivative with respect to x.
+
+193
+00:12:29,620 --> 00:12:32,580
+Of y times the first function which is 6
+x.
+
+194
+00:12:32,580 --> 00:12:34,710
+So that's where this sec, second term
+comes from.
+
+195
+00:12:34,710 --> 00:12:35,740
+It's just the product rule.
+
+196
+00:12:41,870 --> 00:12:46,820
+But the derivative of y with respect to x,
+so that's, that's what I'm looking for.
+
+197
+00:12:46,820 --> 00:12:48,020
+Again, that's d y d x.
+
+198
+00:12:48,020 --> 00:12:53,960
+So technically it's The chain rule, so I
+take the derivative of y with respect
+
+199
+00:12:53,960 --> 00:12:59,700
+to y times dy dx, but really, you can just
+think of this as going straight to dy dx.
+
+200
+00:13:01,530 --> 00:13:07,570
+But now I've got this dy dx on both sides.
+But I'm just going to use algebra to
+
+201
+00:13:07,570 --> 00:13:09,720
+move both of those terms to one side of
+
+202
+00:13:09,720 --> 00:13:11,820
+the equation, and everything else to the
+other side.
+
+203
+00:13:14,300 --> 00:13:19,040
+So I'm going to end up with, so here I had
+a positive 3y squared.
+
+204
+00:13:19,040 --> 00:13:20,060
+That's where this came from.
+
+205
+00:13:20,060 --> 00:13:22,440
+And then I had a 6x on this side, but when
+
+206
+00:13:22,440 --> 00:13:25,620
+I move it to the other side it'll become
+minus 6x.
+
+207
+00:13:25,620 --> 00:13:30,080
+So I have 3y squared minus 6x times dy dx,
+and then everything
+
+208
+00:13:30,080 --> 00:13:34,610
+else, so 6y minus 3x squared on the right
+hand side.
+
+209
+00:13:34,610 --> 00:13:40,690
+And, then, I'm just going to divide both
+sides by 3y square minus 6x and
+
+210
+00:13:40,690 --> 00:13:43,930
+that gives me an expression for my
+derivative.
+
+211
+00:13:43,930 --> 00:13:50,440
+And, again, so I think, okay, let's see,
+2y minus x so, you have to be a little bit
+
+212
+00:13:50,440 --> 00:13:56,170
+careful with this again because, again,
+it's only going to be defined when I'm On
+
+213
+00:13:56,170 --> 00:14:00,160
+the curve, so if I take any other point,
+I'll still be able to evaluate this, and
+
+214
+00:14:00,160 --> 00:14:01,810
+it will give me a number, but that
+
+215
+00:14:01,810 --> 00:14:05,570
+number has no interpretation for what I've
+just done.
+
+216
+00:14:05,570 --> 00:14:10,540
+This only gives me the derivative for
+points that are on this curve.
+
+217
+00:14:10,540 --> 00:14:16,700
+And then there's still some, one small
+problem so if you look at
+
+218
+00:14:16,700 --> 00:14:22,470
+Where the curves cross I actually should
+have two derivatives somehow here.
+
+219
+00:14:22,470 --> 00:14:26,540
+I have one flat derivative and one
+infinitely steep
+
+220
+00:14:26,540 --> 00:14:30,720
+derivative and so the way you're going to,
+capture that
+
+221
+00:14:30,720 --> 00:14:35,780
+is that's at the origin so that's at x
+equals zero, y equals zero.
+
+222
+00:14:35,780 --> 00:14:39,850
+And if x and y are equal to 0, then this
+is zero and this is zero.
+
+223
+00:14:39,850 --> 00:14:42,410
+So I get one of these numbers that do not
+exist.
+
+224
+00:14:45,320 --> 00:14:45,910
+And so,
+
+225
+00:14:48,170 --> 00:14:51,110
+in that case you just have to examine the
+function
+
+226
+00:14:51,110 --> 00:14:53,220
+and try and figure out what its behavior
+is here.
+
+227
+00:14:53,220 --> 00:14:55,240
+But since it's crossing the derivative
+it's
+
+228
+00:14:55,240 --> 00:14:57,490
+not going to be differential at that
+point.
+
+229
+00:14:57,490 --> 00:15:01,050
+Is that the whole idea doesn't really make
+any sense.
+
+230
+00:15:01,050 --> 00:15:02,440
+So it's, you know, I couldn't say
+
+231
+00:15:05,240 --> 00:15:07,890
+you know, if I wanted to add h to this.
+
+232
+00:15:07,890 --> 00:15:11,720
+You know, would it be h going up this way
+or would it be h going out that way?
+
+233
+00:15:11,720 --> 00:15:14,660
+I, I can't do that with just one h so
+you'd have to
+
+234
+00:15:14,660 --> 00:15:19,138
+do something more complicated if you
+wanted to extend the idea of a derivative.
+
+235
+00:15:19,138 --> 00:15:21,250
+To this one point where the curves cross.
+

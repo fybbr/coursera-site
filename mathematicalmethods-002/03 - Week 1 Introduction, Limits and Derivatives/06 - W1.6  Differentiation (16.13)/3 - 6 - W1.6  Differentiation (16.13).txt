@@ -1,0 +1,435 @@
+So we'll pick up, where we left off last
+time.
+with differentiation.
+So last time we, we went through present
+value.
+We used that, a little bit to motivate the
+idea of a limit.
+And then I tried to give an example of
+when a limit's not going to work.
+And when a limit is going to work.
+And then I gave some rules for evaluating
+limits.
+And then we talked about continuity.
+And now we're going to talk about
+differentiation.
+So differentiation is basically the, the
+problem.
+We want to solve is we have some curve, so
+you can imagine in a xy plane.
+You just define the value of y as some
+function of x.
+And I want to find the slope of a tangent
+line to this curve, at a point a.
+So, this is sort of a picture of what I'm
+trying to do.
+So, this blue line is my curve, y equals f
+of x.
+Then I choose some point a on the x axis.
+The corresponding point on the y axis.
+So, what's going to make up this curve is
+just going to be f of a.
+And, I want to touch a line to this curve,
+so that it only touches at exactly one
+point.
+And I'm going to call that a tangent line.
+And the problem I'm trying to solve is if
+I know this point
+right here, I want to know what the slope
+of this tangent line is.
+And so just to make that, this idea of a
+tangent line a, a little bit more rigorous
+I want to say that there's a a
+neighborhood of width
+delta, so it's delta to either side of
+this point a.
+And I'm going to say that this line here,
+so
+the the straight line is tangent to the
+curve.
+If f of x so l of x is going to be my line
+f
+of x is my function, if f of x is equal to
+my function if
+l of x is less than or equal to f of x so
+in my little neighborhood there
+goes to delta of either side because I'm
+using a round bracket here.
+I mean every point up to a but not
+including a, so
+every point less than a down to a minus
+delta and every
+point greater than a up to a plus delta, I
+need to
+have f of x greater than l of x so that
+means
+the curve has to be above the line
+everywhere.
+Or it has to be below the line everywhere.
+So basically, what I'm trying to, to do by
+having these two conditions.
+I either have this shape here.
+So the line is always below the curve.
+Or I just have that upside down, so the
+line would always be above the curve.
+And I just need to have that true in some
+little neighborhood.
+So you can imagine.
+A neighborhood about that
+big around the point.
+And I'm going to say then that this line
+is tangent to the curve at
+that point as long as f of a is equal to l
+of a.
+So, the function and the line have to have
+the same value at a.
+So, it touches at just one point but any
+little bit to either side of that
+point, the line is either always greater
+than
+the curve or always less than the curve.
+So, that'll be a tangent line.
+And the
+interpretation I'm going to give that is
+the slope of this tangent
+line is going to be the slope of the curve
+at the point.
+So at this big blue point, the slope of
+this curve
+is going to be equal to the slope of that
+tangent line.
+So that's the problem I'm going to be
+trying to solve by differentiation.
+And so the way I'm going to approach that,
+is, I'm going to try and approximate it.
+So the normal definition of slope is rise
+over run.
+So, you know, you go forward a certain
+amount.
+You go up a certain amount.
+And if I go up more, it's steeper.
+If I go up less, it's, you know, less
+steep.
+But that's the concept I have of slope.
+And so if I tried to just do this
+approximation but using only one point,
+it's not going to work.
+So I have to pick two different points and
+there has to be some non-zero
+distance between them in the x direction
+and so I'm going to call that the run.
+And then I just evaluate the function at
+the two points.
+So I have f of x and f of x plus h.
+And that's going to give me the, the
+difference in height.
+And so that becomes the rise.
+And so in this picture because these
+points are reasonably far apart.
+I don't get a particularly good estimate
+of what I'm after.
+So this, this line, you know, it, it
+clearly looks like it's steeper
+than the curve at the point x where I'm
+trying to estimate the slopes.
+So it's a lot steeper than, ops.
+If I go back one slide, it's a lot steeper
+than this line that I'm trying to,
+trying to find.
+Oh, ops, I guess I had it one forward
+there.
+But, the idea is now once I've set this
+up, so
+I have an estimate of the slope, so rise
+over run.
+So, it's f of x plus h minus f of x.
+So, that's just this distance here, the
+rise.
+And then, the run is just going to be h.
+So, it's x plus h minus x.
+And I'm just going to try and improve my
+estimate by letting this
+point here, so the one on the right,
+because I'm adding h.
+I'm going to let that point slide along
+the curve towards
+x and hopefully as, as I get closer to x.
+So as h is getting smaller The slope of
+this line here is
+getting closer and closer to the slope of
+the line on the right
+until finally in the limit hopefully the
+slope of my approximation is going to
+be the same as the slope of the tangent
+line that I'm trying to get.
+And so that's actually how we're going to
+define the derivative.
+So the derivative.
+And we'll say a function f is
+differentiable
+at a point x, so it's this point x here,
+if the
+limit of my rise over run approximation
+exists.
+So I'm basically, I'm just looking at.
+The rise divided by the run taking the
+limit as that, as the
+sort of bottom side of that triangle goes
+to zero.
+If that exists then I'm going to say the
+derivative
+exists so the function is differentiable
+at this point x.
+And I'm going to call that f prime of x.
+So f prime of x Is my notation for the
+derivative of f of x.
+And then just like for continuity, we're
+going to say a
+function f of x is differentiable on an
+open interval a, b.
+If it is differentiable at every point in
+a, b.
+And so for a lot of functions, it's just
+going to work on the entire real line.
+If it's you know if it's differentiable
+at all, it's differentiable at every real
+number.
+But you do have to be a little bit
+careful,
+so open, here, means that the interval
+doesn't include the endpoints.
+And so that's why I've used
+the parentheses here rather than square
+brackets.
+And the only reason we have to do this, is
+imagine if I wanted to compute the
+derivative at b.
+So the, where I'm going to run into a
+problem, is in order to compute the
+derivative
+at b, I'd have a b here.
+And I have to add, ops, I have to add a
+little bit of h to that b.
+And if I can actually use the very last
+point in the interval,
+then if I add h to that, I'm going to be
+outside of my interval.
+So I have to just chop off the
+last point and surprisingly that actually
+always works.
+So I can always find enough points to make
+this limit exist.
+And so for, for the purpose of this class
+we're really
+going to be more interested in actually
+being able to compute limits.
+Oh, sorry, to compute derivatives.
+So, we can use just the definition of a
+derivitive to
+try and figure out what the The derivative
+of a function is.
+So for a, a quick example of this, just
+consider this quadratic expression here.
+So 3x squared
+plus 5x plus 1.
+So if I want to compute the derivative of
+f of x using the definition Well, this is
+my definition.
+So I'm just going to start plugging things
+into the definition and see what happens.
+So the first thing I want to do is
+evaluate my function f at x plus h.
+So what that means I'm going to do is
+replace every x up here.
+With the quantity x plus h.
+So now I have 3 times x plus h squared,
+plus 5 times x plus h, plus 1.
+So that's just this function up here
+evaluated at the point x plus h.
+Then I'm going to subtract f of x.
+So that's just
+me substituting in the definition of f of
+x for this particular exercise.
+And divide by h, and then, I'm going to
+try and evaluate this limit and see what
+happens.
+And so the, the way you generally approach
+this when
+you have a, a polynomial, you just expand
+These things, and
+do the math and see what pops out.
+And so that's what I've done
+here, so x plus h squared is going to be x
+squared plus 2xh plus h squared.
+So I multiply that by three, and that's
+where this bit comes from.
+Then I have plus 5x and plus 5h.
+That, it's here.
+And then plus 1.
+And then I'm just going to subtract each
+of these terms.
+And so what ends up happening is my, my
+3x squared here, and 3x, negative 3x
+squared here.
+That gets rid of that x squared term.
+I have a plus 1 here.
+And a minus 1 here, a minus 5x and a plus
+5x.
+So a lot of these things are going to
+cancel
+each other out and if it works out, what's
+going to happen is only the terms up here
+that
+still have an h in them are going to be
+left.
+Once I do
+just this subtraction in the numerator.
+So I end up with 6xh
+3h squared and 5h, and I'm dividing that
+by h.
+And because I'm looking at the limit as h
+goes to
+zero I can pretend that h is always
+greater than zero.
+So if h is greater than zero I can
+multiply the
+top and the bottom by one over h, and get
+rid
+of this h in the bottom.
+And so that means I can cancel out one h
+from each term in the top.
+So I end up with the limit as h goes to
+zero, of 6x plus 3h plus 5.
+And now this is a continuous function.
+So it means that the limit as h goes to
+zero is just equal to that function
+evaluated at zero so I can just put Plug
+in zero for h here.
+And I get 6x plus 5.
+And so this is telling me that the, the
+slope of this curve
+at a point x is equal to 6x plus 5.
+Okay.
+And really what we're going to do with the
+derivative,
+so sort of like continuity, or sort of
+like limits.
+Working with the definition is not very
+much fun.
+So what we want to do is use the
+definition to
+prove some rules that are going to make
+computing derivatives easier.
+So all of these rules can be proved, and
+if you, if you
+took a more rigorous math class that's
+sort of what they would do.
+we're going to be moving a bit faster, so
+I'm just going to say the rules.
+if you look in the textbook, there will be
+proofs of some of these.
+Or if you look in a first year calculus
+book
+in particular Stewart has all the proofs
+for these things.
+So the derivative of a constant is zero.
+So if you ever see a constant.
+That's something you're pretty happy to
+take the
+derivative of, it's hardly any work at
+all.
+second property is linearity.
+So linearity means that if I have two
+functions, so f of x and g of x.
+And really what you're going to do is
+you're generally going to be given one
+function and
+you're going to look at that and say that
+one function is really made up of two
+functions.
+Two simpler functions, how am I going to
+take the derivative of that?
+And so, if I have f
+of x and g of x differentiable functions,
+and if a and b are real valued constants,
+then I'm going to define l of x is a
+linear combination of f of x And g of x.
+If I just say a times f of x plus b times
+g of x.
+And the derivative of l of x,
+so for, for linear combinations of
+differentiable functions,
+the derivative of a sum is just the sum of
+the derivative.
+So the derivative of this Is the sum of
+the derivative
+of the first term ops, and the derivative
+of the second term.
+And also note what happens to the
+constant.
+So if I have a times f of x, then the
+derivative is just a times f prime of x.
+So if I make the function twice as big.
+Then the derivative, you know, at every
+point that sort of
+going to be twice as steep, so really
+what's happening when you
+multiply something by a, say, a is two,
+that it stretches your
+function, so that it's twice as tall as it
+used to be.
+And when you do that, what you're going to
+end up doing
+is just making the derivative twice as
+steep as it used to be.
+And then the final rule is called the
+power rule.
+So, sorry, final rule for this section.
+There will be more rules.
+So let n be a real valued constant.
+Then the derivative of x to the n.
+So for instance, this could be x squared,
+x cubed, something like that, or any real
+value.
+So, x to the 2.5.
+The derivative of that function
+is n times x to the n minus 1.
+And so, this this simple little trick is
+called the power rule.
+And then you can make combinations of the
+power rule and this linearity property
+and that makes it possible to take
+the derivative of polynomials without too
+much trouble.
+So just a, a quick summary that definition
+of
+a derivative was f prime of x is the
+limit.
+Of f of x plus h minus f of x divided by
+h.
+So, that's just the limit of of the rise
+over the run, as the run is going to zero.
+Deriv derivative of a constant is zero, so
+if f of
+x is equal to the same value, no matter
+where I choose
+x that just means f of x is a flat line.
+Then a derivative of a flat line is zero.
+The slope of a flat line is zero.
+Linearity so if I have a linear
+combination of two differentiable
+functions f of x and g of x, then the
+derivative is just the linear combination
+of the two derivatives.
+So, af prime of x plus bg prime of x.
+And then, the power rule.
+And so, this time, instead of n, I wrote
+it as c.
+So, c is supposed to be my, my letter for
+a real valued constant.
+so for any c not equal to zero, x to the
+c,
+the derivative of that is c times x to the
+c minus 1.
+[BLANK_AUDIO]
+

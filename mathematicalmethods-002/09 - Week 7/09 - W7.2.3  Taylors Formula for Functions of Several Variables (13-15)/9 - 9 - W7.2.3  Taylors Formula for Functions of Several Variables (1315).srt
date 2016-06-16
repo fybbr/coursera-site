@@ -1,0 +1,852 @@
+1
+00:00:00,940 --> 00:00:03,316
+So moving on, part 3 is going to
+
+2
+00:00:03,316 --> 00:00:07,750
+be Taylor's formula for functions of
+several variables.
+
+3
+00:00:14,280 --> 00:00:18,380
+So last time f was just a function of a
+single variable, x.
+
+4
+00:00:18,380 --> 00:00:25,540
+And now I'm going to let x be a vector.
+So you can think of x as x1, x2 up to xn.
+
+5
+00:00:27,780 --> 00:00:30,126
+And f is still going to be a, a real
+valued
+
+6
+00:00:30,126 --> 00:00:33,935
+function, so whatever it comes out is I'm
+assuming is scalar.
+
+7
+00:00:33,935 --> 00:00:39,080
+[COUGH].
+
+8
+00:00:39,080 --> 00:00:43,050
+And a, a linear approximation of f around
+a point a.
+
+9
+00:00:43,050 --> 00:00:46,840
+So a has to be, has to live in the same
+space as x now.
+
+10
+00:00:46,840 --> 00:00:52,370
+So if x has n components, then a has to
+have n components as well.
+
+11
+00:00:52,370 --> 00:00:54,602
+So if it was a point in the plane you'd
+
+12
+00:00:54,602 --> 00:00:57,557
+need a x con, an x coordinate and a y
+coordinate.
+
+13
+00:00:57,557 --> 00:01:00,042
+And for x, then you'd need a x coordinate
+
+14
+00:01:00,042 --> 00:01:02,570
+and a y coordinate for the point a as
+well.
+
+15
+00:01:04,920 --> 00:01:10,898
+And then linear approximation around the
+point a, it looks a lot like the
+
+16
+00:01:10,898 --> 00:01:17,340
+Taylor polynomial for the function of a
+single variable, so I have.
+
+17
+00:01:17,340 --> 00:01:20,497
+One point, f of a, where I know what the
+function
+
+18
+00:01:20,497 --> 00:01:24,700
+value is and then I'm just going to add a
+linear approximation.
+
+19
+00:01:24,700 --> 00:01:29,944
+So, for each of the directions, I just
+multiply the distance in that direction,
+
+20
+00:01:29,944 --> 00:01:33,547
+so that's xi minus a, times the partial
+derivative.
+
+21
+00:01:33,547 --> 00:01:36,470
+So the slope in that direction, which is
+the
+
+22
+00:01:36,470 --> 00:01:40,300
+partial derivative of f with respect to
+that direction.
+
+23
+00:01:41,300 --> 00:01:43,040
+And then evaluate it at the point a.
+
+24
+00:01:49,190 --> 00:01:54,494
+And again, we end up with the result that,
+if the second order
+
+25
+00:01:54,494 --> 00:01:59,584
+partial derivatives are continuous.
+Then we have a second
+
+26
+00:01:59,584 --> 00:02:04,784
+order approximation.
+So, if I make this linear approximation,
+
+27
+00:02:04,784 --> 00:02:09,656
+linear, so, order 1 Taylor polynomial for
+a function of two or more
+
+28
+00:02:09,656 --> 00:02:14,458
+variables.
+Then f of x, so this is the thing
+
+29
+00:02:14,458 --> 00:02:21,270
+that I'm trying to approximate.
+Is equal to my approximation.
+
+30
+00:02:23,390 --> 00:02:26,225
+Plus, a term that behaves and now I have
+to
+
+31
+00:02:26,225 --> 00:02:30,220
+be a little bit more careful about how I
+write quadratics.
+
+32
+00:02:30,220 --> 00:02:33,560
+So, what I'm looking at here is x is a
+vector and a is a vector.
+
+33
+00:02:35,620 --> 00:02:39,346
+This symbol, the two parallel, vertical
+parallel lines on each side, that just
+
+34
+00:02:39,346 --> 00:02:42,680
+meant the length of the vector, so the
+Euclidean length of the vector.
+
+35
+00:02:45,860 --> 00:02:52,830
+And because that length is squared, this
+is big O of x squared, essentially.
+
+36
+00:02:52,830 --> 00:02:54,180
+As x is going to a.
+
+37
+00:02:54,180 --> 00:02:56,516
+So I still have the same quadratic
+
+38
+00:02:56,516 --> 00:02:59,801
+sort of error property for this linear
+approximation
+
+39
+00:02:59,801 --> 00:03:01,480
+that I had when I had a linear
+
+40
+00:03:01,480 --> 00:03:04,720
+approximation for a function of a single
+variable.
+
+41
+00:03:12,920 --> 00:03:17,427
+And it also turns out.
+That because this big O is kind of taking
+
+42
+00:03:17,427 --> 00:03:22,960
+care of any it's taking care of these
+constants of proportionality.
+
+43
+00:03:22,960 --> 00:03:27,810
+You can also think about this as just the
+sum of the individual components, squared.
+
+44
+00:03:32,970 --> 00:03:37,059
+And also for the, for the quadratic
+approximation, so
+
+45
+00:03:37,059 --> 00:03:40,690
+now that this is getting a bit more
+complicated.
+
+46
+00:03:40,690 --> 00:03:43,852
+So I have f of a is my constant, so that's
+
+47
+00:03:43,852 --> 00:03:48,410
+the one point where I know what the true
+function value is.
+
+48
+00:03:49,520 --> 00:03:51,925
+I have the linear approximation that's the
+
+49
+00:03:51,925 --> 00:03:54,400
+same as in my linear approximation up
+here.
+
+50
+00:03:55,930 --> 00:03:58,058
+And now I have to do all of the mixed
+
+51
+00:03:58,058 --> 00:04:01,100
+partial derivatives to get my quadratic
+term.
+
+52
+00:04:02,460 --> 00:04:07,770
+So, if I have a function of n variables, I
+have to sum i equals 1 to n and
+
+53
+00:04:07,770 --> 00:04:10,380
+j equals 1 to n, and then all of the
+
+54
+00:04:10,380 --> 00:04:16,210
+mixed partials times the distance in each
+of those directions.
+
+55
+00:04:16,210 --> 00:04:18,905
+And then we see, have because of just the
+definition of the
+
+56
+00:04:18,905 --> 00:04:22,190
+Taylor Polynomial, I have to have this one
+over two factorial here.
+
+57
+00:04:23,660 --> 00:04:27,869
+And so, hopefully you're starting to
+recognize that when I see big ugly
+
+58
+00:04:27,869 --> 00:04:33,120
+sums like this I can benefit from using
+vectors and matrices for my notation.
+
+59
+00:04:33,120 --> 00:04:34,795
+So hopefully that's what's on the next
+slide.
+
+60
+00:04:34,795 --> 00:04:36,127
+Oh, good guess.
+
+61
+00:04:36,127 --> 00:04:41,777
+So lets let d of f of x, so this is the
+gradient of my function f
+
+62
+00:04:41,777 --> 00:04:47,585
+and it's going to be a function that I can
+evaluate at a point x.
+
+63
+00:04:47,585 --> 00:04:48,845
+And it's just
+
+64
+00:04:48,845 --> 00:04:53,780
+defined to be the first partial
+derivative, the second
+
+65
+00:04:53,780 --> 00:04:57,790
+partial derivative and so on in a row
+vector.
+
+66
+00:04:59,320 --> 00:05:01,848
+And so it ends up being for a function,
+
+67
+00:05:01,848 --> 00:05:06,440
+a scalar function, a scaler value function
+of n variables.
+
+68
+00:05:06,440 --> 00:05:14,093
+I end up with a row vector with n elements
+in it as the gradient.
+
+69
+00:05:14,093 --> 00:05:19,483
+And then if I define, if i define x minus
+a, so remember for vector
+
+70
+00:05:19,483 --> 00:05:24,630
+addition, we can do we can do the addition
+element wise.
+
+71
+00:05:24,630 --> 00:05:27,710
+So x minus a is just going to mean this
+vector.
+
+72
+00:05:29,330 --> 00:05:31,476
+So I can actually just do that addition,
+and
+
+73
+00:05:31,476 --> 00:05:33,730
+this, this is a vector of, a column
+vector.
+
+74
+00:05:33,730 --> 00:05:39,140
+So it's got 1 column and n rows.
+And then I end
+
+75
+00:05:39,140 --> 00:05:42,520
+up with anyone remember what this is
+called?
+
+76
+00:05:43,700 --> 00:05:45,470
+Hessian, good, okay.
+
+77
+00:05:45,470 --> 00:05:47,970
+the Hessian of x, which is.
+
+78
+00:05:47,970 --> 00:05:53,306
+So I take the gradient and I kind of
+imaginarily put that
+
+79
+00:05:53,306 --> 00:05:58,626
+across the top row.
+And then I just take the
+
+80
+00:05:58,626 --> 00:06:03,984
+derivatives with respect to the x in in
+each column, or sorry,
+
+81
+00:06:03,984 --> 00:06:05,070
+in each row.
+
+82
+00:06:05,070 --> 00:06:08,528
+And that gives me now a matrix of partial
+derivatives.
+
+83
+00:06:08,528 --> 00:06:09,018
+So the
+
+84
+00:06:09,018 --> 00:06:09,508
+[COUGH]
+
+85
+00:06:09,508 --> 00:06:14,506
+next partial derivatives of the function f
+of x, and now that
+
+86
+00:06:14,506 --> 00:06:18,992
+big ugly formula I had at the bottom of
+the last slide.
+
+87
+00:06:18,992 --> 00:06:21,747
+I can now write that as, so I have to
+
+88
+00:06:21,747 --> 00:06:26,660
+evaluate my function at, at the point
+where I know, still.
+
+89
+00:06:30,190 --> 00:06:32,810
+And then since the gradient is a row
+vector.
+
+90
+00:06:32,810 --> 00:06:35,696
+I'll write a row times a column, so
+basically
+
+91
+00:06:35,696 --> 00:06:38,508
+it's just be, become the dot product of
+this
+
+92
+00:06:38,508 --> 00:06:41,024
+with this, but I can write that out using
+
+93
+00:06:41,024 --> 00:06:45,000
+matrix notation because I've made the
+gradient a row vector.
+
+94
+00:06:47,434 --> 00:06:53,150
+and that's a order of big O of x squared
+approximation.
+
+95
+00:06:55,490 --> 00:06:59,390
+Then I can also write the quadratic Taylor
+approximation, so
+
+96
+00:06:59,390 --> 00:07:02,280
+the first two terms are just what I had
+above.
+
+97
+00:07:04,620 --> 00:07:09,040
+And then it turns out that that big, ugly
+sum can be expressed in matrix vector
+
+98
+00:07:09,040 --> 00:07:13,800
+notation.
+As x minus a transpose, so that's this
+
+99
+00:07:13,800 --> 00:07:20,550
+vector here that's transposed.
+So I want it to be 1 row times n columns.
+
+100
+00:07:20,550 --> 00:07:22,880
+Then I'm going to multiply it by an n by n
+matrix.
+
+101
+00:07:23,990 --> 00:07:27,810
+And then finally, I'm going to multiply it
+by a column vector.
+
+102
+00:07:27,810 --> 00:07:29,369
+So that's an n by 1 matrix.
+
+103
+00:07:31,470 --> 00:07:38,352
+So this whole thing is going to end up
+being a one by one quantity, so it's a
+
+104
+00:07:38,352 --> 00:07:45,130
+scalar quantity, and what's left over is
+going to behave like x cubed.
+
+105
+00:07:47,330 --> 00:07:49,880
+So as x is getting closer and closer to a.
+
+106
+00:07:51,180 --> 00:07:56,030
+My, quality of my approximation is, is
+getting better at a cubic rate.
+
+107
+00:08:02,430 --> 00:08:05,929
+And so just as an example lets consider a
+function of two variables.
+
+108
+00:08:10,180 --> 00:08:15,684
+So I want to make a linear approximation
+of a function
+
+109
+00:08:15,684 --> 00:08:21,060
+f, with two variables, so x and y, around
+a point
+
+110
+00:08:21,060 --> 00:08:25,835
+a,b and so all I end up having to do, I
+have.
+
+111
+00:08:25,835 --> 00:08:31,310
+Whoops, I think I wrote this backwards.
+oh no.
+
+112
+00:08:31,310 --> 00:08:33,590
+Sorry.
+It's one thing at a time.
+
+113
+00:08:33,590 --> 00:08:35,718
+So, here x is actually
+
+114
+00:08:35,718 --> 00:08:37,070
+the number x.
+
+115
+00:08:37,070 --> 00:08:39,660
+It's no longer the vector like it was on
+the last slide.
+
+116
+00:08:40,750 --> 00:08:41,670
+And.
+
+117
+00:08:41,670 --> 00:08:43,630
+B and y are also just numbers.
+
+118
+00:08:43,630 --> 00:08:47,140
+So all I'm doing to get a linear Taylor
+polynomial, I'm taking
+
+119
+00:08:47,140 --> 00:08:50,920
+the function at the point where I know the
+true function value a,b.
+
+120
+00:08:50,920 --> 00:08:56,680
+That I'm making a linear approximation by
+the change
+
+121
+00:08:56,680 --> 00:09:00,776
+in the x direction, so how far away x is
+
+122
+00:09:00,776 --> 00:09:03,160
+from a.
+So that's x minus a.
+
+123
+00:09:04,720 --> 00:09:09,610
+Times the partial derivative of f with
+respect to x, evaluated at a, b.
+
+124
+00:09:09,610 --> 00:09:11,810
+So that's the slope in the f, x direction.
+
+125
+00:09:11,810 --> 00:09:14,980
+So that's just a linear approximation in
+the x direction.
+
+126
+00:09:14,980 --> 00:09:19,310
+And then I do exactly the same thing here,
+but in the y direction.
+
+127
+00:09:19,310 --> 00:09:24,680
+So this is how far away is y, how far away
+y is from b.
+
+128
+00:09:24,680 --> 00:09:25,980
+Times the slope
+
+129
+00:09:25,980 --> 00:09:27,690
+in the y direction.
+
+130
+00:09:33,500 --> 00:09:35,182
+And then what I'm going to end up with
+
+131
+00:09:35,182 --> 00:09:37,600
+when I look at the convergence properties
+here.
+
+132
+00:09:37,600 --> 00:09:42,981
+It's a quadratic, it has quadratic
+convergence properties.
+
+133
+00:09:42,981 --> 00:09:49,065
+So, as x is getting closer to a and y is
+getting closer to b, the
+
+134
+00:09:49,065 --> 00:09:55,690
+error term is big O of x minus a squared
+and big O of y minus b squared.
+
+135
+00:10:01,360 --> 00:10:03,680
+And in matrix notation I can just write
+this out.
+
+136
+00:10:05,420 --> 00:10:08,602
+So remember the gradient here is a row
+vector
+
+137
+00:10:08,602 --> 00:10:13,110
+times a column vector, so those are
+conforming dimensions.
+
+138
+00:10:13,110 --> 00:10:15,529
+So this, I just have to do matrix
+multiplication
+
+139
+00:10:15,529 --> 00:10:17,630
+but it's the same thing as a dot product.
+
+140
+00:10:20,350 --> 00:10:23,390
+And then I still have my error term, but
+at least
+
+141
+00:10:23,390 --> 00:10:27,570
+I kind of understand it's not a bound but
+I understand.
+
+142
+00:10:27,570 --> 00:10:32,388
+It's property, as I'm getting closer and
+closer to the point a,b.
+
+143
+00:10:32,388 --> 00:10:35,752
+And if I want to add a quadratic term
+
+144
+00:10:35,752 --> 00:10:41,680
+to my approximation, so this is getting
+pretty yucky here.
+
+145
+00:10:43,720 --> 00:10:48,395
+so the first row here
+
+146
+00:10:48,395 --> 00:10:52,520
+is just the linear
+
+147
+00:10:52,520 --> 00:10:58,295
+approximation I had from
+
+148
+00:10:58,295 --> 00:11:04,847
+the previous slide.
+That I need to
+
+149
+00:11:04,847 --> 00:11:10,047
+split up the, so there's going to be four
+possibilities,
+
+150
+00:11:10,047 --> 00:11:15,614
+but the, the cross term which I have on
+the third bit here.
+
+151
+00:11:15,614 --> 00:11:16,589
+Let me see.
+
+152
+00:11:16,589 --> 00:11:20,655
+Oh dear, I forgot one of my derivatives in
+the fraction.
+
+153
+00:11:20,655 --> 00:11:24,113
+so I have x minus a squared, divided by 2
+factorial.
+
+154
+00:11:24,113 --> 00:11:27,655
+So I need to have this 2 factorial in the
+denominator,
+
+155
+00:11:27,655 --> 00:11:32,376
+because this is the, that's the definition
+of the Taylor polynomial.
+
+156
+00:11:32,376 --> 00:11:35,410
+And then I need to multiply that by the
+second
+
+157
+00:11:35,410 --> 00:11:39,900
+derivative of f with respect to x,
+evaluated at the point a, b.
+
+158
+00:11:39,900 --> 00:11:44,260
+For the cross term, I have x minus a times
+y minus b.
+
+159
+00:11:44,260 --> 00:11:46,830
+So this partial with respect to y.
+
+160
+00:11:46,830 --> 00:11:49,329
+We're supposed to be in the denominator
+here, but I think
+
+161
+00:11:49,329 --> 00:11:52,140
+I, I missed a, a bracket when I was
+typesetting this.
+
+162
+00:11:52,140 --> 00:11:56,400
+So this is supposed to be the mixed
+partial derivative evaluated at
+
+163
+00:11:56,400 --> 00:12:00,873
+a,b again, and there's no two factorial in
+the denominator here because
+
+164
+00:12:00,873 --> 00:12:02,505
+this one shows up twice.
+
+165
+00:12:02,505 --> 00:12:06,533
+So I actually have an x minus a times y
+minus b plus a y minus b times
+
+166
+00:12:06,533 --> 00:12:09,497
+x minus a, but I, because that's a
+symmetric
+
+167
+00:12:09,497 --> 00:12:12,107
+term, I have two of those divided by 2.
+
+168
+00:12:12,107 --> 00:12:14,516
+So that knocks out the 2 factorial that
+
+169
+00:12:14,516 --> 00:12:17,620
+you would expect to find in the
+denominator here.
+
+170
+00:12:19,160 --> 00:12:24,260
+And then finally, I have the y term, so y
+minus b squared divided by 2 factorial.
+
+171
+00:12:25,850 --> 00:12:30,432
+Times the partial derivative of f, the
+second partial derivative of
+
+172
+00:12:30,432 --> 00:12:33,640
+f with respect to y evaluated at the point
+a, b.
+
+173
+00:12:33,640 --> 00:12:40,730
+And then what's left, oops, okay, what's
+left over should be order x cubed terms.
+
+174
+00:12:40,730 --> 00:12:44,272
+So, as I've added one more term to my
+approximation,
+
+175
+00:12:44,272 --> 00:12:47,260
+then the error is now behaving as a, a
+cubic.
+
+176
+00:12:50,880 --> 00:12:55,140
+And I can write this in matrix vector
+notation, so it simplifies quite a bit.
+
+177
+00:12:56,930 --> 00:13:00,410
+I have f of a,b so that's just my function
+again.
+
+178
+00:13:01,510 --> 00:13:07,201
+The oops, the linear term.
+Then the quadratic term and then again
+
+179
+00:13:07,201 --> 00:13:13,800
+these things should have been to the third
+power for the cubic error term.
+

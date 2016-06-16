@@ -1,0 +1,1500 @@
+1
+00:00:01,050 --> 00:00:04,090
+Now we'll look at something called Taylor
+Series Expansions.
+
+2
+00:00:09,100 --> 00:00:12,670
+So before I assumed that my function f was
+differentiatiable
+
+3
+00:00:12,670 --> 00:00:15,260
+n times, so if I wanted to make order and
+
+4
+00:00:15,260 --> 00:00:19,180
+Taylor polynomial so for a linear
+approximation I just needed
+
+5
+00:00:19,180 --> 00:00:22,780
+to assume that it was differentialable at
+least one time.
+
+6
+00:00:24,012 --> 00:00:28,852
+most of the functions were going to
+encounter are differentiable
+
+7
+00:00:28,852 --> 00:00:34,572
+infinitely many times, and this means
+there so, the key thing to notice
+
+8
+00:00:34,572 --> 00:00:39,304
+here is the function zero has a derivative
+that's also zero.
+
+9
+00:00:39,304 --> 00:00:41,449
+So any polynomial is derivative,
+
+10
+00:00:41,449 --> 00:00:44,042
+defferentiable an infinite number of
+times.
+
+11
+00:00:44,042 --> 00:00:48,688
+So if it's say x squared, I take the
+derivative, I get 2x.
+
+12
+00:00:48,688 --> 00:00:52,427
+I take the derivative, I get two.
+I take the derivative, I get zero.
+
+13
+00:00:52,427 --> 00:00:54,077
+And then I can just continually take
+
+14
+00:00:54,077 --> 00:00:56,340
+derivatives and I always have zero after
+that.
+
+15
+00:00:58,798 --> 00:01:00,870
+so it's, it's difficult.
+
+16
+00:01:00,870 --> 00:01:04,740
+I actually was trying to think up a
+function that I could put on a quiz.
+
+17
+00:01:04,740 --> 00:01:08,240
+Or something that wouldn't, that would
+look like a normal
+
+18
+00:01:08,240 --> 00:01:12,960
+function, and would not be differentiable
+after a certain point.
+
+19
+00:01:12,960 --> 00:01:15,379
+And I couldn't really come up with
+anything that
+
+20
+00:01:15,379 --> 00:01:18,570
+was, was pretty easy so there They do
+exist and
+
+21
+00:01:18,570 --> 00:01:20,550
+they do show up when you start making,
+kind
+
+22
+00:01:20,550 --> 00:01:23,905
+of, more complicated types of functions,
+for instance, these things
+
+23
+00:01:23,905 --> 00:01:27,140
+that are defined as limits of other
+functions.
+
+24
+00:01:27,140 --> 00:01:30,612
+But, for something you can write down,
+generally, they're going
+
+25
+00:01:30,612 --> 00:01:32,830
+to have as many derivatives as you as you
+want.
+
+26
+00:01:35,580 --> 00:01:38,804
+So I'm going to make something called a
+Taylor series expansion.
+
+27
+00:01:38,804 --> 00:01:41,269
+So I'm going to use a notation t of x to
+
+28
+00:01:41,269 --> 00:01:45,519
+mean a Taylor serious expansion, and
+that's just going to
+
+29
+00:01:45,519 --> 00:01:48,239
+be the limit as n goes to infinity of the
+
+30
+00:01:48,239 --> 00:01:52,309
+Taylor polynomial evaluated at x as n goes
+to infinity.
+
+31
+00:01:54,800 --> 00:01:58,328
+And so what I mean by that is just, the
+limit as
+
+32
+00:01:58,328 --> 00:02:03,750
+this, limit of this sum as the number of
+terms gets, infinite.
+
+33
+00:02:07,410 --> 00:02:09,298
+And it turns out that a Taylor series is
+
+34
+00:02:09,298 --> 00:02:12,630
+a special case of something called a Power
+series, so.
+
+35
+00:02:12,630 --> 00:02:16,290
+For a Taylor series, we know exactly what
+the, the coefficients are.
+
+36
+00:02:16,290 --> 00:02:19,490
+They're determined by the function f that
+I'm trying to approximate.
+
+37
+00:02:20,680 --> 00:02:25,633
+So, a Power series is just a coefficient a
+sub k
+
+38
+00:02:25,633 --> 00:02:26,268
+[SOUND]
+
+39
+00:02:26,268 --> 00:02:31,810
+times the quantity x minus a to the kth
+power.
+
+40
+00:02:31,810 --> 00:02:34,569
+And if I look at my definition of the,
+
+41
+00:02:34,569 --> 00:02:38,129
+of the Taylor polynomial, it just tells me
+that
+
+42
+00:02:38,129 --> 00:02:44,390
+a sub k has to equal the kth derivative of
+f evaluated at a, divided by k factorial.
+
+43
+00:02:46,460 --> 00:02:49,125
+And then another little bit of notation
+that
+
+44
+00:02:49,125 --> 00:02:52,810
+you're going to start seeing pretty often
+is.
+
+45
+00:02:52,810 --> 00:02:57,300
+The limit as n goes to infinity of this
+finite sum.
+
+46
+00:02:57,300 --> 00:03:00,108
+So from k equals 0 up to n is going
+
+47
+00:03:00,108 --> 00:03:04,750
+to be written the sum from k equals 0 to
+infinity.
+
+48
+00:03:04,750 --> 00:03:08,290
+So it's probably what you would have
+guessed it would be anyways, but
+
+49
+00:03:08,290 --> 00:03:11,840
+the real definition of what's going on
+here is this means the limit.
+
+50
+00:03:12,900 --> 00:03:18,480
+As n goes to infinity of the finite sum
+from k equals 1 to n of this series.
+
+51
+00:03:22,160 --> 00:03:24,528
+So the Power series coefficients, a sub k,
+
+52
+00:03:24,528 --> 00:03:27,536
+when I'm talking about a Taylor series
+expansion, are
+
+53
+00:03:27,536 --> 00:03:30,288
+just the kth derivative of the function
+I'm trying
+
+54
+00:03:30,288 --> 00:03:33,610
+to approximate, evaluated at a, divided by
+k factorial.
+
+55
+00:03:35,810 --> 00:03:37,695
+And the reason I want to show that the
+
+56
+00:03:37,695 --> 00:03:40,100
+Taylor series of expansion is a special
+case
+
+57
+00:03:40,100 --> 00:03:42,310
+of Power series, is there a more general
+
+58
+00:03:42,310 --> 00:03:45,300
+results for convergence of power series,
+so there's
+
+59
+00:03:45,300 --> 00:03:48,290
+convergence results for power series in
+general, and
+
+60
+00:03:48,290 --> 00:03:51,280
+those, because of Taylor series, there's a
+special
+
+61
+00:03:51,280 --> 00:03:53,165
+case of a power series, we can also
+
+62
+00:03:53,165 --> 00:03:56,260
+use those convergence results for a Taylor
+series.
+
+63
+00:04:00,780 --> 00:04:03,180
+So the important one, the most important
+one,
+
+64
+00:04:03,180 --> 00:04:06,660
+I suppose, is something called the radius
+of convergence.
+
+65
+00:04:06,660 --> 00:04:11,217
+And this is going to be a number capital R
+greater than 0, and
+
+66
+00:04:11,217 --> 00:04:15,309
+I want to look at my Power series, and if
+this sums up to
+
+67
+00:04:15,309 --> 00:04:20,982
+a finite number so when I write less than,
+strictly less than infinity,
+
+68
+00:04:20,982 --> 00:04:26,004
+what I mean is that whatever is on the
+less than side, so whatever
+
+69
+00:04:26,004 --> 00:04:29,120
+is over here is a finite real number.
+
+70
+00:04:29,120 --> 00:04:33,760
+And then I'm going to define S of x just
+to be this
+
+71
+00:04:33,760 --> 00:04:39,096
+infinite sum and so if this is, if x, so x
+here is in this
+
+72
+00:04:39,096 --> 00:04:44,200
+interval a minus R to a plus R, where R is
+the radius of
+
+73
+00:04:44,200 --> 00:04:49,830
+the convergence, so it's giving me and
+interval.
+
+74
+00:04:49,830 --> 00:04:51,015
+If I take any point
+
+75
+00:04:51,015 --> 00:04:53,464
+in that interval then when I make this
+
+76
+00:04:53,464 --> 00:04:56,629
+infinite sum I'm going to get a finite
+number.
+
+77
+00:04:58,280 --> 00:05:00,986
+So clearly, If we don't get a finite
+number then
+
+78
+00:05:00,986 --> 00:05:04,022
+we really can't, you know it's not going
+to be useful
+
+79
+00:05:04,022 --> 00:05:07,718
+for approximation because that's telling
+me as I add more terms,
+
+80
+00:05:07,718 --> 00:05:12,410
+my approximation's just getting bigger,
+and bigger, and bigger, and bigger.
+
+81
+00:05:12,410 --> 00:05:16,442
+So unless I know that f of x is equal to
+infinity I, I don't
+
+82
+00:05:16,442 --> 00:05:19,046
+want to be trying to approximate with
+
+83
+00:05:19,046 --> 00:05:22,660
+something that's diverging as I add more
+terms.
+
+84
+00:05:22,660 --> 00:05:25,710
+So, the, the whole idea is I want to be
+able to add more terms
+
+85
+00:05:25,710 --> 00:05:27,296
+to my Taylor polynomial to get a
+
+86
+00:05:27,296 --> 00:05:30,440
+better approximation, not to get a worse
+approximation.
+
+87
+00:05:36,920 --> 00:05:42,037
+Let's see so, it also turns out that this
+function
+
+88
+00:05:42,037 --> 00:05:46,760
+S of x, we can take derivatives of these
+too.
+
+89
+00:05:46,760 --> 00:05:51,460
+So, I can take the derivative of this when
+it's finite.
+
+90
+00:05:57,450 --> 00:05:59,770
+And then S of x we're going to say is not
+defined.
+
+91
+00:05:59,770 --> 00:06:02,350
+So, if I'm outside of the radius of
+
+92
+00:06:02,350 --> 00:06:06,160
+convergence, then I don't know what
+happens to S.
+
+93
+00:06:06,160 --> 00:06:07,600
+It, it goes to a infinity.
+
+94
+00:06:07,600 --> 00:06:09,264
+So, I'm not really going to make, be
+
+95
+00:06:09,264 --> 00:06:11,920
+able to make any meaningful statement
+about its property.
+
+96
+00:06:11,920 --> 00:06:13,705
+It's like I certainly couldn't define a
+
+97
+00:06:13,705 --> 00:06:16,910
+derivative For something that's equal to
+infinity everywhere.
+
+98
+00:06:21,570 --> 00:06:25,560
+And so this is the convergence property
+that comes from Power series
+
+99
+00:06:25,560 --> 00:06:29,260
+that I want to also be able to use for
+Taylor series.
+
+100
+00:06:29,260 --> 00:06:36,830
+So it turns out, I need, it's, it's going
+to depend on These coefficients a sub k.
+
+101
+00:06:37,980 --> 00:06:41,030
+But if the limit as k goes to infinity.
+
+102
+00:06:42,700 --> 00:06:47,208
+So I just need to look at these
+coefficients a sub k absolute
+
+103
+00:06:47,208 --> 00:06:49,950
+value, to the one over kth power.
+
+104
+00:06:49,950 --> 00:06:57,090
+So this is the same thing as taking the
+kth root Of the absolute value of a sub k.
+
+105
+00:06:57,090 --> 00:06:59,610
+So if it was one half, that would be the
+square root.
+
+106
+00:06:59,610 --> 00:07:02,260
+If it was one third, that would be the
+cube root.
+
+107
+00:07:02,260 --> 00:07:04,970
+If it was one over four, that would be the
+fourth root.
+
+108
+00:07:04,970 --> 00:07:06,440
+And so on.
+
+109
+00:07:06,440 --> 00:07:13,006
+So if you can make sense of that limit, if
+that's a finite value, then I
+
+110
+00:07:13,006 --> 00:07:18,010
+can define the radius of convergence to be
+one divided by that limit.
+
+111
+00:07:19,260 --> 00:07:24,125
+And now for our Taylor series expansion,
+
+112
+00:07:24,125 --> 00:07:28,610
+I know what these a sub k's have to be.
+
+113
+00:07:31,990 --> 00:07:37,723
+And you can use a property so the sort of
+annoying thing is that a sub k has this
+
+114
+00:07:37,723 --> 00:07:41,545
+k factorial in it and sometimes that's
+going to be
+
+115
+00:07:41,545 --> 00:07:45,420
+a pain to try and deal with in the limit.
+
+116
+00:07:45,420 --> 00:07:49,389
+So luckily somebody proved this additional
+theorem where
+
+117
+00:07:49,389 --> 00:07:52,100
+instead of k factorial, I just have k.
+
+118
+00:07:53,180 --> 00:07:57,390
+And so if this limit so it's k divided by.
+
+119
+00:07:57,390 --> 00:08:00,276
+This is the kth derivative of f evaluated
+at a
+
+120
+00:08:00,276 --> 00:08:03,318
+and then I take the absolute value of that
+to the
+
+121
+00:08:03,318 --> 00:08:05,970
+one over kth power so it looks kind of
+like
+
+122
+00:08:05,970 --> 00:08:10,730
+this, except I don't have this k factorial
+in there anymore.
+
+123
+00:08:10,730 --> 00:08:13,260
+So, somehow the k factorial.
+
+124
+00:08:13,260 --> 00:08:16,588
+To the 1 over k has become this k, up in
+
+125
+00:08:16,588 --> 00:08:22,660
+the, just this k to with no factorial up
+in the numerator.
+
+126
+00:08:22,660 --> 00:08:25,108
+So if this limit exists, then the radius
+of
+
+127
+00:08:25,108 --> 00:08:27,964
+convergence, so this is for a Taylor
+series now,
+
+128
+00:08:27,964 --> 00:08:31,364
+because I'm defining these coefficients in
+terms of the,
+
+129
+00:08:31,364 --> 00:08:35,170
+the derivatives that I'm using to build my
+Taylor polynomials.
+
+130
+00:08:37,250 --> 00:08:41,710
+The radius of convergence is 1 divided by
+e times the value of that limit.
+
+131
+00:08:48,930 --> 00:08:54,455
+And so far, what we've been able to show
+then is that T of x is a finite number so
+
+132
+00:08:54,455 --> 00:09:00,070
+that, that's a good first step but it's
+still not doing what we want to do.
+
+133
+00:09:00,070 --> 00:09:05,650
+What we really want to be able to do is to
+use T of x, or, or a polynomial
+
+134
+00:09:05,650 --> 00:09:10,869
+that we would build on the way to T of x
+to approximate our function f.
+
+135
+00:09:12,550 --> 00:09:13,942
+So if T of x is at least a finite
+
+136
+00:09:13,942 --> 00:09:16,494
+number, you know, we're doing a lot better
+than if
+
+137
+00:09:16,494 --> 00:09:20,010
+it was infinite, there's still the
+possibility that it would work.
+
+138
+00:09:22,660 --> 00:09:27,600
+But what we'd really like to know is if or
+where T of x is equal to
+
+139
+00:09:27,600 --> 00:09:33,130
+f of x, because if T of x, so if this
+infinite sum is converging
+
+140
+00:09:33,130 --> 00:09:38,630
+To f of x at a point x, then the idea
+would be that I can use some
+
+141
+00:09:38,630 --> 00:09:44,160
+of those terms to make an approximation of
+f at that point x.
+
+142
+00:09:47,210 --> 00:09:48,810
+So we have a, another theorem.
+
+143
+00:09:49,970 --> 00:09:53,020
+And this is, this one's a little bit
+trickier.
+
+144
+00:09:53,020 --> 00:09:55,708
+So we need to know what the radius of
+convergence is
+
+145
+00:09:55,708 --> 00:09:59,320
+and we can get that from the formula on
+the previous slide.
+
+146
+00:09:59,320 --> 00:10:03,900
+So you can use either the formula for the
+Power series in general.
+
+147
+00:10:03,900 --> 00:10:08,360
+Or you can use the special case for the
+Taylor's expansion.
+
+148
+00:10:09,550 --> 00:10:12,559
+And you, sometimes it's actually easier to
+use the general
+
+149
+00:10:12,559 --> 00:10:16,158
+formula even when you're working with the
+Taylor expansion just to, it
+
+150
+00:10:16,158 --> 00:10:19,495
+depends on whether when you want this k
+factorial in there or not.
+
+151
+00:10:19,495 --> 00:10:20,005
+[COUGH]
+
+152
+00:10:20,005 --> 00:10:25,105
+Then once you know what the radius of
+convergence is, so you
+
+153
+00:10:25,105 --> 00:10:30,220
+know for what values of x is T of x going
+to at least be finite?
+
+154
+00:10:33,190 --> 00:10:34,600
+We can look at this limit.
+
+155
+00:10:34,600 --> 00:10:38,031
+So I need to take R to the k, so this is
+some number that's
+
+156
+00:10:38,031 --> 00:10:43,110
+going to be inside the, it's going to be
+smaller than the radius of convergence.
+
+157
+00:10:44,870 --> 00:10:48,300
+So I take R to the kth power, divided by k
+factorial.
+
+158
+00:10:50,070 --> 00:10:53,220
+And then I have to look at the kth
+derivative of f.
+
+159
+00:10:55,890 --> 00:11:02,830
+Evaluated at a point z, that's in between
+a minus r and a plus r.
+
+160
+00:11:02,830 --> 00:11:07,720
+So I'm making an interval around a of
+width lower case r.
+
+161
+00:11:07,720 --> 00:11:12,060
+And I need to find the maximum value of
+the kth derivative on that interval.
+
+162
+00:11:14,510 --> 00:11:18,590
+So, once you're done doing this part, that
+should just be a number.
+
+163
+00:11:20,050 --> 00:11:22,970
+So it's the maximum value of this
+derivative on
+
+164
+00:11:22,970 --> 00:11:26,370
+this interval so, but it might involve
+this number r.
+
+165
+00:11:29,470 --> 00:11:35,110
+And then I'm going to look at that, this
+limit as k goes to infinity.
+
+166
+00:11:35,110 --> 00:11:40,730
+If that limit is equal to 0, then T of x
+is equal to f of x.
+
+167
+00:11:43,210 --> 00:11:45,859
+And so what that's going to tell me is
+that every x.
+
+168
+00:11:46,950 --> 00:11:54,510
+That's within r, of my point a, has the
+property that the Taylor series expansion.
+
+169
+00:11:54,510 --> 00:11:59,740
+So if I just make this infinitely long
+Taylor polynomial.
+
+170
+00:11:59,740 --> 00:12:03,529
+That's going to be exactly equal to the
+function that I'm trying to approximate.
+
+171
+00:12:07,070 --> 00:12:10,250
+So let me work through a quick example of
+this.
+
+172
+00:12:10,250 --> 00:12:13,862
+So the Taylor series expansion for the
+function f of
+
+173
+00:12:13,862 --> 00:12:16,634
+x equals log of 1 plus x around the point
+
+174
+00:12:16,634 --> 00:12:18,986
+a equals 0 is going to be, so I can
+
+175
+00:12:18,986 --> 00:12:22,900
+either define this just with k equals 0 to
+infinity.
+
+176
+00:12:22,900 --> 00:12:27,820
+Or I can think about making Taylor
+polynomials of order n and then taking
+
+177
+00:12:27,820 --> 00:12:32,248
+the limit as n goes to infinity, either
+one of these they mean the
+
+178
+00:12:32,248 --> 00:12:36,676
+same thing, they're just two different
+ways of communicating
+
+179
+00:12:36,676 --> 00:12:40,572
+this same idea.
+But the one on the right hand side is sort
+
+180
+00:12:40,572 --> 00:12:47,410
+of the more precise of the two.
+So I'm just going to take x minus a.
+
+181
+00:12:47,410 --> 00:12:49,970
+But here, I've said I want to make the
+expansion around the point 0.
+
+182
+00:12:49,970 --> 00:12:57,425
+So that's going to be x minus 0 to the kth
+power, divided by k factorial, times f k,
+
+183
+00:12:57,425 --> 00:13:03,097
+so the kth derivative of my function f
+evaluated at the point 0.
+
+184
+00:13:03,097 --> 00:13:08,281
+So it turns out, if I, if I have log of 1
+plus x, the first
+
+185
+00:13:08,281 --> 00:13:13,465
+derivative of that is just going to be 1
+divided by 1 plus
+
+186
+00:13:13,465 --> 00:13:18,250
+x, so I can write that as 1 plus x to the
+negative 1.
+
+187
+00:13:18,250 --> 00:13:22,468
+And if I were to take another derivative
+of that, I'd have negative
+
+188
+00:13:22,468 --> 00:13:25,390
+1 times 1 plus x to the negative 2.
+
+189
+00:13:25,390 --> 00:13:27,658
+If I took another derivative of that I
+would
+
+190
+00:13:27,658 --> 00:13:31,190
+have negative three times whatever
+coefficient I have out here.
+
+191
+00:13:31,190 --> 00:13:35,040
+And because every time I take a derivative
+I'm getting a negative sign.
+
+192
+00:13:36,558 --> 00:13:39,880
+the sign of each one of these derivatives
+is going to be alternating.
+
+193
+00:13:39,880 --> 00:13:45,200
+So the way I'm going to capture that is
+just put a minus one To a power.
+
+194
+00:13:45,200 --> 00:13:47,510
+And then I just choose this power so that
+
+195
+00:13:47,510 --> 00:13:51,860
+it's even when I want a positive term and
+odd when I want a negative term.
+
+196
+00:13:54,380 --> 00:13:58,745
+So the first derivative, when I have one
+prime here,
+
+197
+00:13:58,745 --> 00:14:03,260
+those are the ones that I want to be
+positive.
+
+198
+00:14:03,260 --> 00:14:07,036
+So when I have an odd derivative, so first
+derivative, third derivative,
+
+199
+00:14:07,036 --> 00:14:10,970
+fifth derivative and so on, I want to have
+a positive expression.
+
+200
+00:14:10,970 --> 00:14:14,256
+So I'm just going to put k plus 1 as my
+power on the negative 1,
+
+201
+00:14:14,256 --> 00:14:16,240
+and that's going to take care of the flip
+
+202
+00:14:16,240 --> 00:14:18,640
+flopping sign as the, as the sum goes
+along.
+
+203
+00:14:20,670 --> 00:14:24,420
+And then, every time I take a derivative,
+I'm going to get 1
+
+204
+00:14:24,420 --> 00:14:27,270
+and then a two and then a three and then a
+four.
+
+205
+00:14:28,910 --> 00:14:32,026
+But, because the first derivative I got
+from
+
+206
+00:14:32,026 --> 00:14:35,440
+log I'm actually one behind in my count.
+
+207
+00:14:35,440 --> 00:14:39,510
+So I end up with k minus 1 factorial as my
+coeefiecient here.
+
+208
+00:14:40,560 --> 00:14:43,650
+And then I have 1 plus x to the minus k.
+
+209
+00:14:43,650 --> 00:14:45,930
+So when I take the first derivative, I
+have a minus 1.
+
+210
+00:14:45,930 --> 00:14:49,260
+The second derivitive would have a minus 2
+and so on.
+
+211
+00:14:51,550 --> 00:14:53,678
+And so this is what I want to plug in
+
+212
+00:14:53,678 --> 00:14:57,110
+to this term right here, and I'm going to
+evaluate.
+
+213
+00:14:57,110 --> 00:15:02,297
+So this is the kth derivitive at x I
+want to evaluate the kth derivative
+
+214
+00:15:02,297 --> 00:15:06,210
+at the point 0, so when I put in 0 in this
+part of the
+
+215
+00:15:06,210 --> 00:15:11,397
+expression here, this is the only part
+that actually has an x in it,
+
+216
+00:15:11,397 --> 00:15:16,766
+I'm going to get 1 plus 0 to the minus kth
+power, and that's just going to
+
+217
+00:15:16,766 --> 00:15:22,750
+be 1 to the minus kth power.
+And 1 to any power is equal to 1.
+
+218
+00:15:22,750 --> 00:15:25,742
+So when I evaluate this at 0, this final
+
+219
+00:15:25,742 --> 00:15:29,500
+part of the expression is just going to
+drop away.
+
+220
+00:15:34,880 --> 00:15:37,370
+So I end up with just this alternating
+sign.
+
+221
+00:15:38,440 --> 00:15:43,948
+And then a k minus 1 factorial, for my fk
+of 0 derivatives,
+
+222
+00:15:43,948 --> 00:15:49,564
+and now, when I plug this back into my
+Taylor expansion, what
+
+223
+00:15:49,564 --> 00:15:54,964
+I end up getting is x minus 0 to the k, so
+that just going to
+
+224
+00:15:54,964 --> 00:16:00,148
+be an x to the k in the numerator I have a
+k factorial and then
+
+225
+00:16:00,148 --> 00:16:05,548
+this expression fk of 0 that we just
+worked out over here and
+
+226
+00:16:05,548 --> 00:16:10,538
+this has a k minus one factorial in it.
+So the k minus one
+
+227
+00:16:10,538 --> 00:16:15,480
+factorial time, divided by k factorial is
+just going to give me.
+
+228
+00:16:16,970 --> 00:16:18,170
+Why can't I select you?
+
+229
+00:16:21,270 --> 00:16:23,520
+Okay I'm not going to try that anymore.
+
+230
+00:16:23,520 --> 00:16:27,640
+It's just going to give me this factor of
+k in the denominator.
+
+231
+00:16:27,640 --> 00:16:31,780
+So that's k minus one factorial divided by
+k factorial.
+
+232
+00:16:31,780 --> 00:16:35,020
+Everything cancels itself out except for
+the k.
+
+233
+00:16:35,020 --> 00:16:38,332
+So I divide by k In the numerator, I have
+x to
+
+234
+00:16:38,332 --> 00:16:42,430
+the k which came from this x minus 0 to
+the kth power.
+
+235
+00:16:44,350 --> 00:16:46,450
+And then I have this flip flopping
+
+236
+00:16:46,450 --> 00:16:47,210
+sine term.
+
+237
+00:16:48,540 --> 00:16:51,990
+So it turns out that my Taylor series
+expansion is going to
+
+238
+00:16:51,990 --> 00:16:55,670
+be x minus x squared over two plus x cubed
+over three.
+
+239
+00:16:55,670 --> 00:16:58,100
+Minus x to the 4th over 4 and so on.
+
+240
+00:17:00,950 --> 00:17:03,960
+And so now I want to find the radius of
+convergence of that.
+
+241
+00:17:07,430 --> 00:17:10,451
+And so first I'll try, because this is a
+Taylor series expansion,
+
+242
+00:17:10,451 --> 00:17:13,540
+I'll try using the formula we had for the
+Taylor series expansion.
+
+243
+00:17:13,540 --> 00:17:14,390
+So I had the.
+
+244
+00:17:16,310 --> 00:17:18,500
+Fk evaluated at the point a.
+
+245
+00:17:18,500 --> 00:17:22,400
+So my point a was 0, so I have an
+expression for that.
+
+246
+00:17:22,400 --> 00:17:26,313
+But now I have this k minus 1 factorial to
+the 1 over
+
+247
+00:17:26,313 --> 00:17:31,100
+kth power in the denominator, and I have a
+k in the numerator.
+
+248
+00:17:32,420 --> 00:17:35,129
+And so I don't really know how to make
+sense out of that limit.
+
+249
+00:17:36,470 --> 00:17:37,830
+So, I said, hmh.
+
+250
+00:17:37,830 --> 00:17:40,000
+But I have another possibility.
+
+251
+00:17:40,000 --> 00:17:42,925
+Because this is a special case of a Power
+series, I can
+
+252
+00:17:42,925 --> 00:17:46,060
+go back and try the formula for the power
+series as well.
+
+253
+00:17:47,970 --> 00:17:51,374
+And so that said that if the limit of
+these coefficients
+
+254
+00:17:51,374 --> 00:17:56,820
+existed, then the radius of convergence
+would be one over this limit.
+
+255
+00:17:56,820 --> 00:17:57,452
+So let's
+
+256
+00:17:57,452 --> 00:18:00,060
+see what happens if I just plug this in.
+
+257
+00:18:00,060 --> 00:18:02,710
+So I have minus one to the k plus
+
+258
+00:18:02,710 --> 00:18:07,100
+one divided by k as my sequence of
+coefficients.
+
+259
+00:18:07,100 --> 00:18:12,125
+And when I take the absolute value of
+that, the whole numerator's just going to
+
+260
+00:18:12,125 --> 00:18:17,156
+go away.
+So what I end up with is the limit As k
+
+261
+00:18:17,156 --> 00:18:22,796
+goes to infinity of 1 over k to the one
+over kth power, and so notice that
+
+262
+00:18:22,796 --> 00:18:28,070
+the power is exactly equal to the thing
+that I am taking the power.
+
+263
+00:18:28,070 --> 00:18:33,452
+So I'm going to say this is equal to the
+limit as u of u to the
+
+264
+00:18:33,452 --> 00:18:38,717
+uth power, and if one over k if k is going
+to infinity,
+
+265
+00:18:38,717 --> 00:18:43,820
+then 1 over k is going to 0.
+So I can just say, this
+
+266
+00:18:43,820 --> 00:18:48,990
+is the limit as u goes down to 0 of u to
+the uth power.
+
+267
+00:18:50,330 --> 00:18:53,159
+And if you go back to our lectures on
+limits, this
+
+268
+00:18:53,159 --> 00:18:56,059
+was one of the things that we said was
+equal to 1.
+
+269
+00:18:57,290 --> 00:19:02,590
+So if this limit is equal to 1, the radius
+of convergence is 1 divided by that.
+
+270
+00:19:05,050 --> 00:19:08,920
+So that tells me that the radius of
+convergence is equal to 1.
+
+271
+00:19:08,920 --> 00:19:14,128
+And then the last thing we have to do is
+
+272
+00:19:14,128 --> 00:19:19,320
+see if Or where t of x is equal to the log
+of one plus x.
+
+273
+00:19:19,320 --> 00:19:21,030
+So this is my function f of x.
+
+274
+00:19:25,090 --> 00:19:28,030
+So I know that the radius of convergence
+is equal to one.
+
+275
+00:19:28,030 --> 00:19:31,960
+So I'm looking for some number r that's
+between 0.
+
+276
+00:19:31,960 --> 00:19:36,346
+So some number little r that's in between
+0 and one
+
+277
+00:19:36,346 --> 00:19:41,038
+and so again, I'm just going to use the
+theorem that I had
+
+278
+00:19:41,038 --> 00:19:44,608
+on a few slides ago, and that said that if
+I
+
+279
+00:19:44,608 --> 00:19:50,524
+looked at this derivative, but now instead
+of being able to evaluate
+
+280
+00:19:50,524 --> 00:19:55,522
+z it at the point 0, I have to evaluate it
+at the point, and
+
+281
+00:19:55,522 --> 00:20:00,590
+find out where it's maximum on the
+interval minus r to r.
+
+282
+00:20:03,480 --> 00:20:07,340
+And what I end up having here is minus 1
+to the n plus 1.
+
+283
+00:20:07,340 --> 00:20:11,790
+So my absolute value is going to take care
+of this flip-flopping sign for me.
+
+284
+00:20:11,790 --> 00:20:17,829
+I have an n minus 1 factorial in the
+numerator and then a 1 plus z to the nth
+
+285
+00:20:17,829 --> 00:20:23,769
+power in the denominator and I'm trying to
+make this as big as I possibly
+
+286
+00:20:23,769 --> 00:20:29,426
+can.
+So I want to make the denominator
+
+287
+00:20:29,426 --> 00:20:33,500
+as small as I possibly can.
+
+288
+00:20:33,500 --> 00:20:37,170
+So the smallest I can make this is if I
+take one minus r
+
+289
+00:20:41,690 --> 00:20:47,748
+And so that gives me is that
+
+290
+00:20:47,748 --> 00:20:53,161
+right?
+I must have
+
+291
+00:20:53,161 --> 00:20:59,027
+had a missing one
+
+292
+00:20:59,027 --> 00:21:04,490
+line in here.
+
+293
+00:21:04,490 --> 00:21:07,056
+For what I should do.
+but essentially
+
+294
+00:21:07,056 --> 00:21:10,752
+because r, I can't actually make this
+denominator 0,
+
+295
+00:21:10,752 --> 00:21:13,530
+because r has to be strictly less than 1.
+
+296
+00:21:13,530 --> 00:21:17,138
+And so what I end up with is, I have
+something
+
+297
+00:21:17,138 --> 00:21:21,180
+to the n down here, and this r to the n
+here.
+
+298
+00:21:21,180 --> 00:21:24,491
+And that actually gives, I can think of
+that as then
+
+299
+00:21:24,491 --> 00:21:27,478
+just r times 1, or, r divided by 1 minus
+r.
+
+300
+00:21:27,478 --> 00:21:31,824
+To the nth power but I'm taking the limit
+as n goes to infinity,
+
+301
+00:21:31,824 --> 00:21:35,690
+and so r divided by 1 minus r, that's just
+a constant.
+
+302
+00:21:37,340 --> 00:21:41,136
+And I have, so I have some constant to the
+nth power divided by n
+
+303
+00:21:41,136 --> 00:21:46,820
+factorial, and that limit is again one of
+the results we had from the first week.
+
+304
+00:21:46,820 --> 00:21:51,053
+That any constant to a power divided by n
+factorial, if I take
+
+305
+00:21:51,053 --> 00:21:55,120
+the limit of that as n goes to infinity,
+I'm going to get 0.
+
+306
+00:21:58,320 --> 00:22:01,682
+And so that tells me, I can make r as
+close as I want
+
+307
+00:22:01,682 --> 00:22:06,540
+to capital R but I can not actually make
+it equal to capital R.
+
+308
+00:22:06,540 --> 00:22:10,875
+So it's just turned this sort of open
+interval, this radius
+
+309
+00:22:10,875 --> 00:22:15,720
+of convergence of being 1 it goes, it's a
+closed interval its
+
+310
+00:22:15,720 --> 00:22:18,865
+now an open interval so our little r can
+be any
+
+311
+00:22:18,865 --> 00:22:23,370
+number if it's smaller than 1 but it can't
+actually be 1.
+
+312
+00:22:23,370 --> 00:22:26,770
+And so that tells me that T of x is equal
+to f
+
+313
+00:22:26,770 --> 00:22:31,173
+of x as long as the absolute value of x is
+less than 1.
+

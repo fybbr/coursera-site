@@ -1,0 +1,459 @@
+Then next topic is going to be something
+called Fubini's Theorem.
+So first of all, I'd like to say, I just
+think, if you have
+a name this neat, it's really good that
+you attach it to a theorem.
+So it's just sort of, for me anyway it's
+fun to say.
+>>
+[LAUGH]
+>>
+[COUGH]
+And so this function, so remember my big
+question
+at the end of the last set of slides.
+If f of x is continuous on the rectangle R
+equals a,b cross c,d
+so it's just between a and b on the x-axis
+and between c and d on the y-axis.
+Then Fubini's theorem tells me that the
+double integral over that
+region over that rectangle is equal to,
+and I can do it either
+dy dx so I can, it's equal to the value of
+iterated integral.
+And it doesn't matter which way I do the
+iterated integrals
+so if I do this dy dx or I do dx dy.
+And so remember, we have to be a bit
+careful that the ab corresponds
+to the dx, so they have to be on the
+inside or on the outside,
+but you can't mix.
+And here, the ab corresponds to the dx.
+So, the order of iteration does not
+matter.
+And so in this particular case, when I'm
+talking about a rectangle, it's
+not going to make too big a deal which way
+you do this first.
+Later on, you're going to find that you
+look at
+a, a region, it's not always going to be
+defined
+just as, you know, this is a, this is b,
+there's going to be functions that give
+you the region too.
+For instance, if you wanted to integrate
+over a triangle or
+a circle or something like that.
+And it's going to be a lot easier
+generally to do dy dx or dx dy.
+So one of them is either going to be very
+difficult or impossible.
+I mean, they both might be very difficult
+or impossible.
+But sometimes one is very difficult and
+the other one is relatively easy.
+And so just, just for your own sanity, I
+would recommend doing it the easy way.
+So, one of the things I like to do when
+I have a theorem like that is just test it
+out.
+So, let's try an example and see what
+happens.
+So, I'm going to define the rectangle to
+be 1, 3 cross 2, 5 so this
+is just in between 1 and 3 on the x-axis
+and in between 2 and 5 on the y-axis.
+My function will be 2y minus 3x and I
+want to compute the double integral
+over that rectangle.
+So using Fubini's theorem, I can say that
+this double
+integral is going to be equal to the
+iterated integral.
+And so in this case, I'll integrate with
+respect to
+x first, and then I'll integrate with
+respect to y.
+So again the 1, 3 is here and that's my x
+limits so I have to do dx
+first if the 1 and 3 are in here and then
+2 and 5 are the limits corresponding to y.
+And so, the way I'm going to do this
+inside integral now, I'm integrating with
+respect to x.
+So, I'm just going to pretend like y is a
+constant.
+And then I can treat this just as a single
+variable integral.
+So the first term, this is just a constant
+times dx.
+So by the anti-Power Rule all that's going
+to happen when
+I take the antiderivative of that, just an
+x shows up.
+And if I were to take the partial
+derivative of this term with respect
+to x, I would just get 2y, which is
+exactly what I started out with.
+The second term, the minus 3,
+minus 3x that's the derivative of minus 3x
+squared
+so if I take the derivative again, partial
+derivative with
+respect to x but it's easier to miss that,
+it's
+a partial derivative because there's no y
+in this term.
+I would take 2 times 3 half to the the,
+times
+x to the 2 minus 1 which would just be 3x.
+And
+now, I can evaluate this at the limits.
+So I guess I was a bit lazy when I wrote
+the limits here but once I've done
+this, there's no more dx in here to tell
+me what variable I've integrated with
+respect to 2.
+So with 2 it's not too bad, but we can use
+the
+same idea of iteration to do triple
+integrals, quadruple integrals, and so on.
+So, it's probably a good habit to
+remember that this is x equals 3 as the
+upper limit and x equals 1 as the bottom
+limit.
+But otherwise, I do it exactly the same
+way
+that I would've done using the Fundamental
+Theorem of Calculus.
+So the value of this integral is just the
+antiderivative evaluated at the upper
+limit minus the antiderivative evaluated
+at the lower limit.
+This thing is the antiderivative,
+so all I'm going to do is put in 3 for x
+in the first term and
+then minus and then substitute 1 for x in
+the second term.
+And so now, I've integrated out the x,
+there's no longer an x in here
+but there still are some ys, and so this
+is now my, my partial integral.
+So it's now a function of y that I
+can integrate in the second step with
+respect to y.
+First though I think I probably simplified
+it because
+addition is going to make this a little
+bit prettier.
+So it turns out that's just equal to 4y
+minus 12.
+And so then this is something we should be
+reasonably
+familiar with now so I'll just go through
+this quickly.
+So, I get the antiderivative evaluated at
+the top
+limit and subtract the evaluation at the
+bottom limit.
+And so that gives me 50 minus 60,
+so that's negative 10 minus 8 minus 24.
+So tricky again, I know
+some of us don't like signs and pluses but
+that's minus 10 minus negative 16 which is
+equal to 6.
+So, in this case, I did the integral.
+I iterated with the dx integral first and
+then the dy integral.
+And so let's try that again.
+But this time, I'm going to do dy first.
+So I had to, I switched the, switched the
+dy and dx.
+And then I also had to switch the two
+integral signs.
+So the, now that the inside limits, the 2
+and
+the 2, these correspond to Integration
+with respect to y.
+And the 1 and the 3, the outside
+integral corresponds to integration with
+respect to x.
+So again, just to use the anti-Power Rule,
+2y is the
+anti or 2y is the derivative of y squared
+and then 3x
+is going to be constant with respect to y.
+So that just becomes 3xy.
+And then again, I'll just evaluate this at
+y equals 5 and
+I evaluate it at y equals 2 and I take the
+difference.
+So this is the, the function evaluated
+when y is equal to
+5 and this is the function evaluated when
+y is equal to 2.
+And now I just have a function, the y is
+entirely gone.
+So I have a function of only x and
+I'm going to integrate that function from
+1 to 3.
+So first I'll do some simplification.
+And then the antiderivative is
+trivial again just with the, the Power
+Rule.
+So I get 21x minus 9 halves x squared from
+1 to 3,
+so I evaluate this at 3, I evaluate at 1,
+take the difference.
+And so it's a, a little bit less pretty
+this time but if I have 63
+minus 21 that gives me 42.
+Then I have negative 81 over 2 and then
+minus, minus 9 over 2.
+So it's the same as negative 81 plus 9
+over 2, which is 72 over 2, which is 36
+and so I have minus
+36 and again I get 6.
+And just for people who weren't paying
+attention on the last slide, that's the
+same answer we got when we did the
+integral iterated on the other direction.
+So, that's a, a pretty good check.
+If I have a, a simple function, at least
+it works and this actually does work in
+general.
+So you don't need to check it but I just
+wanted to go through a, a little example.
+Okay so the next thing, we might want to
+do, so, so
+far I've just talked about doing a double
+integral over a rectangular region.
+but now suppose instead of a rectangle, I
+want to
+have a more general region that I'm
+going to call D.
+So I've, I've, I think on the first set of
+slides I called the area
+in the x,y plane that I was integrating
+above, I called that the domain of
+integration.
+So that's why I chose D here, it just
+means domain.
+And
+I'm going to write this using a set
+notation, so these
+little squiggly brackets this means I'm
+talking about a set.
+And set is just a rule to say something is
+in the set or something is not in the set.
+And so the way you read this is, the set
+consists of points x,y
+that satisfy x has to be in between a and
+b and
+then y has to be in between a function of
+x and another function of x.
+So there's some function of x on the
+bottom and some function of x on the top.
+And so for a rectangle g1 of x was just
+equal to c and g2 of x was equal to d.
+And now this is just letting me have a, a
+slightly more general region.
+So I could have an upward-sloping line and
+then that could
+be either a trapezoid or a triangle, or
+something like that.
+And so then when I do my iterated
+integral, I don't really
+have the freedom to do it dx dy or dy dx
+anymore.
+So in this case, I have to do the dx last
+because those are where I have the
+constants in in the limits.
+So if I find an antiderivative of f of
+x,y, I'm going to evaluate
+it at y equals some function of x and
+again at y equals this lower bound of x.
+So after I've done this inside integral,
+I'm going to have a function of x alone
+and then that's going to be something I
+can integrate in my second integral.
+But the, the limits on the last integral
+always have to be real numbers otherwise,
+you
+know, there's no way for me to integrate
+if I had a, a function of y here.
+And when I did my antiderivative and then
+plugged in my function of y, I would
+still have a function of both x and
+y so it wouldn't be an iterated integral
+anymore.
+And so this is kind of, this is what I was
+getting at when I said sometimes it's
+easier or impossible to do an integral you
+know, dx dy or dy dx.
+You can actually draw a picture of what
+this region
+looks like And if it's bounded both
+directions you'll always be
+able to find a way to describe that as a
+to b with a function making the top and
+another function
+making the bottom.
+Or you could think of it as, you know, c
+to d with
+one function making the left side and one
+function making the right side.
+And one of those might be easier to do
+than the other.
+So I think there's an example in the
+homework of, of how this will work out,
+where
+one of the limits is basically what you
+need to be able to do integration by
+substitution in the outside integral.
+Okay.
+And so this is just the other possibility.
+So d can either have x having the real
+limit.
+So x between a and b and then y between
+functions
+of x or you can have y between c and d and
+then have x in between functions of y.
+And so all that happens here is you just
+have to integrate.
+So here I do dy dx first and here I have
+to do dx dy first.
+So we might see something like this.
+So, if I say x plus y, so
+absolute value of x plus absolute value of
+y has to be less than or equal to 1.
+So, this describes a, a diamond that just
+has corners at
+0 plus or minus 1 and plus or minus 1, 0.
+So, it's usually helpful to draw a picture
+of what this looks like.
+Even if it's not
+a very good picture, it will still help
+you figure out which way
+is going to be easier whether you want to
+do x first or y first.
+And then, this is a, a useful check just
+to
+make sure you've done things first in, in
+getting your region.
+So if I have, if I define my function, the
+integral of f of x,y just to be constant
+1 over the entire domain then when I
+integrate
+that, I'm just going to get the area of my
+domain.
+So if I have a, an area and I multiplied
+it
+by one to get a volume then that volume is
+just
+going to be equal to the area.
+So my double integral over this diamond,
+I can write that just as 1 dA.
+And now this is a bit tricky
+so, it's a good example though of how you
+can split up an integral.
+So I'm going to integrate with respect to
+x last so
+that means that the x limits get to be
+real numbers.
+And conceptually, what I want to do is I
+want to
+start at negative 1 here and go over to
+positive 1.
+And just like I could break up the, the
+interval into two sub-intervals.
+So two integrals that together make the
+full interval for a single variable
+integration problem.
+I can split up the domain into pieces so
+that all of those pieces together make the
+entire domain.
+And so what I'm going to do is this
+function
+will be much easier to define if it
+doesn't have this
+sharp right-hand corner at the top.
+same with the one on the bottom.
+So I'm going to integrate from negative 1
+to zero and then from zero to positive 1.
+And then my limits for y are at a certain
+value of x.
+I'm going to go from, this is actually
+negative 1 plus x.
+So negative 1 minus x is the point down
+here.
+So if x were
+equal to negative 1 half, then y would
+equal negative 1 half as well.
+And so, what I want to do is just set up
+a, a function.
+So the, the limits here, minus 1 minus x
+and 1 plus x given
+x, just tell me how far it is from down
+here to up here.
+And then, the functions are slightly
+different on
+the right-hand side, the, the slope just
+changes.
+So
+I have just where I had plus x over here,
+I'm going to end
+up with minus x over here and the same in
+the, in the bottom.
+And then all that I have to do is start my
+iterated integral.
+So the integral of 1 with respect to y,
+that's just going to be the derivative of
+y.
+So I end up with y evaluated at the
+top limit minus y evaluated at the bottom
+limit.
+So what I'm going to do when I evaluate
+this now,
+I'm going to stick in 1 plus x for y and
+so, and then the same thing for the, for
+the right-hand integral.
+And so what I end up with is, top limit
+minus
+bottom limit for the, for the integral on
+the left term.
+And then top limit minus bottom limit
+for the integral that's the, the
+right-hand term.
+And then I go ahead and simplify that.
+So I get 2 plus 2x and 2 minus 2x.
+But now, I have two single variable
+integration problems.
+And again, they're pretty easy.
+So just use the Power Rule backwards.
+And we get 1 plus 1 which is 2 and I guess
+I'll flip back to this.
+So if I were to take this triangle in the
+bottom
+right side and put it up here, then I'd
+have a square.
+And if I took this one and put it up here
+I'd have another square.
+So that would be a rectangle, these two
+squares.
+So it'd be width 2 and height 1.
+So the area of this shape should be equal
+to
+two.
+And that's what we got when we did our
+integral.
+So everything is working out so far.
+Oh, and I guess I should
+mention, so in the first slide
+when I put Fubini's Theorem up, I
+said that it was over a rectangle.
+

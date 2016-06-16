@@ -1,0 +1,1798 @@
+1
+00:00:00,980 --> 00:00:01,320
+Okay.
+
+2
+00:00:01,320 --> 00:00:07,160
+So, we'll do this one more time, looking
+at the maximum expected returns portfolio.
+
+3
+00:00:07,160 --> 00:00:12,280
+[COUGH]
+
+4
+00:00:12,280 --> 00:00:15,690
+So, just a little bit of a reminder about
+the problem I'm trying to solve.
+
+5
+00:00:16,750 --> 00:00:20,360
+I have a vector of portfolio weights W,
+that I think
+
+6
+00:00:20,360 --> 00:00:23,740
+of as so I'm, I'm thinking of N assets in
+my portfolio.
+
+7
+00:00:23,740 --> 00:00:28,600
+So, W1 is the amount of my portfolio
+invested in asset one.
+
+8
+00:00:28,600 --> 00:00:33,800
+W2 is the amount of my portfolio invested
+in asset two, and so on.
+
+9
+00:00:33,800 --> 00:00:36,050
+There's n assets in the portfolio.
+
+10
+00:00:38,180 --> 00:00:41,370
+And there's a constraint on this factor w,
+that the
+
+11
+00:00:41,370 --> 00:00:43,460
+sum of the elements has to be equal to
+one.
+
+12
+00:00:43,460 --> 00:00:47,900
+So I sort of have one chunk of money that
+I'm going to use to buy my portfolio.
+
+13
+00:00:49,360 --> 00:00:52,020
+And so the, the sum of all the pieces I
+put
+
+14
+00:00:52,020 --> 00:00:55,540
+together to make that portfolio will end
+up equaling that one.
+
+15
+00:00:58,180 --> 00:01:00,780
+Then, for each of the n assets I'm going
+to put in my
+
+16
+00:01:00,780 --> 00:01:07,132
+portfolio, I have a value mu 1 that's the
+expected return of that asset.
+
+17
+00:01:07,132 --> 00:01:10,335
+I'm going to put all of those together in
+a vector and call that mu.
+
+18
+00:01:13,770 --> 00:01:16,710
+And then I also have a covariance matrix
+for
+
+19
+00:01:16,710 --> 00:01:20,800
+the returns of the asset that I'm going to
+call sigma.
+
+20
+00:01:20,800 --> 00:01:23,950
+And so this has to be an n by n matrix,
+
+21
+00:01:23,950 --> 00:01:27,770
+because it's, needs to tell me the
+variance of each asset.
+
+22
+00:01:27,770 --> 00:01:30,360
+So it has to have n diagonal elements.
+
+23
+00:01:30,360 --> 00:01:32,970
+And then all of the off-diagonal elements
+are going to
+
+24
+00:01:32,970 --> 00:01:36,670
+tell me the co-variance between that
+particular pair of assets.
+
+25
+00:01:36,670 --> 00:01:39,290
+So whatever asset corresponds to say,
+
+26
+00:01:39,290 --> 00:01:40,900
+row i and column j.
+
+27
+00:01:42,820 --> 00:01:46,020
+And this has some special properties, so
+it's symmetric.
+
+28
+00:01:46,020 --> 00:01:48,520
+That means sigma is equal to sigma
+transpose.
+
+29
+00:01:49,910 --> 00:01:51,770
+And it's positive definite.
+
+30
+00:01:51,770 --> 00:01:54,820
+So this means that if I the, take an
+eigenvalue
+
+31
+00:01:54,820 --> 00:01:58,290
+decomposition of sigma, all of the
+eigenvalues are greater than 0.
+
+32
+00:01:58,290 --> 00:01:58,790
+And
+
+33
+00:02:02,580 --> 00:02:05,120
+the problem I want to solve, I want to
+
+34
+00:02:05,120 --> 00:02:09,910
+maximize the expected return subject to
+the constraint on risk.
+
+35
+00:02:11,490 --> 00:02:16,810
+So, the expected return for each asset is
+mu sub i for asset i.
+
+36
+00:02:18,770 --> 00:02:23,320
+And so if I just multiply that by the
+weight of each asset and sum that up,
+
+37
+00:02:23,320 --> 00:02:27,920
+so you can think of that as just the dot
+product of mu and my weight vector w,
+
+38
+00:02:27,920 --> 00:02:30,820
+which I'll write in matrix notation as mu
+transpose w.
+
+39
+00:02:32,520 --> 00:02:34,690
+I want to maximize that quantity.
+
+40
+00:02:34,690 --> 00:02:36,050
+So again, this is going to be a linear
+
+41
+00:02:36,050 --> 00:02:40,050
+quantity, because these mu's are given to
+me.
+
+42
+00:02:40,050 --> 00:02:43,540
+And then the w's are just all to the first
+power, so this is going to be mu
+
+43
+00:02:43,540 --> 00:02:49,390
+1 is a coefficient, times w 1, mu 2 is the
+coefficient times w 2, and so on.
+
+44
+00:02:50,460 --> 00:02:51,930
+And then I have two constraints.
+
+45
+00:02:51,930 --> 00:02:53,590
+So there's the
+
+46
+00:02:53,590 --> 00:02:58,550
+linear constraint.
+So e transposed w has to equal 1.
+
+47
+00:02:58,550 --> 00:03:03,450
+So remember e is a vector of ones.
+
+48
+00:03:03,450 --> 00:03:07,220
+So this is going to be on the final too, I
+use e as a vector of ones.
+
+49
+00:03:07,220 --> 00:03:11,250
+So just keep that in mind so e transposed
+turns
+
+50
+00:03:11,250 --> 00:03:15,870
+that into a row vector times a column
+vector w.
+
+51
+00:03:15,870 --> 00:03:19,900
+That's the same thing as just the dot
+product of e and w.
+
+52
+00:03:19,900 --> 00:03:21,740
+And since e is all ones, that's just the
+
+53
+00:03:21,740 --> 00:03:24,630
+same thing as the sum of the elements of
+w.
+
+54
+00:03:24,630 --> 00:03:25,870
+And that has to equal 1.
+
+55
+00:03:25,870 --> 00:03:28,000
+So that's my constraint on the portfolio
+weights.
+
+56
+00:03:28,000 --> 00:03:34,320
+And then the second constraint is w
+transpose sigma w.
+
+57
+00:03:34,320 --> 00:03:39,710
+And so this is interpreted as the risk of
+the portfolio.
+
+58
+00:03:41,910 --> 00:03:44,880
+And the optimization I'm trying to do is
+subject
+
+59
+00:03:44,880 --> 00:03:48,000
+to my portfolio having a certain level of
+risk.
+
+60
+00:03:48,000 --> 00:03:53,000
+I want to choose w to give me the maximum
+possible expected return.
+
+61
+00:03:53,000 --> 00:03:56,150
+So that's what this, this optimization
+problem is asking you to do.
+
+62
+00:03:58,530 --> 00:04:00,690
+So we say it has a linear objective.
+
+63
+00:04:02,520 --> 00:04:06,150
+So that means all of the, the w's are all
+to the first power.
+
+64
+00:04:06,150 --> 00:04:09,260
+And it has linear and quadratic
+constraints, so this is
+
+65
+00:04:09,260 --> 00:04:13,000
+the linear constraint and then this is a
+quadratic constraint.
+
+66
+00:04:17,670 --> 00:04:20,020
+And I can write out the Lagrangian for
+this, so
+
+67
+00:04:20,020 --> 00:04:23,490
+it's going to be a function of w and
+lambda.
+
+68
+00:04:23,490 --> 00:04:25,870
+So here lambda, because I have two
+constraints,
+
+69
+00:04:25,870 --> 00:04:27,950
+lambda is going to be a vector with two
+elements.
+
+70
+00:04:27,950 --> 00:04:31,620
+So I've lambda 1 and lambda 2, the
+Lagrange multipliers.
+
+71
+00:04:34,640 --> 00:04:39,780
+And then it's just equal to the, the
+function
+
+72
+00:04:39,780 --> 00:04:42,530
+that I'm trying to find the optimal value
+of.
+
+73
+00:04:42,530 --> 00:04:44,400
+So that's the objective function.
+
+74
+00:04:45,940 --> 00:04:52,290
+Plus lambda 1 times the first constraint,
+plus lambda 2 times the second constraint.
+
+75
+00:04:58,390 --> 00:05:02,010
+Then I need to take the gradient of the
+Lagrangian.
+
+76
+00:05:02,010 --> 00:05:05,250
+So this is the, this is what I want to set
+equal to 0.
+
+77
+00:05:05,250 --> 00:05:08,040
+So I want to find the inputs w and lambda
+that
+
+78
+00:05:08,040 --> 00:05:10,950
+are going to make the gradient of the
+Lagrangian equal to 0.
+
+79
+00:05:10,950 --> 00:05:13,250
+That's going to give me the critical
+points of the Lagrangian.
+
+80
+00:05:14,830 --> 00:05:17,300
+So this is actually a little bit prettier,
+
+81
+00:05:17,300 --> 00:05:19,900
+because we can assume some knowledge of
+the problem.
+
+82
+00:05:19,900 --> 00:05:23,480
+So in the last problem, I had to write out
+this huge matrix,
+
+83
+00:05:23,480 --> 00:05:24,970
+pretty much element by element.
+
+84
+00:05:26,360 --> 00:05:31,738
+Here, because I can write everything in
+terms of this mu vector and the
+
+85
+00:05:31,738 --> 00:05:37,820
+co-variance matrix, I can, i, it saves me
+a little bit of notation.
+
+86
+00:05:37,820 --> 00:05:40,040
+But you have to be careful about the
+dimension
+
+87
+00:05:40,040 --> 00:05:41,670
+of things to make sure that they add up.
+
+88
+00:05:41,670 --> 00:05:45,530
+So, this is a, a gradient of a function.
+
+89
+00:05:45,530 --> 00:05:49,860
+So the Lagrangian is a function of, so
+this
+
+90
+00:05:49,860 --> 00:05:51,750
+would be n plus 2 variables.
+
+91
+00:05:54,150 --> 00:05:55,780
+And it's a scalar valued function.
+
+92
+00:05:55,780 --> 00:06:00,378
+So when I take it's gradient, I'm going to
+get a row with n plus 2 elements.
+
+93
+00:06:00,378 --> 00:06:04,120
+So you want to make sure there's n plus 2
+elements over here.
+
+94
+00:06:06,040 --> 00:06:08,830
+So this will be the, the first portion of
+
+95
+00:06:08,830 --> 00:06:12,200
+the gradient, the second portion, and the
+third portion.
+
+96
+00:06:13,910 --> 00:06:15,690
+So what is the dimension of this?
+
+97
+00:06:15,690 --> 00:06:19,290
+Well, mu is a vector of expected
+
+98
+00:06:19,290 --> 00:06:22,509
+returns, and there's one expected return
+for each asset.
+
+99
+00:06:24,330 --> 00:06:28,490
+So mu transpose is just going to be a row
+vector of n elements.
+
+100
+00:06:29,950 --> 00:06:33,580
+Then I have lambda 1 is the scaler value
+to
+
+101
+00:06:33,580 --> 00:06:39,190
+e transpose, so e is a column vector of n
+ones.
+
+102
+00:06:39,190 --> 00:06:43,100
+So e transpose will be a row vector of n
+ones.
+
+103
+00:06:43,100 --> 00:06:44,510
+And when I multiply that by lambda
+
+104
+00:06:44,510 --> 00:06:47,910
+one, this thing that I have highlighted
+here, that's going to be a row
+
+105
+00:06:47,910 --> 00:06:52,030
+vector that just contains the value lambda
+1 n times in a row.
+
+106
+00:06:53,040 --> 00:06:56,970
+And so, since this is a row vector with n
+elements, and this
+
+107
+00:06:56,970 --> 00:07:00,180
+is a row vector with n elements, I can go
+ahead and add them.
+
+108
+00:07:00,180 --> 00:07:02,550
+And then I just need to make sure that the
+
+109
+00:07:02,550 --> 00:07:05,369
+last thing here is also a row vector with
+n elements.
+
+110
+00:07:06,710 --> 00:07:09,570
+So, 2 lambda 2, that's going to be a
+scalar
+
+111
+00:07:09,570 --> 00:07:11,730
+quantity, so I don't have to think about
+that.
+
+112
+00:07:13,000 --> 00:07:16,580
+Then I have w transpose sigma.
+
+113
+00:07:17,750 --> 00:07:21,960
+So w is a column vector with n elements.
+
+114
+00:07:21,960 --> 00:07:24,950
+So if I take its transpose, it's a row
+vector with n elements.
+
+115
+00:07:24,950 --> 00:07:30,080
+So its dimensions are 1 by n.
+And sigma is an n by
+
+116
+00:07:30,080 --> 00:07:35,462
+n co-variance matrix.
+So if I have a 1 times
+
+117
+00:07:35,462 --> 00:07:40,970
+x vector times and n by n matrix, that's
+going to give me a 1 by n output,
+
+118
+00:07:40,970 --> 00:07:47,190
+which is again a row vector of n elements.
+So I can sum up these three terms.
+
+119
+00:07:47,190 --> 00:07:50,620
+And that's going to give me a 1 row vector
+with n elements.
+
+120
+00:07:53,885 --> 00:07:59,750
+Then here for the second part of the
+gradient, I have e transpose w.
+
+121
+00:07:59,750 --> 00:08:01,360
+So that's just going to be a dot product.
+
+122
+00:08:01,360 --> 00:08:05,840
+This is a single row times a single
+column, so that's a scalar quantity.
+
+123
+00:08:05,840 --> 00:08:08,960
+And then when I subtract 1, that's also a
+scalar quantity.
+
+124
+00:08:08,960 --> 00:08:10,170
+So this is 1 by 1.
+
+125
+00:08:10,170 --> 00:08:10,670
+And
+
+126
+00:08:12,450 --> 00:08:15,020
+then w transpose w.
+
+127
+00:08:15,020 --> 00:08:19,070
+So, again, this is a bit tricky, but this
+w transpose is 1 by n.
+
+128
+00:08:20,080 --> 00:08:24,290
+Sigma is n by n.
+And w is n by 1.
+
+129
+00:08:24,290 --> 00:08:26,980
+So it's always the outer dimensions that
+are
+
+130
+00:08:26,980 --> 00:08:30,490
+going to determine the dimension of the,
+of the product.
+
+131
+00:08:30,490 --> 00:08:35,270
+So this starts with a 1, and this last w
+ends with a 1.
+
+132
+00:08:35,270 --> 00:08:37,570
+So this quantity that I have highlighted
+is
+
+133
+00:08:37,570 --> 00:08:40,840
+a 1 by 1 quantity.
+So that's just a scalar value.
+
+134
+00:08:40,840 --> 00:08:46,420
+And then sigma squared p is the risk of my
+portfolio that I'm stating.
+
+135
+00:08:46,420 --> 00:08:52,030
+So that's also a scalar value.
+So this final part of the gradient is
+
+136
+00:08:52,030 --> 00:08:57,400
+a scalar value.
+So my gradient is 1 by n plus 2, which
+
+137
+00:08:57,400 --> 00:09:02,720
+is exactly what I was shooting for,
+because I have n plus 2 values as inputs
+
+138
+00:09:02,720 --> 00:09:03,420
+for my function.
+
+139
+00:09:06,820 --> 00:09:09,660
+So, I want to solve to find the critical
+point again.
+
+140
+00:09:09,660 --> 00:09:14,680
+So I'm going to define my function G to be
+a function of w and lambda.
+
+141
+00:09:15,940 --> 00:09:18,070
+It's just going to be the transpose of
+
+142
+00:09:18,070 --> 00:09:21,670
+this function of the gradient of the
+Lagrangian.
+
+143
+00:09:21,670 --> 00:09:27,260
+And so I end up with this vector here that
+
+144
+00:09:27,260 --> 00:09:30,500
+I want to set equal to 0, but again, it's
+got,
+
+145
+00:09:32,710 --> 00:09:35,650
+it's got this quadratic form in it.
+
+146
+00:09:35,650 --> 00:09:39,550
+So it's not going to be something that I
+can just solve as a linear system.
+
+147
+00:09:39,550 --> 00:09:42,970
+So I need to, so it's going to be a
+nonlinear problem that I need to solve.
+
+148
+00:09:42,970 --> 00:09:45,420
+So I'm going to have to approach this with
+Newton's method again.
+
+149
+00:09:49,110 --> 00:09:52,600
+And so the first thing I'm going to need
+is this function G.
+
+150
+00:09:52,600 --> 00:09:54,600
+And then the second piece to, to be able
+to do
+
+151
+00:09:54,600 --> 00:09:57,670
+my Newton iterations is I need the
+gradient of this function G.
+
+152
+00:09:59,120 --> 00:10:02,980
+And so again, this is quite a bit easier
+to write down then the previous
+
+153
+00:10:02,980 --> 00:10:07,360
+example, because I, I know a little bit
+more about the form going on here.
+
+154
+00:10:07,360 --> 00:10:11,280
+So I can just take, the gradient of,
+
+155
+00:10:13,590 --> 00:10:18,570
+of this function is going to be the
+derivative of this with respect to w, then
+
+156
+00:10:18,570 --> 00:10:23,860
+mu 1, then mu 2, or sorry, w, and then
+lambda
+
+157
+00:10:23,860 --> 00:10:29,690
+1, then lambda 2.
+So if take the derivative,
+
+158
+00:10:29,690 --> 00:10:34,200
+mu is constant, so when I take this
+derivative with respect to w, I get zero.
+
+159
+00:10:34,200 --> 00:10:38,240
+There's no w here, so that also becomes
+zero.
+
+160
+00:10:38,240 --> 00:10:38,710
+But there is
+
+161
+00:10:38,710 --> 00:10:41,850
+a w here, and so it turns out that when
+you
+
+162
+00:10:41,850 --> 00:10:46,160
+take the derivative of this, this is
+actually a, a matrix product.
+
+163
+00:10:46,160 --> 00:10:46,690
+So this is
+
+164
+00:10:52,330 --> 00:10:58,890
+this is going to be so it has n pieces.
+So it has n rows and one column.
+
+165
+00:10:58,890 --> 00:11:02,810
+So, when I take the derivative of that,
+I'm going to end up getting a matrix.
+
+166
+00:11:04,250 --> 00:11:08,394
+So this quantity here is 2 times lambda 2
+times sigma.
+
+167
+00:11:09,580 --> 00:11:12,000
+So this has the same dimension as the
+matrix sigma,
+
+168
+00:11:12,000 --> 00:11:15,190
+so this upper left block is n by n matrix.
+
+169
+00:11:18,360 --> 00:11:20,230
+Then when I take the derivative of this
+with
+
+170
+00:11:20,230 --> 00:11:23,260
+respect to lambda 1, I'm just going to get
+e.
+
+171
+00:11:25,690 --> 00:11:27,420
+So that e is going to go here, except
+
+172
+00:11:27,420 --> 00:11:30,563
+remember e is this column vector of n
+ones.
+
+173
+00:11:31,810 --> 00:11:33,520
+So at least the dimensions match up.
+
+174
+00:11:33,520 --> 00:11:37,950
+This has n rows.
+This has n rows.
+
+175
+00:11:40,320 --> 00:11:43,980
+And then, we've also talked about taking
+the derivative of a quadratic form.
+
+176
+00:11:43,980 --> 00:11:49,390
+So the derivative of this is 2 times sigma
+times w.
+
+177
+00:11:53,810 --> 00:11:56,910
+So this is also going to be a quantity
+with n rows.
+
+178
+00:11:58,960 --> 00:12:03,190
+So this top row that I have written here,
+if I were actually to write
+
+179
+00:12:03,190 --> 00:12:08,889
+out every single element by itself, this
+would have n rows and n plus 2 columns.
+
+180
+00:12:11,930 --> 00:12:14,870
+So that when I take, oops, derivative of
+the second
+
+181
+00:12:14,870 --> 00:12:19,550
+line with respect to w, I just gave e
+transpose.
+
+182
+00:12:20,710 --> 00:12:24,630
+And since there's no lambdas anymore in
+here, the
+
+183
+00:12:24,630 --> 00:12:26,889
+bottom right block is always going to be
+zero.
+
+184
+00:12:28,340 --> 00:12:30,850
+And so then again at the bottom here, I
+
+185
+00:12:30,850 --> 00:12:38,198
+take the derivative of this quadratic form
+and that's what's
+
+186
+00:12:38,198 --> 00:12:41,260
+going in here.
+So, now I have
+
+187
+00:12:44,210 --> 00:12:45,642
+I now have the pieces I'm going to go
+
+188
+00:12:45,642 --> 00:12:48,000
+through the a, an example from the
+textbook now.
+
+189
+00:12:49,680 --> 00:12:56,654
+So they used five asset example with
+expected returns of 0.8
+
+190
+00:12:56,654 --> 00:13:03,830
+through 0.20, and the asset return
+co-variance matrix of this.
+
+191
+00:13:03,830 --> 00:13:10,090
+So, remember that these things are sort of
+on the order of mu squared.
+
+192
+00:13:10,090 --> 00:13:13,390
+So that's why these are going to be so
+much smaller than what's going on here.
+
+193
+00:13:16,290 --> 00:13:21,360
+And then the target risk was 25%, so the
+
+194
+00:13:21,360 --> 00:13:26,757
+sigma squared p is going to be 0.25
+squared, which is 0.0625.
+
+195
+00:13:31,930 --> 00:13:35,430
+So this was the definition of the function
+G of w and lambda.
+
+196
+00:13:37,280 --> 00:13:40,280
+And so, I can write an R function to
+compute this.
+
+197
+00:13:40,280 --> 00:13:45,900
+So again, I'm going to use this, vector x
+is going
+
+198
+00:13:45,900 --> 00:13:50,700
+to be w, and then the last two elements
+are going to be lambda 1 and lambda 2.
+
+199
+00:13:50,700 --> 00:13:57,230
+So x, if w has n elements, then x is going
+to have n plus
+
+200
+00:13:57,230 --> 00:13:58,030
+2 elements.
+
+201
+00:13:59,430 --> 00:14:04,190
+And now, instead of hard-coating the
+values for mu
+
+202
+00:14:04,190 --> 00:14:07,350
+and sigma into this function, I want to
+also make
+
+203
+00:14:07,350 --> 00:14:10,890
+them arguments to my function, so that if
+I
+
+204
+00:14:10,890 --> 00:14:13,610
+wanted to solve another problem with this
+same function.
+
+205
+00:14:13,610 --> 00:14:17,790
+Instead of having to rewrite the entire
+function, all I have to do is make
+
+206
+00:14:17,790 --> 00:14:22,570
+a new vector mu and a new matrix Sigma,
+and then I can just pass
+
+207
+00:14:22,570 --> 00:14:24,960
+those in as arguments as well.
+
+208
+00:14:24,960 --> 00:14:28,510
+And then I also need this sigma p2, which
+is, that just
+
+209
+00:14:28,510 --> 00:14:31,600
+this value here, which is the constraint
+on the risk of the portfolio.
+
+210
+00:14:36,050 --> 00:14:40,220
+And all I'm going to do is just evaluate,
+oops, I'm trying
+
+211
+00:14:40,220 --> 00:14:43,210
+to highlight the top line here, but it
+doesn't seem to be working.
+
+212
+00:14:44,910 --> 00:14:48,490
+I'm going to just evaluate these three
+pieces one at a
+
+213
+00:14:48,490 --> 00:14:53,110
+time and put them into a vector, and then
+return that.
+
+214
+00:14:53,110 --> 00:14:55,170
+So that's all the, the function G is going
+to
+
+215
+00:14:55,170 --> 00:14:58,420
+do, just return the vector value of this
+function G.
+
+216
+00:15:01,560 --> 00:15:08,872
+And so the first is just mu plus, this is
+just going to repeat lambda
+
+217
+00:15:08,872 --> 00:15:13,974
+1 n times, which is exactly what this
+second term in the first row is doing.
+
+218
+00:15:13,974 --> 00:15:20,210
+And then 2 times lambda 2 plus
+
+219
+00:15:20,210 --> 00:15:24,820
+sigma times w, so that's just what the
+third portion of the first line is doing.
+
+220
+00:15:26,190 --> 00:15:26,970
+E transpose
+
+221
+00:15:26,970 --> 00:15:30,140
+w, that just sums up the values of w.
+
+222
+00:15:30,140 --> 00:15:33,310
+So I'm just going to use R as sum function
+to do the same thing.
+
+223
+00:15:35,680 --> 00:15:39,520
+And then w transpose sigma w minus sigma
+squared p.
+
+224
+00:15:39,520 --> 00:15:46,140
+So there's w is the first n elements.
+So I guess I was a little bit sloppy here.
+
+225
+00:15:46,140 --> 00:15:48,990
+The five, I should have used an n, but
+because this is a
+
+226
+00:15:48,990 --> 00:15:52,190
+5 by 5 example, I had a 5 in here in the
+first place.
+
+227
+00:15:53,790 --> 00:16:01,120
+So I have w times, sorry, w transpose, so
+in R, this t function transposes.
+
+228
+00:16:02,130 --> 00:16:07,400
+So w transpose sigma w minus sigma squared
+p.
+
+229
+00:16:09,230 --> 00:16:12,086
+And ag, and I'm going to use the C
+function to
+
+230
+00:16:12,086 --> 00:16:15,080
+wrap all that up into a vector and return
+it.
+
+231
+00:16:17,930 --> 00:16:21,110
+Then similarly for the gradient, so this
+is again
+
+232
+00:16:21,110 --> 00:16:23,040
+going to be a little bit messier than the
+last one.
+
+233
+00:16:24,542 --> 00:16:27,890
+I'm going to use pretty much the same
+approach I used in the previous example.
+
+234
+00:16:27,890 --> 00:16:33,550
+So I'll make grad, which is a matrix of
+zeroes, has dimension n plus 2
+
+235
+00:16:33,550 --> 00:16:39,080
+by n plus 2.
+Then, in the top left n by n
+
+236
+00:16:39,080 --> 00:16:44,440
+block, I'm going to put 2 lambda 2 sigma.
+
+237
+00:16:44,440 --> 00:16:49,680
+So 2 lambda 2 is scalar.
+Sigma is an n by n matrix, so that's why I
+
+238
+00:16:49,680 --> 00:16:55,930
+have to assign it into an n by n block of
+this matrix grad.
+
+239
+00:16:56,960 --> 00:17:00,020
+And I just have 2 times lambda 2 times
+sigma.
+
+240
+00:17:02,530 --> 00:17:09,410
+Another nice feature of R is, if I assign
+a scalar value into a range in a vector.
+
+241
+00:17:09,410 --> 00:17:14,500
+So here I'm assigning the number 1 into
+columns, or into
+
+242
+00:17:14,500 --> 00:17:19,860
+rows 1 through n of column n plus 1.
+
+243
+00:17:19,860 --> 00:17:22,320
+So that's referring to this e up here.
+
+244
+00:17:23,800 --> 00:17:28,270
+It's just going to repeat that 1 enough
+times to fill up that range.
+
+245
+00:17:28,270 --> 00:17:32,930
+And so the same thing is going to happen
+for this e here when I run this command.
+
+246
+00:17:36,560 --> 00:17:42,770
+And then for rows 1 through n in column n
+plus 2, so that's describing this
+
+247
+00:17:42,770 --> 00:17:50,220
+portion over here.
+I just need to put 2 times sigma times w.
+
+248
+00:17:50,220 --> 00:17:55,700
+So, remember w is the first five elements
+of the input to this function.
+
+249
+00:17:56,860 --> 00:18:02,230
+And then again, I, I put mu, sigma, n, the
+constraint in here,
+
+250
+00:18:02,230 --> 00:18:04,612
+just so that I can change this anytime I,
+
+251
+00:18:04,612 --> 00:18:07,530
+when want to use it to solve a different
+problem.
+
+252
+00:18:07,530 --> 00:18:09,190
+So for a different mu and a different
+sigma.
+
+253
+00:18:10,691 --> 00:18:14,254
+And I guess this is a little bit
+overparameterized, since I
+
+254
+00:18:14,254 --> 00:18:17,620
+don't think mu and the constraint don't
+show up in here.
+
+255
+00:18:17,620 --> 00:18:20,719
+But I just wanted to use the same
+arguments as I had for the function G.
+
+256
+00:18:25,210 --> 00:18:29,030
+So then, the Newton, so once I'm the bulk
+of the work was
+
+257
+00:18:29,030 --> 00:18:32,610
+getting these two functions to make the,
+to compute the gradient of the function.
+
+258
+00:18:32,610 --> 00:18:36,630
+Once I've done that, I can just assign
+myself a starting point.
+
+259
+00:18:36,630 --> 00:18:41,710
+So I'm going to use 1 half repeated 5
+times, so this is going to
+
+260
+00:18:41,710 --> 00:18:45,282
+make a vector just 1 half, 1 half, 1 half,
+1 half, 1 half.
+
+261
+00:18:45,282 --> 00:18:48,400
+Then I'm going to put a 1 and a 1 at the
+end of it.
+
+262
+00:18:48,400 --> 00:18:50,700
+So my starting point is 1 half for
+
+263
+00:18:50,700 --> 00:18:56,300
+x, or for w1 through w5, which, I don't
+know how much sense that makes, because
+
+264
+00:18:56,300 --> 00:19:00,290
+the one thing I do know about the w's is
+that they should sum up to 1.
+
+265
+00:19:00,290 --> 00:19:01,350
+But at least it works.
+
+266
+00:19:03,240 --> 00:19:06,010
+and then I'm using values of 1 as
+
+267
+00:19:06,010 --> 00:19:09,150
+a starting point for the two Lagrange
+multipliers.
+
+268
+00:19:09,150 --> 00:19:10,810
+So that looks like this.
+
+269
+00:19:12,880 --> 00:19:17,570
+My Newton iterations, again, it's, this
+part's almost always going to be the same.
+
+270
+00:19:17,570 --> 00:19:20,900
+I just, I compute my gradient and I
+compute my
+
+271
+00:19:20,900 --> 00:19:24,970
+function, and then I just need to solve
+that linear system.
+
+272
+00:19:24,970 --> 00:19:28,230
+And then I use that to update x.
+
+273
+00:19:28,230 --> 00:19:32,840
+So I'm writing the updated x in the same
+piece of memory as x had.
+
+274
+00:19:32,840 --> 00:19:35,329
+And I'm going to repeat that 25 times.
+
+275
+00:19:38,360 --> 00:19:40,740
+And that gives me this computed solution
+here.
+
+276
+00:19:40,740 --> 00:19:43,910
+So I couldn't quite fit the whole w vector
+on the
+
+277
+00:19:43,910 --> 00:19:49,350
+first line, so this first five parts
+corresponds to w1 through w5.
+
+278
+00:19:49,350 --> 00:19:53,150
+The portfolio weights, or the asset
+weights within the portfolio.
+
+279
+00:19:55,400 --> 00:20:00,710
+Then this is the first Lagrange multiplier
+and the second Lagrange multiplier.
+
+280
+00:20:00,710 --> 00:20:04,270
+And then I'll do the same thing I did last
+time
+
+281
+00:20:04,270 --> 00:20:07,670
+to try and classify this as a minimum or a
+maximum.
+
+282
+00:20:07,670 --> 00:20:10,530
+So, one of the nice properties about the
+
+283
+00:20:10,530 --> 00:20:12,930
+minimum variance portfolio is because I
+had to
+
+284
+00:20:12,930 --> 00:20:14,740
+solve a linear system to get the critical
+
+285
+00:20:14,740 --> 00:20:18,060
+point, I know there's only one critical
+point.
+
+286
+00:20:18,060 --> 00:20:19,750
+Here, I'm not certain if,
+
+287
+00:20:21,140 --> 00:20:22,450
+what critical point I got.
+
+288
+00:20:22,450 --> 00:20:23,750
+If you know a little bit more about
+
+289
+00:20:23,750 --> 00:20:27,450
+the problem, there should actually be two
+critical points.
+
+290
+00:20:27,450 --> 00:20:32,160
+And it turns out that one of them
+corresponds to the portfolio you want, and
+
+291
+00:20:32,160 --> 00:20:34,650
+the other one corresponds to the absolute
+worst
+
+292
+00:20:34,650 --> 00:20:37,300
+portfolio you can get according to your
+constraint.
+
+293
+00:20:37,300 --> 00:20:39,580
+So it is important in this one to be able
+
+294
+00:20:39,580 --> 00:20:42,990
+to classify the point you found as the
+actual maximum.
+
+295
+00:20:46,030 --> 00:20:49,960
+So, we'll go back and look at the, the
+upper left n by n block
+
+296
+00:20:54,010 --> 00:20:56,500
+of the gradient of the function G.
+
+297
+00:20:56,500 --> 00:20:58,160
+So this is actually just going to be the
+
+298
+00:20:58,160 --> 00:21:01,180
+transpose of the Hessian of this function
+of
+
+299
+00:21:01,180 --> 00:21:07,680
+the, of the Lagrangian, so F, except when
+I plug in the computed values lambda c.
+
+300
+00:21:07,680 --> 00:21:07,680
+>>
+
+301
+00:21:07,680 --> 00:21:13,814
+[INAUDIBLE]
+
+302
+00:21:13,814 --> 00:21:18,550
+>> No, you can actually do that.
+
+303
+00:21:18,550 --> 00:21:21,720
+So what that corresponds to is something
+called a short sale.
+
+304
+00:21:21,720 --> 00:21:26,770
+So what I do is, I pretend like I don't
+have any shares of Starbucks.
+
+305
+00:21:26,770 --> 00:21:30,630
+But I borrow some shares of Starbucks from
+some guy who does
+
+306
+00:21:30,630 --> 00:21:33,780
+and I give, I sell them to you, so you
+give me money.
+
+307
+00:21:33,780 --> 00:21:35,640
+And then, yeah, so there's, a negative
+
+308
+00:21:35,640 --> 00:21:37,720
+weight means I owe that guy some
+Starbucks.
+
+309
+00:21:38,960 --> 00:21:39,640
+Yeah,
+
+310
+00:21:39,640 --> 00:21:42,770
+and I have to buy that back in the future
+to give it back to him.
+
+311
+00:21:43,910 --> 00:21:45,230
+So you can actually do that.
+
+312
+00:21:48,200 --> 00:21:51,150
+Yeah, the problem gets to be a bit more
+complicated if you put,
+
+313
+00:21:51,150 --> 00:21:54,860
+if you start putting extra constraints on
+it like w's have to be positive.
+
+314
+00:21:54,860 --> 00:21:58,820
+So, which can be solved, but not in the
+very
+
+315
+00:21:58,820 --> 00:22:01,595
+first math class that looks at that sort
+of thing.
+
+316
+00:22:01,595 --> 00:22:04,360
+[COUGH]
+
+317
+00:22:04,360 --> 00:22:07,580
+Whoops.
+So this this is the matrix.
+
+318
+00:22:07,580 --> 00:22:13,310
+So last time, I, I set up the problem, or
+not, not me, but Dan Stefanica, who is
+
+319
+00:22:13,310 --> 00:22:15,240
+the author of the course textbook, set up
+the
+
+320
+00:22:15,240 --> 00:22:19,020
+problem so that this matrix was diagonal
+no matter what.
+
+321
+00:22:19,020 --> 00:22:25,130
+So, he set up the Lagrange the Lagrange,
+the Lagrangian,
+
+322
+00:22:25,130 --> 00:22:30,190
+so that the off diagonal element elements
+were always going to be zero.
+
+323
+00:22:30,190 --> 00:22:32,840
+Here that's clearly not the case.
+
+324
+00:22:32,840 --> 00:22:36,120
+So, since the, the matrix isn't a diagonal
+form,
+
+325
+00:22:36,120 --> 00:22:39,340
+you need to compute the eigenvalues of
+this matrix.
+
+326
+00:22:40,530 --> 00:22:43,770
+And the computed points, so w sub c, it'll
+
+327
+00:22:43,770 --> 00:22:48,735
+correspond to a maximum if this matrix is
+negative definite.
+
+328
+00:22:48,735 --> 00:22:52,950
+And it'll correspond to a minimum if this
+matrix is positive definite.
+
+329
+00:22:52,950 --> 00:22:55,400
+And so, the way we can check that, because
+this is just
+
+330
+00:22:55,400 --> 00:23:00,620
+a matrix, it's just numbers, I can just
+compute the eigenvalues of that.
+
+331
+00:23:00,620 --> 00:23:04,689
+So I use eigen to calculate the
+eigenvalues.
+
+332
+00:23:07,420 --> 00:23:09,680
+This is just the code to generate this
+
+333
+00:23:09,680 --> 00:23:12,790
+matrix here, and then the dollar sign says
+it.
+
+334
+00:23:12,790 --> 00:23:15,470
+So the eigenfunction will also give me the
+eigenvectors,
+
+335
+00:23:15,470 --> 00:23:17,930
+but I'm not really interested in that
+right now.
+
+336
+00:23:19,200 --> 00:23:22,340
+So, if I take just the values out of this
+function, I
+
+337
+00:23:22,340 --> 00:23:26,210
+get this vector of five values and they're
+all less than zero.
+
+338
+00:23:26,210 --> 00:23:28,880
+So that tells me that this matrix is
+negative definite.
+
+339
+00:23:29,910 --> 00:23:32,890
+And that tells me that the computed point,
+x subs er,
+
+340
+00:23:32,890 --> 00:23:35,890
+in this case w sub c, corresponds
+
+341
+00:23:35,890 --> 00:23:39,380
+to a constrained maximum of the objective
+function.
+
+342
+00:23:42,020 --> 00:23:45,420
+And then finally, I can find the computed
+w.
+
+343
+00:23:45,420 --> 00:23:49,340
+So that's 0.199.
+
+344
+00:23:49,340 --> 00:23:54,800
+And so this is the maximum that I can make
+the expected return for my portfolio,
+
+345
+00:23:54,800 --> 00:24:00,171
+subject to having a risk of 0.25 squared.
+
+346
+00:24:03,730 --> 00:24:05,040
+Okay.
+So that's all I have.
+
+347
+00:24:05,040 --> 00:24:05,160
+Oh.
+
+348
+00:24:05,160 --> 00:24:05,700
+Okay.
+Yeah.
+
+349
+00:24:05,700 --> 00:24:11,210
+>> How did you know.
+You did 25 iterations, so how
+
+350
+00:24:11,210 --> 00:24:17,010
+do you know that you actually have a
+typical value after 25 iterations?
+
+351
+00:24:17,010 --> 00:24:21,800
+>> Yeah, just to make this stuff fit on
+the slide, I just, I did that.
+
+352
+00:24:21,800 --> 00:24:23,370
+Really, what you should do,
+
+353
+00:24:25,750 --> 00:24:26,869
+so remember, this was
+
+354
+00:24:29,540 --> 00:24:31,080
+in the section on
+
+355
+00:24:33,370 --> 00:24:38,040
+on doing Newton's method with vector
+valued functions.
+
+356
+00:24:40,050 --> 00:24:42,000
+This is sort of my update.
+
+357
+00:24:42,000 --> 00:24:44,760
+And so what happens is the you know, if it
+
+358
+00:24:44,760 --> 00:24:47,670
+works, it's supposed to be converging to a
+certain value.
+
+359
+00:24:47,670 --> 00:24:50,590
+So converging means that my current
+estimate is
+
+360
+00:24:50,590 --> 00:24:53,170
+close to the thing that I'm trying to get.
+
+361
+00:24:53,170 --> 00:24:57,890
+And so when I'm in that situation, if I
+update, I shouldn't move too much.
+
+362
+00:24:59,500 --> 00:25:03,840
+And so, what you can do, is you can
+monitor the norm of this vector.
+
+363
+00:25:03,840 --> 00:25:05,400
+And when that gets below a certain
+
+364
+00:25:05,400 --> 00:25:09,810
+level, and usually you want to do it
+relative to the size of x,
+
+365
+00:25:09,810 --> 00:25:14,110
+so you could the norm of this vector
+divided by the norm of x.
+
+366
+00:25:14,110 --> 00:25:17,550
+When that's less than say one in a
+million, then you just say
+
+367
+00:25:17,550 --> 00:25:21,900
+that this point is so close to x that I'm
+going to stop.
+
+368
+00:25:22,960 --> 00:25:25,180
+So you need, you need to kind of think
+about it a little bit.
+
+369
+00:25:25,180 --> 00:25:28,140
+But essentially you, you want to define a
+value
+
+370
+00:25:28,140 --> 00:25:31,080
+somehow, of what it means to be close
+enough
+
+371
+00:25:31,080 --> 00:25:33,080
+to the thing you're trying to get.
+
+372
+00:25:33,080 --> 00:25:35,300
+And then you just watch as you're going
+along.
+
+373
+00:25:35,300 --> 00:25:39,300
+And when you hit that then you stop.
+
+374
+00:25:39,300 --> 00:25:40,660
+But, like I said, you know,
+
+375
+00:25:40,660 --> 00:25:44,260
+Newton's method isn't really guaranteed to
+converge.
+
+376
+00:25:44,260 --> 00:25:50,570
+So, it's also good to have something like
+this, like you go 50 times until you stop.
+
+377
+00:25:50,570 --> 00:25:53,570
+So you'll either stop or you'll hit 50.
+
+378
+00:25:53,570 --> 00:25:56,530
+But if you don't put a maximum number of
+times and
+
+379
+00:25:56,530 --> 00:25:59,890
+it doesn't converge, you know, it's just
+going to keep going and going and going.
+

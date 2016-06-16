@@ -1,0 +1,1239 @@
+1
+00:00:01,120 --> 00:00:04,730
+The last topic for today is Solving Least
+Squares Problems.
+
+2
+00:00:08,080 --> 00:00:13,000
+So the, problem i'm going to look at is i
+have a data set.
+
+3
+00:00:13,000 --> 00:00:17,738
+So in this case i took some sort of market
+returns,
+
+4
+00:00:17,738 --> 00:00:23,650
+so S&P 500 returns and i've plotted them
+on the X axis.
+
+5
+00:00:23,650 --> 00:00:28,870
+And then i've taken the returns for one,
+oops, one specific asset.
+
+6
+00:00:28,870 --> 00:00:33,226
+So it's going to be shares of Citigroup,
+and i've plotted those on the Y axis and
+
+7
+00:00:33,226 --> 00:00:35,110
+so those are the black dots here.
+
+8
+00:00:37,060 --> 00:00:39,860
+And what you want to do is, or that what
+the goal of
+
+9
+00:00:39,860 --> 00:00:43,420
+this is, is i want to find the best fit
+line here.
+
+10
+00:00:43,420 --> 00:00:45,400
+And the slope of that best fit line is
+
+11
+00:00:45,400 --> 00:00:48,460
+going to be called the beta for this
+particular asset.
+
+12
+00:00:48,460 --> 00:00:51,010
+So it's a, a way of relating the returns
+
+13
+00:00:51,010 --> 00:00:54,400
+on one particular asset to the returns in
+the market.
+
+14
+00:00:58,280 --> 00:01:00,326
+And so what i've drawn here with the red
+
+15
+00:01:00,326 --> 00:01:02,992
+line, it's hopefully you look at that and
+realize
+
+16
+00:01:02,992 --> 00:01:07,220
+the red line is probably not the best fit
+because most of the data is up above it.
+
+17
+00:01:09,040 --> 00:01:11,667
+So this is just my guess at a best fit
+line, so
+
+18
+00:01:11,667 --> 00:01:14,800
+i just wrote a line, that's suppose to be
+a y tilda.
+
+19
+00:01:15,800 --> 00:01:19,690
+Is equal to alpha plus beta times x.
+
+20
+00:01:19,690 --> 00:01:23,434
+And what i want to do is i want to find an
+alpha, and i'm going to call
+
+21
+00:01:23,434 --> 00:01:24,780
+it an alpha hat.
+
+22
+00:01:24,780 --> 00:01:27,580
+And a beta hat that give me the line
+
+23
+00:01:27,580 --> 00:01:32,180
+that's somehow closest, to all of these
+black dots.
+
+24
+00:01:35,530 --> 00:01:38,050
+So in general, what i'm going to, how i'm
+
+25
+00:01:38,050 --> 00:01:41,146
+going to approach this, is i'm going to
+think that i'm
+
+26
+00:01:41,146 --> 00:01:43,450
+going to have a set of M points, so, xi,
+
+27
+00:01:43,450 --> 00:01:46,190
+yi so, each dot here just the X
+coordinates.
+
+28
+00:01:46,190 --> 00:01:49,550
+Suppose this dot up here was the fifth
+point then,
+
+29
+00:01:49,550 --> 00:01:53,050
+X 5 would be the X coordinate of this dot.
+
+30
+00:01:53,050 --> 00:01:55,570
+Y 5 would be the Y coordinate of that dot
+so
+
+31
+00:01:55,570 --> 00:01:58,630
+i have this set of m points so there's m
+dots here.
+
+32
+00:01:59,820 --> 00:02:00,820
+Since these
+
+33
+00:02:00,820 --> 00:02:07,850
+are monthly returns from 2010 there will
+be 12 dots so m will be equal to 12.
+
+34
+00:02:07,850 --> 00:02:11,220
+And i want to find this best fit line.
+
+35
+00:02:11,220 --> 00:02:14,560
+Y hat is equal to alpha hat plus beta hat
+x.
+
+36
+00:02:16,740 --> 00:02:23,842
+And my Criterion is what i'm gone, i'm
+going to define this yi hat to be the
+
+37
+00:02:23,842 --> 00:02:30,710
+value on the, on the line at the same
+value x as each one of these data points.
+
+38
+00:02:30,710 --> 00:02:35,895
+So what i end up, if i look at the one on
+the right here, i'm taking not the
+
+39
+00:02:35,895 --> 00:02:42,015
+perpendicular distance to the line but the
+vertical distance to the line, so that's
+
+40
+00:02:42,015 --> 00:02:46,095
+just going to be yi minus y hat, so the
+actual point, this
+
+41
+00:02:46,095 --> 00:02:50,860
+black dot, minus the point on the line at
+the same x coordinate.
+
+42
+00:02:50,860 --> 00:02:53,180
+So that would be this red dot here.
+
+43
+00:02:53,180 --> 00:02:56,466
+And i'm going to take that difference, and
+because that could be
+
+44
+00:02:56,466 --> 00:03:00,248
+positive or negative, i'm going to square
+that to get something only
+
+45
+00:03:00,248 --> 00:03:02,604
+positive, and then what i want to do is i
+want to
+
+46
+00:03:02,604 --> 00:03:06,076
+choose the line that's going to make that
+square, that squares is
+
+47
+00:03:06,076 --> 00:03:06,634
+[INAUDIBLE]
+
+48
+00:03:06,634 --> 00:03:10,430
+small, so i'm going to sum up all those
+deviations.
+
+49
+00:03:10,430 --> 00:03:12,670
+That's going to give me some positive
+number.
+
+50
+00:03:12,670 --> 00:03:14,154
+And i want to chose the line that's
+
+51
+00:03:14,154 --> 00:03:16,170
+going to make that number as small as
+possible.
+
+52
+00:03:17,390 --> 00:03:20,020
+So i want to minimize this sum of squares.
+
+53
+00:03:22,990 --> 00:03:26,030
+And so the points on the red line here,
+
+54
+00:03:26,030 --> 00:03:30,310
+i can write those as alpha plus beta times
+xi.
+
+55
+00:03:30,310 --> 00:03:34,480
+So for, for any x, the point on the line
+is just given by this.
+
+56
+00:03:34,480 --> 00:03:40,090
+And so, i'm going to replace this y hat
+with a formula that gives me y hat.
+
+57
+00:03:44,420 --> 00:03:47,346
+And i'm going to look for values, alpha
+hat and
+
+58
+00:03:47,346 --> 00:03:49,733
+beta hat, so that when i plug in alpha
+
+59
+00:03:49,733 --> 00:03:52,351
+hat for alpha and beta hat for beta, this
+
+60
+00:03:52,351 --> 00:03:55,160
+sum is the smallest i can possibly make
+it.
+
+61
+00:04:01,120 --> 00:04:04,120
+So that's kind of the, the graph picture.
+
+62
+00:04:04,120 --> 00:04:09,270
+And now i want to see if i can set this up
+as a matrix problem.
+
+63
+00:04:09,270 --> 00:04:14,758
+So i'm going to call that, i'll call this
+the row picture, because
+
+64
+00:04:14,758 --> 00:04:19,658
+i, each of of these points is sort of
+described by xi yi, and
+
+65
+00:04:19,658 --> 00:04:24,980
+so if i think of xi yi as rows, i can draw
+the points like that.
+
+66
+00:04:24,980 --> 00:04:26,240
+for solving it, it turns
+
+67
+00:04:26,240 --> 00:04:28,880
+out to be useful to write this in the
+column picture.
+
+68
+00:04:30,360 --> 00:04:36,870
+So i'm going to take my y values, y1 up to
+ym, and i'm going to call that a vector y.
+
+69
+00:04:36,870 --> 00:04:38,960
+Do the same thing to get a vector x.
+
+70
+00:04:38,960 --> 00:04:42,510
+So x is just the vector of all the x
+values.
+
+71
+00:04:42,510 --> 00:04:45,590
+And then i'll let e be a column vector of
+m ones again.
+
+72
+00:04:48,070 --> 00:04:51,610
+And so what i end up is i can write y
+tilde.
+
+73
+00:04:51,610 --> 00:04:54,650
+So these are, these are the points on the
+line, now.
+
+74
+00:04:56,940 --> 00:04:59,985
+I can write that as a linear combination
+of
+
+75
+00:04:59,985 --> 00:05:03,520
+my vector of ones, and my vector of x's.
+
+76
+00:05:03,520 --> 00:05:06,919
+So i have y1 is equal to, so alpha times
+
+77
+00:05:06,919 --> 00:05:11,800
+one, so y1 is equal to alpha plus beta
+times x1.
+
+78
+00:05:11,800 --> 00:05:13,186
+And that holds for each row
+
+79
+00:05:13,186 --> 00:05:13,686
+[SOUND].
+
+80
+00:05:14,720 --> 00:05:17,870
+So instead of thinking of it as rows i can
+now think of it
+
+81
+00:05:17,870 --> 00:05:22,450
+as this linear combination of this column
+of ones and the, and the vector X.
+
+82
+00:05:25,370 --> 00:05:30,938
+And then i could put those two vectors
+together into a matrix and express this
+
+83
+00:05:30,938 --> 00:05:36,357
+vector y tilde.
+As this matrix with one column of
+
+84
+00:05:36,357 --> 00:05:41,970
+ones and one column being my vector x
+times the vector alpha beta.
+
+85
+00:05:41,970 --> 00:05:45,578
+And then i'm going to do a terrible abuse
+of notation
+
+86
+00:05:45,578 --> 00:05:50,040
+and refer to this vector alpha beta also
+as just beta.
+
+87
+00:05:50,040 --> 00:05:57,543
+So, when beta is a vector quantity it
+means this vector alpha beta, when
+
+88
+00:05:57,543 --> 00:06:04,634
+it's a scalar quantity it means this
+second element of alpha beta.
+
+89
+00:06:04,634 --> 00:06:10,094
+And now remember i want to minimize, so
+this is the distance between the, actually
+
+90
+00:06:10,094 --> 00:06:15,130
+the vertical distance between the actual
+point and the point on the line.
+
+91
+00:06:15,130 --> 00:06:21,010
+So the y tilda over here is the point on
+the line and the yi is the actual point.
+
+92
+00:06:21,010 --> 00:06:23,560
+I'm going to take that distance and square
+it.
+
+93
+00:06:23,560 --> 00:06:24,350
+And sum it up.
+
+94
+00:06:24,350 --> 00:06:28,000
+And that's going to give me the criterion
+of the thing that i want to minimize.
+
+95
+00:06:31,800 --> 00:06:35,380
+But that's actually just the distance
+between these two.
+
+96
+00:06:35,380 --> 00:06:38,210
+That's the definition of the distance
+between two vectors.
+
+97
+00:06:40,000 --> 00:06:41,680
+So if it had a square root here, it
+
+98
+00:06:41,680 --> 00:06:45,360
+would actually be the distance between y
+and y tilde.
+
+99
+00:06:45,360 --> 00:06:48,791
+So without the square root, is the squared
+length of the
+
+100
+00:06:48,791 --> 00:06:51,729
+vector that i get when i subtract y tilde
+from y.
+
+101
+00:06:55,340 --> 00:07:01,720
+And then remember i can write y tilde, so
+what i've just done up here as x beta.
+
+102
+00:07:04,850 --> 00:07:06,260
+Oops.
+
+103
+00:07:06,260 --> 00:07:08,890
+So this is the, the problem i want to look
+at now.
+
+104
+00:07:08,890 --> 00:07:10,480
+So the y is given.
+
+105
+00:07:10,480 --> 00:07:13,130
+I know what those, the y values of my
+points are.
+
+106
+00:07:14,180 --> 00:07:15,810
+The X is given.
+
+107
+00:07:17,000 --> 00:07:19,910
+I know what the first column is, cause
+that's always ones.
+
+108
+00:07:19,910 --> 00:07:23,390
+I know what the second column in, that's
+the X values from my points.
+
+109
+00:07:24,590 --> 00:07:26,760
+And i want to choose beta, so i want to
+
+110
+00:07:26,760 --> 00:07:29,910
+choose values of alpha and beta, to make
+the length of
+
+111
+00:07:29,910 --> 00:07:31,959
+this vector as short as possible.
+
+112
+00:07:36,140 --> 00:07:40,210
+So i'm going to use something called a QR
+Factorization to help me do this.
+
+113
+00:07:40,210 --> 00:07:46,798
+And so if A is an m by n matrix with
+linearly independent columns,
+
+114
+00:07:46,798 --> 00:07:53,264
+a full QR factorization of a, is just
+going to be a product of an m by
+
+115
+00:07:53,264 --> 00:07:59,620
+m orthogonal matrix Q and an m by n upper
+triangular matrix R.
+
+116
+00:08:01,120 --> 00:08:06,108
+And so remember when i have more rows than
+i have columns, it's still
+
+117
+00:08:06,108 --> 00:08:11,096
+just the, you know, 1 1, 2 2, 3 3 elements
+that are non-zero
+
+118
+00:08:11,096 --> 00:08:16,160
+and everything where i is not equal to j
+and this matrix r has to be 0.
+
+119
+00:08:18,890 --> 00:08:22,370
+And my factorization will then be A equals
+QR.
+
+120
+00:08:23,380 --> 00:08:27,950
+So Q is orthogonal, R is upper triangular.
+
+121
+00:08:27,950 --> 00:08:34,250
+And it turns out that while i am in this
+most of the time works and in fact if you
+
+122
+00:08:34,250 --> 00:08:40,565
+allow some of the diagonal elements of r
+to be 0 it always works.
+
+123
+00:08:40,565 --> 00:08:41,125
+[COUGH]
+
+124
+00:08:41,125 --> 00:08:45,045
+And now i want to minimize, so this is
+from
+
+125
+00:08:45,045 --> 00:08:49,804
+the last slide, i want to minimize y minus
+x beta.
+
+126
+00:08:49,804 --> 00:08:53,368
+So i want to choose the elements of beta
+to
+
+127
+00:08:53,368 --> 00:08:58,500
+make this length, this vector, as short as
+possible.
+
+128
+00:09:00,610 --> 00:09:06,200
+And so the standard rule that i have is
+when i can factor a matrix, i'm going to
+
+129
+00:09:06,200 --> 00:09:09,382
+put my factorization of the matrix in
+where i
+
+130
+00:09:09,382 --> 00:09:13,260
+used to have the matrix, so i'll replace
+x.
+
+131
+00:09:13,260 --> 00:09:19,110
+So here q r is a q r factorization of this
+matrix x.
+
+132
+00:09:19,110 --> 00:09:26,121
+So i'll replace x with q r, and its a
+little tricky to see how that's
+
+133
+00:09:26,121 --> 00:09:31,656
+going to help us right now, but we have to
+remember one
+
+134
+00:09:31,656 --> 00:09:36,566
+other thing so q is m by m r is m by n.
+And
+
+135
+00:09:36,566 --> 00:09:41,770
+then beta is n by 1.
+So in this case, q is 12 by 12.
+
+136
+00:09:41,770 --> 00:09:46,390
+So for my, my example that i'm working on,
+i have 12 data points.
+
+137
+00:09:46,390 --> 00:09:48,370
+So q is 12 by 12.
+
+138
+00:09:48,370 --> 00:09:51,060
+R is 12 by 2.
+
+139
+00:09:51,060 --> 00:09:56,410
+And beta was alpha beta, so 2 by 1.
+So the whole product is going to be 12 by
+
+140
+00:09:56,410 --> 00:10:02,110
+1, because the first, the first dimension
+is a 12 and the last dimension is a 1.
+
+141
+00:10:02,110 --> 00:10:05,270
+So this is just a vector.
+Y is a vector.
+
+142
+00:10:05,270 --> 00:10:08,870
+So when i do this subtraction, this is
+still just a vector.
+
+143
+00:10:08,870 --> 00:10:11,112
+And what happens when i multiply a vector
+by an
+
+144
+00:10:11,112 --> 00:10:14,440
+orthogonal matrix, or what happens to the
+length of that vector.
+
+145
+00:10:15,610 --> 00:10:16,114
+One of the
+
+146
+00:10:16,114 --> 00:10:20,390
+really nice properties of an orthogonal
+matrix is that lengths stays the same.
+
+147
+00:10:22,010 --> 00:10:27,218
+So the matrix i'm going to choose to
+multiply this
+
+148
+00:10:27,218 --> 00:10:32,674
+is going to be Q transpose so, if i have y
+is equal to qr
+
+149
+00:10:32,674 --> 00:10:38,760
+beta, so this thing that i just argued was
+a vector.
+
+150
+00:10:38,760 --> 00:10:41,172
+Q transposed is just going to be some sort
+of
+
+151
+00:10:41,172 --> 00:10:43,919
+high dimensional rotation of that vector,
+that
+
+152
+00:10:43,919 --> 00:10:47,380
+leaves the length of the vector unchanged.
+
+153
+00:10:47,380 --> 00:10:50,450
+But now, i can use the left distributive
+property here.
+
+154
+00:10:50,450 --> 00:10:57,552
+So i can write this as Q transpose y minus
+Q transpose QR beta, which is just going
+
+155
+00:10:57,552 --> 00:11:00,944
+to be Q transpose y, so this is another
+
+156
+00:11:00,944 --> 00:11:05,890
+vector with 12 elements in it, minus r
+beta.
+
+157
+00:11:05,890 --> 00:11:06,220
+And r,
+
+158
+00:11:06,220 --> 00:11:10,915
+remember, is now this matrix.
+So in my case it was 12 by 2, and only the
+
+159
+00:11:10,915 --> 00:11:17,410
+upper triangular bit can be non-zero.
+So it has three non-zero elements in it.
+
+160
+00:11:17,410 --> 00:11:20,390
+And it has 21 zeros in it.
+
+161
+00:11:20,390 --> 00:11:22,819
+So this is actually a pretty easy thing to
+deal with.
+
+162
+00:11:27,400 --> 00:11:30,643
+So, now what i'm going to do just so i
+don't have to keep
+
+163
+00:11:30,643 --> 00:11:34,970
+writing Q transpose y all the time, i'm
+going to let u equal transpose y.
+
+164
+00:11:34,970 --> 00:11:37,620
+So this is just the rotation of my y
+vector.
+
+165
+00:11:38,740 --> 00:11:41,310
+So it's still just a vector with 12
+elements in it.
+
+166
+00:11:43,720 --> 00:11:46,160
+And it's going to, the picture's going to
+look like this.
+
+167
+00:11:46,160 --> 00:11:48,550
+So i have u minus r beta.
+
+168
+00:11:48,550 --> 00:11:52,654
+It's going to be u1, u2, u3 minus r and
+
+169
+00:11:52,654 --> 00:11:57,160
+then my vector of beta i can write out
+again.
+
+170
+00:11:57,160 --> 00:11:58,868
+So it's scaler alpha in the first
+
+171
+00:11:58,868 --> 00:12:02,370
+position, scaler beta in the second
+position.
+
+172
+00:12:02,370 --> 00:12:05,370
+And then i can go ahead and just do the
+math here,
+
+173
+00:12:05,370 --> 00:12:09,345
+so i have the first element, so i, i can
+do this multiplication
+
+174
+00:12:09,345 --> 00:12:14,535
+here and then do the subtraction.
+So here i'm going to
+
+175
+00:12:14,535 --> 00:12:19,680
+r 11 times alpha plus r 12 times beta and
+then i'm going to
+
+176
+00:12:19,680 --> 00:12:24,615
+subtract that from u 1, so in the answer i
+have u 1 minus
+
+177
+00:12:24,615 --> 00:12:29,626
+r 11 alpha plus r 12 beta.
+In the second
+
+178
+00:12:29,626 --> 00:12:34,920
+position, i'm going to have u 2 minus 0
+times alpha, minus r 22 beta.
+
+179
+00:12:34,920 --> 00:12:40,620
+So i, in the answer over here, i get u 2
+minus r 22 beta.
+
+180
+00:12:42,220 --> 00:12:45,300
+And then, for every other element here,
+i'm going
+
+181
+00:12:45,300 --> 00:12:48,330
+to have 0 times alpha plus 0 times beta.
+
+182
+00:12:48,330 --> 00:12:50,700
+So the rest of u stays unchanged.
+
+183
+00:12:55,160 --> 00:12:58,870
+So alpha and beta affect only the first n
+elements.
+
+184
+00:12:58,870 --> 00:13:01,150
+So in this particular case, n is 2.
+
+185
+00:13:01,150 --> 00:13:07,598
+So, they only effect the first two
+elements of this vector u minus R beta,
+
+186
+00:13:07,598 --> 00:13:08,118
+[COUGH]
+
+187
+00:13:08,118 --> 00:13:14,084
+and remember i am trying to minimize this
+thing u minus R beta and so.
+
+188
+00:13:14,084 --> 00:13:19,184
+What do i mean when i write the length of
+a vector, well i mean
+
+189
+00:13:19,184 --> 00:13:24,210
+the first thing squared, plus the second
+thing squared.
+
+190
+00:13:24,210 --> 00:13:26,260
+So this is the, sorry, the squared length
+of the
+
+191
+00:13:26,260 --> 00:13:29,470
+vectors is just the length without the
+square root symbol.
+
+192
+00:13:29,470 --> 00:13:33,380
+So that's going to be u 1 squared plus u 2
+squared plus
+
+193
+00:13:33,380 --> 00:13:37,743
+u 3 squared.
+So the length of this vector over here is
+
+194
+00:13:37,743 --> 00:13:46,000
+going to be this thing squared so that's
+what i've written here, plus this squared.
+
+195
+00:13:46,000 --> 00:13:51,410
+That's what i've written here, plus u 3
+squared, plus u 4 squared.
+
+196
+00:13:51,410 --> 00:13:52,910
+So plus everything else squared.
+
+197
+00:13:54,180 --> 00:13:58,401
+But the only thing here if, if i look at
+this closely, the, i can now by choosing
+
+198
+00:13:58,401 --> 00:13:59,345
+alpha and beta.
+
+199
+00:13:59,345 --> 00:14:01,550
+I will never affect what happens over here
+
+200
+00:14:01,550 --> 00:14:04,350
+because these have no dependents on alpha
+and beta.
+
+201
+00:14:06,680 --> 00:14:10,100
+So i have one term that depends on both
+alpha
+
+202
+00:14:10,100 --> 00:14:14,140
+and beta, and one term that depends only
+on beta.
+
+203
+00:14:15,610 --> 00:14:19,266
+And they're squared so they have to be
+positive or zero.
+
+204
+00:14:19,266 --> 00:14:21,858
+So the smallest i can make this thing is
+
+205
+00:14:21,858 --> 00:14:25,120
+if this thing is zero and this thing is
+zero.
+
+206
+00:14:25,120 --> 00:14:27,770
+So i'm going to do essentially just back
+substitution.
+
+207
+00:14:29,320 --> 00:14:31,718
+First i'll choose beta so
+
+208
+00:14:31,718 --> 00:14:35,430
+that u minus r 22 beta is equal to 0.
+
+209
+00:14:35,430 --> 00:14:40,060
+That gives me a fixed value of beta and it
+makes this term 0.
+
+210
+00:14:40,060 --> 00:14:43,120
+Then i'll plug that value of beta in here,
+
+211
+00:14:43,120 --> 00:14:47,300
+and choose alpha, so that this quantity is
+0.
+
+212
+00:14:47,300 --> 00:14:51,700
+And so then, by choosing that particular
+value of beta, and that
+
+213
+00:14:51,700 --> 00:14:56,630
+particular value of alpha, i'll have made
+both of these terms 0.
+
+214
+00:14:56,630 --> 00:14:59,909
+And that's going to be the shortest that
+i'm able to make this vector.
+
+215
+00:15:01,410 --> 00:15:05,564
+And this vector has the same length as the
+vector i was trying to minimize in
+
+216
+00:15:05,564 --> 00:15:10,120
+the first place so that vector alpha hat
+beta hat is going to solve this problem.
+
+217
+00:15:13,400 --> 00:15:15,575
+So it turns out i can find find alpha
+
+218
+00:15:15,575 --> 00:15:18,849
+hat and beta hat just by solving the
+linear system.
+
+219
+00:15:18,849 --> 00:15:21,313
+So i just have to take the first two rows
+
+220
+00:15:21,313 --> 00:15:24,360
+or the first n rows in general if this
+matrix R.
+
+221
+00:15:26,220 --> 00:15:29,850
+And then the solution to this linear
+system, alpha hat beta hat,
+
+222
+00:15:29,850 --> 00:15:33,370
+are going to be the slope and the y
+intercepts that i'm after.
+
+223
+00:15:35,840 --> 00:15:39,762
+And since R was designed to be upper
+triangular, this system is
+
+224
+00:15:39,762 --> 00:15:41,834
+already upper triangular so i can
+
+225
+00:15:41,834 --> 00:15:45,100
+solve this directly just using back
+substitution.
+
+226
+00:15:47,910 --> 00:15:52,400
+And so then i have an r example of doing
+this.
+
+227
+00:15:52,400 --> 00:15:58,080
+So i to get the data that i have in the
+beginning i use the quantmod package.
+
+228
+00:15:58,080 --> 00:15:59,860
+Got the data for Citi Group.
+
+229
+00:15:59,860 --> 00:16:03,460
+This is the symbol for SP500.
+
+230
+00:16:03,460 --> 00:16:07,130
+These next two just turn those into
+monthly returns for the year 2010.
+
+231
+00:16:07,130 --> 00:16:13,082
+The X-variable is going to be the returns
+on the market, so their returns on
+
+232
+00:16:13,082 --> 00:16:17,570
+the SP500.
+And then i need to add a one in front of
+
+233
+00:16:17,570 --> 00:16:22,862
+that to make my matrix x, so this function
+c bind just stick
+
+234
+00:16:22,862 --> 00:16:28,086
+a column of ones in front of that vector.
+So x is now my 12
+
+235
+00:16:28,086 --> 00:16:33,360
+by 2 matrix with a column of ones and the
+my vector of x's.
+
+236
+00:16:36,150 --> 00:16:40,020
+Like the singular value decomposition in
+the eigen
+
+237
+00:16:40,020 --> 00:16:44,150
+decomposition, QR function gives me back a
+list.
+
+238
+00:16:44,150 --> 00:16:47,510
+So i'm going to save that in qr.X, and
+then
+
+239
+00:16:47,510 --> 00:16:51,598
+i'll use this function qr.Q to get the Q
+matrix.
+
+240
+00:16:51,598 --> 00:16:56,200
+This function qr.R to get the R matrix,
+and then if you wanted to, you
+
+241
+00:16:56,200 --> 00:17:01,348
+could check that you did it right by
+saying all equal q percent, star percent,
+
+242
+00:17:01,348 --> 00:17:04,000
+r, comma, x, and that would just check
+
+243
+00:17:04,000 --> 00:17:07,145
+that these two matrices have the same
+value.
+
+244
+00:17:07,145 --> 00:17:08,195
+[COUGH]
+
+245
+00:17:08,195 --> 00:17:13,445
+So then i'll make a vector u,
+
+246
+00:17:13,445 --> 00:17:18,950
+that has q transposed times y.
+
+247
+00:17:18,950 --> 00:17:21,930
+So the returns on my asset are the y
+variable.
+
+248
+00:17:24,120 --> 00:17:28,812
+And then i'll solve for alpha hat and beta
+hat just by solving
+
+249
+00:17:28,812 --> 00:17:33,344
+that square system of the top square of r.
+So
+
+250
+00:17:33,344 --> 00:17:39,020
+the two by two block at the top of r and
+the first two elements of u.
+
+251
+00:17:39,020 --> 00:17:44,204
+And that gives me 0.017 as the alpha hat
+estimate and
+
+252
+00:17:44,204 --> 00:17:49,413
+1.33 as the beta estimate.
+And then i'm am just going to compare
+
+253
+00:17:49,413 --> 00:17:53,050
+that with the built in least squares
+fitting function.
+
+254
+00:17:53,050 --> 00:17:56,248
+So there's a function called ls fit, and i
+can
+
+255
+00:17:56,248 --> 00:18:00,420
+give it the, the x variable and the y
+variable.
+
+256
+00:18:00,420 --> 00:18:08,640
+And note that it also gives me 0.017 for
+the alpha and 1.33 for the beta.
+
+257
+00:18:08,640 --> 00:18:12,360
+And this is the fit we end up with.
+So the red line was my initial guess.
+
+258
+00:18:14,130 --> 00:18:17,416
+It's actually just goes thorugh the origin
+and has slope one so
+
+259
+00:18:17,416 --> 00:18:22,030
+it's sort of saying that the market and
+the asset behave similarly.
+
+260
+00:18:22,030 --> 00:18:24,954
+And the blue line is the least squares fit
+
+261
+00:18:24,954 --> 00:18:28,600
+for the city group returns on the market
+returns.
+

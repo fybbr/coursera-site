@@ -1,0 +1,111 @@
+Hello.
+Welcome to Week 5 for Mathematical Methods
+for Quantitative Finance.
+So the first four weeks, we did our review
+of
+Calculus and now we're going to shift
+focus to Linear Algebra.
+And this week's menu is going to be
+Vectors.
+A vector is just, you can think of it as a
+point in a plane.
+So it's just a pair of numbers x,y.
+And then it also can be extended so you
+could think of it as a point in three
+dimensions, in which case it would be x,
+y,
+z that would be a vector of length three.
+a point in the plane x, y would be a
+vector of length two.
+And so we'll start off just by coming up
+or, or going over the basic addition
+rules and a few other things for vectors.
+Then in the second section, I'll go
+through vector length.
+So unfortunately, one of the things you
+lose when you start to have points in
+two dimensions is you can no longer say,
+you know, x is less than y.
+And so, we need another way to compare
+magnitude so
+we use the length of the vector to do
+that.
+And then I'll go and,
+into just a little discussion about a
+plane.
+So a, a plane is basically just like a
+line, but in three dimensions.
+So it it ends up having length and width.
+And then that's going to lead us into
+Systems of Linear Equations.
+And so in two dimensions, you can think of
+a System of Linear Equations as just two
+lines.
+And what you're interested in finding is
+the point where they intersect.
+In three
+dimensions, now we have to think of
+planes.
+So two planes would intersect in a line
+and then a third plane would intersect
+that
+line in a point, and that will be
+the solution to our system of linear
+equations.
+And then, we're going to start talking
+about
+how we can solve systems of linear
+equations.
+And that's going to bring us to bullet
+point 4, Elimination.
+And following from elimination, we're
+going to end up being able to view the
+problem we're trying to solve as a matrix
+so a
+matrix is just going to be a collection of
+vectors.
+And then we'll look at specifically
+solving the problem Ax equals b.
+So A is a matrix, x is a vector and x is
+the unknown, and then b is another vector.
+And I want to find the vector x that
+satisfies this equation.
+one way to do that is use an inverse
+matrix, so that's all we'll talk about and
+section 7.
+And essentially if
+A is just a number, x were a number, and b
+were a
+number than solving Ax equals b would
+involve just dividing both sides by A.
+And so inverse of a matrix, I think of
+that
+as just A-inverse times A times x will
+equal x.
+And then whatever's left on the right-hand
+side would be the answer A-inverse b.
+And it turns out that in solving this a
+nicer way of
+doing that involves factoring the matrix.
+And this is going to lead us into next
+week's lectures.
+So there are a lot of a lot of useful
+factorizations of
+matrices that will make seemingly
+difficult problems a lot easier to solve.
+And then I'm going to finish up by talking
+about something called the R Environment
+for Statistical Computing.
+And that's just a software program that
+allows you to manipulate matrices and
+vectors.
+When we
+start dealing with this many numbers, it's
+no longer practical to
+try and do the calculations by hand on a
+piece of paper.
+So it's really useful to have a little bit
+of experience, at
+least, with a computer algebra system that
+can do that for you.
+

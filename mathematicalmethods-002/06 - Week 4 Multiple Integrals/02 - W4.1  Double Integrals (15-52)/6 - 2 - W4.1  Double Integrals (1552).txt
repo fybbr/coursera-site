@@ -1,0 +1,444 @@
+Okay.
+So, this week, we will be talking about
+multiple integrals.
+So here's a brief menu for what we will
+have.
+first I'll introduce something called a
+double integral.
+So it's basically just a two dimensional
+version of
+the single variable integral we started
+with in week two.
+And then I'll talk about something called
+Fubini's Theorem.
+And this is going to be the, the bit
+that actually allows us to compute double
+integrals.
+And then we have something called change
+of variables.
+This is basically just the substitution
+method, but when we're doing
+it with two variables there's sort of a
+lot more flexibility.
+So I'll teach you how to, how to set that
+up.
+And then in section four, we'll work
+through an example of that.
+And then section five is pretty short.
+There's a special situation where you have
+something called
+separability, which allows you to write a
+double integral.
+It's just a product of two single
+variable integrals.
+So it makes it a lot easier a lot easier
+to evaluate.
+And then in Wednesday's lecture, we'll
+talk about switching to polar coordinates.
+So, in section three, we talked about
+change of variables.
+Section six, polar coordinates is just one
+particular change of variables that we can
+do.
+section seven, a culturally important
+integral.
+So this is why there's this 1 over the
+square root of 2 pi in the front of the
+[UNKNOWN]
+function.
+And then eight is, this is just something
+that's going to come
+up reasonably often, so we need to compute
+a marginal density function.
+So, when you have a density function that
+has two or more random variables in it,
+sometimes you want to know what would the
+density
+of one of those random variables look
+like.
+And this is the way to do it.
+That's actually a result that'll be more
+applicable
+to 461, but the, the math definitely fits
+in nicely in this class.
+So, I'll go through one example of that.
+Okay.
+So we'll get started with double
+integrals.
+So just a quick reminder of what
+is the integral of a single-variable
+function doing.
+So the problem that I tried to, I set out
+to solve,
+was I have this function f of x on some
+interval ab.
+And I want to come up with how much area
+is underneath f of x, in between a and b.
+And so, the approach I took was, I just
+decided I was going to come
+up with a lower bound by fitting these red
+rectangles underneath f of x.
+And then I was going to estimate the area
+underneath f
+of x just as the sum of the areas of these
+rectangles.
+And then I define the idea of a definite
+integral to just be this sum.
+So, this thing that I'm trying to
+highlight right
+here, f of a plus i times delta x.
+So, if I start with i equals zero, then a
+plus i delta x is just going to
+be a, and f of a is just going to be the
+height of this rectangle.
+So it's the height of the first rectangle.
+And then I'm going to multiply that by
+delta x,
+where delta x is the width of the
+rectangle.
+And here, so delta x is just going to be b
+minus a, so the size of the interval
+divided by n.
+And the as I make n bigger and bigger, so
+I try and cram more
+triangles underneath this curve, my
+estimate, my approximation
+for this area is getting better and
+better.
+And if I take the limit of that as n goes
+to infinity, then I'm going
+to say that, that's the area of underneath
+the f of x in between a and b.
+Well, that's what we did in with a single
+variable integral.
+For a double
+integral we're going to try and do the
+same thing, but now with two variables.
+So it's really a three dimensional
+problem.
+We're thinking of z as being a function of
+x and oops, and y here.
+And now, instead of putting rectangles
+underneath the curve, I'm going to try and
+build these sort of rectangular solids.
+And I'm going to try and put
+them underneath the surface.
+And then the idea is that I'm trying,
+I want to compute the volume under this
+surface.
+So it's going, the interpretation that
+I'm, I'm going for
+is the volume between the xy plane and the
+surface z.
+And so again like the single variable
+integral.
+If the surface is above the xy plane, I'm
+going to get a positive volume,
+and if the surface is below the x-y plane,
+I'm going to get a negative volume.
+And then here, just with four of these
+things,
+you can see that it's not a very good
+approximation.
+There's quite a bit missing, but if I
+instead
+used you know, and I'm dividing each
+interval into four.
+So it's getting a little bit better.
+And then you can go to eight.
+So now I guess there's 64 of these little
+things, and it's starting to resemble the
+surface more.
+And so my definition of a double integral
+then, for this particular problem, the
+domain of integration.
+So that's the area in the xy plane, where
+I'm trying to, where I'm interested in
+estimating the volume.
+So, the first one is going to be the x
+dimension.
+So I want to go 0 to 2 in the x direction.
+And then I want to go zero to two in the
+y direction.
+And then, this surface is
+my f of x, y.
+And now I need something to sort of say
+what my
+variable of integration is, so I'm just
+going to say dA here.
+And dA, you can sort of think of that as
+the size of one of these little.
+In general, they'll be rectangles, but in
+this, they're squares.
+So it's the base of each one of these
+columns.
+And then I'm going to take the limit as m
+and n go to infinity.
+And here, just like I, I did with my red
+rectangles.
+Essentially, all I'm doing is this
+function is
+assigning a height to one of these
+columns.
+And then delta A is the area of the base
+of one of these columns.
+So the volume of each column is going to
+be given by the, the thing in the sum
+here.
+And then hopefully,
+my approximation gets better and better,
+and better as as m and n get bigger.
+And in the limit, it would be equal to the
+volume under the surface, which is what
+I'm trying to get.
+And so, just at the bottom here, I
+have definitions of all the quantities
+I've used.
+So, in general, when I want to integrate
+over a rectangle.
+So I'm going to, I'm going to be using
+this notation pretty commonly.
+So R just means a rectangular region.
+There's no particularly good reason, it's
+just I had to chose some letter.
+And since it's a rectangle I chose R.
+And when I write it like this,
+[a, b] cross [c,d].
+What I mean is the rectangle with one side
+parallel to the x axis going from x equals
+a to x equals b.
+And the other side parallel to the y axis
+going from y equals c to y equals d.
+And so, now I'm going to say that the
+double integral
+over this region R, is going to be equal
+to
+the same limit I had on the last page,
+except
+on the last slide, except now I'm just
+re-writing it.
+So instead of just being ix, I have to
+start at a and go ix.
+And and then for y, I'm going to start at
+c and go j times y.
+So just stepping along the y
+axis in steps of delta y, and stepping
+along the x axis and steps of delta x.
+And then the interpretation of this So
+like I was trying to argue
+before, is if f of x y is greater than or
+equal to 0.
+So that's basically just saying that the
+surface I'm
+trying to integrate under is above the xy
+plane.
+Then I can interpret the, the value of
+this integral
+as the volume of the region above R and
+beneath the,
+the surface z equals f of xy.
+So like the, like the
+single variable integral, we get some,
+some
+pretty useful properties that are going to
+just help.
+You know, without evaluating the integral
+we can at
+least rewrite it in, in terms of its
+terms.
+Split it into two integrals in this case.
+So we have one linearity
+property, which is just saying that if I
+integrate a sum of two simpler functions.
+So in this case, I have the function I'm
+integrating, can be
+written as one function of x and y f, and
+another function of x and y g.
+Then the integral of this sum is equal to
+the sum of
+the two, sorry, sum of the two integrals
+yeah, had it right
+the first time.
+Then the second property that I'm going to
+also throw under this name linearity, is
+if I scale
+my function by.
+So c here is going to be a real
+valued constant, then the integral of c
+times f of x, c times f of x, y is equal
+to c times
+the integral of f of x, y.
+And then I didn't really know what to call
+this property, so I, I came up with
+comparison.
+But it should be reasonably intuitive.
+So, if I have two functions f of x y and g
+of x y.
+And everywhere in my domain of
+integration.
+So this is my, my rectangle R.
+If f of x y is greater than or equal to g
+of x y.
+So one surface is completely above the
+other.
+or some, some places they might touch,
+which is what the equality would mean.
+But if they don't touch, then f of x y is
+above g of x y.
+Then there has to be more volume
+underneath the
+surface f than there is underneath the
+surface g.
+So we'd say that that the
+[COUGH]
+the double integral of f over R is greater
+than
+or equal to the double integral of g over
+R.
+Okay.
+And then there's another related integral
+called an iterated integral.
+And so, I'm going to suppose that f of x,
+y is continuous on the rectangle R.
+So again, R is just a, b in the x
+direction and c, d in the y direction.
+And I'm going to introduce a concept
+called partial integration.
+And so this is sort of the, the backward
+idea of
+partial differentiation.
+So, in partial differentiation, if I have
+a function of x and
+y, and I want to take the partial
+derivative with respect to y.
+I pretend x is a constant, so I fix x, and
+I
+take the derivative, treating the function
+as a function of y alone.
+In partial integration, I'm going to do
+exactly
+the same thing, except just the other
+direction.
+So I'm going to fix x.
+Basically, when I say fix x, I mean
+pretend x is a constant.
+And then I'm going to integrate f of x y
+as if it were a function of y alone.
+And so that's just going to give me a
+function of x.
+So when I integrate from c to d of f of x
+y, dy, the y is going to disappear,
+because after I compute an anti-derivative
+for f of
+x y, treating it just as a function of y.
+I'm then going to replace those, the y's
+in the anti-derivative with c's and d's.
+So, when I'm all done evaluating this
+definite integral
+on the right-hand side, there aren't
+going to be any y's left in it.
+But there still might be some x's, and so
+that's going to be my function A of x.
+And then I can do something called an
+iterated integral.
+So, an iterated integral is just going to
+be
+the integral of A of x with respect to x.
+So now I consider integrating from a to b
+my function A of x dx.
+And this is just going to be a single
+variable integral.
+But then remember how we defined a of x.
+That was just the integral from
+c to d of f of x y dy.
+So I could also write me iterated integral
+in
+this form that I have on the right hand
+side.
+And so, I think you can see kind of why
+it's called iterated integral.
+It's giving me sort of a, a hierarchy, so
+I can
+evaluate this thing by first doing the
+integral in the square brackets.
+That's going to give me a function of x.
+And then I can integrate that using
+this outside integral, which is just an
+integral
+of a function of x alone.
+And then, most of the time when people
+write
+this down, they are going to omit the
+brackets.
+So, both sides of the equality here, they
+mean exactly the same thing.
+And usually when I'm trying to do one of
+these on my own,
+I put the brackets back in just to make
+sure that everything lines up.
+So that the important thing to notice,
+that the brackets will help you with,
+is that this is something that you're
+going to do from the inside out.
+So the first integral, oops, the first
+integral is an
+integral from c to d.
+And c and d, these are the y coordinates.
+So remember on my rectangle, the, the c
+and
+the d are describing the height of the
+rectangle.
+So the bottom and the top of the
+rectangle.
+So they're in the y coordinate.
+So, whatever limits are on here, they have
+to correspond to the
+first, so in this case d y comes first.
+So c, d are the limits for integrating
+with respect to y.
+And then, once that's done, the next layer
+out is going to be the dx layer.
+And so the integral, the, the limits on
+the outside integral ab, they
+correspond to doing the dx dy, sorry they
+correspond to doing the dx.
+And so,
+if you put the brackets in here, just as
+one more reminder, that the
+limits here have to correspond to the
+variable that I'm integrating with respect
+to here.
+And then, there's no reason why we
+couldn't iterate
+the other way, so I could also rewrite
+this.
+And notice, all I've done here, I had dy
+dx, here I had dx dy.
+So in order to rewrite this integral, I
+had to change tho, the integral signs as
+well.
+So I now have ab corresponding to the dx
+and then integral c to d corresponding to
+the dy
+And so, it's a pretty common mistake I
+think,
+you know, if you don't put these brackets
+here.
+That you will eventually use the limits
+for the
+other variable when you integrate the, the
+inside function.
+And so, then the big question we're going
+to
+have is, what is the relationship between
+a double integral?
+So a double integral, this is, this is the
+thing we want.
+What I want to do is be able to compute
+the area underneath a surface.
+And this iterated integral on the right
+hand side.
+This is something I can actually compute.
+And so we'll get to that question in the
+next set of slides.
+

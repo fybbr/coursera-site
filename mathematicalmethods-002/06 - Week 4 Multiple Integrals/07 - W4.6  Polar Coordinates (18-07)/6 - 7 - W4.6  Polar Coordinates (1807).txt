@@ -1,0 +1,462 @@
+Next up is polar coordinates.
+So this is going to be last, last time
+we talked about, change of variables for
+double integrals.
+And then I gave you one sort of contrived
+change of variables, just
+to show how you could change a very
+funny-looking domain into a nice square.
+another useful change of variables is
+to change into something called polar
+coordinates.
+And so in the xy plane I think everybody's
+familiar with describing a point as
+an x value comma y value, but that's not
+the only way you could do it.
+And in polar coordinates, we're going to
+describe points, so I'm
+calling that xy plane this funny shaped or
+funny drawn r squared.
+And that just means, you know, I have a
+real number
+on the x axis and a real number on the y
+axis.
+So it's giving me coordinates in the xy
+plane.
+But instead of using x and y, I'm going to
+describe them as a distance
+r from the origin, and then an angle theta
+from the positive
+x-axis.
+So angle theta is angle counterclockwise
+from the, the positive
+x-axis, and then the way you'll move
+between x and y coordinates and
+polar coordinates or, if I know what r and
+theta are.
+Then I can recover the x coordinate by
+evaluating r cosine
+theta, and I can recover the y coordinate
+by evaluating r sin theta.
+I think, I have a picture.
+So if I
+have a point x0 y0, in x
+y coordinates I would call it x0 y0, in
+polar coordinates I'm going to call it r0.
+So it's the length of this dotted line
+here, away from the origin.
+And then it has, it makes an angle theta
+0, with a positive x axis.
+And then if you just drop the line
+down here, you'll see that makes a right
+triangle.
+So if I, if I take
+a line parallel to the y axis, that goes
+through the point x naught y naught, I'll
+end up with a right triangle.
+And the height of that triangle
+is going to be one of the legs of that
+right triangle, and so the definition
+of the sign of an angle is this leg
+divided by.
+The and by the hypotenuse, and I know
+the hypotenuse is r zero, r naught.
+So, that's how I can recover the x
+coordinate, using r, whoops sorry,
+y coordinate, using r assigned data.
+And then the same thing is going to happen
+for the x coordinate.
+So, I have this right triangle.
+The bottom leg is just the ratio of that
+length
+to the hypotenuse so that length divided
+by r naught.
+That's the cosine of theta, and so that's
+how I'm going to recover my x coordinate.
+So, for any point in the x-y plane,
+there's one way of writing it as x comma
+y and one equivalent way of writing it as
+r
+comma theta except for one point, which is
+the origin.
+And that's a little bit trickier in polar
+coordinates, because if
+I have r equals 0, I can have theta equal
+anything.
+So there's you know, there's an infinite
+number
+of ways to describe the origin in polar
+coordinates.
+But it turns out that in practice that's
+just because it's only occurring at one
+point, that doesn't cause too many
+problems.
+So the change of variables when I want to
+move from,
+from xy coordinates to polar coordinates,
+I've defined it this way.
+And so the partial derivatives of this
+change of variables
+are going to be, so I have to have dx, dr.
+there'll be four of them.
+So, dx, dr, and dx, d theta, and then dy,
+dr, dy, d, theta.
+So, dx dr, that's an easy one to take the
+derivative of.
+Dx d theta, so the derivative of cosine is
+negative sine, so I just end up with
+negative
+r sine theta.
+Dy dr is just going to be sine theta, and
+then the derivative of sine is
+cosine, don't need to change the sine for
+that one so I end up with r cosine theta.
+The Jacobian is then going to be so it's
+dx, dr, dy, d theta, so cosine theta times
+r cos theta.
+So that gives me, that'll be r cos squared
+theta.
+And then I'm going to subtract the partial
+of x with respect to theta.
+So that was minus r sin theta times sin
+theta,
+and hopefully you sort of see where this
+is going now.
+So I can factor an r out of this whole
+thing.
+And I'm left with r times the
+quantity cosine squared theta plus sine
+squared theta
+and this quantity is equal to 1.
+So I end up with the Jacobian just being
+r.
+And then, because I've defined r as a
+distance from the point
+to the origin, I know it's going to be
+greater than 0.
+So when I stick, I, it simplifies things.
+I don't have to worry about taking the
+absolute value of the Jacobian.
+So I can change an integral that's given
+to me in terms
+of x and y into an integral in terms of r
+and theta.
+So I just replace the x coordinate with r
+cosine theta.
+I replace the y with r sine theta.
+I have to multiply by the absolute value
+of the Jacobian, and then that, oops, that
+changes it into an integral in terms of
+r and theta rather than x and y.
+And the only tricky part then is the
+domain of integration.
+If I consider the xy plane, you know, the
+domain of integration is going to be the
+same shape.
+But I'm going to have to describe that
+differently, because
+it's going to be Very different, in terms,
+when i have
+to describe that in terms of R in theta
+than it
+is when I'm describing it in terms of X
+and Y.
+So, some easy domains.
+So, in this case, I, I've written D zero
+comma R,
+and by this I just mean a disk of radius R
+centered at the origin.
+So this 0 is the center and R is the
+radius of the disk.
+And so this is going to be something
+that's very easy to describe
+in polar coordinates but there was more
+difficult to describe in xy coordinate.
+So this is the, this is the shape I was
+getting at when I would do something like
+integrate x from
+minus 1 to 1.
+And then I'd integrate y from the negative
+square root of 1
+minus x squared to the positive square
+root of 1 minus x squared.
+That would be describing the same region,
+but
+it's something that I can describe very
+easy.
+So it's just 0 to r.
+And then 0 to 2 pi, in polar coordinates.
+but it's a much more difficult description
+when I'm working with x and y coordinates.
+And then another useful trick for using
+polar coordinates is if I'm talking
+about the entire plane, so this would
+be the equivalent of integrating.
+Here I've written this, again kind of
+funny r squared to
+mean the entire xy plane.
+If I wrote this as an iterated integral it
+would minus infinity to
+infinity for the dy and then minus
+infinity to infinity for the dx.
+And so this is the kind of integral I
+would be doing if you're taking 461 when
+you're, when you're computing expected
+values so you would
+often have to integrate over the entire
+real line.
+If it's a probability density function
+of two variables, then you have to
+integrate over the entire plane.
+And so you can integrate over the entire
+plane in polar coordinates
+by integrating the radius, so the r
+variable, from 0 to infinity.
+And then integrating the theta variable,
+from 0 to 2 pi.
+Oh, and that I, I pointed out that
+this would be useful for integrating
+probability density functions.
+So for example, suppose I have a disk of
+radius 1.
+So since its radius is 1, technically the
+equation of the circle is x
+squared plus y squared equals r squared,
+but for 1 I can omit the squared.
+And then if I make it less than or equal
+to 1, then I'm
+talking about any point that's on the
+circle or closer to the origin than that.
+So that gives me a disc,
+and I want to compute the integral one
+minus x squared minus y squared, over this
+region.
+So if I try to do this using xy
+coordinates,
+I think this is one of those examples I've
+done
+a couple times before where I'm going to
+go a
+little ways and just say This is way to
+difficult.
+I need to try something different.
+Let's see what ends up happening.
+So I'll try once using xy coordinates and
+then
+I'll try once again after switching to
+polar coordinates.
+So you can tell it's bad again when I need
+so much
+space on the slide that I can't even fit
+the title here.
+But you can see how I've, I've set it up.
+So, for the outside variable, and it
+doesn't matter which one I
+use in this particular case cause I'm, I'm
+working with a circle.
+But I decided to do,
+oops, I decided to do negative 1 to 1 in
+the x direction.
+And then the y direction, oops, will just
+be
+minus the square root of 1 minus x
+squared.
+So that's from the bottom of the circle to
+the positive square root
+of 1 minus x squared which is up to the
+top of the circle.
+And then I put my, my integrand in here.
+Oh yeah.
+>>
+[CROSSTALK]
+from minus one to one, where does the
+minus one come from?
+>> So a circle that's at the origin and
+radius one, what is the left-most point
+that I'm
+going to, if I go one away from the
+origin in the negative direction, where do
+I end up?
+Right.
+And if I go 1 in the positive direction, I
+end up at positive 1.
+So, that's, that's the, the region there.
+And then the top and the bottom are
+going to be curved, so that's why the
+limits have to change.
+So when I'm very close to negative 1, I
+just have a little bit over here.
+And then it gets bigger, and then smaller
+again.
+Okay, so, I started out by finding the
+anti-derivative of the integrand, with
+respect to y.
+That wasn't too difficult.
+The notation here, I treated 1 minus x
+squared as a constant.
+So when I integrated that, when I too the
+anti-derivative of this bit that I have
+highlighted, I just ended up with 1 minus
+x squared times y, and then minus y
+squared.
+That's the derivative of minus y cubed
+over 3.
+And now I have to plug in my limits, but
+my limits aren't, aren't very pretty.
+So, once I plug that in, it actually
+doesn't end up
+being quite as bad as I, I thought it
+would be.
+So I'm going to end up with 1 minus, the
+square root of 1 minus
+x squared cubed in this term, and then I
+have this 1 minus x squared
+times the square root of 1 minus x
+squared.
+And I can think of this as the square root
+of one minus x squared squared, so when I
+do this product here, I have the same
+thing here.
+So, it simplifies a bit, so I ended up
+with six times this thing cubed.
+So the square root of 1 minus x squared
+cubed minus 2.
+So I have 4 3rds square root
+of 1 minus x squared cubed.
+and this is where I, I sort of got sick,
+also
+realized it wasn't going to fit on the
+rest of the slide.
+So I stuck it into Wolfram Alpha just to
+see what it
+would give me as the, as the correct you
+know, exact answer.
+So, this, this is my little dots saying
+lots of work.
+And you end up with
+this which, you can actually.
+It's so, you know, once you've done
+something like
+this with Wolfram Alpha, you know, this,
+if it's
+being evaluated from minus 1 to 1, it's
+the
+anti-derivative of this being evaluated
+from minus 1 to 1.
+So you should be able to take the
+derivative of this and recover this
+function here.
+But even taking the derivative of
+something this complicated doesn't look
+like
+very much fun.
+Finding this as an anti derivative of some
+other function will, would have been
+quite a lot of work, so I'm glad a
+computer could do that for me.
+So the point is this was not very easy to
+do if I left it in x,y coordinates.
+So now let's try it again in polar
+coordinates.
+And so just from the first line, not only
+is there a title on this slide, but
+there's also
+a reasonable amount of space above the
+first line.
+[COUGH]
+So all I've done I have my d theta as my
+outside integral.
+So that's going to go from 0 to 2 pi
+because I'm trying to describe a disk.
+So to get all the way around something
+round I have to
+go from 0 to 2 pi And then the disc has
+radius
+one so the limits on my inside integral,
+these correspond to the
+dr integral, that's going to take r from
+zero up to one.
+Then, my integrand was 1 minus x squared
+but I've replaced
+x with r cosine theta, so that just
+becomes r squared cosine squared theta.
+And just, just to be perfectly clear, this
+notation, cosine
+squared, it means cosine of theta times
+cosine of theta.
+And then, similarly, for y.
+Y was r sine theta, so I'm going to
+replace
+that, and y squared will become r-squared
+sine-squared theta.
+And then my Jacobian to turn dy dx into dr
+d theta gives me this r here.
+So rd rd theta.
+And
+now we can do a little bit of
+simplification.
+So this term, and this term, both have a r
+squared in them, so I'm going to factor
+that out.
+Well, I'll factor out a minus r squared so
+that's going to then leave me with
+cosine squared plus sine squared, which I
+already said was equal to 1.
+So this whole thing that I have, have
+highlighted right now, that's just going
+to drop.
+So I'll, I'll
+end up with 1 minus r squared times rd rd
+theta.
+So the 1 times r became and r.
+The minus t squared times r because this r
+cubed.
+And so all of a sudden, this is an
+integrand
+that looks like it's going to be very easy
+to integrate.
+And because there's no dependence on theta
+inside
+these square brackets, it's also a
+separable function.
+So let's see if I was smart enough to do
+that.
+No, not quite, but you can just evaluate
+this inside the square brackets.
+So I end up with r squared over 2 minus r
+to
+the 4th over 4 and the limits are now 0
+and 1.
+So, whenever you have something where
+every term has
+an r in it, it's always really nice to
+see this at zero because it means that
+when
+I have the second part of the Fundamental
+Theorem
+of Calculus.
+Anti-derivative at the top limit, minus
+anti-derivative of the bottom limit.
+This bottom one will just be 0, so
+you don't have to bother doing that
+subtraction.
+So, I'll end up with one half minus 1 4th.
+So I end up integrating 1 4th, so that
+the value inside the square brackets here
+becomes 1 over 4 and I'm integrating now
+1 over 4 d theta from 0 to 2 pi.
+And that's just going to be, if you, if
+you think about
+what this is going to look like in the r
+theta plane.
+I have a function that's height 1 quarter.
+sorry, not the r theta plane.
+That's with the theta axis and the, with
+the function evaluated over that.
+It's just a rectangle with type one
+quarter, and with 2 pi.
+So the, the integral of this is just going
+to be 2 pi times
+1 quarter, which will give me pi over 2 as
+the value of that integral.
+

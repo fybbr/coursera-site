@@ -1,0 +1,349 @@
+topic four is going to be Newton's Method
+for n Dimensional Nonlinear Problems.
+[COUGH]
+So now I'm going to consider functions,
+so, I've decided to
+call them capital F.
+And these are functions of n variables
+that have n outcomes.
+So you sort of think of it as a vector of
+n functions.
+And each one of those n functions take the
+same n variables as inputs.
+And I still want to solve the problem f of
+x equals 0.
+But now, because f of x is a function that
+has n outputs
+this 0 on the right hand side is a vector
+of n 0's.
+So it's the 0 vector.
+And let's remember that the gradient of f
+is this n by n matrix.
+So in the,
+[SOUND]
+in the first
+row.
+I just have the gradient
+for the first function, the first
+component of this function f, so
+I called that f1.
+Second row is the gradient
+for the second component f2 and
+so on.
+So I can make a Taylor
+polynomial.
+Around the point xk.
+And it looks exactly the same way as it
+did for the one-dimensional one,
+except here I have a vector of values.
+Here, I have
+an n by n matrix.
+And here,
+I have a n by 1 matrix, so a column
+vector of, of the function
+inputs.
+And so I'm going to play around with this.
+This Taylor polynomial, exactly the same
+way as I
+did when it was just a function of 1
+variable.
+So I want
+to imagine that I am approximating a point
+f of xk plus
+1, and that that's where this function is
+going to
+be equal to 0.
+So that gives me this relationship here.
+So, I'm trying to find this point, k plus
+1, so that my function is zero.
+But instead of doing that I'm just using
+the linear approximation and finding out
+where that's
+equal to 0.
+And then, I just want to solve this again
+for x plus 1, and so it
+ends up being a little bit more
+complicated
+this time, because this is a matrix now.
+I can't just divide by the matrix but
+if it's non-singular, I can multiply by
+its inverse.
+So that's going to put the inverse of the
+matrix in front of
+this term, so if I move this to the other
+side of the equal
+sign, it becomes negative.
+And then I multiply by the inverse.
+And that gets me just this guy.
+And then I'm going to move the xk also to
+this side of the equal sign.
+So I've isolated my point xk plus
+1.
+And this is basically the same, same
+formula as I had.
+For the, the one variable case.
+Except now, when I had one variable, I can
+just
+interpret multiplying by the inverse as
+dividing by the derivative.
+And then I need a, a stopping condition.
+So what I'm going to look at here is this.
+Is my updating step.
+So this is how, how much I'm changing my
+guess.
+If this actually did converge to the true
+value, so if I put in x
+star here, x star here, and x star here, I
+should already be at 0.
+So it shouldn't move at all.
+So at x star, this quantity should be 0.
+So my stopping condition is going to be,
+again the problem is
+this is a vector, so I can't just say,
+less than something.
+What I can say is how long that vector is.
+So that's going to give me some idea of
+how far
+away I am from the thing that I'm trying
+to calculate.
+And when that, when that improvement
+gets below a certain level, that I'm
+going to call tau.
+So I need to pick some tolerance tau
+greater than 0,
+but generally you think of this as a very
+small number.
+When the size of my update gets below
+that level, that's going to be my stopping
+condition.
+It might not be the, the best idea for a
+stopping condition, but
+I need some condition to stop and so this,
+this will be okay.
+[COUGH]
+And it's more complicated now, but you
+still have the
+quadratic convergence that you had for the
+univariate
+case.
+Once I'm close enough to the value x star.
+So the algorithm for using this to, to
+solve
+An undimensional optimization problem, an
+n-dimensional non-linear problem.
+I still need a starting point, x 0, and
+then I'm
+going to try to improve that starting
+point, using these Newton iterations.
+So, if the gradient is non-singular, then
+I can
+compute the, compute the next step.
+So from, you know,
+from x 0, I can find x 1, just by updating
+according to this rule.
+But I see this inverse of a matrix here.
+And I don't like that.
+So to avoid computing the inverse of this
+matrix, what I'll do is take this
+and this is a n by n matrix times an n by
+1 matrix times the column vector.
+So I'm just going to look at this product
+and
+say well that's just going to be another
+column vector used.
+So n times n, times n times 1.
+I take the outer dimensions, that's what
+the product's going,
+the dimensions of the product is going to
+be.
+And so that gives me u is also n by
+one, so it's a column vector of n with n
+entries.
+And then I'm going to multiply both sides
+by the gradient.
+So what I end up with is this gradient
+matrix times my unknown.
+And then here I have the gradient times
+its inverse, so that's the identity,
+so that's just going to be equal to the
+function evaluated at f of xk.
+And this is exactly the problem that we
+looked at in
+in the linear algebra section, this is a
+times x, equals b.
+So this is something that we know how to
+solve.
+So the algorithm that I'll end up using to
+compute the n dimensional Newton's
+method, so I have a, a tolerance, tau
+greater than 0, and a starting point, x 0.
+And so, for the kth step, I have to
+compute this vector f of xk.
+This is just a vector of numbers now.
+And I have to compute the gradient.
+So I have a formula for the gradient and I
+plug in xk, and so
+that's going to give me a matrix, so it's
+just a matrix of numbers now.
+So, then I can solve this linear system,
+and find the value u.
+And that value u is the the size of
+update that I want to use in my Newton
+iterations.
+So, I'll update.
+So my current guess is xk.
+I update that by subtracting this vector
+u, that I got by solving
+this linear system in step two, and that's
+going to give me xk plus 1.
+And then if the size of this u is less
+than
+tau, then I'm going return xk plus 1 as
+the answer.
+Otherwise,
+I'm going to go back to step one and just
+pretend
+now that this xk, once I'm on the next
+step.
+That's going to just run me through this
+same set of steps again.
+So I'll do a, a very simple example.
+So if I take 1 minus, so this x minus 1 to
+the 4th power and y minus 1 to
+the 4th power.
+So these are both going to be positive, so
+when I subtract them they're both going to
+be negative, so it should be pretty clear.
+That this is going to have a maximum, when
+this is equal to
+0 and this is equal to 0 and that maximum
+is going to be
+equal to 1.
+Because if I put in anything nonzero for
+these, it's going
+to be subtracted from 1, so it's going to
+make it smaller.
+So this should have a critical point at
+the point 1, 1.
+Or it has a maximum at the point 1, 1, so
+it should have a critical
+point at the point 1, 1.
+So I can compute the gradient of
+this so this is the, the gradient.
+Of the function that I'm trying to find
+the critical point of.
+So this is a function, it's a function
+of two variables but it's a scalar-valued
+function.
+When I evaluate this, I just get a single
+number.
+[COUGH]
+But when I want to find a critical point,
+what I want
+to find is a point where the gradient is
+equal to 0.
+So now the gradient is my function of two
+variables,
+and this is what I want to use Newton's
+method on.
+So I want to, I want to use Newton's
+method to find the point
+where the gradient, so basically where the
+derivative is equal to 0.
+You have to be a little bit careful here,
+because, in general,
+when you think of a function that has
+several
+outputs, you think of that as a column
+vector.
+The gradient here is a row vector, so I've
+just taken the transpose
+here and the transpose here so that
+everything lines up the way it should.
+The gradient of f of x, then, is just this
+function.
+So it's has a very simple gradient.
+And now I'm going to use r to run through
+several iterations
+of Newton's method to try and find the
+solution for this.
+So, the first, the thesis that I'm
+going to need to be able to do this.
+I need a function that I'm going to call
+capital F.
+And this is going to evaluate the, the
+function that I am
+trying to find that I am trying to make
+equal to 0.
+So this is a pretty simple function, its
+just going to be, its
+a, so it has two inputs and two outputs.
+The first output is just 4 times
+x minus 1 cubed, so its a it's basically
+just returning the
+gradient of the function that I'm trying
+to find the, the maximum of.
+DF is going to return the gradient of f.
+So
+those are just this and this, but written
+out in r form.
+So what I've done here is, looked at the
+diagonal elements.
+This is the top left element.
+This is the bottom right element.
+And I've put them in a vector.
+And then a short-cut for making a diagonal
+matrix is just to use this function diag.
+If I give it a vector as its argument, it
+makes a diagonal matrix that has.
+These elements down the main diagonal, and
+then I don't have a particularly
+good way of choosing a starting point.
+Because it was pretty clear from the
+definition of the function, that the point
+I'm
+looking for was 1, 1, but it won't be very
+exciting if I choose that.
+So another commonly chosen starting point
+is 0.
+So I'm going to start at the 0 vector.
+So I'll say x is equal to 0.
+Or, assign the, the 0 vector to the
+variable x.
+And then I'll do 25 Newton iterations.
+So, because I've defined these functions
+as functions of x
+and y, I need to provide each one of them
+with two arguments so
+as just the first element of' x and the
+second element of x.
+I can use the solve function to solve the,
+the
+linear system that I was talking about on
+the previous slide.
+And so all I have to do is give the matrix
+a and the vector b and solve is
+going to solve the linear system for me.
+And then my updating
+step is just to say, xk minus u becomes xk
+plus 1.
+And so when I, when I run this code in r,
+it's going to take xk, it's going to
+subtract the vector u and
+then it's going to write the answer to
+that.
+Into the same piece of memory that I
+originally was using to hold x.
+And then I'm going to put that in
+something called a for loop.
+Which is just going to run this line 25
+times in a row.
+And so we can look at x after this has
+gone 25 times.
+So x started out as 0, 0.
+Then after 25 newton iterations.
+I end up with 0.9999 and 0.9999.
+So, it's gotten
+very close to the point that I was looking
+for, 1, with these 25 iterations.
+

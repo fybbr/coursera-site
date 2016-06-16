@@ -1,0 +1,998 @@
+1
+00:00:00,980 --> 00:00:01,560
+So, I think
+
+2
+00:00:03,590 --> 00:00:06,040
+hopefully everybody knows the distance
+formula, if
+
+3
+00:00:06,040 --> 00:00:08,900
+not I made it just on one slide.
+
+4
+00:00:08,900 --> 00:00:11,630
+So, distance equals rate times time.
+
+5
+00:00:11,630 --> 00:00:15,800
+This just means if I'm say driving at a
+certain speed say
+
+6
+00:00:15,800 --> 00:00:19,219
+30 miles per hour for three hours, I'm
+going to go 90 miles.
+
+7
+00:00:20,780 --> 00:00:25,160
+it's actually amazing how often this is
+the correct answer to
+
+8
+00:00:25,160 --> 00:00:28,570
+a question, or the corre, correct way to
+solve a question.
+
+9
+00:00:28,570 --> 00:00:33,520
+if you can recognize what you're going to
+think of as distance, what you're going
+
+10
+00:00:33,520 --> 00:00:35,950
+to think of as rate, and what you're going
+to think of as time.
+
+11
+00:00:37,660 --> 00:00:41,430
+This form of the distance formula really
+only works
+
+12
+00:00:41,430 --> 00:00:45,210
+when the rate is constant across the
+entire time.
+
+13
+00:00:45,210 --> 00:00:48,020
+But now that we can integrate, we're
+going to be
+
+14
+00:00:48,020 --> 00:00:50,030
+able to allow that to change a little bit.
+
+15
+00:00:56,640 --> 00:01:00,250
+So, it provides intuition for a lot of
+problems, and
+
+16
+00:01:00,250 --> 00:01:04,940
+all that we're really doing is imagining
+rate on one
+
+17
+00:01:04,940 --> 00:01:07,700
+axis, time on another axis, and then the
+distance you're
+
+18
+00:01:07,700 --> 00:01:11,850
+going to cover is going to be equal to
+this area.
+
+19
+00:01:11,850 --> 00:01:17,260
+So that's just the definition of the area
+of a rectangle is height times width.
+
+20
+00:01:22,058 --> 00:01:26,170
+So let's look at something I call the, the
+job problem, which
+
+21
+00:01:26,170 --> 00:01:28,280
+seems to give a lot of people quite a lot
+of trouble.
+
+22
+00:01:30,025 --> 00:01:36,060
+so, I take my motivation quite often from
+the Simpsons.
+
+23
+00:01:36,060 --> 00:01:40,170
+So, I said if Lenny can do a job in 6
+hours and Carl can do
+
+24
+00:01:40,170 --> 00:01:44,620
+the same job in 4 hours, how long does the
+job take if they work together?
+
+25
+00:01:45,950 --> 00:01:47,150
+a lot of times when you ask
+
+26
+00:01:47,150 --> 00:01:49,940
+people this question, they will say
+something the first
+
+27
+00:01:49,940 --> 00:01:52,640
+number that pops into their head is 5
+hours.
+
+28
+00:01:54,050 --> 00:01:57,980
+which seems to make sense, because it's
+just the average of 4 and 6.
+
+29
+00:01:57,980 --> 00:02:00,790
+But that would actually mean that by
+helping
+
+30
+00:02:00,790 --> 00:02:04,750
+out Carl, Lenny is making the job take
+longer.
+
+31
+00:02:04,750 --> 00:02:07,890
+So, you know, clearly that's not the right
+way to think about the problem.
+
+32
+00:02:09,690 --> 00:02:12,280
+And the right way to think about this
+problem is
+
+33
+00:02:12,280 --> 00:02:14,089
+that it's the rates that are additive.
+
+34
+00:02:16,510 --> 00:02:22,100
+So, Lenny, if he can do a job in 6 hours,
+he can do 1/6th of the job per hour.
+
+35
+00:02:23,490 --> 00:02:27,830
+And Carl, can do 1 quarter of the job per
+hour.
+
+36
+00:02:27,830 --> 00:02:31,818
+So if they're working together, their rate
+is going to be 1/6th
+
+37
+00:02:31,818 --> 00:02:35,520
+plus 1/4th, and that ends up being 5/12ths
+of the job per hour.
+
+38
+00:02:37,640 --> 00:02:40,350
+And so, here, the job is what's going to
+end up
+
+39
+00:02:40,350 --> 00:02:44,740
+being the distance and the time is what
+we're asking for.
+
+40
+00:02:44,740 --> 00:02:47,660
+How long does it take them to do the job
+if they're working together?
+
+41
+00:02:49,370 --> 00:02:53,180
+So, solving for time, I just get distance
+divided by rate.
+
+42
+00:02:53,180 --> 00:02:57,240
+And then I've worked out what these
+numbers are, we have one job.
+
+43
+00:02:58,490 --> 00:03:03,010
+The rate that they're working is 5 over 12
+jobs per hour.
+
+44
+00:03:04,850 --> 00:03:09,484
+I can multiply the top and bottom of that
+by 12 over 5 and get 12/5th.
+
+45
+00:03:09,484 --> 00:03:12,950
+So the job is going to take 2 hours and 24
+minutes if they work together.
+
+46
+00:03:14,110 --> 00:03:18,020
+But we've still made the assumption, that
+Lenny
+
+47
+00:03:18,020 --> 00:03:19,840
+and Carl are working at a constant rate.
+
+48
+00:03:24,450 --> 00:03:29,420
+So, suppose instead, that Lenny works at a
+rate L
+
+49
+00:03:29,420 --> 00:03:34,444
+of x and Carl works at a rate C of x, then
+my
+
+50
+00:03:34,444 --> 00:03:40,070
+condition that I started out with, I could
+rewrite
+
+51
+00:03:40,070 --> 00:03:44,730
+this in terms of definite integrals.
+So I know
+
+52
+00:03:44,730 --> 00:03:50,850
+that if I let Lenny work for 6 hours, he's
+going to finish one job.
+
+53
+00:03:50,850 --> 00:03:56,231
+So that means that the integral of L of x
+from 0
+
+54
+00:03:56,231 --> 00:04:01,823
+to 6 has to be equal to 1, and then oops,
+now I've
+
+55
+00:04:01,823 --> 00:04:06,740
+confused L's and my C's.
+So I think this should be the C
+
+56
+00:04:09,450 --> 00:04:15,600
+and the integral from 0 to 4 of c of x
+should also be equal to 1.
+
+57
+00:04:15,600 --> 00:04:20,860
+And that's just the way of mathematically
+writing down the condition, or the
+
+58
+00:04:20,860 --> 00:04:27,410
+statement that Lenny can do one job in 6
+hours and Carl can do one job in 4 hours.
+
+59
+00:04:31,760 --> 00:04:39,000
+And so now my job question is, can I find
+a capital T,
+
+60
+00:04:39,000 --> 00:04:46,220
+so that's a, a time, so that when I add
+these rates together I get 1.
+
+61
+00:04:46,220 --> 00:04:46,720
+And
+
+62
+00:04:49,120 --> 00:04:51,380
+so now, this is not quite as nice
+
+63
+00:04:51,380 --> 00:04:53,320
+a problem, because there are actually a
+whole
+
+64
+00:04:53,320 --> 00:04:55,350
+bunch of different rates that I could add
+
+65
+00:04:55,350 --> 00:04:58,050
+together that would, that would give me
+this condition.
+
+66
+00:04:58,050 --> 00:05:01,510
+So for instance I could just say well, I
+guess I can't.
+
+67
+00:05:01,510 --> 00:05:04,110
+So I have some constraints to, so I am
+
+68
+00:05:04,110 --> 00:05:07,170
+bound by the constraint that Carl works at
+this rate.
+
+69
+00:05:07,170 --> 00:05:10,630
+So the integral of that one has to be over
+0 to
+
+70
+00:05:10,630 --> 00:05:14,490
+4 to be 1 and the integral of L of x over
+
+71
+00:05:14,490 --> 00:05:23,090
+0 to 6 also has to be 1.
+
+72
+00:05:23,090 --> 00:05:27,970
+So I just invented some functions to, to
+try and show, demonstrate this.
+
+73
+00:05:27,970 --> 00:05:31,120
+So I chose 12 minus x divided by 54.
+
+74
+00:05:31,120 --> 00:05:34,030
+And all this is going to, all this is
+going to do,
+
+75
+00:05:36,580 --> 00:05:41,350
+is when we're at time zero.
+So when x is zero, I'm going to have 12
+
+76
+00:05:41,350 --> 00:05:47,050
+minus zero divided by 54.
+And at the end of the job, so when x
+
+77
+00:05:47,050 --> 00:05:51,870
+is equal to 6, I'm going to have 12 minus
+6, which is going to be 6 divided by 54.
+
+78
+00:05:51,870 --> 00:05:56,030
+And we can forget about the bottom,
+because that's the same.
+
+79
+00:05:56,030 --> 00:05:58,470
+So at the beginning, we have 12 over
+something
+
+80
+00:05:58,470 --> 00:06:00,420
+and at the end, we have six over
+something.
+
+81
+00:06:00,420 --> 00:06:01,410
+Six is half of 12,
+
+82
+00:06:01,410 --> 00:06:06,900
+so all this is saying is that Lenny is
+working twice as hard
+
+83
+00:06:06,900 --> 00:06:09,360
+at the beginning of the time period as he
+is at the end.
+
+84
+00:06:09,360 --> 00:06:11,840
+So he gets tired while he's working, so by
+the
+
+85
+00:06:11,840 --> 00:06:14,310
+end of the 6 hours, he's going only half
+as fast.
+
+86
+00:06:14,310 --> 00:06:19,590
+And then I just have to put this 54 down
+here so that the, the condition,
+
+87
+00:06:19,590 --> 00:06:24,460
+the constraint that he finishes the job in
+6 hours is met.
+
+88
+00:06:24,460 --> 00:06:26,440
+And then I'm going to do
+
+89
+00:06:26,440 --> 00:06:28,920
+exactly the same thing for Carl.
+
+90
+00:06:28,920 --> 00:06:32,030
+So initially he's working at 8 over 24, at
+the
+
+91
+00:06:32,030 --> 00:06:35,790
+end of his 4 hours, he's working at 4 over
+24.
+
+92
+00:06:35,790 --> 00:06:38,990
+So he works faster, so he's also getting
+tired faster.
+
+93
+00:06:38,990 --> 00:06:39,490
+And
+
+94
+00:06:41,510 --> 00:06:46,280
+now, how long is it going to take them if
+they, if they work together?
+
+95
+00:06:46,280 --> 00:06:51,000
+So, would it be more or less than the 2
+hours and 24 minutes?
+
+96
+00:06:56,820 --> 00:07:02,540
+So basically what I want to do is find T,
+so that when I integrate this
+
+97
+00:07:02,540 --> 00:07:08,290
+function, L of x plus C of x from zero to
+T, I get my one job finished.
+
+98
+00:07:15,320 --> 00:07:19,660
+And so I'm just going to start by plugging
+in the two functions.
+
+99
+00:07:19,660 --> 00:07:25,880
+So L of x was 12 minus x over 54 and C of
+x was 8 minus x over 24.
+
+100
+00:07:25,880 --> 00:07:28,808
+And then I don't like having these numbers
+in the denominator.
+
+101
+00:07:28,808 --> 00:07:34,270
+So I'm going to multiply both sides of
+this by 216, that's going to be
+
+102
+00:07:34,270 --> 00:07:40,255
+4 times 54.
+So the 4 times 50 is 200, 4 times 4 is 16,
+
+103
+00:07:40,255 --> 00:07:42,640
+216.
+Or it'll be 9 times 24.
+
+104
+00:07:42,640 --> 00:07:48,030
+You can do that in your head pretty easily
+too, because 10 times 24 would be 240,
+
+105
+00:07:48,030 --> 00:07:53,460
+and that's 24 more than 216 so that's got
+to be 9 times 24.
+
+106
+00:07:53,460 --> 00:07:53,960
+And so
+
+107
+00:07:56,860 --> 00:07:59,000
+that's going to get everything out of the
+denominator.
+
+108
+00:07:59,000 --> 00:08:01,700
+So, mostly the reason I wanted to do that,
+it makes
+
+109
+00:08:01,700 --> 00:08:03,988
+the lines a little skinnier so it all fits
+on one slide.
+
+110
+00:08:03,988 --> 00:08:11,390
+But it also means that I can now add these
+together, so my integral is going to
+
+111
+00:08:11,390 --> 00:08:14,853
+simplify itself a bit before I actually
+have to compute an anti-derivative.
+
+112
+00:08:17,300 --> 00:08:19,040
+And so what I end up having to compute
+
+113
+00:08:19,040 --> 00:08:24,470
+the anti-derivative of is this function
+here, 120 minus 13x.
+
+114
+00:08:24,470 --> 00:08:27,380
+So I can just use my anti-power rule to
+get that.
+
+115
+00:08:29,990 --> 00:08:36,720
+And that's going to give me 120x minus 13
+over 2 x squared from 0 to T.
+
+116
+00:08:36,720 --> 00:08:41,880
+And now, even though the variable T is on
+this side, I, I treat it exactly the
+
+117
+00:08:41,880 --> 00:08:47,020
+same way, so I'm just going to evaluate my
+anti deriv, oops, my anti derivative here.
+
+118
+00:08:47,020 --> 00:08:50,180
+I evaluate it at T and then subtract it,
+evaluate
+
+119
+00:08:50,180 --> 00:08:55,309
+it at 0, so I get 120T minus 13 over
+
+120
+00:08:55,309 --> 00:08:56,249
+2 T squared.
+
+121
+00:08:57,710 --> 00:09:03,156
+And then luckily on this side, since I've
+got that zero, when I plug in zero to the
+
+122
+00:09:03,156 --> 00:09:09,320
+to, to this anti-derivative, I just get 0,
+so that makes things a little bit simpler.
+
+123
+00:09:12,390 --> 00:09:17,200
+So I end up with 13 T squared.
+So I, I multiplied both sides of this by,
+
+124
+00:09:18,640 --> 00:09:24,440
+by 2 as well, 13T squared minus 240T plus
+216, oops, I
+
+125
+00:09:27,050 --> 00:09:28,990
+think I forgot to multiply that bit by 2.
+And
+
+126
+00:09:31,240 --> 00:09:34,480
+then you can solve that by using the
+quadratic formula.
+
+127
+00:09:34,480 --> 00:09:36,620
+And that gives 57 minutes.
+
+128
+00:09:36,620 --> 00:09:38,950
+Although I think it gives 57 minutes for
+this one that
+
+129
+00:09:38,950 --> 00:09:41,000
+I forgot to multiply by 2, so I'll have to
+check
+
+130
+00:09:43,880 --> 00:09:44,070
+that.
+
+131
+00:09:44,070 --> 00:09:47,480
+And then another application where this is
+going to
+
+132
+00:09:47,480 --> 00:09:51,490
+turn of for those of you that are taking
+461.
+
+133
+00:09:51,490 --> 00:09:52,770
+in the next couple of weeks, we're
+going to
+
+134
+00:09:52,770 --> 00:09:55,438
+learn about something called a probability
+density function.
+
+135
+00:09:55,438 --> 00:10:02,330
+So, I'm going to denote a probability
+density function for a random variable x.
+
+136
+00:10:02,330 --> 00:10:10,042
+It says f sub X, and its argument is going
+be little x, and I'm
+
+137
+00:10:10,042 --> 00:10:18,510
+going to use it to assign probabilities to
+a random variable being in an interval.
+
+138
+00:10:18,510 --> 00:10:20,790
+So I'm reading this thing on the left hand
+side.
+
+139
+00:10:20,790 --> 00:10:24,352
+It's the probability that my random
+variable is in the interval
+
+140
+00:10:24,352 --> 00:10:28,200
+[a, b].
+It's just going to be the integral of my
+
+141
+00:10:28,200 --> 00:10:37,220
+probability density function over the
+interval [a,b].
+
+142
+00:10:37,220 --> 00:10:40,160
+The support of a random variable is just
+going to be
+
+143
+00:10:40,160 --> 00:10:44,338
+the, the set of points, so generally it's
+an interval.
+
+144
+00:10:44,338 --> 00:10:50,380
+a set of points S, where the probability
+density function is greater
+
+145
+00:10:50,380 --> 00:10:56,618
+than or is greater than zero, when x is in
+S.
+
+146
+00:10:56,618 --> 00:11:02,535
+And so, some of the profi-, properties of
+a probability density function
+
+147
+00:11:02,535 --> 00:11:08,161
+are, if f sub X is a probability, so I'm
+going to eval, abbreviate that
+
+148
+00:11:08,161 --> 00:11:13,787
+as pdf, then I have to have f of x is
+greater than or equal to 0 for all real
+
+149
+00:11:13,787 --> 00:11:19,351
+numbers.
+
+150
+00:11:19,351 --> 00:11:22,051
+And when I integrate this, so sometimes
+instead of
+
+151
+00:11:22,051 --> 00:11:24,271
+instead of writing an interval as just
+from a
+
+152
+00:11:24,271 --> 00:11:27,571
+to b, I might want to write a set that
+might be made up of more than one
+
+153
+00:11:27,571 --> 00:11:31,453
+interval density function.
+
+154
+00:11:31,453 --> 00:11:34,693
+And so, in that case, when I've defined S
+to be a set.
+
+155
+00:11:34,693 --> 00:11:39,440
+So, here S is the set of points where this
+thing strictly greater than 0.
+
+156
+00:11:39,440 --> 00:11:41,290
+I can write the integral sign, and I'll
+just
+
+157
+00:11:41,290 --> 00:11:43,550
+put the name of the set at the bottom.
+
+158
+00:11:45,248 --> 00:11:47,239
+And the integal has to be equal to 1.
+
+159
+00:11:49,550 --> 00:11:52,750
+So the exercise that'll show up quite
+often is, can you
+
+160
+00:11:54,180 --> 00:11:59,000
+prove that a certain function is actually
+a probability density function?
+
+161
+00:11:59,000 --> 00:12:01,620
+And so I'll go through one example of that
+pretty quick.
+
+162
+00:12:01,620 --> 00:12:09,565
+So the PDF of a beta 2-2 distribution, is
+defined to be 6x
+
+163
+00:12:09,565 --> 00:12:15,450
+times 1 minus x, when x is in the interval
+[0, 1], and its defined to be 0 otherwise.
+
+164
+00:12:20,670 --> 00:12:24,250
+So if I want to verify that f of x is
+
+165
+00:12:24,250 --> 00:12:26,950
+greater than or equal to zero, that should
+be pretty straightforward.
+
+166
+00:12:26,950 --> 00:12:33,240
+If I have a number between zero and one,
+then it's greater than or equal to zero.
+
+167
+00:12:33,240 --> 00:12:35,680
+So 6x has to be greater than or equal to
+zero.
+
+168
+00:12:36,680 --> 00:12:40,750
+And one minus x, so the smallest this
+could be
+
+169
+00:12:40,750 --> 00:12:43,760
+is when x is equal to 1 and that's zero.
+
+170
+00:12:43,760 --> 00:12:45,950
+So, it's pretty easy to verify the first
+condition.
+
+171
+00:12:47,920 --> 00:12:51,129
+The, the work is usually verifying that
+the
+
+172
+00:12:51,129 --> 00:12:54,530
+PDF is going to integrate is going to
+integrate
+
+173
+00:12:57,370 --> 00:12:58,680
+to one over it's support.
+
+174
+00:13:00,823 --> 00:13:08,550
+So here going to have the, the integral,
+so S is going to be 0 to 1.
+
+175
+00:13:08,550 --> 00:13:11,310
+So, it doesn't actually include the
+endpoints, but
+
+176
+00:13:11,310 --> 00:13:13,690
+those end up not mattering for the
+integral.
+
+177
+00:13:14,898 --> 00:13:17,380
+So, I'm going to say this is just an
+integral from
+
+178
+00:13:17,380 --> 00:13:21,920
+0 to 1 of 6 x times 1 minus x.
+
+179
+00:13:21,920 --> 00:13:23,860
+Oops, again that typo.
+
+180
+00:13:24,946 --> 00:13:29,950
+dx, so this x, shouldn't be here.
+Hopefully that's going to go away.
+
+181
+00:13:31,190 --> 00:13:31,190
+[COUGH]
+
+182
+00:13:31,190 --> 00:13:31,690
+And
+
+183
+00:13:34,120 --> 00:13:35,890
+so, using some of the properties I've
+
+184
+00:13:38,280 --> 00:13:39,849
+listed in the first set of slides.
+
+185
+00:13:41,170 --> 00:13:44,690
+I have, I can think of x times 1 minus x
+as
+
+186
+00:13:44,690 --> 00:13:48,310
+my f of x, and so I'm just multiplying
+that by a constant.
+
+187
+00:13:48,310 --> 00:13:51,650
+So I can take that constant outside of my
+integral sign to make things a
+
+188
+00:13:51,650 --> 00:13:54,130
+little bit simpler, and then I'm just
+
+189
+00:13:54,130 --> 00:13:56,070
+going to just go ahead and do the
+multiplication.
+
+190
+00:13:56,070 --> 00:13:59,910
+So I have x times 1 gives me x.
+
+191
+00:13:59,910 --> 00:14:03,020
+And then x times x gives me the x squared
+here.
+
+192
+00:14:07,360 --> 00:14:11,300
+And then I can calculate the
+anti-derivative of that, just using my
+
+193
+00:14:11,300 --> 00:14:17,120
+anti power rule on each term.
+So the first one came from 1 half x, 1
+
+194
+00:14:17,120 --> 00:14:23,439
+half x squared, and the second term came
+from 1/3rd x cubed.
+
+195
+00:14:23,439 --> 00:14:27,360
+And now that I've written down my
+anti-derivative here,
+
+196
+00:14:27,360 --> 00:14:29,720
+I've moved my limits to the right hand
+side.
+
+197
+00:14:29,720 --> 00:14:33,020
+So it means this notation again, just
+means evaluate
+
+198
+00:14:33,020 --> 00:14:36,430
+my anti-derivative upper end point and
+subtract
+
+199
+00:14:36,430 --> 00:14:38,970
+the anti-derivative evaluated at the lower
+end point.
+
+200
+00:14:42,550 --> 00:14:46,532
+So, again, because I have an x in each
+term, the bottom
+
+201
+00:14:46,532 --> 00:14:49,300
+endpoint is just going to be zero, that
+simplifies things quite a bit.
+
+202
+00:14:50,320 --> 00:14:52,931
+So, I end up with just 1 half minus 1/3rd.
+
+203
+00:14:52,931 --> 00:15:01,162
+Oops, and that's equal, so 1 half is, I
+can write that as 3 over 6.
+
+204
+00:15:01,162 --> 00:15:07,302
+1/3rd, I could think of as 2 over 6, so 3
+over 6 minus 2 over 6 is 1 over 6.
+
+205
+00:15:07,302 --> 00:15:07,558
+And I
+
+206
+00:15:07,558 --> 00:15:11,387
+have this 6 out in front and that cancels
+each other out.
+
+207
+00:15:11,387 --> 00:15:14,782
+So, I verified that this function here, fx
+
+208
+00:15:14,782 --> 00:15:20,000
+of x is a valid probability density
+function.
+

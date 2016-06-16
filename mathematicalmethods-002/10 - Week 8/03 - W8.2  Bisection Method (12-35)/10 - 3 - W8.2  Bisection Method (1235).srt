@@ -1,0 +1,912 @@
+1
+00:00:00,923 --> 00:00:06,593
+The first method I'm going to look at for
+solving this
+
+2
+00:00:06,593 --> 00:00:11,788
+sort of problem is called the Bisection
+Method.
+
+3
+00:00:11,788 --> 00:00:17,646
+So I want to consider f a continuous
+function defined on the interval a b.
+
+4
+00:00:17,646 --> 00:00:21,546
+So this is exactly what I, if we think
+back to that graph that
+
+5
+00:00:21,546 --> 00:00:26,460
+I was looking at before, I had chosen this
+sequence of values from 0.05
+
+6
+00:00:26,460 --> 00:00:31,375
+to 0.5, and the function was definitely
+continuous on that interval.
+
+7
+00:00:31,375 --> 00:00:37,993
+So just something, something like that.
+And also I want to choose that interval.
+
+8
+00:00:37,993 --> 00:00:42,044
+So that f of a, and f of b have different
+signs.
+
+9
+00:00:42,044 --> 00:00:50,518
+So again, in my, in my example, I had f of
+a was negative, and f of b was positive.
+
+10
+00:00:50,518 --> 00:00:51,028
+Then,
+
+11
+00:00:51,028 --> 00:00:56,350
+there's a result from calculus called the
+intermediate value theorem.
+
+12
+00:00:56,350 --> 00:00:59,290
+And this, this should just make a lot of
+sense if on one side
+
+13
+00:00:59,290 --> 00:01:03,528
+of my interval I'm positive, and on the
+other side of my interval I'm negative.
+
+14
+00:01:03,528 --> 00:01:07,595
+Continuous function is, we think about
+that as a function
+
+15
+00:01:07,595 --> 00:01:11,310
+that you can draw without having to lift
+up your pen.
+
+16
+00:01:11,310 --> 00:01:16,110
+If I'm going to get from this point down
+to this point, I'm going to have to cross
+
+17
+00:01:16,110 --> 00:01:20,721
+zero at some point in between is cheating
+to go around like that.
+
+18
+00:01:20,721 --> 00:01:26,421
+so if f of a and f ob have different
+signs, then there has to be
+
+19
+00:01:26,421 --> 00:01:32,104
+some point x in the interval a b where f
+of x is equal to zero.
+
+20
+00:01:32,104 --> 00:01:38,938
+And so by section is going to be an
+algorithm for finding that point, x.
+
+21
+00:01:38,938 --> 00:01:41,125
+And so the idea is I'm just going
+
+22
+00:01:41,125 --> 00:01:44,608
+to take my interval, oops, and I'm going
+to split
+
+23
+00:01:44,608 --> 00:01:48,010
+it in half and evaluate it at the
+midpoint, so this
+
+24
+00:01:48,010 --> 00:01:51,331
+point c is just the average of the two end
+points,
+
+25
+00:01:51,331 --> 00:01:54,935
+so that's the, the mid point of the
+interval a, b.
+
+26
+00:01:54,935 --> 00:02:00,934
+And I'll evaluate the function at this
+point, c.
+
+27
+00:02:00,934 --> 00:02:06,244
+And so sign is a function where, if the
+argument is greater than zero,
+
+28
+00:02:06,244 --> 00:02:07,700
+I get positive 1.
+
+29
+00:02:07,700 --> 00:02:10,774
+If the argument is less than zero, I get
+negative 1.
+
+30
+00:02:10,774 --> 00:02:15,757
+And if the argument is equal to zero, then
+the sign of that is equal to zero.
+
+31
+00:02:15,757 --> 00:02:22,093
+And so, what this is saying is if the, the
+sign of the function evaluated at the
+
+32
+00:02:22,093 --> 00:02:28,445
+midpoint is equal to the sign of the
+function evaluated at the left endpoint.
+
+33
+00:02:28,445 --> 00:02:31,604
+Then I'm just going to move that left
+endpoint
+
+34
+00:02:31,604 --> 00:02:35,676
+to the midpoint.
+So, I, I make my interval half as wide.
+
+35
+00:02:35,676 --> 00:02:39,620
+Because, if I know that function, it's
+negative here, negative here, and it
+
+36
+00:02:39,620 --> 00:02:42,680
+still will be then, it has to be positive
+at the other point.
+
+37
+00:02:42,680 --> 00:02:49,295
+I now have a new interval that's half as
+wide, and it still has the property
+
+38
+00:02:49,295 --> 00:02:56,103
+that the function evaluated at the end
+points, they have different signs.
+
+39
+00:02:56,103 --> 00:02:56,715
+And then if
+
+40
+00:02:56,715 --> 00:03:01,223
+the signs are not the same, then I just
+chop off the other half of the interval.
+
+41
+00:03:01,223 --> 00:03:03,543
+So I have a picture on the next slide
+
+42
+00:03:03,543 --> 00:03:07,023
+that'll hopefully make this a, a bit more
+clear.
+
+43
+00:03:07,023 --> 00:03:09,259
+And so it's a very simple algorithm.
+
+44
+00:03:09,259 --> 00:03:13,970
+I just chop the interval in half.
+That's going to give me two subintervals.
+
+45
+00:03:13,970 --> 00:03:17,454
+At least one of those, well one of those
+sub intervals is going
+
+46
+00:03:17,454 --> 00:03:21,742
+to still have the property that the
+function at, evaluated at the endpoints
+
+47
+00:03:21,742 --> 00:03:23,554
+is going to have different signs.
+
+48
+00:03:23,554 --> 00:03:29,702
+So that becomes my new interval, and then
+I go back and do this again,
+
+49
+00:03:29,702 --> 00:03:35,390
+so every time, I'm cutting my, cutting my
+interval in half.
+
+50
+00:03:35,390 --> 00:03:39,939
+And then for an algorithm like this it's,
+it's something that is automated.
+
+51
+00:03:39,939 --> 00:03:42,051
+So you need to have a stopping condition
+
+52
+00:03:42,051 --> 00:03:44,563
+because any interval, I can cut that in
+half.
+
+53
+00:03:44,563 --> 00:03:46,873
+So if I just programmed this using steps
+
+54
+00:03:46,873 --> 00:03:51,966
+one, two, and three the way I've written
+them down here, it will just run forever.
+
+55
+00:03:51,966 --> 00:03:56,699
+It, it will get a very small interval, but
+it's still going to just keep going.
+
+56
+00:03:56,699 --> 00:04:00,835
+So, the stopping condition, I'm just going
+to use
+
+57
+00:04:00,835 --> 00:04:04,433
+a very simple one and say when this
+interval.
+
+58
+00:04:04,433 --> 00:04:06,389
+So, if I take b minus a.
+
+59
+00:04:06,389 --> 00:04:09,554
+So, b was the upper end point.
+A was the lower end point.
+
+60
+00:04:09,554 --> 00:04:12,503
+So this is just the, the width of my
+interval.
+
+61
+00:04:12,503 --> 00:04:17,260
+When that gets smaller than some tolerance
+that I have to choose at the beginning, so
+
+62
+00:04:17,260 --> 00:04:21,816
+I could say I want you know, I want to
+know the answer within 1-1 million.
+
+63
+00:04:21,816 --> 00:04:28,836
+So then when this interval is smaller than
+1-1 million I know every point in
+
+64
+00:04:28,836 --> 00:04:35,906
+there is within 1-1 million of the mid
+point of that interval so I can stop.
+
+65
+00:04:35,906 --> 00:04:37,264
+So this is what,
+
+66
+00:04:37,264 --> 00:04:42,792
+what bisection will look like.
+So I start off with I started
+
+67
+00:04:42,792 --> 00:04:48,361
+off with 0.1 and 0.3.
+So that was my initial interval.
+
+68
+00:04:48,361 --> 00:04:54,666
+Then I evaluate the function at 0.1, and
+the function at 0.3, and so at
+
+69
+00:04:54,666 --> 00:05:00,784
+0.3, the function is positive.
+At 0.1, the function is negative.
+
+70
+00:05:00,784 --> 00:05:02,690
+So that's sort of my, my starting
+condition.
+
+71
+00:05:02,690 --> 00:05:06,898
+This is a condition I want to always save
+as I'm going through the iteration.
+
+72
+00:05:06,898 --> 00:05:11,056
+Is that the, the sign of the function
+evaluated at one endpoint of the interval
+
+73
+00:05:11,056 --> 00:05:15,457
+has to be the opposite of the sign of the
+function evaluated at the other endpoint.
+
+74
+00:05:15,457 --> 00:05:20,863
+And then I'm going to evaluate the
+function at a point c that's
+
+75
+00:05:20,863 --> 00:05:25,784
+halfway in between, so at the midpoint of
+the interval.
+
+76
+00:05:25,784 --> 00:05:28,062
+And so in this case,
+
+77
+00:05:28,062 --> 00:05:33,901
+see f of c is less than zero.
+So since f of c has the same sign
+
+78
+00:05:33,901 --> 00:05:39,460
+as f of a, then this is the half the, the
+chunk of the interval
+
+79
+00:05:39,460 --> 00:05:44,589
+a c, that's the part I want to chop off
+and throw away.
+
+80
+00:05:44,589 --> 00:05:48,549
+On the other hand, the interval c b, since
+f of c is negative, and
+
+81
+00:05:48,549 --> 00:05:53,013
+f of b is positive, I know it has to cross
+zero somewhere in that interval,
+
+82
+00:05:53,013 --> 00:05:56,676
+so that's the part, that's the interval I
+want to have.
+
+83
+00:05:56,676 --> 00:05:58,817
+And now I'm just going to do this all over
+again.
+
+84
+00:05:58,817 --> 00:06:00,973
+Except I'm going to start with this
+interval.
+
+85
+00:06:00,973 --> 00:06:05,508
+So when I, I assign c to my value a.
+
+86
+00:06:05,508 --> 00:06:09,206
+And then I go back to the beginning, and I
+repeat the
+
+87
+00:06:09,206 --> 00:06:14,686
+bisection process with just this interval
+on the, on the right side here.
+
+88
+00:06:14,686 --> 00:06:17,546
+So I think this is me just explaining that
+all in bullet point.
+
+89
+00:06:17,546 --> 00:06:19,022
+So I calculate
+
+90
+00:06:19,022 --> 00:06:23,546
+the, the midpoint.
+Evaluate the function at the midpoint.
+
+91
+00:06:23,546 --> 00:06:25,260
+I see that it's less than zero.
+
+92
+00:06:25,260 --> 00:06:29,484
+So since the sign at the midpoint is equal
+to the sign at the
+
+93
+00:06:29,484 --> 00:06:34,199
+left end, I now just move this point a
+over to, over to 0.2.
+
+94
+00:06:34,199 --> 00:06:38,007
+So, my interval gets half as wide, but I
+
+95
+00:06:38,007 --> 00:06:43,854
+still preserve this condition that the
+signs are different.
+
+96
+00:06:43,854 --> 00:06:44,169
+[NOISE]
+
+97
+00:06:44,169 --> 00:06:49,240
+So each step preserves the sign.
+So, once I've made my new interval a b.
+
+98
+00:06:49,240 --> 00:06:54,808
+So once I've updated my a here.
+I still have the property, that the sign
+
+99
+00:06:54,808 --> 00:07:01,078
+at that endpoint of the function evaluated
+at that endpoint, is the
+
+100
+00:07:01,078 --> 00:07:07,650
+opposite of the sign of the function
+evaluated at the other endpoint.
+
+101
+00:07:07,650 --> 00:07:08,136
+[NOISE]
+
+102
+00:07:08,136 --> 00:07:10,140
+So I'll go through a quick r
+implementation.
+
+103
+00:07:10,140 --> 00:07:14,270
+One of the nice things about these is that
+they, they're not very difficult to code.
+
+104
+00:07:14,270 --> 00:07:20,380
+So, I, I made it even less difficult by
+not doing any error checking.
+
+105
+00:07:20,380 --> 00:07:23,835
+So when I say error checking, You know,
+this function is
+
+106
+00:07:23,835 --> 00:07:27,450
+going to just run no matter what values I
+put into it.
+
+107
+00:07:27,450 --> 00:07:33,482
+So, I need to, on my own, make sure that f
+of a and f of b have the
+
+108
+00:07:33,482 --> 00:07:35,380
+same sign.
+
+109
+00:07:35,380 --> 00:07:37,340
+Otherwise, this, this will still do
+something.
+
+110
+00:07:37,340 --> 00:07:39,730
+It won't be the bisection method, if
+that's not true.
+
+111
+00:07:39,730 --> 00:07:43,944
+But, it's still just going to keep
+splitting this interval
+
+112
+00:07:43,944 --> 00:07:47,270
+in half but who knows what the output will
+be?
+
+113
+00:07:47,270 --> 00:07:48,053
+[NOISE]
+
+114
+00:07:48,053 --> 00:07:53,120
+And so, all I'm going to do is, well, so I
+know b is going to be greater than a.
+
+115
+00:07:53,120 --> 00:07:55,350
+So that's another thing that this isn't
+checking.
+
+116
+00:07:55,350 --> 00:07:57,690
+I could put in negative 3 for b and
+positive
+
+117
+00:07:57,690 --> 00:08:00,378
+5 for a and the function's still going to
+run.
+
+118
+00:08:00,378 --> 00:08:03,292
+so while b minus a is greater than this
+
+119
+00:08:03,292 --> 00:08:07,146
+tolerance value, this is another nice
+feature of r.
+
+120
+00:08:07,146 --> 00:08:13,068
+So if I want to have an argument here that
+you can change, but I don't want it to
+
+121
+00:08:13,068 --> 00:08:18,238
+be required every time you run the
+function, I can put an equals here.
+
+122
+00:08:18,238 --> 00:08:21,904
+And so this means if you call this
+function with
+
+123
+00:08:21,904 --> 00:08:26,510
+three arguments, they're going to be
+interpreted as f, a and
+
+124
+00:08:26,510 --> 00:08:29,236
+b and then it will, any time it needs a
+
+125
+00:08:29,236 --> 00:08:35,000
+tolerance inside the function, it'll just
+use this default value here.
+
+126
+00:08:35,000 --> 00:08:38,283
+If I just put tall with no default then
+every time you called
+
+127
+00:08:38,283 --> 00:08:41,050
+the function, you'd have to put a fourth
+argument.
+
+128
+00:08:41,050 --> 00:08:43,831
+And so it's, it's pretty simple.
+
+129
+00:08:43,831 --> 00:08:48,910
+It's just while this interval is wider
+than the tolerance.
+
+130
+00:08:48,910 --> 00:08:52,230
+So this is before my stopping condition
+has occurred.
+
+131
+00:08:54,260 --> 00:08:57,210
+I compute the midpoint of the interval and
+I store it as c.
+
+132
+00:08:58,700 --> 00:09:05,006
+And then so r has a sign function which is
+handy, but be careful when I say sign.
+
+133
+00:09:05,006 --> 00:09:07,429
+I'm not talking about sin sign.
+
+134
+00:09:07,429 --> 00:09:09,751
+I'm talking about sign, sign now.
+
+135
+00:09:09,751 --> 00:09:13,535
+So if the sign of f of c is equal to the
+sign of f of a, then c
+
+136
+00:09:13,535 --> 00:09:15,513
+is a sign to a, so I chop off the
+
+137
+00:09:15,513 --> 00:09:19,641
+lower half of the interval and the only
+other possibility
+
+138
+00:09:19,641 --> 00:09:24,715
+if that, if its, if they have opposite
+signs is that I want to chop off the
+
+139
+00:09:24,715 --> 00:09:29,990
+other half of the interval, because it's,
+it's a very simple algorithm.
+
+140
+00:09:29,990 --> 00:09:32,390
+You lose this half, or you lose this half.
+
+141
+00:09:32,390 --> 00:09:34,440
+So, I don't have to check any other
+condition.
+
+142
+00:09:34,440 --> 00:09:37,610
+I know it, if this is satisfied, I do
+this.
+
+143
+00:09:37,610 --> 00:09:40,560
+Otherwise, I chop off the other half of
+the interval.
+
+144
+00:09:42,080 --> 00:09:43,550
+And that's going to continue running.
+
+145
+00:09:43,550 --> 00:09:44,660
+The interval gets
+
+146
+00:09:44,660 --> 00:09:47,120
+half as long every time I go through this.
+
+147
+00:09:47,120 --> 00:09:50,294
+So, between this set of brackets and this
+set of brackets,
+
+148
+00:09:50,294 --> 00:09:54,670
+and eventually the interval will be
+shorter than this tolerance parameter.
+
+149
+00:09:54,670 --> 00:09:59,470
+And so, I just decided I would return the
+midpoint
+
+150
+00:09:59,470 --> 00:10:04,510
+of that final interval as my best guess of
+the value
+
+151
+00:10:04,510 --> 00:10:09,670
+that I can feed into this function f
+that's going to
+
+152
+00:10:09,670 --> 00:10:11,630
+make f equal to zero.
+
+153
+00:10:11,630 --> 00:10:14,321
+And so let's see how it works this is the
+same
+
+154
+00:10:14,321 --> 00:10:17,450
+example that I solved just using the, the
+plot last time.
+
+155
+00:10:17,450 --> 00:10:23,009
+So now, instead of f sig just being this
+thing evaluated a whole
+
+156
+00:10:23,009 --> 00:10:29,340
+bunch of times from 0.05 to 0.5.
+I'm now going to make it a function.
+
+157
+00:10:29,340 --> 00:10:34,360
+So it's a function of one variable, sigma.
+So everything else is fixed.
+
+158
+00:10:34,360 --> 00:10:34,896
+And it's
+
+159
+00:10:34,896 --> 00:10:39,330
+just going to give me the Black Scholes
+call price at that value of sigma minus 7.
+
+160
+00:10:39,330 --> 00:10:41,943
+So this is a thing that should be equal to
+zero.
+
+161
+00:10:43,974 --> 00:10:47,620
+when I find the implied, the correct
+implied volatility sigma.
+
+162
+00:10:50,800 --> 00:10:53,060
+And so now I just want to use this
+bisection.
+
+163
+00:10:53,060 --> 00:10:55,974
+So bisection, this is supposed to be
+typewriter font,
+
+164
+00:10:55,974 --> 00:10:59,030
+so it's supposed to look like this r code
+here.
+
+165
+00:10:59,030 --> 00:11:02,780
+Bisection was just the name of the
+function that I had on the previous slide.
+
+166
+00:11:02,780 --> 00:11:08,140
+So I want to use that
+
+167
+00:11:08,140 --> 00:11:15,845
+function to solve f of sigma
+
+168
+00:11:15,845 --> 00:11:20,213
+equal to zero.
+
+169
+00:11:20,213 --> 00:11:22,622
+So the arguments, remember, were that the
+function that I want to optimize, and then
+
+170
+00:11:22,622 --> 00:11:24,965
+the lower endpoint and the upper endpoint
+of the interval where I want that to work.
+
+171
+00:11:24,965 --> 00:11:25,519
+And so it returns 0.25117.
+
+172
+00:11:25,519 --> 00:11:31,000
+So, what was the linear interpretation
+again?
+
+173
+00:11:31,000 --> 00:11:31,000
+>>
+
+174
+00:11:31,000 --> 00:11:32,262
+[INAUDIBLE]
+
+175
+00:11:32,262 --> 00:11:32,695
+>> No, no, no but from the quiz question?
+
+176
+00:11:32,695 --> 00:11:34,162
+>> Mine was 1359.
+
+177
+00:11:34,162 --> 00:11:35,766
+>> Oh, okay.
+1359, so yeah.
+
+178
+00:11:35,766 --> 00:11:38,852
+So.
+Yeah.
+
+179
+00:11:38,852 --> 00:11:43,981
+So the linear interpretation was pretty
+close, I suppose.
+
+180
+00:11:43,981 --> 00:11:46,682
+Yeah.
+2511?
+
+181
+00:11:46,682 --> 00:11:48,243
+2513?
+
+182
+00:11:48,243 --> 00:11:54,337
+>> 1359.
+>> 1359, so okay.
+
+183
+00:11:54,337 --> 00:11:57,377
+And so then we can check the computed
+solution,
+
+184
+00:11:57,377 --> 00:11:59,511
+so this is always a, a good idea.
+
+185
+00:11:59,511 --> 00:12:03,639
+So I'm going to take the solution that is
+supposed to make this thing equal to zero.
+
+186
+00:12:03,639 --> 00:12:09,353
+So that should make the Black Scholes call
+price for this equal to 7.
+
+187
+00:12:09,353 --> 00:12:14,843
+So I'm going to plug that back into my
+function for the Black Scholes call
+
+188
+00:12:14,843 --> 00:12:20,747
+price, and now I get basically 7 to within
+two or three significant digits.
+
+189
+00:12:20,747 --> 00:12:23,211
+So this time if
+
+190
+00:12:23,211 --> 00:12:30,455
+I were to round this, I would round this
+to $7.00.
+
+191
+00:12:30,455 --> 00:12:33,830
+So a little bit better than the, the just
+plotting method.
+

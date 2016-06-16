@@ -1,0 +1,1400 @@
+1
+00:00:01,000 --> 00:00:01,980
+Okay.
+
+2
+00:00:01,980 --> 00:00:06,940
+Second half of number seven, so week seven
+is Taylor series.
+
+3
+00:00:08,810 --> 00:00:10,538
+So I'm going to go over something called
+
+4
+00:00:10,538 --> 00:00:12,880
+Taylor's formula for a function of one
+variable.
+
+5
+00:00:14,120 --> 00:00:17,240
+And then just introduce a concept called"
+Big O" notation.
+
+6
+00:00:17,240 --> 00:00:20,570
+Hopefully a lot of you have seen this
+before but it's a pretty simple idea.
+
+7
+00:00:20,570 --> 00:00:25,270
+Just give you an idea of how fast a
+function is growing or shrinking.
+
+8
+00:00:26,910 --> 00:00:27,114
+Then
+
+9
+00:00:27,114 --> 00:00:28,695
+I'll talk about a generalization of
+
+10
+00:00:28,695 --> 00:00:31,150
+Taylor's formula to functions of several
+variables.
+
+11
+00:00:32,460 --> 00:00:34,850
+Something called Taylor series expansions.
+
+12
+00:00:36,150 --> 00:00:40,680
+And then some applications to bond
+convexes.
+
+13
+00:00:40,680 --> 00:00:43,179
+So this is just carrying on from one of
+the lectures from the
+
+14
+00:00:43,179 --> 00:00:47,350
+first week, where I talked about making a
+linear approximation to our function.
+
+15
+00:00:47,350 --> 00:00:49,235
+And now we can add more terms to
+
+16
+00:00:49,235 --> 00:00:52,100
+that approximation to make it a little bit
+better.
+
+17
+00:00:54,130 --> 00:00:57,120
+So I'll start off with Taylor's formula
+for a function of one variable.
+
+18
+00:00:59,190 --> 00:01:01,647
+So my function is going to be f of x
+
+19
+00:01:01,647 --> 00:01:06,770
+and I'm going to assume that it's at least
+n times differentiable.
+
+20
+00:01:06,770 --> 00:01:11,140
+So when I say that I mean I can take the
+derivative of f of x to get f prime.
+
+21
+00:01:11,140 --> 00:01:13,744
+And then I can take the derivative of f
+prime to get f
+
+22
+00:01:13,744 --> 00:01:17,650
+double prime and I can continue doing that
+until I have n primes.
+
+23
+00:01:17,650 --> 00:01:21,470
+And each one of those functions is going
+to be a differentiable function.
+
+24
+00:01:21,470 --> 00:01:24,242
+Then I'm also going to assume that a is
+some
+
+25
+00:01:24,242 --> 00:01:25,170
+real number.
+
+26
+00:01:28,230 --> 00:01:31,350
+And the Taylor polynomial of order n
+around the
+
+27
+00:01:31,350 --> 00:01:34,460
+point a is just defined to be this thing
+here.
+
+28
+00:01:34,460 --> 00:01:36,390
+So what I do.
+
+29
+00:01:36,390 --> 00:01:38,970
+So I evaluate my function at the point a.
+
+30
+00:01:38,970 --> 00:01:41,516
+So the idea is, I know the value of my
+function
+
+31
+00:01:41,516 --> 00:01:44,990
+at certain points and so I'm going to pick
+one of those.
+
+32
+00:01:44,990 --> 00:01:46,910
+So a is going to be that point.
+
+33
+00:01:48,150 --> 00:01:50,190
+And then for points that are near a, I'm
+
+34
+00:01:50,190 --> 00:01:53,250
+just going to use the derivatives to make
+an approximation.
+
+35
+00:01:54,990 --> 00:01:59,690
+And basically what's going on with this
+polynomial, I
+
+36
+00:01:59,690 --> 00:02:04,387
+have x minus a times the first derivative.
+I have x minus
+
+37
+00:02:04,387 --> 00:02:09,166
+a squared, times the second derivative
+divided by two.
+
+38
+00:02:09,166 --> 00:02:14,616
+And then I can just keep going and the
+general formula is
+
+39
+00:02:14,616 --> 00:02:20,066
+going to be x minus a to the kth power
+times the kth derivative
+
+40
+00:02:20,066 --> 00:02:23,990
+evaluated at a, divided by k factorial.
+
+41
+00:02:23,990 --> 00:02:27,710
+And so that's just what the, the final
+term here is.
+
+42
+00:02:27,710 --> 00:02:32,730
+Except that the last one is n, because I
+said it's a Taylor polynomial of order n.
+
+43
+00:02:32,730 --> 00:02:35,682
+So that just means I go up until I'm using
+x minus a
+
+44
+00:02:35,682 --> 00:02:40,059
+to the nth power and then that's the last
+term in my Taylor polynomial.
+
+45
+00:02:41,570 --> 00:02:45,158
+And the idea of this Taylor polynomial is
+that I want to be
+
+46
+00:02:45,158 --> 00:02:49,190
+able to use it to approximate f of a at
+points x that are near a.
+
+47
+00:02:53,500 --> 00:02:57,263
+And so I can write this in a little bit
+more compact notation just
+
+48
+00:02:57,263 --> 00:03:02,090
+like this, so I'm, I'm going from zero up
+to n, so here's the.
+
+49
+00:03:02,090 --> 00:03:05,082
+Here's the nth term on the right here and
+
+50
+00:03:05,082 --> 00:03:08,778
+I can think of just evaluating the
+function as
+
+51
+00:03:08,778 --> 00:03:09,218
+[COUGH]
+
+52
+00:03:09,218 --> 00:03:12,360
+as taking the zeroth derivative.
+
+53
+00:03:12,360 --> 00:03:16,913
+And then there's no x minus a here because
+anything to the zero power is just one.
+
+54
+00:03:22,010 --> 00:03:25,220
+And so I want to use P sub n to
+approximate f of x.
+
+55
+00:03:25,220 --> 00:03:29,672
+And so that the idea here is if I just
+approximated f
+
+56
+00:03:29,672 --> 00:03:34,619
+of x by f of a, you know that might be
+reasonably close.
+
+57
+00:03:36,020 --> 00:03:40,910
+it would just depend on how steep the
+function was and how far away from a I am.
+
+58
+00:03:40,910 --> 00:03:44,393
+And then I could make my, my approximation
+a little
+
+59
+00:03:44,393 --> 00:03:47,309
+bit better by if I, if I know the
+derivative
+
+60
+00:03:47,309 --> 00:03:48,980
+of my function at a.
+
+61
+00:03:48,980 --> 00:03:52,170
+Then I can use a linear approximation on
+either side of a.
+
+62
+00:03:53,750 --> 00:03:57,718
+And then I could make it again a little
+bit better by adding a quadratic term so
+
+63
+00:03:57,718 --> 00:03:59,268
+I add a little bit of a parabola
+
+64
+00:03:59,268 --> 00:04:03,420
+and hopefully that'll make the
+approximation a bit better.
+
+65
+00:04:03,420 --> 00:04:07,291
+And so the idea is as P sub n, as I add
+more terms I'm getting
+
+66
+00:04:07,291 --> 00:04:12,426
+a better and better approximation of f of
+x, but I want to be able to understand
+
+67
+00:04:12,426 --> 00:04:15,130
+how how good my approximation is.
+
+68
+00:04:15,130 --> 00:04:17,600
+And so that's what most of today's lecture
+is going to be.
+
+69
+00:04:19,070 --> 00:04:23,690
+So the questions are does P sub n.
+
+70
+00:04:24,690 --> 00:04:27,240
+Whoops I've got this wrong so this should
+be f of x.
+
+71
+00:04:27,240 --> 00:04:32,290
+But does P sub n of x converge to n, f of
+x as n goes to infinity.
+
+72
+00:04:32,290 --> 00:04:33,879
+So as I add more terms.
+
+73
+00:04:35,100 --> 00:04:37,400
+You know, it's going to be a lot more work
+to calculate
+
+74
+00:04:37,400 --> 00:04:37,750
+[UNKNOWN]
+
+75
+00:04:37,750 --> 00:04:40,150
+all these additional terms, so I want to
+at least know that
+
+76
+00:04:40,150 --> 00:04:42,690
+each term I'm adding is getting me closer
+to what I want.
+
+77
+00:04:44,960 --> 00:04:49,750
+And then order means how well does P sub n
+approximate f of x?
+
+78
+00:04:49,750 --> 00:04:55,370
+So, suppose that this actually did
+converge to f of x.
+
+79
+00:04:55,370 --> 00:05:00,260
+I would still need an infinite number of
+terms to get exactly f of x.
+
+80
+00:05:00,260 --> 00:05:04,580
+So I'd like to know suppose I want to use
+a third order polynomial.
+
+81
+00:05:04,580 --> 00:05:09,680
+You know, how far away from f of x am I?
+
+82
+00:05:09,680 --> 00:05:10,112
+So we'll
+
+83
+00:05:10,112 --> 00:05:13,299
+measure that distance using something
+called approximation error.
+
+84
+00:05:14,850 --> 00:05:18,135
+And that's just going to be defined to be
+the difference
+
+85
+00:05:18,135 --> 00:05:19,950
+between f of x and P sub n of x.
+
+86
+00:05:19,950 --> 00:05:23,814
+So P sub n of x is my polynomial that I'm
+using for approximation and
+
+87
+00:05:23,814 --> 00:05:29,470
+then f of x is the target, that's the
+function that I'm trying to approximate.
+
+88
+00:05:29,470 --> 00:05:33,860
+And if I, if I measure the error using an
+order n.
+
+89
+00:05:33,860 --> 00:05:34,900
+Taylor polynomial.
+
+90
+00:05:34,900 --> 00:05:35,215
+I call
+
+91
+00:05:35,215 --> 00:05:37,855
+that the nth order Taylor approximation
+error.
+
+92
+00:05:37,855 --> 00:05:38,470
+[COUGH]
+
+93
+00:05:38,470 --> 00:05:43,513
+And there are two forms, there are two
+ways for me
+
+94
+00:05:43,513 --> 00:05:48,480
+to get a, a handle on the approximation
+error.
+
+95
+00:05:49,750 --> 00:05:53,360
+So there's, the first one is called the
+derivative form.
+
+96
+00:05:53,360 --> 00:05:57,635
+An so now, I had to assume that f of x was
+least n times differentiable
+
+97
+00:05:57,635 --> 00:05:59,435
+in order to be able to make the
+
+98
+00:05:59,435 --> 00:06:03,890
+Taylor polynomial that I'm using to
+approximate it.
+
+99
+00:06:03,890 --> 00:06:04,118
+If
+
+100
+00:06:04,118 --> 00:06:09,590
+I assume that I can take one more
+derivative than that
+
+101
+00:06:09,590 --> 00:06:14,845
+and that, that derivative is a continuous
+function.
+
+102
+00:06:14,845 --> 00:06:20,037
+Then there's a point c, so c is just some
+point in the
+
+103
+00:06:20,037 --> 00:06:24,974
+interval between a and x.
+So a is the point where
+
+104
+00:06:24,974 --> 00:06:29,710
+I've expanded my, my Taylor polynomial.
+
+105
+00:06:29,710 --> 00:06:33,521
+So I'm writing my Taylor polynomial in
+powers of x minus a.
+
+106
+00:06:33,521 --> 00:06:36,832
+And then x is the point where I'm trying
+to evaluate
+
+107
+00:06:36,832 --> 00:06:40,845
+the function, so ideally you want to have
+x pretty close to a.
+
+108
+00:06:40,845 --> 00:06:41,315
+[COUGH]
+
+109
+00:06:41,315 --> 00:06:44,511
+And then there's going to be some point c
+in
+
+110
+00:06:44,511 --> 00:06:49,070
+between a and x where the following
+relationship holds.
+
+111
+00:06:49,070 --> 00:06:54,720
+So I have x minus a to the n plus one, so
+sort of looks like it's the next term.
+
+112
+00:06:54,720 --> 00:06:58,179
+But instead of evaluating the derivative
+at a exactly?
+
+113
+00:06:58,179 --> 00:07:02,790
+I'm going to evaluate it at this point c,
+that's somewhere between x and a.
+
+114
+00:07:04,180 --> 00:07:06,526
+And that's and then I need to divide
+
+115
+00:07:06,526 --> 00:07:08,190
+by the n plus one factorial.
+
+116
+00:07:09,220 --> 00:07:11,614
+And that's actually not just an
+approximation of
+
+117
+00:07:11,614 --> 00:07:13,910
+the air, but that's exactly equal to the
+air.
+
+118
+00:07:13,910 --> 00:07:14,940
+So it depends.
+
+119
+00:07:16,100 --> 00:07:20,193
+On the choice of c but there's some choice
+of c in this interval ax.
+
+120
+00:07:20,193 --> 00:07:23,988
+Where the approximation error I have
+highlighted on the left hand
+
+121
+00:07:23,988 --> 00:07:27,325
+side is exactly equal to the thing on the
+right hand side.
+
+122
+00:07:27,325 --> 00:07:27,965
+[COUGH]
+
+123
+00:07:27,965 --> 00:07:35,390
+And then there's also an integral form of
+the approximation error.
+
+124
+00:07:38,530 --> 00:07:41,020
+So again I need the, the same condition.
+
+125
+00:07:45,040 --> 00:07:47,770
+But now I can express the Taylor
+approximation error.
+
+126
+00:07:47,770 --> 00:07:52,225
+So the thing on the left hand side is, is
+the same for both both
+
+127
+00:07:52,225 --> 00:07:55,465
+forms of the Taylor approximation error
+for the
+
+128
+00:07:55,465 --> 00:07:59,515
+differentia, derivative form meant for the
+integral form
+
+129
+00:07:59,515 --> 00:08:00,161
+[COUGH].
+
+130
+00:08:00,161 --> 00:08:02,867
+And now on the right hand side instead of
+
+131
+00:08:02,867 --> 00:08:06,393
+having this thing that looks like the next
+term, it
+
+132
+00:08:06,393 --> 00:08:09,755
+looks more like the, the final term in the
+Taylor
+
+133
+00:08:09,755 --> 00:08:14,994
+polynomial except it's multiplied by the n
+plus first derivative.
+
+134
+00:08:14,994 --> 00:08:19,530
+And now I'm going to integrate this with
+respect to t from a to x.
+
+135
+00:08:20,810 --> 00:08:25,430
+And so I've made this, this, I guess it
+kind of looks like a Taylor term
+
+136
+00:08:25,430 --> 00:08:28,900
+but I now instead of having x minus a, I
+have x minus t.
+
+137
+00:08:31,890 --> 00:08:36,030
+And then I'm also evaluating the n plus
+first derivative at the point t.
+
+138
+00:08:37,250 --> 00:08:38,609
+But this is just a function.
+
+139
+00:08:39,610 --> 00:08:43,180
+And then I'm just going to multiply it by
+this factor out in front.
+
+140
+00:08:43,180 --> 00:08:44,390
+That'll be another function.
+
+141
+00:08:44,390 --> 00:08:49,900
+I integrate that function with respect to
+t and then use the limits a to x.
+
+142
+00:08:51,000 --> 00:08:56,280
+And now that's going to be again exactly
+equal to the Taylor approximation error.
+
+143
+00:08:56,280 --> 00:08:56,930
+But this has
+
+144
+00:08:56,930 --> 00:09:00,990
+a sort of added bonus that there's not
+this kind of indeterminate c.
+
+145
+00:09:00,990 --> 00:09:06,260
+So this is something you can just compute
+directly but it's, it ends
+
+146
+00:09:06,260 --> 00:09:11,700
+up being a bit more work because to get
+this form here, you've already taken
+
+147
+00:09:11,700 --> 00:09:17,630
+n plus or n derivatives, so you just have
+to take one more derivative.
+
+148
+00:09:17,630 --> 00:09:19,516
+And you're basically finished with this
+form up
+
+149
+00:09:19,516 --> 00:09:21,340
+here, except that you don't know what c
+is.
+
+150
+00:09:23,070 --> 00:09:27,966
+Here, you do have to still take one more
+derivative but then you have potentially
+
+151
+00:09:27,966 --> 00:09:30,754
+a complicated integral you have to
+evaluate, to
+
+152
+00:09:30,754 --> 00:09:33,809
+figure out what the Taylor approximation
+error is.
+
+153
+00:09:37,570 --> 00:09:39,330
+So let's look at a quick example.
+
+154
+00:09:39,330 --> 00:09:43,419
+I'm going to make a linear approximation
+of the function f
+
+155
+00:09:43,419 --> 00:09:46,840
+of x equals log x around the point a
+equals one.
+
+156
+00:09:48,570 --> 00:09:51,490
+So the black curve is just log x.
+
+157
+00:09:51,490 --> 00:09:53,570
+That's my target function.
+
+158
+00:09:53,570 --> 00:09:55,850
+I'm going to use a first order so P,
+whoops
+
+159
+00:09:55,850 --> 00:09:59,080
+I guess I can't highlight stuff in the
+picture.
+
+160
+00:09:59,080 --> 00:10:02,545
+P sub one of x is just a Taylor polynomial
+of order one,
+
+161
+00:10:02,545 --> 00:10:08,416
+so that's just a linear approximation.
+My point a was chosen because
+
+162
+00:10:08,416 --> 00:10:14,900
+I know log, log of one is a particularly
+easy thing to evaluate, it's zero.
+
+163
+00:10:14,900 --> 00:10:19,410
+So the red line touches the curve at the
+point x equals a.
+
+164
+00:10:19,410 --> 00:10:21,074
+So it's one zero.
+
+165
+00:10:21,074 --> 00:10:27,774
+And then you can see sort of in this
+interval here maybe, plus or minus a
+
+166
+00:10:27,774 --> 00:10:29,382
+quarter from one.
+
+167
+00:10:29,382 --> 00:10:32,151
+It's actually a pretty good approximation
+of
+
+168
+00:10:32,151 --> 00:10:35,039
+the function that I'm trying to
+approximate.
+
+169
+00:10:35,039 --> 00:10:35,604
+[COUGH]
+
+170
+00:10:35,604 --> 00:10:43,290
+And so this is the, this is the general
+form for our order one Taylor polynomial.
+
+171
+00:10:44,970 --> 00:10:47,840
+And then the derivative of log is just one
+over x.
+
+172
+00:10:47,840 --> 00:10:51,320
+When I evaluate that at my point a equals
+one, I just get one.
+
+173
+00:10:51,320 --> 00:10:54,470
+So this is my derivative one over one.
+
+174
+00:10:54,470 --> 00:11:00,430
+My point a is one, so I have x minus one
+that quantity to the first power.
+
+175
+00:11:00,430 --> 00:11:03,750
+And then f of a is equal to log of one
+which is zero.
+
+176
+00:11:03,750 --> 00:11:07,572
+So it turns out that x minus one is my
+first order
+
+177
+00:11:07,572 --> 00:11:13,023
+Taylor polynomial to approximate log x at
+the point a equals one.
+
+178
+00:11:18,190 --> 00:11:21,952
+So now let's look at Taylor approximation
+error and again I'm
+
+179
+00:11:21,952 --> 00:11:25,930
+going to choose another point where it's
+going to be easy to evaluate this.
+
+180
+00:11:25,930 --> 00:11:30,080
+So I'm going to choose x equals e, so the
+log of e will just be equal to one.
+
+181
+00:11:30,080 --> 00:11:32,840
+So at log of one was zero, log of e is
+one.
+
+182
+00:11:34,610 --> 00:11:37,126
+So that'll mean that I can figure out
+easily
+
+183
+00:11:37,126 --> 00:11:40,360
+what the value on the left hand side is.
+
+184
+00:11:40,360 --> 00:11:43,462
+And let's see if we get the same thing
+using the integral
+
+185
+00:11:43,462 --> 00:11:45,820
+form of the Taylor approximation error.
+
+186
+00:11:47,300 --> 00:11:50,366
+So the definition here, I have my limits
+are going
+
+187
+00:11:50,366 --> 00:11:52,529
+to be a to x, so that's one up to x.
+
+188
+00:11:54,080 --> 00:11:58,150
+X minus t to the first power over one
+factorial times f.
+
+189
+00:11:58,150 --> 00:12:02,830
+So, first derivative take the derivative
+of that again, so f double prime.
+
+190
+00:12:04,190 --> 00:12:06,170
+And then I'm going to integrate that with
+respect to t.
+
+191
+00:12:09,350 --> 00:12:12,878
+So I said I want to find the Taylor
+approximation error at the point x
+
+192
+00:12:12,878 --> 00:12:17,320
+equals e, so the first thing I'm going to
+do is just replace the x's in this.
+
+193
+00:12:17,320 --> 00:12:18,060
+With e's.
+
+194
+00:12:19,180 --> 00:12:21,600
+And now t is my variable of integration.
+
+195
+00:12:23,680 --> 00:12:29,959
+So hopefully it should be pretty easy to
+see that this is just going to be so
+
+196
+00:12:29,959 --> 00:12:35,160
+I have minus t times negative one over t.
+That just becomes one over t.
+
+197
+00:12:35,160 --> 00:12:36,750
+Then I have e.
+
+198
+00:12:37,852 --> 00:12:41,940
+times minus one over t squared, so that
+gives me minus e over t squared.
+
+199
+00:12:43,990 --> 00:12:48,990
+That gives me log of t plus e over t,
+evaluated at e and one.
+
+200
+00:12:48,990 --> 00:12:54,150
+And then on the left hand side the, it's
+pretty easy to figure out what this is.
+
+201
+00:12:54,150 --> 00:12:56,140
+So I just end up with log of e.
+
+202
+00:12:56,140 --> 00:12:59,760
+Minus e plus one, so log of e was one.
+
+203
+00:12:59,760 --> 00:13:01,877
+So I get one plus one is two and then I
+
+204
+00:13:01,877 --> 00:13:04,670
+still have this minus e, so I get two
+minus e.
+
+205
+00:13:07,510 --> 00:13:10,941
+And on the right hand side I evaluate my
+integrand at
+
+206
+00:13:10,941 --> 00:13:15,620
+the upper limit and subtract it, evaluate
+it at the lower limit.
+
+207
+00:13:15,620 --> 00:13:19,686
+And so I end up with log of e which is
+one, plus e
+
+208
+00:13:19,686 --> 00:13:25,550
+over e which is another one minus log of
+one which is zero plus e.
+
+209
+00:13:25,550 --> 00:13:29,310
+So this is going to be two and this is
+going to be e.
+
+210
+00:13:32,370 --> 00:13:36,049
+So I get two minus e as the approximation
+error on both sides.
+
+211
+00:13:37,830 --> 00:13:37,990
+Yeah?
+
+212
+00:13:37,990 --> 00:13:40,550
+>> Why are you integrating from one to
+x?
+
+213
+00:13:40,550 --> 00:13:42,626
+Where did that one come from?
+
+214
+00:13:42,626 --> 00:13:48,240
+>> So that domain of integration is a to
+x.
+
+215
+00:13:48,240 --> 00:13:51,640
+And so I did my expansion around the point
+a equals one.
+
+216
+00:13:51,640 --> 00:13:55,360
+So I guess maybe up here I should have put
+an a.
+
+217
+00:13:55,360 --> 00:13:57,845
+And then when I replace these with the
+
+218
+00:13:57,845 --> 00:14:00,480
+actual values it would be one to e.
+
+219
+00:14:00,480 --> 00:14:03,740
+Because I'm, I've built an extension at
+the point a.
+
+220
+00:14:03,740 --> 00:14:07,580
+And I'm trying to evaluate how good that
+is at the point e.
+
+221
+00:14:11,210 --> 00:14:13,190
+So now let's see if we can figure out the
+
+222
+00:14:13,190 --> 00:14:17,180
+same thing using the derivative form of
+the Taylor approximation here.
+
+223
+00:14:17,180 --> 00:14:19,028
+I guess one thing I wanted to point out,
+
+224
+00:14:19,028 --> 00:14:22,435
+let's just remember that the approximation
+error was about 0.7.
+
+225
+00:14:22,435 --> 00:14:23,020
+[COUGH]
+
+226
+00:14:23,020 --> 00:14:26,179
+So I want to know what is the Taylor
+
+227
+00:14:26,179 --> 00:14:31,320
+approximation error again at the point x
+equals e.
+
+228
+00:14:31,320 --> 00:14:35,532
+So I built a Taylor polynomial around at
+the point a equals one and
+
+229
+00:14:35,532 --> 00:14:40,060
+then I want to see how well that
+approximates f at the point x equals e.
+
+230
+00:14:43,030 --> 00:14:48,480
+So this is my formula for the derivative
+form of the Taylor approximation error.
+
+231
+00:14:56,520 --> 00:14:59,648
+And again f double prime here is going to
+be one over x for
+
+232
+00:14:59,648 --> 00:15:05,000
+the first derivative and then minus one
+over x squared for the second derivative.
+
+233
+00:15:05,000 --> 00:15:07,660
+So I get this minus and then I'm
+evaluating it
+
+234
+00:15:07,660 --> 00:15:10,890
+at c, so this is where the c squared came
+from.
+
+235
+00:15:10,890 --> 00:15:13,690
+I have a two factorial, that's where this
+two came from.
+
+236
+00:15:14,780 --> 00:15:18,792
+And then I'm interested in the point x
+equals e, so I'm going to replace
+
+237
+00:15:18,792 --> 00:15:22,330
+the x with an e, so I get e minus one
+squared in the numerator.
+
+238
+00:15:26,250 --> 00:15:30,485
+And now, because I happen to know what the
+true value of the Taylor
+
+239
+00:15:30,485 --> 00:15:35,406
+approximation error is on the left hand
+side, I can solve for this point c.
+
+240
+00:15:35,406 --> 00:15:40,388
+And so what I get is that c is equal to
+1.434 roughly so the,
+
+241
+00:15:40,388 --> 00:15:45,650
+these are probably irrational numbers, so
+they go on forever.
+
+242
+00:15:45,650 --> 00:15:50,300
+But I've just rounded them to rounded them
+to three decimal places.
+
+243
+00:15:50,300 --> 00:15:52,050
+E is definitely an irrational number.
+
+244
+00:15:52,050 --> 00:15:54,500
+So it has an infinite decimal
+representation.
+
+245
+00:15:57,400 --> 00:15:57,850
+[COUGH]
+
+246
+00:15:57,850 --> 00:16:01,000
+And so I found that c is in fact in
+between.
+
+247
+00:16:01,000 --> 00:16:02,658
+So a was equal to one.
+
+248
+00:16:02,658 --> 00:16:05,960
+And then x was equal to e.
+
+249
+00:16:05,960 --> 00:16:08,340
+So I found that the value c is in that
+interval.
+
+250
+00:16:10,220 --> 00:16:10,580
+[COUGH]
+
+251
+00:16:10,580 --> 00:16:13,964
+But I had to know what the Taylor
+approximation error was
+
+252
+00:16:13,964 --> 00:16:17,030
+in order to be able to find that value of
+c.
+
+253
+00:16:17,030 --> 00:16:19,030
+So you might ask how is that useful?
+
+254
+00:16:25,010 --> 00:16:25,320
+[COUGH]
+
+255
+00:16:25,320 --> 00:16:27,180
+And so what we are actually able to do
+
+256
+00:16:27,180 --> 00:16:29,970
+with this, is we can't find with the
+derivative form
+
+257
+00:16:29,970 --> 00:16:32,760
+the exact value of the Taylor
+approximation error but
+
+258
+00:16:32,760 --> 00:16:35,680
+you can find a bound on the Taylor
+approximation error.
+
+259
+00:16:36,810 --> 00:16:39,474
+So I know that the true approximation
+error
+
+260
+00:16:39,474 --> 00:16:42,952
+is going to, for this particular example
+so normally this
+
+261
+00:16:42,952 --> 00:16:45,690
+would either be ax or xa depending on
+whether
+
+262
+00:16:45,690 --> 00:16:48,250
+x is greater than a or less than a.
+
+263
+00:16:48,250 --> 00:16:50,382
+But in this example I know my a is
+
+264
+00:16:50,382 --> 00:16:55,815
+equal to one and my x is equal to e.
+So I know there's some point c
+
+265
+00:16:55,815 --> 00:17:01,270
+in between one and e where the true
+approximation error is going to occur.
+
+266
+00:17:05,220 --> 00:17:07,320
+And then what I want to do.
+
+267
+00:17:07,320 --> 00:17:13,359
+Is say well that, the absolute value of
+the error then must be less than or
+
+268
+00:17:13,359 --> 00:17:19,200
+equal to the maximum value this function
+takes on the interval one e.
+
+269
+00:17:21,160 --> 00:17:22,720
+And so that's going to say well I, I
+
+270
+00:17:22,720 --> 00:17:25,940
+don't know exactly what the Taylor
+approximation error is.
+
+271
+00:17:25,940 --> 00:17:30,889
+But I can tell you that it's definitely
+less than whatever
+
+272
+00:17:30,889 --> 00:17:35,670
+value I'm going to calculate on the right
+hand side here.
+
+273
+00:17:35,670 --> 00:17:39,505
+And so in this case if I, if I take the
+absolute value of the expression I
+
+274
+00:17:39,505 --> 00:17:41,650
+had on the previous slide, I end up with
+
+275
+00:17:41,650 --> 00:17:44,210
+e minus one squared divided by two c
+squared.
+
+276
+00:17:45,390 --> 00:17:48,830
+And now I want to find the value of c
+that's going to make this the biggest.
+
+277
+00:17:51,270 --> 00:17:55,752
+And so it turns out this is, if I put in,
+so since I'm dividing by
+
+278
+00:17:55,752 --> 00:18:00,860
+c, if I want to make this thing big I
+want to make c as small as I can.
+
+279
+00:18:00,860 --> 00:18:03,632
+But c has to be in this interval one e, so
+the
+
+280
+00:18:03,632 --> 00:18:08,370
+smallest I can make c and still stay in
+that interval is one.
+
+281
+00:18:08,370 --> 00:18:11,940
+So that tells me that the absolute value
+of
+
+282
+00:18:11,940 --> 00:18:16,530
+this Taylor approximation error is less
+than or equal
+
+283
+00:18:16,530 --> 00:18:22,610
+to one half e minus one squared and that's
+equal to about 1.476.
+
+284
+00:18:22,610 --> 00:18:28,635
+So my bound on the error is roughly twice
+what the actual error is.
+
+285
+00:18:28,635 --> 00:18:31,455
+because if you remember from the integral
+form we were able to
+
+286
+00:18:31,455 --> 00:18:35,370
+find it exactly and it was about 0.7
+something, the absolute value was.
+
+287
+00:18:37,470 --> 00:18:42,840
+And so the idea here is?
+If this is not good enough.
+
+288
+00:18:42,840 --> 00:18:48,440
+So if I want my approximation to be better
+than within 1.476 of the true value,
+
+289
+00:18:48,440 --> 00:18:53,575
+then I need to use a more complicated
+polynomial to make my approximation.
+
+290
+00:18:53,575 --> 00:18:56,711
+But I also need to know that polynomial
+
+291
+00:18:56,711 --> 00:19:00,669
+is actually getting closer as I add more
+terms.
+
+292
+00:19:03,890 --> 00:19:09,440
+And so this lets me put a bound on the
+Taylor approximation error.
+
+293
+00:19:09,440 --> 00:19:12,966
+So this is the Taylor approximation error
+using a
+
+294
+00:19:12,966 --> 00:19:17,390
+first order Taylor polynomial expanded
+around the point a.
+
+295
+00:19:18,410 --> 00:19:20,990
+And this is the error at the point x
+equals e.
+
+296
+00:19:20,990 --> 00:19:24,240
+And I know that I'm within 1.47 of the
+true value.
+

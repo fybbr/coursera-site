@@ -1,0 +1,2086 @@
+1
+00:00:00,930 --> 00:00:04,110
+The next section is eigenvalues and
+eigenvectors.
+
+2
+00:00:06,990 --> 00:00:12,435
+And I'm going to go back to looking at the
+covariance matrix I talked
+
+3
+00:00:12,435 --> 00:00:18,020
+about in let's see it was last, last
+Wednesdays' lecture.
+
+4
+00:00:18,020 --> 00:00:22,729
+So let's start out with a rectangular
+matrix R, so it has m rows and n columns.
+
+5
+00:00:24,170 --> 00:00:25,750
+And then I'm going to define R tilde.
+
+6
+00:00:25,750 --> 00:00:31,180
+This is exactly the same R tilde that I
+had last Wednesday.
+
+7
+00:00:32,210 --> 00:00:36,277
+So remember we could make this matrix
+operator that had the
+
+8
+00:00:36,277 --> 00:00:41,190
+effect of subtracting the sample mean from
+each column of R.
+
+9
+00:00:41,190 --> 00:00:46,160
+So R tilde is just a matrix whose columns
+each sum up to zero.
+
+10
+00:00:50,430 --> 00:00:53,499
+And then I'm going to take the, so this
+
+11
+00:00:53,499 --> 00:00:58,269
+is the singular value factorization of
+this matrix R tilde.
+
+12
+00:00:58,269 --> 00:01:03,884
+[BLANK_AUDIO]
+
+13
+00:01:03,884 --> 00:01:07,140
+And now remember that I could make my
+covariance matrix.
+
+14
+00:01:07,140 --> 00:01:12,498
+So the covariance matrix for my original
+matrix R, is 1
+
+15
+00:01:12,498 --> 00:01:17,670
+divided by m minus 1 times R tilde
+transpose R tilde.
+
+16
+00:01:20,050 --> 00:01:24,690
+And now I have this singular value
+factorization for R tilde.
+
+17
+00:01:26,330 --> 00:01:29,383
+So generally for homework assignments and
+any time
+
+18
+00:01:29,383 --> 00:01:31,726
+you see these, when you, when you have
+
+19
+00:01:31,726 --> 00:01:34,353
+a factorization for a matrix, the very
+next
+
+20
+00:01:34,353 --> 00:01:37,840
+step is to replace your matrix with its
+factorization.
+
+21
+00:01:38,930 --> 00:01:45,192
+So, I'm going to replace R tilde now, with
+U sigma V transposes, so I end up
+
+22
+00:01:45,192 --> 00:01:50,444
+with my co-variance matrix, also being
+equal to one divided
+
+23
+00:01:50,444 --> 00:01:55,062
+by M minus one.
+And now I have these two singular value,
+
+24
+00:01:55,062 --> 00:02:00,476
+or it's one singular value factorization
+of the matrix R tilde.
+
+25
+00:02:03,100 --> 00:02:06,700
+And I'm going to use my rules for a
+transpose of a product of matrices.
+
+26
+00:02:06,700 --> 00:02:10,910
+So I want to take the transpose of this
+quantity U sigma V transpose.
+
+27
+00:02:12,650 --> 00:02:15,092
+And what I'm going to end up with, so the
+V
+
+28
+00:02:15,092 --> 00:02:18,650
+transpose gets transposed and ends up in
+the first spot.
+
+29
+00:02:18,650 --> 00:02:19,730
+So I end up with a v.
+
+30
+00:02:21,460 --> 00:02:24,220
+Sigma gets a transpose, but it's in the
+middle
+
+31
+00:02:24,220 --> 00:02:26,830
+so it's just going to stay in the same
+spot.
+
+32
+00:02:28,060 --> 00:02:32,830
+And then U is going to get transposed and
+end up in the final spot.
+
+33
+00:02:32,830 --> 00:02:35,476
+And then I'm going to put some, because
+I'm free
+
+34
+00:02:35,476 --> 00:02:39,290
+to do the matrix multiplications in
+whatever order I like.
+
+35
+00:02:39,290 --> 00:02:42,100
+I'm going to do this U transpose U first.
+
+36
+00:02:42,100 --> 00:02:44,340
+And since U is an orthogonal matrix, U
+
+37
+00:02:44,340 --> 00:02:47,610
+transpose U is equal to the identity
+matrix.
+
+38
+00:02:47,610 --> 00:02:49,640
+And so this is just going to go away.
+
+39
+00:02:52,100 --> 00:02:57,646
+And so what I'll end up with is V sigma
+transpose, sigma
+
+40
+00:02:57,646 --> 00:03:02,935
+V transpose.
+And you have to be a little bit careful
+
+41
+00:03:02,935 --> 00:03:10,100
+here because if, I'd like to just say this
+is something like sigma squared.
+
+42
+00:03:10,100 --> 00:03:13,988
+But the dimensions aren't correct so
+remember sigma has
+
+43
+00:03:13,988 --> 00:03:17,309
+to has the same dimensions as the original
+matrix
+
+44
+00:03:17,309 --> 00:03:21,500
+R, so R is M by N, so it's not a square
+matrix.
+
+45
+00:03:21,500 --> 00:03:25,846
+Then even though you kind of think of a
+diagonal matrix as having
+
+46
+00:03:25,846 --> 00:03:31,107
+symmetry built in, you can't just say that
+it's equal to its transpose.
+
+47
+00:03:31,107 --> 00:03:33,207
+Because the dimensions won't work, even
+though
+
+48
+00:03:33,207 --> 00:03:35,170
+the part that doesn't work is all zero.
+
+49
+00:03:35,170 --> 00:03:39,010
+So I have to leave this middle bit as
+sigma transpose sigma.
+
+50
+00:03:40,830 --> 00:03:41,330
+Oops.
+
+51
+00:03:42,540 --> 00:03:42,714
+But
+
+52
+00:03:42,714 --> 00:03:45,360
+I can look at that and make a little bit
+more progress.
+
+53
+00:03:45,360 --> 00:03:51,420
+So if I look at sigma it's diagonal with
+singular values down the main diagonal.
+
+54
+00:03:51,420 --> 00:03:55,330
+And now I'm just leaving everything that's
+zero blank.
+
+55
+00:03:55,330 --> 00:03:57,904
+So what I mean by this is I'm allowed
+non-zero
+
+56
+00:03:57,904 --> 00:04:01,380
+values and they have to be decreasing down
+the main diagonal.
+
+57
+00:04:01,380 --> 00:04:03,360
+And they have to be decreasing just
+because
+
+58
+00:04:03,360 --> 00:04:06,690
+that's sort of the convention for singular
+values.
+
+59
+00:04:06,690 --> 00:04:08,003
+And everything
+
+60
+00:04:08,003 --> 00:04:12,620
+that has i not equal to j is forced to be
+zero.
+
+61
+00:04:12,620 --> 00:04:15,584
+And then notice the, the brackets go down
+a little bit further
+
+62
+00:04:15,584 --> 00:04:18,580
+than the last one and that's this kind of
+empty bit down here.
+
+63
+00:04:18,580 --> 00:04:22,330
+It's just to signify that there's these
+extra.
+
+64
+00:04:22,330 --> 00:04:27,789
+M minus n rows that are all zeros.
+And then when I take the
+
+65
+00:04:27,789 --> 00:04:33,067
+transpose of this, so the sigma transpose
+is now just going to have that
+
+66
+00:04:33,067 --> 00:04:36,360
+extra block of all zeros on the right
+here.
+
+67
+00:04:37,560 --> 00:04:41,289
+But when I start making this product,
+what's going to happen is I have sigma 1.
+
+68
+00:04:42,570 --> 00:04:46,106
+Times sigma one and then I'm going to
+carry on across this row and
+
+69
+00:04:46,106 --> 00:04:50,687
+carry on down this column and that's just
+going to be zeros multiplied together.
+
+70
+00:04:50,687 --> 00:04:54,677
+So the one, one element of this, and this
+is going to
+
+71
+00:04:54,677 --> 00:04:58,097
+end up now sigma transpose is going to be
+an n by
+
+72
+00:04:58,097 --> 00:05:01,760
+m matrix.
+So the product will be m by n.
+
+73
+00:05:01,760 --> 00:05:04,860
+And the top left element is going to be
+sigma 1 squared.
+
+74
+00:05:06,320 --> 00:05:10,500
+And then as I continue doing this
+multiplication, what's going to
+
+75
+00:05:10,500 --> 00:05:14,434
+happen is any time I do an off diagonal
+multiplication here.
+
+76
+00:05:14,434 --> 00:05:19,370
+Whatever singular values on this side is
+going to hit a zero over here.
+
+77
+00:05:19,370 --> 00:05:22,820
+And whatever singular value is over here
+is going to hit a zero over here.
+
+78
+00:05:22,820 --> 00:05:23,165
+So all
+
+79
+00:05:23,165 --> 00:05:26,063
+of the off-diagonal elements of this are
+going to be
+
+80
+00:05:26,063 --> 00:05:29,310
+zero, and it's only when I hit the
+diagonal elements.
+
+81
+00:05:29,310 --> 00:05:33,520
+So I do the, say the second row here times
+the second column here.
+
+82
+00:05:33,520 --> 00:05:41,080
+I'll have zero times zero plus sigma two
+times sigma two, so sigma two squared.
+
+83
+00:05:41,080 --> 00:05:43,650
+And then plus a whole bunch of zeros
+afterwards.
+
+84
+00:05:43,650 --> 00:05:45,995
+So I'm going to end up with a square
+matrix,
+
+85
+00:05:45,995 --> 00:05:48,206
+an n by n matrix, that has the squares of
+
+86
+00:05:48,206 --> 00:05:51,050
+these singular values down the diagonal.
+
+87
+00:05:51,050 --> 00:05:54,326
+So sigma transpose sigma is a square
+matrix, with
+
+88
+00:05:54,326 --> 00:05:57,680
+a square of the singular values down the
+diagonal.
+
+89
+00:06:01,820 --> 00:06:03,440
+Okay, so that's what I just said.
+
+90
+00:06:03,440 --> 00:06:06,228
+And then, because they were already
+positive,
+
+91
+00:06:06,228 --> 00:06:08,690
+we still have the same ordering property.
+
+92
+00:06:11,710 --> 00:06:15,480
+And so now I'm going to define a matrix
+called lambda.
+
+93
+00:06:15,480 --> 00:06:17,220
+To be 1 over m minus 1.
+
+94
+00:06:17,220 --> 00:06:19,980
+So remember, from the previous slide, I
+was carrying
+
+95
+00:06:19,980 --> 00:06:21,995
+this 1 over m minus 1 factor with me.
+
+96
+00:06:21,995 --> 00:06:22,565
+[COUGH]
+
+97
+00:06:22,565 --> 00:06:26,360
+Times sigma transpose sigma.
+
+98
+00:06:26,360 --> 00:06:31,625
+And so what I'm going to end up with, are
+the diagonal elements of this matrix,
+
+99
+00:06:31,625 --> 00:06:36,873
+are just going to be the squares of the
+singular values, divided by m minus 1.
+
+100
+00:06:38,320 --> 00:06:42,541
+And it's only going to have a non zero
+entry wherever this matrix had a non zero
+
+101
+00:06:42,541 --> 00:06:44,752
+entry and we just said that that's only
+
+102
+00:06:44,752 --> 00:06:47,500
+going to have non zero entries down the
+diagonal.
+
+103
+00:06:50,280 --> 00:06:53,880
+So I'm going to rename this matrix sigma
+transpose sigma.
+
+104
+00:06:53,880 --> 00:06:56,320
+This is a capital lambda, and then the
+diagonal
+
+105
+00:06:56,320 --> 00:07:00,310
+elements of my capital lambda, which it's
+a diagonal matrix.
+
+106
+00:07:00,310 --> 00:07:05,302
+The diagonal elements are going to be
+called lambda one,
+
+107
+00:07:05,302 --> 00:07:10,158
+lambda two, lambda three, and so on down
+to lambda n.
+
+108
+00:07:10,158 --> 00:07:12,111
+And now if I substitute this matrix,
+
+109
+00:07:12,111 --> 00:07:15,174
+lambda, into my expression for the
+covariance matrix.
+
+110
+00:07:15,174 --> 00:07:15,482
+So,
+
+111
+00:07:15,482 --> 00:07:20,240
+I had, remember I started out with my
+covariance matrix for my matrix r.
+
+112
+00:07:21,630 --> 00:07:24,828
+And now I'm able to get rid of this
+1/(m-1)
+
+113
+00:07:24,828 --> 00:07:29,324
+in the sigma transpose sigma because
+that's how I defined lambda.
+
+114
+00:07:29,324 --> 00:07:34,124
+Since this is a scalar value, one over x
+minus one, I can move it across these
+
+115
+00:07:34,124 --> 00:07:40,664
+matrices to do the multiplication.
+And so now I have a representation
+
+116
+00:07:40,664 --> 00:07:45,964
+of my covarience matrix for r.
+As V lambda V,
+
+117
+00:07:45,964 --> 00:07:50,984
+oops, V transposed.
+So, I can write it as an orthogonal
+
+118
+00:07:50,984 --> 00:07:56,400
+matrix times a diagonal matrix times the
+transpose of the same orthogonal matrix.
+
+119
+00:08:01,720 --> 00:08:04,984
+So, this is just something I'm going to
+need for, for
+
+120
+00:08:04,984 --> 00:08:08,475
+the rest of this slide, and for the next
+few calculations.
+
+121
+00:08:08,475 --> 00:08:13,060
+So I've used previously the letter e to
+mean a vector of all ones.
+
+122
+00:08:13,060 --> 00:08:16,612
+When I give it a subscript, so I say e sub
+j, I
+
+123
+00:08:16,612 --> 00:08:22,270
+mean a vector that's 1 in the Jth element
+and 0 everywhere else.
+
+124
+00:08:22,270 --> 00:08:27,780
+So e1 would be 1, 0, 0, 0 up to the length
+of the vector.
+
+125
+00:08:27,780 --> 00:08:32,883
+And if you think about what that is, just
+in, in geometry, if I was talking
+
+126
+00:08:32,883 --> 00:08:37,914
+about a, a 2-by-2 space.
+So the of vectors of length 2, e1 would be
+
+127
+00:08:37,914 --> 00:08:43,180
+the vector 1, 0, which would just point in
+the direction of the x-axis.
+
+128
+00:08:43,180 --> 00:08:45,254
+e2 would be 0, 1, which would just be
+
+129
+00:08:45,254 --> 00:08:48,770
+the vector pointing in the direction of
+the y-axis.
+
+130
+00:08:48,770 --> 00:08:52,930
+So that's what I mean when I say e sub j
+is a unit vector in the Jth
+
+131
+00:08:52,930 --> 00:08:54,880
+coordinate direction.
+
+132
+00:08:54,880 --> 00:08:57,150
+So coordinate one would be the x
+direction.
+
+133
+00:08:57,150 --> 00:08:59,365
+Coordinate two is the y direction and so
+on.
+
+134
+00:08:59,365 --> 00:08:59,925
+[COUGH]
+
+135
+00:08:59,925 --> 00:09:05,413
+And now I want to think about what's
+going to happen, so I take
+
+136
+00:09:05,413 --> 00:09:10,531
+my covariance matrix.
+And I multiply it by one of
+
+137
+00:09:10,531 --> 00:09:15,290
+the singular, one of these right singular
+vectors that are in this matrix, v.
+
+138
+00:09:17,490 --> 00:09:19,430
+So, these, it's it's getting a bit
+complicated.
+
+139
+00:09:19,430 --> 00:09:22,670
+These are right singular vectors of R
+tilde, but this
+
+140
+00:09:22,670 --> 00:09:27,340
+is, just this one special vector that that
+I like there.
+
+141
+00:09:27,340 --> 00:09:29,791
+At this point, it's probably better just
+to think
+
+142
+00:09:29,791 --> 00:09:32,680
+of them as the columns of this matrix V.
+
+143
+00:09:32,680 --> 00:09:39,345
+So Vj is the Jth column of the matrix V.
+And what's going to happen when
+
+144
+00:09:39,345 --> 00:09:42,726
+I multiply my covariance matrix times Vj.
+Well
+
+145
+00:09:42,726 --> 00:09:47,870
+I have this way of writing my covariance
+down though.
+
+146
+00:09:47,870 --> 00:09:52,340
+So I'm going to replace the covariance
+matrix by V lambda V transpose.
+
+147
+00:09:52,340 --> 00:09:58,430
+Times Vj and now lets think about what's
+going to happen here.
+
+148
+00:09:58,430 --> 00:10:04,330
+So V transpose has rows, v1, v2 v3 and so
+on.
+
+149
+00:10:04,330 --> 00:10:08,068
+Each one of those is perpendicular to V
+sub j except
+
+150
+00:10:08,068 --> 00:10:12,150
+for the Jth row, which is exactly the
+same.
+
+151
+00:10:12,150 --> 00:10:17,782
+So when I do this, I'm going to get zeroes
+everywhere except the Jth element,
+
+152
+00:10:17,782 --> 00:10:23,250
+which is going to be Vj transposed times
+Vj, which is going to be equal to 1.
+
+153
+00:10:24,870 --> 00:10:28,040
+And that's exactly what I, I said this ej
+would be.
+
+154
+00:10:29,860 --> 00:10:33,143
+So this is that, that, sort of, first
+picture I had in the
+
+155
+00:10:33,143 --> 00:10:35,823
+last set of slides, where I'm sort of
+rotating
+
+156
+00:10:35,823 --> 00:10:38,860
+my system to line up with the coordinate
+directions.
+
+157
+00:10:41,540 --> 00:10:46,200
+So, I have V transposed times V sub j, and
+that's just going to be e sub j.
+
+158
+00:10:50,990 --> 00:10:56,973
+And now lets think about what happens
+
+159
+00:10:56,973 --> 00:11:02,628
+when I multiply a times a vector V.
+
+160
+00:11:02,628 --> 00:11:05,037
+So this is just going to be one of the
+ways
+
+161
+00:11:05,037 --> 00:11:09,413
+I can think about matrix multiplication
+was as a linear combination.
+
+162
+00:11:09,413 --> 00:11:13,079
+So the answer for this matrix
+multiplication problem is
+
+163
+00:11:13,079 --> 00:11:16,121
+V1 times the first column of A, plus V2
+times
+
+164
+00:11:16,121 --> 00:11:22,216
+the second column of A, and so on.
+And now the, the matrix operation and
+
+165
+00:11:22,216 --> 00:11:28,948
+multiplication operation I want to look
+at, is lambda times e sub j.
+
+166
+00:11:28,948 --> 00:11:34,978
+And so the ej's, that's whats giving me
+the coefficients here and all of these
+
+167
+00:11:34,978 --> 00:11:41,151
+are equal to 0 except for the Jth one.
+So all this matrix multiplication
+
+168
+00:11:41,151 --> 00:11:46,236
+is going to do, it's going to give me the
+Jth column of
+
+169
+00:11:46,236 --> 00:11:51,365
+this matrix lambda.
+So lambda times e sub j is just going to
+
+170
+00:11:51,365 --> 00:11:57,646
+be, so its zero times every other column,
+so it's 1 times the Jth column.
+
+171
+00:11:57,646 --> 00:12:02,108
+And then the Jth column, it's 0 everywhere
+up here,
+
+172
+00:12:02,108 --> 00:12:06,667
+0 everywhere down here, it's only in the
+Jth position
+
+173
+00:12:06,667 --> 00:12:10,900
+that it's non-zero and the value is lambda
+sub j.
+
+174
+00:12:11,910 --> 00:12:15,341
+And so I can also write that as just
+lambda sub j, which is
+
+175
+00:12:15,341 --> 00:12:19,730
+a scaler, times a vector that's equal to 1
+only in the jth position.
+
+176
+00:12:22,000 --> 00:12:27,198
+So this lambda, so this matrix times this
+vector e sub j
+
+177
+00:12:27,198 --> 00:12:32,396
+is equal to lambda times that same vector,
+e sub j, the
+
+178
+00:12:32,396 --> 00:12:37,707
+little lambda for corresponding to that
+direction, so
+
+179
+00:12:37,707 --> 00:12:43,240
+this lambda sub j, e sub j, so now I can
+substitute that.
+
+180
+00:12:43,240 --> 00:12:49,260
+So just to sort of recap we are, I started
+out with my covariance matrix.
+
+181
+00:12:49,260 --> 00:12:54,200
+Times one of these vectors, one of the
+columns of V, the Jth column of V.
+
+182
+00:12:55,930 --> 00:13:01,320
+And I've worked that now to, worked that
+down to V times lambda times e sub j.
+
+183
+00:13:03,060 --> 00:13:06,760
+But then I can write this matrix lambda
+times e sub j.
+
+184
+00:13:06,760 --> 00:13:11,070
+That's also equal to just this number
+times the vector e sub j.
+
+185
+00:13:11,070 --> 00:13:14,439
+So one number is certainly a lot easier to
+deal with than a whole matrix.
+
+186
+00:13:15,610 --> 00:13:17,140
+So making some progress.
+
+187
+00:13:19,670 --> 00:13:21,620
+And then because that's a, a scalar.
+
+188
+00:13:23,800 --> 00:13:27,043
+So lambda j is just the number, that's a
+scalar value,
+
+189
+00:13:27,043 --> 00:13:30,330
+I can bring that out, I can bring that out
+in front.
+
+190
+00:13:30,330 --> 00:13:32,120
+So I can move that across the matrix.
+
+191
+00:13:33,450 --> 00:13:40,530
+And so now the last matrix vector product
+I have to consider is V times e sub j.
+
+192
+00:13:45,180 --> 00:13:50,052
+And remember this is just a linear
+combination of the columns of V,
+
+193
+00:13:50,052 --> 00:13:55,800
+and e sub j is equal to 0 everywhere
+except for the Jth position.
+
+194
+00:13:55,800 --> 00:14:01,050
+So basically what's going to happen when I
+do this matrix multiplication, I get zero
+
+195
+00:14:01,050 --> 00:14:05,343
+times the first column of v, plus zero
+times the second column of v.
+
+196
+00:14:05,343 --> 00:14:10,181
+And then I keep doing that until I finally
+get one times the Jth column of
+
+197
+00:14:10,181 --> 00:14:15,420
+V, plus 0 times the J+1th column of V, and
+so on, up to n.
+
+198
+00:14:15,420 --> 00:14:19,830
+And so the J column of V is just this
+vector V sub j again.
+
+199
+00:14:22,060 --> 00:14:26,246
+So, what ended up happening, it's all sort
+of summed
+
+200
+00:14:26,246 --> 00:14:30,796
+up in one line, I have a matrix, some
+special directions.
+
+201
+00:14:30,796 --> 00:14:36,376
+And when I multiple this matrix, the
+co-variance matrix for R, times
+
+202
+00:14:36,376 --> 00:14:41,677
+one of these special directions V sub j, I
+get a vector that points in
+
+203
+00:14:41,677 --> 00:14:47,164
+exactly the same direction and it's just
+scaled by a value lambda
+
+204
+00:14:47,164 --> 00:14:51,584
+sub J.
+So for this special
+
+205
+00:14:51,584 --> 00:14:56,463
+direction V sub j, multiplication by a
+matrix is
+
+206
+00:14:56,463 --> 00:15:01,699
+equal, it's the same operation, as just a
+scaling
+
+207
+00:15:01,699 --> 00:15:06,951
+operation, as multiplication by a scaler
+value.
+
+208
+00:15:06,951 --> 00:15:12,359
+So we started out with this v sub j being
+a right singular vector
+
+209
+00:15:12,359 --> 00:15:13,428
+of R tilde.
+
+210
+00:15:13,428 --> 00:15:20,165
+Define the covariance matrix to be R tilde
+transpose R tilde.
+
+211
+00:15:20,165 --> 00:15:20,630
+[COUGH]
+
+212
+00:15:20,630 --> 00:15:25,652
+And then by doing that if we have the
+right singular vector of this
+
+213
+00:15:25,652 --> 00:15:30,953
+matrix R tilde, when I multiply that by
+the covariance matrix it's
+
+214
+00:15:30,953 --> 00:15:35,791
+just going to scale that vector, it's
+going to stretch it.
+
+215
+00:15:35,791 --> 00:15:41,080
+So I end up with the covariance of R times
+this vector
+
+216
+00:15:41,080 --> 00:15:45,877
+v sub j points in the same direction of s
+sub j and
+
+217
+00:15:45,877 --> 00:15:48,963
+it scaled by a factor lambda.
+
+218
+00:15:48,963 --> 00:15:51,723
+So this was a very special case that I
+just wanted
+
+219
+00:15:51,723 --> 00:15:55,454
+to sort of go through to show where these
+things are coming from.
+
+220
+00:15:55,454 --> 00:16:00,774
+So, in general, if, so this is only, what
+I've done here is only for a covariance
+
+221
+00:16:00,774 --> 00:16:06,094
+matrix, so only for this matrix that I can
+write as the product of R tilde transposed
+
+222
+00:16:06,094 --> 00:16:10,810
+and R tilde.
+in general, if I have a square matrix, so,
+
+223
+00:16:10,810 --> 00:16:13,339
+my covariance matrix was a square matrix.
+
+224
+00:16:15,130 --> 00:16:21,291
+If A is a square matrix and I want to
+think about the product A times a vector
+
+225
+00:16:21,291 --> 00:16:25,937
+x, there are going to be certain special
+directions,
+
+226
+00:16:25,937 --> 00:16:29,485
+x, that are the same direction as A sub x.
+
+227
+00:16:29,485 --> 00:16:34,400
+And these directions are called the
+eigenvectors of A.
+
+228
+00:16:34,400 --> 00:16:36,448
+So there, there, are the directions
+
+229
+00:16:36,448 --> 00:16:41,056
+there, when I multiply by A, I only scale
+the vector, I don't change the directions
+
+230
+00:16:41,056 --> 00:16:42,062
+[UNKNOWN].
+
+231
+00:16:42,062 --> 00:16:45,455
+it's not always guaranteed that these
+things exist.
+
+232
+00:16:45,455 --> 00:16:45,985
+[COUGH]
+
+233
+00:16:45,985 --> 00:16:50,779
+But, for covariance matrices, they do.
+Yeah?
+
+234
+00:16:50,779 --> 00:16:50,779
+>>
+
+235
+00:16:50,779 --> 00:16:56,574
+[INAUDIBLE].
+
+236
+00:16:56,574 --> 00:16:59,924
+>> So there's two kinds of singular
+vectors.
+
+237
+00:16:59,924 --> 00:17:02,247
+There's the left and right.
+
+238
+00:17:02,247 --> 00:17:07,897
+and if I make my square matrix by taking R
+tilde transpose R,
+
+239
+00:17:07,897 --> 00:17:13,773
+then it turns out that the right singular
+vectors are, are the
+
+240
+00:17:13,773 --> 00:17:20,570
+eigenvectors of this matrix here, the
+covariance matrix.
+
+241
+00:17:20,570 --> 00:17:21,641
+But the singular vectors
+
+242
+00:17:21,641 --> 00:17:24,050
+have to be orthoganol.
+Right?
+
+243
+00:17:24,050 --> 00:17:26,950
+Because that was the definition of my
+singular value decomposition.
+
+244
+00:17:28,010 --> 00:17:30,705
+If I make my square matrix as a product
+of,
+
+245
+00:17:30,705 --> 00:17:35,559
+you know, transpose of a rectangular
+matrix times a rectangular matrix.
+
+246
+00:17:36,760 --> 00:17:42,024
+Then I end up having orthogonal
+eigenvectors, but that's not the
+
+247
+00:17:42,024 --> 00:17:47,212
+case in general, so if A is a matrix that
+I can't write like this.
+
+248
+00:17:47,212 --> 00:17:52,978
+Then there's no guarantee that it's going
+to have eigenvectors, and or
+
+249
+00:17:52,978 --> 00:17:58,780
+that they would be orthogonal to one
+another Is that a good enough answer?
+
+250
+00:18:01,060 --> 00:18:01,560
+Okay.
+
+251
+00:18:05,410 --> 00:18:10,816
+So for these special directions so the
+eigenvector directions
+
+252
+00:18:10,816 --> 00:18:16,324
+the matrix product so A times an
+eigenvector is equal to lambda so
+
+253
+00:18:16,324 --> 00:18:21,750
+the lambda is specific for this direction
+x times that vector.
+
+254
+00:18:21,750 --> 00:18:26,006
+So there the special directions for matrix
+times that direction is
+
+255
+00:18:26,006 --> 00:18:30,490
+just scaling that direction and the amount
+of scaling is lambda sub-x
+
+256
+00:18:30,490 --> 00:18:32,749
+so the scaling for the direction x
+
+257
+00:18:35,060 --> 00:18:39,170
+The scaling for the direction x is called
+the eigenvalue.
+
+258
+00:18:39,170 --> 00:18:41,732
+So you have an eigenvector as the
+direction and the
+
+259
+00:18:41,732 --> 00:18:45,210
+eigenvalue is the amount of scaling that
+occurs in that direction.
+
+260
+00:18:49,580 --> 00:18:52,979
+And so we can use this to do something
+called diagonalizing a matrix.
+
+261
+00:18:57,130 --> 00:19:02,524
+And I'm able to diagonalize that matrix,
+so it has to be a square matrix,
+
+262
+00:19:02,524 --> 00:19:08,005
+so I'm going to think of A being n by n
+now, and if it has n linearly independent
+
+263
+00:19:08,005 --> 00:19:13,920
+eigenvectors.
+So if there are, is one eigenvector for.
+
+264
+00:19:13,920 --> 00:19:16,121
+Sort of each dimension of my matrix,
+
+265
+00:19:16,121 --> 00:19:19,260
+and all of those factors are linearly
+independent.
+
+266
+00:19:21,110 --> 00:19:22,326
+Then I can put those
+
+267
+00:19:22,326 --> 00:19:24,606
+eigenvectors in a matrix S, so S is a
+
+268
+00:19:24,606 --> 00:19:27,870
+matrix whose columns are the n
+eigenvectors of A.
+
+269
+00:19:30,060 --> 00:19:36,382
+And then if I pre-multipy A by S inverse
+And post multiple A by S I end up
+
+270
+00:19:36,382 --> 00:19:42,757
+with this matrix lambda that has the eigen
+values down the diagonal.
+
+271
+00:19:42,757 --> 00:19:48,418
+And so the idea here is if I know what the
+eigenvectors are I can
+
+272
+00:19:48,418 --> 00:19:54,123
+take a square matrix and I can turn it
+into a diagonal matrix.
+
+273
+00:19:54,123 --> 00:19:55,607
+So in this case,
+
+274
+00:19:55,607 --> 00:20:03,620
+this is sort of the general idea s just
+has to have these eigenvectors in it.
+
+275
+00:20:03,620 --> 00:20:07,927
+For my covariance matrix we had the extra
+added property that s inverse
+
+276
+00:20:07,927 --> 00:20:10,847
+because the eigenvectors were
+orthothogonal s
+
+277
+00:20:10,847 --> 00:20:13,329
+inverse would be equal to s transpose.
+
+278
+00:20:17,740 --> 00:20:19,940
+So, if I have these N linearly
+
+279
+00:20:19,940 --> 00:20:24,480
+independent eigenvectors, I can
+diagonalize A like this.
+
+280
+00:20:27,610 --> 00:20:32,032
+And then the sort of, useful ways of
+writing this down when you're trying to do
+
+281
+00:20:32,032 --> 00:20:35,784
+calculations with eigenvectors,
+eigenvalues are, you can have
+
+282
+00:20:35,784 --> 00:20:38,120
+A times S is equal to S lambda it's.
+
+283
+00:20:38,120 --> 00:20:41,846
+Essentially just the combinations you can
+get by looking at this
+
+284
+00:20:41,846 --> 00:20:44,760
+and then pre or post multiplying by S or S
+inverse.
+
+285
+00:20:46,100 --> 00:20:48,179
+I tend to think of this as the most
+
+286
+00:20:48,179 --> 00:20:52,290
+natural one because it's writing it down
+as a factorization.
+
+287
+00:20:52,290 --> 00:20:52,926
+So I'm
+
+288
+00:20:52,926 --> 00:21:00,354
+factoring A into a matrix of eigenvectors.
+This diagonal matrix
+
+289
+00:21:00,354 --> 00:21:06,430
+of eigenvalues, and then, oops, and then
+the inverse of my matrix of eigenvectors.
+
+290
+00:21:12,610 --> 00:21:15,874
+So diagonalization, there's two separate
+things you're
+
+291
+00:21:15,874 --> 00:21:18,170
+probably going to get confused later on.
+
+292
+00:21:19,370 --> 00:21:25,840
+So in order to diagonalize, this matrix S
+has to have an inverse.
+
+293
+00:21:25,840 --> 00:21:32,055
+And S is only going to have an inverse, if
+my original matrix A has n
+
+294
+00:21:32,055 --> 00:21:38,267
+linearly independent eigenvectors.
+So the, the requirement
+
+295
+00:21:38,267 --> 00:21:43,170
+for a diagonalization is that A has to
+have n eigenvectors.
+
+296
+00:21:47,840 --> 00:21:51,782
+Later, probably what you're going to want
+to do at some point is
+
+297
+00:21:51,782 --> 00:21:55,724
+use this in place of an inverse because
+the diagonal matrix would
+
+298
+00:21:55,724 --> 00:21:59,499
+be easy to invert and then we'll know that
+s has an inverse.
+
+299
+00:22:01,060 --> 00:22:06,794
+But in order to be able to invert, so in
+order to be able to
+
+300
+00:22:06,794 --> 00:22:13,138
+invert a, so s we know has an inverse
+because I have an s here and
+
+301
+00:22:13,138 --> 00:22:15,110
+an s inverse here.
+
+302
+00:22:15,110 --> 00:22:18,529
+So we're okay there if I can write the, if
+I can diagonalize.
+
+303
+00:22:20,500 --> 00:22:25,400
+But lambda, I seemed to have changed the
+size of my slide, by accident here.
+
+304
+00:22:25,400 --> 00:22:26,800
+There it goes.
+
+305
+00:22:26,800 --> 00:22:31,983
+Lambda is a diagonal matrix, and I said at
+the very beginning of this diagonal matrix
+
+306
+00:22:31,983 --> 00:22:36,979
+is only going to have an inverse, if all
+of that diagonal elements are non zero.
+
+307
+00:22:38,250 --> 00:22:43,326
+So invertibility requires that the
+diagonal elements, none of
+
+308
+00:22:43,326 --> 00:22:47,197
+the diagonal elements of Lambda are equal
+to 0.
+
+309
+00:22:47,197 --> 00:22:50,761
+So there are going to be some matrices
+that I
+
+310
+00:22:50,761 --> 00:22:55,820
+can diagonalize but that I won't be able
+to invert.
+
+311
+00:22:55,820 --> 00:22:59,020
+Because they'll have more one or more zero
+eigenvalues.
+
+312
+00:23:04,990 --> 00:23:07,405
+And then the last thing I want to get to,
+is
+
+313
+00:23:07,405 --> 00:23:10,786
+something called the Spectral Theorem, so
+if we go back to
+
+314
+00:23:10,786 --> 00:23:15,202
+my motivating example, which is motivating
+example was the Singular value
+
+315
+00:23:15,202 --> 00:23:19,175
+decomposition of R tilde, and then the
+covariance matrix for R.
+
+316
+00:23:19,175 --> 00:23:20,355
+[COUGH]
+
+317
+00:23:20,355 --> 00:23:26,491
+So suppose I let A be R tilde
+
+318
+00:23:26,491 --> 00:23:32,789
+transpose R tilde.
+R tilde is an m by n matrix.
+
+319
+00:23:34,700 --> 00:23:37,346
+Then A is going to be symmetric and so I
+think we've already
+
+320
+00:23:37,346 --> 00:23:41,220
+done this exercise but if you just take
+the, the transpose of this.
+
+321
+00:23:41,220 --> 00:23:45,407
+So if I take A transpose I'll end up with
+this R transposed times
+
+322
+00:23:45,407 --> 00:23:49,460
+this R transposed, transposed so I get the
+same thing back.
+
+323
+00:23:49,460 --> 00:23:52,640
+So I can show that A is equal to A
+transpose.
+
+324
+00:23:52,640 --> 00:23:54,750
+That's the definition of a being
+symmetric.
+
+325
+00:23:58,850 --> 00:24:02,630
+And the Spectral Theorem says that every
+symmetric matrix A, so
+
+326
+00:24:02,630 --> 00:24:06,279
+A being symmetric, just means that A is
+equal to A transpose.
+
+327
+00:24:06,279 --> 00:24:11,328
+So for instance this covariance matrix I
+made, by taking the
+
+328
+00:24:11,328 --> 00:24:16,871
+product R tilde transpose R tilde, that's
+a symmetric matrix.
+
+329
+00:24:16,871 --> 00:24:23,939
+Has a factorization Q lambda Q transpose.
+So instead of just having this matrix
+
+330
+00:24:23,939 --> 00:24:28,835
+S that just has the item vectors in it, I
+now have a matrix Q
+
+331
+00:24:28,835 --> 00:24:33,992
+that's playing the same role as S, but
+it's orthogonal.
+
+332
+00:24:33,992 --> 00:24:37,991
+So S inverse just becomes Q transpose
+because for an
+
+333
+00:24:37,991 --> 00:24:42,900
+orthogonal matrix Q, the inverse is equal
+to the transpose.
+
+334
+00:24:42,900 --> 00:24:45,040
+So this is a much nicer way of writing
+this down.
+
+335
+00:24:45,040 --> 00:24:48,993
+I don't have to compute S inverse.
+If I know
+
+336
+00:24:48,993 --> 00:24:51,132
+what Q is then I immediately know what
+
+337
+00:24:51,132 --> 00:24:54,280
+Q inverses because there is just the
+transpose.
+
+338
+00:24:56,660 --> 00:25:01,652
+And then I can write the factorization
+into the
+
+339
+00:25:01,652 --> 00:25:07,668
+eigenvectors so Q the eigenvectors and the
+eigenvalues
+
+340
+00:25:07,668 --> 00:25:13,520
+lambda like this with Q inverse equal to Q
+transpose.
+
+341
+00:25:15,820 --> 00:25:21,120
+And so in particular what this is saying
+is if A is symmetric I get
+
+342
+00:25:21,120 --> 00:25:27,340
+this diagonal matrix lambda that has real
+eigenvalues in it.
+
+343
+00:25:27,340 --> 00:25:33,030
+And I get this orthogonal matrix Q that
+also has all real entries in it.
+
+344
+00:25:35,140 --> 00:25:39,256
+And the caveat, so this is just something
+to beware of, is
+
+345
+00:25:39,256 --> 00:25:43,751
+if you have a non-symmetric matrix you can
+easily end up with.
+
+346
+00:25:43,751 --> 00:25:46,822
+So lamba is my shorthand for eigenvalues
+and
+
+347
+00:25:46,822 --> 00:25:51,180
+x is the eigenvectors that are complex
+numbers.
+
+348
+00:25:51,180 --> 00:25:55,786
+So essentially, there's something kind of
+going on here
+
+349
+00:25:55,786 --> 00:26:00,392
+that's saying, when you have a, a
+symmetric matrix like
+
+350
+00:26:00,392 --> 00:26:04,050
+A transpose it sort of has a, a square
+root.
+
+351
+00:26:04,050 --> 00:26:06,700
+Because where do, where do we get complex
+numbers from?
+
+352
+00:26:06,700 --> 00:26:09,770
+It's when we try to take the square root
+of a negative number.
+
+353
+00:26:09,770 --> 00:26:14,972
+So somehow matrices that are symmetric,
+that's something
+
+354
+00:26:14,972 --> 00:26:20,300
+that I can write as a product like this of
+real value matrices.
+
+355
+00:26:20,300 --> 00:26:25,820
+If I have a nonsymmetric matrix, that's
+kind of somehow like a negative number,
+
+356
+00:26:25,820 --> 00:26:31,350
+because if I try to find a matrix like
+this that's going to give me.
+
+357
+00:26:31,350 --> 00:26:36,190
+You know a matrix times itself to get A, I
+need complex numbers to do that.
+
+358
+00:26:38,770 --> 00:26:40,720
+And luckily a lot of the matrices we look
+at, so
+
+359
+00:26:40,720 --> 00:26:42,870
+especially in mathematical finance you're
+going
+
+360
+00:26:42,870 --> 00:26:45,230
+to be looking at covariance matrices.
+
+361
+00:26:45,230 --> 00:26:49,460
+They are symmetric just because we're
+going to compute them like this.
+
+362
+00:26:49,460 --> 00:26:54,600
+And so they're going to have real
+eigenvalues and real eigenvectors.
+
+363
+00:26:58,900 --> 00:27:02,928
+And then suppose the last, last little
+thing
+
+364
+00:27:02,928 --> 00:27:07,949
+for this section is concept of positive
+definite.
+
+365
+00:27:09,960 --> 00:27:15,060
+And so we'll say a symmetric Matrix is
+positive definite if X
+
+366
+00:27:15,060 --> 00:27:20,800
+transposed Ax is greater than zero or
+every other nonzero vector x.
+
+367
+00:27:22,070 --> 00:27:26,030
+And so this condition it might seem kind
+of almost like it's not possible.
+
+368
+00:27:26,030 --> 00:27:29,936
+But if you have a positive definite matrix
+A, so for instance a covariance
+
+369
+00:27:29,936 --> 00:27:31,700
+instance is going to be a positive
+
+370
+00:27:31,700 --> 00:27:34,590
+definite matrix, it doesn't matter what
+vector.
+
+371
+00:27:34,590 --> 00:27:34,975
+I can put
+
+372
+00:27:34,975 --> 00:27:36,600
+a vector of all negative numbers.
+
+373
+00:27:36,600 --> 00:27:39,970
+I can put a mixed vector of negative
+numbers and positive numbers.
+
+374
+00:27:41,392 --> 00:27:44,239
+but as long as I put x transpose here and
+x here,
+
+375
+00:27:44,239 --> 00:27:48,480
+when I make this product, it's always
+going to be greater than 0.
+
+376
+00:27:48,480 --> 00:27:50,790
+Except for one special case, when x is the
+
+377
+00:27:50,790 --> 00:27:53,703
+0 vector, and then it'll be exactly equal
+to 0.
+
+378
+00:27:57,160 --> 00:28:03,240
+And so what you end up with is if I have a
+symmetric matrix a so I'm just writing
+
+379
+00:28:03,240 --> 00:28:07,705
+that out as a,b,b,c so the off diagonal
+elements have
+
+380
+00:28:07,705 --> 00:28:11,686
+to be equal to each other that makes a
+symmetric.
+
+381
+00:28:11,686 --> 00:28:16,051
+Then when i look at what this matrix
+product is so this x
+
+382
+00:28:16,051 --> 00:28:21,030
+transpose a x I end up with A x, A x
+squared plus, yikes.
+
+383
+00:28:21,030 --> 00:28:22,440
+What happened here?
+
+384
+00:28:22,440 --> 00:28:29,570
+So this shoud be A x 1 squared plus 2, 2b
+times x1 x2 plus c2 x2 squared.
+
+385
+00:28:32,210 --> 00:28:35,927
+And that should always be greater than
+zero and the easiest way to see that at
+
+386
+00:28:35,927 --> 00:28:43,356
+least a matrix like this is going to exist
+Is that if I put b equals zero, I have
+
+387
+00:28:43,356 --> 00:28:50,530
+ax squared and cx2 squared, so the little
+x is missing here.
+
+388
+00:28:50,530 --> 00:28:52,945
+And so if I chose a to be greater than 0
+and c
+
+389
+00:28:52,945 --> 00:28:57,950
+to be greater than 0, then this product
+would always be greater than 0.
+
+390
+00:28:57,950 --> 00:29:00,785
+Another way to see that at least one
+positive definite
+
+391
+00:29:00,785 --> 00:29:04,150
+matrix exists is you could just put the
+identity matrix here.
+
+392
+00:29:05,190 --> 00:29:07,356
+That would just give you x transpose x,
+which
+
+393
+00:29:07,356 --> 00:29:09,693
+would be the squared length of the vector,
+and of
+
+394
+00:29:09,693 --> 00:29:12,372
+course that's always going to be positive,
+except for
+
+395
+00:29:12,372 --> 00:29:14,430
+the 0 vector when it would be equal to 0.
+
+396
+00:29:22,010 --> 00:29:28,280
+So we're going to call this form x
+transpose Ax a quadratic form
+
+397
+00:29:28,280 --> 00:29:34,392
+because it represents this quadratic
+function of x1 and x2.
+
+398
+00:29:34,392 --> 00:29:39,474
+And this is going to have a minimum of
+zero at the point
+
+399
+00:29:39,474 --> 00:29:44,750
+0 and it's going to be positive everywhere
+else.
+
+400
+00:29:44,750 --> 00:29:48,520
+So this is if a is a positive definite
+matrix.
+
+401
+00:29:52,840 --> 00:29:57,580
+And so the, the way to sort of think about
+what positive definite is, is Suppose I,
+
+402
+00:29:57,580 --> 00:29:59,820
+I looked at what would a positive definite
+
+403
+00:29:59,820 --> 00:30:02,640
+matrix, a positive definite one by one
+matrix be?
+
+404
+00:30:03,870 --> 00:30:08,126
+That would just have to be a positive
+number and the way I would think
+
+405
+00:30:08,126 --> 00:30:12,770
+about that is x times a number times x
+would just be say ax squared.
+
+406
+00:30:12,770 --> 00:30:15,038
+And of course that's going to be positive
+when a is
+
+407
+00:30:15,038 --> 00:30:17,749
+positive and it's going to be negative
+when a is negative.
+
+408
+00:30:19,160 --> 00:30:21,240
+And so a positive definite matrix is just
+trying
+
+409
+00:30:21,240 --> 00:30:23,060
+to do the same thing, but with a matrix.
+
+410
+00:30:23,060 --> 00:30:27,218
+So a 2 x 2 matrix, a, is positive
+definite, is sort of like the
+
+411
+00:30:27,218 --> 00:30:32,150
+same statement of just saying a, is a
+little a here, is a positive number.
+
+412
+00:30:35,990 --> 00:30:39,125
+And then I have our example for what
+
+413
+00:30:39,125 --> 00:30:44,920
+I've done with the eigenvector the
+eigenvalue composition here.
+
+414
+00:30:44,920 --> 00:30:50,837
+And essentially we just just end up
+getting the same picture when i did the
+
+415
+00:30:50,837 --> 00:30:56,579
+singuar values and hopefully that's what
+we should have expected.
+
+416
+00:30:56,579 --> 00:31:01,526
+Because we know that this, when I take the
+So here I'm taking
+
+417
+00:31:01,526 --> 00:31:06,376
+the eigen vector eigen value decomposition
+of the variance
+
+418
+00:31:06,376 --> 00:31:11,518
+covariance matrix for R.
+And then I'm just saying S is going
+
+419
+00:31:11,518 --> 00:31:16,589
+to be the eigen vectors and lambda will be
+the eigen values.
+
+420
+00:31:18,710 --> 00:31:22,868
+And so this square root of lambda one,
+this is just
+
+421
+00:31:22,868 --> 00:31:27,719
+the same thing as the first singular value
+of the matrix R~
+
+422
+00:31:27,719 --> 00:31:33,065
+divided by m minus one, square root of m
+minus one times the first
+
+423
+00:31:33,065 --> 00:31:38,910
+singular vector and then the second one,
+the orange direction.
+
+424
+00:31:38,910 --> 00:31:43,758
+So the problem here is that the directions
+are kind of up to
+
+425
+00:31:43,758 --> 00:31:45,870
+plus or minus one.
+
+426
+00:31:45,870 --> 00:31:50,210
+So I end up with a negative one times the
+direction here.
+
+427
+00:31:50,210 --> 00:31:51,791
+But it's still a vector that's just
+
+428
+00:31:51,791 --> 00:31:54,400
+pointing in a, in the perpendicular
+direction.
+
+429
+00:31:54,400 --> 00:31:57,169
+To the first eigen vector, and they're
+going
+
+430
+00:31:57,169 --> 00:32:01,911
+to be perpendicular because the
+variance-covariance matrix is symmetric.
+
+431
+00:32:01,911 --> 00:32:04,719
+So I can use the spectral theorem to say
+that
+
+432
+00:32:04,719 --> 00:32:08,330
+the eigen values are going to be an
+orthoganal matrix.
+

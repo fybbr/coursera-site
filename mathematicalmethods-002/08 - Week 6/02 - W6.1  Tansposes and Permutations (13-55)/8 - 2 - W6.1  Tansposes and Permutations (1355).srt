@@ -1,0 +1,852 @@
+1
+00:00:01,220 --> 00:00:04,270
+I'll get started, then, with transposes
+and permutations.
+
+2
+00:00:10,700 --> 00:00:15,761
+So let's let A by an M by N matrix.
+So, this is a matrix
+
+3
+00:00:15,761 --> 00:00:21,860
+with M rows, and N columns.
+And then I'm going to.
+
+4
+00:00:21,860 --> 00:00:24,610
+Introduce an operation called the
+transpose.
+
+5
+00:00:24,610 --> 00:00:26,754
+So the transpose of A is just going to be
+
+6
+00:00:26,754 --> 00:00:29,320
+denoted by A with a little T in the
+subscript.
+
+7
+00:00:29,320 --> 00:00:32,540
+So, you know, just like A squared this is
+A transpose.
+
+8
+00:00:35,470 --> 00:00:40,360
+And that just means so the transpose
+operation just puts the columns
+
+9
+00:00:40,360 --> 00:00:43,510
+So the columns of A transposed are the
+rows of A, so the
+
+10
+00:00:43,510 --> 00:00:47,430
+first row of A becomes the first column of
+A transposed, the second
+
+11
+00:00:47,430 --> 00:00:51,050
+row of A becomes the second column of A
+transposed and so on.
+
+12
+00:00:52,310 --> 00:00:55,810
+And if you think about it in terms of the
+the
+
+13
+00:00:55,810 --> 00:01:00,310
+elements so a matrix A has elements that
+are little a,
+
+14
+00:01:00,310 --> 00:01:01,750
+sub i j.
+
+15
+00:01:01,750 --> 00:01:08,360
+In the transpose those would just be a sub
+j i so I'm just swapping the indeces.
+
+16
+00:01:11,260 --> 00:01:16,207
+And so if I do that if the dimension of my
+matrix a is m by n then if
+
+17
+00:01:16,207 --> 00:01:21,251
+I swap the row and the columns, the
+dimension of a transpose is
+
+18
+00:01:21,251 --> 00:01:26,510
+going to be n by m.
+So here I had n columns.
+
+19
+00:01:26,510 --> 00:01:29,060
+They become the n rows of a transpose.
+
+20
+00:01:33,660 --> 00:01:37,141
+And just, I mean it's a, it's a pretty
+obvious thing to do, if I have
+
+21
+00:01:37,141 --> 00:01:42,140
+a as just one, two, three, four, five, six
+so the first row is one, two, three.
+
+22
+00:01:42,140 --> 00:01:44,900
+And the first column of A transpose is
+one, two, three.
+
+23
+00:01:45,930 --> 00:01:49,560
+And when A is not square, not that the
+dimension changes too.
+
+24
+00:01:49,560 --> 00:01:51,670
+So it goes from being a two by three
+matrix.
+
+25
+00:01:51,670 --> 00:01:55,450
+So A has two rows and three columns.
+
+26
+00:01:55,450 --> 00:01:58,440
+A transpose then has three rows and two
+columns.
+
+27
+00:02:01,630 --> 00:02:04,185
+And so some properties of the transpose,
+
+28
+00:02:04,185 --> 00:02:07,310
+the first one, hope everybody agrees with
+this.
+
+29
+00:02:07,310 --> 00:02:12,630
+So if I take A transpose and transpose it
+again, I just get A back.
+
+30
+00:02:15,950 --> 00:02:22,518
+If I have a
+
+31
+00:02:22,518 --> 00:02:29,907
+transpose
+
+32
+00:02:29,907 --> 00:02:36,475
+of a sum,
+
+33
+00:02:36,475 --> 00:02:42,222
+so I have
+
+34
+00:02:42,222 --> 00:02:47,148
+A plus B
+
+35
+00:02:47,148 --> 00:02:56,179
+transpose,
+
+36
+00:02:56,179 --> 00:03:00,284
+thats
+
+37
+00:03:00,284 --> 00:03:07,673
+just going
+
+38
+00:03:07,673 --> 00:03:16,704
+to be equal to
+
+39
+00:03:16,704 --> 00:03:24,093
+[INAUDIBLE]
+
+40
+00:03:24,093 --> 00:03:30,661
+it's not
+
+41
+00:03:30,661 --> 00:03:38,050
+letting me
+
+42
+00:03:38,050 --> 00:03:45,439
+highlight
+
+43
+00:03:45,439 --> 00:03:51,186
+there,
+
+44
+00:03:51,186 --> 00:03:55,291
+has to
+
+45
+00:03:55,291 --> 00:03:59,396
+be the
+
+46
+00:03:59,396 --> 00:04:04,322
+same as
+
+47
+00:04:04,322 --> 00:04:10,890
+whatever
+
+48
+00:04:10,890 --> 00:04:16,637
+is in the
+
+49
+00:04:16,637 --> 00:04:26,489
+3 1 position
+
+50
+00:04:26,489 --> 00:04:30,594
+and in
+
+51
+00:04:30,594 --> 00:04:34,699
+the,
+
+52
+00:04:34,699 --> 00:04:38,804
+the 4
+
+53
+00:04:38,804 --> 00:04:43,730
+is here
+
+54
+00:04:43,730 --> 00:04:48,656
+have to
+
+55
+00:04:48,656 --> 00:04:55,224
+be same,
+
+56
+00:04:55,224 --> 00:05:00,150
+so that
+
+57
+00:05:00,150 --> 00:05:04,255
+would
+
+58
+00:05:04,255 --> 00:05:09,181
+be 3 2
+
+59
+00:05:09,181 --> 00:05:15,749
+position
+
+60
+00:05:15,749 --> 00:05:19,854
+has to
+
+61
+00:05:19,854 --> 00:05:23,959
+be the
+
+62
+00:05:23,959 --> 00:05:28,885
+same as
+
+63
+00:05:28,885 --> 00:05:34,632
+the 2 3
+
+64
+00:05:34,632 --> 00:05:42,272
+position So
+
+65
+00:05:42,272 --> 00:05:46,880
+here I have a and a transposed being the
+same thing, so this is a symmetric matrix.
+
+66
+00:05:51,030 --> 00:05:56,630
+And then an even more special case of
+symmetric matrices is a diagonal matrix.
+
+67
+00:05:56,630 --> 00:06:03,630
+And so a matrix is diagonal if.
+Only the diagonal elements are non zero.
+
+68
+00:06:03,630 --> 00:06:09,062
+So, any element aij where j is not equal
+to i has to be equal to zero,
+
+69
+00:06:09,062 --> 00:06:14,360
+and so a diagonal element just because
+these are going to be.
+
+70
+00:06:14,360 --> 00:06:16,568
+So, this is D11, D22,
+
+71
+00:06:16,568 --> 00:06:20,940
+D33 if I switch the order of those
+subscripts.
+
+72
+00:06:20,940 --> 00:06:25,040
+They stay the same, so diagonal matrix is
+automatically symmetric.
+
+73
+00:06:26,520 --> 00:06:28,720
+And again, if, the important thing here,
+not that
+
+74
+00:06:28,720 --> 00:06:31,220
+it's symmetric, that should be pretty
+obvious, but that
+
+75
+00:06:31,220 --> 00:06:32,870
+when I have a diagonal matrix, if I take
+
+76
+00:06:32,870 --> 00:06:35,000
+the transpose of it, I just get the matrix
+back.
+
+77
+00:06:38,520 --> 00:06:39,020
+OK.
+
+78
+00:06:40,620 --> 00:06:41,977
+And so now I want to explain a
+
+79
+00:06:41,977 --> 00:06:45,400
+little bit where diagonal matrices are
+going to come from.
+
+80
+00:06:45,400 --> 00:06:47,770
+Sorry, where symmetric matrices are
+going to come from.
+
+81
+00:06:49,440 --> 00:06:52,210
+So let's let R be any m by n matrix.
+
+82
+00:06:52,210 --> 00:06:54,130
+So here I'm using R just because I want
+
+83
+00:06:54,130 --> 00:06:57,790
+it to be a rectangular matrix, so, not
+necessarily square.
+
+84
+00:06:57,790 --> 00:07:00,309
+So it has m rows and n columns.
+
+85
+00:07:04,530 --> 00:07:08,079
+Then the matrix A that I define as the
+product of
+
+86
+00:07:08,079 --> 00:07:12,790
+R transposed and R is going to be a
+symmetric matrix.
+
+87
+00:07:12,790 --> 00:07:14,560
+And so to show that all we have to do is
+
+88
+00:07:14,560 --> 00:07:17,360
+take the transpose of A and show that
+that's equal to A.
+
+89
+00:07:19,420 --> 00:07:25,820
+So the way I'm going to do that I'll take
+A is equal to R transpose R.
+
+90
+00:07:27,800 --> 00:07:30,410
+So then A transpose is just going to
+
+91
+00:07:30,410 --> 00:07:33,930
+be the transpose of the product R
+transpose R.
+
+92
+00:07:36,140 --> 00:07:38,758
+And now I want to use the rules that I
+gave a
+
+93
+00:07:38,758 --> 00:07:43,800
+couple of slides ago for how I can deal
+with transposes of products.
+
+94
+00:07:43,800 --> 00:07:46,501
+So basically says I take the transpose of
+the
+
+95
+00:07:46,501 --> 00:07:49,510
+pieces and I get them back in the opposite
+order.
+
+96
+00:07:52,740 --> 00:08:00,132
+So this R here becomes this R transposed
+here and this R transposed here, well I
+
+97
+00:08:00,132 --> 00:08:03,614
+take the transpose of that So it's R
+
+98
+00:08:03,614 --> 00:08:06,420
+transposed, transposed so it's going to
+become R again.
+
+99
+00:08:07,940 --> 00:08:12,812
+So I have R transposed R and that's what I
+initially was calling A,
+
+100
+00:08:12,812 --> 00:08:17,858
+so I can start out with any rectangular
+matrix and if I make this matrix
+
+101
+00:08:17,858 --> 00:08:23,040
+R transposed R, then that product A is
+going to be symmetric matrix.
+
+102
+00:08:27,240 --> 00:08:30,920
+And you can do something similar for A
+equals RR transpose.
+
+103
+00:08:30,920 --> 00:08:33,256
+Let's see if I, okay, so I go through
+
+104
+00:08:33,256 --> 00:08:36,720
+this example again, so it's basically the
+same idea.
+
+105
+00:08:37,770 --> 00:08:40,870
+I've defined A to be RR transpose.
+
+106
+00:08:40,870 --> 00:08:43,761
+And I'm going to take the transpose of
+that and if I can show
+
+107
+00:08:43,761 --> 00:08:47,150
+that to equal to A, then A transpose
+equals to A, so A is symentric.
+
+108
+00:08:49,520 --> 00:08:53,110
+And so the same thing happens, it's just
+going to swap the two terms.
+
+109
+00:08:53,110 --> 00:08:58,590
+So I have R transpose, transposed, so
+that's where this first term comes from.
+
+110
+00:08:58,590 --> 00:09:00,730
+The first piece of this product.
+
+111
+00:09:00,730 --> 00:09:06,124
+And then here I have an R and then I am
+going to transpose it, so I end up with R
+
+112
+00:09:06,124 --> 00:09:11,990
+transpose, and then the transpose of a
+transpose is just I get the matrix back.
+
+113
+00:09:11,990 --> 00:09:14,614
+So, that will be R, R transpose which
+
+114
+00:09:14,614 --> 00:09:17,829
+is A, so I get RR transpose is also
+symmetric.
+
+115
+00:09:21,040 --> 00:09:24,490
+And so what we're going to find as we
+start looking at matrix
+
+116
+00:09:24,490 --> 00:09:28,285
+factorizations is a lot of times were
+going to start out with a
+
+117
+00:09:28,285 --> 00:09:33,184
+matrix r that's rectangular, And we're
+going to do some calculation where we're
+
+118
+00:09:33,184 --> 00:09:37,720
+going to end up the product r transpose r,
+or r, r transpose.
+
+119
+00:09:37,720 --> 00:09:39,370
+Or maybe both of them.
+
+120
+00:09:39,370 --> 00:09:42,448
+And so symmetric matrices are going to
+show up
+
+121
+00:09:42,448 --> 00:09:47,090
+sort of more often than you would expect
+just randomly.
+
+122
+00:09:47,090 --> 00:09:49,694
+And there are a lot of nice properties of
+symmetric
+
+123
+00:09:49,694 --> 00:09:52,690
+matrices that I'll get to later in this
+set of lectures.
+
+124
+00:09:55,290 --> 00:09:59,470
+And the second type of matrix I want to
+talk about is called a permutation matrix.
+
+125
+00:10:02,780 --> 00:10:05,340
+Again, a permutation matrix is going to be
+square.
+
+126
+00:10:05,340 --> 00:10:09,564
+So it's a n by n permutation matrix, P,
+has the rows
+
+127
+00:10:09,564 --> 00:10:14,160
+of, so this is I, the identity matrix but
+in any order.
+
+128
+00:10:14,160 --> 00:10:17,136
+So the identity matrix, it has the, you
+know, the first
+
+129
+00:10:17,136 --> 00:10:19,910
+row, the row that starts with a one, goes
+on top.
+
+130
+00:10:19,910 --> 00:10:24,530
+The row that has a one in the second
+position goes in the second place.
+
+131
+00:10:24,530 --> 00:10:28,008
+And if I shuffle those around in any way,
+the matrix that
+
+132
+00:10:28,008 --> 00:10:30,960
+I end up with is going to be a permutation
+matrix.
+
+133
+00:10:34,180 --> 00:10:38,920
+And so for a 3 by 3 matrices, there's 6
+possible permutation matrices, so.
+
+134
+00:10:40,890 --> 00:10:43,134
+You know, one of the things I could get
+when I shuffle
+
+135
+00:10:43,134 --> 00:10:45,850
+the rows around is, I could just get the
+identity matrix back.
+
+136
+00:10:45,850 --> 00:10:47,635
+So we're actually going to count that as a
+
+137
+00:10:47,635 --> 00:10:50,380
+permutation matrix that says just put
+everything where it is.
+
+138
+00:10:50,380 --> 00:10:58,740
+And then these other ones, so the one's
+I've labeled 21, 3,1 and 3,2.
+
+139
+00:10:58,740 --> 00:10:59,469
+What these
+
+140
+00:10:59,469 --> 00:11:05,320
+matrices are going to do when I multiply,
+they're just going to swap rows.
+
+141
+00:11:05,320 --> 00:11:07,980
+So where this would be important, you
+know,
+
+142
+00:11:07,980 --> 00:11:10,850
+when I was talking about pivets when we
+doing
+
+143
+00:11:10,850 --> 00:11:13,720
+elimination it's possible that you could
+end up
+
+144
+00:11:13,720 --> 00:11:16,990
+with a, you could end up with an equation.
+
+145
+00:11:16,990 --> 00:11:21,100
+There's no particular reason why the
+equations have to be in any order.
+
+146
+00:11:21,100 --> 00:11:24,532
+And so if you had an equation that started
+out, so you
+
+147
+00:11:24,532 --> 00:11:28,276
+had 0 times x plus something times y plus
+something times
+
+148
+00:11:28,276 --> 00:11:33,850
+z equals something, and suppose I decided
+to put that equation first.
+
+149
+00:11:33,850 --> 00:11:36,420
+Then I wouldn't have a pivot in the first
+position.
+
+150
+00:11:36,420 --> 00:11:40,910
+So I probably wouldn't want that to be my
+first equation in my system.
+
+151
+00:11:40,910 --> 00:11:44,220
+And so this is sort of the matrix way of
+solving that problem.
+
+152
+00:11:44,220 --> 00:11:46,192
+If I needed to get that row out of the
+
+153
+00:11:46,192 --> 00:11:49,330
+first row, I could multiply by one of
+these matrices.
+
+154
+00:11:49,330 --> 00:11:49,570
+So for
+
+155
+00:11:49,570 --> 00:11:51,520
+instance, I could swap it with the second
+row.
+
+156
+00:11:52,680 --> 00:11:58,508
+And the other interesting that some of
+these have is, if I multiply,
+
+157
+00:11:58,508 --> 00:12:04,790
+P21 by P21, so this is the matrix that
+swaps the first two letters.
+
+158
+00:12:04,790 --> 00:12:08,420
+If I do that again, I would get my
+original matrix back.
+
+159
+00:12:08,420 --> 00:12:11,760
+So that means that P21 is it's own
+inverse.
+
+160
+00:12:11,760 --> 00:12:14,842
+So it swaps row one and two but if I do
+that again it puts,
+
+161
+00:12:14,842 --> 00:12:17,589
+you know, what was originally row one back
+in row
+
+162
+00:12:17,589 --> 00:12:20,620
+one, and what was originally row two back
+in row two.
+
+163
+00:12:26,000 --> 00:12:30,260
+The other interesting property that this
+has is P inverse is the same as P
+
+164
+00:12:30,260 --> 00:12:36,289
+transpose.
+So for P21, since this is a symmetric
+
+165
+00:12:36,289 --> 00:12:43,710
+matrix, and it's its own inverse, you have
+this strange...
+
+166
+00:12:43,710 --> 00:12:45,150
+I guess I would call it duality, but
+
+167
+00:12:45,150 --> 00:12:48,020
+there's actually three things, so maybe
+it's triality.
+
+168
+00:12:48,020 --> 00:12:51,035
+You have the matrix, its transpose, and
+its inverse
+
+169
+00:12:51,035 --> 00:12:52,620
+all being the same matrix.
+
+170
+00:12:53,746 --> 00:12:57,538
+for the more complicated ones, so if you
+want to swap
+
+171
+00:12:57,538 --> 00:13:01,330
+you know, more like pairs of rows then you
+still have
+
+172
+00:13:01,330 --> 00:13:05,201
+this property that pre, p inverse is p
+transpose, But you
+
+173
+00:13:05,201 --> 00:13:10,569
+don't have the property that that these
+are their own inverses anymore.
+
+174
+00:13:14,050 --> 00:13:17,166
+As it is the example of what this is going
+to do, so
+
+175
+00:13:17,166 --> 00:13:22,240
+the permutation matrix P32 that just swaps
+the third row and the second row.
+
+176
+00:13:23,390 --> 00:13:27,789
+So if I have a vector 1 2 3, so it's the
+column vector, so the
+
+177
+00:13:27,789 --> 00:13:33,310
+first row is just 1 2 3 Then it's just
+going to give me 1, 3, 2.
+
+178
+00:13:33,310 --> 00:13:34,673
+So it took what ever was in the third
+
+179
+00:13:34,673 --> 00:13:36,630
+position and will put it in the second
+position.
+
+180
+00:13:36,630 --> 00:13:39,220
+Whatever was in the second position put it
+in the third position.
+
+181
+00:13:42,440 --> 00:13:46,066
+And then if I multiply the output of this,
+so 1, 3, 2 by
+
+182
+00:13:46,066 --> 00:13:50,840
+the same permutation matrix again and it's
+just going to swap the 3 and 2.
+
+183
+00:13:50,840 --> 00:13:55,005
+puts the vector back in the original order
+1,2,3.
+

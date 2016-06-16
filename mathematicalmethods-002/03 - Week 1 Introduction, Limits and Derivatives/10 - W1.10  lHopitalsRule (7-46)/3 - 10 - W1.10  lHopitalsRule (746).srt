@@ -1,0 +1,548 @@
+1
+00:00:00,780 --> 00:00:05,900
+So the final topic in our first set of
+slides is called L'Hopital's Rule.
+
+2
+00:00:09,550 --> 00:00:12,500
+And this is a rule for evaluating limits.
+
+3
+00:00:12,500 --> 00:00:18,840
+So, it's just one more little piece of
+what we started on on the first session.
+
+4
+00:00:20,860 --> 00:00:22,910
+And so the problem that I want to look at,
+
+5
+00:00:22,910 --> 00:00:25,410
+is suppose I have a function that looks
+like this.
+
+6
+00:00:25,410 --> 00:00:28,150
+So I have, sine x divided by x.
+
+7
+00:00:28,150 --> 00:00:29,710
+So one of my rules said that,
+
+8
+00:00:31,750 --> 00:00:34,430
+for a rational function I can just of this
+as the
+
+9
+00:00:34,430 --> 00:00:37,860
+limit of the top divided by the limit of
+the bottom.
+
+10
+00:00:37,860 --> 00:00:40,290
+But that's not going to work here for two
+reasons.
+
+11
+00:00:40,290 --> 00:00:44,140
+A, the limit of the bottom is going to 0.
+
+12
+00:00:44,140 --> 00:00:46,390
+So, it's a continuous function, it's going
+to be 0.
+
+13
+00:00:46,390 --> 00:00:51,400
+And the limit of the top is also a
+continuous function, and sign of 0 is 0.
+
+14
+00:00:52,500 --> 00:00:55,969
+But if you plug this thing, it looks like
+this.
+
+15
+00:00:58,070 --> 00:01:04,279
+So it looks like it's very well defined.
+Except if I plug in the, the
+
+16
+00:01:04,279 --> 00:01:10,410
+number 0 I get an undefined quantity at
+exactly 0.
+
+17
+00:01:10,410 --> 00:01:13,420
+But any positive number or any negative
+
+18
+00:01:13,420 --> 00:01:17,380
+number it's well-defined and it looks like
+this.
+
+19
+00:01:17,380 --> 00:01:21,160
+So if you wanted to, sort of, fill in fill
+in the gap.
+
+20
+00:01:21,160 --> 00:01:23,930
+So I'm missing this one little point right
+here.
+
+21
+00:01:23,930 --> 00:01:25,770
+There's a very obvious choice of what
+number
+
+22
+00:01:25,770 --> 00:01:27,550
+you would want to choose to put there.
+
+23
+00:01:33,220 --> 00:01:35,680
+And so this, this is sort of the problem
+if I
+
+24
+00:01:35,680 --> 00:01:38,530
+jsut tried to evaluate it using the rules
+that I already know.
+
+25
+00:01:38,530 --> 00:01:41,565
+But that's not allowed since the
+denomiator's equal to 0.
+
+26
+00:01:45,930 --> 00:01:48,930
+And so l'Hopitals Rule, let's make some
+sense of this.
+
+27
+00:01:48,930 --> 00:01:53,270
+So, let x be a real number or plus or
+minus infinity.
+
+28
+00:01:53,270 --> 00:01:56,390
+And let F of X and G of X be
+differentiable functions.
+
+29
+00:01:59,510 --> 00:02:02,750
+And there's a lot of conditions, so this
+is a little bit
+
+30
+00:02:02,750 --> 00:02:07,010
+longer than I would like it to be to fit
+on a slide.
+
+31
+00:02:07,010 --> 00:02:11,030
+But basically, what it's saying is if the
+limit of F of X, so this
+
+32
+00:02:11,030 --> 00:02:15,620
+is the thing I'm going to have on the top
+of my fraction is 0.
+
+33
+00:02:15,620 --> 00:02:20,840
+And the limit of g of x, the denominator
+of my fraction, is 0.
+
+34
+00:02:20,840 --> 00:02:25,170
+And if the limit of F prime
+
+35
+00:02:25,170 --> 00:02:27,090
+divided by G prime exists.
+
+36
+00:02:28,860 --> 00:02:33,090
+And that just has to be true on some
+neighborhood around 0.
+
+37
+00:02:33,090 --> 00:02:35,120
+So you can imagine a point x 0.
+
+38
+00:02:35,120 --> 00:02:37,380
+And then theres A over here and B over
+here.
+
+39
+00:02:37,380 --> 00:02:39,890
+So you have some, some points around X and
+0.
+
+40
+00:02:39,890 --> 00:02:39,890
+[BLANK_AUDIO]
+
+41
+00:02:39,890 --> 00:02:40,390
+And
+
+42
+00:02:42,330 --> 00:02:44,410
+you need G prime, so the thing on the
+bottom
+
+43
+00:02:44,410 --> 00:02:48,205
+has to be non-zero everywhere except at X
+and 0.
+
+44
+00:02:50,310 --> 00:02:53,580
+Then, the limit of F of X over G of X, so
+
+45
+00:02:53,580 --> 00:02:56,650
+this is not the derivative anymore, this
+is the two original functions.
+
+46
+00:02:56,650 --> 00:03:02,355
+So, this could be sign X divided by as X
+goes to X 0 it exists
+
+47
+00:03:02,355 --> 00:03:07,840
+and is equal to the limit of the
+derivative as x goes to x 0.
+
+48
+00:03:07,840 --> 00:03:07,840
+[BLANK_AUDIO]
+
+49
+00:03:07,840 --> 00:03:08,340
+And
+
+50
+00:03:11,810 --> 00:03:15,150
+I, I think this will be more clear once I
+show, I show an example.
+
+51
+00:03:18,460 --> 00:03:20,270
+And then we also have pretty much the
+
+52
+00:03:20,270 --> 00:03:24,190
+same thing if I have another, a rational
+function.
+
+53
+00:03:24,190 --> 00:03:27,985
+But in this, this time instead of going to
+0, so
+
+54
+00:03:27,985 --> 00:03:32,220
+0 over 0, now it's going to infinity
+divided by infinity.
+
+55
+00:03:32,220 --> 00:03:35,830
+So this is another quantity that I can't
+make any sense out of mathematically.
+
+56
+00:03:37,400 --> 00:03:43,480
+but pretty much the same condition so if f
+prime over g prime exists and I have this
+
+57
+00:03:45,760 --> 00:03:49,100
+So the intervals now just mean after a
+certain number it has to
+
+58
+00:03:49,100 --> 00:03:53,445
+hold, so such that g prime of x is not
+equal to 0.
+
+59
+00:03:55,800 --> 00:04:01,110
+Then the limit exists, so f(x) over g(x),
+
+60
+00:04:01,110 --> 00:04:03,340
+even though both of these are going to
+infinity.
+
+61
+00:04:05,050 --> 00:04:08,020
+The limit exists and it's equal to the
+
+62
+00:04:08,020 --> 00:04:10,215
+same thing, just the limit of the two
+derivatives.
+
+63
+00:04:12,260 --> 00:04:16,066
+And just a note so you can use this slide
+for reference in the future.
+
+64
+00:04:16,066 --> 00:04:19,820
+So, if X 0 is plus or minus infinity, then
+
+65
+00:04:19,820 --> 00:04:22,400
+these intervals that I've been writing,
+you know, x has to
+
+66
+00:04:22,400 --> 00:04:24,910
+be in the interval a b, you would just
+think
+
+67
+00:04:24,910 --> 00:04:29,030
+of as minus infinity up to b or a to
+infinity.
+
+68
+00:04:31,570 --> 00:04:33,900
+So the way we're going to use this is if I
+want to now
+
+69
+00:04:33,900 --> 00:04:38,010
+try and make sense out of the limit sin(x)
+divided by x.
+
+70
+00:04:39,010 --> 00:04:41,900
+So I have the limit of the numerator and
+
+71
+00:04:41,900 --> 00:04:44,149
+the limit of the denominator both going to
+0.
+
+72
+00:04:46,160 --> 00:04:48,060
+So if I just try to evaluate this,
+
+73
+00:04:48,060 --> 00:04:49,470
+[UNKNOWN]
+
+74
+00:04:49,470 --> 00:04:52,830
+sense they both of 0.
+I'm allowed to use L'Hopital's Rule.
+
+75
+00:04:54,330 --> 00:04:58,600
+So and, I can say that this limit is equal
+to the limit
+
+76
+00:04:58,600 --> 00:05:02,340
+of the derivative of the numerator divided
+by the derivative of the denominator.
+
+77
+00:05:03,610 --> 00:05:09,100
+So we've already shown or already said
+that the derivative of sine
+
+78
+00:05:09,100 --> 00:05:15,100
+is cosine.
+So the limit here is going to be
+
+79
+00:05:15,100 --> 00:05:20,620
+equal to the limit as x goes to 0 of cos x
+divided by 1.
+
+80
+00:05:20,620 --> 00:05:22,520
+So the derivative of x is just 1.
+
+81
+00:05:22,520 --> 00:05:28,420
+And now this is a continuous function, so
+I can just plug in
+
+82
+00:05:28,420 --> 00:05:31,760
+the value 0 and I get cosine of 0 is equal
+to 1.
+
+83
+00:05:31,760 --> 00:05:35,446
+And if we go back quickly and look at my
+picture,
+
+84
+00:05:35,446 --> 00:05:40,110
+that's exactly the value that I would want
+to choose for this
+
+85
+00:05:40,110 --> 00:05:41,770
+function to make it continuous.
+
+86
+00:05:46,350 --> 00:05:47,390
+Oops, okay.
+
+87
+00:05:48,770 --> 00:05:55,350
+So, as another example consider x squared
+minus 1 x squared plus 1.
+
+88
+00:05:55,350 --> 00:05:58,550
+And I want to look at the limit of this as
+x goes to infinity.
+
+89
+00:06:00,140 --> 00:06:02,970
+So clearly the numerator is going to go to
+
+90
+00:06:02,970 --> 00:06:06,000
+infinity and the denominator is going to
+go to infinity.
+
+91
+00:06:07,710 --> 00:06:10,580
+So, if both of them go to infinity I'm
+allowed to use L'Hospital's Rule.
+
+92
+00:06:10,580 --> 00:06:12,690
+And that
+
+93
+00:06:12,690 --> 00:06:17,470
+tells me that this limit Is equal to the
+limit of the derivative of
+
+94
+00:06:17,470 --> 00:06:21,940
+the numerator, divided by the derivative
+of the denumerator, as X goes to infinity.
+
+95
+00:06:23,680 --> 00:06:26,760
+And so when I take the derivative of the
+top, the derivative
+
+96
+00:06:26,760 --> 00:06:30,740
+of the minus one, ones constant, so that's
+just going to be 0.
+
+97
+00:06:30,740 --> 00:06:34,780
+And the power rule says the derivative of
+X squared is 2X.
+
+98
+00:06:34,780 --> 00:06:37,790
+So I'm going to end up with the
+
+99
+00:06:37,790 --> 00:06:42,490
+limit as x goes to infinity of 2x divided
+by 2x.
+
+100
+00:06:45,410 --> 00:06:53,006
+But still, I can't this isn't continuous,
+at the point where I want to or I'm sorry.
+
+101
+00:06:53,006 --> 00:06:53,653
+Eh-heh.
+
+102
+00:06:53,653 --> 00:06:54,880
+I'm not going to 0.
+
+103
+00:06:54,880 --> 00:06:56,710
+I'm going to infinity now.
+
+104
+00:06:56,710 --> 00:06:59,530
+So, still if I look at the limits here,
+the limit of
+
+105
+00:06:59,530 --> 00:07:04,688
+2x divided by the limit of 2x, as x goes
+to infinity.
+
+106
+00:07:04,688 --> 00:07:08,350
+So I'm kind of struggling here to show you
+that you
+
+107
+00:07:08,350 --> 00:07:10,710
+can use L'Hospital's Rule twice to get the
+same thing.
+
+108
+00:07:10,710 --> 00:07:12,889
+You could just cancel the x's here and be
+finished.
+
+109
+00:07:15,080 --> 00:07:18,332
+but the idea here is end up after one
+application of
+
+110
+00:07:18,332 --> 00:07:23,900
+L'Hospital's Rule with another rational
+function that's still 0 over 0.
+
+111
+00:07:23,900 --> 00:07:26,050
+Or infinity over infinity.
+
+112
+00:07:26,050 --> 00:07:29,281
+Then I can go ahead and use L'Hospital's
+Rule again.
+
+113
+00:07:31,350 --> 00:07:34,630
+And so I, I end up with where I was
+before.
+
+114
+00:07:34,630 --> 00:07:38,000
+Take the derivative one more time, so now
+I end up with 2
+
+115
+00:07:38,000 --> 00:07:42,400
+over 2, and that's always going to be
+equal to 1, regardless of x.
+
+116
+00:07:42,400 --> 00:07:46,813
+So the limit as x goes to infinity of
+that, is going to be 1.
+

@@ -1,0 +1,416 @@
+The next section is higher derivatives.
+I'm going to start out with just a little
+motivation
+of the type of problem we're, we're trying
+to solve.
+So, a utility function and this is a
+special type of
+function that shows up in economics Is a
+real value function, u of x.
+So I'm just going to call it u, because
+it's a utility, defined for real numbers.
+And the idea is, it's going to help us
+compare wealth levels.
+And so basically, if If U of x is greater
+than u of y, so x and y
+are some sort of wealth, so you could
+think
+of that as maybe income, maybe a payment
+from something.
+Then u of x is preferred.
+And so it's basically kind of telling me
+Let's see.
+Well, I have some pictures and that, that
+will hopefully make it a bit
+more clear.
+So, some common utility functions are
+exponential utility.
+So, it has a parameter A is greater than
+0.
+Logarithmic utility, so it's just the log
+of my wealth level.
+power rule, so that it's b times x to the
+b.
+So it's sort of a, like a polynomial
+function.
+And quadratic, which is defined to be x
+minus bx for some number b greater than 0.
+And just to sort of help visualize, this
+is what they look like.
+So the, the actual value of the utility
+isn't important.
+But what's, what is important is just how
+I'm
+going to compare things that are on this
+curve.
+So if I look, for instance, at this
+logarithmic utility here.
+And if I'm over on the left side, just a
+small increase
+in, in the x variable is going to give me
+a pretty big increase in utility.
+Whereas if I looked at say the
+right side of this power rule
+You know, the same size increase in x is
+going to give me a much smaller increase
+in my utility.
+So where these things pop up is if
+you're trying to do something like
+planning for retirement.
+You know, having enough money just to
+survive every
+year in retirement that gets you the most
+utility.
+You have to be able to pay for your house,
+pay for
+your food, pay your bills that's You know,
+if you don't have
+that, you're going to have a really bad
+retirement.
+You know, if you get up on the right hand
+side where you start to have a lot of
+wealth.
+You know, you already have a boat, do you
+really need an air strip too?
+You know, you already have a boat, do you
+really need an Air strip too?
+You know, you already have a boat, do you
+really need an Airstream too?
+And so, the particular utility function
+that I'm going to, to
+consider for the rest of this little
+lesson, is the quadratic utility.
+And so normally when you're looking at
+utility
+functions you want them to be non
+decreasing.
+So you don't ever want to get to a point
+like I've drawn here.
+Where if I was on this little bit of the
+quadratic
+utility function, I actually add more
+wealth and I'm somehow worse off.
+And so what you need to do is be able to
+find the maximum of this function.
+And I, I suppose, you know, maybe if
+you know, maybe if I was at a restaurant
+or
+something and I was putting food on the x
+axis.
+There would be some point were I was
+pretty happy.
+And then if I continued to eat I probably
+would be less happy.
+maybe that would be a good example of this
+quadratic function, but generally From
+from just a purely economic point of view,
+you want them to be non-decreasing.
+So what you would want to do with this
+quadratic one is
+you would want to find out where it gets
+to the very top.
+And then, probably at that point, just say
+beyond
+that, the utility is just constant at that
+level.
+Oops.
+So.
+Oh, so what is the derivative telling us?
+And that's what I was trying to get at a
+little bit before when.
+You know If this curve is steep.
+So the derivative is telling us what is
+the slope of this curve at a point.
+So if the derivative is large it means the
+curve is steep, it
+means that a little bit more wealth gives
+us a lot more utility.
+Whereas, if I'm over here a little bit
+more wealth, hardly gives me any utility.
+So that's the, the derivatives is I'm
+going to give me sort of
+the relative change in utility for one
+more dollar worth of wealth.
+And so now if I go back to my,
+my quadratic utility, I want to find a
+point where I'm at the top of this thing.
+And so, the way I'm going to know I'm at
+the top, you know, if I'm walking
+up a hill, I walk up the hill and as I get
+closer to the top.
+You know, it gets less steep,
+less steep, until all of a sudden, I'm
+going down the hill.
+And so, at one point, I'm going up.
+Later, I'm going down.
+Somewhere in the middle, it must have been
+flat.
+And so where it's flat, the slope of that
+tangent line is going to be equal to zero.
+So that means I want to find a point a so
+that the derivative,
+the derivative is the slope of my tangent
+line, is going to be zero.
+And I'm going to call
+that point a critical point.
+And if my function has a local minimum.
+So that means it either has a hump or a
+trough out of point a, then a is always
+going to be a critical point.
+And so if I, if I sort of zoom in on my
+quadratic utility, so my u of x here is
+now the quadratic utility function.
+I find this point a where it's flat here.
+Well, I can also take the derivative of u
+of x and
+that's this descending line here that I've
+called U prime of X.
+And where that line crosses 0, that's
+where this point is, where the critical
+point is going to be.
+That's where the tangent line's going to
+be flat.
+So, where this line is above 0, I have an
+upward sloping curve.
+When the derivative is less than 0, so
+below
+the X axis, I have a downward sloping
+curve.
+And then, you can do exactly the same
+thing.
+If it were this is just some arbitrary
+function that now has a local minimum.
+And so now where it's downward sloping I
+have a derivative of less than zero.
+Where it's upward sloping.
+I have a derivative greater than zero,.
+And where this derivative actually hits
+the x axis,
+that's where my critical point is going to
+be.
+And so the lesson we want to take away
+from this is.
+If f prime of x is decreasing at a, so
+here
+f prime of x is going down at the point a.
+Then I have a local maximum.
+So the funtion looks like the top of a
+hill.
+If it's increasing, so here, the
+derivitive
+is increasing when I hit the critical
+point.
+Then I have a local minimum.
+And so most of the time what's going to
+happen when you're taking derivatives.
+You take a derivative of a function f of x
+and
+you get f prime of x and that's also a
+function.
+And most of the time f prime of x is also
+going to be a differentiable function.
+And so you could again take its
+derivative.
+And so we're going to denote that by f
+double prime of
+x, which is just the derivative of f prime
+of x.
+And f double prime is called the second
+derivative of f of x.
+And I can also write it in Liebniz
+notation, so
+Now I take the first derivative of f of x.
+I think of this thing in the square
+brackets as a function.
+And I take that function's derivative one
+more time with respect to x.
+I can write, this d squared over dx
+squared to
+mean take the derivative, take the second
+derivative in one step.
+And I can also use this notation d squared
+f over dx squared
+to mean the function that is the second
+derivative of f of x.
+And sometimes you'll also see this so you,
+you just use a
+capital letter d, so df of x would be the
+first derivative of f of x.
+D squared f of x is the second derivative.
+And then there's no reason to stop at two.
+So you can have as many higher derivatives
+as you want.
+some notation that seems to be pretty
+common as you have f
+to the n but the n is in parentheses.
+So that just means the nth derivative of
+the function f of x.
+just like we had d
+squared dx here, we can have d to the n, d
+x to the n of f of
+x.
+Or this capital letter D to the n of x.
+But that's only going to work if the one
+before that so f n minus
+1 of x is a differentiable function.
+So as long as the derivative is a
+differentiable function itself,
+you can then take the derivative again
+and, and keep going.
+And so if we go back to our local maximum
+and local minimum
+picture, if I plot the first derivative I
+get this decreasing line.
+If I plot the second derivative, that's
+just
+going to be the slope of the first
+derivative.
+But the derivative is already a line, so
+its slope is going to be constant.
+So I just get a constant value here, u
+double prime of x.
+And so, f of x equals 0, sorry f prime of
+x equals 0, so I have a
+critical point at a here.
+And f double prime of x.
+So th, these, I really ought to have put A
+in here.
+So if I evaluate f double prime at a as
+well.
+So if I look at a, and go down to f double
+prime, that's less than zero.
+Then that corresponds to a local maximum.
+So allow, that allows me to classify this
+critical point as a maximum.
+Where if f prime of a were equal to 0, so
+here
+I have, now I'm talking about the graph on
+the right hand side.
+I have a critical point, because the
+derivative is equal to zero.
+But here f of x, f prime of x is upward
+sloping.
+So f double prime of x is going to be a
+positive constant.
+So f double prime of a,
+in particular, is going to be greater than
+0.
+And that's going to correspond to a local
+minimum.
+So these are called first and second order
+condition.
+The first order condition says the
+derivative has to be equal to zero.
+Second order condition says second
+derivative less than zero.
+And that gives me a local minimum.
+And then if the second derivative is
+greater than zero,
+sorry, second derivative less than zero
+gives me a local maximum.
+Second derivative greater than zero gives
+me a local minimmum.
+So for functions like this it's not too
+bad, you
+can just draw a picture and it's usually
+pretty clear.
+But things get you know can get a little
+bit more
+complicated and then especially if the
+function has several critical points.
+And you're looking for a maximum, you
+might want to wait till we
+[INAUDIBLE]
+the local minimum.
+So for a financial example of this suppose
+I have a certain
+amount of money, and I want to divide it
+into two assets.
+And my goal is to, so that, that is
+something called a portfolio.
+And I want to choose how much I'm going to
+put into each asset to maximize my
+expected return.
+And so basically what I want to do is I am
+suppose I'm not allowed to short sell
+either one of those.
+So short sell means to sell something that
+I don't actually own.
+If I'm not allowed to do that, I have to
+put some amount
+of money into asset A and some amount of
+money into asset B.
+And those two amounts have to both be
+greater than 0.
+And sum up to my total amount of money.
+So the way I'm going to simplify that is
+just say f
+of x is going to be defined on the
+interval 01.
+And x is just going to be the ratio.
+Or the, the fraction of money that goes
+into asset 1.
+So asset 1 get's x.
+Asset 2 get's 1 minus x.
+And if I only consider x on the interval
+0 1, then both of those are going to be
+positive.
+more generally, you can do this on an
+interval AB,
+but 01 will work for what I want to show
+off here.
+So, if I want to find all of the minimum
+and maximum values of this function on 01.
+The approach I'm going to use is first
+find all
+of the critical points on the open
+interval 0 1.
+And
+I'm just going to evaluate f of x there.
+And I also need to evaluate f of x at a
+and b.
+so a and b are the end points.
+So I need to evaluate f of 0 and f of 1.
+And then the global maximum.
+So I can say what the global maximum is
+going to be because I
+know all of the points where that could
+occur on this interval 0 1.
+It's just going to be the maximum of all
+the points I find in steps 1 and 2.
+And then the minimum is going to be The
+minimum
+of all the ones I find in steps one and
+two.
+And really it's step two that I'm trying
+to to harp on here because
+this is what could happen.
+So suppose this little tick over here is
+meant to be 1.
+If I have an expected return that looks
+something like this, I would find Just
+by using calculus, maybe these two orange
+points, which are the critical points.
+And then I would see well this one's
+positive, and this one's negative.
+And, if I'm investing, I certainly don't
+want to invest in something that has
+a negative expected return, so I would
+probably choose this point here.
+But it turns out that in this particular
+example, the best choice would just be to
+put all of my money in asset one and none
+of my money in asset two.
+And so this is actually a pretty common
+interview question.
+They'll set up some sort of payment off
+scheme like this where
+if you don't check the end points, you're
+going to get the wrong answer.
+And then another step you can do is
+calculate the second derivative of f of x.
+And evaluate it at the two critical
+points.
+And that would allow you classify those as
+local minimum or local maximum.
+

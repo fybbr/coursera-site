@@ -1,0 +1,1058 @@
+1
+00:00:01,050 --> 00:00:08,920
+Topic two is Vector Length and Planes.
+So I'll start out with length.
+
+2
+00:00:11,280 --> 00:00:15,060
+And the length of a vector, w, is just
+going to be defined.
+
+3
+00:00:15,060 --> 00:00:19,760
+so length of w, I'll use this notation to
+mean length.
+
+4
+00:00:19,760 --> 00:00:21,840
+So it's just these two vertical bars, sort
+
+5
+00:00:21,840 --> 00:00:25,890
+of like a double absolute value, and it'll
+just
+
+6
+00:00:25,890 --> 00:00:28,190
+be the dot product of the vector with
+
+7
+00:00:28,190 --> 00:00:31,170
+itself, and I'm going to take the square
+root.
+
+8
+00:00:32,980 --> 00:00:36,640
+And so if you think about the reason for
+the square root, if w or something
+
+9
+00:00:36,640 --> 00:00:38,009
+that was actually measured in units.
+
+10
+00:00:39,590 --> 00:00:43,090
+Then when I did this dot product, I'm
+going to have W times W.
+
+11
+00:00:43,090 --> 00:00:46,310
+So whatever unit that would be, would be
+squared.
+
+12
+00:00:46,310 --> 00:00:49,110
+And so if I want to talk about the length
+of W, if W was measured
+
+13
+00:00:49,110 --> 00:00:53,550
+in feet, I want this length to come back
+in feet, not in squared feet.
+
+14
+00:00:53,550 --> 00:00:56,220
+So the square root will get rid of that.
+
+15
+00:00:57,660 --> 00:01:01,650
+And In the plane, you can think about this
+as just the standard
+
+16
+00:01:01,650 --> 00:01:06,530
+Euclidean distance between the origin and
+the point described by W.
+
+17
+00:01:08,690 --> 00:01:13,990
+So for example, if W was a vector of four
+components, then
+
+18
+00:01:13,990 --> 00:01:17,729
+the length of W is just the dot product of
+W with itself.
+
+19
+00:01:18,840 --> 00:01:21,840
+That's just going to be the sum of the
+squared components.
+
+20
+00:01:21,840 --> 00:01:23,330
+And then I'm going to take the square
+root.
+
+21
+00:01:28,670 --> 00:01:33,510
+And the length of a vector is going to be
+positive, except for the zero vector.
+
+22
+00:01:33,510 --> 00:01:35,480
+So remember the zero vector was a special
+
+23
+00:01:35,480 --> 00:01:38,620
+vector where every component was equal to
+0.
+
+24
+00:01:38,620 --> 00:01:41,590
+And the length of 0 will be exactly equal
+to
+
+25
+00:01:41,590 --> 00:01:45,600
+0 and any non 0 vector has to have
+positive length.
+
+26
+00:01:49,840 --> 00:01:52,570
+And then there's a special vector that
+useful
+
+27
+00:01:52,570 --> 00:01:54,600
+in a lot of situations that's called, unit
+vector.
+
+28
+00:01:55,910 --> 00:01:59,050
+And this is just a vector whose length is
+equal to 1.
+
+29
+00:01:59,050 --> 00:02:02,540
+And so if the dot product of two vectors
+is equal
+
+30
+00:02:02,540 --> 00:02:04,920
+to one, then I don't have to take the
+square root.
+
+31
+00:02:06,640 --> 00:02:10,590
+So I can just describe that as u dot u is
+equal to one.
+
+32
+00:02:15,920 --> 00:02:19,680
+And usually that the reason the unit
+vector is going to be useful is it,
+
+33
+00:02:19,680 --> 00:02:21,890
+is it captures the direction of a
+
+34
+00:02:21,890 --> 00:02:25,250
+vector without capturing the length of
+that vector.
+
+35
+00:02:25,250 --> 00:02:29,650
+So if I have any non-zero vector, I can
+find a unit vector.
+
+36
+00:02:29,650 --> 00:02:36,430
+So here I imagined w as a non-zero vector.
+W with a little tilde above
+
+37
+00:02:36,430 --> 00:02:40,850
+it is going to be a vector that points in
+the same direction but has unit length,
+
+38
+00:02:40,850 --> 00:02:43,030
+and I can turn any vector into that type
+
+39
+00:02:43,030 --> 00:02:45,709
+of unit vector, just by dividing it by its
+length.
+
+40
+00:02:47,160 --> 00:02:51,760
+So W is a vector here, the length of W is
+a scalar, so I'm just
+
+41
+00:02:51,760 --> 00:02:56,980
+using my property that one over the length
+of W times W, that's also a vector.
+
+42
+00:03:02,170 --> 00:03:06,770
+Then this idea of length can be
+generalized using something called a norm.
+
+43
+00:03:08,700 --> 00:03:10,840
+And so a norm is a function, I'm going to
+use
+
+44
+00:03:10,840 --> 00:03:16,140
+the same notation here, that assigns a
+length to a vector.
+
+45
+00:03:16,140 --> 00:03:20,680
+Here, I've put lengths in italics, because
+the font that I use for these
+
+46
+00:03:20,680 --> 00:03:24,370
+slides doesn't really make italics stand
+out that much I also put it in quotes.
+
+47
+00:03:25,660 --> 00:03:27,630
+So it's some quantity
+
+48
+00:03:27,630 --> 00:03:29,139
+that you can interpret like a length.
+
+49
+00:03:30,350 --> 00:03:32,570
+But it's not necessarily going to be the
+euclidian
+
+50
+00:03:32,570 --> 00:03:35,900
+length of the, of the point from the
+origin.
+
+51
+00:03:38,600 --> 00:03:43,400
+So a norm, to be a norm, this function has
+to satisfy the following three conditions.
+
+52
+00:03:43,400 --> 00:03:43,900
+So,
+
+53
+00:03:46,130 --> 00:03:50,540
+a norm has to be, has to assign this
+length quantity.
+
+54
+00:03:50,540 --> 00:03:52,370
+That's greater than or equal to zero.
+
+55
+00:03:53,460 --> 00:03:56,360
+And, it can be zero only for the zero
+vector.
+
+56
+00:03:56,360 --> 00:03:59,240
+So, for a non zero vector, it has to
+assign a positive length.
+
+57
+00:04:03,950 --> 00:04:07,290
+The norm of a sum of two vectors has to be
+
+58
+00:04:07,290 --> 00:04:11,449
+less than or equal to the norms of each of
+those vectors.
+
+59
+00:04:15,220 --> 00:04:19,850
+And then if I scale a vector by a real
+number
+
+60
+00:04:19,850 --> 00:04:22,400
+A, so remember if I have a scalar A and I
+
+61
+00:04:22,400 --> 00:04:24,920
+multiply that by a vector that gives me a
+new vector
+
+62
+00:04:24,920 --> 00:04:28,640
+that just has A times the length of the
+original vector.
+
+63
+00:04:28,640 --> 00:04:32,000
+And that is actually a condition that the
+norm is going to enforce.
+
+64
+00:04:32,000 --> 00:04:39,020
+So A times X, the norm of that vector has
+to be equal to the absolute value of A,
+
+65
+00:04:40,520 --> 00:04:43,080
+times the same norm, of X.
+And
+
+66
+00:04:47,800 --> 00:04:54,690
+then important class of norms, are called
+the, the p norms And the definition.
+
+67
+00:04:54,690 --> 00:04:57,510
+So, if I just use this notation.
+
+68
+00:04:57,510 --> 00:05:01,780
+So, and X or any vector with the two bars
+on either side.
+
+69
+00:05:01,780 --> 00:05:04,560
+I'm ging to mean the, the standard vector
+norm.
+
+70
+00:05:04,560 --> 00:05:09,740
+Which is just the uclidian distance
+between the origin and the point.
+
+71
+00:05:10,910 --> 00:05:13,000
+If I put a subscript here,
+
+72
+00:05:13,000 --> 00:05:14,470
+that's how I'm going to communicate that I
+
+73
+00:05:14,470 --> 00:05:16,620
+want this norm to be some different
+function.
+
+74
+00:05:18,900 --> 00:05:23,440
+So if I put a subscript p, what I'm going
+to
+
+75
+00:05:23,440 --> 00:05:29,750
+mean is this expression here, so x i,
+these are the components of my vector x.
+
+76
+00:05:29,750 --> 00:05:35,310
+I take the absolute value of those to the
+p power and I sum them up.
+
+77
+00:05:36,420 --> 00:05:39,240
+And then I pick the pith root of that.
+
+78
+00:05:39,240 --> 00:05:42,300
+So one over p is the same thing as taking
+the pith root.
+
+79
+00:05:44,270 --> 00:05:51,060
+And the standard vector norm Is just going
+to be the 2-norm, in this notation.
+
+80
+00:05:51,060 --> 00:05:53,530
+So if I put a 2 here, I would be
+
+81
+00:05:53,530 --> 00:05:58,330
+squaring each component, so I wouldn't
+need the absolute values anymore.
+
+82
+00:05:58,330 --> 00:06:01,439
+So that would be the sum of the squared
+components, to the
+
+83
+00:06:01,439 --> 00:06:04,650
+one-half power, which would be the same
+thing as the square root.
+
+84
+00:06:04,650 --> 00:06:08,609
+So, putting p equals 2 just gives me back
+the, the regular norm.
+
+85
+00:06:10,340 --> 00:06:10,820
+Using
+
+86
+00:06:10,820 --> 00:06:15,040
+P different value can sometimes be useful
+for solving different problems.
+
+87
+00:06:17,690 --> 00:06:20,970
+You can also define something called the
+infinity norm,
+
+88
+00:06:20,970 --> 00:06:22,910
+where if you take the limit of this as P
+
+89
+00:06:22,910 --> 00:06:25,900
+goes to infinity, what it ends of giving
+you
+
+90
+00:06:25,900 --> 00:06:30,360
+is just the maximum of the Elements of the
+vector.
+
+91
+00:06:34,630 --> 00:06:36,830
+And, then there's also something called
+the 1 norm.
+
+92
+00:06:37,930 --> 00:06:39,540
+Which is just going to be the sum of
+
+93
+00:06:39,540 --> 00:06:42,210
+the absolute values of the elements of the
+vector.
+
+94
+00:06:43,440 --> 00:06:48,250
+And, this is, so, in statistics, this is
+sometimes called the Manhattan distance.
+
+95
+00:06:48,250 --> 00:06:50,910
+So, if you imagine, so, Manhattan.
+
+96
+00:06:50,910 --> 00:06:54,900
+Is a city that's got a grid for its
+streets.
+
+97
+00:06:56,320 --> 00:07:00,450
+it can be any city I suppose that has a
+nice square grid for its streets.
+
+98
+00:07:00,450 --> 00:07:02,340
+And so if you wanted to describe how to
+
+99
+00:07:02,340 --> 00:07:04,920
+get from one address to another address
+you'd have
+
+100
+00:07:04,920 --> 00:07:07,800
+to think of going sort of so many avenues
+
+101
+00:07:07,800 --> 00:07:10,199
+east and west and so many streets north
+and south.
+
+102
+00:07:11,840 --> 00:07:14,350
+Where, you know, the euclidean distance
+would be if I
+
+103
+00:07:14,350 --> 00:07:17,040
+just wanted to walk straight at where I
+want to go.
+
+104
+00:07:18,180 --> 00:07:20,630
+you know, in New York city, the buildings
+are all very tall,
+
+105
+00:07:20,630 --> 00:07:24,050
+so generally you can't walk the straight
+direction where you want to go.
+
+106
+00:07:25,870 --> 00:07:26,370
+Okay.
+And
+
+107
+00:07:31,450 --> 00:07:35,820
+we can also talk about the angle Between
+two vectors.
+
+108
+00:07:40,330 --> 00:07:45,000
+So the dot product has a nice property,
+that when two vectors are perpendicular.
+
+109
+00:07:45,000 --> 00:07:48,070
+So for instance if I thought of the vector
+(1,0)
+
+110
+00:07:48,070 --> 00:07:51,530
+that would just be a vector pointing in
+the X direction.
+
+111
+00:07:51,530 --> 00:07:53,750
+I could think of the vector 0,1, which
+
+112
+00:07:53,750 --> 00:07:56,300
+should be a vector pointing in the Y
+direction.
+
+113
+00:07:56,300 --> 00:08:00,560
+If I took their product I would get 1
+times 0 plus 0 times 1.
+
+114
+00:08:00,560 --> 00:08:04,820
+So, that's 0 plus 0 which is 0.
+So, if I have 2 vectors.
+
+115
+00:08:04,820 --> 00:08:05,650
+So, this property
+
+116
+00:08:05,650 --> 00:08:06,440
+holds in general.
+
+117
+00:08:06,440 --> 00:08:08,395
+So, if I have 2 vectors that are
+perpendicular,
+
+118
+00:08:08,395 --> 00:08:10,777
+when I take the dot product I get 0.
+
+119
+00:08:16,990 --> 00:08:21,870
+And then another little bit of knowledge
+is if I define a vector V.
+
+120
+00:08:23,740 --> 00:08:28,000
+To be cosign phi, sign phi or some angle
+phi.
+
+121
+00:08:29,470 --> 00:08:31,479
+Then this is always going to be a unit
+vector.
+
+122
+00:08:32,660 --> 00:08:35,810
+And so I can see that just by computing
+the length of V.
+
+123
+00:08:38,920 --> 00:08:41,570
+So I have cosine times cosine plus sine
+
+124
+00:08:41,570 --> 00:08:44,820
+times sine, and cosine squared plus sine
+squared
+
+125
+00:08:44,820 --> 00:08:47,880
+is equal to 1, and when I take the square
+root of that, I just get 1.
+
+126
+00:08:47,880 --> 00:08:50,683
+So the length of this vector V is equal to
+1.
+
+127
+00:08:58,230 --> 00:08:58,230
+[SOUND]
+
+128
+00:08:58,230 --> 00:08:58,730
+So
+
+129
+00:09:00,900 --> 00:09:05,270
+I couldn't make all of this pop-up in
+sequence like I normally like to.
+
+130
+00:09:05,270 --> 00:09:08,340
+So I had to just put it all on the slide
+at the same time.
+
+131
+00:09:08,340 --> 00:09:13,790
+So if I define a vector U to be the vector
+(1,4), so that's this black vector.
+
+132
+00:09:13,790 --> 00:09:19,022
+Pointing up here.
+Then if I
+
+133
+00:09:19,022 --> 00:09:25,900
+find a unit vector pointing in the same
+direction, so I can get that just by
+
+134
+00:09:25,900 --> 00:09:27,320
+dividing u by its length.
+
+135
+00:09:29,730 --> 00:09:29,730
+[COUGH]
+
+136
+00:09:29,730 --> 00:09:32,600
+Then the components of that unit vector
+are
+
+137
+00:09:32,600 --> 00:09:35,870
+going to be the cosine of beta, sin beta.
+
+138
+00:09:35,870 --> 00:09:38,100
+So this angle here is beta.
+
+139
+00:09:39,800 --> 00:09:43,430
+And then I can do the same thing with w.
+
+140
+00:09:45,420 --> 00:09:48,380
+So here I'm just going to turn w into a
+unit vector.
+
+141
+00:09:50,250 --> 00:09:53,718
+And then the components of that unit
+vector are just going to be.
+
+142
+00:09:53,718 --> 00:09:54,735
+Cosine alpha,
+
+143
+00:09:54,735 --> 00:09:57,120
+sin alpha, so this blue angle here is
+alpha.
+
+144
+00:09:59,480 --> 00:10:02,450
+And then if I look at the angle between
+those two vectors, so the
+
+145
+00:10:02,450 --> 00:10:08,420
+angle between w and u, the cosine of that
+angle, so here's I've defined that
+
+146
+00:10:08,420 --> 00:10:13,220
+to be this red angle, theta, the cosine of
+that angle, is equal to
+
+147
+00:10:13,220 --> 00:10:17,950
+the dot product Of these two unit vectors,
+the u tilde and the w tilde.
+
+148
+00:10:20,210 --> 00:10:22,290
+And then another nice property that I will
+
+149
+00:10:22,290 --> 00:10:27,130
+refer to later on, is called the Schwarz
+inequality.
+
+150
+00:10:27,130 --> 00:10:30,950
+So it tells me that the dot product of
+these two vectors u and
+
+151
+00:10:30,950 --> 00:10:35,920
+w, so these are the actual u and w, not
+the unit vector any more.
+
+152
+00:10:35,920 --> 00:10:41,290
+This has to be less than or equal to the
+length of u times the length of w.
+
+153
+00:10:44,140 --> 00:10:48,200
+And so remember when I, when I don't put
+any subscript on
+
+154
+00:10:48,200 --> 00:10:53,889
+this norm operator, I mean the actual
+Euclidean length of the vector.
+
+155
+00:10:57,010 --> 00:11:00,440
+OK, so now onto the second piece which was
+planes.
+
+156
+00:11:00,440 --> 00:11:02,250
+So, so far, all of my examples have been
+
+157
+00:11:02,250 --> 00:11:05,720
+in two dimensions and that's mostly just
+for convenience.
+
+158
+00:11:05,720 --> 00:11:08,310
+If it's two dimensional, I can draw a
+picture of it,
+
+159
+00:11:08,310 --> 00:11:10,640
+and it also doesn't take up too much space
+on the slide.
+
+160
+00:11:11,980 --> 00:11:16,700
+But everything, so dot products, lengths,
+angle between two vectors All of
+
+161
+00:11:16,700 --> 00:11:20,440
+that's going to work in higher dimensions
+too, using the same formula.
+
+162
+00:11:24,380 --> 00:11:28,920
+So a plane is a, so, when I was talking
+about a plane, so
+
+163
+00:11:28,920 --> 00:11:32,120
+I had the XY plane and I had things that
+lived in that plane.
+
+164
+00:11:32,120 --> 00:11:34,060
+They were lines and points.
+
+165
+00:11:34,060 --> 00:11:37,250
+Now, if I'm talking about three
+dimensions, I could have a line
+
+166
+00:11:37,250 --> 00:11:41,950
+or a point or a plane that lives in my
+three dimensional space.
+
+167
+00:11:41,950 --> 00:11:43,350
+So, a plane is just going to be a
+
+168
+00:11:43,350 --> 00:11:46,760
+2 dimensional sheet that lives in a 3
+dimensional space.
+
+169
+00:11:46,760 --> 00:11:49,990
+So a simple example would, if I had, you
+know x,
+
+170
+00:11:49,990 --> 00:11:55,010
+y and then z vertical.
+I could think of x, y as defining a plane.
+
+171
+00:11:55,010 --> 00:11:57,520
+But there's no reason it needs to be flat,
+you know, I could tilt
+
+172
+00:11:57,520 --> 00:12:01,040
+my plane like that or that, I could shift
+my plane up and down.
+
+173
+00:12:01,040 --> 00:12:04,160
+So there can be a whole lot of planes
+living in three dimensions.
+
+174
+00:12:07,550 --> 00:12:09,540
+And the way I'm going to describe a plane
+
+175
+00:12:10,880 --> 00:12:15,560
+in three dimensions, I'm going to pick a
+vector n.
+
+176
+00:12:16,870 --> 00:12:22,110
+So this vector n is called a normal
+vector, and I'm going to define my plane
+
+177
+00:12:22,110 --> 00:12:27,620
+to be all of the vectors that are
+perpendicular to this normal vector n.
+
+178
+00:12:27,620 --> 00:12:32,090
+So, often normal means the same thing as
+perpendicular in linear algebra.
+
+179
+00:12:38,040 --> 00:12:42,570
+And so if I have a vector, v, just
+representing a point in my plane, p.
+
+180
+00:12:42,570 --> 00:12:45,160
+So, p is my plane.
+
+181
+00:12:46,820 --> 00:12:50,120
+And it has a normal vector, n, so there's
+a, a plane,
+
+182
+00:12:50,120 --> 00:12:53,610
+and then there's a vector perpendicular to
+that plane that's called n.
+
+183
+00:12:54,690 --> 00:12:59,160
+And if I took any vector in that plane and
+I took the
+
+184
+00:12:59,160 --> 00:13:03,880
+dot product with the normal vector, then
+by definition I should get zero.
+
+185
+00:13:03,880 --> 00:13:05,690
+Because if the vector is normal because
+
+186
+00:13:05,690 --> 00:13:08,350
+it's perpendicular to all the vectors in
+the
+
+187
+00:13:08,350 --> 00:13:12,970
+plane, then my condition for a dot
+
+188
+00:13:12,970 --> 00:13:15,979
+product being zero was the vectors were
+perpendicular.
+
+189
+00:13:18,160 --> 00:13:23,520
+And if I also allow 0 to be in the plane,
+so this plane contains the origin,
+
+190
+00:13:23,520 --> 00:13:25,330
+so we'll generalize on that in a moment,
+but
+
+191
+00:13:25,330 --> 00:13:28,020
+right now it's a plane going through the
+origin.
+
+192
+00:13:28,020 --> 00:13:31,259
+Then I would have n dot 0 equal to 0.
+
+193
+00:13:39,100 --> 00:13:41,950
+And then if I had a plane now passing
+
+194
+00:13:41,950 --> 00:13:46,240
+through (x0, y0, z0), so this is just some
+point
+
+195
+00:13:46,240 --> 00:13:49,160
+in space and I have a plane perpendicular
+to this
+
+196
+00:13:49,160 --> 00:13:51,810
+vector n and it has to go through this
+point.
+
+197
+00:13:53,520 --> 00:13:56,460
+Then, this is the equation you end up
+with.
+
+198
+00:13:56,460 --> 00:13:59,540
+So, this is n dot v minus that point.
+
+199
+00:14:00,580 --> 00:14:04,770
+And, I can just write that out.
+So, that's the first component of n
+
+200
+00:14:04,770 --> 00:14:09,040
+times x minus x,0.
+Second component of n times y minus y,0.
+
+201
+00:14:09,040 --> 00:14:12,105
+And third component of n times z minus
+z,0.
+
+202
+00:14:13,400 --> 00:14:14,680
+And that has to equal zero.
+
+203
+00:14:18,360 --> 00:14:24,685
+And so then what I'm going to do is just
+move all of the- so the x,0,
+
+204
+00:14:24,685 --> 00:14:30,440
+y,0 and z,0 parts of this to the other
+side of the equal sign.
+
+205
+00:14:32,770 --> 00:14:36,500
+And, when I add those up, so, nothing is
+changing here.
+
+206
+00:14:36,500 --> 00:14:41,540
+The x0, y0, z0, that's a fixed, there are
+three fixed numbers.
+
+207
+00:14:41,540 --> 00:14:45,520
+The normal vector has to stay the same,
+so, n dot x0 y0
+
+208
+00:14:45,520 --> 00:14:48,950
+z0, that's just going to be a sum constant
+which I called d.
+
+209
+00:14:51,040 --> 00:14:52,510
+And, so I end up with this equation.
+
+210
+00:14:52,510 --> 00:14:57,680
+So, some coefficient times x plus some
+coefficient times
+
+211
+00:14:57,680 --> 00:15:00,670
+y plus some coefficient times z is equal
+to d.
+
+212
+00:15:00,670 --> 00:15:04,430
+So, that's going to be the equation of a
+plane with normal vector n.
+
+213
+00:15:08,110 --> 00:15:10,250
+And then, different values of d.
+
+214
+00:15:10,250 --> 00:15:12,820
+So if, if the planes are perpendicular to
+
+215
+00:15:12,820 --> 00:15:15,010
+the same vector, they're going to be
+parallel.
+
+216
+00:15:15,010 --> 00:15:17,610
+So different values of d just shift the
+planes
+
+217
+00:15:17,610 --> 00:15:21,080
+up and down, but they're never going to
+intersect.
+
+218
+00:15:21,080 --> 00:15:23,510
+So the distance between those planes will
+stay the same.
+
+219
+00:15:26,100 --> 00:15:27,600
+Oh wait, sorry.
+Not the distance between the.
+
+220
+00:15:27,600 --> 00:15:29,810
+The distance between the planes is what's
+changing.
+
+221
+00:15:29,810 --> 00:15:32,489
+Sort of the, the slope of the planes is
+what's staying the same.
+
+222
+00:15:36,070 --> 00:15:39,900
+And then if I choose d equal to 0, that
+gives me the plane through the origin.
+

@@ -1,0 +1,355 @@
+So moving on for the next lesson.
+We'll talk about gamma, which is the
+derivative of delta with respect
+to s, or the second derivative of c with
+respect to s.
+So gamma is the rate of change of delta.
+So I can write that as the partial
+derivative with respect to s of delta.
+And delta is the partial derivative of c
+with respect to s.
+So this is just the second derivative of c
+with respect to s.
+But again, the way I'm going to compute
+it, since I've already computed this
+derivative for delta.
+I'm going to use that as a starting point
+rather than starting from scratch.
+So all we have to do, since we already
+have an expression for
+delta, is just take the derivative with
+respect to s of that again.
+But that turns out to be pretty difficult,
+because in the last in
+the last set of slides, we, we had this
+three term expression for s.
+But luckily, there's a shortcut.
+So like I mentioned in the previous set,
+if
+we look at the second two terms in the
+square
+brackets here, I said that those were
+going to be equal to zero.
+But that's something that we have to show
+mathematically before we can do it.
+We did this.
+I had one example of this before where I
+had actually plugged in numbers for the
+Black-Scholes pricing
+formula, and we went through the, the work
+of
+showing that this part ends up being equal
+to zero.
+And now we'll do it in general so we never
+have to
+do it again.
+So the textbook says that delta is just
+equal to
+this much simpler expression than what
+we've come up with.
+And finding an expression for gamma is
+certainly
+going to be a lot easier if I only
+have to take the derivative of this,
+rather
+than taking the derivative of all three
+terms.
+So what I'd like to do is figure
+out a way to show that this expression
+here is equal to zero.
+And so when I, when I write something like
+this, I'm not sure
+that it's equal to zero, I want to show
+that it's equal to zero.
+So you don't want to just write down equal
+to zero
+and then start plugging in things and
+showing that it's true.
+What I want to do is start with this
+without saying it's equal to zero.
+And just do algebraic
+manipulations to it, until it finally is
+equal to zero.
+And then what we'll have is, a line of
+work that starts
+out from what I'm given, and ends with
+what I want, basically zero.
+And that'll be an argument that anytime I
+see this.
+Expression in a calculation, I can then
+replace that with zero.
+And that's going to save us a lot of work
+in,
+the next several lessons.
+And so the strategy I'm going to use is I
+have a, one term that has
+a d plus in it and one term that has a d
+minus in it.
+But remember d minus could be written in
+terms of
+d plus just by adding a little bit to it.
+And so what I'm going to do is try and
+manipulate the
+d minus into a d plus, and then there'll
+be some stuff
+left over.
+And hopefully when I factor out the stuff
+that's left over, it's going to.
+Turn this second term into the first term,
+and if both of those terms are
+the same, then when I subtract one from
+the other, I'm going to get zero.
+So phi of d minus is equal to 1 over the
+square root of 2 pi e.
+So I'm using some different notation here
+just because it,
+it gets really small if I have everything
+in the exponent.
+So, exp as a function, so exp and then
+something in parentheses that means
+exactly the same thing as e to the power
+of what's ever in the parentheses here.
+So this is 1 over the square root of 2 pi
+Square root of 2 pi times
+e to the minus d minus squared over 2.
+And that's just the,
+the exact definition of phi of d minus.
+And
+now I'm going to replace d minus in that
+expression,
+with d plus minus.
+Sigma times the square root of t minus t.
+And that was just my expression for d
+minus.
+And now I have a, this quadratic, form
+here.
+So I'm going to expand that.
+The, the first term, I'm going to end up
+with a d plus squared over 2.
+So it's pretty clear that that's going to,
+that's going to get me a phi of d plus.
+And then hopefully the stuff that's left
+over is going to be useful to get this
+result that I'm after, showing that the
+second
+term here is actually equal to the first.
+So this is just what I had on the last bit
+of the, of the previous slide.
+So now what I'm going to do is just go
+ahead and expand this quadratic
+form here, and so I'll end up with d plus
+squared minus 2d plus sigma
+square root of t minus t plus sigma
+squared times t minus t all over 2.
+And now I'm going to regroup
+the terms like this.
+So basically, I'm just taking, ooh, got
+the whole thing that time.
+I'm just taking this d plus squared over 2
+and putting that by itself.
+Because this is now an expression, the 1
+over the square root
+of 2 pi E to the minus d plus squared over
+two.
+That's just and expression from phi of d
+plus.
+And then these two terms
+are what's left over.
+So the middle term that has
+a two in the numerator and in the
+denominator,
+so those are going to cancel each other
+out.
+So I've, I've got from my, oh I can't
+highlight anything.
+I have my phi of d plus from this portion
+of the previous line.
+I have e to the d plus times sigma square
+root of t minus t from this portion.
+And then I have e, this hasn't changed
+I've just written it a little bit
+differently.
+e to the minus sigma squared t minus t
+divided by 2.
+And now, just a quick reminder, of what d
+plus is equal to so what I'm going to.
+What
+I have here is d plus times sigma square
+root of
+t minus t and so all these sigma square
+root t
+minus t is going to do is cancel out the
+sigma
+square root of t minus t in the
+denominator of d plus.
+So I, what I have is E to the numberator
+of the definition of d plus here.
+So, I'll do that in the next line.
+So, all that's
+happened is this d plus sigma square root
+of t minus t has
+just become the numerator of the
+definition of d plus.
+And then the bit on the right hand term is
+still stayed
+the same, just sigma squared, t minus t
+over 2 and it's negative.
+So, what's going to happen, I have e to
+the log of s over k.
+So the exponential and the logarithm, they
+are.
+Inverse functions of one another it's the,
+the exponential undoes what the logarithm
+did,
+so this is just going to allow me to take
+an s over k out.
+And then when I have an exponential of a
+sum, that's
+equal to the, product, so this is the same
+thing as e
+to the log.
+S over k times e to the r minus q plus
+sigma squared over 2, t minus t.
+So this bit here is going to stay in my
+exponential function
+but I'm going to factor out an s over k
+and then also using
+the same property So here I had a product
+of exponentials.
+So this is just going to be the sum of
+this bit that I've
+got highlighted and what's inside the
+square brackets in the lower right here.
+So that gives this s over k out of my
+exponential
+bit, and then leaves me with what's inside
+the exponential bit here.
+But now look what's happened, so this,
+sigma squared t minus t
+over two that I've been carrying down the
+right side of my calculation.
+I have a plus sigma squared over 2 times t
+minus t minus sigma squared over 2 times t
+minus t.
+So all
+of that's going to cancel out, and I'm
+just going to have r minus q.
+That quantity times t minus t left.
+And so now I'm going to go back to
+using the notation of writing this as
+exponential.
+So, this is e to the r times t minus t.
+So that's where this bit came from.
+And then this is e to the minus q.
+Times t minus t, so that's
+where this bit came from and now I have a,
+an expression for phi of d minus
+in terms of phi of d plus and this is the
+expression that I am trying to show is
+equal to zero again.
+So I am going to substitute.
+My expression here for phi of d minus into
+the second term
+here and I get this expression here.
+And so the
+first term has stayed the same but now I
+have k times e to the minus r t minus t.
+So that carried over from before, and now
+I have what's
+coming from my new expression, fee of d
+plus, s divided
+by k, e to the rt minus t, and e to the
+minus qt minus t.
+But here I have a k And
+s over k, so that's going to be just s,
+and I have
+an s in the numerator, and an s in the
+denominator here.
+So all of the strike prices, and the, the
+asset
+prices are going to cancel each other out
+in this term.
+Then I have e to the minus rt minus t, and
+e to the rt minus t.
+So when I add those together I have
+minus rt minus t plus rt minus t.
+That's the same things as e to the zero
+which is just one.
+So, those two parts are going to cancel
+each other out.
+So, all I'm left with Is phi of d plus.
+And e to the minus q t minus t.
+Which is exactly what I had in the
+numerator over here.
+And now in the denominator, remember I've
+canceled out this s here with this s here.
+So I have the same denominator as well.
+So when I do all of the canceling here,
+I've made the second term into the first
+term.
+And I'm subtracting them from one another,
+so I end up having zero.
+So that means when it's time to actually
+go ahead and calculate gamma.
+Instead of having to take the derivative
+with respect to s of this
+great big formula, I can rewrite that as
+just the derivative
+with respect to s of e to the minus q t
+minus t times capital phi of d plus.
+And so when I'm taking the partial
+derivative with respect
+to S, e to the minus q t minus t.
+There's no S in that, so I can treat that
+as a constant.
+So I can move that across the derivative
+operator.
+And so all I need to do is take the
+derivative with respect to s of capital
+phi of d plus.
+And I'll go through this again, but we
+actually did this already when we were
+computing delta.
+So, I'm taking the derivative of a
+function of d plus
+with respect to s so I have to use the
+chain rule.
+And that tells me that I can take the
+derivative of capital phi of d plus.
+And then I have to multiply that by the
+derivative of d plus with respect to s.
+And we've all ready calculated that as
+well so.
+partial derivative of either d plus or d
+minus with respect to s.
+It's just one over s times sigma times the
+square root of t minus t
+And then this we've already seen before
+let's say this is the derivative of our
+indefinite integral so this is just
+going to to
+be equal to lowercase phi of d plus.
+So what I'm left with is that e to the
+minus qt minus t that I had out here.
+The 1 over s times sigma times the square
+root of t minus t that came
+from the chain rule so that's in the
+denominator in the front here.
+And, then, the lower case fee of d plus,
+which was just a derivative that I got
+here.
+And so, we now have an expression for
+gamma, which is the partial
+derivative with respect to S of, sorry, of
+delta with respect to S.
+And this is exactly the same as the line
+above it.
+I've just replaced phi of d plus with the
+actual definition of phi of d plus.
+So, it's 1 over the square root of 2 pi.
+E to the minus d plus squared over 2, so.
+Looks like I missed a little bit because I
+forgot the square
+there, but this should be d plus squared
+over 2.
+

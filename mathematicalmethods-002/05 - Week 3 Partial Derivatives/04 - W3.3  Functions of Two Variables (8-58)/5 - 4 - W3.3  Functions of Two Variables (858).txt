@@ -1,0 +1,245 @@
+Okay, so, moving on.
+So now, I'll just go over a little bit of
+this using a function of two variables.
+Just hopefully, that'll help see something
+concrete.
+This is about as big as it can get while
+it still makes sense on some slides.
+So a, a function of two variables, we can
+think of it as.
+F of xy and then, oops, and then, then
+the notation I, I introduced in the last
+section.
+I'll just say that's from r two.
+So, xy would describe a point in the xy
+plane.
+And then f of xy is going to assign
+one particular value to each point in the
+xy plane.
+And so, that,
+that would be r.
+So, you could think of it as z maybe
+equals f of xy.
+The partial derivatives of f are also
+going to be functions of x and y.
+And so this is how we would define them so
+the partial of f with respect to x.
+It's a function of x and y so that's why I
+put this xy here.
+And it's just going to be defined as the
+limit.
+So here when I'm taking the derivative
+with respect to x, I'm just going
+to add a bit to the x argument and then
+subtract away the value at
+my point, divide by h so that the distant
+between the two points where
+I have evaluated the function and then
+take the limit as h goes to zero.
+So that's exactly the same as the
+definition of
+the derivative, except that you just have
+this extra y
+hanging on here.
+And then we do exactly the same thing for
+y.
+So this time I'm just adding the
+perturbation to y.
+And so that's going to give me the partial
+derivative with respect to y.
+And then the gradient of f of xy.
+So I could write that as d.
+So d here is an operator.
+So the difference between an operator and
+a function
+is the output of a function is a number.
+Here the output is going to be a vector of
+two functions.
+So the output is actually a function of x
+and y.
+And so instead of calling d a function,
+I'm going to call it an operator.
+So the output of an operator is a
+function.
+And then the Hessian is just going to be
+made up of,
+and yes, I actually did it right.
+the four sort of mixed partials, although
+the
+ones on the diagonal are sort of hidden.
+Are in disguise, because even though
+they're a
+mixed partial, they're the same thing
+mixed with itself.
+But they're also each going to be
+functions of x and y.
+And so now let's look at an example, so
+suppose I define my function to be.
+X square y cubed, and I just want to
+compute both the gradient.
+So df is going to be the gradient, and d
+squared f is going to be hessian.
+And then I want to evaluate em at the
+point 1,2.
+And so remember, well let's see if I.
+So if I was going to try and find the
+slope of a function just using
+a function of one variable When I take
+the derivative of my function, I get a
+function.
+So if I have a function of x, and I
+take the derivative, I also have a
+function of x.
+So I'd have f prime of x.
+And then, suppose I want to know what is
+the slope of f of x when x is equal to 3?
+I just evaluate the derivative at the
+point x equals 3.
+it's definitely
+a mistake to evaluate the function at
+three and
+then take the derivative because you would
+get zero.
+And so for some reason everybody seems to
+understand
+that with a single a function of a single
+variable, but then they go ahead and make
+that
+mistake very often when they start working
+with multiple.
+So, for instance When I ask, evaluate.
+Ask you to evaluate it at the point 1,2.
+They'll calculate the gradient correctly.
+Evaluate that at the point 1,2.
+And then try and take the derivative of
+that again.
+And the moral is, you have to take
+all of the derivatives before you start
+evaluating.
+So.
+Here I have just skipped, most of the
+work, I think I just put the answers here.
+So some of these are really easy to see.
+So the partial derivative of x squared y
+cubed with
+respect to x is just going to be two 2xy
+cubed.
+It's also easy to see that the partial
+derivative
+with respect to y will be 3x squared y
+squared.
+It's just the power rule and treating.
+The other variable, so in this case y,
+in this case x, as a constant.
+And then we have to compute the mixed
+partials.
+So here I have the partial of f with
+respect to x squared
+And so I all ready know what the, the
+first partial is
+with respect to x, so I can just plug that
+in here.
+And then I need to take its derivative one
+more
+time with respect to x, so I get 2y cubed.
+The actual mixed partial, so here dy then
+dx.
+And again, I've already computed the
+derivative of f.
+Or the partial derivative of f with
+respect to y.
+So, I'm just going to recycle that result
+rather than do it all over again.
+And then, of this function, I'm going to
+take the derivative with respect to x.
+So, I get 6xy squared.
+And then by the theorem I had.
+So I hope nobody did both partial
+derivatives for the quiz question,
+because that was a well-behaved function,
+so you could have just taken one and
+then said, by the theorem, the other one
+has to be equal to that.
+So, I'm going to do that here.
+So, this is a well-behaved function.
+I can take derivatives of a polynomial
+indefinitely.
+At some point I hit a constant.
+And then I take the derivative of that,
+and I get zero.
+But zero is still a valid function.
+So I can continue to take the derivative
+of that indefinitely.
+And it just stays
+zero, but it's still differentiable.
+Oops.
+And
+then I just have to calculate the other
+second order derivative.
+This time, with respect to y.
+And again, I'll just recycle the first
+first
+partial with respect to y that I've
+already computed.
+Take thats derivative.
+And so, I get 6x squared y.
+Oh, and I guess I, I put in sort of my
+hidden light to gray color here.
+That this is equal to the
+other partial derivatove, other mixed
+partial derivative.
+[NOISE]
+So now I'm just going to plug these into
+the gradient.
+So the definition of the gradient is just
+a partial of the function
+with respect to x and the partial the
+function with respect to y.
+So I can just plug in those two partial
+of derivatives that I computed on the
+previous slide.
+And
+then if I want to evaluate the gradient at
+the point 1, 2 so here I have 2 times x
+times y cubed so this is 2 times 1, so
+that's just this one right here.
+Times 2 cubed; so that's just this two
+here.
+And then 3 x squared, y squared.
+So, 3 times 1 squared times 2 squared.
+And easy enough, 16, 12.
+And then, I"ll do exactly the same thing
+for the gradient.
+Sorry, for the Hessian.
+So, first I'll just.
+Plug in the formulas that I computed on
+the previous slide, and remember
+we get this symmetry of the off-diagonal
+entries in the, in the Hessian.
+And then when I want to evaluate the
+Hessian of the point
+1,2, I just plug in one for x and two for
+y.
+And so this gives me the actual value at,
+of the Hessian.
+But only specifically at the point 1, 2.
+If I move away from 1, 2, then these
+numbers here are going to change.
+And so, I guess.
+Where we're going to be using this when we
+get to solving problems numerically.
+we'll be computing the gradient and the
+Hessian.
+And then that's going to give our
+algorithm some idea.
+So based on what these numbers actually
+are at a certain point.
+We're going to try to move to another
+point so we'll
+move maybe from 1, 2 to 1, 1 and the way
+we're
+going to choose where we're going to move
+is going to
+be a function of these actual numbers that
+appear in here.
+

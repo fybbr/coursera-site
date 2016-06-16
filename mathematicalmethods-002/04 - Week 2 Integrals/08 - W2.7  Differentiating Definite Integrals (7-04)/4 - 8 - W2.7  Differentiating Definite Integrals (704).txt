@@ -1,0 +1,185 @@
+So now moving on.
+So
+the first six lessons I was just trying to
+talk about what an integral is, the
+problem I'm trying
+to answer and then some techniques that
+we're going to
+use in 461 and in later courses for
+evaluating integrals.
+Now I need some, some special results, eh,
+in
+particular I'm driving at is, is
+differentiating improper integrals.
+Because this is going to be something you
+need to be able to do
+when you want to work with the black
+[UNKNOWN],
+spacing formula.
+Eh, and so I'm going to first
+get started by just differentiating
+definite integrals.
+Then I'll introduce what an improper
+integral is.
+And then we will learn how to take their
+derivatives.
+So this is actually not too difficult of a
+topic.
+So hopefully this set will go by quickly.
+So first start out by pointing out that a
+definite integral, so if I
+integrate a function f of x over an
+interval ab, that's a real number.
+So it's constant, it's not changing.
+So if I try and take the derivitive of
+this function, it's constant so it's
+derivative is zero.
+So the only way this is going to get
+exciting is
+if the limits so that the A and the B are
+now functions of a, of another variable.
+So I, I chose T.
+Then when I evaluate this definite
+integral
+it still going to be a function of
+T and so I might want to consider taking
+its derivative with respect to T.
+And then more generally the integrand
+could also have T in it.
+But since we haven't talked about
+functions of more than
+one variable yet, I'm going to leave that
+for lesson three.
+And so the question we want to consider is
+how can I calculate the derivative, with
+respect to T,
+of the integral of, of function f of x
+where the limits depend our functions of
+the value t.
+So it's actually pretty straightforward.
+If I wanted to just evaluate this
+integral.
+What I would do is find an antiderivative
+of my function.
+And then by the fundamental theorem of
+calculus.
+I could evaluate this integral.
+It's just going to be the anti-derivative
+evaluated at the top
+end point, and the anti-derivative
+evaluated at the bottom end point.
+[BLANK_AUDIO]
+And
+now, if I take the derivative of this
+well,
+all I have here is a function of a
+function.
+So I can take the derivative of that,
+using the chain rule.
+And so what I'm going to get is G prime of
+T, so G
+is a function of T, so I'm taking it's
+derivative with respect to T.
+That's just going to be equal to the
+derivative
+of the outside function, evaluated at the
+inside function.
+And then by the chain rule, I have to
+also multiply that by the derivative of
+the inside function.
+And it looks a little bit complicated,
+but all I'm doing is just I have to put
+once
+for the upper end point, and once for the
+lower end point.
+And then by the way we've defined this
+capital F, I know its derivative is
+lowercase f, so the formula for
+differentiating a definite integral is
+just going to be f(b(t)) times b'(t) minus
+f(a(t)) times a'(t).
+And so just to state it with all of its
+actual conditions.
+So this is the, this is the definition
+that came out of the course textbook.
+So F has to be a continuous function.
+And a of t and b of t have to be
+differentiable functions.
+Then, the derivative with respect to T, of
+the integral from A of
+T to B of T of F of X DX is just F of
+B of T times B prime of T minus F of A of
+T times A prime of T.
+A so just a, a quick example of this.
+I think this is my simplified version of
+exercise 11 from, from chapter one.
+So, let's let g of x be defined as 1 over
+the square root of
+2 pi times the integral from 0 to b of x
+of e to the minus t squared over 2.
+And then, b of x is just going to be
+defined by this
+function here.
+Which can be simplified the way I've done
+it in the light grey on the right.
+And so this is actually a calculation
+you'll, you'll come across
+These are, these are sort of pieces of the
+black sholes pricing formula, so this is
+the interest rate.
+This is the, this is the volatility but
+again since
+I haven't talked about functions of
+multiple variables yet I
+just wanted to plug in specific numbers so
+it doesn't
+get too confusing about what I'm actually
+trying to do.
+And so the, the goal then is to compute g
+prime of x,
+and so is this the, the formula from the
+previous slide.
+But now since my lower limit is zero, so
+it's constant with respect to x, if I
+take its derivative, this, this a prime of
+t is just going to be equal to 0.
+So derivative of a constant.
+So this formula will simplify a bit,
+because of a being equal to 0.
+So all I need to do is just evaluate my
+function.
+And then multiply by the
+derivative of the inside.
+So the first step I will do is just
+evaluate my function g of x,
+so this bit here.
+I'm just going to evaluate that at b.
+And so I get, I had 5 times log of x plus
+0.06.
+So when I square that, I'm going to end up
+with
+25 times the log of x plus 0.06, that
+quantity squared.
+[BLANK_AUDIO]
+And
+then I still need to multiply it by the
+derivative, then of b of x.
+So, b of x was equal to 5 times the log of
+x plus 0.06.
+And so that's pretty easy to see the
+derivative of, that's 5 times log of x.
+That's derivative is 5 divided by x and 5
+times 0.06, that's just going to be
+a constant, so we don't even need to
+bother
+doing the math, that's going to have a
+derivative of 0.
+So b'(x) is just going to be 5 divided by
+x,
+and so I just need to put all of the
+pieces
+together, which just means substituting in
+5 over x for b'(x),
+And that gives me the derivative of my
+function g(x).
+

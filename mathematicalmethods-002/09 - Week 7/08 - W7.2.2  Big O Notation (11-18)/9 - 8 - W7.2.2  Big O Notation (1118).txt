@@ -1,0 +1,277 @@
+So, the next section is Big O Notation.
+So, Big O Notation came from looking at
+polynomials of degree n as
+x goes to infinity, so now, the n is
+fixed, but it's the argument
+of the polynomial the that.
+X value, that's going to be getting large.
+And I want to have a measure of how fast
+this polynomial is getting big.
+And so it turns out that, so it should be
+as x goes to
+infinity, the highest order term dominates
+the other.
+So what, what I can do is locate the limit
+of my polynomial
+as x goes to infinity divided by x to the
+n.
+So x to the n is the highest, it's x to
+the highest power.
+It's x to the degree of the polynomial.
+So I can write my polynomial like this,
+it's just the time sum of a coefficient
+times
+a constant term plus a coefficient times x
+plus a coefficient times x squared, and so
+on.
+Up to a coefficient times x to the n, so
+that'll be the last term.
+So there's one term in the numerator here
+that's a coefficient times x to the n.
+And
+I'm going to divide that sum by x to the n
+and what I'm going to get
+is 1 term that is a sub n times x to the n
+divided by x to the n.
+So that is just going to be a times
+x to the n And then each additional term,
+because
+the term on top is the power to the
+smaller than, than n The x is going to
+move down
+to the denominator And so if I take the
+limit of each of these terms as x goes to
+infinity each of these terms is going to
+get smaller and smaller and smaller.
+While this a sub n coefficient from the xn
+term is going to remain
+constant and actually when I take this
+limit what I'm going to end up
+with is a to the n.
+And so, Big O Notation is just trying to
+summarise this behaviour in a
+simpler way And so, I'm going to say the
+polynomial p of x is Big O of x to the n.
+So the way you can sort of think is if you
+look at x to the n or
+the polynomial and sort of zoomed out.
+What is this going
+to look like?
+So if you had a very small scale
+so all the terms are going to contribute
+something.
+So suppose I was looking at x squared plus
+x plus 1 so each term is contributing
+eaqually.
+When I evaluate it at the point 1,000,
+now the x squared term is contributing a
+million.
+The x term is contributing 1,000, and x,
+er the constant term
+is contributing just 1.
+So on kind of a percentage wise bit the
+million is dominating that
+and so as I zoom out all I'm going to see
+is a parabola.
+And whatever effect the x and the 1 have,
+at a smaller scale
+their just going to disappear as I keep
+moving to larger and larger scales.
+And so because that polynomial would look
+like a parabola
+as I sort of zoomed out and just continued
+zooming out.
+I'm going to say that, that would be order
+of x squared or order x to the 2.
+And so formally the way we're going to
+determine Big O Notation is
+let f and g functions.
+So the fruncs, functions from
+the real numbers with a real output and
+then I'll
+say f of x is big O of g of x as x goes to
+infinity.
+If they're.
+Is some constant c, and some constant m
+both greater than 0.
+So I'm not really concerned with sign
+here,
+all I'm concerned with is just relative
+magnitude.
+So if f of x divided by g of x, as x is
+getting larger and larger and larger, if
+this ratio is bounded by a constant.
+So, for instance in the last example, it
+was just this
+coefficient on the highest degree term of
+the polynomial a sub n.
+whenever x is greater than some fixed real
+number, so that this
+is just me trying to take advantage of the
+definition of a limit.
+Then, we'll say that.
+f of x is big O of g of x, so they
+grow at the same rate after x exceeds some
+threshold.
+Similarly, we can sort
+of spin this around for finite points.
+So generally, when I'm thinking of x going
+off to infinity, I'm thinking of things
+getting bigger.
+So the function of x is getting bigger and
+I'm interested in,
+you know, are f and g growing at the same
+rate?
+You know, up to a constant of
+proportionality?
+Or is f growing, you know, at some faster
+rate?
+Y'know, so if f was a polynomial of degree
+3, and g was a
+polynomial of degree 2, then there
+wouldn't
+be a value c that kept this bounded.
+On the other hand, when I, I look at a
+finite point.
+So now I'm thinking about x going to a,
+rather than x goes to infinity.
+So I pick some real number a.
+And I want to think, how does f of x
+behave as I move closer and closer to a?
+Then, I still want to have this constant c
+which is sort of
+my constant of proportionality, but now
+I'm going to have a width, delta.
+And so I want to say that f of x and g of
+x, so f of x divided by g of
+x, the ratio of that magnitude is less
+than or equal
+to this constant of proportionality
+whenever x is within delta of a.
+So, in some neighbourhood around the point
+a, f of x and g of x have the same.
+So, when it goes to infinity I say sort of
+growth characteristic here.
+I, I suppose I should say it shrink
+characteristic or something like that.
+And so what I'm after in this case with
+the second definition is
+I want to understand how big the Taylor
+approximation error is.
+And so I want to understand that, as the
+point where I'm making my
+approximation, gets closer and closer and
+closer
+through the point a where I've built
+my approximation.
+And now, so if, if.
+If I'm looking at things getting big, you
+know, quadratic or cubic that's sort of
+bad.
+That's saying, well, x is already getting
+big and x squared
+or x cubed is getting big much, much
+faster than that.
+And in that case it would be the
+highest order term that's sort of going to
+dominate.
+When I look at things getting small, so if
+I take 1 and square it, I get 1.
+If I take something smaller than 1 and
+square it,
+I get a number smaller than what I started
+with.
+And so there it's going to be the smaller
+power that's going to be the dominant one.
+And so what I'm, what I want to be able to
+show here, is that the Taylor
+approximation error is big O.
+So that the distance between the point,
+where I'm evaluating my Taylor polynomial
+and
+the point a where I've constructed my
+Taylor polynomial.
+The larger I can make this number, the
+faster this error is
+going to get smaller as I move towards a.
+So once I'm sort
+of within 1 of a, this quantity is going
+to be less than 1.
+And when I start taking powers of that
+it's going to get small.
+And then the larger the power I can, I can
+make.
+The faster this is going to get small,
+as I move closer and closer to a.
+So I can also just rewrite this as one of
+the terms in my Taylor
+polynomial approximation.
+So I've said that.
+f of x minus the approximation at x is
+order x minus
+a to the n plus 1.
+And this is again, as x is going to a.
+So it's not trying to say how bad does the
+approximation get as I move away from
+a, it's trying to tell me how good does
+the approximation get as I move towards a.
+And I can just add the polynomial to both
+sides, so I move the
+p sub n of x over to the right hand side
+of the equality.
+And then replace that with, the
+definition.
+And so what you see is here I have a, the
+constant part of the
+approximation, then I would have the
+linear part
+of the approximation, the quadratic part
+of the
+approximation and so on.
+And I end up with my last term being a
+sort of nth degree approximation term.
+And then the amount that I missed by is
+going to be
+on the order on x minus a to the 10 plus
+first power.
+Again, as a is moving towards x.
+And what this allows us to say is, for
+instance, the linear approximation.
+So here's my Taylor polynomial of order 1.
+So I have a, a constant part of the
+approximation
+and then I have the linear part of the
+approximation.
+And then what's left over is big O of x
+minus a squared.
+The quadratic approximation, then, is
+going
+to be a third-order approximation,
+because.
+Both so where this term is coming from is
+from either the
+derivative form or the or the integral
+form of the Taylor approximation error.
+So I have the x minus a cubed is the, the
+size of.
+That's describing the growth of the
+approximation error.
+How fast it, I suppose, shrinks as x goes
+to a.
+And I don't really care about the
+constant of proportionality, I just want
+to know if I use
+this approximation, and then I move twice
+as close to a.
+This term is going to get smaller at a, at
+a cubic rate.
+And so again the, the larger I can make
+this power.
+So this is just me adding more terms.
+Then as x goes to a means I'm getting
+closer
+and closer to the thing that I want to be
+getting.
+at a faster and faster rate, so as this
+number gets bigger and bigger.
+

@@ -1,0 +1,123 @@
+Welcome to week 8, the 8th and
+final week of Mathematical Methods for
+Quantitative Finance.
+This week, I'm going to talk about
+numerical methods.
+So, so far in the course, I've introduced
+a
+lot of topics for solving different types
+of the problems.
+But a lot of the examples in the homework
+have been
+what, what I sort of think of as sort of
+toy examples.
+Because they need to be complicated enough
+that you understand what's going on.
+At the same time they need to be simple
+enough that you
+can actually solve them with a, pen and a
+piece of paper.
+In practice though, we're going to want to
+solve much more complicated problems.
+And so to do that we, we're going to want
+to do that with a computer.
+And so that brings us to this topic of
+numerical methods.
+So the outline for this week, I'll talk
+about a problem called Implied Volatility.
+So this is basically going back to the
+Black-Sholes pricing formula.
+But instead of thinking of the, the value
+that I
+want to calculate as the call price or the
+put price.
+I'm going to think that I could actually
+go,
+or I'm going to approach the problem in
+this sense.
+I can actually go to the
+market and I can observe all of the inputs
+for the Black-Sholes formula.
+And I can see what that put or call price
+actually is.
+And the one thing that's going to be the
+most
+difficult to observe is the volatility
+parameter, the sigma.
+And so, given that I have the price, I can
+actually use Black-sholes kind of
+backwards to figure out what the sigma
+parameter had to be to justify that price.
+And that turns out to involve solving
+something called a non linear equation.
+And so then in sections two and three, I'm
+going to
+consider two methods for solving non
+linear equations, the Bisection method.
+So essentially what I'm trying to do with
+the Bisection method.
+So I want to find two endpoints so that I
+know I'm bigger than the value I
+want on one side, and I'm smaller than the
+value I want on the other side.
+And then, I'm going to just start chopping
+that interval in half.
+By preserving this property that the, the
+right end point and
+the left end point bracket the point that
+I'm looking for.
+And so, as I chop this in half, you know,
+the end points
+are getting closer and closer to the
+number that I want to compute.
+Another approach for solving this is
+called Newton's method.
+So this has a little bit stronger
+assumptions that I need
+the function I'm trying to find the value
+of to be differentiable.
+And then the other nice property that
+Newton's Method
+has is there's a n dimensional version of
+Newton's Method.
+So the, the bisection method is only
+going to work if there's a single
+variable.
+It get, it starts to break down if I'm, if
+there's
+a variable going this way and a variable
+going this way.
+And so once I've gone over how I can
+solve these nonlinear problems using
+Newton's method and bisection.
+Then I'm going to look at some of the
+problems we had from last week's lecture.
+So in particular, the problems that came
+up using Lagrange's method.
+We're going to have generally a non linear
+system that we
+need to solve to find the critical point
+of the Lagrange
+[UNKNOWN].
+And so we can use Newton's method do that.
+So I'll talk about about how you can set
+that
+problem up in section 5 and go through a
+small example.
+And then in section 6, I'm going to go
+through another example of that.
+And then finally in section 7, I'm going
+to look at the other optimal
+investment portfolio that I talked about
+in
+week 7 called the maximum expected returns
+portfolio.
+And so this ends up being a
+bit more complicated than the minimum
+variance portfolio.
+But it's something that can be solved
+using the n dimensional version of
+Newton's method.
+And so I have a example of how that can be
+done.
+

@@ -1,0 +1,147 @@
+Welcome to week seven of Mathematical
+Methods for Quantitative Finance.
+This week I'm going to cover two topics,
+the first is
+Lagrange's Method, which is a method for
+solving constrained optimization problems.
+And the second topic is Taylor Series, and
+this is basically polynomial expansions of
+nonlinear functions.
+That are going to make that are going to
+make it possible to compute
+decimal representations of of those
+functions.
+So this week's menu, I'm going to start
+off.
+So the first five lectures will be on will
+be on the subject of Lagrange method.
+I'll start off with optimal investment
+portfolios.
+And so this is, a type of constrained
+optimization
+problem, that, that occurs quite often in
+a financial setting.
+So, if you've already have a, a set of
+assets that you
+want to buy, say you have ten stocks, and
+you have a certain
+amount of money to use to buy those
+stocks.
+Then you want to choose how much of each
+one to buy with the constraint that the
+sum of all of those has to be the amount
+of money you're going to be using.
+And then optimal means you want to have
+some sort of optimal criteria.
+So you might want to minimize the risk of
+that portfolio
+or you might want to maximize the expected
+return of that portfolio.
+So in the first section I'll just describe
+the problem I'm trying to solve.
+Then I'll talk a little bit about
+relative extrema for functions of several
+variables.
+So we saw already that if I had a function
+of one variable, if I wanted to
+find the local minimum or a local maximum,
+I had to use first and second order
+conditions.
+So the first order condition gave me the
+critical points.
+And then the second order condition
+allowed me to classify those critical
+points as either a maximum or a minimum.
+And in section two, I'm going to go over
+how
+you can do that now for functions of
+several variables.
+Section three, I'll describe Lagrange's
+Method.
+Section four, I'll give an example; so
+actually
+solve a constrained optimization problem
+using Lagrange's Method.
+And then in section five, I'll go back to
+one of the investment portfolios I talked
+about in section
+one, called the Minimum Variance
+Portfolio.
+And this turns out to be, have a very nice
+properties.
+So when you put this problem into the
+Lagrange's Method, you end up
+with a linear system, so ax equals b to
+solve for the critical point.
+So this builds very nicely on some of the
+topics we just learned in linear algebra.
+Then in the second half of this
+week's lecture I'm going to talk about
+Taylor's Formula.
+So first I'll start off just by going
+over Taylor's formula for a function of
+one variable.
+And then, a lot of what we're interested
+in
+with Taylor's Formula is, I'm using this
+to make
+approximations of difficult functions
+using polynomials, so a polynomial
+is generally considered a pretty easy
+function to work with.
+you know, highly non-linear functions,
+like sin of x times z
+to the x, or something like that, would
+not be fun functions
+to work with.
+And what we'll be interested in is how
+close
+is this polynomial, my polynomial
+approximation, to the actual function.
+And one nice concept for sort of
+understanding that is called the Big O
+notation.
+And so I'm going to go over that in
+section seven.
+Section eight, I'll go over the.
+Taylor's formula, so the same thing I did
+in section six, but now using functions of
+several variables.
+Then in section nine, I'll talk about a
+Taylor series expansion.
+So Taylor's formula is a polynomial, so
+you could have a second order, Taylor
+polynomial.
+It's going to have a linear term and a
+quadratic term.
+If I had a third order Taylor polynomial,
+it would
+have a linear term, a quadratic term and a
+cubic term.
+Taylor series expansion is,
+if I just take the limit.
+So I take, you know, fourth order
+polynomial, fifth order polynomial, n-th
+order polynomial and then I take the limit
+as n goes to infinity.
+And so really what were interested in
+there is does this Taylor series
+expansion converge to the thing that I'm
+trying to approximate or does it diverge?
+And so we have a few results that are
+going to answer that question.
+And then I'm going to
+finish up that section by talking about
+Bond Convexity which is revisiting a
+topic.
+From the first set of lectures, where I
+did bond duration, and
+then used bond duration to make a linear
+approximation of the yield curve.
+With some of the, the tools we've learned
+from Taylor's formula, we can
+now extend that to have a, a second order,
+so a quadratic term in the approximation.
+And that quadratic term is called
+convexity.
+

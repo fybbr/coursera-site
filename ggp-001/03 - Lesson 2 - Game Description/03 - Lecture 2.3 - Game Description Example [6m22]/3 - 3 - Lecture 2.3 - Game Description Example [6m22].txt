@@ -1,0 +1,172 @@
+Let's look at GDL in the context of a
+specific game.
+namely Tic-tac-toe.
+As fundamental entities, we include white
+and black, the roles of the game.
+we also include 1, 2, and 3, which are
+the.
+We will use this indices for rows and
+columns of the Tic-tac-toe board.
+And we'll use x, o and b, meaning blank,
+as
+marks that go in the cells of the
+Tic-tac-toe board.
+we'll use the ternary function constant.
+Cell together with a row index and a
+column index and a mark to designate the
+proposition that the cell in the specified
+row
+and column contains the specified mark or
+blank.
+For example the data cell 2, 3, o, says
+that there's
+an o in the cell in row 2 and column 3.
+We use the unary
+function constant control to say whose
+turn it is to mark a cell.
+For example, the proposition control of
+white denotes
+the proposition that it's white's turn to
+play.
+In Tic-tac-toe, there are only two types
+of actions a player can perform.
+It can either mark a cell or it can do
+nothing, which
+is what a player does when it's not his
+turn to play.
+The binary relation con, binary function
+constant
+mark, together with a row and a column,
+and designates the action of playing,
+placing a mark in row m and column n.
+Mark place there depends on who does the
+action.
+And fi,
+going back to the object constants, we
+have noop
+which refers to the act of doing nothing
+at all.
+Finally, we have some helper vocabulary.
+row, column, diagonal, line, open.
+whose purpose will become clear soon.
+The state of the game of Tic-tac-toe was
+an arbitrary subset of the propositions.
+Propositions in a state are assumed to be
+true whenever the game
+is in that state and all others are
+assumed to be false.
+For example, we can just describe the
+Tic-tac-toe state shown here
+on the left with the set of propositions
+shown on the right.
+cell 1, 1, contains an x, cell 2, 2,
+contains an o, cell 3, 3, contains an x.
+The other cells are all blank.
+And it's black's turn to play.
+Using this conceptualization of states, we
+can define the game of
+Tic-tac-toe with a small set of logical
+sentences, as shown here.
+The game has thousands of states.
+And it can be described by just one page
+of rules.
+A similar parsimony is possible for other
+games.
+For example, chess is more than 10 to the
+30
+[INAUDIBLE]
+states.
+And yet, it can be described in about four
+pages of rules with this search on here.
+let's look at each of these groups of
+rules in more detail.
+we first of, identified the two roles in
+the
+game, namely white and black, using the
+role relation.
+Next, we define the propositions in the
+game.
+Since there are only 29 propositions, we
+could
+do this by writing out 29 ground atoms,
+however.
+we can do this more economically by
+writing just
+two rules, as shown here, together with
+some ground atoms.
+Now, the first rule says that an
+expression
+of the form cell of x,y,w is true.
+if x is an index, and
+y is an index, and w is a filler, that is
+we'll
+see x over b.
+And an index there is 1, 2, or 3.
+The second rule says that a player, every
+player
+[INAUDIBLE],
+that there is a proposition of the form
+control of
+w for each of the two roles in the game.
+Now we can do the same for actions and
+expression mark of x, y is an action
+for w if w is a role and x is an index and
+y is an index.
+And noop is a possible action for either
+of the two players.
+Okay, here we characterize the initial
+state by writing
+all relevant propositions that are true in
+the initial state.
+In this case all cells are blank and the x
+player has control.
+Next, we then have to find legality.
+Player may mark a cell if that cell is
+blank, and it has control.
+Otherwise, the only legal action is noop.
+Next, we look at the update rules for the
+game.
+In other words it's physics.
+It's dynamics.
+First rule here says that a cell is marked
+with an
+x or an o if the appropriate player marks
+that cell.
+And the second rule handles the other
+player.
+If a cell is blank and is not, not marked
+on that step then it remains blank.
+The cell contains a mark.
+It retains that mark on the subsequent
+state.
+Finally, control alternates on each play.
+Before we get to rewards and termination,
+here's some supporting concepts.
+A row of marks means that there are
+[UNKNOWN].
+three marks all with the same first
+coordinate.
+The column and diagonal relations are
+defined analgously.
+A line is a row of marks of the same type
+or column or a diagonal.
+Finally a game is open provided there is
+some cell containing a blank.
+Alright, here we have the definition of
+goals.
+A white player gets 100 points, since
+there's a
+line of x marks, and no line of o marks.
+If there are no lines of either sort,
+white gets 50 points.
+There's a line of o marks and no line of x
+marks then white gets zero, zero points.
+The rewards for black are analogous.
+The final is termination.
+The game terminates whenever either player
+has a line of marks
+of the appropriate type or if the board is
+not open.
+That is, there are no cells containing
+blanks.
+

@@ -1,0 +1,299 @@
+Okay.
+So we'll get started with integration.
+So the problem that integration was
+originally invented to
+solve was, I have this function f of x.
+So that's the blue curve here, and then I
+imagine that there's a region underneath
+my function, so it's above the x axis,
+between a lower limit a an upper limit b.
+And I want to
+assign some sort of area to this region s.
+So, often you hear
+integration just as referred to as the
+problem of finding the area under a curve.
+And so the, the kind of the concept of
+area, it's,
+until there was calculus, the only way you
+could the find
+the area of something was figuring out how
+to make it
+into a rectangle and then taking the area
+of that rectangle.
+And so for instance,
+if you had two triangles and they were
+both right triangels,
+you could sort of fit them together and
+make a rectangle.
+And then you would say, well, the area of
+the triangle must be
+half of that because there were two of
+them that made it up.
+Here, it's going to be a little bit
+trickier, because it's, even the concept
+of area is a little bit less clear when
+you have a curved edge like this.
+But the approach we’re going to take is
+just take a lower bound for this area and
+then an upper bound for this area.
+So the lower bound is going to be these
+red rectangles.
+And so, I've, I've made this diagram a
+little
+bit simpler just by making the curve
+upwards sloping everywhere.
+So I'm going to evaluate the height of the
+rectangle at the left side of each
+rectangle.
+And that means that each rectangle is
+completely below the curve.
+And then I'm going to do just the opposite
+with the black rectangle.
+I'm going to evaluate that at the right
+side.
+So each black rectangle is completely
+above the curve, at
+the top of each black rectangle is
+completely above the curve.
+And then my lower limit for my area
+underneath
+this curve is going to be the sum of the
+areas of the red rectangles, and the upper
+limit
+is going to be the sum areas of the black
+rectangles.
+And I'm going to refer to this splitting
+up of the region ab as a partition.
+And what I want to do then is notice
+I have n here as a subscript from my
+partition.
+So this would be p5, it's a partition into
+five sub intervals.
+And I can refine my partition just by
+breaking this up at another point.
+So, for instance, right in the middle
+here,
+I could add another point to my partition.
+And then you're going to see that the, the
+red sum
+was going to get a little bit bigger,
+because I could
+fit a little bit more red rectangle in
+here.
+And the black sum is going to get a little
+bit smaller,
+because I could take a little bit away
+from up here.
+And then the idea is to look as I make my
+partition finer and finer and finer.
+So this p sub n.
+And I have n going to infinity.
+So my, my upper limit, my upper bound for
+this area is coming down as n goes to
+infinity.
+And the red rectangles, my lower bound is
+going up as n goes to infinity.
+And so I'm going to
+say that if those two limits are equal.
+So,
+if I, if I let my partition become finer
+and finer, and finer in the limit.
+If my lower bound is equal to my upper
+bound, then I'm going to say
+that the definite integral of f of x from
+a to b, and I write it using.
+So this symbol here that
+I can't highlight, is integral from a to b
+of f of x the x.
+I'm just going to define that to be the
+limit of, because these are equal, I can
+pick either one, but I picked the, the
+lower lower bound, and I'm going to call
+that A.
+And then the interpretation I get after
+doing
+all of this is that A can be interpreted
+as the area of the region S.
+And then I'm also going to say that my
+function f of x is integrable.
+And this, this condition at the end, or
+this definition
+means that both of these limits are equal
+to one another.
+If I were to continuously refine my
+partition until and these limits.
+If the upper limit stayed above the lower
+limit, then f would not be an integrable
+function.
+So the, the notation, or the, the
+definition of integrability
+is that these two limits are going to
+equal to one another.
+And so, just to get used to working with
+integrals.
+So, I'll go over some basic properties.
+So, if I look at the integral from b to a.
+So now, I'll I've done is I've switched
+the, the endpoint.
+So, instead of my limit going from a to b,
+I'm now going to go from b to a.
+And let's pretend it's like the picture,
+so a is less than b.
+I'm just going to end up with minus the
+integral, the
+definite integral from a to b of f of x.
+And so in particular, it's sort of like
+area, but it's
+somehow a little bit different.
+Because the area of a rectangle doesn't
+really change.
+And if I look at it going this way, or if
+I look at it going this way, it's the same
+area.
+But the, the value of an integral's going
+to change depending
+on if I'm going from left to right or
+right to left.
+If I integrate a function over an interval
+of width
+zero, so this is just a to a, the same
+point,
+the value of that integral is going to be
+zero.
+So here I let c be a real-valued constant.
+If I look at the
+integral from a to b of c, that's just
+going to be c times b minus a.
+And if you imagine what this is going to
+look like, c says my
+function is constant for all x, so it's
+just a, a horizontal line.
+And I'm integrating, I'm trying to find
+the area underneath that between a and b.
+So if b is greater than a, b minus a is
+going to
+be positive, that's just going to give me
+the width of this region.
+And then because it has a constant height,
+that's just going to be a rectangle.
+So all I've done here is just said width
+times height is the area of a rectangle.
+And then like for the derivative, we also
+have a linearity property for integration.
+So the integral from a to b of a function
+that's equal to two simpler functions
+added together, is just the integral of
+the
+first function plus the integral of the
+second function.
+Similarly, I can scale it.
+So, if I have a integral of a function
+f of x times a real valued constant c,
+then the answer
+to that is just c times the value of the
+integral.
+And now I'm going to choose a point c that
+is
+strictly between a and b, so I'm splitting
+up the integral ab into two pieces.
+And
+if I integrate the function f of x over
+the first piece and add that
+to the integral of f of x over the second
+piece, that's going to
+be equal to the value of the integral over
+the whole integral.
+So as you just integral from a to c of f
+of x plus the integral from c to
+b of of x, is the same thing as the
+integral from a to b of f of x.
+And then if f of x is greater than or
+equal to zero at every point in between a
+and b, then the integral of that function
+over that
+interval has to be greater than or equal
+to zero.
+And also if f of x is greater than or
+equal
+to g of x at every point in the interval,
+then
+the integral of f of x over the interval
+is greater
+than the integral of g of x over that same
+interval.
+Oops.
+And then this number 9 is essentially the
+same thing I did
+with my partition, except now I just have
+a partition of size one.
+All I'm saying is that if f of x is
+greater than some constant m over the
+entire interval and less than some
+constant capital M over that interval.
+Then I can make a lower bound and an upper
+bound
+for the integral by just saying that this
+integral, or sorry,
+this rectangle that fits entirely
+underneath the curve that's going to
+have an area smaller than the value of
+the, the integral.
+And this rectangle where the curve fits
+entirely inside the rectangle is
+going to have a value larger than the
+value of the integral.
+Okay.
+And so, just a, a quick example of, of how
+we can use this are principle to evaluate
+an integral.
+Suppose I want to evaluate the integral
+from 0 to 4 of 4x minus x squared.
+So, it's not really clear how you could do
+that right from the start.
+but I think if I change this function
+around a little bit most of you will
+recognize it.
+And if you don't, I'll tell you what it is
+at the end so it makes sense, hopefully.
+So the first thing I'm going to do is just
+write it backwards.
+I want to have the x squared first.
+So I'll say, minus x squared minus 4x.
+And then I'm going to add and subtract 4.
+So really, what I'm going to do is
+underneath the
+square root, I'm going to add 0 to this
+quantity.
+But I'm going to pick a very special value
+of 0 that I can write the 4 minus 4.
+And so, I'm going to put the positive 4
+here And then because everything in that
+quantity is going to be negative, if I put
+the positive four here, that's my 4 minus
+4.
+But now,
+we can recognize this as x minus 2
+squared.
+So I can rewrite, oops, what have I done?
+Maybe I have to keep hitting that.
+so now I can recognize this as x minus
+2 squared, the integral from 0 to 4.
+And I think I have my picture here.
+So this is what this function looks like.
+And in fact, if you get rid of the square
+root here, you think of this
+function as y equals f of x, then what
+you're going to have is y squared plus
+x minus 2 squared equals 2 squared.
+Which is just the area of, or the equation
+for a circle with center at 2,0.
+And so that means that I can use my
+area interpretation, because I know how to
+compute the
+area of half a circle to say that the
+value of this integral is equal to 2 pi.
+And just in case you forgot, at the bottom
+there
+I wrote the equation of a circle with
+center at x0,y0.
+

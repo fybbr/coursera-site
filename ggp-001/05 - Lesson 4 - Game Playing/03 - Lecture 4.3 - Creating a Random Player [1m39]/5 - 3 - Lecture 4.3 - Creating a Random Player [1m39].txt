@@ -1,0 +1,53 @@
+A random player is similar to legal
+player.
+That it maintains a state and selects an
+action for each state
+based solely on its legality in that state
+without consideration of the consequences.
+A random player differs from a legal
+player
+is not simply take the first legal move
+it finds but rather selects randomly from
+among
+all of the legal actions available in that
+state.
+Usually choosing a different move on
+different occasions.
+The implementation of a random player's
+almost
+identical to the implementation of a legal
+player.
+In fact it's hard to see the difference
+here.
+The only difference is in the play
+handler.
+In the legal player the play handler
+simply returns the first legal move.
+In a random player the play handler first
+computes all legal moves
+using find legals and then selects one at
+random from this list.
+Random players are no smarter than legal
+players,
+however they often appear more interesting
+because they're unpredictable.
+Also sometimes they avoid tracks, traps
+that befall consistent players like legal,
+which
+sometimes can ma, maneuver themselves into
+corners
+from which they are unable to escape.
+Random players are also used as standards
+to show that
+general game players as specific methods
+perform better than chance.
+now one downside on a random player is it
+consumes slightly more compute time than
+a legal player, since it must compute
+all legal moves rather than computing just
+one.
+Now, for most games, this is not a problem
+but for games
+with a large number of possible actions
+the difference can be noticeable.
+

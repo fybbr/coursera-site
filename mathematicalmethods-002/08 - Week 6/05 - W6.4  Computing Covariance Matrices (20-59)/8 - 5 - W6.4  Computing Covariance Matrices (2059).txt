@@ -1,0 +1,518 @@
+The next topic I, I called computing
+covariance matrices, just because
+I couldn't really think of a, a better
+title for it.
+So in, in the third, in the third, topic
+I talked about what a variance covariance
+matrix is.
+And now I want to show that really
+what we're doing when we do matrix
+multiplication.
+You can sort of design one matrix to
+operate
+on another matrix to give you what you
+want.
+And so this the covariance matrices gives
+kind of a nice way to
+explain that and, and also to discover
+that some matrices have very interesting
+properties.
+So let's take a closer look at how we made
+this x tilde
+vector.
+So I said x tilde was equal to x.
+So this is a column vector with n, column
+vector with m elements.
+X bar was a scalar.
+And e was a column vector of m one.
+So when I do this multiplication
+here, I just end up with a vector of
+length
+m and every element of that is equal to x
+bar.
+And then when I subtract that from x it
+gives me, I call
+it, a centered vector because now it's
+going to have sample, sample mean zero.
+And now I want to work backwards a little
+bit.
+So I'm going to replace X bar by my I
+guess
+matrix definition, my matrix computation,
+that gave me the sample mean.
+And now it might get a little bit more
+clear.
+Why I wanted to put the x bar after the e.
+So if you look closely at this, I have
+this column
+vector and then this row vector and then
+this column vector here.
+And then the 1 over m, that's a scalar,
+and remember.
+So a column vector, that's just a matrix
+with one column and m rows.
+This is a matrix with one row and m
+columns and then m rows and
+1 column agains and a scaler.
+And for matrices
+I'm free to do the multiplication in any
+order I want to.
+So if I did this multiplication first and
+then divided by m, I ended up with x bar.
+But let's look at what happens if I, well
+let's see what I did exactly.
+Yes, I'm going to instead look at this
+matrix now, e, e, transpose.
+So e is this column vector of m ones.
+E transposed is a row vector, so I'm
+going to end up
+with a square matrix, m by m matrix of all
+ones.
+And then I'm going to divide that by m and
+multiply that by x and that's.
+Going to be equal still to x tilde because
+I'm still doing the same operation.
+I'm just kind of organizing the
+computations in a different order now.
+And now, I'm going to factor.
+So I can factor always an identity
+matrix out of something.
+So I could write this as i.
+So now i have an m by m identity matrix i
+minus e e
+transpose.
+So this, this outer product here is an m
+by m matrix of all ones divided by m.
+So each element of
+this second matrix is one over m.
+And
+now I'm going to think about this, this
+thing, the identity matrix minus ee
+transposed over m.
+Think about that as a, so I
+can write x tilted here as a matrix a
+times x.
+So I'm designing this matrix a.
+subtract the mean form
+my vector x.
+What is a?
+So the outer product e e transpose
+is an m by m matrix.
+I, I is the m by m
+identity matrix.
+So a is also going to be an m
+by m matrix.
+And it's a special m by m matrix
+has a property that premultiplications
+i mean multiplying i put a before x that's
+premultiplying.
+Turns X into X tilde.
+And so you can think of this
+matrix multiplication as one matrix acting
+on another.
+So you, we saw things like this already
+with
+a permutation matrix, I pre-multiply by a
+permutation matrix.
+And that swaps rows, also I, I think I
+showed a rotation matrix at some point,
+so I pre-multiply a vector by a rotation
+matrix and that just rotates the vector.
+So there's certain matrices, you can
+design
+them to do something that you want.
+And so I've designed this matrix a.
+To center the vector x, so I want to
+subtract the sample mean from each element
+of x.
+So, now let's consider what happens when I
+pre-multiply the matrix r by a.
+So, remember r was this matrix I made that
+had one column
+x, the first column is x and the second
+column is y.
+So I have my matrix A, so that's where
+this A comes
+from, and then R is this matrix with
+column X and column Y.
+And so I can think of A as I think of Rs
+having a block structure with the blocks
+are just going to be the columns.
+So when I do the multiplication, the first
+column is just going to be
+A times x, and the second column is
+going to be A times y.
+And then we know what a does to each of
+these vectors.
+So A turns x into x tilde, and A turns y
+into y tilde,
+so when I do this.
+matrix multiplication here I'm going to
+end up with x tilde y tilde
+so the same matrix a is going to turn the
+matrix R into R tilde.
+so now let's think about what's going to
+happen when
+we stick this into the expression for our
+covariance matrix.
+So, in the previous set I had to define
+the covariance.
+You know I needed to subtract the mean
+and then I could calculate the variances
+and covariances.
+So I needed to first make this matrix R
+tilde.
+And then I could compute the covariance.
+So here I'm aiming to get
+the covariance of the matrix R.
+The sample covariance for the matrix,
+R, but I first need to make this R tilde
+matrix in order to do that.
+But now, I can replace R tilde, just by
+AR,
+because A is going to turn R into R tilde,
+and now
+I have a product here.
+And a transpose,
+so I might as well use my transpose rules.
+oops, I guess I'm getting ahead of myself.
+So let's see, because R has two columns,
+the covariance
+matrix for r is going to be a 2 by 2
+matrix.
+Okay, so in general.
+I guess I've been, what I wanted to
+communicate here was, I'm
+trying to do a 2 by 2 matrix just to keep
+things simple.
+What's going to happen in general is that,
+so here R has two columns,
+and R tilde has two columns, and because I
+can just apply a row by row.
+These are columns.
+I can apply A column by column,
+I could do three columns, I could had an
+arbitrary number of columns
+in R, so I can say it has n columns.
+And, so, if.
+R has n columns, then the covariance
+matrix for
+R is going to be an n by n matrix.
+And what you'll end up with then is the
+diagonal elements
+are going to be the variance, the sample
+variances for the columns.
+And then the off-diagonal
+elements will be the sample covariances
+for
+that particular row and that particular
+column.
+And the nice thing about this is that
+A only depended on the number of
+observations.
+So it only depended on the number of rows
+in R, so
+it was the, the length of each one of
+these vectors m.
+Because it was i, minus e e transposed
+over m.
+So this matrix a stays the same,
+regardless of what I,
+you know, how many columns I decide to put
+into R.
+Okay.
+So now I get to do my, my exciting result.
+So I'm looking at the covariance matrix
+For R.
+And on the last slide I said, well I can
+write that as AR, that
+product transposed times AR because AR is
+equal to R tilde.
+And now I have a rule for taking the
+transpose of matrix products.
+So I can rewrite this.
+As, so one over m, my scale factor.
+R transposed, A transposed, AR.
+And so now what I want to do is, usually
+when you see something like this, remember
+when I was saying you have a matrix
+transposed times itself, you know, it will
+be symmetric.
+It also sometimes has nice properties.
+And so let's take a look at that and
+see if we can find anything interesting.
+So product A transposed A is just going to
+be, all I've done here is I'm replacing A
+by how I created A in the first place,
+so that's I minus e e transposed divided
+by m.
+And so I have a transpose a and now here's
+a transpose again.
+I've got a product here and
+a sum here and I have rules for taking
+transposes of that.
+So lets try that and see what happens.
+So lets see if I, if I did that.
+So the first thing I did was transpose of
+a sum.
+Was just the transpose of each part of the
+sum, each term in the sum.
+So this sum transposed becomes identity
+matrix
+transposed, minus ee transposed over m
+transposed.
+Identity matrix transposed, so it's
+diagonal, it's symmetric,
+transposed is equal to itself.
+So this will become i.
+And I'll have to see what happens to this
+real quick.
+So this e gets transposed and I swap
+the order so that becomes this e transpose
+here.
+This e transpose gets transposed and I
+swap the order.
+So that becomes this e e, e transpose
+transpose here.
+Sorry.
+E transpose, transpose just becomes e.
+And then I had this e transpose that I'll
+carry down.
+Sorry, I've said e and transpose quite a
+lot in this last couple of sentences here.
+And what do I end up with?
+I have i minus e, e tranpose over m.
+Which is A.
+So A transpose A is also equal to A
+squared.
+And since A, so what I've really done
+here,
+I've, I haven't touched this second A, so
+all I've
+done is operated on this first part of the
+product
+and just shown that A transpose is equal
+to A.
+So that tells me that a transpose, sorry a
+common is symmetric.
+But that's not, not all yet.
+I have a transpose a is equal to i minus
+e, well you can read it now.
+[COUGH]
+So I can say that's equal to i minus e
+transpose over m squared.
+So, A transpose A is equal to A squared.
+But I can actually go a head and just do
+this multiplication as well.
+So let's see what happens when I do that.
+So I end up with it's just the,
+the standard, you know, first, outer,
+inner, last.
+So I have identity matrix times identity
+matrix gives me identity matrix squared.
+And I have outer identity matrix times
+this.
+And it's negative, and then I have inner
+identity matrix times this.
+So I get two of these guys.
+And then the last one I get ee transposed
+squared over m.
+So ee transposed over m, that thing
+squared, which I've written out here.
+So these middle terms are going to be the
+same, so I'll just
+write two of them, i squared is just like
+1 squared but with
+matrices so I get the identy matrix back
+and then when I do
+this product here I'm going to get a m
+squared in the denominator.
+And then I'm going to get an e, e
+transposed, e
+and e transposed, so just write those four
+things out here.
+And then, remember, these are just
+matrices,
+even though they're one by something
+matrices, but
+But I'm free to do this multiplication in
+any order I want to.
+And so what I'm going to do is do the
+inside multiplication first.
+So I'll have e transpose e, which is a
+inner product or
+a dot product of a vector of m1s with a
+vector of m1s.
+That's going to be one times one plus one
+time one.
+So I'm basically just adding up one
+squared m times.
+So that's equal to m.
+And it's scalar, so I could then move that
+out in front if I wanted
+to, and that'll cancel out one of my m's
+that I have in the bottom.
+So this just becomes this
+m.
+This m will cancel out one in the bottom.
+And what I'll end up with is I have 1
+minus
+2 times ee 2 transposed over m plus ee
+transposed over m.
+Which is 1 minus ee transpose over m which
+is equal to a.
+So this matrix
+a has got two neat properties now.
+If I multiply a vector by a, pre-multiply
+a vector by a, it subtracts the
+mean from each element, it subtracts the
+sample mean from each element of my
+vector.
+And it also has this, well I think it's
+a neat property, that A squared is equal
+to A.
+And so there's a special name that this
+actually pops up more often than you would
+think.
+there's a special name for matrices that
+have this property.
+and it's called idempotent.
+So if a squared is equal to a, it's an
+idempotent
+matrix, which is a word I'm still not
+really comfortable pronouncing.
+>>
+[LAUGH]
+>> Okay, so now let's see what happens
+if
+I plug this back into my covariance matrix
+formula.
+So remember I'm trying to get the
+covariance.
+Matrix for R.
+You know, initially I had it as R tilde, R
+tilde transpose R, but
+then I can get rid of the R tildes by
+using this A matrix.
+And then when I did the, the transpose
+kind of, of A the product AR.
+I got this A transposed A, but we've just
+proved that
+that's equal to A squared, and that's also
+equal to A.
+So I end up with this expression for my
+covariance matrix or R.
+I have 1 over M minus 1, that's a scalar.
+It's the kind of Taking the average of
+these squared deviations.
+And I have R transposed times A times R.
+And then you want to do some sanity checks
+every
+now and then when you've done a big
+calculation like this.
+So,
+R transposed, R is an M by M matrix, so R
+transposed (no period)
+Is going to be n by m, and then a,
+remember was m by m.
+So here, these ms match and these ms
+match, so I'm
+able to do that calculation.
+Then
+the outer dimensions give me the
+dimensions of the matrix product.
+So it's going to be an n by m matrix.
+And that's good because on the one or two
+slides ago I kind of argued at the
+very end that this covariance matrix
+should be an
+n by n matrix if R has n columns.
+But the problem with doing this is this is
+actually,
+so I started out with an m by n matrix
+and in my In my example, you know,' m' was
+a big number, maybe, but n was equal to 2.
+And now, to do this, I would actually have
+to compute
+an M by N matrix, so M is a big number,
+and N is 2.
+Then, R and, or r
+transposed and r, they're going to have
+two m entries in them, but this is
+going to have m squared entries, so that's
+going to be a really big matrix.
+It's going to take, if I were programming
+it, or if I were trying to write
+it on a chalkboard, it would take a long
+time to write that matrix down.
+Or it would take a lot of memory, and then
+when I do the matrix multiplication If
+I've used up all that memory to store a
+matrix I have to go through all that
+memory
+to do my matrix multiplication.
+So this is another nice thing about, I can
+choose, you know, what order I want to do
+calculations
+in to try and minimize the amount of work
+I actually have to do to compute this
+product here.
+So to do that, I'm going to replace A by
+its definition again.
+And then just look at what's going to
+happen when I rewrite.
+So here, if I do this product first, I end
+up with an m by m matrix.
+And I want to avoid doing that.
+So, sort of the obvious thing to do would
+be To do this times r first.
+[COUGH]
+So I'll take this m out, alright?
+That is just one over m.
+Then the EE transpose.
+I'll have the E here.
+E transpose and then R, but I'm going to
+do this red calculation first.
+And so that's going to be one times m
+times m
+times n so that will be a one times n,
+matrix.
+So it's a
+matrix with one row and n columns.
+And then I'm going to call that m1 and
+I'll stick that back here.
+And that's actually pretty small, so in
+my, in my example when I
+just had x and y as the columns, my n was
+equal to two.
+So this m1, even though it's a big m1.
+It's a one by two matrix, so it's actually
+only takes me two numbers.
+So it's a lot less than m squared.
+And now I still have to do an outer
+product, so that inside dimension here is
+one, so that The e times m1, that's
+going to give me an m by n matrix.
+But that's still just the same size as my
+original r matrix.
+Oh and I guess also I should point out I
+did this r times the
+identity matrix and stuck that here just,
+that's where the rest of this is, here.
+That's where the rest of this is coming
+from, but the
+exciting part is the part on the, the
+right hand side here.
+So I'll do this matrix multiplication e
+times M1, this outer product,
+and that'll give me this M2 matrix here
+which is m by n.
+And then I can go ahead and do this
+subtraction here.
+And then when I do that I will just have R
+will be an N times N matrix, and
+I will have to do one more matrix
+multiplication
+and that will give me a covariance matrix
+for R.
+

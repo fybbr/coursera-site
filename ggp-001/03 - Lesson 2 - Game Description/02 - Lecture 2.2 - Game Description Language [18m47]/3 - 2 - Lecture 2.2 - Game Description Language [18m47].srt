@@ -1,0 +1,1508 @@
+1
+00:00:00,685 --> 00:00:02,902
+[BLANK_AUDIO].
+
+2
+00:00:02,902 --> 00:00:08,050
+A logic program is a collection of
+sentences that define relations.
+
+3
+00:00:08,050 --> 00:00:12,950
+Either directly by enumeration, or
+indirectly, in the form of logical rules.
+
+4
+00:00:15,010 --> 00:00:15,990
+Here's a simple example.
+
+5
+00:00:15,990 --> 00:00:21,552
+And the first four sentences here define
+the parent relation by enumeration.
+
+6
+00:00:21,552 --> 00:00:24,070
+Art is parent of Bob, and Amy is the
+parent of Bob.
+
+7
+00:00:25,210 --> 00:00:27,420
+Bob is the parent of Coe and Cal.
+
+8
+00:00:29,190 --> 00:00:31,060
+The rule in the middle, defines the
+
+9
+00:00:31,060 --> 00:00:33,440
+grandparent relation in terms of the
+parent relation.
+
+10
+00:00:34,580 --> 00:00:40,170
+X is the grandparent of Z If X is a parent
+of some person Y and Y is a parent of Z.
+
+11
+00:00:42,170 --> 00:00:45,560
+So we shall see, given these definitions
+of parenting, grandparent, we can
+
+12
+00:00:45,560 --> 00:00:49,940
+conclude that Art and Amy are both the
+grandparents of Cal and Coe.
+
+13
+00:00:54,950 --> 00:00:57,930
+As previously mentioned, GDL has a logic
+programming languages, in many
+
+14
+00:00:57,930 --> 00:01:02,750
+ways resembles Prolog, the most popular of
+the logic programming languages.
+
+15
+00:01:02,750 --> 00:01:04,570
+Moreover, there're several important
+differences.
+
+16
+00:01:05,580 --> 00:01:08,660
+First of all, the semantics of GDL is
+purely declarative.
+
+17
+00:01:08,660 --> 00:01:11,190
+That is, there's no imperative features,
+such as
+
+18
+00:01:11,190 --> 00:01:14,000
+assert and retract and cut, as in Prolog.
+
+19
+00:01:16,210 --> 00:01:18,520
+Second, GDL has some restrictions that
+
+20
+00:01:18,520 --> 00:01:21,870
+ensure that all pertinent questions are
+decidable.
+
+21
+00:01:21,870 --> 00:01:24,960
+In particular, all relations can be
+computed in finite time.
+
+22
+00:01:26,710 --> 00:01:28,960
+And finally, there's some reserved words
+which tailor
+
+23
+00:01:28,960 --> 00:01:31,010
+the language to the task of defining
+games.
+
+24
+00:01:32,860 --> 00:01:35,360
+Despite these restrictions we frequently
+use the phrase logic
+
+25
+00:01:35,360 --> 00:01:38,080
+program to refer to a game description in
+GDL.
+
+26
+00:01:41,440 --> 00:01:46,530
+Logic programs in GDL are built up from 4
+disjoint classes of symbols.
+
+27
+00:01:46,530 --> 00:01:48,580
+Namely, object constants, function
+
+28
+00:01:48,580 --> 00:01:51,890
+constants, relation constants and
+variables.
+
+29
+00:01:52,980 --> 00:01:56,530
+And what follows, we write such symbols as
+strings of letters,
+
+30
+00:01:56,530 --> 00:02:00,640
+digits and a few non alpha numeric
+characters such as underscore.
+
+31
+00:02:02,390 --> 00:02:06,310
+Constants must begin with a lowercase
+letter or digit,
+
+32
+00:02:06,310 --> 00:02:08,450
+variables must begin with an uppercase
+letter.
+
+33
+00:02:10,820 --> 00:02:14,860
+The arity of a function constant or a
+relation constant is the number
+
+34
+00:02:14,860 --> 00:02:17,520
+of arguments that can be associated with
+
+35
+00:02:17,520 --> 00:02:19,780
+the function or relation when writing
+expressions.
+
+36
+00:02:19,780 --> 00:02:24,828
+As we'll see in the example to follow.
+
+37
+00:02:24,828 --> 00:02:28,320
+A term is defined as either an
+
+38
+00:02:28,320 --> 00:02:32,830
+object constant, a variable, or a
+functional term.
+
+39
+00:02:32,830 --> 00:02:35,980
+And by functional term here, I mean an
+expression consisting
+
+40
+00:02:35,980 --> 00:02:40,350
+of an N-Ary function constant, and N
+simpler terms.
+
+41
+00:02:40,350 --> 00:02:42,150
+And what follows, we write
+
+42
+00:02:42,150 --> 00:02:45,330
+functional terms and traditional
+mathematical notation.
+
+43
+00:02:45,330 --> 00:02:47,592
+The function constant first, followed by
+its
+
+44
+00:02:47,592 --> 00:02:50,740
+arguments, enclosed in parentheses and
+separated by commas.
+
+45
+00:02:52,180 --> 00:02:53,830
+Now for example, if F is a unary
+
+46
+00:02:53,830 --> 00:02:58,000
+function constant, and G is a binary
+function constant.
+
+47
+00:02:58,000 --> 00:03:01,840
+If A and B are both object constants, and
+if X is a variable,
+
+48
+00:03:01,840 --> 00:03:11,710
+then f of a is a functional term, and so
+is g of X,b.
+
+49
+00:03:11,710 --> 00:03:15,335
+An atom is an expression consisting of n
+re relation
+
+50
+00:03:15,335 --> 00:03:19,260
+constant and n terms.
+What follows,
+
+51
+00:03:19,260 --> 00:03:23,010
+we write atoms in traditional mathematical
+notation, just like terms.
+
+52
+00:03:23,010 --> 00:03:26,510
+The relation constant, in this case.
+Followed by it's arguments,
+
+53
+00:03:26,510 --> 00:03:28,970
+enclosed in parentheses, and separated by
+commas.
+
+54
+00:03:30,180 --> 00:03:33,330
+For example, if p is a binary relation
+constant.
+
+55
+00:03:33,330 --> 00:03:36,630
+And if a and b are object constants, then
+p of ab is an atom.
+
+56
+00:03:39,200 --> 00:03:42,030
+A negation is an expression formed using
+the
+
+57
+00:03:42,030 --> 00:03:47,840
+negation sign, the tilde character and an
+app.
+
+58
+00:03:47,840 --> 00:03:49,130
+For example, not p of ab.
+
+59
+00:03:49,130 --> 00:03:49,630
+A
+
+60
+00:03:52,490 --> 00:03:54,550
+literal is either an atom or a negation.
+
+61
+00:03:56,020 --> 00:03:58,580
+An atom by itself is sometimes called a
+positive
+
+62
+00:03:58,580 --> 00:04:01,769
+literal and a negation is sometimes called
+a negative literal.
+
+63
+00:04:05,870 --> 00:04:06,680
+Finally we get to rules.
+
+64
+00:04:06,680 --> 00:04:12,320
+A rule is an expression consisting of a
+distinguished atom called the head and a
+
+65
+00:04:12,320 --> 00:04:15,730
+conjunction of zero or more literals
+called
+
+66
+00:04:15,730 --> 00:04:19,000
+the body, separated by the colon minus
+operator.
+
+67
+00:04:20,380 --> 00:04:23,009
+Literals in the body are called subgoals.
+
+68
+00:04:24,090 --> 00:04:27,260
+Intended meaning, is that an instance of
+the head is true,
+
+69
+00:04:27,260 --> 00:04:31,370
+and ever corresponding instances of all of
+the positive subgoals are true.
+
+70
+00:04:31,370 --> 00:04:33,990
+And all of the negative subgoals are
+false.
+
+71
+00:04:37,930 --> 00:04:43,169
+A logic program in GDL is a finite
+collection of atoms and rules, this for.
+
+72
+00:04:44,640 --> 00:04:46,570
+In order to simplify our definitions in
+analysis,
+
+73
+00:04:46,570 --> 00:04:48,930
+we occasionally talk about infinite sets
+of rules.
+
+74
+00:04:48,930 --> 00:04:51,980
+While these sets are useful, they're not
+themselves logic programs.
+
+75
+00:04:51,980 --> 00:04:55,510
+Okay, here are some examples of things
+that are logic programs.
+
+76
+00:04:55,510 --> 00:04:57,570
+In this first case, we define the parent
+relation
+
+77
+00:04:57,570 --> 00:05:00,510
+p in terms of father f and mother m.
+
+78
+00:05:02,040 --> 00:05:03,120
+X is the parent
+
+79
+00:05:03,120 --> 00:05:05,680
+of Y if X is a father of Y.
+
+80
+00:05:05,680 --> 00:05:08,260
+X is also a parent of Y if X is a mother
+of Y.
+
+81
+00:05:10,310 --> 00:05:12,160
+In the second example, we defined
+grandparent
+
+82
+00:05:12,160 --> 00:05:14,300
+in terms of parent, as we saw before.
+
+83
+00:05:16,430 --> 00:05:19,329
+In the third, we define ancestor in terms
+of parent.
+
+84
+00:05:20,370 --> 00:05:22,310
+Note that the definition in this case is
+recursive.
+
+85
+00:05:23,930 --> 00:05:25,920
+And finally, we define remote ancestors.
+
+86
+00:05:25,920 --> 00:05:29,770
+Any ancestors that is not apparent using
+the not symbol.
+
+87
+00:05:32,250 --> 00:05:35,440
+Although every GDL expression's a finite
+set of atoms and rules,
+
+88
+00:05:35,440 --> 00:05:38,190
+not every finite set of atoms and rules is
+a GDL description.
+
+89
+00:05:39,360 --> 00:05:40,930
+As mentioned earlier, there are some
+restrictions
+
+90
+00:05:40,930 --> 00:05:43,570
+to ensure that such descriptions have
+desirable properties.
+
+91
+00:05:43,570 --> 00:05:44,070
+The
+
+92
+00:05:45,950 --> 00:05:48,260
+first of these restrictions is called
+Safety.
+
+93
+00:05:48,260 --> 00:05:52,020
+A rule in a logic program is safe if
+
+94
+00:05:52,020 --> 00:05:54,710
+and only if every variable that appears in
+the head,
+
+95
+00:05:55,800 --> 00:05:59,570
+or, in any negative literal in the body
+also
+
+96
+00:05:59,570 --> 00:06:02,260
+appears in at least one positive literal
+in the body.
+
+97
+00:06:03,560 --> 00:06:05,150
+The first rule shown here is safe.
+
+98
+00:06:05,150 --> 00:06:10,100
+Variables X and Z appear in the head, and
+Y appears in a negative subgoal.
+
+99
+00:06:10,100 --> 00:06:11,090
+Fortunately, all three
+
+100
+00:06:11,090 --> 00:06:14,150
+of these variables appear in positive
+subgoals as well.
+
+101
+00:06:14,150 --> 00:06:15,100
+And so the rule is safe.
+
+102
+00:06:16,900 --> 00:06:19,880
+The second is not safe because variable Z
+appears
+
+103
+00:06:19,880 --> 00:06:21,850
+in the head but not in any positive
+subgoal.
+
+104
+00:06:21,850 --> 00:06:27,590
+And the third rule is not safe because the
+variable Z appears in a negative subgoal
+
+105
+00:06:27,590 --> 00:06:34,110
+but not in a positive subgoal.
+In GDL we require that all rules are safe.
+
+106
+00:06:39,190 --> 00:06:43,310
+The next two restrictions in GL have to do
+with recursion.
+
+107
+00:06:43,310 --> 00:06:44,910
+The restrictions are best be-defined using
+
+108
+00:06:44,910 --> 00:06:48,200
+this notion of dependency graphs
+illustrated here.
+
+109
+00:06:48,200 --> 00:06:50,750
+The dependency graph for a set of rules is
+a directed
+
+110
+00:06:50,750 --> 00:06:54,990
+graph in which the nodes are the relations
+mentioned in the head.
+
+111
+00:06:56,340 --> 00:06:59,058
+And, heads and bodies of the rules.
+
+112
+00:06:59,058 --> 00:07:04,630
+And there's an arc from a node p to a node
+q, whenever p occurs with the body
+
+113
+00:07:04,630 --> 00:07:06,750
+of a rule in which q is in the head.
+A
+
+114
+00:07:09,390 --> 00:07:11,350
+set of rules is recursive if and only if
+
+115
+00:07:11,350 --> 00:07:14,449
+its dependency graph contains a cycle, as
+this one does.
+
+116
+00:07:18,248 --> 00:07:23,330
+Now we use, we say that a recursion in a
+set of rules is stratified, if and only
+
+117
+00:07:23,330 --> 00:07:25,800
+if a variable in a subgoal relation occurs
+in
+
+118
+00:07:25,800 --> 00:07:27,930
+a subgoal with a relation at a lower
+stratum.
+
+119
+00:07:29,020 --> 00:07:31,130
+The recursion in the first rule shown here
+is
+
+120
+00:07:31,130 --> 00:07:34,480
+stratified because all the variables
+involved in the recursion.
+
+121
+00:07:34,480 --> 00:07:37,290
+Occurring relations that are not defined
+in terms of r.
+
+122
+00:07:39,820 --> 00:07:42,290
+Recursion in the second rule is not
+stratified because the
+
+123
+00:07:42,290 --> 00:07:45,070
+variables involved in the recursion do not
+appear in other relations.
+
+124
+00:07:46,280 --> 00:07:48,855
+In GDL, we require that all recursions be
+stratified.
+
+125
+00:07:48,855 --> 00:07:53,520
+[SOUND].
+
+126
+00:07:53,520 --> 00:07:56,040
+Another case is stratified negation.
+
+127
+00:07:56,040 --> 00:07:58,910
+A negation in a set of rules is said to be
+stratified, if
+
+128
+00:07:58,910 --> 00:08:02,730
+and only if there's no recursive cycle in
+the dependency graph involving a negation.
+
+129
+00:08:04,450 --> 00:08:06,450
+For example, the first rule set shown here
+is not
+
+130
+00:08:06,450 --> 00:08:10,289
+stratified, because there's a cycle
+involving a negative occurrence of R.
+
+131
+00:08:12,100 --> 00:08:14,600
+By contrast, the second of rules,set of
+rules is stratified.
+
+132
+00:08:14,600 --> 00:08:18,330
+The set is recursive, but there's no
+negation occurring in a cycle.
+
+133
+00:08:19,550 --> 00:08:21,325
+The only negative occurrence of our
+
+134
+00:08:21,325 --> 00:08:21,500
+[UNKNOWN]
+
+135
+00:08:21,500 --> 00:08:24,550
+definition of T, and that's not part of
+any recursion.
+
+136
+00:08:26,340 --> 00:08:29,570
+In GDL, we also require that all negations
+be stratified.
+
+137
+00:08:32,300 --> 00:08:35,550
+Okay, now with these three definitions
+behind us we could formalize
+
+138
+00:08:35,550 --> 00:08:39,580
+the semantics and in other words the
+meaning of GDL expressions.
+
+139
+00:08:39,580 --> 00:08:42,550
+Start with the notion of a Herbrand
+Universe.
+
+140
+00:08:42,550 --> 00:08:47,150
+Herbrand Universe is the set of all ground
+terms in the language.
+
+141
+00:08:47,150 --> 00:08:50,120
+In case of language without function
+constants, the Herbrand
+
+142
+00:08:50,120 --> 00:08:52,540
+Universe is exactly the set of all object
+constants.
+
+143
+00:08:54,240 --> 00:08:57,390
+In the presence of function constants, we
+add in the functional terms that can be
+
+144
+00:08:57,390 --> 00:08:59,110
+formed using those function constants.
+
+145
+00:09:00,380 --> 00:09:02,700
+Since nested functional terms are
+forbidden in
+
+146
+00:09:02,700 --> 00:09:05,419
+GDL, the Herbrand universe is always
+finite.
+
+147
+00:09:10,160 --> 00:09:13,340
+The Herbrand base for a logic program is
+the set of all ground atoms that can
+
+148
+00:09:13,340 --> 00:09:15,230
+be formed from the relation constants in
+the
+
+149
+00:09:15,230 --> 00:09:18,250
+language and the elements of a Herbrand
+Universe.
+
+150
+00:09:18,250 --> 00:09:20,350
+For example, given the language shown
+here, the Herbrand
+
+151
+00:09:20,350 --> 00:09:22,910
+Base consists of six atoms and just six
+atoms.
+
+152
+00:09:22,910 --> 00:09:23,610
+P of a.
+
+153
+00:09:23,610 --> 00:09:28,690
+P of b.
+Q of aa, q of ab, q of ba, and q of bb.
+
+154
+00:09:28,690 --> 00:09:29,580
+That's it, there are no more.
+
+155
+00:09:33,630 --> 00:09:38,140
+A Herbrand interpretation is a arbitrary
+subset of the Herbrand Base for a program.
+
+156
+00:09:38,140 --> 00:09:40,640
+Dutifully, we can think of the Herbrand
+interpretation as
+
+157
+00:09:40,640 --> 00:09:42,310
+a listing of the atoms that are true in
+
+158
+00:09:42,310 --> 00:09:44,750
+that interpretation with a sense that
+those that are
+
+159
+00:09:44,750 --> 00:09:46,940
+not in the interpretation are considered
+to be false.
+
+160
+00:09:48,510 --> 00:09:53,590
+Given the Herbrand Base we just saw, here
+are three different interpretations.
+
+161
+00:09:53,590 --> 00:09:55,551
+Since there are six atoms in Herbrand
+Base,
+
+162
+00:09:55,551 --> 00:09:58,650
+there're two to the sixth, or 64, distinct
+interpretations.
+
+163
+00:09:58,650 --> 00:09:59,900
+Here we've just listed three of them.
+
+164
+00:10:04,390 --> 00:10:04,660
+Okay.
+
+165
+00:10:04,660 --> 00:10:08,380
+Now, finally, we say that interpretation
+delta satisfies
+
+166
+00:10:08,380 --> 00:10:12,082
+an expression, in our language, under the
+following conditions.
+
+167
+00:10:12,082 --> 00:10:12,262
+If
+
+168
+00:10:12,262 --> 00:10:13,072
+[INAUDIBLE]
+
+169
+00:10:13,072 --> 00:10:17,032
+is a ground atom, delta satisfies it, if
+and only if
+
+170
+00:10:17,032 --> 00:10:17,842
+[INAUDIBLE]
+
+171
+00:10:17,842 --> 00:10:20,486
+is in delta.
+Is a member of that set.
+
+172
+00:10:20,486 --> 00:10:22,255
+Delta satisfies not
+
+173
+00:10:22,255 --> 00:10:23,610
+[INAUDIBLE]
+
+174
+00:10:23,610 --> 00:10:24,148
+if and only if
+
+175
+00:10:24,148 --> 00:10:24,270
+[INAUDIBLE]
+
+176
+00:10:24,270 --> 00:10:27,129
+is not in delta.
+Delta satisfies
+
+177
+00:10:27,129 --> 00:10:28,757
+[INAUDIBLE]
+
+178
+00:10:28,757 --> 00:10:29,388
+1 and
+
+179
+00:10:29,388 --> 00:10:31,016
+[INAUDIBLE]
+
+180
+00:10:31,016 --> 00:10:31,850
+2.
+
+181
+00:10:31,850 --> 00:10:34,055
+And so forth, if and only it satisfies
+every
+
+182
+00:10:34,055 --> 00:10:34,270
+[INAUDIBLE]
+
+183
+00:10:34,270 --> 00:10:34,770
+I.
+
+184
+00:10:37,300 --> 00:10:39,670
+Finally, delta satisfies a rule if and
+only if
+
+185
+00:10:39,670 --> 00:10:43,220
+it satisfies the head, or fails to satisfy
+the body.
+
+186
+00:10:43,220 --> 00:10:45,190
+Or equivalently, delta satisfies a rule if
+and only
+
+187
+00:10:45,190 --> 00:10:47,550
+it satisfies a head whenever it satisfies
+the body.
+
+188
+00:10:49,500 --> 00:10:52,580
+And finally we say that delta satisfies a
+rule with variables, which
+
+189
+00:10:52,580 --> 00:10:55,780
+is a common case, if and only it satisfies
+every ground instance.
+
+190
+00:10:55,780 --> 00:10:58,330
+That is, every instance with members
+
+191
+00:10:58,330 --> 00:11:01,360
+of the broad universe substituted for
+variables.
+
+192
+00:11:05,630 --> 00:11:09,000
+Now, in general a logic program can have
+more than one model.
+
+193
+00:11:09,000 --> 00:11:13,790
+Consider the program consisting of p of
+a,b and the rule of q of x,y if p of x,y.
+
+194
+00:11:13,790 --> 00:11:19,330
+This program has one model of just p of
+a,b and q of a,b.
+
+195
+00:11:19,330 --> 00:11:21,050
+And it has another model with p of a,b and
+q of
+
+196
+00:11:21,050 --> 00:11:25,540
+a,b and q of b,a and it has other models
+as well.
+
+197
+00:11:26,874 --> 00:11:29,570
+However, it's worth noting that the first
+model is the subset of the second.
+
+198
+00:11:29,570 --> 00:11:30,830
+And it's
+
+199
+00:11:30,830 --> 00:11:34,770
+clear that p of a and q of a, b must be
+true in any model of this program.
+
+200
+00:11:34,770 --> 00:11:36,200
+But q of b, a is optional.
+
+201
+00:11:38,430 --> 00:11:40,640
+To eliminate such ambiguities, we usually
+adopt
+
+202
+00:11:40,640 --> 00:11:42,618
+a minimal model semantics for logic
+workups.
+
+203
+00:11:42,618 --> 00:11:46,970
+A model D, of a program that's minimal, if
+null, if
+
+204
+00:11:46,970 --> 00:11:50,650
+no proper subset of D is also a model of
+that program.
+
+205
+00:11:52,060 --> 00:11:53,830
+One interesting property of our language
+is that
+
+206
+00:11:53,830 --> 00:11:57,390
+every logic program has a unique minimal
+model.
+
+207
+00:11:57,390 --> 00:11:58,690
+Also all models are finite.
+
+208
+00:12:03,770 --> 00:12:07,470
+Okay, that's it for traditional ordinary
+logic programs.
+
+209
+00:12:09,510 --> 00:12:12,190
+logic programs like these are often
+defined as closed in that
+
+210
+00:12:12,190 --> 00:12:14,470
+they fix the meaning of all the relations
+in their program.
+
+211
+00:12:15,880 --> 00:12:17,540
+In open logic programs, some of the
+
+212
+00:12:17,540 --> 00:12:20,980
+relations called the inputs, are left
+undefined.
+
+213
+00:12:20,980 --> 00:12:23,340
+And other relations, usually called the
+outputs.
+
+214
+00:12:23,340 --> 00:12:23,565
+Are
+
+215
+00:12:23,565 --> 00:12:23,890
+[COUGH]
+
+216
+00:12:23,890 --> 00:12:25,610
+excuse me, are defined in terms of these.
+
+217
+00:12:27,550 --> 00:12:28,890
+the same program can be used with
+different
+
+218
+00:12:28,890 --> 00:12:31,620
+input relations yielding different output
+relations in each case.
+
+219
+00:12:33,030 --> 00:12:35,920
+So, formally now, we, to find an open
+logic program as a logic
+
+220
+00:12:35,920 --> 00:12:39,250
+program, together with a partition of the
+relation constants in these two types.
+
+221
+00:12:39,250 --> 00:12:41,320
+Input relations and output relations.
+
+222
+00:12:41,320 --> 00:12:44,870
+Output relations can appear anywhere in
+the program, but input relations can
+
+223
+00:12:44,870 --> 00:12:47,370
+appear only in the sub roles of rules, not
+in their heads.
+
+224
+00:12:49,594 --> 00:12:53,300
+but base for an open logic program is, is
+the set of all atoms that can
+
+225
+00:12:53,300 --> 00:12:54,840
+be formed from the base relations of the
+
+226
+00:12:54,840 --> 00:12:58,580
+program, and the entities in the programs
+combined.
+
+227
+00:12:58,580 --> 00:12:59,110
+Universe.
+
+228
+00:13:00,340 --> 00:13:03,380
+An input model is an arbitrary subset of
+its input base.
+
+229
+00:13:04,620 --> 00:13:07,260
+The output base for an open logic program
+is the set of all atoms that can
+
+230
+00:13:07,260 --> 00:13:08,850
+be formed from the output relations of the
+
+231
+00:13:08,850 --> 00:13:12,040
+program and the entities in the program
+around universe.
+
+232
+00:13:12,040 --> 00:13:14,770
+And an output model is some subset of its
+output base.
+
+233
+00:13:16,990 --> 00:13:18,820
+Even an open logic program.
+
+234
+00:13:18,820 --> 00:13:23,520
+P and an input model D, we define the
+overall model for responding to D
+
+235
+00:13:23,520 --> 00:13:27,850
+to be the minimum model of P together with
+D, in other words, P union D.
+
+236
+00:13:28,950 --> 00:13:33,730
+The output model corresponding to D is the
+intersection
+
+237
+00:13:33,730 --> 00:13:35,610
+of the overall model with the program's
+output base.
+
+238
+00:13:35,610 --> 00:13:37,310
+In other words, it consists of those
+sentences in
+
+239
+00:13:37,310 --> 00:13:39,640
+the overall model that mention only the
+output relations.
+
+240
+00:13:41,620 --> 00:13:42,300
+And finally
+
+241
+00:13:42,300 --> 00:13:44,500
+we can think of the meaning of open logic
+programs of function
+
+242
+00:13:44,500 --> 00:13:48,720
+that maps each input model for the program
+into the corresponding output model.
+
+243
+00:13:48,720 --> 00:13:50,870
+for example, the simple logic program
+shown
+
+244
+00:13:50,870 --> 00:13:52,740
+here gives different outputs for different
+inputs.
+
+245
+00:13:52,740 --> 00:13:57,830
+Given p of a, b and p of b, b, and q of b,
+the output is r of a, b.
+
+246
+00:13:59,690 --> 00:14:02,882
+Given just p of a, b and p of b, b,
+without q of
+
+247
+00:14:02,882 --> 00:14:06,000
+b, the output is r of a, b and r of b, b
+both.
+
+248
+00:14:09,970 --> 00:14:13,469
+Okay, now, with those definitions behind
+us, let's get back to game description.
+
+249
+00:14:14,720 --> 00:14:17,380
+As mentioned in the introduction, we can
+conceptualize a game
+
+250
+00:14:17,380 --> 00:14:20,410
+as a structured state graph, like the one
+shown here.
+
+251
+00:14:20,410 --> 00:14:23,560
+GDL gives us a way of describing such
+graphs in compact form.
+
+252
+00:14:25,560 --> 00:14:27,430
+The content of a structured state graph
+can be
+
+253
+00:14:27,430 --> 00:14:31,669
+expressed in GDL, using some reserved game
+independent vocabulary.
+
+254
+00:14:32,930 --> 00:14:35,030
+The vocabulary is game-independent and the
+same
+
+255
+00:14:35,030 --> 00:14:39,804
+words are used in describing all games.
+There are ten game-independent
+
+256
+00:14:39,804 --> 00:14:43,945
+relation constants in GDL, anyway the ones
+
+257
+00:14:43,945 --> 00:14:48,190
+requested here.
+For example, role of A means that A has a
+
+258
+00:14:48,190 --> 00:14:53,050
+role in the game.
+Base of the p, base of proposition means
+
+259
+00:14:53,050 --> 00:15:00,440
+that p is a proposition in the game,
+action of a inputs are input of role and a
+
+260
+00:15:00,440 --> 00:15:05,592
+means that a is in action in the game 4
+rule, the specified role.
+
+261
+00:15:05,592 --> 00:15:10,200
+Init of p means that the proposition p is
+true in the initial state.
+
+262
+00:15:14,410 --> 00:15:17,300
+True if p means that the proposition p is
+true in the current state.
+
+263
+00:15:18,530 --> 00:15:21,480
+Whatever that happens to be, we'll see
+later.
+
+264
+00:15:21,480 --> 00:15:25,350
+Does of r and a means that the player
+
+265
+00:15:25,350 --> 00:15:28,470
+performs, r performs action a in the
+current state.
+
+266
+00:15:29,470 --> 00:15:31,690
+Again we'll see how that works out later.
+
+267
+00:15:32,710 --> 00:15:34,840
+Next of p means that the proposition p is
+true
+
+268
+00:15:34,840 --> 00:15:36,860
+in the next state, the one after the
+current state.
+
+269
+00:15:38,540 --> 00:15:39,660
+Legal of r and
+
+270
+00:15:39,660 --> 00:15:43,080
+a means that it's legal for role r to play
+action a in the current state.
+
+271
+00:15:44,130 --> 00:15:48,550
+Goal of r and n means that the player in,
+in the current state has utility n.
+
+272
+00:15:50,900 --> 00:15:53,919
+Terminal means that the current state is a
+terminal state, the game is over.
+
+273
+00:15:55,950 --> 00:15:58,640
+GDL has no independent, game independent
+function constants.
+
+274
+00:15:58,640 --> 00:16:03,640
+However, there are 101 independent, game
+independent object constants in GDL.
+
+275
+00:16:03,640 --> 00:16:07,670
+Namely the base ten representations of the
+integers from zero through 100 inclusive.
+
+276
+00:16:07,670 --> 00:16:10,280
+0, 1, 2, 3, 4 and so forth, up to 100.
+
+277
+00:16:10,280 --> 00:16:14,180
+These are included mostly as utility
+values for game
+
+278
+00:16:14,180 --> 00:16:16,889
+states, with zero being low and 100 being
+high.
+
+279
+00:16:20,360 --> 00:16:22,460
+the first step in writing a game
+description is to select
+
+280
+00:16:22,460 --> 00:16:26,590
+the game specific vocabulary to capture
+the structure of states and actions.
+
+281
+00:16:28,090 --> 00:16:30,120
+For example, here we have object constants
+white and
+
+282
+00:16:30,120 --> 00:16:34,230
+black as names for the two roles of the
+game.
+
+283
+00:16:34,230 --> 00:16:37,126
+We use A, B, and C to refer to primitive
+entities in the game.
+
+284
+00:16:37,126 --> 00:16:41,320
+We have names p and q for relationships
+among primitive entities, and we
+
+285
+00:16:41,320 --> 00:16:45,630
+have f and g as operations that can be
+performed on these primitive entities.
+
+286
+00:16:45,630 --> 00:16:48,315
+Finally, we have some helper relations, r
+and s.
+
+287
+00:16:48,315 --> 00:16:53,390
+The propositions comprising states can be
+thought of as either object
+
+288
+00:16:53,390 --> 00:16:55,020
+constants or functional terms in our
+
+289
+00:16:55,020 --> 00:16:57,710
+language formed using the relationship
+functions.
+
+290
+00:16:59,750 --> 00:17:02,370
+similarly, actions can be either object
+constants
+
+291
+00:17:02,370 --> 00:17:04,880
+or functional terms form using action
+factions.
+
+292
+00:17:04,880 --> 00:17:09,410
+For example, supplying relationships
+functions p and q to primitive
+
+293
+00:17:11,590 --> 00:17:13,250
+objects.
+Applying them to primitive
+
+294
+00:17:13,250 --> 00:17:13,580
+[INAUDIBLE]
+
+295
+00:17:13,580 --> 00:17:17,438
+a, b, and c, we end up with propositions p
+of a and q of b, c.
+
+296
+00:17:18,770 --> 00:17:21,380
+And applying operations f and g to these
+objects.
+
+297
+00:17:21,380 --> 00:17:24,460
+We end up with actions like f of a and g
+of b,c and so forth.
+
+298
+00:17:26,140 --> 00:17:28,580
+The rules in the game description say
+which propositions are
+
+299
+00:17:28,580 --> 00:17:33,200
+true, and which actions are performed as
+shown in what follows.
+
+300
+00:17:33,200 --> 00:17:35,840
+And specify the results of the performing
+those actions.
+
+301
+00:17:38,590 --> 00:17:42,540
+Finally, we define a game description as
+an open logic programming using GDL's game
+
+302
+00:17:42,540 --> 00:17:44,960
+independent vocabulary together with the
+game's game
+
+303
+00:17:44,960 --> 00:17:48,285
+specific vocabulary subject to a few
+restrictions here.
+
+304
+00:17:48,285 --> 00:17:51,290
+True and does our input relations to the
+program.
+
+305
+00:17:53,090 --> 00:17:54,950
+The GDL game description must get complete
+
+306
+00:17:54,950 --> 00:17:58,370
+definitions for role, action, base, and
+input.
+
+307
+00:18:00,630 --> 00:18:01,430
+I'm sorry, an init.
+
+308
+00:18:02,790 --> 00:18:07,490
+it must define legal and goal in terms of
+an input relation true.
+
+309
+00:18:08,640 --> 00:18:11,860
+It must define next in terms of input true
+and does.
+
+310
+00:18:13,870 --> 00:18:16,520
+Since does and true are treated as inputs,
+there, there're must
+
+311
+00:18:16,520 --> 00:18:19,540
+not be any rules with either of those
+relations in the head.
+
+312
+00:18:22,260 --> 00:18:24,290
+Okay, well, wow.
+That's a lot to digest.
+
+313
+00:18:25,335 --> 00:18:27,150
+in the abstract is concepts are difficult
+to
+
+314
+00:18:27,150 --> 00:18:31,350
+master, and as presented, they're not
+particularly well-motivated.
+
+315
+00:18:31,350 --> 00:18:34,240
+In practice, things are a lot simpler.
+
+316
+00:18:35,300 --> 00:18:38,870
+In the next couple of segments, we
+illustrate these notions by looking at,
+
+317
+00:18:38,870 --> 00:18:42,730
+Plus games, specific game description and
+see how it's used in simulating a game.
+

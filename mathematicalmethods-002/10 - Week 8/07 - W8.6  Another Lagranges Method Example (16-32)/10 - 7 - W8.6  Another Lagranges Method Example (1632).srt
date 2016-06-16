@@ -1,0 +1,1089 @@
+1
+00:00:01,230 --> 00:00:05,902
+So, I've just finish up with the eight set
+of lectures today.
+
+2
+00:00:05,902 --> 00:00:08,854
+I finished the, the last one with this
+idea of
+
+3
+00:00:08,854 --> 00:00:13,200
+using Lagrange Method, followed by
+Newton's Method to find the
+
+4
+00:00:13,200 --> 00:00:16,890
+critical point, and so I'm basically just
+going to do two
+
+5
+00:00:16,890 --> 00:00:21,739
+more examples of that with just slightly
+more complicated problems.
+
+6
+00:00:21,739 --> 00:00:27,050
+So this one actually builds on one of the
+questions you just did for homework.
+
+7
+00:00:28,990 --> 00:00:31,888
+So Homework 7, we asked, why was it
+difficult to find
+
+8
+00:00:31,888 --> 00:00:36,130
+the critical points of the Lagrangian for
+the, this optimization problem?
+
+9
+00:00:36,130 --> 00:00:41,800
+And so the, what made this one tricky is
+now, the objective function
+
+10
+00:00:41,800 --> 00:00:47,680
+is linear, so it's just, you know,
+coefficient times x1, coefficient
+
+11
+00:00:47,680 --> 00:00:52,550
+times x2, coefficient times x3,
+coefficient times x4.
+
+12
+00:00:52,550 --> 00:00:55,111
+But the constraints are quadratic.
+
+13
+00:00:55,111 --> 00:01:00,985
+So when I make the Lagrangian, I end up
+with this lambda 1 times something with
+
+14
+00:01:00,985 --> 00:01:07,240
+quadratic terms in it, and lambda 2 times
+something with quadratic terms in it.
+
+15
+00:01:07,240 --> 00:01:13,504
+And so, when I take the gradient of
+Lagrangian, these last two, the, the two
+
+16
+00:01:13,504 --> 00:01:20,308
+elements of this vector that correspond to
+the, to the constraints that I put
+
+17
+00:01:20,308 --> 00:01:25,620
+into the Lagrangian, they now have
+quadratic terms in them.
+
+18
+00:01:25,620 --> 00:01:28,500
+So I, I can't write this as a linear
+system to solve,
+
+19
+00:01:28,500 --> 00:01:32,200
+like I could when I was trying to do the
+minimum variance portfolio.
+
+20
+00:01:35,280 --> 00:01:37,872
+And so, now I need to do this numerically,
+
+21
+00:01:37,872 --> 00:01:40,870
+so I'm going to use Newton's Method to do
+this.
+
+22
+00:01:40,870 --> 00:01:45,378
+And one sort of annoying thing that I, I
+found here is,
+
+23
+00:01:45,378 --> 00:01:50,970
+for some reason, we decide to write the
+gradient as a row.
+
+24
+00:01:50,970 --> 00:01:55,017
+But generally, when I talk about a
+function with, of n variables,
+
+25
+00:01:55,017 --> 00:01:58,680
+into n variables, I want to think of that
+as a column vector.
+
+26
+00:01:58,680 --> 00:02:00,474
+So I'm using this notation
+
+27
+00:02:00,474 --> 00:02:05,544
+just to say, I'm taking the transpose of
+the gradient, and then I'm relabeling
+
+28
+00:02:05,544 --> 00:02:10,200
+that G just so that I'm using the same
+notation that's in the textbook.
+
+29
+00:02:10,200 --> 00:02:16,189
+And so, it's not very pretty, but I can
+write down the gradient of G.
+
+30
+00:02:16,189 --> 00:02:20,370
+And so, all I'm doing here, I'm looking at
+the
+
+31
+00:02:20,370 --> 00:02:25,681
+first element of my six valued function G,
+and I'm taking
+
+32
+00:02:25,681 --> 00:02:30,360
+the derivative of this with each of the
+variables.
+
+33
+00:02:30,360 --> 00:02:37,999
+So, the variables here are x1, x2, x3, x4,
+and then lambda 1 and then lambda 2.
+
+34
+00:02:40,920 --> 00:02:45,336
+And then since I have six functions, and
+I'm taking six derivatives of each one,
+
+35
+00:02:45,336 --> 00:02:51,960
+I'm going to get a 6 by 6 matrix.
+And this is the gradient of G.
+
+36
+00:02:51,960 --> 00:02:56,874
+And because all of these functions are
+continuous, you can kind
+
+37
+00:02:56,874 --> 00:03:00,900
+of also think of it as the Hessian of the
+Lagrangian.
+
+38
+00:03:02,180 --> 00:03:06,535
+So I got, I got this vector here by taking
+derivatives of the Lagrangian, and
+
+39
+00:03:06,535 --> 00:03:08,679
+then I got this gradient here by taking
+
+40
+00:03:08,679 --> 00:03:12,120
+derivatives of this thing which was
+already a derivative.
+
+41
+00:03:12,120 --> 00:03:14,590
+And so, in a sense these are second
+derivatives.
+
+42
+00:03:16,980 --> 00:03:23,014
+But I'm trying to find where this function
+G of x lambda is equal to 0.
+
+43
+00:03:23,014 --> 00:03:27,916
+So I, I don't want to think of this as a
+Hessian, I
+
+44
+00:03:27,916 --> 00:03:33,235
+want to think of this as the gradient of G
+of x lambda.
+
+45
+00:03:33,235 --> 00:03:39,266
+So I can make functions to compute these,
+they're not particularly pretty.
+
+46
+00:03:39,266 --> 00:03:42,137
+But I made a function G and all it's
+
+47
+00:03:42,137 --> 00:03:47,957
+doing is evaluating this function here.
+So you can see, the first element
+
+48
+00:03:47,957 --> 00:03:53,877
+is just going to be 3 plus 6 times lambda
+2, times x1, it's one way.
+
+49
+00:03:53,877 --> 00:03:59,070
+And so the first element of this function
+is just 3, oops plus 6.
+
+50
+00:03:59,070 --> 00:04:04,640
+And now, I'm going to treat this as a
+function of just one variable, x.
+
+51
+00:04:04,640 --> 00:04:06,800
+So x is a vector with six elements.
+
+52
+00:04:06,800 --> 00:04:07,170
+So you
+
+53
+00:04:07,170 --> 00:04:11,684
+just have to kind of remember, that the
+first four of them correspond to the
+
+54
+00:04:11,684 --> 00:04:16,380
+x up here, and the elements five and six
+correspond to lambda 1 and lambda 2.
+
+55
+00:04:16,380 --> 00:04:20,310
+So x6 is referring to this x here.
+
+56
+00:04:22,160 --> 00:04:23,530
+x6 is lambda 2.
+
+57
+00:04:24,560 --> 00:04:26,710
+And then x1 is actually x1.
+
+58
+00:04:26,710 --> 00:04:32,884
+And so, then I have the second element,
+third element, fourth element,
+
+59
+00:04:32,884 --> 00:04:36,300
+so on, fifth element, sixth element.
+
+60
+00:04:37,390 --> 00:04:41,310
+And all this function is doing is just
+computing these six values,
+
+61
+00:04:41,310 --> 00:04:46,346
+and then it's using this R function,
+little c, that concatenates them together.
+
+62
+00:04:46,346 --> 00:04:49,720
+So it's just going to return a vector of
+these six values.
+
+63
+00:04:52,120 --> 00:04:54,976
+And then similarly, it's even less pretty,
+but
+
+64
+00:04:54,976 --> 00:04:57,400
+I can take, so this big matrix down here.
+
+65
+00:04:57,400 --> 00:05:02,200
+Thankfully, it's got a lot of 0's in it
+which makes it a bit easier to fill in.
+
+66
+00:05:02,200 --> 00:05:06,318
+So, what I'm going to do to write an R
+function for that, I, I'm going to
+
+67
+00:05:06,318 --> 00:05:11,130
+call my function DG, so it's for the
+gradient of the specter value function G.
+
+68
+00:05:12,190 --> 00:05:17,172
+It's also going to be a function of the
+same six values that were
+
+69
+00:05:17,172 --> 00:05:23,020
+up here in the function G.
+So this is a vector with six elements.
+
+70
+00:05:23,020 --> 00:05:28,110
+The first four correspond to x1, x2, x3,
+x4 from G.
+
+71
+00:05:28,110 --> 00:05:30,920
+And then element five and six are lambda 1
+and 2 again.
+
+72
+00:05:32,650 --> 00:05:35,050
+And the way it's going to work, I make
+
+73
+00:05:35,050 --> 00:05:38,360
+a matrix called grad using the matrix
+function.
+
+74
+00:05:38,360 --> 00:05:42,248
+So the syntax here is, this is the value
+that goes into the
+
+75
+00:05:42,248 --> 00:05:45,893
+matrix, and then the second argument is
+the number of
+
+76
+00:05:45,893 --> 00:05:50,670
+rose, and the third argument is the number
+of columns.
+
+77
+00:05:50,670 --> 00:05:55,229
+So this command is going to make a 6 by 6
+matrix that has only 0's in it.
+
+78
+00:05:56,630 --> 00:05:59,210
+And I'm just going to go row by row
+through it.
+
+79
+00:05:59,210 --> 00:06:01,383
+I don't know if this was the best way to
+do it, but
+
+80
+00:06:01,383 --> 00:06:04,090
+it was the easiest way to make the
+function fit on the slide.
+
+81
+00:06:05,280 --> 00:06:06,753
+And so, I'm just replacing.
+
+82
+00:06:06,753 --> 00:06:07,497
+So in the first
+
+83
+00:06:07,497 --> 00:06:12,582
+instance, row number one.
+And the second instance, row number
+
+84
+00:06:12,582 --> 00:06:17,890
+two, and so on.
+And so, the first one, I'm replacing the
+
+85
+00:06:17,890 --> 00:06:25,259
+first element with 6 times x6, so that
+would be 6 Lambda 2 then 0, 0, 0, 0.
+
+86
+00:06:25,259 --> 00:06:27,646
+And then the last element is 6 times x1.
+
+87
+00:06:27,646 --> 00:06:32,860
+And so, if I pop back, that's just what I
+wanted to have here.
+
+88
+00:06:32,860 --> 00:06:40,388
+6 lambda 2, four 0's, and then 6 times x1.
+And so, if I didn't make any
+
+89
+00:06:40,388 --> 00:06:47,650
+mistakes, I did the same thing for each of
+the remaining rows up to 6.
+
+90
+00:06:47,650 --> 00:06:51,850
+And then I want to, when my function
+finishes,
+
+91
+00:06:51,850 --> 00:06:55,110
+I want to return this 6 by 6 matrix.
+
+92
+00:06:55,110 --> 00:06:58,110
+So I just, on the last line of my
+function, I just put grad,
+
+93
+00:06:58,110 --> 00:07:01,960
+which is my 6 by 6 matrix, except I've
+filled in all of these entries now.
+
+94
+00:07:03,330 --> 00:07:05,020
+And then I finish my function.
+
+95
+00:07:07,400 --> 00:07:12,121
+So I have a function to compute G, so this
+vector valued function G.
+
+96
+00:07:12,121 --> 00:07:17,371
+And then I have a function to compute,
+this matrix valued gradient of G.
+
+97
+00:07:17,371 --> 00:07:21,916
+And so, if I want to use Newton's Method,
+I need a starting point.
+
+98
+00:07:21,916 --> 00:07:25,209
+So I am going to choose from my starting
+point
+
+99
+00:07:25,209 --> 00:07:28,642
+1, negative 1, 1, negative 1, 1, negative
+1.
+
+100
+00:07:28,642 --> 00:07:32,919
+again, no particularly good reason for why
+I chose this
+
+101
+00:07:32,919 --> 00:07:36,426
+actually stole this from from the
+textbook.
+
+102
+00:07:36,426 --> 00:07:42,103
+And this is the starting point he used.
+So, it's not, not all of me.
+
+103
+00:07:42,103 --> 00:07:47,880
+And then again, the Newton iterations are
+very easy to write,
+
+104
+00:07:47,880 --> 00:07:52,950
+so I just have to put the matrix here.
+So this is solving
+
+105
+00:07:52,950 --> 00:07:58,164
+the linear system.
+So I have, what I want to,
+
+106
+00:07:58,164 --> 00:08:04,386
+what I want to solve is xk plus 1 equals
+xk minus the inverse of
+
+107
+00:08:04,386 --> 00:08:11,800
+the gradient times the vector valued
+function at the point xk.
+
+108
+00:08:11,800 --> 00:08:15,580
+But since I don't want to actually have to
+convert, compute the inverse
+
+109
+00:08:15,580 --> 00:08:18,860
+of this matrix, I'm just going to set it
+of as a linear system.
+
+110
+00:08:20,160 --> 00:08:23,779
+This function solves, solves that linear
+system, and
+
+111
+00:08:23,779 --> 00:08:26,782
+that tells me what my sort of improvements
+that
+
+112
+00:08:26,782 --> 00:08:30,160
+should be to get from xk to xk plus 1.
+
+113
+00:08:30,160 --> 00:08:34,285
+And then instead of saving all of the xk's
+along the way, I am just
+
+114
+00:08:34,285 --> 00:08:39,040
+going to write xk plus 1 into the same
+piece of memory that was holding the xk.
+
+115
+00:08:41,280 --> 00:08:45,310
+And then this is so for loop, so it says
+for i in 1 colon 25.
+
+116
+00:08:45,310 --> 00:08:48,390
+So, it's just going to repeat this line 25
+times.
+
+117
+00:08:49,920 --> 00:08:53,250
+And each time hopefully, this, this
+approximation
+
+118
+00:08:53,250 --> 00:08:55,100
+of the, of the value x, where
+
+119
+00:08:55,100 --> 00:08:59,510
+the function G should be equal to 0, is
+going to get better and better.
+
+120
+00:09:01,900 --> 00:09:06,580
+And so, after 25 iterations, this is the
+value that I've computed.
+
+121
+00:09:09,000 --> 00:09:09,880
+So the first line.
+
+122
+00:09:12,420 --> 00:09:16,220
+This is, this is on this same scale as the
+inputs
+
+123
+00:09:16,220 --> 00:09:20,621
+to this function G, and here to the
+functions G and DG.
+
+124
+00:09:20,621 --> 00:09:24,577
+So the first four correspond to x1, x2,
+x3, x4,
+
+125
+00:09:24,577 --> 00:09:29,604
+and then the last two values correspond to
+the Lagrange multiplier.
+
+126
+00:09:29,604 --> 00:09:33,536
+So this one is lambda 1 and this one is
+lambda 2.
+
+127
+00:09:33,536 --> 00:09:37,431
+And so, I can write that a little bit more
+cleanly
+
+128
+00:09:37,431 --> 00:09:38,430
+like this.
+
+129
+00:09:41,920 --> 00:09:47,610
+And so, all I know is that this point here
+is a critical point of the Lagrangian.
+
+130
+00:09:49,090 --> 00:09:52,330
+But what I'd really like to know is, is it
+a maximum or a minimum.
+
+131
+00:09:52,330 --> 00:09:57,756
+So, have to figure out how we're going to
+deal with that.
+
+132
+00:09:57,756 --> 00:10:02,858
+So I want to ask the question, does the
+point xc, lambda c.
+
+133
+00:10:02,858 --> 00:10:05,424
+So this is just that vector of six values
+that I had on the previous screen.
+
+134
+00:10:05,424 --> 00:10:06,936
+Does this correspond
+
+135
+00:10:06,936 --> 00:10:08,819
+to a minimum or a maximum?
+
+136
+00:10:15,950 --> 00:10:17,590
+And so one thing you might do is just.
+
+137
+00:10:17,590 --> 00:10:19,765
+This is the original function, so
+
+138
+00:10:19,765 --> 00:10:23,320
+the objective function from my
+optimization problem.
+
+139
+00:10:24,590 --> 00:10:27,880
+And so you can just evaluate that at xc.
+
+140
+00:10:27,880 --> 00:10:29,562
+So this should correspond to one of
+
+141
+00:10:29,562 --> 00:10:33,010
+the constrained minimum, or the contained
+maximum.
+
+142
+00:10:33,010 --> 00:10:36,271
+And that's equal to 12.
+It still doesn't really tell us.
+
+143
+00:10:36,271 --> 00:10:38,185
+So if, if we were able to find all of
+
+144
+00:10:38,185 --> 00:10:41,023
+the critical points, this would be a way
+to find the
+
+145
+00:10:41,023 --> 00:10:42,510
+minimum and the maximum.
+
+146
+00:10:42,510 --> 00:10:45,576
+If there were say four critical points, I
+could just
+
+147
+00:10:45,576 --> 00:10:49,299
+evaluate this function f at each of the
+four critical points.
+
+148
+00:10:50,430 --> 00:10:51,930
+And I'm going to get four values.
+
+149
+00:10:51,930 --> 00:10:53,728
+And one of those hopefully is going to be
+
+150
+00:10:53,728 --> 00:10:56,360
+the biggest, otherwise there could just be
+ties.
+
+151
+00:10:56,360 --> 00:10:59,669
+But if one of them is the biggest, then
+that's going to be the maximum.
+
+152
+00:10:59,669 --> 00:11:03,290
+One of them will be the smallest, that one
+would be the minimum.
+
+153
+00:11:03,290 --> 00:11:05,942
+But here I only have one, so I can't do
+that.
+
+154
+00:11:05,942 --> 00:11:06,149
+And
+
+155
+00:11:06,149 --> 00:11:10,599
+I'm not certain how many critical points
+this is actually is going to have.
+
+156
+00:11:10,599 --> 00:11:13,596
+So, my numerical method, it's from a
+starting
+
+157
+00:11:13,596 --> 00:11:16,107
+point, is going to sort of, you can think
+
+158
+00:11:16,107 --> 00:11:18,861
+of it, if it's looking for a maximum, it's
+
+159
+00:11:18,861 --> 00:11:21,980
+kind of going up to the nearest critical
+point.
+
+160
+00:11:21,980 --> 00:11:25,910
+If it's finding a minimum, it's going down
+to the nearest critical point.
+
+161
+00:11:25,910 --> 00:11:28,106
+But once it gets there, it doesn't tell me
+
+162
+00:11:28,106 --> 00:11:31,048
+anything else about how many critical
+points there are.
+
+163
+00:11:31,048 --> 00:11:35,078
+Or you know, I need to try from different
+starting points or, or use some
+
+164
+00:11:35,078 --> 00:11:37,372
+other knowledge about the problem to
+figure
+
+165
+00:11:37,372 --> 00:11:39,700
+out how many critical points there will
+be.
+
+166
+00:11:41,610 --> 00:11:44,681
+But one thing I can do is try and classify
+this
+
+167
+00:11:44,681 --> 00:11:49,570
+at least as locally a minimum value or
+locally a maximum value.
+
+168
+00:11:49,570 --> 00:11:52,029
+And so, one of the ways I can try doing
+that.
+
+169
+00:11:53,760 --> 00:11:56,081
+If I look at this value f of x.
+
+170
+00:11:56,081 --> 00:11:59,177
+So I'm saying for feasible x, and so when
+I
+
+171
+00:11:59,177 --> 00:12:04,240
+say feasible, this means values of x that
+satisfy the constraints.
+
+172
+00:12:07,320 --> 00:12:11,814
+And so for feasible x, I can say little f
+of x, is equal to.
+
+173
+00:12:11,814 --> 00:12:14,929
+And now what I've done I, I haven't put x
+
+174
+00:12:14,929 --> 00:12:18,774
+sub c here, so I'm saying any feasible
+value of x.
+
+175
+00:12:18,774 --> 00:12:23,540
+But I'm going to plug in the computed
+Lagrange multipliers.
+
+176
+00:12:23,540 --> 00:12:30,170
+So I can rewrite out the Lagrangian, so I
+still have the objective function here.
+
+177
+00:12:30,170 --> 00:12:32,762
+But now I have the computed value
+
+178
+00:12:32,762 --> 00:12:36,794
+of Lambda 1 times the first constraint,
+plus the
+
+179
+00:12:36,794 --> 00:12:41,372
+computed value of Lambda 2 times the 2nd
+constraint.
+
+180
+00:12:41,372 --> 00:12:47,414
+And the reason I'm saying this are equal,
+is when a point x is feasible,
+
+181
+00:12:47,414 --> 00:12:52,750
+this constraint, because I've written it G
+of x is equal to 0.
+
+182
+00:12:52,750 --> 00:12:57,643
+So for feasible x, this thing that I have
+highlighted is 0.
+
+183
+00:12:57,643 --> 00:13:00,905
+And also this constraint is equal to 0.
+
+184
+00:13:00,905 --> 00:13:07,179
+So that means capital F of x comma lambda
+to c is just going to be equal to this.
+
+185
+00:13:14,430 --> 00:13:19,836
+So, a constrained minimum or maximum is
+going to of little
+
+186
+00:13:19,836 --> 00:13:24,910
+f of x is going to correspond to the
+minimum and maximum.
+
+187
+00:13:24,910 --> 00:13:29,660
+The unconstrained minimum and maximum of
+this function f,
+
+188
+00:13:29,660 --> 00:13:34,740
+capital F x, but with these Lagrange
+multipliers plugged in.
+
+189
+00:13:41,980 --> 00:13:45,095
+And I already know that x sub c is going
+to be
+
+190
+00:13:45,095 --> 00:13:50,270
+a critical point of this, because that
+was, that was my condition.
+
+191
+00:13:50,270 --> 00:13:51,800
+That's how I found x sub c.
+
+192
+00:13:54,510 --> 00:13:56,790
+And we had second order conditions.
+
+193
+00:13:56,790 --> 00:14:00,620
+So now this is a, this is an unconstrained
+optimization problem.
+
+194
+00:14:00,620 --> 00:14:04,950
+So we had second order conditions for
+functions of more than one variable.
+
+195
+00:14:06,710 --> 00:14:12,100
+And that was that x sub c would correspond
+to a minimum of the
+
+196
+00:14:12,100 --> 00:14:19,130
+objective function if the Hessian is
+positive definite at x sub c.
+
+197
+00:14:19,130 --> 00:14:19,590
+And it
+
+198
+00:14:19,590 --> 00:14:25,386
+would correspond to a maximum if the
+Hessian were negative definite at this
+
+199
+00:14:25,386 --> 00:14:31,122
+point x sub c.
+So, positive definite, I just meant that,
+
+200
+00:14:31,122 --> 00:14:36,870
+so this just going to be a matrix.
+I take its eigenvalues.
+
+201
+00:14:36,870 --> 00:14:40,360
+Positive definite means all of the
+eigenvalues are greater than 0.
+
+202
+00:14:40,360 --> 00:14:43,540
+Negative definite means all of the
+eigenvalues are less than 0.
+
+203
+00:14:47,180 --> 00:14:53,420
+And if you think carefully about what
+we've done, we actually already
+
+204
+00:14:53,420 --> 00:14:59,911
+have this matrix because it's just this
+matrix of partial derivatives.
+
+205
+00:14:59,911 --> 00:15:06,483
+And that's just a subset, a small, it's a
+block of this matrix
+
+206
+00:15:06,483 --> 00:15:12,370
+the gradient of the function G that I was
+trying to set equal to 0.
+
+207
+00:15:12,370 --> 00:15:16,200
+So it's actually, let's see, I think I
+figured out a way to do this.
+
+208
+00:15:20,030 --> 00:15:23,349
+Almost got it.
+So it's the top left four by four block.
+
+209
+00:15:24,410 --> 00:15:27,875
+This is the, going to be the gradient of
+
+210
+00:15:27,875 --> 00:15:32,070
+this function F evaluated at the point x
+sub c.
+
+211
+00:15:32,070 --> 00:15:35,674
+And remember, when I wanted to do an
+eigenvector, eigenvalue
+
+212
+00:15:35,674 --> 00:15:39,498
+decomposition, I want, I was trying to
+diagonalize the matrix.
+
+213
+00:15:39,498 --> 00:15:45,053
+And so this one is kind of cheating,
+because it's already in a diagonal format.
+
+214
+00:15:45,053 --> 00:15:47,321
+So, if you have a diagonal matrix
+
+215
+00:15:47,321 --> 00:15:51,170
+like this, the diagonal entries are the
+eigenvalues.
+
+216
+00:15:51,170 --> 00:15:54,084
+So, in this case, I have everything off
+the diagonal here is
+
+217
+00:15:54,084 --> 00:15:57,060
+equal to 0, and all of the diagonal
+entries are less than 0.
+
+218
+00:15:57,060 --> 00:15:59,664
+So this matrix is negative definite, and
+that tells
+
+219
+00:15:59,664 --> 00:16:01,648
+me that x sub c corresponds to a maximum.
+
+220
+00:16:01,648 --> 00:16:04,252
+So this matrix is negative definite, and
+that tells
+
+221
+00:16:04,252 --> 00:16:06,236
+me that x sub c corresponds to a maximum.
+
+222
+00:16:06,236 --> 00:16:10,204
+So this matrix is negative definite, and
+that tells me that x sub c corresponds
+
+223
+00:16:10,204 --> 00:16:10,916
+to a maximum.
+
+224
+00:16:10,916 --> 00:16:13,091
+And I can go back then and say,
+
+225
+00:16:13,091 --> 00:16:17,876
+for the constrained optimization problem
+I'm looking at, this
+
+226
+00:16:17,876 --> 00:16:20,921
+point x sub c corresponds to a constrained
+
+227
+00:16:20,921 --> 00:16:24,619
+optimum of the objective function little f
+of x.
+
+228
+00:16:29,520 --> 00:16:31,570
+So, x sub c is a maximum.
+

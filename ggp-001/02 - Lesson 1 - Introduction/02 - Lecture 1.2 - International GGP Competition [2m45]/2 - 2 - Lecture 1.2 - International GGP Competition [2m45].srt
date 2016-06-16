@@ -1,0 +1,205 @@
+1
+00:00:04,120 --> 00:00:06,780
+The main driving force of the General Game
+Playing
+
+2
+00:00:06,780 --> 00:00:11,228
+community is the Annual International
+General Game Playing Competition.
+
+3
+00:00:11,228 --> 00:00:13,680
+The competition is typically held in
+conjunction with the
+
+4
+00:00:13,680 --> 00:00:18,000
+national Conference on Artificial
+Intelligence sponsored by the AAAI.
+
+5
+00:00:18,000 --> 00:00:21,620
+That's the Association for the Advancement
+of Artificial Intelligence.
+
+6
+00:00:21,620 --> 00:00:24,360
+Or sometimes it's the biennial IJCAI, and
+
+7
+00:00:24,360 --> 00:00:27,358
+that's the International Conference on
+Artificial Intelligence.
+
+8
+00:00:27,358 --> 00:00:29,120
+The competition is administered by
+
+9
+00:00:29,120 --> 00:00:31,230
+Stanford University, so those of you who
+are
+
+10
+00:00:31,230 --> 00:00:33,860
+at Stanford are not eligible to
+participate unfortunately.
+
+11
+00:00:35,050 --> 00:00:38,090
+The competition began in 2005, and it's
+run
+
+12
+00:00:38,090 --> 00:00:40,660
+annually ever since, and with the
+exception of 2009.
+
+13
+00:00:40,660 --> 00:00:43,340
+And it's been won by players from various
+different
+
+14
+00:00:43,340 --> 00:00:47,330
+countries, including the US and Germany,
+France, and Iceland.
+
+15
+00:00:49,740 --> 00:00:51,270
+Here's a photo of Jim Clune, the winner of
+the
+
+16
+00:00:51,270 --> 00:00:56,110
+first GGB competition being congratulated
+by the AAA president, Ron Rockman.
+
+17
+00:00:57,670 --> 00:01:01,150
+Jim was obviously pleased in his player
+having won, or that smile might
+
+18
+00:01:01,150 --> 00:01:05,040
+be due in part to the $10,000 he received
+for winning the competition.
+
+19
+00:01:07,470 --> 00:01:10,110
+Here we have Michael Thielscher and
+Stephan Schiffel
+
+20
+00:01:10,110 --> 00:01:12,982
+from Dresden, winners of the competition
+at AAAIO6.
+
+21
+00:01:16,840 --> 00:01:20,690
+On the left here we have Helmer Vincent
+and Ing Ve Burenesen, the winners in 2007
+
+22
+00:01:20,690 --> 00:01:26,760
+and 8 and again in 2012.
+And they're there together with Michael
+
+23
+00:01:26,760 --> 00:01:32,200
+Telsheer and stuff on and Michael Shiffer
+and Michael Telsheer, the winners in 2006.
+
+24
+00:01:32,200 --> 00:01:35,215
+And there's Jim Clune on the right, the
+winner from 2005.
+
+25
+00:01:38,040 --> 00:01:40,390
+And finally, here we have Hilmar Finnsson
+congratulating
+
+26
+00:01:40,390 --> 00:01:44,294
+a beaming Sam Schreiber at the end of
+GGP-11.
+
+27
+00:01:47,070 --> 00:01:49,560
+the contest is exciting, but even the
+spectators get in on the action.
+
+28
+00:01:49,560 --> 00:01:52,580
+Without getting into any specifics here,
+let me just say that some of
+
+29
+00:01:52,580 --> 00:01:54,740
+the people, at the competition have come
+
+30
+00:01:54,740 --> 00:01:58,240
+away from those sessions wealthier than
+beforehand.
+
+31
+00:02:01,350 --> 00:02:04,650
+In addition to the regular GGB competition
+there's
+
+32
+00:02:04,650 --> 00:02:07,015
+now an annual battle between carbon and
+silicon.
+
+33
+00:02:07,015 --> 00:02:10,130
+Unfortunately for us, the beams are not
+doing that well.
+
+34
+00:02:11,450 --> 00:02:16,070
+for example, 2012, Katya player handily
+defeated the human race,
+
+35
+00:02:16,070 --> 00:02:20,750
+represented here by Chris Welty shown with
+some of his advisors.
+
+36
+00:02:21,750 --> 00:02:23,100
+Keeping with the format of the
+
+37
+00:02:23,100 --> 00:02:25,430
+competition, the contestants play two
+different games.
+
+38
+00:02:25,430 --> 00:02:26,518
+And the first Katya
+
+39
+00:02:26,518 --> 00:02:31,067
+player handily defeated the human in a
+well played match of dual Connect Four.
+
+40
+00:02:31,067 --> 00:02:33,400
+And it then won a match of Platform
+Jumpers.
+
+41
+00:02:34,650 --> 00:02:39,130
+Its consolation prize, the human was
+awarded two bottles of scotch by the way.
+
+42
+00:02:39,130 --> 00:02:42,260
+In part, to ease his disappointment in
+letting down the human race.
+

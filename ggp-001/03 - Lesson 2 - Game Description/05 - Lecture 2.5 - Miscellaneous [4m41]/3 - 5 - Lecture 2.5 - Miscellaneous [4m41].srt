@@ -1,0 +1,386 @@
+1
+00:00:03,800 --> 00:00:07,950
+Of necessity, game descriptions are
+logically incomplete in that
+
+2
+00:00:07,950 --> 00:00:11,470
+they don't uniquely specify the moves of
+all the players.
+
+3
+00:00:13,050 --> 00:00:15,760
+However, every game description does
+contain complete definitions
+
+4
+00:00:15,760 --> 00:00:19,564
+for initial state, legality, termination,
+goalhood,and so forth.
+
+5
+00:00:20,920 --> 00:00:23,740
+The upshot is that every state, in
+
+6
+00:00:23,740 --> 00:00:26,620
+every state, every player can determine
+those things.
+
+7
+00:00:26,620 --> 00:00:29,050
+Legality, termination, goalhood.
+And given a joint
+
+8
+00:00:29,050 --> 00:00:31,250
+move can update the state as well.
+
+9
+00:00:34,110 --> 00:00:38,200
+A game terminates if all infinite
+sequences of legal moves from the initial
+
+10
+00:00:38,200 --> 00:00:42,770
+state of the game reach a terminal state
+after a finite number of steps.
+
+11
+00:00:43,790 --> 00:00:45,590
+In general game playing we currently
+require
+
+12
+00:00:45,590 --> 00:00:48,040
+that all games terminate in exactly this
+way.
+
+13
+00:00:50,660 --> 00:00:55,020
+The game description in GDL is playable,
+game is playable if and only if every role
+
+14
+00:00:55,020 --> 00:00:56,785
+has at least one legal move in every
+
+15
+00:00:56,785 --> 00:00:59,570
+non-terminal state that's reachable from
+the initial state.
+
+16
+00:01:00,740 --> 00:01:04,980
+Note that in chess, a player cannot move,
+if a player cannot move, it's a stalemate.
+
+17
+00:01:04,980 --> 00:01:06,870
+Fortunately, this is a terminal state.
+
+18
+00:01:08,200 --> 00:01:11,590
+In GGP, we guarantee that, every game is
+playable.
+
+19
+00:01:14,890 --> 00:01:17,720
+A game is strongly winnable, if and only
+if, for
+
+20
+00:01:17,720 --> 00:01:21,410
+some player there is a sequence of
+individual moves that player.
+
+21
+00:01:21,410 --> 00:01:23,580
+That leads to a terminating goal state for
+
+22
+00:01:23,580 --> 00:01:26,030
+that player independently of whatever the
+other player's do.
+
+23
+00:01:27,970 --> 00:01:31,270
+A game is weakly winnable if and only if
+for every player there's a sequence
+
+24
+00:01:31,270 --> 00:01:33,000
+of joint moves of the players that leads
+
+25
+00:01:33,000 --> 00:01:34,970
+to a terminating goal state for that
+player.
+
+26
+00:01:36,660 --> 00:01:40,470
+In GGP, every game is at least weakly
+winnable and
+
+27
+00:01:40,470 --> 00:01:42,399
+all single player games are strongly
+winnable.
+
+28
+00:01:45,520 --> 00:01:48,860
+Okay, those are three properties we
+require of all games.
+
+29
+00:01:48,860 --> 00:01:51,840
+Now we talk a little bit about how games
+are played.
+
+30
+00:01:51,840 --> 00:01:54,000
+The first issue here is obfuscation.
+
+31
+00:01:55,240 --> 00:01:58,650
+In order to prevent programmers from
+building in specialized capabilities for
+
+32
+00:01:58,650 --> 00:02:02,520
+specific words in game descriptions, other
+then the game can independent vocabulary.
+
+33
+00:02:03,530 --> 00:02:06,570
+It's common for game managers to obfuscate
+their descriptions.
+
+34
+00:02:07,770 --> 00:02:10,730
+This means that all words are consistently
+replaced by nonsense words,
+
+35
+00:02:10,730 --> 00:02:11,900
+as in examples shown here.
+
+36
+00:02:11,900 --> 00:02:16,270
+The only exceptions are variables, and a
+selection of constants, common
+
+37
+00:02:16,270 --> 00:02:19,270
+to all games, such as next, does, true,
+and so forth.
+
+38
+00:02:23,330 --> 00:02:25,410
+And finally, there's the issue of syntax.
+
+39
+00:02:25,410 --> 00:02:30,140
+The version of GDL we've been looking at
+uses traditional in fix syntax.
+
+40
+00:02:30,140 --> 00:02:31,930
+Easy for humans to read.
+
+41
+00:02:33,880 --> 00:02:35,560
+However, it is not the only version of
+Linux.
+
+42
+00:02:35,560 --> 00:02:38,290
+There's also a version that uses prefix
+syntax.
+
+43
+00:02:38,290 --> 00:02:42,630
+Although, some general game playing
+environments support in fix GDL.
+
+44
+00:02:42,630 --> 00:02:45,030
+It's not universal.
+
+45
+00:02:45,030 --> 00:02:47,600
+On the other hand, all current systems
+support Prefix GDL.
+
+46
+00:02:48,920 --> 00:02:51,160
+The good news is that there is a direct
+relationship
+
+47
+00:02:51,160 --> 00:02:53,866
+between the two syntaxes, and it's easy to
+convert between them.
+
+48
+00:02:53,866 --> 00:02:59,640
+It's just a, well let's see, I'll
+summarize some of these things here.
+
+49
+00:02:59,640 --> 00:03:00,579
+So first of all.
+
+50
+00:03:01,790 --> 00:03:04,040
+variables are repla, re-prefixed with
+question
+
+51
+00:03:04,040 --> 00:03:08,500
+mark, since the language is case
+independent.
+
+52
+00:03:08,500 --> 00:03:12,220
+Operators are renamed.
+Colon minus is replaced by a left arrow.
+
+53
+00:03:12,220 --> 00:03:14,800
+Ampersand is replaced by and.
+
+54
+00:03:14,800 --> 00:03:17,590
+And the tilde symbol is replaced by not,
+not.
+
+55
+00:03:20,420 --> 00:03:21,960
+There's just one issue to worry about in
+
+56
+00:03:21,960 --> 00:03:27,100
+this transition between, translation
+between prefix and infix.
+
+57
+00:03:27,100 --> 00:03:29,600
+Issue is the spelling of constants and
+variables.
+
+58
+00:03:29,600 --> 00:03:31,370
+Prefix GDL is case independent, so it
+
+59
+00:03:31,370 --> 00:03:33,810
+cannot use capital letters to distinguish
+the two.
+
+60
+00:03:33,810 --> 00:03:36,340
+Constants that are spelled the same in
+both versions.
+
+61
+00:03:36,340 --> 00:03:37,990
+But in prefix GDL we distinguish variables
+
+62
+00:03:37,990 --> 00:03:40,790
+by beginning with a character, question
+mark.
+
+63
+00:03:40,790 --> 00:03:42,780
+Thus, the constant A is the same in both
+
+64
+00:03:42,780 --> 00:03:45,645
+languages, while the variable X in infix
+GDL is spelled?
+
+65
+00:03:45,645 --> 00:03:49,990
+X or question mark capital X in prefix
+GDL.
+
+66
+00:03:51,230 --> 00:03:53,130
+Unfortunately, mapping between the two can
+be tricky
+
+67
+00:03:53,130 --> 00:03:56,075
+since the case independent system might
+discourage case information.
+
+68
+00:03:56,075 --> 00:03:58,610
+Hence it's generally good practiced to use
+just one case
+
+69
+00:03:58,610 --> 00:04:01,480
+in naming constants and it's common
+practice to use lower case.
+
+70
+00:04:04,050 --> 00:04:05,890
+Finally, just to be clear on this, in
+prefix GDL,
+
+71
+00:04:05,890 --> 00:04:10,530
+white space, spaces, tabs, carriage
+returns, line feeds and so forth.
+
+72
+00:04:10,530 --> 00:04:12,940
+can appear anywhere other than the middle
+of
+
+73
+00:04:12,940 --> 00:04:14,840
+the constants, variables, and operator
+names, that is.
+
+74
+00:04:15,880 --> 00:04:19,390
+Thus, there can be multiple spaces between
+the components of an expression.
+
+75
+00:04:19,390 --> 00:04:21,830
+There can be spaces after the opening
+parenthesis of an
+
+76
+00:04:21,830 --> 00:04:27,060
+expression and before the operator or
+relation constant or function constant.
+
+77
+00:04:27,060 --> 00:04:29,090
+And there can be spaces after the last
+component of
+
+78
+00:04:29,090 --> 00:04:31,540
+an expression and before the closing
+parenthesis.
+
+79
+00:04:31,540 --> 00:04:34,100
+Just no spaces in the middle of words,
+
+80
+00:04:34,100 --> 00:04:37,225
+relation constants, function constants,
+object constants and variables.
+
+81
+00:04:37,225 --> 00:04:41,266
+[SOUND]
+

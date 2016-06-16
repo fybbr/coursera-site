@@ -1,0 +1,433 @@
+So now I'm going to look at something
+called bond duration.
+This is just meant to be a little bit more
+involved example of taking a derivative.
+So a price of a bond is given by a
+following formula.
+so P oops P is the price of the bond.
+And if you look at this it looks a lot
+like what we talked about on tuesday for
+present value.
+And so what basically the way a bond works
+is or
+at least the one that I've written down
+the formula for.
+It has a face value, so let's just pretend
+that's $100.
+And it has coupon payments, and that's
+going to make n coupon payments.
+And so the agreement I'm going to enter
+into with somebody
+is, I sell them the bond.
+So they end up with a piece of paper.
+I end up with $100.
+And then every year.
+So this is, this is sort of set up for
+yearly coupon payments.
+I'm going, let's see, I have the 100
+dollars, they have the bond.
+I'm gong to pay them the coupon payment.
+So that might be say, 5 dollars.
+So
+I'm borrowing their money, and the price
+of doing that
+is that I have to give them 5 dollars
+every year.
+And after N payments, I have to give them
+5 dollars, plus their money back.
+So they get their 100 dollars back.
+So, all I'm doing to calculate the price
+of my bond.
+So I'm taking the face value, and I'm
+discounting that N periods.
+And then I'm taking this stream
+of coupon payments And I'm cou, I'm
+discounting the first coupon payment
+for one year; I'm discounting the second
+coupon payment for two years.
+Looks like I might have forgotten some
+parentheses
+around this, but it's better on this side.
+yeah.
+And so it's essentially just it's the same
+rules
+that we had before for doing present value
+calculation.
+Just applied to this slightly more
+complicated payment
+scheme of a bond which is what we
+did with the annuity plus you're going to
+get the, the face value of the bond back.
+So c is a coupon payment, n is the number
+of periods remaining, f is the face value
+and then this value lambda, which is sort
+of playing the role of the interest rate
+from our last calculations.
+For bonds it's called yield to maturity.
+So, I'm going to
+make just a small change to that.
+And instead of calling
+the coupon payments capital C, and having
+them all be the same, I'm going to say
+C sub little k.
+And the only real reason I want to do this
+is now I can just say that the.
+All of the short term ones.
+So, you know, one up to n minus one are
+all of, sorry not short term but only
+coupon payments one.
+Those are all going to be the same c and
+then the
+last one is just going to be the coupon
+plus the face value.
+And so that's going to give me my present
+value for whatever payment I'm going to
+receive in the
+[UNKNOWN]
+period.
+So now I can rewrite my, my bond pretty
+much using the same formula we had last
+time except that instead of having a
+constant value, so I think I called
+it A last time, I now have something that
+can be different every time but for
+this particular type of bond it's going to
+be the same for N minus one periods.
+And then the last one is just going to be
+face value plus coupon payment.
+And then I have to divide them by
+1 plus the yield to maturity to the case
+power, because
+I need to discount money that I'm going to
+receive in the future.
+The duration of a bond is a weighted
+average Of
+the time that these payments are going to
+be made.
+So I'm going to define, the weights as the
+present value of the payment received
+in period k, divided by the price, and
+then I'm going to multiply that by k.
+And so k is just the index here, it's
+going from one up to
+n, so this is going to be You know, pv1
+divided by p.
+So that's weight 1 times 1.
+Pv2 divided by p is going to be weight 2.
+So it'll be weight 2 times 2 plus weight 3
+times 3 and so on up to n.
+And when I sum all of those things up, I'm
+going to call that D, which is duration.
+And if you think about this, what are the
+units of PVK.
+It's a present value of something, so it's
+going to be made in dollars.
+>>
+[INAUDIBLE]
+present value, of the
+[INAUDIBLE]
+made in PDK?
+>> Yeah.
+>> Okay.
+>> And then P is just the sum of all of
+them.
+>> OKAY.
+>> That's the price of the bond today.
+>> Yeah.
+And so, what's going to end up happening
+here is, present value is measured in
+dollars.
+The price of the bond is also measured in
+dollars.
+So when I do this division, I have
+something
+measured in dollars divided by something
+measured in dollars.
+So, I get a unit less quantity.
+And, K, this is going to be dates.
+So, K is actually, has some sort of units
+in time.
+So, the way I've written this down, this
+is for yearly coupon
+payment So k is going to be one year, two
+years, three years, four years.
+So kind of interestingly
+this quantity duration is measured in
+years.
+And I guess that will sort of seem a
+little bit more strange
+once we see how duration's going to get
+used in this bond pricing formula.
+And so then another thing I can do is just
+take this P
+out the denominator here and put it on the
+left side of the equation.
+And I'm just doing this because this sum
+of K times PVK
+is going to be something that falls out of
+a calculation later.
+And I'm going to want to be able to
+replace that with duration times price.
+Yep.
+>> I'm confused
+why we're waiting payments further into
+the future more heavily.
+>> the present value of something in the
+future is going to be less.
+>>
+[CROSSTALK]
+Less.
+Yeah.
+>> Yeah.
+>> so, is that
+[UNKNOWN]
+undo that to get the price.
+I mean here it's not really clear.
+>> Why someone tried to do this in the
+first place.
+I think, as we go forward you're going to
+see that this
+sort of pops out as a useful quantity in,
+in the equations.
+And so I guess yeah, next bullet point.
+So, sensitivity, Is suppose that this
+yield to maturity rate changes.
+What's going to happen to the value of the
+bond?
+So I'm asking said, that's a sensitivity
+if, if that rate
+changes a little and there's a big change
+in the price, we're
+going to say that's highly sensitive and
+if the rate changes
+and the price stays pretty much the same,
+then that's low sensitivity.
+So the present value of the payment
+received in period k, so here
+Ck is the nominal payment so that's, you
+know, the $5 or the $105.
+So I, in period n I'm going to get a
+hundred and five dollars.
+And every other period I'm going to get
+five dollars.
+And then this number in the bottom is
+going to be bigger than one.
+So the present value of that's going be
+getting smaller.
+And so I can write that as Ck.
+Times 1 plus Lambda to the minus K.
+So, I'm basically just taking this out of
+the denominator, and writing it like this.
+So, I've always been doing this when I
+want to take a
+derivative, so I'm just setting myself up
+to use the Power Rule here.
+So now, if I want to take the derivative
+of the present value of the Kth
+payment, with respect to Lambda Well it
+should
+be pretty straightforward, the power rule
+of linearity.
+And then you have to be a bit careful
+because the chain rule
+comes into play here too because I
+actually have a function of a function.
+But luckily the derivative of this inside
+function is one.
+So that's a time where you can forget the
+chain rule and
+still get the right answer.
+not a very safe habit.
+So this just becomes minus k times C sub
+k,
+my argument here and then minus k minus 1.
+So that's just a, the power rule to take
+the derivative.
+And
+then I can rewrite it like this.
+So that's sort of just undoing this
+negative exponent trick.
+And minus k minus 1 is the same as the
+quantity k plus 1 times negative 1.
+So that's why we get a power of k plus 1
+down here.
+And now if you look carefully at this, we
+have C sub k divided
+by one plus lambda to the k.
+But that was just Where is it?
+Right here.
+Our definition of PVK.
+And then I have this plus 1 down here,
+which
+gives me 1 extra 1 plus lambda in the
+denominator.
+And I have a minus k in
+the numerator.
+So I end up with minus k over 1
+plus lambda times the present value of the
+kth payment.
+And now let's look at, the price.
+So my goal was to figure out what's the
+sensity of sensitivity of the price not
+just each payment.
+So if I want to take the derivative of
+that with
+respect to lambda I'm going to take the
+derivative so
+my definition for the price was just the
+present value of this future stream of
+payments.
+And by my linearity property of
+derivatives,
+I can move this derivative inside the sum.
+So, the derivative of a sum is the sum of
+the derivatives.
+And we've already computed this.
+This is what I just did on the last slide,
+the derivative
+of the present value of decay of payment
+divided with respect to lambda.
+And so I'm just going to plug my formula
+from the previous slide in here.
+And I get this guy.
+And
+now if you look at that, remember what did
+we say duration was?
+Duration was k times pvk Summed up.
+So what I'm going to do is take the
+negative one
+and the divided one plus lambda out in
+front of the sum.
+And then I'm left with just the sum of k
+times pvk
+which is this quanitty duration.
+That just sort of falls out of us taking
+the derivative.
+And this, this quantity here, so negative
+1 divided
+1 plus Lambda times the duration, is
+called, oops.
+Not the negative, everything but the
+negative.
+There.
+Is called Modified Duration.
+And so the sensitivity, the rate of change
+of the price, with
+respect to the, you can think of this as
+the interest rate.
+Is equal to minus the modified duration
+times the price.
+M'kay, yeah, so dm is modified duration.
+And so, this is what we've found now.
+That the derivative of the price which
+repsect to the yield
+to maturity, is the negative of the
+modified duration times the price.
+And I'm going to make one more Little
+substitution here, so since the price
+it's obviously going to be non zero, I can
+divide both sides by price.
+And now I have the change in price, with
+respect to
+a change in the yield to maturity, divided
+by the price.
+So the change in price, That's going to be
+something that's measured in dollars.
+So if the price changes from $100 down to
+$180, The change
+in price was negative $20.
+If I divide that by the price, now I have
+some sort of rate.
+So, it doesn't matter what the price was.
+If it, if it went from 100 down to 80 or
+if it went
+from 1,000 down to 800, this thing on the
+left is going to be the same.
+And so, that's going to be our
+interpretation.
+For the
+modified duration.
+So it's going to give us some measure of
+the relative
+change in price as the yield to maturity
+is changing.
+And kind of in summary, duration then
+which is something measured in years.
+Is a measure of interest rate sensitivity.
+Yes?
+>>
+[INAUDIBLE]
+sensitivity will price things, will price
+change
+[INAUDIBLE].
+>> You mean like that?
+>> Yeah.
+>> Okay.
+>> the other question is.
+>> M'kay, and so
+essentially all we've, we've done here is,
+we've just figured out what this
+curve.
+So this is that curve in the price-yield
+[UNKNOWN]
+space, so it's called a "price-yield
+curve." And I've calculated the
+derivitives,
+so it's just going to be the slope of this
+tangent line.
+And so then, one of the, one of the main
+things
+you're going to use a derivative for, when
+you can find a
+tangent line like this is if you, if you
+look at
+this, maybe between about eight percent
+and maybe twelve or thirteen percent.
+This tangent line is very, very close to
+the actual curve,
+and it's going to be easy to evaluate
+points along
+the tangent line because it's just a
+linear function.
+It actually can be quite difficult
+especially, you know, when people were
+trying
+to do these computations before you had
+computers, to evaluate points along this
+curve.
+So one of the ideas of doing this, this
+approximation and finding the tangent line
+is it gives us a good way to make local
+approximations to our function value.
+And you can actually improve this so.
+What we've done here, is just the first
+order of approximation.
+What we're trying to approximate this
+function
+with a linera function so a tangenr line.
+You can use convexity, which is sort of
+how quickly
+the second derivative so the size of the
+second derivative.
+It's sort of how quickly this curve is
+changing slope.
+And that allows us to make an even better
+approximation.
+And we'll, we'll come to that, in the, the
+second half of this course.
+So after the midterm.
+Okay.
+So just a quick summary.
+This is a formula for duration.
+You can also multiply the price on the
+left hand side and get this k times PVk.
+Modified duration is just one divided by
+one plus lambda times duration.
+And then the price sensitivity formula is,
+so
+the, the rate of change of the price with
+respect to a change in in interest rate.
+Is minus the modified duration times the
+price.
+[BLANK_AUDIO]
+

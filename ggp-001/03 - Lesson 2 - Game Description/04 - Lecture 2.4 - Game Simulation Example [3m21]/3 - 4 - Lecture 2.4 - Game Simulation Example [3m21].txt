@@ -1,0 +1,93 @@
+As an exercise in logic programming in
+GDL.
+Let's look at the outputs of the rules
+that we
+just saw at various points during an
+instance of the game.
+To start, we can use the rule set to
+compute the roles of the game.
+This is simple in the case of
+[INAUDIBLE]
+contained explicitly in the rule set.
+now the indicating portions of the rule
+set, in the boxes
+at the tops of these slides, and, and the
+results below them.
+Similarly, we can compute the possible
+propositions of the game.
+Remember that this gives a list of all
+such propositions only
+a subset are true, will be true at any
+particular state.
+Can
+also compute the relevant actions of the
+game for each player.
+Extension of the input relation in this
+case consists of the 20 sentences shown
+here.
+The first step in playing or simulating a
+game is to compute the initial state.
+Now we can do this by computing the init
+relation.
+As with rolls, this is really easy, since
+the initial conditions are
+explicitly listed in the program, though
+that may not always be the case.
+Once we have these conditions, we can turn
+them into a state description for
+the first step of the game, by asserting
+that each initial condition is true.
+Taking this input data and the logic
+program, we can
+check whether the state is terminal, in
+this case it's not.
+There are cells containing B which means
+it's open and there's no line.
+We can also compute the goal values of the
+state.
+And since the state is non-terminal
+there's not much point in doing this.
+But the description does give values for
+the state, namely 50 for both white
+and black since there's neither a line of
+x's or a line of o's.
+More interestingly, using the state
+description and logic program,
+we can compute the legal actions for the
+state.
+The white player has nine possible
+actions, marking actions for each of
+the blank cells, and the black player has
+just one action, namely, noop.
+let's suppose that the white player
+chooses the first legal action.
+Mark one, one and the bike player chooses
+its sole legal action
+noop, this gives us little data set like
+the one shown here.
+Now combining this data set with the state
+description, and the logic
+program, we can compute what must be true
+in the next state.
+For example, using the first update rule
+and
+the first does fact, we can conclude the
+first
+fact about the next state.
+Namely that there will be an x in cell one
+one.
+In similar manner we can compute the
+various other propositions that must be
+true.
+In the successive state.
+Alright.
+Now to produce a description for the
+resulting state from next, we
+substitute true for next in each of these
+sentences and repeat the process.
+And this continues until we encounter a
+state that's terminal, at which
+point we can compute the goals of the
+players in a similar manner.
+[BLANK_AUDIO]
+

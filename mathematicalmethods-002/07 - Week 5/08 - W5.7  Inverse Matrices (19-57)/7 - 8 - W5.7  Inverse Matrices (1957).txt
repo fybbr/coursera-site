@@ -1,0 +1,495 @@
+The next topic is Inverse Matrices.
+A square matrix A is invertible so square
+means the dimensions have to match, right?
+So, I've been calling matrices m by n, so
+m rows and n columns.
+Square just means that m is equal to n so
+I could say it's either m by m or n by n.
+And I think most of the time, I'll say n
+by n.
+so A is invertible if there exists a
+matrix, so I'm going
+to call the inverse A to the minus 1
+power, it doesn't mean 1 over A.
+But it's sort of in the same sense that if
+I had a real number that's not equal to 0.
+And I took 1 divided by that real number,
+then
+when I multiply those two things together,
+I would get 1.
+So A inverse is going to be a matrix where
+I
+multiply either before or after A so I can
+take A-inverse A,
+that has to be equal to the identity
+matrix and
+A A-inverse has to be equal to the
+identity matrix.
+So if I can find this matrix A-inverse,
+then I will say that A is invertible.
+So the inverse, if it exists, is unique.
+And one way you can see that is if, so,
+so, what I'm trying to do here is I'm
+trying to say is that B and C are
+two different matrices that satisfy the
+properties in the definition.
+So the left-hand inverse, this one here,
+will be the
+matrix B and the right-hand inverse will
+be this matrix C.
+And then
+you can do a clever little trick.
+So
+if I have B times AC, but
+what is AC?
+That's just the identity matrix.
+So this is B times the identity matrix,
+which is just
+equal to B.
+But since I know AC, the product
+AC is also equal to the identity matrix.
+Then I can substitute the value AC in here
+for I.
+And then for my rules of matrix
+multiplication,
+it doesn't matter where I put the
+parenthesis.
+So I'm going to, instead of putting the
+parenthesis around AC, I'll put
+the parentheses around BA.
+But I've already assumed that this is
+equal to the identity matrix.
+So this is telling me that this is I times
+C which is the same thing as C.
+So if I assume BA is equal to the identity
+matrix and AC is equal to the identity
+matrix, then you can make an argument like
+this to say that B has to be equal to C.
+So there can only be one matrix that
+satisfies this property
+or these two properties if an inverse
+exists.
+So, if A is invertible, then the unique
+solution to this system of equations
+represented by Ax equals b, I'll start off
+just by writing Ax equals b.
+If A is invertible, then I have this
+matrix A inverse.
+So I'm, I'm going to multiply both sides
+of this, pre-multiply by A-inverse.
+So I put a A-inverse before the Ax, and an
+A-inverse before the b.
+And then A-inverse A, by the definition
+of the inverse, that's just the identity
+matrix.
+So identity matrix times x is equal to x.
+So I end up with x, which
+is the solution, this is the thing I'm
+looking for, is equal
+to A-inverse times b.
+And if there's a vector x
+that's not equal to 0 but the, has the
+property that
+A times x is equal to 0, then A is not
+invertible.
+And basically, I want to use this result
+here just to show what's going to go
+wrong so this, this is a kind of common
+argument that you make in mathematics.
+I want to assume that x is not equal to 0.
+And then based on that assumption, I
+want to prove that it is equal to 0.
+And so I'm, I'm assuming that something is
+true, contradicting that assumption.
+And so that's going to be called a proof
+by contradiction.
+And that's going to allow me to say that A
+is not invertible.
+Because if A is invertible, I can solve
+for this vector x
+here using this trick that I've just done
+in the third bullet point.
+[COUGH]
+So if there is a vector, a non-zero vector
+x so
+at least one element of this vector x has
+to be non-zero.
+Then I could write x as the identity
+matrix times x.
+And then if A was invertible, it would
+have an inverse and then that would
+satisfied
+the, the property in the definition so I
+could replace this identity matrix with
+A-inverse A.
+And then I can just, because of my rules
+for
+matrix multiplication, I can put
+parentheses wherever I want to.
+So I'm going to put some around this Ax
+here but I've assumed that there's
+this non-zero vector x that has a property
+that Ax is equal to 0.
+So x, remember, is non-zero.
+It has at least one non-zero component.
+But I can replace this Ax with the zero
+vector.
+And so that tells me that x has to be
+equal to A-inverse times 0.
+But anything times 0 is equal to 0.
+So what I've assumed on the
+left is that if A is invertible or I've
+assumed on the
+left that I have an invertible matrix a
+and this non-zero
+vector x.
+And then I've showed that A-inverse times,
+well, so essentially what I've been able
+to show with
+that assumption is that my non-zero x is
+equal to 0.
+So that's a contradiction so I can't have
+a
+non-zero vector x having every element
+equal to 0.
+And so then whatever I assumed has to be
+false.
+So I can't assume that A is invertible.
+Or if I assume that A is invertible,
+I can provide that it's not invertible
+essentially.
+So that's how you show that if there is
+this non-zero vector
+x, it satisfies Ax equals to 0, then A is
+not invertible.
+In the 2 x 2 case, there's actually a nice
+formula for computing the inverse.
+So, a 2 x 2 matrix will be invertible if
+and only if ad minus bc.
+So I've, I'm just labeling the elements.
+So I have a, b, c, d as the, the so ab is
+the first row, cd is the second row.
+And it needs to satisfy this property, so
+the ad minus bc has to be non-zero.
+If that's not equal to 0, then the inverse
+of A
+is going to equal to 1 divided by ad minus
+bc.
+So this is why this value has to be
+non-zero because
+I'm going to divide by it times d minus b
+minus ca.
+So that's going to give me a matrix that
+when I multiply it either
+in front of or after A, is going to give
+me the identity matrix.
+And the number ad minus bc is called the
+determinant of A.
+So essentially, if this number is not
+equal
+to 0, then A is going to be invertible.
+So a matrix is invertible if its
+determinant is not equal to 0.
+And then just, as a special case, I want
+to point
+out the easiest type of matrix to compute
+the inverse of.
+So the 2 x 2, I have this nice
+formula here, not nice necessarily, but I
+have a formula.
+A diagonal matrix just means that any
+off-diagonal element.
+So any, any element where I is not equal
+to
+J, so above the diagonal or below the
+diagonal, all of
+those have to be 0.
+If I have a matrix like that,
+then the inverse is just 1 over the
+diagonal elements.
+And so this also supposes that, so
+A-inverse will
+exist if all of these diagonal elements
+are non-zero.
+If if one of these, so suppose the first
+one was equal
+to 0, then there's nothing I could put in
+this cell here so
+that, that matrix wouldn't have an
+inverse.
+So if, if the diagonal elements of a
+diagonal matrix are all non-zero, then I
+can very easily calculate the inverses
+just
+by taking the reciprocal of each diagonal
+element.
+>>
+[INAUDIBLE]
+>> All of the rest of them stays 0.
+>>
+[INAUDIBLE]
+>> Yeah.
+And you can just convince yourself of this
+when you do the multiplication.
+I'll have first first row times the first
+column here so I'd have d1 times 1 over
+d1 and then just a whole bunch of zeros
+here times a whole bunch of zeros here.
+And if the I is not equal to J, then the
+non-zero element here will
+just crash into a 0 on this side and the
+non-zero element here will hit
+a 0 element on this side.
+So everything ends up being 0 off the
+diagonal so I get the identity matrix
+back.
+So then we have some rules for inverses.
+So these are probably the most important
+things
+you're going to want to remember about the
+inverse.
+generally, if you ever need to compute the
+inverse of a matrix, you're going to do
+that
+using a computer so even this formula
+here,
+it's not something I have committed to
+memory.
+If I need it, I'll look it up or it's
+usually,
+if you remember just the determinant, you
+can figure out what the,
+the arrangement of the rest of the letters
+has to be pretty quick, quickly.
+[COUGH]
+What is useful though is thinking about
+matrices sort of more abstractly.
+So instead of thinking about the actual
+elements,
+I'm trying to do mathematics with the
+matrices themselves.
+And so if I end up with a product AB and I
+need to take the inverse of
+that product, that ends up being B-inverse
+times A-inverse.
+And the way to convince yourself that's
+true is to just plug that into the
+definition of the inverse.
+So remember, my, my definition of the
+inverse said that if I
+have the inverse times the matrix, that
+has to give me the identity.
+So in this case, it would be AB inverse
+times the matrix product AB.
+And now this, I can write without the
+parentheses and that would be the same
+thing.
+The AB inversed, the order
+swapped, so it becomes B-inverse A-inverse
+and then I'll
+put some parentheses around what I get on
+the inside.
+A-inverse A is just equal to the identity
+matrix
+so it's going to just sort of collapse in
+upon itself.
+So this I, I can multiply that I times B
+that's identity matrix times anything just
+gives me the anything back.
+So I times B gives me B back.
+I end up with
+B-inverse B which is by the definition of
+an inverse, the identity matrix.
+And then I can do the same thing for the,
+for the right-hand inverse.
+Again, because it switches the order, all
+that's going to happen is I
+end up eliminating the B first so the B
+multiplied by B-inverse becomes identity.
+And I end up with AIA or AIA-inverse which
+becomes
+AA-inverse, which becomes I.
+And you can do exactly the same thing for
+a longer products as well.
+So, if I have ABC-inverse, I just reverse
+the order
+of the product so that becomes C-inverse
+B-inverse A inverse.
+So if you wanted to prove that that's
+true, you're just putting ABC
+over here and then its going to collapse
+three times rather than just two times
+but what you're left with is the identity
+matrix.
+So now, let's think about how would I
+actually find A-inverse.
+So I need to find a matrix so that when
+I multiply A by A-inverse, I get the
+identity matrix.
+If I can find this, I've already argued
+that it's going to be
+unique and it would also be the matrix
+that can go on the front.
+So, I don't need to compute both of them,
+I just need to compute one of them.
+If there's one matrix that have this
+property then it automatically
+has the property that if I pre-multiply by
+A-inverse, that's also
+going to turn A into the identity matrix.
+So, let's make some vectors here.
+So, I've used e before to mean a column
+vector of all ones.
+I'm going to add a subscript now to mean
+it's a vector of all zeros
+except it's got a 1 in whatever
+position, this little script, subscript
+corresponds to.
+So e sub 1 would be 1 0 0.
+and if it's in general in N dimensions,
+then I have e1 up through en.
+And it just means that it's all 0 except
+for
+the, the ith element and that's going to
+be equal
+to 1.
+So then, I have e2 is 0 1 0 and e3 is 0 0
+1.
+And then, if I bind all three of these
+vectors
+together, e1, e2, e3, that's just going to
+be the identity matrix.
+So, you can almost kind of see it here.
+I just have ones going down the diagonal.
+And now I can imagine that I have an
+inverse, so A-inverse, an inverse of this
+matrix A.
+And the columns of my matrix A-inverse,
+I'm going to call x1, x2, and x3.
+So x1 is a column vector with three
+entries, x2 is a column
+vector with three entries, and x3 is a
+column vector with three entries.
+So I can write out my A A-inverse is equal
+to A times these three column vectors
+bound together into a matrix.
+And I know that has to equal e1, e2, e3,
+which is the identity matrix.
+And so what I end up having to do is solve
+three systems of equations.
+I have to solve Ax1 equals e1, Ax2 equals
+e2, and Ax3 equals e3.
+So, if I was actually computing the
+inverse, remember, before I said I could
+compute the solution to Ax equals B by
+pre-multiplying by A-inverse.
+So if I already knew what the inverse was,
+I could just
+multiply and find that, well, A-inverse B
+is going to be the solution.
+But if I just want to actually solve that
+system, I would just be solving one of
+these.
+If I want to find the A-inverse and use
+A-inverse to
+solve that system, I end up solving three
+of these.
+So it ends up being three times as much
+work to find a inverse to
+solve that problem as it would be
+just to directly solve that problem using
+elimination.
+So computing A-inverse three times
+as much work as solving Ax equals b.
+So the, this is going to be sort of one of
+the
+morals of the story here is quite often if
+you need to
+compute an inverse, if you see an inverse
+in a matrix formula,
+there's a better, faster way to solve the
+problem without using an inverse.
+so in this case, I, I was looking at a 3 x
+3 case.
+And I said that you'd have to solve this
+three times.
+So it turns out that if you look at a 4 x
+4 case or a 5
+x 5 case, the, the three times ends up
+being an upper bound on the amount of
+work you have to do because you've done
+enough elimination on A in solving these
+first three,
+that you can kind of recycle that you
+know,
+if you're are intelligent about the
+algorithm you use.
+And so the algorithm is called the
+Gauss-Jordan
+method, which I'm not going to go through
+this here but it's essentially just
+doing this elimination problem and you can
+do this in n cubed elimination steps.
+But if you compare that to solving Ax
+equals b, this requires n
+cubed divided by 3 or roughly n cubed
+divided by three elimination steps.
+So you're going to be doing less work.
+sorry, not n cubed.
+This is not quite right.
+Not elimination steps, but mathematical
+operations.
+but the point I want you take away from
+this
+is, it's 1 3rd as much work to solve Ax
+equals b using elimination as it would be
+to find
+an inverse and then use that to solve Ax
+equals b.
+And I remember I said if I, if I was
+doing elimination and I ran into a row
+that was all
+zeroes, I couldn't find a pivot in that
+row so
+that particular system does not have a
+full set of pivots.
+Oops.
+And now, I have this idea of
+invertibility.
+It says some matrices have inverses and
+some matrices don't.
+So if a matrix has an inverse that I can't
+find a non-zero vector
+that has the property that if I say a
+times that vector, I get zero.
+And so it turns out these two things are
+related,
+so let's supposed A is a square matrix and
+suppose
+there are n pivots.
+Then I could solve each one of these
+equations and that would
+give me these xis that would be the
+columns of my inverse.
+So I can put the, these column vectors xi
+together
+to make an matrix that's the inverse of my
+matrix A.
+And so elimination then gives a complete
+test for A-inverse to exist.
+So there has to be n pivot.
+So, this isn't a complete proof.
+This is just the result.
+So in a, a Linear Algebra textbook, they
+will tell you exactly how to,
+how to do this because it's sort of
+something you have to do both directions.
+But essentially if a matrix A is
+invertible,
+then you can find a set of n pivots.
+So you say, it has a full set of pivots.
+And if a matrix is non-singular, that
+means every row has
+a pivot then that matrix is also going to
+be invertible.
+

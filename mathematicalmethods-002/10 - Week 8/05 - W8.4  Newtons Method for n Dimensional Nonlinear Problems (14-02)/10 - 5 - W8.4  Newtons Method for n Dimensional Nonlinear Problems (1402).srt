@@ -1,0 +1,930 @@
+1
+00:00:01,587 --> 00:00:10,047
+topic four is going to be Newton's Method
+for n Dimensional Nonlinear Problems.
+
+2
+00:00:10,047 --> 00:00:10,447
+[COUGH]
+
+3
+00:00:10,447 --> 00:00:14,527
+So now I'm going to consider functions,
+so, I've decided to
+
+4
+00:00:14,527 --> 00:00:18,464
+call them capital F.
+And these are functions of n variables
+
+5
+00:00:18,464 --> 00:00:22,617
+that have n outcomes.
+So you sort of think of it as a vector of
+
+6
+00:00:22,617 --> 00:00:28,111
+n functions.
+And each one of those n functions take the
+
+7
+00:00:28,111 --> 00:00:35,565
+same n variables as inputs.
+And I still want to solve the problem f of
+
+8
+00:00:35,565 --> 00:00:37,003
+x equals 0.
+
+9
+00:00:37,003 --> 00:00:40,243
+But now, because f of x is a function that
+has n outputs
+
+10
+00:00:40,243 --> 00:00:43,366
+this 0 on the right hand side is a vector
+of n 0's.
+
+11
+00:00:43,366 --> 00:00:43,597
+So it's the 0 vector.
+
+12
+00:00:43,597 --> 00:00:45,672
+And let's remember that the gradient of f
+is this n by n matrix.
+
+13
+00:00:45,672 --> 00:00:51,387
+So in the,
+
+14
+00:00:51,387 --> 00:00:54,562
+[SOUND]
+
+15
+00:00:54,562 --> 00:01:00,912
+in the first
+
+16
+00:01:00,912 --> 00:01:05,847
+row.
+I just have the gradient
+
+17
+00:01:05,847 --> 00:01:10,806
+for the first function, the first
+component of this function f, so
+
+18
+00:01:10,806 --> 00:01:15,799
+I called that f1.
+Second row is the gradient
+
+19
+00:01:15,799 --> 00:01:20,146
+for the second component f2 and
+
+20
+00:01:20,146 --> 00:01:24,635
+so on.
+So I can make a Taylor
+
+21
+00:01:24,635 --> 00:01:30,601
+polynomial.
+Around the point xk.
+
+22
+00:01:30,601 --> 00:01:36,457
+And it looks exactly the same way as it
+did for the one-dimensional one,
+
+23
+00:01:36,457 --> 00:01:41,500
+except here I have a vector of values.
+Here, I have
+
+24
+00:01:41,500 --> 00:01:45,841
+an n by n matrix.
+And here,
+
+25
+00:01:45,841 --> 00:01:51,609
+I have a n by 1 matrix, so a column
+
+26
+00:01:51,609 --> 00:01:56,347
+vector of, of the function
+
+27
+00:01:56,347 --> 00:02:01,518
+inputs.
+And so I'm going to play around with this.
+
+28
+00:02:01,518 --> 00:02:05,928
+This Taylor polynomial, exactly the same
+way as I
+
+29
+00:02:05,928 --> 00:02:10,096
+did when it was just a function of 1
+variable.
+
+30
+00:02:10,096 --> 00:02:10,887
+So I want
+
+31
+00:02:10,887 --> 00:02:15,859
+to imagine that I am approximating a point
+f of xk plus
+
+32
+00:02:15,859 --> 00:02:20,831
+1, and that that's where this function is
+going to
+
+33
+00:02:20,831 --> 00:02:25,971
+be equal to 0.
+So that gives me this relationship here.
+
+34
+00:02:25,971 --> 00:02:30,836
+So, I'm trying to find this point, k plus
+1, so that my function is zero.
+
+35
+00:02:30,836 --> 00:02:33,148
+But instead of doing that I'm just using
+
+36
+00:02:33,148 --> 00:02:36,344
+the linear approximation and finding out
+where that's
+
+37
+00:02:36,344 --> 00:02:37,149
+equal to 0.
+
+38
+00:02:37,149 --> 00:02:41,153
+And then, I just want to solve this again
+for x plus 1, and so it
+
+39
+00:02:41,153 --> 00:02:43,925
+ends up being a little bit more
+complicated
+
+40
+00:02:43,925 --> 00:02:46,696
+this time, because this is a matrix now.
+
+41
+00:02:46,696 --> 00:02:49,455
+I can't just divide by the matrix but
+
+42
+00:02:49,455 --> 00:02:53,763
+if it's non-singular, I can multiply by
+its inverse.
+
+43
+00:02:53,763 --> 00:02:57,683
+So that's going to put the inverse of the
+matrix in front of
+
+44
+00:02:57,683 --> 00:03:01,443
+this term, so if I move this to the other
+side of the equal
+
+45
+00:03:01,443 --> 00:03:05,276
+sign, it becomes negative.
+And then I multiply by the inverse.
+
+46
+00:03:05,276 --> 00:03:07,179
+And that gets me just this guy.
+
+47
+00:03:07,179 --> 00:03:10,927
+And then I'm going to move the xk also to
+this side of the equal sign.
+
+48
+00:03:10,927 --> 00:03:15,855
+So I've isolated my point xk plus
+
+49
+00:03:15,855 --> 00:03:21,086
+1.
+And this is basically the same, same
+
+50
+00:03:21,086 --> 00:03:26,920
+formula as I had.
+For the, the one variable case.
+
+51
+00:03:26,920 --> 00:03:29,840
+Except now, when I had one variable, I can
+just
+
+52
+00:03:29,840 --> 00:03:34,160
+interpret multiplying by the inverse as
+dividing by the derivative.
+
+53
+00:03:36,970 --> 00:03:42,779
+And then I need a, a stopping condition.
+So what I'm going to look at here is this.
+
+54
+00:03:44,100 --> 00:03:45,630
+Is my updating step.
+
+55
+00:03:45,630 --> 00:03:49,800
+So this is how, how much I'm changing my
+guess.
+
+56
+00:03:49,800 --> 00:03:55,650
+If this actually did converge to the true
+value, so if I put in x
+
+57
+00:03:55,650 --> 00:04:01,410
+star here, x star here, and x star here, I
+should already be at 0.
+
+58
+00:04:02,490 --> 00:04:07,630
+So it shouldn't move at all.
+So at x star, this quantity should be 0.
+
+59
+00:04:07,630 --> 00:04:11,455
+So my stopping condition is going to be,
+again the problem is
+
+60
+00:04:11,455 --> 00:04:15,395
+this is a vector, so I can't just say,
+less than something.
+
+61
+00:04:15,395 --> 00:04:18,179
+What I can say is how long that vector is.
+
+62
+00:04:18,179 --> 00:04:21,485
+So that's going to give me some idea of
+how far
+
+63
+00:04:21,485 --> 00:04:25,360
+away I am from the thing that I'm trying
+to calculate.
+
+64
+00:04:25,360 --> 00:04:27,536
+And when that, when that improvement
+
+65
+00:04:27,536 --> 00:04:30,678
+gets below a certain level, that I'm
+going to call tau.
+
+66
+00:04:30,678 --> 00:04:33,890
+So I need to pick some tolerance tau
+greater than 0,
+
+67
+00:04:33,890 --> 00:04:37,310
+but generally you think of this as a very
+small number.
+
+68
+00:04:39,620 --> 00:04:41,360
+When the size of my update gets below
+
+69
+00:04:41,360 --> 00:04:44,140
+that level, that's going to be my stopping
+condition.
+
+70
+00:04:44,140 --> 00:04:47,218
+It might not be the, the best idea for a
+stopping condition, but
+
+71
+00:04:47,218 --> 00:04:50,335
+I need some condition to stop and so this,
+this will be okay.
+
+72
+00:04:50,335 --> 00:04:50,900
+[COUGH]
+
+73
+00:04:50,900 --> 00:04:56,098
+And it's more complicated now, but you
+still have the
+
+74
+00:04:56,098 --> 00:05:01,296
+quadratic convergence that you had for the
+univariate
+
+75
+00:05:01,296 --> 00:05:06,000
+case.
+Once I'm close enough to the value x star.
+
+76
+00:05:10,460 --> 00:05:13,198
+So the algorithm for using this to, to
+solve
+
+77
+00:05:15,970 --> 00:05:21,000
+An undimensional optimization problem, an
+n-dimensional non-linear problem.
+
+78
+00:05:21,000 --> 00:05:23,926
+I still need a starting point, x 0, and
+then I'm
+
+79
+00:05:23,926 --> 00:05:28,730
+going to try to improve that starting
+point, using these Newton iterations.
+
+80
+00:05:30,440 --> 00:05:35,438
+So, if the gradient is non-singular, then
+I can
+
+81
+00:05:35,438 --> 00:05:40,869
+compute the, compute the next step.
+So from, you know,
+
+82
+00:05:40,869 --> 00:05:47,170
+from x 0, I can find x 1, just by updating
+according to this rule.
+
+83
+00:05:48,350 --> 00:05:51,809
+But I see this inverse of a matrix here.
+And I don't like that.
+
+84
+00:05:55,920 --> 00:06:02,691
+So to avoid computing the inverse of this
+matrix, what I'll do is take this
+
+85
+00:06:02,691 --> 00:06:09,200
+and this is a n by n matrix times an n by
+1 matrix times the column vector.
+
+86
+00:06:10,460 --> 00:06:12,458
+So I'm just going to look at this product
+and
+
+87
+00:06:12,458 --> 00:06:15,300
+say well that's just going to be another
+column vector used.
+
+88
+00:06:15,300 --> 00:06:18,060
+So n times n, times n times 1.
+
+89
+00:06:18,060 --> 00:06:20,860
+I take the outer dimensions, that's what
+the product's going,
+
+90
+00:06:20,860 --> 00:06:23,780
+the dimensions of the product is going to
+be.
+
+91
+00:06:23,780 --> 00:06:25,938
+And so that gives me u is also n by
+
+92
+00:06:25,938 --> 00:06:29,449
+one, so it's a column vector of n with n
+entries.
+
+93
+00:06:31,340 --> 00:06:34,910
+And then I'm going to multiply both sides
+by the gradient.
+
+94
+00:06:37,490 --> 00:06:44,470
+So what I end up with is this gradient
+matrix times my unknown.
+
+95
+00:06:46,370 --> 00:06:50,586
+And then here I have the gradient times
+its inverse, so that's the identity,
+
+96
+00:06:50,586 --> 00:06:54,500
+so that's just going to be equal to the
+function evaluated at f of xk.
+
+97
+00:06:57,660 --> 00:07:00,788
+And this is exactly the problem that we
+looked at in
+
+98
+00:07:00,788 --> 00:07:04,257
+in the linear algebra section, this is a
+times x, equals b.
+
+99
+00:07:04,257 --> 00:07:06,930
+So this is something that we know how to
+solve.
+
+100
+00:07:12,380 --> 00:07:18,122
+So the algorithm that I'll end up using to
+compute the n dimensional Newton's
+
+101
+00:07:18,122 --> 00:07:23,370
+method, so I have a, a tolerance, tau
+greater than 0, and a starting point, x 0.
+
+102
+00:07:27,730 --> 00:07:32,720
+And so, for the kth step, I have to
+compute this vector f of xk.
+
+103
+00:07:32,720 --> 00:07:34,530
+This is just a vector of numbers now.
+
+104
+00:07:35,810 --> 00:07:37,980
+And I have to compute the gradient.
+
+105
+00:07:37,980 --> 00:07:41,868
+So I have a formula for the gradient and I
+plug in xk, and so
+
+106
+00:07:41,868 --> 00:07:46,560
+that's going to give me a matrix, so it's
+just a matrix of numbers now.
+
+107
+00:07:49,140 --> 00:07:54,170
+So, then I can solve this linear system,
+and find the value u.
+
+108
+00:07:54,170 --> 00:07:56,371
+And that value u is the the size of
+
+109
+00:07:56,371 --> 00:07:59,310
+update that I want to use in my Newton
+iterations.
+
+110
+00:08:01,730 --> 00:08:05,580
+So, I'll update.
+So my current guess is xk.
+
+111
+00:08:05,580 --> 00:08:11,768
+I update that by subtracting this vector
+u, that I got by solving
+
+112
+00:08:11,768 --> 00:08:18,270
+this linear system in step two, and that's
+going to give me xk plus 1.
+
+113
+00:08:18,270 --> 00:08:21,966
+And then if the size of this u is less
+than
+
+114
+00:08:21,966 --> 00:08:26,600
+tau, then I'm going return xk plus 1 as
+the answer.
+
+115
+00:08:26,600 --> 00:08:27,524
+Otherwise,
+
+116
+00:08:27,524 --> 00:08:30,716
+I'm going to go back to step one and just
+pretend
+
+117
+00:08:30,716 --> 00:08:34,740
+now that this xk, once I'm on the next
+step.
+
+118
+00:08:34,740 --> 00:08:37,970
+That's going to just run me through this
+same set of steps again.
+
+119
+00:08:42,070 --> 00:08:44,600
+So I'll do a, a very simple example.
+
+120
+00:08:46,670 --> 00:08:52,570
+So if I take 1 minus, so this x minus 1 to
+the 4th power and y minus 1 to
+
+121
+00:08:52,570 --> 00:08:58,290
+the 4th power.
+So these are both going to be positive, so
+
+122
+00:08:58,290 --> 00:09:05,150
+when I subtract them they're both going to
+be negative, so it should be pretty clear.
+
+123
+00:09:05,150 --> 00:09:08,654
+That this is going to have a maximum, when
+this is equal to
+
+124
+00:09:08,654 --> 00:09:11,793
+0 and this is equal to 0 and that maximum
+is going to be
+
+125
+00:09:11,793 --> 00:09:12,680
+equal to 1.
+
+126
+00:09:12,680 --> 00:09:16,136
+Because if I put in anything nonzero for
+these, it's going
+
+127
+00:09:16,136 --> 00:09:19,570
+to be subtracted from 1, so it's going to
+make it smaller.
+
+128
+00:09:19,570 --> 00:09:24,385
+So this should have a critical point at
+the point 1, 1.
+
+129
+00:09:24,385 --> 00:09:30,545
+Or it has a maximum at the point 1, 1, so
+it should have a critical
+
+130
+00:09:30,545 --> 00:09:37,054
+point at the point 1, 1.
+So I can compute the gradient of
+
+131
+00:09:37,054 --> 00:09:41,625
+this so this is the, the gradient.
+
+132
+00:09:41,625 --> 00:09:44,382
+Of the function that I'm trying to find
+the critical point of.
+
+133
+00:09:44,382 --> 00:09:46,329
+So this is a function, it's a function
+
+134
+00:09:46,329 --> 00:09:49,150
+of two variables but it's a scalar-valued
+function.
+
+135
+00:09:49,150 --> 00:09:51,695
+When I evaluate this, I just get a single
+number.
+
+136
+00:09:51,695 --> 00:09:52,220
+[COUGH]
+
+137
+00:09:52,220 --> 00:09:56,630
+But when I want to find a critical point,
+what I want
+
+138
+00:09:56,630 --> 00:10:01,210
+to find is a point where the gradient is
+equal to 0.
+
+139
+00:10:01,210 --> 00:10:04,158
+So now the gradient is my function of two
+variables,
+
+140
+00:10:04,158 --> 00:10:07,720
+and this is what I want to use Newton's
+method on.
+
+141
+00:10:07,720 --> 00:10:10,264
+So I want to, I want to use Newton's
+method to find the point
+
+142
+00:10:10,264 --> 00:10:13,530
+where the gradient, so basically where the
+derivative is equal to 0.
+
+143
+00:10:13,530 --> 00:10:17,880
+You have to be a little bit careful here,
+because, in general,
+
+144
+00:10:17,880 --> 00:10:20,655
+when you think of a function that has
+several
+
+145
+00:10:20,655 --> 00:10:24,520
+outputs, you think of that as a column
+vector.
+
+146
+00:10:24,520 --> 00:10:27,598
+The gradient here is a row vector, so I've
+just taken the transpose
+
+147
+00:10:27,598 --> 00:10:31,000
+here and the transpose here so that
+everything lines up the way it should.
+
+148
+00:10:35,410 --> 00:10:39,420
+The gradient of f of x, then, is just this
+function.
+
+149
+00:10:39,420 --> 00:10:41,280
+So it's has a very simple gradient.
+
+150
+00:10:41,280 --> 00:10:45,696
+And now I'm going to use r to run through
+several iterations
+
+151
+00:10:45,696 --> 00:10:50,290
+of Newton's method to try and find the
+solution for this.
+
+152
+00:10:53,090 --> 00:10:56,800
+So, the first, the thesis that I'm
+going to need to be able to do this.
+
+153
+00:10:56,800 --> 00:10:59,830
+I need a function that I'm going to call
+capital F.
+
+154
+00:10:59,830 --> 00:11:03,684
+And this is going to evaluate the, the
+function that I am
+
+155
+00:11:03,684 --> 00:11:07,457
+trying to find that I am trying to make
+equal to 0.
+
+156
+00:11:07,457 --> 00:11:12,709
+So this is a pretty simple function, its
+just going to be, its
+
+157
+00:11:12,709 --> 00:11:18,185
+a, so it has two inputs and two outputs.
+The first output is just 4 times
+
+158
+00:11:18,185 --> 00:11:21,959
+x minus 1 cubed, so its a it's basically
+just returning the
+
+159
+00:11:21,959 --> 00:11:26,460
+gradient of the function that I'm trying
+to find the, the maximum of.
+
+160
+00:11:28,640 --> 00:11:34,200
+DF is going to return the gradient of f.
+So
+
+161
+00:11:34,200 --> 00:11:39,610
+those are just this and this, but written
+out in r form.
+
+162
+00:11:41,970 --> 00:11:44,990
+So what I've done here is, looked at the
+diagonal elements.
+
+163
+00:11:44,990 --> 00:11:46,870
+This is the top left element.
+
+164
+00:11:46,870 --> 00:11:51,710
+This is the bottom right element.
+And I've put them in a vector.
+
+165
+00:11:51,710 --> 00:11:56,030
+And then a short-cut for making a diagonal
+matrix is just to use this function diag.
+
+166
+00:11:56,030 --> 00:12:01,381
+If I give it a vector as its argument, it
+makes a diagonal matrix that has.
+
+167
+00:12:01,381 --> 00:12:07,621
+These elements down the main diagonal, and
+then I don't have a particularly
+
+168
+00:12:07,621 --> 00:12:10,837
+good way of choosing a starting point.
+
+169
+00:12:10,837 --> 00:12:12,757
+Because it was pretty clear from the
+
+170
+00:12:12,757 --> 00:12:15,381
+definition of the function, that the point
+I'm
+
+171
+00:12:15,381 --> 00:12:19,289
+looking for was 1, 1, but it won't be very
+exciting if I choose that.
+
+172
+00:12:19,289 --> 00:12:23,533
+So another commonly chosen starting point
+is 0.
+
+173
+00:12:23,533 --> 00:12:28,194
+So I'm going to start at the 0 vector.
+So I'll say x is equal to 0.
+
+174
+00:12:28,194 --> 00:12:33,729
+Or, assign the, the 0 vector to the
+variable x.
+
+175
+00:12:33,729 --> 00:12:36,385
+And then I'll do 25 Newton iterations.
+
+176
+00:12:36,385 --> 00:12:41,842
+So, because I've defined these functions
+as functions of x
+
+177
+00:12:41,842 --> 00:12:47,299
+and y, I need to provide each one of them
+with two arguments so
+
+178
+00:12:47,299 --> 00:12:52,799
+as just the first element of' x and the
+second element of x.
+
+179
+00:12:52,799 --> 00:12:55,459
+I can use the solve function to solve the,
+the
+
+180
+00:12:55,459 --> 00:12:59,160
+linear system that I was talking about on
+the previous slide.
+
+181
+00:12:59,160 --> 00:13:04,984
+And so all I have to do is give the matrix
+a and the vector b and solve is
+
+182
+00:13:04,984 --> 00:13:11,010
+going to solve the linear system for me.
+And then my updating
+
+183
+00:13:11,010 --> 00:13:17,110
+step is just to say, xk minus u becomes xk
+plus 1.
+
+184
+00:13:17,110 --> 00:13:19,778
+And so when I, when I run this code in r,
+
+185
+00:13:19,778 --> 00:13:24,286
+it's going to take xk, it's going to
+subtract the vector u and
+
+186
+00:13:24,286 --> 00:13:27,470
+then it's going to write the answer to
+that.
+
+187
+00:13:27,470 --> 00:13:30,900
+Into the same piece of memory that I
+originally was using to hold x.
+
+188
+00:13:32,480 --> 00:13:34,810
+And then I'm going to put that in
+something called a for loop.
+
+189
+00:13:34,810 --> 00:13:38,820
+Which is just going to run this line 25
+times in a row.
+
+190
+00:13:40,770 --> 00:13:44,040
+And so we can look at x after this has
+gone 25 times.
+
+191
+00:13:44,040 --> 00:13:46,170
+So x started out as 0, 0.
+
+192
+00:13:46,170 --> 00:13:50,110
+Then after 25 newton iterations.
+
+193
+00:13:50,110 --> 00:13:55,965
+I end up with 0.9999 and 0.9999.
+So, it's gotten
+
+194
+00:13:55,965 --> 00:14:01,670
+very close to the point that I was looking
+for, 1, with these 25 iterations.
+

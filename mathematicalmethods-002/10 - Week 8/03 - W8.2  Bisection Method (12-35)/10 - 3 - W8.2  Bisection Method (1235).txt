@@ -1,0 +1,340 @@
+The first method I'm going to look at for
+solving this
+sort of problem is called the Bisection
+Method.
+So I want to consider f a continuous
+function defined on the interval a b.
+So this is exactly what I, if we think
+back to that graph that
+I was looking at before, I had chosen this
+sequence of values from 0.05
+to 0.5, and the function was definitely
+continuous on that interval.
+So just something, something like that.
+And also I want to choose that interval.
+So that f of a, and f of b have different
+signs.
+So again, in my, in my example, I had f of
+a was negative, and f of b was positive.
+Then,
+there's a result from calculus called the
+intermediate value theorem.
+And this, this should just make a lot of
+sense if on one side
+of my interval I'm positive, and on the
+other side of my interval I'm negative.
+Continuous function is, we think about
+that as a function
+that you can draw without having to lift
+up your pen.
+If I'm going to get from this point down
+to this point, I'm going to have to cross
+zero at some point in between is cheating
+to go around like that.
+so if f of a and f ob have different
+signs, then there has to be
+some point x in the interval a b where f
+of x is equal to zero.
+And so by section is going to be an
+algorithm for finding that point, x.
+And so the idea is I'm just going
+to take my interval, oops, and I'm going
+to split
+it in half and evaluate it at the
+midpoint, so this
+point c is just the average of the two end
+points,
+so that's the, the mid point of the
+interval a, b.
+And I'll evaluate the function at this
+point, c.
+And so sign is a function where, if the
+argument is greater than zero,
+I get positive 1.
+If the argument is less than zero, I get
+negative 1.
+And if the argument is equal to zero, then
+the sign of that is equal to zero.
+And so, what this is saying is if the, the
+sign of the function evaluated at the
+midpoint is equal to the sign of the
+function evaluated at the left endpoint.
+Then I'm just going to move that left
+endpoint
+to the midpoint.
+So, I, I make my interval half as wide.
+Because, if I know that function, it's
+negative here, negative here, and it
+still will be then, it has to be positive
+at the other point.
+I now have a new interval that's half as
+wide, and it still has the property
+that the function evaluated at the end
+points, they have different signs.
+And then if
+the signs are not the same, then I just
+chop off the other half of the interval.
+So I have a picture on the next slide
+that'll hopefully make this a, a bit more
+clear.
+And so it's a very simple algorithm.
+I just chop the interval in half.
+That's going to give me two subintervals.
+At least one of those, well one of those
+sub intervals is going
+to still have the property that the
+function at, evaluated at the endpoints
+is going to have different signs.
+So that becomes my new interval, and then
+I go back and do this again,
+so every time, I'm cutting my, cutting my
+interval in half.
+And then for an algorithm like this it's,
+it's something that is automated.
+So you need to have a stopping condition
+because any interval, I can cut that in
+half.
+So if I just programmed this using steps
+one, two, and three the way I've written
+them down here, it will just run forever.
+It, it will get a very small interval, but
+it's still going to just keep going.
+So, the stopping condition, I'm just going
+to use
+a very simple one and say when this
+interval.
+So, if I take b minus a.
+So, b was the upper end point.
+A was the lower end point.
+So this is just the, the width of my
+interval.
+When that gets smaller than some tolerance
+that I have to choose at the beginning, so
+I could say I want you know, I want to
+know the answer within 1-1 million.
+So then when this interval is smaller than
+1-1 million I know every point in
+there is within 1-1 million of the mid
+point of that interval so I can stop.
+So this is what,
+what bisection will look like.
+So I start off with I started
+off with 0.1 and 0.3.
+So that was my initial interval.
+Then I evaluate the function at 0.1, and
+the function at 0.3, and so at
+0.3, the function is positive.
+At 0.1, the function is negative.
+So that's sort of my, my starting
+condition.
+This is a condition I want to always save
+as I'm going through the iteration.
+Is that the, the sign of the function
+evaluated at one endpoint of the interval
+has to be the opposite of the sign of the
+function evaluated at the other endpoint.
+And then I'm going to evaluate the
+function at a point c that's
+halfway in between, so at the midpoint of
+the interval.
+And so in this case,
+see f of c is less than zero.
+So since f of c has the same sign
+as f of a, then this is the half the, the
+chunk of the interval
+a c, that's the part I want to chop off
+and throw away.
+On the other hand, the interval c b, since
+f of c is negative, and
+f of b is positive, I know it has to cross
+zero somewhere in that interval,
+so that's the part, that's the interval I
+want to have.
+And now I'm just going to do this all over
+again.
+Except I'm going to start with this
+interval.
+So when I, I assign c to my value a.
+And then I go back to the beginning, and I
+repeat the
+bisection process with just this interval
+on the, on the right side here.
+So I think this is me just explaining that
+all in bullet point.
+So I calculate
+the, the midpoint.
+Evaluate the function at the midpoint.
+I see that it's less than zero.
+So since the sign at the midpoint is equal
+to the sign at the
+left end, I now just move this point a
+over to, over to 0.2.
+So, my interval gets half as wide, but I
+still preserve this condition that the
+signs are different.
+[NOISE]
+So each step preserves the sign.
+So, once I've made my new interval a b.
+So once I've updated my a here.
+I still have the property, that the sign
+at that endpoint of the function evaluated
+at that endpoint, is the
+opposite of the sign of the function
+evaluated at the other endpoint.
+[NOISE]
+So I'll go through a quick r
+implementation.
+One of the nice things about these is that
+they, they're not very difficult to code.
+So, I, I made it even less difficult by
+not doing any error checking.
+So when I say error checking, You know,
+this function is
+going to just run no matter what values I
+put into it.
+So, I need to, on my own, make sure that f
+of a and f of b have the
+same sign.
+Otherwise, this, this will still do
+something.
+It won't be the bisection method, if
+that's not true.
+But, it's still just going to keep
+splitting this interval
+in half but who knows what the output will
+be?
+[NOISE]
+And so, all I'm going to do is, well, so I
+know b is going to be greater than a.
+So that's another thing that this isn't
+checking.
+I could put in negative 3 for b and
+positive
+5 for a and the function's still going to
+run.
+so while b minus a is greater than this
+tolerance value, this is another nice
+feature of r.
+So if I want to have an argument here that
+you can change, but I don't want it to
+be required every time you run the
+function, I can put an equals here.
+And so this means if you call this
+function with
+three arguments, they're going to be
+interpreted as f, a and
+b and then it will, any time it needs a
+tolerance inside the function, it'll just
+use this default value here.
+If I just put tall with no default then
+every time you called
+the function, you'd have to put a fourth
+argument.
+And so it's, it's pretty simple.
+It's just while this interval is wider
+than the tolerance.
+So this is before my stopping condition
+has occurred.
+I compute the midpoint of the interval and
+I store it as c.
+And then so r has a sign function which is
+handy, but be careful when I say sign.
+I'm not talking about sin sign.
+I'm talking about sign, sign now.
+So if the sign of f of c is equal to the
+sign of f of a, then c
+is a sign to a, so I chop off the
+lower half of the interval and the only
+other possibility
+if that, if its, if they have opposite
+signs is that I want to chop off the
+other half of the interval, because it's,
+it's a very simple algorithm.
+You lose this half, or you lose this half.
+So, I don't have to check any other
+condition.
+I know it, if this is satisfied, I do
+this.
+Otherwise, I chop off the other half of
+the interval.
+And that's going to continue running.
+The interval gets
+half as long every time I go through this.
+So, between this set of brackets and this
+set of brackets,
+and eventually the interval will be
+shorter than this tolerance parameter.
+And so, I just decided I would return the
+midpoint
+of that final interval as my best guess of
+the value
+that I can feed into this function f
+that's going to
+make f equal to zero.
+And so let's see how it works this is the
+same
+example that I solved just using the, the
+plot last time.
+So now, instead of f sig just being this
+thing evaluated a whole
+bunch of times from 0.05 to 0.5.
+I'm now going to make it a function.
+So it's a function of one variable, sigma.
+So everything else is fixed.
+And it's
+just going to give me the Black Scholes
+call price at that value of sigma minus 7.
+So this is a thing that should be equal to
+zero.
+when I find the implied, the correct
+implied volatility sigma.
+And so now I just want to use this
+bisection.
+So bisection, this is supposed to be
+typewriter font,
+so it's supposed to look like this r code
+here.
+Bisection was just the name of the
+function that I had on the previous slide.
+So I want to use that
+function to solve f of sigma
+equal to zero.
+So the arguments, remember, were that the
+function that I want to optimize, and then
+the lower endpoint and the upper endpoint
+of the interval where I want that to work.
+And so it returns 0.25117.
+So, what was the linear interpretation
+again?
+>>
+[INAUDIBLE]
+>> No, no, no but from the quiz question?
+>> Mine was 1359.
+>> Oh, okay.
+1359, so yeah.
+So.
+Yeah.
+So the linear interpretation was pretty
+close, I suppose.
+Yeah.
+2511?
+2513?
+>> 1359.
+>> 1359, so okay.
+And so then we can check the computed
+solution,
+so this is always a, a good idea.
+So I'm going to take the solution that is
+supposed to make this thing equal to zero.
+So that should make the Black Scholes call
+price for this equal to 7.
+So I'm going to plug that back into my
+function for the Black Scholes call
+price, and now I get basically 7 to within
+two or three significant digits.
+So this time if
+I were to round this, I would round this
+to $7.00.
+So a little bit better than the, the just
+plotting method.
+

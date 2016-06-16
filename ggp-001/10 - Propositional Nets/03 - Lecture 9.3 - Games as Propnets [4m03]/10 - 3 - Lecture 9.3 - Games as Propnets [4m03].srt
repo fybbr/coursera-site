@@ -1,0 +1,296 @@
+1
+00:00:01,700 --> 00:00:06,810
+Propnets are an alternative to GDL for
+expressing the dynamics of games.
+
+2
+00:00:07,860 --> 00:00:11,070
+With a few additional provisions, it's
+possible to convert any
+
+3
+00:00:11,070 --> 00:00:15,030
+GDL game description into a propositional
+net, with the same dynamics.
+
+4
+00:00:16,050 --> 00:00:19,429
+As an example of this, consider the simple
+game shown here.
+
+5
+00:00:20,570 --> 00:00:23,620
+It's just one role, white.
+
+6
+00:00:23,620 --> 00:00:27,230
+There's just one base proposition, and
+there are two actions.
+
+7
+00:00:29,130 --> 00:00:30,460
+The two actions are always legal.
+
+8
+00:00:33,150 --> 00:00:37,590
+The player gets 100 points if S is true,
+otherwise the player gets zero points, and
+
+9
+00:00:37,590 --> 00:00:46,680
+the game ends if Q ever becomes true.
+Notice the dynamics: if A is performed
+
+10
+00:00:48,700 --> 00:00:54,210
+and S is true then P becomes true.
+If P is false Q becomes true.
+
+11
+00:00:54,210 --> 00:00:58,820
+If Q is true R becomes true and if Y
+performs B then R becomes true as well.
+
+12
+00:01:01,930 --> 00:01:06,850
+Now, let's build a prop net for this game.
+We start with the game's physics.
+
+13
+00:01:06,850 --> 00:01:10,270
+The base proposition's in the prop net
+consist of the propositions
+
+14
+00:01:10,270 --> 00:01:13,630
+defined in the base relation in the game
+description, namely S.
+
+15
+00:01:14,670 --> 00:01:17,520
+The input propositions correspond to the
+actions defined by the
+
+16
+00:01:17,520 --> 00:01:19,969
+input relation in the game description,
+namely A and B.
+
+17
+00:01:21,490 --> 00:01:23,960
+We use the next relation to capture the
+dynamics of
+
+18
+00:01:23,960 --> 00:01:26,940
+the game, starting with the base and input
+propositions, where we
+
+19
+00:01:26,940 --> 00:01:30,730
+add links for each rule, using inverters
+for the negations,
+
+20
+00:01:30,730 --> 00:01:33,990
+and gates for multiple conditions, and or
+gates for multiple rules.
+
+21
+00:01:35,050 --> 00:01:36,890
+And so doing, we augment the propos-,
+
+22
+00:01:36,890 --> 00:01:39,160
+prop net with additional new propositions
+as necessary.
+
+23
+00:01:39,160 --> 00:01:42,620
+The result is the prop net shown here
+which is
+
+24
+00:01:42,620 --> 00:01:46,070
+exactly the same as the one introduced in
+the previous segment.
+
+25
+00:01:49,630 --> 00:01:53,660
+Okay now, we have more things to model to
+complete our game description.
+
+26
+00:01:53,660 --> 00:01:55,960
+First of all termination.
+
+27
+00:01:55,960 --> 00:01:59,940
+Model terminate in the prop net by adding
+a special node for termination.
+
+28
+00:01:59,940 --> 00:02:02,110
+In this case, terminal corresponds exactly
+to q.
+
+29
+00:02:02,110 --> 00:02:04,830
+Remember, the game is over if q ever
+becomes true.
+
+30
+00:02:04,830 --> 00:02:07,510
+So, we could just use q as our terminal
+node.
+
+31
+00:02:07,510 --> 00:02:10,640
+However, for the sake of clarity we can
+also add a new
+
+32
+00:02:10,640 --> 00:02:14,390
+node, t, as shown here, and insert a
+connection from q to t.
+
+33
+00:02:15,850 --> 00:02:17,650
+Note that I've used an one-input and gate.
+
+34
+00:02:17,650 --> 00:02:21,560
+I could equally have used a two-input and
+gate with both inputs supplied
+
+35
+00:02:21,560 --> 00:02:25,070
+by q, but this is simpler and the behavior
+is exactly the same.
+
+36
+00:02:28,420 --> 00:02:30,540
+Rewards are handled analogously.
+
+37
+00:02:30,540 --> 00:02:33,320
+We create a new node for each reward value
+and we
+
+38
+00:02:33,320 --> 00:02:37,220
+use the definitions for these values to
+extend the prop net further.
+
+39
+00:02:37,220 --> 00:02:42,070
+In this case, Goal of white being one
+hundred corresponds exactly to S,
+
+40
+00:02:42,070 --> 00:02:44,700
+so we don't really need to add a new node
+for that case.
+
+41
+00:02:44,700 --> 00:02:47,030
+However for clarity in our example again
+we have added
+
+42
+00:02:47,030 --> 00:02:49,020
+a new node for this case and labeled it
+100.
+
+43
+00:02:49,020 --> 00:02:53,900
+And then we've also added a node for zero
+which is the true
+
+44
+00:02:53,900 --> 00:02:58,780
+in exactly the opp, the rema, other cases
+from the case where the goal is
+
+45
+00:02:58,780 --> 00:03:05,220
+100.
+Legality is by far the trickiest part.
+
+46
+00:03:05,220 --> 00:03:08,910
+Of for input in, in encoding GDL in prop
+nets.
+
+47
+00:03:08,910 --> 00:03:10,550
+There are various ways we can do this.
+
+48
+00:03:10,550 --> 00:03:12,420
+The simplest method conceptually is to
+simply
+
+49
+00:03:12,420 --> 00:03:15,180
+add one legality proposition for each
+possible
+
+50
+00:03:15,180 --> 00:03:19,210
+action, and extend the prop net to say
+that when these nodes are true.
+
+51
+00:03:20,720 --> 00:03:23,110
+In this case, we would add two new
+propositions, la
+
+52
+00:03:23,110 --> 00:03:26,139
+and lb, for the legality of a and legality
+of b.
+
+53
+00:03:27,410 --> 00:03:31,810
+In this case there always true, actions
+can always be performed, to model
+
+54
+00:03:31,810 --> 00:03:35,650
+this we add a self loop for each of these
+legality propositions, and
+
+55
+00:03:35,650 --> 00:03:39,760
+then we initialize that proposition to
+true, of course because of the dynamics
+
+56
+00:03:39,760 --> 00:03:43,320
+of transitions the propositions remain
+true indefinitely
+
+57
+00:03:43,320 --> 00:03:45,630
+meaning that those actions are always
+legal.
+
+58
+00:03:47,040 --> 00:03:47,660
+And that's it.
+
+59
+00:03:49,080 --> 00:03:51,380
+Once this is done, we have a prop net
+
+60
+00:03:51,380 --> 00:03:53,980
+that reflects the game described in the
+given GDL.
+
+61
+00:03:55,140 --> 00:03:59,620
+In the next section, we discuss how to use
+this prop net to play games.
+

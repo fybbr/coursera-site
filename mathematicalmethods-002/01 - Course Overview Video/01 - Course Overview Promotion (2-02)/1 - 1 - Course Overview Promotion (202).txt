@@ -1,0 +1,64 @@
+Hi, my name's Chao Kunnes.
+I'm a new professor in the Computational
+Finance and Risk Management
+Program, in the Department of Applied
+Mathematics at the University of
+Washington.
+And I'm going to be offering a course
+called Mathematical Methods for
+Quantitative Finance on Coursera.
+So, a little bit about my background.
+I did a masters degree in applied
+mathematics and
+then a doctorate in statistics at the
+University of Oxford.
+And then I did
+a four year postdoc, at the Swiss
+Federal Institute of Technology in
+Lausanne, Switzerland.
+Now, I've just joined the department here
+with a research area in computational
+finance, where
+I'm hoping to apply some of my
+knowledge of statistics to problems in
+quantitative finance.
+So the course I'm going to be offering is
+going
+to be a pre-program course for our Masters
+program.
+It's going to cover single and
+multivariable calculus, linear algebra,
+optimization methods in finance and then
+numerical
+techniques for solving these sorts of
+problems.
+And the motivation for this course really
+came from a lot of the students we were
+getting who are interested in applying for
+our Masters in computational finance.
+And this is a very mathematical degree and
+we were finding that a lot of
+otherwise well qualified people, people
+who had either
+been working for several years in industry
+or
+had undergraduate degrees in economics or
+business
+finance, who would be ideal candidates for
+our
+Masters program, who are just a little bit
+ill prepared when it came to mathematics.
+And so we want to offer a course that's
+going to bring people like that up to
+speed.
+And this would be useful, you know, if
+you're looking to, get an internship
+or a job in the finance industry or if
+you're interested in pursuing a degree
+in mathematical finance.
+And so, if you feel like you would fall
+into either of these two
+groups of people, I'd really like to
+invite you to take my course on Coursera.
+Thank you very much.
+

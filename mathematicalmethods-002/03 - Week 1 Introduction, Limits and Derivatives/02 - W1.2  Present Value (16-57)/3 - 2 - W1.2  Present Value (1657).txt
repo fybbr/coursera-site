@@ -1,0 +1,452 @@
+So now we get to start with the actual
+content of the course.
+I'll start with the idea called present
+value.
+So, we're going to start out with, just
+talking about interest.
+So you can think about this you know,
+pretty much everyone has some sort of bank
+account.
+So if you think of a savings account, you
+put
+money in your savings account and then
+periodically the bank.
+Or whoever is holding your savings account
+gives you a little bit as
+a reward for letting the, letting the bank
+hold on to your money.
+And so for simple interest,
+this is the easiest possible way that a
+bank can pay you interest.
+money is going to accumulate proportional
+to the total time of the
+investment.
+So here r is my interest rate.
+So you could think about this as the
+yearly
+interest rate, so maybe, you know, 4% per
+year.
+n is the number
+of periods, and A zero is going to be my
+initial amount that I put in the bank.
+And so the way this is going to work is,
+it's a single
+interest payment that just happens at the
+end of whatever agreement I have.
+So if I, if I said I'm going to put this
+money into a bank
+account for one year, then I would get 1
+plus r times A 0, out at
+the very end.
+If I put it in for two years I would get 1
+plus 2 r times A0
+at the end of two years, so its a linear
+function here in the number of years.
+And then compound interest, simple
+interest,
+I don't think this really happens.
+Too much anywhere, any more.
+But you know, back when it was difficult
+to do mathematics before
+computers, things like that, this, this
+was probably a lot more common.
+Compound interest is interest paid
+regularly.
+So let's see if I can understand what my
+slide is here.
+So basically,
+what's happening here, v is going to be my
+value in the future, A0 is going to
+be my initial deposit, 1 plus r times A0,
+that's going to be the values.
+Oops, that's going to be the value after
+one
+time period, and notice it's in these red
+brackets here.
+And so when, when I go to
+the second time period, I get 1 plus r
+times what's in the red brackets.
+So that means I'm going to get some
+interest on the interest this time.
+And so you can sort of see that, oops,
+sort of see that as 1 plus r times A1.
+So you can pick up A0 is the amount in my
+account is my initial deposit.
+A1 is the amount after one time period, so
+say one year.
+Then after two time periods, I'm going to
+have 1 plus r.
+Times what I had at the end of the first
+period.
+And the way that's going to end up looking
+mathematically,
+is just 1 plus r to the nth power times my
+initial investment.
+And then, you can make this formula a
+little bit more general.
+So it might, in the second bullet here
+compound
+interest, I'm just receiving one interest
+payment per year.
+But quite often the compound interest is
+going to be stated in a year license.
+So if somebody says you know, the interest
+on this
+account is 2.5%, they mean you're paying
+2.5% per year.in the.
+But they might be paying you interest
+monthly.
+So in every statement, you get a little
+interest payment that's going into your
+savings account.
+And so the way we're going to handle that
+is you're just
+going to have r, which is the yearly
+interest rate, divided by m.
+So this is going to be the number of
+times.
+That it gets paid.
+So the, you know, the key ones are
+probably going to be quarterly,
+monthly or daily.
+So in that case you know, if it's
+quarterly n would
+be 4, if montly, n would be 12 and so on.
+And then it's basically the same formula
+that you
+have here, except that I'm just changing r
+to be.
+in some sort of different units.
+And then k instead of being now measured
+in years, it's just measured in periods.
+So if m is dividing the year into 12
+periods then k
+equals 1 is going to be the value after
+the first month.
+k equals 2 is the value after the second
+month and so on.
+And then just so that the slide will be
+useful as a reference when
+you're trying to think about this later,
+here's all of the terms that I have.
+So, to make it fit on one line I had to
+say r equals rate.
+That's the interest rate.
+And, yeah, so I think everything else
+should be clear there.
+So, present and future value.
+So, suppose the interest rate is 4%.
+Then in one years time, if I make an
+initial deposit, if
+I go to the bank and put $100 in a
+saving's account.
+After I get my interest payment in one
+year.
+My savings account is going to have $104
+in it.
+So one year from now, I have $104.
+So, kind of in our present value,
+future value terminology, I would say that
+the future value of my $100 now is $104.
+And present value I'm going to get just be
+turning that around.
+So if I know that my $100 now is worth
+$104.
+A year in the future, but I also know that
+the present value
+of $104 a year in the future, is worth a
+$100 now.
+And so without too much trouble you should
+be able to work out this formula.
+So the future value is just equal to, 1
+plus r times
+the present value, where r is the interest
+rate for the time period.
+And ten we can get an expression for
+the present value just by doing some
+simple algebra.
+So we get present value is equal to 1
+divided by 1 plus r times the future
+values.
+And we're going to call this factor 1
+divided by 1 plus r
+a discount.
+So what I want to do is, discount
+a future value to come up with some idea
+of what that's worth now.
+And I'm going to call that my present
+value, and so will call
+d1 a discount factor so, because I haven't
+put the over
+m here this is all on kind of a yearly
+basis.
+But just like on the last slide, we can
+mess around with this and
+get a discount for a finer grain of
+interest payments.
+And then with this discount factor, d sub
+k, we can say the
+present value of a payment a sub k,
+received after k periods.
+Is just A sub k discounted by the
+appropriate discount factor d sub k.
+And now we're going to look at a financial
+product, or a contract, called an annuity.
+And this is just a contract where I buy it
+now, and what I'm buying is some future
+stream of payments.
+And my question is, suppose I want to buy
+an annuity that pays $100 at the end of
+the year for each of the next ten years,
+and the current interest rate is 4%.
+So how much would I expect to pay?
+So you could kind of get an idea of how
+much this thing should be.
+Just that you know the interest rate is
+never very big.
+I mean today 4% is extraordinary.
+My savings account right
+now pays 1/10th of 1% so it's uh.You know
+if we go much
+further we might not be even have to learn
+this accounting any more
+so if I did a discount if I said $100 in a
+year
+is worth $100 now I'm going to be paid ten
+times $1000 per year.
+The money now would still be better, but
+but I would be willing to pay something
+close to, but not, not, never more than
+$1000 for ten
+yearly payments of $100.
+But if we want to be mathematically
+correct about this, what we really want to
+do is discount each
+of the ten future payments, and then sum
+up all of those.
+And that's going to give me the present
+value for this stream of payments, so
+receiving
+$100 a year for the next ten years.
+So, we just start plugging numbers into
+the formulas on the, on the last slide.
+And we get the present value of the kth
+payment is just going to be.
+So d sub k, if m is equal to 1, then 1
+divided by this, oops, 1 divided by that.
+That's my discount factor.
+And then the a sub k is always going to be
+100, because I'm always getting $100.
+So this is the present value
+of the payment received in period k.
+Then the value of the whole annuity is
+just going to be the sum of those.
+And so I get a, a formula that looks like
+this.
+And that probably doesn't look too
+intimidating.
+I mean you could stick that into a
+spreadsheet
+pretty easily and figure out figure out
+what that's worth.
+But, you know when people were working up
+these
+formulas in the first place, there were no
+spreadsheets.
+And some said at maths class, we're going
+to do it the way the old people did.
+So, we'll start off with, this is just
+what I had on the last line of this slide.
+So, the value of the annuity is.
+The sum of these ten payments,
+appropriately
+discounted for, for being in the future.
+And so, you know, the one way I could do
+it, just actually write down everything.
+It's going to take a while, but you will
+get the right answer,
+but what we want is a short-cut, and so
+the, the trick we use to get that.
+As I'm, I'm going to multiply v by
+whatever's in the denominator here, but
+not, not with the power.
+So, just 1 plus 0.04 times v.
+And what that's going to do is if I, if I
+multiplied both sides of this thing up
+here by 1.04.
+Its just going to knock out one of these
+things
+in the denominator here, and leave me with
+this
+thing on the left side.
+So for the, when k is equal to 1 I'm
+going to have 1.04
+on the bottom here, times 1.04 and that's
+where this 100 comes from.
+Then I'm going to have the remaining nine
+of these things and
+the only place, there is a K is down at
+the bottom here.
+So I'm just going to change this as the
+sum from 1
+to 9 of 100 divided by 1 plus 0.04 to the
+k.
+So I hope
+that's clear how that one worked, but if
+its
+not just write it down with instead of 10
+here.
+Write it out without the summation
+notation with 4, maybe 3 or 4 terms.
+And just do it, and you'll see what's
+happening.
+And then what I'm going to do is, I'm
+going to write the original thing we had
+underneath it.
+So I had the sum from 1 to 10 of 100
+divided by, my discount factor.
+But instead of write, writing that out as
+just
+the summation, I'm going to write that out
+as sum from
+1 to 9, and then just add on what I would
+have put in there for the tenth term.
+And now I subtract these things, so this,
+this guy over here is a
+little red subtraction sign, I think
+Manage to put a line in my slide, too.
+So it's supposed to look like kind of a
+elementary school maths problem.
+If I now subtract
+the bottom line from the top line, I'll
+have 1
+plus 0.04 v minus v, so that's going to be
+0.04 v.
+100 minus, well, there's nothing behind,
+nothing below that.
+So there's going to be 100 here.
+This term here, oops, is the same as this
+term here.
+So those are going to cancel each other
+out when I do the subtraction.
+And then I'm going to have minus this
+thing on the right hand
+side over here.
+So now I've managed to get an expression
+involving v, and not involving the sum any
+more.
+And so, it doesn't matter if I want from 1
+to 10 or 1 to 1,000, basically
+the information I need to get to recover v
+is kind of somehow contained in just the.
+You know, the, the very first and very
+last of those terms, if you're clever.
+And so that is just a little algebra
+exercise
+to figure out what this annuity should be
+worth.
+So I ended up coming up with $811.9.
+So now we're going look at this as the
+number of
+periods gets longer and so there's
+something called a perpetual annuity.
+or a perpetuity and this is going to pay
+$100 per time period.
+So say $100 a year.
+But the payments never stop.
+It just.
+Just keeps going so, forever.
+And I actually thought this was something
+that
+they invented just, you know, for
+economics 101
+text books to kind of work through this
+example.
+But apparently they actually exist,
+there's
+something in the U.K. Called a console.
+Which, you buy and it pays you forever.
+And so we'll sort of just try to do the
+same thing that we did last time.
+So, the only difference is now instead of
+going from one to ten.
+You know, I'm going from one to infinity.
+And so when I pop off this first term, so
+when I multiply by the.
+The 1 plus 0.04.
+I still have an infinite number of terms
+trailing off in the end.
+But this hundred does
+pop out in front.
+And I'm going to do exactly the same
+thing.
+Subtract the v.
+But now.
+And this is kind of clever, but
+essentially
+what's happening is, you know, as I go
+further and further into the future, you
+know,
+the money that I receive 1000 years from
+now.
+you know, really this whole exercise seems
+kind of silly to
+me, because I'm going to be dead in
+probably 60 or 70 years.
+There's no point in me thinking about
+money I'm going to receive in 1000 years.
+But it's
+getting, you know, this discount factor on
+the bottom's getting really, really small.
+I'm sorry, the discount factor's getting
+really small,
+the thing in the denominator here is
+getting big.
+And so that means these future, future
+payments just their present value's
+effectively zero.
+So again we do the subtraction, but this
+time
+I just find out that 0.04, so that's the
+interest
+rate, times the value of my annuity, is
+then
+just equal to the payment that I'm
+receiving every year.
+And so, again, I can just solve that
+simple algebra exercise.
+And get, 2,500, okay.
+So a quick summary of, my present value
+slide.
+So this is the formula for the discount
+factor.
+So m is the number of periods, r is the
+yearly interest
+rate and then k is the index for period
+that you are
+receiving the payment.
+The value of an annuity that pays a an
+amount annually at an
+annual interest rate r for n total
+payments is given by this formula.
+So this is just the same one we had on
+the previous slide, but with the a over r
+factored out.
+And then value v of perpetual annuity,
+that pays an
+amount a annually at an interest rate r,
+is just
+a over r.
+And you can kind of see that from this,
+this expression here,
+you know, the 1 divided by 1 plus r to the
+n.
+As n gets bigger and bigger this
+denominator is going to get bigger and
+bigger and so the, the second term is
+getting closer and closer to 0.
+So, you know, hopefully this v is kind of
+getting close to, to this v in the bottom
+one.
+As you let the number of periods increase.
+

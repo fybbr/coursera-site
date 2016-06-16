@@ -1,0 +1,513 @@
+Okay.
+Second half of number seven, so week seven
+is Taylor series.
+So I'm going to go over something called
+Taylor's formula for a function of one
+variable.
+And then just introduce a concept called"
+Big O" notation.
+Hopefully a lot of you have seen this
+before but it's a pretty simple idea.
+Just give you an idea of how fast a
+function is growing or shrinking.
+Then
+I'll talk about a generalization of
+Taylor's formula to functions of several
+variables.
+Something called Taylor series expansions.
+And then some applications to bond
+convexes.
+So this is just carrying on from one of
+the lectures from the
+first week, where I talked about making a
+linear approximation to our function.
+And now we can add more terms to
+that approximation to make it a little bit
+better.
+So I'll start off with Taylor's formula
+for a function of one variable.
+So my function is going to be f of x
+and I'm going to assume that it's at least
+n times differentiable.
+So when I say that I mean I can take the
+derivative of f of x to get f prime.
+And then I can take the derivative of f
+prime to get f
+double prime and I can continue doing that
+until I have n primes.
+And each one of those functions is going
+to be a differentiable function.
+Then I'm also going to assume that a is
+some
+real number.
+And the Taylor polynomial of order n
+around the
+point a is just defined to be this thing
+here.
+So what I do.
+So I evaluate my function at the point a.
+So the idea is, I know the value of my
+function
+at certain points and so I'm going to pick
+one of those.
+So a is going to be that point.
+And then for points that are near a, I'm
+just going to use the derivatives to make
+an approximation.
+And basically what's going on with this
+polynomial, I
+have x minus a times the first derivative.
+I have x minus
+a squared, times the second derivative
+divided by two.
+And then I can just keep going and the
+general formula is
+going to be x minus a to the kth power
+times the kth derivative
+evaluated at a, divided by k factorial.
+And so that's just what the, the final
+term here is.
+Except that the last one is n, because I
+said it's a Taylor polynomial of order n.
+So that just means I go up until I'm using
+x minus a
+to the nth power and then that's the last
+term in my Taylor polynomial.
+And the idea of this Taylor polynomial is
+that I want to be
+able to use it to approximate f of a at
+points x that are near a.
+And so I can write this in a little bit
+more compact notation just
+like this, so I'm, I'm going from zero up
+to n, so here's the.
+Here's the nth term on the right here and
+I can think of just evaluating the
+function as
+[COUGH]
+as taking the zeroth derivative.
+And then there's no x minus a here because
+anything to the zero power is just one.
+And so I want to use P sub n to
+approximate f of x.
+And so that the idea here is if I just
+approximated f
+of x by f of a, you know that might be
+reasonably close.
+it would just depend on how steep the
+function was and how far away from a I am.
+And then I could make my, my approximation
+a little
+bit better by if I, if I know the
+derivative
+of my function at a.
+Then I can use a linear approximation on
+either side of a.
+And then I could make it again a little
+bit better by adding a quadratic term so
+I add a little bit of a parabola
+and hopefully that'll make the
+approximation a bit better.
+And so the idea is as P sub n, as I add
+more terms I'm getting
+a better and better approximation of f of
+x, but I want to be able to understand
+how how good my approximation is.
+And so that's what most of today's lecture
+is going to be.
+So the questions are does P sub n.
+Whoops I've got this wrong so this should
+be f of x.
+But does P sub n of x converge to n, f of
+x as n goes to infinity.
+So as I add more terms.
+You know, it's going to be a lot more work
+to calculate
+[UNKNOWN]
+all these additional terms, so I want to
+at least know that
+each term I'm adding is getting me closer
+to what I want.
+And then order means how well does P sub n
+approximate f of x?
+So, suppose that this actually did
+converge to f of x.
+I would still need an infinite number of
+terms to get exactly f of x.
+So I'd like to know suppose I want to use
+a third order polynomial.
+You know, how far away from f of x am I?
+So we'll
+measure that distance using something
+called approximation error.
+And that's just going to be defined to be
+the difference
+between f of x and P sub n of x.
+So P sub n of x is my polynomial that I'm
+using for approximation and
+then f of x is the target, that's the
+function that I'm trying to approximate.
+And if I, if I measure the error using an
+order n.
+Taylor polynomial.
+I call
+that the nth order Taylor approximation
+error.
+[COUGH]
+And there are two forms, there are two
+ways for me
+to get a, a handle on the approximation
+error.
+So there's, the first one is called the
+derivative form.
+An so now, I had to assume that f of x was
+least n times differentiable
+in order to be able to make the
+Taylor polynomial that I'm using to
+approximate it.
+If
+I assume that I can take one more
+derivative than that
+and that, that derivative is a continuous
+function.
+Then there's a point c, so c is just some
+point in the
+interval between a and x.
+So a is the point where
+I've expanded my, my Taylor polynomial.
+So I'm writing my Taylor polynomial in
+powers of x minus a.
+And then x is the point where I'm trying
+to evaluate
+the function, so ideally you want to have
+x pretty close to a.
+[COUGH]
+And then there's going to be some point c
+in
+between a and x where the following
+relationship holds.
+So I have x minus a to the n plus one, so
+sort of looks like it's the next term.
+But instead of evaluating the derivative
+at a exactly?
+I'm going to evaluate it at this point c,
+that's somewhere between x and a.
+And that's and then I need to divide
+by the n plus one factorial.
+And that's actually not just an
+approximation of
+the air, but that's exactly equal to the
+air.
+So it depends.
+On the choice of c but there's some choice
+of c in this interval ax.
+Where the approximation error I have
+highlighted on the left hand
+side is exactly equal to the thing on the
+right hand side.
+[COUGH]
+And then there's also an integral form of
+the approximation error.
+So again I need the, the same condition.
+But now I can express the Taylor
+approximation error.
+So the thing on the left hand side is, is
+the same for both both
+forms of the Taylor approximation error
+for the
+differentia, derivative form meant for the
+integral form
+[COUGH].
+And now on the right hand side instead of
+having this thing that looks like the next
+term, it
+looks more like the, the final term in the
+Taylor
+polynomial except it's multiplied by the n
+plus first derivative.
+And now I'm going to integrate this with
+respect to t from a to x.
+And so I've made this, this, I guess it
+kind of looks like a Taylor term
+but I now instead of having x minus a, I
+have x minus t.
+And then I'm also evaluating the n plus
+first derivative at the point t.
+But this is just a function.
+And then I'm just going to multiply it by
+this factor out in front.
+That'll be another function.
+I integrate that function with respect to
+t and then use the limits a to x.
+And now that's going to be again exactly
+equal to the Taylor approximation error.
+But this has
+a sort of added bonus that there's not
+this kind of indeterminate c.
+So this is something you can just compute
+directly but it's, it ends
+up being a bit more work because to get
+this form here, you've already taken
+n plus or n derivatives, so you just have
+to take one more derivative.
+And you're basically finished with this
+form up
+here, except that you don't know what c
+is.
+Here, you do have to still take one more
+derivative but then you have potentially
+a complicated integral you have to
+evaluate, to
+figure out what the Taylor approximation
+error is.
+So let's look at a quick example.
+I'm going to make a linear approximation
+of the function f
+of x equals log x around the point a
+equals one.
+So the black curve is just log x.
+That's my target function.
+I'm going to use a first order so P,
+whoops
+I guess I can't highlight stuff in the
+picture.
+P sub one of x is just a Taylor polynomial
+of order one,
+so that's just a linear approximation.
+My point a was chosen because
+I know log, log of one is a particularly
+easy thing to evaluate, it's zero.
+So the red line touches the curve at the
+point x equals a.
+So it's one zero.
+And then you can see sort of in this
+interval here maybe, plus or minus a
+quarter from one.
+It's actually a pretty good approximation
+of
+the function that I'm trying to
+approximate.
+[COUGH]
+And so this is the, this is the general
+form for our order one Taylor polynomial.
+And then the derivative of log is just one
+over x.
+When I evaluate that at my point a equals
+one, I just get one.
+So this is my derivative one over one.
+My point a is one, so I have x minus one
+that quantity to the first power.
+And then f of a is equal to log of one
+which is zero.
+So it turns out that x minus one is my
+first order
+Taylor polynomial to approximate log x at
+the point a equals one.
+So now let's look at Taylor approximation
+error and again I'm
+going to choose another point where it's
+going to be easy to evaluate this.
+So I'm going to choose x equals e, so the
+log of e will just be equal to one.
+So at log of one was zero, log of e is
+one.
+So that'll mean that I can figure out
+easily
+what the value on the left hand side is.
+And let's see if we get the same thing
+using the integral
+form of the Taylor approximation error.
+So the definition here, I have my limits
+are going
+to be a to x, so that's one up to x.
+X minus t to the first power over one
+factorial times f.
+So, first derivative take the derivative
+of that again, so f double prime.
+And then I'm going to integrate that with
+respect to t.
+So I said I want to find the Taylor
+approximation error at the point x
+equals e, so the first thing I'm going to
+do is just replace the x's in this.
+With e's.
+And now t is my variable of integration.
+So hopefully it should be pretty easy to
+see that this is just going to be so
+I have minus t times negative one over t.
+That just becomes one over t.
+Then I have e.
+times minus one over t squared, so that
+gives me minus e over t squared.
+That gives me log of t plus e over t,
+evaluated at e and one.
+And then on the left hand side the, it's
+pretty easy to figure out what this is.
+So I just end up with log of e.
+Minus e plus one, so log of e was one.
+So I get one plus one is two and then I
+still have this minus e, so I get two
+minus e.
+And on the right hand side I evaluate my
+integrand at
+the upper limit and subtract it, evaluate
+it at the lower limit.
+And so I end up with log of e which is
+one, plus e
+over e which is another one minus log of
+one which is zero plus e.
+So this is going to be two and this is
+going to be e.
+So I get two minus e as the approximation
+error on both sides.
+Yeah?
+>> Why are you integrating from one to
+x?
+Where did that one come from?
+>> So that domain of integration is a to
+x.
+And so I did my expansion around the point
+a equals one.
+So I guess maybe up here I should have put
+an a.
+And then when I replace these with the
+actual values it would be one to e.
+Because I'm, I've built an extension at
+the point a.
+And I'm trying to evaluate how good that
+is at the point e.
+So now let's see if we can figure out the
+same thing using the derivative form of
+the Taylor approximation here.
+I guess one thing I wanted to point out,
+let's just remember that the approximation
+error was about 0.7.
+[COUGH]
+So I want to know what is the Taylor
+approximation error again at the point x
+equals e.
+So I built a Taylor polynomial around at
+the point a equals one and
+then I want to see how well that
+approximates f at the point x equals e.
+So this is my formula for the derivative
+form of the Taylor approximation error.
+And again f double prime here is going to
+be one over x for
+the first derivative and then minus one
+over x squared for the second derivative.
+So I get this minus and then I'm
+evaluating it
+at c, so this is where the c squared came
+from.
+I have a two factorial, that's where this
+two came from.
+And then I'm interested in the point x
+equals e, so I'm going to replace
+the x with an e, so I get e minus one
+squared in the numerator.
+And now, because I happen to know what the
+true value of the Taylor
+approximation error is on the left hand
+side, I can solve for this point c.
+And so what I get is that c is equal to
+1.434 roughly so the,
+these are probably irrational numbers, so
+they go on forever.
+But I've just rounded them to rounded them
+to three decimal places.
+E is definitely an irrational number.
+So it has an infinite decimal
+representation.
+[COUGH]
+And so I found that c is in fact in
+between.
+So a was equal to one.
+And then x was equal to e.
+So I found that the value c is in that
+interval.
+[COUGH]
+But I had to know what the Taylor
+approximation error was
+in order to be able to find that value of
+c.
+So you might ask how is that useful?
+[COUGH]
+And so what we are actually able to do
+with this, is we can't find with the
+derivative form
+the exact value of the Taylor
+approximation error but
+you can find a bound on the Taylor
+approximation error.
+So I know that the true approximation
+error
+is going to, for this particular example
+so normally this
+would either be ax or xa depending on
+whether
+x is greater than a or less than a.
+But in this example I know my a is
+equal to one and my x is equal to e.
+So I know there's some point c
+in between one and e where the true
+approximation error is going to occur.
+And then what I want to do.
+Is say well that, the absolute value of
+the error then must be less than or
+equal to the maximum value this function
+takes on the interval one e.
+And so that's going to say well I, I
+don't know exactly what the Taylor
+approximation error is.
+But I can tell you that it's definitely
+less than whatever
+value I'm going to calculate on the right
+hand side here.
+And so in this case if I, if I take the
+absolute value of the expression I
+had on the previous slide, I end up with
+e minus one squared divided by two c
+squared.
+And now I want to find the value of c
+that's going to make this the biggest.
+And so it turns out this is, if I put in,
+so since I'm dividing by
+c, if I want to make this thing big I
+want to make c as small as I can.
+But c has to be in this interval one e, so
+the
+smallest I can make c and still stay in
+that interval is one.
+So that tells me that the absolute value
+of
+this Taylor approximation error is less
+than or equal
+to one half e minus one squared and that's
+equal to about 1.476.
+So my bound on the error is roughly twice
+what the actual error is.
+because if you remember from the integral
+form we were able to
+find it exactly and it was about 0.7
+something, the absolute value was.
+And so the idea here is?
+If this is not good enough.
+So if I want my approximation to be better
+than within 1.476 of the true value,
+then I need to use a more complicated
+polynomial to make my approximation.
+But I also need to know that polynomial
+is actually getting closer as I add more
+terms.
+And so this lets me put a bound on the
+Taylor approximation error.
+So this is the Taylor approximation error
+using a
+first order Taylor polynomial expanded
+around the point a.
+And this is the error at the point x
+equals e.
+And I know that I'm within 1.47 of the
+true value.
+

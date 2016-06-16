@@ -1,0 +1,584 @@
+Topic five is Matrix Multiplication.
+So, I think we're developing some idea of
+what it means to multiply a vector by a
+matrix, and now we'll just look at how we
+can extend that idea to multiplying two
+matrices together.
+So we have a linear system Ax equals b.
+And now we know how to make these
+elimination matrixes, matrices E.
+So, I can make and eliminate, an
+elimination matrix E.
+And I know what that's supposed to do.
+So, I want to define matrix
+multiplication,
+so that the product of E and my
+coefficient matrix.
+Gives me the same coefficient matrix I
+would get if I did one elimination step.
+So we know how to do the vector.
+So I know how to do elimination on the
+right hand side now.
+And I know what effect elimination is
+going to
+have on the coefficient matrix so I
+want to make
+sure that whatever definition I come up
+with
+for matrix multiplication it, it needs to
+do that.
+So for our.
+Column view.
+I, I think of the matrix as composed of n
+columns.
+So here, a1, a2 up to an, these are the
+columns of the matrix A.
+And I know how to do vector times alright
+sorry, matrix times vector multiplication.
+So
+I could think of one way I might want to
+represent matrix multiplication is just,
+I'll say the answer needs to be E times
+the first column of A, E
+times the second column of A, and then
+each one of those is going to
+be a vector, and I'm going to put all
+those vectors back together in a matrix.
+And so this would then be the answer
+to my matrix multiplication product, so my
+matrix
+product, E times A.
+Okay.
+So we have to, to make this a little bit
+more rigorous,
+we have to start thinking of exactly what
+rules we have to follow.
+So a matrix is just a rectangular array of
+numbers.
+If we say an m by n matrix, we mean that
+it has m rows and n columns.
+And I'm going to denote the entries in the
+matrix by little aij.
+So if it has, I'm sort of using the
+notation here if it's got one subscript.
+So if I say just A sub j that's a whole
+column.
+If it's A sub i that's a row.
+Or if it's aij if it has two
+subscripts then that's a particular entry
+in a matrix.
+And so that means I can write my matrix A
+like this.
+So I have a11 is always the top left entry
+and then there's a21 below that, a31 below
+that all the way down to am1 and then for
+columns I have a11.
+Just one step to the right of that is a12,
+a13, and so on up to a1n.
+And then the bottom right corner will just
+be amn.
+So this works well for small, smaller
+matrices.
+I suppose if you wanted to actually start
+talking about you know, the.
+13, 17 position, you might want to put a
+comma in between here,
+[COUGH]
+and so for addition, we're
+going to do addition for matrices
+just like we did with vectors, and so it's
+going to be For
+vectors I call the elements components and
+for a matrix I'll call the
+elements entries, like that.
+So if matrices,
+two matrices are the same dimension, so
+they have the same number
+of rows and the same number of columns,
+then I can add them.
+And I'm going to say that the sum is just
+The element-wise sum.
+And then I can also multiply a matrix by a
+scalar value, C.
+And that's going to be the same as the
+vector.
+It's just going to be each entry in the
+matrix multiplied by that value, C.
+So, for instance, if I wanted to add these
+two matrices together, I have in the top
+left, so the 1 1 sum is just going to be 1
+plus 2, so I get 3.
+The top right entry is going to be 2 plus
+2, 4.
+And, you know, every other one.
+So this would be 0 plus 9 is equal to 9.
+And then if I want to multiply by a scalar
+value C.
+So here I decided to choose 2 as my scalar
+value.
+Then that's going to have the affect of
+just
+doubling every element or every entry in
+the matrix.
+So 1,2 becomes 2,4.
+3,4 becomes 6,8 and then 0,0 stays 0,0.
+So addition is pretty straightforward,
+scaling by a
+[NOISE]
+A real valued scalier is pretty straight
+forward.
+Matrix multiplication we're going to find
+is a little bit more difficult.
+So in order to plot, in order to multiply
+a matrix A by a matrix
+B the number of columns of A has to be
+equal to the number of rows of B.
+So in particular if A is an m by n matrix,
+and B is an n by p
+matrix, then I'm going to have m rows and
+n columns for A.
+And then the number of columns of A has to
+be equal to the number
+of rows, so I have to have n columns in A
+and n rows in B.
+If that's true, then I can make a matrix
+product.
+And the output is going to be the
+dimension of
+the output, so the dimension of the
+product is going
+to ha have a number of rows determined by
+the first.
+Element in the product, and a number of
+columns determined by the second.
+So the product AB is going to have m rows
+because A had
+m rows and it's going to have p columns
+because B had p columns.
+And so one thing you can think of is the
+matrix
+form of the dot product is just the most
+extreme case.
+So, if I have two vectors, in this case,
+of length two, and I take their dot
+product.
+I could also write that as u transpose, so
+that means,
+transpose of a vector just means turn it
+on it's side.
+So, here u is a column vector.
+When I transpose it.
+It becomes a row.
+So I now have a matrix that has one row
+and
+two columns, times a matrix with two rows
+and one column,
+and that's just going to be the, the
+standard dot product.
+And so what was important here was that
+the number of columns,
+so in this case two, And the number of
+rows that had to
+match and then I'm able to make this
+product, so this is, this
+provides a very easy check whenever you're
+doing any sort of matrix computation.
+you know if the dimensions of your
+matrices don't fit in
+your products then you've done something
+wrong.
+And so then the rule to find the actual
+entries in the product AB.
+So we can say this is going to have the
+dot products, so I
+think this is the easiest way, if you, if
+I'm just interested in calculating.
+The product of two matrices.
+This is the easiest way to think about it.
+So, the entries in the matrix AB are the
+dot
+products of the rows of A and the columns
+of B.
+So I'm using this notation.
+So AB is the, a matrix product.
+And then I
+want to take the ith, jth element of that.
+And the way I'm going to get that, so
+that's going to be one single number.
+And remember dot products give me a scaler
+value which is one single number.
+The way I'm going to figure out what that
+number is, is I'm going to take the
+ith row of a, and take the dot product of
+that and the jth column of B.
+And then, once I know what the dimensions
+are,
+I'll know what the ranges of i and j are.
+And then I just have to fill in the matrix
+one by one.
+You can also write this out using a sum
+notation.
+So, here, just instead of writing AB.
+I'm going to call that matrix C, so C is
+the product of the matrix A and B and then
+C sub ij are the entries of that matrix
+and this is basically just
+writing out exactly the same operation
+that this would be doing, so here,
+I'm summing over k, so k is the thing
+that's changing.
+So, this i here is the same for all n of
+the, the pieces of this
+sum.
+And similarly, j is staying the same.
+So that means that the row of the matrix A
+that I'm looking at.
+Is determined just by the position of C in
+the, in the answer, and then I'm going
+across the row and
+down the column to compute the actual
+value for that,for that entry C.
+And so, for example, you can just do a
+quick two by two example, so If
+I want to know where this 5 came from,
+this 5 is in the 1 1 position.
+So that tells me it's the dot product of
+the
+first row of A, and the first column of B.
+So that would be 1 times 2, plus 1 times
+3, which gives me 5.
+Or I can look at Cij, so C
+1 1.
+So this number here would be C, 1, 1.
+Would be a, 1, 1 time b, 1,
+1 plus a, 1, 2 times b, 1, 2, which is
+exactly the, the same thing.
+Ops, sorry.
+B, 2, 1.
+So a 1 1, b 1 1, a 2 1, sorry,
+a 1 2, b 2 1, which gives me the same dot
+product.
+So I find it tricky to keep track of all
+these subscripts,
+as you just witnessed, so I prefer
+thinking of it like this.
+Or, more likely, using a computer to
+calculate these things for me.
+And one thing to keep in mind, so, for two
+by
+two and three by three cases, generally it
+seems pretty straightforward.
+But, really what your aiming at is solving
+much bigger systems of equations.
+So you want to think about how much work
+it's actually going to, going to take.
+So, you know, now again you have a
+computer, so it's not so bad.
+At least it's not you doing the work.
+But imagine if you had to solve a problem
+on a chalk board.
+You know, you would have really
+two considerations.
+One is going to be, how you know, how
+many different operations am I going to
+need to do?
+So, for each cell in this matrix, so this
+one is, if
+it's a two by two matrix, there's going to
+be four cells
+[COUGH]
+I need to do n multiplications, so that's
+just my dot product, and then to add those
+up, I need to do n minus 1 additions.
+And then there's going to be,
+so in this case, it's square, so it's n
+times n,
+so this algorithm, I'm going to have to do
+something that takes.
+2n roughly steps, and I'm going to have to
+do that n times n times, so it's going to
+take 2 times n cubed mathematical
+operations, like simple
+mathematical operations, for me to do this
+matrix product.
+And so the other consideration you might
+want to think is
+how much memory is that going to take.
+So if I was doing this on a chalkboard or
+a piece of paper the chalkboard's nice
+because I can
+actually reuse parts of it by erasing a
+number I
+don't need anymore and writing another
+number in that space.
+It's a little more difficult to do with a
+piece of paper.
+surprisingly if you are programming a
+computer, generally when you
+want to optimize an algorithm, you're
+doing pretty much the same thing.
+You want to use the least amount
+of memory and do the least amount of
+mathematics, so.
+A lot of what was developed initially when
+people were trying to solve
+these problems by hand, is still really
+quite useful for solving them with
+computers.
+Okay, so an inner product is a row times a
+column.
+So this was the, the example I gave of
+a dot product being a simple example of
+matrix multiplication.
+So, if I have a row times a column then
+there's only going to be, so that's
+one row with several columns times one
+column with several rows.
+So, the answer is going to be a scaler.
+I can actually move those and do, or do
+that in the opposite order.
+So now I can do a single col, so a matrix
+that's a single column times a matrix
+that's a single row.
+And that gives me something called an
+outer product
+and this outer product is now going to be
+going to be a matrix so I have a three by
+one matrix times a one by three matrix.
+And so it's that three on the outside and,
+the,
+so at the beginning, and the three at the
+end that give me the dimension of the
+answer.
+And then the ones that have to match up on
+the inside so I can actually do the matrix
+multiplication.
+So, inner product gives me a scalar value.
+An outer product gives me a matrix like
+this.
+And some useful facts about matrix
+multiplication so each column
+of AB is a linear combination of the
+columns of A.
+So if I look at A times the column of
+B this is exactly the same thing I was
+doing.
+When I was multiplying a matrix times a
+vector, and I said that I could
+interpret that using my column picture as
+a linear combination of the columns of A.
+And so
+that gives me each column of the product
+is going
+to be a linear combination of the columns
+of A.
+And then I can get a similar result So the
+rows of the product, so the row i of
+AB, the rows of the product are going to
+be linear combinations of the rows of B.
+So here, this is, this is sort of how I
+want to think, think about it.
+I take one row of i and that's, or sorry,
+one row of A.
+And that's going to give me the
+coefficients for the rows of B.
+They give me row i of AB.
+And so then laws
+for matrix operations.
+We get a commutative law.
+So for addition we have A plus B is equal
+to B plus A.
+And you can show that with just the same
+arguments
+that I did for vectors because it's
+defined entry wise.
+I get a distributive law, so if I take the
+sum
+of A plus B and scale that by scaler value
+c.
+Then that's equal to A scaled by that
+constant and plus B
+scaled by the same constant.
+I get an associative law for addition, so
+it doesn't matter if I want to add A+B+C,
+I can add B+C first or I can add A+B
+first, I'm going to get the same answer.
+For multiplication it's a little bit
+trickier.
+So I get left distributive law so if I
+have C times
+A plus B that's equal to C times A plus C
+times B.
+I get a right distributive law So A plus B
+times C
+is equal to AC plus BC and the important
+thing ops the
+important thing to keep, keep track of
+here if is C comes
+first, it has to always come first when
+I'm doing this distributive operation.
+If the A and B come first.
+Then the A and B have to
+come first when I'm doing this
+distributive operation.
+And then I also get an associative law, so
+if I want to calculate the product of
+three matrices, A plus, or, A time B times
+C, they have to be the right dimensions.
+So The number of columns of A has to equal
+the number of rows of B.
+And the number of rows of B has to equal
+the number of.
+Sorry.
+The number of columns of B has to equal
+the number of rows of C.
+I think I got that right.
+and, but if I can do those operations then
+it doesn't matter what order I do them in.
+So, I can do The product BC first and then
+multiply that by
+A or I can do the product AB first and
+multiply that by C.
+So one law we don't get is a commutative
+law for matrix multiplication
+so almost all the time A times B is not
+even equal to B times A.
+And it's even worse than that.
+So, if p is not equal to m, so remember A
+is an m by n matrix, and
+B is an n by p matrix, if p is not equal
+to m, then I can't
+even do this operation, because the
+dimensions
+won't line up when I switch the order.
+If both A and B are m by n matrices,
+sorry,
+if A is m by n and B is n by m, then
+if I do the product AB I'm going to end up
+using these outer dimensions.
+When I do the product BA, now the outer
+dimensions are going to be n and n.
+So AB is an m by m matrix.
+BA is an n by n matrix.
+So these things, they can't be equal
+to one another if they have different
+dimensions.
+So, for equality, they have to be the same
+dimension and then each entry has to be
+equal.
+And then when we have square matrices, so
+if we have n by n matrices, at
+least I can do the products and they'll be
+the right size.
+But suppose I let A equal 0,0,1,0
+and B equal 0,1,0,0.
+So if I do this product AB ops- product
+AB that gives me 0 0 0 1.
+But if I do the product BA, I get
+1 0 0 1.
+So even when I can do it and they're the
+right size, you're still not
+guaranteed to get the same answer if I do
+the multiplication in the opposite order.
+So one exception to this rule,
+so this is a constant c, a scalar value.
+And this
+is the identity matrix, yeah.
+It's kind of hard to see with this font.
+So, one matrix that always Commutes is the
+identity matrix.
+And so, if it's scaled by a constant
+value, that will also commute.
+So, if you have a identity matrix times
+something, and they're square,
+then you can switch the order of that
+multiplication.
+And
+then one more thing that I want to
+mention, just because
+I don't know really where else it fits in,
+matrix powers.
+So a power of a matrix if I tell, talk
+about A squared, then A needs to have the
+right dimension.
+So basically it needs to be a square
+matrix.
+if I have A squared times say A cubed
+that's equal
+to A to the fifth power so these behave
+just like numbers would and if
+I have say A squared and that quantity
+cubed that's equal to A to the sixth.
+And then if I talk about A to the 0,
+that's going to be equal to 1.
+And 1, when I'm talking about matrices is
+the identity matrix.
+>> Did you say that A had to be a square
+matrix for that to work?
+Because I, I was writing down.
+>> Well because you can only multiply A
+by A, if it has the
+same number of rows and columns, so that
+means it has to be square.
+Okay.
+[COUGH]
+Then, I can also do something called
+putting a matrix into block form.
+So here I have a matrix with four rows and
+six columns.
+And then I'm going to break it into six
+blocks, and
+each block is going to be a two by two
+identity matrix.
+So I could also write A like this, so
+these
+are just six identity matrices, they're
+all two by two.
+And then if I make these blocks the
+correct size, I can do.
+Block multiplication following the same
+rules
+that I would do for matrix multiplication.
+So if I have a matrix, A, that I can split
+into four blocks like this,
+then when I want to figure out what the
+product of this matrix is, I can do
+the, the product block-wise.
+So I just was Just pretend like these
+are values.
+It would be A11 times B11 plus A12 times
+B21 which is exactly what I end up with
+here.
+So, it's the same formula for matrices,
+except now I'm talking about blocks
+of matrices, or sorry, blocks, which are
+kind of sub matrices of a matrix.
+And the only caveat here is you have to
+define
+your blocks so that all of these
+operations are permitted.
+And the reason I want to do this is it
+lets me do one last
+clever thing, which I can also now define
+matrix multiplication in
+terms of columns, so I can get a sort of
+column space.
+So my first definition was rows of A times
+columns of B, if I make my blocks the
+columns of A and the rows of B and then I
+use this rule here, what I end up with
+[INAUDIBLE]
+Is a column of A, times a row of B.
+But if I have
+a column times a row, that was an outer
+product, so that's actually a matrix.
+And it turns out that, what I end up with,
+are n matrices.
+So here, ai, bi, is an outer product, so
+that's a matrix.
+I have n matrices like this,
+one from each row-column, or, column-row
+combination here.
+And then I add up those n matrices, and
+that will also give me this product, AB.
+

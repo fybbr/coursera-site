@@ -1,0 +1,425 @@
+So, now we'll look at higher order partial
+derivatives.
+So, remember for a function of a single
+variable I could say d squared by dx
+squared of f of x when I wanted to talk
+about the second derivative of f of x.
+And what I meant, what I mean by this
+notation is take the
+derivative of f of x with respect to x one
+time, the thing
+in the square brackets here, that's going
+to be another function of x
+and then I'm going to take the derivative
+of that, again with respect to x.
+And then I can also use the notation.
+So, the derivative of x with respect to x
+I can call, sorry.
+Yeah.
+Derivative of x with respect to x.
+So, I'll call that f prime.
+And if I take the derivative of that
+again, we use the notation f double prime.
+So for a function of several variables,
+I'm going to do
+pretty much the same thing, except just
+with partial derivatives.
+So for instance, if I wanted to take the
+derivative with respect to x so the
+second derivative with respect to x,
+second partial
+derivative with respect to x of a
+function.
+E to the xy.
+So, maybe highlight that part at least.
+What I mean is take the derivative take
+the partial
+with respect to x of e to the xy.
+That's going to give me another function
+of x and y.
+And then take the partial derivative of
+that function with respect to x again.
+And so if I just go ahead and evaluate
+that, I'm going to end up with y
+times e to the xy, by taking the
+derivative of this with respect to x once.
+And then another y will pop out when I
+take the second derivative,
+so I end up with y squared e to the xy So
+there's a bad
+example of how not to do the chain rule,
+by just doing it all explicitly.
+Hm-mmm.
+And then similarly if I want to take the
+second partial,
+second partial derivative of e to the xy
+with respect to y.
+I'm going to do exactly the same thing,
+except I'm just
+going to have partial y's in the
+denominator And in this
+case, this is such a simple function I
+could just
+relabel the x and y, so we can kind of
+skip
+the computation and just see that the
+output is going to
+be, in this case, x squared times e to the
+xy.
+But for functions of several variables
+there's now also
+the The possibility of something called a
+mixed partial derivative.
+So I'm going to keep the same idea as I,
+as I had in middle
+section of the slide where I take the
+derivative with respect say the partial
+derivative of my function with respect to
+one of the variables and repeat except
+when I repeat I can take the partial
+derivative With respect to a different
+one of the variables.
+So in this case, I'm going to take the
+partial derivative,
+first with respect to y, and then with
+respect to x.
+So you can kind of think of this thing
+here as an operator.
+And so, it's going to do something to this
+function.
+And the part that's closest to the
+function that's going to happen first.
+[INAUDIBLE]
+.
+So if I were to write this out using
+slightly longer form.
+When I say partial squared, partial x,
+partial y.
+I mean, first take the partial derivative
+with respect to y of my function.
+That's going to give me another function
+of x and y.
+And I'm going to take the partial
+derivative
+with respect to x of that function.
+So, here, I've just evaluated the first
+partial with respect to y.
+So we got the same thing we got up here.
+But now, this time, it's going to be
+slightly more complicated.
+Because I'm going to take the derivative
+of this now with respect to x.
+So now this is a product of two functions
+of x.
+So.
+X is the first function, and then e to the
+x y
+is my second function, so I have to use
+the product rule.
+And so again just to make this all fit
+on one slide, I've skipped, probably some
+essential work.
+But I hope it's, I hope it's correct.
+So I have the derivative of the first
+function times the second function.
+So the derivative of x is going to just be
+one.
+So the first term in the product rule is
+going to to be e to the xy.
+And plus the first funtion times the
+derivative of the second.
+So I'm going to take X times the partial
+with respect
+to x, of e to the x y.
+We already worked that out above, too.
+So I have e to the x y plus x y e to the x
+y.
+Oops, going to write down here.
+Okay, my arrow's not working anymore.
+There it goes.
+And somehow this is going to probably
+bring up the question what
+is the relationship between, so here I'm
+doing the mixed partial.
+Taking the partial derivative with respect
+to y
+and then the partial derivative with
+respect to x.
+X.
+And here it's just the other way around.
+First, with respect to x and then with
+respect to y.
+So we already saw that if I did it y first
+then x, this is the function that I got.
+[INAUDIBLE]
+.
+And
+now let's look at what happens when I do
+it with respect to x first.
+And then with respect to y.
+So first, I'm going to take the partial
+derivative
+with respect to x of e to the xy.
+And that's just going to give me y times e
+to the xy.
+And now again I have to use the product
+rule to take the derivative of this.
+So it's, the derivative of the first
+function,
+so the derivative of y with respect to y,
+is just one, times the second function, so
+that's where this e to the xy comes from.
+Plus, the first function, so that's my y
+here.
+Times the derivative of the second
+function.
+And we've already worked this out, this
+was just x times e to the xy.
+So I end up with e to the xy plus xye to
+the xy, which is what
+we got for the first one.
+And so when I have this.
+Sort of, very symmetric with respect to
+differentiation function.
+I find that the mixed partials are equal.
+So, it doesn't matter if I do dx dy, or dy
+dx, I get the same, same result.
+So, but this function that I chose, it was
+easy to work with in terms of taking its
+derivatives.
+But, because of this symmetry, maybe we
+should try it with a, a little
+bit more complicated function to see what
+happens.
+So I think I chose this function from the,
+from the text book.
+it was not fun to take the derivatives of
+this.
+So to get the second partial with respect
+to y and then respect to
+x, first I'll start out by taking the
+derivative of this with respect to y.
+So let's see.
+So the first thing I'm going to do is make
+my
+u substitution, just to avoid making
+mistakes with the chain rule.
+Usually what, what gets me is the minus
+sign up here, because
+that's, if there's a minus sign here and a
+minus sign here,
+for some reason I tend to have about a 50%
+chance of missing one of those.
+We're getting it wrong I suppose.
+[SOUND]
+So,
+I also did the partial derivative with
+respect to y
+of the first term here just because it was
+easy.
+So by the power rule the y is just y to
+the zero.
+So I have x squared.
+Plus the partial derivative with respect
+to y of e to the u.
+So that begs for the chain rule.
+And so that's just going to be the
+derivative of e
+to the u with respect to u, which luckily
+is ease,
+e to the u, times the partial derivative
+of u with respect to y, which
+I'm going to get just exactly like the
+first
+example by taking the derivative of my
+substitution.
+So let's see what I end up with here.
+So I have x squared minus 3 xy squared e
+to the minus xy cubed.
+And in fact since we've already taken the
+derivative of this
+a few slides ago, I didn't have to do this
+bit.
+I could've just used the derivative I'd
+already computed.
+And so now I want to take the derivative
+of this guy, the partial derivative with
+respect to x.
+So again I'll do the, the first term,
+just because the derivative of x squared
+is easy.
+By the power rule I just get two x.
+And then this minus is going to appear
+here.
+And then I'll take the derivative of this
+term by treating it as two functions.
+3 x y squared, and e to the minus x y
+cubed.
+And so I'm taking the derivative now with
+respect to x.
+So, the derivative of the first term,
+that's easy.
+That just got x to the 1 so the x is going
+to go away so I end up with 3y squared
+times the second function.
+And plus the first function so there's my
+3xy squared times the derivative of the
+second function
+[SOUND]
+And so, just, plugging all of this in and
+distributing this minus sign,
+gives me this, and now all I have to do is
+plug in, what
+u is, and what partial derivative of u
+with respect to x is, which I got just
+Again, by taking the derivative with
+respect to x this time.
+And so, I end up with this somewhat
+unhappy looking formula here.
+But, at least it's something that doesn't
+look
+like it's going to have a lot of symmetry.
+Like if I changed the x and y, they
+shouldn't be the same.
+And so now we'll repeat the same
+calculation,
+but here I'm going to use x first.
+So this time the last time I did y first,
+and now this time I'll do x first.
+So again the first term's going to be
+pretty easy to do, so we'll just do that.
+Second term I'm going to make my u
+substitution,
+so I can see myself using the chain rule.
+So I'll let u equal minus x y cubed,
+again.
+So the first part, I'm treating y as a
+constant, and then
+taking the derivative of x squared, so the
+power rule just says
+that's going to be 2x, and then times y,
+and then I need
+to take the derivative with respect to x
+of e to the u.
+So by the chain rule, that's going to be e
+to
+the u, times the partial derivative of u
+with respect to x.
+Which again, I get just by taking the
+derivative of my substitution.
+And
+now I need to take the partial derivative
+of this with respect to y.
+So again the first term is going to be
+easy, that's
+just y to the one, so that's going to be
+two x.
+And the second term I'm going to need to
+use the product rule,
+so the functions will be y cubed and e to
+the u.
+So, the product rule says it's derivative
+of the first function,
+so this is the derivative of Y cubed by
+the power rule.
+Times the second function, plus the first
+function times the derivative of the
+second function.
+And so we've done this several times
+already, so
+just skip this line and just plug in the
+results.
+Oops, two times.
+And so we get another Sort of unhappy
+looking formula.
+But I think on the next slide I put them
+together, and those were actually the same
+formulas both ways.
+So that sort of gives us some hope that,
+probably these
+things are equal, regardless of what order
+you take the derivative.
+And.
+If you take a more serious math class, you
+can actually prove this.
+I'm just going to give the, the statement
+of
+the theorem.
+So, if all of the partial derivatives of
+order k.
+So, order k means how many times I've
+taken a derivative.
+So, if if I take the second
+partial derivative, that's a derivative of
+order two.
+Of the function f of x exist and are
+continuous.
+Then the order in which the partial
+derivatives of f of x of order at most k.
+So, as long as I don't try to go beyond k.
+Then the order that I do those derivatives
+doesn't matter.
+I'm going to get the same mixed partial.
+And so, just like I made an array to hold,
+the first
+derivatives, I need to make an array now
+to hold, the second derivatives.
+And this array is going to be called the
+Hessian
+of f of x, and we can use the notation.
+D squared so that two just
+means essentially just take the derivative
+twice.
+But in this case because we're talking
+about
+functions, you know, so the first one has
+n inputs, then I end up with the gradient
+which
+has n outputs, so that's a, a function
+that has n
+When I evaluate the gradient at one point
+I get n results.
+And then I'm going to take the derivative
+of that again so
+I'm going to get an n by n array of mixed
+partial derivatives.
+And so down the, the diagonal of the
+array, so the diagonal for
+some reason, when people say that, they
+mean top left to bottom right.
+this going up bottom left to top right.
+It's also a diagonal but nobody means that
+when they say diagonal.
+So the diagonal elements are just going to
+be taking the derivative,
+the partial derivative of the function
+with respect to the same variable twice.
+So In that case, I can kind of compact
+this notation.
+This means partial x one, partial x one.
+But it's the same thing, so I just write
+it as squared.
+And then in the off-diagonal elements
+[COUGH],
+the, the first row, I take the derivative
+with respect to x one.
+The partial derivative with respect to x
+one first.
+So the x one is going on the right side,
+here.
+And then I take the partial derivative
+with respect to x whatever column I'm in.
+So if I'm in the second column, I take the
+partial derivative with respect to x two.
+If it's the nth column, I take the partial
+derivative with respect to x n.
+And,
+remember, because of the theorem that I
+had on
+the last slide, this function here and
+this function here,
+so this is x1x2 and this is x2x1, so
+if this function is well behaved, then
+these two terms will be
+equal.
+

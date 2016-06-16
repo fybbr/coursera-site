@@ -1,0 +1,88 @@
+In the introduction, we saw that it's
+possible to think of the
+dynamics of the game as a state grpah,
+like the one shown here.
+The game is characterized by a finitie
+number of states and also
+a finite number of players and there's a
+finite number of actions for each player.
+At each point in time the graph is in one
+of the possible states.
+The players choose from their possible
+actions and
+as the players perform their chosen
+actions
+the game changes from one state to
+another.
+In the vast majority of games, states and
+actions, however, are not monolithic.
+They can be defined in terms of more
+fundamental entities.
+In chess, for example, states can be
+thought of
+in terms of locations of individual pieces
+on the chessboard.
+For example, the state shown on the left
+here can be thought of in terms of
+the locations of the white king, the white
+queen, the black king, and the black
+queen.
+Also, in the vast majority of games, the
+effects of individual actions are local.
+As actions are performed, some of these
+conditions become true and others become
+false.
+However the truth values of the majority
+of these conditions remain the same.
+The ideas of state decomposition and
+limited influence of actions suggest
+the conceptualization of games in terms of
+individual propositions and actions
+rather than states, together with the
+representation of the effects of
+these actions on these propositions rather
+than on the entire states.
+Results is an alternative representation
+of dynamics called a Propositional Net.
+Unlike a state
+machine, in which the nodes represent
+states,
+in a Propositional Net, the nodes denote
+propositions and actions together with
+connectives that
+capture their behavior, as we shall see.
+One of the benefits of formalizing games'
+propositional nets is compactness.
+A set of end propositions corresponds to a
+set of 2 to the n
+possible states, all of the different
+combinations
+of the truth values for the n
+propositions.
+Thus it's often possible to characterize
+the dynamics of games
+with graphs that are much smaller than the
+corresponding state machines.
+For example, a prop net with just three
+propositions corresponds
+to a state machine with eight possible
+states.
+The second benefit of propositional nets
+is ease of analysis.
+It's sometimes possible to use a prop net
+to discover independence, or game factors,
+dead states, and other features that can
+dramatically reduce the cost of game tree
+search.
+In the next segment, we formalize
+propositional nets.
+And in the section thereafter, we show how
+to describe games in this way.
+And in the segment after that, we see how
+to play
+games using game descriptions encoded as
+propositional nets rather than in GDL.
+And we then see how to use propositional
+nets in restructuring games and
+discovering game-specific heuristics.
+

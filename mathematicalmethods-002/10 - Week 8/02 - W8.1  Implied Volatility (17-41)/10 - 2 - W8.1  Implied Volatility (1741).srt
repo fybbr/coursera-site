@@ -1,0 +1,1247 @@
+1
+00:00:01,420 --> 00:00:04,270
+So, we're finally arriving at week number
+eight
+
+2
+00:00:05,430 --> 00:00:07,960
+where I'm going to talk about numerical
+methods.
+
+3
+00:00:07,960 --> 00:00:11,730
+So I think it's you know, when we looked
+at the Lagrange
+
+4
+00:00:11,730 --> 00:00:15,480
+multipliers, we started to arrive at
+things where they were getting just.
+
+5
+00:00:15,480 --> 00:00:18,250
+You could still solve them in special
+cases.
+
+6
+00:00:18,250 --> 00:00:22,780
+for instance, when we looked at the
+minimum, minimum variance portfolio.
+
+7
+00:00:22,780 --> 00:00:26,570
+It was still possible to, where we ended
+up like the linear system,
+
+8
+00:00:26,570 --> 00:00:28,790
+we need to dissolve to do the Lagrange
+multipliers.
+
+9
+00:00:31,230 --> 00:00:32,700
+here to find the critical point for the
+
+10
+00:00:32,700 --> 00:00:36,155
+Lagrange multiplier, the critical point
+for the Lagrangian.
+
+11
+00:00:36,155 --> 00:00:37,850
+[COUGH]
+
+12
+00:00:37,850 --> 00:00:42,870
+But pretty much anything beyond that, any
+anything that is not sort of
+
+13
+00:00:42,870 --> 00:00:47,570
+contrived to be simple is going to be far
+too difficult to solve.
+
+14
+00:00:47,570 --> 00:00:50,200
+And so that's why we have something called
+the numerical methods.
+
+15
+00:00:50,200 --> 00:00:54,720
+Which I sort of think of as just the
+logical extension
+
+16
+00:00:54,720 --> 00:00:58,430
+of the guess and check method that I
+learned in elementary school.
+
+17
+00:00:58,430 --> 00:01:01,700
+So you basically are just trying to make a
+guess.
+
+18
+00:01:01,700 --> 00:01:02,940
+You'll measure how
+
+19
+00:01:02,940 --> 00:01:05,830
+wrong you are, and that will hopefully
+suggest
+
+20
+00:01:05,830 --> 00:01:08,000
+a way for you to improve your guess.
+
+21
+00:01:08,000 --> 00:01:10,160
+And you want to do that in a way where you
+
+22
+00:01:10,160 --> 00:01:13,270
+find the answer you're looking for with a
+minimum amount of work.
+
+23
+00:01:15,590 --> 00:01:17,360
+So the motivation for this, I'm, I'm
+
+24
+00:01:17,360 --> 00:01:20,760
+going to look at a problem called implied
+volatility.
+
+25
+00:01:20,760 --> 00:01:23,490
+And then I'll talk about two methods for
+solving that.
+
+26
+00:01:23,490 --> 00:01:26,060
+So one is bisection method, which is just
+a
+
+27
+00:01:26,060 --> 00:01:30,750
+very easy approach to solving this implied
+volatility problem.
+
+28
+00:01:30,750 --> 00:01:36,090
+Then Newton's method, which is not much
+more difficult, but theoretically
+
+29
+00:01:36,090 --> 00:01:40,950
+it's a bit more, it, it has some
+theoretical, some nice theoretical
+
+30
+00:01:40,950 --> 00:01:43,290
+results we can, we can look at.
+
+31
+00:01:43,290 --> 00:01:46,430
+Now, also the nice thing about Newton's
+method
+
+32
+00:01:46,430 --> 00:01:49,409
+is it can be extended for N dimensional
+problems.
+
+33
+00:01:51,210 --> 00:01:54,570
+And then finally, and I don't know if
+we'll have time to get to this today.
+
+34
+00:01:56,200 --> 00:02:01,110
+we'll look at solving a problem with
+Lagrange method, so it's actually
+
+35
+00:02:01,110 --> 00:02:05,990
+one of the same problems I looked at in
+the Lagrange slides.
+
+36
+00:02:05,990 --> 00:02:09,960
+But instead of just trying to do algebra
+once I need to find
+
+37
+00:02:09,960 --> 00:02:13,250
+the critical point, I'll use Newton's
+method to try and find the critical point.
+
+38
+00:02:15,490 --> 00:02:18,130
+So we get started by talking about implied
+volatility.
+
+39
+00:02:21,938 --> 00:02:25,820
+So if we remember from the first half of
+the course, we were looking at the,
+
+40
+00:02:25,820 --> 00:02:28,090
+the Black-Scholes formula for a while, and
+mostly
+
+41
+00:02:28,090 --> 00:02:30,259
+when we were looking at computing partial
+derivatives.
+
+42
+00:02:31,670 --> 00:02:33,420
+And so, this is just to remind you what it
+
+43
+00:02:33,420 --> 00:02:36,570
+is, and hopefully I haven't made any, any
+typos in it.
+
+44
+00:02:39,390 --> 00:02:42,170
+And if you look, well, I think I've got
+all of the,
+
+45
+00:02:44,730 --> 00:02:50,240
+so the maturity, so the, the maturity date
+of an option, this is
+
+46
+00:02:50,240 --> 00:02:54,380
+a, a contract that I go and buy and sell
+in a market.
+
+47
+00:02:54,380 --> 00:02:57,730
+And when it's written, it's going to have
+a maturity date.
+
+48
+00:02:57,730 --> 00:03:00,210
+So, it's good for 3 months or it's good
+for 6 months.
+
+49
+00:03:00,210 --> 00:03:00,940
+Something like that.
+
+50
+00:03:00,940 --> 00:03:04,510
+It has something called the strike price,
+which is, this
+
+51
+00:03:04,510 --> 00:03:07,220
+is also something going to be written on
+the contract.
+
+52
+00:03:07,220 --> 00:03:10,030
+So basically, once this contract comes
+
+53
+00:03:10,030 --> 00:03:17,150
+into existence, the T Oops, and the K are
+fixed, so they're never going to change.
+
+54
+00:03:20,720 --> 00:03:23,330
+And then there's a secondary market for
+these contracts.
+
+55
+00:03:23,330 --> 00:03:28,150
+So once I have the contract, if it's
+between the time that it was written
+
+56
+00:03:28,150 --> 00:03:33,050
+and the maturity, I can go to the
+secondary market and I can sell my option.
+
+57
+00:03:33,050 --> 00:03:37,410
+So I don't actually have to wait for the
+condition in the auction to come to pass.
+
+58
+00:03:37,410 --> 00:03:41,210
+I can go and find somebody else who's
+interested in having that
+
+59
+00:03:41,210 --> 00:03:45,140
+same type of protection and I can sell my
+option to him.
+
+60
+00:03:45,140 --> 00:03:46,380
+And so if I
+
+61
+00:03:46,380 --> 00:03:53,780
+sell the option, at the time that I sell
+the option the price that I sell it for
+
+62
+00:03:53,780 --> 00:03:55,670
+is going to be known, because you know, I
+
+63
+00:03:55,670 --> 00:03:57,770
+give him the contract, he gives me some
+money.
+
+64
+00:03:57,770 --> 00:03:59,900
+So I can look at the amount of money he
+gave me
+
+65
+00:03:59,900 --> 00:04:02,840
+and, and I know exactly what the price of
+that option is.
+
+66
+00:04:03,970 --> 00:04:08,660
+The option is based on some underlying
+asset that has a,
+
+67
+00:04:08,660 --> 00:04:11,680
+a price S, and so I can also look in the
+market
+
+68
+00:04:11,680 --> 00:04:17,160
+at the same time that I sold my option for
+this price C.
+
+69
+00:04:18,350 --> 00:04:20,240
+I can look at the most recent trade for
+
+70
+00:04:20,240 --> 00:04:22,870
+that underlying assett and see what the
+asset price is.
+
+71
+00:04:22,870 --> 00:04:26,480
+So, I can also assume that when these
+transactions take
+
+72
+00:04:26,480 --> 00:04:29,280
+place, the C and the S are going to be
+known.
+
+73
+00:04:33,440 --> 00:04:35,760
+And then I'm also going to assume that the
+
+74
+00:04:35,760 --> 00:04:39,600
+risk free rate is constant, and that the
+dividend rate.
+
+75
+00:04:39,600 --> 00:04:42,980
+So, because options exist on kind of a
+short time scale
+
+76
+00:04:42,980 --> 00:04:47,500
+most of the time, you know either 3 months
+or 6 months.
+
+77
+00:04:47,500 --> 00:04:49,900
+You generally know what the, the company's
+already
+
+78
+00:04:49,900 --> 00:04:51,930
+announced when it's going to be paying
+dividends.
+
+79
+00:04:51,930 --> 00:04:53,290
+So you know if you're going to get
+
+80
+00:04:53,290 --> 00:04:56,030
+dividends during the life of the option or
+not.
+
+81
+00:04:56,030 --> 00:04:59,110
+And the risk free risk, well, it's
+definitely changing.
+
+82
+00:04:59,110 --> 00:05:01,230
+It changes on a very slow time scale.
+
+83
+00:05:01,230 --> 00:05:06,130
+So on the, during the life of the option,
+you can assume that that's fixed.
+
+84
+00:05:06,130 --> 00:05:12,641
+And so it turns that if you look in this
+formula, so it depends on this d1 and d2
+
+85
+00:05:12,641 --> 00:05:18,700
+as well, you know everything except this
+variable sigma.
+
+86
+00:05:23,860 --> 00:05:27,160
+So the, the only quantity that's not known
+is the volatility, and
+
+87
+00:05:27,160 --> 00:05:30,110
+this is the one thing that it's actually
+quite difficult to know,
+
+88
+00:05:30,110 --> 00:05:32,970
+that there's not any one thing in the
+market where you can
+
+89
+00:05:32,970 --> 00:05:36,585
+just say oh, this is, this is definitely
+the rate of sigma.
+
+90
+00:05:36,585 --> 00:05:39,850
+So going in the, in the forward sense when
+you want to use sigma as
+
+91
+00:05:39,850 --> 00:05:44,050
+an input to this formula, it's something
+you have to actually estimate from data.
+
+92
+00:05:44,050 --> 00:05:49,040
+So you have to look at, it's, it's trying
+to describe the, how how
+
+93
+00:05:49,040 --> 00:05:54,680
+wide the fluctuations are of this
+underlying asset price S.
+
+94
+00:05:54,680 --> 00:05:57,595
+And so it's, you can estimate it, but you
+can never actually know it.
+
+95
+00:05:57,595 --> 00:06:02,640
+Whereas if you go to the market you know,
+on a particular day, I can see what was
+
+96
+00:06:02,640 --> 00:06:05,630
+you know, what when that asset changed
+hands, what
+
+97
+00:06:05,630 --> 00:06:09,030
+were those prices so I can actually
+observe S.
+
+98
+00:06:09,030 --> 00:06:11,070
+Sigma, I'm not able to do that in any way.
+
+99
+00:06:15,520 --> 00:06:17,240
+So the implied volatility problem.
+
+100
+00:06:17,240 --> 00:06:23,250
+If I know every variable and the answer to
+the Black-Scholes pricing formula except
+
+101
+00:06:23,250 --> 00:06:28,950
+sigma, then what I want to do is just sort
+of solve this equation backwards.
+
+102
+00:06:28,950 --> 00:06:32,320
+So, essentially, if I could, I'd like to
+isolate sigma and
+
+103
+00:06:32,320 --> 00:06:36,440
+have a new functions that's sigma as a
+function of everything else.
+
+104
+00:06:36,440 --> 00:06:41,010
+But it turns out, if, if we look at this
+guy, it's not exactly easy to do that.
+
+105
+00:06:41,010 --> 00:06:44,010
+So extra credit if anybody can come up
+with the formula.
+
+106
+00:06:49,270 --> 00:06:51,230
+And so what I want to do, as this is
+
+107
+00:06:51,230 --> 00:06:54,530
+where I was getting at this trial and
+error thing.
+
+108
+00:06:54,530 --> 00:06:57,425
+I want to just plug in values of sigma
+into my
+
+109
+00:06:57,425 --> 00:07:01,410
+Black-Scholes formula, and I know what the
+call price should be.
+
+110
+00:07:01,410 --> 00:07:03,260
+And for every different value of sigma
+that
+
+111
+00:07:03,260 --> 00:07:06,040
+I plug in, I'm going to get some price.
+
+112
+00:07:06,040 --> 00:07:09,690
+And eventually, if I just keep guessing
+long enough, I'm going to get a value of
+
+113
+00:07:09,690 --> 00:07:13,820
+sigma that gets me very close to the price
+that I know it should, should be.
+
+114
+00:07:13,820 --> 00:07:14,150
+So I,
+
+115
+00:07:14,150 --> 00:07:17,770
+if I can get close to that market price C,
+then that's
+
+116
+00:07:17,770 --> 00:07:22,040
+probably, well, I mean, that's the, the
+value of sigma that would
+
+117
+00:07:22,040 --> 00:07:25,858
+have been in the market.
+And so even though I can't observe sigma,
+
+118
+00:07:25,858 --> 00:07:30,560
+all the other things that I can observe
+imply a certain level for sigma.
+
+119
+00:07:30,560 --> 00:07:39,200
+They imply a certain amount sigma, and so
+that's going to be called the
+
+120
+00:07:39,200 --> 00:07:41,992
+implied volatility.
+
+121
+00:07:41,992 --> 00:07:47,262
+So what I want to look at is, is if, if S,
+K, Q, R, T and little t.
+
+122
+00:07:47,262 --> 00:07:50,034
+So this is basically all of the inputs to
+the
+
+123
+00:07:50,034 --> 00:07:54,885
+Black-Scholes pricing formula for our
+European call option are known and
+
+124
+00:07:54,885 --> 00:07:57,734
+I also know what the price of that option
+is,
+
+125
+00:07:57,734 --> 00:08:00,799
+then I can think of this as a function of
+sigma.
+
+126
+00:08:00,799 --> 00:08:04,735
+So there's only one unknown in this
+highlighted
+
+127
+00:08:04,735 --> 00:08:09,816
+side of the equation and that's sigma.
+And the way I've set
+
+128
+00:08:09,816 --> 00:08:14,713
+this up, I've, I've, put the theoretical
+price for European call
+
+129
+00:08:14,713 --> 00:08:19,981
+option minus the price for that option
+that I've observed in the market.
+
+130
+00:08:19,981 --> 00:08:25,129
+So when I have the correct value of sigma,
+this
+
+131
+00:08:25,129 --> 00:08:30,014
+whole thing f of sigma should be equal to
+0.
+
+132
+00:08:30,014 --> 00:08:34,118
+So finding the implied volatility really
+just boils down to solving
+
+133
+00:08:34,118 --> 00:08:38,392
+this thing, it, it's called a non-linear
+optimization problem.
+
+134
+00:08:38,392 --> 00:08:46,549
+And I just want to find the value of sigma
+so that f of sigma is equal to zero.
+
+135
+00:08:46,549 --> 00:08:50,749
+And this is something like I said you're
+not going to be able to just
+
+136
+00:08:50,749 --> 00:08:55,024
+isolate sigma and have a nice f of sigma
+function you can just plug in a
+
+137
+00:08:55,024 --> 00:08:58,538
+zero and find out what should it have
+been.
+
+138
+00:08:58,538 --> 00:09:02,350
+so you have to solve this numerically.
+
+139
+00:09:02,350 --> 00:09:06,292
+And so when I say, solve numerically,
+there, there are lots of
+
+140
+00:09:06,292 --> 00:09:10,864
+different prices, lots of different ways I
+can try and do this.
+
+141
+00:09:10,864 --> 00:09:15,679
+So, the, the simplest one would just be to
+make a plot
+
+142
+00:09:15,679 --> 00:09:19,961
+of f of sigma and see where it crosses the
+x axis.
+
+143
+00:09:19,961 --> 00:09:23,174
+And so, where it crosses the x axis is
+where f of sigma is going
+
+144
+00:09:23,174 --> 00:09:27,171
+to be equal to 0, and that's what I'm
+trying to find in the, the value.
+
+145
+00:09:27,171 --> 00:09:30,755
+So, the x axis in this case is going to be
+the sigma axis.
+
+146
+00:09:30,755 --> 00:09:36,663
+The value of sigma where it crosses the
+axis is this f of sigma equals 0.
+
+147
+00:09:38,900 --> 00:09:43,785
+And so, to do that in R, the first thing I
+need is a function to compute the
+
+148
+00:09:43,785 --> 00:09:48,940
+Black-Scholes call price.
+So, this is just our implementation of
+
+149
+00:09:48,940 --> 00:09:54,840
+what was on the slide, a couple of slides
+ago, so I've made an expression for d1.
+
+150
+00:09:57,760 --> 00:10:02,990
+Then the expression for d2, and then
+finally the expression
+
+151
+00:10:02,990 --> 00:10:08,060
+for the Black-Scholes call price.
+
+152
+00:10:08,060 --> 00:10:12,800
+And I, I don't know if you guys are
+getting used to looking at r
+
+153
+00:10:12,800 --> 00:10:17,400
+yet, but basically what I'm doing here is
+I've I'm taking this expression,
+
+154
+00:10:19,250 --> 00:10:24,020
+I'm assigning it to a piece of memory, a
+variable called d1.
+
+155
+00:10:24,020 --> 00:10:27,420
+Then I'm taking this expression, assigning
+it to
+
+156
+00:10:27,420 --> 00:10:31,290
+a piece of memory, a variable called d2.
+
+157
+00:10:31,290 --> 00:10:35,440
+But then in R, if the last expression in a
+function.
+
+158
+00:10:35,440 --> 00:10:38,330
+So, because this has this keyword function
+here, this thing
+
+159
+00:10:38,330 --> 00:10:43,780
+is a function, the last expression in a
+function gets returned.
+
+160
+00:10:44,970 --> 00:10:49,140
+So, when I evaluate this, I don't have to,
+you can if you want to
+
+161
+00:10:49,140 --> 00:10:53,650
+say you know, assign this to say
+Black-Scholes call price and
+
+162
+00:10:53,650 --> 00:10:57,560
+then have one more line that says return
+Black-Scholes call price.
+
+163
+00:10:57,560 --> 00:11:00,850
+Or you can just put an expression for the
+thing
+
+164
+00:11:00,850 --> 00:11:04,110
+that you want your function to return as
+the last line.
+
+165
+00:11:04,110 --> 00:11:05,770
+So that's why this is going to work.
+
+166
+00:11:08,340 --> 00:11:12,570
+And then one of the nice features R has is
+it's treating every
+
+167
+00:11:12,570 --> 00:11:16,840
+variable like a vector.
+So, instead of having to do this in a for
+
+168
+00:11:16,840 --> 00:11:22,430
+loop, or evaluate the function by hand you
+know, 50 or 60 times to get a set of
+
+169
+00:11:22,430 --> 00:11:30,050
+points to, to plot, I can just give I can
+give a vector argument.
+
+170
+00:11:30,050 --> 00:11:33,358
+So right now I'm giving every argument
+that's just a
+
+171
+00:11:33,358 --> 00:11:36,860
+length one vector.
+And so I get a length one answer.
+
+172
+00:11:39,680 --> 00:11:45,540
+On the other hand, suppose I take, so the
+second to last thing, this little s so.
+
+173
+00:11:46,800 --> 00:11:49,000
+I, I guess I should also mention this is
+sort of
+
+174
+00:11:49,000 --> 00:11:53,969
+bad bad programming, because none of the
+variables have very meaningful names.
+
+175
+00:11:55,510 --> 00:11:57,670
+I just had to do that to make it fit on
+the slide, the
+
+176
+00:11:57,670 --> 00:12:01,170
+first way, I wrote this only about the
+first half of it on the slide.
+
+177
+00:12:01,170 --> 00:12:02,970
+I also think it's a lot easier to read
+
+178
+00:12:02,970 --> 00:12:05,044
+if you know, when I say something like R
+minus
+
+179
+00:12:05,044 --> 00:12:08,080
+Q, that should be R space minus space Q.
+
+180
+00:12:09,150 --> 00:12:13,094
+you want to group things, so it's a little
+bit easier to see what the function is.
+
+181
+00:12:13,094 --> 00:12:17,940
+But in this particular case I had a
+another constraint which it needed to
+
+182
+00:12:17,940 --> 00:12:20,900
+fit up here for the, for the lecture, so I
+had to skip that.
+
+183
+00:12:22,070 --> 00:12:25,360
+But if we look at the second to last
+argument, this lower
+
+184
+00:12:25,360 --> 00:12:28,715
+case s, this is where I'm putting in my
+value of sigma.
+
+185
+00:12:28,715 --> 00:12:30,613
+And so, when I call my function
+
+186
+00:12:30,613 --> 00:12:33,533
+this time, instead of putting in a single
+value
+
+187
+00:12:33,533 --> 00:12:36,798
+for sigma, I'm putting in three values for
+sigma.
+
+188
+00:12:36,798 --> 00:12:42,512
+I want to end that getting out are three
+values for this Black-Scholes call price.
+
+189
+00:12:42,512 --> 00:12:48,947
+So all of the other variables stay the
+same, but the first one here
+
+190
+00:12:48,947 --> 00:12:55,616
+corresponds to sigma of 0.15, the second
+one here corresponds
+
+191
+00:12:55,616 --> 00:13:02,798
+to sigma of 0.2, and the third one
+corresponds to sigma of 0.25.
+
+192
+00:13:02,798 --> 00:13:08,334
+And now, let's suppose that the option
+sold for $7, and I want to find sigma.
+
+193
+00:13:08,334 --> 00:13:10,746
+So you can think of this is, I want to
+find the
+
+194
+00:13:10,746 --> 00:13:14,761
+sigma that's going to make my
+Black-Scholes call price equal to 7.
+
+195
+00:13:14,761 --> 00:13:18,067
+But most nonlinear solvers are going to be
+set
+
+196
+00:13:18,067 --> 00:13:21,445
+up just to solve this f of whatever equals
+0.
+
+197
+00:13:21,445 --> 00:13:23,545
+So you want to make a new objective
+
+198
+00:13:23,545 --> 00:13:26,900
+function where the point you're looking
+for is 0.
+
+199
+00:13:26,900 --> 00:13:27,400
+And
+
+200
+00:13:30,140 --> 00:13:32,140
+I'm going to call that function f of
+sigma.
+
+201
+00:13:32,140 --> 00:13:35,343
+And that's just going to be my
+Black-Scholes call price minus 7.
+
+202
+00:13:36,550 --> 00:13:38,620
+And I'm going to plot that over a range of
+values
+
+203
+00:13:38,620 --> 00:13:41,790
+of sigma and see where it crosses the x
+axis.
+
+204
+00:13:43,090 --> 00:13:45,850
+So the first thing I'll do is make my
+range of sigmas.
+
+205
+00:13:45,850 --> 00:13:49,870
+So seq is a function that just makes a
+sequence.
+
+206
+00:13:49,870 --> 00:13:51,954
+It starts at 0.05.
+
+207
+00:13:51,954 --> 00:13:54,427
+It's going to end at 0.5.
+
+208
+00:13:55,450 --> 00:14:01,926
+And it's going to go in steps of 0.01.
+
+209
+00:14:01,926 --> 00:14:06,510
+Then f sig, I'm going
+
+210
+00:14:06,510 --> 00:14:11,010
+to evaluate my Black-Scholes call price,
+add all of
+
+211
+00:14:11,010 --> 00:14:15,870
+the inputs that were fixed, and then at
+this entire vector of sigmas.
+
+212
+00:14:15,870 --> 00:14:21,580
+So this is, I think this will end up being
+maybe 46 different values of sigma.
+
+213
+00:14:21,580 --> 00:14:27,620
+So, this is going to give me 46 different
+Black-Scholes call prices corresponding to
+
+214
+00:14:27,620 --> 00:14:32,460
+each one of those input sigmas, and then
+I'm going to subtract seven from that.
+
+215
+00:14:32,460 --> 00:14:34,770
+And hopefully, one of these will be pretty
+close to zero.
+
+216
+00:14:36,080 --> 00:14:41,670
+And then I'm going to plot.
+So, I'll put sigma on the x axis, and
+
+217
+00:14:41,670 --> 00:14:47,190
+then this fsig that I've just calculated
+here on the y axis, and then this optional
+
+218
+00:14:47,190 --> 00:14:49,010
+arguments type equals l.
+
+219
+00:14:49,010 --> 00:14:50,800
+It's just going to plot it with a line
+rather than
+
+220
+00:14:50,800 --> 00:14:54,589
+with points, and I get a plot that looks
+like this.
+
+221
+00:14:56,720 --> 00:15:00,420
+And so, on the, on the left here, I'm
+below 0, on the right I'm about 0.
+
+222
+00:15:00,420 --> 00:15:07,520
+And it looks like about sigma equals 0.25
+is about where I hit 0.
+
+223
+00:15:07,520 --> 00:15:11,470
+So that gives me an implied volatility,
+
+224
+00:15:11,470 --> 00:15:15,560
+so I denoted that.
+Sigma sub implied, think the book is
+
+225
+00:15:15,560 --> 00:15:23,050
+called Sigma sub imp of 0.25.
+
+226
+00:15:23,050 --> 00:15:29,490
+And so, this is a valid way of coming up
+with an implied volatility.
+
+227
+00:15:29,490 --> 00:15:33,500
+But to do that, I had to evaluate the
+Black-Scholes formula 46 times.
+
+228
+00:15:33,500 --> 00:15:36,450
+And now if you look at this plot, you
+know, I evaluated
+
+229
+00:15:36,450 --> 00:15:39,520
+a whole lot over here where it wasn't
+telling me very much.
+
+230
+00:15:39,520 --> 00:15:41,460
+And I did the same thing over here.
+
+231
+00:15:44,410 --> 00:15:47,910
+And still the computer answer was not very
+precise.
+
+232
+00:15:47,910 --> 00:15:53,312
+So I, I only plotted it in these steps of
+0.01.
+
+233
+00:15:53,312 --> 00:16:00,620
+And so it turned out that 0.25 was
+slightly less than 0.
+
+234
+00:16:00,620 --> 00:16:04,910
+And when I put in 0.26, it was slightly
+more, but it
+
+235
+00:16:04,910 --> 00:16:08,750
+was more slightly more so that 0.25 was
+the closest one to 0.
+
+236
+00:16:08,750 --> 00:16:09,750
+So that's
+
+237
+00:16:09,750 --> 00:16:16,580
+why I picked this one.
+And so I was off by, so this,
+
+238
+00:16:16,580 --> 00:16:20,970
+this is on the scale of dollars here, so I
+was off by about one and a half cents.
+
+239
+00:16:22,280 --> 00:16:24,210
+So it's, doesn't sound too bad, except
+that
+
+240
+00:16:24,210 --> 00:16:26,370
+you might be trading, you know, thousands
+or tens
+
+241
+00:16:26,370 --> 00:16:28,230
+of thousands of these things, and so that,
+that
+
+242
+00:16:28,230 --> 00:16:32,490
+ends up being more worrisome to be off by.
+
+243
+00:16:34,940 --> 00:16:36,700
+So what I'd really like to be able to do
+
+244
+00:16:37,710 --> 00:16:44,720
+is compute this implied volatility to
+within a pre-specified tolerance.
+
+245
+00:16:44,720 --> 00:16:49,140
+So right now, I've, I've just sort of done
+these 46 things, and I've ended
+
+246
+00:16:49,140 --> 00:16:53,780
+up finding out how close I was just by
+going back and checking my solution.
+
+247
+00:16:53,780 --> 00:16:59,349
+What I would like to have is an algorithm
+that's going to keep going until.
+
+248
+00:16:59,349 --> 00:17:03,210
+So for instance, I was just going to buy
+one option, I
+
+249
+00:17:03,210 --> 00:17:06,890
+would sort of want this to keep going
+until maybe the first significant
+
+250
+00:17:06,890 --> 00:17:10,010
+digit was somewhere over here, and then I
+would be certain that
+
+251
+00:17:10,010 --> 00:17:14,720
+I'm within less than a penny of the price
+that I'm aiming for.
+
+252
+00:17:14,720 --> 00:17:16,340
+And so, if I only wanted to buy one.
+
+253
+00:17:16,340 --> 00:17:19,630
+Well, if that's the smallest denomination
+of currency bill
+
+254
+00:17:19,630 --> 00:17:21,750
+allowed me to use, then that will be good
+enough.
+
+255
+00:17:23,880 --> 00:17:27,650
+So I want to get inside this pre-specified
+color, and at the same time
+
+256
+00:17:27,650 --> 00:17:32,330
+to do that, I want to use the minimum
+number of function evaluations required.
+
+257
+00:17:34,920 --> 00:17:37,020
+And so the methods, the, the general
+methods for
+
+258
+00:17:37,020 --> 00:17:41,186
+solving this type of problem are called
+nonlinear solvers.
+

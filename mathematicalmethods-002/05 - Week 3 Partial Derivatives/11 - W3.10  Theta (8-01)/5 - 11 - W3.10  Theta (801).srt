@@ -1,0 +1,592 @@
+1
+00:00:01,030 --> 00:00:05,800
+So the last Greek that I want to go
+through the calculation through is theta,
+
+2
+00:00:08,070 --> 00:00:09,790
+and so theta is the rate of change of
+
+3
+00:00:09,790 --> 00:00:13,290
+the value of the portfolio with respect to
+time t.
+
+4
+00:00:15,580 --> 00:00:17,700
+And again, our portfolio that we're
+considering
+
+5
+00:00:17,700 --> 00:00:19,900
+just contains a single call option, so the
+
+6
+00:00:19,900 --> 00:00:21,460
+price of our portfolio is going to be
+
+7
+00:00:21,460 --> 00:00:24,140
+the Black-Scholes price for a European
+call option.
+
+8
+00:00:27,970 --> 00:00:31,460
+And we just start by taking he partial
+derivative of the Black Scholes
+
+9
+00:00:31,460 --> 00:00:35,070
+price formula with respect to t and that's
+what we're going to call theta.
+
+10
+00:00:40,260 --> 00:00:43,900
+And so here its going to be a little bit
+more complicated.
+
+11
+00:00:43,900 --> 00:00:47,600
+Because now have this e to the minus qt
+minus t.
+
+12
+00:00:47,600 --> 00:00:48,900
+That terms has a t in it.
+
+13
+00:00:51,490 --> 00:00:57,555
+E to the minus or rt minus t, that has
+term in it, sorry has a t in it.
+
+14
+00:00:57,555 --> 00:01:03,140
+Phi of d plus is a function of d plus and
+d plus depends on t.
+
+15
+00:01:03,140 --> 00:01:04,570
+And so does d minus.
+
+16
+00:01:04,570 --> 00:01:07,220
+So I have to use the product rule on each
+term here.
+
+17
+00:01:09,990 --> 00:01:15,220
+So what I'll, I'll get is the derivative
+of the first term.
+
+18
+00:01:15,220 --> 00:01:18,140
+So here is where the minus signs cancel
+out, that
+
+19
+00:01:18,140 --> 00:01:20,160
+I confused myself with in the last set of
+slides.
+
+20
+00:01:20,160 --> 00:01:23,270
+So here, it's minus.
+
+21
+00:01:26,980 --> 00:01:28,880
+I really should have done this with a
+substitution.
+
+22
+00:01:28,880 --> 00:01:31,440
+I'm even confusing myself now.
+
+23
+00:01:31,440 --> 00:01:34,910
+So, what's going to happen, I have a minus
+sign here, that's going to pop
+
+24
+00:01:34,910 --> 00:01:40,760
+out in front, and a minus sign here,
+that's going to also pop out in front.
+
+25
+00:01:42,920 --> 00:01:45,590
+And I think maybe the easiest way to look
+at this
+
+26
+00:01:45,590 --> 00:01:50,540
+is I have e to the minus q times capital
+t.
+
+27
+00:01:50,540 --> 00:01:52,180
+That doesn't depend on little t.
+
+28
+00:01:52,180 --> 00:01:56,290
+And then, I have e to the minus q times
+minus t.
+
+29
+00:01:56,290 --> 00:02:01,920
+So, when I take the derivative, it's e to
+the qt that's kind of.
+
+30
+00:02:01,920 --> 00:02:06,410
+Playing the important part of that.
+So I just get a q popping out in front.
+
+31
+00:02:06,410 --> 00:02:07,800
+So it's q times t.
+
+32
+00:02:08,890 --> 00:02:10,670
+And there really is no minus sign here.
+
+33
+00:02:10,670 --> 00:02:12,960
+It's just because of the actual way the
+formula's
+
+34
+00:02:12,960 --> 00:02:15,190
+written down that it looks like there's
+two minus signs.
+
+35
+00:02:15,190 --> 00:02:17,550
+But with respect to the variable I'm
+taking
+
+36
+00:02:17,550 --> 00:02:21,880
+the derivative of, there's, it's e to the
+qt.
+
+37
+00:02:24,180 --> 00:02:26,130
+So what I'm going to end up with is
+
+38
+00:02:29,670 --> 00:02:35,350
+derivative of the first function times the
+second function.
+
+39
+00:02:35,350 --> 00:02:38,180
+Plus derivative of the second function.
+
+40
+00:02:38,180 --> 00:02:40,080
+So that's going to be the partial
+derivative with
+
+41
+00:02:40,080 --> 00:02:42,039
+respect to t of phi of d plus.
+
+42
+00:02:43,550 --> 00:02:45,650
+Times the first function, that's just the
+product rule.
+
+43
+00:02:47,200 --> 00:02:50,240
+And then this subtraction is coming from
+here just because it's
+
+44
+00:02:50,240 --> 00:02:53,310
+the, the first term minus the second term
+in the pricing formula.
+
+45
+00:02:53,310 --> 00:02:53,810
+And
+
+46
+00:02:55,500 --> 00:02:56,820
+then the same thing is going to happen.
+
+47
+00:02:56,820 --> 00:03:03,830
+This really is e to the rt times e to the
+minus r capitol t.
+
+48
+00:03:04,870 --> 00:03:07,880
+So when I take the derivative, it's just
+going to be one little r that pops out.
+
+49
+00:03:10,410 --> 00:03:16,540
+So I have derivative of the first term,
+times the second term,
+
+50
+00:03:16,540 --> 00:03:21,980
+plus derivative of the second term, sorry,
+second function, times the first function.
+
+51
+00:03:21,980 --> 00:03:25,340
+So it's just the product rule again, on
+the second term.
+
+52
+00:03:25,340 --> 00:03:26,600
+Of the pricing formula.
+
+53
+00:03:29,650 --> 00:03:33,650
+And so now I'm going to, look at this and,
+maybe we can squeeze
+
+54
+00:03:33,650 --> 00:03:37,730
+just a little bit more mileage out of our,
+our, kind of intermediate result.
+
+55
+00:03:39,830 --> 00:03:42,240
+but what I want to do is, right now I
+
+56
+00:03:42,240 --> 00:03:46,655
+have d minuses in the square brackets, and
+d pluses.
+
+57
+00:03:46,655 --> 00:03:48,310
+In, in the first line.
+
+58
+00:03:50,780 --> 00:03:54,240
+And that result ended up working out well,
+when I had
+
+59
+00:03:54,240 --> 00:03:57,620
+an s in one term, and a k in the second
+term.
+
+60
+00:03:57,620 --> 00:04:05,630
+So, what I'm going to do is just rewrite
+these so that I have the, the two q's.
+
+61
+00:04:05,630 --> 00:04:08,700
+Now which ones are together, plus, plus,
+minus, minus.
+
+62
+00:04:08,700 --> 00:04:10,760
+Phi to d t.
+So when I have the two
+
+63
+00:04:13,300 --> 00:04:15,740
+functions that have the partial derivative
+with respect to
+
+64
+00:04:15,740 --> 00:04:18,320
+t of the phi, those will go in one group.
+
+65
+00:04:18,320 --> 00:04:20,660
+And then the other two will go in the
+second group.
+
+66
+00:04:22,280 --> 00:04:25,390
+So I end up with this expression here.
+And
+
+67
+00:04:27,440 --> 00:04:28,419
+now I have this.
+
+68
+00:04:31,430 --> 00:04:31,560
+Oops.
+
+69
+00:04:31,560 --> 00:04:33,570
+So, now, it's this one that I can get rid
+of.
+
+70
+00:04:33,570 --> 00:04:38,520
+So, I have a way to replace this with
+something that depends on s.
+
+71
+00:04:38,520 --> 00:04:40,850
+So, actually something that's going to be
+equal to this again.
+
+72
+00:04:45,130 --> 00:04:45,750
+So, let's see.
+
+73
+00:04:48,580 --> 00:04:51,870
+So, here I'm just working on the, the part
+in the square brackets.
+
+74
+00:04:51,870 --> 00:04:55,000
+So, here I've used the chain rule so the
+
+75
+00:04:55,000 --> 00:04:57,120
+derivative, with respect to t of capital
+phi of
+
+76
+00:04:57,120 --> 00:04:59,490
+d plus, that's become lower case phi of d
+
+77
+00:04:59,490 --> 00:05:04,180
+plus times partial d plus with respect to
+t.
+
+78
+00:05:04,180 --> 00:05:06,460
+And, then, the same thing with the second
+term the.
+
+79
+00:05:06,460 --> 00:05:10,060
+Derivative with respect to t of capital
+phi has become
+
+80
+00:05:10,060 --> 00:05:13,620
+lowercase phi of d minus times the partial
+of d
+
+81
+00:05:13,620 --> 00:05:14,890
+minus with respect to t.
+And
+
+82
+00:05:19,480 --> 00:05:23,080
+now I can do the same trick that I had
+done before.
+
+83
+00:05:23,080 --> 00:05:24,880
+I have now partial derivative.
+
+84
+00:05:27,090 --> 00:05:29,080
+So I can replace this guy here
+
+85
+00:05:32,890 --> 00:05:33,460
+with this.
+
+86
+00:05:33,460 --> 00:05:36,480
+That was that intermediate result that I
+had before.
+
+87
+00:05:36,480 --> 00:05:40,810
+And so I can rewrite this bit in the
+square brackets like this.
+
+88
+00:05:40,810 --> 00:05:43,510
+And now last time I had.
+
+89
+00:05:43,510 --> 00:05:46,360
+The derivative with respect to sigma, this
+time it's
+
+90
+00:05:46,360 --> 00:05:48,380
+the derivative with respect to t, but I'm
+still going
+
+91
+00:05:48,380 --> 00:05:51,190
+to have this d, d plus minus d minus,
+
+92
+00:05:51,190 --> 00:05:53,320
+which is going to simplify that expression
+quite a bit.
+
+93
+00:05:55,800 --> 00:05:59,230
+So I'm going to look at this quantity in a
+little bit closer detail.
+
+94
+00:06:01,900 --> 00:06:04,040
+So I can rewrite that again as the partial
+derivative
+
+95
+00:06:04,040 --> 00:06:06,900
+with respect to t just a d plus minus d
+minus.
+
+96
+00:06:10,730 --> 00:06:14,210
+And so in, in light gray here just, I tend
+to confuse
+
+97
+00:06:14,210 --> 00:06:17,150
+myself if I try to take a derivative of
+something with a square
+
+98
+00:06:17,150 --> 00:06:20,445
+root just Like when I have a, a rational
+function, if I have
+
+99
+00:06:20,445 --> 00:06:24,280
+1 over sigma, I'd rather write that as
+Sigma to the minus one.
+
+100
+00:06:24,280 --> 00:06:27,720
+Here I have square root of t minus t, I'd
+rather
+
+101
+00:06:27,720 --> 00:06:30,670
+write that as the quantity t minus t to
+the one half.
+
+102
+00:06:32,730 --> 00:06:36,210
+And so now I'm set up to use the power
+rule to take the derivative here.
+
+103
+00:06:37,890 --> 00:06:39,690
+So what I'm going to end up with, I have
+one half.
+
+104
+00:06:39,690 --> 00:06:43,290
+So that's where this two comes from.
+
+105
+00:06:43,290 --> 00:06:46,830
+Then I'll have the quantity, t minus t to
+the negative one half.
+
+106
+00:06:46,830 --> 00:06:51,240
+That's going to be where the 1 over square
+root of t minus t comes from.
+
+107
+00:06:51,240 --> 00:06:54,400
+And then I have this sigma left over in
+front.
+
+108
+00:06:54,400 --> 00:06:56,900
+And that's where the sigma in the top
+comes from.
+
+109
+00:06:58,560 --> 00:07:01,870
+And then by the chain rule, so the
+derivative
+
+110
+00:07:01,870 --> 00:07:05,670
+that I'm taking here is with respect to t,
+and
+
+111
+00:07:05,670 --> 00:07:09,120
+in the inside function, t is negative, so
+I have
+
+112
+00:07:09,120 --> 00:07:11,370
+to multiply this by negative one by the
+chain rule.
+
+113
+00:07:11,370 --> 00:07:16,150
+So if I'd made a u substitution, and said
+u is equal to capital t
+
+114
+00:07:16,150 --> 00:07:20,240
+minus little t, then when I took the
+derivative of u, I would get minus one.
+
+115
+00:07:24,930 --> 00:07:28,680
+And so this is the expression for theta
+that I had before.
+
+116
+00:07:29,970 --> 00:07:34,110
+So, it's the second term that I'm going to
+be able to simplify using my, my trick.
+
+117
+00:07:36,080 --> 00:07:39,000
+And I now have an expression for this
+here, which is just
+
+118
+00:07:39,000 --> 00:07:42,340
+minus sigma divided by 2 times the square
+root of t minus t.
+
+119
+00:07:44,520 --> 00:07:47,270
+And so that's going to finally give me my
+expression for theta.
+
+120
+00:07:47,270 --> 00:07:50,810
+So this one, unfortunately, doesn't
+simplify much further than this.
+
+121
+00:07:52,150 --> 00:07:54,180
+And so all I've done is just substitute
+the
+
+122
+00:07:54,180 --> 00:07:58,900
+expression we had last time into the first
+term here.
+
+123
+00:07:58,900 --> 00:08:00,650
+And then left the other two terms alone.
+
+124
+00:08:00,650 --> 00:08:00,650
+[BLANK_AUDIO]
+
+125
+00:08:00,650 --> 00:08:00,650
+.
+

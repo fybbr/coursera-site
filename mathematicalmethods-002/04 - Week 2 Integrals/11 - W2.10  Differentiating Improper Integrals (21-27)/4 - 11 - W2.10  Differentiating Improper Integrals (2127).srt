@@ -1,0 +1,1396 @@
+1
+00:00:00,990 --> 00:00:04,730
+Okay, and now I think we have sort of the
+
+2
+00:00:04,730 --> 00:00:09,730
+the, tools we needed, to get to the the
+important point.
+
+3
+00:00:09,730 --> 00:00:12,370
+Which was differentiating improper
+integrals.
+
+4
+00:00:21,470 --> 00:00:23,830
+So we're going to start out with a
+function F.
+
+5
+00:00:23,830 --> 00:00:29,370
+That's continuous, and we're going to
+assume that the integral of f over
+
+6
+00:00:29,370 --> 00:00:34,920
+the entire real number line, so integral
+from minus infinity to infinity, exists.
+
+7
+00:00:34,920 --> 00:00:37,490
+So, in particular, that means that it's
+finite.
+
+8
+00:00:43,790 --> 00:00:48,660
+And now I want to consider a function b of
+t.
+
+9
+00:00:48,660 --> 00:00:50,940
+Its a differentiable function and I am
+going to
+
+10
+00:00:50,940 --> 00:00:54,220
+define a new function g of t which is
+
+11
+00:00:54,220 --> 00:01:00,430
+going to be the integral of my function f
+from minus infinity up to b of t,
+
+12
+00:01:05,290 --> 00:01:07,498
+and I want to be able to compute g prime
+of t.
+
+13
+00:01:09,168 --> 00:01:14,150
+And so so, sort of like taking the
+derivative of a definite integral.
+
+14
+00:01:14,150 --> 00:01:17,700
+It's actually, doesn't end up being too
+difficult.
+
+15
+00:01:17,700 --> 00:01:21,930
+So all we're going to do, because we
+assumed that this integral
+
+16
+00:01:21,930 --> 00:01:27,000
+exists, that means that I can pick a point
+somewhere in between.
+
+17
+00:01:28,890 --> 00:01:30,450
+And I can write g
+
+18
+00:01:30,450 --> 00:01:33,900
+of t as an integral from minus infinity up
+to that
+
+19
+00:01:33,900 --> 00:01:39,160
+point plus the integral from that point up
+to b of t.
+
+20
+00:01:40,410 --> 00:01:44,840
+And then because I'm free to choose that
+point I might as
+
+21
+00:01:44,840 --> 00:01:47,403
+well choose something that's easy to work
+with so I chose 0.
+
+22
+00:01:51,440 --> 00:01:56,765
+And so now I just want to take the
+derivative of G of T, but
+
+23
+00:01:56,765 --> 00:02:02,140
+since the first term,
+
+24
+00:02:02,140 --> 00:02:06,780
+so if I look at this closely now, this is
+a, it's an indefinite integral.
+
+25
+00:02:07,880 --> 00:02:11,280
+So the integral from minus infinity up to
+zero.
+
+26
+00:02:11,280 --> 00:02:16,490
+But there's no t's in this first term.
+So as far as I'm concerned,
+
+27
+00:02:16,490 --> 00:02:21,180
+when I'm taking a derivative with respect
+to the variable t, this is a constant.
+
+28
+00:02:24,650 --> 00:02:26,340
+And so, when I take the derivative of that
+
+29
+00:02:26,340 --> 00:02:28,790
+with respect to t, when I take its
+derivative.
+
+30
+00:02:28,790 --> 00:02:29,950
+I'm just going to get zero.
+
+31
+00:02:30,990 --> 00:02:35,740
+So, to compute the derivative with respect
+to t of my function
+
+32
+00:02:35,740 --> 00:02:40,300
+g of t, I can just ignore this first term
+and all I
+
+33
+00:02:40,300 --> 00:02:43,720
+have to do is compute the derivative with
+respect to t of the
+
+34
+00:02:43,720 --> 00:02:47,879
+integral from zero to b of t of my
+function f of x.
+
+35
+00:02:50,830 --> 00:02:52,960
+But notice what happened now.
+
+36
+00:02:52,960 --> 00:02:55,060
+So the, the problem that we were trying to
+deal
+
+37
+00:02:55,060 --> 00:02:57,810
+with is that we had an, we had an improper
+integral.
+
+38
+00:02:59,140 --> 00:03:05,470
+But because of this the limits here are
+both finite values.
+
+39
+00:03:05,470 --> 00:03:09,460
+So, this is integral that we already know
+how to take the derivative of.
+
+40
+00:03:09,460 --> 00:03:12,240
+This is just a, take the, we use exactly
+the same rule
+
+41
+00:03:12,240 --> 00:03:16,292
+I talked about in I guess it would be
+number seven today.
+
+42
+00:03:16,292 --> 00:03:19,260
+How to take the derivative of a definite
+integral.
+
+43
+00:03:19,260 --> 00:03:23,020
+And, on top of that, we're lucky that the
+bottom is
+
+44
+00:03:23,020 --> 00:03:25,700
+zero so we only have to use half of the
+formula.
+
+45
+00:03:28,730 --> 00:03:34,960
+So, g prime of t is just going to be the
+derivative with respect to t of the
+
+46
+00:03:34,960 --> 00:03:37,870
+anti derivative of f evaluated at b of t
+
+47
+00:03:37,870 --> 00:03:41,010
+minus the anti derivative of f evaluated
+at zero.
+
+48
+00:03:42,090 --> 00:03:46,850
+And this is just the result from
+differentiating.
+
+49
+00:03:46,850 --> 00:03:48,380
+a definite integral.
+
+50
+00:03:48,380 --> 00:03:54,040
+So I know that that's f of b of t times
+the derivative of b of t.
+
+51
+00:03:54,040 --> 00:03:59,710
+So f of b of t times b prime of t.
+
+52
+00:03:59,710 --> 00:04:03,360
+And then to do the same thing for the
+lower limit.
+
+53
+00:04:04,720 --> 00:04:06,780
+Or we can do the same thing for the lower
+limit.
+
+54
+00:04:06,780 --> 00:04:12,410
+So I'm just going to instead of g of t,
+I'm going to have h of t, just exactly the
+
+55
+00:04:12,410 --> 00:04:14,450
+same thing, except that now it's my lower
+limits
+
+56
+00:04:14,450 --> 00:04:16,510
+that's the function of t rather than the
+upper limit,
+
+57
+00:04:16,510 --> 00:04:17,010
+[NOISE].
+
+58
+00:04:24,300 --> 00:04:29,631
+And so I'm still going to consider
+integrating this function from a of t to
+
+59
+00:04:29,631 --> 00:04:35,010
+zero, and then adding on the integral from
+zero to infinity.
+
+60
+00:04:37,890 --> 00:04:40,450
+And then when I take the derivative of
+that, this
+
+61
+00:04:40,450 --> 00:04:43,230
+second term now is going to be the
+constant, so that's
+
+62
+00:04:43,230 --> 00:04:45,480
+just going to go away so the, the answer
+here
+
+63
+00:04:45,480 --> 00:04:47,680
+is just going to be the derivative of this
+first term.
+
+64
+00:04:51,000 --> 00:04:55,410
+And so the only difference we're going to
+see, is just because
+
+65
+00:04:55,410 --> 00:04:58,630
+when I do this part of the fundamental
+theorem of Calculus.
+
+66
+00:04:58,630 --> 00:05:02,420
+Now my function a of t is on the negative
+side, so I get
+
+67
+00:05:02,420 --> 00:05:07,980
+the same answer as I got for the, for the
+upper, limit being the function.
+
+68
+00:05:07,980 --> 00:05:09,635
+Except now it's just going to be minus.
+
+69
+00:05:09,635 --> 00:05:16,080
+F of a of t times a prime of t.
+So now we have a, a very simple
+
+70
+00:05:16,080 --> 00:05:19,220
+rule for taking the derivative of an
+indefinite integral.
+
+71
+00:05:19,220 --> 00:05:22,250
+And let's see if we can put that to work.
+
+72
+00:05:23,465 --> 00:05:26,565
+So,
+
+73
+00:05:26,565 --> 00:05:26,590
+[NOISE]
+
+74
+00:05:26,590 --> 00:05:30,780
+I'm going to look at something called the
+delta of a European Call Option.
+
+75
+00:05:30,780 --> 00:05:33,280
+That I'm going to price using the
+Black-Scholes formula.
+
+76
+00:05:35,120 --> 00:05:38,810
+And so the Black-Scholes price, for a
+European call option,
+
+77
+00:05:38,810 --> 00:05:41,696
+so this is the simplest possible one to
+look at.
+
+78
+00:05:41,696 --> 00:05:46,530
+On a non-dividend paying asset, so this
+could just be
+
+79
+00:05:46,530 --> 00:05:49,842
+a stock for instance, with a strike price
+of 1.
+
+80
+00:05:51,720 --> 00:05:56,160
+Has a, a volatility of 20%, so this means
+the volatility of
+
+81
+00:05:56,160 --> 00:06:00,640
+the returns on my asset, and I'm looking
+at three months to maturity.
+
+82
+00:06:00,640 --> 00:06:04,030
+And so again, the reason I'm, I'm putting
+all of these real numbers in
+
+83
+00:06:04,030 --> 00:06:06,030
+here is just because the Black-Scholes
+pricing
+
+84
+00:06:06,030 --> 00:06:09,540
+formula, it's a function of several
+variables.
+
+85
+00:06:09,540 --> 00:06:12,200
+I'm going to make it into a function of a
+single
+
+86
+00:06:12,200 --> 00:06:15,480
+variable s which is the, the current price
+of the asset,
+
+87
+00:06:16,750 --> 00:06:21,540
+just by plugging in actual numeric values
+to all of the rest of the inputs.
+
+88
+00:06:23,188 --> 00:06:25,120
+And so this is the, the pricing formula.
+
+89
+00:06:26,320 --> 00:06:30,900
+So I have s.
+Times this function phi, evaluated at d
+
+90
+00:06:30,900 --> 00:06:36,320
+1, minus e to the minus 0.01,
+
+91
+00:06:36,320 --> 00:06:41,560
+times this function phi again, evaluated
+at d 2.
+
+92
+00:06:41,560 --> 00:06:45,860
+Where d 1 of S is just going to equal 10
+
+93
+00:06:45,860 --> 00:06:50,270
+times the log of the, the current stock
+price, so 10 times the log of S.
+
+94
+00:06:50,270 --> 00:06:58,990
+Plus 0.015.
+D2 of s is equal to d1 of s minus 0.1.
+
+95
+00:06:58,990 --> 00:07:02,100
+And this function phi.
+
+96
+00:07:02,100 --> 00:07:06,820
+So this is where the, all of the math
+we've been doing
+
+97
+00:07:06,820 --> 00:07:09,160
+for the, for the last two lectures is
+going to come into play.
+
+98
+00:07:09,160 --> 00:07:09,760
+This function phi.
+
+99
+00:07:10,880 --> 00:07:12,950
+Is defined as the integral.
+
+100
+00:07:12,950 --> 00:07:15,650
+So this is a, a capital phi, wherein the
+font
+
+101
+00:07:15,650 --> 00:07:19,120
+I'm using, it's drawn just with a vertical
+middle line.
+
+102
+00:07:19,120 --> 00:07:25,080
+The lowercase phi is its derivative, which
+has a, a slightly slanted line.
+
+103
+00:07:25,080 --> 00:07:29,990
+So I'm going to integrate lowercase phi
+from minus infinity up to z.
+
+104
+00:07:32,220 --> 00:07:37,060
+And lower case v this is probability
+density function for a
+
+105
+00:07:37,060 --> 00:07:42,020
+standard normal distribution and this is
+the mathematical formula it has.
+
+106
+00:07:43,700 --> 00:07:46,640
+So in order to calculate the price of my
+European call
+
+107
+00:07:46,640 --> 00:07:50,500
+option, I am going to need to be able to
+do mathematics.
+
+108
+00:07:50,500 --> 00:07:54,240
+With this function capital phi.
+
+109
+00:07:55,750 --> 00:07:57,450
+But this is a function that's sort of
+famous
+
+110
+00:07:57,450 --> 00:07:59,700
+for not having an antiderivative.
+
+111
+00:07:59,700 --> 00:08:04,800
+So you can't actually write down a formula
+for the value of this integral.
+
+112
+00:08:04,800 --> 00:08:08,040
+This is the simplest that I can write it
+down.
+
+113
+00:08:08,040 --> 00:08:10,340
+So in order to actually price these
+things, you have
+
+114
+00:08:10,340 --> 00:08:13,380
+to use a computer to approximate the value
+of this integral.
+
+115
+00:08:15,550 --> 00:08:18,930
+But when we do mathematics with the
+Black-Scholes formula,
+
+116
+00:08:18,930 --> 00:08:21,110
+we still want to be able to get analytical
+results.
+
+117
+00:08:21,110 --> 00:08:21,290
+You know?
+
+118
+00:08:21,290 --> 00:08:24,500
+If, if I try to do everything numerically.
+
+119
+00:08:24,500 --> 00:08:28,830
+Then you run into problems of, you have to
+be very careful of, you know?
+
+120
+00:08:28,830 --> 00:08:31,100
+As you continue to do calculations, are
+you
+
+121
+00:08:31,100 --> 00:08:32,910
+accumulating any round off error in your
+compu
+
+122
+00:08:32,910 --> 00:08:34,150
+[INAUDIBLE].
+
+123
+00:08:34,150 --> 00:08:37,760
+In your sums things like that, so what we
+would like
+
+124
+00:08:37,760 --> 00:08:41,428
+to be able to do is actually compute
+derivatives of the
+
+125
+00:08:41,428 --> 00:08:46,620
+Black-Scholes pricing formula and get the
+correct answer theoretically before we
+
+126
+00:08:46,620 --> 00:08:50,850
+actually have to start plugging in numbers
+to the to the formula.
+
+127
+00:08:53,580 --> 00:08:58,960
+And so, the delta of a European call
+option is just the derivative of the
+
+128
+00:08:58,960 --> 00:09:04,160
+price, so the derivative of the pricing
+formula, so in this case c of s with
+
+129
+00:09:04,160 --> 00:09:08,980
+respect to the asset price s.
+And it's denoted by
+
+130
+00:09:08,980 --> 00:09:13,890
+this Equilateral triangle is capital Greek
+letter delta.
+
+131
+00:09:16,170 --> 00:09:18,750
+And so this is the derivative that I'm
+going to try and compute.
+
+132
+00:09:21,800 --> 00:09:28,490
+So, it's already kind of complicated and
+it's much, much
+
+133
+00:09:28,490 --> 00:09:31,340
+more complicated if I don't plug numbers
+into it, because
+
+134
+00:09:31,340 --> 00:09:33,010
+as soon as I plug the numbers into it, I
+
+135
+00:09:33,010 --> 00:09:36,046
+can do some math and a lot of them combine
+together.
+
+136
+00:09:36,046 --> 00:09:39,780
+but it's still complicated enough that I'm
+going to try
+
+137
+00:09:39,780 --> 00:09:42,060
+and compute the derivative of this term by
+term.
+
+138
+00:09:42,060 --> 00:09:44,530
+So first I'll look at this term and then
+we'll
+
+139
+00:09:44,530 --> 00:09:47,190
+look at this term and we'll try and
+simplify our answers
+
+140
+00:09:47,190 --> 00:09:47,890
+as much as we can.
+
+141
+00:09:50,590 --> 00:09:56,840
+So for the derivative of the first term I
+have S times a function of S.
+
+142
+00:09:56,840 --> 00:09:58,530
+So I'm going to need to use the product
+rule.
+
+143
+00:09:58,530 --> 00:10:01,270
+So that's just going to tell me that the
+derivative of this
+
+144
+00:10:01,270 --> 00:10:06,020
+function here is going to be the
+derivative of s times this.
+
+145
+00:10:06,020 --> 00:10:08,650
+Plus the derivative of this times s.
+
+146
+00:10:12,190 --> 00:10:15,780
+So here, I have the derivative of s is
+just, oops.
+
+147
+00:10:15,780 --> 00:10:17,860
+Derivative of s is just 1.
+
+148
+00:10:17,860 --> 00:10:19,940
+So I just have the second piece here.
+
+149
+00:10:21,610 --> 00:10:27,910
+Then plus s times the derivative of, this
+guy.
+
+150
+00:10:27,910 --> 00:10:30,090
+And I'm just going to replace that by its
+definition.
+
+151
+00:10:30,090 --> 00:10:33,080
+So that's the, the definition of capital
+phi of d one of
+
+152
+00:10:33,080 --> 00:10:38,010
+s is the integral from minus infinity up
+to d one of s.
+
+153
+00:10:38,010 --> 00:10:39,700
+Of little phi of x.
+
+154
+00:10:45,300 --> 00:10:50,290
+And so we have a formula now for
+evaluating this derivative.
+
+155
+00:10:51,470 --> 00:10:54,740
+So, if I'm taking the derivative of an
+indefinite
+
+156
+00:10:54,740 --> 00:10:58,309
+integral, I know that it's just going to
+be.
+
+157
+00:10:59,930 --> 00:11:04,610
+The integrand evaluated at the upper limit
+times the derivative of
+
+158
+00:11:04,610 --> 00:11:07,890
+the upper limit, with respect to the
+variable that I'm, I'm computing.
+
+159
+00:11:07,890 --> 00:11:09,330
+So I need to use the chain rule here.
+
+160
+00:11:10,540 --> 00:11:12,710
+And so I'm going to end up with s, that's
+this
+
+161
+00:11:12,710 --> 00:11:17,040
+s here, times lower case phi of d 1 of s.
+
+162
+00:11:17,040 --> 00:11:20,360
+So that's this phi evaluated at the upper
+end point of the integral
+
+163
+00:11:21,620 --> 00:11:25,380
+and then by the chain rule this is phi of
+d of s.
+
+164
+00:11:25,380 --> 00:11:30,220
+So I need to also multiply that by the
+derivative of d1 of s.
+
+165
+00:11:34,630 --> 00:11:38,649
+So now remember that d1 of s is equal to
+10 times the log of s.
+
+166
+00:11:40,240 --> 00:11:46,530
+Plus 0.015, so the derivative with respect
+to s of d1 of s
+
+167
+00:11:46,530 --> 00:11:52,150
+is just going to be 10 divided by s, so 10
+times this here that's just a
+
+168
+00:11:52,150 --> 00:11:56,550
+constant so the derivative of the constant
+is zero, the derivative of the log of
+
+169
+00:11:56,550 --> 00:11:59,680
+s with respect to s is just 1 over s so I
+end up with
+
+170
+00:11:59,680 --> 00:12:00,549
+10 divided by s.
+
+171
+00:12:04,600 --> 00:12:09,754
+So that tells me that the derivative of
+the first term now, this capital phi
+
+172
+00:12:09,754 --> 00:12:15,370
+of d1 of s plus s times lower-case phi of
+d1 of s,
+
+173
+00:12:15,370 --> 00:12:20,112
+times 10 over s, and luckily one of the
+nice things about Black-Scholes is
+
+174
+00:12:20,112 --> 00:12:25,600
+usually when you're doing it right stuff
+kind of beneficially cancels out for you.
+
+175
+00:12:25,600 --> 00:12:29,250
+So here, the s and 1 over s are going to
+cancel each other out.
+
+176
+00:12:30,500 --> 00:12:34,420
+So for the first term, the derivative is
+capital phi of d
+
+177
+00:12:34,420 --> 00:12:38,620
+1 of S, plus 10 times little phi of d 1 of
+S.
+
+178
+00:12:41,460 --> 00:12:41,730
+Okay.
+
+179
+00:12:41,730 --> 00:12:45,710
+So now let's look at the derivative of the
+second term.
+
+180
+00:12:45,710 --> 00:12:49,460
+So here it's a little bit easier, so e to
+the minus 0.01.
+
+181
+00:12:49,460 --> 00:12:52,630
+Looks complicated but that's just a
+constant.
+
+182
+00:12:52,630 --> 00:12:54,050
+[COUGH]
+
+183
+00:12:54,050 --> 00:12:57,080
+So I'm going to take that outside of
+
+184
+00:12:57,080 --> 00:13:00,170
+my derivative, so the derivative was
+linear remember.
+
+185
+00:13:00,170 --> 00:13:07,610
+And I'm left with the derivative of
+capital phi of d2 of s.
+
+186
+00:13:07,610 --> 00:13:10,910
+And I'm just going to, so in the square
+brackets is just the definition of that.
+
+187
+00:13:10,910 --> 00:13:16,580
+So that's the integral from minus infinity
+to d2 of s, of little phi of x dx.
+
+188
+00:13:22,300 --> 00:13:28,310
+And so I'm going to use my pricing rule
+sorry my im.
+
+189
+00:13:28,310 --> 00:13:29,650
+Improper integral rule
+
+190
+00:13:31,660 --> 00:13:32,170
+again.
+
+191
+00:13:32,170 --> 00:13:36,470
+So that's just going to be phi evaluated
+at
+
+192
+00:13:36,470 --> 00:13:40,290
+the upper endpoint, and then by the chain
+rule,
+
+193
+00:13:40,290 --> 00:13:42,300
+I need to divide that, or, sorry, I need
+
+194
+00:13:42,300 --> 00:13:45,389
+to multiply that by the derivative of d2
+of S.
+
+195
+00:13:49,470 --> 00:13:53,930
+And so remember, d2 of s was just equal to
+d1 of s minus 0.1.
+
+196
+00:13:53,930 --> 00:13:54,430
+So
+
+197
+00:13:57,410 --> 00:14:00,490
+this is just a constant, so the derivative
+of d2 with respect
+
+198
+00:14:00,490 --> 00:14:03,050
+to s has to be the equal to the derivative
+of d1
+
+199
+00:14:03,050 --> 00:14:07,030
+with respect to s, and we already computed
+that, and that was
+
+200
+00:14:07,030 --> 00:14:09,690
+10 over s, so we can recycle that result a
+little bit.
+
+201
+00:14:12,320 --> 00:14:17,760
+So that's this parked over here I can
+replace with 10 over S and
+
+202
+00:14:17,760 --> 00:14:22,920
+that gives me e to the minus 0.01 times
+phi of
+
+203
+00:14:22,920 --> 00:14:27,950
+d 2 of S times 10 over S.
+And
+
+204
+00:14:29,530 --> 00:14:33,613
+so if I put all of that together.
+The derivative of the first term
+
+205
+00:14:33,613 --> 00:14:37,506
+was capital phi of d 1 plus
+
+206
+00:14:37,506 --> 00:14:41,128
+10 times lower case phi of d 1 of s.
+
+207
+00:14:43,230 --> 00:14:45,110
+And the derivative of the second term so I
+was
+
+208
+00:14:45,110 --> 00:14:48,220
+subtracting the second term so it's
+going to be subtracted here.
+
+209
+00:14:48,220 --> 00:14:49,325
+I have10 over s.
+
+210
+00:14:49,325 --> 00:14:55,070
+E to the minus 0.01 times phi of d 2 of S.
+
+211
+00:14:55,070 --> 00:14:57,180
+So sorry, I should, this d 1 is a function
+of
+
+212
+00:14:57,180 --> 00:14:59,740
+S, so it should have an S in the
+parentheses, as well.
+
+213
+00:14:59,740 --> 00:15:00,710
+I forgot to put that there.
+
+214
+00:15:07,050 --> 00:15:07,050
+[COUGH]
+
+215
+00:15:07,050 --> 00:15:09,240
+But unfortunately, we're not finished yet.
+
+216
+00:15:11,770 --> 00:15:17,980
+So remember that little phi of x is equal
+to 1 over the square root of 2 pi times
+
+217
+00:15:17,980 --> 00:15:24,940
+e to the minus x squared over 2.
+So
+
+218
+00:15:24,940 --> 00:15:29,970
+what I'd like to do to simplify this.
+Instead of having a d1 and a d2 in here.
+
+219
+00:15:29,970 --> 00:15:32,410
+I want to see if I can rewrite, just
+remember d,
+
+220
+00:15:32,410 --> 00:15:36,120
+d1 and d2 weren't that different, d2 was
+just d1 minus 0.1.
+
+221
+00:15:36,120 --> 00:15:38,100
+So maybe
+
+222
+00:15:38,100 --> 00:15:42,620
+I can make this simpler by writing writing
+this term
+
+223
+00:15:42,620 --> 00:15:45,079
+in terms of d1 of S rather than d2 of S.
+
+224
+00:15:49,370 --> 00:15:53,883
+So I'm just going to start plugging things
+into this definition of lower case phi.
+
+225
+00:15:56,780 --> 00:15:59,592
+And so first of all, I'm just going to
+evaluate phi
+
+226
+00:15:59,592 --> 00:16:03,370
+at d 2 so I have d 2 of s squared.
+
+227
+00:16:03,370 --> 00:16:05,300
+Where they used to just be the argument
+here.
+
+228
+00:16:08,290 --> 00:16:11,010
+But I want to have a d 1 there instead.
+
+229
+00:16:11,010 --> 00:16:15,950
+So I'm going to replace my d 2 with d 1 of
+S, minus 0.1.
+
+230
+00:16:15,950 --> 00:16:21,730
+So I have e to the minus phi 1 of S minus
+0.1, that quantity squared.
+
+231
+00:16:24,370 --> 00:16:27,270
+And now I'm going to try and to, to make a
+little bit of sense of this.
+
+232
+00:16:27,270 --> 00:16:32,500
+It would be nice if I had this just in
+terms of e to the
+
+233
+00:16:32,500 --> 00:16:37,520
+d1 of S squared because that, that would
+allow me to write it in terms
+
+234
+00:16:37,520 --> 00:16:42,569
+of phi of d1 of S which would make it
+match what's on in this second term here.
+
+235
+00:16:44,060 --> 00:16:47,630
+And so now what I want to do is sort of my
+completing the squares trick backwards,
+
+236
+00:16:50,040 --> 00:16:55,310
+so let's just start by doing the math.
+So the first thing I'm going to do is
+
+237
+00:16:55,310 --> 00:17:01,010
+expand the, the squared term here.
+So I had.
+
+238
+00:17:01,010 --> 00:17:07,330
+D1 of S minus 0.1 squared.
+So that ends up being d1 squared of S
+
+239
+00:17:07,330 --> 00:17:14,144
+minus 2 times 0.1 times d1 of S, so I have
+0.2 d1 of S.
+
+240
+00:17:14,144 --> 00:17:14,646
+Then,
+
+241
+00:17:14,646 --> 00:17:21,191
+plus negative 0.1 squared, so that becomes
+positive 0.01.
+
+242
+00:17:27,070 --> 00:17:27,630
+Let's see.
+
+243
+00:17:31,420 --> 00:17:33,780
+Did anything change?
+No.
+
+244
+00:17:33,780 --> 00:17:37,340
+I think I made a cutting and pasting error
+in this one, so it's hope, hopefully, that
+
+245
+00:17:37,340 --> 00:17:44,894
+doesn't last too long.
+Okay, so essentially what was
+
+246
+00:17:44,894 --> 00:17:51,836
+supposed to happen in this line,
+
+247
+00:17:51,836 --> 00:17:58,520
+and I guess I somehow missed it.
+
+248
+00:17:58,520 --> 00:18:03,635
+Here I have 0.01 divided by 2, so that's
+
+249
+00:18:03,635 --> 00:18:08,590
+going to be 0.005 and remember when
+
+250
+00:18:08,590 --> 00:18:14,190
+I'm adding things together in an exponent,
+I can also think of that as a product
+
+251
+00:18:14,190 --> 00:18:18,980
+of e to each one of those terms.
+So what I meant to
+
+252
+00:18:18,980 --> 00:18:23,630
+do in this line here, I wanted to have e
+to
+
+253
+00:18:23,630 --> 00:18:27,970
+the minus d1 squared over 2.
+That's what's going to end up here.
+
+254
+00:18:29,120 --> 00:18:34,100
+I'm going to have minus times minus, so.
+
+255
+00:18:34,100 --> 00:18:38,180
+E to the minus, or e to the positive 0.2 d
+one but
+
+256
+00:18:38,180 --> 00:18:41,790
+I'm dividing that by two so I get e to the
+0.1 d one.
+
+257
+00:18:41,790 --> 00:18:42,290
+And
+
+258
+00:18:44,380 --> 00:18:51,240
+then, 0.01 divided by two was 0.05.
+And that was just going to end up also
+
+259
+00:18:51,240 --> 00:18:55,398
+over here and remember there's the minus
+sign multiplying it here so I have minus.
+
+260
+00:18:55,398 --> 00:19:01,170
+0.01 minus 0.005.
+And that's what gives me this term here.
+
+261
+00:19:03,600 --> 00:19:05,250
+So hopefully, that would have been a
+little bit
+
+262
+00:19:05,250 --> 00:19:08,790
+more clear if I had, not messed up this
+line.
+
+263
+00:19:08,790 --> 00:19:09,290
+But,
+
+264
+00:19:12,690 --> 00:19:15,150
+okay.
+And now I've, I've written this bit.
+
+265
+00:19:15,150 --> 00:19:17,050
+The one over 2 pi here.
+
+266
+00:19:17,050 --> 00:19:22,020
+E to the minus d 1 of s squared over 2,
+
+267
+00:19:22,020 --> 00:19:24,930
+well that's exactly what phi of d 1 of s
+would be.
+
+268
+00:19:24,930 --> 00:19:29,210
+So hopefully that's starting to look a
+little bit simpler now.
+
+269
+00:19:30,870 --> 00:19:35,509
+And now remember I had d 1 was just 10
+times.
+
+270
+00:19:37,900 --> 00:19:42,520
+The log of, 10 times the log of S,
+hopefully that'll show
+
+271
+00:19:42,520 --> 00:19:46,988
+up here.
+10 times the log of S plus
+
+272
+00:19:46,988 --> 00:19:52,110
+0.15.
+And so
+
+273
+00:19:52,110 --> 00:19:57,820
+here I have e to the log of S.
+That's just going to be S.
+
+274
+00:19:57,820 --> 00:20:03,080
+Because this is a sum I could also think
+of this as e to the positive 0.015
+
+275
+00:20:03,080 --> 00:20:09,180
+so that's going to cancel out my e to the
+negative 0.015 or you could also think
+
+276
+00:20:09,180 --> 00:20:14,210
+of it as just I'm adding those two numbers
+together getting e to the 0 and that's 1.
+
+277
+00:20:14,210 --> 00:20:18,160
+So this bit here is going to cancel out
+this bit here.
+
+278
+00:20:19,620 --> 00:20:25,690
+This e to the log of s, that's going to be
+
+279
+00:20:25,690 --> 00:20:28,760
+just s, so that's going to cancel out my s
+down here,
+
+280
+00:20:31,260 --> 00:20:36,660
+so what I am left with is this second term
+the, the
+
+281
+00:20:36,660 --> 00:20:40,279
+magnitude of it being equal to 10 times
+phi of d1 of s.
+
+282
+00:20:41,300 --> 00:20:41,300
+[INAUDIBLE]
+
+283
+00:20:41,300 --> 00:20:41,300
+.
+
+284
+00:20:41,300 --> 00:20:45,370
+So now, let's go back and look at my, my
+formula for the delta of c.
+
+285
+00:20:46,850 --> 00:20:52,400
+And so the delta of c was originally phi
+of d1,
+
+286
+00:20:52,400 --> 00:20:58,180
+plus 10 times lower-case phi of d1.
+And then minus.
+
+287
+00:20:58,180 --> 00:21:00,446
+And we've just showed that this thing, 10
+over s.
+
+288
+00:21:00,446 --> 00:21:04,010
+Times e to the minus 0.01 times phi of d2
+of s.
+
+289
+00:21:04,010 --> 00:21:06,786
+That was the same thing as
+
+290
+00:21:06,786 --> 00:21:16,710
+10 times phi of d1 of s.
+So what
+
+291
+00:21:16,710 --> 00:21:19,340
+I end up with is capital phi of d1 plus 10
+lower-case phi minus 10 lower-case phi.
+
+292
+00:21:19,340 --> 00:21:22,140
+And in the end we find that the delta for
+
+293
+00:21:22,140 --> 00:21:27,560
+this call option, is actually just capital
+phi of D 1.
+

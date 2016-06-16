@@ -1,0 +1,194 @@
+1
+00:00:00,960 --> 00:00:03,380
+The topic for week two is integrals.
+
+2
+00:00:07,940 --> 00:00:12,640
+And what we're going to cover in this
+series of videos, first integration.
+
+3
+00:00:12,640 --> 00:00:15,320
+So this is just the definition of an
+integral.
+
+4
+00:00:15,320 --> 00:00:17,950
+It's the problem we're trying to solve.
+
+5
+00:00:17,950 --> 00:00:22,420
+And it boils down to basically trying to
+find the area in between a curve,
+
+6
+00:00:22,420 --> 00:00:27,390
+in between the, a curve representing the
+graph of a function and the x axis.
+
+7
+00:00:29,050 --> 00:00:33,250
+The second topic, the fundamental theorem
+of calculus, this gives us a mathematical
+
+8
+00:00:33,250 --> 00:00:37,547
+tool that allows us to answer the question
+we, we set up in, in part one.
+
+9
+00:00:39,770 --> 00:00:44,330
+In part three, I just discuss some
+applications of integration.
+
+10
+00:00:44,330 --> 00:00:46,580
+So this is sort of showing the kind of
+
+11
+00:00:46,580 --> 00:00:49,330
+problem you can interpret as an area and
+then
+
+12
+00:00:49,330 --> 00:00:52,190
+a couple of quick examples of how you can
+
+13
+00:00:52,190 --> 00:00:55,360
+generalize that once I'm allowed to use an
+integral.
+
+14
+00:00:56,880 --> 00:00:59,560
+Then I'm going to switch to techniques of
+integration.
+
+15
+00:00:59,560 --> 00:01:00,060
+So,
+
+16
+00:01:02,060 --> 00:01:04,000
+like the differentiation we did in the
+
+17
+00:01:04,000 --> 00:01:09,000
+first week integration is a mathematical
+operation.
+
+18
+00:01:09,000 --> 00:01:10,850
+It's unfortunately a little bit trickier.
+
+19
+00:01:10,850 --> 00:01:13,290
+So with differentiation, we had a set of
+rules that
+
+20
+00:01:13,290 --> 00:01:16,330
+you can apply to a function to find its
+derivative.
+
+21
+00:01:16,330 --> 00:01:19,750
+In integration we have to run that
+backwards and it's
+
+22
+00:01:19,750 --> 00:01:23,050
+not so clear cut exactly how that's going
+to work,
+
+23
+00:01:23,050 --> 00:01:24,910
+but there are a lot of sort of rules of
+
+24
+00:01:24,910 --> 00:01:27,150
+thumb that can help you out and so that's
+what
+
+25
+00:01:27,150 --> 00:01:28,970
+I mean by techniques of integration.
+
+26
+00:01:30,040 --> 00:01:33,930
+Integration by parts, integration by
+substitution and
+
+27
+00:01:33,930 --> 00:01:36,880
+completing the square are all techniques
+of integration.
+
+28
+00:01:36,880 --> 00:01:40,760
+So there are tricks that are going to help
+you find the integral of a function.
+
+29
+00:01:42,310 --> 00:01:45,080
+And then we'll start moving on to some
+topics we'll need
+
+30
+00:01:45,080 --> 00:01:49,710
+to be able to take derivatives of the
+Black-Scholes pricing formula.
+
+31
+00:01:49,710 --> 00:01:52,410
+So, in particular, we're going to need to
+be able to take
+
+32
+00:01:52,410 --> 00:01:54,080
+the derivative of an integral.
+
+33
+00:01:55,940 --> 00:01:57,080
+So, that will be topic
+
+34
+00:01:57,080 --> 00:02:00,350
+number seven, different, differentiating
+definite integrals.
+
+35
+00:02:01,555 --> 00:02:05,550
+We're also going to look at integrals that
+have an unbounded region.
+
+36
+00:02:05,550 --> 00:02:09,979
+So, that would be integrating from, say a
+minus infinity up to a certain value x.
+
+37
+00:02:11,440 --> 00:02:14,510
+We can also look at improper integrals
+where the function
+
+38
+00:02:14,510 --> 00:02:17,560
+takes an inter, sorry, where the function
+takes an infinite
+
+39
+00:02:17,560 --> 00:02:22,040
+value, and that will be what we talk about
+in topic nine, improper integrals two.
+
+40
+00:02:23,738 --> 00:02:27,140
+And then we'll put all of that together
+and learn how to take
+
+41
+00:02:27,140 --> 00:02:31,840
+the derivative of a function defined to be
+the improper integral of another function.
+

@@ -1,0 +1,546 @@
+1
+00:00:01,170 --> 00:00:05,610
+Okay, and then I'm going to visit one more
+topic, quickly from the first week.
+
+2
+00:00:07,660 --> 00:00:10,604
+So I talked about something called bond
+duration, and
+
+3
+00:00:10,604 --> 00:00:13,560
+it turned out that, was just a linear
+approximation.
+
+4
+00:00:13,560 --> 00:00:15,804
+So I was using the derivative, to make a
+
+5
+00:00:15,804 --> 00:00:18,800
+linear approximation of a yield curve, for
+a bond.
+
+6
+00:00:20,750 --> 00:00:24,150
+So this is the, the yield curve for a
+bond.
+
+7
+00:00:24,150 --> 00:00:27,389
+The price formula, so the price of a bond
+is the,
+
+8
+00:00:27,389 --> 00:00:32,530
+it's essentially, it's just the discounted
+value of the futures stream.
+
+9
+00:00:32,530 --> 00:00:37,829
+So, what I'm going to get paid, is the
+face value of the bond, in n periods.
+
+10
+00:00:39,240 --> 00:00:44,642
+And then sort of my reward, for giving
+somebody money now, that they're going to
+
+11
+00:00:44,642 --> 00:00:47,010
+pay me back in the future, is they're
+
+12
+00:00:47,010 --> 00:00:51,030
+going to make coupon payments every every
+month.
+
+13
+00:00:52,060 --> 00:00:55,600
+And so, this actually should have had
+parentheses around it.
+
+14
+00:00:55,600 --> 00:00:57,812
+And so what, what I'm after here
+
+15
+00:00:57,812 --> 00:01:02,078
+is just the discounted value of this
+stream of coupon payments,
+
+16
+00:01:02,078 --> 00:01:06,570
+plus the discounted value of the face
+value when the bond matures.
+
+17
+00:01:08,030 --> 00:01:12,010
+So I have coupon payment, number of
+periods remaining.
+
+18
+00:01:12,010 --> 00:01:16,430
+So N is just how many periods I have to
+wait before I get my money back.
+
+19
+00:01:17,760 --> 00:01:19,860
+F is the face value, so that's what I get.
+
+20
+00:01:19,860 --> 00:01:22,935
+That's sort of usually it's how much I
+have sold
+
+21
+00:01:22,935 --> 00:01:23,867
+the bond for.
+
+22
+00:01:23,867 --> 00:01:26,694
+And then I just get, my money back some
+time in the future.
+
+23
+00:01:26,694 --> 00:01:30,545
+And then lambda, you can think of this as
+the interest rate.
+
+24
+00:01:30,545 --> 00:01:34,225
+But it's, for a bond it's called yield for
+maturity.
+
+25
+00:01:34,225 --> 00:01:34,875
+[COUGH]
+
+26
+00:01:34,875 --> 00:01:41,910
+And so last time, I said we can make a, a
+linear approximation.
+
+27
+00:01:43,460 --> 00:01:46,820
+So I, I introduced this concept called
+duration, but then I, I showed
+
+28
+00:01:46,820 --> 00:01:50,670
+that it was basically just a, a simple
+transformation of the first derivative.
+
+29
+00:01:50,670 --> 00:01:53,940
+And so I could use that to make a linear
+approximation to my bond.
+
+30
+00:01:53,940 --> 00:01:59,750
+And so if I did that at the point 10% and
+100.
+
+31
+00:01:59,750 --> 00:02:01,920
+And you can see, you know, maybe between
+
+32
+00:02:01,920 --> 00:02:05,790
+8% and 12%, the linear approximation is
+pretty good.
+
+33
+00:02:05,790 --> 00:02:08,563
+But you know, if you deviate a long way
+from there, then
+
+34
+00:02:08,563 --> 00:02:12,500
+the distance between the actual price and
+the approximation gets pretty big.
+
+35
+00:02:12,500 --> 00:02:17,560
+And I said, we could improve this by
+adding a quadratic term.
+
+36
+00:02:17,560 --> 00:02:22,660
+And so we'll see that, that quadratic term
+is just, a degree 2 Taylor polynomial.
+
+37
+00:02:25,730 --> 00:02:28,990
+So, the quadratic term is called
+convexity.
+
+38
+00:02:30,050 --> 00:02:32,745
+And we just have to compute it, by looking
+
+39
+00:02:32,745 --> 00:02:36,330
+at the present value of the future stream
+of payments.
+
+40
+00:02:36,330 --> 00:02:42,860
+So if I say ak is the amount that I'm
+going to receive after, in the kth period.
+
+41
+00:02:43,940 --> 00:02:46,790
+Then I want to find the present value of
+that amount.
+
+42
+00:02:46,790 --> 00:02:51,024
+Just by discounting it, by a factor that's
+equal to 1 plus the yield
+
+43
+00:02:51,024 --> 00:02:51,930
+to maturity.
+
+44
+00:02:51,930 --> 00:02:56,727
+And then I'll say that, the price of the
+current
+
+45
+00:02:56,727 --> 00:03:01,740
+price of the bond is just equal to the
+sum.
+
+46
+00:03:01,740 --> 00:03:05,580
+Of the present values of all of the future
+payments I'll receive.
+
+47
+00:03:05,580 --> 00:03:11,260
+And that's equal to the sum of all of
+these amounts discounted by 1 plus lambda.
+
+48
+00:03:15,660 --> 00:03:22,480
+Then the term convexity is defined to be,
+1 over P times the second derivative.
+
+49
+00:03:22,480 --> 00:03:24,710
+Of this price formula with respect to
+lambda.
+
+50
+00:03:33,070 --> 00:03:38,630
+And, so I said the price was equal to this
+thing over here.
+
+51
+00:03:38,630 --> 00:03:42,855
+And, so I'm going to just put 1 over p
+times the price, and instead of having
+
+52
+00:03:42,855 --> 00:03:45,260
+this in the denominator, I just think I
+make
+
+53
+00:03:45,260 --> 00:03:48,450
+fewer mistakes when I can use the power
+rule.
+
+54
+00:03:48,450 --> 00:03:52,120
+So I write that as, 1 minus lambda to the
+minus k instead.
+
+55
+00:03:52,120 --> 00:03:58,315
+And then the only thing that has a lambda
+in
+
+56
+00:03:58,315 --> 00:04:01,540
+it is this term here.
+
+57
+00:04:01,540 --> 00:04:04,378
+So I'm going to move my derivative
+operator across
+
+58
+00:04:04,378 --> 00:04:07,310
+the 1 over P and then across the sum.
+
+59
+00:04:07,310 --> 00:04:09,656
+So we have this linearity property,
+remember, so the
+
+60
+00:04:09,656 --> 00:04:11,820
+derivative of a sum is the sum of the
+derivative.
+
+61
+00:04:13,960 --> 00:04:17,404
+And then in 1 step I will take 2
+derivatives, so
+
+62
+00:04:17,404 --> 00:04:20,260
+I add this to the minus k, so I get, k
+
+63
+00:04:20,260 --> 00:04:23,620
+here, and then a k plus 1, and since I'm
+doing
+
+64
+00:04:23,620 --> 00:04:27,960
+it twice, the minus signs are going to
+cancel each other out.
+
+65
+00:04:30,170 --> 00:04:33,840
+And then I end up with minus k plus 2 in
+the denominator.
+
+66
+00:04:33,840 --> 00:04:36,260
+So the denominator, the power's getting
+smaller.
+
+67
+00:04:39,950 --> 00:04:43,642
+And you can write this as 1 over p, so I'm
+going to take this plus
+
+68
+00:04:43,642 --> 00:04:49,100
+2 here, and write it as 1 over p times the
+quantity 1 plus lambda squared.
+
+69
+00:04:49,100 --> 00:04:52,835
+And then I have inside this sum, k times k
+plus 1 times
+
+70
+00:04:52,835 --> 00:04:54,578
+these a sub k divided, so
+
+71
+00:04:54,578 --> 00:04:58,840
+that the discounted feature payments again
+essentially.
+
+72
+00:04:58,840 --> 00:05:05,450
+And now I need a point, where I can make
+my approximation.
+
+73
+00:05:05,450 --> 00:05:08,695
+So I all ready saw that in my graph it was
+the point.
+
+74
+00:05:08,695 --> 00:05:12,679
+10% and 100 so that gives me a lambda note
+and a P0,
+
+75
+00:05:12,679 --> 00:05:18,225
+so, so some point where I've actually
+evaluated the, the price of the bond.
+
+76
+00:05:18,225 --> 00:05:24,159
+Then I have Dm, as something called the
+modified duration and C as the convexity,
+
+77
+00:05:24,159 --> 00:05:31,093
+that we calculated on the last slide.
+And so if you look in the investment
+
+78
+00:05:31,093 --> 00:05:35,251
+science textbook, you'll find that just,
+the change in price
+
+79
+00:05:35,251 --> 00:05:38,870
+of the bond is approximately equal to
+minus the modified
+
+80
+00:05:38,870 --> 00:05:42,720
+duration, times the price times the change
+in the interest
+
+81
+00:05:42,720 --> 00:05:46,510
+rate, plus 1 half times the price times
+the convexity.
+
+82
+00:05:48,690 --> 00:05:50,770
+Times the change in the interest rate
+squared.
+
+83
+00:05:52,670 --> 00:05:54,816
+And so let's just try and write this out
+into
+
+84
+00:05:54,816 --> 00:05:58,310
+things that look more familiar for, with
+what we've just done.
+
+85
+00:05:59,840 --> 00:06:05,441
+So I'll say delta P, that's just going to
+be the difference between P and P0.
+
+86
+00:06:05,441 --> 00:06:09,146
+So I'll leave the P on the left, lefthand
+side
+
+87
+00:06:09,146 --> 00:06:13,801
+right here, but I'll move the P0 to the
+righthand side,
+
+88
+00:06:13,801 --> 00:06:17,411
+so I have P0 minus the modified duration
+
+89
+00:06:17,411 --> 00:06:21,225
+times the price times lambda minus lambda
+0.
+
+90
+00:06:21,225 --> 00:06:26,574
+So that's delta lambda, I'm just going to
+think of that as lambda minus lambda 0.
+
+91
+00:06:26,574 --> 00:06:31,890
+And then 1 half price times convexity
+times lamba minus lambda 0 squared.
+
+92
+00:06:33,010 --> 00:06:35,530
+And if I go back and substitute in how
+
+93
+00:06:35,530 --> 00:06:39,142
+we got these terms in the first place, the
+modified
+
+94
+00:06:39,142 --> 00:06:44,518
+duration time price and price times
+convexity, both of those just came from
+
+95
+00:06:44,518 --> 00:06:50,490
+the derivatives of this price formula for
+the bond with respect to lambda.
+
+96
+00:06:50,490 --> 00:06:53,901
+So the first one is just dP d-lambda,
+evaluated at P0.
+
+97
+00:06:53,901 --> 00:06:59,221
+And then price times convexity, that's the
+same thing as the second derivative of
+
+98
+00:06:59,221 --> 00:07:04,292
+P with respect to lambda evaluated at P0.
+So really all we've done,
+
+99
+00:07:04,292 --> 00:07:07,030
+when we use modified duration and
+convexity
+
+100
+00:07:07,030 --> 00:07:10,636
+to approximate the, the price of a bond.
+
+101
+00:07:10,636 --> 00:07:17,070
+we've used order 2 Taylor polynomial to,
+to approximate the same thing.
+
+102
+00:07:20,060 --> 00:07:24,430
+And so just to finish up this is the, the
+picture of what that looks like.
+
+103
+00:07:24,430 --> 00:07:29,875
+So the, the blue curve is the actual price
+curve, yield curve of the bond.
+
+104
+00:07:29,875 --> 00:07:30,370
+[COUGH]
+
+105
+00:07:30,370 --> 00:07:35,716
+And the dashed black line is the linear
+approximation, and then
+
+106
+00:07:35,716 --> 00:07:40,856
+the red line is the order 2 approximation.
+And so again in
+
+107
+00:07:40,856 --> 00:07:45,930
+maybe, maybe a little bit wider now maybe
+6 or 7 to
+
+108
+00:07:45,930 --> 00:07:51,520
+about 13 or 14, we have a good
+approximation.
+
+109
+00:07:51,520 --> 00:07:55,488
+But then as we get into more extreme
+values, much further away from the point
+
+110
+00:07:55,488 --> 00:07:58,060
+we used to build the approximation.
+
+111
+00:07:58,060 --> 00:08:02,284
+The the true yield curve is deviating from
+our approximation, and so on
+
+112
+00:08:02,284 --> 00:08:04,000
+this side it's higher than the
+
+113
+00:08:04,000 --> 00:08:06,760
+approximations, and on this side it's
+lower.
+

@@ -1,0 +1,457 @@
+The last topic for today is Solving Least
+Squares Problems.
+So the, problem i'm going to look at is i
+have a data set.
+So in this case i took some sort of market
+returns,
+so S&P 500 returns and i've plotted them
+on the X axis.
+And then i've taken the returns for one,
+oops, one specific asset.
+So it's going to be shares of Citigroup,
+and i've plotted those on the Y axis and
+so those are the black dots here.
+And what you want to do is, or that what
+the goal of
+this is, is i want to find the best fit
+line here.
+And the slope of that best fit line is
+going to be called the beta for this
+particular asset.
+So it's a, a way of relating the returns
+on one particular asset to the returns in
+the market.
+And so what i've drawn here with the red
+line, it's hopefully you look at that and
+realize
+the red line is probably not the best fit
+because most of the data is up above it.
+So this is just my guess at a best fit
+line, so
+i just wrote a line, that's suppose to be
+a y tilda.
+Is equal to alpha plus beta times x.
+And what i want to do is i want to find an
+alpha, and i'm going to call
+it an alpha hat.
+And a beta hat that give me the line
+that's somehow closest, to all of these
+black dots.
+So in general, what i'm going to, how i'm
+going to approach this, is i'm going to
+think that i'm
+going to have a set of M points, so, xi,
+yi so, each dot here just the X
+coordinates.
+Suppose this dot up here was the fifth
+point then,
+X 5 would be the X coordinate of this dot.
+Y 5 would be the Y coordinate of that dot
+so
+i have this set of m points so there's m
+dots here.
+Since these
+are monthly returns from 2010 there will
+be 12 dots so m will be equal to 12.
+And i want to find this best fit line.
+Y hat is equal to alpha hat plus beta hat
+x.
+And my Criterion is what i'm gone, i'm
+going to define this yi hat to be the
+value on the, on the line at the same
+value x as each one of these data points.
+So what i end up, if i look at the one on
+the right here, i'm taking not the
+perpendicular distance to the line but the
+vertical distance to the line, so that's
+just going to be yi minus y hat, so the
+actual point, this
+black dot, minus the point on the line at
+the same x coordinate.
+So that would be this red dot here.
+And i'm going to take that difference, and
+because that could be
+positive or negative, i'm going to square
+that to get something only
+positive, and then what i want to do is i
+want to
+choose the line that's going to make that
+square, that squares is
+[INAUDIBLE]
+small, so i'm going to sum up all those
+deviations.
+That's going to give me some positive
+number.
+And i want to chose the line that's
+going to make that number as small as
+possible.
+So i want to minimize this sum of squares.
+And so the points on the red line here,
+i can write those as alpha plus beta times
+xi.
+So for, for any x, the point on the line
+is just given by this.
+And so, i'm going to replace this y hat
+with a formula that gives me y hat.
+And i'm going to look for values, alpha
+hat and
+beta hat, so that when i plug in alpha
+hat for alpha and beta hat for beta, this
+sum is the smallest i can possibly make
+it.
+So that's kind of the, the graph picture.
+And now i want to see if i can set this up
+as a matrix problem.
+So i'm going to call that, i'll call this
+the row picture, because
+i, each of of these points is sort of
+described by xi yi, and
+so if i think of xi yi as rows, i can draw
+the points like that.
+for solving it, it turns
+out to be useful to write this in the
+column picture.
+So i'm going to take my y values, y1 up to
+ym, and i'm going to call that a vector y.
+Do the same thing to get a vector x.
+So x is just the vector of all the x
+values.
+And then i'll let e be a column vector of
+m ones again.
+And so what i end up is i can write y
+tilde.
+So these are, these are the points on the
+line, now.
+I can write that as a linear combination
+of
+my vector of ones, and my vector of x's.
+So i have y1 is equal to, so alpha times
+one, so y1 is equal to alpha plus beta
+times x1.
+And that holds for each row
+[SOUND].
+So instead of thinking of it as rows i can
+now think of it
+as this linear combination of this column
+of ones and the, and the vector X.
+And then i could put those two vectors
+together into a matrix and express this
+vector y tilde.
+As this matrix with one column of
+ones and one column being my vector x
+times the vector alpha beta.
+And then i'm going to do a terrible abuse
+of notation
+and refer to this vector alpha beta also
+as just beta.
+So, when beta is a vector quantity it
+means this vector alpha beta, when
+it's a scalar quantity it means this
+second element of alpha beta.
+And now remember i want to minimize, so
+this is the distance between the, actually
+the vertical distance between the actual
+point and the point on the line.
+So the y tilda over here is the point on
+the line and the yi is the actual point.
+I'm going to take that distance and square
+it.
+And sum it up.
+And that's going to give me the criterion
+of the thing that i want to minimize.
+But that's actually just the distance
+between these two.
+That's the definition of the distance
+between two vectors.
+So if it had a square root here, it
+would actually be the distance between y
+and y tilde.
+So without the square root, is the squared
+length of the
+vector that i get when i subtract y tilde
+from y.
+And then remember i can write y tilde, so
+what i've just done up here as x beta.
+Oops.
+So this is the, the problem i want to look
+at now.
+So the y is given.
+I know what those, the y values of my
+points are.
+The X is given.
+I know what the first column is, cause
+that's always ones.
+I know what the second column in, that's
+the X values from my points.
+And i want to choose beta, so i want to
+choose values of alpha and beta, to make
+the length of
+this vector as short as possible.
+So i'm going to use something called a QR
+Factorization to help me do this.
+And so if A is an m by n matrix with
+linearly independent columns,
+a full QR factorization of a, is just
+going to be a product of an m by
+m orthogonal matrix Q and an m by n upper
+triangular matrix R.
+And so remember when i have more rows than
+i have columns, it's still
+just the, you know, 1 1, 2 2, 3 3 elements
+that are non-zero
+and everything where i is not equal to j
+and this matrix r has to be 0.
+And my factorization will then be A equals
+QR.
+So Q is orthogonal, R is upper triangular.
+And it turns out that while i am in this
+most of the time works and in fact if you
+allow some of the diagonal elements of r
+to be 0 it always works.
+[COUGH]
+And now i want to minimize, so this is
+from
+the last slide, i want to minimize y minus
+x beta.
+So i want to choose the elements of beta
+to
+make this length, this vector, as short as
+possible.
+And so the standard rule that i have is
+when i can factor a matrix, i'm going to
+put my factorization of the matrix in
+where i
+used to have the matrix, so i'll replace
+x.
+So here q r is a q r factorization of this
+matrix x.
+So i'll replace x with q r, and its a
+little tricky to see how that's
+going to help us right now, but we have to
+remember one
+other thing so q is m by m r is m by n.
+And
+then beta is n by 1.
+So in this case, q is 12 by 12.
+So for my, my example that i'm working on,
+i have 12 data points.
+So q is 12 by 12.
+R is 12 by 2.
+And beta was alpha beta, so 2 by 1.
+So the whole product is going to be 12 by
+1, because the first, the first dimension
+is a 12 and the last dimension is a 1.
+So this is just a vector.
+Y is a vector.
+So when i do this subtraction, this is
+still just a vector.
+And what happens when i multiply a vector
+by an
+orthogonal matrix, or what happens to the
+length of that vector.
+One of the
+really nice properties of an orthogonal
+matrix is that lengths stays the same.
+So the matrix i'm going to choose to
+multiply this
+is going to be Q transpose so, if i have y
+is equal to qr
+beta, so this thing that i just argued was
+a vector.
+Q transposed is just going to be some sort
+of
+high dimensional rotation of that vector,
+that
+leaves the length of the vector unchanged.
+But now, i can use the left distributive
+property here.
+So i can write this as Q transpose y minus
+Q transpose QR beta, which is just going
+to be Q transpose y, so this is another
+vector with 12 elements in it, minus r
+beta.
+And r,
+remember, is now this matrix.
+So in my case it was 12 by 2, and only the
+upper triangular bit can be non-zero.
+So it has three non-zero elements in it.
+And it has 21 zeros in it.
+So this is actually a pretty easy thing to
+deal with.
+So, now what i'm going to do just so i
+don't have to keep
+writing Q transpose y all the time, i'm
+going to let u equal transpose y.
+So this is just the rotation of my y
+vector.
+So it's still just a vector with 12
+elements in it.
+And it's going to, the picture's going to
+look like this.
+So i have u minus r beta.
+It's going to be u1, u2, u3 minus r and
+then my vector of beta i can write out
+again.
+So it's scaler alpha in the first
+position, scaler beta in the second
+position.
+And then i can go ahead and just do the
+math here,
+so i have the first element, so i, i can
+do this multiplication
+here and then do the subtraction.
+So here i'm going to
+r 11 times alpha plus r 12 times beta and
+then i'm going to
+subtract that from u 1, so in the answer i
+have u 1 minus
+r 11 alpha plus r 12 beta.
+In the second
+position, i'm going to have u 2 minus 0
+times alpha, minus r 22 beta.
+So i, in the answer over here, i get u 2
+minus r 22 beta.
+And then, for every other element here,
+i'm going
+to have 0 times alpha plus 0 times beta.
+So the rest of u stays unchanged.
+So alpha and beta affect only the first n
+elements.
+So in this particular case, n is 2.
+So, they only effect the first two
+elements of this vector u minus R beta,
+[COUGH]
+and remember i am trying to minimize this
+thing u minus R beta and so.
+What do i mean when i write the length of
+a vector, well i mean
+the first thing squared, plus the second
+thing squared.
+So this is the, sorry, the squared length
+of the
+vectors is just the length without the
+square root symbol.
+So that's going to be u 1 squared plus u 2
+squared plus
+u 3 squared.
+So the length of this vector over here is
+going to be this thing squared so that's
+what i've written here, plus this squared.
+That's what i've written here, plus u 3
+squared, plus u 4 squared.
+So plus everything else squared.
+But the only thing here if, if i look at
+this closely, the, i can now by choosing
+alpha and beta.
+I will never affect what happens over here
+because these have no dependents on alpha
+and beta.
+So i have one term that depends on both
+alpha
+and beta, and one term that depends only
+on beta.
+And they're squared so they have to be
+positive or zero.
+So the smallest i can make this thing is
+if this thing is zero and this thing is
+zero.
+So i'm going to do essentially just back
+substitution.
+First i'll choose beta so
+that u minus r 22 beta is equal to 0.
+That gives me a fixed value of beta and it
+makes this term 0.
+Then i'll plug that value of beta in here,
+and choose alpha, so that this quantity is
+0.
+And so then, by choosing that particular
+value of beta, and that
+particular value of alpha, i'll have made
+both of these terms 0.
+And that's going to be the shortest that
+i'm able to make this vector.
+And this vector has the same length as the
+vector i was trying to minimize in
+the first place so that vector alpha hat
+beta hat is going to solve this problem.
+So it turns out i can find find alpha
+hat and beta hat just by solving the
+linear system.
+So i just have to take the first two rows
+or the first n rows in general if this
+matrix R.
+And then the solution to this linear
+system, alpha hat beta hat,
+are going to be the slope and the y
+intercepts that i'm after.
+And since R was designed to be upper
+triangular, this system is
+already upper triangular so i can
+solve this directly just using back
+substitution.
+And so then i have an r example of doing
+this.
+So i to get the data that i have in the
+beginning i use the quantmod package.
+Got the data for Citi Group.
+This is the symbol for SP500.
+These next two just turn those into
+monthly returns for the year 2010.
+The X-variable is going to be the returns
+on the market, so their returns on
+the SP500.
+And then i need to add a one in front of
+that to make my matrix x, so this function
+c bind just stick
+a column of ones in front of that vector.
+So x is now my 12
+by 2 matrix with a column of ones and the
+my vector of x's.
+Like the singular value decomposition in
+the eigen
+decomposition, QR function gives me back a
+list.
+So i'm going to save that in qr.X, and
+then
+i'll use this function qr.Q to get the Q
+matrix.
+This function qr.R to get the R matrix,
+and then if you wanted to, you
+could check that you did it right by
+saying all equal q percent, star percent,
+r, comma, x, and that would just check
+that these two matrices have the same
+value.
+[COUGH]
+So then i'll make a vector u,
+that has q transposed times y.
+So the returns on my asset are the y
+variable.
+And then i'll solve for alpha hat and beta
+hat just by solving
+that square system of the top square of r.
+So
+the two by two block at the top of r and
+the first two elements of u.
+And that gives me 0.017 as the alpha hat
+estimate and
+1.33 as the beta estimate.
+And then i'm am just going to compare
+that with the built in least squares
+fitting function.
+So there's a function called ls fit, and i
+can
+give it the, the x variable and the y
+variable.
+And note that it also gives me 0.017 for
+the alpha and 1.33 for the beta.
+And this is the fit we end up with.
+So the red line was my initial guess.
+It's actually just goes thorugh the origin
+and has slope one so
+it's sort of saying that the market and
+the asset behave similarly.
+And the blue line is the least squares fit
+for the city group returns on the market
+returns.
+

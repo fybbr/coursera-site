@@ -1,0 +1,611 @@
+Okay, so I want to keep moving along a
+bit.
+So, Rho and Vega, they're a little bit
+easier
+so I tried to cram them into one lesson.
+So rho is the rate of change of the value
+of a portfolio with respect to the
+risk-free interest rate r.
+And so again r portfolio that we are
+considering right now
+just has a single asset in it which is
+called option.
+So, this will be the pricing formula for
+my portfolio, and I want to take the
+derivative of that with respect to r, the
+partial derivative with respect to the
+risk-free interest rate.
+[SOUND]
+So, what's going to happen, here, the
+first, the first term will be relatively
+easy.
+So I'm going to use the, again the
+linearity property, so
+derivative of a sum, is the sum of the
+derivatives.
+This Se to the minus q to the minus T
+minus t, this doesn't depend on r.
+So I can move that across the derivative
+operator.
+So the derivative of the first term is
+going to be S q T minus t.
+Se to the q minus q T minus t, times the
+partial derivative with respect to r.
+Of capital phi of d plus.
+And then I need to subtract.
+And
+now, here, I'm going to take the product
+rule.
+Because ke to the minus r, t minus t, and
+phi of d minus.
+Those are two functions that both depend
+on r.
+So by the product rule, it's going to be
+the derivative of the first function
+times the second function, plus the
+derivative
+of the second function times the first
+function.
+So the derivative of the first
+function with respect to R is going to be.
+K times minus t minus little t.
+So this is going to get a bit complicated.
+I probably should have used a, a
+substitution to get this.
+But this minus sign here came from this
+minus sign here.
+Then when I take the derivative.
+oh, did I make a mistake?
+So when
+[LAUGH]
+when I take the derivative of
+K e to the minus r T minus t, so r is the
+variable I'm taking the derivative
+with respect to, and that's multiplied by
+minus capital T minus little t.
+Yeah, do I have
+the minus?
+I switched
+the order of the terms.
+So it is, okay, it is okay.
+Right, okay.
+Right?
+Well, there's going to be two minus signs.
+Because I'm take.
+So this is, the mistake is that, when
+you take the derivative with respect to
+little t.
+Little t is minus n here, and the r.
+So,
+minus.
+Oh, sorry.
+I'm confusing myself.
+>>
+[LAUGH].
+>> I'm taking the derivative with
+respect to r.
+I got ahead of myself.
+I was.
+Working very hard right before class on
+the theta, which is the
+next lesson where I'll be taking a
+derivative with respect to little t.
+Yeah, so oh okay, this is correct.
+So I have minus capital t minus little t
+times k so that's why I get a minus
+capital t times minus little t times k
+times e to the minus r t minus t.
+Times phi of d minus.
+So it's a derivative of the first function
+times
+the second then plus the derivative of the
+second function.
+So I'm taking the partial derivative of
+phi of
+d minus and multiplying that by the first
+function.
+K e to the minus r t minus t, mm okay.
+So crisis avoided.
+And
+now by the chain rule, so I kept the.
+So this, first Bit here it's going to stay
+the same and now I'm trying
+to take the derivative of a function of d
+plus with respect to little r.
+So I have to use the chain rule.
+So I'm starting to do a few more steps in
+each line here.
+So we've already seen that the derivative
+of capital phi of d
+plus with respect to d plus, that's just
+little phi of d plus.
+And then by the chain rule, I need to
+multiply that
+by the partial derivative of D plus with
+respect to R.
+And then the same thing is going to happen
+in
+the second term of the part in the square
+brackets here when I have to take the
+derivative
+of capital fee again with respect to D
+minus.
+So I'll get the derivative of capital phi
+of d minus, is just lowercase
+phi of d minus times the partial
+derivative of d minus with respect to r.
+So that's just the chain rule, so I've
+used it here and
+I've used it here.
+>>
+[INAUDIBLE]
+So that's the derivative of capital Phi so
+remember we've defined capital
+Phi as the integral from minus infinity up
+to Z of little
+phi.
+Alright, so little phi is just the
+derivative of Capital Phi essentially.
+So, next thing I'm going to need are the
+partial
+derivatives of d plus and d minus with
+respect to r.
+So, again, this turns out not to be too
+difficult because if I look at the
+definition of d plus or d minus so I can,
+again, look at these same time.
+I can write this as, so I have log of S
+over K divided by the denominator
+minus q times T minus t over the
+denominator, plus or
+minus sigma squared over 2 times T minus t
+over the denominator.
+I want to take all of those bits that
+don't depend on r.
+And just lump them up into something
+that's
+constant, relative to the risk free
+interest rate, r.
+And then the only bit that's left over,
+the part that's going
+to depend on r, is going to be this plus r
+divided
+by the square root of T minus t.
+And so I have, I'll think of this T minus
+t, the actual quantity.
+As just the square root squared.
+So one of those square roots is going to
+cancel.
+So I end up on the top with r times the
+square root of T minus t.
+And on the bottom, I just have this sigma
+left over.
+And now, this is actually a very easy
+function to
+take the derivative, because I'm, I
+want to take the derivative
+of this with respect to r, and so this is
+just some number.
+Times r to the first power, so I can use
+the power rule to say
+that's just going to be the square root of
+t minus t divided by sigma.
+And again, because it doesn't have the,
+the part with this plus
+or minus sigma squared ended up being
+constant with respect to r.
+That's just gone.
+I doesn't matter if I'm taking the
+derivative of d plus or d minus.
+I'm going to get the same value, square
+root of t minus t divided by sigma.
+So if I substitute that in for d plus
+and d minus, I end of with this expression
+here.
+So the first term that we, we already had
+and then this
+is just the, what we had on the, the slide
+before, except the
+partial derivative with respect to r of d
+plus or d minus, that's
+just been replaced with the square root t
+minus t divided by sigma.
+And I'm going to rewrite that like this.
+So it might take a little bit of thinking
+to
+get from, from the top point to the bottom
+point.
+The first term stayed the same.
+And all I did was reintroduce the square
+root of T minus t in the denominator.
+So I recovered, just a.
+Square root of T minus t squared in the
+numerator and
+then I factored that out and that's where
+this came from.
+Then, because I've introduced this s in
+the denominator here,
+I can factor out an s over here as well.
+And so may be with the, may be with the
+little bit
+of staring at this you will convince
+yourself that I can move from
+this line here to this line here and now
+if you look
+at the part that's in this square brackets
+that's exactly the same expression.
+That we showed was zero
+[NOISE]
+when we were trying to simplify the
+expression for delta, so that I
+could compute gamma without have to take
+the derivative of all three terms.
+So if this thing in the square brackets is
+equal to zero,
+then it doesn't matter what s, and capital
+T and little t are.
+This whole second line here is equal to
+zero.
+And so my expression for rho is just
+going to
+be K, oops, going to do it backwards, so K
+times
+T minus t times e to the minus r to the,
+so e to the minus r T minus t
+times capital phi of d minus.
+So that's us getting rho.
+[SOUND]
+Vega is the rate of change of
+the value of the portfolio
+with respect to the volatility sigma.
+So, now, I just need to take partial
+derivatives with respect to sigma.
+So again we're going to start off with
+Black-Scholes formula for the price
+of a European call option.
+And
+I want to take the derivative with respect
+to sigma.
+So that's my, my definition of vega.
+And so this one looks like it should be
+fairly straightforward since.
+Here, s, e, q, t and t, there's no sigma
+there and the
+same for, for the right 10 term.
+I have k, r, t and t.
+So I'm just going to have to, you know, by
+the linearity
+property this is the derivative of a sum.
+This is sum of the derivatives.
+And I can move these terms that are
+constant with respect to sigma across the
+derivative operator.
+So I can write this in this form here.
+So I have vega equals S e to the minus q T
+minus t.
+And then I'm, I'm starting to do more
+operations in each step, so.
+By the chain role the derivative with
+respect to sigma of capital phi is
+going to
+be the derivative of capital phi which
+we've,
+which I've said now is lower case phi.
+So once you've sort of proved something
+one
+time, or once you've used a result often
+enough.
+We don't have to keep proving
+at every single time that you do it,
+and then by the Chain rule because I am
+taking the derivative of.
+Capital fi of d plus, d plus is the
+function of sigma.
+So, I have to use the Chain rule, and
+so to get the correct derivative I need to
+multiply.
+Lower case phi of d plus by the derivative
+the
+partial derivative of d plus with respect
+to sigma and then
+I am going to do exactly the same thing to
+the
+right-hand term except that it's just
+going to be a lower-case
+phi of d minus and then by the chain
+rule partial derivative of d minus with
+respect to sigma.
+Oh.
+>> So is the, 'cause I heard earlier
+that that guy was,uh,
+[INAUDIBLE]
+sigma and we had the, you know, phi being
+the, the
+[INAUDIBLE]
+so, is the actual formula then, in this
+case, one of several different varieties.
+>>Right.
+So, v, v is They chose that letter for a
+value so it's the value of a portfolio.
+>>
+[INAUDIBLE]
+>> Well I said in the first slide, the
+portfolio I want
+to consider during this session is a
+portfolio that contains one call option.
+Okay, so so for this you know v as an
+general for instance when
+you are doing the homework i asked you to
+calculate vega of a put option.
+So then you would say you know v of p
+that would be partial if p with respect to
+sigma.
+In general, V is just whatever your
+portfolio is, so you
+could put, you know, several shares of the
+asset into it.
+You could put, some options into it.
+Yeah, so V is kind of the general idea and
+then, because I'm only pricing a portfolio
+with a call option, I've just gone to just
+using the call option pricing formula.
+Okay, did I explain all of this slide
+already yes, I did okay.
+So what I need now are partial derivatives
+of
+d plus and d minus with respective to
+sigma.
+So I
+will start out just by writing down what d
+plus minus is so again I am
+using this sort of place holder so I can
+do them both at the same time.
+And so it turns out I can separate this
+into
+two things that are going to be easier to
+work with.
+So there is one term in the numerator
+here.
+The sigma squared over 2 times t minus t
+that has a sigma squared in it.
+So I'm going to put that all by itself on
+the right-hand side.
+And so, what I've ended up doing is,
+taking the sigma squared over 2, divided
+by sigma.
+So that's just this sigma
+here, divided by 2.
+Then I have a T minus t in the numerator.
+And a square root of T minus t in the
+denominator.
+So I have.
+T minus T, and square root of T minus T
+here.
+And then I have to just take what's left,
+and put that in the other term.
+So I have a log of S over K plus R minus Q
+times T minus T.
+So.
+That's just this part here.
+Divided by the square root of T minus T.
+And then I'm going to, because I'm setting
+myself up to use the
+power rule, I'm just going to write that
+as sigma to the minus one.
+Because I'm, you know, for me personally,
+less
+likely to make a mistake if I write it
+this way than if I try and take
+the derivative just with the sigma and the
+denominator.
+So now I'm going to go ahead and take the
+partial derivative of d
+plus and minus with respect to sigma.
+And notice it's, it's going to kind of
+carry through
+this time, because now I have the plus or
+minus.
+And there's a sigma here, so when I take
+the derivative
+I'm still going to have this plus or minus
+thing here, so.
+It's now getting important that we be
+careful with the plus or minus notation.
+So it doesn't look like I really did
+anything, but all that happened here is
+that
+in the first term, I took minus 1 times
+this coefficient here, so it's minus 1.
+Times this fraction, to the times sigma to
+the negative 2.
+So that's just the power rule for the
+first term.
+And then the second term is pretty easy.
+That was just sigma to the 1, so by the
+power rule, I just get 1
+times this quantity here, times sigma to
+the 0, or just the
+quantity, just the coefficient that was
+multiplying the sigma in the second term.
+And so I'm going to try and unsimplify now
+a little bit, to see if
+that, that's going to help me because
+it's,
+none of this is looking particularly
+pretty yet.
+So, sometimes when you put it back
+together
+it will resemble something that you have
+seen before.
+So I'll try doing that.
+So, I'm going to multiply the right
+hand term, by Sigma squared over Sigma
+squared, just so that I
+can have the, the same denominator for
+both terms.
+And so that's going to make this Sigma
+squared
+over two, pop up in the numerator again.
+And so now, my notation's getting a little
+bit tricky but
+this turns into a minus over plus, which
+just means now
+that if I'm talking about d plus, I refer
+to the
+minus one here, and d minus refers to the
+plus one here.
+But it's starting to look a little bit
+more familiar again.
+So the sign here is changed, and I've
+picked up a sigma
+squared in the denominator, but that's an
+expression for the, the derivative
+of d plus, or d minus, with respect to
+sigma.
+And
+now I need to substitute that, into this
+formula here, and.
+Generally, when I'm working, I, I like
+after every step for things to look like
+they're getting simpler and this is,
+clearly, going
+to make it get a lot more complicated.
+So, I, I put this, kind of, wisecrack in
+here.
+It looks like it's going to get worse
+before it gets better.
+and so, usually, you know, you can do
+this.
+And if you don't make any mistakes, you
+will get the right answer.
+But, when I see something that gets this
+complicated, I start thinking
+like, you know, may be there's a better
+way to do this.
+Or to at least You know, if it's, sort of,
+a risk management technique.
+You know, now all of the sudden investing
+a little bit of
+time to, maybe, not have to do this might
+be a good idea.
+So, let's see what I have down here.
+So, let's look at this, this results been
+handy already.
+So, maybe, I can squeeze a little bit more
+mileage out of this.
+Okay, so, we're here, so I'm going to
+rewrite this, so if I,
+if I add the second term to both sides, I
+just put the equals sign in between here.
+And then, since sigma and the square root
+of T
+minus t are going to be on both sides, I
+can, and.
+They're both greater than zero.
+I'll multiply both sides by that.
+And then move this S from the denominator
+of this side just into the numerator on
+this side so the fractions will go away.
+So I can simplify this expression a bit
+and I have this.
+And so, does that look like it's going to
+be helpful?
+Well,
+I've got an Se to the minus q, T minus t
+here.
+And I've got a Ke to the minus r, T minus
+t here.
+So, so far, you know, things are looking
+good.
+And so this was my expression for Vega, so
+this
+is exactly what I had on the previous
+slide here.
+And if
+you look at this a bit, I've got this D
+plus term, here.
+So, the derivative of D plus with respect
+to sigma on here.
+A derivative of D minus with respect to
+sigma.
+And so, it turns out I can rewrite this
+like this because I have.
+On the previous slide I have this equality
+relationship here,
+and so now this is starting to look quite
+a bit
+better, and now the next big step that I
+can make.
+Was that not clear?
+I guess I, I didn't mention one thing.
+So what I did to, to get that, I took
+the derivative of this expression here
+with respect to sigma.
+And that turns out to be exactly what this
+is.
+And now I can replace one of these guys
+with,
+With the bit that I have here with the s.
+And so if I can replace this thing with
+the, the first bit here.
+Then I can just factor that out.
+And so, essentially, it's that same
+computation that we've done.
+You know?
+It's, it's kind of complicated.
+But just.
+changing this d minus, this phi of d minus
+into a phi of d plus, and
+some other stuff, but since I've already
+done
+that calculation, I'm just going to reuse
+that result.
+Then I end up with the partial derivative
+of d plus with respect
+to sigma minus the partial derivative of d
+minus with respect to sigma.
+But that's same thing so I can, you know,
+do this linearity property backwards.
+If I, if I had,
+d plus minus d minus, and I took the
+partial derivative of
+that quantity, with respect to sigma, I
+would get exactly this thing here.
+And now the, the trick is to remember that
+d minus
+is defined in terms of d plus by this
+relatively simple expression.
+So if I want to look at d plus minus d
+minus, so the thing that I'm trying to
+take the derivative of.
+I have D plus minus the quantity D plus
+minus sigma times the square root of T
+minus t.
+And so, that's D plus minus D plus.
+So, the D plus goes away.
+And then, I have minus negative square
+root of T minus t.
+So that's just going to be sigma times the
+square root of t minus t.
+And then I'll take the derivative with
+respect to sigma of both sides of this.
+And so this is actually pretty straight
+forward, this is just the power rule now.
+So the partial derivative of sigma times
+the square root of t with minus t.
+With respect to sigma, it's just going to
+be the square root of t minus t.
+So that's quite a lot less work than I was
+looking at before.
+So now I can plug this in here,
+and I'm finished.
+So that's my expression for vega, so.
+This partial derivative here of d plus
+minus d minus, with respect
+to sigma, that was just the square root of
+T minus t.
+And so then I have this S, S, T minus t, T
+minus t,
+and the rest, e to the minus q T minus t
+times phi of d plus.
+

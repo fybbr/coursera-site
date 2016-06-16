@@ -1,0 +1,240 @@
+This lesson's an overview of Game
+Management.
+More properly it should be called Match
+Management as the issue
+is how to manage individual matches of
+games, not the games themselves.
+We'll start with an overview of the
+general game
+playing ecosystem, and the central role of
+the game manager.
+But then discuss the general game playing
+communication protocol, and
+finally we see how it's used in a simple
+game.
+Here's a diagram of the typical general
+game-playing ecosystem.
+At the center is the Game Manager.
+The Game Manager maintains the database
+of game descriptions, maintains some
+temporary
+state for matches while they're running
+and maintains a database of match results.
+The Game Manager communicates with game
+players using
+the internet's TCP/IP protocol and more
+specifically HTTP.
+It also provides a user interface for
+users who want to
+schedule matches and provides graphics for
+spectators watching matches in progress.
+In the current GGP communication language
+there are five types of messages.
+that you use strict communication between
+the game manager and the game players.
+Mainly, info, start, play, stop, and
+abort.
+Let's look at each one of these in turn.
+An info message is used to confirm that a
+player is up and running.
+The general form is shown here.
+Upon receipt of an info message, a player
+is expected to return
+ready, if it is ready to receive messages
+and play a game.
+Otherwise, it should return nil or busy.
+Of
+course, if a player is not running, or not
+connected, there'll be no response.
+So in practice, info messages sometimes
+evoke no reply at all.
+A
+start message is used to initialize a
+match.
+The general form of start message is shown
+here.
+The messages begins with the keyword
+start, and that's followed by five
+arguments.
+namely match identifier is the sequence of
+alpha numeric characters beginning with a
+lower-case letter.
+Uniquely distinguishes the match.
+There's a role for the player to play,
+chosen from among the roles
+mentioned in the game description
+a list of game rules, written as sentences
+in prefix
+gdl, a startclock in seconds, and a
+playclock, also in seconds.
+Upon receipt of a start message, a player
+should prepare itself to play a match.
+Once it's done, to reply ready to the game
+manager that it's ready to begin.
+the ggp protocol requires that the
+player reply before startclock seconds
+have elapsed.
+If the game manager has not received a
+reply by this
+time, it proceeds on the assumption that
+the player is ready.
+A
+play message is used to request an action
+from a player.
+The general forms of a play, message are
+shown here.
+In each case, there's an identifier for
+the match.
+On the first request, where there's no
+preceding move, the second argument is
+nil.
+In all subsequent requests, the second
+argument is a list
+of the actions of all the players on the
+preceding step.
+The order of the deaction in the record is
+the same of the order
+of the roles in the game description.
+Note that if a player fails to reply or
+does
+not reply in time, the Manager substitutes
+a random legal action.
+Upon receipt of a play message, a player
+uses
+the move information to update its state
+as necessary.
+Then computes its next move and returns
+that as answer.
+the ggb protocol requires that the player
+reply before
+playclock seconds have elapsed, if the
+Game Manager has
+not received a reply by this time, or
+receives
+an illegal action, it substitutes an
+arbitrary legal action.
+A stop message is used to tell a player
+that a match has reached completion.
+General form is shown here, there's a
+match ID and a
+record of the actions of all the players
+on the preceding step.
+On receipt of a stop message, player can
+clean
+up after playing the match move his, the
+move
+is sent along in case the player wants to
+know the action that, the actions that
+terminated the game.
+Now after finishing up the player should
+return done.
+Finally, an abort message is used to
+tell players that the match has terminated
+abnormally.
+It differs from a stop message in that the
+match not need be in a terminal state.
+And upon receipt of an abort message,
+player, can eliminate any data
+structures that it has set up and return
+to a ready state.
+And once it's finished, it, should return
+done.
+Okay, so in summary, a person's running
+match goes as follows.
+It begins with a receipt of a request to
+run a
+match from a human who wants to see the
+match run.
+Game Manager may, at his discretion, send
+info messages
+to the players to ensure that they're
+ready to play.
+When it's ready, it sends a start message
+with
+appropriate arguments to each player to
+initiate the match.
+Once again, play begins, the manager sends
+play messages to each player
+to get their plays and it then simulates
+the results.
+This part of the process repeats until the
+game is over.
+Manager then sends a stop message to each
+player.
+Of course, if anything is wrong, the
+manager may send
+an abort message at any time to terminate
+the match.
+Okay, now, here's an example of messages
+for a quick game of Tic-Tac-Toe.
+The game manager initiates the match here
+by sending a start
+message to all of the players, each with a
+different role.
+So, Player x is playing white, and Player
+y is playing black.
+The players then respond with ready.
+They can respond immediately, or they can
+wait until the startclock's exhausted
+before responding.
+That's their discretion.
+Play begins after all the players have
+responded to the
+start message, or after the startclock has
+expired, whichever comes first.
+In this case the manager initiates play by
+sending a play message to all of the
+players.
+Since this is the first step and there are
+no
+previous moves, move argument in the play
+message is nil.
+In this case, the first player responds
+with the action mark 1 1.
+One of its nine legal actions, and a
+second player
+responds with no operages, its only legal
+action.
+The Game Manager checks that all of these
+actions are legal,
+simulates their effects and upstates the
+state of the game for itself.
+And then sends play messages to the
+players to solicit their next actions.
+Second argument in the play message, in
+this case, is a
+list of actions received in response to
+the preceding play message.
+In this case, the first player responds
+with noop, its only
+legal action, and the second player
+responds with mark 1 2.
+Not a particularly good choice.
+Again, the Game Manager checks legality,
+simulates the move and updates
+its state, and sends play messages
+requesting the players next actions.
+Fir, first player here takes advantage of
+the situation and
+plays mark 2 2 while the second player
+does noop.
+[NOISE]
+There's not much for the second player
+can, that
+the second player do at this point to save
+itself.
+Instead of staving off its immediate loss,
+it plays
+mark 1 3, while the first player does
+noop.
+Game manager again simulates updates and
+requests a move.
+In this case first player goes in for the
+kill playing mark 3 3.
+With this move, the game's over.
+As usual in such cases, the Manager lets
+the players know by sending a suitable
+stop message, and then stores the results
+in the database for future reference, and
+terminates.
+

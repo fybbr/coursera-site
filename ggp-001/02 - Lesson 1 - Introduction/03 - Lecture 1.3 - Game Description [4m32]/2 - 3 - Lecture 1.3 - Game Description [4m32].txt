@@ -1,0 +1,43 @@
+Despite the variety of games treated in general game playing, all games share a common abstract structure.
+Each game takes place in an environment with finitely many states.
+The one distinguished initial state and one or more terminal states.
+In addition each game has a fixed finite number of players.
+Each player has finitely many possible actions in any given game state
+and each state has an associated goal value for each player.
+The dynamic model for general games is synchronous update:
+All players move on all steps, although some moves could be no-ops.
+And the environment updates only in response to the moves taken by the players.
+Given this common structure we can think of a game as a state graph like the one shown here.
+In this case you have a game with one player with 8 states names s1 through s8.
+There's one initial state, namely s1, and two terminal states, that's s4 and s8.
+The numbers associated with each state indicate the values of those states
+and the arcs on the graph capture the transition function for the game.
+For example, if the game is in state s1 and the player does action a the game will move to state s2.
+if the player does action b the game will move to state s5, and so forth.
+In the case of multiple players with simultaneous moves, the arcs become multi-arcs with one arc for each combination of players actions.
+Here's an example of a simultaneous move game with 2 players.
+it its state is s1 and both players perform action a, we follow the arc labeled "a / a".
+If the first player does action b and the second player does action a we follow the arc "b / a".
+We also have different goals for the different players: for example in state s4 player 1 gets 100 points while player 2 gets 0 points
+and in state s8 the situation is reversed.
+State graph captures the essential information about a game, and since all games that we're considering are finite it's possible at least in principle to describe such games in the form of state graphs.
+Unfortunately such explicit representation are not practical in all cases: even though the number of states and actions a finite, these sets can be extremly large and of course the corresponding graphs can be larger still.
+For example in chess there are thousands of possible moves and more than 10^30 states.
+Fortunately we can solve this problem exploiting regularities in the game to produce compact encodings.
+In practice we rarely think of states as monolithic entities and more frequently characterize states in terms of propositions that are true in those states.
+Similarly we often think of actions as having some structure as well.
+This leads to a notion of a structured state machine like the one shown here.
+The overall structure is the same as in the simple state machine shown earlier but in this case we've revealed the substructure of states.
+Now by itself this does not help us since the graph is the same size as before.
+However actions frequently effect only some of the propositions that are true in states and leave others unchanged.
+By exploiting these limitations on the effects of actions we can encode state graphs compactly by writing logical rules in place of explicit graphs.
+GDL or Game Description Language is a formal language for encoding games in this way.
+As we'll see it's based on symbolic logic.
+It's widely used in the litterature and is used in virtually all general game playing competitions.
+Moreover its form is the basis for some more expressive variance that have significant value in real-world applications such as enterprise management, computational law.
+Here's an example of GDL, in this case the rules for the game of tic-tac-toe.
+We discuss the specifics of GDL in the next lesson, for now the details are unimportant.
+The one thing to note is that this one page of rules fully describes a game with thousands of states.
+It's a significant savings over the state graph.
+The improvement in more complex games can be even more dramatic, for example it's possible to describe the rules of chess with many, many more states in just about 4 pages of rules like these.
+

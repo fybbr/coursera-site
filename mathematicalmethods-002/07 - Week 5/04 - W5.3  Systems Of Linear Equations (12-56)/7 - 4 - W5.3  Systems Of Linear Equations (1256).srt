@@ -1,0 +1,870 @@
+1
+00:00:01,120 --> 00:00:03,640
+Topic three is systems of linear
+equations.
+
+2
+00:00:08,540 --> 00:00:12,060
+So what I'm building up to, is I want to
+be able to solve problems like this.
+
+3
+00:00:12,060 --> 00:00:15,650
+So I have three equations and three
+unknowns.
+
+4
+00:00:15,650 --> 00:00:19,150
+So the unknowns are x, y and z.
+
+5
+00:00:19,150 --> 00:00:24,290
+And then each row here is one equation and
+I want to find a, I want to find
+
+6
+00:00:26,730 --> 00:00:31,250
+x y and z that simultaneously satisfy all
+three of these equations.
+
+7
+00:00:35,740 --> 00:00:37,760
+So there are two ways I can look at this
+
+8
+00:00:37,760 --> 00:00:40,230
+if I, if I try and translate this into
+vectors.
+
+9
+00:00:40,230 --> 00:00:43,060
+So I can look at something called the row
+picture.
+
+10
+00:00:43,060 --> 00:00:47,070
+So that's trying to describe each one of
+these rows, and if I,
+
+11
+00:00:47,070 --> 00:00:50,180
+if I do that, what I end up with is the
+dot product.
+
+12
+00:00:50,180 --> 00:00:54,960
+So I'd have the dot product of the
+coefficient, so there's an invisible
+
+13
+00:00:54,960 --> 00:00:58,560
+1 here, so if I just say X, I really mean
+1 times X.
+
+14
+00:00:58,560 --> 00:00:59,819
+That's where this 1 comes from.
+
+15
+00:01:01,000 --> 00:01:06,550
+So, the first row is 1, 2, 3 dot X, Y, Z
+is equal to 6.
+
+16
+00:01:06,550 --> 00:01:11,240
+Second row is 2, 5, 2 dot X, Y, Z is equal
+to 4 and so on.
+
+17
+00:01:13,180 --> 00:01:16,820
+And it turns out I can also do this using
+a column picture.
+
+18
+00:01:20,180 --> 00:01:26,060
+So I can also think of this as X times 1,
+
+19
+00:01:26,060 --> 00:01:31,880
+2, 6, y as 2 5 minus 3 and z
+
+20
+00:01:31,880 --> 00:01:37,060
+times 3, 2, 1, sounds just the same
+numbers are the coefficients here.
+
+21
+00:01:37,060 --> 00:01:40,400
+So, I can think of this either as dot
+products, they give me the
+
+22
+00:01:40,400 --> 00:01:45,780
+rows or I can think of this as a linear
+combination of the columns of
+
+23
+00:01:45,780 --> 00:01:47,490
+my coefficients.
+
+24
+00:01:54,260 --> 00:01:58,990
+So the problem this is trying to describe,
+let's see, so
+
+25
+00:01:58,990 --> 00:02:02,370
+you can see there is sort of this dark
+point here.
+
+26
+00:02:02,370 --> 00:02:04,480
+And each one of these equations in the
+
+27
+00:02:04,480 --> 00:02:07,740
+row picture, it's describing one of these
+planes.
+
+28
+00:02:09,240 --> 00:02:13,110
+And so it's, it's really difficult to try
+and put three planes onto one picture.
+
+29
+00:02:13,110 --> 00:02:16,820
+Even, even this one, I failed miserably
+trying to
+
+30
+00:02:16,820 --> 00:02:19,280
+do my own artwork, so I just copied this
+out
+
+31
+00:02:19,280 --> 00:02:20,710
+of the book.
+
+32
+00:02:20,710 --> 00:02:24,780
+And even there, I still can't really
+convince myself
+
+33
+00:02:24,780 --> 00:02:27,720
+what direction this plane is supposed to
+be tilting.
+
+34
+00:02:29,926 --> 00:02:32,620
+you know sometimes it goes from looking
+like this to looking like this to me.
+
+35
+00:02:34,500 --> 00:02:38,129
+But the point of this is I'm supposed to
+have these two planes.
+
+36
+00:02:40,190 --> 00:02:44,380
+And the space where they intersect is
+going to be this black line, here.
+
+37
+00:02:44,380 --> 00:02:47,250
+So if I have one point that's kind of like
+this and one point
+
+38
+00:02:47,250 --> 00:02:51,790
+that's like this, where they intersect is
+going to be described by a line.
+
+39
+00:02:51,790 --> 00:02:56,990
+So the intersection of the first two
+planes will give me a line.
+
+40
+00:02:56,990 --> 00:03:00,430
+So I've gone from having sort of
+two-dimensional objects.
+
+41
+00:03:01,830 --> 00:03:05,460
+So these two planes, they're
+two-dimensional objects that exist
+
+42
+00:03:05,460 --> 00:03:06,380
+in three dimensions.
+
+43
+00:03:06,380 --> 00:03:10,960
+When I intersect them, I now have a
+one-dimensional object, so this line that
+
+44
+00:03:10,960 --> 00:03:16,400
+exists in three dimensions, and then to
+solve my problem.
+
+45
+00:03:16,400 --> 00:03:19,340
+So to finish solving my system of
+equations, I
+
+46
+00:03:19,340 --> 00:03:22,460
+need to intersect that line with the third
+plane.
+
+47
+00:03:22,460 --> 00:03:27,260
+And so, if I have a plane and one line,
+it's going to hit at just a single point.
+
+48
+00:03:27,260 --> 00:03:30,720
+And that point is going to be the value of
+
+49
+00:03:30,720 --> 00:03:33,729
+x, y, and z that solves my system of
+equations.
+
+50
+00:03:40,590 --> 00:03:44,370
+So, I want to now try so, so that's sort
+of the row picture.
+
+51
+00:03:44,370 --> 00:03:46,010
+So remember the rows were giving me
+
+52
+00:03:46,010 --> 00:03:48,830
+equations of planes and those planes,
+then, were
+
+53
+00:03:48,830 --> 00:03:52,520
+giving me this picture and that was giving
+me one approach for solving this problem.
+
+54
+00:03:53,600 --> 00:03:59,144
+And now I'm also going to try and consider
+solving it using the, the column approach.
+
+55
+00:03:59,144 --> 00:04:05,620
+So to do that I'm going to start by
+stacking rows, or binding columns.
+
+56
+00:04:05,620 --> 00:04:05,710
+So
+
+57
+00:04:05,710 --> 00:04:09,040
+I can either think of the, the rows as
+being the coefficients
+
+58
+00:04:09,040 --> 00:04:14,310
+from each equation or the columns of being
+the coefficients for each variable.
+
+59
+00:04:14,310 --> 00:04:18,570
+So if I stack the rows, I put the
+coefficients for the
+
+60
+00:04:18,570 --> 00:04:22,840
+third equation on bottom, second equation
+in the middle, and the third
+
+61
+00:04:22,840 --> 00:04:27,470
+equation on top, or I can take all of the
+x coor-,
+
+62
+00:04:27,470 --> 00:04:30,750
+x coeffcients and put them in the first
+column, y coefficients go in
+
+63
+00:04:30,750 --> 00:04:33,970
+the second column, z coefficients go in
+the third column.
+
+64
+00:04:33,970 --> 00:04:36,430
+So, the, the nice thing about this is we
+get a duality.
+
+65
+00:04:36,430 --> 00:04:39,840
+So it doesn't matter which approach I
+take, I'm going to get the same answer.
+
+66
+00:04:39,840 --> 00:04:45,490
+So, quite often, like in, in statistics,
+it turns out that looking at the columns
+
+67
+00:04:45,490 --> 00:04:52,310
+of a matrix makes calculating statistical
+properties of estimators very easy.
+
+68
+00:04:52,310 --> 00:04:56,110
+And looking at the rows of the data in a
+matrix makes
+
+69
+00:04:56,110 --> 00:04:57,070
+plotting the data.
+
+70
+00:04:57,070 --> 00:05:01,770
+So, actually looking at it you know, with
+your eye, very easy.
+
+71
+00:05:01,770 --> 00:05:04,010
+So, you can use the rows to make plots,
+
+72
+00:05:04,010 --> 00:05:06,940
+and you can use the columns to do
+mathematics.
+
+73
+00:05:06,940 --> 00:05:10,200
+But, because you're really doing the same
+thing, regardless of whether
+
+74
+00:05:10,200 --> 00:05:12,700
+you try to use the row problem, or the
+column problem.
+
+75
+00:05:13,800 --> 00:05:17,890
+both of those are going to be descriptions
+of the same actual problem.
+
+76
+00:05:21,410 --> 00:05:27,510
+So if A is my coefficient matrix, then I
+can write my system of three
+
+77
+00:05:27,510 --> 00:05:34,110
+equations and three unknowns like this.
+So I have the coefficient matrix.
+
+78
+00:05:34,110 --> 00:05:37,060
+Times a, a vector of unknowns and that's
+going
+
+79
+00:05:37,060 --> 00:05:41,380
+to equal a vector of the, the right hand
+sine.
+
+80
+00:05:41,380 --> 00:05:46,610
+So the, you know these were equations like
+somethi- you know,
+
+81
+00:05:46,610 --> 00:05:51,920
+a x plus b y plus c z equals d so these
+are these values d.
+
+82
+00:05:51,920 --> 00:05:54,780
+They go on the right hand side here in a
+vector called b.
+
+83
+00:05:58,920 --> 00:06:03,990
+And so you can recover pretty easily the
+row picture here, so I just have 1,
+
+84
+00:06:03,990 --> 00:06:08,220
+2, 3 dot x, y ,z equals 6, that's going to
+give me the first equation.
+
+85
+00:06:08,220 --> 00:06:12,787
+And I can repeat that for the second or
+the third row, or I can say x.
+
+86
+00:06:12,787 --> 00:06:19,280
+Times 1, 2,6 Plus y times 2, 5, -3 Plus z
+times 3,2,1
+
+87
+00:06:19,280 --> 00:06:22,570
+Equals 6, 4, 2 and that gives me the
+column picture of the problem.
+
+88
+00:06:29,130 --> 00:06:31,030
+And so we can think of this as the left
+
+89
+00:06:31,030 --> 00:06:35,129
+hand side multiplies a times the unknowns
+v to get v.
+
+90
+00:06:38,450 --> 00:06:41,070
+And so what we want to move towards now is
+having some sort of
+
+91
+00:06:41,070 --> 00:06:44,290
+multiplication rule for matrices and
+vectors that's
+
+92
+00:06:44,290 --> 00:06:45,940
+going to make sense out of this.
+
+93
+00:06:45,940 --> 00:06:48,840
+So the, the properties we want it to have
+are it has
+
+94
+00:06:48,840 --> 00:06:53,250
+to give this linear combination for the
+column picture, and it needs to
+
+95
+00:06:54,670 --> 00:06:59,052
+Give me the row picture, so I need the dot
+product here,uh you
+
+96
+00:06:59,052 --> 00:07:04,200
+know that this row of this matrix times
+this column vector of unknowns,
+
+97
+00:07:04,200 --> 00:07:05,560
+that needs to be a don't product.
+
+98
+00:07:08,850 --> 00:07:16,110
+So I can represent this as Av being just
+row 1 dot v row 2 dot v or row 3 dot v.
+
+99
+00:07:19,050 --> 00:07:24,970
+Or the column picture, a times v, that's
+just going to be, so x here was the first
+
+100
+00:07:24,970 --> 00:07:30,970
+component of my vector v, y was the second
+component, and z was the third component.
+
+101
+00:07:33,320 --> 00:07:37,981
+And so just some examples here, so if I
+have 1, so 1
+
+102
+00:07:37,981 --> 00:07:42,914
+0 0.4 5 6 that's going to equal
+
+103
+00:07:42,914 --> 00:07:48,010
+4.
+1 0 0.4 5 6
+
+104
+00:07:48,010 --> 00:07:52,940
+again is going to equal 4 and 1 0 0.4 5 6
+is going to equal 4.
+
+105
+00:07:52,940 --> 00:07:58,520
+So multiplying by this matrix A Just
+plucks
+
+106
+00:07:58,520 --> 00:08:02,120
+this first value out and puts that in the
+answer.
+
+107
+00:08:04,360 --> 00:08:06,720
+Another matrix- this matrix has a special
+name.
+
+108
+00:08:06,720 --> 00:08:08,140
+It's called the identity matrix.
+
+109
+00:08:10,120 --> 00:08:12,800
+If I have ones down the diagonal so the
+
+110
+00:08:12,800 --> 00:08:15,090
+diagonal is where the row is equal to the
+column.
+
+111
+00:08:15,090 --> 00:08:16,970
+So here I'm in the first row and first
+
+112
+00:08:16,970 --> 00:08:19,789
+column, here I'm in the second row and
+second column.
+
+113
+00:08:20,850 --> 00:08:25,530
+Here, I'm in the first row but the second
+column, so it's not on the diagonal.
+
+114
+00:08:25,530 --> 00:08:28,730
+So if I have ones down the diagonal and
+zeroes everywhere else,
+
+115
+00:08:29,950 --> 00:08:33,390
+then that's going to give me the same
+vector back.
+
+116
+00:08:33,390 --> 00:08:35,730
+So I have one zero zero times four five
+
+117
+00:08:35,730 --> 00:08:38,620
+six, that's going to just pluck out this
+four.
+
+118
+00:08:38,620 --> 00:08:39,510
+Then 010 times 456.
+
+119
+00:08:39,510 --> 00:08:44,860
+That's going to take the 5.
+Then 001, that's
+
+120
+00:08:44,860 --> 00:08:49,710
+going to take this 6.
+
+121
+00:08:49,710 --> 00:08:55,220
+So suppose I have this system
+
+122
+00:08:55,220 --> 00:08:58,140
+of equations.
+So 3x minus Y equals 3.
+
+123
+00:08:58,140 --> 00:09:00,270
+X plus Y equals 5.
+
+124
+00:09:00,270 --> 00:09:03,500
+I can write that in the matrix form as a
+coefficient
+
+125
+00:09:03,500 --> 00:09:07,690
+matrix times an unknown vector XY is equal
+to the vector 35.
+
+126
+00:09:07,690 --> 00:09:08,190
+And
+
+127
+00:09:10,420 --> 00:09:12,210
+I can draw two pictures of this now.
+
+128
+00:09:12,210 --> 00:09:14,005
+So as long as these are, you know,
+
+129
+00:09:14,005 --> 00:09:17,060
+two equations and 2 unknowns, it's easy to
+draw.
+
+130
+00:09:18,740 --> 00:09:23,430
+So the row picture, this is probably how
+you want to think about this.
+
+131
+00:09:24,470 --> 00:09:27,923
+So each one of these rows determines a
+line in the X-Y plane,
+
+132
+00:09:27,923 --> 00:09:32,260
+and then the answer is just going to be
+where the two lines intersect.
+
+133
+00:09:32,260 --> 00:09:35,240
+So I drew these two lines and I
+intersected at the point 2,3,
+
+134
+00:09:35,240 --> 00:09:41,540
+and so you can see, if I put in 2,3 here,
+I get 6 minus 3 is equal to 3, and
+
+135
+00:09:41,540 --> 00:09:46,240
+2 plus 3 is equal to 5 so that is actually
+the solution to this system of equations.
+
+136
+00:09:50,030 --> 00:09:54,170
+I can also draw the column picture.
+So this one's a little bit trickier to
+
+137
+00:09:54,170 --> 00:10:01,110
+see, but the columns are 3 1 so that gives
+me my first column.
+
+138
+00:10:01,110 --> 00:10:04,360
+And so then this arrow here, labeled
+column one.
+
+139
+00:10:04,360 --> 00:10:07,795
+I go over three and up one.
+So this is column one.
+
+140
+00:10:07,795 --> 00:10:15,290
+Column 2 is -1, 1 so that's this vector
+here so -1 1 and
+
+141
+00:10:15,290 --> 00:10:16,450
+it's labeled column two.
+
+142
+00:10:18,420 --> 00:10:23,020
+And then I'm looking for a linear
+combination, so I'm looking for something
+
+143
+00:10:23,020 --> 00:10:28,170
+times column 1 plus something times column
+2 that's going to equal 3,5.
+
+144
+00:10:28,170 --> 00:10:33,580
+And so you can visualize that, if I
+want to get,if I have to follow these two
+
+145
+00:10:33,580 --> 00:10:36,980
+directions, so either this direction or
+this direction,
+
+146
+00:10:36,980 --> 00:10:38,770
+and I want to get to the point 3,5.
+
+147
+00:10:38,770 --> 00:10:41,040
+Then what
+
+148
+00:10:41,040 --> 00:10:47,040
+I need to do is go 2 times column 1, and
+that gets me to this point.
+
+149
+00:10:47,040 --> 00:10:51,810
+And then I'm going to add 3 times column
+2, that gets me up to this point.
+
+150
+00:10:51,810 --> 00:10:58,780
+So this point up here, which is 3,5, I can
+describe that as 2 times column 1.
+
+151
+00:10:58,780 --> 00:11:00,640
+Plus 3 times column 2.
+
+152
+00:11:03,080 --> 00:11:06,950
+So 2 times column 1.
+Plus 3 times column 2.
+
+153
+00:11:06,950 --> 00:11:13,040
+So that gives me the vector 6, 2.
+Plus the vector -3, 3.
+
+154
+00:11:13,040 --> 00:11:15,994
+So six minus 3 gives me 3.
+
+155
+00:11:15,994 --> 00:11:19,600
+And 2, 3 gives me 5 so that gives me the,
+the same answer
+
+156
+00:11:19,600 --> 00:11:22,990
+whether I try and do this using the row
+view or the column view.
+
+157
+00:11:24,900 --> 00:11:28,240
+And then both of those are representations
+of this matrix
+
+158
+00:11:28,240 --> 00:11:29,110
+form of the equation.
+
+159
+00:11:34,260 --> 00:11:38,720
+So some properties of systems of equations
+so most of the time If you
+
+160
+00:11:38,720 --> 00:11:40,630
+have the same number of equations and
+
+161
+00:11:40,630 --> 00:11:42,920
+unknowns, there's going to be one
+solution..
+
+162
+00:11:42,920 --> 00:11:47,100
+So, that means, you know, you have a plane
+like this, a plane like this.
+
+163
+00:11:47,100 --> 00:11:49,800
+That determines a line and then you maybe
+have a plane like
+
+164
+00:11:49,800 --> 00:11:53,040
+this and wherever that line hits the third
+plane, that's your solution.
+
+165
+00:11:54,180 --> 00:11:56,230
+But, of course, things can go wrong, so
+you
+
+166
+00:11:56,230 --> 00:12:00,310
+could have two planes that are actually
+the same plane.
+
+167
+00:12:00,310 --> 00:12:02,500
+So Imagine if I took the equation of a
+plane
+
+168
+00:12:02,500 --> 00:12:06,990
+and just multiplied both sides by 2,
+every, every point
+
+169
+00:12:06,990 --> 00:12:11,310
+would still be, the, the points that
+satisfy that are
+
+170
+00:12:11,310 --> 00:12:14,500
+going to be the points in the same actual
+plane.
+
+171
+00:12:14,500 --> 00:12:16,870
+Or I could have two planes that were
+parallel
+
+172
+00:12:16,870 --> 00:12:19,289
+and so there would be no intersection
+between those.
+
+173
+00:12:23,040 --> 00:12:25,980
+So, there may be no solution.
+
+174
+00:12:25,980 --> 00:12:29,700
+So, if two lines are parallel and
+basically the, my interpretation
+
+175
+00:12:29,700 --> 00:12:33,300
+of a system of equations is, where do
+these two lines intersect.
+
+176
+00:12:33,300 --> 00:12:36,100
+If the two lines are parallel, we will get
+no solution.
+
+177
+00:12:37,810 --> 00:12:40,450
+Or if you have two equations that
+
+178
+00:12:40,450 --> 00:12:42,970
+look different but are actually describing
+the same
+
+179
+00:12:42,970 --> 00:12:45,770
+line in the plane, then you have
+infinitely
+
+180
+00:12:45,770 --> 00:12:48,410
+many solutions, so any point on that plane
+
+181
+00:12:48,410 --> 00:12:51,100
+will satisfy the equation of both lines.
+
+182
+00:12:51,100 --> 00:12:54,960
+Sorry, any point on that line satisfies
+the equation of each line.
+

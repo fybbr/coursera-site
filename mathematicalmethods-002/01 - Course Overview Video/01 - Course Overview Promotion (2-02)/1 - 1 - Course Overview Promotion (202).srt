@@ -1,0 +1,174 @@
+1
+00:00:00,025 --> 00:00:02,120
+Hi, my name's Chao Kunnes.
+
+2
+00:00:02,120 --> 00:00:05,860
+I'm a new professor in the Computational
+Finance and Risk Management
+
+3
+00:00:05,860 --> 00:00:07,470
+Program, in the Department of Applied
+
+4
+00:00:07,470 --> 00:00:09,830
+Mathematics at the University of
+Washington.
+
+5
+00:00:09,830 --> 00:00:11,410
+And I'm going to be offering a course
+
+6
+00:00:11,410 --> 00:00:15,990
+called Mathematical Methods for
+Quantitative Finance on Coursera.
+
+7
+00:00:15,990 --> 00:00:17,770
+So, a little bit about my background.
+
+8
+00:00:17,770 --> 00:00:20,470
+I did a masters degree in applied
+mathematics and
+
+9
+00:00:20,470 --> 00:00:24,120
+then a doctorate in statistics at the
+University of Oxford.
+
+10
+00:00:24,120 --> 00:00:25,080
+And then I did
+
+11
+00:00:25,080 --> 00:00:27,400
+a four year postdoc, at the Swiss
+
+12
+00:00:27,400 --> 00:00:30,260
+Federal Institute of Technology in
+Lausanne, Switzerland.
+
+13
+00:00:32,280 --> 00:00:35,410
+Now, I've just joined the department here
+
+14
+00:00:35,410 --> 00:00:39,540
+with a research area in computational
+finance, where
+
+15
+00:00:39,540 --> 00:00:42,200
+I'm hoping to apply some of my
+
+16
+00:00:42,200 --> 00:00:45,651
+knowledge of statistics to problems in
+quantitative finance.
+
+17
+00:00:45,651 --> 00:00:48,510
+So the course I'm going to be offering is
+going
+
+18
+00:00:48,510 --> 00:00:52,080
+to be a pre-program course for our Masters
+program.
+
+19
+00:00:52,080 --> 00:00:57,350
+It's going to cover single and
+multivariable calculus, linear algebra,
+
+20
+00:00:57,350 --> 00:01:00,330
+optimization methods in finance and then
+numerical
+
+21
+00:01:00,330 --> 00:01:02,525
+techniques for solving these sorts of
+problems.
+
+22
+00:01:02,525 --> 00:01:08,430
+And the motivation for this course really
+came from a lot of the students we were
+
+23
+00:01:08,430 --> 00:01:12,905
+getting who are interested in applying for
+our Masters in computational finance.
+
+24
+00:01:12,905 --> 00:01:16,960
+And this is a very mathematical degree and
+we were finding that a lot of
+
+25
+00:01:16,960 --> 00:01:20,070
+otherwise well qualified people, people
+who had either
+
+26
+00:01:20,070 --> 00:01:22,720
+been working for several years in industry
+or
+
+27
+00:01:22,720 --> 00:01:26,010
+had undergraduate degrees in economics or
+business
+
+28
+00:01:26,010 --> 00:01:28,690
+finance, who would be ideal candidates for
+our
+
+29
+00:01:28,690 --> 00:01:34,380
+Masters program, who are just a little bit
+ill prepared when it came to mathematics.
+
+30
+00:01:34,380 --> 00:01:36,150
+And so we want to offer a course that's
+
+31
+00:01:36,150 --> 00:01:39,470
+going to bring people like that up to
+speed.
+
+32
+00:01:39,470 --> 00:01:43,380
+And this would be useful, you know, if
+you're looking to, get an internship
+
+33
+00:01:43,380 --> 00:01:48,130
+or a job in the finance industry or if
+you're interested in pursuing a degree
+
+34
+00:01:48,130 --> 00:01:49,212
+in mathematical finance.
+
+35
+00:01:49,212 --> 00:01:52,800
+And so, if you feel like you would fall
+into either of these two
+
+36
+00:01:52,800 --> 00:01:56,765
+groups of people, I'd really like to
+invite you to take my course on Coursera.
+
+37
+00:01:56,765 --> 00:01:57,710
+Thank you very much.
+

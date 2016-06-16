@@ -1,0 +1,278 @@
+Okay so now we'll talk a little bit about
+the next type.
+So that was improper integrals where I was
+looking at an infinite infinite interval.
+The other possibility is that the
+integrand f
+of x is unbounded at either a or b.
+So a or b are the end points of the
+interval where I want to integrate.
+And so,
+if I say it's unbounded at a, what I mean
+is that the limit
+as x goes down to a of f of x is plus or
+minus infinity,
+so it either goes up to positive infinity
+or it goes down to minus infinity,
+and then just the same thing at at the
+upper end point of the limit.
+So if x is increasing towards b, if the
+limit of f
+of x goes to either, so if the function
+blows up and
+goes to infinity or it goes down to minus
+infinity.
+And so were going to define this in
+exactly
+the same way, so instead of having an
+infinite
+value in the limit were just going to
+define to be the limit as so for the lower
+endpoint as t goes down to a, the integral
+from t to b of f of x,
+or the integral goes up to b, of the
+integral from a to t of f of x.
+If those limits again exist and they're
+finite, then are going to say that,
+oops didn't want that bit yet.
+that this integral exists,
+and the value of this integral is equal to
+the value of this limit, or this limit.
+And so this third point, is if you're
+truly unlucky and it's unbounded at both
+endpoints, what you need to do is just
+choose a point somewhere in the middle.
+And go both ways.
+So, what you'd be doing is splitting the
+interval up into
+two intervals and then integrating over
+each one of those separately.
+So, as a quick example of this guy,
+imagine trying to integrate the function.
+1 over the square root of x dx from 0 to
+1.
+And so the problem is as I move towards
+zero, 1 over the
+square root of x is going to get bigger
+and bigger and bigger.
+And in the limit it's going to be
+infinite.
+But I'm going to try and replace the zero
+in the lower end point with
+t so t in this case has to be some number
+greater than zero.
+So I'll integrate from t to one and then
+it'll be easier to
+integrate, I can use my anti power rule,
+if I just write it.
+1 over the square root of x has x to the
+minus one half power.
+And so I'll go ahead and do this integral.
+And then I'll take the limit of
+that as x goes down to 0.
+So evaluating my integral, I just have.
+2 x to the one half.
+So that's anti-derivative of x to the
+minus one half.
+And you can verify that just by taking one
+half times 2
+is 1.
+Which is the coefficient here.
+X to the one half minus 1, so x to the
+minus one half.
+And then I need to evaluate that at the
+upper end
+point and subtract and evaluate it at the
+lower end point.
+So that's going to give me 2 minus 2 times
+the square root of t.
+And now I'm going to take the limit of
+this expression here as t deceases to
+zero.
+And so, essentially the, the second term
+that has the t
+in it, that's just going to get smaller,
+and smaller and smaller.
+So, in the limit, that's just going to end
+up being equal to two.
+So, even though this function takes on
+arbitrarily
+large values in the interval where I'm
+interested
+in integrating it, I can still come up
+with a finite number For the area of it.
+Okay,
+and so this is this is a picture of what
+it looks like.
+So in this lower square here from 0, 0 to
+1, 1 square,
+that's half of the area, and then the area
+where it's got this
+curved side here, all the way up to
+infinity, so, it's difficult to
+draw something that goes all the way to
+infinity so I stopped at six.
+but that has the same area so
+above the line, y equals 1, the yellow
+region has the same area as this unit
+square.
+Here.
+And then we can also combine both types of
+improper integrals.
+So for instance, suppose I wanted to try
+to compute the integral from zero to
+infinity of 1 over the square root of the
+absolute value of x
+minus 1.
+So it has an infinity in the
+it has infinitely long interval.
+And also
+when x is equal to 1, I'm going to end up
+dividing by 0 and that's
+going to be a point that's in the interior
+of the interval where I'm trying to
+integrate.
+So the function is not only unbounded in
+the positive
+x direction it's also unbounded in the
+positive y direction.
+And so this is actually what it, what it's
+going to look like.
+so at, at zero it has a point of
+discontinuity, it's basically the limit
+of this function as I move towards one in
+either direction is positive infinity.
+And so, basically my approach to doing
+this
+is, I'm just going to split up the
+interval.
+So I'm going to considering integrating
+this function from
+zero to one, and then from one to two.
+And I'll use the second type of improper
+integral there
+because that's going to help me handle
+this unbounded y direction.
+And then I'll add on the integral from two
+to positive infinity.
+And that'll be an indefinite
+yeah indefinite integral of the first
+type.
+So, this is just me writing that out, so
+all I'm doing is
+splitting this up into the, so, it's the
+integral from 0 to infinity.
+I'm going to think of that as, integral
+from
+zero to one, integral from one to two.
+And then integral from two to infinity.
+But I'm going to replace all those with
+the limit definitions.
+So if this integral exists,
+or for this integral to exist all three of
+these limits have to exist and be finite.
+So lets just tackle them one at a time.
+So for the first one if I'm
+considering values in the interval 0, 1
+then 1 minus x.
+So remember I use to have a absolute value
+down there.
+1 minus x is going to be positive already
+so I don't need the absolute value.
+So I've gotten rid of those
+and now this is just going to be 1 minus x
+to the negative one half power.
+And when I find the anti-derivative of
+that, have to remember to use
+the chain rule because I have a negative x
+inside my function here.
+I end up finding out that that's equal to
+two.
+So hopefully that's what we would expect,
+because that's what we just did.
+So if you noticed this, this shape here is
+just
+exactly the same one we had last time,
+turned around.
+Then, I'm going to look at the, the next
+bit.
+So it's actually symmetric about one.
+So it's not surprising that I, I end up
+getting the same value, but
+to be to be more rigorous about it, we can
+go through the steps again.
+So this time, if x is greater
+than 1, then x minus 1 did I write this
+backwards the second time?
+So x minus 1 is going to be the way to get
+a positive number.
+So if x is greater than 1, so for instance
+if it's 2, 2 minus 1 is greater than 0.
+So I just flip the order around of these
+guys
+and that let's me get rid of the absolute
+value.
+And then I just take that anti-derivative.
+So this time, I don't get the minus sign,
+because
+here I had a negative x underneath my
+square root.
+Here I have a positive x underneath my
+square root.
+So it's going to be positive.
+And then I just end up,
+once I evaluate my limit at two and t.
+I get 2 minus 2 times the square root of t
+minus 1.
+I'm taking the limit as t goes to one.
+So when t goes to 1 t minus 1 is
+going to 0 so the second term is getting
+arbitrarily small.
+So in the limit I can just say that's
+going to
+be zero and I just end up with this two
+again.
+So, so far so good.
+But now when I try and integrate my third
+integral, I have
+the same, the same integrand as the second
+one so the first step is is pretty easy.
+And now I'm going to evaluate it at the
+upper end point.
+And subtract, subtract this, evaluated at
+the lower endpoint.
+And that gives me this expression here.
+But now, I have a, a t.
+I'm, I'm no longer dividing by t.
+The, the power of the term containing the
+t.
+So, t minus 1 is to a power greater than
+zero.
+And so this is going to get bigger as t
+gets bigger and in an unbounded way.
+So if t is going to infinity, then the
+square root of t is also going to
+infinity.
+And so when I take the limit of this
+expression.
+Oops, this expression, as t goes to
+infinity.
+I get infinity, and so the conclusion I'm
+going to
+make from this is that the integral from
+zero to
+infinity of d x over the square root of
+the absolute value of x minus 1 does not
+exist.
+Because when I split it up into these
+pieces one of them was not finite.
+And so then in particular, that means that
+if I took the limit of this as the upper
+end point goes to infinity.
+That's not going to be finite either.
+And our definition for an indefinite
+integral existing
+required that the value has to be finite.
+So if this is not finite, this integral,
+this indefinite integral does not exist.
+

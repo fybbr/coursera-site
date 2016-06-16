@@ -1,0 +1,993 @@
+1
+00:00:00,900 --> 00:00:05,750
+So, last section for today.
+integration by substitution.
+
+2
+00:00:09,850 --> 00:00:14,450
+So we did integration by parts, and that
+was the product rule running backwards.
+
+3
+00:00:16,710 --> 00:00:18,930
+Integration by substitution we can think
+of
+
+4
+00:00:18,930 --> 00:00:21,420
+as just working the chain rule backwards.
+
+5
+00:00:26,750 --> 00:00:31,260
+So I'm going to start out by letting
+capital F of x just be the
+
+6
+00:00:31,260 --> 00:00:36,130
+antiderivative of little f of x.
+And
+
+7
+00:00:36,130 --> 00:00:40,409
+then I'm going to think of x as being a
+function of another variable, u.
+
+8
+00:00:42,280 --> 00:00:48,200
+Then by the chain rule, if I took the
+derivative of capital F of g of u,
+
+9
+00:00:50,880 --> 00:00:55,400
+I would end up with f prime evaluated at g
+of u.
+
+10
+00:00:55,400 --> 00:00:59,080
+And then the chain rule then says I have
+to take this function
+
+11
+00:00:59,080 --> 00:01:02,279
+on the inside and multiply by its
+derivative to, so I end up with.
+
+12
+00:01:03,540 --> 00:01:06,460
+A g prime of u showing up on the outside.
+
+13
+00:01:06,460 --> 00:01:10,390
+And then because of the way I've defined
+little f of x to be the, the
+
+14
+00:01:10,390 --> 00:01:12,700
+derivative of capital F or rather a
+capital
+
+15
+00:01:12,700 --> 00:01:15,640
+F to be an anti derivative of little f.
+
+16
+00:01:15,640 --> 00:01:15,930
+I can
+
+17
+00:01:15,930 --> 00:01:20,570
+write that as F of g of u times g prime of
+u.
+
+18
+00:01:27,780 --> 00:01:27,780
+[SOUND].
+
+19
+00:01:27,780 --> 00:01:31,060
+And then if I integrate both sides with
+respect to u.
+
+20
+00:01:32,830 --> 00:01:35,570
+Well, on this side, I, I just had d of u.
+
+21
+00:01:36,950 --> 00:01:37,880
+d by du.
+
+22
+00:01:37,880 --> 00:01:40,790
+So the derivative with respect to u of f
+of g of u.
+
+23
+00:01:41,840 --> 00:01:47,160
+So that's going to be the complementary
+operation to my anti derivative.
+
+24
+00:01:47,160 --> 00:01:50,020
+So that's just going to be f capital f of
+g of u.
+
+25
+00:01:51,180 --> 00:01:52,960
+Is going to be equal to the integral
+
+26
+00:01:54,710 --> 00:01:58,980
+of little f of g of u times g prime of u
+du.
+
+27
+00:02:07,220 --> 00:02:12,470
+And so my rule for integration by
+substitution then, is if x, f of
+
+28
+00:02:12,470 --> 00:02:15,340
+x is an integrable function and g
+
+29
+00:02:15,340 --> 00:02:19,220
+of x is invertible and continuously
+differentiable.
+
+30
+00:02:19,220 --> 00:02:22,460
+Then I can make the substitution x equals
+g of u.
+
+31
+00:02:23,660 --> 00:02:26,120
+And it's going to change my integral in
+the following way.
+
+32
+00:02:26,120 --> 00:02:32,450
+So if I replace the variable x in my
+function f of x with g of u,
+
+33
+00:02:33,660 --> 00:02:38,869
+then I have to multiply by g prime of u in
+order to get the same answer.
+
+34
+00:02:44,020 --> 00:02:46,040
+And so I think the easiest way to see how
+
+35
+00:02:46,040 --> 00:02:49,330
+this is going to, work is just to try an
+example.
+
+36
+00:02:50,510 --> 00:02:53,450
+So if I look at this, I see
+
+37
+00:02:57,590 --> 00:03:00,469
+the top of this fraction as the
+exponential function.
+
+38
+00:03:01,490 --> 00:03:06,140
+And then, the argument to that exponential
+function is the square root of x.
+
+39
+00:03:10,560 --> 00:03:14,030
+So, I don't know how to integrate this
+function just looking at that.
+
+40
+00:03:14,030 --> 00:03:18,970
+I'm not going to make any progress if I
+keep it in terms of x.
+
+41
+00:03:18,970 --> 00:03:21,510
+But, it would be easier to integrate.
+
+42
+00:03:21,510 --> 00:03:28,060
+If, instead of having a square root in the
+exponent here, I just had a single letter.
+
+43
+00:03:28,060 --> 00:03:31,080
+So if this was, say, e to the u, for
+instance.
+
+44
+00:03:32,220 --> 00:03:36,350
+So, the way I can do that, is make a
+substitution.
+
+45
+00:03:36,350 --> 00:03:39,540
+I'm going to define u to be the square
+root of x.
+
+46
+00:03:42,500 --> 00:03:47,600
+And then if I do that, I could also think
+of it as x being equal to u squared.
+
+47
+00:03:49,660 --> 00:03:51,220
+And then if I were to take the derivative
+of
+
+48
+00:03:51,220 --> 00:03:56,240
+that, I would find that dx is equal to 2u
+du.
+
+49
+00:04:00,060 --> 00:04:02,660
+And so let's see what happens when I
+start.
+
+50
+00:04:02,660 --> 00:04:06,560
+Plugging in these these substitutions
+into, into my integral.
+
+51
+00:04:10,920 --> 00:04:16,060
+So on the bottom, I can write square root
+
+52
+00:04:16,060 --> 00:04:21,000
+of x, so this square root of x in the
+denominator just becomes a u.
+
+53
+00:04:23,470 --> 00:04:26,790
+In the numerator my e to the square root
+of x.
+
+54
+00:04:26,790 --> 00:04:32,470
+That's going to be e to the u, and then my
+dx term over here
+
+55
+00:04:32,470 --> 00:04:36,510
+this is going to be the part that sort of
+picks up my bit from the chain roll.
+
+56
+00:04:38,230 --> 00:04:44,075
+dx is equal to 2udu So I'm going to put
+that right here in place of the dx.
+
+57
+00:04:46,020 --> 00:04:48,850
+And then what's going to happen that's
+very convenient,
+
+58
+00:04:48,850 --> 00:04:50,570
+is that this u here and the u
+
+59
+00:04:50,570 --> 00:04:52,770
+in the denominator, they're going to
+cancel each other out.
+
+60
+00:04:56,190 --> 00:04:58,910
+And then because 2 is a constant, I can
+use my,
+
+61
+00:04:58,910 --> 00:05:03,340
+my scaling property just to move that 2
+outside of the integral.
+
+62
+00:05:03,340 --> 00:05:08,600
+And so I can rewrite this as 2 times the
+indefinite integral of e to the u d u.
+
+63
+00:05:08,600 --> 00:05:09,100
+And
+
+64
+00:05:11,890 --> 00:05:17,270
+now since I'm integrating, this d u tells
+me the variable that I'm integrating with.
+
+65
+00:05:17,270 --> 00:05:19,500
+This e to the u is going to be a very easy
+
+66
+00:05:19,500 --> 00:05:23,689
+function to integrate with respect to u,
+because it's its own antiderivative.
+
+67
+00:05:24,690 --> 00:05:30,700
+So I end up with 2 e to the u plus c but
+that's not quite finished yet,
+
+68
+00:05:32,820 --> 00:05:36,470
+because the answer to the question that I
+asked, should be
+
+69
+00:05:36,470 --> 00:05:39,500
+given in terms of x because this is a
+function of x.
+
+70
+00:05:41,130 --> 00:05:43,060
+But I know that u is equal to the square
+root
+
+71
+00:05:43,060 --> 00:05:46,220
+of x so all I have to do in my final step.
+
+72
+00:05:46,220 --> 00:05:48,940
+Is just replaced this u with the square
+root of x.
+
+73
+00:05:50,190 --> 00:05:54,050
+So this would be in, in my opinion
+
+74
+00:05:54,050 --> 00:05:56,400
+probably the simplest way to write down
+the answers.
+
+75
+00:05:56,400 --> 00:05:57,830
+So to have 2 times e to the
+
+76
+00:05:57,830 --> 00:06:01,010
+square root of x plus an arbitrary
+constant.
+
+77
+00:06:01,010 --> 00:06:05,400
+If you take the derivative of that, you're
+going to get this e
+
+78
+00:06:05,400 --> 00:06:07,970
+to the square root of x divided by the
+square root of x.
+
+79
+00:06:09,212 --> 00:06:16,140
+and here I've assumed that x is greater
+than 0 just
+
+80
+00:06:16,140 --> 00:06:18,010
+because I want to be able to take the
+square root of it.
+
+81
+00:06:23,170 --> 00:06:27,530
+So now let's consider trying a little bit
+more complicated function.
+
+82
+00:06:33,390 --> 00:06:38,480
+So this, this doesn't really look very,
+very much like it's a, a function
+
+83
+00:06:38,480 --> 00:06:41,920
+that I'm going to be able to write down as
+a function of another function,
+
+84
+00:06:45,730 --> 00:06:50,950
+but it is something that I can still use
+this rule to, to simplify quite a bit.
+
+85
+00:06:50,950 --> 00:06:57,670
+So, suppose I define u to be e to the x
+minus e to the minus x.
+
+86
+00:06:57,670 --> 00:07:02,570
+So it's going to be the denominator as my
+integrand.
+
+87
+00:07:04,540 --> 00:07:09,189
+So integrand is just a word that means the
+function that I'm trying to integrate.
+
+88
+00:07:12,330 --> 00:07:17,320
+Well, if I take the derivative of this
+function with respect to, with respect to
+
+89
+00:07:17,320 --> 00:07:25,311
+x, I'm going to get du is equal to e to
+the x, and then this
+
+90
+00:07:25,311 --> 00:07:32,190
+one, by the chain rule, I'm going to have
+a minus sign pop down, so this, oh, sorry.
+
+91
+00:07:32,190 --> 00:07:38,540
+This side, when I take its derivative, I'm
+going to get e to the minus x times
+
+92
+00:07:38,540 --> 00:07:40,180
+the derivative of the exponent.
+
+93
+00:07:40,180 --> 00:07:44,200
+The derivative of minus x is negative 1,
+so that's going to have that's going
+
+94
+00:07:44,200 --> 00:07:48,010
+to have the effect of just changing this
+minus sign into a plus sign.
+
+95
+00:07:49,560 --> 00:07:52,510
+So that's just a little application of the
+chain rule here.
+
+96
+00:07:52,510 --> 00:07:53,010
+And
+
+97
+00:07:55,570 --> 00:07:58,490
+now if I go ahead and make these
+substitutions,
+
+98
+00:08:03,220 --> 00:08:09,590
+I end up with e to the x plus e to the
+minus x times dx.
+
+99
+00:08:09,590 --> 00:08:12,310
+But that's just what I've said, that's my
+du.
+
+100
+00:08:13,660 --> 00:08:18,540
+And I have 1 over e to the x minus e to
+the minus x.
+
+101
+00:08:18,540 --> 00:08:23,050
+And that's what I've called my, that's the
+variable I've chosen fort my substitution.
+
+102
+00:08:24,150 --> 00:08:28,310
+So this whole thing simplifies into just
+finding the anti-derivative of 1
+
+103
+00:08:28,310 --> 00:08:29,020
+over u du.
+
+104
+00:08:29,020 --> 00:08:34,630
+And that again was in my little dictionary
+of anti-derivatives.
+
+105
+00:08:34,630 --> 00:08:36,060
+So that's the log of u.
+
+106
+00:08:40,060 --> 00:08:43,720
+And then to be finished I have to
+substitute back
+
+107
+00:08:43,720 --> 00:08:47,240
+so u is equal to e to the x minus x.
+
+108
+00:08:49,360 --> 00:08:52,910
+So the value of this anti-derivative here
+is going to be log of e
+
+109
+00:08:52,910 --> 00:08:57,360
+to the x minus e to the minus x plus an
+arbitrary constant.
+
+110
+00:09:03,710 --> 00:09:05,760
+And then there's one more trick we can use
+
+111
+00:09:08,960 --> 00:09:12,859
+with integration by substitution when
+we're working with definite integrals.
+
+112
+00:09:16,260 --> 00:09:18,510
+So by the Fundamental Theorem of Calculus,
+
+113
+00:09:22,520 --> 00:09:26,914
+let's see, if I get to where I used that.
+When
+
+114
+00:09:26,914 --> 00:09:31,190
+I integrate, oops.
+When I
+
+115
+00:09:31,190 --> 00:09:36,960
+integrate f of x, I should just have
+
+116
+00:09:36,960 --> 00:09:42,650
+capital f of x evaluated at its upper and
+lower endpoints.
+
+117
+00:09:42,650 --> 00:09:47,570
+But if I'm going to change from x into u,
+so I'm going to make some
+
+118
+00:09:47,570 --> 00:09:50,390
+sort of substitution, the endpoints have
+to
+
+119
+00:09:50,390 --> 00:09:53,560
+change, too, because what I'm really
+saying.
+
+120
+00:09:53,560 --> 00:09:56,840
+When I write these limits, oops, the
+limits of integration,
+
+121
+00:09:56,840 --> 00:10:02,090
+so from a to b, I'm talking about values
+of x.
+
+122
+00:10:02,090 --> 00:10:06,720
+So I'm talking about x equals a to x
+equals b.
+
+123
+00:10:06,720 --> 00:10:09,070
+When there's only one variable generally
+you don't write
+
+124
+00:10:09,070 --> 00:10:13,410
+this notation just because there's no, no
+possibility of ambiguity.
+
+125
+00:10:13,410 --> 00:10:15,580
+Because there's only one variable that
+you're talking about.
+
+126
+00:10:18,020 --> 00:10:22,520
+But when I make my substitution, so when I
+want to use the
+
+127
+00:10:22,520 --> 00:10:27,102
+integration by substitution formula.
+Here my
+
+128
+00:10:27,102 --> 00:10:31,510
+intergram is now a function of u.
+So the limits on
+
+129
+00:10:31,510 --> 00:10:36,930
+my integral also need to be in terms of u,
+rather than in terms of x.
+
+130
+00:10:36,930 --> 00:10:43,370
+So I need to take g inverse.
+So that's the, if I have u
+
+131
+00:10:43,370 --> 00:10:45,160
+is equal to g of x.
+
+132
+00:10:47,830 --> 00:10:52,730
+then I need to use that function backwards
+to get what my limits should
+
+133
+00:10:52,730 --> 00:10:57,479
+be once I've changed from sort of
+integrating in x space into u space.
+
+134
+00:11:07,020 --> 00:11:10,040
+And so if we just follow this calculation
+all the way through, what
+
+135
+00:11:10,040 --> 00:11:12,230
+we're eventually going to end up with, so
+
+136
+00:11:12,230 --> 00:11:15,480
+I used my integration by substitution
+formula.
+
+137
+00:11:17,480 --> 00:11:19,450
+Then once I have this guy here, I can
+
+138
+00:11:19,450 --> 00:11:24,840
+run the chain rule backwards which gives
+me this.
+
+139
+00:11:24,840 --> 00:11:27,230
+The integral and the derivative.
+
+140
+00:11:27,230 --> 00:11:29,360
+So I, if I take the antiderivative of a
+
+141
+00:11:29,360 --> 00:11:31,500
+derivative, I just end up with the same
+function.
+
+142
+00:11:31,500 --> 00:11:32,210
+So I have
+
+143
+00:11:32,210 --> 00:11:36,220
+f of g of u.
+I've defined my limits.
+
+144
+00:11:36,220 --> 00:11:41,200
+To be g inverse b and g inverse of a so
+when I evaluate
+
+145
+00:11:41,200 --> 00:11:45,830
+this g of u at g inverse of b and g
+inverse of a.
+
+146
+00:11:45,830 --> 00:11:50,040
+So that it's getting kind of sloppy here,
+but g and g
+
+147
+00:11:50,040 --> 00:11:54,760
+inverse their functions that sort of undo
+whatever the first function did.
+
+148
+00:11:54,760 --> 00:11:58,560
+So g of g inverse of x is just equal to x.
+
+149
+00:11:58,560 --> 00:12:02,950
+So all this is really going to end up
+being is f of b minus f of a.
+
+150
+00:12:02,950 --> 00:12:05,220
+Which is what we were after in the first
+place.
+
+151
+00:12:09,930 --> 00:12:11,490
+And so, this ends up being the
+
+152
+00:12:12,940 --> 00:12:17,000
+integration by substitution rule, for a
+definite integral.
+
+153
+00:12:17,000 --> 00:12:20,130
+And then I'll go through a quick example
+of, of using this guy.
+
+154
+00:12:20,130 --> 00:12:20,130
+[INAUDIBLE]
+
+155
+00:12:20,130 --> 00:12:20,142
+.
+>>
+
+156
+00:12:20,142 --> 00:12:20,642
+[INAUDIBLE].
+
+157
+00:12:25,920 --> 00:12:26,310
+>> Yeah.
+
+158
+00:12:26,310 --> 00:12:31,000
+So it's, it's essentially a shortcut that
+avoids you having to go back.
+
+159
+00:12:31,000 --> 00:12:34,120
+So you could just compute the anti
+derivative.
+
+160
+00:12:34,120 --> 00:12:34,770
+>> Right.
+
+161
+00:12:34,770 --> 00:12:36,228
+>> And once you have the
+anti-derivative.
+
+162
+00:12:36,228 --> 00:12:38,010
+Derivative.
+That's all you need.
+
+163
+00:12:38,010 --> 00:12:40,550
+It's just a trick to get you the
+anti-derivative.
+
+164
+00:12:40,550 --> 00:12:43,350
+But if you change the limits, you don't
+have to substitute
+
+165
+00:12:43,350 --> 00:12:48,280
+backwards cause you already have limits
+in, in the right numbers.
+
+166
+00:12:48,280 --> 00:12:51,288
+Or in, in the right scale I suppose for
+the right variable.
+
+167
+00:12:51,288 --> 00:12:55,956
+>> Right.
+>> So suppose I
+
+168
+00:12:55,956 --> 00:13:01,540
+want to integrate
+
+169
+00:13:01,540 --> 00:13:07,050
+and suppose I want to do this by
+substitution.
+
+170
+00:13:07,050 --> 00:13:10,900
+Because if I looked at this, I would
+probably just do the multiplication.
+
+171
+00:13:10,900 --> 00:13:16,170
+And then use the anti power rule.
+But,
+
+172
+00:13:16,170 --> 00:13:18,530
+what I'm going to do is recognize that the
+derivative
+
+173
+00:13:18,530 --> 00:13:21,080
+of this, is going to have an x squared in
+it.
+
+174
+00:13:21,080 --> 00:13:27,720
+So I could make some sort of substitution
+for this x cubed minus a constant piece.
+
+175
+00:13:29,140 --> 00:13:33,240
+So I'm going to let u equals, equal x
+cubed minus 1.
+
+176
+00:13:33,240 --> 00:13:37,130
+Then du is going to be 3x squared dx.
+
+177
+00:13:37,130 --> 00:13:41,570
+So I already have an x squared d x here,
+so to get a three I just need
+
+178
+00:13:41,570 --> 00:13:46,640
+to multiply by one, use the very clever
+choice of one of being
+
+179
+00:13:46,640 --> 00:13:51,925
+one third times three, and that's going to
+give me one
+
+180
+00:13:51,925 --> 00:13:57,020
+third, oops.
+
+181
+00:13:57,020 --> 00:13:59,210
+There are supposed to be a fourth power up
+
+182
+00:13:59,210 --> 00:14:01,160
+here which made it a little bit more
+complicated.
+
+183
+00:14:08,190 --> 00:14:12,560
+so I'm going to put my 3x squared dx over
+on the right hand side.
+
+184
+00:14:12,560 --> 00:14:16,859
+And that's going to be just equal to the
+derivative of my substitution.
+
+185
+00:14:18,060 --> 00:14:21,630
+In order to put this 3 here I had to
+introduce a 1 3rd,
+
+186
+00:14:21,630 --> 00:14:25,680
+but because that's a constant value I can
+move that out of the integral sign.
+
+187
+00:14:27,950 --> 00:14:30,090
+And then I'll go ahead and make my
+substitution,
+
+188
+00:14:32,350 --> 00:14:34,670
+but I'm also going to change the, the
+limits when I
+
+189
+00:14:34,670 --> 00:14:38,250
+do this too, so, when I look at the lower
+limit.
+
+190
+00:14:38,250 --> 00:14:43,490
+When I put negative 1 into here, I have
+negative 1 cubed.
+
+191
+00:14:43,490 --> 00:14:48,470
+Is minus 1 times minus 1 is 1 times minus
+1 again is negative 1.
+
+192
+00:14:48,470 --> 00:14:49,810
+Minus 1.
+
+193
+00:14:49,810 --> 00:14:52,780
+So that becomes negative 2.
+
+194
+00:14:52,780 --> 00:14:56,920
+And then 0 cubed is obviously going to be
+0.
+
+195
+00:14:56,920 --> 00:14:57,455
+Minus
+
+196
+00:14:57,455 --> 00:15:00,392
+1.
+So that gets me at negative one up here.
+
+197
+00:15:00,392 --> 00:15:07,502
+Because the 3 X squared
+
+198
+00:15:07,502 --> 00:15:13,550
+is what I can replace
+
+199
+00:15:13,550 --> 00:15:17,270
+by the, by the chain rule backwards.
+Becomes my D U term.
+
+200
+00:15:20,220 --> 00:15:23,500
+And so I can use my anti-power rule to
+figure
+
+201
+00:15:23,500 --> 00:15:26,010
+out what an anti-derivative for u to the
+fourth is.
+
+202
+00:15:27,380 --> 00:15:33,310
+And then I just end up with 1 15th times
+negative 1 to the fifth power.
+
+203
+00:15:35,870 --> 00:15:36,390
+Oops.
+
+204
+00:15:40,170 --> 00:15:41,160
+What have I done here?
+
+205
+00:15:46,570 --> 00:15:50,370
+Yeah, so this should be a 1 15th too, boy.
+Lots of typos on these slides.
+
+206
+00:15:50,370 --> 00:15:51,880
+I don't know what happened this time
+around.
+
+207
+00:15:53,740 --> 00:15:55,240
+at the bottom limit squared.
+
+208
+00:15:57,820 --> 00:16:01,370
+And if you do the math, you end up with 31
+over 15.
+
+209
+00:16:01,370 --> 00:16:05,811
+Sorry, minus 31 over 15.
+

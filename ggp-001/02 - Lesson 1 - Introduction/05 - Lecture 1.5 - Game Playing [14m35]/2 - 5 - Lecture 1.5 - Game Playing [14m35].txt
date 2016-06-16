@@ -1,0 +1,114 @@
+Having a formal description of the game is one thing, being able to use that description to play the game effectively is something else entirely.
+players must be able to compute the initial state of the game, must be able to compute which moves are legal in every state
+must be able to determine the state resulting form a particular combination of moves
+must be able to compute the value of each state for each player
+and must be able to determine whether any given state is terminal.
+Since game descriptions are written in symbolic logic it's obviously necessary for a game player to do some amount of automated reasoning.
+Now there are two extremes here: one possibility is for the game player to process the game description interpretively throughout a game,
+second possibility is for a player to use the description to devise a specialized program and then use that program to play the game.
+So effectively automatic programming.
+Since this is just an introduction, we will discuss the first possiblibility only and leave it to you to think about the second possibility in various hybrid approaches.
+To start with, the player can use the game description to determine the initial state.
+In the case of tic-tac-toe, xwe have a board with 9 empty cells.
+Given a state, like the one we just saw, the player can use the game description to compute the legal moves for each of the players.
+In this case, the white player can mark any of the 9 cells and the black player must do nothing, in other words it executes the "noop" action.
+Given a state, and the players' actions, a player can compute the next state using the update rules in the game description.
+In the case shown here, the white player plays the "mark(1,3)" action in the initial state
+and the black player does "noop", then the result is the state in which there is an "x" in the upper right hand corner.
+One way for a player to decide on a course of action in a match is to use these computations repeatedly to expand the game tree.
+Starting in a known state, it computes the legal actions for itself and its opponents in a manner just discussed
+for each combination of actions of the players, it simulates the actions to obtain the next state and thereby expands the tree.
+Here we see the tic-tac-toe expanded one level.
+Repeating this, a player can expand a tree to two levels, three levels, and so forth until it encounters a terminal state on every branch.
+So just the one shown here in the middle of the bottom row.
+By examining the various branches, it can choose the one that produces the best payoff.
+Now of course this choice depends on the moves of the other players, and must consider all possible opponents moves or make some assumptions about the things that the other player will or will not do.
+In principle the procedure allows a player to identify the best possible strategy to play any game.
+Unfortunately, even in cases where there is a clear-cut solution, the tree may be so large as to make it practically impossible for any player to expand the game tree.
+In tic-tac-toe there are just 5000 states, which is reasonable manageable number.
+But there more than 10^30 states in chess, and using this approach the player would run out of time and memory long before finishing.
+The alternative is to do incremental search.
+On each move expanding the tree as much a possible, ans then making a choice based on the apparent value of non-terminal states.
+Now in traditional game playing where the rules are known in advance the programmer can invent a game-specific evaluation function to help in this regard.
+For example in chess we know that states with higher piece counts and greater board control are better than ones with less material or less control.
+Unfortunately it's not possible for a GGP programmer to invent such game-specific rules in advance, since the game's rules are not known until the game begins.
+The program must evaluate the states for itself.
+The good news is that there are some evaluation techniques that always work.
+For example, there's no harm prefering new states to states that have previously been seen provided of course that there's a way to get back to the original states.
+Also if a player is to determine that some observable condition corresponds to distance from the goal, then it's a good idea to minimize that quantity.
+Suppose for example the player were in a cave trying to get out, if it saw a brighter light in one tunnel than another it might go for the brighter light.
+Finally there's some states that can be determined to be bad even if other states are not known to be good.
+For silly example, stepping off the roof of a tall building is probably not a great way to get to the store, at least not in the real world.
+Another possibility is to use non guaranteed evaluation functions sometimes called heuristics.
+A number of such heuristics have been proposed over the years.
+Goal proximity is one of those: proponents of this heuristic argue that all other things being equal, it's a good idea to prefer states that are closer to goal states than states that are farther away.
+Distance here is usually judged by similarity between states, that is the number of facts in common in the descriptions of the two states.
+Mobility is another general heuristic: proponents argue that, all other things being equal, it's better to move to a state that affords the player greater mobility.
+And that's as it gives it more possible actions, better than being boxed into a corner.
+Symetrically proponents of mobility argue that it is good to minimize the mobility of one's opponents.
+Now all these heuristics have been shown to be effective in some games, unfortunately, they are only heuristics: they sometimes fail and sometimes with comical consequences.
+Final match of GGP 2006 is an example.
+The game was cylinder checkers, that is checkers played on a cylinder: the game wraps around vertically.
+Recall that in checkers a player i s permitted to move one of his ordinary pieces, pieces that are not kings that is, one square forward in each turn.
+Here red is moving from the top to the bottom and black is moving from the bottom to the top.
+If a piece is blocked by an opponent's player [piece] you can jump that player [piece] if there is an empty square on the other side.
+Moreover, the player must make such a jump if one is available.
+The objective of the game is to take all or as many of the opponent's pieces as possible while preserving one's own.
+Here is a snapshot of the game, it's red's turn to play: what should he do, and what do you think he did ?
+Okay here's a hint: the player in this case was Clune's player and it had decided for some reason or other that limiting the opponent's mobility was a good heuristic.
+If we were to move the rearmost piece, black would have multiple possible moves.
+However if it were to move the piece in front, then black would be forced to capture it.
+In other words, it would have at most one move.
+Clearly moving the forward piece minimizes the opponent's mobility, so that's what Clune's player did.
+Actually the whole match played out this way with red giving black captures at every opportunity, it was sad to watch but frankly a little comical at the same time.
+The moral here is that while non-guaranteed heuristics search is sometimes useful, they're not always useful.
+An alternative to evaluation functions like these is Monte-Carlo search.
+The basic idea is simple: the player expands the tree for a few levels, then rather than using a local heuristic to evaluate a state, it makes some probes from that state to the end of the game by selecting random moves for all players, which can be done very rapidly.
+Sums up the total reward for all such probes and divides by the number of probes to obtain an estimated utility for that state.
+You can then use these expected utilities in comparing states and selecting actions.
+Monte-Carlo and its variants have proven highly successful in general game playing, virtually every general game playing program today using some variant of Monte-Carlo search.
+Okay this discussion of game tree search and heuristics reveals just how difficult the GGP problem is. 
+Monte-Carlo works amazingly well, but even it breaks down badly in certain cases.
+Fortunately, there's another complimentary approach to general game playing that has tremendous power, and it's called metagaming.
+Metagaming is problem-solving in the world of games, it involves reasoning about games and by extension game players and game playing.
+As stated, this is an extremly general definition, and includes both game design and game analysis, it includes reasoning about games in general as well as reasoning about specific games and specific matches of specific games.
+Significantly, it includes what programmers do in devising programs to play specific games, as well as what programmers do in devising general game playing programs.
+Metagame is usually done offline during the brief player after a player receives the game rules and [before] game play begins.
+Or sometimes it's done in parallel with ordinary game tree search.
+In general game playing we're primarily interested in those types of metagaming that can be automated.
+It raises the question of distinction between ordinary game playing and metagaming.
+Can we distinguish the two ? Well it's not that easy, but there are some differences.
+To begin with, ordinary game tree search can be viewed as a degenerate form of metagaming, one in which the metagamer must find the best action for a specific role in a specific game starting in a specific state.
+By contrast in some cases metagaming sometimes involves informations and goals that are different from the specifics used in game tree search. 
+To begin with, metagaming can take into account information other than the game description. For example it might take into account past experience.
+In round robin tournaments where total return, the sum of the values over multiple matches, in cases like that it might select a different strategy than in an elimination ladder where beating one's opponent is more important than the score that one gets, so long as it's greater than the opponent's score.
+Metagaming is also sometimes done with less information than is used in match play: for example without information about the role, initial state, goals, termination and so forth.
+As a result, metagaming can be more general deriving conclusions that apply across different matches and different players.
+Also the goal in metagaming is broader than that of game tree search, it's not so much concern with selecting the actions of a specific player in a specific game but rather concerns with devising a game tree search program or optimizing an existing program to search the game tree, but without actually searching that tree itself.
+Okay well, whether or not this concept of automated metagaming can be distinguished from game tree search, there's no doubt that the concept is used to good effect in many general game playing programs, and we'll have a chance to look at some metagaming techniques in the course.
+Before we the concept though I want to give one example of metagaming.
+The example here is called game decomposition or sometimes factoring.
+Consider the example of Hodgepodge, Hodgepodge is actually 2 games glued together.
+Here we show chess and othello but it could be any two games.
+One move in a game of hodgepodge corresponds to one move on each of the two constituing games.
+Winning requires winning at least one of the two games while not loosing the other.
+What makes Hodgepodge interesting is that it's factorable, that is it can be divided into two independent games.
+Realizing this can have dramatic effect.
+To see this consider the size of the game tree for Hodgepodge, supposing that one game tree has branching factor "a" and the other has branching factor "b"
+Then the branching factor of the joint game is "a * b".
+At any point in the game, a player has "a * b" possible moves.
+The size of the fringe of the game tree at level n is "(a * b) ^n".
+However the two games are independent: moving in one subgame does not affect the state of the other subgame.
+So the players really should be searching two smaller game trees: one with branching factor "a" and the other with btanching factor "b".
+In this way, at depth n, there would be only "a^n + b^n" possible states.
+This is a huge decrease in the size of the search space.
+So factoring is just one example of game reformulation and metagaming, there are many others. For example it's possible to find symmetries in games to cut down on the search space.
+In some ways, in some games there are bottlenecks that allow for different type of factoring.
+Consider for example a game made up of 1 or more subgames in which it's necessary to win the first game before moving on the secondgame and so forth.
+In such case there's no need to search to a terminal game in the overall game it's sufficient to just limit the search to the termination of the current subgame.
+And only after that's done search to the termination condition the next subgame and so forth.
+Now these examples are extreme cases but there are simple, everyday examples of finding structure of this  sort that can help in curtailing search.
+Whatever sort of metagaming is done the trick is to analyze and reformulate a game without exapnding the entire game tree.
+The interesting thing about general game playing is this: at some times the cost of analysis is proportional to the size of the description rather than the size of the game tree as in examples we just saw.
+And in such cases playerrs can expand a little time and gain a lot in search savings.
+

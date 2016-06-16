@@ -1,0 +1,31 @@
+Game management is the process of administering a game in a general game playing setting.
+More properly it should be called match management as the issue is how to manage individual matches of games, not the games themselves
+however everyone seems to use the phrase "game management" so we're stuck with it.
+In this segment we're gonna start with an overview of the general game playing environment illustrating the central role of a game manager
+and we'll then discuss the general game playing protocol.
+Here's a diagram of a typical general game playing ecosystem.
+At the center of the ecosystem is the game manager.
+Game manager maintains a database of game descriptions, maintains some temporary state for matches while they're running, and maintains a database of match results.
+The game manager communicates with game players using the internet TCP/IP protocol.
+And it also provides user interface for users who want to schedule matches, and it provides graphics for spectators who want to watch matches while they're running.
+The process of running a match goes as follows: if I'm receiving a request to run a match the game manager first sends a "start" message to each player to initiate the match.
+Shortly thereafter, game play begins, and it send "play" messages to each player to obtain their moves, and simulates the results.
+This part of the process then repeats until the game is over and the manager then sends "stop" messages to each player.
+The "start" message contains the name of the match, the role the payer is to assume, for example white or black in chess
+a formal description of the associated game written in GDL
+and the start clock and play clock associated with the match.
+Start clock determines how much time remains before play begins.
+The play clock determines how much time each play has to play each move once play begins.
+Upon receiving a start message each play sets up its data structures and does whatever analysis is deemed desirable in the time available, and then replies to the game manager that it's ready to play.
+Having sent a "start" message the game manager [error in video] waits for the replies from the players and once it has received these replies or once the start clock is exhausted, it commences play.
+On each step, the game manager sends a "play" message to each player.
+The message includes information about the action of all players on the preceding step, and on the first step the argument is null because there are no preceding actions.
+On receiving a "play" message, players spend their time trying to decide their moves.
+They must reply within the amount of time specified by the match's play clock.
+The game manager waits for replies from the players, if a player does not respond before the play clock is exhausted the game manager selects an arbitrary legal move.
+In any case, one all the players reply or the play clock is exhausted the game manager takes the specified moves or the legal moves it has determined for the player and determines the next game state
+then evaluates the termination condition to see if the game is over, if the game is not over the game manager sends the moves of the players to all players and this process then repeats.
+Once a game is determined to be over, the game manager sends a "stop" message to each player with information about the last moves made by all the players.
+The stop message allows players to clean up any data structures for the match and the information provided about previous plays is supplied so that the player with learning components can profit from their experience
+Having stopped all the players the game manager then computes the rewards for each player, stores this information together with the play history in its database and ceases operation.
+

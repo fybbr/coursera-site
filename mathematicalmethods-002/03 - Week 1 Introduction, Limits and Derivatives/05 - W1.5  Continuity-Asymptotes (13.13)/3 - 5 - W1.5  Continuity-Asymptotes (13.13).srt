@@ -1,0 +1,881 @@
+1
+00:00:01,060 --> 00:00:07,500
+Okay, and then onto the last section which
+is continuity and asymptotes.
+
+2
+00:00:09,740 --> 00:00:15,300
+So most of the time when we have a
+function F of X, if I take the limit
+
+3
+00:00:15,300 --> 00:00:21,340
+of that function as X goes to A then
+that's going to be equal to F of A.
+
+4
+00:00:21,340 --> 00:00:23,860
+And, and in fact you know, sometimes it's
+
+5
+00:00:23,860 --> 00:00:25,880
+hard to imagine why that would not be
+true.
+
+6
+00:00:26,980 --> 00:00:29,500
+I'll show you one, one picture in a
+second.
+
+7
+00:00:29,500 --> 00:00:35,170
+But if you think about the, the quiz
+question you just did, that is actually
+
+8
+00:00:35,170 --> 00:00:35,960
+well defined.
+
+9
+00:00:37,130 --> 00:00:39,810
+or sorry, there's a very good choice of a
+number
+
+10
+00:00:39,810 --> 00:00:42,850
+to choose for that when x is equal to one.
+
+11
+00:00:42,850 --> 00:00:44,980
+But the function's not defined at one.
+
+12
+00:00:47,900 --> 00:00:50,490
+And so this is kind of the indea of
+continuity.
+
+13
+00:00:50,490 --> 00:00:54,410
+If this blue curve is my function f of x
+
+14
+00:00:54,410 --> 00:00:57,060
+then you can think of it as a function's
+continuous.
+
+15
+00:00:57,060 --> 00:01:01,890
+If I could draw the curve associated with
+that function without lifting my pencil
+
+16
+00:01:01,890 --> 00:01:06,905
+off the piece of paper.
+And so if I, if I have a point A on the
+
+17
+00:01:06,905 --> 00:01:12,680
+X-axis and input A, and if I just move
+along the curve until I get to A,
+
+18
+00:01:13,700 --> 00:01:18,791
+then the value of that point should be
+equal to f(a).
+
+19
+00:01:20,730 --> 00:01:23,850
+And so that's actually the concept of
+continuity.
+
+20
+00:01:23,850 --> 00:01:28,180
+That's the definition of continuity.
+So we say a function f is continuous at a
+
+21
+00:01:28,180 --> 00:01:34,670
+point a if the limit as x goes to a of my
+function f of x is equal to f of a.
+
+22
+00:01:39,160 --> 00:01:42,550
+And then we can be a little bit, a little
+bit more precise about this.
+
+23
+00:01:42,550 --> 00:01:48,410
+So we say a function is right continuous
+if as I look at points that are greater
+
+24
+00:01:48,410 --> 00:01:55,440
+than a and kind of moved down towards a,
+the limit of f of x is equal to f of a.
+
+25
+00:01:55,440 --> 00:01:56,820
+And then we have the same idea.
+
+26
+00:01:56,820 --> 00:02:04,150
+The function is left continuous at A.
+If, if I look at points,
+
+27
+00:02:04,150 --> 00:02:10,950
+less than A and move towards A the limit
+as f of x goes up to A is equal to f of a.
+
+28
+00:02:10,950 --> 00:02:13,940
+And so clearly if a function is continuous
+
+29
+00:02:13,940 --> 00:02:16,759
+it's going to be both right continuous and
+left continuous.
+
+30
+00:02:19,930 --> 00:02:22,310
+And then we'll also say a function is
+continuous
+
+31
+00:02:22,310 --> 00:02:25,790
+on an interval, so I named my interval c,
+d.
+
+32
+00:02:25,790 --> 00:02:28,830
+So that's just the lower limit c, up to an
+upper limit,
+
+33
+00:02:28,830 --> 00:02:33,660
+d if it is continuous at every point to a,
+in that interval.
+
+34
+00:02:38,030 --> 00:02:42,650
+And so this Is kind of an idea of what a
+discontinuity would look like.
+
+35
+00:02:42,650 --> 00:02:47,330
+So if there's a jump in the function for
+one reason or another.
+
+36
+00:02:47,330 --> 00:02:50,180
+So this is pretty much the same thing I
+had on the last slide.
+
+37
+00:02:50,180 --> 00:02:54,440
+It's just at this point a, I decided to
+add a little bit to f of x.
+
+38
+00:02:54,440 --> 00:02:56,930
+So that explains this jump here.
+
+39
+00:02:56,930 --> 00:03:03,240
+And then the open circle means that I
+follow this curve up to every point that's
+
+40
+00:03:03,240 --> 00:03:08,470
+less than A, but not A itself and then
+this solid circle
+
+41
+00:03:08,470 --> 00:03:13,250
+means that I start at A and for every
+point greater than A.
+
+42
+00:03:13,250 --> 00:03:17,510
+So, if the solid circle were down here and
+the open circle would have to be
+
+43
+00:03:17,510 --> 00:03:19,040
+up here because the function can only be
+
+44
+00:03:19,040 --> 00:03:22,120
+defined To be one value at any given
+input.
+
+45
+00:03:25,120 --> 00:03:30,840
+And that's just going to affect the, the
+definition of whether it's left or right
+
+46
+00:03:30,840 --> 00:03:36,510
+continuous at that point.
+So here is f of x continuous at a.
+
+47
+00:03:36,510 --> 00:03:40,680
+And I would say no, because if I look at
+the limit as I go.
+
+48
+00:03:42,000 --> 00:03:46,570
+Towards A over here if.
+I was bouncing back and forth.
+
+49
+00:03:49,300 --> 00:03:50,880
+You know sometimes I'm going to be quite a
+bit
+
+50
+00:03:50,880 --> 00:03:53,910
+less than the function value, no matter
+how thin I make
+
+51
+00:03:53,910 --> 00:03:58,498
+my interval, am always going to be able
+to, and if I choose an epsilon
+
+52
+00:03:58,498 --> 00:04:04,660
+that makes a Range around this solid dot.
+
+53
+00:04:04,660 --> 00:04:08,910
+Say halfway in between the open circle and
+the filled in circle.
+
+54
+00:04:08,910 --> 00:04:14,000
+I'm never going to be able to get any
+points on this side, into that range.
+
+55
+00:04:14,000 --> 00:04:14,350
+So it's
+
+56
+00:04:14,350 --> 00:04:17,570
+definitely the limit as I approach a from
+the left hand side,
+
+57
+00:04:17,570 --> 00:04:21,110
+it's going to be less than the value of
+the function there.
+
+58
+00:04:21,110 --> 00:04:22,240
+So it's not continuous.
+
+59
+00:04:24,020 --> 00:04:25,290
+Is it right continuous?
+
+60
+00:04:25,290 --> 00:04:28,000
+So if I forget about this lower curve and
+only look at
+
+61
+00:04:28,000 --> 00:04:30,950
+the stuff on the, the right hand curve,
+you know, as I
+
+62
+00:04:30,950 --> 00:04:35,120
+move down since I've defined my function
+to be the value of
+
+63
+00:04:35,120 --> 00:04:39,139
+the top curve at A it is going to be right
+continuous.
+
+64
+00:04:40,830 --> 00:04:44,270
+But the reason that it's not continuous is
+that it's not left continuous.
+
+65
+00:04:44,270 --> 00:04:49,770
+So as I approach this point a from the
+left, the limit is
+
+66
+00:04:49,770 --> 00:04:53,670
+this open circle but the value of the
+function is the filled in circle.
+
+67
+00:04:53,670 --> 00:04:55,500
+So that's the sort of the way we want to
+
+68
+00:04:57,280 --> 00:05:01,630
+give a rigorous definition to this idea of
+Of continuity.
+
+69
+00:05:04,870 --> 00:05:07,760
+And so then again in a first-year calculus
+text book, you're going to
+
+70
+00:05:07,760 --> 00:05:12,290
+be able to find lots of theorems about
+when is a function continuous.
+
+71
+00:05:13,310 --> 00:05:15,990
+And so I'm just going to list off a lot of
+these very quickly.
+
+72
+00:05:15,990 --> 00:05:19,050
+So, let f and g be continuous functions.
+
+73
+00:05:19,050 --> 00:05:21,900
+So they're continuous at a point a.
+
+74
+00:05:21,900 --> 00:05:24,490
+And again, c is just going to be a real
+value constant.
+
+75
+00:05:26,160 --> 00:05:29,880
+So the sum of two continuous functions is
+continuous.
+
+76
+00:05:29,880 --> 00:05:32,780
+The difference of two continuous function
+is continuous.
+
+77
+00:05:34,770 --> 00:05:38,100
+If I multiply a continuous function by a
+real
+
+78
+00:05:38,100 --> 00:05:40,680
+value, that's also going to give me a
+continuous function.
+
+79
+00:05:42,590 --> 00:05:44,010
+If I take the product of two
+
+80
+00:05:44,010 --> 00:05:46,820
+continuous functions, that's going to be a
+continuous function.
+
+81
+00:05:48,230 --> 00:05:54,520
+And as long as the denominator is not
+equal to zero at the point A,
+
+82
+00:05:55,790 --> 00:05:59,539
+then the ratio of two continuous functions
+is also going to be continuous.
+
+83
+00:06:00,610 --> 00:06:02,510
+And again, this is, this is a point wise
+
+84
+00:06:02,510 --> 00:06:06,310
+definition so this is only continuous as a
+point A,
+
+85
+00:06:06,310 --> 00:06:09,230
+so all of these have to hold on an entire
+
+86
+00:06:09,230 --> 00:06:12,330
+interval for these functions to be
+continuous on that interval.
+
+87
+00:06:16,600 --> 00:06:21,310
+Any polynomial, so, 1 useful interval is
+R, that's all of the real
+
+88
+00:06:21,310 --> 00:06:23,230
+numbers, so everything greater than
+negative
+
+89
+00:06:23,230 --> 00:06:26,310
+infinite and everything less than positive
+infinite.
+
+90
+00:06:26,310 --> 00:06:30,210
+Any polynomial is continuous on the real
+numbers.
+
+91
+00:06:32,340 --> 00:06:35,600
+And then the following functions are
+continuous on their domains,
+
+92
+00:06:35,600 --> 00:06:37,990
+so the domain is just where the function
+is defined.
+
+93
+00:06:37,990 --> 00:06:40,120
+So sometimes you have to be a little bit
+careful, like if you
+
+94
+00:06:40,120 --> 00:06:44,149
+have the logarhythm, that's not going to
+be defined for a negative number.
+
+95
+00:06:46,050 --> 00:06:49,900
+So like I said, a polynomial is continuous
+on the entire real line.
+
+96
+00:06:49,900 --> 00:06:53,630
+So it's its domain is a entire set of real
+numbers.
+
+97
+00:06:53,630 --> 00:06:56,360
+So it's continuous on its domain.
+
+98
+00:06:57,610 --> 00:07:01,740
+Trigonometric functions, so this is sines,
+cosines, tangents, things like that.
+
+99
+00:07:01,740 --> 00:07:03,840
+You have to be a little bit careful
+because sometimes
+
+100
+00:07:03,840 --> 00:07:08,470
+you end up Dividign by 0 for instance
+without tangent.
+
+101
+00:07:08,470 --> 00:07:11,400
+But if you're not dividign by 0 it's going
+to be continuous.
+
+102
+00:07:13,050 --> 00:07:16,220
+Rational functions so that was things like
+f over g.
+
+103
+00:07:17,860 --> 00:07:22,990
+Inverse trigonometric functions, so this
+is, you know if I say the sine of an angle
+
+104
+00:07:22,990 --> 00:07:23,570
+is a certain vaule.
+
+105
+00:07:23,570 --> 00:07:26,990
+I can do something called the arc sine of
+that value.
+
+106
+00:07:26,990 --> 00:07:31,420
+Is going to give me that angle up to some
+sort of multiplicity.
+
+107
+00:07:31,420 --> 00:07:37,220
+And so it's going to be continuous on the
+right domain, and range.
+
+108
+00:07:39,380 --> 00:07:42,160
+The square root or cubed root, something
+like that.
+
+109
+00:07:43,460 --> 00:07:47,970
+Exponential functions, and logarithmic
+function.
+
+110
+00:07:47,970 --> 00:07:51,060
+So you can see from this set of sort
+
+111
+00:07:51,060 --> 00:07:54,300
+of seven things, there's probably not very
+much that you
+
+112
+00:07:54,300 --> 00:07:56,860
+would normally be able to write down
+that's not
+
+113
+00:07:56,860 --> 00:07:59,970
+going to be continuous at least on some,
+on some domain.
+
+114
+00:08:02,320 --> 00:08:08,390
+And then also if you have a function of a
+function so if g is a continuous function
+
+115
+00:08:08,390 --> 00:08:15,400
+and sorry if g is continuous at a, And
+there's going to be a value g of a.
+
+116
+00:08:15,400 --> 00:08:18,450
+If f is continuous at that value g of
+
+117
+00:08:18,450 --> 00:08:24,950
+a, then whoops, f, so this, this means
+composed with.
+
+118
+00:08:24,950 --> 00:08:27,480
+And the, probably the easier way to think
+about it is just
+
+119
+00:08:27,480 --> 00:08:28,710
+f of g of x.
+
+120
+00:08:28,710 --> 00:08:28,710
+[INAUDIBLE]
+
+121
+00:08:28,710 --> 00:08:28,710
+.
+
+122
+00:08:28,710 --> 00:08:32,900
+That's also going to be a continuous at
+the point A.
+
+123
+00:08:37,190 --> 00:08:41,530
+And so just a, a quick example.
+where is the following continuous?
+
+124
+00:08:41,530 --> 00:08:48,363
+So it's log of x plus, arc tangent of x
+divided by x squared minus 1.
+
+125
+00:08:50,390 --> 00:08:54,590
+So, this is a bit confusing sometimes.
+
+126
+00:08:54,590 --> 00:08:58,840
+Because if I put a 2 there, generally I
+mean tangent squared.
+
+127
+00:08:58,840 --> 00:09:04,440
+If I put a negative 1 there, I mean 1 over
+tangent, I mean arc-tangent, usually.
+
+128
+00:09:06,850 --> 00:09:10,400
+So, I would say, best to avoid this
+notation.
+
+129
+00:09:10,400 --> 00:09:11,920
+Use arc tangent.
+
+130
+00:09:13,130 --> 00:09:15,020
+And if you need that to be a power just
+
+131
+00:09:15,020 --> 00:09:18,840
+write it as 1 over tangent squared or
+something like that.
+
+132
+00:09:23,240 --> 00:09:24,980
+So this second bullet point is just
+
+133
+00:09:24,980 --> 00:09:27,540
+a little diversion to explain this, this
+tangent.
+
+134
+00:09:27,540 --> 00:09:32,460
+Which I think basically was invented
+because it fit nicely on calculator keys.
+
+135
+00:09:34,370 --> 00:09:38,680
+So, I'll first got a look at the numerator
+here.
+
+136
+00:09:38,680 --> 00:09:40,620
+So I have log(x).
+
+137
+00:09:40,620 --> 00:09:43,200
+That's going to be continuous on its
+domain, 'cause log is
+
+138
+00:09:43,200 --> 00:09:50,190
+a logarithmic function and its domain is
+x>0 and arctan(x)
+
+139
+00:09:50,190 --> 00:09:54,490
+is going to be continuous For any X in the
+real numbers.
+
+140
+00:09:58,220 --> 00:10:03,170
+So, the numerator is going to be
+continuous for
+
+141
+00:10:03,170 --> 00:10:05,880
+any X in the interval from zero to
+infinity.
+
+142
+00:10:09,800 --> 00:10:13,080
+Now I'm going to look at the denominator
+Oops.
+
+143
+00:10:13,080 --> 00:10:14,600
+So x squared minus 1.
+
+144
+00:10:14,600 --> 00:10:16,620
+Well this is a polynomial.
+
+145
+00:10:16,620 --> 00:10:19,290
+We said polynomials were going to be
+continuous on
+
+146
+00:10:19,290 --> 00:10:22,310
+all of the real numbers so this is
+continuous everywhere.
+
+147
+00:10:28,270 --> 00:10:30,889
+And so f of x is then going to be
+continuous.
+
+148
+00:10:32,350 --> 00:10:36,890
+Everywhere except where the bottom is
+equal to zero.
+
+149
+00:10:36,890 --> 00:10:42,630
+So that was my one condition for a
+rational function to be continuous, So X
+
+150
+00:10:42,630 --> 00:10:49,190
+squared minus one is going to be equal to
+zero only when X is equal to one.
+
+151
+00:10:49,190 --> 00:10:53,390
+One or negative one, except that we're
+really only considering Zero
+
+152
+00:10:53,390 --> 00:10:55,160
+to infinity because of the numerator.
+
+153
+00:10:56,170 --> 00:10:59,720
+So, the only point where I'm going to have
+a problem is the x equal to 1.
+
+154
+00:10:59,720 --> 00:11:02,180
+And so that tells me that f of x is
+
+155
+00:11:02,180 --> 00:11:08,110
+going to be continuous on the intervals
+0,1 and 1 infinity.
+
+156
+00:11:08,110 --> 00:11:13,270
+And by using the parentheses here I mean
+zero one.
+
+157
+00:11:13,270 --> 00:11:15,470
+So every number that's greater than zero
+and
+
+158
+00:11:15,470 --> 00:11:18,640
+less than one, but not zero or one itself.
+
+159
+00:11:18,640 --> 00:11:18,810
+If
+
+160
+00:11:18,810 --> 00:11:22,650
+I want to include the endpoints in my
+interval, then I use square brackets.
+
+161
+00:11:24,150 --> 00:11:29,420
+And so basically, it's continuous on this
+interval,
+
+162
+00:11:29,420 --> 00:11:32,220
+except when x is exactly equal to one.
+
+163
+00:11:39,740 --> 00:11:44,750
+And then just one last thing that I want
+to stick somewhere in the course
+
+164
+00:11:44,750 --> 00:11:48,840
+and this is where I think it fits best is
+the idea of a horizontal asymptote.
+
+165
+00:11:50,300 --> 00:11:54,240
+And so basically what I'm plotting here Is
+
+166
+00:11:54,240 --> 00:11:57,850
+this rational function X squared minus one
+divided by
+
+167
+00:11:57,850 --> 00:12:02,030
+X squared plus one and I want to know what
+happens to that as X becomes large.
+
+168
+00:12:03,620 --> 00:12:04,730
+And if you think about it,
+
+169
+00:12:04,730 --> 00:12:07,600
+you know, when, when X is small sort of
+minus one
+
+170
+00:12:07,600 --> 00:12:10,650
+divided by one is going to be the dominant
+part of this
+
+171
+00:12:10,650 --> 00:12:13,560
+but when X is big, like if X were 1,000
+It's
+
+172
+00:12:13,560 --> 00:12:16,690
+going to be a million minus one divided by
+a million plus one.
+
+173
+00:12:16,690 --> 00:12:18,230
+So it's going to be pretty close to one.
+
+174
+00:12:21,080 --> 00:12:23,590
+And so the definition of this red line.
+
+175
+00:12:23,590 --> 00:12:29,770
+So if I have, if I look at the limit as x
+goes to infinity of f of x.
+
+176
+00:12:29,770 --> 00:12:34,160
+If that approach is some finite value,
+then I'm going to say that this
+
+177
+00:12:34,160 --> 00:12:38,610
+function, f of x, has a horizontal
+asymptote at that, at that value.
+
+178
+00:12:38,610 --> 00:12:41,590
+And the way I've, the way I've written
+this, or
+
+179
+00:12:41,590 --> 00:12:46,150
+the way I've designed this example, you
+get the same value
+
+180
+00:12:46,150 --> 00:12:49,250
+if I go Do plus infinity or minus
+
+181
+00:12:49,250 --> 00:12:52,510
+infinity, that doesn't necessarily have to
+be the case.
+
+182
+00:12:52,510 --> 00:12:56,750
+So this L here doesn't necessarily need to
+be the same as this L here.
+
+183
+00:12:58,530 --> 00:13:02,120
+And so this line is called the horizontal
+asymptote,
+
+184
+00:13:02,120 --> 00:13:04,530
+if the limit as X goes to infinity is
+
+185
+00:13:04,530 --> 00:13:10,390
+equal to L Or if the limit, as x goes to
+minus infinity, is equal to a different L.
+

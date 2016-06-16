@@ -1,0 +1,1097 @@
+1
+00:00:01,060 --> 00:00:04,435
+So the next topic is, a Change of
+Variables Example,
+
+2
+00:00:04,435 --> 00:00:08,270
+so a slightly more complicated version of
+what we just did.
+
+3
+00:00:10,680 --> 00:00:12,510
+And this one I, I took from the textbook.
+
+4
+00:00:14,100 --> 00:00:18,959
+And I found it when I was reading the book
+getting ready to do this class I found it.
+
+5
+00:00:20,040 --> 00:00:22,740
+I thought sort of too complicated, so I
+thought it would be a good
+
+6
+00:00:22,740 --> 00:00:25,948
+thing to go through step by step just to
+make sure everybody understands it.
+
+7
+00:00:25,948 --> 00:00:30,832
+So I want to evaluate the double integral
+over
+
+8
+00:00:30,832 --> 00:00:35,980
+domain D of x dx dy, where this domain D
+is going to
+
+9
+00:00:35,980 --> 00:00:42,316
+be points in the xy plane, where x is
+greater than or equal
+
+10
+00:00:42,316 --> 00:00:48,650
+to zero, then the product x and y is in
+between 1 and 2.
+
+11
+00:00:48,650 --> 00:00:53,271
+And then y divided by x is also between 1
+and 2.
+
+12
+00:00:56,440 --> 00:01:00,440
+And so it turns out we can assume that x
+is greater than zero.
+
+13
+00:01:00,440 --> 00:01:01,570
+I wrote assume here.
+
+14
+00:01:01,570 --> 00:01:02,720
+You don't really have to assume.
+
+15
+00:01:02,720 --> 00:01:04,650
+You can actually see that it's greater
+than zero.
+
+16
+00:01:07,430 --> 00:01:08,010
+[COUGH]
+
+17
+00:01:08,010 --> 00:01:15,340
+So it's easier if you rewrite the domain
+so solve for one of the variables.
+
+18
+00:01:15,340 --> 00:01:18,000
+So generally I like to see y as a function
+of x.
+
+19
+00:01:18,000 --> 00:01:20,270
+That's what I'm most comfortable plotting.
+
+20
+00:01:21,760 --> 00:01:29,380
+So if I solve for y, if I can isolate y,
+then I can just say y equals 1 over x.
+
+21
+00:01:29,380 --> 00:01:31,650
+That has to be kind of a lower bound in
+some sense.
+
+22
+00:01:31,650 --> 00:01:33,436
+And y less than or equal
+
+23
+00:01:33,436 --> 00:01:35,930
+to 2 over x.
+So y equals 2 over x.
+
+24
+00:01:35,930 --> 00:01:37,410
+That's going to be kind of an upper bound.
+
+25
+00:01:38,440 --> 00:01:41,730
+And then the same thing is going to happen
+with the second set of limits.
+
+26
+00:01:41,730 --> 00:01:44,410
+So I have.
+x less than or equal to y.
+
+27
+00:01:44,410 --> 00:01:47,324
+That's just the line y equals x, and the
+function, the
+
+28
+00:01:47,324 --> 00:01:50,420
+domain has to be above that because it's y
+greater than x.
+
+29
+00:01:51,470 --> 00:01:54,880
+And then there's also going to be a line y
+equals 2x, and that has to
+
+30
+00:01:54,880 --> 00:01:59,270
+be kind of an upper bound, because it says
+that y has to be below that.
+
+31
+00:01:59,270 --> 00:02:03,080
+And so once you've gotten this far, what
+you want to do next.
+
+32
+00:02:03,080 --> 00:02:05,340
+Is, just draw a picture.
+
+33
+00:02:05,340 --> 00:02:08,230
+So, I tried my artistic skills here.
+
+34
+00:02:11,110 --> 00:02:16,850
+And, so, the second condition, y has to be
+greater than x.
+
+35
+00:02:16,850 --> 00:02:20,610
+So, the bottom side of this blue region is
+the line y equal x.
+
+36
+00:02:20,610 --> 00:02:25,850
+In the top side of the blue region is the
+line y equals 2x.
+
+37
+00:02:25,850 --> 00:02:28,770
+And this just says y has to be in between
+those two lines.
+
+38
+00:02:28,770 --> 00:02:31,440
+So to be in my domain I have to be in my
+blue region.
+
+39
+00:02:33,650 --> 00:02:37,700
+And then 1 over x so y has to be greater
+than 1 over x.
+
+40
+00:02:37,700 --> 00:02:41,719
+So this line, the bottom of the yellow
+reason is this line 1 over x.
+
+41
+00:02:42,720 --> 00:02:45,980
+The top of this yellow regions is 2 over
+x.
+
+42
+00:02:47,210 --> 00:02:49,850
+So this is 2 over x up here.
+
+43
+00:02:49,850 --> 00:02:53,280
+And so to be in the domain I also have to
+be in the yellow region.
+
+44
+00:02:53,280 --> 00:02:56,690
+So I have to be in the blue region and I
+have to be in the yellow region.
+
+45
+00:02:56,690 --> 00:02:59,132
+And if I remember my primary school
+
+46
+00:02:59,132 --> 00:03:02,850
+art class correctly, yellow and blue make
+green.
+
+47
+00:03:02,850 --> 00:03:06,950
+So that tells me that this green shape is
+the domain that they're talking about.
+
+48
+00:03:06,950 --> 00:03:09,466
+So this is, this description this set, if
+I
+
+49
+00:03:09,466 --> 00:03:12,030
+want to draw a picture of it looks like
+this.
+
+50
+00:03:12,030 --> 00:03:13,040
+[COUGH]
+
+51
+00:03:13,040 --> 00:03:18,050
+And so what do I have next?
+So it
+
+52
+00:03:18,050 --> 00:03:23,364
+turns out that the points here's.
+This
+
+53
+00:03:23,364 --> 00:03:28,473
+point at the bottom is, let's see, what
+did I
+
+54
+00:03:28,473 --> 00:03:33,577
+do?
+dx last, so this has this point at the
+
+55
+00:03:33,577 --> 00:03:38,428
+left most side of the green region in the
+
+56
+00:03:38,428 --> 00:03:43,573
+x coordinate is one, then I get this point
+
+57
+00:03:43,573 --> 00:03:48,476
+here, oh oops.
+Not 1, it's
+
+58
+00:03:48,476 --> 00:03:53,552
+the square root of 2 over 2, then this
+point is going to
+
+59
+00:03:53,552 --> 00:03:58,580
+be 1.
+And so that makes sense, because y equals
+
+60
+00:03:58,580 --> 00:04:03,828
+x gives me the point 1 equals 1, and y
+equals 1 over x also gives me the point
+
+61
+00:04:03,828 --> 00:04:07,057
+1 equals 1.
+So this bottom point of the green
+
+62
+00:04:07,057 --> 00:04:07,462
+[COUGH]
+
+63
+00:04:07,462 --> 00:04:12,740
+green region is the point 1,1.
+This point over here is root 2 over 2.
+
+64
+00:04:12,740 --> 00:04:14,814
+And so you just find those by figuring out
+
+65
+00:04:14,814 --> 00:04:17,510
+where each of these lines intersects the
+other one.
+
+66
+00:04:19,070 --> 00:04:22,743
+And then on the right hand side I guess we
+get root 2.
+
+67
+00:04:24,940 --> 00:04:26,990
+And, it turns out that we're pretty lucky.
+
+68
+00:04:26,990 --> 00:04:28,853
+That this point at the very top of
+
+69
+00:04:28,853 --> 00:04:31,855
+the green region, too, also has x
+coordinate 1.
+
+70
+00:04:32,890 --> 00:04:35,160
+So, it's exactly above this bottom point.
+
+71
+00:04:36,340 --> 00:04:38,932
+And, so the reason that that's going to be
+handy is that means that
+
+72
+00:04:38,932 --> 00:04:42,160
+instead of having to split this up into a
+whole bunch of pieces.
+
+73
+00:04:42,160 --> 00:04:44,040
+I can just split it up into two pieces.
+
+74
+00:04:44,040 --> 00:04:48,480
+So I can go from the leftmost endpoint,
+which was root 2 over 2, up to 1.
+
+75
+00:04:48,480 --> 00:04:49,944
+And I'm going to
+
+76
+00:04:49,944 --> 00:04:54,890
+kind of try and get this bit over here.
+Oh, I could have used another color.
+
+77
+00:04:54,890 --> 00:04:57,600
+And then I want to go from 1.
+
+78
+00:04:57,600 --> 00:05:02,380
+So that's kind of this line dividing the
+green region in half up to root 2.
+
+79
+00:05:02,380 --> 00:05:06,330
+And that's going to be my second integral,
+but the point is
+
+80
+00:05:06,330 --> 00:05:10,950
+in the first integral, given x, I can find
+an upper bound.
+
+81
+00:05:10,950 --> 00:05:14,968
+So, I can find an upper limit and a lower
+limit as functions
+
+82
+00:05:14,968 --> 00:05:19,140
+g of x, so g one of x and g two of x.
+So, the upper limit, given
+
+83
+00:05:19,140 --> 00:05:22,858
+x, will be 2x, and the lower limit will be
+one over x.
+
+84
+00:05:22,858 --> 00:05:28,903
+Then, when I'm on the right hand side of
+the x equals 1 line, the upper limit
+
+85
+00:05:28,903 --> 00:05:35,041
+will be 2 over x, so that's this line up
+here, and the lower limit will just be
+
+86
+00:05:35,041 --> 00:05:41,238
+x.
+So y equals x, and so those,
+
+87
+00:05:41,238 --> 00:05:47,046
+I guess, are the limits that
+
+88
+00:05:47,046 --> 00:05:52,128
+I've plugged in here and
+
+89
+00:05:52,128 --> 00:05:57,977
+here, and here, and here.
+
+90
+00:05:57,977 --> 00:06:02,057
+So, I think the rest, most of this slide,
+you can tell it's going to be
+
+91
+00:06:02,057 --> 00:06:06,640
+bad because I didn't have enough space to
+even put the, the title up at the top.
+
+92
+00:06:06,640 --> 00:06:09,259
+I needed, you know, more space to put the
+calculations.
+
+93
+00:06:10,590 --> 00:06:13,288
+You can actually evaluate this it just
+sort of
+
+94
+00:06:13,288 --> 00:06:17,660
+becomes an exercise in bookkeeping which I
+did for you.
+
+95
+00:06:17,660 --> 00:06:23,300
+So, just to point out some good habits.
+
+96
+00:06:23,300 --> 00:06:27,330
+So, first I'm going to integrate with
+respect to y.
+
+97
+00:06:27,330 --> 00:06:31,767
+So that means my limits have to be y
+equals functions of x and so
+
+98
+00:06:31,767 --> 00:06:35,290
+then when I, once I find an anti
+derivative.
+
+99
+00:06:35,290 --> 00:06:41,330
+So when I integrate x with respect to y
+that's going to come from the function xy.
+
+100
+00:06:41,330 --> 00:06:44,180
+If I took the derivative of that, the
+partial derivative of
+
+101
+00:06:44,180 --> 00:06:46,389
+xy with respect to y that would just give
+me x.
+
+102
+00:06:48,670 --> 00:06:51,361
+And then just to remind myself which
+direction
+
+103
+00:06:51,361 --> 00:06:53,776
+I'm going, I said I'm going to evaluate
+
+104
+00:06:53,776 --> 00:06:57,990
+that at y equals 2x and then 1 equals 1
+over x and take the difference.
+
+105
+00:06:57,990 --> 00:07:00,036
+And then I'm going to do the same thing
+for
+
+106
+00:07:00,036 --> 00:07:02,330
+my integral on the right hand side as
+well.
+
+107
+00:07:03,460 --> 00:07:06,930
+And so at this first step I get the same
+antiderivative.
+
+108
+00:07:06,930 --> 00:07:13,774
+I don't suppose I can make that go away.
+Maybe if I click
+
+109
+00:07:13,774 --> 00:07:17,708
+on details and then quit.
+
+110
+00:07:17,708 --> 00:07:19,840
+We are going to have to edit this out of
+the video I think.
+
+111
+00:07:19,840 --> 00:07:26,260
+Okay, good.
+
+112
+00:07:27,980 --> 00:07:31,300
+So hopefully I don't get some terrible
+virus in the next 12 minutes.
+
+113
+00:07:34,730 --> 00:07:37,314
+So in the first step we're going to get
+the first
+
+114
+00:07:37,314 --> 00:07:40,850
+anti-derivative, but once I evaluate this
+at the limit, so
+
+115
+00:07:40,850 --> 00:07:43,774
+the, the limits in the y direction are
+different in
+
+116
+00:07:43,774 --> 00:07:47,198
+the first integral than they are in the
+second integral.
+
+117
+00:07:47,198 --> 00:07:49,402
+So I'm going to have a different integral
+when I
+
+118
+00:07:49,402 --> 00:07:51,780
+come to doing the second step of my
+interation.
+
+119
+00:07:53,680 --> 00:07:56,381
+And so this is what I end up with, an
+integral
+
+120
+00:07:56,381 --> 00:08:00,000
+from root 2 over 2 to one of 2x square
+minus 1.
+
+121
+00:08:00,000 --> 00:08:03,370
+And then the integral from 1 to root 2 of
+2 minus x squared.
+
+122
+00:08:05,810 --> 00:08:10,076
+Now it's just a regular old single
+variable problem, so you can
+
+123
+00:08:10,076 --> 00:08:13,750
+look through the slide on your own time if
+you want to.
+
+124
+00:08:13,750 --> 00:08:16,040
+Just trust that I did it correctly.
+
+125
+00:08:16,040 --> 00:08:19,659
+Again, big exercise in bookkeeping, but if
+you don't
+
+126
+00:08:19,659 --> 00:08:23,047
+make any sign mistakes you will eventually
+arrive at
+
+127
+00:08:23,047 --> 00:08:28,670
+the correct answer, which is this minus 6
+plus 5 times the square root of 2 over 3.
+
+128
+00:08:28,670 --> 00:08:31,016
+And so just let's keep that
+
+129
+00:08:31,016 --> 00:08:34,010
+in mind.
+So minus 6 plus 5 root 2 over 3.
+
+130
+00:08:34,010 --> 00:08:40,070
+And now let's consider the change of
+variables.
+
+131
+00:08:40,070 --> 00:08:45,940
+So s equals xy, and t equals y over x.
+So, hopefully seems familiar.
+
+132
+00:08:49,780 --> 00:08:54,630
+This was my domain in, for the original
+integral.
+
+133
+00:08:54,630 --> 00:08:57,594
+And it turns out, if I define these
+variables this way, it's
+
+134
+00:08:57,594 --> 00:09:02,560
+actually pretty easy to figure out what
+the, the transformed domain should be.
+
+135
+00:09:02,560 --> 00:09:06,103
+So here I have x y has to be in between 1
+and 2.
+
+136
+00:09:07,480 --> 00:09:11,170
+So that's going to tell me that s has to
+be in between 1
+
+137
+00:09:11,170 --> 00:09:15,024
+and 2, and then t is equal to y over x, so
+this just tells
+
+138
+00:09:15,024 --> 00:09:17,990
+me that t also has to be in between 1 and
+2.
+
+139
+00:09:17,990 --> 00:09:21,990
+So instead of having this funny shaped
+green interval now,
+
+140
+00:09:21,990 --> 00:09:25,112
+I just have a square 1, 2 cross 1, 2.
+
+141
+00:09:28,050 --> 00:09:31,010
+So that's my new domain of integration,
+omega.
+
+142
+00:09:33,130 --> 00:09:37,850
+And you can sort of use the same reasoning
+that I used to, with the diamond.
+
+143
+00:09:37,850 --> 00:09:45,940
+So here if we look at t, is this y over x.
+So if I were to solve this.
+
+144
+00:09:45,940 --> 00:09:51,450
+For x I would get y equals t times x.
+
+145
+00:09:51,450 --> 00:09:54,520
+So that's saying t is kind of the slope of
+that line.
+
+146
+00:09:54,520 --> 00:09:58,160
+And if you think about what's happening in
+this blue region,
+
+147
+00:09:58,160 --> 00:10:02,200
+t equals 1 corresponds to the bottom of
+the blue region.
+
+148
+00:10:02,200 --> 00:10:05,130
+And t equals 2 corresponds to the top of
+the blue region.
+
+149
+00:10:05,130 --> 00:10:08,220
+Just because here I have y equals 1 times
+x.
+
+150
+00:10:08,220 --> 00:10:11,030
+Up to y equals 2 times x.
+
+151
+00:10:11,030 --> 00:10:14,045
+And in between 1 and 2 if I had t equals 3
+over 2 times
+
+152
+00:10:14,045 --> 00:10:18,500
+x, that would just be a line that split
+the blue region right down the middle.
+
+153
+00:10:18,500 --> 00:10:23,300
+So you can sort of think of it as this
+bottom line swinging up to the top line.
+
+154
+00:10:23,300 --> 00:10:28,424
+So it's pivoting on the origin, just from.
+y equals x up to y
+
+155
+00:10:28,424 --> 00:10:33,930
+equals two x and then the same thing for
+this s equals xy.
+
+156
+00:10:33,930 --> 00:10:39,078
+I could think of that as y equals s over
+x, and so again there's
+
+157
+00:10:39,078 --> 00:10:43,731
+this number 1 going up to 2, oops, going
+up to 2, so s
+
+158
+00:10:43,731 --> 00:10:48,384
+equals one just corresponds to the bottom
+of this yellow
+
+159
+00:10:48,384 --> 00:10:53,930
+region, the curve making the bottom of the
+yellow region.
+
+160
+00:10:53,930 --> 00:10:58,758
+And that curve is just going to shift up
+to the top as s goes from 1 to 2.
+
+161
+00:11:00,450 --> 00:11:03,798
+So that's sort of the geometric argument,
+you know making this
+
+162
+00:11:03,798 --> 00:11:07,550
+sketch of the domain is usually what
+you'll have to do.
+
+163
+00:11:07,550 --> 00:11:10,385
+It turned out this wasn't quite as hard as
+I thought it
+
+164
+00:11:10,385 --> 00:11:13,472
+would be the first time I read it, just
+because, I realize
+
+165
+00:11:13,472 --> 00:11:15,929
+now the reason that the, the textbook
+defined
+
+166
+00:11:15,929 --> 00:11:18,930
+the, defined this domain in such a
+complicated way.
+
+167
+00:11:18,930 --> 00:11:21,210
+Is because it makes it easy to see what
+the limits
+
+168
+00:11:21,210 --> 00:11:23,148
+on s and t are going to be just because
+this
+
+169
+00:11:23,148 --> 00:11:25,314
+is really telling you what the limit of s
+is and
+
+170
+00:11:25,314 --> 00:11:27,740
+this is really telling you what the limit
+of t is.
+
+171
+00:11:30,120 --> 00:11:36,098
+And so that means I can change my domain
+from d, which is this funny shaped
+
+172
+00:11:36,098 --> 00:11:42,290
+green thing, to just t equals 1 to t
+equals 2 and s equals 1 to s equals 2.
+
+173
+00:11:42,290 --> 00:11:43,883
+But then I need to use my change of
+
+174
+00:11:43,883 --> 00:11:46,400
+variables formula to figure out what I
+need here.
+
+175
+00:11:49,010 --> 00:11:53,290
+And so first, to do that we have to do
+what the, the quiz question was last time.
+
+176
+00:11:53,290 --> 00:11:59,340
+So I came up with the, the change x equals
+the square root of s over t.
+
+177
+00:11:59,340 --> 00:12:01,920
+And y equals the square root of s times t.
+
+178
+00:12:04,930 --> 00:12:09,320
+And then, I calculated the partial
+derivatives for the change of variables.
+
+179
+00:12:09,320 --> 00:12:13,230
+So I got, 1 over 2 times the square root
+of st.
+
+180
+00:12:14,930 --> 00:12:18,350
+Square root of t divided by 2 times the
+square root of st.
+
+181
+00:12:19,770 --> 00:12:20,810
+Square root of s.
+
+182
+00:12:22,120 --> 00:12:25,248
+Oh, so, minus the square root of s divided
+by 2t to the
+
+183
+00:12:25,248 --> 00:12:28,610
+3 halves, but I wrote that as t times the
+square root of t.
+
+184
+00:12:30,670 --> 00:12:34,280
+And then, square root of s divided by 2
+times the square root of t, so.
+
+185
+00:12:35,390 --> 00:12:38,994
+For me, I, I put this here just because I
+think it looks a little
+
+186
+00:12:38,994 --> 00:12:41,918
+prettier, but in terms of doing the
+calculation,
+
+187
+00:12:41,918 --> 00:12:44,450
+I find this, this formula far more useful.
+
+188
+00:12:46,830 --> 00:12:49,457
+So these are actually the things I would
+plug
+
+189
+00:12:49,457 --> 00:12:52,630
+into, that I would plug into the Jacobian
+formula.
+
+190
+00:12:53,840 --> 00:12:58,394
+And these, you know, if I write my
+transformations like this, then I can just
+
+191
+00:12:58,394 --> 00:13:03,200
+use the power rule to figure out what's
+going on to take the partial derivatives.
+
+192
+00:13:07,340 --> 00:13:11,293
+And so the Jacobian for this particular
+change of variables just becomes this,
+
+193
+00:13:11,293 --> 00:13:15,000
+and if you cancel everything out so you
+can see it's kind of constructed.
+
+194
+00:13:15,000 --> 00:13:17,679
+So stuff cancels out nicely, so the square
+root of t will
+
+195
+00:13:17,679 --> 00:13:21,330
+cancel out this square root of t, square
+root of s cancels out.
+
+196
+00:13:21,330 --> 00:13:23,000
+This, square root of s.
+
+197
+00:13:23,000 --> 00:13:26,930
+And so in both cases, we just get 1 over 2
+times the square root of t.
+
+198
+00:13:29,560 --> 00:13:32,490
+Sorry, 1 over 2 times the square root of t
+squared.
+
+199
+00:13:34,130 --> 00:13:39,920
+So I get 1 over 4t times 1 over 4t, and
+that's one over 2t.
+
+200
+00:13:42,030 --> 00:13:44,790
+Okay, at least one person got the right
+answer on the quiz.
+
+201
+00:13:49,350 --> 00:13:53,540
+So now I can plug this into my change of
+variables formula.
+
+202
+00:13:53,540 --> 00:13:57,364
+So, this was the original integral over
+the funny-shaped domain d.
+
+203
+00:14:00,100 --> 00:14:04,370
+And now I've already worked out what the
+new domain, omega, is.
+
+204
+00:14:04,370 --> 00:14:08,390
+It's just the square 1,2 to 1,2.
+
+205
+00:14:08,390 --> 00:14:12,561
+I have my function is x and my change of
+variables was
+
+206
+00:14:12,561 --> 00:14:16,380
+x is equal to the square root of s divided
+by t.
+
+207
+00:14:16,380 --> 00:14:22,790
+So this is, oops see if I can.
+The square root here is just x.
+
+208
+00:14:22,790 --> 00:14:25,476
+Then, the absolute value of my Jacobian
+
+209
+00:14:25,476 --> 00:14:26,930
+is 1 over 2 times t.
+
+210
+00:14:29,910 --> 00:14:33,518
+And since I defined x and y to be greater
+than 0, that
+
+211
+00:14:33,518 --> 00:14:38,890
+was part of the definition of my domain,
+then, the Jacobian, so t.
+
+212
+00:14:38,890 --> 00:14:42,250
+Is this function of x and y, but it's
+going to be positive
+
+213
+00:14:42,250 --> 00:14:45,930
+only when x and y, or it's positive when x
+and y are positive.
+
+214
+00:14:45,930 --> 00:14:51,490
+So the absolute values, they're kind of
+invisibly here, but not necessary.
+
+215
+00:14:51,490 --> 00:14:54,600
+And then I can change this into an
+integral, ds dt.
+
+216
+00:14:58,560 --> 00:15:04,600
+And so now I just have to integrate.
+This function, instead of just x.
+
+217
+00:15:04,600 --> 00:15:07,460
+But at least the, the limits are quite a
+lot easier this time.
+
+218
+00:15:07,460 --> 00:15:10,694
+So instead of having these complicated
+limits for for
+
+219
+00:15:10,694 --> 00:15:13,350
+the first integral, I now just have 1 and
+2.
+
+220
+00:15:13,350 --> 00:15:20,650
+And so again, it's just sort of two single
+variable problems one after the other.
+
+221
+00:15:23,700 --> 00:15:28,747
+And again, I like to write it in this form
+here, so I can see
+
+222
+00:15:28,747 --> 00:15:34,360
+clearly how the power rule or the
+anti-power rule are working.
+
+223
+00:15:35,930 --> 00:15:38,543
+And so the rest of it's just sort of an
+exercise
+
+224
+00:15:38,543 --> 00:15:41,630
+in keeping track of signs and not screwing
+up too much.
+
+225
+00:15:43,290 --> 00:15:48,916
+And, once we get to the end, I end up with
+the same value, so last time
+
+226
+00:15:48,916 --> 00:15:52,581
+I had negative 6 plus 5 root 2 over 3.
+
+227
+00:15:52,581 --> 00:15:56,641
+the only thing that changed here is
+somehow my negative 6 being ended
+
+228
+00:15:56,641 --> 00:16:01,020
+up second but we get the same answer so
+that's a pretty good affirmation.
+

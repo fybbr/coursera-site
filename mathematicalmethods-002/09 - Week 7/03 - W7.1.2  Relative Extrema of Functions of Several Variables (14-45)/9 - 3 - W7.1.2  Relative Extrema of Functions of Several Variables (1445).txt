@@ -1,0 +1,360 @@
+So the next topic is going to be relative
+extrema of functions of several variables.
+A local minimum, so basically this holds
+for a minimum and maximum, but today I'm
+going to
+be aiming at minimizing, minimizing risk.
+So I'm going to talk about local minimum
+of
+a function, f, is a point x0 that has the
+property that f of x zero
+is less than or equal to f of x in some
+neighborhood around x0, so.
+Epsilon is just some value greater than
+zero.
+And so I'm making an interval here that's
+centered on x0, and at every point
+in that interval, so every point x in that
+interval, x,
+f of x, is greater than or equal to f of
+x0.
+And if that's true, I'm going to call f of
+x0 a local minimum.
+And so this is, I think everybody has a
+good idea
+of what a minimum or a maximum of a
+function is.
+This is just a way to say the same thing
+mathematically.
+And then this word extrema just means that
+a point is either a local
+minimum or a local maximum, so it's a
+kind of extreme value of the function.
+If f is twice differentiable, so the
+function f has two derivatives.
+And if the second derivative is
+continuous,
+then any local extremum is a critical
+point of f.
+So that means that f prime evaluated at x0
+is going to be equal to 0.
+And then we can also use this second
+derivative test.
+So this is the second-order condition to
+classify a
+critical point as either a minimum or a
+maximum.
+And so I.
+If I have a f prime of x0, strictly
+less than zero, that's going to be a local
+maximum.
+If f prime so, if the, oops.
+That should be double primes.
+so if the second derivative evaluated at
+x0 is
+greater than zero, that's going to be a
+local minimum.
+And if it's equal to zero, then anything
+is possible.
+So, either of these two, or it can be
+neither.
+So that's a brief review of how this works
+for single variable functions.
+Now, let's think about a function of n
+variables.
+So, a local minimum of a function of n
+variables.
+So, remember that's what this notation
+means, that f is a function that goes
+from an n dimensional space to a single
+value, to a single real number.
+[COUGH]
+So, local minimum is a point x0 in that n
+dimensional space And it's exactly
+the same criteria as before, except now,
+x0 is going to be a vector of n values.
+It's all n of the inputs to this function
+f.
+x is also a vector of n values.
+And I'm just going to make a.
+So in two dimensions, you know,
+this would just be a circle.
+Alright?
+So all the points that have distance from
+x0 less than epsilon, so
+a circle and all the points inside it, so
+I guess technically, a disc.
+it becomes a, sort of a ball in
+higher-dimensional spaces.
+So if X is within epsilon of X naught.
+Then the smallest I can make that function
+is F of X0,
+so if that's true I'm going to call F of
+X0 a local minimum.
+And again every local extremum is going to
+be a critical point.
+So, if I take the gradient of my function
+f
+and evaluate that at x0, I'm going to get
+zero.
+If f is twice differentiable and
+has continuous second order partial
+derivatives then.
+So remember that was my condition for
+being able to exchange the
+order of taking partial derivatives, so
+this matrix, the hessian, so the matrix
+of second partial derivatives, evaluated
+at the point x naught, so you
+have to compute the hessian first, and
+then evaluate it at x naught.
+That's going to be a symmetric matrix, and
+the remember from out linear algebra
+lectures a symmetric
+matrix has real eigenvalues.
+So the second order condition then for a
+function of N variables is going to be.
+If all of the eigenvalues.
+Of the Hessian evaluated at x naught.
+So I, I compute the Hessian, that gives me
+this matrix of functions.
+I evaluate each of those functions at the
+point
+x naught, then I find the eigenvalues of
+that matrix.
+If all of the eigenvalues are strictly
+greater than zero.
+Then that corresponds to a local minimum.
+If all the eigenvalues are strictly less
+than zero, that corresponds to a local
+maximum.
+If it has positive eigenvalues and
+negative eigenvalues
+then you have something called a saddle
+point.
+And what that looks like is, imagine if
+you have plane, and then the
+a function of two variables is going to be
+a surface above that plane.
+A saddle point is something where if I go
+this way, I go over a hill like that.
+So going straight ahead, it looks like a
+maximum to me.
+And then going left
+to right the function goes like that.
+So if you were going this direction it
+would look like a minimum.
+And if your going this direction it would
+look like a maximum.
+And that looks like looks like a saddle.
+Which if anybody doesn't know what that
+is, that's just like
+the chair you put on a horse before you
+ride it.
+which kind of has that shape.
+It's more comfortable than sitting on a
+local maximum, I guess.
+And then the fourth possibility is that
+the, so when
+I, I compute the Hessian evaluated at the
+point x naught.
+I end up with a, a singular matrix so this
+is
+going to be a matrix that has one or more
+zero eigenvalues.
+And this is going to be the same thing as
+what happens when I had the second
+derivative being zero.
+So now anything can happen.
+I can have a saddle point, I can have a
+minimum or I can
+have a maximum.
+So it's basically, when I say anything can
+happen, what
+I really mean is if you have a singular
+matrix for
+your hessian, then you are not able to
+classify the
+critical point as a minimum or maximum or
+a saddle point.
+So let's go through some quick examples
+here.
+So suppose I make my function f of x y, x
+squared plus xy plus y squared.
+I can compute the gradient of that.
+I get 2x plus y and x plus 2y.
+And you can see right away
+that if I evaluate that at 0,0, that's
+going to give me a critical point.
+So the, the origin is a critical point.
+When I compute the Hessian, there's no X's
+or Y's left so this isn't the Hessian
+evaluated at a particular point, evaluated
+at 0,0, this is the Hessian everywhere.
+So it's also if I put, If I put in 0, 0
+here I'll get the same matrix.
+And.
+Sort of in our linear algebra lectures I
+skipped actually how you
+compute eigenvalues, so I'm just going to
+use r to compute these things.
+probably not worth even trying to do by
+hand
+if there's a three by three matrix or
+bigger.
+So first thing I'm going to do is just
+make a matrix A That has 2, 1, 1, 2 in it.
+Eigen is the function that computes
+an eigenvector, eigenvalue decomposition,
+or factorization.
+And then, it returns a list.
+And I'm going to use this dollar sign
+operator
+to pluck only the values element off that
+list.
+And it turns out the eigenvalues are
+three and one, so they're both strictly
+greater than zero.
+So since both eigenvalues are greater than
+zero; 0, 0 is a local minimum.
+Okay.
+And so hopefully if.
+If x squared plus xy plus y squared had a
+local minimum
+if I just put a minus sign in front of
+each term.
+That's basically doing exactly the same
+problem but upside down.
+So this really ought to have a local
+maximum.
+So, I'll first compute the.
+First, compute the gradient, and again,
+that's trivial to
+see that 0, 0 is the point that satisfies
+that.
+So 0, 0 is the critical point.
+This time when I the Hessian I get the
+negative of the previous Hessian.
+Use R again to compute the eigenvalues.
+And now I get negative one negative three.
+And so both of these are strictly less
+than zero.
+So since both eigenvalues are less than
+zero,
+0, 0 now corresponds to a local maximum.
+And then third and final example If I now
+let
+my function be X squared plus 3XY plus Y
+squared.
+My my gradient is going to be 2X plus 3Y,
+3X plus 2Y, and
+again, it should be obvious that 0, 0 is
+going to be the critical point.
+So it's just 2 times 0 plus 3 times 0 is
+going to be 0.
+0,0 is our critical point.
+But now the, the matrix, so you can sort
+of see when you look at these for awhile.
+If this value is greater than what's on
+the diagonal, then
+it's not going to have kind of the nice
+properties that we like.
+So this, for instance, can never happen
+with a variance covariance matrix.
+If you look at a value on the off
+diagonal,
+and then you look down at what's on the
+diagonal
+in that column, and what's on the diagonal
+in that row.
+If you multiply those two things multiply
+the square roots of
+those two things together, it has to be
+bigger than this.
+So now I'm going to use R again to compute
+the eigenvalues, and now I get five and
+negative one.
+And so that I have one eigenvalue that's
+greater
+than zero, and one eigenvalue that's less
+than zero.
+And so, now this point 0,0 is going to be
+a saddle point,
+so that means you can go in one direction,
+you go over like that.
+And going perpendicular direction, you
+drop and go back up like that.
+Okay and now, so the those three were,
+were pretty simple because
+everything was just a degree two term when
+I was taking derivatives.
+The the Hessian ended up being constant.
+And so I just want to go through one quick
+example of how, exactly how this works
+when it's not.
+So now I'm going to put something to the
+three halves power here,
+so that's not ever going to disappear when
+I take deriv, it's not ever
+going to become constant when I'm taking
+derivatives.
+So the first order condition says I have
+to compute the gradient of F of XY,
+and then find the point X, Y that makes
+the gradient equal to the zero vector.
+So the gradient is two Y, and then two X
+plus
+three Y times the square root of one minus
+Y squared.
+But if you notice, this just has a y in
+it, and this has an x in it and a y in it.
+And so, if I put in 0, 0 again, I'm
+going to get 2 times 0, plus
+2 times 2 times 0 here, then 2 times 0
+plus 3 times 0 times 1.
+So again, zero zero's going to be the
+critical point.
+The second order condition.
+So now I end up with a Hessian that's 0,
+2, 2.
+And now I have kind of a complicated
+function of
+Y for my, my two, two entry in my Hessian.
+And so this is something I, y'know,
+there's no way I could tell R to take the
+eigen values of this, so what you have to
+remember is it's a test at the critical
+points.
+So to figure out what matrix I want
+to take the eigen values of, I have
+to evaluate the Hessian at the critical
+point.
+So I need to take 0, 0.
+Plug in those values here, and that's
+going to give me then a matrix that's
+just numbers and that's something I can go
+ahead and compute the eigenvalues of.
+So, if I have 0,0 and I plug in zero for
+y, I'm going to
+get 3 minus 0, divided by the square root
+of 1 minus
+0, so 3 divided by 1.
+So this is my Hessian at the point,
+evaluated at the point 0, 0.
+So I'll just use, I'll use R again.
+Did I skip it here?
+Oh, no I just made it a little bit
+smaller.
+So here I- to
+make it fit on the slide I kind of packed
+it all into one command so.
+This command that I have highlighted here.
+This is what was creating the matrix, so
+this is just a matrix of 0, 3, 3, 2.
+Oops, so it was supposed to be 0, 2, 2, 3.
+when you take
+the eigenvalues of this, you get one
+positive and one negative.
+And so this has a saddle point as a
+critical point.
+

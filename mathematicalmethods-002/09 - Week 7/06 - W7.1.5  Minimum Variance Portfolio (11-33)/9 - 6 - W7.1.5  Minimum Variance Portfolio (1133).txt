@@ -1,0 +1,271 @@
+So now that we've seen LaGrange method
+let's take another look at minimum
+variance portfolios,
+and just see what we have to do to solve
+one of these optimization problems.
+So a minimum variance portfolio.
+This was the quantity I was calling risk,
+which is just the variance of my
+portfolio.
+And I want to minimize my risk, so I
+want to minimize the variance, subject to
+two conditions.
+One, that I hit my target rate of return.
+And two because this is sort of a more
+realistic like there's
+no way around this condition.
+That my money and my portfolio has to all
+be sort of used up.
+So the proportions of my portfolio, my
+weights, have to all sum up to one.
+So to set this up.
+For Lagrange method.
+The objective function, the f, the thing
+that I'm trying to minimize
+or maximize, is going to be the variance.
+The w transpose sigma w.
+And the constraints.
+So g is going to be a function of this
+weights vector.
+So the weights of my portfolio.
+It's a vector-valued function with two
+pieces.
+The first one is just this condition.
+So I've, here I haven't written them equal
+to 0.
+So when I write this out in the, and the g
+of x, I
+have to oh, I guess I swapped them too,
+but that won't make any difference.
+So instead of saying expected the return
+of the
+portfolio should be equal to my target
+expected return I'm
+going to say the expected return of my
+portfolio minus
+my target expected return has to be equal
+to zero.
+And that the sum of the weights minus 1
+has to be equal to 0.
+And then I'll check my necessary
+condition, so If I take the gradient
+of this, I'm just going to end up with mew
+transposed as the first row.
+And the second row being all one, and so
+the only way I could get in to trouble is
+if I manage to pick n assets that all had
+exactly the same expected return.
+So if one, the vector one, so one in every
+element,
+that's proportional to any vector.
+That has the same
+number for every element, so as long as I
+have at least two distinct expected
+returns among my assets, then this matrix
+is going to be full rank.
+It's going to have two pivots for two
+rows.
+And I need a indermediate result.
+Which is something called the derivative
+of a quadratic form.
+So I'm going to let A be a symmetric
+matrix,
+so this is just a two by two example.
+So I have diagonal entries A and C,
+and then the off-diagonal elements, they
+have to match.
+So, for a two by two case, there's only
+one off-diagonal element, B.
+And so, so I guess it's two, but they have
+to be the same.
+So the 1, 2 and the 2,1 element are the
+same value.
+And then I'll define, f of x to be equal
+to, so x is going
+to be a vector of, of two elements.
+X transpose a x.
+And when I do that arithmetic what I end
+up with is a x1 squared
+plus 2b x1x2 plus c x2 squared.
+If I take the
+derivative of that, so the partial
+derivatives
+of this, I end up getting 2 x transpose A.
+So you can kind of see what's, you know,
+it makes sense because this x transpose A
+x, this is sort of the matrix equivalent
+of just, what a single variable function
+would have as a x squared.
+If I take the derivative of a function
+that's equal to a x squared, I get 2 a x.
+And so, that's pretty much what I've got
+here, except I just
+have to respect the order of operations,
+so that the, I get
+the right answer that I want to.
+So the gradient has to be a row vector.
+So I need to do this as x transpose A so
+that the answer here is going to be a row
+vector.
+And then I pick up this factor of 2
+because I, it's
+sort of the same thing as taking a
+derivative of x squared.
+[COUGH]
+And it turns out that in general if a is
+an n by n symmetric
+matrix,so that's what makes this thing a
+quadratic form.
+Is if I write this here.
+So x is my vector.
+It's my, has my variables in it, x1 up to
+xn.
+And a is a symmetric matrix.
+Then this thing here is called a quadratic
+form.
+So the derivative of a quadratic form, so
+that the gradient.
+Of, of the corresponding function here.
+You can just write that as two x transpose
+a.
+So it works for the two by two case like
+this, and if you actually
+did the same thing but for larger cases,
+three by three or n by n.
+You'd be doing a whole lot of
+calculations, but in
+the end you're always going to get two x
+transpose a.
+That's it, okay.
+So
+now let's look at the Lagrangian I have
+for my, my minimum variance problem.
+So I put the variance here, so this is the
+little f.
+Then I have lambda 1 times constraint 1
+plus lambda 2 times constraint 2.
+And now I want to take the gradient of the
+lagrangian, so I can do
+this again doing sort of the x part first
+and then the lambda part second.
+So what I end up with is the gradient.
+Of the objective function, so
+the little f.
+Ans so that's, I've just mentioned how I
+can take the derivative of this quadratic
+form so that's
+two w transpose sigma and then I'm going
+to have lambda
+to one times the gradient of g, so the
+gradient of g is
+going to just be.
+If I look at the, the gradient here it
+will just be a vector of ones.
+So it's one times w, and I'm taking the
+derivatives with respect to each of these
+w's, so each
+time only one of those terms is going to
+pop out and it's always going to be a one.
+And then similarly, when I do the same
+thing
+here, oh and I guess this one is constant.
+This mu p is constant, so they're going to
+disappear when I take derivatives.
+And the same thing's going to happen here.
+When I take the gradient here, I'm just
+going to
+get mu one, mu two, mu three in a row.
+Because everything else I, I'm taking the
+partial derivative with respect to a
+different variable.
+So I can write that, just as lambda 1
+times e transpose plus lambda 2 times mu
+transpose.
+And then, the partial derivatives with
+respect to the lambda here.
+They are just going to be my constraints
+again.
+So I end up with e transpose w minus 1,
+and mu transpose w minus mu p.
+And so I guess we should check that all of
+the dimensions work out here.
+So w W transposed.
+W's a column vector with n elements in it.
+And this is an n by n matrix, so when
+I take w transpose, that has dimensions 1
+by n.
+Sigma has dimensions n by n, so when I do
+that product, I'm going to get 1 by n.
+E transposed, this is this column vector
+of m, sorry n
+ones, so when I take the transpose of that
+I'm going to get.
+A vector here that has, it's a row vector
+with n elements and
+similarly mu transposed is also going to
+be a row vector with n elements.
+So I can do this sum, and I end up with a
+row vector with n elements.
+And then these are each scalar values.
+So I have n elements here and then I have
+two lambdas so I end up with two more.
+So m more terms here, but in this
+particular case m is equal to 2.
+And I need to find values now of w.
+Lambda one and lambda two, that are going
+to make this equal to 0.
+And so it turns out, you can write
+that problem down just as solving a linear
+system.
+So I have 2 Sigma, so that's your 2 Sigma.
+Times w, so this is just the
+transpose of this so it's kind of more
+convenient to work, with this as a column
+vector when I want to solve it.
+lambda 1 times e transpose.
+So that's going to be, if I just take the
+transpose
+of that, lambda 1 a constant, so That'll
+just become e.
+And then lambda 2 times u transposed.
+So I end up with mu here.
+And now if I do the dot product of this
+row and this column,
+I end up with, 2 sigma w e plus e lambda 1
+plus mu.
+Lambda 2, which is just the transpose of
+this here.
+So if I can make this thing equal to
+zero, then I'm also making this thing
+equal to zero.
+Then I need e transposed w has to equal 1.
+So here I have e transposed times w.
+Plus 0 times lambda
+one plus 0 times lambda 2 equals 1.
+So that gets
+me this constraint here and then u
+transposed
+times w, plus 0 times lambda 1 plus 0
+times
+lambda 2 equals mu p.
+So that gets me this constraint here.
+So it turns out in the, in the case of
+this minimum variance portfolio, I'm
+able to find, there's going to just be one
+critical point because this is a
+linear system, and I'm able to find that
+just by solving this ax equals b
+problem that we worked on in the, in the
+linear algebra section of the lectures.
+And so that's it for, for the lecture
+today, there's still
+one more quiz, but I just wanted to
+mention some further reading.
+So there is also a, a
+reasonably complicated second order
+condition for whether
+a point you find using Lagrange
+multipliers is a maximum or a minimum.
+And that's described in the course
+textbook, so Theorem 9.2 and Corollary 9.1
+

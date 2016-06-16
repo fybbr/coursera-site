@@ -1,0 +1,1124 @@
+1
+00:00:00,810 --> 00:00:02,920
+So now I'll talk about some extensions of
+
+2
+00:00:02,920 --> 00:00:05,960
+the chain rule for functions of several
+variables.
+
+3
+00:00:09,340 --> 00:00:12,590
+So suppose f of x is a differentiable
+function.
+
+4
+00:00:16,420 --> 00:00:18,750
+And so here I'm, I'm starting out again
+just as functions
+
+5
+00:00:18,750 --> 00:00:21,150
+of one variable and then we'll try and
+generalize from there.
+
+6
+00:00:22,200 --> 00:00:27,450
+And x is equal to g of t, where g of t is
+also a differentiable function.
+
+7
+00:00:27,450 --> 00:00:27,950
+And
+
+8
+00:00:31,000 --> 00:00:36,060
+I can think of f as a function of t just
+by, you know.
+
+9
+00:00:36,060 --> 00:00:39,000
+First I'll calculate x by evaluating g at
+
+10
+00:00:39,000 --> 00:00:42,089
+t, and then I'll evaluate f at that
+number.
+
+11
+00:00:43,090 --> 00:00:45,390
+And so then by the, this is the, the
+single
+
+12
+00:00:45,390 --> 00:00:49,650
+variable chain rule, I have derivative of
+f with respect
+
+13
+00:00:49,650 --> 00:00:52,740
+to t is equal to derivative of f with
+respect
+
+14
+00:00:52,740 --> 00:00:55,530
+to x times the derivative of x with
+respect to t.
+
+15
+00:00:58,980 --> 00:01:01,990
+And so if I want to evaluate the log of
+cosine of t.
+
+16
+00:01:03,510 --> 00:01:06,330
+With respect to t, so here, log is playing
+the
+
+17
+00:01:06,330 --> 00:01:11,040
+role of f, and cosine is playing the role
+of g.
+
+18
+00:01:12,090 --> 00:01:17,300
+So f is equal to log of x, and x is equal
+to cosine of t.
+
+19
+00:01:17,300 --> 00:01:20,110
+So x is equal to g of t is equal to cosine
+of t.
+
+20
+00:01:23,800 --> 00:01:26,220
+So to take the derivative of this I'm just
+going to,
+
+21
+00:01:26,220 --> 00:01:29,430
+it's going to be a straightforward
+application of the chain rule.
+
+22
+00:01:29,430 --> 00:01:33,320
+So the derivative of f with respect to x,
+so that's the logarithm.
+
+23
+00:01:33,320 --> 00:01:37,100
+The derivative of the logarithm is just
+one over x.
+
+24
+00:01:37,100 --> 00:01:39,310
+Oh and I guess this reminds me of
+something, so.
+
+25
+00:01:40,660 --> 00:01:43,020
+Somebody asked me after class last time
+
+26
+00:01:43,020 --> 00:01:47,635
+what the difference between log and
+natural log?
+
+27
+00:01:47,635 --> 00:01:49,200
+And, so for this class I actually
+
+28
+00:01:49,200 --> 00:01:50,110
+mean the same thing.
+
+29
+00:01:50,110 --> 00:01:55,320
+So when I write log just like this, I mean
+log with a base e.
+
+30
+00:01:55,320 --> 00:02:01,210
+If I want it to be a log with a different
+base I'll write sub base, so it will be.
+
+31
+00:02:01,210 --> 00:02:04,670
+Log and the subscript ten would be what
+your
+
+32
+00:02:04,670 --> 00:02:07,570
+log button on, you know, old calculators
+used to do.
+
+33
+00:02:10,000 --> 00:02:12,460
+I'm doing it this way just because later
+in
+
+34
+00:02:12,460 --> 00:02:15,520
+the course we'll be using a program called
+R.
+
+35
+00:02:15,520 --> 00:02:17,820
+And when you use the log function in R, it
+
+36
+00:02:17,820 --> 00:02:21,130
+calculates a natural logger rhythm even
+though it's spelled log.
+
+37
+00:02:24,850 --> 00:02:29,090
+Generally, in mathematics when you get
+sort of
+
+38
+00:02:29,090 --> 00:02:33,220
+higher, further along, l, o, g means
+natural log.
+
+39
+00:02:33,220 --> 00:02:36,250
+And in engineering you have l n for
+natural logarithm.
+
+40
+00:02:38,380 --> 00:02:43,616
+So, 1 over x is the derivative of log x,
+when
+
+41
+00:02:43,616 --> 00:02:48,420
+the log function is using e as its base.
+
+42
+00:02:48,420 --> 00:02:50,940
+So here, when I take the derivative of f,
+I get 1
+
+43
+00:02:50,940 --> 00:02:55,430
+over x, and then I have to multiply that
+times dx dt.
+
+44
+00:02:56,770 --> 00:02:58,200
+And so here.
+
+45
+00:02:58,200 --> 00:03:00,710
+G of t or dx dt is just going to be
+
+46
+00:03:00,710 --> 00:03:03,400
+the derivative of cosign of t with respect
+to t.
+
+47
+00:03:03,400 --> 00:03:04,850
+So that's minus sine of t.
+
+48
+00:03:10,110 --> 00:03:14,900
+So then I end up with minus 1 over cosine
+of t so x
+
+49
+00:03:14,900 --> 00:03:18,570
+remember is cosine of t times the sine of
+t and that's equal to.
+
+50
+00:03:18,570 --> 00:03:23,060
+So sine of t divided by cosine of t,
+that's the tangent of t and so then it's
+
+51
+00:03:23,060 --> 00:03:29,590
+negative, so I get minus tangent of t.
+
+52
+00:03:29,590 --> 00:03:34,246
+So now let's see what happens when we have
+a function of two variables.
+
+53
+00:03:34,246 --> 00:03:35,390
+So, f of xy,
+
+54
+00:03:35,390 --> 00:03:36,890
+it's differentiable again.
+
+55
+00:03:38,620 --> 00:03:42,760
+This time I'm going to define x to be a
+function g of t.
+
+56
+00:03:42,760 --> 00:03:45,610
+And y to be a function h of t.
+
+57
+00:03:45,610 --> 00:03:48,520
+Where g and h are also both differentiable
+functions.
+
+58
+00:03:48,520 --> 00:03:54,640
+But in this specific case now, f is a
+function of two variables.
+
+59
+00:03:54,640 --> 00:03:56,670
+But g.
+
+60
+00:03:56,670 --> 00:04:00,550
+And h are both functions of t, so f of xy
+is
+
+61
+00:04:00,550 --> 00:04:02,570
+actually only a function of one variable.
+
+62
+00:04:04,190 --> 00:04:06,960
+It's sort of like in the pricing formula I
+had in the
+
+63
+00:04:06,960 --> 00:04:09,917
+first set of slides, I have this d one and
+d two.
+
+64
+00:04:11,480 --> 00:04:14,129
+They are both functions of the same
+variables.
+
+65
+00:04:17,770 --> 00:04:20,020
+I guess that'll be a better example when I
+let,
+
+66
+00:04:20,020 --> 00:04:23,210
+g and h be functions of more than one
+variable.
+
+67
+00:04:23,210 --> 00:04:25,600
+But essentially what you are sort of doing
+is you're getting to
+
+68
+00:04:25,600 --> 00:04:29,660
+a function of t by way of a function of x
+and y.
+
+69
+00:04:32,590 --> 00:04:35,590
+And so I can think of f of xy.
+
+70
+00:04:35,590 --> 00:04:39,630
+If I evaluate, so if I replace the x just
+by g of t, which gives me my
+
+71
+00:04:39,630 --> 00:04:44,530
+x coordinate, and by h of t, y by h of t,
+which gives me my y coordinate.
+
+72
+00:04:44,530 --> 00:04:51,760
+Then, this function here is really just a
+function of t, and its derivative.
+
+73
+00:04:51,760 --> 00:04:56,390
+So here, I'm getting kind of clever with
+the d' s and the partial symbols.
+
+74
+00:04:57,470 --> 00:05:00,190
+So, because f is only a function of one
+variable
+
+75
+00:05:00,190 --> 00:05:03,880
+t, I can actually write a complete
+derivative for f.
+
+76
+00:05:04,950 --> 00:05:06,950
+But the way I'm going to get that is I'm
+going
+
+77
+00:05:06,950 --> 00:05:11,938
+to take the partial derivative of f with
+respect to x.
+
+78
+00:05:11,938 --> 00:05:15,530
+So that's going to be a function of x and
+y but
+
+79
+00:05:15,530 --> 00:05:18,730
+then by the chain rule I have to multiply
+this by.
+
+80
+00:05:21,670 --> 00:05:25,820
+So this is going to be d u d t.
+So g prime of t.
+
+81
+00:05:25,820 --> 00:05:27,560
+So whatever gave me this.
+
+82
+00:05:27,560 --> 00:05:30,950
+So here it's going to be advantageous to
+use the,
+
+83
+00:05:30,950 --> 00:05:33,240
+the other notation, which will be in the
+next line.
+
+84
+00:05:34,380 --> 00:05:34,380
+[COUGH]
+
+85
+00:05:34,380 --> 00:05:39,520
+And then I'm also going to take the
+partial derivative.
+
+86
+00:05:39,520 --> 00:05:43,060
+With respect of f with respect to y,
+that's
+
+87
+00:05:43,060 --> 00:05:44,890
+going to be a function of x and y again.
+
+88
+00:05:44,890 --> 00:05:50,670
+But then I have to evaluate that I'm sorry
+multiply that by h prime of t.
+
+89
+00:05:50,670 --> 00:05:54,780
+So this is, this is the chain rule popping
+out again, but I'm basically, what I'm
+
+90
+00:05:54,780 --> 00:05:59,460
+trying to do is capture how f is going to
+react to a change in x.
+
+91
+00:05:59,460 --> 00:06:02,570
+And how f is going to react to a change in
+y, and
+
+92
+00:06:02,570 --> 00:06:07,450
+then multiply that by how fast those are
+changing with respect to t.
+
+93
+00:06:07,450 --> 00:06:09,950
+And when I add those together, that's
+going to be
+
+94
+00:06:09,950 --> 00:06:13,500
+giving me my full derivative of F with
+respect to t.
+
+95
+00:06:14,850 --> 00:06:17,160
+And this, is not something that you're
+supposed to just look at
+
+96
+00:06:17,160 --> 00:06:20,740
+and understand, this is sort of the
+definition of the chain rule.
+
+97
+00:06:20,740 --> 00:06:23,830
+When I define a function this way.
+
+98
+00:06:26,600 --> 00:06:28,350
+And so it's a little bit more clear when I
+write
+
+99
+00:06:28,350 --> 00:06:33,720
+the, when I write out the chain rule using
+this notation.
+
+100
+00:06:33,720 --> 00:06:39,710
+So I have df dt, so the full derivative of
+f with respect to t, so I just take
+
+101
+00:06:39,710 --> 00:06:42,980
+the partial of f with respect to x and
+multiply
+
+102
+00:06:42,980 --> 00:06:46,240
+that times the derivative of x with
+respect to t.
+
+103
+00:06:47,270 --> 00:06:49,020
+And then I do the same thing with the
+
+104
+00:06:49,020 --> 00:06:51,730
+partial derivative of f with respect to y,
+times the
+
+105
+00:06:51,730 --> 00:06:55,360
+partial, times the derivative of y with
+respect to t.
+
+106
+00:06:55,360 --> 00:06:58,340
+And so the, the, here, f is a function of
+
+107
+00:06:58,340 --> 00:07:01,730
+two variables, so I have to think of doing
+partial derivatives.
+
+108
+00:07:01,730 --> 00:07:03,500
+But here, x.
+
+109
+00:07:03,500 --> 00:07:05,200
+And y, these are just functions of the
+
+110
+00:07:05,200 --> 00:07:07,680
+single variable t, so I get full
+derivatives there.
+
+111
+00:07:10,310 --> 00:07:14,340
+So we can do a quick example of this.
+So suppose I let
+
+112
+00:07:14,340 --> 00:07:18,860
+f of xy equal x squared plus y plus xy
+cubed,
+
+113
+00:07:18,860 --> 00:07:22,580
+and x is equal to e to the 2t, and y is
+equal to t squared.
+
+114
+00:07:24,340 --> 00:07:30,330
+So first just to make sure that, you know,
+I'm not selling snake oil I suppose, I'm
+
+115
+00:07:30,330 --> 00:07:35,530
+going to do this by direct computation.
+So one way to make this into a function
+
+116
+00:07:35,530 --> 00:07:41,010
+of t alone is just to in the function
+itself, replace x.
+
+117
+00:07:41,010 --> 00:07:45,190
+By e to the 2 t, and replace all the y's
+by t squareds.
+
+118
+00:07:47,520 --> 00:07:52,220
+So if I do that, I get f of t is e to the
+4t.
+
+119
+00:07:52,220 --> 00:07:54,930
+So that's just e to the 2t squared.
+
+120
+00:07:54,930 --> 00:07:58,090
+T squared, that's, came from my y.
+
+121
+00:07:58,090 --> 00:08:01,440
+And then y cubed this going to give me t
+to the sixth
+
+122
+00:08:01,440 --> 00:08:04,100
+and the x is going to give me e to the 2t,
+and
+
+123
+00:08:06,580 --> 00:08:09,800
+then I will take the derivative of this
+with respect to t.
+
+124
+00:08:11,090 --> 00:08:12,070
+So, it's pretty easy.
+
+125
+00:08:12,070 --> 00:08:16,430
+I can do the first two just term by term
+so.
+
+126
+00:08:16,430 --> 00:08:18,550
+Here I've cheated a little bit with the
+chain rule
+
+127
+00:08:18,550 --> 00:08:22,540
+I skipped doing the substitution, but
+that's 4e to the 4t.
+
+128
+00:08:24,310 --> 00:08:27,470
+T squared by the power rules just going to
+be 2t.
+
+129
+00:08:27,470 --> 00:08:31,650
+And then here I have a function of t times
+another function of
+
+130
+00:08:31,650 --> 00:08:33,740
+t so I have to use the product rule.
+
+131
+00:08:33,740 --> 00:08:37,690
+So that says derivative of the first
+function so derivative of t to the
+
+132
+00:08:37,690 --> 00:08:43,330
+sixth and sixth t to the fifth times the
+second function plus the first function
+
+133
+00:08:43,330 --> 00:08:44,800
+[COUGH]
+
+134
+00:08:44,800 --> 00:08:46,680
+times the derivative of the second
+function.
+
+135
+00:08:49,730 --> 00:08:51,650
+And so that tells me that the derivative
+of
+
+136
+00:08:51,650 --> 00:08:55,412
+f with respect to t is this expression
+here.
+
+137
+00:08:55,412 --> 00:08:58,320
+Let's see, yeah, so, that's as simple as
+
+138
+00:08:58,320 --> 00:09:00,570
+it's going to get so it's not particularly
+pretty.
+
+139
+00:09:03,060 --> 00:09:05,890
+But it's also ugly enough that if we get
+the exactly the
+
+140
+00:09:05,890 --> 00:09:08,770
+same thing I'm not going to think that it
+just happened by chance.
+
+141
+00:09:11,480 --> 00:09:14,070
+So, we'll try this again, this time using
+the chain
+
+142
+00:09:14,070 --> 00:09:18,690
+rule So first I'm going to calculate all
+the pieces I need.
+
+143
+00:09:18,690 --> 00:09:21,500
+So, I'll need the derivative of f with
+respect to
+
+144
+00:09:21,500 --> 00:09:24,320
+x, the partial derivative of f with
+respect to x.
+
+145
+00:09:24,320 --> 00:09:28,450
+So, that's pretty easy to see using
+linearity and the power rule.
+
+146
+00:09:28,450 --> 00:09:30,860
+And the partial derivative of f with
+respect to y.
+
+147
+00:09:34,180 --> 00:09:37,962
+And then I need the derivative of x with
+respect to t, so that's 2e
+
+148
+00:09:37,962 --> 00:09:42,510
+to the 2t, and the derivative of y with
+respect to t, so that's just 2t.
+
+149
+00:09:42,510 --> 00:09:46,730
+So remember x was equal to e to the 2t,
+and y was equal to t squared.
+
+150
+00:09:50,240 --> 00:09:52,810
+And so now my expression for the
+derivative.
+
+151
+00:09:52,810 --> 00:09:56,630
+With respect to t of f of xy was the
+partial of f
+
+152
+00:09:56,630 --> 00:10:00,430
+with respect to x times the derivative of
+x with respect to t.
+
+153
+00:10:00,430 --> 00:10:05,370
+Plus the derivative of f, sorry partial of
+f with respect
+
+154
+00:10:05,370 --> 00:10:08,490
+to y times the derivative of y with
+respect to t.
+
+155
+00:10:08,490 --> 00:10:09,680
+[COUGH]
+
+156
+00:10:09,680 --> 00:10:14,000
+So, I'll just go ahead and from the things
+I've already calculated plug those in.
+
+157
+00:10:17,330 --> 00:10:19,270
+So, hopefully, it's clear where all of
+that came
+
+158
+00:10:19,270 --> 00:10:22,100
+from, just each one of these shows up
+here.
+
+159
+00:10:25,590 --> 00:10:29,720
+And, now, I need to get the answer in
+terms of t so
+
+160
+00:10:29,720 --> 00:10:34,660
+I'll just substitute n, the expressions
+for t for, for x and y.
+
+161
+00:10:41,220 --> 00:10:41,390
+Okay.
+
+162
+00:10:41,390 --> 00:10:45,570
+And then I just threw a little bit of
+simplication,
+
+163
+00:10:50,250 --> 00:10:57,640
+and I think, so let's see, I put it in The
+terms with, the polynomial bit descending.
+
+164
+00:10:57,640 --> 00:11:01,730
+So I have a t to the sixth term.
+A t to the fifth term.
+
+165
+00:11:01,730 --> 00:11:04,210
+A t term, and a t to the zero term.
+
+166
+00:11:05,470 --> 00:11:07,940
+Just, that's how I'm going to put these in
+order.
+
+167
+00:11:12,550 --> 00:11:15,660
+And so, was that.
+Go back to the last thing.
+
+168
+00:11:15,660 --> 00:11:18,670
+So here I had t to the 6th term, 2e to the
+2t,
+
+169
+00:11:18,670 --> 00:11:22,750
+t to the 5th term, t term, and t to the 0
+term.
+
+170
+00:11:22,750 --> 00:11:23,250
+So,
+
+171
+00:11:25,470 --> 00:11:29,730
+so using the chain rule we got the same
+result that we did using the direct
+
+172
+00:11:29,730 --> 00:11:35,598
+calculation.
+Okay,
+
+173
+00:11:35,598 --> 00:11:42,160
+and so
+
+174
+00:11:42,160 --> 00:11:46,260
+now we'll let again, f of xy be a
+differentiable function.
+
+175
+00:11:47,630 --> 00:11:50,560
+But now we're going to allow x to be a
+function of
+
+176
+00:11:50,560 --> 00:11:52,400
+two other variables.
+
+177
+00:11:52,400 --> 00:11:55,790
+And y to be a function of two of them, the
+same two other variables.
+
+178
+00:11:55,790 --> 00:11:58,830
+So we can express, we can write s, x as a
+function
+
+179
+00:11:58,830 --> 00:12:02,270
+of s and t and y as a function of s and t.
+
+180
+00:12:05,170 --> 00:12:08,510
+And here, g and h, so these functions that
+give me
+
+181
+00:12:08,510 --> 00:12:12,499
+x and t, x and y, also need to be
+differentiable functions.
+
+182
+00:12:15,470 --> 00:12:18,670
+So, then if I re-write the function like
+this, I can
+
+183
+00:12:18,670 --> 00:12:22,030
+think of my function f as a function of s
+and t.
+
+184
+00:12:25,710 --> 00:12:27,480
+And I can write the derivatives.
+
+185
+00:12:27,480 --> 00:12:32,380
+So now because f of x is again, or f is
+again a function of two variables.
+
+186
+00:12:32,380 --> 00:12:35,920
+I've just changed variables from x and y
+to s and t.
+
+187
+00:12:35,920 --> 00:12:39,970
+I'm going to end up with two partials for
+f, for f.
+
+188
+00:12:39,970 --> 00:12:41,980
+So have partial f, partial s.
+
+189
+00:12:43,330 --> 00:12:44,640
+And there I'm just going to get that
+
+190
+00:12:44,640 --> 00:12:47,450
+by both of these are equivalent, just
+depending on
+
+191
+00:12:47,450 --> 00:12:51,160
+whether you want to think of the name of
+the function that gives you x as x or
+
+192
+00:12:51,160 --> 00:12:57,000
+if you want to consider it g.
+But essentially, I just have to add up.
+
+193
+00:12:57,000 --> 00:13:01,310
+The, the partials that give me my partial
+with respect to S.
+
+194
+00:13:01,310 --> 00:13:07,120
+So I take the partial of f with respect
+with s, times, the partial of, sorry,
+
+195
+00:13:07,120 --> 00:13:12,070
+partial of f with respect to x times the
+partial of f with respect to s.
+
+196
+00:13:12,070 --> 00:13:16,510
+And I'm going to add that to partial to f
+with respect to y times the partial
+
+197
+00:13:16,510 --> 00:13:18,220
+of y with respect to s.
+
+198
+00:13:18,220 --> 00:13:19,760
+And that sort of captures, all of the
+
+199
+00:13:19,760 --> 00:13:24,500
+dependents of my function f, on the
+variable f.
+
+200
+00:13:24,500 --> 00:13:27,890
+And then I can do exactly the same thing
+for the variable t.
+
+201
+00:13:27,890 --> 00:13:28,390
+[SOUND]
+
+202
+00:13:36,570 --> 00:13:41,510
+And so in general If f is a function of n
+variables.
+
+203
+00:13:45,250 --> 00:13:50,830
+And for each i and 1 to n, x i.
+So all I'm saying here is
+
+204
+00:13:50,830 --> 00:13:56,559
+each one of those variables, is in turn a
+function of m other variables.
+
+205
+00:13:59,700 --> 00:14:04,280
+Then the partial derivative of f with
+respect to tj so t
+
+206
+00:14:04,280 --> 00:14:08,650
+is one of my, sort of, second level
+variables, is
+
+207
+00:14:08,650 --> 00:14:12,500
+given by this formula.
+So it just says the partial of f with
+
+208
+00:14:12,500 --> 00:14:18,730
+respect to tj is equal to the sum Of the
+partial of f with respect to
+
+209
+00:14:18,730 --> 00:14:24,840
+each argument of f times the partial of
+the argument with respect to t j
+
+210
+00:14:24,840 --> 00:14:26,320
+so really what i am trying to do is just
+
+211
+00:14:26,320 --> 00:14:29,600
+capture all of the dependence of f on this
+t
+
+212
+00:14:29,600 --> 00:14:32,400
+j and add those together and that's
+going to give me
+
+213
+00:14:32,400 --> 00:14:35,340
+the partail of f with respect to t sub j.
+
+214
+00:14:37,540 --> 00:14:42,810
+And I worked through a very complicated
+example of this as well.
+
+215
+00:14:42,810 --> 00:14:44,560
+I think.
+
+216
+00:14:47,520 --> 00:14:50,100
+So I'll just let you look at how I'm
+setting it up.
+
+217
+00:14:50,100 --> 00:14:55,210
+So I have f is now a function of three
+variables.
+
+218
+00:14:55,210 --> 00:15:00,250
+Given by this, again not very pretty
+expression, and then each one of the
+
+219
+00:15:00,250 --> 00:15:06,340
+arguments of f, so x1, x2, x3 is in turn a
+function of two variables.
+
+220
+00:15:06,340 --> 00:15:11,450
+So that means even though when I want to
+write down F.
+
+221
+00:15:11,450 --> 00:15:12,730
+I see three things here.
+
+222
+00:15:12,730 --> 00:15:15,320
+There's really only kind of two degrees of
+freedom, there's,
+
+223
+00:15:15,320 --> 00:15:18,640
+there's t1 and t2 that are affecting how f
+changes.
+
+224
+00:15:20,720 --> 00:15:25,710
+And to calculate the partial, I'm just
+going to take the partial of f, with
+
+225
+00:15:25,710 --> 00:15:31,320
+respect to the first argument, times the
+partial of that wirh respect to t1.
+
+226
+00:15:31,320 --> 00:15:34,180
+Add that to the same thing for the second
+argument..
+
+227
+00:15:34,180 --> 00:15:36,460
+And add that to the same thing for the
+third argument.
+
+228
+00:15:38,010 --> 00:15:40,790
+I think I actually did all of this, but
+I'm.
+
+229
+00:15:40,790 --> 00:15:42,690
+It's just algebra, so you have it all on
+
+230
+00:15:42,690 --> 00:15:44,290
+the slide if you would like to go through
+it.
+
+231
+00:15:44,290 --> 00:15:46,240
+It comes from
+
+232
+00:15:46,240 --> 00:15:49,170
+the textbook too, so I think the reason I
+chose to
+
+233
+00:15:49,170 --> 00:15:51,340
+do this was just I was reading the book
+and thought,
+
+234
+00:15:51,340 --> 00:15:56,150
+that's way too complicated To go sort of
+directly from here
+
+235
+00:15:56,150 --> 00:16:00,360
+to here, so, now you have an explanation,
+if you need it.
+

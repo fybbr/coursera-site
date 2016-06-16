@@ -1,0 +1,245 @@
+1
+00:00:03,020 --> 00:00:05,690
+As an exercise in logic programming in
+GDL.
+
+2
+00:00:05,690 --> 00:00:09,280
+Let's look at the outputs of the rules
+that we
+
+3
+00:00:09,280 --> 00:00:13,620
+just saw at various points during an
+instance of the game.
+
+4
+00:00:15,200 --> 00:00:18,159
+To start, we can use the rule set to
+compute the roles of the game.
+
+5
+00:00:19,350 --> 00:00:21,313
+This is simple in the case of
+
+6
+00:00:21,313 --> 00:00:22,096
+[INAUDIBLE]
+
+7
+00:00:22,096 --> 00:00:24,120
+contained explicitly in the rule set.
+
+8
+00:00:24,120 --> 00:00:27,370
+now the indicating portions of the rule
+set, in the boxes
+
+9
+00:00:27,370 --> 00:00:30,860
+at the tops of these slides, and, and the
+results below them.
+
+10
+00:00:33,620 --> 00:00:37,270
+Similarly, we can compute the possible
+propositions of the game.
+
+11
+00:00:37,270 --> 00:00:39,860
+Remember that this gives a list of all
+such propositions only
+
+12
+00:00:39,860 --> 00:00:43,700
+a subset are true, will be true at any
+particular state.
+
+13
+00:00:43,700 --> 00:00:44,200
+Can
+
+14
+00:00:47,870 --> 00:00:51,090
+also compute the relevant actions of the
+game for each player.
+
+15
+00:00:51,090 --> 00:00:52,780
+Extension of the input relation in this
+
+16
+00:00:52,780 --> 00:00:55,580
+case consists of the 20 sentences shown
+here.
+
+17
+00:01:01,900 --> 00:01:06,280
+The first step in playing or simulating a
+game is to compute the initial state.
+
+18
+00:01:06,280 --> 00:01:08,470
+Now we can do this by computing the init
+relation.
+
+19
+00:01:09,540 --> 00:01:12,130
+As with rolls, this is really easy, since
+the initial conditions are
+
+20
+00:01:12,130 --> 00:01:15,130
+explicitly listed in the program, though
+that may not always be the case.
+
+21
+00:01:17,520 --> 00:01:20,530
+Once we have these conditions, we can turn
+them into a state description for
+
+22
+00:01:20,530 --> 00:01:24,110
+the first step of the game, by asserting
+that each initial condition is true.
+
+23
+00:01:28,450 --> 00:01:31,390
+Taking this input data and the logic
+program, we can
+
+24
+00:01:31,390 --> 00:01:34,140
+check whether the state is terminal, in
+this case it's not.
+
+25
+00:01:35,370 --> 00:01:38,940
+There are cells containing B which means
+it's open and there's no line.
+
+26
+00:01:42,000 --> 00:01:44,440
+We can also compute the goal values of the
+state.
+
+27
+00:01:44,440 --> 00:01:46,890
+And since the state is non-terminal
+there's not much point in doing this.
+
+28
+00:01:46,890 --> 00:01:52,100
+But the description does give values for
+the state, namely 50 for both white
+
+29
+00:01:52,100 --> 00:01:56,500
+and black since there's neither a line of
+x's or a line of o's.
+
+30
+00:01:59,870 --> 00:02:02,590
+More interestingly, using the state
+description and logic program,
+
+31
+00:02:02,590 --> 00:02:05,130
+we can compute the legal actions for the
+state.
+
+32
+00:02:05,130 --> 00:02:08,980
+The white player has nine possible
+actions, marking actions for each of
+
+33
+00:02:08,980 --> 00:02:13,640
+the blank cells, and the black player has
+just one action, namely, noop.
+
+34
+00:02:18,610 --> 00:02:22,288
+let's suppose that the white player
+chooses the first legal action.
+
+35
+00:02:22,288 --> 00:02:25,090
+Mark one, one and the bike player chooses
+its sole legal action
+
+36
+00:02:25,090 --> 00:02:28,820
+noop, this gives us little data set like
+the one shown here.
+
+37
+00:02:30,010 --> 00:02:33,780
+Now combining this data set with the state
+description, and the logic
+
+38
+00:02:33,780 --> 00:02:37,400
+program, we can compute what must be true
+in the next state.
+
+39
+00:02:37,400 --> 00:02:39,440
+For example, using the first update rule
+and
+
+40
+00:02:39,440 --> 00:02:43,830
+the first does fact, we can conclude the
+first
+
+41
+00:02:43,830 --> 00:02:44,970
+fact about the next state.
+
+42
+00:02:44,970 --> 00:02:47,340
+Namely that there will be an x in cell one
+one.
+
+43
+00:02:48,460 --> 00:02:50,620
+In similar manner we can compute the
+
+44
+00:02:50,620 --> 00:02:54,300
+various other propositions that must be
+true.
+
+45
+00:02:54,300 --> 00:02:55,440
+In the successive state.
+
+46
+00:03:00,640 --> 00:03:00,850
+Alright.
+
+47
+00:03:00,850 --> 00:03:04,720
+Now to produce a description for the
+resulting state from next, we
+
+48
+00:03:04,720 --> 00:03:08,240
+substitute true for next in each of these
+sentences and repeat the process.
+
+49
+00:03:09,460 --> 00:03:12,684
+And this continues until we encounter a
+state that's terminal, at which
+
+50
+00:03:12,684 --> 00:03:15,587
+point we can compute the goals of the
+players in a similar manner.
+
+51
+00:03:15,587 --> 00:03:21,080
+[BLANK_AUDIO]
+

@@ -1,0 +1,72 @@
+The topic for week two is integrals.
+And what we're going to cover in this
+series of videos, first integration.
+So this is just the definition of an
+integral.
+It's the problem we're trying to solve.
+And it boils down to basically trying to
+find the area in between a curve,
+in between the, a curve representing the
+graph of a function and the x axis.
+The second topic, the fundamental theorem
+of calculus, this gives us a mathematical
+tool that allows us to answer the question
+we, we set up in, in part one.
+In part three, I just discuss some
+applications of integration.
+So this is sort of showing the kind of
+problem you can interpret as an area and
+then
+a couple of quick examples of how you can
+generalize that once I'm allowed to use an
+integral.
+Then I'm going to switch to techniques of
+integration.
+So,
+like the differentiation we did in the
+first week integration is a mathematical
+operation.
+It's unfortunately a little bit trickier.
+So with differentiation, we had a set of
+rules that
+you can apply to a function to find its
+derivative.
+In integration we have to run that
+backwards and it's
+not so clear cut exactly how that's going
+to work,
+but there are a lot of sort of rules of
+thumb that can help you out and so that's
+what
+I mean by techniques of integration.
+Integration by parts, integration by
+substitution and
+completing the square are all techniques
+of integration.
+So there are tricks that are going to help
+you find the integral of a function.
+And then we'll start moving on to some
+topics we'll need
+to be able to take derivatives of the
+Black-Scholes pricing formula.
+So, in particular, we're going to need to
+be able to take
+the derivative of an integral.
+So, that will be topic
+number seven, different, differentiating
+definite integrals.
+We're also going to look at integrals that
+have an unbounded region.
+So, that would be integrating from, say a
+minus infinity up to a certain value x.
+We can also look at improper integrals
+where the function
+takes an inter, sorry, where the function
+takes an infinite
+value, and that will be what we talk about
+in topic nine, improper integrals two.
+And then we'll put all of that together
+and learn how to take
+the derivative of a function defined to be
+the improper integral of another function.
+

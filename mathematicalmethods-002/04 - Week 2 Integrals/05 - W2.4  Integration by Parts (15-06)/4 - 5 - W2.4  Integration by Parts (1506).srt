@@ -1,0 +1,1013 @@
+1
+00:00:01,130 --> 00:00:06,510
+Okay, so that was my, my brief overview of
+what
+
+2
+00:00:06,510 --> 00:00:11,620
+integration is and two or three problems
+that can be used to to address.
+
+3
+00:00:11,620 --> 00:00:15,820
+And I'm going to start talking about
+techniques of integration.
+
+4
+00:00:17,600 --> 00:00:22,040
+So these are techniques for finding
+anti-derivatives of functions.
+
+5
+00:00:22,040 --> 00:00:24,380
+And the first one is called integration by
+parts.
+
+6
+00:00:28,910 --> 00:00:31,680
+So essentially what I'm going to try and
+do to get integration by
+
+7
+00:00:31,680 --> 00:00:35,820
+parts is remember, when I was computing
+derivatives, we had certain rules.
+
+8
+00:00:35,820 --> 00:00:37,870
+One of them was the product rule which
+
+9
+00:00:37,870 --> 00:00:40,220
+was the derivative of the product of two
+functions.
+
+10
+00:00:41,420 --> 00:00:43,850
+And so I'm just going to try and use that
+
+11
+00:00:43,850 --> 00:00:49,290
+rule backwards to be able to evaluate an
+anti derivative.
+
+12
+00:00:51,610 --> 00:00:55,090
+So, let's start out with two functions, f
+of x and g of x.
+
+13
+00:00:55,090 --> 00:00:56,960
+And they need to be continuous and
+integrable.
+
+14
+00:01:03,220 --> 00:01:07,550
+Then if I looked at the product of their
+anti derivatives,
+
+15
+00:01:10,290 --> 00:01:12,770
+and here it's a little bit, a little
+
+16
+00:01:12,770 --> 00:01:15,260
+bit trickier what I'm going to do with,
+constant.
+
+17
+00:01:15,260 --> 00:01:17,120
+Because if I said f of x, if I
+
+18
+00:01:17,120 --> 00:01:20,880
+was allowed, to put in a arbitrary
+constant there.
+
+19
+00:01:20,880 --> 00:01:23,150
+And I did the same thing with g of x then
+when
+
+20
+00:01:23,150 --> 00:01:28,368
+I multiply these together I would have the
+constant from f of x
+
+21
+00:01:28,368 --> 00:01:31,750
+times g of x and the constant from g of x
+times f
+
+22
+00:01:31,750 --> 00:01:35,660
+of x, so for this to work I have to choose
+my constant
+
+23
+00:01:35,660 --> 00:01:36,339
+to be zero
+
+24
+00:01:40,870 --> 00:01:40,870
+[SOUND].
+
+25
+00:01:40,870 --> 00:01:42,820
+So I'm going to take the product of these
+two
+
+26
+00:01:42,820 --> 00:01:47,220
+anti derivatives, and take its derivative
+using the product rule.
+
+27
+00:01:47,220 --> 00:01:48,930
+And what I'm going to end up with is
+
+28
+00:01:48,930 --> 00:01:51,410
+the derivative of the first function times
+the second.
+
+29
+00:01:52,550 --> 00:01:54,320
+So this guy here.
+
+30
+00:01:54,320 --> 00:01:57,400
+Plus the derivative of the second
+function.
+
+31
+00:01:57,400 --> 00:01:58,260
+Times the first.
+
+32
+00:02:01,830 --> 00:02:06,890
+So then if I take the integral of both
+sides of that, well the
+
+33
+00:02:06,890 --> 00:02:08,890
+integral sort of by the fundamental
+theorem
+
+34
+00:02:08,890 --> 00:02:11,360
+of calculus that's just undoing my
+derivative
+
+35
+00:02:11,360 --> 00:02:17,700
+operation, so I have capital F of x times
+capital G of x
+
+36
+00:02:17,700 --> 00:02:23,370
+is just going to be equal to the integrals
+of the two terms on the right-hand side.
+
+37
+00:02:27,720 --> 00:02:29,770
+And then I'm just going to rearrange these
+terms
+
+38
+00:02:29,770 --> 00:02:32,410
+to get something called the integration by
+parts formula.
+
+39
+00:02:35,080 --> 00:02:36,020
+So I'm going to take
+
+40
+00:02:38,380 --> 00:02:38,880
+Oops,
+
+41
+00:02:40,950 --> 00:02:44,610
+this second term, move it to the left hand
+side of the equation
+
+42
+00:02:44,610 --> 00:02:47,170
+and move the other two terms to the right
+hand side of the equation.
+
+43
+00:02:47,170 --> 00:02:47,670
+And
+
+44
+00:02:50,170 --> 00:02:52,050
+now what this is telling me is that if I
+can
+
+45
+00:02:52,050 --> 00:02:58,150
+find, if I can break my function up into a
+function
+
+46
+00:02:58,150 --> 00:03:01,970
+that I can integrate, this g of x, and a
+function
+
+47
+00:03:01,970 --> 00:03:05,570
+that I can take its, where I can take its
+derivative.
+
+48
+00:03:05,570 --> 00:03:09,730
+Then I can use this formula to evaluate
+this integral.
+
+49
+00:03:12,800 --> 00:03:16,240
+So generally the idea is going to be to
+choose.
+
+50
+00:03:16,240 --> 00:03:18,760
+F of x and little g of x so that
+
+51
+00:03:18,760 --> 00:03:22,160
+this final term here is something that's
+easy to compute.
+
+52
+00:03:23,190 --> 00:03:29,030
+So I'm starting out over here with a
+capital F of x.
+
+53
+00:03:29,030 --> 00:03:31,820
+So the easiest thing that I could ever
+have here would just be an
+
+54
+00:03:31,820 --> 00:03:37,610
+x, because if I took the derivative of
+captial X, if capital, sorry capital F.
+
+55
+00:03:37,610 --> 00:03:38,270
+If that's
+
+56
+00:03:38,270 --> 00:03:42,770
+a constant, then I could just take this
+little f,
+
+57
+00:03:42,770 --> 00:03:45,980
+the derivative of a constant, sorry, if
+this was x,
+
+58
+00:03:47,580 --> 00:03:49,380
+little f of x is going to be a constant,
+
+59
+00:03:49,380 --> 00:03:52,380
+and I can take my constant outside my
+integral sign.
+
+60
+00:03:52,380 --> 00:03:56,649
+And then I just have to integrate, oops,
+that should be a little g of x.
+
+61
+00:03:58,350 --> 00:04:03,390
+No, sorry, capital G of x never mind.
+so what I'm wanting
+
+62
+00:04:03,390 --> 00:04:06,050
+to do is choose these functions so that
+this
+
+63
+00:04:06,050 --> 00:04:09,290
+integral is going to be something that's
+easy to evaluate.
+
+64
+00:04:09,290 --> 00:04:11,230
+And so since I'm just stumbling over my
+words
+
+65
+00:04:11,230 --> 00:04:14,120
+now I probably should just skip ahead to
+an example.
+
+66
+00:04:16,740 --> 00:04:19,355
+So here this doesn't even look like it's
+something that
+
+67
+00:04:19,355 --> 00:04:21,180
+I'm going to be able to write down as a
+product.
+
+68
+00:04:22,480 --> 00:04:24,330
+But you always have a one.
+
+69
+00:04:26,230 --> 00:04:32,210
+So if I let my capital F of x just be this
+function here log of 1 plus x.
+
+70
+00:04:34,370 --> 00:04:41,410
+And I let my g of x be 1 plus x, then
+
+71
+00:04:41,410 --> 00:04:44,920
+my little g of x, that's just going to be
+the derivative of this guy here.
+
+72
+00:04:44,920 --> 00:04:46,710
+It's just going to be a constant it's
+going to be one.
+
+73
+00:04:47,760 --> 00:04:54,050
+So I can write this function here as
+capital F of x times little g of x.
+
+74
+00:04:58,420 --> 00:05:00,900
+So this was my integration by parts
+formula.
+
+75
+00:05:04,540 --> 00:05:08,650
+And then I just go ahead and plug these
+functions
+
+76
+00:05:08,650 --> 00:05:12,530
+that I've worked out here, into the
+integration by parts formula.
+
+77
+00:05:12,530 --> 00:05:17,220
+So, capital F of x is just log of 1 plus
+x, g
+
+78
+00:05:17,220 --> 00:05:19,906
+of x is equal to 1 so I didn't bother to
+write that down.
+
+79
+00:05:19,906 --> 00:05:24,780
+The anti derivative of that is going to be
+F
+
+80
+00:05:24,780 --> 00:05:28,800
+of x, capital F of x times capital G of x.
+
+81
+00:05:28,800 --> 00:05:29,540
+So, that's just
+
+82
+00:05:29,540 --> 00:05:37,650
+1 plus x times log of 1 plus x minus the
+integral of little f of x.
+
+83
+00:05:37,650 --> 00:05:40,010
+So that's going to be the derivative of
+this guy here.
+
+84
+00:05:42,950 --> 00:05:46,590
+Times capital g of x which is one plus x.
+
+85
+00:05:46,590 --> 00:05:50,530
+So, the capital G of x ends up on top
+here.
+
+86
+00:05:50,530 --> 00:05:54,070
+The derivative of the logarithm is just 1
+over the argument.
+
+87
+00:05:54,070 --> 00:05:56,880
+So in this case, the argument is 1 plus x.
+
+88
+00:05:56,880 --> 00:06:01,870
+So, little f of x is going to be 1 over 1
+plus x.
+
+89
+00:06:01,870 --> 00:06:05,920
+And technically I skipped a step here,
+because I also have to use the chain rule.
+
+90
+00:06:05,920 --> 00:06:08,240
+But the derivative of 1 plus x,
+
+91
+00:06:08,240 --> 00:06:12,753
+we already said, was equal to 1.
+So, it's 1 over 1 plus x, times 1.
+
+92
+00:06:14,560 --> 00:06:16,930
+And now if I look at the term on the right
+
+93
+00:06:16,930 --> 00:06:20,190
+here, I have 1 plus x, divided by 1 plus
+x.
+
+94
+00:06:20,190 --> 00:06:22,070
+So that's just going to cancel each other
+out.
+
+95
+00:06:24,780 --> 00:06:28,630
+So I have 1 plus x times the log of 1 plus
+x.
+
+96
+00:06:28,630 --> 00:06:30,710
+Minus the integral just of d x.
+
+97
+00:06:32,500 --> 00:06:33,102
+And so.
+
+98
+00:06:33,102 --> 00:06:36,580
+That integral is very easy to calculate, I
+just end up
+
+99
+00:06:36,580 --> 00:06:40,500
+with x being the anti derivative and then
+because I don't have
+
+100
+00:06:40,500 --> 00:06:42,990
+limits here I am asking for an
+in-definitive and well just
+
+101
+00:06:42,990 --> 00:06:46,090
+a anti derivative so I am adding on a
+arbitrary constant C,
+
+102
+00:06:49,420 --> 00:06:51,800
+so generally the bulk of the work in
+
+103
+00:06:51,800 --> 00:06:55,500
+using this formula Is looking at the
+original function
+
+104
+00:06:58,140 --> 00:07:03,561
+and then trying to identify you know, how
+am I going to write that as a capital F of
+
+105
+00:07:03,561 --> 00:07:11,270
+x and a lower case g of x so I want to
+split up that function.
+
+106
+00:07:11,270 --> 00:07:14,560
+So that this term that I get on the
+right-hand side, the term that I still
+
+107
+00:07:14,560 --> 00:07:16,700
+have to integrate after I use the
+integration
+
+108
+00:07:16,700 --> 00:07:20,230
+by parts formula, is going to be easy to
+integrate.
+
+109
+00:07:20,230 --> 00:07:23,140
+And unfortunately, there's just not a
+really good way to
+
+110
+00:07:23,140 --> 00:07:24,290
+tell you how to do that.
+
+111
+00:07:24,290 --> 00:07:27,290
+You just have to practice, and every time
+you do it, you get
+
+112
+00:07:27,290 --> 00:07:30,340
+a little bit better at seeing how you
+could break these things up.
+
+113
+00:07:34,490 --> 00:07:37,560
+So suppose I want to integrate, I want to
+find
+
+114
+00:07:37,560 --> 00:07:42,250
+the anti-derivative for the function x
+squared times log of x.
+
+115
+00:07:46,070 --> 00:07:49,500
+So this time it's going to be a little bit
+simpler, I mean this is clearly.
+
+116
+00:07:50,590 --> 00:07:52,030
+The product of two functions.
+
+117
+00:07:52,030 --> 00:07:54,500
+I have x squared times log of x.
+
+118
+00:07:55,790 --> 00:08:00,820
+So, let's just start there by saying log
+of x is going to
+
+119
+00:08:00,820 --> 00:08:06,730
+be the f of x and I could also choose to
+make x squared the f of x.
+
+120
+00:08:06,730 --> 00:08:11,110
+And log of x to be.
+The, the g of x, but I'm
+
+121
+00:08:11,110 --> 00:08:12,630
+going to have to integrate this thing.
+
+122
+00:08:12,630 --> 00:08:17,420
+So I want to pick that in a way where it's
+going to be easy to do.
+
+123
+00:08:17,420 --> 00:08:19,380
+So the capital F of x, that's something
+
+124
+00:08:19,380 --> 00:08:21,050
+I'm going to have to take the derivative
+of.
+
+125
+00:08:22,210 --> 00:08:23,620
+And it's going to be easier to take the
+
+126
+00:08:23,620 --> 00:08:26,150
+derivative of this than it is to integrate
+it.
+
+127
+00:08:26,150 --> 00:08:30,750
+On the other hand, this is just, something
+I can use my anti power rule on.
+
+128
+00:08:30,750 --> 00:08:32,790
+So that's going to be something that's
+probably not going to
+
+129
+00:08:32,790 --> 00:08:35,620
+be too difficult to find an anti
+derivative of.
+
+130
+00:08:35,620 --> 00:08:36,180
+So let's
+
+131
+00:08:36,180 --> 00:08:37,890
+choose that to be the part where
+
+132
+00:08:37,890 --> 00:08:39,650
+I'm going to have to compute the
+antiderivative.
+
+133
+00:08:40,980 --> 00:08:44,650
+So, so if my my capital F of x is log of x
+
+134
+00:08:46,710 --> 00:08:49,730
+and my capital G of X is 1 3rd x cubed.
+
+135
+00:08:51,010 --> 00:08:53,610
+Then my little g of x is going to be x
+squared.
+
+136
+00:08:56,140 --> 00:08:59,110
+And so now we can figure out what the anti
+derivative
+
+137
+00:08:59,110 --> 00:09:02,570
+of this function is just by plugging these
+values into the
+
+138
+00:09:02,570 --> 00:09:07,330
+integration by parts formula, and hoping
+that we're able to integrate
+
+139
+00:09:07,330 --> 00:09:09,380
+the term that's going to end up on the
+right-hand side.
+
+140
+00:09:11,590 --> 00:09:16,680
+So, let's see.
+Yeah, got it right this time.
+
+141
+00:09:16,680 --> 00:09:22,110
+So the integral of capital F of x, g of x.
+So, just plug everything in.
+
+142
+00:09:23,280 --> 00:09:30,510
+So, capital F of x, that was the log of x.
+The g of x is the x squared.
+
+143
+00:09:32,070 --> 00:09:36,710
+And so my integration by parts formula
+tells me that I take capital F of x times
+
+144
+00:09:36,710 --> 00:09:37,640
+capital G of x.
+
+145
+00:09:37,640 --> 00:09:43,530
+So I get one third x cubed times log of x
+minus the integral.
+
+146
+00:09:46,750 --> 00:09:49,610
+And now here I have my lowercase x, so
+here
+
+147
+00:09:49,610 --> 00:09:52,740
+I just have to take the derivative Of this
+function
+
+148
+00:09:54,690 --> 00:09:57,710
+and back in my little dictionary slide I
+have the
+
+149
+00:09:57,710 --> 00:09:59,928
+derivative of log of x is just 1 over x,
+
+150
+00:09:59,928 --> 00:10:06,840
+so I have 1 over x times capital g of x
+which is one third x cubed and so not
+
+151
+00:10:06,840 --> 00:10:09,410
+only does it is it possible to integrate,
+it even
+
+152
+00:10:09,410 --> 00:10:11,880
+gets a little simpler since this 1 over x
+is going to
+
+153
+00:10:11,880 --> 00:10:18,080
+cancel one of my x's in my g of x
+function.
+
+154
+00:10:18,080 --> 00:10:26,112
+So I end up with one third x cubed log x
+minus the integral of one third x squared.
+
+155
+00:10:29,140 --> 00:10:33,910
+So I could use the anti power rule to
+evaluate this guy here.
+
+156
+00:10:33,910 --> 00:10:40,320
+And add up with one third x cubed times
+log of x, minus one ninth x cubed.
+
+157
+00:10:40,320 --> 00:10:45,020
+And then because I haven't put any limits
+on this, I'm asking just for
+
+158
+00:10:45,020 --> 00:10:47,080
+an anti derivative, an indefinite
+integral, so
+
+159
+00:10:47,080 --> 00:10:49,000
+I have to add an arbitrary constant c.
+
+160
+00:10:53,360 --> 00:10:58,040
+And we're also going to be able to.
+Do this for definite integrals.
+
+161
+00:10:58,040 --> 00:11:00,390
+And in practice, really, it's not going to
+change anything.
+
+162
+00:11:00,390 --> 00:11:03,560
+You just use the trick to find the anti
+derivative.
+
+163
+00:11:03,560 --> 00:11:06,370
+But you can actually work though it if you
+want to.
+
+164
+00:11:06,370 --> 00:11:10,220
+this will probably be the one and only
+time you do with the limits here.
+
+165
+00:11:14,200 --> 00:11:17,040
+So this is exactly the same setup that I
+had before.
+
+166
+00:11:17,040 --> 00:11:18,795
+I have the.
+
+167
+00:11:18,795 --> 00:11:22,490
+Derivative of capital f of x times capital
+G of
+
+168
+00:11:22,490 --> 00:11:26,160
+x and I'm going to integrate that over an
+interval ab.
+
+169
+00:11:31,440 --> 00:11:33,530
+So, because the, by the fundamental
+
+170
+00:11:33,530 --> 00:11:36,820
+theoreum of calculus, this integration and
+differentiation.
+
+171
+00:11:36,820 --> 00:11:39,450
+They are sort of complementary operations.
+
+172
+00:11:39,450 --> 00:11:43,720
+This integral is going to cancel out my
+derivative and I just have to
+
+173
+00:11:43,720 --> 00:11:48,770
+then evaluate my anti-derivative here at
+its end points and take the difference.
+
+174
+00:11:50,630 --> 00:11:57,100
+So that's going to give me capital F of b
+times capital G of b minus capital F of a
+
+175
+00:11:57,100 --> 00:11:58,280
+times capital G of a.
+
+176
+00:12:01,480 --> 00:12:03,440
+And I can then just rearrange the terms.
+
+177
+00:12:03,440 --> 00:12:07,140
+So I can use the linearity property to put
+this integral sign
+
+178
+00:12:09,950 --> 00:12:11,920
+in front of this function as well, so I
+can write
+
+179
+00:12:11,920 --> 00:12:15,450
+this integral of a sum as the sum of two
+integrals.
+
+180
+00:12:17,210 --> 00:12:18,000
+And that gives me.
+
+181
+00:12:19,640 --> 00:12:23,260
+The integration by parts formula for a
+definite integral.
+
+182
+00:12:27,760 --> 00:12:28,880
+Except I believe, oh no,
+
+183
+00:12:31,700 --> 00:12:36,820
+yeah, so we just end up evaluating this
+
+184
+00:12:36,820 --> 00:12:40,150
+term here at it's upper and lower end
+point.
+
+185
+00:12:40,150 --> 00:12:42,920
+So I think this can be a little bit
+confusing.
+
+186
+00:12:42,920 --> 00:12:47,130
+So if you, if you're not getting the
+correct answer the first time you do this.
+
+187
+00:12:47,130 --> 00:12:49,610
+you might want to try and use this longer
+formula.
+
+188
+00:12:49,610 --> 00:12:51,780
+And see if, that helps you spot your
+mistake.
+
+189
+00:12:56,570 --> 00:12:58,120
+And so, one final example.
+
+190
+00:12:59,200 --> 00:13:04,340
+I'll try and integrate from one to three
+the function x times e to the x.
+
+191
+00:13:07,320 --> 00:13:12,235
+So again I'm going to let the function
+that I'm going to take the derivative of
+
+192
+00:13:12,235 --> 00:13:16,520
+be x, because when I take the derivative
+of that I'm just going to get one.
+
+193
+00:13:16,520 --> 00:13:18,009
+That will be something easy to work with.
+
+194
+00:13:19,820 --> 00:13:28,660
+The function I'm going to have to
+integrate should be oh, e to the x.
+
+195
+00:13:28,660 --> 00:13:31,280
+Its anti-derivative is just going to be
+itself.
+
+196
+00:13:31,280 --> 00:13:34,370
+So that's going to be an easy choice.
+
+197
+00:13:34,370 --> 00:13:37,390
+And so I just have to then go ahead and
+plug these.
+
+198
+00:13:37,390 --> 00:13:39,620
+Into the integration by parts formula.
+
+199
+00:13:41,010 --> 00:13:45,930
+So remember on the previous slide I'd
+written this as f of
+
+200
+00:13:45,930 --> 00:13:49,480
+b times g of b minus f of a times g of a.
+
+201
+00:13:49,480 --> 00:13:51,950
+And that's exactly what I mean by this
+notation here.
+
+202
+00:13:54,600 --> 00:13:59,350
+So here what I mean is take capital F of
+three times capital G of three.
+
+203
+00:13:59,350 --> 00:14:04,640
+Minus capital F of 1 times capital G of 1
+and the rest of
+
+204
+00:14:04,640 --> 00:14:08,840
+it should be clear just because the, the
+limits are still on the integral signs.
+
+205
+00:14:12,970 --> 00:14:13,890
+And so I'm going to get
+
+206
+00:14:17,370 --> 00:14:20,280
+this line just by plugging in.
+
+207
+00:14:20,280 --> 00:14:23,790
+The functions I've worked out into this
+formula here.
+
+208
+00:14:29,510 --> 00:14:32,800
+And so this is my capital F and my capital
+G.
+
+209
+00:14:34,250 --> 00:14:38,307
+And then this one was easy to do, just
+because it's its own anti-derivative.
+
+210
+00:14:42,350 --> 00:14:47,915
+So this is 3 times e to the third minus
+
+211
+00:14:47,915 --> 00:14:53,900
+1 times e to the 1, so this comes from the
+first term here and then from this
+
+212
+00:14:53,900 --> 00:14:59,510
+second term I end up with e cubed minus e.
+
+213
+00:15:01,350 --> 00:15:02,280
+And I can do a little bit of
+
+214
+00:15:02,280 --> 00:15:05,630
+simplification, and get the, answer 2 e
+cubed.
+

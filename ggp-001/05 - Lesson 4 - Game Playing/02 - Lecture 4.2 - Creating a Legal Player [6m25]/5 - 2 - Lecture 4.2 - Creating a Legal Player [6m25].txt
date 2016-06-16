@@ -1,0 +1,182 @@
+A legal player, is one of the simplest
+types of game players.
+You need to stay.
+A legal player selects an action based
+solely
+on its legality, without consideration of
+the consequences whatsoever.
+Typically, the choice of action is
+consistent, and selects the
+same action every time it finds itself in
+the same state.
+Using the basic sub-routines provided in
+the GDP
+starter pack, building a legal player is
+simple.
+Here we see the entire implementation.
+And throughout this course, we use
+JavaScript
+for computer code, as I mentioned earlier.
+This is a compromise between Lisp and
+Java.
+Lisp is a powerful language, it's highly
+efficient
+and it's easy to use in building players.
+However, it's not very
+widely known.
+Building programs in Java is slightly more
+difficult, but
+the language is familiar to more people
+these days.
+Java script has a flexibility of Lisp, and
+at the same time it's easily converted to
+Java.
+It can also be used directly to implement
+players,
+either in web browsers or in stand alone
+applications.
+Let's walk through this implementation.
+We start by setting up some global
+variables
+to maintain state, while a match is in
+progress.
+That's a variable to hold the game rule
+set, a
+variable to hold the player's role in that
+game, a
+variable to hold a list of all the roles
+in
+the game, and a variable to hold the
+current state.
+And now, properly we should create a data
+structure
+for each separate match, and we should
+attach these values
+to this data structure, so the player can
+actually play multiple matches at the same
+time.
+However, in this presentation we're
+striving for simplicity, and so
+we'll be treating these as global
+variables and what follows.
+Okay, next we define a handler for each
+type of message.
+The info handler, does nothing at all and
+simply returns ready.
+The start event handler, assigns values to
+the rule
+set and role variables, based on the
+incoming start message.
+It, it initializes roles and the state
+variable, and then returns ready.
+The play event handler, takes a match
+identifier and a move his arguments.
+If the move is not nil, it uses nexts to
+find nexts, to compute
+the state resulting from them preceding
+state and the action supplied in the move.
+Once the player has the latest state, he
+uses legalx, findlegalx, to compute a
+legal move.
+The stop event handler for a legal player
+does nothing.
+Ignores the inputs, and simply returns
+done, as required by the GGP protocol.
+And like the stop message handler, the
+abort message handler
+for a player, also does nothing and it
+simply returns done.
+Okay, just to be clear on how this
+works, lets work through a short
+tic-tac-toe match.
+When the players initialized, it sets up
+data structures to hold
+the game description, the role, roles, and
+the state.
+These are all initially empty.
+Players not retain start clock and play
+clock, since it does not need to do
+extensive computation for those li, how
+limits are irrelevant.
+[BLANK_AUDIO]
+Okay, let's assume that player reads the
+start, receives the
+start message from the game manager, as
+sort shown here.
+Match identifiers in 23.
+The player is told to be the white player.
+There are the usual axioms of tic-tac-toe.
+The start clock and play clock are both
+set to ten seconds.
+On receipt of the message, the player code
+calls start handler.
+This records the game description and the
+rule set
+variable, and the player's role in the
+role variable.
+Then computes roles from the game
+description,and the initial state.
+Returned values ready, which is then sent
+back
+to the game manager by the listener loop.
+Okay, now play begins after all the
+players have responded,
+or after the start clock has expired,
+whichever comes first.
+Once the game manager's ready, it sends a
+suitable play message to all of the
+players.
+Here we see a request for the player to
+choose an action from match m 23.
+Excuse me.
+The value nil signifies that this is the
+first step of the match.
+On receipt of this message, the player
+code invokes the play
+handler with the arguments passed to it by
+the game manager.
+Since the move argument is nil, no changes
+are made to the data structures at all.
+And using the state together with the role
+in the role description,
+associated with this match, the player
+then computes the first legal move.
+In this case mark (1,1), and it returns
+that as the answer.
+Game manager checks that the actions of
+all the players are
+legal, and simulates their effects, and
+updates the state of the game.
+And then sends play messages to the
+players to solicit their next actions.
+In this case, the player will receive the
+message shown here.
+Mark (1, 1), from the white player, and no
+opt the only legal move for the black
+player.
+Again, the player invokes its play handler
+with
+the arguments passed to it by the game
+manager.
+And this time the move is not nil, and so
+the player uses find next, to compute the
+next state.
+There are two differences.
+There's now an x in cell (1, 1), and
+control is switched from white to black.
+Using this state, the player then computes
+the first legal action in this state.
+Its, its only legal action, there's no up,
+and returns that as answer.
+Okay, this processing repeats until the
+end of the game.
+When the game's over the player receives a
+message like the one shown here.
+While some players are able to make use of
+the information in a stop message,
+our legal player simply ignores this
+information,
+returns done, terminating its activity on
+this match.
+[SOUND]
+

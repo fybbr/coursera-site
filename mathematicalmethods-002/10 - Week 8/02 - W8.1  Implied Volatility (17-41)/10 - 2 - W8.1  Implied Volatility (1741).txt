@@ -1,0 +1,474 @@
+So, we're finally arriving at week number
+eight
+where I'm going to talk about numerical
+methods.
+So I think it's you know, when we looked
+at the Lagrange
+multipliers, we started to arrive at
+things where they were getting just.
+You could still solve them in special
+cases.
+for instance, when we looked at the
+minimum, minimum variance portfolio.
+It was still possible to, where we ended
+up like the linear system,
+we need to dissolve to do the Lagrange
+multipliers.
+here to find the critical point for the
+Lagrange multiplier, the critical point
+for the Lagrangian.
+[COUGH]
+But pretty much anything beyond that, any
+anything that is not sort of
+contrived to be simple is going to be far
+too difficult to solve.
+And so that's why we have something called
+the numerical methods.
+Which I sort of think of as just the
+logical extension
+of the guess and check method that I
+learned in elementary school.
+So you basically are just trying to make a
+guess.
+You'll measure how
+wrong you are, and that will hopefully
+suggest
+a way for you to improve your guess.
+And you want to do that in a way where you
+find the answer you're looking for with a
+minimum amount of work.
+So the motivation for this, I'm, I'm
+going to look at a problem called implied
+volatility.
+And then I'll talk about two methods for
+solving that.
+So one is bisection method, which is just
+a
+very easy approach to solving this implied
+volatility problem.
+Then Newton's method, which is not much
+more difficult, but theoretically
+it's a bit more, it, it has some
+theoretical, some nice theoretical
+results we can, we can look at.
+Now, also the nice thing about Newton's
+method
+is it can be extended for N dimensional
+problems.
+And then finally, and I don't know if
+we'll have time to get to this today.
+we'll look at solving a problem with
+Lagrange method, so it's actually
+one of the same problems I looked at in
+the Lagrange slides.
+But instead of just trying to do algebra
+once I need to find
+the critical point, I'll use Newton's
+method to try and find the critical point.
+So we get started by talking about implied
+volatility.
+So if we remember from the first half of
+the course, we were looking at the,
+the Black-Scholes formula for a while, and
+mostly
+when we were looking at computing partial
+derivatives.
+And so, this is just to remind you what it
+is, and hopefully I haven't made any, any
+typos in it.
+And if you look, well, I think I've got
+all of the,
+so the maturity, so the, the maturity date
+of an option, this is
+a, a contract that I go and buy and sell
+in a market.
+And when it's written, it's going to have
+a maturity date.
+So, it's good for 3 months or it's good
+for 6 months.
+Something like that.
+It has something called the strike price,
+which is, this
+is also something going to be written on
+the contract.
+So basically, once this contract comes
+into existence, the T Oops, and the K are
+fixed, so they're never going to change.
+And then there's a secondary market for
+these contracts.
+So once I have the contract, if it's
+between the time that it was written
+and the maturity, I can go to the
+secondary market and I can sell my option.
+So I don't actually have to wait for the
+condition in the auction to come to pass.
+I can go and find somebody else who's
+interested in having that
+same type of protection and I can sell my
+option to him.
+And so if I
+sell the option, at the time that I sell
+the option the price that I sell it for
+is going to be known, because you know, I
+give him the contract, he gives me some
+money.
+So I can look at the amount of money he
+gave me
+and, and I know exactly what the price of
+that option is.
+The option is based on some underlying
+asset that has a,
+a price S, and so I can also look in the
+market
+at the same time that I sold my option for
+this price C.
+I can look at the most recent trade for
+that underlying assett and see what the
+asset price is.
+So, I can also assume that when these
+transactions take
+place, the C and the S are going to be
+known.
+And then I'm also going to assume that the
+risk free rate is constant, and that the
+dividend rate.
+So, because options exist on kind of a
+short time scale
+most of the time, you know either 3 months
+or 6 months.
+You generally know what the, the company's
+already
+announced when it's going to be paying
+dividends.
+So you know if you're going to get
+dividends during the life of the option or
+not.
+And the risk free risk, well, it's
+definitely changing.
+It changes on a very slow time scale.
+So on the, during the life of the option,
+you can assume that that's fixed.
+And so it turns that if you look in this
+formula, so it depends on this d1 and d2
+as well, you know everything except this
+variable sigma.
+So the, the only quantity that's not known
+is the volatility, and
+this is the one thing that it's actually
+quite difficult to know,
+that there's not any one thing in the
+market where you can
+just say oh, this is, this is definitely
+the rate of sigma.
+So going in the, in the forward sense when
+you want to use sigma as
+an input to this formula, it's something
+you have to actually estimate from data.
+So you have to look at, it's, it's trying
+to describe the, how how
+wide the fluctuations are of this
+underlying asset price S.
+And so it's, you can estimate it, but you
+can never actually know it.
+Whereas if you go to the market you know,
+on a particular day, I can see what was
+you know, what when that asset changed
+hands, what
+were those prices so I can actually
+observe S.
+Sigma, I'm not able to do that in any way.
+So the implied volatility problem.
+If I know every variable and the answer to
+the Black-Scholes pricing formula except
+sigma, then what I want to do is just sort
+of solve this equation backwards.
+So, essentially, if I could, I'd like to
+isolate sigma and
+have a new functions that's sigma as a
+function of everything else.
+But it turns out, if, if we look at this
+guy, it's not exactly easy to do that.
+So extra credit if anybody can come up
+with the formula.
+And so what I want to do, as this is
+where I was getting at this trial and
+error thing.
+I want to just plug in values of sigma
+into my
+Black-Scholes formula, and I know what the
+call price should be.
+And for every different value of sigma
+that
+I plug in, I'm going to get some price.
+And eventually, if I just keep guessing
+long enough, I'm going to get a value of
+sigma that gets me very close to the price
+that I know it should, should be.
+So I,
+if I can get close to that market price C,
+then that's
+probably, well, I mean, that's the, the
+value of sigma that would
+have been in the market.
+And so even though I can't observe sigma,
+all the other things that I can observe
+imply a certain level for sigma.
+They imply a certain amount sigma, and so
+that's going to be called the
+implied volatility.
+So what I want to look at is, is if, if S,
+K, Q, R, T and little t.
+So this is basically all of the inputs to
+the
+Black-Scholes pricing formula for our
+European call option are known and
+I also know what the price of that option
+is,
+then I can think of this as a function of
+sigma.
+So there's only one unknown in this
+highlighted
+side of the equation and that's sigma.
+And the way I've set
+this up, I've, I've, put the theoretical
+price for European call
+option minus the price for that option
+that I've observed in the market.
+So when I have the correct value of sigma,
+this
+whole thing f of sigma should be equal to
+0.
+So finding the implied volatility really
+just boils down to solving
+this thing, it, it's called a non-linear
+optimization problem.
+And I just want to find the value of sigma
+so that f of sigma is equal to zero.
+And this is something like I said you're
+not going to be able to just
+isolate sigma and have a nice f of sigma
+function you can just plug in a
+zero and find out what should it have
+been.
+so you have to solve this numerically.
+And so when I say, solve numerically,
+there, there are lots of
+different prices, lots of different ways I
+can try and do this.
+So, the, the simplest one would just be to
+make a plot
+of f of sigma and see where it crosses the
+x axis.
+And so, where it crosses the x axis is
+where f of sigma is going
+to be equal to 0, and that's what I'm
+trying to find in the, the value.
+So, the x axis in this case is going to be
+the sigma axis.
+The value of sigma where it crosses the
+axis is this f of sigma equals 0.
+And so, to do that in R, the first thing I
+need is a function to compute the
+Black-Scholes call price.
+So, this is just our implementation of
+what was on the slide, a couple of slides
+ago, so I've made an expression for d1.
+Then the expression for d2, and then
+finally the expression
+for the Black-Scholes call price.
+And I, I don't know if you guys are
+getting used to looking at r
+yet, but basically what I'm doing here is
+I've I'm taking this expression,
+I'm assigning it to a piece of memory, a
+variable called d1.
+Then I'm taking this expression, assigning
+it to
+a piece of memory, a variable called d2.
+But then in R, if the last expression in a
+function.
+So, because this has this keyword function
+here, this thing
+is a function, the last expression in a
+function gets returned.
+So, when I evaluate this, I don't have to,
+you can if you want to
+say you know, assign this to say
+Black-Scholes call price and
+then have one more line that says return
+Black-Scholes call price.
+Or you can just put an expression for the
+thing
+that you want your function to return as
+the last line.
+So that's why this is going to work.
+And then one of the nice features R has is
+it's treating every
+variable like a vector.
+So, instead of having to do this in a for
+loop, or evaluate the function by hand you
+know, 50 or 60 times to get a set of
+points to, to plot, I can just give I can
+give a vector argument.
+So right now I'm giving every argument
+that's just a
+length one vector.
+And so I get a length one answer.
+On the other hand, suppose I take, so the
+second to last thing, this little s so.
+I, I guess I should also mention this is
+sort of
+bad bad programming, because none of the
+variables have very meaningful names.
+I just had to do that to make it fit on
+the slide, the
+first way, I wrote this only about the
+first half of it on the slide.
+I also think it's a lot easier to read
+if you know, when I say something like R
+minus
+Q, that should be R space minus space Q.
+you want to group things, so it's a little
+bit easier to see what the function is.
+But in this particular case I had a
+another constraint which it needed to
+fit up here for the, for the lecture, so I
+had to skip that.
+But if we look at the second to last
+argument, this lower
+case s, this is where I'm putting in my
+value of sigma.
+And so, when I call my function
+this time, instead of putting in a single
+value
+for sigma, I'm putting in three values for
+sigma.
+I want to end that getting out are three
+values for this Black-Scholes call price.
+So all of the other variables stay the
+same, but the first one here
+corresponds to sigma of 0.15, the second
+one here corresponds
+to sigma of 0.2, and the third one
+corresponds to sigma of 0.25.
+And now, let's suppose that the option
+sold for $7, and I want to find sigma.
+So you can think of this is, I want to
+find the
+sigma that's going to make my
+Black-Scholes call price equal to 7.
+But most nonlinear solvers are going to be
+set
+up just to solve this f of whatever equals
+0.
+So you want to make a new objective
+function where the point you're looking
+for is 0.
+And
+I'm going to call that function f of
+sigma.
+And that's just going to be my
+Black-Scholes call price minus 7.
+And I'm going to plot that over a range of
+values
+of sigma and see where it crosses the x
+axis.
+So the first thing I'll do is make my
+range of sigmas.
+So seq is a function that just makes a
+sequence.
+It starts at 0.05.
+It's going to end at 0.5.
+And it's going to go in steps of 0.01.
+Then f sig, I'm going
+to evaluate my Black-Scholes call price,
+add all of
+the inputs that were fixed, and then at
+this entire vector of sigmas.
+So this is, I think this will end up being
+maybe 46 different values of sigma.
+So, this is going to give me 46 different
+Black-Scholes call prices corresponding to
+each one of those input sigmas, and then
+I'm going to subtract seven from that.
+And hopefully, one of these will be pretty
+close to zero.
+And then I'm going to plot.
+So, I'll put sigma on the x axis, and
+then this fsig that I've just calculated
+here on the y axis, and then this optional
+arguments type equals l.
+It's just going to plot it with a line
+rather than
+with points, and I get a plot that looks
+like this.
+And so, on the, on the left here, I'm
+below 0, on the right I'm about 0.
+And it looks like about sigma equals 0.25
+is about where I hit 0.
+So that gives me an implied volatility,
+so I denoted that.
+Sigma sub implied, think the book is
+called Sigma sub imp of 0.25.
+And so, this is a valid way of coming up
+with an implied volatility.
+But to do that, I had to evaluate the
+Black-Scholes formula 46 times.
+And now if you look at this plot, you
+know, I evaluated
+a whole lot over here where it wasn't
+telling me very much.
+And I did the same thing over here.
+And still the computer answer was not very
+precise.
+So I, I only plotted it in these steps of
+0.01.
+And so it turned out that 0.25 was
+slightly less than 0.
+And when I put in 0.26, it was slightly
+more, but it
+was more slightly more so that 0.25 was
+the closest one to 0.
+So that's
+why I picked this one.
+And so I was off by, so this,
+this is on the scale of dollars here, so I
+was off by about one and a half cents.
+So it's, doesn't sound too bad, except
+that
+you might be trading, you know, thousands
+or tens
+of thousands of these things, and so that,
+that
+ends up being more worrisome to be off by.
+So what I'd really like to be able to do
+is compute this implied volatility to
+within a pre-specified tolerance.
+So right now, I've, I've just sort of done
+these 46 things, and I've ended
+up finding out how close I was just by
+going back and checking my solution.
+What I would like to have is an algorithm
+that's going to keep going until.
+So for instance, I was just going to buy
+one option, I
+would sort of want this to keep going
+until maybe the first significant
+digit was somewhere over here, and then I
+would be certain that
+I'm within less than a penny of the price
+that I'm aiming for.
+And so, if I only wanted to buy one.
+Well, if that's the smallest denomination
+of currency bill
+allowed me to use, then that will be good
+enough.
+So I want to get inside this pre-specified
+color, and at the same time
+to do that, I want to use the minimum
+number of function evaluations required.
+And so the methods, the, the general
+methods for
+solving this type of problem are called
+nonlinear solvers.
+

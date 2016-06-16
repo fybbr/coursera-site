@@ -1,0 +1,1265 @@
+1
+00:00:01,160 --> 00:00:03,300
+Next up is polar coordinates.
+
+2
+00:00:05,880 --> 00:00:08,420
+So this is going to be last, last time
+
+3
+00:00:08,420 --> 00:00:12,960
+we talked about, change of variables for
+double integrals.
+
+4
+00:00:12,960 --> 00:00:17,400
+And then I gave you one sort of contrived
+change of variables, just
+
+5
+00:00:17,400 --> 00:00:21,450
+to show how you could change a very
+funny-looking domain into a nice square.
+
+6
+00:00:23,812 --> 00:00:25,410
+another useful change of variables is
+
+7
+00:00:25,410 --> 00:00:27,680
+to change into something called polar
+coordinates.
+
+8
+00:00:29,430 --> 00:00:34,900
+And so in the xy plane I think everybody's
+familiar with describing a point as
+
+9
+00:00:34,900 --> 00:00:38,860
+an x value comma y value, but that's not
+the only way you could do it.
+
+10
+00:00:41,520 --> 00:00:44,650
+And in polar coordinates, we're going to
+describe points, so I'm
+
+11
+00:00:44,650 --> 00:00:49,680
+calling that xy plane this funny shaped or
+funny drawn r squared.
+
+12
+00:00:49,680 --> 00:00:52,160
+And that just means, you know, I have a
+real number
+
+13
+00:00:52,160 --> 00:00:55,280
+on the x axis and a real number on the y
+axis.
+
+14
+00:00:55,280 --> 00:00:57,710
+So it's giving me coordinates in the xy
+plane.
+
+15
+00:01:00,190 --> 00:01:04,780
+But instead of using x and y, I'm going to
+describe them as a distance
+
+16
+00:01:04,780 --> 00:01:09,185
+r from the origin, and then an angle theta
+from the positive
+
+17
+00:01:09,185 --> 00:01:14,830
+x-axis.
+
+18
+00:01:14,830 --> 00:01:18,675
+So angle theta is angle counterclockwise
+from the, the positive
+
+19
+00:01:18,675 --> 00:01:25,320
+x-axis, and then the way you'll move
+between x and y coordinates and
+
+20
+00:01:25,320 --> 00:01:30,430
+polar coordinates or, if I know what r and
+theta are.
+
+21
+00:01:30,430 --> 00:01:35,370
+Then I can recover the x coordinate by
+evaluating r cosine
+
+22
+00:01:35,370 --> 00:01:40,400
+theta, and I can recover the y coordinate
+by evaluating r sin theta.
+
+23
+00:01:40,400 --> 00:01:45,400
+I think, I have a picture.
+So if I
+
+24
+00:01:45,400 --> 00:01:50,481
+have a point x0 y0, in x
+
+25
+00:01:50,481 --> 00:01:56,820
+y coordinates I would call it x0 y0, in
+polar coordinates I'm going to call it r0.
+
+26
+00:01:56,820 --> 00:02:02,810
+So it's the length of this dotted line
+here, away from the origin.
+
+27
+00:02:02,810 --> 00:02:07,670
+And then it has, it makes an angle theta
+0, with a positive x axis.
+
+28
+00:02:09,430 --> 00:02:11,600
+And then if you just drop the line
+
+29
+00:02:11,600 --> 00:02:14,730
+down here, you'll see that makes a right
+triangle.
+
+30
+00:02:14,730 --> 00:02:15,650
+So if I, if I take
+
+31
+00:02:15,650 --> 00:02:20,230
+a line parallel to the y axis, that goes
+through the point x naught y naught, I'll
+
+32
+00:02:20,230 --> 00:02:25,980
+end up with a right triangle.
+And the height of that triangle
+
+33
+00:02:28,090 --> 00:02:33,700
+is going to be one of the legs of that
+right triangle, and so the definition
+
+34
+00:02:33,700 --> 00:02:39,050
+of the sign of an angle is this leg
+
+35
+00:02:39,050 --> 00:02:43,980
+divided by.
+The and by the hypotenuse, and I know
+
+36
+00:02:43,980 --> 00:02:48,850
+the hypotenuse is r zero, r naught.
+
+37
+00:02:48,850 --> 00:02:53,430
+So, that's how I can recover the x
+coordinate, using r, whoops sorry,
+
+38
+00:02:53,430 --> 00:02:56,310
+y coordinate, using r assigned data.
+
+39
+00:02:56,310 --> 00:02:59,650
+And then the same thing is going to happen
+for the x coordinate.
+
+40
+00:02:59,650 --> 00:03:01,150
+So, I have this right triangle.
+
+41
+00:03:01,150 --> 00:03:06,290
+The bottom leg is just the ratio of that
+length
+
+42
+00:03:06,290 --> 00:03:09,400
+to the hypotenuse so that length divided
+by r naught.
+
+43
+00:03:09,400 --> 00:03:14,130
+That's the cosine of theta, and so that's
+how I'm going to recover my x coordinate.
+
+44
+00:03:14,130 --> 00:03:18,690
+So, for any point in the x-y plane,
+there's one way of writing it as x comma
+
+45
+00:03:18,690 --> 00:03:22,580
+y and one equivalent way of writing it as
+r
+
+46
+00:03:22,580 --> 00:03:26,310
+comma theta except for one point, which is
+the origin.
+
+47
+00:03:27,450 --> 00:03:32,640
+And that's a little bit trickier in polar
+coordinates, because if
+
+48
+00:03:32,640 --> 00:03:36,120
+I have r equals 0, I can have theta equal
+anything.
+
+49
+00:03:36,120 --> 00:03:38,770
+So there's you know, there's an infinite
+number
+
+50
+00:03:38,770 --> 00:03:41,930
+of ways to describe the origin in polar
+coordinates.
+
+51
+00:03:41,930 --> 00:03:44,050
+But it turns out that in practice that's
+
+52
+00:03:44,050 --> 00:03:45,800
+just because it's only occurring at one
+
+53
+00:03:45,800 --> 00:03:48,330
+point, that doesn't cause too many
+problems.
+
+54
+00:03:54,850 --> 00:03:58,410
+So the change of variables when I want to
+move from,
+
+55
+00:04:01,480 --> 00:04:06,100
+from xy coordinates to polar coordinates,
+I've defined it this way.
+
+56
+00:04:11,350 --> 00:04:13,710
+And so the partial derivatives of this
+change of variables
+
+57
+00:04:13,710 --> 00:04:17,750
+are going to be, so I have to have dx, dr.
+
+58
+00:04:17,750 --> 00:04:18,660
+there'll be four of them.
+
+59
+00:04:18,660 --> 00:04:23,262
+So, dx, dr, and dx, d theta, and then dy,
+dr, dy, d, theta.
+
+60
+00:04:23,262 --> 00:04:27,600
+So, dx dr, that's an easy one to take the
+derivative of.
+
+61
+00:04:29,410 --> 00:04:33,650
+Dx d theta, so the derivative of cosine is
+
+62
+00:04:33,650 --> 00:04:36,400
+negative sine, so I just end up with
+negative
+
+63
+00:04:36,400 --> 00:04:37,290
+r sine theta.
+
+64
+00:04:38,950 --> 00:04:43,960
+Dy dr is just going to be sine theta, and
+then the derivative of sine is
+
+65
+00:04:43,960 --> 00:04:49,200
+cosine, don't need to change the sine for
+that one so I end up with r cosine theta.
+
+66
+00:04:52,060 --> 00:04:57,360
+The Jacobian is then going to be so it's
+
+67
+00:04:57,360 --> 00:05:03,290
+dx, dr, dy, d theta, so cosine theta times
+r cos theta.
+
+68
+00:05:03,290 --> 00:05:07,670
+So that gives me, that'll be r cos squared
+theta.
+
+69
+00:05:10,660 --> 00:05:14,880
+And then I'm going to subtract the partial
+of x with respect to theta.
+
+70
+00:05:14,880 --> 00:05:18,350
+So that was minus r sin theta times sin
+theta,
+
+71
+00:05:19,550 --> 00:05:21,870
+and hopefully you sort of see where this
+is going now.
+
+72
+00:05:23,400 --> 00:05:26,500
+So I can factor an r out of this whole
+thing.
+
+73
+00:05:26,500 --> 00:05:28,610
+And I'm left with r times the
+
+74
+00:05:28,610 --> 00:05:31,840
+quantity cosine squared theta plus sine
+squared theta
+
+75
+00:05:34,750 --> 00:05:37,025
+and this quantity is equal to 1.
+
+76
+00:05:38,440 --> 00:05:41,800
+So I end up with the Jacobian just being
+r.
+
+77
+00:05:41,800 --> 00:05:45,270
+And then, because I've defined r as a
+distance from the point
+
+78
+00:05:45,270 --> 00:05:47,960
+to the origin, I know it's going to be
+greater than 0.
+
+79
+00:05:47,960 --> 00:05:50,460
+So when I stick, I, it simplifies things.
+
+80
+00:05:50,460 --> 00:05:53,430
+I don't have to worry about taking the
+absolute value of the Jacobian.
+
+81
+00:05:56,580 --> 00:06:00,130
+So I can change an integral that's given
+to me in terms
+
+82
+00:06:00,130 --> 00:06:06,760
+of x and y into an integral in terms of r
+and theta.
+
+83
+00:06:06,760 --> 00:06:10,310
+So I just replace the x coordinate with r
+cosine theta.
+
+84
+00:06:10,310 --> 00:06:15,670
+I replace the y with r sine theta.
+I have to multiply by the absolute value
+
+85
+00:06:15,670 --> 00:06:21,600
+of the Jacobian, and then that, oops, that
+changes it into an integral in terms of
+
+86
+00:06:21,600 --> 00:06:24,720
+r and theta rather than x and y.
+
+87
+00:06:24,720 --> 00:06:29,470
+And the only tricky part then is the
+domain of integration.
+
+88
+00:06:29,470 --> 00:06:32,130
+If I consider the xy plane, you know, the
+
+89
+00:06:32,130 --> 00:06:35,710
+domain of integration is going to be the
+same shape.
+
+90
+00:06:35,710 --> 00:06:38,350
+But I'm going to have to describe that
+differently, because
+
+91
+00:06:38,350 --> 00:06:41,630
+it's going to be Very different, in terms,
+when i have
+
+92
+00:06:41,630 --> 00:06:44,190
+to describe that in terms of R in theta
+than it
+
+93
+00:06:44,190 --> 00:06:46,606
+is when I'm describing it in terms of X
+and Y.
+
+94
+00:06:46,606 --> 00:06:56,000
+So, some easy domains.
+
+95
+00:06:56,000 --> 00:06:59,510
+So, in this case, I, I've written D zero
+comma R,
+
+96
+00:07:01,770 --> 00:07:05,970
+and by this I just mean a disk of radius R
+centered at the origin.
+
+97
+00:07:05,970 --> 00:07:10,940
+So this 0 is the center and R is the
+radius of the disk.
+
+98
+00:07:12,350 --> 00:07:15,650
+And so this is going to be something
+that's very easy to describe
+
+99
+00:07:15,650 --> 00:07:20,650
+in polar coordinates but there was more
+difficult to describe in xy coordinate.
+
+100
+00:07:20,650 --> 00:07:24,530
+So this is the, this is the shape I was
+
+101
+00:07:24,530 --> 00:07:26,910
+getting at when I would do something like
+integrate x from
+
+102
+00:07:26,910 --> 00:07:27,790
+minus 1 to 1.
+
+103
+00:07:27,790 --> 00:07:32,450
+And then I'd integrate y from the negative
+square root of 1
+
+104
+00:07:32,450 --> 00:07:35,590
+minus x squared to the positive square
+root of 1 minus x squared.
+
+105
+00:07:35,590 --> 00:07:38,790
+That would be describing the same region,
+but
+
+106
+00:07:38,790 --> 00:07:40,690
+it's something that I can describe very
+easy.
+
+107
+00:07:40,690 --> 00:07:46,450
+So it's just 0 to r.
+And then 0 to 2 pi, in polar coordinates.
+
+108
+00:07:46,450 --> 00:07:51,671
+but it's a much more difficult description
+when I'm working with x and y coordinates.
+
+109
+00:07:51,671 --> 00:07:57,255
+And then another useful trick for using
+
+110
+00:07:57,255 --> 00:08:02,500
+polar coordinates is if I'm talking
+
+111
+00:08:02,500 --> 00:08:07,577
+about the entire plane, so this would
+
+112
+00:08:07,577 --> 00:08:12,360
+be the equivalent of integrating.
+
+113
+00:08:12,360 --> 00:08:16,848
+Here I've written this, again kind of
+funny r squared to
+
+114
+00:08:16,848 --> 00:08:18,790
+mean the entire xy plane.
+
+115
+00:08:19,860 --> 00:08:23,040
+If I wrote this as an iterated integral it
+would minus infinity to
+
+116
+00:08:23,040 --> 00:08:28,060
+infinity for the dy and then minus
+infinity to infinity for the dx.
+
+117
+00:08:29,120 --> 00:08:33,500
+And so this is the kind of integral I
+would be doing if you're taking 461 when
+
+118
+00:08:33,500 --> 00:08:36,480
+you're, when you're computing expected
+values so you would
+
+119
+00:08:36,480 --> 00:08:39,600
+often have to integrate over the entire
+real line.
+
+120
+00:08:39,600 --> 00:08:41,930
+If it's a probability density function
+
+121
+00:08:41,930 --> 00:08:47,340
+of two variables, then you have to
+integrate over the entire plane.
+
+122
+00:08:47,340 --> 00:08:50,490
+And so you can integrate over the entire
+plane in polar coordinates
+
+123
+00:08:51,840 --> 00:08:56,750
+by integrating the radius, so the r
+variable, from 0 to infinity.
+
+124
+00:08:57,750 --> 00:09:01,140
+And then integrating the theta variable,
+from 0 to 2 pi.
+
+125
+00:09:06,170 --> 00:09:08,060
+Oh, and that I, I pointed out that
+
+126
+00:09:08,060 --> 00:09:11,240
+this would be useful for integrating
+probability density functions.
+
+127
+00:09:14,920 --> 00:09:20,403
+So for example, suppose I have a disk of
+radius 1.
+
+128
+00:09:21,520 --> 00:09:26,570
+So since its radius is 1, technically the
+equation of the circle is x
+
+129
+00:09:26,570 --> 00:09:30,700
+squared plus y squared equals r squared,
+but for 1 I can omit the squared.
+
+130
+00:09:30,700 --> 00:09:35,410
+And then if I make it less than or equal
+to 1, then I'm
+
+131
+00:09:35,410 --> 00:09:39,770
+talking about any point that's on the
+circle or closer to the origin than that.
+
+132
+00:09:39,770 --> 00:09:40,719
+So that gives me a disc,
+
+133
+00:09:43,550 --> 00:09:45,570
+and I want to compute the integral one
+
+134
+00:09:45,570 --> 00:09:50,140
+minus x squared minus y squared, over this
+region.
+
+135
+00:09:52,890 --> 00:09:55,830
+So if I try to do this using xy
+coordinates,
+
+136
+00:09:57,120 --> 00:09:59,030
+I think this is one of those examples I've
+done
+
+137
+00:09:59,030 --> 00:10:01,040
+a couple times before where I'm going to
+go a
+
+138
+00:10:01,040 --> 00:10:03,980
+little ways and just say This is way to
+difficult.
+
+139
+00:10:03,980 --> 00:10:05,750
+I need to try something different.
+
+140
+00:10:05,750 --> 00:10:07,090
+Let's see what ends up happening.
+
+141
+00:10:11,010 --> 00:10:13,730
+So I'll try once using xy coordinates and
+then
+
+142
+00:10:13,730 --> 00:10:17,140
+I'll try once again after switching to
+polar coordinates.
+
+143
+00:10:18,270 --> 00:10:20,520
+So you can tell it's bad again when I need
+so much
+
+144
+00:10:20,520 --> 00:10:23,820
+space on the slide that I can't even fit
+the title here.
+
+145
+00:10:25,440 --> 00:10:27,610
+But you can see how I've, I've set it up.
+
+146
+00:10:27,610 --> 00:10:31,370
+So, for the outside variable, and it
+doesn't matter which one I
+
+147
+00:10:31,370 --> 00:10:34,900
+use in this particular case cause I'm, I'm
+working with a circle.
+
+148
+00:10:34,900 --> 00:10:36,530
+But I decided to do,
+
+149
+00:10:36,530 --> 00:10:40,162
+oops, I decided to do negative 1 to 1 in
+the x direction.
+
+150
+00:10:40,162 --> 00:10:44,990
+And then the y direction, oops, will just
+be
+
+151
+00:10:44,990 --> 00:10:47,450
+minus the square root of 1 minus x
+squared.
+
+152
+00:10:47,450 --> 00:10:51,690
+So that's from the bottom of the circle to
+the positive square root
+
+153
+00:10:51,690 --> 00:10:55,180
+of 1 minus x squared which is up to the
+top of the circle.
+
+154
+00:10:55,180 --> 00:10:57,930
+And then I put my, my integrand in here.
+
+155
+00:11:02,200 --> 00:11:02,700
+Oh yeah.
+
+156
+00:11:04,820 --> 00:11:04,820
+>>
+
+157
+00:11:04,820 --> 00:11:04,820
+[CROSSTALK]
+
+158
+00:11:04,820 --> 00:11:07,830
+from minus one to one, where does the
+minus one come from?
+
+159
+00:11:09,180 --> 00:11:13,880
+>> So a circle that's at the origin and
+
+160
+00:11:13,880 --> 00:11:17,350
+radius one, what is the left-most point
+that I'm
+
+161
+00:11:17,350 --> 00:11:19,430
+going to, if I go one away from the
+
+162
+00:11:19,430 --> 00:11:21,810
+origin in the negative direction, where do
+I end up?
+
+163
+00:11:22,840 --> 00:11:23,070
+Right.
+
+164
+00:11:23,070 --> 00:11:26,250
+And if I go 1 in the positive direction, I
+end up at positive 1.
+
+165
+00:11:26,250 --> 00:11:28,760
+So, that's, that's the, the region there.
+
+166
+00:11:28,760 --> 00:11:29,880
+And then the top and the bottom are
+
+167
+00:11:29,880 --> 00:11:32,240
+going to be curved, so that's why the
+limits have to change.
+
+168
+00:11:32,240 --> 00:11:35,230
+So when I'm very close to negative 1, I
+just have a little bit over here.
+
+169
+00:11:35,230 --> 00:11:37,750
+And then it gets bigger, and then smaller
+again.
+
+170
+00:11:41,520 --> 00:11:43,952
+Okay, so, I started out by finding the
+
+171
+00:11:43,952 --> 00:11:47,880
+anti-derivative of the integrand, with
+respect to y.
+
+172
+00:11:47,880 --> 00:11:50,220
+That wasn't too difficult.
+
+173
+00:11:50,220 --> 00:11:54,430
+The notation here, I treated 1 minus x
+squared as a constant.
+
+174
+00:11:54,430 --> 00:11:59,395
+So when I integrated that, when I too the
+anti-derivative of this bit that I have
+
+175
+00:11:59,395 --> 00:12:01,820
+highlighted, I just ended up with 1 minus
+
+176
+00:12:01,820 --> 00:12:06,720
+x squared times y, and then minus y
+squared.
+
+177
+00:12:06,720 --> 00:12:09,310
+That's the derivative of minus y cubed
+over 3.
+
+178
+00:12:09,310 --> 00:12:14,640
+And now I have to plug in my limits, but
+my limits aren't, aren't very pretty.
+
+179
+00:12:15,740 --> 00:12:18,750
+So, once I plug that in, it actually
+doesn't end up
+
+180
+00:12:18,750 --> 00:12:22,430
+being quite as bad as I, I thought it
+would be.
+
+181
+00:12:22,430 --> 00:12:26,020
+So I'm going to end up with 1 minus, the
+square root of 1 minus
+
+182
+00:12:26,020 --> 00:12:32,700
+x squared cubed in this term, and then I
+have this 1 minus x squared
+
+183
+00:12:32,700 --> 00:12:35,070
+times the square root of 1 minus x
+squared.
+
+184
+00:12:38,220 --> 00:12:43,150
+And I can think of this as the square root
+of one minus x squared squared, so when I
+
+185
+00:12:43,150 --> 00:12:48,190
+do this product here, I have the same
+thing here.
+
+186
+00:12:49,450 --> 00:12:56,610
+So, it simplifies a bit, so I ended up
+with six times this thing cubed.
+
+187
+00:12:56,610 --> 00:12:59,555
+So the square root of 1 minus x squared
+cubed minus 2.
+
+188
+00:13:00,800 --> 00:13:03,510
+So I have 4 3rds square root
+
+189
+00:13:03,510 --> 00:13:05,050
+of 1 minus x squared cubed.
+
+190
+00:13:06,770 --> 00:13:09,010
+and this is where I, I sort of got sick,
+also
+
+191
+00:13:09,010 --> 00:13:11,360
+realized it wasn't going to fit on the
+rest of the slide.
+
+192
+00:13:13,290 --> 00:13:15,930
+So I stuck it into Wolfram Alpha just to
+see what it
+
+193
+00:13:15,930 --> 00:13:22,830
+would give me as the, as the correct you
+know, exact answer.
+
+194
+00:13:22,830 --> 00:13:26,160
+So, this, this is my little dots saying
+lots of work.
+
+195
+00:13:27,340 --> 00:13:28,890
+And you end up with
+
+196
+00:13:28,890 --> 00:13:30,950
+this which, you can actually.
+
+197
+00:13:30,950 --> 00:13:33,250
+It's so, you know, once you've done
+something like
+
+198
+00:13:33,250 --> 00:13:35,750
+this with Wolfram Alpha, you know, this,
+if it's
+
+199
+00:13:35,750 --> 00:13:39,371
+being evaluated from minus 1 to 1, it's
+the
+
+200
+00:13:39,371 --> 00:13:45,550
+anti-derivative of this being evaluated
+from minus 1 to 1.
+
+201
+00:13:45,550 --> 00:13:46,890
+So you should be able to take the
+
+202
+00:13:46,890 --> 00:13:50,100
+derivative of this and recover this
+function here.
+
+203
+00:13:50,100 --> 00:13:52,200
+But even taking the derivative of
+
+204
+00:13:52,200 --> 00:13:54,090
+something this complicated doesn't look
+like
+
+205
+00:13:54,090 --> 00:13:55,340
+very much fun.
+
+206
+00:13:55,340 --> 00:14:00,020
+Finding this as an anti derivative of some
+other function will, would have been
+
+207
+00:14:00,020 --> 00:14:02,960
+quite a lot of work, so I'm glad a
+computer could do that for me.
+
+208
+00:14:04,340 --> 00:14:09,070
+So the point is this was not very easy to
+do if I left it in x,y coordinates.
+
+209
+00:14:10,470 --> 00:14:13,750
+So now let's try it again in polar
+coordinates.
+
+210
+00:14:13,750 --> 00:14:16,090
+And so just from the first line, not only
+
+211
+00:14:16,090 --> 00:14:19,220
+is there a title on this slide, but
+there's also
+
+212
+00:14:19,220 --> 00:14:21,740
+a reasonable amount of space above the
+first line.
+
+213
+00:14:21,740 --> 00:14:22,240
+[COUGH]
+
+214
+00:14:29,060 --> 00:14:34,750
+So all I've done I have my d theta as my
+outside integral.
+
+215
+00:14:34,750 --> 00:14:38,690
+So that's going to go from 0 to 2 pi
+because I'm trying to describe a disk.
+
+216
+00:14:38,690 --> 00:14:42,170
+So to get all the way around something
+round I have to
+
+217
+00:14:42,170 --> 00:14:45,450
+go from 0 to 2 pi And then the disc has
+radius
+
+218
+00:14:45,450 --> 00:14:48,570
+one so the limits on my inside integral,
+these correspond to the
+
+219
+00:14:48,570 --> 00:14:52,590
+dr integral, that's going to take r from
+zero up to one.
+
+220
+00:14:54,450 --> 00:14:59,850
+Then, my integrand was 1 minus x squared
+but I've replaced
+
+221
+00:14:59,850 --> 00:15:04,870
+x with r cosine theta, so that just
+becomes r squared cosine squared theta.
+
+222
+00:15:07,330 --> 00:15:10,430
+And just, just to be perfectly clear, this
+notation, cosine
+
+223
+00:15:10,430 --> 00:15:13,550
+squared, it means cosine of theta times
+cosine of theta.
+
+224
+00:15:15,200 --> 00:15:17,210
+And then, similarly, for y.
+
+225
+00:15:17,210 --> 00:15:20,490
+Y was r sine theta, so I'm going to
+replace
+
+226
+00:15:20,490 --> 00:15:24,508
+that, and y squared will become r-squared
+sine-squared theta.
+
+227
+00:15:27,580 --> 00:15:34,200
+And then my Jacobian to turn dy dx into dr
+d theta gives me this r here.
+
+228
+00:15:34,200 --> 00:15:35,610
+So rd rd theta.
+
+229
+00:15:35,610 --> 00:15:36,110
+And
+
+230
+00:15:39,820 --> 00:15:42,008
+now we can do a little bit of
+simplification.
+
+231
+00:15:42,008 --> 00:15:45,980
+So this term, and this term, both have a r
+
+232
+00:15:45,980 --> 00:15:47,750
+squared in them, so I'm going to factor
+that out.
+
+233
+00:15:47,750 --> 00:15:54,040
+Well, I'll factor out a minus r squared so
+that's going to then leave me with
+
+234
+00:15:54,040 --> 00:16:00,170
+cosine squared plus sine squared, which I
+already said was equal to 1.
+
+235
+00:16:00,170 --> 00:16:02,630
+So this whole thing that I have, have
+
+236
+00:16:02,630 --> 00:16:04,440
+highlighted right now, that's just going
+to drop.
+
+237
+00:16:04,440 --> 00:16:05,460
+So I'll, I'll
+
+238
+00:16:05,460 --> 00:16:09,490
+end up with 1 minus r squared times rd rd
+theta.
+
+239
+00:16:12,010 --> 00:16:15,890
+So the 1 times r became and r.
+
+240
+00:16:17,280 --> 00:16:20,740
+The minus t squared times r because this r
+cubed.
+
+241
+00:16:23,760 --> 00:16:26,090
+And so all of a sudden, this is an
+integrand
+
+242
+00:16:26,090 --> 00:16:28,920
+that looks like it's going to be very easy
+to integrate.
+
+243
+00:16:28,920 --> 00:16:31,960
+And because there's no dependence on theta
+inside
+
+244
+00:16:31,960 --> 00:16:35,330
+these square brackets, it's also a
+separable function.
+
+245
+00:16:35,330 --> 00:16:37,560
+So let's see if I was smart enough to do
+
+246
+00:16:39,630 --> 00:16:40,030
+that.
+
+247
+00:16:40,030 --> 00:16:46,090
+No, not quite, but you can just evaluate
+this inside the square brackets.
+
+248
+00:16:46,090 --> 00:16:49,080
+So I end up with r squared over 2 minus r
+to
+
+249
+00:16:49,080 --> 00:16:53,420
+the 4th over 4 and the limits are now 0
+and 1.
+
+250
+00:16:53,420 --> 00:16:58,010
+So, whenever you have something where
+every term has
+
+251
+00:16:58,010 --> 00:17:00,180
+an r in it, it's always really nice to
+
+252
+00:17:00,180 --> 00:17:02,260
+see this at zero because it means that
+when
+
+253
+00:17:02,260 --> 00:17:05,430
+I have the second part of the Fundamental
+Theorem
+
+254
+00:17:05,430 --> 00:17:06,875
+of Calculus.
+
+255
+00:17:06,875 --> 00:17:11,190
+Anti-derivative at the top limit, minus
+anti-derivative of the bottom limit.
+
+256
+00:17:11,190 --> 00:17:12,700
+This bottom one will just be 0, so
+
+257
+00:17:12,700 --> 00:17:14,480
+you don't have to bother doing that
+subtraction.
+
+258
+00:17:15,540 --> 00:17:25,510
+So, I'll end up with one half minus 1 4th.
+So I end up integrating 1 4th, so that
+
+259
+00:17:25,510 --> 00:17:30,500
+the value inside the square brackets here
+becomes 1 over 4 and I'm integrating now
+
+260
+00:17:30,500 --> 00:17:33,776
+1 over 4 d theta from 0 to 2 pi.
+
+261
+00:17:35,170 --> 00:17:37,650
+And that's just going to be, if you, if
+you think about
+
+262
+00:17:37,650 --> 00:17:40,050
+what this is going to look like in the r
+theta plane.
+
+263
+00:17:41,360 --> 00:17:44,300
+I have a function that's height 1 quarter.
+
+264
+00:17:47,320 --> 00:17:48,690
+sorry, not the r theta plane.
+
+265
+00:17:48,690 --> 00:17:53,810
+That's with the theta axis and the, with
+the function evaluated over that.
+
+266
+00:17:53,810 --> 00:17:59,320
+It's just a rectangle with type one
+quarter, and with 2 pi.
+
+267
+00:17:59,320 --> 00:18:02,874
+So the, the integral of this is just going
+to be 2 pi times
+
+268
+00:18:02,874 --> 00:18:07,140
+1 quarter, which will give me pi over 2 as
+the value of that integral.
+

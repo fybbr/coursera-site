@@ -1,0 +1,144 @@
+Of necessity, game descriptions are
+logically incomplete in that
+they don't uniquely specify the moves of
+all the players.
+However, every game description does
+contain complete definitions
+for initial state, legality, termination,
+goalhood,and so forth.
+The upshot is that every state, in
+every state, every player can determine
+those things.
+Legality, termination, goalhood.
+And given a joint
+move can update the state as well.
+A game terminates if all infinite
+sequences of legal moves from the initial
+state of the game reach a terminal state
+after a finite number of steps.
+In general game playing we currently
+require
+that all games terminate in exactly this
+way.
+The game description in GDL is playable,
+game is playable if and only if every role
+has at least one legal move in every
+non-terminal state that's reachable from
+the initial state.
+Note that in chess, a player cannot move,
+if a player cannot move, it's a stalemate.
+Fortunately, this is a terminal state.
+In GGP, we guarantee that, every game is
+playable.
+A game is strongly winnable, if and only
+if, for
+some player there is a sequence of
+individual moves that player.
+That leads to a terminating goal state for
+that player independently of whatever the
+other player's do.
+A game is weakly winnable if and only if
+for every player there's a sequence
+of joint moves of the players that leads
+to a terminating goal state for that
+player.
+In GGP, every game is at least weakly
+winnable and
+all single player games are strongly
+winnable.
+Okay, those are three properties we
+require of all games.
+Now we talk a little bit about how games
+are played.
+The first issue here is obfuscation.
+In order to prevent programmers from
+building in specialized capabilities for
+specific words in game descriptions, other
+then the game can independent vocabulary.
+It's common for game managers to obfuscate
+their descriptions.
+This means that all words are consistently
+replaced by nonsense words,
+as in examples shown here.
+The only exceptions are variables, and a
+selection of constants, common
+to all games, such as next, does, true,
+and so forth.
+And finally, there's the issue of syntax.
+The version of GDL we've been looking at
+uses traditional in fix syntax.
+Easy for humans to read.
+However, it is not the only version of
+Linux.
+There's also a version that uses prefix
+syntax.
+Although, some general game playing
+environments support in fix GDL.
+It's not universal.
+On the other hand, all current systems
+support Prefix GDL.
+The good news is that there is a direct
+relationship
+between the two syntaxes, and it's easy to
+convert between them.
+It's just a, well let's see, I'll
+summarize some of these things here.
+So first of all.
+variables are repla, re-prefixed with
+question
+mark, since the language is case
+independent.
+Operators are renamed.
+Colon minus is replaced by a left arrow.
+Ampersand is replaced by and.
+And the tilde symbol is replaced by not,
+not.
+There's just one issue to worry about in
+this transition between, translation
+between prefix and infix.
+Issue is the spelling of constants and
+variables.
+Prefix GDL is case independent, so it
+cannot use capital letters to distinguish
+the two.
+Constants that are spelled the same in
+both versions.
+But in prefix GDL we distinguish variables
+by beginning with a character, question
+mark.
+Thus, the constant A is the same in both
+languages, while the variable X in infix
+GDL is spelled?
+X or question mark capital X in prefix
+GDL.
+Unfortunately, mapping between the two can
+be tricky
+since the case independent system might
+discourage case information.
+Hence it's generally good practiced to use
+just one case
+in naming constants and it's common
+practice to use lower case.
+Finally, just to be clear on this, in
+prefix GDL,
+white space, spaces, tabs, carriage
+returns, line feeds and so forth.
+can appear anywhere other than the middle
+of
+the constants, variables, and operator
+names, that is.
+Thus, there can be multiple spaces between
+the components of an expression.
+There can be spaces after the opening
+parenthesis of an
+expression and before the operator or
+relation constant or function constant.
+And there can be spaces after the last
+component of
+an expression and before the closing
+parenthesis.
+Just no spaces in the middle of words,
+relation constants, function constants,
+object constants and variables.
+[SOUND]
+

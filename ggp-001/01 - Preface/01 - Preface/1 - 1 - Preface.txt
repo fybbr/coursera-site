@@ -1,0 +1,73 @@
+Hello, and welcome to this introductory course on General Game Playing
+My name is Michael Genesereth and I'm a professor at Stanford Univerity
+I'm the primary developer of this course, but I'm not the only one involved
+Some of the material is due to Michael Thielscher, professor at the University of New South Wales and a one-time winner of the international general game playing competition
+There's also Sam Schreiber, another winner of the international game playing competition and developer of the game playing software used in the course
+Some credit here is also due to people like Alex Landau and Peter Pham and Bertrand Decoster and other teaching assistants who have helped to refine the material over the years
+Before we get started I wanna make some general remarks about the course
+First of all a few words about content: the course is an elementary introduction to general game playing
+It presents the theory of general game playing and leading general game playing technologies
+Second it shows how to create and test general game playing
+programs capable of competing against other programs and humans
+And finally it offers a glimpse of some of the real world applications of general game playing
+Although the course is elementary, it does assume some basic background
+First of all, you should be familiar with symbolic logic
+Game descriptions are written in the language of symbolic logic and it helps to be able to read and write such descriptions
+Second you should be familiar with the concept of computer programming
+At the very least you should be able to read and understand program fragments written in modern programming languages
+We use javascript in all of our examples, javascript is fairly simple
+If you're familiar with languages like Java and C you should be able to read javascript without any further training
+If not, you might want to spend some time learning the language that you can understand the examples
+Okay with these two elements you should be able to understand the presentations and the course and you should even be able to configure a player to compete in competitions using some software components provided by us
+On the otehr hand if you're adept at programming you may wish to modify the standard components or even build your own player from scratch
+There's not restriction on what language to use in building your player so long as it abides by the general game playing communication protocol which we'll see later
+The ability to write your own general game playing program or configurable one is desirable but it's not required
+Like other online courses all the material in this course is accessible via the course homepage
+The material includes online videos, many of these videos include interactive exercises
+These exercises do not count towards your grade but they're useful in insuring that you understand the material being presented
+There are also written notes for each lesson, these are basically transcriptions of the videos but there's some supplementary material there as well so you might want to take a look
+There are online problems and programming assignments, we use these to evaluate your understanding of the material so they are required in a sense
+These count towards your grade which is important if you want a certificate at the end of the course
+There's some background reading, this material is optional but quite useful and there is a community forum which you can use to discuss general game playing with the instructors and other students
+One of the important difference from many other online courses is that the completion of this course requires that you develop a computer program and test it by having it compete with programs developed by other students
+In particular, we want you to develop a general game playing system of your own and see how it does in playing games against the general game playing programs developed by others
+You can learn a lot about general game playing by simply listening to the videos and doing the exercises
+You can learn even more by participating as a player in general game playing matches
+But it's our belief that it's better yet if you develop a general game playing program of your own
+We believe that this not only increases the fun of the course, but also facilitates and deepens your understanding of the material
+For those of you with programming experience, especially those who know javascript or Java, this should be relatively straightforward
+In the lectures we present javascript versions of all the techniques discussed in the course
+And online we provide a codebase for a high performance player written in Java
+You can create a player simply by running this code, and you can prove its performance by modifying it as you see fit
+For those of you who are not programmers or are not familiar with Java, we offer an alternative approach
+We've created a parametric player, that is a general game playing program whose behaviour is based on the values of various configuration parameters
+There's a graphical user interface that allows you to specify different options for these parameters and thereby create general game players with different capabilities
+You just start the program and use your browser to configure the player
+Whichever approach you use, your job will be to test your player by having it compete against other players on games of increasing complexity as the course progresses
+There will also be a final competition at the end of the course to determine an overall winner
+and if you like you'll be able to enter your player into next year's international general game playing competition
+One requirement for this all to work is that our webpages and our code must run on your computer
+Webpages work in most browsers or at least with Safari, Chrome and Firefox
+The Java codebase and the parametric player are fairly portable and run on most machines
+If you encounter problems we can provide some support, however with a course this large it's not possible to provide individual service for everyone
+There are instructions on the website on how to test your browsers and how to download and test the codebase
+You should follow these instructions right upfront so you can determine early whether or not the web pages and code are compatible with your system
+One frequently asked question is whether you're permitted to collaborate with others in building your general game players
+The answer is a resounding yes, in fact it's pedagogically valuable for you to work with others in building your players
+If you do form a team we ask only that identify your teammates so that we know you're all working on the same player
+And if you do form a team, you'll get the same grade on all problems that test your player
+In any case, whether you work alone or in a team one of the first things you need to do is to invent a unique and hopefully interesting name for your player
+Anything goes as long as it's a sequence of ASCII characters restricted to letters, numbers and the underscore character
+Here are some examples of names used in the past, of course there are the winners of the international competition but there are many more
+Here are some: djava_unchained, red_hot_chili_peppers, resolutionaries, michael_genesereth
+And no that was not mine but some students have figured that I would not want to see that particular player loose
+And so forth, be creative but be careful: once you pick a net player name you're stuck with it for the duration of the course
+Your score for the course as a whole will be based on your performance on the weekly problems, the programming assignments and the performance of your player in the final competition at the end of the course
+We will issue certificates of completion for all students who atteign an overall score of 70% on these components
+Let me close with a plea for patience on your part: although we've taught this course many times in the classroom this is the first time we're offering it online
+And it's the first time we're it to so many students at once
+We think we've worked out all the kinks in the system but as we go along we may encounter some problems
+Please use the forum to let us know of any problems you encounter and suggest solutions if you can
+And please if you can be patient with us as we work through any problems that arise
+Okay that's it for this introduction, as soon as you're ready click on the video link for the first lesson and get started !
+

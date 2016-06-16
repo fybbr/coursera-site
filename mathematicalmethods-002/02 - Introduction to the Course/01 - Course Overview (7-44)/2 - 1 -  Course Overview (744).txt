@@ -1,0 +1,237 @@
+Welcome to Mathematical Methods For
+Quantitative Finance.
+For this first video, I'm just going to do
+a
+quick overview of what you can expect
+during this course.
+So, I'm your instructor Kjell Konis.
+First name rhymes with cello, so cello
+without the o.
+For evaluation for this course, this is
+something
+I can't do really well in a massive
+setting.
+So what I've come up with are discussion
+questions.
+And so, at the end of each video, there
+will be a discussion question.
+It should be something that if you've
+understood the
+video that you'll be able to answer just
+within a few minutes.
+And then you're encouraged to share your
+solution on on the forum.
+And so hopefully, sort of just
+organically,
+there'll be some correct crowd sourced
+solutions.
+And additionally, there'll be weekly
+homework assignments.
+And these will be something, these will be
+more difficult problems.
+So the idea will be that you watch all of
+the
+videos for one particular week, and then
+you
+should be able to do the homework
+assignment.
+It should take you probably 3 or 4 hours,
+about
+the same amount of time as the videos take
+to watch.
+And then there will be a due date for
+these
+homework assignments, and after the due
+date, I will post solutions.
+And again, because it's a mathematics
+course, it's going
+to be something that's difficult for me to
+actually grade.
+So, you'll be expected
+to just go through the solutions and grade
+yourself.
+And then one last thing I, I want to
+mention
+at the very beginning, is Wolfram/Alpha,
+this is a website.
+It's a lot like Google, except
+it's for asking and answering mathematics
+questions.
+A lot of what would normally be in a first
+year calculus
+course or a first year linear algebra
+course is some rote memorization.
+So there're just certain functions where
+you
+have to memorize this is the derivative
+of that.
+I don't really want to concentrate so much
+on just having you memorize things like
+this.
+So you can, and there are a lot of tools
+on line now.
+So my favorite right now is Wolfram Alpha.
+And so, for simple functions, things like
+sine, cosine, logarithm, you can
+just ask Wolfram Alpha, and just type into
+the, into the search bar.
+You know, what is the derivative of the
+logarithm and it'll think for
+a couple seconds, and it'll give you the
+answer.
+So what the course is going to cover.
+So, the numbers on the left here, these
+correspond to the weeks of the course.
+So this will be an eight week course.
+The first week is going to be a review of
+limits and derivatives.
+The second week will be integration.
+So, this is going to be essentially a two
+week review
+of what you would normally learn in a
+first year calculus course.
+And then, we'll move onto partial
+derivatives.
+And so, partial derivative is something
+you
+can take using the same techniques that
+we'll cover in week one, but it's defined
+for a function of several variables.
+And then multiple integrals, week 4, is
+the same idea except for integration.
+So, it's basically how you can make sense
+of integrals of functions that take
+several variables.
+And the reason these topics are, are sort
+of divided into two
+bunch, bunches, so we have one through
+four and then five through eight.
+What I'm really aiming for with the first
+four weeks is I want, I
+want you to be able to take
+the derivatives of the Black Shoal's
+pricing formula.
+And since this is a math class, really
+what I'm
+going to be focusing on is the mathematics
+of this.
+So, the Black Shoals formula is just
+function of many variables.
+And so, if you understand the, the
+concepts
+that are, that we're going to cover in
+these
+first 4 weeks, then you're going to be
+able
+to take the derivative of the Black Shoals
+formula.
+And these derivatives are something that's
+commonly known as the Greeks.
+The second set of lectures is going to be
+on linear algebra, Legrange
+multipliers and numerical methods.
+And the,
+the problem I'm looking at in this second
+set of the course
+is something called minimum variance
+portfolio.
+And so it'll turn out is, when we look at
+linear algebra,
+we're really going to be concerning
+ourselves
+with solving systems of linear equations.
+Lagrange multipliers is going to give us
+the
+tools we need to calculate the minimum.
+So we want to find a portfolio of assets
+that has the minimum variance.
+And then it's going to turn out that when
+we use this Lagrange multiplier approach,
+it's going to give us a system of linear
+equations that need to be solved.
+So, we'll have done that already in weeks
+five and six.
+And then finally in week 8, I'm going to
+start using something called the R
+Environment for Statistical Computing.
+It's, software program
+for working with vectors and matrices, and
+also, for it's also a programming
+language.
+It's something very similar to MATLAB, if
+you already have some experience with
+that.
+And we'll actually try and solve some
+problems using a computer to do that.
+So there's one recommended textbook for
+this
+course, it's Primer for the Mathematics
+of Financial Engineering by Dan Stefanica.
+This is a very a much more general book
+than, than this course will be.
+So this book contains several mathematical
+topics as
+well as the financial applications of
+those topics.
+I'm going to just choose a few of the
+mathematical topics and
+I'm going to focus much more on just the
+mathematics and not so much
+on the, on the financial applications.
+And the idea being that after you do this
+course, you'll be a lot ready, better
+prepared to go on to a course where
+they're going to focus more on the
+finance.
+And it'll be sort of like you, you sort of
+learn one thing first and then the other.
+And the idea being that will be a bit
+easier for you
+than trying to learn both the mathematics
+and the finance in tandem.
+And one thing that's nice about this
+course,
+is there's also a solutions manual which
+has detailed
+solutions for all of the homework
+assignments in this book.
+And so, I, I recommend if you, if you can
+get your
+hands on the textbook, that you also try
+and get the solutions manual.
+And then on your own time, try and work
+through some of the, the exercises in in
+the textbook.
+And then use the solutions manual to make
+sure that
+you're using the right approach and
+getting the right answer.
+And the last recommended book that I
+wanted to mention.
+So this is the first year calculus book
+that they use at the University of
+Washington.
+And so that's why I've put it on this
+slide and have a picture of it.
+But really any first year calculus book
+will be
+sufficient, and this one is over a
+thousand pages long.
+And really what you're looking for is just
+sort of and encyclopedia of calculus.
+So that when you have questions,
+you have somewhere to go and look it up.
+So, Calculus, Early Transcendentals by
+James Stewart.
+pretty much any edition would be
+sufficient,
+or any other first year calculus book.
+But if you get your hands on a book like
+that, that is going
+to be a valuable resource for doing some
+of the exercises in this class.
+Okay?
+So that's all I have for the introduction,
+and
+I hope you enjoy the rest of the course.
+

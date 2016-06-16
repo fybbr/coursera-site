@@ -1,0 +1,192 @@
+1
+00:00:00,960 --> 00:00:05,970
+The topic for week three is partial
+derivatives, and the menu for
+
+2
+00:00:05,970 --> 00:00:09,940
+week three is going to start out with
+function of several variables.
+
+3
+00:00:09,940 --> 00:00:14,320
+So, remember our goal is we want to be
+able to take the partial derivatives of
+
+4
+00:00:14,320 --> 00:00:17,060
+the black shoals pricing formula, the
+black shoals
+
+5
+00:00:17,060 --> 00:00:20,120
+pricing formula is a function of many
+variables.
+
+6
+00:00:20,120 --> 00:00:24,490
+So we'll start off just defining what we
+mean by a function of many variables .
+
+7
+00:00:27,230 --> 00:00:31,410
+Then in section two I'll talk about higher
+order partial derivatives.
+
+8
+00:00:31,410 --> 00:00:33,480
+So remember higher derivative was just
+when
+
+9
+00:00:33,480 --> 00:00:36,120
+I took the derivative of a derivative.
+
+10
+00:00:36,120 --> 00:00:39,230
+When I have a function of more than one
+variable I
+
+11
+00:00:39,230 --> 00:00:43,110
+could take the derivative Of that function
+with respect to y.
+
+12
+00:00:43,110 --> 00:00:45,590
+That will give me a new function.
+
+13
+00:00:45,590 --> 00:00:49,190
+And then I could take the derivative of
+that function with respect to x.
+
+14
+00:00:49,190 --> 00:00:52,260
+So now it's actually possible to mix the
+partial
+
+15
+00:00:52,260 --> 00:00:54,890
+derivatives, so we have to talk a little
+
+16
+00:00:54,890 --> 00:00:57,960
+bit about how we're going to deal with
+that possibility.
+
+17
+00:00:57,960 --> 00:01:00,020
+In section three I'll give a concrete
+
+18
+00:01:00,020 --> 00:01:02,309
+example just using a function of two
+variables.
+
+19
+00:01:03,690 --> 00:01:05,890
+Section four, I'll talk about an extension
+of
+
+20
+00:01:05,890 --> 00:01:08,220
+the Chain Rule for functions of several
+variables.
+
+21
+00:01:09,310 --> 00:01:12,120
+And in section five I'll talk about
+implicit functions.
+
+22
+00:01:12,120 --> 00:01:17,190
+So, an implicit function is a function
+that I can't write as Y equals F of X.
+
+23
+00:01:17,190 --> 00:01:19,040
+It's something a little bit more general.
+
+24
+00:01:19,040 --> 00:01:22,400
+So, a circle, for instance, would be an
+implicit function.
+
+25
+00:01:22,400 --> 00:01:24,220
+Because when I write down it's equation it
+has
+
+26
+00:01:24,220 --> 00:01:27,020
+to be X squared plus Y squared equals R
+squared.
+
+27
+00:01:29,230 --> 00:01:34,140
+In the second half of this weeks topics,
+I'll start talking about the Greeks.
+
+28
+00:01:34,140 --> 00:01:36,010
+And so the Greeks, recall are the
+
+29
+00:01:36,010 --> 00:01:38,730
+partial derivatives of the Black Shoals
+pricing formula.
+
+30
+00:01:40,110 --> 00:01:42,530
+And I'll start off just by introducing
+what the
+
+31
+00:01:42,530 --> 00:01:47,054
+Greeks are, and also a notion called
+put-call parity.
+
+32
+00:01:47,054 --> 00:01:50,290
+And then I'll talk about four, or, the
+five Greeks.
+
+33
+00:01:50,290 --> 00:01:55,020
+So we have Delta, which is the derivative
+with respect to the asset price.
+
+34
+00:01:55,020 --> 00:01:58,650
+Gamma which is the second derivative with
+respect to the asset price.
+
+35
+00:02:00,360 --> 00:02:02,630
+Then row vega and theta.
+
+36
+00:02:02,630 --> 00:02:05,660
+And so these will actually be just
+complicated
+
+37
+00:02:05,660 --> 00:02:07,990
+calculations, but it'll be nice just to go
+
+38
+00:02:07,990 --> 00:02:12,540
+through them once I think in course with
+slides so you can see how they're done.
+
+39
+00:02:12,540 --> 00:02:16,750
+There some very nice tricks you can use to
+simplify the calculations that, you know,
+
+40
+00:02:16,750 --> 00:02:19,960
+if just try and do this on your own, the
+first time you might not catch.
+

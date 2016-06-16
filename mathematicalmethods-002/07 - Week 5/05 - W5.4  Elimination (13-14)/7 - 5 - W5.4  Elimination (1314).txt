@@ -1,0 +1,315 @@
+Topic 4 is Elimination.
+So I'm going to take another look at
+solving a system of equations.
+So, I have x minus 2y equals 1 and 3x plus
+2y equals 11.
+And when I was in high school, the way
+they taught me how to solve this is I
+would take one of these equations and I
+would solve it for one of the variables.
+Then I would use that expression So if I
+took this equation, I'm going to solve it
+for x.
+I'm going to substitute that expression
+for x into the second equation.
+And that's going to give me a second
+equation that only
+involves y.
+So I can solve that and find the actual
+numeric value of y.
+And then I can go and plug that into my
+expression
+in the first equation and that gives me my
+value of x.
+So let's see, I did that x is equal to 2,
+y plus 1 then I put the 2, y plus 1, I
+substitute that into the second equation.
+I solve for y and I get y equals 1.
+And then I plug this y equals 1 back into
+my first equation and that gives me x
+equals 3.
+So I end up with the 0.31 or the vector
+31 being the intersection of these two
+lines.
+So now let's look at a more technical
+approach for solving this problem.
+So now I've, instead of just calling this
+x, I'm going to put
+a 1x here and I'm going to introduce a
+little bit of terminology.
+So a pivot is going to be the first
+non-zero equation in a row that does
+the elimination.
+So when I do my substitution,
+I'm using the first equation to eliminate
+the x in the second equation.
+So that's what I mean by the row or the
+equation.
+This is the equation that's going to do
+the elimination.
+I'm going to use this equation to
+eliminate x.
+And the period is going to be the first
+non-zero so I'm looking at the, the
+coefficients here.
+The equation that's going to do the
+elimination
+is highlighted and the first non-zero
+coefficient is this 1.
+So that's why I had put a 1 here, just
+that I could highlight it.
+So that's going to be called the pivot.
+And then I'm going to use that pivot to
+work out a multiplier.
+So I want to eliminate a number.
+So, if I want this equation to no longer
+depend on x,
+then the number I want to eliminate is 3.
+And my multiplier
+is just going to be this number that I
+want to eliminate, divided by the pivot.
+So in this case, my multiplier would be 3
+that
+I want to eliminate divided by 1, which is
+3.
+And then if you think about what actually
+happened
+when I substituted that expression in for
+x, so when I
+substituted x equals 2y plus 1, this is
+what I was doing.
+So, I was adding negative 3x.
+And so that what I'm going to do is to
+take this negative 3,
+with 3 as multiplier I worked out, when I
+want to eliminate.
+What I'm going to do is take negative my
+multiplier times
+the row that's doing my elimination so
+that's this first row.
+And I'm going to add that to the second
+equation so the equation
+where I'm trying to eliminate the number.
+And so if you see what
+happens when I multiply negative 3 times
+1x, that's going to give me minus 3x.
+And then when I add, 3 plus negative 3 is
+going to give me 0x.
+So that's what I mean by eliminating in th
+co-efficiency on x in the second equation.
+And then to keep the equality, I have to
+do the
+same operation for the rest of the, rest
+of the co-efiecient.
+So here I'm going to have negative 3 times
+negative 2
+so I'm going to have 2 plus 6.
+So I have 2y plus 6y
+gives me 8y and the I have to do the same
+thing to the
+right hand side so here I have 11 plus
+negative 3 times
+1 and that gives me 8.
+So one elimination step or some
+times it's also called an elimentry step
+is just going
+to be to subtract a multiple of one
+equation from another.
+So in this case I'm subtracting 3
+times the first equation from the second
+equation.
+And the idea is to use elimination
+to create something called an upper
+triangular system.
+So, so for a two by two system, we achieve
+that after just doing one elimination.
+So upper triangular system means that
+every coefficient below the diagonal.
+So here, you kind of have to imagine that
+there's a matrix but I have
+[NOISE]
+when the row is equal to the column,
+that's my diagonal.
+So 1 and 8 are my diagonal elements.
+Below the diagonal is just the coefficient
+on this x in the second equation.
+And if I can make that zero then
+I'm going to call this system an upper
+triangular system.
+So it's only coefficients in the triangle
+here that have non-zero coefficients.
+And if I can do that then it's going to be
+really easy
+to solve for x and y using an algorithm
+called back substitution.
+So if a system is upper triangular, then
+whatever equation's on the bottom,
+it has zeroes in all of the places except
+for the very last one.
+So if I look at the bottom, I only ever
+have to solve this.
+And so in this case, I have 8y is equal to
+8 and that gives me y equals 1.
+And then once I know that y is equal to
+one I can plug that
+in here.
+So I, I'll move all of the y's to this
+side.
+And I just end up with another upper
+triangular system.
+So this is a, a trivial upper
+triangular system because there's just x
+equals something.
+[COUGH]
+But if there are more variables I'll have
+to
+do this one time for, sort of, each
+equation.
+But every time, I have a very simple
+equation to solve.
+I only ever.
+Oops.
+I only ever have to solve something like
+that.
+So, I solve for y, then use y to solve.
+Oops.
+Then use y to solve for x, so I thought I
+was going to actually do it but I guess I
+forgot
+to, so if I end up with y is equal to, so
+y is equal to 1 is going to solve this.
+And then I'll move this to the other side
+of the equal
+sign and plug in my value for y that I
+just found.
+And I will have
+1x is equal to 1 plus 2 or x is equal to
+3.
+So I get the same, same solution that I
+got in the previous slides.
+And what we're moving towards now is can
+we elimin can we represent elimination
+using a matrix?
+So now let's consider a slightly more
+complicated system.
+So now I have three equations and three
+unknowns.
+And I want to write that in the form a x
+equals b.
+So here's my system and I can write that
+in matrix form.
+So I have
+a is a coefficient matrix, so you can
+verify that it just has the same numbers
+as I have coefficients over here.
+The unknowns are this vector
+x and then the vector b is the right hand
+side, so it's the 2, 8 and 10.
+Ahead of time, I'll tell you that the
+solution is negative 1, 2, 2.
+And so now if I think about this as a
+matrix formula A x
+equals b that's both the row form and the
+column form of the system
+And so I can either think of this as just
+a.
+product.
+So, if I do the.
+product of each row with this solution
+we'll see that we get 2, 8, 10.
+And I can also think of this as
+multiplying A times x as this linear
+combination.
+So, it's the first element of x times the
+first column of A plus
+the second element of x times the second
+column of A plus the third element
+of x times the third column of A.
+And that also gives me 2,8,10.
+So I can represent the original equation
+as
+Ax equals b or the original system of
+equations.
+And, now let's think about what is
+elimination
+going to look like in terms of a matrix.
+So, the first thing I want to do, I
+want to
+subtract 2 times the first equation from
+the second.
+So, I want to start eliminating.
+And so, I'll use something called an
+elimination matrix.
+So, this looks a lot like the identity
+matrix, it's zeros almost
+everywhere, except for the main diagonal,
+which is equal to 1.
+So, if I, if this negative 2 here were
+a 0, then I would just have the identity
+matrix.
+So mostly it's going to leave my system
+alone.
+Except here
+this negative 2 is going to have the
+effect of, so it's in the 2,1 position.
+So it's in row 2, column 1.
+And so that's going to subtract whatever
+this value is.
+So the multiplier in this case is 2.
+So it's going to subtract 2 times the
+first equation from the second.
+And so we can see that just by
+using either one of our matrix vector
+multiplication pictures.
+So, if I multiply, so here I'm just
+looking at
+the right-hand side to make the example a
+little bit easier.
+So, if I have 1, 0, 0.b1, b2, b3 that's
+just going to give me b1.
+So this matrix leaves the first element
+unchanged.
+Then if I say, minus 2, 1, 0 times b2, b1,
+b2,
+b3 that's going to give me 1 times b2
+minus 2 times b1.
+So it's subtracting twice whatever was in
+the first row.
+So twice whatever was in the first row
+from the second row.
+And then 0 0 1 is just going to give me b3
+back, so that leaves the third row or
+the third element unchanged.
+And so if I multiply this by 2, 8, 10.
+This is just me plugging in
+2, 8, 10, for b1, b2, b3.
+That gives me 2, 4, 10.
+So the identity matrix has ones down the
+diagonal.
+So in general, an elimination matrix that
+subtracts
+a multiple, so this is an l right here.
+A multiple l of row j from row i, it's an
+identity matrix,
+except it has an additional non-zero entry
+equal to minus l.
+And it's in the I th, J th position.
+So E 3,1.
+So this is going to subtract 3 times row 1
+from row 3.
+Is that right?
+So I want to subtract a multiple of row j,
+so j is the second index.
+3 times row 1 from row i so from
+the first index, from row 3.
+And so this is just the example I did on
+the previous page.
+So previously I had written out the whole
+form of the matrix.
+Here I'm just going to say E 2, 1, so it's
+subtracting.
+2 times row 1, so 2 times this index from
+this index.
+And then, remember the identity matrix is
+just leaving a vector unchanged.
+

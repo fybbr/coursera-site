@@ -1,0 +1,133 @@
+Monte Carlo Tree Search is a more
+sophisticated variation of Monte
+Carlo Search, that tackles some of the
+weaknesses of the simpler method.
+both methods build up a game tree
+incrementally,
+and both rely on random simulation of
+games.
+But they differ in the way the tree is
+expanded.
+MCS, Monte Carlo Search uniformly expands
+the partial game tree during
+it's expansion phase, and then simulates
+games starting at the state,
+states on the fringe of the expanded tree.
+MCTS, Monte Carlo Tree Search, uses a more
+sophisticated approach, in which
+the, the processes of expansion in the
+simulation are kind of interleaved.
+MCTS processes the game tree in cycles of
+4 steps each.
+And after each cycle's complete, it
+repeats
+the steps, so long as there's time
+remaining.
+At which point, it selects an action based
+on the statistics its accumulated to that
+point.
+On the selection step, the player
+traverses the tree produced
+thus far, to select an unexpanded node of
+the tree.
+Making choices based on visit counts and
+utilities stored on nodes of the tree.
+We'll see how that
+happens a little bit later.
+During expansion, the successes of the
+state chosen
+during the selection phase are added to
+the tree.
+The player then simulates the game
+starting
+at the node chosen during the selection
+phase.
+In so doing, it chooses actions at random
+until a terminal state is encountered, as
+with MCS.
+And finally, the value of the terminal
+state is propagated back along the
+path to the root node, and the
+visit counts and utilities are updated
+accordingly.
+Here's an implementation of the MCTS
+selection procedure.
+If the initial state has not been seen
+before, not
+with zero visits, has not been seen
+before, then hit selected.
+Otherwise, a procedure search is the
+successors of the node.
+If any of them have not been seen, then
+one of the unseen nodes is selected.
+If all of the successors have been seen
+before, then
+procedure uses the select fin subroutine,
+which we'll talk about.
+The fine values for those nodes, and
+chooses
+the one that maximizes this value.
+Okay, one of the most common ways of
+implementing selection fun, is
+what's called UCT which is short for upper
+confidence bounds applied to trees.
+A typical UCT formula is shown here.
+Vi plus the square root of log n p over
+ni.
+Vi's the average reward for that state,
+that it's seen so far.
+Np is the total number of times the
+parent's, state's parent was picked.
+Ni is the number of times this particular
+state was picked.
+Course, there are other ways that, that
+one can evaluate states.
+The form here is based on combination of
+what's called exploitation exploration.
+Exploitation here means that results use
+of results on
+previously explored states, which is the
+first term, vi.
+Exploration means expansion of as yet
+unexplored states,
+a measure of which is the second term.
+And at the bottom of the slide, we have
+simply implementation of the formula shown
+at the top.
+Expansion in MCTS is basically the same as
+that for MCS.
+An implementation for a single player is
+shown here.
+On large games with large time bounds,
+it's possible that the
+space consumed as process could exceed the
+memory available to a player.
+In such cases, it's common to use a
+variation of the selection procedure, in
+which no additional states are added to
+the tree, and just probes are used.
+Simulation for MCTS is essentially the
+same as simulation for MCS.
+So the same procedure, exact procedure can
+be used in both methods.
+And MCTS however, has a different
+procedure for recording the results,
+called backpropagation.
+At the selected node, the method records a
+visit count and a utility.
+A visit count in this case is one, since
+it, it's a newly-processed state.
+The utility is the result of the
+simulation.
+the procedure then propagates to ancestors
+of this node.
+In the case of a single-player
+game, the procedure simply adds one to the
+visit count of each ancestor,
+and it augments its total utility by the
+utility obtained on the latest simulation.
+In the case of a multi-player game, the
+propagated value
+is the minimum of the values for all
+opponent actions.
+

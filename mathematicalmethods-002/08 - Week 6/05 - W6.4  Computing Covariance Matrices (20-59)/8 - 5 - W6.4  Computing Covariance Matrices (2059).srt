@@ -1,0 +1,1399 @@
+1
+00:00:00,950 --> 00:00:05,636
+The next topic I, I called computing
+covariance matrices, just because
+
+2
+00:00:05,636 --> 00:00:08,870
+I couldn't really think of a, a better
+title for it.
+
+3
+00:00:10,100 --> 00:00:12,947
+So in, in the third, in the third, topic
+
+4
+00:00:12,947 --> 00:00:16,310
+I talked about what a variance covariance
+matrix is.
+
+5
+00:00:16,310 --> 00:00:18,038
+And now I want to show that really
+
+6
+00:00:18,038 --> 00:00:21,540
+what we're doing when we do matrix
+multiplication.
+
+7
+00:00:21,540 --> 00:00:23,988
+You can sort of design one matrix to
+operate
+
+8
+00:00:23,988 --> 00:00:27,500
+on another matrix to give you what you
+want.
+
+9
+00:00:27,500 --> 00:00:31,185
+And so this the covariance matrices gives
+kind of a nice way to
+
+10
+00:00:31,185 --> 00:00:33,396
+explain that and, and also to discover
+
+11
+00:00:33,396 --> 00:00:36,620
+that some matrices have very interesting
+properties.
+
+12
+00:00:39,000 --> 00:00:44,544
+So let's take a closer look at how we made
+this x tilde
+
+13
+00:00:44,544 --> 00:00:50,680
+vector.
+So I said x tilde was equal to x.
+
+14
+00:00:50,680 --> 00:00:55,530
+So this is a column vector with n, column
+vector with m elements.
+
+15
+00:00:57,050 --> 00:01:02,594
+X bar was a scalar.
+And e was a column vector of m one.
+
+16
+00:01:02,594 --> 00:01:04,997
+So when I do this multiplication
+
+17
+00:01:04,997 --> 00:01:08,112
+here, I just end up with a vector of
+length
+
+18
+00:01:08,112 --> 00:01:11,430
+m and every element of that is equal to x
+bar.
+
+19
+00:01:12,540 --> 00:01:15,420
+And then when I subtract that from x it
+gives me, I call
+
+20
+00:01:15,420 --> 00:01:19,840
+it, a centered vector because now it's
+going to have sample, sample mean zero.
+
+21
+00:01:23,610 --> 00:01:26,590
+And now I want to work backwards a little
+bit.
+
+22
+00:01:26,590 --> 00:01:29,758
+So I'm going to replace X bar by my I
+guess
+
+23
+00:01:29,758 --> 00:01:36,110
+matrix definition, my matrix computation,
+that gave me the sample mean.
+
+24
+00:01:36,110 --> 00:01:40,309
+And now it might get a little bit more
+clear.
+
+25
+00:01:41,520 --> 00:01:44,080
+Why I wanted to put the x bar after the e.
+
+26
+00:01:45,540 --> 00:01:48,820
+So if you look closely at this, I have
+this column
+
+27
+00:01:48,820 --> 00:01:53,296
+vector and then this row vector and then
+this column vector here.
+
+28
+00:01:53,296 --> 00:01:57,400
+And then the 1 over m, that's a scalar,
+and remember.
+
+29
+00:01:57,400 --> 00:02:02,771
+So a column vector, that's just a matrix
+with one column and m rows.
+
+30
+00:02:02,771 --> 00:02:08,357
+This is a matrix with one row and m
+columns and then m rows and
+
+31
+00:02:08,357 --> 00:02:13,956
+1 column agains and a scaler.
+And for matrices
+
+32
+00:02:13,956 --> 00:02:17,750
+I'm free to do the multiplication in any
+order I want to.
+
+33
+00:02:19,480 --> 00:02:26,490
+So if I did this multiplication first and
+then divided by m, I ended up with x bar.
+
+34
+00:02:26,490 --> 00:02:30,150
+But let's look at what happens if I, well
+let's see what I did exactly.
+
+35
+00:02:30,150 --> 00:02:35,360
+Yes, I'm going to instead look at this
+matrix now, e, e, transpose.
+
+36
+00:02:35,360 --> 00:02:38,910
+So e is this column vector of m ones.
+
+37
+00:02:38,910 --> 00:02:43,174
+E transposed is a row vector, so I'm
+going to end up
+
+38
+00:02:43,174 --> 00:02:47,360
+with a square matrix, m by m matrix of all
+ones.
+
+39
+00:02:48,460 --> 00:02:54,540
+And then I'm going to divide that by m and
+multiply that by x and that's.
+
+40
+00:02:54,540 --> 00:02:59,510
+Going to be equal still to x tilde because
+I'm still doing the same operation.
+
+41
+00:02:59,510 --> 00:03:03,100
+I'm just kind of organizing the
+computations in a different order now.
+
+42
+00:03:05,860 --> 00:03:10,124
+And now, I'm going to factor.
+So I can factor always an identity
+
+43
+00:03:10,124 --> 00:03:14,709
+matrix out of something.
+So I could write this as i.
+
+44
+00:03:14,709 --> 00:03:19,535
+So now i have an m by m identity matrix i
+minus e e
+
+45
+00:03:19,535 --> 00:03:25,187
+transpose.
+So this, this outer product here is an m
+
+46
+00:03:25,187 --> 00:03:30,948
+by m matrix of all ones divided by m.
+So each element of
+
+47
+00:03:30,948 --> 00:03:36,673
+this second matrix is one over m.
+And
+
+48
+00:03:36,673 --> 00:03:41,146
+now I'm going to think about this, this
+thing, the identity matrix minus ee
+
+49
+00:03:41,146 --> 00:03:46,014
+transposed over m.
+Think about that as a, so I
+
+50
+00:03:46,014 --> 00:03:51,120
+can write x tilted here as a matrix a
+times x.
+
+51
+00:03:51,120 --> 00:03:56,326
+So I'm designing this matrix a.
+subtract the mean form
+
+52
+00:03:56,326 --> 00:03:57,700
+my vector x.
+
+53
+00:04:01,690 --> 00:04:07,086
+What is a?
+So the outer product e e transpose
+
+54
+00:04:07,086 --> 00:04:12,071
+is an m by m matrix.
+I, I is the m by m
+
+55
+00:04:12,071 --> 00:04:17,090
+identity matrix.
+So a is also going to be an m
+
+56
+00:04:17,090 --> 00:04:22,050
+by m matrix.
+And it's a special m by m matrix
+
+57
+00:04:22,050 --> 00:04:26,914
+has a property that premultiplications
+
+58
+00:04:26,914 --> 00:04:33,537
+i mean multiplying i put a before x that's
+premultiplying.
+
+59
+00:04:33,537 --> 00:04:35,930
+Turns X into X tilde.
+
+60
+00:04:40,470 --> 00:04:42,142
+And so you can think of this
+
+61
+00:04:42,142 --> 00:04:45,810
+matrix multiplication as one matrix acting
+on another.
+
+62
+00:04:45,810 --> 00:04:48,557
+So you, we saw things like this already
+with
+
+63
+00:04:48,557 --> 00:04:52,396
+a permutation matrix, I pre-multiply by a
+permutation matrix.
+
+64
+00:04:52,396 --> 00:04:57,786
+And that swaps rows, also I, I think I
+showed a rotation matrix at some point,
+
+65
+00:04:57,786 --> 00:05:03,630
+so I pre-multiply a vector by a rotation
+matrix and that just rotates the vector.
+
+66
+00:05:03,630 --> 00:05:05,697
+So there's certain matrices, you can
+design
+
+67
+00:05:05,697 --> 00:05:10,800
+them to do something that you want.
+And so I've designed this matrix a.
+
+68
+00:05:10,800 --> 00:05:12,844
+To center the vector x, so I want to
+
+69
+00:05:12,844 --> 00:05:15,840
+subtract the sample mean from each element
+of x.
+
+70
+00:05:20,450 --> 00:05:26,620
+So, now let's consider what happens when I
+pre-multiply the matrix r by a.
+
+71
+00:05:26,620 --> 00:05:30,427
+So, remember r was this matrix I made that
+had one column
+
+72
+00:05:30,427 --> 00:05:33,940
+x, the first column is x and the second
+column is y.
+
+73
+00:05:38,390 --> 00:05:42,422
+So I have my matrix A, so that's where
+this A comes
+
+74
+00:05:42,422 --> 00:05:47,190
+from, and then R is this matrix with
+column X and column Y.
+
+75
+00:05:49,260 --> 00:05:51,116
+And so I can think of A as I think of Rs
+
+76
+00:05:51,116 --> 00:05:55,860
+having a block structure with the blocks
+are just going to be the columns.
+
+77
+00:05:55,860 --> 00:05:59,875
+So when I do the multiplication, the first
+column is just going to be
+
+78
+00:05:59,875 --> 00:06:03,170
+A times x, and the second column is
+going to be A times y.
+
+79
+00:06:03,170 --> 00:06:08,570
+And then we know what a does to each of
+these vectors.
+
+80
+00:06:09,830 --> 00:06:15,033
+So A turns x into x tilde, and A turns y
+into y tilde,
+
+81
+00:06:15,033 --> 00:06:16,899
+so when I do this.
+
+82
+00:06:18,800 --> 00:06:24,524
+matrix multiplication here I'm going to
+end up with x tilde y tilde
+
+83
+00:06:24,524 --> 00:06:29,990
+so the same matrix a is going to turn the
+matrix R into R tilde.
+
+84
+00:06:34,990 --> 00:06:37,735
+so now let's think about what's going to
+happen when
+
+85
+00:06:37,735 --> 00:06:40,960
+we stick this into the expression for our
+covariance matrix.
+
+86
+00:06:42,440 --> 00:06:45,600
+So, in the previous set I had to define
+the covariance.
+
+87
+00:06:45,600 --> 00:06:47,615
+You know I needed to subtract the mean
+
+88
+00:06:47,615 --> 00:06:50,910
+and then I could calculate the variances
+and covariances.
+
+89
+00:06:50,910 --> 00:06:54,760
+So I needed to first make this matrix R
+tilde.
+
+90
+00:06:56,190 --> 00:06:58,700
+And then I could compute the covariance.
+
+91
+00:06:58,700 --> 00:07:00,170
+So here I'm aiming to get
+
+92
+00:07:00,170 --> 00:07:04,898
+the covariance of the matrix R.
+The sample covariance for the matrix,
+
+93
+00:07:04,898 --> 00:07:09,710
+R, but I first need to make this R tilde
+matrix in order to do that.
+
+94
+00:07:11,610 --> 00:07:16,272
+But now, I can replace R tilde, just by
+AR,
+
+95
+00:07:16,272 --> 00:07:21,060
+because A is going to turn R into R tilde,
+and now
+
+96
+00:07:21,060 --> 00:07:25,495
+I have a product here.
+And a transpose,
+
+97
+00:07:25,495 --> 00:07:27,630
+so I might as well use my transpose rules.
+
+98
+00:07:30,298 --> 00:07:32,800
+oops, I guess I'm getting ahead of myself.
+
+99
+00:07:32,800 --> 00:07:36,328
+So let's see, because R has two columns,
+the covariance
+
+100
+00:07:36,328 --> 00:07:38,810
+matrix for r is going to be a 2 by 2
+matrix.
+
+101
+00:07:44,340 --> 00:07:45,640
+Okay, so in general.
+
+102
+00:07:46,770 --> 00:07:49,956
+I guess I've been, what I wanted to
+communicate here was, I'm
+
+103
+00:07:49,956 --> 00:07:52,800
+trying to do a 2 by 2 matrix just to keep
+things simple.
+
+104
+00:07:52,800 --> 00:07:58,785
+What's going to happen in general is that,
+so here R has two columns,
+
+105
+00:07:58,785 --> 00:08:04,930
+and R tilde has two columns, and because I
+can just apply a row by row.
+
+106
+00:08:06,050 --> 00:08:09,790
+These are columns.
+I can apply A column by column,
+
+107
+00:08:09,790 --> 00:08:15,319
+I could do three columns, I could had an
+arbitrary number of columns
+
+108
+00:08:15,319 --> 00:08:20,049
+in R, so I can say it has n columns.
+And, so, if.
+
+109
+00:08:21,220 --> 00:08:24,540
+R has n columns, then the covariance
+matrix for
+
+110
+00:08:24,540 --> 00:08:27,220
+R is going to be an n by n matrix.
+
+111
+00:08:27,220 --> 00:08:30,196
+And what you'll end up with then is the
+diagonal elements
+
+112
+00:08:30,196 --> 00:08:33,713
+are going to be the variance, the sample
+variances for the columns.
+
+113
+00:08:33,713 --> 00:08:35,116
+And then the off-diagonal
+
+114
+00:08:35,116 --> 00:08:37,373
+elements will be the sample covariances
+for
+
+115
+00:08:37,373 --> 00:08:39,940
+that particular row and that particular
+column.
+
+116
+00:08:44,290 --> 00:08:46,540
+And the nice thing about this is that
+
+117
+00:08:46,540 --> 00:08:49,565
+A only depended on the number of
+observations.
+
+118
+00:08:49,565 --> 00:08:52,365
+So it only depended on the number of rows
+in R, so
+
+119
+00:08:52,365 --> 00:08:55,530
+it was the, the length of each one of
+these vectors m.
+
+120
+00:08:57,810 --> 00:09:01,600
+Because it was i, minus e e transposed
+over m.
+
+121
+00:09:01,600 --> 00:09:04,682
+So this matrix a stays the same,
+regardless of what I,
+
+122
+00:09:04,682 --> 00:09:07,540
+you know, how many columns I decide to put
+into R.
+
+123
+00:09:11,330 --> 00:09:14,580
+Okay.
+So now I get to do my, my exciting result.
+
+124
+00:09:15,770 --> 00:09:19,500
+So I'm looking at the covariance matrix
+For R.
+
+125
+00:09:20,590 --> 00:09:25,690
+And on the last slide I said, well I can
+write that as AR, that
+
+126
+00:09:25,690 --> 00:09:30,790
+product transposed times AR because AR is
+equal to R tilde.
+
+127
+00:09:30,790 --> 00:09:37,330
+And now I have a rule for taking the
+transpose of matrix products.
+
+128
+00:09:37,330 --> 00:09:42,770
+So I can rewrite this.
+As, so one over m, my scale factor.
+
+129
+00:09:44,290 --> 00:09:47,130
+R transposed, A transposed, AR.
+
+130
+00:09:48,500 --> 00:09:52,784
+And so now what I want to do is, usually
+when you see something like this, remember
+
+131
+00:09:52,784 --> 00:09:54,548
+when I was saying you have a matrix
+
+132
+00:09:54,548 --> 00:09:57,800
+transposed times itself, you know, it will
+be symmetric.
+
+133
+00:09:57,800 --> 00:10:00,370
+It also sometimes has nice properties.
+
+134
+00:10:00,370 --> 00:10:02,429
+And so let's take a look at that and
+
+135
+00:10:02,429 --> 00:10:04,930
+see if we can find anything interesting.
+
+136
+00:10:06,900 --> 00:10:13,130
+So product A transposed A is just going to
+be, all I've done here is I'm replacing A
+
+137
+00:10:13,130 --> 00:10:15,889
+by how I created A in the first place,
+
+138
+00:10:15,889 --> 00:10:19,360
+so that's I minus e e transposed divided
+by m.
+
+139
+00:10:21,340 --> 00:10:26,210
+And so I have a transpose a and now here's
+a transpose again.
+
+140
+00:10:26,210 --> 00:10:27,866
+I've got a product here and
+
+141
+00:10:27,866 --> 00:10:31,460
+a sum here and I have rules for taking
+transposes of that.
+
+142
+00:10:31,460 --> 00:10:33,250
+So lets try that and see what happens.
+
+143
+00:10:36,630 --> 00:10:38,420
+So lets see if I, if I did that.
+
+144
+00:10:38,420 --> 00:10:42,040
+So the first thing I did was transpose of
+a sum.
+
+145
+00:10:42,040 --> 00:10:48,279
+Was just the transpose of each part of the
+sum, each term in the sum.
+
+146
+00:10:48,279 --> 00:10:52,319
+So this sum transposed becomes identity
+matrix
+
+147
+00:10:52,319 --> 00:10:57,960
+transposed, minus ee transposed over m
+transposed.
+
+148
+00:10:57,960 --> 00:11:01,382
+Identity matrix transposed, so it's
+diagonal, it's symmetric,
+
+149
+00:11:01,382 --> 00:11:06,280
+transposed is equal to itself.
+So this will become i.
+
+150
+00:11:06,280 --> 00:11:09,510
+And I'll have to see what happens to this
+real quick.
+
+151
+00:11:11,420 --> 00:11:13,740
+So this e gets transposed and I swap
+
+152
+00:11:13,740 --> 00:11:17,820
+the order so that becomes this e transpose
+here.
+
+153
+00:11:17,820 --> 00:11:21,320
+This e transpose gets transposed and I
+swap the order.
+
+154
+00:11:21,320 --> 00:11:26,530
+So that becomes this e e, e transpose
+transpose here.
+
+155
+00:11:26,530 --> 00:11:27,030
+Sorry.
+
+156
+00:11:31,420 --> 00:11:34,810
+E transpose, transpose just becomes e.
+
+157
+00:11:34,810 --> 00:11:38,790
+And then I had this e transpose that I'll
+carry down.
+
+158
+00:11:38,790 --> 00:11:43,630
+Sorry, I've said e and transpose quite a
+lot in this last couple of sentences here.
+
+159
+00:11:43,630 --> 00:11:45,260
+And what do I end up with?
+
+160
+00:11:45,260 --> 00:11:49,440
+I have i minus e, e tranpose over m.
+Which is A.
+
+161
+00:11:50,720 --> 00:11:55,490
+So A transpose A is also equal to A
+squared.
+
+162
+00:11:56,590 --> 00:11:59,402
+And since A, so what I've really done
+here,
+
+163
+00:11:59,402 --> 00:12:02,806
+I've, I haven't touched this second A, so
+all I've
+
+164
+00:12:02,806 --> 00:12:05,840
+done is operated on this first part of the
+product
+
+165
+00:12:05,840 --> 00:12:09,510
+and just shown that A transpose is equal
+to A.
+
+166
+00:12:09,510 --> 00:12:13,410
+So that tells me that a transpose, sorry a
+common is symmetric.
+
+167
+00:12:18,130 --> 00:12:20,660
+But that's not, not all yet.
+
+168
+00:12:20,660 --> 00:12:27,355
+I have a transpose a is equal to i minus
+e, well you can read it now.
+
+169
+00:12:27,355 --> 00:12:27,930
+[COUGH]
+
+170
+00:12:27,930 --> 00:12:34,460
+So I can say that's equal to i minus e
+transpose over m squared.
+
+171
+00:12:34,460 --> 00:12:37,140
+So, A transpose A is equal to A squared.
+
+172
+00:12:40,950 --> 00:12:45,270
+But I can actually go a head and just do
+this multiplication as well.
+
+173
+00:12:47,320 --> 00:12:49,240
+So let's see what happens when I do that.
+
+174
+00:12:51,530 --> 00:12:53,220
+So I end up with it's just the,
+
+175
+00:12:53,220 --> 00:12:56,470
+the standard, you know, first, outer,
+inner, last.
+
+176
+00:12:56,470 --> 00:13:01,720
+So I have identity matrix times identity
+matrix gives me identity matrix squared.
+
+177
+00:13:01,720 --> 00:13:07,880
+And I have outer identity matrix times
+this.
+
+178
+00:13:07,880 --> 00:13:12,140
+And it's negative, and then I have inner
+identity matrix times this.
+
+179
+00:13:12,140 --> 00:13:13,820
+So I get two of these guys.
+
+180
+00:13:13,820 --> 00:13:16,988
+And then the last one I get ee transposed
+
+181
+00:13:16,988 --> 00:13:18,360
+squared over m.
+
+182
+00:13:19,470 --> 00:13:23,930
+So ee transposed over m, that thing
+squared, which I've written out here.
+
+183
+00:13:27,490 --> 00:13:31,340
+So these middle terms are going to be the
+same, so I'll just
+
+184
+00:13:31,340 --> 00:13:35,190
+write two of them, i squared is just like
+1 squared but with
+
+185
+00:13:35,190 --> 00:13:38,809
+matrices so I get the identy matrix back
+and then when I do
+
+186
+00:13:38,809 --> 00:13:43,980
+this product here I'm going to get a m
+squared in the denominator.
+
+187
+00:13:43,980 --> 00:13:47,628
+And then I'm going to get an e, e
+transposed, e
+
+188
+00:13:47,628 --> 00:13:53,020
+and e transposed, so just write those four
+things out here.
+
+189
+00:13:53,020 --> 00:13:55,644
+And then, remember, these are just
+matrices,
+
+190
+00:13:55,644 --> 00:13:58,524
+even though they're one by something
+matrices, but
+
+191
+00:14:00,530 --> 00:14:04,190
+But I'm free to do this multiplication in
+any order I want to.
+
+192
+00:14:04,190 --> 00:14:08,390
+And so what I'm going to do is do the
+inside multiplication first.
+
+193
+00:14:08,390 --> 00:14:12,806
+So I'll have e transpose e, which is a
+inner product or
+
+194
+00:14:12,806 --> 00:14:17,810
+a dot product of a vector of m1s with a
+vector of m1s.
+
+195
+00:14:17,810 --> 00:14:20,580
+That's going to be one times one plus one
+time one.
+
+196
+00:14:20,580 --> 00:14:23,930
+So I'm basically just adding up one
+squared m times.
+
+197
+00:14:23,930 --> 00:14:25,510
+So that's equal to m.
+
+198
+00:14:25,510 --> 00:14:29,030
+And it's scalar, so I could then move that
+out in front if I wanted
+
+199
+00:14:29,030 --> 00:14:32,760
+to, and that'll cancel out one of my m's
+that I have in the bottom.
+
+200
+00:14:35,730 --> 00:14:40,959
+So this just becomes this
+
+201
+00:14:40,959 --> 00:14:46,416
+m.
+This m will cancel out one in the bottom.
+
+202
+00:14:46,416 --> 00:14:49,076
+And what I'll end up with is I have 1
+minus
+
+203
+00:14:49,076 --> 00:14:52,815
+2 times ee 2 transposed over m plus ee
+transposed over m.
+
+204
+00:14:52,815 --> 00:14:58,540
+Which is 1 minus ee transpose over m which
+is equal to a.
+
+205
+00:14:59,880 --> 00:15:01,116
+So this matrix
+
+206
+00:15:01,116 --> 00:15:04,140
+a has got two neat properties now.
+
+207
+00:15:05,360 --> 00:15:09,638
+If I multiply a vector by a, pre-multiply
+a vector by a, it subtracts the
+
+208
+00:15:09,638 --> 00:15:12,053
+mean from each element, it subtracts the
+
+209
+00:15:12,053 --> 00:15:15,410
+sample mean from each element of my
+vector.
+
+210
+00:15:15,410 --> 00:15:18,050
+And it also has this, well I think it's
+
+211
+00:15:18,050 --> 00:15:21,210
+a neat property, that A squared is equal
+to A.
+
+212
+00:15:26,030 --> 00:15:27,812
+And so there's a special name that this
+
+213
+00:15:27,812 --> 00:15:30,450
+actually pops up more often than you would
+think.
+
+214
+00:15:30,450 --> 00:15:33,100
+there's a special name for matrices that
+have this property.
+
+215
+00:15:34,194 --> 00:15:36,840
+and it's called idempotent.
+
+216
+00:15:36,840 --> 00:15:39,628
+So if a squared is equal to a, it's an
+idempotent
+
+217
+00:15:39,628 --> 00:15:43,910
+matrix, which is a word I'm still not
+really comfortable pronouncing.
+
+218
+00:15:43,910 --> 00:15:43,910
+>>
+
+219
+00:15:43,910 --> 00:15:47,031
+[LAUGH]
+
+220
+00:15:47,031 --> 00:15:49,176
+>> Okay, so now let's see what happens
+if
+
+221
+00:15:49,176 --> 00:15:52,100
+I plug this back into my covariance matrix
+formula.
+
+222
+00:15:53,330 --> 00:15:55,980
+So remember I'm trying to get the
+covariance.
+
+223
+00:15:55,980 --> 00:15:56,930
+Matrix for R.
+
+224
+00:15:59,080 --> 00:16:03,741
+You know, initially I had it as R tilde, R
+tilde transpose R, but
+
+225
+00:16:03,741 --> 00:16:07,970
+then I can get rid of the R tildes by
+using this A matrix.
+
+226
+00:16:07,970 --> 00:16:14,220
+And then when I did the, the transpose
+kind of, of A the product AR.
+
+227
+00:16:14,220 --> 00:16:17,100
+I got this A transposed A, but we've just
+proved that
+
+228
+00:16:17,100 --> 00:16:20,210
+that's equal to A squared, and that's also
+equal to A.
+
+229
+00:16:22,570 --> 00:16:28,270
+So I end up with this expression for my
+covariance matrix or R.
+
+230
+00:16:28,270 --> 00:16:31,020
+I have 1 over M minus 1, that's a scalar.
+
+231
+00:16:31,020 --> 00:16:37,500
+It's the kind of Taking the average of
+these squared deviations.
+
+232
+00:16:37,500 --> 00:16:42,340
+And I have R transposed times A times R.
+
+233
+00:16:42,340 --> 00:16:44,407
+And then you want to do some sanity checks
+every
+
+234
+00:16:44,407 --> 00:16:47,140
+now and then when you've done a big
+calculation like this.
+
+235
+00:16:47,140 --> 00:16:47,504
+So,
+
+236
+00:16:47,504 --> 00:16:53,120
+R transposed, R is an M by M matrix, so R
+transposed (no period)
+
+237
+00:16:53,120 --> 00:16:59,120
+Is going to be n by m, and then a,
+remember was m by m.
+
+238
+00:16:59,120 --> 00:17:03,721
+So here, these ms match and these ms
+match, so I'm
+
+239
+00:17:03,721 --> 00:17:08,608
+able to do that calculation.
+Then
+
+240
+00:17:08,608 --> 00:17:13,570
+the outer dimensions give me the
+dimensions of the matrix product.
+
+241
+00:17:13,570 --> 00:17:16,850
+So it's going to be an n by m matrix.
+
+242
+00:17:16,850 --> 00:17:21,660
+And that's good because on the one or two
+slides ago I kind of argued at the
+
+243
+00:17:21,660 --> 00:17:24,694
+very end that this covariance matrix
+should be an
+
+244
+00:17:24,694 --> 00:17:26,690
+n by n matrix if R has n columns.
+
+245
+00:17:30,900 --> 00:17:34,244
+But the problem with doing this is this is
+actually,
+
+246
+00:17:34,244 --> 00:17:36,448
+so I started out with an m by n matrix
+
+247
+00:17:36,448 --> 00:17:42,500
+and in my In my example, you know,' m' was
+a big number, maybe, but n was equal to 2.
+
+248
+00:17:42,500 --> 00:17:48,170
+And now, to do this, I would actually have
+to compute
+
+249
+00:17:48,170 --> 00:17:53,380
+an M by N matrix, so M is a big number,
+and N is 2.
+
+250
+00:17:53,380 --> 00:17:55,923
+Then, R and, or r
+
+251
+00:17:55,923 --> 00:18:00,774
+transposed and r, they're going to have
+two m entries in them, but this is
+
+252
+00:18:00,774 --> 00:18:05,770
+going to have m squared entries, so that's
+going to be a really big matrix.
+
+253
+00:18:05,770 --> 00:18:08,590
+It's going to take, if I were programming
+it, or if I were trying to write
+
+254
+00:18:08,590 --> 00:18:12,140
+it on a chalkboard, it would take a long
+time to write that matrix down.
+
+255
+00:18:12,140 --> 00:18:16,602
+Or it would take a lot of memory, and then
+when I do the matrix multiplication If
+
+256
+00:18:16,602 --> 00:18:18,714
+I've used up all that memory to store a
+
+257
+00:18:18,714 --> 00:18:21,024
+matrix I have to go through all that
+memory
+
+258
+00:18:21,024 --> 00:18:23,720
+to do my matrix multiplication.
+
+259
+00:18:23,720 --> 00:18:26,275
+So this is another nice thing about, I can
+
+260
+00:18:26,275 --> 00:18:29,633
+choose, you know, what order I want to do
+calculations
+
+261
+00:18:29,633 --> 00:18:32,334
+in to try and minimize the amount of work
+
+262
+00:18:32,334 --> 00:18:35,590
+I actually have to do to compute this
+product here.
+
+263
+00:18:36,690 --> 00:18:40,220
+So to do that, I'm going to replace A by
+its definition again.
+
+264
+00:18:43,730 --> 00:18:47,120
+And then just look at what's going to
+happen when I rewrite.
+
+265
+00:18:47,120 --> 00:18:51,700
+So here, if I do this product first, I end
+up with an m by m matrix.
+
+266
+00:18:51,700 --> 00:18:54,030
+And I want to avoid doing that.
+
+267
+00:18:54,030 --> 00:18:59,535
+So, sort of the obvious thing to do would
+be To do this times r first.
+
+268
+00:18:59,535 --> 00:19:00,375
+[COUGH]
+
+269
+00:19:00,375 --> 00:19:07,470
+So I'll take this m out, alright?
+That is just one over m.
+
+270
+00:19:07,470 --> 00:19:11,980
+Then the EE transpose.
+I'll have the E here.
+
+271
+00:19:11,980 --> 00:19:17,160
+E transpose and then R, but I'm going to
+do this red calculation first.
+
+272
+00:19:17,160 --> 00:19:20,594
+And so that's going to be one times m
+times m
+
+273
+00:19:20,594 --> 00:19:24,880
+times n so that will be a one times n,
+matrix.
+
+274
+00:19:24,880 --> 00:19:25,376
+So it's a
+
+275
+00:19:25,376 --> 00:19:27,190
+matrix with one row and n columns.
+
+276
+00:19:33,890 --> 00:19:36,910
+And then I'm going to call that m1 and
+I'll stick that back here.
+
+277
+00:19:36,910 --> 00:19:40,540
+And that's actually pretty small, so in
+my, in my example when I
+
+278
+00:19:40,540 --> 00:19:44,120
+just had x and y as the columns, my n was
+equal to two.
+
+279
+00:19:44,120 --> 00:19:47,210
+So this m1, even though it's a big m1.
+
+280
+00:19:47,210 --> 00:19:50,920
+It's a one by two matrix, so it's actually
+only takes me two numbers.
+
+281
+00:19:50,920 --> 00:19:52,610
+So it's a lot less than m squared.
+
+282
+00:19:54,970 --> 00:20:00,010
+And now I still have to do an outer
+product, so that inside dimension here is
+
+283
+00:20:00,010 --> 00:20:05,390
+one, so that The e times m1, that's
+going to give me an m by n matrix.
+
+284
+00:20:05,390 --> 00:20:08,860
+But that's still just the same size as my
+original r matrix.
+
+285
+00:20:11,090 --> 00:20:14,192
+Oh and I guess also I should point out I
+did this r times the
+
+286
+00:20:14,192 --> 00:20:19,780
+identity matrix and stuck that here just,
+that's where the rest of this is, here.
+
+287
+00:20:19,780 --> 00:20:21,895
+That's where the rest of this is coming
+from, but the
+
+288
+00:20:21,895 --> 00:20:24,310
+exciting part is the part on the, the
+right hand side here.
+
+289
+00:20:28,980 --> 00:20:34,498
+So I'll do this matrix multiplication e
+times M1, this outer product,
+
+290
+00:20:34,498 --> 00:20:39,520
+and that'll give me this M2 matrix here
+which is m by n.
+
+291
+00:20:39,520 --> 00:20:42,440
+And then I can go ahead and do this
+subtraction here.
+
+292
+00:20:46,080 --> 00:20:50,952
+And then when I do that I will just have R
+will be an N times N matrix, and
+
+293
+00:20:50,952 --> 00:20:54,312
+I will have to do one more matrix
+multiplication
+
+294
+00:20:54,312 --> 00:20:57,710
+and that will give me a covariance matrix
+for R.
+

@@ -1,0 +1,100 @@
+1
+00:00:03,423 --> 00:00:07,914
+As we shall see, general game playing is an interesting application in its own right.
+
+2
+00:00:08,366 --> 00:00:12,051
+It's intellectually engaging and more than a little fun.
+
+3
+00:00:12,614 --> 00:00:14,166
+But it's much more than that.
+
+4
+00:00:15,260 --> 00:00:23,867
+It serves as an analog for applications of logic in other areas such as business and law, science and engineering, and other areas.
+
+5
+00:00:24,109 --> 00:00:33,493
+More fundamentally, it raises questions about the nature of intelligence and serves as a laboratory which through evaluate competing approaches to intelligence.
+
+6
+00:00:36,270 --> 00:00:43,861
+Game descriptions provide full information about a world and determine optimal strategies as a baseline for evaluating agent behavior.
+
+7
+00:00:44,547 --> 00:00:51,939
+By its nature, the general game playing setting can be used to evaluate problem solving strategies and by extension theories of intelligence
+
+8
+00:00:52,229 --> 00:00:59,032
+by taking into account representation, incompleteness of information and ressource bounds.
+
+9
+00:01:00,634 --> 00:01:08,816
+The idea of using applications like general game playing for such purposes is not new.
+
+10
+00:01:09,267 --> 00:01:14,572
+It was in 1958 that John McCarty invented the concept of the "advice taker".
+
+11
+00:01:15,100 --> 00:01:20,131
+The idea was simple: he wanted a machine that he could program by description.
+
+12
+00:01:20,487 --> 00:01:28,843
+He would describe the intended environment and the desired goal, and the machine would use that information in determining its behavior.
+
+13
+00:01:29,101 --> 00:01:31,605
+There would be no programming in the traditional sense.
+
+14
+00:01:32,411 --> 00:01:38,072
+McCarthy presented his concept in a paper that has become a classic in the field of AI. Here is a quote:
+
+15
+00:01:38,514 --> 00:01:56,652
+<quote on slide>
+
+16
+00:01:58,362 --> 00:02:02,679
+It was an ambitious goal, but those were times of high hopes and grand ambitions.
+
+17
+00:02:03,800 --> 00:02:17,070
+The idea caught the imaginations of numerous subsequent researchers, notably Bob Kowalski, the high priest of logic programming, and Ed Feigenbaum, the inventor of knowledge engineering.
+
+18
+00:02:17,870 --> 00:02:24,509
+In a paper written in 1974, Feigenbaum gave us the most forceful statement of McCarthy's ideal:
+
+19
+00:02:25,992 --> 00:03:03,022
+<quote on slide>
+
+20
+00:03:05,266 --> 00:03:11,730
+Okay so one final remark: some have argued that the way to achieve intelligent behavior is through specialization.
+
+21
+00:03:13,069 --> 00:03:17,763
+That may work so long as the assumptions one makes in building such a assumptions are true.
+
+22
+00:03:18,516 --> 00:03:27,053
+For a general intelligence however, general intellectual capabilities are needed and such systems should be capable of performing well in a wide variety of tasks.
+
+23
+00:03:28,221 --> 00:03:30,351
+To paraphrase the words of Robert Heinlein:
+
+24
+00:03:30,726 --> 00:03:58,567
+<quote on slide>
+
+25
+00:03:59,811 --> 00:04:05,360
+Those of us who are more interested in artificial intelligence than artificial insects agree with Heinlein.
+

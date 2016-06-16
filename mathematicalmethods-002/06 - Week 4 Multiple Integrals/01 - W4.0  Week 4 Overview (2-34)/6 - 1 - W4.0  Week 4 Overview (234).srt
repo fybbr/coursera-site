@@ -1,0 +1,212 @@
+1
+00:00:01,000 --> 00:00:03,570
+The topic for week 4 is Multiple
+integrals.
+
+2
+00:00:07,230 --> 00:00:10,730
+So again I'm going to sort of follow the
+same design I used in week two.
+
+3
+00:00:10,730 --> 00:00:14,260
+I'll start off just by defining what a
+multiple integral is.
+
+4
+00:00:14,260 --> 00:00:15,950
+And because I want to be able to visualize
+
+5
+00:00:15,950 --> 00:00:17,979
+this, I'm just going to talk about double
+integrals.
+
+6
+00:00:19,740 --> 00:00:22,640
+The second section is something called
+Fubini's theorem.
+
+7
+00:00:22,640 --> 00:00:25,930
+And this is sort of like the, the
+fundamental theorem of calculus,
+
+8
+00:00:25,930 --> 00:00:30,890
+gave us a way to evaluate an integral, a
+single variable integral.
+
+9
+00:00:30,890 --> 00:00:32,300
+Fubini's theorem allows
+
+10
+00:00:32,300 --> 00:00:34,910
+us to use something called an iterated
+integral
+
+11
+00:00:34,910 --> 00:00:37,100
+to evaluate a double integral or a
+multiple
+
+12
+00:00:37,100 --> 00:00:41,130
+integral In section three, I'll talk about
+something
+
+13
+00:00:41,130 --> 00:00:43,790
+called the change of variables for double
+integrals.
+
+14
+00:00:43,790 --> 00:00:48,830
+So this is if I want to substitute one of
+my variables with an expression,
+
+15
+00:00:48,830 --> 00:00:53,530
+how I can modify my integral so that it's
+still evaluates to the same number.
+
+16
+00:00:54,740 --> 00:00:57,360
+In section four, I'll just go through and
+extend an example
+
+17
+00:00:57,360 --> 00:00:57,860
+of that.
+
+18
+00:00:58,870 --> 00:01:00,900
+And in section five, I will show you that
+there
+
+19
+00:01:00,900 --> 00:01:04,990
+is a certain class of double integrals
+that are called separable.
+
+20
+00:01:04,990 --> 00:01:10,071
+Where without actually doing anti, any
+integration, you can separate them to two
+
+21
+00:01:10,071 --> 00:01:13,818
+single variable integrals, and that will
+make the calculation a little bit easier.
+
+22
+00:01:13,818 --> 00:01:18,570
+In section six, I will talk about one
+particular
+
+23
+00:01:18,570 --> 00:01:22,490
+type of change of variables, which is
+re-expressing the problem
+
+24
+00:01:22,490 --> 00:01:23,746
+in polar coordinates.
+
+25
+00:01:23,746 --> 00:01:27,650
+So, if the normal, if the original problem
+was described in terms
+
+26
+00:01:27,650 --> 00:01:31,130
+of x and y, that would describe a point in
+the plane.
+
+27
+00:01:31,130 --> 00:01:35,670
+Polar coordinates allows me to describe a
+point in the plane using r and theta.
+
+28
+00:01:35,670 --> 00:01:38,170
+So r is a distance from the origin and
+
+29
+00:01:38,170 --> 00:01:40,350
+theta is an angle from the positive x
+axis.
+
+30
+00:01:42,750 --> 00:01:47,270
+In section seven, I'll do something called
+a culturally important integral.
+
+31
+00:01:47,270 --> 00:01:51,165
+So if you look at the standard normal
+density, you'll notice there's this
+
+32
+00:01:51,165 --> 00:01:54,180
+1 over the square root of 2 pi out in the
+front of it.
+
+33
+00:01:55,270 --> 00:01:57,909
+And that's because I wanted to integrate
+to one.
+
+34
+00:01:59,160 --> 00:02:03,020
+And so I want to go through the argument
+for why the, the
+
+35
+00:02:03,020 --> 00:02:06,660
+normalization factor should be 1 over the
+square root of 2 pi.
+
+36
+00:02:06,660 --> 00:02:07,830
+So that's what we'll,
+
+37
+00:02:07,830 --> 00:02:09,650
+that's what we'll cover in topic seven.
+
+38
+00:02:10,910 --> 00:02:14,880
+And then in topic eight, I want to work
+through calculating
+
+39
+00:02:14,880 --> 00:02:19,070
+something called the marginal density of a
+bi-variate normal distribution.
+
+40
+00:02:19,070 --> 00:02:23,340
+So this is actually just single partial
+integration exercise,
+
+41
+00:02:23,340 --> 00:02:26,040
+but it's a very complicated integral to
+look at.
+
+42
+00:02:26,040 --> 00:02:30,040
+But again, it has, there are some tricks
+that makes it easier to evaluate, and so
+
+43
+00:02:30,040 --> 00:02:31,890
+I want to go through them once in class
+
+44
+00:02:31,890 --> 00:02:33,670
+just so you have the opportunity to see
+them.
+

@@ -1,0 +1,514 @@
+1
+00:00:04,420 --> 00:00:07,080
+In general game planning, a player may
+choose to make
+
+2
+00:00:07,080 --> 00:00:09,520
+assumptions about the actions of the other
+players or not.
+
+3
+00:00:11,010 --> 00:00:15,010
+For example, a player might assume that
+the other players are behaving rationally.
+
+4
+00:00:16,230 --> 00:00:18,940
+By eliminating irrational actions on the
+part of other players a
+
+5
+00:00:18,940 --> 00:00:21,409
+player can decrease the number of
+possibilities it needs to consider.
+
+6
+00:00:23,320 --> 00:00:26,890
+Unfortunately, in general game playing, at
+least as currently constituted, no
+
+7
+00:00:26,890 --> 00:00:30,600
+player knows the identity of the other
+players or their characteristics.
+
+8
+00:00:30,600 --> 00:00:33,390
+The other players might be irrational, or
+they
+
+9
+00:00:33,390 --> 00:00:35,160
+might behave the same as the player
+itself.
+
+10
+00:00:36,350 --> 00:00:39,640
+Players might even be down, not
+functioning correctly.
+
+11
+00:00:39,640 --> 00:00:41,430
+Since there's no information about the
+other players,
+
+12
+00:00:41,430 --> 00:00:44,705
+many general game players take a
+pessimistic approach.
+
+13
+00:00:44,705 --> 00:00:47,510
+They assume that the other players will
+perform the worst possible actions.
+
+14
+00:00:47,510 --> 00:00:52,720
+This pessimistic approach is the basis for
+a game playing technique called minimax.
+
+15
+00:00:55,840 --> 00:00:59,420
+Basic idea of minimax is to select moves
+that are guaranteed
+
+16
+00:00:59,420 --> 00:01:03,399
+to produce the highest possible return, no
+matter what the opponents do.
+
+17
+00:01:04,950 --> 00:01:07,320
+Player tries to maximize its own value and
+assumes that the
+
+18
+00:01:07,320 --> 00:01:11,530
+opponents are trying to minimize its
+value, hence the name minimax.
+
+19
+00:01:11,530 --> 00:01:12,030
+In
+
+20
+00:01:18,220 --> 00:01:20,570
+the case of a one step game, minimax
+chooses
+
+21
+00:01:20,570 --> 00:01:22,820
+an action such that the value of the
+resulting state
+
+22
+00:01:22,820 --> 00:01:24,610
+for any opponent is greater than or equal
+to
+
+23
+00:01:24,610 --> 00:01:27,010
+the value of the resulting state for any
+other action.
+
+24
+00:01:27,010 --> 00:01:29,030
+In the case of a multi-step game, minimax
+goes
+
+25
+00:01:29,030 --> 00:01:31,700
+to the end of the game, and backs up
+values.
+
+26
+00:01:31,700 --> 00:01:33,930
+Generally, we can think about minimax as a
+search of a
+
+27
+00:01:33,930 --> 00:01:39,880
+bipartite tree, consisting of alternating
+max nodes, shown here as gray squares.
+
+28
+00:01:39,880 --> 00:01:42,940
+And min nodes, show her as beige circles.
+
+29
+00:01:44,210 --> 00:01:46,600
+The max nodes represent the choices of the
+player, while
+
+30
+00:01:46,600 --> 00:01:48,970
+the min nodes represent the choices of the
+other players.
+
+31
+00:01:50,440 --> 00:01:52,980
+Now, in the case of games with more than
+two players, it
+
+32
+00:01:52,980 --> 00:01:56,180
+can be multiple layers of min nodes
+between each layer of max nodes.
+
+33
+00:01:56,180 --> 00:01:57,230
+One layer for each opponent.
+
+34
+00:01:59,290 --> 00:02:01,825
+now, also in looking at this tree, note
+that although
+
+35
+00:02:01,825 --> 00:02:04,340
+we've separated the choices of the player
+and its opponents.
+
+36
+00:02:04,340 --> 00:02:06,630
+This does not mean that the play
+alternates between
+
+37
+00:02:06,630 --> 00:02:10,110
+the opponents or that the opponents know
+the player's action.
+
+38
+00:02:10,110 --> 00:02:13,460
+Player and opponents make their choices
+and then simultaneously, with knowledge of
+
+39
+00:02:13,460 --> 00:02:16,110
+each others, and, and simultaneously
+without
+
+40
+00:02:16,110 --> 00:02:17,280
+the knowledge of each others' choices.
+
+41
+00:02:19,900 --> 00:02:24,270
+Okay, the value of a max node for a player
+is the utility the
+
+42
+00:02:24,270 --> 00:02:25,930
+goal, the value, the reward at the
+
+43
+00:02:25,930 --> 00:02:28,090
+corresponding state, if that state is
+terminal.
+
+44
+00:02:29,940 --> 00:02:32,020
+Otherwise, it's the maximum of the values
+of
+
+45
+00:02:32,020 --> 00:02:35,200
+the min nodes that result from its legal
+actions.
+
+46
+00:02:35,200 --> 00:02:36,626
+The value of a min node is the
+
+47
+00:02:36,626 --> 00:02:39,420
+minimum that results for any legal
+opponent action.
+
+48
+00:02:42,600 --> 00:02:46,000
+Let's see how this works.
+Following game tree illustrates it.
+
+49
+00:02:46,000 --> 00:02:48,620
+The nodes at the bottom of the tree are
+terminal states
+
+50
+00:02:48,620 --> 00:02:51,430
+and the values are the player's gold
+values for those states.
+
+51
+00:02:52,610 --> 00:02:54,000
+The values shown in the other nodes are
+
+52
+00:02:54,000 --> 00:02:56,450
+computed according to the rules we just
+went over.
+
+53
+00:02:56,450 --> 00:03:01,620
+For example, the value of the min node at
+the lower left is one because that's
+
+54
+00:03:01,620 --> 00:03:05,559
+the minimum of the two values of the max
+nodes below it, namely one and two.
+
+55
+00:03:07,060 --> 00:03:07,760
+The value of the min
+
+56
+00:03:07,760 --> 00:03:11,800
+node next to that min node is three
+because that's the minimum of the
+
+57
+00:03:11,800 --> 00:03:15,370
+value of the, values of the two max nodes
+below it, namely three and four.
+
+58
+00:03:17,420 --> 00:03:20,260
+The value of the max node above these two
+min nodes is
+
+59
+00:03:20,260 --> 00:03:23,479
+three because that's the maximum of the
+values of the two min nodes.
+
+60
+00:03:24,610 --> 00:03:25,120
+And so forth.
+
+61
+00:03:29,350 --> 00:03:31,070
+Here's an implementation of a minimax
+player.
+
+62
+00:03:31,070 --> 00:03:34,930
+It's identical to the implementations of
+the compulsive deliberation for
+
+63
+00:03:34,930 --> 00:03:37,770
+single player games, except that it has a
+different bestmove procedure.
+
+64
+00:03:41,270 --> 00:03:44,940
+The main difference between the bestmove
+subroutine for single player games, and
+
+65
+00:03:44,940 --> 00:03:48,280
+the bestmove for multiple player games, is
+the way the scores are computed.
+
+66
+00:03:48,280 --> 00:03:49,880
+Rather than comparing subsequent states,
+it
+
+67
+00:03:49,880 --> 00:03:52,180
+compares the min nodes, as described
+previously.
+
+68
+00:03:55,510 --> 00:03:58,170
+The minscore subroutine for minimax takes
+an action and
+
+69
+00:03:58,170 --> 00:04:01,370
+a state as arguments, and produces the
+minimum values for
+
+70
+00:04:01,370 --> 00:04:03,530
+the given role associated with the given
+player for
+
+71
+00:04:03,530 --> 00:04:05,749
+any of the opponents legal actions in the
+given state.
+
+72
+00:04:07,190 --> 00:04:12,610
+The maxscore subroutine, which is called
+by minscore, takes state as argument,
+
+73
+00:04:12,610 --> 00:04:16,190
+and conducts a recursive exploration of
+the game tree below that state.
+
+74
+00:04:16,190 --> 00:04:19,710
+If the state's terminal, the output is
+just the roles reward for that state.
+
+75
+00:04:19,710 --> 00:04:20,530
+Otherwise, the output
+
+76
+00:04:20,530 --> 00:04:22,400
+is the maximum of the utilities of the min
+nodes
+
+77
+00:04:22,400 --> 00:04:28,820
+corresponding to the player's legal
+actions in the given state.
+
+78
+00:04:28,820 --> 00:04:31,330
+Now, one disadvantage to the minimax
+procedure is that
+
+79
+00:04:31,330 --> 00:04:34,140
+it examines the entire game tree in all
+cases.
+
+80
+00:04:34,140 --> 00:04:36,760
+While this is sometimes necessary, there
+are cases where it's possible
+
+81
+00:04:36,760 --> 00:04:40,090
+to get the same result without examining
+the entire game tree.
+
+82
+00:04:40,090 --> 00:04:43,110
+For example, if in processing a state the
+
+83
+00:04:43,110 --> 00:04:45,530
+max score subroutine finds an action that
+produces
+
+84
+00:04:45,530 --> 00:04:46,740
+100 points.
+
+85
+00:04:46,740 --> 00:04:49,480
+It doesn't need to look at any additional
+actions as it cannot do better.
+
+86
+00:04:50,780 --> 00:04:53,140
+Similarly if the minscore subroutine finds
+an action
+
+87
+00:04:53,140 --> 00:04:56,420
+that produces zero points for the player
+it
+
+88
+00:04:56,420 --> 00:04:57,890
+does not need to look at any additional
+
+89
+00:04:57,890 --> 00:04:59,820
+actions, as it cannot get the score any
+lower.
+
+90
+00:05:01,560 --> 00:05:03,480
+Bounded minimax is just the minimax
+procedure
+
+91
+00:05:03,480 --> 00:05:05,210
+we just saw with two minor changes.
+
+92
+00:05:05,210 --> 00:05:07,575
+Rather than processing all actions on
+every node,
+
+93
+00:05:07,575 --> 00:05:10,550
+maxscore and minscore, first check for
+these bounds.
+
+94
+00:05:10,550 --> 00:05:12,220
+And if they occur in any node, they
+
+95
+00:05:12,220 --> 00:05:14,880
+terminate their search, and return the
+corresponding values.
+
+96
+00:05:16,730 --> 00:05:18,300
+So here's an example.
+
+97
+00:05:18,300 --> 00:05:23,100
+The nodes in this tree with are, are those
+examined by bounded minimax.
+
+98
+00:05:24,170 --> 00:05:27,520
+The ones that have numbers on them, are
+examined by bounded minimax.
+
+99
+00:05:27,520 --> 00:05:30,100
+The other nodes are not examined at all,
+and they don't need to be examined.
+
+100
+00:05:30,100 --> 00:05:34,370
+In this case notice that more than half of
+the tree is pruned from consideration.
+
+101
+00:05:40,330 --> 00:05:43,690
+Note that 100 and zero are not the only
+values that can be used here.
+
+102
+00:05:43,690 --> 00:05:46,980
+For example, if a player is in a so-called
+satsificing game where it just needs
+
+103
+00:05:46,980 --> 00:05:51,120
+to get a certain minimum score, then it
+can use that threshhold rather than 100.
+
+104
+00:05:51,120 --> 00:05:55,170
+For example, the player simply wants to
+win and it's a
+
+105
+00:05:55,170 --> 00:05:58,500
+fixed sum game, then he can use 51 as the
+threshold.
+
+106
+00:05:58,500 --> 00:06:00,550
+Knowing that if he gets this amount it has
+won the game.
+

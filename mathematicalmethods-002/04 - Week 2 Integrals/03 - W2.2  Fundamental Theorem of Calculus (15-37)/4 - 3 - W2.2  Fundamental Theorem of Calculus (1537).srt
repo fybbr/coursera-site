@@ -1,0 +1,1086 @@
+1
+00:00:01,070 --> 00:00:05,490
+So there're very, very few functions where
+you're going to be able to just look
+
+2
+00:00:05,490 --> 00:00:09,160
+at it and see what the area is and use
+that to evaluate the integral.
+
+3
+00:00:09,160 --> 00:00:12,220
+So clearly, we need something a bit better
+than that.
+
+4
+00:00:14,280 --> 00:00:16,584
+So the fundamental theorem of calculus,
+really gives us
+
+5
+00:00:16,584 --> 00:00:18,600
+the rule that's going to allow us to
+evaluate that,
+
+6
+00:00:18,600 --> 00:00:19,032
+[INAUDIBLE]
+
+7
+00:00:19,032 --> 00:00:19,840
+most integrals.
+
+8
+00:00:23,300 --> 00:00:27,820
+So I'll start off by defining, something
+called an anti-derivative.
+
+9
+00:00:27,820 --> 00:00:33,384
+So if f as a function is an integrable
+function, then the
+
+10
+00:00:33,384 --> 00:00:39,040
+anti-derivative of f, so I use f from my
+original function.
+
+11
+00:00:39,040 --> 00:00:43,411
+I'm in use the capital F, to mean the
+anti-derivative
+
+12
+00:00:43,411 --> 00:00:48,280
+Of my function, is a function that
+satisfies this property.
+
+13
+00:00:48,280 --> 00:00:55,310
+So capital f is the anti derivative of f
+of x, if and only if, f prime.
+
+14
+00:00:55,310 --> 00:00:58,640
+So capital f prime of x is equal to f of
+x.
+
+15
+00:00:58,640 --> 00:01:02,350
+So what I want to find is a function
+capital f that has the property
+
+16
+00:01:02,350 --> 00:01:06,110
+That when I take its derivative, it gives
+me the function I started out with.
+
+17
+00:01:08,050 --> 00:01:10,428
+And this, so when I, when I, write the
+integral
+
+18
+00:01:10,428 --> 00:01:13,328
+symbol without limits on it, so notice it
+doesn't have and
+
+19
+00:01:13,328 --> 00:01:14,410
+a, and a, b here.
+
+20
+00:01:14,410 --> 00:01:18,343
+I'm not talking about evaluating the
+integral and trying to come up
+
+21
+00:01:18,343 --> 00:01:22,720
+with a number I'm just putting that symbol
+in front of a function.
+
+22
+00:01:22,720 --> 00:01:26,270
+That's My symbol for take the
+antiderivative.
+
+23
+00:01:26,270 --> 00:01:28,450
+Sometimes also called an indefinite
+integral.
+
+24
+00:01:33,570 --> 00:01:35,340
+And one of the problems we're going to
+
+25
+00:01:35,340 --> 00:01:38,600
+run into is that antiderivative, is not
+unique.
+
+26
+00:01:38,600 --> 00:01:39,700
+So I can
+
+27
+00:01:41,980 --> 00:01:45,802
+Add any constant, any arbitrary constant I
+want to, to my
+
+28
+00:01:45,802 --> 00:01:50,770
+anti derivative and when I take the
+derivative of that function.
+
+29
+00:01:50,770 --> 00:01:55,207
+The derivative of the constant is going to
+be zero, and if f of
+
+30
+00:01:55,207 --> 00:02:00,850
+x capital f of x here is the anti
+derivative of my little f function.
+
+31
+00:02:00,850 --> 00:02:04,087
+Than the derivative of this quantity, is
+also
+
+32
+00:02:04,087 --> 00:02:07,750
+going to be a valid antiderivative for my
+function.
+
+33
+00:02:10,000 --> 00:02:13,636
+So this means in particular if I ever say
+what is the indefinite integral.
+
+34
+00:02:13,636 --> 00:02:21,139
+Or what is the anti derivative of, to be
+correct you have to add a constant
+
+35
+00:02:21,139 --> 00:02:28,113
+after you've figured what the kind of the
+core of the function is.
+
+36
+00:02:28,113 --> 00:02:31,428
+And the trick now of the fundamental
+theorem of
+
+37
+00:02:31,428 --> 00:02:35,338
+calculus, is when a closed form of the
+antiderivative
+
+38
+00:02:35,338 --> 00:02:41,090
+exists then we can use the following
+theorem to evaluate a definite integral.
+
+39
+00:02:42,410 --> 00:02:46,405
+So I'm going to put some conditions on my
+function f, f of x
+
+40
+00:02:46,405 --> 00:02:51,400
+has to be continuous on the interval where
+I'd like to integrate it.
+
+41
+00:02:54,970 --> 00:03:00,770
+Then the integral of little f of x dx over
+the integral of ab is
+
+42
+00:03:00,770 --> 00:03:06,810
+just equal To the anti=derivative of
+little f(x), evaluated
+
+43
+00:03:06,810 --> 00:03:12,130
+at b minus the anti-derivative of little f
+evaluated at a.
+
+44
+00:03:13,160 --> 00:03:17,660
+And the trick here is this is true for
+every single anti-derivative?
+
+45
+00:03:17,660 --> 00:03:20,117
+So, if I look up, here you might
+
+46
+00:03:20,117 --> 00:03:22,969
+think what's going to happen to the c.
+
+47
+00:03:24,540 --> 00:03:28,948
+But essentially, if I added a c on here,
+I'm going to get c times b minus
+
+48
+00:03:28,948 --> 00:03:30,620
+a, and it has to be the same
+
+49
+00:03:30,620 --> 00:03:34,780
+anti-derivative for both the upper and
+lower endpoint.
+
+50
+00:03:34,780 --> 00:03:39,864
+So I end up with c times b minus a, minus
+c times b minus a, and so it doesn't
+
+51
+00:03:39,864 --> 00:03:45,240
+matter what constant I choose, that That
+amount is always going to
+
+52
+00:03:45,240 --> 00:03:49,024
+cancel itself out, so you might as well
+choose the C
+
+53
+00:03:49,024 --> 00:03:53,560
+that is easiest, and for me the easiest
+one is usually zero.
+
+54
+00:03:57,410 --> 00:04:00,920
+And so this is going to be our rule for
+evaluating integrals, the
+
+55
+00:04:00,920 --> 00:04:04,765
+bulk of the work is going to be finding
+the antiderivative, capital F
+
+56
+00:04:04,765 --> 00:04:07,325
+>> And then, I just need to evaluate it
+at the upper
+
+57
+00:04:07,325 --> 00:04:10,628
+end point and at the lower end point and
+take the difference.
+
+58
+00:04:10,628 --> 00:04:10,628
+>>
+
+59
+00:04:10,628 --> 00:04:10,644
+[INAUDIBLE]
+
+60
+00:04:10,644 --> 00:04:16,692
+>> The, the constant
+
+61
+00:04:16,692 --> 00:04:25,130
+makes it non-unique.
+
+62
+00:04:25,130 --> 00:04:29,090
+So you know, I could have, if I found a
+function F of f
+
+63
+00:04:29,090 --> 00:04:33,230
+that has the property that when I take its
+derivative,
+
+64
+00:04:33,230 --> 00:04:35,838
+I get f of x.
+Then I could also
+
+65
+00:04:35,838 --> 00:04:40,734
+add I could say F of f plus 1, and when I
+take the derivative of that, I get the
+
+66
+00:04:40,734 --> 00:04:43,542
+derivative of f of x plus the derivative
+of 1,
+
+67
+00:04:43,542 --> 00:04:46,880
+which would just be the derivative of f of
+x.
+
+68
+00:04:46,880 --> 00:04:49,650
+>> Which is my little F of X.
+
+69
+00:04:49,650 --> 00:04:52,721
+So, the little F of, differentiation has a
+
+70
+00:04:52,721 --> 00:04:57,720
+unique answer, but the anti-derivative has
+a non-unique answer.
+
+71
+00:04:57,720 --> 00:05:01,078
+But, you can understand it by adding, just
+it's only
+
+72
+00:05:01,078 --> 00:05:03,280
+every going to be off by a constant.
+
+73
+00:05:09,000 --> 00:05:15,240
+So, for example, suppose capital F of x is
+equal to one-half of x squared.
+
+74
+00:05:15,240 --> 00:05:17,710
+So here I'm going to cheat a little bit.
+
+75
+00:05:17,710 --> 00:05:20,280
+I still haven't talked about how we're
+going to find anti-derivatives.
+
+76
+00:05:20,280 --> 00:05:23,064
+So I'm just going to start out with the
+anti-derivative,
+
+77
+00:05:23,064 --> 00:05:25,460
+and then get my little f of x by
+differentiating.
+
+78
+00:05:28,580 --> 00:05:32,321
+Then by the power rule, I just take 2
+times 1/2 x
+
+79
+00:05:32,321 --> 00:05:35,960
+to the 2 minus 1, so that's just going to
+be x.
+
+80
+00:05:38,210 --> 00:05:42,522
+So the Fundamental Theorem of Calculus
+says the area under
+
+81
+00:05:42,522 --> 00:05:46,200
+the curve f of x equals x from 0 to b.
+
+82
+00:05:46,200 --> 00:05:50,841
+So that's my integral of little f of x
+from 0 to
+
+83
+00:05:50,841 --> 00:05:55,850
+b, is going to be capital F of b minus
+capital F of 0.
+
+84
+00:05:55,850 --> 00:06:00,300
+And I know what capital F is, because
+that's where I started.
+
+85
+00:06:00,300 --> 00:06:03,800
+So I get 1/2 b squared minus 1/2 0
+squared.
+
+86
+00:06:03,800 --> 00:06:06,540
+So this second term is obviously just
+going to disappear.
+
+87
+00:06:08,070 --> 00:06:13,878
+And so that tells me, that the area under
+the curve little
+
+88
+00:06:13,878 --> 00:06:19,470
+f of x equals x is just from zero to b is
+1/2 b squared.
+
+89
+00:06:19,470 --> 00:06:20,898
+And so I think if I draw a picture of
+
+90
+00:06:20,898 --> 00:06:23,710
+this, it's pretty obvious that's just the
+area of a triangle.
+
+91
+00:06:25,490 --> 00:06:28,040
+And so we know the formula for the area of
+a triangle.
+
+92
+00:06:28,040 --> 00:06:29,009
+So area of a triangle
+
+93
+00:06:29,009 --> 00:06:30,880
+should be one half base times height.
+
+94
+00:06:33,730 --> 00:06:38,820
+And we get exactly the same thing by
+solving this question with integration.
+
+95
+00:06:38,820 --> 00:06:41,610
+So that, that's a very good thing to do
+when you're.
+
+96
+00:06:41,610 --> 00:06:44,150
+Trying out you know, new mathematical
+methods.
+
+97
+00:06:44,150 --> 00:06:47,600
+This probably seems like a very easy
+operation.
+
+98
+00:06:47,600 --> 00:06:49,538
+But if it's not giving you the right
+answer,
+
+99
+00:06:49,538 --> 00:06:51,170
+you know, it's you don't want to go a
+
+100
+00:06:51,170 --> 00:06:53,210
+lot further and find out it's not working,
+and
+
+101
+00:06:53,210 --> 00:06:56,070
+that you could've seen that at the very
+first step.
+
+102
+00:06:56,070 --> 00:06:58,429
+So you want to check it on the, on the
+obvious examples.
+
+103
+00:07:02,520 --> 00:07:07,030
+So evaluating definite integrals basically
+boils down to finding anti derivatives.
+
+104
+00:07:09,690 --> 00:07:11,258
+And unfortunately this isn't as
+
+105
+00:07:11,258 --> 00:07:14,280
+straightforward as differentiation so at
+differentiation.
+
+106
+00:07:14,280 --> 00:07:16,920
+We, we, have a set of rules, and it was
+pretty clear
+
+107
+00:07:16,920 --> 00:07:20,510
+how you could use those rules to compute
+the derivative of a function.
+
+108
+00:07:23,410 --> 00:07:26,322
+Essentially for finding an anti-derivative
+we're going to use the
+
+109
+00:07:26,322 --> 00:07:28,580
+same rules but just try, and use them
+backwards.
+
+110
+00:07:28,580 --> 00:07:30,652
+So we're going to be looking for things
+that we
+
+111
+00:07:30,652 --> 00:07:34,330
+recognize as the derivatives of functions
+that we know.
+
+112
+00:07:34,330 --> 00:07:37,921
+And then once we've identified that, we
+can then go ahead and replace that
+
+113
+00:07:37,921 --> 00:07:41,630
+with the, with the function that would
+have that at its, as its derivative.
+
+114
+00:07:42,860 --> 00:07:45,450
+So the easiest one of these is just
+going to be
+
+115
+00:07:45,450 --> 00:07:48,410
+the, the power rule so I've decided to
+call the
+
+116
+00:07:48,410 --> 00:07:52,270
+indefinite integral of x to the n the
+anti-power rule.
+
+117
+00:07:52,270 --> 00:07:54,790
+I Googled that I don't think anybody else
+has used
+
+118
+00:07:54,790 --> 00:07:57,449
+that word yet so this might be unique to
+this class.
+
+119
+00:07:58,742 --> 00:08:01,544
+the technique is definitely not unique.
+
+120
+00:08:01,544 --> 00:08:03,656
+and I think this was probably the first
+
+121
+00:08:03,656 --> 00:08:07,060
+type of antiderivative anybody figured out
+how to compute.
+
+122
+00:08:10,130 --> 00:08:13,770
+So, if I want to find a antiderivative of
+x to the
+
+123
+00:08:13,770 --> 00:08:17,993
+n, while I know that the power must have
+been n plus 1.
+
+124
+00:08:19,090 --> 00:08:22,730
+And then if I was going to take the
+derivative of x to the n plus 1,
+
+125
+00:08:22,730 --> 00:08:27,170
+I know that an n plus 1 would pop out in
+the front by the power rule.
+
+126
+00:08:27,170 --> 00:08:31,740
+So I better divide by 1 over n plus 1 so I
+can cancel that out.
+
+127
+00:08:31,740 --> 00:08:35,165
+And so I end up with this function here.
+And if you take the
+
+128
+00:08:35,165 --> 00:08:38,940
+derivative of that, I just have n plus 1
+times 1 over n plus 1.
+
+129
+00:08:38,940 --> 00:08:40,570
+So that gets rid of the coefficient.
+
+130
+00:08:41,770 --> 00:08:45,990
+And then I'd have x to the n plus 1 minus
+1, or x to the n.
+
+131
+00:08:45,990 --> 00:08:50,256
+And then just to be complete, I add an
+arbitrary constant to this
+
+132
+00:08:50,256 --> 00:08:55,260
+because when I take the derivative of
+that, that's going to always be 0.
+
+133
+00:08:55,260 --> 00:09:00,342
+And after that essentially, what we need
+to do is just come up with a dictionary
+
+134
+00:09:00,342 --> 00:09:02,180
+of functions that we know.
+
+135
+00:09:03,300 --> 00:09:05,588
+And what they're derivatives are, and then
+we'll
+
+136
+00:09:05,588 --> 00:09:07,310
+be able to try and use that backwards.
+
+137
+00:09:08,800 --> 00:09:11,280
+So some common functions are if I have
+
+138
+00:09:11,280 --> 00:09:14,640
+a, a function that's equal to zero
+everywhere,
+
+139
+00:09:14,640 --> 00:09:17,840
+it's derivative is equal to zero because
+it's
+
+140
+00:09:17,840 --> 00:09:20,960
+a constant and the derivative of that is
+zero,
+
+141
+00:09:22,970 --> 00:09:26,750
+If I have just a constant then I can use
+my anti power
+
+142
+00:09:26,750 --> 00:09:31,230
+rule trick, I can just pretend that's c
+times x to the 0.
+
+143
+00:09:31,230 --> 00:09:35,529
+Define that the antiderivative of a
+constant is just c times x.
+
+144
+00:09:38,410 --> 00:09:41,760
+And then some important functions e to the
+x.
+
+145
+00:09:41,760 --> 00:09:45,162
+Remember this was a special function where
+it was equal to its own
+
+146
+00:09:45,162 --> 00:09:48,879
+derivative so here it's also going to do
+that backwards it's going to
+
+147
+00:09:48,879 --> 00:09:53,667
+be a special function where it's, it's own
+anti-derivative except in this column
+
+148
+00:09:53,667 --> 00:09:57,205
+we should have a c an arbitrary constant
+could be added to that.
+
+149
+00:09:57,205 --> 00:10:01,110
+1/x.
+
+150
+00:10:01,110 --> 00:10:03,611
+So you might look at this and think,
+that's just
+
+151
+00:10:03,611 --> 00:10:06,830
+x to the -1, that probably came from the
+power rule.
+
+152
+00:10:06,830 --> 00:10:08,882
+Except if you try that, you'll realize
+that
+
+153
+00:10:08,882 --> 00:10:12,250
+this won't work backwards for that one
+particular case.
+
+154
+00:10:12,250 --> 00:10:15,022
+And it turns out that the antiderivative
+of
+
+155
+00:10:15,022 --> 00:10:18,069
+1/x is actually equal to the logarithm of
+x.
+
+156
+00:10:21,150 --> 00:10:23,990
+And then here we had before.
+
+157
+00:10:23,990 --> 00:10:27,494
+I, I think this was the one that I asked
+my phone for.
+
+158
+00:10:27,494 --> 00:10:30,448
+the derivative of sine is cosine.
+
+159
+00:10:30,448 --> 00:10:33,748
+So the anti-derivative of cosine is sine
+and then again for
+
+160
+00:10:33,748 --> 00:10:37,260
+all of these we could always add an
+arbitrary constant to that.
+
+161
+00:10:37,260 --> 00:10:38,280
+The capital f.
+
+162
+00:10:38,280 --> 00:10:38,780
+Colon.
+
+163
+00:10:41,540 --> 00:10:49,190
+And then also the anti-derivative of
+sin(x) then -cos(x).
+
+164
+00:10:49,190 --> 00:10:52,910
+And so these are things where you can
+either look in one of those big fat
+
+165
+00:10:52,910 --> 00:10:55,490
+calculus textbooks to find tables of
+integrals and
+
+166
+00:10:55,490 --> 00:10:58,470
+they get a lot more complicated than this.
+
+167
+00:10:58,470 --> 00:11:01,312
+You can use computer algebra software, or
+you can just try
+
+168
+00:11:01,312 --> 00:11:04,930
+using something like Wolfram|Alpha to try
+to find the answer to these.
+
+169
+00:11:11,230 --> 00:11:14,632
+And so just some quick examples that, some
+simple examples
+
+170
+00:11:14,632 --> 00:11:17,467
+again, of using some of the properties I
+went through
+
+171
+00:11:17,467 --> 00:11:20,810
+in the last set of slides, and then And
+then
+
+172
+00:11:20,810 --> 00:11:24,590
+some of these anti-derivative rules that
+I've just shown now.
+
+173
+00:11:24,590 --> 00:11:28,620
+Let's consider evaluating the definite
+integral over the interval from two
+
+174
+00:11:28,620 --> 00:11:31,020
+to five of three x squared plus two x plus
+one.
+
+175
+00:11:33,850 --> 00:11:37,626
+So the first property I'm going to use is
+linearity property so I can split
+
+176
+00:11:37,626 --> 00:11:41,800
+this up into three separate integrals and
+then I can use the, my anti-power rule.
+
+177
+00:11:41,800 --> 00:11:42,940
+3 times.
+
+178
+00:11:45,910 --> 00:11:49,402
+And so because of the way I've written
+this
+
+179
+00:11:49,402 --> 00:11:54,030
+down, these are all just derivatives of
+powers of x.
+
+180
+00:11:54,030 --> 00:11:57,620
+So 3x squared is the derivative of x
+cubed.
+
+181
+00:11:57,620 --> 00:11:59,540
+2x the derivative of x.
+
+182
+00:11:59,540 --> 00:12:03,580
+And dx is the derivative of X.
+
+183
+00:12:03,580 --> 00:12:06,970
+And then I need to evaluate these each
+term.
+
+184
+00:12:06,970 --> 00:12:11,390
+Evaluated at the upper endpoint and
+subtracted at the lower endpoint.
+
+185
+00:12:12,970 --> 00:12:15,670
+So here my function is x cubed.
+
+186
+00:12:15,670 --> 00:12:17,820
+So I'm going to evaluate it at the upper
+endpoint.
+
+187
+00:12:17,820 --> 00:12:20,280
+I get 5 cubed.
+
+188
+00:12:20,280 --> 00:12:23,430
+And then subtract that function evaluated
+at the lower endpoint.
+
+189
+00:12:23,430 --> 00:12:24,810
+I get 2 cubed.
+
+190
+00:12:24,810 --> 00:12:29,160
+Then I repeat for the x squared term and I
+repeat for the x to the first power term.
+
+191
+00:12:30,340 --> 00:12:36,370
+And then I skipped some of the messy
+calculations and that ended being 141.
+
+192
+00:12:36,370 --> 00:12:39,310
+If I want to evaluate
+
+193
+00:12:39,310 --> 00:12:45,200
+the integral of 2 Sin x over the interval
+of 0 to pi
+
+194
+00:12:48,210 --> 00:12:54,320
+I can treat that as a constant times a
+function I know how to integrate.
+
+195
+00:12:54,320 --> 00:12:57,320
+So I can move the 2 outside of the
+integral sign.
+
+196
+00:12:58,810 --> 00:13:01,078
+And then in my little dictionary on the
+last
+
+197
+00:13:01,078 --> 00:13:03,569
+slide, I had an antiderivative for sine of
+x.
+
+198
+00:13:06,090 --> 00:13:12,270
+So that's just going to be equal to two
+times minus cosign of x evaluated
+
+199
+00:13:12,270 --> 00:13:18,038
+between zero and pie so that's just
+going to be two times minus cosign
+
+200
+00:13:18,038 --> 00:13:23,620
+x of pie minus, oh let me just show you,
+minus cosign of zero
+
+201
+00:13:26,220 --> 00:13:31,724
+Oops, and I've done something silly
+
+202
+00:13:31,724 --> 00:13:36,852
+here.
+So cosign
+
+203
+00:13:36,852 --> 00:13:41,604
+of pi is equal to 1 not
+
+204
+00:13:41,604 --> 00:13:47,250
+equal to 0.
+So if you imagine what a cosine looks
+
+205
+00:13:47,250 --> 00:13:51,230
+like, For you it's going to start at 1.
+It's going to drop, hit 0 at pi
+
+206
+00:13:51,230 --> 00:13:54,670
+over 2, and it's going to hit negative 1
+at pi.
+
+207
+00:13:54,670 --> 00:13:56,940
+So this actually should have been a
+negative 1 here.
+
+208
+00:13:58,980 --> 00:14:03,419
+So I would have had negative 1 minus 1.
+So I would have had minus 2.
+
+209
+00:14:04,440 --> 00:14:08,480
+Times minus 2 and that would have been
+equal to 4.
+
+210
+00:14:08,480 --> 00:14:10,450
+Yeah, so little typo there.
+
+211
+00:14:15,340 --> 00:14:18,310
+So this is going to be an easy one.
+
+212
+00:14:18,310 --> 00:14:21,825
+So the integral of the exponential
+function from minus 1 to 1.
+
+213
+00:14:21,825 --> 00:14:26,450
+>> So, the exponential functions, it's
+own antiderivative.
+
+214
+00:14:28,610 --> 00:14:31,992
+So, I'm going to get E to the first power
+minus E
+
+215
+00:14:31,992 --> 00:14:35,590
+to the minus 1, which is just E minus 1
+over E.
+
+216
+00:14:38,030 --> 00:14:39,997
+And that's equal to about 2.35.
+
+217
+00:14:43,350 --> 00:14:45,370
+And then the final example.
+
+218
+00:14:45,370 --> 00:14:50,820
+I'm just going to try and integrate, so
+this is shorthand, when I type dx over x.
+
+219
+00:14:50,820 --> 00:14:54,320
+The function f of x is equal to 1/x, and
+then because it's
+
+220
+00:14:54,320 --> 00:14:59,480
+an integral, I have this dx at the end,
+but I multiply those together.
+
+221
+00:14:59,480 --> 00:15:02,140
+And I just write this as D X divided by X.
+
+222
+00:15:08,030 --> 00:15:11,802
+And so, in my little table of anti
+derivatives, we saw
+
+223
+00:15:11,802 --> 00:15:15,689
+that the anti derivative of one over X was
+equal to log X.
+
+224
+00:15:16,890 --> 00:15:22,563
+So the value of this integral is just
+going to be log x evaluated at 4 minus
+
+225
+00:15:22,563 --> 00:15:27,928
+log x evaluated at 1.
+So log of 4 minus log of 1 which
+
+226
+00:15:27,928 --> 00:15:33,172
+is just equal to log of 4 because of 1 is
+0 and
+
+227
+00:15:33,172 --> 00:15:37,249
+that's equal to about 1.39.
+

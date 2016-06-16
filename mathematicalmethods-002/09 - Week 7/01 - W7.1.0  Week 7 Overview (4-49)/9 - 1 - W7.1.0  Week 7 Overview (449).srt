@@ -1,0 +1,389 @@
+1
+00:00:01,220 --> 00:00:06,030
+Welcome to week seven of Mathematical
+Methods for Quantitative Finance.
+
+2
+00:00:06,030 --> 00:00:09,083
+This week I'm going to cover two topics,
+the first is
+
+3
+00:00:09,083 --> 00:00:14,572
+Lagrange's Method, which is a method for
+solving constrained optimization problems.
+
+4
+00:00:14,572 --> 00:00:17,164
+And the second topic is Taylor Series, and
+
+5
+00:00:17,164 --> 00:00:21,820
+this is basically polynomial expansions of
+nonlinear functions.
+
+6
+00:00:21,820 --> 00:00:26,363
+That are going to make that are going to
+make it possible to compute
+
+7
+00:00:26,363 --> 00:00:29,980
+decimal representations of of those
+functions.
+
+8
+00:00:32,470 --> 00:00:34,280
+So this week's menu, I'm going to start
+off.
+
+9
+00:00:34,280 --> 00:00:40,960
+So the first five lectures will be on will
+be on the subject of Lagrange method.
+
+10
+00:00:40,960 --> 00:00:43,390
+I'll start off with optimal investment
+portfolios.
+
+11
+00:00:43,390 --> 00:00:46,398
+And so this is, a type of constrained
+optimization
+
+12
+00:00:46,398 --> 00:00:51,250
+problem, that, that occurs quite often in
+a financial setting.
+
+13
+00:00:51,250 --> 00:00:54,286
+So, if you've already have a, a set of
+assets that you
+
+14
+00:00:54,286 --> 00:00:57,586
+want to buy, say you have ten stocks, and
+you have a certain
+
+15
+00:00:57,586 --> 00:01:00,029
+amount of money to use to buy those
+stocks.
+
+16
+00:01:01,110 --> 00:01:05,782
+Then you want to choose how much of each
+one to buy with the constraint that the
+
+17
+00:01:05,782 --> 00:01:10,970
+sum of all of those has to be the amount
+of money you're going to be using.
+
+18
+00:01:10,970 --> 00:01:15,920
+And then optimal means you want to have
+some sort of optimal criteria.
+
+19
+00:01:15,920 --> 00:01:18,542
+So you might want to minimize the risk of
+that portfolio
+
+20
+00:01:18,542 --> 00:01:21,930
+or you might want to maximize the expected
+return of that portfolio.
+
+21
+00:01:23,150 --> 00:01:26,130
+So in the first section I'll just describe
+the problem I'm trying to solve.
+
+22
+00:01:27,280 --> 00:01:28,960
+Then I'll talk a little bit about
+
+23
+00:01:28,960 --> 00:01:32,380
+relative extrema for functions of several
+variables.
+
+24
+00:01:32,380 --> 00:01:36,510
+So we saw already that if I had a function
+of one variable, if I wanted to
+
+25
+00:01:36,510 --> 00:01:39,030
+find the local minimum or a local maximum,
+
+26
+00:01:39,030 --> 00:01:41,890
+I had to use first and second order
+conditions.
+
+27
+00:01:41,890 --> 00:01:45,010
+So the first order condition gave me the
+critical points.
+
+28
+00:01:45,010 --> 00:01:48,482
+And then the second order condition
+allowed me to classify those critical
+
+29
+00:01:48,482 --> 00:01:50,470
+points as either a maximum or a minimum.
+
+30
+00:01:51,750 --> 00:01:53,748
+And in section two, I'm going to go over
+how
+
+31
+00:01:53,748 --> 00:01:56,300
+you can do that now for functions of
+several variables.
+
+32
+00:01:57,420 --> 00:02:01,270
+Section three, I'll describe Lagrange's
+Method.
+
+33
+00:02:01,270 --> 00:02:03,979
+Section four, I'll give an example; so
+actually
+
+34
+00:02:03,979 --> 00:02:07,760
+solve a constrained optimization problem
+using Lagrange's Method.
+
+35
+00:02:08,930 --> 00:02:10,925
+And then in section five, I'll go back to
+
+36
+00:02:10,925 --> 00:02:13,718
+one of the investment portfolios I talked
+about in section
+
+37
+00:02:13,718 --> 00:02:16,600
+one, called the Minimum Variance
+Portfolio.
+
+38
+00:02:16,600 --> 00:02:19,460
+And this turns out to be, have a very nice
+properties.
+
+39
+00:02:19,460 --> 00:02:23,678
+So when you put this problem into the
+Lagrange's Method, you end up
+
+40
+00:02:23,678 --> 00:02:28,030
+with a linear system, so ax equals b to
+solve for the critical point.
+
+41
+00:02:29,060 --> 00:02:33,250
+So this builds very nicely on some of the
+topics we just learned in linear algebra.
+
+42
+00:02:34,550 --> 00:02:36,025
+Then in the second half of this
+
+43
+00:02:36,025 --> 00:02:39,030
+week's lecture I'm going to talk about
+Taylor's Formula.
+
+44
+00:02:40,450 --> 00:02:42,620
+So first I'll start off just by going
+
+45
+00:02:42,620 --> 00:02:45,560
+over Taylor's formula for a function of
+one variable.
+
+46
+00:02:46,660 --> 00:02:48,806
+And then, a lot of what we're interested
+in
+
+47
+00:02:48,806 --> 00:02:51,300
+with Taylor's Formula is, I'm using this
+to make
+
+48
+00:02:51,300 --> 00:02:55,070
+approximations of difficult functions
+using polynomials, so a polynomial
+
+49
+00:02:55,070 --> 00:02:59,396
+is generally considered a pretty easy
+function to work with.
+
+50
+00:02:59,396 --> 00:03:02,523
+you know, highly non-linear functions,
+like sin of x times z
+
+51
+00:03:02,523 --> 00:03:05,532
+to the x, or something like that, would
+not be fun functions
+
+52
+00:03:05,532 --> 00:03:06,340
+to work with.
+
+53
+00:03:07,730 --> 00:03:10,505
+And what we'll be interested in is how
+close
+
+54
+00:03:10,505 --> 00:03:16,350
+is this polynomial, my polynomial
+approximation, to the actual function.
+
+55
+00:03:16,350 --> 00:03:18,570
+And one nice concept for sort of
+
+56
+00:03:18,570 --> 00:03:22,230
+understanding that is called the Big O
+notation.
+
+57
+00:03:22,230 --> 00:03:24,200
+And so I'm going to go over that in
+section seven.
+
+58
+00:03:24,200 --> 00:03:27,610
+Section eight, I'll go over the.
+
+59
+00:03:28,630 --> 00:03:30,646
+Taylor's formula, so the same thing I did
+
+60
+00:03:30,646 --> 00:03:33,680
+in section six, but now using functions of
+several variables.
+
+61
+00:03:35,460 --> 00:03:39,400
+Then in section nine, I'll talk about a
+Taylor series expansion.
+
+62
+00:03:39,400 --> 00:03:41,745
+So Taylor's formula is a polynomial, so
+
+63
+00:03:41,745 --> 00:03:45,310
+you could have a second order, Taylor
+polynomial.
+
+64
+00:03:45,310 --> 00:03:47,800
+It's going to have a linear term and a
+quadratic term.
+
+65
+00:03:47,800 --> 00:03:50,320
+If I had a third order Taylor polynomial,
+it would
+
+66
+00:03:50,320 --> 00:03:54,010
+have a linear term, a quadratic term and a
+cubic term.
+
+67
+00:03:54,010 --> 00:03:55,560
+Taylor series expansion is,
+
+68
+00:03:55,560 --> 00:03:57,110
+if I just take the limit.
+
+69
+00:03:57,110 --> 00:04:01,598
+So I take, you know, fourth order
+polynomial, fifth order polynomial, n-th
+
+70
+00:04:01,598 --> 00:04:05,230
+order polynomial and then I take the limit
+as n goes to infinity.
+
+71
+00:04:06,350 --> 00:04:10,584
+And so really what were interested in
+there is does this Taylor series
+
+72
+00:04:10,584 --> 00:04:16,160
+expansion converge to the thing that I'm
+trying to approximate or does it diverge?
+
+73
+00:04:16,160 --> 00:04:19,650
+And so we have a few results that are
+going to answer that question.
+
+74
+00:04:19,650 --> 00:04:20,802
+And then I'm going to
+
+75
+00:04:20,802 --> 00:04:23,178
+finish up that section by talking about
+
+76
+00:04:23,178 --> 00:04:26,680
+Bond Convexity which is revisiting a
+topic.
+
+77
+00:04:26,680 --> 00:04:30,390
+From the first set of lectures, where I
+did bond duration, and
+
+78
+00:04:30,390 --> 00:04:34,910
+then used bond duration to make a linear
+approximation of the yield curve.
+
+79
+00:04:35,940 --> 00:04:40,910
+With some of the, the tools we've learned
+from Taylor's formula, we can
+
+80
+00:04:40,910 --> 00:04:46,550
+now extend that to have a, a second order,
+so a quadratic term in the approximation.
+
+81
+00:04:46,550 --> 00:04:48,470
+And that quadratic term is called
+convexity.
+

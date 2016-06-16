@@ -1,0 +1,1527 @@
+1
+00:00:03,280 --> 00:00:05,470
+Okay, so we've seen that propositional
+nets can
+
+2
+00:00:05,470 --> 00:00:07,530
+be used to advantage in searching game
+trees.
+
+3
+00:00:08,550 --> 00:00:13,300
+The other main use of propnets is in
+analyzing games.
+
+4
+00:00:13,300 --> 00:00:15,380
+For example, by analyzing the propnet for
+a
+
+5
+00:00:15,380 --> 00:00:17,210
+game, it's sometimes possible for a player
+to
+
+6
+00:00:17,210 --> 00:00:19,410
+detect structure that allows him to
+actually decrease
+
+7
+00:00:19,410 --> 00:00:21,300
+the size of the game tree in significant
+ways.
+
+8
+00:00:22,580 --> 00:00:26,840
+Game decomposition, or so-called
+factoring, is a good example of this.
+
+9
+00:00:30,250 --> 00:00:32,770
+A compound game is a single game
+consisting
+
+10
+00:00:32,770 --> 00:00:36,220
+of two or more individual games glued
+together.
+
+11
+00:00:36,220 --> 00:00:37,600
+The state of the compound game is a
+
+12
+00:00:37,600 --> 00:00:40,620
+composition of the states of the
+individual games.
+
+13
+00:00:40,620 --> 00:00:42,670
+On each step of a compound game the
+
+14
+00:00:42,670 --> 00:00:45,400
+players perform actions in each of the
+individual games.
+
+15
+00:00:46,750 --> 00:00:50,760
+The compound game is over when either one
+or all of the individual games are over.
+
+16
+00:00:50,760 --> 00:00:52,180
+Depending on the type of the compound
+game.
+
+17
+00:00:55,210 --> 00:00:56,890
+Now using the techniques we have seen thus
+
+18
+00:00:56,890 --> 00:01:00,290
+far, compound games can be quite expensive
+to play.
+
+19
+00:01:00,290 --> 00:01:05,190
+Unless a player recognizes that there are
+independent subgames involved, it's likely
+
+20
+00:01:05,190 --> 00:01:07,920
+to search a game tree that's far larger
+than it needs to be.
+
+21
+00:01:09,220 --> 00:01:12,320
+For example, if one subgame has branching
+factor a,
+
+22
+00:01:12,320 --> 00:01:15,090
+and a second has branching factor b, then
+the
+
+23
+00:01:15,090 --> 00:01:17,410
+branching factor of the joint game is a
+times
+
+24
+00:01:17,410 --> 00:01:20,920
+b, one choice of each of the b actions
+
+25
+00:01:20,920 --> 00:01:23,010
+for each of the a actions.
+
+26
+00:01:23,010 --> 00:01:25,320
+Then the fringe of the game tree at depth
+d is likely
+
+27
+00:01:25,320 --> 00:01:28,700
+to be something like (a x b) raised to the
+power d.
+
+28
+00:01:31,740 --> 00:01:33,940
+Now this is wasteful if the two games are
+
+29
+00:01:33,940 --> 00:01:37,660
+truly independent, in that case there are
+two trees, one
+
+30
+00:01:37,660 --> 00:01:40,420
+with branching factor a and one with
+branching factor b
+
+31
+00:01:40,420 --> 00:01:43,190
+and the total size of the fringe of these
+trees.
+
+32
+00:01:43,190 --> 00:01:48,650
+At depth d, should be only a to the d plus
+b to the d, significantly smaller.
+
+33
+00:01:51,320 --> 00:01:53,440
+Double Tic Tac Toe is an example.
+
+34
+00:01:53,440 --> 00:01:57,170
+On each move, players play on one of the
+two boards.
+
+35
+00:01:57,170 --> 00:01:59,080
+First to win on either board wins the
+overall game.
+
+36
+00:02:00,130 --> 00:02:03,320
+If the game is left unfactored, the
+branching factors are quite large.
+
+37
+00:02:03,320 --> 00:02:07,120
+There are 81 possibilities in that first
+move.
+
+38
+00:02:07,120 --> 00:02:11,220
+Nine for each board, and then they're 64
+in a second and so forth.
+
+39
+00:02:11,220 --> 00:02:14,430
+However, the games are factored, the
+branching factors are much more modest.
+
+40
+00:02:17,870 --> 00:02:19,300
+Game factoring is the process of
+
+41
+00:02:19,300 --> 00:02:23,250
+discovering independent games inside of
+larger games.
+
+42
+00:02:23,250 --> 00:02:25,620
+Once discovered, game players can use
+these factors
+
+43
+00:02:25,620 --> 00:02:28,520
+to play the individual games independently
+of each other.
+
+44
+00:02:28,520 --> 00:02:32,109
+And those cut down on the combinatory cost
+of playing such games.
+
+45
+00:02:32,109 --> 00:02:35,390
+Turns out that it's often easier to
+discover independent subgames
+
+46
+00:02:35,390 --> 00:02:39,790
+using the propnet representation for
+games, rather than other representations.
+
+47
+00:02:42,490 --> 00:02:45,160
+Now in this segment, we'll look at
+
+48
+00:02:45,160 --> 00:02:48,570
+some elementary techniques for factoring
+games using propnets.
+
+49
+00:02:48,570 --> 00:02:52,450
+We'll first talk about discovering factors
+with completely independent subgames.
+
+50
+00:02:53,450 --> 00:02:57,630
+We'll then talk about factoring with
+interdependent termination and rewards.
+
+51
+00:02:57,630 --> 00:03:01,599
+And after that, we talk about factoring
+with interdependent actions as well.
+
+52
+00:03:02,880 --> 00:03:06,230
+And finally we'll discuss briefly the
+conditional factors.
+
+53
+00:03:06,230 --> 00:03:07,670
+That is factors that appear only
+
+54
+00:03:07,670 --> 00:03:09,950
+in certain states of the games but not in
+all states.
+
+55
+00:03:12,960 --> 00:03:14,650
+Okay, so let's begin our discussion of
+factoring
+
+56
+00:03:14,650 --> 00:03:16,970
+with a simple case of a compound game.
+
+57
+00:03:18,430 --> 00:03:23,120
+consisting of multiple and completely
+independent subgames.
+
+58
+00:03:23,120 --> 00:03:26,810
+Only one of which is relevant to the
+overall game.
+
+59
+00:03:26,810 --> 00:03:29,630
+Without factoring, the player is likely to
+consider actions of
+
+60
+00:03:29,630 --> 00:03:33,930
+all of the subgames, when only one of
+those subgames matters.
+
+61
+00:03:33,930 --> 00:03:36,730
+Now, okay, now this is admittedly a very
+special case.
+
+62
+00:03:36,730 --> 00:03:37,850
+It doesn't arise often,
+
+63
+00:03:37,850 --> 00:03:40,780
+and it can be solved by means other than
+factoring.
+
+64
+00:03:40,780 --> 00:03:43,110
+But not by the method we've seen thus far.
+
+65
+00:03:43,110 --> 00:03:45,514
+Nevertheless, it's worth considering
+because of it prepares
+
+66
+00:03:45,514 --> 00:03:47,500
+us for factoring more complicated sorts of
+games.
+
+67
+00:03:49,450 --> 00:03:52,960
+Okay, Multiple Buttons and Lights is an
+example of a game of this sort.
+
+68
+00:03:52,960 --> 00:03:57,690
+The overall game consists of multiple
+copies of mul-, buttons and lights, and
+
+69
+00:03:57,690 --> 00:04:02,070
+each copy of buttons and lights, there are
+three base propositions for lights.
+
+70
+00:04:02,070 --> 00:04:03,310
+And three actions,
+
+71
+00:04:03,310 --> 00:04:04,620
+the buttons.
+
+72
+00:04:04,620 --> 00:04:08,820
+Pushing the first button in each group
+toggles the first light in that group.
+
+73
+00:04:08,820 --> 00:04:11,160
+Pushing the second button in each group
+interchanges
+
+74
+00:04:11,160 --> 00:04:13,450
+the first and second lights in that group.
+
+75
+00:04:13,450 --> 00:04:15,340
+And pushing the third button in each group
+
+76
+00:04:15,340 --> 00:04:18,000
+interchanges the second and third lights
+in that group.
+
+77
+00:04:19,080 --> 00:04:21,430
+Initially, all of the lights are off.
+
+78
+00:04:21,430 --> 00:04:25,160
+The goal is to turn on all of the lights
+in the middle group.
+
+79
+00:04:25,160 --> 00:04:26,640
+The setting of the others doesn't matter.
+
+80
+00:04:30,030 --> 00:04:32,220
+Now here's a propnet for the game.
+
+81
+00:04:32,220 --> 00:04:34,720
+Notice that there are three disjoined
+parts of the propnet.
+
+82
+00:04:34,720 --> 00:04:37,650
+One portion for the first group of buttons
+and lights, a second
+
+83
+00:04:37,650 --> 00:04:40,450
+portion for the second group, and a third
+portion for the third group.
+
+84
+00:04:40,450 --> 00:04:44,210
+And note that the goal and termination
+conditions for the overall
+
+85
+00:04:44,210 --> 00:04:47,130
+game are based entirely on the lights in
+the second group.
+
+86
+00:04:49,430 --> 00:04:51,010
+Looking at the propnet for this game, it's
+easy to
+
+87
+00:04:51,010 --> 00:04:53,100
+see that the game is of this very special
+structure.
+
+88
+00:04:54,122 --> 00:04:55,830
+The propnet consists entirely of three
+
+89
+00:04:55,830 --> 00:04:58,820
+completely disconnected subnets, one for
+each subgame.
+
+90
+00:04:58,820 --> 00:05:01,400
+Finding factors in situations like this is
+really easy, it can
+
+91
+00:05:01,400 --> 00:05:04,030
+be computed in time that's polynomial in
+the size of the propnet.
+
+92
+00:05:04,030 --> 00:05:07,100
+And having found these factors, the
+solution is really simple.
+
+93
+00:05:07,100 --> 00:05:09,770
+The player just keeps the essential
+component and discards the other two.
+
+94
+00:05:11,590 --> 00:05:12,580
+Now, note that this technique can be
+
+95
+00:05:12,580 --> 00:05:15,450
+applied equally well to multiple player
+games.
+
+96
+00:05:15,450 --> 00:05:17,606
+For example, Multiple Tic Tac Toe, that is
+three games of
+
+97
+00:05:17,606 --> 00:05:21,160
+Tic Tac Toe glued together, in which only
+the middle game matters.
+
+98
+00:05:21,160 --> 00:05:22,899
+Propnet from Multiple Tic Tac Toe is
+similar
+
+99
+00:05:22,899 --> 00:05:24,930
+to the propnet from Multiple Buttons and
+Lights.
+
+100
+00:05:24,930 --> 00:05:27,490
+And it's possible to find the structure in
+Multiple Tic
+
+101
+00:05:27,490 --> 00:05:30,310
+Tac Toe just as easily as from Multiple
+Buttons and Lights.
+
+102
+00:05:33,300 --> 00:05:36,800
+Okay, now let's consider a slightly more
+complicated case.
+
+103
+00:05:36,800 --> 00:05:41,040
+Namely, compound games with interdependent
+termination.
+
+104
+00:05:42,340 --> 00:05:45,230
+We can assume interdependent goals as well
+but I'm going
+
+105
+00:05:45,230 --> 00:05:48,240
+to ignore goals for now and just focus on
+termination.
+
+106
+00:05:49,620 --> 00:05:53,708
+As with the case of independent subgames,
+entirely independent subgames actions are
+
+107
+00:05:53,708 --> 00:05:55,836
+petitioned over distinct subgames and
+there
+
+108
+00:05:55,836 --> 00:05:58,523
+are no incoming connections between those
+subgames.
+
+109
+00:05:58,523 --> 00:06:02,240
+The main difference is that the
+termination condition for the overall game
+
+110
+00:06:02,240 --> 00:06:05,290
+can depend on more than one and perhaps
+all of the subgames.
+
+111
+00:06:06,790 --> 00:06:10,170
+Now in games of this sort, the termination
+of the overall game
+
+112
+00:06:10,170 --> 00:06:14,500
+can be defined as any boolean combination
+of conditions in the individual games.
+
+113
+00:06:14,500 --> 00:06:16,647
+In the case where the combinations are
+disjunction
+
+114
+00:06:16,647 --> 00:06:19,060
+then the game is said to be disjunctive.
+
+115
+00:06:19,060 --> 00:06:20,470
+In the case where the combinations is
+
+116
+00:06:20,470 --> 00:06:22,449
+conjunct the game is said to be
+conjunctive.
+
+117
+00:06:24,540 --> 00:06:26,330
+As a simple example of a factorable game
+
+118
+00:06:26,330 --> 00:06:31,910
+with disjunctive termination, consider
+Best Buttons and Lights.
+
+119
+00:06:31,910 --> 00:06:35,310
+In multiple buttons and lights, only one
+group of buttons and lights matters.
+
+120
+00:06:35,310 --> 00:06:37,960
+In Best Buttons and Lights, the compound
+games
+
+121
+00:06:37,960 --> 00:06:42,990
+terminate, compound game terminates,
+whenever any group terminates.
+
+122
+00:06:42,990 --> 00:06:44,450
+Not just the one in the middle.
+
+123
+00:06:44,450 --> 00:06:47,220
+This gives the player the freedom to play
+whichever subgame
+
+124
+00:06:47,220 --> 00:06:49,650
+it likes and rest assured that if it
+succeeds on
+
+125
+00:06:49,650 --> 00:06:53,376
+that subgame, it succeeds on the overall
+game with the same score.
+
+126
+00:06:53,376 --> 00:06:58,105
+Okay here's a propnet for Best Buttons and
+Lights.
+
+127
+00:06:58,105 --> 00:07:02,620
+It's similar to the propnet for Multiple
+Buttons and Lights, except that the goals
+
+128
+00:07:02,620 --> 00:07:09,070
+and termination are based disjunctively on
+all three subgames.
+
+129
+00:07:09,070 --> 00:07:10,750
+The good news is that we can
+
+130
+00:07:10,750 --> 00:07:15,980
+extend the technique, this discussed, in
+just discussed.
+
+131
+00:07:15,980 --> 00:07:18,290
+Let's consider the simply disjunctive
+case.
+
+132
+00:07:18,290 --> 00:07:21,400
+If the connective leading to a termination
+is a disjunction as it is
+
+133
+00:07:21,400 --> 00:07:25,680
+in this case with its inputs, in terms
+supplied by nodes in different subgames,
+
+134
+00:07:25,680 --> 00:07:34,200
+and we simply cut off the overall
+termination condition, and and, and make
+
+135
+00:07:34,200 --> 00:07:36,235
+the termination of each of the individual
+
+136
+00:07:36,235 --> 00:07:39,020
+subnets a termination condition for that
+subnet.
+
+137
+00:07:39,020 --> 00:07:41,000
+And we
+
+138
+00:07:41,000 --> 00:07:43,550
+can repeat this process as long as we only
+encounter disjunctions.
+
+139
+00:07:43,550 --> 00:07:46,570
+If the game is truly disjunctive, this
+will eventually
+
+140
+00:07:46,570 --> 00:07:48,880
+lead to a separable propnet like the ones
+shown here.
+
+141
+00:07:51,260 --> 00:07:52,880
+Now, if the process does succeed in
+
+142
+00:07:52,880 --> 00:07:54,440
+factoring the propnet in this way, then
+the
+
+143
+00:07:54,440 --> 00:07:56,600
+player simply picks one of the subgames,
+and
+
+144
+00:07:56,600 --> 00:08:00,510
+proceeds as with the case of independent
+subgames.
+
+145
+00:08:00,510 --> 00:08:03,086
+Alternatively and better, the player tries
+playing all of
+
+146
+00:08:03,086 --> 00:08:05,600
+the subgames, and picks the one with the
+best score.
+
+147
+00:08:05,600 --> 00:08:06,900
+Or, at least that's the basic idea.
+
+148
+00:08:08,940 --> 00:08:11,170
+Unfortunately, it's not quite that simple.
+
+149
+00:08:11,170 --> 00:08:13,360
+There's a problem that does not arise
+
+150
+00:08:13,360 --> 00:08:16,040
+in the case of completely independent
+subgames.
+
+151
+00:08:16,040 --> 00:08:18,340
+The player may choose one subgame, find
+
+152
+00:08:18,340 --> 00:08:20,910
+a winning strategy, and begin executing
+that strategy.
+
+153
+00:08:21,960 --> 00:08:24,220
+Unfortunately in the course of execution
+on the
+
+154
+00:08:24,220 --> 00:08:28,590
+chosen subgame, one of the other subgames
+may terminate.
+
+155
+00:08:28,590 --> 00:08:30,230
+Terminating the game as a whole before
+
+156
+00:08:30,230 --> 00:08:32,970
+the strategy in the chosen subgame is
+complete.
+
+157
+00:08:32,970 --> 00:08:33,960
+This can lead to a lower
+
+158
+00:08:33,960 --> 00:08:35,890
+score than a player might have otherwise
+expected.
+
+159
+00:08:37,140 --> 00:08:39,954
+The solution to this problem is to check
+each of the
+
+160
+00:08:39,954 --> 00:08:44,890
+subgames for terminations when no actions
+are played in that subgame.
+
+161
+00:08:44,890 --> 00:08:46,830
+The player takes the shortest time period
+and
+
+162
+00:08:46,830 --> 00:08:48,860
+plays each of the other subgames with that
+
+163
+00:08:48,860 --> 00:08:50,800
+as a step limit and takes the one
+
+164
+00:08:50,800 --> 00:08:53,106
+that provides the best result within that
+step limit.
+
+165
+00:08:53,106 --> 00:08:56,600
+For the subgame with the shortest
+termination, if there are no
+
+166
+00:08:56,600 --> 00:08:59,160
+other subgames with that step limit, the
+player tries the next
+
+167
+00:08:59,160 --> 00:09:00,720
+shortest step limit and so forth.
+
+168
+00:09:02,220 --> 00:09:05,610
+Although in this approach the player
+searches all of the sub-games more than
+
+169
+00:09:05,610 --> 00:09:09,750
+once, this is usually a lot less expensive
+that searching the game tree with
+
+170
+00:09:09,750 --> 00:09:13,550
+the unfactored game because it's not, not
+cross multiply the branching factors of
+
+171
+00:09:13,550 --> 00:09:17,160
+the independent games as it would if it
+did not use the game's factors.
+
+172
+00:09:18,410 --> 00:09:20,235
+And once again, it's possible to extend
+this technique to
+
+173
+00:09:20,235 --> 00:09:22,460
+multi-player games, but this has to be
+done with some care.
+
+174
+00:09:25,410 --> 00:09:27,490
+Okay, finally, let's look at compound
+
+175
+00:09:27,490 --> 00:09:33,260
+games with interdependent actions,
+interdependent, interdependent actions.
+
+176
+00:09:33,260 --> 00:09:37,300
+By interdependence of actions, we mean
+those actions have effects
+
+177
+00:09:37,300 --> 00:09:40,620
+on more than one of the subgames of the
+compound game.
+
+178
+00:09:40,620 --> 00:09:42,270
+Okay, now, at first blush, it might seem
+that
+
+179
+00:09:42,270 --> 00:09:44,760
+games of this sort are just plain not
+factorable.
+
+180
+00:09:44,760 --> 00:09:47,630
+However, that's not necessarily true.
+
+181
+00:09:47,630 --> 00:09:51,310
+Under certain circumstances, even with
+interdependent
+
+182
+00:09:51,310 --> 00:09:54,730
+actions, it's possible to identify factors
+and use those factors to
+
+183
+00:09:54,730 --> 00:09:58,580
+search the game tree more efficiently then
+without considering the factors.
+
+184
+00:10:00,310 --> 00:10:04,970
+Okay here's an example, this is called
+Joint Buttons and Lights.
+
+185
+00:10:04,970 --> 00:10:07,220
+As with the other buttons and lights
+variants
+
+186
+00:10:07,220 --> 00:10:09,280
+that we've seen so far, lights in this
+game
+
+187
+00:10:09,280 --> 00:10:12,710
+are organized in terms of three, however
+unlike the
+
+188
+00:10:12,710 --> 00:10:15,940
+previous variance, buttons are not
+associated in specific groups,
+
+189
+00:10:15,940 --> 00:10:20,154
+instead each button has effects on all
+three groups.
+
+190
+00:10:20,154 --> 00:10:23,750
+Button aaa toggles the first light in each
+group.
+
+191
+00:10:25,490 --> 00:10:28,220
+Button aab toggles the first light in the
+
+192
+00:10:28,220 --> 00:10:29,880
+first group and the first light in the
+second
+
+193
+00:10:29,880 --> 00:10:33,300
+group and interchanges the values of the
+first and
+
+194
+00:10:33,300 --> 00:10:36,200
+second light in the third group, and so
+forth.
+
+195
+00:10:36,200 --> 00:10:40,160
+So we have all possible combinations of
+the actions.
+
+196
+00:10:40,160 --> 00:10:41,160
+In the preceding games.
+
+197
+00:10:44,715 --> 00:10:47,940
+Although all of the buttons in this game
+affect all of the subgames.
+
+198
+00:10:47,940 --> 00:10:51,780
+And the game is still factorable with just
+three actions per factor.
+
+199
+00:10:51,780 --> 00:10:55,350
+The reason is that there's one button in
+the compound
+
+200
+00:10:55,350 --> 00:10:58,910
+game for each combination of actions in
+the other two subgames.
+
+201
+00:10:58,910 --> 00:11:03,080
+Thus the game trees for each subgame can
+be searched independently of each other
+
+202
+00:11:03,080 --> 00:11:08,490
+and the actions chosen can be reassembled
+into overall actions of the compound game.
+
+203
+00:11:08,490 --> 00:11:09,750
+For example, if action a is
+
+204
+00:11:09,750 --> 00:11:13,160
+chosen in the first and second subgames,
+and action c is chosen in
+
+205
+00:11:13,160 --> 00:11:18,190
+the third subgame, then action aac can be
+performed in the compound game.
+
+206
+00:11:20,975 --> 00:11:23,930
+Okay, now recognizing when this can be
+done is not easy.
+
+207
+00:11:23,930 --> 00:11:24,875
+But it is doable.
+
+208
+00:11:24,875 --> 00:11:28,630
+There are just basically two steps, and
+the first step the
+
+209
+00:11:28,630 --> 00:11:33,160
+player groups actions into equivalence
+classes of actions for each subgame.
+
+210
+00:11:33,160 --> 00:11:35,920
+And in the second step, the player
+determines whether these
+
+211
+00:11:35,920 --> 00:11:39,590
+equivalence classes satisfy what is called
+the lossless join condition.
+
+212
+00:11:40,920 --> 00:11:44,380
+Finding equivalence classes is done by
+looking at the propnet for each subgame.
+
+213
+00:11:44,380 --> 00:11:46,170
+Two actions are equivalent if they are
+used
+
+214
+00:11:46,170 --> 00:11:48,360
+in the same way in the propnet for that
+subgame.
+
+215
+00:11:48,360 --> 00:11:51,470
+For example, if each action is input to an
+and gate
+
+216
+00:11:51,470 --> 00:11:55,290
+with a same other input, and if the
+outputs are connected by
+
+217
+00:11:55,290 --> 00:11:57,190
+an or gate, then the effects of one action
+can not be
+
+218
+00:11:57,190 --> 00:11:59,790
+distinguished from the effects of the
+other action, hence they are equivalent.
+
+219
+00:12:01,270 --> 00:12:05,630
+The process of finding equivalence classes
+is repeated for each potential subgame.
+
+220
+00:12:05,630 --> 00:12:08,370
+In general, the equivalence classes for
+each subgame will be different.
+
+221
+00:12:08,370 --> 00:12:09,930
+In fact, as we'll see, in order for
+
+222
+00:12:09,930 --> 00:12:11,770
+the game to be factorable, they must be
+different.
+
+223
+00:12:13,830 --> 00:12:17,860
+Once a player has equivalence classes for
+each potential subgame, and
+
+224
+00:12:17,860 --> 00:12:21,960
+then checks whether those equivalence
+classes are independent of each other.
+
+225
+00:12:21,960 --> 00:12:22,770
+Criterion is simple.
+
+226
+00:12:22,770 --> 00:12:25,985
+Each equivalence class in one potential
+subgame must have a
+
+227
+00:12:25,985 --> 00:12:28,090
+non-empty intersection with each
+equivalence
+
+228
+00:12:28,090 --> 00:12:30,280
+class of every other potential subgame.
+
+229
+00:12:30,280 --> 00:12:31,870
+If this is true, then these
+
+230
+00:12:31,870 --> 00:12:35,160
+partitions pass the so-called lossless
+join criterion.
+
+231
+00:12:35,160 --> 00:12:36,250
+More details in the notes.
+
+232
+00:12:36,250 --> 00:12:36,750
+If
+
+233
+00:12:38,370 --> 00:12:43,340
+a player finds equivalence classes for
+various two for potential subgames.
+
+234
+00:12:43,340 --> 00:12:45,080
+And they pass this lossless join tests.
+
+235
+00:12:45,080 --> 00:12:46,880
+And the player can factor the games into
+subgames.
+
+236
+00:12:48,000 --> 00:12:51,900
+In order to benefit from the factoring,
+the player must modify each propnet so
+
+237
+00:12:51,900 --> 00:12:53,550
+that the individual actions are replaced
+with
+
+238
+00:12:53,550 --> 00:12:56,260
+the equivalence classes of which they are
+members.
+
+239
+00:12:56,260 --> 00:12:57,780
+This cuts down on the number of possible
+
+240
+00:12:57,780 --> 00:13:00,120
+actions to consider, otherwise the
+branching factor of the
+
+241
+00:13:00,120 --> 00:13:01,580
+game trees for the subgames will be just
+as
+
+242
+00:13:01,580 --> 00:13:03,420
+large as the branching factor for the
+overall game.
+
+243
+00:13:04,650 --> 00:13:07,170
+Once this is done, the player can then
+search the game trees
+
+244
+00:13:07,170 --> 00:13:10,421
+for the different subgames to select
+actions to perform in each subgame.
+
+245
+00:13:11,520 --> 00:13:12,790
+They can then find an action in the
+
+246
+00:13:12,790 --> 00:13:16,090
+compound game for the particular
+combination of subgame actions.
+
+247
+00:13:16,090 --> 00:13:17,540
+This is always doable provided that the
+
+248
+00:13:17,540 --> 00:13:20,539
+partitioning of action satisfies that
+lossless joins property.
+
+249
+00:13:21,890 --> 00:13:23,890
+the player then performs any action in the
+
+250
+00:13:23,890 --> 00:13:26,350
+intersection of the equivalence classes
+chosen in this process.
+
+251
+00:13:28,570 --> 00:13:31,600
+Okay, again, check out the notes for more
+
+252
+00:13:31,600 --> 00:13:35,530
+details on, on factoring games with
+interdependent actions.
+
+253
+00:13:35,530 --> 00:13:38,530
+Finally, let's look at one more case,
+namely, conditional factoring.
+
+254
+00:13:38,530 --> 00:13:40,400
+That is factoring in cases where a game is
+
+255
+00:13:40,400 --> 00:13:43,809
+not factorable to start out, but over time
+becomes factorable.
+
+256
+00:13:44,950 --> 00:13:48,900
+Here's an example.
+It's called Linked Tic Tac Toe.
+
+257
+00:13:48,900 --> 00:13:51,130
+Two games of Tic Tac Toe connect,
+connected by
+
+258
+00:13:51,130 --> 00:13:55,270
+a single square that, that connects the
+two subgames.
+
+259
+00:13:55,270 --> 00:13:59,950
+The goal of the game as a whole is for the
+player to get two lines a row, column, or
+
+260
+00:13:59,950 --> 00:14:02,460
+diagonal of that player's mark, with at
+least two of
+
+261
+00:14:02,460 --> 00:14:06,570
+the marks residing in a specific Tic Tac
+Toe domain.
+
+262
+00:14:06,570 --> 00:14:10,660
+Diagonals through the middle, don't count,
+diagonals don't count.
+
+263
+00:14:10,660 --> 00:14:15,980
+When in each turn the player in control
+can place two marks either one in each, in
+
+264
+00:14:15,980 --> 00:14:20,350
+each distinct Tic Tac Toe domain, or one
+mark in the Tic Tac Toe domain, and one
+
+265
+00:14:20,350 --> 00:14:21,010
+in the center square.
+
+266
+00:14:22,370 --> 00:14:24,799
+Now suppose the state of the game is as
+shown here.
+
+267
+00:14:25,880 --> 00:14:28,460
+Once it is not possible like this to
+achieve
+
+268
+00:14:28,460 --> 00:14:31,740
+a row utilizing the center square, the
+only possible
+
+269
+00:14:31,740 --> 00:14:33,632
+solution lie in the domains of the Tic Tac
+
+270
+00:14:33,632 --> 00:14:35,890
+Toe games that are conjoined by the center
+square.
+
+271
+00:14:35,890 --> 00:14:39,070
+The states of these two Tic Tac Toe games
+can be considered
+
+272
+00:14:39,070 --> 00:14:41,960
+independently to find the remaining
+optimal
+
+273
+00:14:41,960 --> 00:14:42,990
+moves for the duration of the game.
+
+274
+00:14:44,020 --> 00:14:45,398
+Only the game trees for each
+
+275
+00:14:45,398 --> 00:14:47,840
+Tic Tac Toe game, modular the center
+square, need
+
+276
+00:14:47,840 --> 00:14:51,210
+to be searched to determine the remaining
+optimal moves.
+
+277
+00:14:51,210 --> 00:14:52,890
+Given the current state, the game can best
+
+278
+00:14:52,890 --> 00:14:56,040
+be factored into two independent subgames
+at this point.
+
+279
+00:14:56,040 --> 00:14:57,780
+However, for the initial state, this game
+cannot
+
+280
+00:14:57,780 --> 00:15:00,470
+be factored into sub, independent games
+because the shared
+
+281
+00:15:00,470 --> 00:15:02,740
+middle square intertwines the two domains
+as it's
+
+282
+00:15:02,740 --> 00:15:05,645
+relevant to the satisfaction goals in the,
+both subgames.
+
+283
+00:15:05,645 --> 00:15:10,570
+While this game is not factorable, in
+general, it is factorable
+
+284
+00:15:10,570 --> 00:15:13,460
+contingent upon entering a state in which
+no
+
+285
+00:15:13,460 --> 00:15:16,430
+row through the middle is possible for
+either player.
+
+286
+00:15:16,430 --> 00:15:20,500
+So the game is s-, said to be contingently
+factorable since it
+
+287
+00:15:20,500 --> 00:15:23,730
+reduces to independent simultaneous
+subgames, given
+
+288
+00:15:23,730 --> 00:15:25,470
+that it enters in this certain state.
+
+289
+00:15:25,470 --> 00:15:26,799
+It's contingent upon this state.
+
+290
+00:15:27,830 --> 00:15:31,980
+The raw computational benefit acquired
+from recognizing contingent factors like
+
+291
+00:15:31,980 --> 00:15:35,620
+these is less than that of recognizing
+initial factors because
+
+292
+00:15:35,620 --> 00:15:37,528
+it requires that the game be in a specific
+state.
+
+293
+00:15:37,528 --> 00:15:41,410
+However, the re-, relative computational
+savings are still
+
+294
+00:15:41,410 --> 00:15:44,860
+the same because the number of accessible
+fringe nodes
+
+295
+00:15:44,860 --> 00:15:48,440
+reduces to the sum of the remaining
+accessible fringe
+
+296
+00:15:48,440 --> 00:15:51,480
+nodes of the individual games rather than
+their product.
+
+297
+00:15:53,860 --> 00:15:55,110
+Okay, at this point in time, there
+
+298
+00:15:55,110 --> 00:15:58,510
+are no established techniques for
+discovering and exploiting
+
+299
+00:15:58,510 --> 00:16:02,560
+cases of contingent, conditional
+independence, although there is
+
+300
+00:16:02,560 --> 00:16:04,950
+some work that is being done right now.
+
+301
+00:16:04,950 --> 00:16:06,840
+However, it seems likely that some of
+these techniques
+
+302
+00:16:06,840 --> 00:16:09,060
+that we have already discussed can be
+further adapted
+
+303
+00:16:09,060 --> 00:16:11,250
+or these new techniques that are being
+discussed may
+
+304
+00:16:11,250 --> 00:16:14,840
+turn out to have power in finding
+conditional factors.
+
+305
+00:16:17,270 --> 00:16:20,180
+Okay, game factoring is complicated, as
+you
+
+306
+00:16:20,180 --> 00:16:23,860
+probably have guessed but it is really
+worthwhile.
+
+307
+00:16:23,860 --> 00:16:26,430
+You can significantly decrease the cost of
+game playing.
+
+308
+00:16:26,430 --> 00:16:31,480
+Or not the only source of propnet based
+game analysis that is worthwhile.
+
+309
+00:16:31,480 --> 00:16:35,270
+For example, propnets can be used to find
+bottlenecks.
+
+310
+00:16:35,270 --> 00:16:38,250
+That is, games structured in a series
+where the
+
+311
+00:16:38,250 --> 00:16:41,400
+player must win the first game before
+playing subsequent games.
+
+312
+00:16:43,912 --> 00:16:46,550
+Propnets can be used to eliminate dead
+states, that
+
+313
+00:16:46,550 --> 00:16:48,930
+is states that cannot lead to an
+acceptable solution.
+
+314
+00:16:48,930 --> 00:16:51,830
+And which can, therefore, be pruned from
+further consideration.
+
+315
+00:16:53,648 --> 00:16:55,560
+And propnets can also be used to detect
+
+316
+00:16:55,560 --> 00:16:58,450
+certain kinds of monotonicities, that is,
+cases where
+
+317
+00:16:58,450 --> 00:17:02,050
+higher goal values on non-terminal states
+correlate with
+
+318
+00:17:02,050 --> 00:17:05,730
+progress toward terminal states with
+acceptable goal values.
+
+319
+00:17:05,730 --> 00:17:07,700
+And there's a lot more research to be done
+in this area.
+

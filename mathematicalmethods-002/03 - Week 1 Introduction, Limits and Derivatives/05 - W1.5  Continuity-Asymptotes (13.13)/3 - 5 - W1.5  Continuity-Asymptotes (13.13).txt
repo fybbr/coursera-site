@@ -1,0 +1,327 @@
+Okay, and then onto the last section which
+is continuity and asymptotes.
+So most of the time when we have a
+function F of X, if I take the limit
+of that function as X goes to A then
+that's going to be equal to F of A.
+And, and in fact you know, sometimes it's
+hard to imagine why that would not be
+true.
+I'll show you one, one picture in a
+second.
+But if you think about the, the quiz
+question you just did, that is actually
+well defined.
+or sorry, there's a very good choice of a
+number
+to choose for that when x is equal to one.
+But the function's not defined at one.
+And so this is kind of the indea of
+continuity.
+If this blue curve is my function f of x
+then you can think of it as a function's
+continuous.
+If I could draw the curve associated with
+that function without lifting my pencil
+off the piece of paper.
+And so if I, if I have a point A on the
+X-axis and input A, and if I just move
+along the curve until I get to A,
+then the value of that point should be
+equal to f(a).
+And so that's actually the concept of
+continuity.
+That's the definition of continuity.
+So we say a function f is continuous at a
+point a if the limit as x goes to a of my
+function f of x is equal to f of a.
+And then we can be a little bit, a little
+bit more precise about this.
+So we say a function is right continuous
+if as I look at points that are greater
+than a and kind of moved down towards a,
+the limit of f of x is equal to f of a.
+And then we have the same idea.
+The function is left continuous at A.
+If, if I look at points,
+less than A and move towards A the limit
+as f of x goes up to A is equal to f of a.
+And so clearly if a function is continuous
+it's going to be both right continuous and
+left continuous.
+And then we'll also say a function is
+continuous
+on an interval, so I named my interval c,
+d.
+So that's just the lower limit c, up to an
+upper limit,
+d if it is continuous at every point to a,
+in that interval.
+And so this Is kind of an idea of what a
+discontinuity would look like.
+So if there's a jump in the function for
+one reason or another.
+So this is pretty much the same thing I
+had on the last slide.
+It's just at this point a, I decided to
+add a little bit to f of x.
+So that explains this jump here.
+And then the open circle means that I
+follow this curve up to every point that's
+less than A, but not A itself and then
+this solid circle
+means that I start at A and for every
+point greater than A.
+So, if the solid circle were down here and
+the open circle would have to be
+up here because the function can only be
+defined To be one value at any given
+input.
+And that's just going to affect the, the
+definition of whether it's left or right
+continuous at that point.
+So here is f of x continuous at a.
+And I would say no, because if I look at
+the limit as I go.
+Towards A over here if.
+I was bouncing back and forth.
+You know sometimes I'm going to be quite a
+bit
+less than the function value, no matter
+how thin I make
+my interval, am always going to be able
+to, and if I choose an epsilon
+that makes a Range around this solid dot.
+Say halfway in between the open circle and
+the filled in circle.
+I'm never going to be able to get any
+points on this side, into that range.
+So it's
+definitely the limit as I approach a from
+the left hand side,
+it's going to be less than the value of
+the function there.
+So it's not continuous.
+Is it right continuous?
+So if I forget about this lower curve and
+only look at
+the stuff on the, the right hand curve,
+you know, as I
+move down since I've defined my function
+to be the value of
+the top curve at A it is going to be right
+continuous.
+But the reason that it's not continuous is
+that it's not left continuous.
+So as I approach this point a from the
+left, the limit is
+this open circle but the value of the
+function is the filled in circle.
+So that's the sort of the way we want to
+give a rigorous definition to this idea of
+Of continuity.
+And so then again in a first-year calculus
+text book, you're going to
+be able to find lots of theorems about
+when is a function continuous.
+And so I'm just going to list off a lot of
+these very quickly.
+So, let f and g be continuous functions.
+So they're continuous at a point a.
+And again, c is just going to be a real
+value constant.
+So the sum of two continuous functions is
+continuous.
+The difference of two continuous function
+is continuous.
+If I multiply a continuous function by a
+real
+value, that's also going to give me a
+continuous function.
+If I take the product of two
+continuous functions, that's going to be a
+continuous function.
+And as long as the denominator is not
+equal to zero at the point A,
+then the ratio of two continuous functions
+is also going to be continuous.
+And again, this is, this is a point wise
+definition so this is only continuous as a
+point A,
+so all of these have to hold on an entire
+interval for these functions to be
+continuous on that interval.
+Any polynomial, so, 1 useful interval is
+R, that's all of the real
+numbers, so everything greater than
+negative
+infinite and everything less than positive
+infinite.
+Any polynomial is continuous on the real
+numbers.
+And then the following functions are
+continuous on their domains,
+so the domain is just where the function
+is defined.
+So sometimes you have to be a little bit
+careful, like if you
+have the logarhythm, that's not going to
+be defined for a negative number.
+So like I said, a polynomial is continuous
+on the entire real line.
+So it's its domain is a entire set of real
+numbers.
+So it's continuous on its domain.
+Trigonometric functions, so this is sines,
+cosines, tangents, things like that.
+You have to be a little bit careful
+because sometimes
+you end up Dividign by 0 for instance
+without tangent.
+But if you're not dividign by 0 it's going
+to be continuous.
+Rational functions so that was things like
+f over g.
+Inverse trigonometric functions, so this
+is, you know if I say the sine of an angle
+is a certain vaule.
+I can do something called the arc sine of
+that value.
+Is going to give me that angle up to some
+sort of multiplicity.
+And so it's going to be continuous on the
+right domain, and range.
+The square root or cubed root, something
+like that.
+Exponential functions, and logarithmic
+function.
+So you can see from this set of sort
+of seven things, there's probably not very
+much that you
+would normally be able to write down
+that's not
+going to be continuous at least on some,
+on some domain.
+And then also if you have a function of a
+function so if g is a continuous function
+and sorry if g is continuous at a, And
+there's going to be a value g of a.
+If f is continuous at that value g of
+a, then whoops, f, so this, this means
+composed with.
+And the, probably the easier way to think
+about it is just
+f of g of x.
+[INAUDIBLE]
+.
+That's also going to be a continuous at
+the point A.
+And so just a, a quick example.
+where is the following continuous?
+So it's log of x plus, arc tangent of x
+divided by x squared minus 1.
+So, this is a bit confusing sometimes.
+Because if I put a 2 there, generally I
+mean tangent squared.
+If I put a negative 1 there, I mean 1 over
+tangent, I mean arc-tangent, usually.
+So, I would say, best to avoid this
+notation.
+Use arc tangent.
+And if you need that to be a power just
+write it as 1 over tangent squared or
+something like that.
+So this second bullet point is just
+a little diversion to explain this, this
+tangent.
+Which I think basically was invented
+because it fit nicely on calculator keys.
+So, I'll first got a look at the numerator
+here.
+So I have log(x).
+That's going to be continuous on its
+domain, 'cause log is
+a logarithmic function and its domain is
+x>0 and arctan(x)
+is going to be continuous For any X in the
+real numbers.
+So, the numerator is going to be
+continuous for
+any X in the interval from zero to
+infinity.
+Now I'm going to look at the denominator
+Oops.
+So x squared minus 1.
+Well this is a polynomial.
+We said polynomials were going to be
+continuous on
+all of the real numbers so this is
+continuous everywhere.
+And so f of x is then going to be
+continuous.
+Everywhere except where the bottom is
+equal to zero.
+So that was my one condition for a
+rational function to be continuous, So X
+squared minus one is going to be equal to
+zero only when X is equal to one.
+One or negative one, except that we're
+really only considering Zero
+to infinity because of the numerator.
+So, the only point where I'm going to have
+a problem is the x equal to 1.
+And so that tells me that f of x is
+going to be continuous on the intervals
+0,1 and 1 infinity.
+And by using the parentheses here I mean
+zero one.
+So every number that's greater than zero
+and
+less than one, but not zero or one itself.
+If
+I want to include the endpoints in my
+interval, then I use square brackets.
+And so basically, it's continuous on this
+interval,
+except when x is exactly equal to one.
+And then just one last thing that I want
+to stick somewhere in the course
+and this is where I think it fits best is
+the idea of a horizontal asymptote.
+And so basically what I'm plotting here Is
+this rational function X squared minus one
+divided by
+X squared plus one and I want to know what
+happens to that as X becomes large.
+And if you think about it,
+you know, when, when X is small sort of
+minus one
+divided by one is going to be the dominant
+part of this
+but when X is big, like if X were 1,000
+It's
+going to be a million minus one divided by
+a million plus one.
+So it's going to be pretty close to one.
+And so the definition of this red line.
+So if I have, if I look at the limit as x
+goes to infinity of f of x.
+If that approach is some finite value,
+then I'm going to say that this
+function, f of x, has a horizontal
+asymptote at that, at that value.
+And the way I've, the way I've written
+this, or
+the way I've designed this example, you
+get the same value
+if I go Do plus infinity or minus
+infinity, that doesn't necessarily have to
+be the case.
+So this L here doesn't necessarily need to
+be the same as this L here.
+And so this line is called the horizontal
+asymptote,
+if the limit as X goes to infinity is
+equal to L Or if the limit, as x goes to
+minus infinity, is equal to a different L.
+

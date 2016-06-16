@@ -1,0 +1,317 @@
+And now, we finally get to Lagrange's
+Method.
+Hey guys.
+I'm, I'm starting up again.
+So now I get to Lagrange's Method.
+So the problem I am trying to solve.
+Remember when I go back to my
+portfolio optimization, I want to maximize
+a function.
+So I'm going to call this my objective
+subject to one or more constraints.
+So I'm, I'm going to use n for the number
+of variables of the function I am trying
+to maximize.
+And then I'm going to think about having n
+con-, m constraints.
+So g1 up to gm.
+So there was a 18th century mathematician
+named Joseph Louis Lagrange
+who proposed the following method for, for
+a solution for this problem.
+And his solution was to make this function
+It's now a function of the original n
+variable so x one up to xn.
+And then also these values lambda.
+So you get one lambda for each of the
+constraints you have.
+So lambdas going to go there's, or the
+subscript on lambda will go from one to m.
+So there's Lambda 1 for g1, Lambda 2 for
+g2, and so on.
+And the way you make this function
+is you just put the objective here, and
+then you
+add Lambda times each of these constraints
+to that objective function.
+So you have Lambda 1 times g1 plus Lambda
+2
+times g2 plus Lambda 3 times g3 and so on.
+And also note that I've written the
+constraints
+so that they have to be equal to zero.
+So this is zero isn't a variable that's
+kind
+of hard coded in that spot.
+So if you have something like a condition
+X squared plus Y squared equals 1,
+you have to write that as X squared plus Y
+squared and minus 1 equals 0.
+And then it turns out the optimal value,
+so, the
+maximum value of f, the biggest or
+smallest I can
+make f, subject to these m constraints, is
+going to
+occur at one of the critical points for
+this function here.
+Suggest a little terminology to get us
+started.
+This function, capital F, so is a function
+of n variables
+and the m lambda values is called the
+Lagrangian.
+And the vector Lambda that has Lambda 1
+through Lambda
+m as it's components is called the
+Lagrange multipliers vector.
+So each one of these things is called a
+Lagrange multiplier,
+and then the whole vector is called the
+Lagrange multipliers vector.
+And then there's one necessary condition
+for this meth-, method to work.
+So if I rename the inputs to the
+original function, to the objective
+function, lowercase f.
+I'm going to put those in a vector and
+just call that x.
+And then, if I let g of x just be this
+vector valued function.
+So remember, again, when I put parentheses
+around a
+row, what I really mean is a, a column
+vector.
+So this is a column vector that has G1 as
+its first element.
+G2 as it's second element, and so on,
+so it's a vector-valued function of the
+constraints.
+Then the gradient, and now remember that,
+so if I have
+a vector-valued function, the gradient's
+now going to be a matrix.
+The gradient of this vector-valued
+function, g(x).
+Has to have full rank at any point where
+the constraint g of x equals zero is
+satisfied.
+So that means you have to figure out what
+this gradient matrix looks like.
+Pick a point that satisfies the contraint.
+So, pick a point that satisfies g of x
+equals zero, then evaluate the gradient at
+that point.
+So that will give me a matrix now just of
+numbers, because
+it's sort of a matrix of functions,
+evaluated at one particular point.
+You can do elimination
+on that matrix, and you'd end up with a
+full set of pivots.
+So if that condition holds, then I say
+that the rank of
+the gradient of this vector value function
+g is equal to m, so
+it's this matrix is going to have m rows,
+and so in each
+row, I'm able to find a pivot, that means
+I have full rank.
+And so I said oh you can do that for one
+point but
+actually for this condition to hold you
+have to do it at every point.
+So this this can sometimes be pretty
+problematic to to do
+Most of the time I don't bother checking
+this, unless something really goes wrong.
+And then you wonder, why is this not
+working.
+You know, oh, maybe it's the, the
+condition isn't, isn't being held.
+Okay.
+So the Lagrangian is going to be a
+function that has N plus M variables, so.
+X is this is the argument for the, for the
+objective function.
+Little f.
+Which was a function of n variables.
+And then I'm also going to have m Lagrange
+multipliers.
+So, the Lagrangian has n plus m variables.
+And I need to compute the gradient of this
+thing.
+Because.
+I need to find the critical points,
+because what I'm after is a critical
+point of the Lagrangian will correspond to
+an extreme value of, of my optimization
+problem.
+So I can think about doing this in two
+steps,
+and it turns out this, this step is pretty
+easy.
+So, I'll write d sub x of the lagrangian.
+So, this will be
+the gradient, but I'm only going to take
+partial derivatives with respect to x.
+And then, this will be the gradient
+with the partial derivatives with respect
+to lambda.
+And since this should just be one long row
+vector, so it's a row vector
+because I'm using the square brackets
+here, so
+I mean I want everything to stay in
+a row and the first n elements will be
+these partial derivatives with respect to
+the x variables.
+And the last m elements will be the
+partial derivatives with respect to the
+Lagrange multipliers.
+And now let's remember what the Lagrangian
+looks like.
+And now if I want to take the partial
+derivative of the Lagrangian
+with respect to one of the x variables,
+what I'll end up with.
+Because the differentiation is a, is a
+linear operation.
+So the derivative of a sum is the sum of
+the derivatives.
+So I'll have one derivative.
+So if I'm taking the,
+the partial with respect to xj, I'll end
+up with
+the partial derivative of little f with
+respect to xj.
+So that's my first term here.
+And then for lambda 1, I'm going to end up
+with lambda 1 times the partial derivative
+of g 1
+with respect to x j, plus lambda 2 times
+the
+partial derivative of g 2 with respect to
+x j.
+So I can actually just move that
+differentiation operation across the sum.
+And what I'll end up with.
+Partial derivative of f with respect to
+xj, plus the sum from 1 to m.
+So summing over each one of these
+Lagrange multipliers terms, of the
+Lagragne multiplier
+so lambda i times the partial derivative
+of constraint i with respect to xj.
+And then on the right hand side, this
+turns out to be quite a bit easier.
+So when I'm taking the partial derivative
+with respect to each
+of the lambdas, the objective function
+doesn't have a lambda in it,
+so this the derivative of this, the
+partial derivative of this
+with respect to anyone of the lambdas is
+going to be zero.
+And also, the g doesn't have any lambdas
+in it.
+It's also a function
+just of the, the x variables.
+So the only place the Lagrange multipliers
+are going
+to show up are just lambda i to the 1.
+And so when I'm taking the partial
+derivative with respect to lamda i, every
+one of these is going to be equal to zero,
+except for lamda i.
+And so what I end up with is just a gi of
+x.
+So the gradient of f is going to be these
+partial derivatives with respect to x.
+The gradient of g is going to be this, so
+it's a little tricky to see.
+But the, there, there's n columns so x1,
+x2, all the way up to xn.
+And then there's m rows.
+So it's a m by n matrix.
+And then, each row is just going to be the
+gradient.
+Of g, i of x.
+So here, first row is
+the gradient of g1, second row is the
+gradient of g2 and so on.
+And so I end up with this matrix being the
+gradient of a vector valued function.
+So now I can express the, the sum.
+And the second term using matrix notation,
+so I had this sum of lambda
+i times the partial derivative of gi which
+respect to xj and so if
+I look at a column here, if I pick a
+particular j, so suppose I pick j
+equals 2, that's going to be the second
+column of this matrix.
+So, this sum is just going to be equal to
+lambda times
+the second column of this matrix.
+So that's what I mean when I say.
+Matrix sub j, I mean the jth column so if
+I put a little two down
+here, I'll be talking about the column
+back
+there, that's the second column of this
+matrix.
+And I can write this sum then as lambda
+transposed times
+dot specific so the jth column of this
+matrix.
+That's going to make my notation a little
+bit easier to handle now.
+I don't have to write out all of these
+partial
+derivatives, I can just write it out in
+terms of gradients.
+So it follows that my gradient for the
+whole Lagrangian now.
+This is going to be the gradient of f,
+plus this
+thing that I just worked out up here, and
+so I'm
+going to be able to do this plus operation
+because the, the
+gradient of f is going to be a row vector
+with n elements.
+And then lamba transpose.
+That's also going to be a row vector with
+n elements.
+And I'm going to multiply that by an n by
+n
+matrix, so it's going to stay a row vector
+with n elements.
+So this term is a row vector with n
+elements; this term is a row vector with n
+elements.
+And so I can do the sum just by doing the
+summation element wise, and
+I end up getting exactly what I had in the
+sum formula in the previous slide.
+And then the derivatives for
+For the part of the Lagrangian that just
+corresponds to taking derivatives with
+respect to lambda, they
+just end up being the constraints again,
+so remember
+g was a vector valued function of the
+constraints.
+So if I take g transpose, that's just
+going
+to be that same vector but put into a row.
+And I have to do that because this whole
+thing has to end up being a row.
+So I end up with a row vector here of n
+elements, and a row vector here
+of m elements, and so when I put those two
+next to each other, I end up with this
+row vector with n plus m elements that's
+the gradient of the Lagrangian.
+

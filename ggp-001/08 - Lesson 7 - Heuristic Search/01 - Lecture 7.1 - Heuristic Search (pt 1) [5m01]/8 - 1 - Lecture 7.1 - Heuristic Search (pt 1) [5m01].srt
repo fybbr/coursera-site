@@ -1,0 +1,374 @@
+1
+00:00:07,410 --> 00:00:12,033
+In the last two lessons, we looked at
+approaches to playing small games, those
+
+2
+00:00:12,033 --> 00:00:16,700
+games for which there is sufficient time
+for a complete search of the game tree.
+
+3
+00:00:18,010 --> 00:00:20,740
+Unfortunately, most games are not so
+small.
+
+4
+00:00:20,740 --> 00:00:22,310
+Incomplete search is usually impractical.
+
+5
+00:00:23,760 --> 00:00:28,540
+In this lesson, we'll look at a variety of
+techniques for incomplete search.
+
+6
+00:00:28,540 --> 00:00:32,473
+We'll begin with simple Depth-Limited
+Search, and after that,
+
+7
+00:00:32,473 --> 00:00:34,060
+we turn to two variations.
+
+8
+00:00:34,060 --> 00:00:39,049
+First, Fixed-Depth Heuristic and then
+Variable-Depth Heuristic Search.
+
+9
+00:00:40,520 --> 00:00:41,990
+And in the next lesson, we examine
+
+10
+00:00:41,990 --> 00:00:44,410
+statistical methods for dealing with
+incomplete search.
+
+11
+00:00:47,070 --> 00:00:50,400
+Simplest way of dealing with games, which
+is too little time to
+
+12
+00:00:50,400 --> 00:00:53,140
+search the entire game tree, is to limit
+the search in some way.
+
+13
+00:00:54,170 --> 00:00:57,979
+In depth-limited search, player explores
+the game tree to a given depth.
+
+14
+00:01:00,000 --> 00:01:03,540
+Legal player is a special case of depth
+limited search in
+
+15
+00:01:03,540 --> 00:01:08,150
+fact, as is a random player, where the
+depth is effectively zero.
+
+16
+00:01:08,150 --> 00:01:12,460
+The imp, implementation of depth limited
+search is a small variation
+
+17
+00:01:12,460 --> 00:01:15,616
+on the implementation of the minimax
+player described in the preceding lesson.
+
+18
+00:01:15,616 --> 00:01:21,380
+The only difference is the addition of a
+level parameter to maxscore and minscore.
+
+19
+00:01:22,830 --> 00:01:25,132
+Parameters incremented in minscore on each
+
+20
+00:01:25,132 --> 00:01:28,000
+recursive call to maxscore, as we see here
+at the bottom.
+
+21
+00:01:30,974 --> 00:01:33,438
+and it's the level of any particular
+non-terminal
+
+22
+00:01:33,438 --> 00:01:36,159
+state in the entry exceeds a predetermined
+depth limit.
+
+23
+00:01:37,160 --> 00:01:41,470
+rather than expanding, maxscore simply
+returns zero for that state, which
+
+24
+00:01:41,470 --> 00:01:45,590
+is a quite conservative lower bound on the
+utility of the state.
+
+25
+00:01:45,590 --> 00:01:46,090
+Here
+
+26
+00:01:49,400 --> 00:01:51,140
+is an example of depth limited search.
+
+27
+00:01:52,210 --> 00:01:55,240
+By limiting the depth of players not need
+to explore the entire tree,
+
+28
+00:01:55,240 --> 00:01:58,690
+it is still able to find a solution that
+nets at 80 points.
+
+29
+00:01:59,750 --> 00:02:02,330
+Not as good as 100 points that it might
+get if we were able to go
+
+30
+00:02:02,330 --> 00:02:06,430
+deeper into the tree, but it's better than
+50 and, and a lot better than zero.
+
+31
+00:02:11,620 --> 00:02:15,219
+The most obvious problem with
+depth-limited search is that the, is the
+
+32
+00:02:15,219 --> 00:02:17,697
+conservative estimate of zero for
+non-terminal
+
+33
+00:02:17,697 --> 00:02:19,830
+states is really not very informative.
+
+34
+00:02:20,940 --> 00:02:23,470
+In the worst case, none of the states at
+the given depths
+
+35
+00:02:23,470 --> 00:02:26,590
+may be terminal, in which case the search
+provides no real value.
+
+36
+00:02:26,590 --> 00:02:27,780
+You just get zero everywhere.
+
+37
+00:02:27,780 --> 00:02:31,000
+And we're going to discuss some ways of
+dealing with this
+
+38
+00:02:31,000 --> 00:02:33,939
+problem in the next segment, and again, in
+the next lesson.
+
+39
+00:02:37,440 --> 00:02:39,378
+It also the opposite problem that.
+
+40
+00:02:39,378 --> 00:02:43,118
+The depth maybe set a too greater level,
+forcing the pair to surge
+
+41
+00:02:43,118 --> 00:02:47,480
+deep into the tree before finding an
+answer that exists at a shallow level.
+
+42
+00:02:47,480 --> 00:02:50,607
+This probes that's, ssss, is serious, if
+along the way that
+
+43
+00:02:50,607 --> 00:02:54,389
+run, the player as out of time before
+encountering the shallow solution.
+
+44
+00:02:58,680 --> 00:03:00,632
+One solution to this problem is to
+
+45
+00:03:00,632 --> 00:03:03,930
+use Breadth-First Search rather than
+Depth-First Search.
+
+46
+00:03:05,480 --> 00:03:06,510
+Start off at the root,
+
+47
+00:03:08,680 --> 00:03:13,910
+expand one level, chec, checking each node
+for termination, then we, ho.
+
+48
+00:03:13,910 --> 00:03:17,830
+If we halt if we ever encounter a terminal
+state with sufficiently large value.
+
+49
+00:03:17,830 --> 00:03:20,210
+And if time expires before this happened,
+we simply choose
+
+50
+00:03:20,210 --> 00:03:22,985
+a branch that leads to a node with highest
+terminal value.
+
+51
+00:03:22,985 --> 00:03:28,050
+Breadth-First Search has the merit that it
+finds the shortest path to a maximal goal.
+
+52
+00:03:28,050 --> 00:03:31,120
+And has the disadvantage that it consumes
+space that's
+
+53
+00:03:31,120 --> 00:03:34,230
+proportional to the size of the expanding
+game tree,
+
+54
+00:03:34,230 --> 00:03:35,560
+which can be exponential in depth.
+
+55
+00:03:37,710 --> 00:03:40,560
+Using this approach in some cases, the
+player can run out of memory and crash.
+
+56
+00:03:40,560 --> 00:03:41,060
+An
+
+57
+00:03:44,150 --> 00:03:47,590
+alternative solution to the problem is to
+use what is called iterative deepening.
+
+58
+00:03:48,710 --> 00:03:54,039
+Exploring the entire game tree repeatedly
+at increasing depths until time runs out.
+
+59
+00:03:55,210 --> 00:04:01,470
+We search the tree to depth one, and then
+we search the entire tree to depth two and
+
+60
+00:04:01,470 --> 00:04:03,910
+we search it again to depth three, and so
+
+61
+00:04:03,910 --> 00:04:07,230
+forth, using depth-limited search on each
+of these iterations.
+
+62
+00:04:10,020 --> 00:04:13,190
+The primary disadvantage of this approach
+is that it requires space.
+
+63
+00:04:13,190 --> 00:04:15,950
+Primarily advantage, I'm sorry if this
+person requires place that
+
+64
+00:04:15,950 --> 00:04:18,560
+linear in a depth that you export portion
+of the tree.
+
+65
+00:04:18,560 --> 00:04:21,760
+The entire sub tree does not need to be
+stored,
+
+66
+00:04:21,760 --> 00:04:24,790
+yet it still finds the shortest path to an
+optimal solution.
+
+67
+00:04:24,790 --> 00:04:27,040
+And the primary disadvantage is that
+portions
+
+68
+00:04:27,040 --> 00:04:29,155
+of the tree may me explored multiple
+times.
+
+69
+00:04:29,155 --> 00:04:32,275
+However, it's usual with iterative
+deepening, this waste
+
+70
+00:04:32,275 --> 00:04:34,679
+is usually bounded by a small constant
+factor.
+
+71
+00:04:35,830 --> 00:04:37,290
+Now why is that?
+
+72
+00:04:37,290 --> 00:04:40,060
+the size of the fringe of the tree is
+approximately
+
+73
+00:04:40,060 --> 00:04:43,010
+the same as the size of the tree above the
+fringe.
+
+74
+00:04:43,010 --> 00:04:46,840
+So searching the entire tree in additional
+time requires only the same amount of time
+
+75
+00:04:46,840 --> 00:04:48,465
+as you would need to expend, to,
+
+76
+00:04:48,465 --> 00:04:50,750
+to explore the fringe to another level
+anyway.
+
+77
+00:04:50,750 --> 00:04:54,670
+This means the ex, the extra there is
+extra work, but it is bounded by a simple
+
+78
+00:04:54,670 --> 00:05:01,834
+constant factor that you can factor two or
+three.
+

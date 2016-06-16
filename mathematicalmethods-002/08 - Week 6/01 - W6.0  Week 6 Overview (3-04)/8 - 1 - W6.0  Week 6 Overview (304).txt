@@ -1,0 +1,93 @@
+So welcome to week six of mathematical
+methods for quantitative finance.
+We're going to continue this week talking
+about linear algebra.
+last week we got the basics down, vectors,
+matrices and
+some of the arithmetic rules for working
+with vectors and matrices.
+And now we're going to look a little bit
+deeper into factorizations
+of matrices and the types of problems you
+can solve with them.
+So this week's
+menu, I'll start off with a few more a few
+more properties or types of matrices.
+So there's a, a transpose, is an operation
+you can do on a matrix.
+And a permutation is another operation you
+can do on a matrix.
+And then I'll talk a little bit about
+vector spaces and sub spaces.
+And then I really want to get in to sort
+of the
+meat of this weeks lectures which are
+going to be operations.
+So, when you want to do something to a
+data set
+Often that something can be written down
+as a matrix
+and then I can complete that operation
+just by doing, matrix multiplication or
+some potentially more complicated formula
+involving matrix manipulations.
+And the example I'm going to use to, to
+show
+how that can be done is variance,
+covariance matrix which
+in section four I just start calling
+covariance matrix
+because the full name is kind of difficult
+to pronounce.
+Then in lecture five I'm going to
+introduce
+yet another type of matrix called an
+orthoganal matrix.
+And this is a matrix that has a very
+nice property that it's inverse is also
+its transpose.
+And then I'm going to look at
+some factorizations of matrices that
+basically involve
+factoring, the full matrix into orthogonal
+matrices and then one more matrix that has
+some sort of special property.
+So in the singular value factorization I'm
+going to end up with two orthogonal
+matrices.
+So these are very easy matrices to work
+with because they
+have this nice property their inverse is
+equal to their transpose.
+And then the third matrix is going to be a
+diagonal matrix which that means that
+if, if I look down the main diagonal of
+the matrix, those elements are non zero.
+But any other element has to be zero.
+And so again, this is a very easy matrix
+to work with because
+it's inverse is just the reciprocal of
+each one of those diagonal elements.
+And then I'm going to use the singular
+value factorization to motivate something
+called the eigenvalues
+and eigenvectors and then finally in
+section eight
+I'm going to look at solving something
+called a least.
+Squares problem.
+And so this is if I have a, a scatter
+plot.
+values so I have x values on the x axis, y
+values on the y axis.
+And then I want to put a best fit line
+onto that plot.
+The, the slope and the y intercept at that
+best,
+best fit line you calculate by solving a
+least squares problem.
+And so I'm going to go over how you can
+use
+a matrix factorization called a QR
+factorization to solve that problem.
+

@@ -1,0 +1,449 @@
+The last lesson in this set is
+Marginal Density of a Bivariate Normal
+Distribution.
+So this was actually one of the integrals
+that
+motivated me to have this class in the
+first
+place because I gave this in Introductory
+Statistics class
+to people who haven't done Calculus for
+quite some time.
+And pretty much everybody fell flat on
+their face.
+So hopefully if we go through this one
+time, I want to just point out some of
+the tricks that pop up quite often when
+we're integrating probability distribution
+function, probability density functions.
+And this a reasonably complicated and
+useful example.
+So if you thought the Black-Scholes
+formula was difficult
+[LAUGH]
+this, this one is it's got the same number
+of
+variables but they have Greek names or at
+least five of them have Greek names.
+And so I think that makes people think
+it's more complicated.
+For the model I want to use, we can
+simplify it a bit.
+So it, what I would want to use this for,
+its
+a, for two random variables but
+rather than being independent, they're
+correlated.
+And so this last argument that I have here
+is a correlation coefficient.
+When it's positive, it just means if first
+random variable so if,
+if x were large and I could observe that
+before observing y
+then I would expect y to be large as well.
+If it were zero, then knowing the value of
+x wouldn't tell me anything about the
+value of y.
+And if it were negative, then if I knew I
+had a large
+value of x, that would lead me to expect a
+small value of y.
+If I want to use this in a financial
+application, the, the mu, these are sort
+of expected values.
+So there would be expected return.
+And I, if I were using this for a
+single asset, I would sort of say that the
+expected
+return in this period is probably going to
+be
+the same as this expected return in the
+next period.
+And then these sigma x and sigma y are
+thought of as the, the risk of owning that
+asset.
+So the sigma x would be the risk in the
+first
+period, sigma y would be the risk in the
+second period.
+If the periods are next to each other and
+reasonably short, then
+you can also get away with just assuming
+that that's the same.
+So I'm going to rewrite this with
+sigma x equals sigma y just equals sigma
+and mu x equals mu y just equals mu.
+And that'll at least make this fraction in
+the right-hand side drop down one level.
+Because I'll be able to take this, this
+sigma x squared will be
+the same as this product, sigma x sigma y,
+and the same as this.
+So I'll be able to write that just down
+here.
+And
+then, the thing that I'm trying to compute
+is called a marginal density.
+So this is the density, you know, in
+theory I have these two variables that are
+somehow
+behaving together, but if I don't, if I'm
+in
+a position where I can't see the other
+variable.
+So suppose I don't pay attention to what
+happened on
+the, during the first period and I just
+wonder what's
+going to happen in the second period,
+that's the marginal density.
+So, if I don't care about x and I just say
+what, what's the best you can tell
+me about y given that I'm choosing to
+ignore
+x, you end up with this thing called
+marginal density.
+And you get that just by integrating one
+of the variables out.
+So if I take a functions of x and y and I
+integrate it from negative infinity to
+infinity with respect to x, I'm going to
+be left with this partial integral.
+It's going to be a function of y and
+that's going
+to be called in probability and
+statistics, the marginal density of y.
+For our, for, you know, for this course,
+I'm just doing one partial integral.
+So let's see.
+So that was my, my example was, oops, x
+and y were returns on an asset in
+consecutive periods.
+And then the simplification I'm going to
+make is that
+the expected return on the asset is the
+same in
+each period and the risk that I'm taking
+on by
+investing on that asset during that period
+is the same.
+So I only have one mu and one sigma.
+And so, I can almost force this onto one
+slide.
+So the, oh, oops, if I've done it the
+other way around.
+Yes.
+So on the first slide, I said I was
+going to get the marginal density with
+respect to y.
+Here, I'm doing the same thing with
+respect to x but it's
+exactly the same operation since it's
+symmetric with respect to x and y.
+So what I want to do is integrate this big
+ugly bivariate
+density function from minus infinity to
+infinity with respect to y.
+And one of the nice things to that,
+I said this was the normal probability
+density function.
+It has this nice property that most of the
+time when you
+do things to it, the answer is a normal
+probability density function.
+So, a good first step and this happens
+quite often, you can
+usually make a pretty good guess as to
+what the answer should be.
+or you can at least guess, you know, what
+it
+should be if it's going to be easy to do.
+you might try that and find out it doesn't
+work
+and then it's not going to be easy to do.
+but in this particular case, I'm just
+going to
+guess that the marginal density is just a
+univariate.
+so this is the, the same, you know, phi
+function.
+It's just been scaled by a factor sigma
+and shifted by a factor mu, but this
+is a normal probability density function.
+And so here, since I'm, oops, since I'm
+integrating with respect to y, everything
+in this
+marginal density with respect to x is
+going
+to be constant with respect to this
+integration.
+So what I'm going to do is factor all of
+that stuff out
+of here, move it outs, oops, move it
+outside of my integral sign.
+Because if, if it's constant with respect
+to y, it can cross the integral sign.
+And then look at what's left, and hope
+that
+that's something I can figure out how to
+integrate.
+So, the idea is that I will end up with
+this marginal density.
+My guess at what the marginal density
+function should be, times everything
+that's left.
+So, this C here is, this, this thing here
+with
+the 1 over square root of 2 pi sigma
+factored out.
+I just couldn't fit everything into the
+slide if I did it.
+And then, I have all of
+this stuff left over.
+And so I need to somehow show that this
+integral from minus infinity to infinity,
+this big ugly mess, dy is equal to 1.
+And so this is, this is what this value of
+C is equal to.
+So it's if you multiply this by C, you
+just
+get the scaling factor from the, from the
+bivariate density function.
+>> Can we go back over this real quick
+[INAUDIBLE]?
+>> Yep.
+>> I'm sorry, so you're taking your
+guess for
+[INAUDIBLE]
+would be and multiply it by what we have
+up above?
+Is that what's going on?
+>> So, what I've done, I've taken this
+term here or this factor
+here and I've split it up into this and
+this.
+Alright, so if I multiply those together,
+I get this thing back.
+And then, this is what I want to appear
+outside.
+Oh, and again, this should be an x.
+It should be the same as this, just with
+the opposite sign.
+and so if I have a negative 1 here and a
+positive 1 here, that would be e to the 0.
+So it's basically what I've just done, is
+multiplied this
+thing by 1, but used a, a clever choice of
+1.
+>> Thank you.
+>> Okay.
+So now what I want to do is look at the
+part that's in the
+square brackets, so if I go back,
+I'm looking at this, this square brackets
+here.
+I just, I want to simplify that.
+So, this is the bit in the square
+brackets.
+If I wanted to do this subtraction, then
+I've got 2 sigma squared in the
+denominator here and 2 sigma squared times
+1 minus rho squared in the denominator
+here.
+So I need to multiply those first term by
+1 minus rho squared over 1 minus rho
+squared.
+So if I do that, then I can put everything
+over a common denominator.
+And I have 1 minus rho squared times x
+minus mu squared.
+And then, what I had originally.
+And if you look at this carefully, I have
+1 times x minus mu squared
+minus x minus mu squared.
+So this 1 is going to disappear.
+This whole term is going to disappear and
+what will be
+left is negative rho squared times x minus
+mu squared.
+So let's hope that that's what I've done
+in the next step.
+Yep.
+So I have negative rho squared times the
+quantity x minus mu squared.
+I have everything else still staying the
+same here.
+And let's see, what have I done?
+So now I multiplied the numerator by
+negative 1 and then I'm
+going to cancel that out by multiplying
+the whole fraction also by negative 1.
+So that made my first term positive,
+second term negative, third term positive.
+And if you stare at this for a while, it
+should start to look familiar.
+So if
+you think back to the Completing the
+Square Lecture, you'll actually realize
+that this
+is already in the, the right form, it
+could be written as something squared.
+And that something is just going to be rho
+x
+sorry, rho x times the quantity x minus mu
+minus y minus mu squared or
+sorry, minus y minus mu.
+Hopefully I'll get it right when I hit the
+Next key.
+So I have rho times x minus mu.
+When I square that, I'm going to get this.
+Then I have minus y minus mu.
+When I square that, I'm going to get this.
+And then the cross terms are going to be
+rho x minus
+mu y minus mu with a negative sign in
+front of it.
+I'm going to get two of those from the
+outer and from the inner,
+and so that's where this middle term is
+coming from or going, I guess.
+Okay.
+And then I'm going to write this.
+So it's exactly the same thing, I've
+just sort of rearranged where I'm putting
+parenthesis.
+So I have y
+minus something and that something is mu
+plus rho times x minus mu.
+So all I've done here, I had a, a rho
+times
+x, sorry, a rho times x minus mu and a
+minus y.
+so I did something that's a bit a bit
+clever here.
+Since this is squared, I can multiply the
+inside by negative 1.
+So I can actually write this as y minus
+mu, minus rho times x minus mu.
+And when I square that, the negative 1
+will go away.
+So it'll be negative 1 squared times the
+product here.
+So that lets
+me put this term in front.
+And this term, second.
+So I end up with this y, oops, minus this
+mu.
+So this mu here becomes this mu here.
+Then, I have minus rho times x minus mu
+but since I'm writing it in these
+parenthesis here, that minus has to be a
+plus because that minus is going over
+here.
+So, I end up with mu
+plus rho times x minus mu.
+So, that's mostly just an exercise in
+bookkeeping for science.
+And then in the denominator, I'm going to
+write sigma squared times 1 minus rho
+squared.
+As sigma times the square root of 1 minus
+rho, I'll put that all in parentheses and
+square that.
+And now if you look closely at what this
+is, this is a variable minus a constant
+squared
+over 2 times another constant squared.
+And now I'm going to plug this back into
+my square brackets here.
+So this is what we had at the end of, you
+know, two slides ago.
+This was the thing where I said, I want to
+show that this integral is equal to 1.
+And
+I want to look just at the integrand so
+that's the C times the thing in the square
+brackets.
+So on the previous slide I found another
+expression for what's in the square
+brackets here.
+And that's, I've plugged in here.
+And then in my C constant, I'm going to do
+the same thing I did I'm going to write
+the sigma times the square root of 1 minus
+rho squared in parenthesis.
+And now this constant here is equal to
+this constant here.
+And if you think back to what did
+the standard norm or what did the normal
+density
+function look like, in the original one
+this was called sigma.
+I just had a 2 sigma squared over in the
+exponential part of the function.
+And I had a 1 over square root of 2pi
+times sigma.
+So this is just a new value for a sigma.
+And then the numerator of the exponential
+part, I have y minus mu squared and so
+now, I just had y minus something but it's
+I'm integrating with respect to y.
+And this doesn't have any ys in it, so
+that's effectively a constant.
+So this is actually a normal probability
+density function,
+just with a different mean and a different
+standard deviation.
+So this, this term down here is the
+standard deviation.
+And this, this term here is the mean.
+And so, if I let m
+equal this guy here, which is that.
+And I let
+s equal sigma times the square root of one
+minus rho squared, which is that.
+And when I plug those in, I end up with 1
+over the square root of
+2 pi times s e to the minus y minus m
+squared
+over 2s squared.
+And this is exactly the normal
+density with mean m and then standard
+deviation s.
+And so if I integrate this, so I'm
+integrating
+this with respect to y from minus infinity
+to infinity.
+I know it's a density function so this is,
+this is
+sort of the big trick because I don't
+actually have to do
+the integral if I can show that it's a
+density function
+because I know every density function is
+going to integrate to 1.
+So
+the integral of this normal density over
+the entire real
+line, so from minus infinity to infinity
+is equal to 1.
+And so now if I go back to, so this was
+my, my big ugly formula.
+I've just been simplifying and simplifying
+the integral.
+And now I have it oops, looks like the dy
+disappeared off the end of the slide.
+but the integral of this density
+over the entire real line is equal to 1.
+So, I get that my
+marginal density was equal to 1 over the
+square root of 2 pi sigma.
+This is just the thing that I guessed and
+factored out at the beginning.
+oops, so, it looks like I switched the xs
+and ys again, so this should be an x.
+so x minus mu squared divided by 2 sigma
+squared.
+So I get that the marginal density of x is
+also a a normal distribution.
+

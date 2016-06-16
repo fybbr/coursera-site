@@ -1,0 +1,1193 @@
+1
+00:00:00,960 --> 00:00:01,380
+Okay.
+
+2
+00:00:01,380 --> 00:00:05,130
+So, this week, we will be talking about
+multiple integrals.
+
+3
+00:00:07,660 --> 00:00:12,090
+So here's a brief menu for what we will
+have.
+
+4
+00:00:12,090 --> 00:00:15,160
+first I'll introduce something called a
+double integral.
+
+5
+00:00:15,160 --> 00:00:17,976
+So it's basically just a two dimensional
+version of
+
+6
+00:00:17,976 --> 00:00:21,490
+the single variable integral we started
+with in week two.
+
+7
+00:00:21,490 --> 00:00:25,430
+And then I'll talk about something called
+Fubini's Theorem.
+
+8
+00:00:27,520 --> 00:00:29,032
+And this is going to be the, the bit
+
+9
+00:00:29,032 --> 00:00:31,630
+that actually allows us to compute double
+integrals.
+
+10
+00:00:35,330 --> 00:00:37,360
+And then we have something called change
+of variables.
+
+11
+00:00:37,360 --> 00:00:41,200
+This is basically just the substitution
+method, but when we're doing
+
+12
+00:00:41,200 --> 00:00:44,610
+it with two variables there's sort of a
+lot more flexibility.
+
+13
+00:00:44,610 --> 00:00:47,220
+So I'll teach you how to, how to set that
+up.
+
+14
+00:00:47,220 --> 00:00:50,350
+And then in section four, we'll work
+through an example of that.
+
+15
+00:00:51,650 --> 00:00:53,250
+And then section five is pretty short.
+
+16
+00:00:53,250 --> 00:00:56,058
+There's a special situation where you have
+something called
+
+17
+00:00:56,058 --> 00:00:58,940
+separability, which allows you to write a
+double integral.
+
+18
+00:00:58,940 --> 00:01:00,368
+It's just a product of two single
+
+19
+00:01:00,368 --> 00:01:01,410
+variable integrals.
+
+20
+00:01:01,410 --> 00:01:05,600
+So it makes it a lot easier a lot easier
+to evaluate.
+
+21
+00:01:06,900 --> 00:01:11,540
+And then in Wednesday's lecture, we'll
+talk about switching to polar coordinates.
+
+22
+00:01:11,540 --> 00:01:14,970
+So, in section three, we talked about
+change of variables.
+
+23
+00:01:14,970 --> 00:01:17,079
+Section six, polar coordinates is just one
+
+24
+00:01:17,079 --> 00:01:19,709
+particular change of variables that we can
+do.
+
+25
+00:01:19,709 --> 00:01:23,510
+section seven, a culturally important
+integral.
+
+26
+00:01:23,510 --> 00:01:25,398
+So this is why there's this 1 over the
+
+27
+00:01:25,398 --> 00:01:27,227
+square root of 2 pi in the front of the
+
+28
+00:01:27,227 --> 00:01:27,640
+[UNKNOWN]
+
+29
+00:01:27,640 --> 00:01:28,260
+function.
+
+30
+00:01:30,290 --> 00:01:33,962
+And then eight is, this is just something
+that's going to come
+
+31
+00:01:33,962 --> 00:01:38,480
+up reasonably often, so we need to compute
+a marginal density function.
+
+32
+00:01:38,480 --> 00:01:43,376
+So, when you have a density function that
+has two or more random variables in it,
+
+33
+00:01:43,376 --> 00:01:46,256
+sometimes you want to know what would the
+density
+
+34
+00:01:46,256 --> 00:01:49,000
+of one of those random variables look
+like.
+
+35
+00:01:49,000 --> 00:01:50,280
+And this is the way to do it.
+
+36
+00:01:50,280 --> 00:01:52,994
+That's actually a result that'll be more
+applicable
+
+37
+00:01:52,994 --> 00:01:55,295
+to 461, but the, the math definitely fits
+
+38
+00:01:55,295 --> 00:01:58,460
+in nicely in this class.
+So, I'll go through one example of that.
+
+39
+00:02:02,050 --> 00:02:02,460
+Okay.
+
+40
+00:02:02,460 --> 00:02:04,099
+So we'll get started with double
+integrals.
+
+41
+00:02:08,940 --> 00:02:10,968
+So just a quick reminder of what
+
+42
+00:02:10,968 --> 00:02:15,140
+is the integral of a single-variable
+function doing.
+
+43
+00:02:15,140 --> 00:02:18,668
+So the problem that I tried to, I set out
+to solve,
+
+44
+00:02:18,668 --> 00:02:23,220
+was I have this function f of x on some
+interval ab.
+
+45
+00:02:23,220 --> 00:02:28,530
+And I want to come up with how much area
+is underneath f of x, in between a and b.
+
+46
+00:02:30,150 --> 00:02:34,110
+And so, the approach I took was, I just
+decided I was going to come
+
+47
+00:02:34,110 --> 00:02:38,470
+up with a lower bound by fitting these red
+rectangles underneath f of x.
+
+48
+00:02:42,510 --> 00:02:45,414
+And then I was going to estimate the area
+underneath f
+
+49
+00:02:45,414 --> 00:02:48,380
+of x just as the sum of the areas of these
+rectangles.
+
+50
+00:02:49,510 --> 00:02:54,880
+And then I define the idea of a definite
+integral to just be this sum.
+
+51
+00:02:54,880 --> 00:02:59,223
+So, this thing that I'm trying to
+highlight right
+
+52
+00:02:59,223 --> 00:03:02,069
+here, f of a plus i times delta x.
+
+53
+00:03:03,330 --> 00:03:07,810
+So, if I start with i equals zero, then a
+plus i delta x is just going to
+
+54
+00:03:07,810 --> 00:03:11,960
+be a, and f of a is just going to be the
+height of this rectangle.
+
+55
+00:03:11,960 --> 00:03:13,616
+So it's the height of the first rectangle.
+
+56
+00:03:13,616 --> 00:03:16,466
+And then I'm going to multiply that by
+delta x,
+
+57
+00:03:16,466 --> 00:03:19,280
+where delta x is the width of the
+rectangle.
+
+58
+00:03:20,370 --> 00:03:22,726
+And here, so delta x is just going to be b
+
+59
+00:03:22,726 --> 00:03:25,970
+minus a, so the size of the interval
+divided by n.
+
+60
+00:03:28,330 --> 00:03:31,642
+And the as I make n bigger and bigger, so
+I try and cram more
+
+61
+00:03:31,642 --> 00:03:35,575
+triangles underneath this curve, my
+estimate, my approximation
+
+62
+00:03:35,575 --> 00:03:38,620
+for this area is getting better and
+better.
+
+63
+00:03:38,620 --> 00:03:43,212
+And if I take the limit of that as n goes
+to infinity, then I'm going
+
+64
+00:03:43,212 --> 00:03:48,200
+to say that, that's the area of underneath
+the f of x in between a and b.
+
+65
+00:03:49,750 --> 00:03:52,800
+Well, that's what we did in with a single
+variable integral.
+
+66
+00:03:52,800 --> 00:03:53,550
+For a double
+
+67
+00:03:53,550 --> 00:03:58,600
+integral we're going to try and do the
+same thing, but now with two variables.
+
+68
+00:03:58,600 --> 00:04:00,360
+So it's really a three dimensional
+problem.
+
+69
+00:04:00,360 --> 00:04:06,710
+We're thinking of z as being a function of
+x and oops, and y here.
+
+70
+00:04:06,710 --> 00:04:13,196
+And now, instead of putting rectangles
+underneath the curve, I'm going to try and
+
+71
+00:04:13,196 --> 00:04:18,630
+build these sort of rectangular solids.
+And I'm going to try and put
+
+72
+00:04:18,630 --> 00:04:19,970
+them underneath the surface.
+
+73
+00:04:19,970 --> 00:04:22,050
+And then the idea is that I'm trying,
+
+74
+00:04:22,050 --> 00:04:24,723
+I want to compute the volume under this
+surface.
+
+75
+00:04:24,723 --> 00:04:29,440
+So it's going, the interpretation that
+I'm, I'm going for
+
+76
+00:04:29,440 --> 00:04:34,110
+is the volume between the xy plane and the
+surface z.
+
+77
+00:04:34,110 --> 00:04:36,990
+And so again like the single variable
+integral.
+
+78
+00:04:36,990 --> 00:04:40,590
+If the surface is above the xy plane, I'm
+going to get a positive volume,
+
+79
+00:04:40,590 --> 00:04:44,610
+and if the surface is below the x-y plane,
+I'm going to get a negative volume.
+
+80
+00:04:49,070 --> 00:04:51,670
+And then here, just with four of these
+things,
+
+81
+00:04:51,670 --> 00:04:54,600
+you can see that it's not a very good
+approximation.
+
+82
+00:04:54,600 --> 00:04:57,759
+There's quite a bit missing, but if I
+instead
+
+83
+00:04:57,759 --> 00:05:01,860
+used you know, and I'm dividing each
+interval into four.
+
+84
+00:05:01,860 --> 00:05:04,630
+So it's getting a little bit better.
+
+85
+00:05:04,630 --> 00:05:06,270
+And then you can go to eight.
+
+86
+00:05:06,270 --> 00:05:08,034
+So now I guess there's 64 of these little
+
+87
+00:05:08,034 --> 00:05:10,500
+things, and it's starting to resemble the
+surface more.
+
+88
+00:05:11,770 --> 00:05:14,286
+And so my definition of a double integral
+
+89
+00:05:14,286 --> 00:05:18,470
+then, for this particular problem, the
+domain of integration.
+
+90
+00:05:18,470 --> 00:05:20,850
+So that's the area in the xy plane, where
+
+91
+00:05:20,850 --> 00:05:24,730
+I'm trying to, where I'm interested in
+estimating the volume.
+
+92
+00:05:25,820 --> 00:05:29,130
+So, the first one is going to be the x
+dimension.
+
+93
+00:05:29,130 --> 00:05:34,340
+So I want to go 0 to 2 in the x direction.
+And then I want to go zero to two in the
+
+94
+00:05:34,340 --> 00:05:39,374
+y direction.
+And then, this surface is
+
+95
+00:05:39,374 --> 00:05:40,610
+my f of x, y.
+
+96
+00:05:42,570 --> 00:05:44,827
+And now I need something to sort of say
+what my
+
+97
+00:05:44,827 --> 00:05:48,330
+variable of integration is, so I'm just
+going to say dA here.
+
+98
+00:05:48,330 --> 00:05:52,880
+And dA, you can sort of think of that as
+the size of one of these little.
+
+99
+00:05:52,880 --> 00:05:55,860
+In general, they'll be rectangles, but in
+this, they're squares.
+
+100
+00:05:55,860 --> 00:05:57,799
+So it's the base of each one of these
+columns.
+
+101
+00:06:00,230 --> 00:06:03,440
+And then I'm going to take the limit as m
+and n go to infinity.
+
+102
+00:06:05,010 --> 00:06:07,860
+And here, just like I, I did with my red
+rectangles.
+
+103
+00:06:07,860 --> 00:06:10,320
+Essentially, all I'm doing is this
+function is
+
+104
+00:06:10,320 --> 00:06:13,350
+assigning a height to one of these
+columns.
+
+105
+00:06:13,350 --> 00:06:17,680
+And then delta A is the area of the base
+of one of these columns.
+
+106
+00:06:17,680 --> 00:06:19,920
+So the volume of each column is going to
+
+107
+00:06:19,920 --> 00:06:22,480
+be given by the, the thing in the sum
+here.
+
+108
+00:06:24,200 --> 00:06:25,280
+And then hopefully,
+
+109
+00:06:25,280 --> 00:06:29,840
+my approximation gets better and better,
+and better as as m and n get bigger.
+
+110
+00:06:29,840 --> 00:06:31,880
+And in the limit, it would be equal to the
+
+111
+00:06:31,880 --> 00:06:35,020
+volume under the surface, which is what
+I'm trying to get.
+
+112
+00:06:38,580 --> 00:06:39,972
+And so, just at the bottom here, I
+
+113
+00:06:39,972 --> 00:06:42,349
+have definitions of all the quantities
+I've used.
+
+114
+00:06:50,270 --> 00:06:54,160
+So, in general, when I want to integrate
+over a rectangle.
+
+115
+00:06:54,160 --> 00:06:58,320
+So I'm going to, I'm going to be using
+this notation pretty commonly.
+
+116
+00:06:58,320 --> 00:07:01,230
+So R just means a rectangular region.
+
+117
+00:07:01,230 --> 00:07:05,000
+There's no particularly good reason, it's
+just I had to chose some letter.
+
+118
+00:07:05,000 --> 00:07:10,270
+And since it's a rectangle I chose R.
+And when I write it like this,
+
+119
+00:07:10,270 --> 00:07:15,626
+[a, b] cross [c,d].
+What I mean is the rectangle with one side
+
+120
+00:07:15,626 --> 00:07:21,040
+parallel to the x axis going from x equals
+a to x equals b.
+
+121
+00:07:21,040 --> 00:07:26,450
+And the other side parallel to the y axis
+going from y equals c to y equals d.
+
+122
+00:07:30,840 --> 00:07:34,108
+And so, now I'm going to say that the
+double integral
+
+123
+00:07:34,108 --> 00:07:36,768
+over this region R, is going to be equal
+to
+
+124
+00:07:36,768 --> 00:07:39,580
+the same limit I had on the last page,
+except
+
+125
+00:07:39,580 --> 00:07:44,220
+on the last slide, except now I'm just
+re-writing it.
+
+126
+00:07:44,220 --> 00:07:48,340
+So instead of just being ix, I have to
+start at a and go ix.
+
+127
+00:07:49,473 --> 00:07:54,270
+And and then for y, I'm going to start at
+c and go j times y.
+
+128
+00:07:54,270 --> 00:07:55,857
+So just stepping along the y
+
+129
+00:07:55,857 --> 00:08:00,260
+axis in steps of delta y, and stepping
+along the x axis and steps of delta x.
+
+130
+00:08:06,850 --> 00:08:10,492
+And then the interpretation of this So
+like I was trying to argue
+
+131
+00:08:10,492 --> 00:08:13,920
+before, is if f of x y is greater than or
+equal to 0.
+
+132
+00:08:13,920 --> 00:08:17,922
+So that's basically just saying that the
+surface I'm
+
+133
+00:08:17,922 --> 00:08:21,503
+trying to integrate under is above the xy
+plane.
+
+134
+00:08:21,503 --> 00:08:26,563
+Then I can interpret the, the value of
+this integral
+
+135
+00:08:26,563 --> 00:08:31,508
+as the volume of the region above R and
+beneath the,
+
+136
+00:08:31,508 --> 00:08:36,467
+the surface z equals f of xy.
+So like the, like the
+
+137
+00:08:36,467 --> 00:08:41,225
+single variable integral, we get some,
+some
+
+138
+00:08:41,225 --> 00:08:46,700
+pretty useful properties that are going to
+just help.
+
+139
+00:08:46,700 --> 00:08:49,340
+You know, without evaluating the integral
+we can at
+
+140
+00:08:49,340 --> 00:08:52,250
+least rewrite it in, in terms of its
+terms.
+
+141
+00:08:52,250 --> 00:08:56,566
+Split it into two integrals in this case.
+So we have one linearity
+
+142
+00:08:56,566 --> 00:09:02,450
+property, which is just saying that if I
+integrate a sum of two simpler functions.
+
+143
+00:09:02,450 --> 00:09:07,234
+So in this case, I have the function I'm
+integrating, can be
+
+144
+00:09:07,234 --> 00:09:12,670
+written as one function of x and y f, and
+another function of x and y g.
+
+145
+00:09:12,670 --> 00:09:16,688
+Then the integral of this sum is equal to
+the sum of
+
+146
+00:09:16,688 --> 00:09:21,686
+the two, sorry, sum of the two integrals
+yeah, had it right
+
+147
+00:09:21,686 --> 00:09:26,919
+the first time.
+Then the second property that I'm going to
+
+148
+00:09:26,919 --> 00:09:32,136
+also throw under this name linearity, is
+if I scale
+
+149
+00:09:32,136 --> 00:09:36,984
+my function by.
+So c here is going to be a real
+
+150
+00:09:36,984 --> 00:09:41,812
+valued constant, then the integral of c
+
+151
+00:09:41,812 --> 00:09:47,350
+times f of x, c times f of x, y is equal
+to c times
+
+152
+00:09:47,350 --> 00:09:50,500
+the integral of f of x, y.
+
+153
+00:09:50,500 --> 00:09:52,320
+And then I didn't really know what to call
+
+154
+00:09:52,320 --> 00:09:54,540
+this property, so I, I came up with
+comparison.
+
+155
+00:09:54,540 --> 00:09:59,190
+But it should be reasonably intuitive.
+
+156
+00:09:59,190 --> 00:10:02,880
+So, if I have two functions f of x y and g
+of x y.
+
+157
+00:10:02,880 --> 00:10:05,200
+And everywhere in my domain of
+integration.
+
+158
+00:10:05,200 --> 00:10:07,908
+So this is my, my rectangle R.
+
+159
+00:10:09,460 --> 00:10:12,430
+If f of x y is greater than or equal to g
+of x y.
+
+160
+00:10:12,430 --> 00:10:15,260
+So one surface is completely above the
+other.
+
+161
+00:10:16,592 --> 00:10:20,200
+or some, some places they might touch,
+which is what the equality would mean.
+
+162
+00:10:20,200 --> 00:10:24,710
+But if they don't touch, then f of x y is
+above g of x y.
+
+163
+00:10:24,710 --> 00:10:27,323
+Then there has to be more volume
+underneath the
+
+164
+00:10:27,323 --> 00:10:30,510
+surface f than there is underneath the
+surface g.
+
+165
+00:10:30,510 --> 00:10:32,211
+So we'd say that that the
+
+166
+00:10:32,211 --> 00:10:32,616
+[COUGH]
+
+167
+00:10:32,616 --> 00:10:35,694
+the double integral of f over R is greater
+than
+
+168
+00:10:35,694 --> 00:10:38,650
+or equal to the double integral of g over
+R.
+
+169
+00:10:43,930 --> 00:10:44,250
+Okay.
+
+170
+00:10:44,250 --> 00:10:48,690
+And then there's another related integral
+called an iterated integral.
+
+171
+00:10:49,890 --> 00:10:54,760
+And so, I'm going to suppose that f of x,
+y is continuous on the rectangle R.
+
+172
+00:10:54,760 --> 00:10:58,888
+So again, R is just a, b in the x
+direction and c, d in the y direction.
+
+173
+00:10:58,888 --> 00:11:06,120
+And I'm going to introduce a concept
+called partial integration.
+
+174
+00:11:06,120 --> 00:11:09,006
+And so this is sort of the, the backward
+idea of
+
+175
+00:11:09,006 --> 00:11:11,640
+partial differentiation.
+
+176
+00:11:11,640 --> 00:11:14,968
+So, in partial differentiation, if I have
+a function of x and
+
+177
+00:11:14,968 --> 00:11:18,840
+y, and I want to take the partial
+derivative with respect to y.
+
+178
+00:11:18,840 --> 00:11:21,220
+I pretend x is a constant, so I fix x, and
+I
+
+179
+00:11:21,220 --> 00:11:26,040
+take the derivative, treating the function
+as a function of y alone.
+
+180
+00:11:26,040 --> 00:11:27,960
+In partial integration, I'm going to do
+exactly
+
+181
+00:11:27,960 --> 00:11:30,800
+the same thing, except just the other
+direction.
+
+182
+00:11:30,800 --> 00:11:32,050
+So I'm going to fix x.
+
+183
+00:11:33,530 --> 00:11:36,936
+Basically, when I say fix x, I mean
+pretend x is a constant.
+
+184
+00:11:36,936 --> 00:11:41,710
+And then I'm going to integrate f of x y
+as if it were a function of y alone.
+
+185
+00:11:43,920 --> 00:11:46,600
+And so that's just going to give me a
+function of x.
+
+186
+00:11:46,600 --> 00:11:52,500
+So when I integrate from c to d of f of x
+y, dy, the y is going to disappear,
+
+187
+00:11:52,500 --> 00:11:56,900
+because after I compute an anti-derivative
+for f of
+
+188
+00:11:56,900 --> 00:12:00,316
+x y, treating it just as a function of y.
+
+189
+00:12:00,316 --> 00:12:06,650
+I'm then going to replace those, the y's
+in the anti-derivative with c's and d's.
+
+190
+00:12:06,650 --> 00:12:09,247
+So, when I'm all done evaluating this
+definite integral
+
+191
+00:12:09,247 --> 00:12:12,450
+on the right-hand side, there aren't
+going to be any y's left in it.
+
+192
+00:12:12,450 --> 00:12:17,080
+But there still might be some x's, and so
+that's going to be my function A of x.
+
+193
+00:12:20,230 --> 00:12:23,920
+And then I can do something called an
+iterated integral.
+
+194
+00:12:24,950 --> 00:12:27,614
+So, an iterated integral is just going to
+be
+
+195
+00:12:27,614 --> 00:12:30,650
+the integral of A of x with respect to x.
+
+196
+00:12:30,650 --> 00:12:35,820
+So now I consider integrating from a to b
+my function A of x dx.
+
+197
+00:12:35,820 --> 00:12:38,140
+And this is just going to be a single
+variable integral.
+
+198
+00:12:39,470 --> 00:12:42,650
+But then remember how we defined a of x.
+
+199
+00:12:42,650 --> 00:12:45,328
+That was just the integral from
+
+200
+00:12:45,328 --> 00:12:46,900
+c to d of f of x y dy.
+
+201
+00:12:46,900 --> 00:12:49,675
+So I could also write me iterated integral
+in
+
+202
+00:12:49,675 --> 00:12:52,460
+this form that I have on the right hand
+side.
+
+203
+00:12:52,460 --> 00:12:55,530
+And so, I think you can see kind of why
+it's called iterated integral.
+
+204
+00:12:55,530 --> 00:12:58,330
+It's giving me sort of a, a hierarchy, so
+I can
+
+205
+00:12:58,330 --> 00:13:03,340
+evaluate this thing by first doing the
+integral in the square brackets.
+
+206
+00:13:03,340 --> 00:13:05,430
+That's going to give me a function of x.
+
+207
+00:13:05,430 --> 00:13:07,489
+And then I can integrate that using
+
+208
+00:13:07,489 --> 00:13:10,471
+this outside integral, which is just an
+integral
+
+209
+00:13:10,471 --> 00:13:11,980
+of a function of x alone.
+
+210
+00:13:15,730 --> 00:13:17,802
+And then, most of the time when people
+write
+
+211
+00:13:17,802 --> 00:13:20,160
+this down, they are going to omit the
+brackets.
+
+212
+00:13:20,160 --> 00:13:24,620
+So, both sides of the equality here, they
+mean exactly the same thing.
+
+213
+00:13:24,620 --> 00:13:27,863
+And usually when I'm trying to do one of
+these on my own,
+
+214
+00:13:27,863 --> 00:13:31,870
+I put the brackets back in just to make
+sure that everything lines up.
+
+215
+00:13:31,870 --> 00:13:36,160
+So that the important thing to notice,
+that the brackets will help you with,
+
+216
+00:13:36,160 --> 00:13:40,640
+is that this is something that you're
+going to do from the inside out.
+
+217
+00:13:40,640 --> 00:13:46,022
+So the first integral, oops, the first
+integral is an
+
+218
+00:13:46,022 --> 00:13:51,850
+integral from c to d.
+And c and d, these are the y coordinates.
+
+219
+00:13:51,850 --> 00:13:54,329
+So remember on my rectangle, the, the c
+and
+
+220
+00:13:54,329 --> 00:13:57,220
+the d are describing the height of the
+rectangle.
+
+221
+00:13:57,220 --> 00:13:59,120
+So the bottom and the top of the
+rectangle.
+
+222
+00:13:59,120 --> 00:14:01,000
+So they're in the y coordinate.
+
+223
+00:14:01,000 --> 00:14:05,806
+So, whatever limits are on here, they have
+to correspond to the
+
+224
+00:14:05,806 --> 00:14:08,790
+first, so in this case d y comes first.
+
+225
+00:14:08,790 --> 00:14:13,150
+So c, d are the limits for integrating
+with respect to y.
+
+226
+00:14:13,150 --> 00:14:18,870
+And then, once that's done, the next layer
+out is going to be the dx layer.
+
+227
+00:14:18,870 --> 00:14:24,030
+And so the integral, the, the limits on
+the outside integral ab, they
+
+228
+00:14:24,030 --> 00:14:29,140
+correspond to doing the dx dy, sorry they
+correspond to doing the dx.
+
+229
+00:14:30,390 --> 00:14:30,880
+And so,
+
+230
+00:14:30,880 --> 00:14:34,870
+if you put the brackets in here, just as
+one more reminder, that the
+
+231
+00:14:34,870 --> 00:14:37,040
+limits here have to correspond to the
+
+232
+00:14:37,040 --> 00:14:40,400
+variable that I'm integrating with respect
+to here.
+
+233
+00:14:44,410 --> 00:14:47,446
+And then, there's no reason why we
+couldn't iterate
+
+234
+00:14:47,446 --> 00:14:49,990
+the other way, so I could also rewrite
+this.
+
+235
+00:14:49,990 --> 00:14:55,120
+And notice, all I've done here, I had dy
+dx, here I had dx dy.
+
+236
+00:14:55,120 --> 00:14:57,331
+So in order to rewrite this integral, I
+
+237
+00:14:57,331 --> 00:15:00,080
+had to change tho, the integral signs as
+well.
+
+238
+00:15:00,080 --> 00:15:03,344
+So I now have ab corresponding to the dx
+
+239
+00:15:03,344 --> 00:15:07,380
+and then integral c to d corresponding to
+the dy
+
+240
+00:15:10,060 --> 00:15:12,020
+And so, it's a pretty common mistake I
+think,
+
+241
+00:15:12,020 --> 00:15:14,510
+you know, if you don't put these brackets
+here.
+
+242
+00:15:14,510 --> 00:15:18,059
+That you will eventually use the limits
+for the
+
+243
+00:15:18,059 --> 00:15:23,320
+other variable when you integrate the, the
+inside function.
+
+244
+00:15:27,160 --> 00:15:29,592
+And so, then the big question we're going
+to
+
+245
+00:15:29,592 --> 00:15:33,040
+have is, what is the relationship between
+a double integral?
+
+246
+00:15:33,040 --> 00:15:36,320
+So a double integral, this is, this is the
+thing we want.
+
+247
+00:15:36,320 --> 00:15:40,610
+What I want to do is be able to compute
+the area underneath a surface.
+
+248
+00:15:41,620 --> 00:15:45,600
+And this iterated integral on the right
+hand side.
+
+249
+00:15:45,600 --> 00:15:48,160
+This is something I can actually compute.
+
+250
+00:15:48,160 --> 00:15:51,440
+And so we'll get to that question in the
+next set of slides.
+

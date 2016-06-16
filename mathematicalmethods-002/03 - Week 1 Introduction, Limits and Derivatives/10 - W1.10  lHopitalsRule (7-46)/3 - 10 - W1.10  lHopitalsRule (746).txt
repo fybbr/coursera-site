@@ -1,0 +1,201 @@
+So the final topic in our first set of
+slides is called L'Hopital's Rule.
+And this is a rule for evaluating limits.
+So, it's just one more little piece of
+what we started on on the first session.
+And so the problem that I want to look at,
+is suppose I have a function that looks
+like this.
+So I have, sine x divided by x.
+So one of my rules said that,
+for a rational function I can just of this
+as the
+limit of the top divided by the limit of
+the bottom.
+But that's not going to work here for two
+reasons.
+A, the limit of the bottom is going to 0.
+So, it's a continuous function, it's going
+to be 0.
+And the limit of the top is also a
+continuous function, and sign of 0 is 0.
+But if you plug this thing, it looks like
+this.
+So it looks like it's very well defined.
+Except if I plug in the, the
+number 0 I get an undefined quantity at
+exactly 0.
+But any positive number or any negative
+number it's well-defined and it looks like
+this.
+So if you wanted to, sort of, fill in fill
+in the gap.
+So I'm missing this one little point right
+here.
+There's a very obvious choice of what
+number
+you would want to choose to put there.
+And so this, this is sort of the problem
+if I
+jsut tried to evaluate it using the rules
+that I already know.
+But that's not allowed since the
+denomiator's equal to 0.
+And so l'Hopitals Rule, let's make some
+sense of this.
+So, let x be a real number or plus or
+minus infinity.
+And let F of X and G of X be
+differentiable functions.
+And there's a lot of conditions, so this
+is a little bit
+longer than I would like it to be to fit
+on a slide.
+But basically, what it's saying is if the
+limit of F of X, so this
+is the thing I'm going to have on the top
+of my fraction is 0.
+And the limit of g of x, the denominator
+of my fraction, is 0.
+And if the limit of F prime
+divided by G prime exists.
+And that just has to be true on some
+neighborhood around 0.
+So you can imagine a point x 0.
+And then theres A over here and B over
+here.
+So you have some, some points around X and
+0.
+[BLANK_AUDIO]
+And
+you need G prime, so the thing on the
+bottom
+has to be non-zero everywhere except at X
+and 0.
+Then, the limit of F of X over G of X, so
+this is not the derivative anymore, this
+is the two original functions.
+So, this could be sign X divided by as X
+goes to X 0 it exists
+and is equal to the limit of the
+derivative as x goes to x 0.
+[BLANK_AUDIO]
+And
+I, I think this will be more clear once I
+show, I show an example.
+And then we also have pretty much the
+same thing if I have another, a rational
+function.
+But in this, this time instead of going to
+0, so
+0 over 0, now it's going to infinity
+divided by infinity.
+So this is another quantity that I can't
+make any sense out of mathematically.
+but pretty much the same condition so if f
+prime over g prime exists and I have this
+So the intervals now just mean after a
+certain number it has to
+hold, so such that g prime of x is not
+equal to 0.
+Then the limit exists, so f(x) over g(x),
+even though both of these are going to
+infinity.
+The limit exists and it's equal to the
+same thing, just the limit of the two
+derivatives.
+And just a note so you can use this slide
+for reference in the future.
+So, if X 0 is plus or minus infinity, then
+these intervals that I've been writing,
+you know, x has to
+be in the interval a b, you would just
+think
+of as minus infinity up to b or a to
+infinity.
+So the way we're going to use this is if I
+want to now
+try and make sense out of the limit sin(x)
+divided by x.
+So I have the limit of the numerator and
+the limit of the denominator both going to
+0.
+So if I just try to evaluate this,
+[UNKNOWN]
+sense they both of 0.
+I'm allowed to use L'Hopital's Rule.
+So and, I can say that this limit is equal
+to the limit
+of the derivative of the numerator divided
+by the derivative of the denominator.
+So we've already shown or already said
+that the derivative of sine
+is cosine.
+So the limit here is going to be
+equal to the limit as x goes to 0 of cos x
+divided by 1.
+So the derivative of x is just 1.
+And now this is a continuous function, so
+I can just plug in
+the value 0 and I get cosine of 0 is equal
+to 1.
+And if we go back quickly and look at my
+picture,
+that's exactly the value that I would want
+to choose for this
+function to make it continuous.
+Oops, okay.
+So, as another example consider x squared
+minus 1 x squared plus 1.
+And I want to look at the limit of this as
+x goes to infinity.
+So clearly the numerator is going to go to
+infinity and the denominator is going to
+go to infinity.
+So, if both of them go to infinity I'm
+allowed to use L'Hospital's Rule.
+And that
+tells me that this limit Is equal to the
+limit of the derivative of
+the numerator, divided by the derivative
+of the denumerator, as X goes to infinity.
+And so when I take the derivative of the
+top, the derivative
+of the minus one, ones constant, so that's
+just going to be 0.
+And the power rule says the derivative of
+X squared is 2X.
+So I'm going to end up with the
+limit as x goes to infinity of 2x divided
+by 2x.
+But still, I can't this isn't continuous,
+at the point where I want to or I'm sorry.
+Eh-heh.
+I'm not going to 0.
+I'm going to infinity now.
+So, still if I look at the limits here,
+the limit of
+2x divided by the limit of 2x, as x goes
+to infinity.
+So I'm kind of struggling here to show you
+that you
+can use L'Hospital's Rule twice to get the
+same thing.
+You could just cancel the x's here and be
+finished.
+but the idea here is end up after one
+application of
+L'Hospital's Rule with another rational
+function that's still 0 over 0.
+Or infinity over infinity.
+Then I can go ahead and use L'Hospital's
+Rule again.
+And so I, I end up with where I was
+before.
+Take the derivative one more time, so now
+I end up with 2
+over 2, and that's always going to be
+equal to 1, regardless of x.
+So the limit as x goes to infinity of
+that, is going to be 1.
+
