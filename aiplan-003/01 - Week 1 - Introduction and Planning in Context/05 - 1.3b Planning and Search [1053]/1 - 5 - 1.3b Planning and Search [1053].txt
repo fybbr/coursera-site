@@ -1,0 +1,309 @@
+So, now we have seen what search problems 
+look like, we can turn towards search 
+algorithms. 
+But before we describe the algorithm, I 
+need to describe the data structure that 
+we manipulate during the search. 
+And this is called a search node. 
+A search node is really a bookkeeping 
+structure that encapsulates a state. 
+Note that I say search tree here because 
+we will be using the search graph as a 
+search tree. 
+This is simply to make the algorithms 
+slightly easier to explain. 
+but there is a simple extension that you 
+can come up with that turns this back 
+into a graph search algorithm. 
+So, 
+here is the data structure we're looking 
+at. 
+Each search node consists of five things. 
+The first thing is the state, the state 
+that is encapsulated in the search node. 
+So a state corresponds to a configuration 
+of our world, and a node is a place in 
+our search tree. 
+Note that two search nodes may contain 
+the same state. 
+The next component of a search node, is 
+the parent node, that we store in each 
+node. 
+That is the immediate predecessor in the 
+search tree, the parent in the tree. 
+The only node that doesn't have a parent 
+is, of course, the root node in a tree. 
+Then we have to store an action in a 
+search node. 
+That is the action that gets us from the 
+parent node to this node. 
+Or, more precisely. 
+From the parents nodes state to this 
+state. 
+Then we also want to store the path cost, 
+in a search node. 
+That is the total cost of the path 
+leading to this node in the tree. 
+And finally, we can store the depth in 
+the tree as part of the node, 
+which allows us to do for example, 
+a simple cutoff, if we go too deep in the 
+search tree. 
+So these are the five components, that 
+make up a search node. 
+The state. 
+The parent node. 
+The action. 
+The path cost, and the depth. 
+So now, we get to the first algorithm 
+that you will see in this course. 
+This is the general tree search 
+algorithm. 
+The algorithm is implemented as a 
+function tree search, that takes a search 
+problem as input, and a search strategy. 
+I will get to the search strategy in a 
+minute. 
+The search problem is simply what we've 
+seen before, 
+the thing that consists of four 
+components. 
+The initial state, the successor 
+function, the goal, and the path cost 
+function. 
+The algorithm starts by creating a new 
+search node. 
+So that's the structure we've seen in the 
+previous slide, 
+from the initial state of our search 
+problem. 
+And this is stored in a set of nodes. 
+These are set braces. 
+and the set is called the fringe. 
+It is often also called the set of open 
+nodes, 
+as opposed to the set of closed nodes. 
+What this means is, these are all the 
+nodes in our search tree that we have not 
+yet explored. 
+And initially, we have not explored the 
+initial state, 
+and that's the only state we know about 
+initially. 
+So what we do then is we go through a 
+potentially infinite loop. 
+And the first thing we do in this loop, 
+is, we test whether there are still nodes 
+in our fringe that we can examine. 
+If there are no more nodes on the fringe, 
+that means we've explored the whole 
+graph, 
+and we haven't come across a node that is 
+a goal node. 
+So, in that case, we can return failure. 
+There is no solution to the search 
+problem if we have explored all the nodes 
+in the graph, and have not come across a 
+goal node. 
+But initially, there will, of course, be 
+at least one node, namely the node we 
+created from the initial state. 
+So what we do in the next step, then, is 
+we, we take our set of fringe nodes, and 
+we select one node from the fringe, and 
+we use the strategy to decide which node 
+we will select first. 
+So this node is the next one we will 
+explore in our search. 
+And by explore, I mean two things. 
+The first thing is, we apply the goal 
+test to the state that corresponds to 
+this node. 
+If this node is a goal node, that means 
+we found a solution to our planning 
+problem, to our search problem. 
+And we can stop the search here. 
+Note that this catches the case where out 
+initial state was actually a goal state, 
+because the first thing we do is we apply 
+the goal test before we do anything else 
+to this node. 
+If the gold task test has succeeded, we 
+can simply return the path to this node, 
+as this must be a solution to our search 
+problem. 
+If our current node we are looking at is 
+not a goal node, then what we have to do 
+is we generate all the successors and we 
+use the function expand here to do this. 
+So what we do is, we take the problem, 
+and we take the node, and we apply the 
+successor function that is defined as 
+part of the problem to this node which 
+gives us a set of actions and new states. 
+And each of these states can be turned 
+into a new node. 
+Together with the action that led to that 
+state. 
+And we expand the fringe so we add these 
+new nodes to the fringe. 
+And this gives us our new fringe. 
+And, at that point, we go back to the 
+beginning of the loop, and start again. 
+We look at the fringe, whether it's 
+empty. 
+If it's not empty, we select a node from 
+the fringe. 
+So this will be now a, a node at depth 
+one. 
+Then we apply the goal test to that node. 
+If it's not a solution, then we have to 
+do the same for that node, expand it, 
+generate its successors, and so on, until 
+we finally come to the point where either 
+we've explored the whole graph, 
+which means the fringe is empty, or we 
+come to the point where a node is a goal 
+node and passes the goal test and in that 
+case our search is done. 
+Now there are a few subtleties, with this 
+algorithm that I briefly want to go into. 
+The first one is that a tree 
+corresponding to a finite search graph 
+may be infinite. 
+Look at this very simple tree. 
+We have two nodes here. 
+And we can go from one to the other. 
+And then we can go back. 
+If neither of those two nodes is a goal 
+node, that would give us an infinite 
+loop. 
+We can always start here. 
+Then we add its successor to the fringe, 
+which is this node. 
+Then we have only one node on the fringe. 
+But then we go back to this node, add 
+this to the fringe. 
+We go here and here. 
+And our search tree will be infinite. 
+So, that means that this loop here. 
+May never terminate even if the search 
+graph is finite. 
+And the second subtlety has to do with 
+the strategy and that's what we will look 
+at next. 
+The search control strategy is an 
+effective method for scheduling the 
+application of the successor function. 
+We have seen this in the algorithm. 
+The strategy tells us which node from the 
+fringe we will select next to apply the 
+successive function to, and generates its 
+successors. 
+Now, the first thing to note here is that 
+it's got to be an effective method. 
+So what we mean by that here is that the 
+strategy must not take up too much time 
+to decide which node from the fringe to 
+expand next. 
+Ideally, it would take constant time. 
+What the strategy then does is determine 
+the order in which we expand nodes, or 
+the order in which we explore nodes in 
+our tree, the order in which we go 
+through our tree to look for a gold 
+state. 
+Our aim, of course, is to produce a gold 
+state as quickly as possible, so we want 
+to descend down our tree to a gold state 
+that is relatively close, and we come 
+across that quite quickly. 
+So a perfect strategy would know where 
+that gold state is an r tree. 
+But then, if we knew where the gold state 
+is, we wouldn't have to search for it in 
+the first place. 
+In general, a strategy that produces a 
+gold state quicker than another is 
+considered a better strategy. 
+And the way we have described the 
+previous algorithm in the previous slide, 
+with the strategy as an argument to the 
+node selection. 
+This makes it a deterministic algorithm, 
+as long as the strategy is deterministic. 
+Otherwise, without the strategy, you can 
+read this as a non-deterministic 
+algorithm. 
+The way a strategy can be implemented is 
+by keeping the fringe nodes in a specific 
+data structure. 
+A queue could be either a last in first 
+out queue, or a first in first out queue, 
+and that results in different search 
+algorithms. 
+For example, the LIFO queue, is 
+effectively a stack, 
+which means our search proceeds by always 
+exploring the node that has, that has 
+been last been added to the queue, 
+which means it does a depth first search. 
+It goes deeper into the tree before it 
+examines the neighbors of a given node. 
+Feefo would give you a breadth first 
+search by going to one level of the tree 
+before it goes to the next. 
+But there are many, many more ways you 
+can think of how to search and we will 
+look at something called a heuristic in 
+the next week. 
+just another example, you could also take 
+an alphabetical ordering of the nodes, if 
+you can't find some ordering relation 
+between the nodes. 
+Another thing that is quite important is 
+that in many search problems the complete 
+tree is far too large to fit into a 
+computer's memory, even with the kind of 
+memory we have today. 
+So the search strategy determines which 
+part of the search tree will be explored 
+and will be in memory, and therefore it 
+may determine whether we are successful 
+at all. 
+Because if the search tree is too large 
+for memory, we may not come across a goal 
+node at all. 
+Now for those of you who are not familiar 
+with search I recommend that you either 
+go to the Russel and Norvik textbook that 
+is mentioned on the website and have a 
+look at the corresponding chapters or you 
+should go through the programming 
+exercise and implement the missionaries 
+and cannibals problem as a search 
+problem. 
+You can use either of those two queueing 
+strategies mentioned there. 
+Lost and first out, or first and first 
+out, 
+and just see what happens when you apply 
+these two strategies. 
+Also, a hint regarding repeated states. 
+To turn the tree search into a graph 
+search, 
+you have to remember all the nodes you've 
+seen so far. 
+And the most effective way to do this is 
+to add them to a hash table. 
+And before you add a note to the fringe 
+again you check whether it is already in 
+that hash table. 
+You should be able to do this in the 
+programming language of your choice. the 
+missionaries and cannibals search space, 
+as you have seen is very small, so the 
+search should be instantaneous whatever 
+you use. 
+So, have fun with that. 
+

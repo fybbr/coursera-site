@@ -1,0 +1,304 @@
+>> Before we go into the details of the
+graph plan system, I want to start with a
+simple example that we will use throughout
+the segment.
+This example is again from the dock worker
+robot domain, so you should be familiar
+with that.
+And it illustrates the propositional
+representation, so it consists of a
+propositional planning domain and a
+propositional planning problem.
+To put the propositional representation in
+context, here's a quick reminder of
+classical representations, and I've shown
+you this slide before.
+So far, we've seen planning domains and
+planning problems represented in the
+STRIPS representation.
+The STRIPS representation is exactly like
+the propositional representation we will
+see next.
+But, it uses first order literals instead
+of propositions.
+So, the atoms are relations that relate
+objects to each other.
+We have also seen a specific syntax that
+we can use to write STRIPS representation
+domains and planning problems, and that
+was the PDDL language.
+Now, in the propositional representation,
+a world state is simply a set of
+proposition symbols.
+And as opposed to first-order literals,
+symbols don't have an internal structure.
+And then, the actions in the propositional
+representation consists of precondition
+propositions, propositions to be added and
+to be removed.
+So the propositions to be added are the
+positive effects, and the propositions to
+be removed are the negative effects.
+The precondition propositions correspond
+to the positive preconditions in the
+STRIPS representation.
+And this is another difference between the
+STRIPS representation, as we've seen it so
+far, and the propositional representation.
+In the STRIPS representation, we had
+positive and negative preconditions, and
+now we only have positive preconditions.
+As it turns out, this isn't much of a
+restriction, as every STRIPS planning
+domain, every STRIPS operator that has
+negative preconditions can be translated
+into an equivalent domain and operator
+that has no negative preconditions.
+So, any problem that can be represented in
+one of these two representations can be
+translated into the other without much
+difficulty.
+And just as a reminder, there was also a
+third flavor of this type of
+representation, the state-variable
+representation.
+But, I won't go into detail here as we're
+not going to use it in this segment.
+But as a reminder, this representation is
+also essentially equivalent to the STRIPS
+representation.
+So, nothing can be said in one of these
+three representations that can't be said
+in the others.
+And here is an example world state from
+our simplified dock worker robot problem
+that we will be using in this segment.
+In this state, we have only two locations.
+Location 1 and location 2.
+And they are connected by a path as you
+can see in this image.
+The two robots are called r and q, or
+robot r and robot q, and are at the two
+locations initially, r at location 1 and q
+at location 2.
+Both robots are currently unloaded, but
+there are also two containers in this
+state, and the two containers are
+container a and container b, at the two
+locations as shown here.
+What's new here is that robots can load
+and unload the containers autonomously.
+So each robot has its own personal crane
+attached to the robot that is carries
+around with it.
+Also, we will now think of locations as
+being big enough for multiple robots.
+Otherwise, there wouldn't be much we could
+do in this state because both locations
+are already occupied.
+That really simplifies the problem a lot.
+And the problem is then give by a set of
+actions which I will describe shortly.
+An initial state, which is shown here, and
+a goal description which simply consists
+of a state in which the two containers are
+swapped.
+So, in our goal state, we want container a
+at location 2 and container b at location
+1.
+And here are the operators in the STRIPS
+notation as we can use them for state
+transitions in this simplified domain.
+The first operator we have defined here is
+the move operator which moves robot r from
+location l to location l prime.
+And since there can be multiple robots at
+the same location, the preconditions and
+the effects of the move action are
+actually a lot simpler than what we've
+seen previously.
+Similarly, we have simpler load and unload
+operations that take fewer parameters and
+have fewer preconditions and effects
+because the crane is now attached to the
+robot.
+That also means we don't need a take and
+put action for the cranes.
+One nice side effect of the simplified
+problem is that none of the operators have
+negative preconditions.
+As I've just mentioned, that is one of the
+features that we need for the
+propositional representation.
+Another interesting observation is to do
+with the number of possible actions that
+are instances of each operator.
+So, looking at the move action first, we
+have two possible robots, and we have two
+possible locations that we can use for l.
+And two possible locations that we can use
+for l prime.
+So, in theory, that means there should be
+8 possible instances of this move
+operator.
+But when we look at the preconditions of
+this operator, we have one precondition in
+here that is static.
+That is, this relation never changes from
+any world state to another.
+So, when we translate our operators into
+actions, we can exploit that.
+We now know that for this operator, there
+are two possible robots.
+And for this pair, ll prime, there are two
+ways we can satisfy the adjacent relation,
+as defined in our problem.
+That means we have to multiply this by 2.
+Giving us 4 actions that are possible in
+this problem.
+Now, let's have a look at the propositions
+symbols we will use in our example to
+represent world states and actions.
+And since we'll have to handle quite a few
+of these symbols in our actions, they are
+actually very concise.
+For example, we have the symbol r1 that we
+use to denote that the robot with the name
+r is at the location 1, r1 and r2.
+Meaning that the robot with the name r is
+at location 2.
+The strips representation for these two
+symbols will look something like this, r1
+is at robot r location 1, and r2 is at
+robot r location 2.
+Similarly, we have equivalent symbols for
+the other robot for robot q.
+This symbol means that robot q is at
+location 1, and this symbol means that
+robot q is at location q.
+And we also need symbols to express that
+the robot is not loaded with the
+container, and we use the symbol ur,
+meaning that robot r is unloaded and uq to
+indicate that robot q is unloaded.
+So, that means that we have 6 symbols to
+talk about the two robots.
+But, we need more symbols to talk about
+the containers.
+And here, we have the symbol a1, for
+example, meaning that container a is at
+location 1.
+Or more specifically, it means that this
+container is at the unique pile that is at
+that location.
+So, it's not on a robot that is at
+location 1, but really in that pile at
+location 1.
+Similarly, we have a symbol representing
+that container a is at location 2 , in a
+pile at location 2.
+Or we have a symbol that says that
+container a is on robot r.
+Or the final location for the container it
+can be on robot q.
+This is container a on loaded onto the
+robot q.
+And we also need equivalent symbols for
+our second container, container b.
+And we have those here.
+B1 means container b is in the pile at
+location 1, b2, container b is in the pile
+at location 2, br, container b is loaded
+onto robot r.
+And finally, bq, container b is loaded
+onto robot q.
+So that means we have altogether 8 more
+symbols to describe the state of the two
+containers.
+And, of course, these symbols are already
+sufficient to describe our initial state
+which is given here.
+In our initial state, our robot r is at
+location 1, whereas our robot q is at the
+other location, location 2.
+The container a is in the pilot location
+1, and container b is in the other pilot
+location 2.
+And both robots are unloaded.
+These are all the propositions that are
+true in the initial state, and all the
+propositions not mentioned here are false.
+And here are all the symbols we will use
+to represent actions in this domain.
+Let's start with the available move
+actions.
+And again, the symbols I'm using for
+actions are quite concise.
+So, this symbol here Mr12 represents the
+action of moving robot r from location 1
+to location 2.
+The first thing that you note here is that
+the first letter representing the action
+is a capital letter.
+I have used symbols with lower case
+letters for state propositions.
+And I will use symbols starting with an
+upper case letter for action propositions.
+And the first letter indicates which
+action this is.
+M for move.
+Then, there are the parameters represented
+by single letters here.
+Namely r, we're moving robot r, and we're
+moving it from location 1 to location 2.
+Then similarly, we have Mr21 indicating
+that we're moving robot r from location 2
+to location 1, representing this action,
+this instance of an operator.
+Similar actions for robot q are Mq12.
+Meaning, we're moving robot q from
+location 1 to location 2.
+And here, we have Mq21, moving robot q in
+the other direction from location 2 to
+location 1.
+So, these are the four possible move
+actions that exist in this problem
+instance.
+Similarly, we have actions representing
+loading of containers, and these all start
+with the capital letter L, like Lar1,
+meaning we're loading container a onto
+robot r at location 1.
+And here is what that was as an operator.
+Then, we have Lar2.
+Meaning we're loading container a onto
+robot r at location 2, and so on.
+We have symbols for loading container a
+onto the different robots at the different
+locations.
+And symbols for loading container b onto
+the different robots at the different
+locations.
+And finally, we have the unload actions.
+The unload actions start with the capital
+letter U like Uar1 here, which means we're
+unloading container a from robot r at
+location 1.
+And of course, the other unload actions
+follow all the same pattern.
+We have the letter U, followed by the
+container we're unloading, the robot from
+which we're unloading it, and the number
+Indicates which location this is happening
+at.
+So, what we have here is 4 plus 8 plus 8.
+All together 20 diffeent action symbols
+representing 20 different types of
+actions.
+And we had 14 different proposition
+symbols that we use in states.
+So, all together we have 34 different
+symbols we need to deal with.
+And that concludes my simplified DWR
+problem in the propositional
+representation.

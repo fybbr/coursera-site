@@ -1,0 +1,30 @@
+The SenseMaker receives a report about fire in the area.
+He inserts a new record of the incident into his object view table.
+Since he has no more information at the moment, he doesn't take any other action.
+The incident is automatically added to the current state descriptor.
+The state descriptor also contains current states of all field units
+and is shared in real time by both the Sensemaker and Commander.
+25 minutes later, the Sensemaker receives reports about people injured in Town1 and Town2.
+Again, he inserts corresponding records into his object view table
+and the state descriptor is updated.
+Next, the Sensemaker creates two activities "treat injuries in Town1 and 2" and passes them to the Commander.
+The Commander receives these activities immediately.
+Before executing them, he orders to take aerial snapshots of the affected areas.
+He passes the corresponding commands to subordinate field units.
+Using HTN planning (I-Plan), CNP negotiation and the commitment mechanism, field units generate and execute a distributed plan.
+They report completion of the task back to the Commander.
+Based on the received snapshots, the Commander decides to build a mobile hospital nearby Town1 and 2.
+He issues a corresponding command for the field units.
+Once again, the field units come up with a distributed plan.
+They transport construction materials and a builder to the site,
+and a mobile hospital is built there.
+Upon completion of the task, the Commander executes the two treat injuries commands.
+Medical material and medics are transported to the sites.
+As usual, task completion is reported to the Commander.
+Since these two tasks were originally created by the SenseMaker, he is also automatically notified about the tasks completion.
+Approximately an hour later, the Sensemaker eceives a report about collapsed houses in Town3.
+He inserts a new record into his object view table.
+He then passes a new task "build houses in Town3" to the Commander.
+The Commander receives this task and executes it.
+Field units take care of the task.
+Successful completion of the task is reported to the Commander and is also propogated to the Sensemaker.

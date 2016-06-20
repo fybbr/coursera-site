@@ -1,0 +1,229 @@
+So now that you know how the A* algorithm 
+works, I want to go a bit in to the 
+theory, and give you some properties of 
+the algorithm. 
+These all rely on the fact that the 
+heuristic use is admissible. 
+And we will talk about that first. 
+A heuristic is called admissible if it 
+never overestimates the distance from a 
+node to the nearest goal node. 
+So what this means is that the value of 
+the function h(n) must always be less or 
+equal than the actual distance to the 
+nearest goal node. 
+The equality is actually quite important. 
+For example, the heuristic value of a 
+goal node is equal to zero and therefore, 
+it's equal to the actual distance to the 
+goal node. 
+So any heuristic must have that property. 
+In other words, there's usually at least 
+one node for which the equality holds 
+namely, the goal node. 
+Unfortunately, this is often the only 
+node for which this holds. 
+Otherwise, we would have a perfect 
+heuristic, and that is too good to be 
+true. 
+Admissible heuristics usually think the 
+nearest goal node is closer than it 
+actually is. 
+They tend to underestimate the distance 
+to the goal. 
+An example of an admissible heuristics is 
+one we have seen for the touring Romania 
+problem, namely the straight line 
+distance. 
+The shortest distance between two points 
+on a map is usually the straight line. 
+Hence the straight line distance 
+heuristic must underestimate the actual 
+distance along a road. 
+Thus, it is an admissible heuristic. 
+For A* search, here's what that means. 
+We set that the evaluation function f(n) 
+represents the cost over the shortest 
+path through node n to a goal node. 
+So if the uristic never overestimates the 
+distance from n to the nearest goal node, 
+then the evaluation function used by A* 
+never overestimates the true cost of a 
+lu, solution through the node n. 
+This brings me to the most important 
+property of A* namely that it is optimal. 
+We can prove the following theory. 
+A* using tree search is optimal if the 
+heuristic h is admissible. 
+Just as a reminder, optimal here means 
+that the algorithm is guaranteed to find 
+the shortest path from the initial state 
+to a goal node. 
+And this theorem tells us that if our 
+heuristic is admissible, then A* will 
+return with an optimal path. 
+That is of course a very useful property 
+for a search algorithm to have. 
+By the way a similar theorem can be shown 
+for A* using graph search but I won't go 
+into this here now. 
+Another property of A* is that it is 
+complete which means that if there is a 
+solution, A* can find the solution. 
+This can be shown using something called 
+contours. 
+And since this is quite an interesting 
+concept, I want to introduce this here. 
+So contours are sets of states that can 
+be reached within a certain cost. 
+This is a bit like a topographic map that 
+you've all seen, I hope. 
+In a topographic map, you see lines 
+indicating points of equal altitude. 
+Here the contour is a line indicating 
+nodes of equal F value, and all the nodes 
+within the contour belong to the set. 
+A prerequisite for being able to draw 
+contours is that the f values along a 
+path are non-decreasing. 
+So what this means is that as we move 
+away from the initial state the f values 
+are usually increasing. 
+Now the way A* works fundamentally is 
+that it starts from the initial state and 
+then adds nodes according to these 
+contours. 
+It always starts with a smaller set and 
+then increases the F value as it goes 
+along. 
+But it will always explore nodes with 
+lower F values before it moves to a 
+higher plateau, so to speak. 
+If our heuristic function always had the 
+value zero, 
+what A* would do is essentially draw 
+circles around the initial state. 
+If the heuristic always had the value 
+zero, this would, of course, be 
+uninformed search. 
+And, in fact, this algorithm has a name. 
+It's called uniform cost search, or 
+Dijkstra's Algorithm. 
+But with the heuristic that provides some 
+information what happens is that the 
+contours become ellipses that are drawn 
+towards a goal state, so they try to get 
+closer to a goal state. 
+And the more accurate our heuristic is 
+the more these ellipses stretch towards a 
+goal. 
+A completeness of A* simply follows from 
+this, because as it explores more and 
+more nodes the contours are growing and 
+growing. 
+And eventually this must include a goal 
+node. 
+This is true, because each contour can 
+only contain a finite number of states. 
+And once these are all explored, A* will 
+go to the next higher altitude for bigger 
+contour. 
+And here is what this looks like visually 
+for our touring in Romania example. 
+We start off in Irat. 
+And the F value there was 366, so that's 
+the smallest control from which we start 
+that contains A node at all. 
+Then, A* will continue to grow this 
+contour. 
+Initially, as a small set, but then we 
+have a slightly bigger set, that for 
+example, has the value 400. 
+And as you can see this node here is 
+almost on the edge. 
+And if you go back to the tree you will 
+see it's F value is above 400, so it must 
+be outside the set. 
+And so on. 
+So, A* continues to grow this contour 
+until it includes the Bucharest node. 
+In this example, you can see nicely how 
+the ellipsis it draws stretch toward the 
+goal node. 
+But you can also see it the other way 
+around. 
+What this means is that A* must explore 
+all those nodes that are within a contour 
+that has a value just less than the cost 
+of the optimal path. 
+A* needs to include all those nodes that 
+are within this contour that almost leads 
+to the goal node. 
+And often, that is still quite a large 
+number. 
+So in this example, you see that most of 
+the contours contain different nodes. 
+But think about the eight puzzle for a 
+second, and what that looks like there. 
+In the eight puzzle the maximum goal 
+distance you have is 31 steps. 
+Yet, you have just over 180,000 nodes. 
+So there must be many nodes that have the 
+same F value. 
+Here is another property of A* namely A* 
+is optimally efficient. 
+What this means is, that no other, 
+optimal algorithm is guaranteed to expand 
+fewer nodes than A*. 
+This is of course true for a given 
+specific heuristic function. 
+What this gives us is that, any other 
+algorithm that guarantees us an optimal 
+solution must expand at least as many 
+nodes as A* for a given heuristic 
+function. 
+Of course, there can still be a more 
+efficient way of finding a solution to a 
+given problem namely if we have a 
+different, more efficient heuristic. 
+But for a fixed juristic, A* is optimally 
+efficient. 
+Notice that efficiency here is counted in 
+the number of nodes that are expanded, 
+but of course that's not the only thing 
+that makes an algorithm efficient. 
+For example, computing the juristic 
+function has a computational cost but it 
+does not count towards the number of 
+nodes that we expand. 
+So A* is only optimally efficient with 
+respect to number of nodes it expands. 
+To be more specific, it's not only the 
+number of nodes that any other algorithm 
+must expand. 
+It is exactly those nodes. 
+Suppose there is another algorithm that 
+is optimal, which means it returns an 
+optimal path. 
+But it does not expand one of the nodes 
+that is expanded by A*. 
+What does this mean? 
+A* expands all those nodes with an F 
+value that is less than C* where C* is 
+the value of the optimal power. 
+So, if another algorithm did not expand 
+one of these nodes. 
+That means, in the search space of the 
+algorithm, there's an unexplored node 
+that has an F value of less than C*. 
+So that means the most promising path 
+through that node that the algorithm 
+ignores, looks better than the optimal 
+path. 
+So if we don't explore that path, we can 
+never find out that it actually turns out 
+to be something worse in the end. 
+So in the end, A* expands a minimal 
+number of nodes that still guarantee an 
+optimal solution. 
+

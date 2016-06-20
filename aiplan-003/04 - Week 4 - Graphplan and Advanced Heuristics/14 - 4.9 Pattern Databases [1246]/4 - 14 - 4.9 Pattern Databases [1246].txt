@@ -1,0 +1,324 @@
+So now we have seen how the reachability
+analysis performed in the planning graph
+can be used to compute some simple
+heuristics.
+But the problem with a star that remains
+is that it uses exponential memory.
+And to address this problem, another
+algorithm has been developed, which I
+won't introduce here, which is called
+Iterative Deepening A star.
+This algorithm is also very good, and
+specifically it uses only very little
+memory.
+In fact, it uses so little memory that
+most of the computers memory remains
+unused.
+And that led to the question, can't we do
+anything useful with this memory that aids
+our search?
+And the idea is to compute pattern
+databases in advance of our search that we
+can use to compute heuristics.
+I will now use the 8 puzzle to illustrate
+the basic idea behind pattern databases.
+In the 8 puzzle, we were given a
+configuration of times on a 3 by 3 grid,
+and we have to achieve a specific other
+configuration by shifting the tiles
+around.
+There were eight tiles and they were
+numbered one through eight, and one way to
+simplify this problem is simply to remove
+the numbers from some of the tiles.
+So we see some of these tiles are marked
+with a star now.
+And we've marked the same tiles with a
+star in our solution.
+What this means is, we still have to get
+the tiles one through four into the
+correct positions.
+But, we can't tell where the other tiles
+are as long a there are tiles with a star
+those are in a correct place and therefore
+form a solution.
+It should be clear that this problem is
+simpler than the original problem.
+In fact, it's a subproblem of the original
+problem because we only need to achieve a
+subconfiguration.
+But, what is important here is that the
+cost of solving the subproblem, the one
+where the tiles are marked with a star, is
+less or equal to the cost of solving the
+complete problem.
+So, the original problem we are trying to
+solve.
+And if that is the case, that means we can
+use the cost of solving the subproblem as
+an admissible heuristic for the cost of
+solving the overall problem.
+The problem remains to solve the
+subproblem, we still need to do search.
+It will be in a smaller search space, but
+in general, search is expensive, and we
+want to avoid this.
+And here is the idea that helps us avoid
+search during the computation of the
+heuristic.
+What we want to do is we want to
+pre-compute and store in a database all
+the solution costs for all possible
+subproblems that we may encounter.
+Clearly, this will take up quite some
+memory but that was the idea that we want
+to make use of the memory that we have.
+Once we have got this database, computing
+the heuristic is simply a database
+look-up, so it should be possible in
+constant time, very fast.
+Then, the only question that remains is,
+how we can construct this database that we
+want to use as a heuristic?
+And the basic idea is that we search
+backwards in a breadth-first fashion from
+the goal state and record the costs of
+each of the states as we come across them.
+So, because we've searched breadth-first,
+we know that the first time we encounter a
+node we encounter a minimal depth.
+And we can just record the depth in our
+database as its heuristic value.
+Now, what we've done is shifted the search
+operation from the time when we need to
+compute the heuristic to before we try to
+solve a problem, but the search we're
+doing is now a breadth first search, and
+that is a very expensive operation because
+we need to search the whole search space
+in this way, or generate the search space.
+The good news is we only need to compute
+this once so we pre-compute our pattern
+database once, and then we can solve many
+problems with the same database.
+The next question is, how do we choose the
+patterns that we want to record in our
+database?
+And the answer here is that we start from
+the available amount of memory that we
+have.
+So, we take all of the memory.
+We compute how much memory we will need
+for search, maybe very little, and the
+remainder is how much memory we have for
+our pattern database.
+And then, we know that if our original
+search space had the size, size of S, then
+our new search space depends on how much
+tiles in the search space we mark with a
+star, and that is, let's say, that's the
+number n, then we can say that the new
+search space has the size of the old
+search space divided by n factorial,
+because all the permutations of the tiles
+marked with a star do not matter.
+So, that's roughly the size of the table
+we'll generate.
+And for each element we need to store the
+state, plus a single number that gives us
+our heuristic value.
+Of course, there is no point in doing this
+for the 8 puzzle because the whole search
+space of the 8 puzzle already fits into
+memory.
+So, we don't need to store a pattern
+database, we can store the database of all
+solutions.
+But, for bigger version of the same
+puzzle, for example, the 15 puzzle shown
+here or even bigger the 24 puzzle, this
+does make sense.
+So, what we see here is an approach to
+choosing the patterns of what we are
+looking for and if we try to find a clever
+heuristic what we want to do is explore
+it's symmetry in this space so.
+If we define the pattern consisting of
+those tiles here, then we can also rotate
+the puzzle and use them here, and here,
+and here.
+So, the same database can be used to
+compute different values for the
+heuristic.
+And we can simply take the maximum of all
+these.
+Because we must get all the tiles that
+match our patterns into the right
+positions.
+But you can easily see that the patterns
+that we're now checking, are actually
+overlapping.
+And that's one of the reasons why we have
+to take the maximum of all the heuristic
+values here, because this pattern and the
+next count the same four tiles in the
+heuristic value.
+And I've just given you the answer to the
+first question on this slide which is, can
+we add the values instead of taking the
+maximum?
+And the answer is, no, because the
+patterns overlap and that would be
+counting the same moves twice in computing
+the heuristic.
+But there is a way to avoid this problem.
+And the first step toward the solution is
+to choose the pattern in such a way that
+when we exploit the symmetry, we don't
+have overlapping patterns and we don't
+count the same times twice.
+And an approach For this, for the
+24-puzzle is shown here.
+You can see a pattern that we're choosing,
+these six tiles and if we turn this
+pattern or the puzzle under it then we get
+a different area of the puzzle that does
+not overlap with our original pattern.
+So, that's half the solution and the other
+half is when we record a value in our
+database all we have to count is the
+non-star tile moves.
+So, we only count the ones in the pattern
+and not the stars.
+Because the stars would appear in other
+patterns as well and we don't want to
+count them twice.
+If we do that, if we choose the patterns
+to exploit the symmetry non-overlapping
+and don't count the start tiles when we
+compute our heuristic, then we can
+actually add the different values to get
+an admissible heuristic out of our
+database.
+And this approach is called a Disjoint
+Pattern Database because the patterns are
+disjoint and we can add the values of the
+heuristic.
+Unfortunately, it's not always possible to
+find disjoint pattern databases that work.
+One example where this hasn't been found
+yet is the Rubik's Cube.
+But where these heuristics exist, for
+example in the 24 puzzle, they seem to be
+the best heuristics around at present.
+Now, we have seen how we can use pattern
+databases to generate heuristics for a
+specific problem.
+The question now is, can we generalize
+this approach to generate heuristics for
+arbitrary planning problems?
+Remember, planning problems are given to
+us as an initial state, a goal and a set
+of operators.
+So, it's very hard to see what a generic
+pattern could look like.
+But the key idea for generating pattern
+databases for the 8 puzzle or for generic
+planning problems is the same.
+We need to construct abstract problem
+spaces.
+For the eighth puzzle, we've abstracted
+away the names of some tiles.
+And for generic planning problems, we're
+going to do something similar, we're going
+to drop some of the detail from the
+problem description to create a more
+abstract problem.
+Then, we're going to solve this more
+abstract problem, and the solution length
+for the solution to the more abstract
+problem, is a heuristic for our original
+problem.
+So, the most important question then is,
+how do we create this more abstract
+problem?
+And the answer is actually quite simple.
+What we do is, we pick some of the
+proposition symbols that we have in our
+propositional planning problem.
+So, these are some of the symbols that
+describe aspects of the state.
+And out of the complete set of state
+propositions that we have available, we
+pick some and drop them from the problem
+description.
+So we drop them from the goals, from the
+initial state, and from the pre-conditions
+and the effects of all the operators.
+And this gives us a more abstract problem.
+This is really all there is to our new
+abstract problem space.
+We drop state propositions from the
+problem description.
+Now, the question that remains is, which
+state proposition symbols should we drop
+from our problem description.
+And the way we do this determines the
+quality of our heuristic.
+And one way to do this, works as follows.
+We divide the set of all state
+propositions that we have into mutually
+exclusive, and therefore disjoined,
+groups, G 1 though G K.
+So, in each group, we find symbols that
+are mutually exclusive, meaning they can't
+be true in the same state.
+So, in our Dock Worker Robot example, the
+symbols r1 and r2, the robots at location
+one and at location two are mutually
+exclusive and therefore could be in the
+same group.
+Now, we may have quite a lot of groups
+which means our abstract problem spaces
+may be too abstract.
+They may be trivial to solve and the
+heuristic information it reveals is almost
+nothing.
+So, what we do is we divide this into just
+two sets of symbols, namely those that are
+in even numbered groups, and those that
+are in odd numbered groups.
+That effectively gives us two abstract
+problem spaces.
+So, what we do is simply modify the goal
+by taking, on the one hand the goals from
+the even groups, and on the other the
+goals from the odd groups.
+And similarly, for the operators, we
+intersect their preconditions and effects
+with the corresponding groups.
+This gives us our abstract problem spaces
+and now, we can construct our pattern
+databases.
+We pre-compute them as we did for the 8
+puzzle, that's how pattern databases can
+be used for arbitrary planning problems.
+And the result that we get from this is a
+heuristic that computes in constant time
+because it's just a hash table look-up.
+And also the pattern database that we get
+with this approach is disjoint.
+So, we can add the two values that we get
+from the even and odd groups.
+The pattern database is, of course, still
+slow to compute, but reusable so we can
+use the same database to solve multiple
+problems.
+But again, the re-usability of this
+database is quite limited.
+Because we can not change the goal, or for
+example, increase the number of containers
+that we have in our Dock Worker Robot
+domain.
+For that, we would have to generate a new
+pattern database.

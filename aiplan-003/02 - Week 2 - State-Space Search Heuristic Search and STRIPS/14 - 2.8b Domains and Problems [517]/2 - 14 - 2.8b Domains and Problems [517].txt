@@ -1,0 +1,158 @@
+Now with a formal definition of a STRIPS 
+planning domain, we can now define a 
+STRIPS planning problem. 
+A STRIPS planning problem is a triple 
+consisting of three components, 
+and these are given here. 
+This is, of course, the state transition 
+system that we're looking at. 
+This is the initial state and that is the 
+goal. 
+So, what are these formally? 
+The first is a STRIPS planning domain 
+that is defined over some first order 
+language we've seen earlier. 
+And again, we have the state space here, 
+the action space and the state transition 
+function as we've seen in the previous 
+slide. 
+Then there are two more things we need 
+for a planning problem. 
+The first is an initial state which is 
+simply one of the states in our states 
+base. 
+Finally, the goal of a planning problem 
+is defined as a set of ground literals. 
+And once we are given a goal described in 
+this way, we can define the set of 
+possible goal states, as all those states 
+in s that satisfy the goal. 
+And satisfaction was something we defined 
+earlier, 
+you may remember the symbol. 
+We said that s satisfies g if all the 
+positive literals in g are true in s and 
+none of the negative literals in g are 
+holding in s. 
+So that is the definition of a planning 
+problem. 
+An interesting observation is that goals 
+are defined as exactly the same things 
+that are the preconditions of operators 
+namely sets of literals or for actions 
+sets of ground literals. 
+That is not a coincidence. 
+And here's a very simple example of a 
+STRIPS planning problem, a DWR example 
+from the dock worker robot domain. 
+The planning domain is the one we've 
+defined earlier consisting of the five 
+operators described in PDDL. 
+Then I need to pick an initial state 
+which is what I've done here, so this is 
+our initial state and I've described that 
+in this expression here as a set of 
+ground atoms. 
+So each of those are relations that 
+relate different objects in the domain to 
+each other. 
+It's a very simple example as you can 
+see. 
+And then I have to pick a goal, which is 
+a set of ground literals. 
+In this case, I want the robot to be 
+loaded with a container, so it is not 
+unloaded, and I want the robot to be at 
+location too. 
+These are my two goal conditions, and in 
+this simple example, there is only this 
+one state, that is a goal state. 
+And here is a definition of a planning 
+problem in the PDDL syntax. 
+Note that this is a different problem so 
+it is not the problem we have seen in the 
+previous slide. 
+In PDDL we of course must define the 
+initial state, and the goal. 
+Just like we need for any planning 
+problem. 
+But there are a few other things that we 
+need to define. 
+The first thing is, we can give the 
+planning problem a name, so we can refer 
+to it. 
+That's what we do here, it's a DWRPB1 
+problem. 
+Then we can say which domain we're using. 
+And we're saying that by referring to the 
+domain name as shown here. 
+Then we can explicitly define what 
+objects we're using in this domain. 
+This is actually optional and requires 
+the typing extension. 
+So we say that there's one robot which is 
+a type robot. 
+then we have two locations, two cranes 
+and four piles here and all together we 
+have six containers and the palate. 
+The palate is of course also defined in 
+the domain, but that doesn't matter here. 
+So this declares what things exist in our 
+states. 
+Then the initial state contains the 
+ground atoms that relate these objects to 
+each other. 
+So that's what we got here. 
+We start off with a static relations. 
+These are the things that describe the 
+topology, and won't change from state to 
+state. 
+So there's the adjacency between the two 
+locations. 
+There is where the different piles are. 
+Piles one, P1 and Q1 are at location one. 
+P2, Q2 at location two. 
+And where the different cranes are. 
+One crane at each location. 
+Then we have. 
+The dynamic relation's listed next. 
+And they tell us what is in the first 
+pile. 
+Namely, container A, B, and C. 
+Here's the order of the containers on the 
+pallet. 
+Container C is at the top. 
+The same for the second pile. 
+This is also at location one, containing 
+three containers, stacked on top of each 
+other. 
+And container F at the top. 
+The piles at the other location are both 
+empty as you can see here because the top 
+of the pile is the pallet. 
+Finally we learn where the robot is and 
+that's unloaded and also that the two 
+cranes are currently not holding 
+anything. 
+That was the initial state, and now comes 
+the goal. 
+The goal is described as a conjunction. 
+So all of these things must be true. 
+And it's simply saying, in which pile the 
+different containers must be. 
+Ca must be in P2. 
+Cc in P2, and so on. 
+And the other four containers must be in 
+the pile, Q2. 
+So it doesn't specify the order in which 
+the containers must be in those piles, 
+just in which piles they must be. 
+Note that there are no negative goals in 
+this example but of course it is possible 
+to define negative goals in general. 
+And if you find this a little hard to 
+read again here's the URL where you can 
+find the complete description of this 
+problem so you can download it and read 
+it in quiet and peace later. 
+

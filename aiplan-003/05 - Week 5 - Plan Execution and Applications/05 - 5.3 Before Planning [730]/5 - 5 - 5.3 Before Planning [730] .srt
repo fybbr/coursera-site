@@ -1,0 +1,459 @@
+1
+00:00:00,012 --> 00:00:07,088
+So far in this course we have looked at a
+number of ways of solving planning
+
+2
+00:00:07,088 --> 00:00:12,988
+problems efficiently.
+That is, we have assumed that we were
+
+3
+00:00:12,988 --> 00:00:19,655
+giving a planning problem.
+But a planning problem is a very specific
+
+4
+00:00:19,655 --> 00:00:23,774
+artifact.
+And to get to this artifact requires a lot
+
+5
+00:00:23,774 --> 00:00:27,013
+of work.
+So we have a lot of problems we need to
+
+6
+00:00:27,013 --> 00:00:32,742
+solve before we can start planning and
+that's what we will look at now briefly.
+
+7
+00:00:32,742 --> 00:00:37,994
+The first problem that we need to solve
+before we can do any planning is the
+
+8
+00:00:37,994 --> 00:00:43,036
+knowledge engineering problem.
+One thing we have learned on this course
+
+9
+00:00:43,036 --> 00:00:48,106
+is what the planner takes as input, namely
+a planning problem consisting of an
+
+10
+00:00:48,106 --> 00:00:52,942
+initial state, a goal, and a set of
+operators that we can use to move through
+
+11
+00:00:52,942 --> 00:00:56,564
+the state space.
+And for a planner to use this as input,
+
+12
+00:00:56,564 --> 00:01:01,037
+all this needs to be represented in a
+formal language, such as PDDL.
+
+13
+00:01:01,037 --> 00:01:06,119
+Knowledge engineering is really everything
+that we need to do to get from the first
+
+14
+00:01:06,119 --> 00:01:11,010
+informal problem description to this
+formal representation that we can give to
+
+15
+00:01:11,010 --> 00:01:14,140
+a planner.
+And this involves the problem of problem
+
+16
+00:01:14,140 --> 00:01:18,676
+formulation that I've already talked about
+when I've introduced you to the
+
+17
+00:01:18,676 --> 00:01:24,362
+missionaries and cannibals problem.
+And problem formulation is really vital
+
+18
+00:01:24,362 --> 00:01:28,606
+for the efficiency with which we can do
+problem solving.
+
+19
+00:01:28,606 --> 00:01:34,397
+If the operators we choose to represent
+contain too much detail then the state
+
+20
+00:01:34,397 --> 00:01:39,956
+space can explode exponentially and we
+cannot solve problems anymore.
+
+21
+00:01:39,956 --> 00:01:44,444
+But that is only one of the concerns
+during knowledge engineering.
+
+22
+00:01:44,444 --> 00:01:49,832
+There are others like how adequate is the
+knowledge we have represented or how easy
+
+23
+00:01:49,832 --> 00:01:54,617
+will it be to maintain in the future?
+There are now tools that we can use to
+
+24
+00:01:54,617 --> 00:01:58,559
+perform the knowledge engineering for
+planning domains.
+
+25
+00:01:58,560 --> 00:02:04,719
+And these tools support one or more phases
+of knowledge representation as shown here.
+
+26
+00:02:04,719 --> 00:02:10,204
+The first phase that we need to go through
+is the requirements specification.
+
+27
+00:02:10,204 --> 00:02:15,735
+This is where we talk to domain experts
+and try to find out what they expect from
+
+28
+00:02:15,735 --> 00:02:19,804
+the system that we will build as a result
+of this process.
+
+29
+00:02:19,804 --> 00:02:24,947
+Then the second phase is knowledge
+modelling where we take the knowledge that
+
+30
+00:02:24,947 --> 00:02:30,319
+we have extracted from the experts in the
+first phase and built a formal model but a
+
+31
+00:02:30,319 --> 00:02:34,682
+fomal model that the experts can still
+understand and critique.
+
+32
+00:02:34,683 --> 00:02:39,402
+So it needs to be fairly high level.
+Then we can do a model analysis, which
+
+33
+00:02:39,402 --> 00:02:44,715
+involves verification and validation,
+finding out whether the model is adequate
+
+34
+00:02:44,715 --> 00:02:47,623
+and captures all the knowledge that we
+need.
+
+35
+00:02:47,623 --> 00:02:53,019
+Then we can deploy the model, which means
+we have to export our domain specification
+
+36
+00:02:53,019 --> 00:02:56,936
+in a language and formalism that a planner
+can understand.
+
+37
+00:02:56,936 --> 00:03:02,452
+This is then followed by plan synthesis
+which is essentially what we've looked at
+
+38
+00:03:02,452 --> 00:03:06,129
+in this course.
+And finally we can do plan analysis and
+
+39
+00:03:06,129 --> 00:03:11,070
+post design which is we look at the
+generated plans, go back to the experts
+
+40
+00:03:11,070 --> 00:03:14,131
+and show them is this really what you
+wanted.
+
+41
+00:03:14,131 --> 00:03:18,860
+Are these plans useful to you?
+What criteria do we have to assess these
+
+42
+00:03:18,860 --> 00:03:22,327
+plans?
+And overall this is an iterative process,
+
+43
+00:03:22,327 --> 00:03:27,307
+so that means we can go back to any phase
+at any time and start over again to
+
+44
+00:03:27,307 --> 00:03:31,589
+improve the model.
+As you can see, knowledge engineering for
+
+45
+00:03:31,589 --> 00:03:37,333
+planning domains is anything but trivial.
+But there is an alternative approach to
+
+46
+00:03:37,333 --> 00:03:43,129
+doing all this manually, and that is to
+try to learn planning domain model-[SOUND]
+
+47
+00:03:43,129 --> 00:03:48,589
+The basic idea here is, that you build a
+system that can observe what is going on
+
+48
+00:03:48,589 --> 00:03:53,058
+in a specific domain.
+And derive operator descriptions, that
+
+49
+00:03:53,058 --> 00:03:57,975
+describe how the state of the world as
+changes, as the system sees it.
+
+50
+00:03:57,976 --> 00:04:04,387
+This has been done recently for the game
+of Freecell, where a system observed the
+
+51
+00:04:04,387 --> 00:04:10,562
+game playing for a while and then came up
+with a formal system of operators that
+
+52
+00:04:10,562 --> 00:04:16,184
+described how to play this game.
+One of the problems that keeps coming up
+
+53
+00:04:16,184 --> 00:04:22,532
+during knowledge engineering for reasoning
+about actions and change is The Frame
+
+54
+00:04:22,532 --> 00:04:25,723
+Problem.
+An to explain this to you I need to go
+
+55
+00:04:25,723 --> 00:04:29,851
+back in time a little.
+Back when people were first looking at
+
+56
+00:04:29,851 --> 00:04:35,035
+planing problems in the '60, a very
+popular field in [UNKNOWN]AI and in which
+
+57
+00:04:35,035 --> 00:04:39,685
+a lot of progress was being made was
+automated[UNKNOWN] imprving.
+
+58
+00:04:39,686 --> 00:04:45,290
+So one of the earliest approaches to
+solving planning problems, then, was to
+
+59
+00:04:45,290 --> 00:04:49,935
+transform a planning problem into a theory
+improving problem.
+
+60
+00:04:49,935 --> 00:04:56,031
+And doing that involves writing a set of
+logical axioms that represent what changes
+
+61
+00:04:56,031 --> 00:05:01,592
+in the world when an action happens.
+There were, of course, axioms expressing
+
+62
+00:05:01,592 --> 00:05:06,818
+the preconditions of an operator, and
+there were axioms expressing the effects
+
+63
+00:05:06,818 --> 00:05:10,456
+of an operator.
+But it turned out for a theorem improver
+
+64
+00:05:10,456 --> 00:05:15,058
+to work you also have to write down
+explicitly what doesn't work when an
+
+65
+00:05:15,058 --> 00:05:19,454
+action is executed.
+And in fact, the list of things that don't
+
+66
+00:05:19,454 --> 00:05:24,932
+change when an action is executed, is much
+longer than the list of things that do
+
+67
+00:05:24,932 --> 00:05:28,206
+change.
+So the problem was, that we needed to
+
+68
+00:05:28,206 --> 00:05:32,863
+represent a long list of facts that are
+not changed by an action.
+
+69
+00:05:32,863 --> 00:05:39,125
+And the frame problem in general, then, is
+to construct a formal framework for the
+
+70
+00:05:39,125 --> 00:05:45,105
+reasoning about actions and change in
+which the non-effects of actions do not
+
+71
+00:05:45,105 --> 00:05:50,447
+have to be enumerated explicitly.
+The formal framework that was used
+
+72
+00:05:50,447 --> 00:05:55,802
+originally was first order logic, and
+using theorem proving as the problem
+
+73
+00:05:55,802 --> 00:06:00,027
+solving technique.
+And the specific set of relations and
+
+74
+00:06:00,027 --> 00:06:05,789
+functions that were used to represent
+operators in first order logic, are known
+
+75
+00:06:05,789 --> 00:06:10,392
+as the situation calculus.
+Now, there are a number of ways in which
+
+76
+00:06:10,392 --> 00:06:15,117
+the frame problem can be approached and
+the first one was to ask the question
+
+77
+00:06:15,117 --> 00:06:19,692
+whether we can use a different style of
+representation so we don't use the
+
+78
+00:06:19,692 --> 00:06:24,642
+situation calculus but we use a different
+way of encoding the same knowledge in
+
+79
+00:06:24,642 --> 00:06:27,668
+first-order logic so we keep the
+formalism.
+
+80
+00:06:27,669 --> 00:06:32,413
+And while there has been some progress
+with this approach.
+
+81
+00:06:32,413 --> 00:06:37,739
+The problem of enumerating non effective
+actions explicitly did remain in some way
+
+82
+00:06:37,739 --> 00:06:40,899
+or other.
+The second approach, then, was to use a
+
+83
+00:06:40,899 --> 00:06:45,171
+different logical formalism.
+So, instead of first order logic.
+
+84
+00:06:45,171 --> 00:06:50,259
+We may be able to use a more complicated
+formalism that can encode the knowledge
+
+85
+00:06:50,259 --> 00:06:53,091
+better.
+And 1 good candidate was always non
+
+86
+00:06:53,091 --> 00:06:56,944
+monotonic logic.
+And again there has been some progress in
+
+87
+00:06:56,944 --> 00:07:00,336
+that area.
+But theory improves for non-monotonic
+
+88
+00:07:00,336 --> 00:07:05,097
+logic are not very efficient.
+And the third approach was to simply write
+
+89
+00:07:05,097 --> 00:07:10,102
+a procedure that generates the right
+conclusions, in our case plans, because
+
+90
+00:07:10,102 --> 00:07:16,872
+its solution is built into the procedure.
+And that third approach is basically what
+
+91
+00:07:16,872 --> 00:07:23,372
+we've been following on this course.
+But you should be aware of the frame
+
+92
+00:07:23,372 --> 00:07:30,229
+problem which has to do with the
+representation of non-effects of actions.

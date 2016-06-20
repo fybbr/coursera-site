@@ -1,0 +1,273 @@
+So, we have now seen what the search 
+state look like in our new search-space, 
+and we have seen what the state 
+transitions in this new search-space. 
+look like. 
+And there were four such transitions 
+according to the four components of a 
+partial plan, we could add an action, we 
+could add an ordering constraint, we 
+could add variable bindings, and we could 
+add causal links to the partial plan. 
+This means we're very close to the 
+definition of plan-space search as a 
+search problem. 
+So, we will look at the missing bits and 
+pieces next. 
+The first thing that is missing to define 
+our problem is the initial search state. 
+Our initial search state is the empty 
+plan that contains only the goal and the 
+initial state, and we will add the goal 
+and the initial state as dummy actions to 
+our plan. 
+To do this, we have one action, init, 
+that has no preconditions and has 
+everything in the initial state as 
+effects of the dummy action. 
+So, if this is the first action in our 
+plan, the result is that the initial 
+state holds. 
+And then, we have another action in our 
+plan goal, which contains all the goal 
+conditions as preconditions and has no 
+effect. 
+And if this is the last action in our 
+plan, that means before we can execute 
+this goal action, all the preconditions 
+must hold, which means the goal has been 
+achieved. 
+Our initial search state is then the 
+empty plan, pi 0, consisting of the 
+following component. 
+First, we have the two dummy actions, 
+init and goal, which we just described. 
+Then, we have one ordering constraint, 
+namely that init must be before goal. 
+We have no variable binding initially 
+because there will be no variables in the 
+initial state or in the goal. 
+They're all fully ground. 
+And finally, there will be no causal 
+links between any of the propositions in 
+the initial state or the goal. 
+That is the empty plan, the initial 
+search state we'll be using to start our 
+search. 
+And here is our empty plan in a pictorial 
+representation. 
+We have the two dummy actions, init and 
+zero. 
+These are two actions in this plan. 
+So, each action consists of preconditions 
+and effects. 
+The preconditions of init are here and 
+they're of course empty, 
+and the effects of goal are here and 
+again they're empty. 
+Otherwise, what we see are the initial 
+propositions from our initial state in 
+the planning problem and the goal 
+conditions from our planning problem. 
+Also, we have this ordering constraint 
+here saying that init has to come before 
+goal. 
+That's it. 
+That's the empty plan. 
+And I hope you're not getting confused 
+with the initial search state here. 
+So, we distinguish the initial state that 
+is part of our planning problem which is 
+a world state consisting of all these 
+ground atoms. 
+And we have the initial search state 
+which is the state from which we start 
+our search, in this case the partial 
+plan. 
+The two have nothing to do with each 
+other, although, they are both initial 
+states in some way. 
+One is the initial state in the world 
+state space, 
+and the other is the initial state in our 
+search. 
+The successor function we need to define 
+our search problem is, of course, given 
+by the plan refinement operation we've 
+seen previously. 
+So, we generate successors by applying 
+our plan refinement operators. 
+And we can apply one or more of these 
+operators at the same time to constitute 
+one step in our successor function. 
+And the reason why we want several 
+operators at the same time is simply that 
+we need to keep our partial plans 
+consistent. 
+So, we've already seen examples of that, 
+namely when we add a causal link, we 
+should also add an ordering constraint at 
+the same time in the same step. 
+This is necessary to keep our plan 
+consistent. 
+So, our plan refinement operators are 
+combined to give us the successor 
+function. 
+We use one or more of the following, 
+adding an action, adding an ordering 
+constraint, adding a binding constraint, 
+or adding a causal link to the partial 
+plan we're currently observing. 
+And we want to do this in such a way that 
+our partial plan remains valid. 
+So that means that all the constraints we 
+add as part of our plan refinement must 
+be satisfiable in some way. 
+You can see that what plan-space search 
+is doing is decoupling two problems that 
+we need to solve as part of planning. 
+The first problem is, which actions to 
+execute as part of our plan. 
+And the second problem is, how to 
+organize these actions. 
+What is the organizational structure that 
+underlies our plan? 
+Another view of plan-space search is that 
+we view a partial plan as really 
+representing a set of plans, namely all 
+those plans that we can achieve from this 
+partial plan by these plan refinement 
+operations. 
+So, every time we apply refinement 
+operation as part of our planning 
+process, we reduce the set of possible 
+plans into which the partial plan can be 
+refined. 
+And we do this until the plan is fully 
+ground and there is only one plan left. 
+Now, what remains to be defined here for 
+our plan-space search problem is the goal 
+test. 
+But before we define the goal test for 
+our search problem, we need to reconsider 
+what we understand by a solution for a 
+given planning problem. 
+Just a quick recap, a planning problem 
+was defined by a state transmission 
+system, initial state, and a goal 
+condition. 
+And the plan pi is considered a solution 
+for this planning problem if the 
+application of the plan in the initial 
+state gives us a new state and that state 
+satisfies our goal. 
+That is how we have defined a solution 
+for a planning problem. 
+And here is the problem that we have now. 
+This term, gamma si pi, was only defined 
+for a sequence of ground actions because 
+those were the only plans we've 
+considered so far. 
+The plans we are considering now are only 
+partially ordered. 
+Of course, we can turn this partial order 
+into total order by respecting all the 
+partial order constraints. 
+But then the question is, in our 
+definition of gamma si pi, which of these 
+total orderings should we use? 
+In general, there could be an exponential 
+number of total orderings that correspond 
+to one partial order. 
+Similarly, our partial plan may only 
+contain a partial instantiation of the 
+variables which we will need to bind in 
+our plan. 
+So, there may be a large number of ways 
+to turn our partially instantiated 
+variables into a fully ground plan and we 
+need to decide which ones of those to use 
+for our definition of a solution. 
+The simplest way to address this problem 
+is to consider a new definition of a 
+partial order solution. 
+And here is our new definition when a 
+partial order plan constitutes a solution 
+to a planning problem. 
+A planning problem, of course, consists 
+of the same component as before. Which 
+means it's a state transition system, an 
+initial world state, and a goal 
+condition. 
+And we consider a plan that may be a 
+solution consisting of actions, ordering 
+constraints, variable bindings and causal 
+links. 
+That may be a partial order solution for 
+our planning problem if two conditions 
+hold. 
+Firstly, the ordering constraints and the 
+variable binding constraints in our 
+partial plan must be consistent. 
+The ordering constraints are consistent 
+if there's no loop in the orderings. 
+And the variable binding constraints are 
+consistent if we can find values for all 
+the variables such that all the 
+constraints which are equalities or 
+inequalities are respected. 
+So, in our partial order solution, all 
+the variable bindings and ordering 
+constraints must be consistent. And, we 
+have another condition. Namely, that for 
+every total order sequence of a1 through 
+ak, which are the actions in a minus the 
+init and goal actions, these were the 
+dummy actions we've only used in our 
+empty plan, the other actions were the 
+ones that were added through plan 
+deployment operations of the first type, 
+namely adding actions. 
+So, every such totally ordered sequence 
+that is fully ground and respects the 
+orderings and variable binding 
+constraints must satisfy the following 
+condition. That is, if we apply this 
+total order plan in the initial state, 
+then the state transition function gives 
+us a new state which must satisfy our 
+goal. 
+So, there is an exponential number of 
+ways to turn our partial order plan into 
+a total order plan, and our definition 
+for a partial order solution now requires 
+us to have every such total ordering 
+satisfy our goal. 
+There are a few things to note here. 
+And the first interesting thing is, that 
+the causal links apparently don't play a 
+role in the definition of a solution 
+plan. 
+The second is, if we want to turn this 
+into a computational procedure that we 
+can use as a goal test, it is not very 
+practical. 
+If we have to test every total order 
+sequence and there is an exponential 
+number of such sequences, then we have a 
+lot of work to do to verify our goal 
+test. 
+But, of course, in the construction of 
+our plan, we pay careful attention to the 
+the way we combine the action. 
+And, in fact, if every precondition of 
+every action is supported by a causal 
+link, then we know that our plan will 
+satisfy the goal because the goal is the 
+final step in our plan. 
+The problem is, this condition that every 
+precondition is supported by a causal 
+link is not quite strong enough as a goal 
+test yet. 
+But, we will get there soon enough. 
+

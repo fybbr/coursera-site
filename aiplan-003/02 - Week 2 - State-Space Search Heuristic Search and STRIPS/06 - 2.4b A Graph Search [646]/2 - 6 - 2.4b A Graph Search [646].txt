@@ -1,0 +1,187 @@
+The fact that the 8 puzzle, the search 
+space usually fits into memory means we 
+can do some interesting analysis on this. 
+So here's the example we've seen earlier. 
+This is the same initial state we've seen 
+before. 
+What we have for this initial state is 
+that we can move in all 4 directions and 
+so we have 4 successors for this state 
+and they are shown here as the 4 
+successors of this node. 
+Note that all the arrows here are 
+bi-directional because, in this search 
+problem, as in many others, actions are 
+reversible, which means I can always go 
+back and forth between 1 state and 1 of 
+its successors. 
+So there's already a little optimization 
+potential for our search algorithm. 
+We can avoid reversible actions. 
+So, looking at the successes we have 3 
+possible actions here. 
+But of course, 1 of them would us get 
+back to the initial state. 
+So, in fact, there's only 2 successes 
+that we would generate here. 
+For this, again, we have 3 possible 
+actions here. 
+3 possible actions. 
+And there, 3 possible actions. 
+Which means, for each of those. 
+Successors we generate 2 more successors 
+as shown here. 
+So we look at 1 example here where we 
+have moved the empty tile up and this 
+gives us those 2 successors and in this 
+case there are 2 actions here and 2 
+actions there which means for each of 
+those as only 1. 
+Possible, real successor, but again note, 
+it's a by directional arrow, so, we can 
+go back and forth between these states. 
+And so on I can follow this path, and 
+generate more successors. 
+You can see there, I've ignored some, 
+that I didn't generate, or didn't look at 
+in detail, and so on. 
+Here is where I'm simply running out of 
+slide, otherwise I would have gone a 
+little further. 
+And then you would see what I'm 
+effectively doing here, is the moves I'm 
+following are simply shifting the empty 
+tile in this circle. 
+And, what this means is eventually, this 
+path will lead up here again. 
+We're back at our initial space. 
+So, this shows that as a graph, and it's 
+a graph that contains quite some long 
+loops. 
+And as I said before we can actually 
+create the whole search space and then 
+analyze how deep the different solutions 
+are. 
+And this is what this graph shows us. 
+We have here the depth of the different 
+solution nodes, so what we did is we 
+started a generation from the solution 
+node and generated all the different 
+nodes that are availible in the search 
+space and these are the depth at which 
+they are from the solutions. 
+And here we've the number of different 
+states that are at that depth. 
+Altogether there's about 180,000 
+different states in the search space. 
+And we can see that most of the states 
+are actually at around depth, what is 
+this, 24. 
+So, as I have said before the number of 
+states we generate in both tree and graph 
+search grows exponentially. 
+So what we can expect is that this will 
+initially more or less follow the states 
+base here that we generate the No's as 
+they are available. 
+But then, then for tree search this will 
+continue to grow exponentially so this 
+goes up here somewhere, and out of the 
+slide. 
+But then we see for the worst case here, 
+at depth 31, there's really only two 
+different states. 
+And if we wanted to use tree search to 
+search for those states, we would have to 
+generate all those states up here where, 
+in fact, there are only 2. 
+So what this would lead us to expect is 
+that tree search is reasonably efficient 
+up to about this depth here and then 
+becomes incredibly inefficient and we 
+should use graph search for these worst 
+case scenarios. 
+But then graph search also has some 
+additional costs. 
+We need to maintain that hash table, as 
+we've seen. 
+And comparing states in the hash table, 
+well depending on the complexity of these 
+states, this can take up quite some time 
+too. 
+So there's a basic trade off here. 
+Another problem is related to 
+permutations of solutions. 
+By that I mean, if we are given one 
+solution part from the initaial state to 
+a goal node, if we can swap some of the 
+states and some of the actions on that 
+path to obtain a different solution path, 
+then this is a permutations of that 
+solution, and this creates problems for 
+that star. 
+Often permutations are allowed if we have 
+independent actions in our domain. 
+So if for all states, if we first apply 
+one action and then another, we get one 
+state and that is the same state as 
+applying the actions in the reverse 
+order, then we say these 2 actions are 
+independent. 
+We could, in principle, execute those 2 
+actions in parallel, but isnce we are 
+only looking at action sequences so far, 
+we have to choose an order. 
+And since the order doesn't matter, we 
+have a permutation in our solution here. 
+The state that is the result of applying 
+these two actions, in which ever order we 
+choose them is the same. 
+Now why is this a problem for a star? And 
+here is the worst case scenario. 
+This is unrealistic but it is the worst 
+case. 
+Suppose we are given a the search problem 
+where we have an intiatial state and we 
+found a path to our goal state and 
+they're many intermediate notes here. 
+And our optimal path has a lenth of n, 
+and the worst case is that All these n 
+actions are independent. 
+It is easy to show that if all the pairs 
+of actions are pair wise independent, 
+then we can basically permute those 
+actions into any order we like, and it 
+doesn't change the outcome of the plan. 
+Now remember what I said earlier about 
+contours, namely that a star, if the 
+optimal solution length is n in this 
+example, will need to generate all the 
+nodes within a smaller contour. 
+So, if the F value is n-1 then this is 
+the contour that a star will generate 
+with the FLU being equal to n-1. 
+What this means is that it will generate 
+all those permutations that have n-1 
+nodes. 
+So what this means is in this part 
+there's n-1 factorial, different 
+combinations of solutions. 
+And, we'll explore all these paths before 
+it moves on to the first solution. 
+Of course, then it will find n factorial 
+solutions for this problem which are a 
+lot of solutions. 
+And, you should now understand that there 
+is no way around this, of course. 
+So you can now go and experiment with 
+this by programming all this in your 
+language of choice. 
+Specifically, why don't you try to 
+generate this graph here that tells us 
+how many different states exactly there 
+are at the different depths. 
+So for example, how many states would you 
+find here at depth 27? That is a 
+question. 
+

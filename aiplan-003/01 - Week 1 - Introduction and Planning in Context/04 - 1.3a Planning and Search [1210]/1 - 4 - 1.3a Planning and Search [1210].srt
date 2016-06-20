@@ -1,0 +1,884 @@
+1
+00:00:05,040 --> 00:00:08,333
+We have now seen a conceptual model for 
+planning, 
+
+2
+00:00:08,333 --> 00:00:13,375
+namely, the state transition system. 
+This helped us formulize the problem we 
+
+3
+00:00:13,375 --> 00:00:17,677
+are trying to solve in planning. 
+A technique that is used almost 
+
+4
+00:00:17,677 --> 00:00:22,382
+everywhere in planning, and in many other 
+areas of AI is called search. 
+
+5
+00:00:22,382 --> 00:00:25,340
+And this is what we will be looking at 
+next. 
+
+6
+00:00:25,340 --> 00:00:30,523
+Before we go in to the details of search 
+algorithms, I briefly want to talk about 
+
+7
+00:00:30,523 --> 00:00:33,658
+the types of problems we will see on this 
+course. 
+
+8
+00:00:33,658 --> 00:00:36,730
+Namely, toy problems versus real-world 
+problems. 
+
+9
+00:00:36,730 --> 00:00:41,645
+Toy problems are characterized by a 
+description that is concise and exact. 
+
+10
+00:00:41,645 --> 00:00:47,025
+The description being concise allows me 
+to describe the problem in one slide 
+
+11
+00:00:47,025 --> 00:00:50,213
+quickly. 
+The description being exact means there 
+
+12
+00:00:50,213 --> 00:00:54,930
+shouldn't be too much ambiguity about 
+what the problem is trying to do. 
+
+13
+00:00:54,930 --> 00:00:58,474
+Toy problems are often used for 
+illustration purposes, 
+
+14
+00:00:58,474 --> 00:01:02,477
+for example, on this course. 
+They are also used to compare the 
+
+15
+00:01:02,477 --> 00:01:05,300
+performance of different search 
+algorithms. 
+
+16
+00:01:05,300 --> 00:01:08,327
+Toy problems have two interesting 
+properties. 
+
+17
+00:01:08,327 --> 00:01:12,970
+Namely they are rich and simple. 
+By rich, we mean they're anything but 
+
+18
+00:01:12,970 --> 00:01:16,334
+trivial to solve. 
+And by simple, I mean, they can be 
+
+19
+00:01:16,334 --> 00:01:20,691
+described easily and precisely. 
+Real-world problems tend to be very 
+
+20
+00:01:20,691 --> 00:01:23,403
+different. 
+To begin with, there is no single 
+
+21
+00:01:23,403 --> 00:01:26,747
+agreed-upon description for most 
+real-world problems. 
+
+22
+00:01:26,747 --> 00:01:31,794
+That means if we were to use real-world 
+problems in this course, I would spend a 
+
+23
+00:01:31,794 --> 00:01:36,715
+lot of time describing what the actual 
+problems is and describing the details 
+
+24
+00:01:36,715 --> 00:01:39,364
+that need to be addressed in each 
+problem. 
+
+25
+00:01:39,364 --> 00:01:42,519
+However, toy problems are good as mental 
+exercises. 
+
+26
+00:01:42,519 --> 00:01:46,620
+But real-world problems, people care 
+about the solutions of those. 
+
+27
+00:01:46,620 --> 00:01:51,738
+The missionaries and cannibals problem we 
+have seen earlier clearly falls into the 
+
+28
+00:01:51,738 --> 00:01:55,889
+category of toy problems. 
+Now, before we go into search algorithms, 
+
+29
+00:01:55,889 --> 00:02:01,108
+we need to characterize what constitutes 
+a search problem, and here are the four 
+
+30
+00:02:01,108 --> 00:02:04,110
+components that characterize a search 
+problem. 
+
+31
+00:02:04,110 --> 00:02:08,629
+The first component is the initial state. 
+This is simply the state of the world 
+
+32
+00:02:08,629 --> 00:02:12,348
+from which we start our search. 
+In the missionaries and cannibals 
+
+33
+00:02:12,348 --> 00:02:16,925
+problem, this was the state where all the 
+missionaries and all the cannibals and 
+
+34
+00:02:16,925 --> 00:02:19,729
+the boat were on the left-hand side of 
+the river. 
+
+35
+00:02:19,729 --> 00:02:24,191
+Next, we need a set of possible actions. 
+Not every action will be applicable in 
+
+36
+00:02:24,191 --> 00:02:26,880
+every state, 
+so we will also need to define the 
+
+37
+00:02:26,880 --> 00:02:29,570
+applicability conditions for actions in 
+states. 
+
+38
+00:02:29,570 --> 00:02:33,836
+We can define the actions through a 
+successor function. 
+
+39
+00:02:33,836 --> 00:02:39,655
+A successor function maps a state into a 
+set of pairs of actions and state. 
+
+40
+00:02:39,655 --> 00:02:45,473
+So, for each state of the world, the 
+successor function maps it to all those 
+
+41
+00:02:45,473 --> 00:02:50,903
+actions that are applicable, 
+together with the states that result from 
+
+42
+00:02:50,903 --> 00:02:54,549
+the action being applied in the original 
+state, 
+
+43
+00:02:54,549 --> 00:02:59,916
+and leading us to this new state. 
+Together, the successor function and the 
+
+44
+00:02:59,916 --> 00:03:05,038
+initial state span a state space which 
+corresponds roughly to the states 
+
+45
+00:03:05,038 --> 00:03:10,582
+transition graph we have seen earlier. 
+The state space is a directed graph with 
+
+46
+00:03:10,582 --> 00:03:13,810
+states as nodes and actions as labels on 
+arcs. 
+
+47
+00:03:13,810 --> 00:03:17,050
+The third component of a search problem 
+is the goal. 
+
+48
+00:03:17,050 --> 00:03:21,849
+This can be either an individual state, 
+in which case, we have just one unique 
+
+49
+00:03:21,849 --> 00:03:26,898
+goal state, or in general, we can have a 
+function that tests whether a given state 
+
+50
+00:03:26,898 --> 00:03:31,510
+is a goal state or not, which allows us 
+to have many different goal states. 
+
+51
+00:03:31,510 --> 00:03:36,756
+A solution to a search problem is simply 
+a path in the state space from the 
+
+52
+00:03:36,756 --> 00:03:41,587
+initial state to a gold state. 
+The final component of a search problem 
+
+53
+00:03:41,587 --> 00:03:46,212
+is the path cost function. 
+This simply assigns a cost value to each 
+
+54
+00:03:46,212 --> 00:03:51,251
+possible path in the state space. 
+we use this when we're doing optimal 
+
+55
+00:03:51,251 --> 00:03:54,426
+search. 
+When we're looking for an optimal path, 
+
+56
+00:03:54,426 --> 00:03:57,740
+we're looking for the path with the 
+lowest cost. 
+
+57
+00:03:57,740 --> 00:04:03,349
+A simplification that is often used in 
+planning is that each action has a fixed 
+
+58
+00:04:03,349 --> 00:04:08,117
+cost and that the cost of a path is 
+simply, the sum of the step cost, 
+
+59
+00:04:08,117 --> 00:04:12,614
+the cost of each action. 
+Now, you will have noticed that there are 
+
+60
+00:04:12,614 --> 00:04:17,403
+some similarities between what we've just 
+defined and stay transition systems, and 
+
+61
+00:04:17,403 --> 00:04:21,959
+the next quiz will give you little time 
+to think about those similarities and 
+
+62
+00:04:21,959 --> 00:04:25,467
+differences. 
+Going back to the missionaries and 
+
+63
+00:04:25,467 --> 00:04:29,225
+cannibals example, let's try to define 
+this as a search problem. 
+
+64
+00:04:29,225 --> 00:04:33,400
+So, we need to define the four 
+components, which were the initial state 
+
+65
+00:04:33,400 --> 00:04:36,085
+which was given to us as part of the 
+problem. 
+
+66
+00:04:36,085 --> 00:04:40,737
+And the third component was the goal 
+state which was also given to us as part 
+
+67
+00:04:40,737 --> 00:04:43,899
+of the problem. 
+Then, the fourth component is the path 
+
+68
+00:04:43,899 --> 00:04:47,000
+cost function. 
+And there, we simply assume that every 
+
+69
+00:04:47,000 --> 00:04:50,758
+step has the same cost. 
+So, the only thing that is slightly more 
+
+70
+00:04:50,758 --> 00:04:54,993
+complex is the successor function. 
+And we can define this as a table as 
+
+71
+00:04:54,993 --> 00:04:58,216
+shown here. 
+So, what this table does is simply 
+
+72
+00:04:58,216 --> 00:05:02,760
+enumerate all the mappings of states to 
+set of action state pairs. 
+
+73
+00:05:02,760 --> 00:05:05,444
+What we have on the left-hand side is a 
+state. 
+
+74
+00:05:05,444 --> 00:05:08,654
+So, this is the initial state as defined 
+in the problem. 
+
+75
+00:05:08,654 --> 00:05:12,330
+And I'll decipher this for you quickly. 
+This has two components. 
+
+76
+00:05:12,330 --> 00:05:16,473
+It says, what's on the left-hand side and 
+what's on the right-hand side. 
+
+77
+00:05:16,473 --> 00:05:20,616
+On the left-hand side, we have the three 
+missionaries, we have the three 
+
+78
+00:05:20,616 --> 00:05:24,175
+cannibals, and the boat. 
+And on the right-hand side, we have no 
+
+79
+00:05:24,175 --> 00:05:28,202
+missionaries and no cannibals initially. 
+So, that is the initial state. 
+
+80
+00:05:28,202 --> 00:05:31,470
+We describe everything that's on each 
+side of the river. 
+
+81
+00:05:31,470 --> 00:05:34,639
+This is mapped to three pairs. 
+One, two, three. 
+
+82
+00:05:34,639 --> 00:05:38,745
+each of which consists of an action and 
+another state. 
+
+83
+00:05:38,745 --> 00:05:43,860
+So, let's look at the first one. 
+In the first case, we ship two cannibals 
+
+84
+00:05:43,860 --> 00:05:47,966
+across the river. 
+And this gives us, on the left-hand side, 
+
+85
+00:05:47,966 --> 00:05:52,937
+three missionaries, one cannibal, 
+because we ship two cannibals across. 
+
+86
+00:05:52,937 --> 00:05:57,836
+On the right-hand side, zero 
+missionaries, and two cannibals, plus the 
+
+87
+00:05:57,836 --> 00:06:01,150
+boat, which is also now on the right-hand 
+side. 
+
+88
+00:06:01,150 --> 00:06:06,021
+Altogether, we see there are three 
+different pairs here because, there are 
+
+89
+00:06:06,021 --> 00:06:09,010
+three applicable actions in the initial 
+state. 
+
+90
+00:06:09,010 --> 00:06:11,599
+In the next row, we have a different 
+state. 
+
+91
+00:06:11,599 --> 00:06:16,347
+And we, again, define what can be done in 
+this state, these are the two actions, 
+
+92
+00:06:16,347 --> 00:06:20,232
+and the resulting states that we get if 
+we apply these actions. 
+
+93
+00:06:20,232 --> 00:06:24,240
+This is actually, the same state that 
+we've looked at just now. 
+
+94
+00:06:24,240 --> 00:06:28,586
+This state here became the state there. 
+So, we need to do this for the whole set 
+
+95
+00:06:28,586 --> 00:06:31,611
+of states that are available for the 
+whole states base. 
+
+96
+00:06:31,611 --> 00:06:36,232
+Which means we need to go through a whole 
+list of states and define where we can go 
+
+97
+00:06:36,232 --> 00:06:39,313
+from these states. 
+And if we had completed this table, we 
+
+98
+00:06:39,313 --> 00:06:43,219
+had defined the whole state-transition 
+function and this concludes the 
+
+99
+00:06:43,219 --> 00:06:47,864
+definition of the surge problem. 
+In contrast to this toy problem, we will 
+
+100
+00:06:47,864 --> 00:06:52,120
+now look at a real-world problem, 
+namely, touring in Romania. 
+
+101
+00:06:52,120 --> 00:06:57,078
+What you see here is a rough map of the 
+country with some of its major cities. 
+
+102
+00:06:57,078 --> 00:07:00,001
+To define touring Romania as a search 
+problem, 
+
+103
+00:07:00,001 --> 00:07:04,070
+we again have to define the four 
+components of a search problem. 
+
+104
+00:07:04,070 --> 00:07:08,710
+So, let's start with the initial state. 
+Suppose we are in the city of Arad, 
+
+105
+00:07:08,710 --> 00:07:11,380
+that's where we start our tour of 
+Romania. 
+
+106
+00:07:11,380 --> 00:07:16,207
+The next thing we need to define are the 
+possible actions that we can take in this 
+
+107
+00:07:16,207 --> 00:07:18,591
+problem. 
+Since we are looking at a map, it 
+
+108
+00:07:18,591 --> 00:07:21,615
+suggests that we can drive from one city 
+to another. 
+
+109
+00:07:21,615 --> 00:07:25,977
+But presumably, when you're touring a 
+country, that's not all you want to do. 
+
+110
+00:07:25,977 --> 00:07:30,572
+You probably also want to do some sight 
+seeing, or you need a hotel, so you need 
+
+111
+00:07:30,572 --> 00:07:33,480
+to check into that hotel, 
+you need to book a hotel. 
+
+112
+00:07:33,480 --> 00:07:38,163
+there are many different types of actions 
+that you want to do when you tour a 
+
+113
+00:07:38,163 --> 00:07:41,228
+country and you can see, this is a real 
+world problem. 
+
+114
+00:07:41,228 --> 00:07:45,450
+We already have the first problem, 
+deciding what the possible actions are. 
+
+115
+00:07:45,450 --> 00:07:49,621
+The same applies for the goal. 
+When you're going on holiday somewhere, 
+
+116
+00:07:49,621 --> 00:07:52,945
+to tour a country or a region, what is 
+your actual goal? 
+
+117
+00:07:52,945 --> 00:07:57,419
+Well, presumably, you want to end up in 
+the same state that you started off, 
+
+118
+00:07:57,419 --> 00:08:00,320
+namely, at home. 
+So, that can't really be the goal. 
+
+119
+00:08:00,320 --> 00:08:05,217
+You want to have something else that you 
+need to describe as your goal, something 
+
+120
+00:08:05,217 --> 00:08:09,206
+that happens along the way. 
+But it's very hard to describe because 
+
+121
+00:08:09,206 --> 00:08:13,826
+this is a real-world problem. 
+What is the little bit easier is probably 
+
+122
+00:08:13,826 --> 00:08:19,150
+the cost that is associated with each 
+action and that will mostly be time and 
+
+123
+00:08:19,150 --> 00:08:22,152
+money. 
+As a side remark, the touring in Romania 
+
+124
+00:08:22,152 --> 00:08:26,623
+problem is taken from a famous AI 
+textbook, by Russell and Norvig. And if 
+
+125
+00:08:26,623 --> 00:08:31,613
+you want to learn more about search, I 
+recommend that you have a look at this 
+
+126
+00:08:31,613 --> 00:08:34,594
+book. 
+The reference to this book will be given 
+
+127
+00:08:34,594 --> 00:08:38,980
+on the course website. 
+So, what you have just seen is that 
+
+128
+00:08:38,980 --> 00:08:42,656
+problem formulation is itself a complex 
+problem. 
+
+129
+00:08:42,656 --> 00:08:48,170
+And its the problem of defining the four 
+components of a search problem. 
+
+130
+00:08:48,170 --> 00:08:53,574
+In problem formulation, we have to decide 
+what actions we want to consider and what 
+
+131
+00:08:53,574 --> 00:08:58,588
+states we want to consider in the world. 
+Probably the most difficult decision 
+
+132
+00:08:58,588 --> 00:09:02,885
+there is, at what level of abstraction 
+are we looking at the world? 
+
+133
+00:09:02,885 --> 00:09:07,704
+What detail do we want to take into 
+account and what detail do we want to 
+
+134
+00:09:07,704 --> 00:09:10,083
+omit? 
+So, looking at the touring Romania 
+
+135
+00:09:10,083 --> 00:09:14,975
+examples, we could define actions that 
+describe how we drive a car that, say, we 
+
+136
+00:09:14,975 --> 00:09:19,686
+have to turn a steering wheel by one 
+degree left or right and we have to move 
+
+137
+00:09:19,686 --> 00:09:24,397
+our foot from one pedal to the other. 
+But this would probably give us too much 
+
+138
+00:09:24,397 --> 00:09:28,745
+irrelevant detail and there's a lot of 
+uncertainty involved in that, too. 
+
+139
+00:09:28,745 --> 00:09:32,490
+So, we probably don't want to go to that 
+lower level of detail. 
+
+140
+00:09:32,490 --> 00:09:37,867
+Also, if we try to solve our problem at 
+that level of detail, we would come up 
+
+141
+00:09:37,867 --> 00:09:41,080
+with a solution plan that has many, many 
+steps. 
+
+142
+00:09:41,080 --> 00:09:44,739
+If we define the problem at a higher 
+level of abstraction, 
+
+143
+00:09:44,739 --> 00:09:49,156
+say, we consider actions that drive us 
+immediately to another big city. 
+
+144
+00:09:49,156 --> 00:09:54,393
+Then, we have the problem that we need to 
+decide how to execute such an action when 
+
+145
+00:09:54,393 --> 00:09:58,620
+we come to plan execution. 
+Also, if this is the level of abstraction 
+
+146
+00:09:58,620 --> 00:10:03,416
+we consider driving to another city, 
+we can't really talk about things we do 
+
+147
+00:10:03,416 --> 00:10:07,895
+in between, between two cities. 
+So, deciding at what level of abstraction 
+
+148
+00:10:07,895 --> 00:10:12,628
+we model our actions and states is 
+probably the most important decision in 
+
+149
+00:10:12,628 --> 00:10:16,293
+problem formulation. 
+But to help us with problem formulation, 
+
+150
+00:10:16,293 --> 00:10:20,861
+there are number of assumptions that 
+search engines and planners often make 
+
+151
+00:10:20,861 --> 00:10:25,728
+and if we take those in to account during 
+problem formulation, we may have a much 
+
+152
+00:10:25,728 --> 00:10:28,649
+easier task. 
+The first assumption is that we have a 
+
+153
+00:10:28,649 --> 00:10:32,371
+finite number of world states. 
+This implies that we cannot have 
+
+154
+00:10:32,371 --> 00:10:36,656
+continuous variables in those states, as 
+this would automatically give us an 
+
+155
+00:10:36,656 --> 00:10:40,266
+infinite number of states. 
+Then, we will assume that the world is 
+
+156
+00:10:40,266 --> 00:10:43,480
+fully observable. 
+Which means everything that is relevant 
+
+157
+00:10:43,480 --> 00:10:47,935
+to us in the state of the world can be 
+seen and will be known to the algorithm 
+
+158
+00:10:47,935 --> 00:10:52,274
+to our planner that we're using. 
+The next assumption is that the actions 
+
+159
+00:10:52,274 --> 00:10:57,280
+that were using are deterministic, which 
+means each action has one well-defined 
+
+160
+00:10:57,280 --> 00:11:00,385
+outcome. 
+There's no uncertainty which state we'll 
+
+161
+00:11:00,385 --> 00:11:04,973
+be in after we apply an action. 
+The final assumption is that the world is 
+
+162
+00:11:04,973 --> 00:11:07,596
+static. 
+Which means, there are no events so 
+
+163
+00:11:07,596 --> 00:11:12,093
+nothing happens that we don't do. 
+Only the actions that we do modify the 
+
+164
+00:11:12,093 --> 00:11:15,466
+state of the world. 
+So, these are assumptions about the 
+
+165
+00:11:15,466 --> 00:11:20,275
+environment, but we will also make some 
+other assumptions that are useful for 
+
+166
+00:11:20,275 --> 00:11:23,398
+planning. 
+The first one is that we have restricted 
+
+167
+00:11:23,398 --> 00:11:26,334
+goals. 
+And that means that our goals are either 
+
+168
+00:11:26,334 --> 00:11:31,330
+given to us as a single state that we 
+want to be in or a set of states that are 
+
+169
+00:11:31,330 --> 00:11:34,773
+all gold states. 
+The second assumption is that the 
+
+170
+00:11:34,773 --> 00:11:39,660
+solution we are looking for is a 
+sequential plan, so a solution is a 
+
+171
+00:11:39,660 --> 00:11:44,260
+linear list of actions. 
+There's no parallel activity in our plan. 
+
+172
+00:11:44,260 --> 00:11:49,507
+We shall also not consider time 
+explicitly but only implicit, which means 
+
+173
+00:11:49,507 --> 00:11:53,740
+activities will not have a duration for 
+the time being. 
+
+174
+00:11:53,740 --> 00:11:58,163
+And the final assumption is that we're 
+doing offline planning, that is, the 
+
+175
+00:11:58,163 --> 00:12:02,766
+state transition system which underlies 
+our planning process is not changing 
+
+176
+00:12:02,766 --> 00:12:07,755
+while we're doing the planning. 
+Okay, time for another quick quiz to give 
+
+177
+00:12:07,755 --> 00:12:09,620
+you time to think about this. 
+

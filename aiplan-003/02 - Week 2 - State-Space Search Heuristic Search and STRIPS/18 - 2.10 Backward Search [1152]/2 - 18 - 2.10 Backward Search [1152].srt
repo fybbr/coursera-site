@@ -1,0 +1,809 @@
+1
+00:00:04,460 --> 00:00:09,396
+We have now, almost reached the end of 
+week two, and we have just seen our first 
+
+2
+00:00:09,396 --> 00:00:13,144
+planning algorithm. 
+Some of you may be a little disappointed 
+
+3
+00:00:13,144 --> 00:00:18,205
+that it took so long to get to the first 
+planning algorithm, and for those people 
+
+4
+00:00:18,205 --> 00:00:23,141
+here comes the next planning algorithm. 
+In the algorithm we've just seen, search 
+
+5
+00:00:23,141 --> 00:00:28,015
+states are exactly those states that are 
+world states in the planning problem. 
+
+6
+00:00:28,015 --> 00:00:32,576
+States are sets of ground atoms. 
+The algorithm then searched forward from 
+
+7
+00:00:32,576 --> 00:00:37,262
+the initial state through all the 
+reachable states, until it comes across a 
+
+8
+00:00:37,262 --> 00:00:40,636
+goal state. 
+The algorithm we will look at next is 
+
+9
+00:00:40,636 --> 00:00:45,442
+Backwards State-Space Search. 
+In this algorithm we'll start form the 
+
+10
+00:00:45,442 --> 00:00:50,885
+goal, and search backwards through the 
+state space, until we reach the initial 
+
+11
+00:00:50,885 --> 00:00:53,646
+state. 
+This is quite straight forward, and very 
+
+12
+00:00:53,646 --> 00:00:57,100
+similar to forward search, as you will 
+see. 
+
+13
+00:00:57,100 --> 00:01:01,704
+We will start by defining two concepts, 
+namely, relevance and regression sets. 
+
+14
+00:01:01,704 --> 00:01:06,248
+Relevance is really the equivalent 
+concept to applicability, as it tells us 
+
+15
+00:01:06,248 --> 00:01:09,701
+which actions we can use to move through 
+our search base. 
+
+16
+00:01:09,701 --> 00:01:13,942
+Again, we start with a planning problem 
+consisting of the usual things. 
+
+17
+00:01:13,942 --> 00:01:18,425
+Namely, a state transition system that 
+tells us how the world can evolve, a 
+
+18
+00:01:18,425 --> 00:01:23,151
+initial state from which we're moving 
+away, and a goal description which tells 
+
+19
+00:01:23,151 --> 00:01:27,985
+us which states are goal states. 
+Then we can say an action, A, of our 
+
+20
+00:01:27,985 --> 00:01:34,120
+action set, is relevant for goal, G, if 
+the following two conditions hold. 
+
+21
+00:01:34,120 --> 00:01:39,992
+Firstly the goal in intersected with the 
+affect of the action must not be empty. 
+
+22
+00:01:39,992 --> 00:01:45,864
+This means they must be an element that 
+is in both sets, so there must be element 
+
+23
+00:01:45,864 --> 00:01:51,369
+there is on the one hand go, and on the 
+other hand an infect of the action. 
+
+24
+00:01:51,369 --> 00:01:56,180
+This means the action must contribute to 
+the goal in some way. 
+
+25
+00:01:56,180 --> 00:02:02,111
+Secondly the positive goals of the goal 
+description and the negative effect of 
+
+26
+00:02:02,111 --> 00:02:07,967
+the action must not intersect and the 
+negative goals and the positive effects 
+
+27
+00:02:07,967 --> 00:02:12,622
+must also not intersect. 
+This means the goal must not conflict 
+
+28
+00:02:12,622 --> 00:02:17,374
+with the effects of the action. 
+Looking at the first case, if we had a 
+
+29
+00:02:17,374 --> 00:02:22,222
+negative effect of the action, that was 
+also a positive goal, that means this 
+
+30
+00:02:22,222 --> 00:02:25,093
+action would delete this goal from our 
+state. 
+
+31
+00:02:25,093 --> 00:02:29,240
+So it would no longer hold. 
+The second case is just the other way 
+
+32
+00:02:29,240 --> 00:02:32,110
+around. 
+We have a positive effect that adds a 
+
+33
+00:02:32,110 --> 00:02:35,109
+negative goal to the state, which we 
+don't want. 
+
+34
+00:02:35,109 --> 00:02:39,319
+So, an action is relevant for a goal, if 
+it contributes to the goal, 
+
+35
+00:02:39,319 --> 00:02:43,466
+that's the first condition. 
+And if it does not interfere with the 
+
+36
+00:02:43,466 --> 00:02:47,160
+goal in a negative way. 
+That's the second condition. 
+
+37
+00:02:47,160 --> 00:02:54,170
+Now we can define the regression set of a 
+goal G for a relevant action A. 
+
+38
+00:02:54,170 --> 00:02:58,888
+And as you can see this is meant to be 
+the inverse of the state transition 
+
+39
+00:02:58,888 --> 00:03:01,718
+function gamma and it is computed as 
+follows. 
+
+40
+00:03:01,718 --> 00:03:07,003
+We start off with the original goal which 
+is a set of ground literals and we remove 
+
+41
+00:03:07,003 --> 00:03:11,343
+all the effects of the action from that 
+goal and then we add all the 
+
+42
+00:03:11,343 --> 00:03:16,222
+preconditions of the action to the goal. 
+Effectively, this computes from a given 
+
+43
+00:03:16,222 --> 00:03:18,888
+goal G. 
+We remove all the effects, meaning we 
+
+44
+00:03:18,888 --> 00:03:23,431
+remove all those things that have been 
+achieved by the action that we have 
+
+45
+00:03:23,431 --> 00:03:26,460
+selected. 
+So we no longer need to achieve these if 
+
+46
+00:03:26,460 --> 00:03:29,853
+we execute this action as the last step 
+before the goal. 
+
+47
+00:03:29,853 --> 00:03:33,912
+But then, we need to have all the 
+preconditions true, so that we can 
+
+48
+00:03:33,912 --> 00:03:38,092
+actually execute this action. 
+So what this gives us, is a new sub-goal. 
+
+49
+00:03:38,092 --> 00:03:42,575
+And if we can somehow achieve this 
+sub-goal, then we know that through the 
+
+50
+00:03:42,575 --> 00:03:45,120
+action A, we can achieve our original 
+goal. 
+
+51
+00:03:46,420 --> 00:03:51,835
+Relevance and regression sets tell us how 
+we can move through our state base 
+
+52
+00:03:51,835 --> 00:03:55,351
+backward. 
+They tell us how we can, given a goal and 
+
+53
+00:03:55,351 --> 00:04:00,837
+a relevant action for this goal, compute 
+a new sub goal that constitutes a new 
+
+54
+00:04:00,837 --> 00:04:05,723
+search state for our backward search. 
+So here is how we can define the 
+
+55
+00:04:05,723 --> 00:04:10,635
+successor function for the backwards 
+search, which is equivalent to the 
+
+56
+00:04:10,635 --> 00:04:14,025
+reachability analysis we did for forward 
+search. 
+
+57
+00:04:14,025 --> 00:04:18,522
+We start with regression through a single 
+step from a given goal. 
+
+58
+00:04:18,522 --> 00:04:23,780
+This is defined as the set of all those 
+sub-goals, gamma minus one GA, so the 
+
+59
+00:04:23,780 --> 00:04:28,070
+regression sets, for a relevant action 
+for G, our original goal. 
+
+60
+00:04:28,070 --> 00:04:32,427
+To compute this we start with our 
+original goal, then compute all the 
+
+61
+00:04:32,427 --> 00:04:37,289
+relevant actions for this goal, and 
+regress through these actions two new sub 
+
+62
+00:04:37,289 --> 00:04:40,320
+goals. 
+So this is a set of sub goals that we get 
+
+63
+00:04:40,320 --> 00:04:43,415
+as a result. 
+The next step is that we extend this 
+
+64
+00:04:43,415 --> 00:04:48,656
+function to take multiple goals as input, 
+so the input is now a set of goals rather 
+
+65
+00:04:48,656 --> 00:04:52,255
+than a single goal. 
+And if we regress through zero states 
+
+66
+00:04:52,255 --> 00:04:55,413
+that means simply the set of goals stays 
+the same. 
+
+67
+00:04:55,413 --> 00:04:59,073
+There's no change. 
+If we can go one step backwards in our 
+
+68
+00:04:59,073 --> 00:05:04,380
+search from a given set of goals, this is 
+simply the union over all the individual 
+
+69
+00:05:04,380 --> 00:05:09,233
+goals and we regress those through our 
+regression function defined earlier. 
+
+70
+00:05:09,233 --> 00:05:14,281
+And then we can apply this for M steps 
+backwards from a given set of goals by 
+
+71
+00:05:14,281 --> 00:05:18,358
+simply doing a recursive definition as we 
+did for reachability. 
+
+72
+00:05:18,358 --> 00:05:23,535
+So we apply it for one step after we've 
+applied it to M minus one steps for the 
+
+73
+00:05:23,535 --> 00:05:27,285
+same set of goals. 
+What this means is that, from any of the 
+
+74
+00:05:27,285 --> 00:05:32,263
+sub-goals that we've computed in this 
+way, we can reach the original goals in 
+
+75
+00:05:32,263 --> 00:05:35,818
+exactly M steps. 
+M actions are necessary to go from the 
+
+76
+00:05:35,818 --> 00:05:41,331
+sub-goals to one of the original goals. 
+And we can define the transitive closure 
+
+77
+00:05:41,331 --> 00:05:46,060
+for this function, which is the set of 
+all regression sets that are possibly. 
+
+78
+00:05:46,060 --> 00:05:50,914
+So these are all the possible sub goals, 
+that we can compute from our original 
+
+79
+00:05:50,914 --> 00:05:53,589
+goal. 
+This is, pronounced gamma backwards, is 
+
+80
+00:05:53,589 --> 00:05:58,443
+simply the union over all lengths of 
+plans that we can implement here, where K 
+
+81
+00:05:58,443 --> 00:06:03,172
+is the length of the plan, and we compute 
+gamma minus K, of our original goal. 
+
+82
+00:06:03,172 --> 00:06:07,901
+So for any K from zero to infinity, this 
+gives us all the sub goals that are 
+
+83
+00:06:07,901 --> 00:06:12,400
+possibly reachable in our search base 
+from our original goal. 
+
+84
+00:06:12,400 --> 00:06:16,636
+Now, given these definitions we can 
+define a search space for backwards 
+
+85
+00:06:16,636 --> 00:06:19,859
+search planning. 
+The input to the algorithm is again a 
+
+86
+00:06:19,859 --> 00:06:24,752
+statement of planning problem consisting 
+of a set of operators in a initial state, 
+
+87
+00:06:24,752 --> 00:06:29,526
+and the goal to description as before. 
+Then the search problem can be defined by 
+
+88
+00:06:29,526 --> 00:06:33,583
+the following four components. 
+We start with the initial state for a 
+
+89
+00:06:33,583 --> 00:06:36,507
+search. 
+That is not the initial state not a state 
+
+90
+00:06:36,507 --> 00:06:39,909
+base but the goal. 
+So we're searching backwards from the 
+
+91
+00:06:39,909 --> 00:06:42,594
+goal. 
+And in our search space the goal is the 
+
+92
+00:06:42,594 --> 00:06:46,099
+initial state. 
+And if the goal is our initial state that 
+
+93
+00:06:46,099 --> 00:06:49,340
+means we need a new goal test for the 
+search space. 
+
+94
+00:06:49,340 --> 00:06:54,107
+And this goal test is that the intitial 
+state in our problem specification 
+
+95
+00:06:54,107 --> 00:06:57,983
+satisfies our sub-goal S. 
+Remember, we move through the search 
+
+96
+00:06:57,983 --> 00:07:03,195
+space, or that is the idea, from the goal 
+backwards by computing sub-goals and S is 
+
+97
+00:07:03,195 --> 00:07:08,025
+meant to be one of these sub-goals. 
+Now if we come across a sub-goal that is 
+
+98
+00:07:08,025 --> 00:07:13,046
+satisfied the, in the initial state, that 
+means we can reach the goal state from 
+
+99
+00:07:13,046 --> 00:07:17,050
+the sub-goal according to our regression 
+function just defined. 
+
+100
+00:07:17,050 --> 00:07:22,124
+So, if our initial state satisfies the 
+sub-goal, we have reached a goal state in 
+
+101
+00:07:22,124 --> 00:07:25,977
+a our search space. 
+The path cost function remains unchanged, 
+
+102
+00:07:25,977 --> 00:07:30,923
+it is simply the length of the plan. 
+And the successor function, will be using 
+
+103
+00:07:30,923 --> 00:07:35,419
+is simply the regression function we've 
+defined in the previous slide. 
+
+104
+00:07:35,419 --> 00:07:40,622
+In general this function takes a sub-goal 
+that we've come across, and computes its 
+
+105
+00:07:40,622 --> 00:07:45,182
+successors in the search space. 
+So, this concludes the definition of the 
+
+106
+00:07:45,182 --> 00:07:47,880
+search space for backward search 
+planning. 
+
+107
+00:07:47,880 --> 00:07:52,920
+Next I could show you the backward search 
+planning algorithm and pseudo code, but I 
+
+108
+00:07:52,920 --> 00:07:55,349
+won't. 
+The pseudo code would look almost 
+
+109
+00:07:55,349 --> 00:08:00,329
+identical to the code defined for forward 
+search and I'll leave that to you as an 
+
+110
+00:08:00,329 --> 00:08:04,580
+exercise to modify that algorithm so that 
+it performs backward search. 
+
+111
+00:08:05,980 --> 00:08:11,024
+Now that you understand how two planning 
+algorithms work, I'll even given you the 
+
+112
+00:08:11,024 --> 00:08:14,760
+idea for a third one. 
+And to introduce this, I'll give you an 
+
+113
+00:08:14,760 --> 00:08:17,625
+example. 
+Suppose our goal, our original goal we 
+
+114
+00:08:17,625 --> 00:08:21,299
+start from is that we want the robot to 
+be at location one. 
+
+115
+00:08:21,299 --> 00:08:26,655
+There is one operator in the dock loc 
+robot domain, that can achieve this goal, 
+
+116
+00:08:26,655 --> 00:08:31,700
+and that is the move operator for moving 
+a robot r from location l to location M. 
+
+117
+00:08:31,700 --> 00:08:38,367
+And we can see that this operator is 
+relevant because it has an effect at r m 
+
+118
+00:08:38,367 --> 00:08:43,410
+which we can use to achieve our goal at 
+robot location one. 
+
+119
+00:08:43,410 --> 00:08:49,712
+So all the actions that can be relevant 
+for this goal must be of this form that 
+
+120
+00:08:49,712 --> 00:08:54,676
+we want to move the robot from some 
+location L to location one. 
+
+121
+00:08:54,676 --> 00:08:59,738
+But, l remains a variable here. 
+So we don't know what this value of l 
+
+122
+00:08:59,738 --> 00:09:03,146
+should be. 
+In fact, if you choose the wrong value 
+
+123
+00:09:03,146 --> 00:09:06,128
+for ,, it may even interfere with the 
+goal. 
+
+124
+00:09:06,128 --> 00:09:09,608
+Because we also have a negative effect, 
+not at rl. 
+
+125
+00:09:09,608 --> 00:09:15,359
+In the backwards search we've considered 
+so far, we've only looked at actions for 
+
+126
+00:09:15,359 --> 00:09:20,097
+regressing goals to sub-goals. 
+So what we could do in our algorithm is 
+
+127
+00:09:20,097 --> 00:09:25,574
+simply replace this value L through all 
+possible constants that are of the right 
+
+128
+00:09:25,574 --> 00:09:28,442
+type. 
+But if there are many places from which 
+
+129
+00:09:28,442 --> 00:09:33,590
+we can move to location one that means 
+there are many options and that increases 
+
+130
+00:09:33,590 --> 00:09:36,704
+the branching factor in our search 
+unnecessarily. 
+
+131
+00:09:36,704 --> 00:09:41,662
+So what we can do is simply keep this 
+variable as a variable and that is what 
+
+132
+00:09:41,662 --> 00:09:46,874
+is called lifted backwards search, which 
+can also deal with partially instantiated 
+
+133
+00:09:46,874 --> 00:09:51,895
+operators where not all the parameters of 
+the operators are replaced by actual 
+
+134
+00:09:51,895 --> 00:09:55,157
+values. 
+This does reduce the branching factor but 
+
+135
+00:09:55,157 --> 00:09:58,960
+unfortunately it also makes the algorithm 
+a lot more complicated. 
+
+136
+00:09:58,960 --> 00:10:03,407
+Keeping variables in a plan is an example 
+of what is sometimes called least 
+
+137
+00:10:03,407 --> 00:10:08,263
+commitment planning where we try to make 
+as few commitments as possible during the 
+
+138
+00:10:08,263 --> 00:10:12,886
+planning process unless we have a good 
+reason for making a specific commitment. 
+
+139
+00:10:12,886 --> 00:10:16,940
+We will see a lot more of this type of 
+planning next week. 
+
+140
+00:10:16,940 --> 00:10:20,807
+So this concludes the segment on 
+states-based search planning. 
+
+141
+00:10:20,807 --> 00:10:25,860
+In this segment we've learned a lot about 
+the STRIPS representation for planning. 
+
+142
+00:10:25,860 --> 00:10:30,913
+In the STRIPS representation we have seen 
+a standardized way of representing the 
+
+143
+00:10:30,913 --> 00:10:34,593
+internal structure of states, namely a 
+sets of ground atoms. 
+
+144
+00:10:34,593 --> 00:10:39,459
+So we have objects that are related by 
+some relations, and sets of these atoms 
+
+145
+00:10:39,459 --> 00:10:44,137
+describe what the world state looks like. 
+And then we have defined what the 
+
+146
+00:10:44,137 --> 00:10:46,820
+internal structure of operators looks 
+like. 
+
+147
+00:10:46,820 --> 00:10:51,898
+Namely, an operator consists of a name 
+with parameters, a set of preconditions, 
+
+148
+00:10:51,898 --> 00:10:55,591
+and a set of effects. 
+The effects are often divided into 
+
+149
+00:10:55,591 --> 00:10:59,943
+positive and negative effects or the add 
+list and the delete list. 
+
+150
+00:10:59,943 --> 00:11:05,021
+Based on this we can define strips 
+planning domains which are simply sets of 
+
+151
+00:11:05,021 --> 00:11:09,836
+operators, and we can define strips 
+planning problems and consisting of a 
+
+152
+00:11:09,836 --> 00:11:12,935
+domain, an initial state, and a goal 
+description. 
+
+153
+00:11:12,935 --> 00:11:17,816
+And all this we've learned together with 
+a new syntax, the PDDL syntax, for 
+
+154
+00:11:17,816 --> 00:11:23,006
+describing planning domains and problems. 
+Pbdl is probably the most commonly 
+
+155
+00:11:23,006 --> 00:11:27,942
+understood language by planners today. 
+And next we have seen how forward states 
+
+156
+00:11:27,942 --> 00:11:31,191
+space search can be used to solve 
+planning problems. 
+
+157
+00:11:31,191 --> 00:11:36,065
+And there is a variant of that we have 
+also seen how we can search this space 
+
+158
+00:11:36,065 --> 00:11:38,876
+backwards from the goal to the initial 
+state. 
+
+159
+00:11:38,876 --> 00:11:43,500
+Unfortunately this planning algorithms as 
+of described them here are very 
+
+160
+00:11:43,500 --> 00:11:46,874
+inefficient. 
+But as we will see later on the course it 
+
+161
+00:11:46,874 --> 00:11:51,372
+doesn't take all that much to turn them 
+in to the state of our planning 
+
+162
+00:11:51,372 --> 00:11:52,060
+algorithms. 
+

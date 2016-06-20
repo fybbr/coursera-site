@@ -1,0 +1,418 @@
+You should now understand what we mean by 
+planning in AI. Next, we will formalise 
+this understanding of planning by means 
+of a conceptual model for planning. This 
+conceptual model will be a 
+state-transition system. 
+Before I introduce the conceptual model 
+that underlies planning, 
+I want to talk to you about conceptual 
+models in general and why they are a good 
+idea. 
+So, what is a conceptual model? 
+A conceptual model is a theoretical 
+device for describing the elements of a 
+problem. 
+What this means is it helps us to 
+formalize the problem we are trying to 
+solve. 
+This is good for a number of things. 
+For example, we can explain the basic 
+concepts with this model so it helps us 
+to define what the objects are that we 
+are manipulating during problem solving. 
+It also helps us to clarify some 
+assumptions. 
+What constraints are imposed by this 
+model is clarified by writing down such a 
+model. 
+We can also use it to analyze 
+requirements, so we can look at the 
+representations we need to develop to 
+represent the objects that we're 
+manipulating during problem solving. 
+Also, we can prove semantic properties 
+with a theoretical device like this. The 
+most important properties for algortithms 
+we're interested in our soundness and 
+completeness and they require a semantic 
+foundation which is given by a conceptual 
+model. 
+What a conceptional model isn't good for, 
+is developing efficient algorithms and 
+other computational concerns. 
+So, we cannot immediately derive planners 
+from the conceptual model. 
+But the conceptual model we are using and 
+planning is called a state-transition 
+system. 
+Formally, a state-transition system is 
+defined as a 4-tuple consisting of four 
+components, S, A, E, and gamma. 
+I will now explain these components in 
+turn. 
+The first component, S, is a finite or 
+recursively innumerable set of states. 
+So, these are all the possible states the 
+world can be in. 
+The set can be finite or recursively 
+innumerable, which means infinite. 
+But in most of the examples we'll be 
+looking at, we have only finite sets of 
+states so don't worry about the second 
+part for now. 
+The second component is a set of actions. 
+Actions are the things an agent can do to 
+change the state of the world. 
+The third component is a set of events. 
+Events can happen in the world and are 
+not under the control of an agent, but 
+events, too, can change the state of the 
+world. 
+The fourth and most complex component of 
+a state-transition system is the 
+state-transition function, gamma. 
+Gamma takes two things. 
+It takes a state, a state of the world as 
+input, and it takes an action or event. 
+So, this second component is the union of 
+all the actions and events and one of 
+those is the second argument to the 
+state-transition function. 
+The result of applying the 
+state-transition functions then, is 
+another set of states. 
+So, this notation here, 2 to the s, just 
+denotes the power set of all possible 
+states. 
+Which means an element of the set is, 
+itself, a set. 
+A set of world states. 
+So, the state-transition function takes a 
+state, an action or event and gives us 
+all the possible states that may be the 
+result of applying this action, or this 
+event happening. 
+We can now use this definition to define 
+some other concepts formally. 
+For example, applicability, we can say 
+that an action A is applicable in a state 
+S, if gamma of S and A is not empty so if 
+there is at least one state that is the 
+result of applying this action in the 
+given state. 
+And when we apply an action A in a state 
+S, this will take our state-transition 
+system to a new state S prime. 
+And S prime must be an element of gamma 
+of S and A. 
+Another way to look at a state-transition 
+system is to view it as a graph. 
+Suppose we are given a state-transition 
+system S, A, E, and gamma, 
+then we can define a directed labeled 
+graph G, that consists of nodes NG and 
+edges EG. 
+The nodes of this graph are simply the 
+world states that are possible in this 
+state-transition system. 
+NG is equal to S. 
+And the edges in this graph correspond 
+directly to state transitions defined by 
+the state-transition function. 
+So, we have an arc from a node, s, to 
+another node, s prime. 
+So, this is and edge in this graph and 
+that is labeled with label u, which is 
+either an action or an event, if and only 
+if. 
+The state s prime is the result of 
+applying u in s. 
+u can be action or event so we have a 
+transition from here to here with label 
+u. 
+So, a state-transition graph consists of 
+nodes that correspond to world states and 
+edges that correspond to state 
+transitions. 
+Let me illustrate a state-transition 
+system with a very old problem that has 
+been used many times in AI, 
+the missionaries and cannibals problem. 
+In this problem we have a river. 
+And on one side of the river we have 
+three missionaries and three cannibals 
+initially. 
+The missionaries are black triangles and 
+the cannibals are red circles here. 
+There is also a boat available and in 
+this boat, can be up to two people. 
+And they can use this boat to cross the 
+river. 
+Now, the problem is, if the cannibals 
+ever outnumber the missionaries on either 
+of the banks of the river, then the 
+missionaries will get eaten by the 
+cannibals. 
+And we don't want that. 
+So, you can see in the initial state, 
+there's an equal number of missionaries 
+and cannibals on one side and no 
+missionaries or cannibals on the other 
+side, so there's no problem. 
+The planning problem now is to come up 
+with a sequence of actions that carries 
+all the missionaries and cannibals safely 
+across the river, to the other side. 
+This system can be described by a 
+state-transition system. 
+And if you're not familiar with this type 
+of system, I would advise you to now try 
+to define this as a state-transition 
+system. 
+Specifically, you are trying to see what 
+are the world states that are possible 
+here, what are the actions and what are 
+the events that can happen in this 
+problem. 
+The state-transition function is best 
+defined as a graph. 
+And, if you've sit down for about half an 
+hour, I'm pretty sure you can come up, 
+come up with a graph that describes the 
+whole state-transition graph for this 
+problem. 
+So, if you want to do this little 
+exercise, you need to pause the video 
+now. 
+So, here is my version of the 
+state-transition graph for the 
+missionaries and cannibals problem. 
+To define this as a state-transition 
+system, we have to define the four 
+components. 
+The first component is the set of states 
+S. 
+And that can be defined as the different 
+world states we see here. 
+And these are all the squares, 
+rectangle that are drawn here. 
+there are sixteen different world states 
+and they are denoted by these rectangles. 
+So, this is the initial state, as we've 
+seen in the previous slide, where all the 
+missionaries and cannibals are on the 
+left-hand side of the river. 
+And over here on the right, we have the 
+gold state. 
+And in this gold state, all the 
+missionaries and cannibals are on the 
+right-hand side of the river. 
+And the second component of a 
+state-transition systems are the actions 
+that are possible. 
+In this case, there are five different 
+actions. 
+And I've denoted them here with the 
+labels that occur on the different state 
+transitions. 
+So, there's two types of actions, 
+namely, actions with one person in the 
+boat, and actions with two people in the 
+boat. 
+The actions with one person in the boat 
+are the ones where we have one missionary 
+or one cannibal in the boat, 
+or we can have two people in the boat. 
+This can be two missionaries, two 
+cannibals or one missionary and one 
+cannibal. 
+It's denoted here by 1m1c. 
+So, these are the five possible actions 
+that we have to to do something in this 
+system. 
+I don't need to denote where the boat is. 
+Because the boat can only cross from one 
+side of the river to the other. 
+The set of events is empty for the 
+state-transition system. 
+And finally, the state-transition 
+function is defined by all the arcs that 
+make up the, the lines between the 
+different state here. 
+Note in this specific problem, all the 
+arcs are bidirectional. 
+Which means, with the same action, we can 
+go to one state and then back to the 
+original state. 
+So, this is one arc here, and this is 
+one, this is one. 
+And all these arcs together make define 
+the state-transition function. 
+And that concludes the definition of the 
+state-transition system. 
+A state-transition system is useful 
+because it describes all the possible 
+ways in which our system may evolve as a 
+result of applying actions or events 
+happening. 
+But what we want to do is solve planning 
+problems and the solution to a planning 
+problem is a plan. 
+And by a plan, we mean a structure that 
+gives appropriate actions that we can 
+apply in the initial state of our problem 
+such that it gets us to a different state 
+in which our objective that we're trying 
+to achieve, as part of the planning 
+problem, will be achieved. 
+A simple example of such a structure 
+would be to have a sequential list of 
+actions that we need to perform in order. 
+A more complex structure could be a 
+function that maps states to actions so 
+that when we are in a given state, we can 
+use that function to decide what action 
+to apply. 
+A plan implicitly describes a path 
+through, through our state-transition 
+graph. 
+So, when we execute a plan, we expect to 
+end up in a state in which our objective 
+is satisfied. 
+There are different types of objectives 
+that can be defined for planning, and I 
+will give you some examples now. 
+The simplest way to define an objective 
+is simply to have a gold state. 
+This can be an individual gold state that 
+is named, 
+we've seen this in the missionaries and 
+cannibals problem, 
+or it can be a set of gold states that 
+means one of those states is one that we 
+want to reach. 
+An objective can also include some 
+constrains on itermediate state through 
+which we're passing on the way to the 
+goal, for example, we can have states 
+that we don't want to go through that we 
+need to avoid as part of the objective. 
+A more complex objective could also come 
+with a utility function for each state 
+and tells us that we have to maximize the 
+utility on our way to the goal. 
+As you can see, an objective can be quite 
+complex. 
+A completely different view of an 
+objective would be to not try achieve 
+something but to perform a given task. 
+So, a good example of this is when you 
+are going on a holiday. 
+You're not really trying to change the 
+state of the world. 
+You want to end up back in the same state 
+where you started. 
+But you want to do something in the time 
+where you go on holiday. 
+And that's a task that needs to be 
+performed. 
+Probably, the most common reason for 
+solving planning problems is that we want 
+to execute the resulting plans. 
+And here is the model for how planned 
+execution might actually work. 
+So, we have a planner that is given a 
+description of the state-transition 
+system that tells the planner how the 
+world may evolve. 
+We're also giving this planner the 
+initial state. 
+That is, the state in which the world is 
+in and some objectives that tell the 
+planner where we want to be. 
+The planner then solves this planning 
+problem and generates a plan which is 
+passed to the controller for execution. 
+The controller takes this plan and 
+executes the actions in this plan. 
+So, it has to extract the next action to 
+be executed and passes this to the 
+system. 
+The execution of the action then changes 
+the state of the actual system that we're 
+trying to manipulate. 
+For example, the real world. 
+And hopefully, our system is consistent 
+with the description of the system that 
+was given to the planner to generate the 
+plan that we're now executing. 
+But the system is not only changed by the 
+actions we are taking that are controlled 
+by the controller, it is also changing 
+because of events that are happening. 
+For the controller to take appropriate 
+actions, it usually needs to know what 
+state the system is actually in and to do 
+so it has observations which are going 
+from the system to the controller. 
+We model observations through the 
+observation function eta which maps a 
+state to set up observations that can be 
+made in the state. 
+Quite often, the world is not fully 
+observable, and in this case, the set of 
+observation does not allow us to 
+immediately infer which state we are in. 
+So, a given set of observation makes it 
+possible that we are in a number of 
+states, and this is what is called the 
+belief state of the controller. 
+Now, the model we've just seen is not 
+very realistic, because the real world on 
+which we are executing our plans is often 
+different from the description of the 
+state-transition system that we are 
+giving to our planner. 
+So, those two are not identical. 
+The reason is that this description we're 
+giving to the planner is an abstraction. 
+It leaves out many details about the real 
+world which make planning possible. 
+And then, when we execute the plan, 
+things may go wrong because the two 
+models are not the same. 
+A more realistic model is called dynamic 
+planning, in which planning and execution 
+are actually interleaved. 
+What is different in this model is that 
+the controller has to do something called 
+plan supervision and that means, it has 
+to detect when observations differ from 
+expected results. 
+So, it expects the world to be in a 
+certain state as a result of an action, 
+but it can observe that it isn't. 
+What it can do, in this case, is plan 
+revision. 
+That is, we take the existing plan and 
+try to change it in some way to take into 
+account the new state. 
+This can be done by the controller for 
+very simple cases or it has to be done by 
+the planner for more complex cases. 
+In this case, the controller has to pass 
+an execution status back to the planner, 
+so that the planner can generate a new 
+plan that is passed to the controller. 
+And that takes into account the change 
+that has happened. 
+In the worst case, the planner will have 
+to re-plan that is, it will have to 
+create a completely new plan from scratch 
+for the given problem. 
+Dynamic planning then, closes the loop 
+between the planner and execution by 
+passing back the execution status to the 
+planner for replanning or plan repair. 
+

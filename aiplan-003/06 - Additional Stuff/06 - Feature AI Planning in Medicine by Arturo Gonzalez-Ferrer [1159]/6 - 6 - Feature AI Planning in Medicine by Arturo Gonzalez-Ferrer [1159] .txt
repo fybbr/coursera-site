@@ -1,0 +1,227 @@
+Hello everyone.
+This is a video lecture recorded for the
+artificial intelligent planning course in
+the online learning community of Coursera.
+The topic of this talk is how to use AI
+Planning in. Medicine. Okay, something
+about me before starting. I got my PhD in
+Computer Science less than two years ago
+in the University of Granada, Spain. I
+develop several knowledge engineering
+techniques for modeling, planning and
+scheduling domains, using the HTN
+paradigm. And I used these, techniques in
+three different domains, e-learning,
+healthcare. And business process
+management. Now, I am doing a Postdoc
+research and fellowship in the University
+of Haifa in Israel and I'm working in a
+very interesting project called MobiGuide,
+which is aimed to create a clinical
+decision support system for physicians and
+patients to manage the care process of two
+different diseases, gestational diabetes
+and atrial fibrillation and the idea is to
+use this system anytime and everywhere. So
+I will start showing several applications
+in the real world of how to use a planning
+in the domain of medicine. So one example
+is how to schedule the beds that are
+needed in a hospital for all the patients
+that come here on a daily basis. Another
+example is how to use AI planning for
+conducting clinical trial protocols and
+complying with all the requirements that
+are specified in those protocols. AI
+planning has been used also, to control
+the state Of patients in intensive-care
+units. It also has been used to evaluate
+the risk and the consequences of a
+specific treatment, improving the shared
+decision-making process between patients
+and physicians. Finally, it has been used
+to prepare treatment plans for the actions
+that need to be carried out over a
+patient. this topic is the center, the
+focus of this talk, as you will see in a
+few slides. But before people may think
+that applying artificial intelligence to
+medicine is not appropriate and many
+people don't trust computer that much. So
+I could show you some n numbers and, about
+the estimation of medic al errors that are
+commited by. Physicians. This is a report
+of the history for medicine where between
+44,000 and 98,000 deaths were estimated
+each year inclusive U.S. Hospitals and 1
+million injuries also are estimated each
+year in these hospitals. Then follow-up
+study found that medication errors are
+among the most common medical Mistakes.
+And they com, could harm at least 1.5
+million people every year. So, it is clear
+that physicians need support for the
+actions, and medical scope. There is a
+relevant movement known as evidence-based
+medicine. So this part, I'm try to collect
+the best evidence em, for treating
+patients with specific conditions. Then a
+set of experts collect all this
+information and put them in narrative
+clinical guidelines and protocols. They
+use these guidelines and protocols. With
+idea to, of improving equality of the,
+care process. And to also to reduce the
+deviations in the clinical practice,
+according to this protocols, to guide the
+collection of data, to interpret and
+manage much better the patient's status.
+And to improve the decision support. Of
+course, if we are able to computerize this
+knowledge, we can create system to out
+activate alerts and reminders for the
+physicians and the patients. So if, if we
+Try to see how to use AI Planning for, for
+planning the therapy of a patient. We'll
+see that the requirements in this domain
+are higher than in typical toy-problems.
+and this is due to the unpredictable
+nature of this domain. So in this domain
+we will need several specific
+sub-processes, not only plan generation,
+but it's really, really important for the
+safety of the patient to verify the plan.
+of course we'll need to provide a
+visualization of the plan to execute the
+plan, to modify the plan And finally the
+plan critiquing, which is to analyse if
+the plan being executed is, is, is
+correct. So it has any problem regarding
+the original knowledge. So there are
+several challenges of course related to
+these processes. one of the choices in
+knowledge engineering, we need to, to
+accompl ish the acquisition of knowledge
+and the verification and validation. then
+we have the temporary presentation of
+management. Many different temporary
+constraints are usually found in these
+guidelines. Then another problem using
+data integration we need to evaluate with
+real data in the hospital data basis and
+we need to integrate this into the
+planning domain and of course the
+exception handling due to this
+unpredictable nature, there are many cases
+in which the human, the physician is to
+Interact with the plan and needs to change
+the plan according to a specific event
+that has happened. Another important, or
+one of the important issues is the
+temporal monitoring. So this domain is
+states, events, Events, actions, plans
+goals, and effects, all of them are
+constrained by temporal information. And
+this makes monitoring and the states of an
+events, during execution and very
+necessary. Also the states model of a plan
+engine may need to consider more than the
+plan generation. So it could be needed to
+suspend the plan or to check if it's
+completed. what are the conditions for
+aborting the plan and so, so it's not only
+plan generation. It's more dynamic and of
+course the domain is not static and these
+unpredictable events Can occur, and this
+depends really in, on your needs. Of
+course in high frequency domains like
+intensive care, care unit this is more
+relevant. but there are also low frequency
+domains where the physicians only want
+Will have a plan of the treatment to
+follow in the next eh, days. Another
+important requirement is the management of
+the care team view. So medicine is
+supplied by the team of physicians nurses
+and so on. So we have different roles, and
+they use a number of resources for
+accomplishing the treatment. For example,
+x-ray machines. So the plans to be
+generated from the clinical protocols may
+need to consider these institutional
+constraints and they should deliver a
+personalized plan for patients, but also
+for physicians. So we will explain very
+quickly. a real project was carried out in
+the so uth of Spain. It's called the
+Oncotheraper. and here in this project,
+the oncologists were required to apply
+clinical guidance for treating. several
+patients and this guy lands or protocols
+in this case they have lot of temporary
+constraints and they have all this
+requirements that we talk about. Doing
+what? To have a personalized care process
+for patients and medical staff and they
+want to reduce the time that they expand
+on preparing this treatment. This is an
+architecture that consider all the
+requirements that we talked about. So if
+we start looking at the numbers of, inside
+the boxes. we start on number one, on the
+left hand side of the screen on the
+bottom, we can see that clinicians are
+responsible for the finding this narrative
+guidance. Then, knowledge engineers
+formalize this knowledge using what is
+known as computer interpretative
+algorithms, which are language to
+computerize this, knowledge. Then we have
+a sic connector which is able to move from
+this formal knowledge to a planning
+specification. For this, of course. We
+need to include the connection with the
+electronic health record from the
+hospital, and the hospital information
+system. Then, having this specification
+created, and also considering all the
+temporary constraints, we use a plan
+generation engine Planner, in this case we
+use Heirarchical Task Network planner, and
+we generate a care pathway personalized
+for the patient. This care pathway can be
+delivered in the form of a Gantt diagram
+today physician so they can see a, all the
+actions following specific Time for
+recommendations and we can also deliver or
+deploy, this care pathway using a business
+process management engine. And, this is a
+software tool possibly for an execute a
+plan Remotely. And so each role is, is
+each clinician or nurse can enter through
+this portal and follow the plan. Of course
+in number six we have another module which
+is for repairing the plan and for
+replanning. And this would be needed in
+the cases we want to include the
+management of unexpected event. So, wha t
+do we get? Just a fragment of the care
+pathway that, that we can have as a result
+of using this planning, technique, so we
+have the start intended for each, step Eh,
+the duration if is part of a higher level
+chemotherapy cycle. The oncologist that
+needs, needs to carry out the action. The
+action itself, for example, the
+administration of Prednisone, which is a,
+a drug. The patient and the dosage of the
+drug. On the bottom of the screen we can
+see how to deploy this into a BPM engine
+so that the physicians can ubiquitously
+execute this plan. So this is all. Here in
+the last slide you have a sound references
+that who should have, ha , try to read in
+case that you have more interest in this
+wonderful domain and I hope that you have
+enjoyed the talk. And to enjoy also the
+rest of the course. Thank you very much.

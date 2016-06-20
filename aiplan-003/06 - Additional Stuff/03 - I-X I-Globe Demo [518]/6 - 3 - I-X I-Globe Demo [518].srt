@@ -1,0 +1,119 @@
+1
+00:00:06,826 --> 00:00:13,281
+The SenseMaker receives a report about fire in the area.
+
+2
+00:00:13,281 --> 00:00:19,849
+He inserts a new record of the incident into his object view table.
+
+3
+00:00:19,849 --> 00:00:25,437
+Since he has no more information at the moment, he doesn't take any other action.
+
+4
+00:00:25,437 --> 00:00:32,135
+The incident is automatically added to the current state descriptor.
+
+5
+00:00:32,135 --> 00:00:37,542
+The state descriptor also contains current states of all field units
+
+6
+00:00:37,542 --> 00:00:42,462
+and is shared in real time by both the Sensemaker and Commander.
+
+7
+00:00:43,985 --> 00:00:49,585
+25 minutes later, the Sensemaker receives reports about people injured in Town1 and Town2.
+
+8
+00:00:49,585 --> 00:00:55,630
+Again, he inserts corresponding records into his object view table
+
+9
+00:00:55,630 --> 00:01:00,857
+and the state descriptor is updated.
+
+10
+00:01:15,341 --> 00:01:22,853
+Next, the Sensemaker creates two activities "treat injuries in Town1 and 2" and passes them to the Commander.
+
+11
+00:01:38,000 --> 00:01:44,458
+The Commander receives these activities immediately.
+
+12
+00:01:44,458 --> 00:01:50,500
+Before executing them, he orders to take aerial snapshots of the affected areas.
+
+13
+00:01:57,500 --> 00:02:04,000
+He passes the corresponding commands to subordinate field units.
+
+14
+00:02:06,000 --> 00:02:15,500
+Using HTN planning (I-Plan), CNP negotiation and the commitment mechanism, field units generate and execute a distributed plan.
+
+15
+00:02:15,500 --> 00:02:21,000
+They report completion of the task back to the Commander.
+
+16
+00:02:22,500 --> 00:02:30,261
+Based on the received snapshots, the Commander decides to build a mobile hospital nearby Town1 and 2.
+
+17
+00:02:32,430 --> 00:02:37,953
+He issues a corresponding command for the field units.
+
+18
+00:02:39,604 --> 00:02:45,611
+Once again, the field units come up with a distributed plan.
+
+19
+00:02:45,611 --> 00:02:51,193
+They transport construction materials and a builder to the site,
+
+20
+00:02:59,748 --> 00:03:04,288
+and a mobile hospital is built there.
+
+21
+00:03:06,288 --> 00:03:13,264
+Upon completion of the task, the Commander executes the two treat injuries commands.
+
+22
+00:03:19,757 --> 00:03:25,301
+Medical material and medics are transported to the sites.
+
+23
+00:03:42,148 --> 00:03:47,861
+As usual, task completion is reported to the Commander.
+
+24
+00:03:49,569 --> 00:03:56,201
+Since these two tasks were originally created by the SenseMaker, he is also automatically notified about the tasks completion.
+
+25
+00:03:58,771 --> 00:04:05,240
+Approximately an hour later, the Sensemaker eceives a report about collapsed houses in Town3.
+
+26
+00:04:05,240 --> 00:04:09,530
+He inserts a new record into his object view table.
+
+27
+00:04:16,992 --> 00:04:23,251
+He then passes a new task "build houses in Town3" to the Commander.
+
+28
+00:04:33,882 --> 00:04:39,239
+The Commander receives this task and executes it.
+
+29
+00:04:40,393 --> 00:04:45,780
+Field units take care of the task.
+
+30
+00:05:08,629 --> 00:05:15,619
+Successful completion of the task is reported to the Commander and is also propogated to the Sensemaker.

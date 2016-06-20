@@ -1,0 +1,874 @@
+1
+00:00:00,012 --> 00:00:06,937
+So far I've talked about STN which stands 
+for simple task network. 
+
+2
+00:00:06,937 --> 00:00:14,917
+The more general approach is known as 
+hierarchical type planning and that's 
+
+3
+00:00:14,917 --> 00:00:20,568
+what we'll be looking at next. 
+HTN planning is more general than STN 
+
+4
+00:00:20,568 --> 00:00:25,746
+planning, but that also means there isn't 
+a single algorithm that implements HTN 
+
+5
+00:00:25,746 --> 00:00:29,074
+planning. 
+So I can't show you any pseudo-code here. 
+
+6
+00:00:29,074 --> 00:00:33,512
+Instead, I will just give you an overview 
+of the general approach. 
+
+7
+00:00:33,512 --> 00:00:36,673
+In STN planning, as I have just described 
+it. 
+
+8
+00:00:36,673 --> 00:00:42,093
+There were 2 types of constraints that 
+were part of the representation and the 
+
+9
+00:00:42,093 --> 00:00:45,672
+procedure. 
+The first type of constraint we've seen 
+
+10
+00:00:45,672 --> 00:00:50,521
+are the ordering constraints. 
+And if you remember the definition of a 
+
+11
+00:00:50,521 --> 00:00:53,710
+task network, consisting of nodes and 
+edges. 
+
+12
+00:00:53,710 --> 00:00:57,317
+These edges represented the ordering 
+constraints. 
+
+13
+00:00:57,317 --> 00:01:00,606
+So. 
+They were built into the representation 
+
+14
+00:01:00,606 --> 00:01:04,503
+of a task network. 
+This means there was exactly one way in 
+
+15
+00:01:04,503 --> 00:01:08,604
+which ordering constraints between tasks 
+could be handled. 
+
+16
+00:01:08,604 --> 00:01:12,983
+The other type of constraints we've seen 
+are the preconditions. 
+
+17
+00:01:12,983 --> 00:01:18,020
+Preconditions are constraints on the 
+state before a method or an action is 
+
+18
+00:01:18,020 --> 00:01:21,501
+applied. 
+And what we have done in STN planning is 
+
+19
+00:01:21,501 --> 00:01:27,035
+that we have written it in to a planning 
+procedure that preconditions must hold. 
+
+20
+00:01:27,035 --> 00:01:30,469
+So preconditions were enforced by the 
+procedure. 
+
+21
+00:01:30,469 --> 00:01:35,824
+And to be able to enforce preconditions 
+the planning procedure have to rely on 
+
+22
+00:01:35,824 --> 00:01:41,204
+knowledge of the state before a method or 
+an action is applied.So you must know 
+
+23
+00:01:41,204 --> 00:01:45,702
+what exactly that state is to be able to 
+test for applicability. 
+
+24
+00:01:45,702 --> 00:01:51,772
+And that means we must perform forward 
+search, because of the way we represented 
+
+25
+00:01:51,772 --> 00:01:55,635
+preconditions are part of methods in our 
+Approach. 
+
+26
+00:01:55,635 --> 00:01:59,502
+In HTN planning, we try to take a more 
+general approach. 
+
+27
+00:01:59,502 --> 00:02:04,703
+HTN planning does not deal with a 
+specific type of ordering constraints, or 
+
+28
+00:02:04,703 --> 00:02:08,010
+of specific representation for 
+preconditions. 
+
+29
+00:02:08,010 --> 00:02:13,290
+But maintains general constrains 
+explicitly as part of the representation. 
+
+30
+00:02:13,290 --> 00:02:18,747
+So of course this will require additional 
+bookkeeping, but it means we are much 
+
+31
+00:02:18,747 --> 00:02:22,435
+more flexible. 
+If we want to have a different type for 
+
+32
+00:02:22,435 --> 00:02:27,996
+ordering our network, then we can plug a 
+different constraint management system 
+
+33
+00:02:27,996 --> 00:02:32,597
+into our HTN planner. 
+Similarly for other types of constraints 
+
+34
+00:02:32,597 --> 00:02:37,497
+we want to handle, they can be included 
+in our representation as part of a 
+
+35
+00:02:37,497 --> 00:02:42,072
+general constraint network having 
+different types of constraints. 
+
+36
+00:02:42,072 --> 00:02:47,322
+Although I won't go into as much detail 
+as before, I at least wanted to give you 
+
+37
+00:02:47,322 --> 00:02:52,397
+a flavor of HTN methods look like by 
+presenting you with a formal definition 
+
+38
+00:02:52,397 --> 00:02:56,139
+here. 
+This will allow you to at least contrast 
+
+39
+00:02:56,139 --> 00:03:00,494
+STN and HTN methods. 
+So we start off with a set of method 
+
+40
+00:03:00,494 --> 00:03:06,412
+symbols that we use to uniquely name our 
+methods, just as for STN planning. 
+
+41
+00:03:06,412 --> 00:03:11,148
+Then we say an HTN method is a 4 tuple 
+consisting of 4 things. 
+
+42
+00:03:11,148 --> 00:03:16,265
+And these 4 things are, firstly, there is 
+the name of the method. 
+
+43
+00:03:16,265 --> 00:03:20,901
+And that name is. 
+Just like for STN method, consisting of a 
+
+44
+00:03:20,901 --> 00:03:26,805
+method symbol, and then has a syntactic 
+expression of the form n of x1 through 
+
+45
+00:03:26,805 --> 00:03:31,452
+xk, where n is a method symbol, and so 
+element of our set ms. 
+
+46
+00:03:31,452 --> 00:03:36,740
+And x1 through xk are the variables 
+representing the objects that are 
+
+47
+00:03:36,740 --> 00:03:41,820
+manipulated by this method. 
+So this is exactly as for STN methods. 
+
+48
+00:03:41,820 --> 00:03:47,430
+And then, also, like for STN methods. 
+is the task of the method the second 
+
+49
+00:03:47,430 --> 00:03:52,592
+component? This must be a non primitive 
+task that is accomplished. 
+
+50
+00:03:52,592 --> 00:03:56,873
+By this method. 
+And then again as for STN methods, we 
+
+51
+00:03:56,873 --> 00:04:03,142
+have a set of sub task, these are the 
+tasks into which the method breaks down. 
+
+52
+00:04:03,142 --> 00:04:07,614
+So, so far there's nothing new. 
+What's really new is that we have a set 
+
+53
+00:04:07,614 --> 00:04:12,650
+of constraints associated with an HTN 
+method and we're not going to be specific 
+
+54
+00:04:12,650 --> 00:04:15,715
+here about what types of constraints 
+these are. 
+
+55
+00:04:15,715 --> 00:04:20,730
+These can be simple ordering constraints 
+of the type we seen them or they can be 
+
+56
+00:04:20,730 --> 00:04:25,602
+preconditioned constraints of the type 
+That we've also had an HTN methods or 
+
+57
+00:04:25,602 --> 00:04:30,533
+there could be more complex things like 
+we could of time-point network if we want 
+
+58
+00:04:30,533 --> 00:04:35,099
+to do a more elaborate temporal planing 
+or we could have constraints on the 
+
+59
+00:04:35,099 --> 00:04:39,139
+resources that are consumed by the 
+different tasks in our method. 
+
+60
+00:04:39,139 --> 00:04:44,932
+The HTN approach is not specific as to 
+what necessarily must be involved here. 
+
+61
+00:04:44,932 --> 00:04:47,947
+So let's look at an example of an HTN 
+method. 
+
+62
+00:04:47,947 --> 00:04:53,274
+And again, we'll use an example from our 
+Dock Worker domain the example we seen 
+
+63
+00:04:53,274 --> 00:04:58,023
+previously as an STN method. 
+We want to move the top-most container 
+
+64
+00:04:58,023 --> 00:05:03,084
+from one pile to another and this is 
+again a take action followed by a put 
+
+65
+00:05:03,084 --> 00:05:06,336
+action. 
+So as I've said before the first three 
+
+66
+00:05:06,336 --> 00:05:11,706
+parts are actually the same as before, so 
+we have A method name, describing this 
+
+67
+00:05:11,706 --> 00:05:14,605
+method. 
+Then, we have a task that is accomplished 
+
+68
+00:05:14,605 --> 00:05:19,179
+by this method, and the method name 
+contains the same variables, representing 
+
+69
+00:05:19,179 --> 00:05:23,213
+the same objects, as before. 
+Also, the task is the same as before, so 
+
+70
+00:05:23,213 --> 00:05:27,972
+I won't go into this in In detail. 
+What is new is the network of sub tasks 
+
+71
+00:05:27,972 --> 00:05:33,362
+here, consisting of sub tasks as before, 
+but what I've also done, is I've given 
+
+72
+00:05:33,362 --> 00:05:37,993
+the sub task names that allow me to refer 
+to them in the constraints. 
+
+73
+00:05:37,993 --> 00:05:43,534
+So the first sub task is called, t1 here, 
+that's a local name for the sub task, and 
+
+74
+00:05:43,534 --> 00:05:48,160
+the 2nd one is called T2 other than that 
+the sub tasks are the same. 
+
+75
+00:05:48,160 --> 00:05:53,749
+But then I add general constraints to 
+this network to complete this HTN method. 
+
+76
+00:05:53,749 --> 00:05:58,731
+And the first constraint I have is that 
+T1 must be before T2 so that's an 
+
+77
+00:05:58,731 --> 00:06:03,193
+ordering constraint I have here. 
+Then I have other constraints 
+
+78
+00:06:03,193 --> 00:06:08,312
+representing the preconditions. 
+Looking at this example I say here that 
+
+79
+00:06:08,312 --> 00:06:13,335
+before the set T1 so this is a set Of 
+tasks, there could be more than one here, 
+
+80
+00:06:13,335 --> 00:06:17,772
+we must have the condition that the 
+container, c, is on top of the origin 
+
+81
+00:06:17,772 --> 00:06:21,132
+pile, true. 
+So that's a before constraint, applied to 
+
+82
+00:06:21,132 --> 00:06:26,144
+a set of tasks, and a condition, and we 
+have several other constraints Of this 
+
+83
+00:06:26,144 --> 00:06:32,209
+type here that effectively represent the 
+pre-conditions of the STN method as we've 
+
+84
+00:06:32,209 --> 00:06:36,527
+seen it previously. 
+But one thing that is different here is 
+
+85
+00:06:36,527 --> 00:06:41,537
+if you look at this constraint here, here 
+we don't have a t1 but a t2. 
+
+86
+00:06:41,537 --> 00:06:45,313
+We have the same here for the second 
+pre-condition. 
+
+87
+00:06:45,313 --> 00:06:50,851
+What this is saying is that these two 
+conditions must only be True before the 
+
+88
+00:06:50,851 --> 00:06:55,746
+second task in the network, so can, we 
+can be more specific here, about where we 
+
+89
+00:06:55,746 --> 00:06:59,997
+want preconditions to be true. 
+And looking at the second one, we only 
+
+90
+00:06:59,997 --> 00:07:04,792
+need the fact that Xd, the destination 
+container onto which we are putting our 
+
+91
+00:07:04,792 --> 00:07:09,662
+container, needs to be at the top of the 
+destination pile, before we put it down 
+
+92
+00:07:09,662 --> 00:07:13,562
+there and when you think about it that 
+makes a lot of sense. 
+
+93
+00:07:13,562 --> 00:07:17,241
+There's no need for this to be the case 
+before task 1. 
+
+94
+00:07:17,241 --> 00:07:22,165
+But instead, before we put down the 
+container, we must have this true. 
+
+95
+00:07:22,165 --> 00:07:27,610
+So, this approach of handling constraints 
+like this can be more explicit as to 
+
+96
+00:07:27,610 --> 00:07:30,402
+where those constraints must be. 
+True. 
+
+97
+00:07:30,402 --> 00:07:35,360
+But sometimes, a more general approach 
+can also come with difficulties, and 
+
+98
+00:07:35,360 --> 00:07:39,066
+that's what this 2nd example of HTN 
+methods illustrates. 
+
+99
+00:07:39,066 --> 00:07:43,905
+This is again taken from our dock worker 
+robot domain, and this is the example of 
+
+100
+00:07:43,905 --> 00:07:48,910
+moving a stack by repeatedly moving the 
+top-most container until the stack is 
+
+101
+00:07:48,910 --> 00:07:51,536
+empty. 
+And again, we have 2 methods that 
+
+102
+00:07:51,536 --> 00:07:56,566
+accomplish this, and these are the 
+recursive move method we've seen earlier, 
+
+103
+00:07:56,566 --> 00:08:01,502
+from Po to Pd, moving container C from 
+container Xo, and it accomplishes the 
+
+104
+00:08:01,502 --> 00:08:06,247
+task of moving the stack from Po to Pd. 
+And it has the following network of 
+
+105
+00:08:06,247 --> 00:08:10,031
+subtasks. 
+The tasks themselves haven't changed. 
+
+106
+00:08:10,031 --> 00:08:14,410
+So, again, we have, moving the top most 
+container and then, moving the stack. 
+
+107
+00:08:14,410 --> 00:08:18,298
+We've introduced names for those tasks so 
+that we confer to them in the 
+
+108
+00:08:18,298 --> 00:08:21,354
+constraints. 
+the first contsraint is the ordering 
+
+109
+00:08:21,354 --> 00:08:25,362
+constraint and the pre-conditions are 
+attatched to the first task. 
+
+110
+00:08:25,362 --> 00:08:31,340
+So there's nothing different about this 
+first HTN method from the STN version we 
+
+111
+00:08:31,340 --> 00:08:35,890
+have seen earlier. 
+But the second method shown here, move 1, 
+
+112
+00:08:35,890 --> 00:08:41,498
+is very different from no move, what 
+we've seen earlier in the STN methods. 
+
+113
+00:08:41,498 --> 00:08:46,611
+And the reason for this is that 
+constrains are always attached to the 
+
+114
+00:08:46,611 --> 00:08:51,356
+tasks in our network. 
+So If our network consist of no tasks, 
+
+115
+00:08:51,356 --> 00:08:55,392
+then we really can't attach any 
+constraints to this. 
+
+116
+00:08:55,392 --> 00:08:58,238
+method. 
+And that is of course what we had in the 
+
+117
+00:08:58,238 --> 00:09:01,553
+no move method. 
+There were no tasks so in this approach 
+
+118
+00:09:01,553 --> 00:09:05,789
+we couldn't attach any constraints. 
+What we've got to do to solve this 
+
+119
+00:09:05,789 --> 00:09:10,787
+problem is simply introduce a method that 
+moves the last container in the network. 
+
+120
+00:09:10,787 --> 00:09:15,810
+And that means we only have one sub-task, 
+moving the topmost container which is the 
+
+121
+00:09:15,810 --> 00:09:20,565
+last here, and we add constraints to this 
+sub-task that ensure that this is the 
+
+122
+00:09:20,565 --> 00:09:23,955
+last container. 
+So it needs to be on top of the pile, but 
+
+123
+00:09:23,955 --> 00:09:29,015
+more importantly The container that we 
+are trying to move here must be on the 
+
+124
+00:09:29,015 --> 00:09:33,722
+pallet and if it's on the pallet it's the 
+last container in the stack. 
+
+125
+00:09:33,722 --> 00:09:37,872
+So you can see it's not all that 
+different from an STN method. 
+
+126
+00:09:37,872 --> 00:09:42,528
+I want to take a step back now, and 
+compare HTN planning to the STRIPS 
+
+127
+00:09:42,528 --> 00:09:47,096
+planning we've seen previously. 
+And the first thing I want you to 
+
+128
+00:09:47,096 --> 00:09:52,556
+understand is that HTN planning is far 
+more expressive than STRIPS planning. 
+
+129
+00:09:52,556 --> 00:09:57,829
+So you can encode problems in HTN that 
+you can't encode in STRIPS planning. 
+
+130
+00:09:57,829 --> 00:10:01,160
+And this applies to HTN and STN planning 
+alike. 
+
+131
+00:10:01,160 --> 00:10:04,936
+So I will argue here that this holds for 
+STN planning. 
+
+132
+00:10:04,936 --> 00:10:10,550
+And since HTN planning is a genealization 
+of STN planning, it will also hold for 
+
+133
+00:10:10,550 --> 00:10:11,698
+HTN. 
+Planning. 
+
+134
+00:10:11,698 --> 00:10:16,859
+And the way you can see that STN planning 
+must be a more powerful approach is by 
+
+135
+00:10:16,859 --> 00:10:19,871
+seeing that STN problems can be 
+undecidable. 
+
+136
+00:10:19,871 --> 00:10:24,711
+So, thinking back to STRIPS planning, 
+what we did was we encoded a finite 
+
+137
+00:10:24,711 --> 00:10:30,020
+search space, we had a finite number of 
+objects, a finite number of predicates. 
+
+138
+00:10:30,020 --> 00:10:35,329
+Which means, we have a finite number of 
+combinations, how we can build our world 
+
+139
+00:10:35,329 --> 00:10:38,515
+states and we can do a graph search in 
+the state. 
+
+140
+00:10:38,515 --> 00:10:42,752
+So, it cannot possibly be undecibale 
+whether there is a plan. 
+
+141
+00:10:42,752 --> 00:10:46,990
+Or there isn't a plan. 
+STRIPS planning may be hard but it is 
+
+142
+00:10:46,990 --> 00:10:50,698
+decidable. 
+To see that STN planning is undecidable 
+
+143
+00:10:50,698 --> 00:10:53,897
+requires a little more background. 
+Ground. 
+
+144
+00:10:53,897 --> 00:10:59,297
+But when you compare the STN formalism, 
+to programming langueages, you will see 
+
+145
+00:10:59,297 --> 00:11:03,997
+that they are quite similar. 
+In fact, the basic conststructs you find 
+
+146
+00:11:03,997 --> 00:11:07,722
+in any programming language, are also in 
+STN planning. 
+
+147
+00:11:07,722 --> 00:11:12,397
+You have branching by having alternative 
+methods that have different 
+
+148
+00:11:12,397 --> 00:11:16,203
+pre-conditions. 
+Just think back to the second example 
+
+149
+00:11:16,203 --> 00:11:20,126
+we've just seen. 
+And we also have methods that accomplish 
+
+150
+00:11:20,126 --> 00:11:25,465
+a given task, but have the same type of 
+task as a sub-task, so these methods are 
+
+151
+00:11:25,465 --> 00:11:29,768
+effectively recursive. 
+And with recursion, and branching, we 
+
+152
+00:11:29,768 --> 00:11:33,252
+have the power of a general programming 
+language. 
+
+153
+00:11:33,252 --> 00:11:36,310
+And that is why STN Planning is so 
+powerful. 
+
+154
+00:11:36,310 --> 00:11:41,964
+The STN and therefore the HTN formalism 
+is more expressive than STRIPS planning. 
+
+155
+00:11:41,964 --> 00:11:47,122
+That's what you need to remember here. 
+But, if you leave out the recursive 
+
+156
+00:11:47,122 --> 00:11:52,049
+aspect from STN Planning so if you have 
+no methods that are effectively 
+
+157
+00:11:52,049 --> 00:11:57,653
+recursive, then you can translate these 
+domain into equivalent STRIPS problems 
+
+158
+00:11:57,653 --> 00:12:02,872
+that solve the same problem. 
+Unfortunately this translation process 
+
+159
+00:12:02,872 --> 00:12:07,322
+may lead to an exponential blow up in the 
+size of the problem. 
+
+160
+00:12:07,322 --> 00:12:12,888
+As a final point there is also a set of 
+STN domains called regular STN domains 
+
+161
+00:12:12,888 --> 00:12:16,393
+and that also is equivalent to STRIPS 
+planning. 
+
+162
+00:12:16,393 --> 00:12:21,702
+Regular STN domains contain some degree 
+of recursiveness but not much. 
+
+163
+00:12:21,702 --> 00:12:26,168
+So this is the end of this segment about 
+STN or HTN planning. 
+
+164
+00:12:26,168 --> 00:12:31,944
+I've told you all about tasks and task 
+networks which were the new nodes in our 
+
+165
+00:12:31,944 --> 00:12:35,193
+search space. 
+We've seen what methods are. 
+
+166
+00:12:35,193 --> 00:12:41,003
+They refine task networks to give us 
+state transitions in our search space and 
+
+167
+00:12:41,003 --> 00:12:46,205
+they way they do that is through 
+Decomposition of tasks in the networks. 
+
+168
+00:12:46,205 --> 00:12:50,715
+Then we've seen the usual definitions of 
+problems and solutions. 
+
+169
+00:12:50,715 --> 00:12:55,581
+And we have seen how we can do planning 
+with the TFD and PFD algorithms. 
+
+170
+00:12:55,581 --> 00:13:01,321
+This whole approach can be generalized to 
+HTN planning, where we explicitly handle 
+
+171
+00:13:01,321 --> 00:13:06,786
+constrains of unknown types. 
+And although I've just compared HTN and 
+
+172
+00:13:06,786 --> 00:13:11,872
+STRIPS planning. 
+Keep in mind that these two approaches 
+
+173
+00:13:11,872 --> 00:13:15,606
+really solve two different types of 
+problem. 
+
+174
+00:13:15,606 --> 00:13:21,282
+The one is goal-based planning, and the 
+other is task-based planning. 
+
+175
+00:13:21,282 --> 00:13:23,906
+And that concludes this segment. 
+

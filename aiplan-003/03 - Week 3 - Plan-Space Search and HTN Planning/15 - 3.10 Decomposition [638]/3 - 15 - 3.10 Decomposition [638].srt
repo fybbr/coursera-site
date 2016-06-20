@@ -1,0 +1,409 @@
+1
+00:00:00,012 --> 00:00:08,027
+As you may have guessed, we will be using 
+search to solve STM planning problems. 
+
+2
+00:00:08,027 --> 00:00:16,442
+The search nodes in the search space that 
+we'll be searching will be task networks. 
+
+3
+00:00:16,442 --> 00:00:22,270
+and the methods we have just described 
+will be used as refinement operations in 
+
+4
+00:00:22,270 --> 00:00:26,803
+our new search space. 
+Methods give us the safe transitions we 
+
+5
+00:00:26,803 --> 00:00:32,482
+need to move from one task network to 
+another, and the way this is done is that 
+
+6
+00:00:32,482 --> 00:00:38,302
+we use methods to decompose tasks and 
+that's what I'll be talking about next. 
+
+7
+00:00:38,302 --> 00:00:44,092
+Here is an example how decomposition 
+works in the Dock Worker Robots domain. 
+
+8
+00:00:44,092 --> 00:00:50,147
+And to do the decomposition I've already 
+introduced the decomposition function 
+
+9
+00:00:50,147 --> 00:00:55,462
+delta that takes a task, a method 
+instance, and substitution sigma. 
+
+10
+00:00:55,462 --> 00:01:00,722
+We can visualize the process of 
+decomposition by means of a decomposition 
+
+11
+00:01:00,722 --> 00:01:05,817
+tree which is what you see here. 
+The decomposition tree has as it's root 
+
+12
+00:01:05,817 --> 00:01:09,657
+the task t. 
+So this is the task t, that we're trying 
+
+13
+00:01:09,657 --> 00:01:14,062
+to decompose and that is the root of our 
+decomposition tree. 
+
+14
+00:01:14,062 --> 00:01:20,777
+In this case, the task was to move the 
+stack from p1 to some other pile q. 
+
+15
+00:01:20,777 --> 00:01:27,225
+Then, we have a method instance that 
+we're using to decompose the task with. 
+
+16
+00:01:27,225 --> 00:01:31,966
+And the method instance here is recursive 
+move, p1, p2, 
+
+17
+00:01:31,966 --> 00:01:35,487
+c1, c2. 
+And the final component the substitution 
+
+18
+00:01:35,487 --> 00:01:40,962
+sigma tells us how we have to replace the 
+variables so that's what we find here, we 
+
+19
+00:01:40,962 --> 00:01:44,237
+have to replace the variable q with the 
+value p2. 
+
+20
+00:01:44,237 --> 00:01:49,512
+Then the children that we have off the 
+node that represents the task that we are 
+
+21
+00:01:49,512 --> 00:01:54,537
+trying to decompose are exactly those sub 
+tasks that we find in the method. 
+
+22
+00:01:54,537 --> 00:01:59,283
+So here it is the first sub task 
+move-topmost and here the second one to 
+
+23
+00:01:59,283 --> 00:02:03,014
+move the stack. 
+The only other thing worth noting is this 
+
+24
+00:02:03,014 --> 00:02:07,646
+arrow here, that underlines the 
+substitution and the method, and that 
+
+25
+00:02:07,646 --> 00:02:12,614
+simply gives us the order in which we 
+have to execute the sub-task. 
+
+26
+00:02:12,614 --> 00:02:17,118
+And if we look at this tree we can 
+immediately see what the result is by 
+
+27
+00:02:17,118 --> 00:02:20,780
+looking at the leaf nodes. 
+So, this is the result of this 
+
+28
+00:02:20,780 --> 00:02:25,932
+decomposition here, namely to move the 
+top most container from pile p1 to p2 and 
+
+29
+00:02:25,932 --> 00:02:29,182
+then move the remaining stack from pile 
+p1 to p2. 
+
+30
+00:02:29,182 --> 00:02:33,577
+As you can see there's quite a lot of 
+redundant information in this tree. 
+
+31
+00:02:33,577 --> 00:02:37,922
+For example, you can derive the 
+substitution you're looking at from the 
+
+32
+00:02:37,922 --> 00:02:41,513
+values used in the task and the method, 
+or in the sub tasks. 
+
+33
+00:02:41,513 --> 00:02:46,385
+That is why when you see this tree later 
+in another example, I will leave out some 
+
+34
+00:02:46,385 --> 00:02:51,222
+of that information to save a little 
+space and be able to draw bigger trees. 
+
+35
+00:02:51,222 --> 00:02:59,127
+Now that we understand how to decompose a 
+single task in isolation, we will look at 
+
+36
+00:02:59,127 --> 00:03:03,972
+how to decompose tasks that are in a task 
+network. 
+
+37
+00:03:03,972 --> 00:03:08,850
+So we start with a task network, w, 
+consisting of nodes and edges where the 
+
+38
+00:03:08,850 --> 00:03:12,531
+nodes are tasks and the edges are 
+ordering constraints. 
+
+39
+00:03:12,531 --> 00:03:17,069
+And we want to decompose one of the 
+tasks, t, that is in this network. 
+
+40
+00:03:17,069 --> 00:03:20,533
+And this must be a task that has no 
+predecessors in w. 
+
+41
+00:03:20,533 --> 00:03:25,509
+So, if this network is totally ordered, 
+then it will be the first task in the 
+
+42
+00:03:25,509 --> 00:03:28,508
+list. 
+If it's a partial-order network, there 
+
+43
+00:03:28,508 --> 00:03:31,632
+may several tasks that have no 
+predecessor. 
+
+44
+00:03:31,632 --> 00:03:37,886
+Then we want to decompose this task using 
+a method and this method of course has to 
+
+45
+00:03:37,886 --> 00:03:43,431
+be relevant for the task under some 
+substitution sigma, and this method 
+
+46
+00:03:43,431 --> 00:03:47,772
+itself will have a network consisting of 
+notes and edges. 
+
+47
+00:03:47,772 --> 00:03:55,262
+Then we can define the decomposition of 
+t, the task t in the network w by method 
+
+48
+00:03:55,262 --> 00:03:59,312
+m under our substitution sigma as 
+follows. 
+
+49
+00:03:59,312 --> 00:04:06,202
+The first thing we have to do is we 
+replace our task t by the instantiated 
+
+50
+00:04:06,202 --> 00:04:12,591
+network task that come from our method. 
+So from our original network w consisting 
+
+51
+00:04:12,591 --> 00:04:17,986
+of the tasks in u we remove the task t 
+and in its place we put all those tasks 
+
+52
+00:04:17,986 --> 00:04:22,928
+that are in and instantiate those with 
+the substitution sigma. 
+
+53
+00:04:22,928 --> 00:04:28,437
+That is how we modify the tasks in the 
+network and then we also have to modify 
+
+54
+00:04:28,437 --> 00:04:32,848
+the edges in the network. 
+And the edges we have to replace are 
+
+55
+00:04:32,848 --> 00:04:38,009
+exactly those edges in e that involve t, 
+because t is no longer available as an 
+
+56
+00:04:38,009 --> 00:04:41,664
+endpoint to an edge. 
+We have to replace them by edges to 
+
+57
+00:04:41,664 --> 00:04:45,516
+appropriate nodes. 
+In our new set of nodes that we've just 
+
+58
+00:04:45,516 --> 00:04:50,011
+introduced sigma of 
+To illustrate this, let us look at a 
+
+59
+00:04:50,011 --> 00:04:55,607
+simple network that consists of two 
+tasks, task nodes, that I illustrate 
+
+60
+00:04:55,607 --> 00:04:58,867
+here, and just one edge that orders 
+these. 
+
+61
+00:04:58,867 --> 00:05:02,923
+Let this be our network w. 
+Then the only task that has no 
+
+62
+00:05:02,923 --> 00:05:08,059
+predecessors here is this task here, and 
+that's the one we can decompose now. 
+
+63
+00:05:08,059 --> 00:05:13,417
+And suppose we have a method that is also 
+very simple and decomposes our task into 
+
+64
+00:05:13,417 --> 00:05:18,722
+another very simple network just like the 
+one above consisting of nodes 1 and 2, 
+
+65
+00:05:18,722 --> 00:05:23,100
+let's say. 
+Then, the first thing our decomposition 
+
+66
+00:05:23,100 --> 00:05:29,719
+function does is replace the task t, 
+so we have to remove it from the network. 
+
+67
+00:05:29,719 --> 00:05:33,905
+And we insert the subtasks defined by the 
+method. 
+
+68
+00:05:33,905 --> 00:05:38,827
+And these are, of course the tasks 1 and 
+2 from our method. 
+
+69
+00:05:38,827 --> 00:05:43,732
+And then we have to replace all the edges 
+that were connected to t which is this 
+
+70
+00:05:43,732 --> 00:05:48,587
+edge here and we can replace this with 
+edges to all the newly introduced nodes, 
+
+71
+00:05:48,587 --> 00:05:51,477
+so we have to have an edge here and an 
+edge here. 
+
+72
+00:05:51,477 --> 00:05:56,357
+But because we already have this edge, 
+there's no need to have the second edge 
+
+73
+00:05:56,357 --> 00:05:59,012
+so we can actually omit that if we 
+wanted. 
+
+74
+00:05:59,012 --> 00:06:04,329
+And in this example, the resulting 
+network would be the sequence consisting 
+
+75
+00:06:04,329 --> 00:06:08,498
+of the node 1, 2 and this final node 
+here, which I'll call 3. 
+
+76
+00:06:08,498 --> 00:06:13,110
+And what we have done to get to this 
+network, is we have applied the 
+
+77
+00:06:13,110 --> 00:06:16,508
+decomposition function, which is defined 
+here. 
+
+78
+00:06:16,508 --> 00:06:19,594
+And the application consisted of two 
+steps. 
+
+79
+00:06:19,594 --> 00:06:24,649
+We have replaced the node t that we're 
+decomposing by all the nodes in the 
+
+80
+00:06:24,649 --> 00:06:29,356
+network of the method. 
+And we've replaced all the edges that are 
+
+81
+00:06:29,356 --> 00:06:35,232
+connected to T by edges to the new node. 
+And this is how you decompose a task in a 
+
+82
+00:06:35,232 --> 00:06:35,942
+task network. 
+

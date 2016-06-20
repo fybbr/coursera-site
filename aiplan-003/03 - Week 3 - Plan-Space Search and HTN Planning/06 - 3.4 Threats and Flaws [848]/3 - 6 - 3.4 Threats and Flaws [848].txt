@@ -1,0 +1,244 @@
+A partial plan is a solution for a given 
+planning problem if it contains no more 
+flaws. 
+So, our goal test will be to check 
+whether our partial plan is a flawless 
+partial plan. 
+Of course, we haven't defined a flaw yet 
+so that's what we will do next. 
+And when we have done this, the search 
+problem will be complete. 
+We have defined the initial state. 
+We have defined the successor function, 
+and we will now look at the goal test. 
+I will now introduce the concept of a 
+threat in a partial plan and I will use 
+an example to illustrate this. 
+What we see here is a partial plan to 
+which I've already added two actions to 
+support the two goal conditions. 
+We also the dummy action for the goal 
+over here. 
+And there should be a second dummy action 
+for the initial state. 
+But since we're not going to use that in 
+this example, I've left it out here to 
+save a little space. 
+Now, what we do is apply more plan 
+refinement operations. 
+In this case, we add an action to the 
+plan, 
+this new move action over here. 
+And the reason why we do this is because 
+we want to support the precondition at 
+robot location one with this new 
+operator. 
+So, we haven't started a cause link for 
+this, and we insert an ordering 
+constraint because the action that is the 
+provider must come before the consumer. 
+Now, let us also look at the condition 
+that are protected by the cause links. 
+These are at robot location two here the 
+not unloaded robot here the two goal 
+condition that we want to support. 
+And over here, it is the precondition of 
+the load operator that the robot must be 
+at location one that we're protecting 
+with this causal link. 
+Now, the problem is the following. 
+Our first operator, the move action, has 
+a negative effect at robot location one, 
+which is exactly the condition we're 
+trying to protect down here. 
+This means if we first executed action 
+number three, the move robot location to 
+location one. 
+Then, action number one moving the robot 
+from location one to location two, and 
+finally action number two loading the 
+container onto the robot with a crane, 
+etc. 
+Then, this plan would not be valid 
+because the second action in our totally 
+ordered plan will destroy the protected 
+condition that we need to execute the 
+final action in that plan. 
+So, the final action would no longer be 
+executable. 
+This is what is called the threat. 
+We have an action that may possibly occur 
+in parallel with a causal link and that 
+has an effect that is complementary to 
+the condition we're trying to protect in 
+the causal link. 
+That is what is called a threat. 
+And in this case, there is a simple way 
+to get rid of this threat, namely to 
+introduce another ordering constraint 
+that says, action number one must come 
+after action number two. In which case, 
+the action with the effect that is 
+potentially harmful cannot be in parallel 
+to the causal link that protects this 
+condition. 
+So, the insertion of the ordering 
+constraint removes the threat and that is 
+what is called a resolver for this 
+threat. 
+Now that you've seen an example of a 
+threat, here's the formal definition of 
+what constitutes a threat. 
+We start of with a plan pi consisting of 
+the four usual components. 
+We have actions, orderings, variable 
+bindings, and causal links. 
+In this plan, we have an action ak that 
+may cause a threat for a causal link, 
+That links an action ai to an action aj 
+protecting condition p. 
+And we say that the action ak threatens 
+our causal link if the following 
+preconditions hold. 
+Firstly, ak must have an effect, not q, 
+that is possibly inconsistent with p, the 
+condition we're trying to protect. 
+If p and q are ground, then of course, 
+they are possibly inconsistent if they 
+are the same. 
+But, if they contain variables, then they 
+are possibly inconsistent if p and q are 
+unfiable. 
+That means, they can be made the same if 
+we substitute values for variables. 
+The second condition is that the 
+following ordering constraints must be 
+consistent with the ordering constraints 
+in our plan. 
+And the ordering constraints that we 
+consider are ai could come before ak, and 
+ak before aj. 
+What this means is that our action ak can 
+possible be in parallel to the causal 
+link because the provider comes before ak 
+and the consumer comes after ak. 
+But, the condition here is, that this is 
+possible, not that it is necessarily so. 
+So, these orderings, constraints must be 
+consistent with our orderings in the 
+plan, but they need not be in the plan. 
+Similarly, the third condition states 
+that if we introduce new variable 
+bindings as part of our unification up 
+here, then, these new variable binding 
+constraints must be consistent with the 
+binding constraints that we currently 
+have in our Plan. 
+So, ak can threaten our causal link if it 
+has an effect that is possibly 
+inconsistent with the proposition we're 
+trying to protect. 
+And it may possibly occur in parallel to 
+our causal link. 
+And finally, the bindings that we need 
+for making p and w the same are 
+consistent with the bindings used in the 
+plan, that is the definition of a threat. 
+Threats however, are not the only types 
+of flaws that can occur in a plan. 
+The good news is there are only two types 
+of flaws we need to look out for. 
+So, in a plan pi, that consists of the 
+usual four components, we can have two 
+types of flaws. 
+The first is an unsatisfied sub-goal in 
+that plan. 
+And an unsatisfied sub-goal is a 
+precondition of an action that does not 
+have an incoming causal link that 
+supports it. 
+So, this could be the goal dummy action 
+which, of course, has all the goal 
+conditions as preconditions. 
+All of those need to be supported for the 
+plan not to have this type of flaw. 
+And then, every action that we have added 
+to the plan also must have all of its 
+preconditions supported by causal link 
+for the plan not to have this type of 
+flaw. 
+And the second type of flaw is a threat, 
+so that's what we have just seen in 
+action that may interfere with a causal 
+link. 
+And that's it. That's all the type flaws 
+we need to consider. 
+And here is the proposition that gives us 
+our goal test. 
+Suppose we are given a partial plan, 
+consisting of actions, orderings, 
+bindings, and links and we can say that 
+this solution to a planning problem 
+consisting of a state transition system, 
+initial state and goal, if three 
+conditions hold. 
+The first one is that the plan pi has no 
+flaw. 
+That's the two types of flaws we've just 
+described. 
+Then, the ordering constraints must not 
+be circular, so they must be consistent. 
+And the variable binding constraints must 
+also be consistent. 
+So, while we are doing our search for a 
+plan, we have these three conditions to 
+maintain. 
+The first one that a plan must have no 
+flaws, well, we cannot really have that 
+because initially our plan has flaws. 
+The goal has unsatisfied preconditions. 
+But, the other two conditions That we 
+keep up our ordering constraints and our 
+variable binding constraints consist in 
+these two conditions, 
+we maintain this consistency during the 
+planning process. 
+Why is that? Because once we introduce an 
+inconsistency into either set of 
+constraints, this can never be removed. 
+So, we maintain the consistency of the 
+constraints and try to remove the flaws 
+from the plan. 
+And once for all the flaws are gone, 
+we're done. 
+I won't go into the proof of this 
+proposition in detail, 
+but just tell you that this can be done 
+by induction quite easily. 
+So, we start off with the base case, that 
+is the empty plan. 
+And in the empty plan, the only causal 
+links can go from the innate action to 
+the goal action, the two dummy actions 
+that we have in this plan. 
+And if all the goal conditions are 
+supported from the initial state, that 
+must be a solution plan to our problem in 
+which case the goal was already satisfied 
+in our initial state. 
+And the induction step simply consist of 
+removing one action from the plan and 
+showing that the shorter plan now still 
+is a solution to a planning problem, the 
+modified planning problem. 
+And the action we pick here, as you can 
+see, is one of the actions in the plan 
+that has no predecessors. 
+So, this is it. 
+This is our goal test that completes the 
+planning problem. 
+And now, a goal test is that our plan 
+must not have flaws. 
+If it has no flaws, it is a solution 
+plan. 
+

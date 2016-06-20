@@ -1,0 +1,394 @@
+1
+00:00:04,660 --> 00:00:09,256
+Now with a formal definition of a STRIPS 
+planning domain, we can now define a 
+
+2
+00:00:09,256 --> 00:00:13,028
+STRIPS planning problem. 
+A STRIPS planning problem is a triple 
+
+3
+00:00:13,028 --> 00:00:16,328
+consisting of three components, 
+and these are given here. 
+
+4
+00:00:16,328 --> 00:00:20,335
+This is, of course, the state transition 
+system that we're looking at. 
+
+5
+00:00:20,335 --> 00:00:23,105
+This is the initial state and that is the 
+goal. 
+
+6
+00:00:23,105 --> 00:00:26,995
+So, what are these formally? 
+The first is a STRIPS planning domain 
+
+7
+00:00:26,995 --> 00:00:30,884
+that is defined over some first order 
+language we've seen earlier. 
+
+8
+00:00:30,884 --> 00:00:35,658
+And again, we have the state space here, 
+the action space and the state transition 
+
+9
+00:00:35,658 --> 00:00:38,310
+function as we've seen in the previous 
+slide. 
+
+10
+00:00:38,310 --> 00:00:41,897
+Then there are two more things we need 
+for a planning problem. 
+
+11
+00:00:41,897 --> 00:00:46,410
+The first is an initial state which is 
+simply one of the states in our states 
+
+12
+00:00:46,410 --> 00:00:49,907
+base. 
+Finally, the goal of a planning problem 
+
+13
+00:00:49,907 --> 00:00:55,864
+is defined as a set of ground literals. 
+And once we are given a goal described in 
+
+14
+00:00:55,864 --> 00:01:01,379
+this way, we can define the set of 
+possible goal states, as all those states 
+
+15
+00:01:01,379 --> 00:01:06,452
+in s that satisfy the goal. 
+And satisfaction was something we defined 
+
+16
+00:01:06,452 --> 00:01:09,400
+earlier, 
+you may remember the symbol. 
+
+17
+00:01:09,400 --> 00:01:15,280
+We said that s satisfies g if all the 
+positive literals in g are true in s and 
+
+18
+00:01:15,280 --> 00:01:19,150
+none of the negative literals in g are 
+holding in s. 
+
+19
+00:01:19,150 --> 00:01:22,723
+So that is the definition of a planning 
+problem. 
+
+20
+00:01:22,723 --> 00:01:28,678
+An interesting observation is that goals 
+are defined as exactly the same things 
+
+21
+00:01:28,678 --> 00:01:34,558
+that are the preconditions of operators 
+namely sets of literals or for actions 
+
+22
+00:01:34,558 --> 00:01:38,280
+sets of ground literals. 
+That is not a coincidence. 
+
+23
+00:01:39,540 --> 00:01:44,192
+And here's a very simple example of a 
+STRIPS planning problem, a DWR example 
+
+24
+00:01:44,192 --> 00:01:48,478
+from the dock worker robot domain. 
+The planning domain is the one we've 
+
+25
+00:01:48,478 --> 00:01:52,580
+defined earlier consisting of the five 
+operators described in PDDL. 
+
+26
+00:01:52,580 --> 00:01:57,059
+Then I need to pick an initial state 
+which is what I've done here, so this is 
+
+27
+00:01:57,059 --> 00:02:01,772
+our initial state and I've described that 
+in this expression here as a set of 
+
+28
+00:02:01,772 --> 00:02:04,623
+ground atoms. 
+So each of those are relations that 
+
+29
+00:02:04,623 --> 00:02:07,706
+relate different objects in the domain to 
+each other. 
+
+30
+00:02:07,706 --> 00:02:10,150
+It's a very simple example as you can 
+see. 
+
+31
+00:02:10,150 --> 00:02:14,481
+And then I have to pick a goal, which is 
+a set of ground literals. 
+
+32
+00:02:14,481 --> 00:02:19,345
+In this case, I want the robot to be 
+loaded with a container, so it is not 
+
+33
+00:02:19,345 --> 00:02:22,810
+unloaded, and I want the robot to be at 
+location too. 
+
+34
+00:02:22,810 --> 00:02:28,074
+These are my two goal conditions, and in 
+this simple example, there is only this 
+
+35
+00:02:28,074 --> 00:02:34,163
+one state, that is a goal state. 
+And here is a definition of a planning 
+
+36
+00:02:34,163 --> 00:02:37,866
+problem in the PDDL syntax. 
+Note that this is a different problem so 
+
+37
+00:02:37,866 --> 00:02:40,970
+it is not the problem we have seen in the 
+previous slide. 
+
+38
+00:02:40,970 --> 00:02:44,546
+In PDDL we of course must define the 
+initial state, and the goal. 
+
+39
+00:02:44,546 --> 00:02:46,950
+Just like we need for any planning 
+problem. 
+
+40
+00:02:46,950 --> 00:02:50,080
+But there are a few other things that we 
+need to define. 
+
+41
+00:02:50,080 --> 00:02:54,458
+The first thing is, we can give the 
+planning problem a name, so we can refer 
+
+42
+00:02:54,458 --> 00:02:56,968
+to it. 
+That's what we do here, it's a DWRPB1 
+
+43
+00:02:56,968 --> 00:02:59,829
+problem. 
+Then we can say which domain we're using. 
+
+44
+00:02:59,829 --> 00:03:03,799
+And we're saying that by referring to the 
+domain name as shown here. 
+
+45
+00:03:03,799 --> 00:03:07,885
+Then we can explicitly define what 
+objects we're using in this domain. 
+
+46
+00:03:07,885 --> 00:03:11,388
+This is actually optional and requires 
+the typing extension. 
+
+47
+00:03:11,388 --> 00:03:15,300
+So we say that there's one robot which is 
+a type robot. 
+
+48
+00:03:15,300 --> 00:03:20,321
+then we have two locations, two cranes 
+and four piles here and all together we 
+
+49
+00:03:20,321 --> 00:03:24,970
+have six containers and the palate. 
+The palate is of course also defined in 
+
+50
+00:03:24,970 --> 00:03:31,324
+the domain, but that doesn't matter here. 
+So this declares what things exist in our 
+
+51
+00:03:31,324 --> 00:03:34,123
+states. 
+Then the initial state contains the 
+
+52
+00:03:34,123 --> 00:03:37,294
+ground atoms that relate these objects to 
+each other. 
+
+53
+00:03:37,294 --> 00:03:41,123
+So that's what we got here. 
+We start off with a static relations. 
+
+54
+00:03:41,123 --> 00:03:45,850
+These are the things that describe the 
+topology, and won't change from state to 
+
+55
+00:03:45,850 --> 00:03:48,662
+state. 
+So there's the adjacency between the two 
+
+56
+00:03:48,662 --> 00:03:51,593
+locations. 
+There is where the different piles are. 
+
+57
+00:03:51,593 --> 00:03:55,302
+Piles one, P1 and Q1 are at location one. 
+P2, Q2 at location two. 
+
+58
+00:03:55,302 --> 00:03:59,012
+And where the different cranes are. 
+One crane at each location. 
+
+59
+00:03:59,012 --> 00:04:02,035
+Then we have. 
+The dynamic relation's listed next. 
+
+60
+00:04:02,035 --> 00:04:04,794
+And they tell us what is in the first 
+pile. 
+
+61
+00:04:04,794 --> 00:04:09,220
+Namely, container A, B, and C. 
+Here's the order of the containers on the 
+
+62
+00:04:09,220 --> 00:04:11,337
+pallet. 
+Container C is at the top. 
+
+63
+00:04:11,337 --> 00:04:15,764
+The same for the second pile. 
+This is also at location one, containing 
+
+64
+00:04:15,764 --> 00:04:18,907
+three containers, stacked on top of each 
+other. 
+
+65
+00:04:18,907 --> 00:04:23,553
+And container F at the top. 
+The piles at the other location are both 
+
+66
+00:04:23,553 --> 00:04:27,755
+empty as you can see here because the top 
+of the pile is the pallet. 
+
+67
+00:04:27,755 --> 00:04:32,574
+Finally we learn where the robot is and 
+that's unloaded and also that the two 
+
+68
+00:04:32,574 --> 00:04:35,170
+cranes are currently not holding 
+anything. 
+
+69
+00:04:35,170 --> 00:04:38,118
+That was the initial state, and now comes 
+the goal. 
+
+70
+00:04:38,118 --> 00:04:42,540
+The goal is described as a conjunction. 
+So all of these things must be true. 
+
+71
+00:04:42,540 --> 00:04:46,668
+And it's simply saying, in which pile the 
+different containers must be. 
+
+72
+00:04:46,668 --> 00:04:48,790
+Ca must be in P2. 
+Cc in P2, and so on. 
+
+73
+00:04:48,790 --> 00:04:51,915
+And the other four containers must be in 
+the pile, Q2. 
+
+74
+00:04:51,915 --> 00:04:56,574
+So it doesn't specify the order in which 
+the containers must be in those piles, 
+
+75
+00:04:56,574 --> 00:05:01,042
+just in which piles they must be. 
+Note that there are no negative goals in 
+
+76
+00:05:01,042 --> 00:05:05,840
+this example but of course it is possible 
+to define negative goals in general. 
+
+77
+00:05:05,840 --> 00:05:10,639
+And if you find this a little hard to 
+read again here's the URL where you can 
+
+78
+00:05:10,639 --> 00:05:15,437
+find the complete description of this 
+problem so you can download it and read 
+
+79
+00:05:15,437 --> 00:05:17,160
+it in quiet and peace later. 
+

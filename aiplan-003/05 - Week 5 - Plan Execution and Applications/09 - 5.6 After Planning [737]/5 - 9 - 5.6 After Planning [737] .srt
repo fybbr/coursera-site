@@ -1,0 +1,508 @@
+1
+00:00:00,012 --> 00:00:08,137
+Assuming we have generated a plan, the
+next question is, what do we do with this
+
+2
+00:00:08,137 --> 00:00:12,583
+plan?
+What happens after we have planned?
+
+3
+00:00:12,584 --> 00:00:17,500
+Now you may think execution as the obvious
+answer, but there may be other things.
+
+4
+00:00:17,500 --> 00:00:22,042
+For example, we may have generated
+multiple plans as options that we want to
+
+5
+00:00:22,042 --> 00:00:26,938
+consider in which case the next step would
+be to evaluate these plans according to
+
+6
+00:00:26,938 --> 00:00:31,679
+some different criteria, and then select
+the plan possibly for execution.
+
+7
+00:00:31,680 --> 00:00:36,784
+But we may also have scenarios where we
+hope that we will never have to execute
+
+8
+00:00:36,784 --> 00:00:41,471
+those plans, for example when we come up
+with emergency response plans.
+
+9
+00:00:41,471 --> 00:00:45,048
+In this case the planning is really just
+for preparedness.
+
+10
+00:00:45,048 --> 00:00:49,558
+But the most common thing we do after
+planning is probably plan execution.
+
+11
+00:00:49,558 --> 00:00:54,321
+And my colleague, Austin Tate, talked
+about planning and plan execution, in the
+
+12
+00:00:54,321 --> 00:00:57,286
+context of real applications earlier this
+week.
+
+13
+00:00:57,286 --> 00:01:00,922
+So all I need to give you now, is probably
+a brief reminder.
+
+14
+00:01:00,923 --> 00:01:08,342
+Here's a slide that I've used before and
+that describes our model of plan
+
+15
+00:01:08,342 --> 00:01:12,114
+execution.
+This model starts with what we've seen a
+
+16
+00:01:12,114 --> 00:01:15,309
+lot in this course, namely with a planning
+problem.
+
+17
+00:01:15,309 --> 00:01:20,340
+This is described by an initial state, and
+by some objectives which can be either
+
+18
+00:01:20,340 --> 00:01:25,440
+gold, or tasks depending on whether we do
+STRIPS like our HTN planning, and then we
+
+19
+00:01:25,440 --> 00:01:30,615
+have a description of our state transition
+system which could be methods or strips
+
+20
+00:01:30,615 --> 00:01:35,241
+operators as we've seen before.
+And then the planner is the planning
+
+21
+00:01:35,241 --> 00:01:38,482
+algorithm we've looked at most of this
+course.
+
+22
+00:01:38,482 --> 00:01:41,971
+And the output of that planner is, of
+course, a plan.
+
+23
+00:01:41,971 --> 00:01:46,657
+This plan is then passed to the
+controller, which is responsible for the
+
+24
+00:01:46,657 --> 00:01:51,027
+execution of the plan.
+The controller takes the actions from our
+
+25
+00:01:51,027 --> 00:01:56,083
+plan, and somehow makes sure they get
+executed, which affects our real world
+
+26
+00:01:56,083 --> 00:02:01,446
+system, that somehow changes its state.
+Of course, the system also changes its
+
+27
+00:02:01,446 --> 00:02:06,091
+state due to events that may Occur.
+And to deal with those events and to
+
+28
+00:02:06,091 --> 00:02:11,268
+ensure that the actions have the desirous
+effects on the state of the real world.
+
+29
+00:02:11,268 --> 00:02:16,020
+The controller has some observations that
+it can use to monitor the state.
+
+30
+00:02:16,020 --> 00:02:19,227
+Ideally then, everything goes according to
+plan.
+
+31
+00:02:19,227 --> 00:02:24,652
+And the controller has nothing more to do.
+More realistically things will go wrong or
+
+32
+00:02:24,652 --> 00:02:28,668
+the unexpected will happen.
+And that means the plan needs to be
+
+33
+00:02:28,668 --> 00:02:32,665
+changed, and for the plan to change we
+need the planner again.
+
+34
+00:02:32,665 --> 00:02:37,599
+But what we have to do is give the planner
+some additional input and that is the
+
+35
+00:02:37,599 --> 00:02:42,630
+execution status of the plan so far.
+Then the planner hopefully can generate a
+
+36
+00:02:42,630 --> 00:02:45,857
+new plan.
+The controller can start executing that
+
+37
+00:02:45,857 --> 00:02:49,536
+new plan and so on.
+So what we really have here is a loop that
+
+38
+00:02:49,536 --> 00:02:54,228
+starts with the initial planning problem
+then goes through the controller and the
+
+39
+00:02:54,228 --> 00:02:58,920
+execution and returns to the planner and
+may go through this process several times
+
+40
+00:02:58,920 --> 00:03:03,145
+before we end up with the desired
+objectives achieved in the real world.
+
+41
+00:03:03,145 --> 00:03:07,114
+And to answer my question then what comes
+after we plan?
+
+42
+00:03:07,114 --> 00:03:12,083
+Well the answer's simply more planning.
+Namely when things go wrong we need to do
+
+43
+00:03:12,083 --> 00:03:17,041
+either plan revision which means we take
+our existing plan and change parts of it
+
+44
+00:03:17,041 --> 00:03:21,777
+to deal with deviations between the
+description of our system and the actual
+
+45
+00:03:21,777 --> 00:03:26,168
+system that we are manipulating.
+Or we can throw away the old plan and
+
+46
+00:03:26,168 --> 00:03:31,062
+start replanning from scratch.
+One of the issue with the model I just
+
+47
+00:03:31,062 --> 00:03:36,758
+showed you in the previous slide is, that
+there was just a single planner and a
+
+48
+00:03:36,758 --> 00:03:41,360
+single controller.
+More realistically, however, is a scenario
+
+49
+00:03:41,360 --> 00:03:45,850
+where we have multiple agents.
+That is, multiple agents which are
+
+50
+00:03:45,850 --> 00:03:50,152
+executing the plan.
+Multiple agents which are controlling the
+
+51
+00:03:50,152 --> 00:03:53,236
+execution.
+And even multiple agents that are
+
+52
+00:03:53,236 --> 00:03:57,240
+generating the plan.
+And this of course, leads to a number of
+
+53
+00:03:57,240 --> 00:04:02,253
+additional problem during plan execution.
+And one of the problems is that, if we
+
+54
+00:04:02,253 --> 00:04:07,285
+have multiple agents execute the actions
+and the plan, then these actions need to
+
+55
+00:04:07,285 --> 00:04:10,373
+be coordinated between the different
+agents.
+
+56
+00:04:10,373 --> 00:04:15,592
+As a simple example, remember that our
+plans contained ordering constrains
+
+57
+00:04:15,592 --> 00:04:19,916
+between different actions.
+Now, if we assign two actions that are
+
+58
+00:04:19,916 --> 00:04:23,754
+ordered with respect to each other to two
+different agents.
+
+59
+00:04:23,754 --> 00:04:28,895
+Then during plan execution, these two
+agents need to make sure that first, one
+
+60
+00:04:28,895 --> 00:04:32,995
+action is executed.
+And then the other action is executed by
+
+61
+00:04:32,995 --> 00:04:36,915
+the other agent.
+That means the second agent needs to know
+
+62
+00:04:36,915 --> 00:04:40,295
+when the first agent has finished its
+activity.
+
+63
+00:04:40,295 --> 00:04:45,076
+So ordering constraints leads to a
+coordination problem immediately.
+
+64
+00:04:45,076 --> 00:04:50,152
+A similar problem arises when actions use
+shared resources that have limited
+
+65
+00:04:50,152 --> 00:04:53,594
+capacity.
+Again, we need to coordinate the actions
+
+66
+00:04:53,594 --> 00:04:58,808
+if they are assigned to different agents,
+such that they will never exhaust the
+
+67
+00:04:58,808 --> 00:05:03,411
+capacity that is available.
+And, of course, we may have joint actions.
+
+68
+00:05:03,411 --> 00:05:08,291
+You remember the example earlier from two
+agents lifting a table with objects on it.
+
+69
+00:05:08,291 --> 00:05:12,437
+The lifting of the table needs to be
+started and finished together or the
+
+70
+00:05:12,437 --> 00:05:16,736
+objects will fall off the table.
+And, again, this requires coordination
+
+71
+00:05:16,736 --> 00:05:20,302
+between the two agents.
+And the most common way to solve
+
+72
+00:05:20,302 --> 00:05:25,552
+coordination problems is, of course,
+communication between the different agents
+
+73
+00:05:25,552 --> 00:05:28,860
+involved.
+And the way this is done is that we start
+
+74
+00:05:28,860 --> 00:05:33,386
+with a plan as we've seen it so far.
+And then we assign the actions in that
+
+75
+00:05:33,386 --> 00:05:37,465
+plan two different agents.
+And then, what we have to is, amend the
+
+76
+00:05:37,465 --> 00:05:42,481
+plan with communication actions that are
+required for the coordination of the
+
+77
+00:05:42,481 --> 00:05:47,008
+different activities in the plan.
+So we add more actions to the plan,
+
+78
+00:05:47,008 --> 00:05:51,026
+communication actions to make sure the
+execution may go well.
+
+79
+00:05:51,026 --> 00:05:55,288
+Another reason why we may need
+communication in a plan is that we may
+
+80
+00:05:55,288 --> 00:05:59,555
+have observation actions.
+So one agent that is part of our plan has
+
+81
+00:05:59,555 --> 00:06:04,171
+to look at the state of the world and
+recognize something in that state.
+
+82
+00:06:04,171 --> 00:06:09,259
+And then it may need to communicate the
+result to other agents that may depend on
+
+83
+00:06:09,259 --> 00:06:12,164
+it.
+But however well we prepare our plan it
+
+84
+00:06:12,164 --> 00:06:17,753
+can always still go wrong and that means
+we have execution failure somewhere in our
+
+85
+00:06:17,753 --> 00:06:20,521
+plan.
+And the question then is how can we
+
+86
+00:06:20,521 --> 00:06:25,546
+recover from this failure if we have
+multiple agents executing the plan.
+
+87
+00:06:25,546 --> 00:06:29,942
+And the easiest way to recover from
+failure would of course be local plan
+
+88
+00:06:29,942 --> 00:06:32,781
+repair.
+So if we can modify the plan locally so
+
+89
+00:06:32,781 --> 00:06:37,599
+that only the agent that experienced the
+failure can some how fix its part of the
+
+90
+00:06:37,599 --> 00:06:42,206
+plan without effecting other parts of the
+plan assigned to other agents.
+
+91
+00:06:42,206 --> 00:06:47,187
+Then we wouldn't have to talk to other
+agents before we continue the execution.
+
+92
+00:06:47,188 --> 00:06:52,577
+But often a plan cannot be fixed locally
+and requires some global change to the
+
+93
+00:06:52,577 --> 00:06:55,892
+plan.
+That is a change that effects other agents
+
+94
+00:06:55,892 --> 00:07:01,561
+that have to execute actions in the plan.
+And then the problem is to propagate those
+
+95
+00:07:01,561 --> 00:07:04,693
+changes through the plan and to other
+agents.
+
+96
+00:07:04,693 --> 00:07:08,085
+And one important concept here is
+decommitment.
+
+97
+00:07:08,085 --> 00:07:13,045
+So when we start the execution we have the
+agents commit to the actions.
+
+98
+00:07:13,045 --> 00:07:18,716
+That they need to execute in the plan.
+And when things go wrong, they may need to
+
+99
+00:07:18,716 --> 00:07:23,426
+de-commit from these actions, and we need
+to handle this somehow.
+
+100
+00:07:23,426 --> 00:07:28,808
+So, as you can see, there are many
+problems that may arise during multi-agent
+
+101
+00:07:28,808 --> 00:07:34,184
+plan execution, and all these need to be
+addressed if we successfully want to
+
+102
+00:07:34,184 --> 00:07:37,168
+execute our plans with multiple agents.

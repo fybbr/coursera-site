@@ -1,0 +1,750 @@
+1
+00:00:04,560 --> 00:00:11,359
+Previously we have seen how the general 
+tree search algorithm uses a strategy to 
+
+2
+00:00:11,359 --> 00:00:15,640
+determine which node on the fringe to 
+explore next. 
+
+3
+00:00:15,640 --> 00:00:19,890
+An example of such a strategy was a first 
+in first out queue. 
+
+4
+00:00:19,890 --> 00:00:25,005
+We call this an uninformed source 
+strategy because it does not use any 
+
+5
+00:00:25,005 --> 00:00:30,408
+information about the state itself, it 
+only uses information about when the 
+
+6
+00:00:30,408 --> 00:00:34,586
+state was queued but nothing that is 
+internal to the state. 
+
+7
+00:00:34,586 --> 00:00:39,989
+We will now look at heuristic search 
+strategies which use information about 
+
+8
+00:00:39,989 --> 00:00:44,600
+the state on the fringe to determine 
+which note to explore next. 
+
+9
+00:00:45,780 --> 00:00:51,887
+Information about a state that can be 
+used in a search strategy can be encoded 
+
+10
+00:00:51,887 --> 00:00:56,989
+using a heuristic function. 
+In general, a heuristic function H, maps 
+
+11
+00:00:56,989 --> 00:01:00,545
+a node in the search space to a real 
+number, R. 
+
+12
+00:01:00,545 --> 00:01:05,029
+Or sometimes, you also find it maps it to 
+a natural number. 
+
+13
+00:01:05,029 --> 00:01:11,369
+What a heuristic function encodes is the 
+estimated cost of the cheapest path from 
+
+14
+00:01:11,369 --> 00:01:16,703
+the given node to a goal node. 
+So the heuristic function tells us how 
+
+15
+00:01:16,703 --> 00:01:21,752
+close is the nearest goal node. 
+Obviously if the node N given to the 
+
+16
+00:01:21,752 --> 00:01:26,196
+heuristic function is a goal node, then 
+the value must be zero. 
+
+17
+00:01:26,196 --> 00:01:31,931
+That is, we are already had a goal node 
+so that nearest goal node is in distance 
+
+18
+00:01:31,931 --> 00:01:34,495
+zero. 
+As you can see, a heuristic function 
+
+19
+00:01:34,495 --> 00:01:38,416
+encodes problem specific knowledge in a 
+problem independent way. 
+
+20
+00:01:38,416 --> 00:01:42,766
+For each problem we are looking at, we 
+can define a different heuristic 
+
+21
+00:01:42,766 --> 00:01:45,706
+function. 
+Which is why the heuristic function is 
+
+22
+00:01:45,706 --> 00:01:49,198
+problem specific. 
+But whatever search space we're looking 
+
+23
+00:01:49,198 --> 00:01:53,916
+at, whatever problem we're looking at, 
+the heuristic function will always give 
+
+24
+00:01:53,916 --> 00:01:58,204
+us a numeric value for each state. 
+And the fact that it is a number is 
+
+25
+00:01:58,204 --> 00:02:01,796
+problem independent. 
+A perfect heuristic function would always 
+
+26
+00:02:01,796 --> 00:02:04,389
+give us the correct distance to the goal 
+node. 
+
+27
+00:02:04,389 --> 00:02:09,066
+But if we had such a function the search 
+wouldn't be very hard in fact it would be 
+
+28
+00:02:09,066 --> 00:02:11,884
+trivial. 
+Unfortunately perfect heuristic functions 
+
+29
+00:02:11,884 --> 00:02:15,660
+are very hard to find for most of the 
+problems we'll be looking at. 
+
+30
+00:02:16,680 --> 00:02:21,944
+Best-First search is an instance of the 
+general tree search algorithm, where we 
+
+31
+00:02:21,944 --> 00:02:27,008
+use the knowledge provided by the 
+heuristic function to decide which of the 
+
+32
+00:02:27,008 --> 00:02:30,007
+nodes on the fringe looks best for 
+expansion. 
+
+33
+00:02:30,007 --> 00:02:35,005
+In fact, Best-First search is a whole 
+group of algorithms, as we can use the 
+
+34
+00:02:35,005 --> 00:02:38,870
+heuristic in various ways to decide which 
+node looks best. 
+
+35
+00:02:38,870 --> 00:02:44,499
+And Best-first search can be used as a 
+tree search or graph search or algorithm, 
+
+36
+00:02:44,499 --> 00:02:48,931
+depending on whether we use the test for 
+repeated nodes, or not. 
+
+37
+00:02:48,931 --> 00:02:53,505
+In Best-First search, we use the 
+strategy, that uses an evaluation 
+
+38
+00:02:53,505 --> 00:02:58,219
+function F, to decide which node in the 
+state space to explore next. 
+
+39
+00:02:58,219 --> 00:03:03,919
+and again, the evaluation function maps a 
+node in the states space, to real number 
+
+40
+00:03:03,919 --> 00:03:06,980
+R. 
+In general we will choose that node from 
+
+41
+00:03:06,980 --> 00:03:12,822
+the fringe which has the lowest value F. 
+So the evaluation function determines the 
+
+42
+00:03:12,822 --> 00:03:18,093
+search strategy in Best-First search. 
+Again, if we had a perfect evaluation 
+
+43
+00:03:18,093 --> 00:03:23,080
+function we could use the search to lead 
+us straight to the goal node. 
+
+44
+00:03:23,080 --> 00:03:26,987
+Note that the evaluate function is not 
+problem specific. 
+
+45
+00:03:26,987 --> 00:03:32,010
+It is specific to the algorithm. 
+But the evaluation function may use the 
+
+46
+00:03:32,010 --> 00:03:35,150
+heuristic function, which is problem 
+specific. 
+
+47
+00:03:35,150 --> 00:03:40,452
+What we mean by best in Best-First search 
+is simply defined by the evaluation 
+
+48
+00:03:40,452 --> 00:03:43,801
+function. 
+The node that is best has the lowest F 
+
+49
+00:03:43,801 --> 00:03:45,820
+value. 
+Now, a quick word about the 
+
+50
+00:03:45,820 --> 00:03:49,080
+implementation. 
+There are really two operations that we 
+
+51
+00:03:49,080 --> 00:03:51,629
+need to support, when we look at our 
+fringe. 
+
+52
+00:03:51,629 --> 00:03:56,194
+When we generate the successors of a 
+node, we need to add those to the fringe. 
+
+53
+00:03:56,194 --> 00:04:01,114
+And when we select a node from the fringe 
+for expansion, we need to select the node 
+
+54
+00:04:01,114 --> 00:04:05,026
+with the lowest F value. 
+Since we will do both of these operations 
+
+55
+00:04:05,026 --> 00:04:08,997
+quite often during the search it is 
+important that these are cheap 
+
+56
+00:04:08,997 --> 00:04:12,272
+operations. 
+The good way to implement this is by 
+
+57
+00:04:12,272 --> 00:04:16,454
+means of a priority queue. 
+A priority queue maintains all the nodes 
+
+58
+00:04:16,454 --> 00:04:20,070
+in the fringe, in ascending order of 
+their F values. 
+
+59
+00:04:20,070 --> 00:04:25,430
+A priority queue can be implemented as a 
+binary tree, which means O adding a node 
+
+60
+00:04:25,430 --> 00:04:31,000
+and retreading the node with a lowest F 
+value has a algorithmic time complexity. 
+
+61
+00:04:32,240 --> 00:04:37,214
+The simplest Best-First search algorithm 
+is probably Greedy Best-First Search. 
+
+62
+00:04:37,214 --> 00:04:42,381
+This algorithm simply uses the heuristic 
+function defined for the problem as the 
+
+63
+00:04:42,381 --> 00:04:45,060
+evaluation function used by the 
+algorithm. 
+
+64
+00:04:45,060 --> 00:04:50,784
+Remember that the heuristic function is 
+problem specific and encodes the distance 
+
+65
+00:04:50,784 --> 00:04:55,811
+to the nearest goal node. Whereas the 
+evaluation function is not problem 
+
+66
+00:04:55,811 --> 00:05:01,186
+specific and is used by the algorithm to 
+determine which node to expand next. 
+
+67
+00:05:01,186 --> 00:05:06,003
+So the meaning of these two functions is 
+really completely different. 
+
+68
+00:05:06,003 --> 00:05:11,239
+But Greedy Best-First search simply 
+equates the two and uses the heuristic 
+
+69
+00:05:11,239 --> 00:05:14,730
+function to give us a search strategy 
+immediately. 
+
+70
+00:05:14,730 --> 00:05:20,503
+The result is an algorithm that always 
+expands the node that is closest to the 
+
+71
+00:05:20,503 --> 00:05:24,379
+goal node next. 
+The algorithm is called greedy because it 
+
+72
+00:05:24,379 --> 00:05:29,408
+always tries to take the largest chunk 
+out of the remaining distance to the 
+
+73
+00:05:29,408 --> 00:05:33,180
+nearest goal node. 
+It tries to get to the goal node in as 
+
+74
+00:05:33,180 --> 00:05:38,077
+few steps as possible, but since the 
+number of steps isn't necessarily the 
+
+75
+00:05:38,077 --> 00:05:42,048
+cost of a path, this is not necessarily 
+the optimal strategy. 
+
+76
+00:05:42,048 --> 00:05:47,209
+In fact, Greedy Best-First search often 
+gives us solutions that are far longer 
+
+77
+00:05:47,209 --> 00:05:50,820
+than the optimal path, and also far more 
+costly. 
+
+78
+00:05:50,820 --> 00:05:55,870
+So let's look at our touring Romania 
+problem to see how Greedy Best-First 
+
+79
+00:05:55,870 --> 00:05:59,556
+search works. 
+To remind you, the initial state was that 
+
+80
+00:05:59,556 --> 00:06:03,242
+we are in Arad. 
+Now suppose our goal state is to be in 
+
+81
+00:06:03,242 --> 00:06:07,269
+Bucharest, the capital. 
+The actions we have available are to 
+
+82
+00:06:07,269 --> 00:06:12,797
+drive along the arcs shown in this graph. 
+And each arc has an associated cost, and 
+
+83
+00:06:12,797 --> 00:06:15,664
+that is shown as a number next to the 
+arc. 
+
+84
+00:06:15,664 --> 00:06:20,510
+So from Arad, I could drive to these 
+three towns and the costs would be 
+
+85
+00:06:20,510 --> 00:06:26,640
+respectively this, this. 
+And this number. 
+
+86
+00:06:26,640 --> 00:06:30,583
+What we also need for greedy best first 
+search is a heuristic. 
+
+87
+00:06:30,583 --> 00:06:34,845
+And that's what we've got here. 
+The heuristic needs to estimate the 
+
+88
+00:06:34,845 --> 00:06:39,551
+distance to the nearest goal node. 
+And our goal node is to be in Bucharest. 
+
+89
+00:06:39,551 --> 00:06:43,813
+So we only have one goal node. 
+And on a map, we can use the straight 
+
+90
+00:06:43,813 --> 00:06:48,774
+line distance to estimate the distance to 
+the, to a different point on the map. 
+
+91
+00:06:48,774 --> 00:06:53,735
+So we will use the Euclidean distance 
+between two points on a two dimensional 
+
+92
+00:06:53,735 --> 00:06:57,087
+map. 
+The table you are looking at simply gives 
+
+93
+00:06:57,087 --> 00:07:01,660
+us the values of our heuristic function 
+for different nodes N. 
+
+94
+00:07:01,660 --> 00:07:06,527
+So, if the node N is Arad, the distance 
+would be 366 rounded. 
+
+95
+00:07:06,527 --> 00:07:10,067
+and so on. 
+For each city in our map, we have a 
+
+96
+00:07:10,067 --> 00:07:15,820
+straight line distance in this table. 
+And this is the value we will use as our 
+
+97
+00:07:15,820 --> 00:07:20,114
+heuristic value. 
+As is to be expected, the heuristic value 
+
+98
+00:07:20,114 --> 00:07:25,280
+for the goal note is zero. 
+Another feature of this heuristic is that 
+
+99
+00:07:25,280 --> 00:07:29,078
+it always underestimates the distance to 
+the goal. 
+
+100
+00:07:29,078 --> 00:07:34,015
+Let's look at a simple example here. 
+For example, we have figure S. 
+
+101
+00:07:34,015 --> 00:07:39,864
+Which, according to the heuristic, is 176 
+from the nearest goal node, Bucharest. 
+
+102
+00:07:39,864 --> 00:07:44,775
+But, going back to the map. 
+You can see that from Arad, it really 211 
+
+103
+00:07:44,775 --> 00:07:48,734
+from the goal node. 
+That is because roads don't tend to be 
+
+104
+00:07:48,734 --> 00:07:52,556
+straight lines. 
+In reality, it is probably something like 
+
+105
+00:07:52,556 --> 00:07:55,560
+this. 
+And that's a longer distance than what 
+
+106
+00:07:55,560 --> 00:07:59,041
+the heuristic gives us. 
+So the real distance is 211. 
+
+107
+00:07:59,041 --> 00:08:04,092
+But, going to the next slide again. 
+The estimated distance according to the, 
+
+108
+00:08:04,092 --> 00:08:09,052
+the heuristic, is 176, which is lower. 
+Another important observation here is 
+
+109
+00:08:09,052 --> 00:08:14,122
+that the heuristic presents us with 
+additional information to what we had in 
+
+110
+00:08:14,122 --> 00:08:17,415
+the original problem description given by 
+the map. 
+
+111
+00:08:17,415 --> 00:08:22,551
+There is no way you can compute the 
+values in this table from the information 
+
+112
+00:08:22,551 --> 00:08:25,910
+given in the map. 
+And of course this table presents 
+
+113
+00:08:25,910 --> 00:08:31,389
+problem-specific information. 
+Now, let us have a look at greedy first 
+
+114
+00:08:31,389 --> 00:08:35,329
+search in action. 
+What we see here is the initial state of 
+
+115
+00:08:35,329 --> 00:08:38,724
+the algorithm. 
+All the nodes you see are the fringe 
+
+116
+00:08:38,724 --> 00:08:42,161
+nodes, and there's only one node, of 
+course initially. 
+
+117
+00:08:42,161 --> 00:08:45,668
+Fringe nodes are shown in blue here. 
+That's the legend. 
+
+118
+00:08:45,668 --> 00:08:49,053
+And the node we select to expand next is 
+shown in red. 
+
+119
+00:08:49,053 --> 00:08:54,068
+So currently, there is no node selected. 
+Within each node, you see the name of the 
+
+120
+00:08:54,068 --> 00:08:56,827
+city, plus the heuristic value for that 
+node. 
+
+121
+00:08:56,827 --> 00:09:01,277
+Also, on the right hand side, you see 
+information about the depth of the 
+
+122
+00:09:01,277 --> 00:09:06,042
+different nodes in the search tree. 
+So the first thing the algorithm does is 
+
+123
+00:09:06,042 --> 00:09:10,493
+select a node from the fringe. 
+And since there is only one node, this is 
+
+124
+00:09:10,493 --> 00:09:15,501
+the one that's going to be selected. 
+Then the algorithm performs the goal test 
+
+125
+00:09:15,501 --> 00:09:18,777
+on this node. 
+Which will fail in this case, because 
+
+126
+00:09:18,777 --> 00:09:23,952
+this is not goal node.The next step then 
+is to generate the successors of this 
+
+127
+00:09:23,952 --> 00:09:27,644
+node. 
+So now, our initial state, Arad is no 
+
+128
+00:09:27,644 --> 00:09:31,514
+longer on the fringe. 
+But its three successors are now the new 
+
+129
+00:09:31,514 --> 00:09:34,511
+fringe. 
+This means we have to go through another 
+
+130
+00:09:34,511 --> 00:09:38,319
+iteration of our loop. 
+And the first step is to select a node 
+
+131
+00:09:38,319 --> 00:09:41,627
+from the fringe. 
+We do this according to the strategy. 
+
+132
+00:09:41,627 --> 00:09:45,872
+Which tells us we've got to select the 
+node with the lowest f value. 
+
+133
+00:09:45,872 --> 00:09:49,805
+So here, we have three nodes. 
+And the lowest f value is this one. 
+
+134
+00:09:49,805 --> 00:09:54,677
+So this is the one we will select next. 
+Again, there's no, it doesn't not pass 
+
+135
+00:09:54,677 --> 00:09:59,817
+the goal test, so we have to continue. 
+We generate the successors, and add these 
+
+136
+00:09:59,817 --> 00:10:02,955
+to the fringe. 
+You can see what we are doing here is 
+
+137
+00:10:02,955 --> 00:10:06,103
+tree search. 
+Because we've generated Arad again. 
+
+138
+00:10:06,103 --> 00:10:10,360
+So this node is the original node. 
+And we could go back there immediately. 
+
+139
+00:10:10,360 --> 00:10:14,557
+For most search problems, applying an 
+action, and then the reverse action 
+
+140
+00:10:14,557 --> 00:10:17,006
+immediately afterwards is not a good 
+idea. 
+
+141
+00:10:17,006 --> 00:10:21,670
+But let's continue with the algorithm. 
+So the next thing we have to do is select 
+
+142
+00:10:21,670 --> 00:10:24,819
+another node. 
+And we select the node with the lowest f 
+
+143
+00:10:24,819 --> 00:10:26,860
+value. 
+And here, that is Fagaras. 
+
+144
+00:10:26,860 --> 00:10:32,407
+Again this is not a goal node so we have 
+to expand it and add its two successors 
+
+145
+00:10:32,407 --> 00:10:36,174
+to the fringe. 
+Now we select a node from the fringe and 
+
+146
+00:10:36,174 --> 00:10:41,242
+the node with the lowest F value is 
+Bucharest and this time the goal test 
+
+147
+00:10:41,242 --> 00:10:46,814
+will toss so we finished with our search. 
+We can now extract the path to the goal 
+
+148
+00:10:46,814 --> 00:10:52,136
+node simply by going up from our goal 
+node, the one that we found through the 
+
+149
+00:10:52,136 --> 00:10:56,007
+tree, to the initial state and this is 
+our solution path. 
+
+150
+00:10:56,007 --> 00:10:59,740
+That's it, that's how a greedy best first 
+search works. 
+

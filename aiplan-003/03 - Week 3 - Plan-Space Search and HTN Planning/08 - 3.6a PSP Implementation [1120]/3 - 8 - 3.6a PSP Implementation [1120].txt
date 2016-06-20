@@ -1,0 +1,308 @@
+What you have just seen is the overview 
+of a generic plan space search planner. 
+The reason why we've looked for the 
+overview first is so that you can 
+recognize the generic search structure 
+that underlies this algorithm. 
+Now, we will look at some of the 
+implementation details that come with 
+this algorithm and that were hidden and 
+the function used by the generic 
+algorithm. 
+The first function used by the plan space 
+planner is the function that extracts the 
+Opengoals from a given plan. 
+And instead of computing these open 
+goals, afresh every time we go through 
+the loop, we will do this incrementally. 
+We start off with out initial plan pi 0, 
+that has just the 2 dummy actions in it 
+and goal. 
+And the question now is, what are the 
+unachieved sub goals in this initial 
+plan? And the answer is simply that these 
+are the gold conditions that are the 
+pre-conditions of the goal dummy act. 
+So our goal conditions from our planning 
+problem are our initial unachieved 
+sub-goals. 
+Then we have to modify the set when we do 
+one of two things. 
+When we add an action to the plan we have 
+add all the action's preconditions as 
+unachieved sub-goals to our set. 
+So we increase the set of unachieved 
+sub-goals every time we add an action to 
+our partial plan. 
+And when we add a causal link we decrease 
+the set of unachieved sub-goals. 
+And we decrease it by the preposition 
+that is now protected in this causal link 
+and is no longer unachieved. 
+This precondition of an action is not 
+supported by a casual link and is no 
+longer an unachieved sub goal.Next we 
+have to complete the threats that exist 
+in our current partial plan and again 
+we'll do this incrementally rather than 
+compute them every time we go Through the 
+loop. 
+And we start with our initial plan pi 0 
+that simply contains no threat. 
+So that is very easy to compute. 
+The other cases are a little more 
+complex. 
+New threats can be introduced into our 
+plan every time we add an action to our 
+plan. 
+So suppose we're adding our action A new 
+to our plan consisting of the usual 
+things. 
+Then what we have to do is follow this 
+procedure to check whether. 
+A new threat has been introduced with 
+this action. 
+The way we do this is we go through every 
+causal link that is currently in our 
+plan, and we have a loop variable here 
+that represents this causal link as going 
+from AI to AJ, protecting proposition P, 
+and for every such link we have to check 
+the following. 
+The first one is, we check whether our 
+new action is already ordered, before ai, 
+or after aj. 
+So if the new action, is before the 
+provider, or after the consumer, that 
+means it cannot be imparital, to our 
+causal link. 
+Which means, it cannot threaten that 
+causal link, and we can just simply, 
+continue with the loop, go to the next 
+link. 
+Otherwise that means the action can be in 
+parallel to our link. 
+It need necessarily but it can be. 
+And then we have to check every effect q 
+of our new action. 
+And if there is such an effect q that can 
+be unified with p such that q and ~p are 
+equal. 
+q and p are complimentary then and only 
+then is q of anew a threat for our causal 
+link. 
+Of course, this only applies if the 
+substitution is actually consistent with 
+out binding constraints. 
+So this was the case where a newly 
+introduced action may threaten an 
+existing causal link in our partial plan. 
+The other way where we can add new 
+threats to our partial plan is when we 
+add a causal link, from ai, to aj, 
+protecting proposition p, to our current 
+partial plan. 
+And when we add this new causal link to 
+the plan, 
+this may be threatened by any action that 
+is already in the plan. 
+So what we've got to do is, we've got to 
+loop over all the old actions in our plan 
+that already existed in our plan. 
+And check whether they pose of threat. 
+Again, if this existing action is either 
+before the provider or after the 
+consumer, then this action cannot be a 
+threat. 
+And there's a third condition here, 
+namely that our existing action is the 
+consumer in our causal link. 
+Of course, the consumer of a causal link 
+cannot threaten that causal link. 
+So, if one of these three conditions 
+hold, we can go on to the next action 
+because this Existing action we're 
+currently observing cannot possibly be a 
+threat to the newly introduced causal 
+link. 
+Otherwise, we have to observe all the 
+effects of our existing action, and do 
+what we did before. 
+We've got to see whether this is 
+unifiable with our protected proposition, 
+and if this is the case, if these two can 
+be made complimentary by some 
+substitution that is consistent with our 
+binding constraints, then we have the 
+case where we effect q of our existing 
+action a old threatens are newly 
+introduced causal link from ai to aj 
+protecting proposition p. 
+In summary, we have no threats initially 
+but every time we add an action to the 
+plan that means we can threaten an 
+existing causal link with this new action 
+and every time we add a causal link to 
+this plan to the partial plan then this 
+may be threatened by an existing action 
+that is already in the plan. 
+Now that we have detected the two types 
+of potential flaws that can exist in a 
+partial plan we need to look at the 
+function that can remove these flaws and 
+this is this function here getResolvers, 
+the Resolver is a way of removing a flaw 
+from a plan. 
+And we will first look at the flaw that 
+is an unachieved precondition in our 
+partial plan. 
+And we will consider the precondition p 
+of action ag. 
+And there are two principal ways in which 
+this type of flaw can be removed from the 
+plan and in which way can be resolved 
+namely by adding a causal link and by 
+adding a new action and a causal link. 
+Let's start with the causal link along. 
+This is a causal link to an existing 
+action so what we going to do is see 
+whether there is an existing action in 
+our plan , so we go through all our 
+existing actions in the plan to check 
+whether there can be a provider for this 
+unsupported pre-condition. 
+The first condition then is that we have 
+to make sure that our existing action can 
+be ordered before the consumer, and the 
+consumer, of course, is ag in this case. 
+So, if our existing action is the 
+consumer, or it is already ordered after 
+the consumer, then we cannot use it as a 
+provider, because it cannot come before 
+the consumer, so we can just consider the 
+next action. 
+Otherwise, if it may come before the 
+consumer, then we've got to check every 
+effect q, of our existing action, to see 
+whether this can be used as a provider. 
+And again, what we do, is we try to find 
+the substitution, consistent with our 
+variable binding constraints such that p 
+and q are equal. 
+If we can find such a substitution, then 
+adding a causal link to our plan, is a 
+resolver for this thread. 
+And the causal link we need to add is, 
+from our currently existing action, to 
+our consumer, protecting the link sigma 
+of p. 
+So we instantiate our proposition with 
+the substitution we just found. 
+This was the case where we used an 
+existing action in our plan to provide 
+support for an unachieved precondition. 
+The alternative is, of course, that we 
+introduce a new action into our plan that 
+supports our unachieved precondition. 
+And to check whether this is possible, 
+we've got to loop over all the operators 
+in our planning domain and check every 
+effect q of every operator to see whether 
+this can be used as a provider The first 
+step is, that we look for a substitution 
+sigma, that makes p and q equal. 
+Note that we don't have to worry about 
+the variable binding constraints in this 
+case, because all the variables in q, 
+that we've just introduced with the new 
+operator, are of course new variables, 
+and have no bindings yet. 
+If we find such an operator, then we use 
+an instance of this operator as a new 
+action in our plan. 
+So this is the new action we need to add 
+to the plan. 
+And we also need to add a causal link to 
+the plan and this causal link consists 
+of. 
+The link from a new, the provider, the 
+action we just introduced, to our 
+consumer, ag. 
+And again we protect the condition sigma 
+of p, the instantiated proposition, that 
+is an unachieved pre-condition of a g. 
+And these two things together, provide 
+our result for. 
+So if our flaw is an unachieved 
+precondition. 
+we can remove this flaw by either adding 
+a cause link from an existing action or 
+we add a new action and a causal link 
+from that new action to our unachieved 
+precondition. 
+Now lets look at the case, where we have 
+an action at, that is threatening a 
+causal link ai to aj, protecting 
+proposition p. 
+And lets see how we can getResolvers, 
+that remove this type of flaw from our 
+partial plan. 
+For an action to be a threat to a cause 
+link it must be at least potentially in 
+parallel to that cause link so one way to 
+remove this type of flaw is to simply 
+order the action either before or after 
+the cause link, And we can order the 
+action before the threatened link under 2 
+conditions. 
+The 1st 1 is that the threat must not be 
+the provider and the 2nd is that it must 
+not be already after the consumer. 
+If neither of these 2 holds, then we can 
+add an ordering at before ai and that is 
+a resolver for our threat. 
+The other ordering that resolves this 
+threat, is to have the action come after 
+the causal link or the causal link before 
+the action. 
+However, if our threatening action is the 
+provider in our causal link, then we 
+cannot use it. 
+Or similarly, if the action is already 
+ordered before the provider, then we 
+cannot order it after the causal link. 
+In all other cases, 
+ordering or threatening action after the 
+consumer is a resolver for this type of 
+flaw. 
+The other way in which this type of flaw 
+can be resolved is to add variable 
+bindings such that the unifications that 
+we computed earlier will fail. 
+And here is how we can do that. 
+Remember it is the effect q that 
+threatens our proposition p here, so what 
+we do is we go through every variable v 
+that occurs in p or q and try to make the 
+unification fail on that variable. 
+So if we computed earlier our 
+substitution of v must be a specific 
+value, sigma of v, then. 
+Asserting that our variable v must not 
+have this value is, of course, a 
+potential resolver, but it is only a 
+resolver if this is consistent with the 
+variable bindings currently in our 
+partial plan. 
+If it is consistent, then this is a 
+resolver. 
+Adding this variable binding constraint 
+is a resolver for our flaw. 
+In summary threads can be removed from a 
+plan by either ordering the threatening 
+action before or after the cause of the 
+link or extending the variable bindings 
+such such that unification of the 
+offending effect and the protected 
+proposition fail. 
+

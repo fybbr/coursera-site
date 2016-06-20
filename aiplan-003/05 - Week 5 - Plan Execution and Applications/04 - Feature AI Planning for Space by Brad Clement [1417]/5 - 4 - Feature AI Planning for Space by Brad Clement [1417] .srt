@@ -1,0 +1,949 @@
+1
+00:00:00,012 --> 00:00:03,753
+>> Hi, I'm Brad Clement.
+I'm going to talk about Artificial
+
+2
+00:00:03,753 --> 00:00:08,986
+Intelligence for Space Applications.
+I worked for the NASA Jet Propulsion
+
+3
+00:00:08,986 --> 00:00:12,707
+Laboratory.
+Jpl was a lead US center for robotic space
+
+4
+00:00:12,707 --> 00:00:18,339
+exploration and has space-based programs
+in the earth sciences and astronomy.
+
+5
+00:00:18,340 --> 00:00:23,084
+Jpl Spacecraft have visited every planet
+of the solar system.
+
+6
+00:00:23,084 --> 00:00:28,230
+This is an aerial view of JPL.
+You can visit JPL's mission control room
+
+7
+00:00:28,230 --> 00:00:33,734
+where you can see missions uploading
+commands to their spacecraft using the
+
+8
+00:00:33,734 --> 00:00:38,291
+Deep Space Network.
+You can also go to the MarsYard and try to
+
+9
+00:00:38,291 --> 00:00:43,756
+scare the rover with loud noises.
+>> So why would a space mission want
+
+10
+00:00:43,756 --> 00:00:47,065
+automated planning?
+There's several reasons.
+
+11
+00:00:47,065 --> 00:00:52,526
+Spacecraft are complex and expensive.
+Part of that expense is rocket fuel, the
+
+12
+00:00:52,526 --> 00:00:56,094
+launch.
+The bigger the spacecraft, the more rocket
+
+13
+00:00:56,094 --> 00:00:58,036
+fuel.
+So cost limits mass.
+
+14
+00:00:58,037 --> 00:01:02,926
+Well, mass limits power, because of the
+size of solar rays and if you limit power,
+
+15
+00:01:02,926 --> 00:01:07,291
+you limit communication signal strength
+which restricts bandwidth.
+
+16
+00:01:07,291 --> 00:01:12,401
+And bandwidth is critical resource for
+spacecraft because oftentimes, it collect
+
+17
+00:01:12,401 --> 00:01:15,933
+data a lot more quickly than you can send
+it back to earth.
+
+18
+00:01:15,934 --> 00:01:21,702
+So, these limitations and the complexity
+of the spacecraft subsystems, will capture
+
+19
+00:01:21,702 --> 00:01:26,186
+many rules and constraints for operating
+the spacecraft safely.
+
+20
+00:01:26,186 --> 00:01:31,169
+This complexity can be overwhelming for
+science and operation staff, thus
+
+21
+00:01:31,169 --> 00:01:36,283
+operations are also expensive.
+And spacecraft have a limited lifetime, so
+
+22
+00:01:36,283 --> 00:01:41,587
+inefficient use of the spacecraft can
+reduce the value of the entire mission.
+
+23
+00:01:41,587 --> 00:01:46,431
+Also, mistakes can be disastrous.
+Automation promises to reduce complexity
+
+24
+00:01:46,431 --> 00:01:50,945
+of operation, avoid human error, thus
+reducing mission cost and risk.
+
+25
+00:01:50,945 --> 00:01:56,217
+That's not the only reason for planning.
+For a space mission, everything needs to
+
+26
+00:01:56,217 --> 00:02:01,365
+be thought out in advance, because, once
+the spacecraft is launched, you can't
+
+27
+00:02:01,365 --> 00:02:06,382
+replace the battery or add more memory.
+In addition, communication signals can
+
+28
+00:02:06,382 --> 00:02:10,802
+take minutes to hours to reach the
+spacecraft And communication is not always
+
+29
+00:02:10,802 --> 00:02:13,689
+available.
+So, the spacecraft needs to be able to
+
+30
+00:02:13,689 --> 00:02:17,222
+receive a batch of commands and be able to
+operate on its own.
+
+31
+00:02:17,222 --> 00:02:21,613
+You can't joystick the spacecraft.
+This requires predicting what's going to
+
+32
+00:02:21,613 --> 00:02:24,970
+happen.
+Well, if the environment is unpredictable,
+
+33
+00:02:24,970 --> 00:02:29,484
+then the spacecraft should be able to
+operate on their own and be able to do
+
+34
+00:02:29,484 --> 00:02:34,140
+their own prediction, their own plan.
+So, automate planning not only helps
+
+35
+00:02:34,140 --> 00:02:39,180
+scientists in operations planning, but
+also enable spacecraft to operate on their
+
+36
+00:02:39,180 --> 00:02:44,132
+own in a predictable environment.
+For these reasons, automated planning has
+
+37
+00:02:44,132 --> 00:02:48,932
+been used by science and operations
+planning to figure out what to do and when
+
+38
+00:02:48,932 --> 00:02:51,771
+to do it.
+And it has been used for autonomously
+
+39
+00:02:51,771 --> 00:02:55,937
+commanding a spacecraft.
+Planning has been used to figure out how
+
+40
+00:02:55,937 --> 00:03:00,031
+to manipulate solar rays from an
+International Space Station.
+
+41
+00:03:00,031 --> 00:03:04,720
+It's even been used for project management
+for the construction of rockets.
+
+42
+00:03:04,720 --> 00:03:07,646
+So what's challenging about, about space
+applications?
+
+43
+00:03:07,646 --> 00:03:10,684
+Scale is one of them.
+You could have a schedule with tens of
+
+44
+00:03:10,684 --> 00:03:14,742
+thousands of activities, tens of hundreds
+of statement resource variables.
+
+45
+00:03:14,742 --> 00:03:17,403
+And model [unknown] resources can be
+complex too.
+
+46
+00:03:17,403 --> 00:03:21,253
+There's a conflex interaction between
+solar rays and the battery in power
+
+47
+00:03:21,253 --> 00:03:25,067
+availability.
+Temperature is difficult to model and how
+
+48
+00:03:25,067 --> 00:03:29,301
+would you model a fall system.
+Well, you might be able to model how the
+
+49
+00:03:29,301 --> 00:03:33,994
+spacecraft works, but can you produce
+schedules that the user really wants?
+
+50
+00:03:33,994 --> 00:03:37,032
+Sometimes the user can't tell you what
+they want.
+
+51
+00:03:37,032 --> 00:03:41,673
+Also, can you gurantee every plan that
+comes out of your playing system is going
+
+52
+00:03:41,673 --> 00:03:44,961
+to be saved properly and won't crash the
+spacecraft?
+
+53
+00:03:44,961 --> 00:03:50,001
+On board the spacecraft, the CPU is about
+a thousand times slower than your desktop.
+
+54
+00:03:50,001 --> 00:03:54,831
+I'll briefly describe the history of AI
+planning in space applications, some of
+
+55
+00:03:54,831 --> 00:03:58,181
+the planners and their deployments
+spanning 30 years.
+
+56
+00:03:58,181 --> 00:04:02,743
+In the early '70s, JPL began designing the
+Mars Rover and recognize that the rover
+
+57
+00:04:02,743 --> 00:04:06,488
+would need planning capabilities.
+That's about the time JPL began
+
+58
+00:04:06,488 --> 00:04:09,910
+researching planning.
+In the early 1980s, the DEVISER planner
+
+59
+00:04:09,910 --> 00:04:14,005
+was used for activity planning for the
+Voyager mission and its encounter with
+
+60
+00:04:14,005 --> 00:04:16,693
+Uranus.
+But many of the planners from the 80s and
+
+61
+00:04:16,693 --> 00:04:20,847
+90s is written in the functional
+programming language Lisp and inherited
+
+62
+00:04:20,847 --> 00:04:25,403
+traits from the Nonlin planner, such as
+partial order planning, subgoaling, and
+
+63
+00:04:25,403 --> 00:04:28,692
+backward chaining.
+This is done by starting out with the
+
+64
+00:04:28,692 --> 00:04:32,752
+goals and the plans, which is the one at
+the bottom of the page, and then
+
+65
+00:04:32,752 --> 00:04:36,510
+establishing those goals with the effects
+from other actions.
+
+66
+00:04:36,510 --> 00:04:41,918
+And then establishing the preconditions of
+those actions through the effects of other
+
+67
+00:04:41,918 --> 00:04:46,246
+actions, thus building the plan from the
+initial state to the goals.
+
+68
+00:04:46,246 --> 00:04:49,821
+The new thing the DEVISER brought was time
+windows.
+
+69
+00:04:49,821 --> 00:04:54,707
+The reason about metric time, concurrency
+in the form of simple temporal
+
+70
+00:04:54,707 --> 00:05:00,387
+constraints, where time points vary within
+some ranging or constrained to be within
+
+71
+00:05:00,387 --> 00:05:04,972
+some range of each other.
+Plan-it has been built as an improvement
+
+72
+00:05:04,972 --> 00:05:08,077
+on DEVISER.
+As you can see, it's been used in a wide
+
+73
+00:05:08,077 --> 00:05:12,993
+variety of applications over the years.
+One thing that it did differently is it
+
+74
+00:05:12,993 --> 00:05:17,884
+started to model resources explicitly in
+the language, and, it also took a local
+
+75
+00:05:17,884 --> 00:05:21,496
+search approach called heuristic,
+iterative repair.
+
+76
+00:05:21,496 --> 00:05:26,304
+The problem with building up a plan like a
+partial order is that you can spend a long
+
+77
+00:05:26,304 --> 00:05:30,963
+time trying to figure out the solution and
+then be left with just a partial plan.
+
+78
+00:05:30,963 --> 00:05:35,257
+The great thing about local search
+approach is you always have some schedule
+
+79
+00:05:35,257 --> 00:05:38,962
+that you're working with.
+It may have conflict and flaws on it, but
+
+80
+00:05:38,962 --> 00:05:43,317
+you're iteratively working on the same
+schedule, that way you don't have, have
+
+81
+00:05:43,317 --> 00:05:47,806
+problems with growing memory and you have
+a best effort solution or in any type of
+
+82
+00:05:47,806 --> 00:05:50,634
+solution.
+A couple of years after planning was
+
+83
+00:05:50,634 --> 00:05:55,324
+scheduled for the Deep Space Network,
+British National Space Centre launched a
+
+84
+00:05:55,324 --> 00:06:00,504
+technology-proven satellite project under
+which the T-SCHED scheduler generated a 24
+
+85
+00:06:00,504 --> 00:06:05,116
+hour plan that was uploaded and executed
+live on board UoSAT-II satellite.
+
+86
+00:06:05,116 --> 00:06:08,768
+You'll hear me mix the words planning and
+scheduling.
+
+87
+00:06:08,768 --> 00:06:11,856
+Scheduling is implicitly a part of
+planning.
+
+88
+00:06:11,856 --> 00:06:17,520
+Planning is about figuring out what to do,
+scheduling is about figuring out when to
+
+89
+00:06:17,520 --> 00:06:22,193
+do it and what resources to use.
+A Spike scheduler is in use by several
+
+90
+00:06:22,193 --> 00:06:27,053
+missions, most notably the great
+observatories, like the Hubble Space
+
+91
+00:06:27,053 --> 00:06:30,487
+Telescope.
+Spike takes a different approach than the
+
+92
+00:06:30,487 --> 00:06:34,848
+other planes we were talked about.
+It represents a schedule and problems
+
+93
+00:06:34,848 --> 00:06:39,472
+constraint optimization, like a system of
+equations that needs to solve for.
+
+94
+00:06:39,472 --> 00:06:43,880
+Then it has three main stages, a trial
+assignment, repair where it tries to
+
+95
+00:06:43,880 --> 00:06:48,365
+resolve complex observations.
+You're going to [unknown] stage, where it
+
+96
+00:06:48,365 --> 00:06:52,289
+removes the activities or it relaxes
+constraints of something.
+
+97
+00:06:52,289 --> 00:06:57,332
+With the Hubble Space Telescope, Spike
+schedules an entire year at the resolution
+
+98
+00:06:57,332 --> 00:07:00,665
+of a minute.
+That's between 10,000 and 30,000
+
+99
+00:07:00,665 --> 00:07:04,678
+observations.
+And its user-authorizing, because it has
+
+100
+00:07:04,678 --> 00:07:10,038
+constraints which span several months,
+such as you can't take an observation of
+
+101
+00:07:10,038 --> 00:07:13,053
+the same target within 2 months of
+another.
+
+102
+00:07:13,053 --> 00:07:18,526
+The Optimum-AIV planner was developed by
+the European Space Agency for the Assembly
+
+103
+00:07:18,526 --> 00:07:23,454
+Integration and Verification of the
+vehicle equipment bays for the Ariane 4
+
+104
+00:07:23,454 --> 00:07:26,450
+rockets.
+Like Spike, it treats the plane
+
+105
+00:07:26,450 --> 00:07:30,791
+[inaudible] problem with resource in
+temporal constraints.
+
+106
+00:07:30,791 --> 00:07:34,458
+However, it's [inaudible] is similar to
+DEVISERS and planets.
+
+107
+00:07:34,458 --> 00:07:39,292
+The Remote Agent Experiment was the first
+to demonstrate planning and executions on
+
+108
+00:07:39,292 --> 00:07:42,936
+board a spacecraft.
+There are three main list components that
+
+109
+00:07:42,936 --> 00:07:46,503
+autonomously operate at the Deep Space 1
+mission for 2 days.
+
+110
+00:07:46,503 --> 00:07:51,274
+Nasa Ames Research Center is responsible
+for the planner[SOUND]cheduler and the
+
+111
+00:07:51,274 --> 00:07:54,821
+mode identification reconfiguration called
+Livingstone.
+
+112
+00:07:54,821 --> 00:07:57,473
+Jpl will develop the EXEC, smart
+executive.
+
+113
+00:07:57,473 --> 00:08:02,159
+In simulation it also demonstrated the
+response to unexpected events while on
+
+114
+00:08:02,159 --> 00:08:04,551
+board.
+This is a common integration of
+
+115
+00:08:04,551 --> 00:08:07,749
+components.
+The planner[SOUND]cheduler is at the top
+
+116
+00:08:07,749 --> 00:08:12,441
+with the Liberty player, underneath is
+monitoring and execution, at the bottom is
+
+117
+00:08:12,441 --> 00:08:15,361
+the actual actuators, and the hardware or
+robot.
+
+118
+00:08:15,361 --> 00:08:20,196
+Sensor and state information typically
+flow up the layers and commands flow down.
+
+119
+00:08:20,196 --> 00:08:25,722
+The Earth Observing-1 spacecraft has been
+operated by autonomous planning since
+
+120
+00:08:25,722 --> 00:08:29,130
+2004.
+Eo1 participates in main space networks
+
+121
+00:08:29,130 --> 00:08:34,460
+through the aqua spacecraft is downlinking
+images as usual, and one of them is
+
+122
+00:08:34,460 --> 00:08:39,790
+detected to have changed since the last
+time it was finished by software on the
+
+123
+00:08:39,790 --> 00:08:43,140
+ground.
+This software signals EO1 to span a high
+
+124
+00:08:43,140 --> 00:08:48,552
+resolution image goal for its schedule the
+time, it's planner reschedules its
+
+125
+00:08:48,552 --> 00:08:53,800
+activities, so then it can smooth the
+spacecraft and get the image on its next
+
+126
+00:08:53,800 --> 00:08:57,544
+pass enabling a quicker response to this
+forest fire.
+
+127
+00:08:57,544 --> 00:09:02,091
+That was CASPER on board EO1.
+This is this continual version of ASPEN
+
+128
+00:09:02,091 --> 00:09:07,632
+JPL stochastic iterative repair planner.
+It's the first planner we talked about
+
+129
+00:09:07,632 --> 00:09:10,952
+that's not written in Lisp, but instead,
+C++.
+
+130
+00:09:10,952 --> 00:09:15,176
+Casper is also part of the Autonomous
+Sciencecraft Experiment that's on board
+
+131
+00:09:15,176 --> 00:09:17,410
+EO1.
+This also includes machine learning
+
+132
+00:09:17,410 --> 00:09:21,442
+algorithms that were used for detecting
+different kinds of phenomena in the
+
+133
+00:09:21,442 --> 00:09:24,029
+images.
+In this case, screening out images that
+
+134
+00:09:24,029 --> 00:09:26,508
+recorded clouds instead of the actual
+target.
+
+135
+00:09:26,508 --> 00:09:31,134
+Here, it notices that there's a difference
+in images, triggering it to take another
+
+136
+00:09:31,134 --> 00:09:35,666
+high resolution image of the target on
+which they discovered volcanic activity.
+
+137
+00:09:35,666 --> 00:09:40,429
+That's going to save the MAMM, EO1, and
+DARPA Orbital Express missions millions of
+
+138
+00:09:40,429 --> 00:09:43,245
+dollars.
+It's currently being used to schedule
+
+139
+00:09:43,245 --> 00:09:45,866
+ground antennas for the Deep Space
+Network.
+
+140
+00:09:45,866 --> 00:09:50,771
+Proba-1, the first in a series of several
+autonomy missions demonstrated on board
+
+141
+00:09:50,771 --> 00:09:54,752
+scheduling resource management.
+That saying, this Europa planner is
+
+142
+00:09:54,752 --> 00:09:59,030
+evolved from the planner[SOUND]cheduler
+used in the Remote Agent Experiment now
+
+143
+00:09:59,030 --> 00:10:02,088
+written in C++.
+Its constraint programming approach to
+
+144
+00:10:02,088 --> 00:10:06,696
+planning and scheduling and, as before, it
+does not differentiate between action and
+
+145
+00:10:06,696 --> 00:10:09,480
+states.
+Treat them both as variables with temporal
+
+146
+00:10:09,480 --> 00:10:13,482
+extent, and like most other planar, it's
+language is object oriented, this is very
+
+147
+00:10:13,482 --> 00:10:16,111
+convenient for representing large problem
+domains.
+
+148
+00:10:16,111 --> 00:10:20,351
+And it has its own CLIP-based interactive
+development environments and is integrated
+
+149
+00:10:20,351 --> 00:10:23,889
+with SPIFe, the human centered planing
+tool which that used for many NASA
+
+150
+00:10:23,889 --> 00:10:26,808
+missions.
+This part of MAPGEN built to help the Mars
+
+151
+00:10:26,808 --> 00:10:31,293
+Exploration Rover mission pack more
+activities into their plans increasing
+
+152
+00:10:31,293 --> 00:10:34,447
+their efficiency.
+It's also been used to plan out the
+
+153
+00:10:34,447 --> 00:10:38,286
+movement and orientation of solar arrays
+for the space station.
+
+154
+00:10:38,286 --> 00:10:43,053
+European Space Agency, MEXAR and RAXEM
+planners were used for uplink and downlink
+
+155
+00:10:43,053 --> 00:10:47,469
+planning for the Mars Express mission
+where they reduce planning effort and
+
+156
+00:10:47,469 --> 00:10:52,692
+increase science return.
+So what does the future hold for AI
+
+157
+00:10:52,692 --> 00:10:59,060
+planning for space?
+Well, how about making rovers autonomous?
+
+158
+00:10:59,060 --> 00:11:05,174
+Turns out that the rovers already use AI
+style path planning.
+
+159
+00:11:05,174 --> 00:11:10,637
+As you'll see, rover navigation is very
+sophisticated.
+
+160
+00:11:13,205 --> 00:11:22,699
+[music].
+[music].
+
+161
+00:11:27,329 --> 00:11:41,118
+Class, today's lesson is autonomous way
+point navigation in natural terrain.
+
+162
+00:11:41,118 --> 00:11:52,003
+This is your designated goal location.
+First, watch this video to learn how it's
+
+163
+00:11:52,003 --> 00:11:56,478
+done.
+There are ongoing efforts at JPL to make
+
+164
+00:11:56,478 --> 00:12:04,007
+rovers autonomous in different ways.
+One effort, AEGIS, integrates planning,
+
+165
+00:12:04,007 --> 00:12:10,142
+machine learning, and science knowledge.
+But rovers do not yet use autonomous
+
+166
+00:12:10,142 --> 00:12:12,846
+planning.
+Other parts of AEGIS in use by MER so are
+
+167
+00:12:12,846 --> 00:12:17,266
+constantly discovering and investigate
+high valued science targets during one
+
+168
+00:12:17,266 --> 00:12:24,110
+traverse.
+There are wide variety of other
+
+169
+00:12:24,110 --> 00:12:40,187
+applications and challenges that require
+research and planning like human robot
+
+170
+00:12:40,187 --> 00:12:46,811
+exploration teams.
+Tele-operated robots, mission and vehicle
+
+171
+00:12:46,811 --> 00:12:51,348
+design, robotic instruction habitats.
+Other than the rover, there are other
+
+172
+00:12:51,348 --> 00:12:55,688
+kinds of planetary exploration vehicles
+that [inaudible] need to handle
+
+173
+00:12:55,688 --> 00:13:00,504
+uncertainty brought by weather or ocean
+currents, like aerobots or hydrobots.
+
+174
+00:13:00,504 --> 00:13:05,842
+Planning is also apart of research in
+related fields, such as testing,
+
+175
+00:13:05,842 --> 00:13:11,328
+verification, and validation.
+For example, what are good scenarios to
+
+176
+00:13:11,328 --> 00:13:13,760
+test?
+What are good test cases?
+
+177
+00:13:13,760 --> 00:13:19,467
+And how should they be ordered to more
+quickly find bugs or other problems?
+
+178
+00:13:19,467 --> 00:13:24,784
+Over the past 30 years, AI planning has
+shown its value in many ways.
+
+179
+00:13:24,785 --> 00:13:28,052
+But still, very few missions actually take
+advantage of it.
+
+180
+00:13:28,052 --> 00:13:32,673
+There are unlimited number of applications
+and opportunities where AI planning can
+
+181
+00:13:32,673 --> 00:13:36,031
+make a big impact.
+There are many demonstrations of automated
+
+182
+00:13:36,031 --> 00:13:39,694
+planning, but few are operational.
+In order for AI planning to gain
+
+183
+00:13:39,694 --> 00:13:44,116
+widespread acceptance, we need to make it
+easier to hand off automated planning
+
+184
+00:13:44,116 --> 00:13:48,659
+systems to the domain experts and take the
+algorithm experts out of the, the loop.
+
+185
+00:13:48,659 --> 00:13:51,715
+User interface design is key for solving
+this problem.
+
+186
+00:13:51,715 --> 00:13:55,491
+Farther in the future, there are many
+mission concepts that will need
+
+187
+00:13:55,491 --> 00:13:59,976
+capabilities that deployed planners do not
+have today including reasoning about
+
+188
+00:13:59,976 --> 00:14:03,160
+uncertainty.
+There are many areas of planning research
+
+189
+00:14:03,160 --> 00:14:06,547
+that can have a great impact on a wide
+range of applications.
+
+190
+00:14:06,548 --> 00:14:13,193
+I hope you found this information helpful.
+Thank you for your attention.

@@ -1,0 +1,744 @@
+1
+00:00:04,440 --> 00:00:09,821
+Now, we have seen what the strips 
+representation for world states looks 
+
+2
+00:00:09,821 --> 00:00:13,078
+like. 
+The internal structure is represented as 
+
+3
+00:00:13,078 --> 00:00:17,609
+a set of ground atoms. 
+Where each atom expresses a relation that 
+
+4
+00:00:17,609 --> 00:00:22,778
+must hold between objects in the domain. 
+The next step, then, is to look at 
+
+5
+00:00:22,778 --> 00:00:28,017
+operators with internal structure. 
+And actions that are instances of these 
+
+6
+00:00:28,017 --> 00:00:31,487
+operators. 
+Remember that actions are what give us 
+
+7
+00:00:31,487 --> 00:00:35,240
+the state transitions in our state 
+transition system. 
+
+8
+00:00:36,920 --> 00:00:40,921
+For states I started with some examples 
+and some informal definitions and 
+
+9
+00:00:40,921 --> 00:00:45,301
+followed this with the formal dentition 
+of what a strips representation state is. 
+
+10
+00:00:45,301 --> 00:00:47,788
+For operators I'll do it the other way 
+around. 
+
+11
+00:00:47,788 --> 00:00:51,800
+I will start with the formal definition 
+of what a strips operator is. 
+
+12
+00:00:51,800 --> 00:00:56,300
+A planning operator in the strips 
+representation is simply a triple, so 
+
+13
+00:00:56,300 --> 00:00:59,088
+means it consists of three different 
+things. 
+
+14
+00:00:59,088 --> 00:01:03,778
+A name, the name of the operator, the 
+preconditions of the operator, and the 
+
+15
+00:01:03,778 --> 00:01:07,772
+effects of the operator. 
+The name of the operator, the name that 
+
+16
+00:01:07,772 --> 00:01:12,273
+we can use to refer to this operator, is 
+simply given by this syntactic 
+
+17
+00:01:12,273 --> 00:01:15,442
+expression. 
+So it consists of a unique name symbol 
+
+18
+00:01:15,442 --> 00:01:18,105
+that we can use to refer to this 
+operator. 
+
+19
+00:01:18,105 --> 00:01:22,796
+It must be unique to this operator, 
+meaning no other operator can have the 
+
+20
+00:01:22,796 --> 00:01:26,156
+same symbol. 
+And it consists of some parameters which 
+
+21
+00:01:26,156 --> 00:01:30,150
+characterize the objects that are 
+manipulated by this operator. 
+
+22
+00:01:30,150 --> 00:01:35,598
+These objects are defined as variables 
+for an operator as an operator is 
+
+23
+00:01:35,598 --> 00:01:39,106
+generic. 
+They may also be typed if we are using 
+
+24
+00:01:39,106 --> 00:01:44,182
+the types extension in PDDL. 
+The components that define the internal 
+
+25
+00:01:44,182 --> 00:01:49,407
+structure of an operator are the 
+preconditions, and the effects of the 
+
+26
+00:01:49,407 --> 00:01:52,990
+operator. 
+And both of these are sets of literals. 
+
+27
+00:01:52,990 --> 00:01:57,790
+Remember that a literal is either a 
+positive or a negative atom. 
+
+28
+00:01:57,790 --> 00:02:02,665
+So, a relation between objects. 
+Where the objects are named by the 
+
+29
+00:02:02,665 --> 00:02:06,790
+variable given in the operator name. 
+X1 through xk here. 
+
+30
+00:02:06,790 --> 00:02:12,490
+The preconditions are simply those 
+literals that we want to be satisfied in 
+
+31
+00:02:12,490 --> 00:02:17,897
+the state before we execute an action. 
+The effects are the things that are true 
+
+32
+00:02:17,897 --> 00:02:22,326
+after we've executed an action. 
+Again, the effects can be literals, which 
+
+33
+00:02:22,326 --> 00:02:27,254
+means they can be positive or negative, 
+and traditionally the positive literals 
+
+34
+00:02:27,254 --> 00:02:32,432
+that are effects are often referred to as 
+the ad list, as this is something that is 
+
+35
+00:02:32,432 --> 00:02:37,610
+asserted in the new state after an action 
+is applied, and the negative literals are 
+
+36
+00:02:37,610 --> 00:02:41,790
+referred to as the delete list as these 
+are removed from the state. 
+
+37
+00:02:41,790 --> 00:02:47,287
+An operator is generic in the sense that 
+it only specifies what is manipulated by 
+
+38
+00:02:47,287 --> 00:02:51,712
+the operator, as variables. 
+An action, on the other hand, is specific 
+
+39
+00:02:51,712 --> 00:02:55,533
+because there's a ground instance of a 
+planning operator. 
+
+40
+00:02:55,533 --> 00:03:00,628
+So if we take all the variables and 
+choose values, objects in our domain, for 
+
+41
+00:03:00,628 --> 00:03:04,114
+these variables, then our operator 
+becomes an action. 
+
+42
+00:03:04,114 --> 00:03:09,478
+And of course, there can be many actions 
+that are instances of the same operator 
+
+43
+00:03:09,478 --> 00:03:15,438
+in our planning domain. 
+Now, here are some examples of operators 
+
+44
+00:03:15,438 --> 00:03:21,576
+defined for the dock worker robot domain. 
+The first example we will look at is the 
+
+45
+00:03:21,576 --> 00:03:25,207
+move operator. 
+Move is the symbol that identifies this 
+
+46
+00:03:25,207 --> 00:03:29,375
+operator, and the name of the operator is 
+given by all of this. 
+
+47
+00:03:29,375 --> 00:03:33,275
+This expression here. 
+Namely, the symbol that identifies it 
+
+48
+00:03:33,275 --> 00:03:37,712
+plus the three variables that are used to 
+identify its parameters. 
+
+49
+00:03:37,712 --> 00:03:43,091
+And these are a robot and two locations. 
+The location we are moving from and the, 
+
+50
+00:03:43,091 --> 00:03:47,730
+the location we are moving to. 
+Then, the internal structure is defined 
+
+51
+00:03:47,730 --> 00:03:52,628
+by preconditions and effects. 
+There are two positive pre-conditions in 
+
+52
+00:03:52,628 --> 00:03:56,182
+this example. 
+Namely that the two locations when moving 
+
+53
+00:03:56,182 --> 00:04:00,252
+between must be adjacent. 
+The location when moving from must be 
+
+54
+00:04:00,252 --> 00:04:02,965
+adjacent to the location we are moving 
+to. 
+
+55
+00:04:02,965 --> 00:04:07,875
+And the robot R, the robot that we are 
+moving must be at the location we are 
+
+56
+00:04:07,875 --> 00:04:11,054
+starting from. 
+And then we have one negative 
+
+57
+00:04:11,054 --> 00:04:15,740
+precondition and that is given here. 
+This is simply the symbol for negation, 
+
+58
+00:04:15,740 --> 00:04:20,364
+that's the NOT symbol in logic. 
+the negative precondition here says the 
+
+59
+00:04:20,364 --> 00:04:25,300
+location m we are moving to must not be 
+occupied by a robot when we move there. 
+
+60
+00:04:25,300 --> 00:04:28,719
+So three preconditions. 
+Two positive one negative. 
+
+61
+00:04:28,719 --> 00:04:33,186
+And then we have the effects. 
+Again two positive effects, and two 
+
+62
+00:04:33,186 --> 00:04:37,583
+negative effects here. 
+Let's look at the positive effects first. 
+
+63
+00:04:37,583 --> 00:04:43,236
+When we move robot R from location L to 
+location M as a result the robot will be 
+
+64
+00:04:43,236 --> 00:04:47,074
+at location M. 
+And the location M will be occupied as a 
+
+65
+00:04:47,074 --> 00:04:51,162
+result of this action. 
+These are the effects that are added by 
+
+66
+00:04:51,162 --> 00:04:54,353
+this operator. 
+Hence, this is known as the add list. 
+
+67
+00:04:54,353 --> 00:04:59,713
+the delete list, or the negative effects 
+of this operator, are that the location L 
+
+68
+00:04:59,713 --> 00:05:03,798
+is no longer occupied. 
+We've just moved the robot away from this 
+
+69
+00:05:03,798 --> 00:05:06,605
+location. 
+And the robot is no longer at this 
+
+70
+00:05:06,605 --> 00:05:09,350
+location, L, that we've just moved away 
+from. 
+
+71
+00:05:09,350 --> 00:05:13,474
+There are a few things that are quite 
+common about this operator. 
+
+72
+00:05:13,474 --> 00:05:17,345
+But they are not part of the definition 
+of a strips operator. 
+
+73
+00:05:17,345 --> 00:05:22,232
+And those are, all the parameters are 
+actually mentioned in the preconditions. 
+
+74
+00:05:22,232 --> 00:05:25,531
+R, l, and m. 
+All of those are mentioned in these three 
+
+75
+00:05:25,531 --> 00:05:28,611
+conditions. 
+Also very common is that we have the 
+
+76
+00:05:28,611 --> 00:05:32,730
+negative effects of the operator, the 
+delete list, as part of the 
+
+77
+00:05:32,730 --> 00:05:36,978
+preconditions, only negated. 
+For the second negative effect, this is 
+
+78
+00:05:36,978 --> 00:05:40,261
+explicit here. 
+And for the first one, it is implicit. 
+
+79
+00:05:40,261 --> 00:05:45,152
+Of course, the location l was occupied 
+before the robot moved away from that. 
+
+80
+00:05:45,152 --> 00:05:49,980
+But because we have this precondition, it 
+was not necessary to mention that. 
+
+81
+00:05:49,980 --> 00:05:55,460
+Quickly, the two other examples. 
+The second one is that we're loading. 
+
+82
+00:05:55,460 --> 00:05:59,310
+With crane K at location L. 
+We're loading container C onto robot R. 
+
+83
+00:05:59,310 --> 00:06:01,994
+These are the four arguments to this 
+operator. 
+
+84
+00:06:01,994 --> 00:06:06,720
+And all this is the name of the operator. 
+Again, we have preconditions and effects. 
+
+85
+00:06:06,720 --> 00:06:11,037
+And they are divided into positive and 
+negative preconditions and effects. 
+
+86
+00:06:11,037 --> 00:06:14,537
+In fact, we have no negative 
+preconditions for this operator. 
+
+87
+00:06:14,537 --> 00:06:19,088
+So the positive preconditions are that 
+the crane must belong to that location. 
+
+88
+00:06:19,088 --> 00:06:23,230
+It must be at that location. 
+the crane must be holding the container. 
+
+89
+00:06:23,230 --> 00:06:27,256
+So it can load it onto the robot, which 
+must also be at that location. 
+
+90
+00:06:27,256 --> 00:06:30,901
+And must be un-. 
+Loaded so it cannot have a container on 
+
+91
+00:06:30,901 --> 00:06:32,190
+it. 
+The effects are. 
+
+92
+00:06:32,190 --> 00:06:36,718
+That now the crane will be empty after 
+we've loaded the container onto the 
+
+93
+00:06:36,718 --> 00:06:39,496
+robot. 
+So it will no longer hold the container, 
+
+94
+00:06:39,496 --> 00:06:44,326
+but the container will be loaded onto the 
+robot, and the robot will no longer be 
+
+95
+00:06:44,326 --> 00:06:47,355
+unloaded. 
+Similarly there's the put action which 
+
+96
+00:06:47,355 --> 00:06:52,325
+has as parameters a crane, a location, a 
+container, another container and a pile 
+
+97
+00:06:52,325 --> 00:06:57,422
+into which we're putting the container C. 
+The crane must be at that location and 
+
+98
+00:06:57,422 --> 00:07:02,456
+also the pile must be at that location 
+and of course we want the crane to hold 
+
+99
+00:07:02,456 --> 00:07:06,035
+to the container. 
+And this precondition here tells us the 
+
+100
+00:07:06,035 --> 00:07:11,088
+meaning of this second container D that 
+is a parameter that to put action, namely 
+
+101
+00:07:11,088 --> 00:07:15,830
+it is the container that is on top of the 
+pile before we execute our action. 
+
+102
+00:07:15,830 --> 00:07:21,213
+And the reason why we need to know this 
+is simply such that we can withdraw this 
+
+103
+00:07:21,213 --> 00:07:24,353
+from our state. 
+So the container D is, after we've 
+
+104
+00:07:24,353 --> 00:07:29,544
+executed the action, no longer on top of 
+the pile because we have the container C 
+
+105
+00:07:29,544 --> 00:07:32,684
+on top of D and now C is the new top of 
+the pile. 
+
+106
+00:07:32,684 --> 00:07:37,554
+So C will also be in our pile, the crane 
+will be empty, and the crane will no 
+
+107
+00:07:37,554 --> 00:07:41,912
+longer hold container C. 
+there's also an unload and a take action 
+
+108
+00:07:41,912 --> 00:07:47,039
+that reverse the load and the put action 
+but I won't go through those in detail 
+
+109
+00:07:47,039 --> 00:07:51,486
+here. 
+In the previous slide, we have seen some 
+
+110
+00:07:51,486 --> 00:07:55,099
+examples of operators, of what they look 
+like logically. 
+
+111
+00:07:55,099 --> 00:08:00,090
+Now I will introduce the PDDL syntax, for 
+defining an operator in a planning 
+
+112
+00:08:00,090 --> 00:08:02,860
+domain. 
+This example, again, starts with a 
+
+113
+00:08:02,860 --> 00:08:07,902
+comment, introduced by the semicolon, 
+that tells us what this action will 
+
+114
+00:08:07,902 --> 00:08:11,614
+actually do. 
+And here is the first slightly confusing 
+
+115
+00:08:11,614 --> 00:08:16,656
+thing about the PDDL definition. 
+Namely, the operator is called an action 
+
+116
+00:08:16,656 --> 00:08:19,877
+in PDDL. 
+So, in the strips representation, we 
+
+117
+00:08:19,877 --> 00:08:23,518
+consider an action to be an instance of 
+an operator. 
+
+118
+00:08:23,518 --> 00:08:26,390
+In PDDL, this is what is called an 
+action. 
+
+119
+00:08:26,390 --> 00:08:30,902
+This is actually not uncommon in the 
+planning literature, that terminology is 
+
+120
+00:08:30,902 --> 00:08:33,950
+not agreed. 
+So you always have to make sure that you 
+
+121
+00:08:33,950 --> 00:08:38,287
+understand what authors mean by the 
+different terms like action or action 
+
+122
+00:08:38,287 --> 00:08:42,469
+type or operator, et cetera. 
+So in PDDL, this action has the unique 
+
+123
+00:08:42,469 --> 00:08:47,120
+name, move, that can be used to identify 
+this, action, this operator. 
+
+124
+00:08:47,120 --> 00:08:50,677
+And it has several parameters that are 
+defined here. 
+
+125
+00:08:50,677 --> 00:08:54,507
+And there is one parameter which is this 
+one, a variable. 
+
+126
+00:08:54,507 --> 00:08:59,501
+Remember, variables start with the 
+question mark R, which is of type robot. 
+
+127
+00:08:59,501 --> 00:09:03,673
+And then it has two more variables, both 
+of the type location. 
+
+128
+00:09:03,673 --> 00:09:06,820
+This is what we call the name of the 
+operator. 
+
+129
+00:09:06,820 --> 00:09:11,900
+In the definition of a strips planning 
+operator two slides ago. 
+
+130
+00:09:11,900 --> 00:09:14,490
+Next we have the preconditions and 
+effects. 
+
+131
+00:09:14,490 --> 00:09:19,130
+So the preconditions are introduced by 
+the preconditions symbol, and then are 
+
+132
+00:09:19,130 --> 00:09:22,263
+just listed. 
+It is also exclusively stated in PDDL 
+
+133
+00:09:22,263 --> 00:09:24,912
+that this is a conjunction. 
+Of pre-conditions. 
+
+134
+00:09:24,912 --> 00:09:28,492
+So they all must hold. 
+And that's what we introduce with the an 
+
+135
+00:09:28,492 --> 00:09:31,049
+symbol. 
+PDDL also allows other pre-conditions, 
+
+136
+00:09:31,049 --> 00:09:34,800
+dis-disjunctive pre-conditions. 
+But we will not look at those here. 
+
+137
+00:09:34,800 --> 00:09:39,061
+So what we have is that, the first 
+pre-condition is that two locations must 
+
+138
+00:09:39,061 --> 00:09:42,016
+be adjacent. 
+The robot must be at the first of those 
+
+139
+00:09:42,016 --> 00:09:46,164
+two locations we're starting from. 
+And this location must not be occupied. 
+
+140
+00:09:46,164 --> 00:09:50,540
+Slightly different syntax, but exactly 
+the three pre-conditions we've seen in 
+
+141
+00:09:50,540 --> 00:09:54,122
+the previous slide. 
+Similarly for the effects, they're listed 
+
+142
+00:09:54,122 --> 00:09:56,502
+here. 
+They are a conjunction of effects. 
+
+143
+00:09:56,502 --> 00:09:59,737
+And it's the same four effects we've seem 
+previously. 
+
+144
+00:09:59,737 --> 00:10:04,375
+Namely that the robot must be at the two 
+location, as a result of the action. 
+
+145
+00:10:04,375 --> 00:10:08,647
+And this location will be occupied. 
+The robot is no longer at the from 
+
+146
+00:10:08,647 --> 00:10:11,150
+location, which is not, no longer 
+occupied. 
+
+147
+00:10:11,150 --> 00:10:15,496
+You should now be able to express the 
+other two operators introduced in the 
+
+148
+00:10:15,496 --> 00:10:19,899
+previous slide, in the PDDL presentation. 
+So why don't you do that as a little 
+
+149
+00:10:19,899 --> 00:10:20,700
+exercise here. 
+

@@ -1,0 +1,199 @@
+What we've seen so far is the complete 
+input that must be given to a planner. 
+Now we will turn to the output of the 
+planner which is, of course, a plan. 
+And a plan is a sequence of actions, A1 
+through AK. 
+We're using the pi symbol here to denote 
+the plan and the sequence consists first 
+of the action A1 then of the action A2 
+and so on until we reach the action AK. 
+And K must be greater or equal to zero so 
+the plan can be empty and contain no 
+actions. 
+The length of a plan then, is simply the 
+number of actions it contains. 
+So it is K, where K is zero or more 
+actions. 
+Given this definition of plans, there's a 
+number of things we can do with those 
+plans. 
+For example, we can concatenate plans. 
+That means, if we're given a plan that 
+consists of actions A1 through AK, and 
+another plan consisting of A prime one 
+through A prime J, then we can define the 
+concatenation of those two plans, as 
+simply the sequence of actions 
+consisting, first, all those actions from 
+the first plan. 
+And then, all those actions from the 
+second plan. 
+We can also extend our state transition 
+function as follows. 
+We can define a state transition function 
+for a state and a plan. 
+By defining that it is the state from 
+which we start, if our plan was empty. 
+So if there were no actions in the plan, 
+we simply remain in the same state. 
+But if there were actions in the plan. 
+So k was greater than zero. 
+Then what we do is we first execute the 
+first action. 
+That gives us a new state. 
+And then what we do. 
+We apply the state transition function, 
+recursively, to the remainder of our 
+plan. 
+For this to be well defined, of course 
+our action, A1, the first action in our 
+plan, must be applicable in the state in 
+which we're trying to apply the plan. 
+In any other case the state transition 
+function applied to the state and the 
+plan is undefined. 
+So the most important thing to remember 
+here is we define plans simply as 
+sequences of actions. 
+Of course there are more complex types of 
+plans but this is what we're looking at 
+here now. 
+The output of a planner is a plan. 
+But of course, not every plan is a 
+solution to a planning problem. 
+And here is how we can define what 
+constitutes a solution. 
+We are given a planning problem 
+consisting of a state transition system 
+or a set of operators. 
+An initial state, and a goal description 
+then we can say that a plan pi, is a 
+solution for a planning problem. 
+For this planning problem that we are 
+given here. 
+If the state transition function applied 
+to the initial state of the planning 
+problem. 
+And the plan that we're trying to execute 
+in that problem gives us a new state. 
+And that state satisfies the goal. 
+So, a plan is a solution, if the 
+execution of the plan leads us to a state 
+in which the goal is satisfied. 
+Since there may be many plans that are 
+solutions for planning problems, we want 
+to distinguish those. 
+And we can do that by defining some 
+properties of the solution plans. 
+So we can say that the solution is 
+redundant if there's a proper subsequence 
+of this plan, that is also a solution for 
+P. 
+So if we can take our plan pi, remove 
+some of the actions, and still have a 
+solution plan, then we call the original 
+plan redundant. 
+And we can say that the plan pi is 
+minimal if no other solution for our 
+planning problems contains fewer actions. 
+So it is minimal if it has the minimal 
+number of actions. 
+Now all the definitions you've seen so 
+far apply to classical planning. 
+But in fact, there are variations of what 
+is exactly classical planning. 
+Most of what we've seen so far is the 
+strips representation. 
+Here, I want to give you a quick overview 
+of what other flavors of classical 
+representations exist. 
+The simplest representation is the 
+propositional representation. 
+In the propositional representation, a 
+world state is described by a set of 
+propositions. 
+So, a proposition is a simple symbol. 
+It does not contain any internal 
+structure. 
+In the strips representation, in the 
+state, we have first order atoms, 
+ground atoms, to be more specific. 
+And these relate objects to each other. 
+In the propositional representation, 
+there are only propositions, symbols. 
+Actions in the propositional 
+representation consist of preconditions, 
+post-conditions to be added and to be 
+removed. 
+The first thing to note here is there are 
+only actions, there are no operators 
+because we don't have parameters and 
+that's because we have symbols that have 
+no objects they relate to each other. 
+So there's no variables which means 
+everything is ground, everything is in 
+action. 
+Then we have preconditioned propositions 
+which means we don't have positive and 
+negative propositions in the 
+preconditions. 
+Only positive propositions exist in this 
+simple representation. 
+And then we have negative and positive 
+effects, as before these are symbols not 
+ground atoms. 
+And I've also mentioned they are often 
+called the add list and the delete list 
+to be removed. 
+The strips representation then is simply 
+the same, but instead of propositions 
+we're dealing with first auto-literals, 
+in most cases. 
+Specifically this means the preconditions 
+of an operator can be positive or 
+negative. 
+The final variant is the state variable 
+representation where a state. 
+Consists of a set of state variables. 
+A state variable is simply a variable 
+that must have a value. 
+It's usually described by a function. 
+So, for example, we could have a function 
+that describes the location of the robot. 
+RLook that takes a robot as an argument, 
+and tells us where that robot is at 
+location L. 
+The advantage of this representation is, 
+that it represents the functional 
+property of this. 
+The robot can only be at one location at 
+any one time. 
+So in the strips presentation, at least, 
+in theory. 
+You can have several assertions of where 
+the robot might be. 
+In the state variable representation. 
+And, the functional property, namely that 
+the robot can only be at one location at 
+a time is exploited. 
+Actions in this representation are simply 
+undescribed by sets of preconditions that 
+look like expressions like this and 
+assignment of new values to these state 
+variables like this one. 
+So what you need to remember here is that 
+there are different flavors of the 
+classical representation, there's not 
+just the stripser presentation we've 
+looked at. 
+There's also these other two. 
+But, and this is the important point, 
+these representations can be translated 
+into each other so essentially they're 
+all equivalent in terms of 
+expressiveness. 
+There's nothing that you can say in one 
+of these three representations that you 
+can't say in the other. 
+

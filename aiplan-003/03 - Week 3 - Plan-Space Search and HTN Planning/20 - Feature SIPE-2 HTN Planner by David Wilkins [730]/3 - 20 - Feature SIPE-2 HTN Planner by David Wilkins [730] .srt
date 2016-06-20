@@ -1,0 +1,488 @@
+1
+00:00:00,012 --> 00:00:08,376
+Hi I'm David Wilkins I'm a Senior 
+Computer Scientist at SRI International's 
+
+2
+00:00:08,376 --> 00:00:16,614
+Artificial Intelligence Center. 
+SRI is a not for profit contract research 
+
+3
+00:00:16,614 --> 00:00:23,442
+institute in Silicone Valley. 
+I got my PhD in Stanford in 1979. 
+
+4
+00:00:23,442 --> 00:00:27,541
+My adviser was John McCarthy, who taught 
+my first list class. 
+
+5
+00:00:27,541 --> 00:00:32,726
+Immediately after graduating I moved 
+across to El Camino, to SRI's AI center. 
+
+6
+00:00:32,726 --> 00:00:37,906
+Primarily because Nils Nilson was here 
+and I wanted to work with him, My first 
+
+7
+00:00:37,906 --> 00:00:42,817
+boss at SRI was Earl Sacerdoti the author 
+of NOAH before NOAH AI planning was 
+
+8
+00:00:42,817 --> 00:00:47,919
+generally search in a space space and 
+NOAH introduced search in a planned space 
+
+9
+00:00:47,919 --> 00:00:50,952
+AI planning. 
+Inspired by Earl and NOAHI became 
+
+10
+00:00:50,952 --> 00:00:56,173
+interested in solving real world planning 
+problems and found that this regard of 
+
+11
+00:00:56,173 --> 00:01:00,292
+more domain knowledge and more expressive 
+representations. 
+
+12
+00:01:00,292 --> 00:01:03,129
+I divide past research in AI findings in 
+two camps. 
+
+13
+00:01:03,129 --> 00:01:07,175
+The first are systems that take a 
+minimalist approach to main knowledge, 
+
+14
+00:01:07,175 --> 00:01:11,526
+they use strip style descriptions of 
+primitive actions, I call them primitive 
+
+15
+00:01:11,526 --> 00:01:14,729
+action planners. 
+The second are the systems that focus on 
+
+16
+00:01:14,729 --> 00:01:17,491
+leveraging as much domain knowledge as 
+possible. 
+
+17
+00:01:17,491 --> 00:01:21,112
+I use this approach in developing the 
+sight planning system. 
+
+18
+00:01:21,112 --> 00:01:24,443
+System. 
+On the first slide we'll see an example 
+
+19
+00:01:24,443 --> 00:01:29,899
+of one of the domains that site and coded 
+for planning it's the response to oil 
+
+20
+00:01:29,899 --> 00:01:33,309
+spills. 
+And in this picture we see several boats 
+
+21
+00:01:33,309 --> 00:01:37,962
+deploying boom around an island to 
+protect it from an oil spill. 
+
+22
+00:01:37,962 --> 00:01:42,960
+The key point here is that there multiple 
+boats executing this plan and that it's 
+
+23
+00:01:42,960 --> 00:01:47,312
+important to have a sufficient amount of 
+boom to go around the island. 
+
+24
+00:01:47,312 --> 00:01:52,404
+On the next slide, we'll see a number of 
+techniques I've developed to address real 
+
+25
+00:01:52,404 --> 00:01:55,853
+world problems. 
+This list was driven by client needs to 
+
+26
+00:01:55,853 --> 00:01:59,139
+solve their problems, not by any research 
+attempts. 
+
+27
+00:01:59,139 --> 00:02:03,993
+Some of these techniques are now called 
+hierarchical task network planning in 
+
+28
+00:02:03,993 --> 00:02:07,769
+SIPE known as an HTN planner. 
+The first technique is multiple 
+
+29
+00:02:07,769 --> 00:02:11,492
+abstraction levels. 
+Many real problems have distinct natural 
+
+30
+00:02:11,492 --> 00:02:15,174
+attraction levels making them natural 
+fits for HTN planning. 
+
+31
+00:02:15,174 --> 00:02:19,484
+These levels are a powerful way to 
+control the search and they're a great 
+
+32
+00:02:19,484 --> 00:02:24,124
+way to interact with humans because a 
+primitive action strip style plan at the 
+
+33
+00:02:24,124 --> 00:02:27,812
+lowest level of detail can be very 
+difficult to understand. 
+
+34
+00:02:27,812 --> 00:02:33,127
+Next item is parallel actions. 
+Realistic domains generally have parallel 
+
+35
+00:02:33,127 --> 00:02:38,707
+agents executing activities at the same 
+time and these agents must coordinate 
+
+36
+00:02:38,707 --> 00:02:42,722
+their activities. 
+Parallelism can cause computational 
+
+37
+00:02:42,722 --> 00:02:47,795
+problems in AI planners and some AI 
+Planning systems produce only sequential 
+
+38
+00:02:47,795 --> 00:02:50,715
+plans. 
+Next is context dependent effects which 
+
+39
+00:02:50,715 --> 00:02:55,399
+are ubiquitous in real world problems. 
+For example if you move an object to a 
+
+40
+00:02:55,399 --> 00:02:59,097
+new location all the objects attached to 
+it are on top of or moved with it. 
+
+41
+00:02:59,097 --> 00:03:04,039
+So I could deduce these context-dependent 
+effects where as an strip style planner, 
+
+42
+00:03:04,039 --> 00:03:08,870
+you would generally need a different 
+operative for every possible combination 
+
+43
+00:03:08,870 --> 00:03:11,747
+of things that might be attached to the 
+block. 
+
+44
+00:03:11,747 --> 00:03:16,481
+The next two items constraints and 
+resources come from the fact that 
+
+45
+00:03:16,481 --> 00:03:22,196
+reasoning about numbers are essential to 
+almost every realistic domain.Time is a, 
+
+46
+00:03:22,196 --> 00:03:27,816
+is certainly a key element in most plans. 
+Resources also have a specific capacity 
+
+47
+00:03:27,816 --> 00:03:31,258
+or must be accumulated in, in certain 
+quantities. 
+
+48
+00:03:31,258 --> 00:03:36,522
+An example of a goal in accumulation is 
+obtaining the boom in the previous 
+
+49
+00:03:36,522 --> 00:03:41,938
+example a planner had to plan to obtain 
+enough boom to surround the island and it 
+
+50
+00:03:41,938 --> 00:03:46,656
+had to reason about numbers to do that. 
+SIPE developed heuristics and 
+
+51
+00:03:46,656 --> 00:03:51,815
+representations to efficiently reason 
+about actions which we needn't go into 
+
+52
+00:03:51,815 --> 00:03:57,049
+detail here and the real world problems 
+plans never executed as expected so you 
+
+53
+00:03:57,049 --> 00:04:00,481
+wanted to re-plan during execution to fix 
+the plan. 
+
+54
+00:04:00,481 --> 00:04:03,493
+Many AI planners never address that 
+problem. 
+
+55
+00:04:03,493 --> 00:04:08,678
+And finally, we found a need to have an 
+interactive graphical user interface. 
+
+56
+00:04:08,678 --> 00:04:13,802
+SIPE had perhaps the most advanced GUI 
+and AI planning in the 80s and 90s. 
+
+57
+00:04:13,802 --> 00:04:18,679
+Interacting with people is a critical 
+aspect of real-world planning. 
+
+58
+00:04:18,679 --> 00:04:23,971
+Realistic problems are embedded in the 
+world and aren't precisely defined. 
+
+59
+00:04:23,971 --> 00:04:27,731
+They have fuzzy edges. 
+The person almost always knows 
+
+60
+00:04:27,731 --> 00:04:32,995
+information the planner doesn't and can 
+use that to help make good choices. 
+
+61
+00:04:32,995 --> 00:04:37,797
+Another important reason to have the 
+Gooey is that it helps the user 
+
+62
+00:04:37,797 --> 00:04:41,372
+understand the plan. 
+A large plan full of primitive actions 
+
+63
+00:04:41,372 --> 00:04:45,880
+can be very difficult to understand. 
+And the ability to use the abstraction 
+
+64
+00:04:45,880 --> 00:04:50,662
+levels and the Gooey and trail down and 
+see network displays is very crucial. 
+
+65
+00:04:50,662 --> 00:04:56,587
+So in the next slide, we actually see a 
+screenshot capturing part of an oil spill 
+
+66
+00:04:56,587 --> 00:05:02,452
+response plan from the site, Gooey. 
+We'll look at the top three nodes of this 
+
+67
+00:05:02,452 --> 00:05:05,777
+plan. 
+And and the top right you see a Blue 
+
+68
+00:05:05,777 --> 00:05:08,682
+oval. 
+Blue ovals represent primitive actions 
+
+69
+00:05:08,682 --> 00:05:12,767
+that are already in the plan. 
+In this case the action is to deploy 
+
+70
+00:05:12,767 --> 00:05:16,077
+3,000 feet of boom to the Berkeley 
+eelgrass at Time 3. 
+
+71
+00:05:16,077 --> 00:05:21,802
+This spill was in the San Francisco bay. 
+Right before that is a aqua hexagon. 
+
+72
+00:05:21,802 --> 00:05:28,315
+They represent goals that need to be 
+expanded at the next level of details. 
+
+73
+00:05:28,315 --> 00:05:34,828
+This particular goal was to get this 
+3,000 feet of boom located at Berkley. 
+
+74
+00:05:34,828 --> 00:05:38,162
+So look at the goal immediately below 
+this. 
+
+75
+00:05:38,162 --> 00:05:43,487
+It turns out that the higher level goal 
+was to get 9,000 feet of Boom to Berkley. 
+
+76
+00:05:43,487 --> 00:05:48,662
+SIPE new of 3,000 feet of Boom in some 
+locations so it split the goal into two. 
+
+77
+00:05:48,662 --> 00:05:51,937
+The first one was to get to 3.000 feet 
+Feet there. 
+
+78
+00:05:51,937 --> 00:05:56,216
+And parallel I posted another goal to get 
+the additional 6,000 feet of boom to 
+
+79
+00:05:56,216 --> 00:05:58,637
+Berkely. 
+The entire plan for this oil spill 
+
+80
+00:05:58,637 --> 00:06:02,032
+response had a few hundred notes when it 
+was complete. 
+
+81
+00:06:02,032 --> 00:06:06,359
+And the next light I'll show you a brief 
+overview of how sight produces plans. 
+
+82
+00:06:06,359 --> 00:06:10,743
+It has a representation of the state of 
+the world which you see on the left side 
+
+83
+00:06:10,743 --> 00:06:13,287
+of the slide. 
+And that's for example where it 
+
+84
+00:06:13,287 --> 00:06:17,357
+represents the fact that it knows that 
+there's 3,000 feet of boom in some 
+
+85
+00:06:17,357 --> 00:06:20,682
+warehouse somewhere. 
+It then has operators that represent 
+
+86
+00:06:20,682 --> 00:06:25,408
+actions, these are multiple levels of 
+extraction they represent Things about 
+
+87
+00:06:25,408 --> 00:06:30,571
+how to transport boom and how to deploy 
+it when you have goals and objectives 
+
+88
+00:06:30,571 --> 00:06:35,026
+you're trying to achieve. 
+The plan generator then combines these 
+
+89
+00:06:35,026 --> 00:06:40,442
+and on the right side you see a depiction 
+of how it applies these operators level 
+
+90
+00:06:40,442 --> 00:06:44,137
+after level to expand down to the most 
+primitive plan. 
+
+91
+00:06:44,137 --> 00:06:49,693
+And when it finally gets a Plan composed 
+of primitive actions then it's ready for 
+
+92
+00:06:49,693 --> 00:06:55,235
+execution and the plan executed will then 
+take over, and if we plan in as needed it 
+
+93
+00:06:55,235 --> 00:07:00,626
+will cycle back and give some new goals 
+and give the new beliefs and constraints 
+
+94
+00:07:00,626 --> 00:07:05,802
+that represent the world. 
+This concludes my description of the 
+
+95
+00:07:05,802 --> 00:07:11,602
+motivations behind sipe. 
+For more information on the last slide, 
+
+96
+00:07:11,602 --> 00:07:17,727
+there is a URL to the site homepage and 
+to my publication's homepage. 
+
+97
+00:07:17,727 --> 00:07:21,042
+Thanks very much for your attention. 
+
+98
+00:07:21,042 --> 00:07:24,779
+[MUSIC] 
+

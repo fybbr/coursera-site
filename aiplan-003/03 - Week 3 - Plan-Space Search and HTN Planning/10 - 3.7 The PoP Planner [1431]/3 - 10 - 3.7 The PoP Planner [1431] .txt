@@ -1,0 +1,406 @@
+Before we finish with plan-space search, 
+I want to introduce another refinement to 
+the generic algorithm we've just seen. 
+This is the algorithm as it was 
+implemented in the UCPOP planner that was 
+developed about the early 90s,' if I 
+remember correctly. 
+In the algorithm as we've seen it so far, 
+it considers two types of flaws, 
+unachieved goals and threats. And every 
+time we go through our main loop, one of 
+these flaws is removed from the plan and 
+potentially others introduced. 
+The UCPOP planner only considers 
+unachieved goals and deals with threads 
+as part of the main loop. 
+So, here is the data flow of the PSP 
+algorithm as we've seen it so far. 
+We start off with our initial plan, pi 0, 
+that plan consists of actions, orderings, 
+bindings, and causal links. 
+Then, what we do is we compute the 
+threats and the open goals which are the 
+flaws in our over all plan. 
+Then, if we find there is no flaw in our 
+plan, we can return this plan as a 
+solution plan. 
+However, if there are flaws in the plan, 
+then we got to select one of these flaws, 
+compute the resolvers. 
+If there are no resolvers for the 
+selected flaw, then we can return failure 
+because this plan can never be refined 
+into a solution plan. 
+If there is a resolver, then we've got to 
+choose one of the resolvers that are 
+possible, apply those resolver. 
+And while we apply the resolver, we've 
+got to retain our ordering constraints 
+and our binding constraints such that 
+variable bindings and orders are always 
+consistent. 
+Then, we go back in our loop and start 
+with the beginning with the partial plan 
+that we consider. 
+The UC pop planner is different and that 
+it does not deal with the computation and 
+handling of threats at this stage in the 
+algorithm. 
+In fact, threats are moved to a different 
+part. 
+Namely, after the open goals are dealt 
+with. 
+The algorithim will deal with all the 
+threats that are caused by the resolver 
+for the open goal flaw. 
+And this may cause a little loop here, 
+namely one where all the threats are 
+dealt With. 
+The input to the PoP planner or to the 
+UCPOP planner to be more specific, looks 
+slightly different from what we've seen 
+so far. 
+We have an extended input that takes a 
+partial plan as input, that is the same 
+initial plan we've seen before. 
+And the second component it takes as 
+input is an agenda, an agenda of things 
+that still need to be done. 
+Abd this is the set of pairs of actions 
+and preconditions of these actions. 
+So, these are all the open goal flaws 
+that exist in the current partial plan. 
+Initially, that is, of course, all the 
+preconditions of the goal dummy action. 
+The agenda is simply the way to avoid 
+recomputing the open goals every time we 
+go through the loop. 
+Where the loop here is implemented as a 
+recursive function. 
+Search control of the algorithm is then 
+by flaw type. 
+That means, we have the unachieved 
+sub-goals as part of our agenda, and 
+every time we go through our algorithm, 
+we go through the loop. 
+We select one of the unachieved sub-goals 
+and remove that as a flaw from our 
+partial plan, potentially introducing 
+others. 
+Threats, on the other hand, are resolved 
+as part of the successor generation. 
+So, internally to the algorithm, we 
+remove all the threats so that when we 
+generate a new search node, that will 
+have no threats in it. 
+Finally, we get to the pseudo code for 
+our partial order planner. 
+This is essentially the algorithm that is 
+implemented by the UCPOP planning system. 
+Unfortunately, the algorithm is a little 
+more complex than the algortithms we've 
+seen previously, so I have to distribute 
+it over two slides. 
+So, this is the first part of the 
+algorithm. 
+And what we define here, is a function 
+PoP, which implements our partial order 
+planner. 
+And this function takes two arguments. 
+Firstly, a partial order plan, which 
+initially is our initial plan pi 0. 
+And it takes an agenda, which consists of 
+all the unsatisfied subgoals in our 
+current plan. 
+In our initial plan, these were only the 
+preconditions of the goal dummy action. 
+Then, the algorithm begins by testing 
+whether the agenda is empty. 
+So, if there are no more unsatisfied 
+preconditions, 
+that means our plan contains no more 
+flaws. 
+And that means it's a solution plan for 
+our planning problem, 
+and we can return this plan as a 
+solution. 
+However, if there are still items left on 
+the agenda, then we need to select one of 
+these as the flaw we want to work on 
+next. 
+And the selection is deterministic choice 
+point, which means we don't need to 
+backtrack over it. 
+The reason is, again, that we need to 
+work on all agenda items eventually and 
+it's only important for efficiency in 
+which order we do that but not for 
+completeness. 
+So, now we've chosen a pair, which is an 
+agenda entry, consistent of an action ag, 
+and the precondition pg. 
+The next step, simply removes the chosen 
+entry from our agenda. 
+Then, we have to compute all the 
+providers for our chosen precondition pg. 
+A provider, of course, can be any action 
+that has an effect that can unify with 
+pg. 
+This could be an action that is already 
+in the plan or it could be a new instance 
+of an operator that we introduce into the 
+plan. 
+So this gives us our set of relevant 
+actions. 
+If this set is empty, 
+if there are no relevant actions, then 
+there is no way to resolve this flaw, 
+which means we can return failure. 
+So, what we do at this point is go up in 
+our search tree to the nearest backtrack 
+point and try an alternative branch. 
+Now, if our set of relevant actions 
+wasn't empty, then we can do this now, we 
+can choose one. 
+This is a nondeterministic choice point, 
+which means here we set up a backtrack 
+point where we branch in our search tree. 
+And if any of those branches returns 
+failure, we simply go back and explore 
+the next branch. 
+Choosing a resolver gives us three 
+things. 
+Firstly, it gives us an action that we've 
+chosen as the provider. 
+It gives us a proposition that is one of 
+its effects that unifies with our 
+unachieved sub-goal, and the substitution 
+sigma is the substitution that makes the 
+unachieved sub-goal and the effect the 
+same. 
+Given our chosen resolver, we can now 
+start to refine the plan accordingly. And 
+the first thing we do is we add a causal 
+link and the new causal link links our 
+chosen provider, ap, to our consumer, ag. 
+And the proposition that we are trying to 
+protect is sigma of pg, the instantiated 
+goal proposition. 
+Note that this is the same as sigma of pp 
+as sigma unifies the two. 
+And in addition to this causal link, we 
+also need to add new bindings to our 
+variable binding constraints. 
+And those are exactly those bindings that 
+are defined by the substitution sigma. 
+This is the first part of the algorithm, 
+and the next part follows in the next 
+slide. 
+So far, we have added cause of links and 
+variable bindings to our partial plan as 
+necessary. 
+The next thing, the next component we 
+want to modify in our partial plan is the 
+set of actions. 
+And this depends on whether our chosen 
+provider, ap, was already an action or 
+plan, or whether it was a new operator 
+instance that we introduced into the 
+plan. 
+If it is a new instance of an operator, 
+so if it was not an element of our plan, 
+then what we have to do is simply add 
+that new action to our plan. 
+and we also have to add to the agenda all 
+it's preconditions as unachieved 
+sub-goals. 
+If our chosen provider was already part 
+of the plan, then we don't need to modify 
+the set of actions of our partial plan. 
+In the next step, we simply generate a 
+copy of our plan that we can modify in 
+the loop that follows. 
+As I've explained earlier, the 
+introduction of new actions or new causal 
+links into a partial plan may also 
+introduce new threats. And this is what 
+we'll deal with next. 
+So, what we have here is a loop over all 
+potentially new threats. 
+These are threats on our newly introduced 
+causal link, or threats that are due to 
+the new action. 
+Of course, if this was an existing 
+action, this cannot introduce new threats 
+into the plan. 
+But we can always have threats on our new 
+causal link. 
+So, for each of these threats, we have to 
+compute the set of all possible resolvers 
+for the threat in our current plan. 
+And if there are no resolvers for one of 
+those threats, that means we can return 
+failure because there's no way or 
+removing that flaw from the plan. 
+Again, 
+returning failure here means going to the 
+next backtrack point and trying a 
+different branch in the search tree. 
+If there are resolvers, then we need to 
+choose one of them. 
+And again, this is a non deterministic 
+choice point, 
+which means we may have to back track to 
+this point. 
+If we fail in one of the branches, we go 
+back and try a different branch until we 
+reach one where we succeed. 
+And then, we take our resolver that we've 
+just chosen and apply that to our current 
+plan. So, we take the new plan and refine 
+it according to that resolver, which 
+gives us a modified new plan. 
+And then, we can simply do the recursive 
+call. 
+So, we call our procedure PoP with our 
+new plan and our modified agenda. 
+And, of course, our new plan only 
+contains flaws of the type unacheived 
+precondition as all the threats have just 
+been resolved in the loop we've just gone 
+through. And the agenda contains all 
+those unacheived preconditions. 
+And that concludes our partial order of 
+planning algortihm, and it almost 
+concludes this segment. 
+Now, before we finish with plan-space 
+planning, here is a quick overview of how 
+plan-space planning compares to 
+state-space planning. 
+Firstly, in state-space planning, we are 
+dealing with a finite search space. 
+In each state, we only have an finite 
+number of objects, we have a finite 
+number of relations. 
+Which means, there's a finite number of 
+atoms that can relate the different 
+objects to each other. 
+And that means there's only a finite 
+number of states that we have in our 
+search space. 
+In plan-space planning, on the other 
+hand, are search spaces potentially 
+infinite. 
+You can easily see a plan can have 
+potentially infinite length so there must 
+be an infinite number of plans in our 
+search space. 
+But, of course, what matters in practice 
+is the part of the search space that is 
+generated or that is explored before a 
+solution plan is found. 
+And also, in state-space planning, our 
+search space is usually a graph but what 
+we're searching is a tree, 
+and the tree is infinite. 
+But, what we do have in state-space 
+planning is an explicit representation of 
+the intermediate states that we're going 
+through on our way to the goal. 
+In plan-space planning, during the 
+planning process, 
+we don't know which intermediate states 
+we will encounter. 
+This is quite an important distinction, 
+as we will see later in the course, 
+because most of the modern heuristics 
+that are used during planning rely on an 
+explicit representations of intermediate 
+states that we are searching. 
+So, the heuristics are defined on states, 
+on world states. 
+Next, in state-space planning, the 
+ordering of the actions really reflects 
+the search control strategy that we, 
+we've been using. 
+Whereas in plan-space planning the choice 
+and the organization that we have in our 
+plan is independent of our search 
+strategy. 
+So, in state-space planning, we consider 
+one action after another, and the 
+ordering in which we consider them is 
+also the ordering in which they end up in 
+our plan, even if there is no ordering 
+constraint necessary between these 
+actions. 
+In plan-space planning, we are much more 
+flexible. 
+In fact, we have seen that in partial 
+plans, two actions in the plan don't 
+necessarily need to be ordered with 
+respect to each other. 
+They can be in parallel. 
+Also, in plan-space planning, we have an 
+explicit representation of the rationale 
+why actions are in the plan that is given 
+by the causal links. 
+There is no such structure in state-space 
+planning. 
+We only have the sequence of actions that 
+we need to execute. 
+This is quite important for the execution 
+of the plan, namely when things go wrong. 
+If we then have the explicit knowledge of 
+why we did an action, then it is much 
+easier to fix the current plan. 
+And finally, in state-space planning the 
+search nodes we consider are relatively 
+simple. That is, each search node is a 
+set of ground atoms, and the successors 
+were relatively easy to compute. 
+I say relatively easy because there may 
+still be an exponential number of 
+applicable actions, of course. But in 
+practice, this is rarely the case. 
+In plan-space search, on the other hand, 
+the search nodes are quite complex. 
+Meaning that we have constrained networks 
+that we need to maintain as part of our 
+refinement process. 
+So that means successors are potentially 
+expensive to compute. 
+Overall, one can say that plan-space 
+planning was a big step forward when it 
+was introduced. 
+But nowadays, due to efficient heuristics 
+state-space planning is the more 
+eddicient way for searching for 
+solutions. 
+This concludes the segment on plan-space 
+search. 
+In this approach, we have introduced a 
+new search space in which search nodes 
+are partial plans, 
+and steps in our search space are planned 
+refinement operations. 
+This is, of course, completely different 
+from the search-space we've considered 
+during state-space search. 
+That means we also had to define a new 
+initial state and a new goal test. 
+And what we did in our PSP algorithm was 
+search for a plan that has no flaws. 
+Where a flaw can be either an unachieved 
+sub-goal or a threat. 
+And finally, we've looked at a 
+refinement, of this generic algorithm 
+that was implemented in the UCPOP planner 
+where the only flaw we considered were 
+unachieved sub-goals, and threats were 
+dealt with as part of the node generation 
+process. 
+And that's all I was going to tell you on 
+partial order planning. 
+

@@ -1,0 +1,909 @@
+1
+00:00:00,012 --> 00:00:06,668
+>> The problem with the planning graph
+heuristics we have looked at is that they
+
+2
+00:00:06,668 --> 00:00:12,000
+are not very accurate.
+Especially where the goal consists of
+
+3
+00:00:12,000 --> 00:00:16,407
+multiple conditions.
+Pattern databases can result in very
+
+4
+00:00:16,407 --> 00:00:21,282
+accurate heuristics, but there's a lot of
+overhead involved in computing the
+
+5
+00:00:21,282 --> 00:00:26,307
+database and they're usually only for one
+specific goal so if the goal changes we
+
+6
+00:00:26,307 --> 00:00:29,785
+need a new database.
+Now we will take a closer look a the
+
+7
+00:00:29,785 --> 00:00:34,701
+heuristic used by the FF planner.
+Ff was developed by Jor Kauffman who
+
+8
+00:00:34,701 --> 00:00:39,981
+presented this week's feature, and the
+heuristic it uses is quite remarkable,
+
+9
+00:00:39,981 --> 00:00:45,648
+because it is both efficient and accurate.
+So, let's have a look at the FF Planner.
+
+10
+00:00:45,648 --> 00:00:49,082
+Planner.
+The first thing to note about FF is that
+
+11
+00:00:49,082 --> 00:00:55,177
+it performs a forward state-space search.
+Which is the technique we've described in
+
+12
+00:00:55,177 --> 00:01:00,237
+the second week of this course.
+That means that planner starts from the
+
+13
+00:01:00,237 --> 00:01:06,102
+initial state and generates more states
+going forward into the search space until
+
+14
+00:01:06,102 --> 00:01:08,536
+it encounters a gold state.
+And.
+
+15
+00:01:08,536 --> 00:01:13,220
+The basic search strategy can be a star in
+f, f, but there is a second strategy
+
+16
+00:01:13,220 --> 00:01:16,806
+implemented, and that is called enforced
+hill climbing.
+
+17
+00:01:16,806 --> 00:01:21,844
+Enforced hill climbing is a kind of best
+first search, where we commit to the first
+
+18
+00:01:21,844 --> 00:01:26,241
+state that looks better than all the
+previous states we have looked at.
+
+19
+00:01:26,242 --> 00:01:31,576
+One advantage of this technique is that it
+copes well with search spaces that have
+
+20
+00:01:31,576 --> 00:01:35,126
+large plateaus.
+That is, large sets of states that all
+
+21
+00:01:35,126 --> 00:01:40,110
+have the same evaluation function value.
+And this is quite often the case in
+
+22
+00:01:40,110 --> 00:01:44,988
+forward states based search.
+However, the early commitment, taken by
+
+23
+00:01:44,988 --> 00:01:49,184
+enforced hill climbing can lead to degrees
+of sub-optimality.
+
+24
+00:01:49,184 --> 00:01:53,037
+And in the worst case, it can not give us
+solutions at all.
+
+25
+00:01:53,037 --> 00:01:56,247
+Namely, if the search space contains dead
+ends.
+
+26
+00:01:56,247 --> 00:02:01,053
+But this segment is about advanced
+euristics, so let's take a look at the
+
+27
+00:02:01,053 --> 00:02:05,345
+relaxed problem heuristic, which is the
+heuristic used by f, f.
+
+28
+00:02:05,346 --> 00:02:10,794
+So, the first step is to construct a
+relaxed problem that we need to solve as
+
+29
+00:02:10,794 --> 00:02:16,771
+part of our computation of the heuristic.
+And, the relaxed problem used by FF is one
+
+30
+00:02:16,771 --> 00:02:20,741
+where we ignore the delete lists of all
+the operators.
+
+31
+00:02:20,741 --> 00:02:26,072
+So we take our original problem, and
+remove the delete lists, the negative
+
+32
+00:02:26,072 --> 00:02:31,285
+effects from all the operators.
+And this is our new problem that we use to
+
+33
+00:02:31,285 --> 00:02:35,927
+compute the heuristic.
+And the important thing here is, to solve
+
+34
+00:02:35,927 --> 00:02:39,761
+this relaxed problem, we only need
+polynomial time.
+
+35
+00:02:39,761 --> 00:02:43,226
+That means the heuristic ids efficient to
+compute.
+
+36
+00:02:43,226 --> 00:02:47,126
+And the solving of the relaxed problem
+works in two steps.
+
+37
+00:02:47,126 --> 00:02:52,572
+The first step is a forward chaining step
+where we build something that is similar
+
+38
+00:02:52,572 --> 00:02:57,992
+to the planning graph we've seen earlier.
+But this time it's a planning graph for
+
+39
+00:02:57,992 --> 00:03:02,691
+the relaxed problem, that contains way
+fewer edges and information.
+
+40
+00:03:02,691 --> 00:03:07,689
+Then in the second step we chain backward
+from the last layer on this graph to
+
+41
+00:03:07,689 --> 00:03:13,040
+extract out relaxed plan from this graph.
+And while the forward chaining is quite
+
+42
+00:03:13,040 --> 00:03:17,798
+similar to what graph plan does, the
+backward chaining is actually quite
+
+43
+00:03:17,798 --> 00:03:21,182
+different.
+The result of backward chaining is a
+
+44
+00:03:21,182 --> 00:03:24,822
+relaxed plan.
+And then to compute the heuristic, we
+
+45
+00:03:24,822 --> 00:03:30,030
+simply take the length of the relaxed
+plan, that is the number of actions in
+
+46
+00:03:30,030 --> 00:03:35,253
+that plan as our heuristic value.
+That is the relaxed problem heuristic or
+
+47
+00:03:35,253 --> 00:03:41,317
+ignoring delete list heuristic used by FF.
+Another improvement implemented by FF is
+
+48
+00:03:41,317 --> 00:03:46,096
+that it prunes its search using helpful
+actions, and in that way it uses
+
+49
+00:03:46,096 --> 00:03:51,790
+information gained during the computation
+of the heuristic to improve the search.
+
+50
+00:03:51,790 --> 00:03:56,980
+Another important technique, but not
+related to advanced heuristics, so we
+
+51
+00:03:56,980 --> 00:04:01,888
+won't go into details here.
+And here is the idea of the relaxed
+
+52
+00:04:01,888 --> 00:04:07,895
+planning problem applied to its, the
+example we have used earlier.
+
+53
+00:04:07,895 --> 00:04:15,109
+What we see here are the 3 operators from
+our simplified dock worker robot domain,
+
+54
+00:04:15,109 --> 00:04:19,364
+where the robots had cranes to load and
+unload.
+
+55
+00:04:19,364 --> 00:04:24,502
+Containers and to compute the relaxed
+prime problem we simple remove all the
+
+56
+00:04:24,502 --> 00:04:28,851
+delete list that is the negative effects
+from all the operators.
+
+57
+00:04:28,851 --> 00:04:33,717
+So, we remove the not A (r,l) from first
+operator then not in (c,l) and not
+
+58
+00:04:33,717 --> 00:04:37,976
+unloaded (r) from load and not loaded from
+the final operator.
+
+59
+00:04:37,976 --> 00:04:41,884
+It's that simple.
+What this gives us is a planning problem
+
+60
+00:04:41,884 --> 00:04:47,064
+that contains some magical objects, for
+example looking at the first operator when
+
+61
+00:04:47,064 --> 00:04:51,948
+we move the robot r from location l to l
+prime, the precondition is that the robot
+
+62
+00:04:51,948 --> 00:04:55,379
+is at location l.
+And as a result of this operator we will
+
+63
+00:04:55,379 --> 00:04:59,993
+have the robot at location l prime.
+But because we've removed the negative
+
+64
+00:04:59,993 --> 00:05:02,899
+effect, the robot would still be at
+location l.
+
+65
+00:05:02,899 --> 00:05:07,250
+So it's now in both places.
+And the same goes for the containers in
+
+66
+00:05:07,250 --> 00:05:10,962
+the other actions.
+The containers, after a load or an unload
+
+67
+00:05:10,962 --> 00:05:15,772
+action, remain the place where they used
+to be but they are also in the new place
+
+68
+00:05:15,772 --> 00:05:20,940
+where we just put them with this operator.
+And that's the problem we need to solve to
+
+69
+00:05:20,940 --> 00:05:26,470
+compute the relaxed problem heuristic.
+And here is the pseudocode that performs
+
+70
+00:05:26,470 --> 00:05:31,260
+the forward chaining, and computes the
+relaxed planning graph.
+
+71
+00:05:31,260 --> 00:05:36,722
+And this is defined by a function
+computeRPG for a relaxed planning graph,
+
+72
+00:05:36,722 --> 00:05:42,354
+takes as input, a planning problem, and
+this is already the relaxed planning
+
+73
+00:05:42,354 --> 00:05:45,271
+problem.
+Then the first thing we do is some
+
+74
+00:05:45,271 --> 00:05:48,942
+initialization.
+And we start off with a set of fluents.
+
+75
+00:05:48,942 --> 00:05:52,889
+These are state propositions that hold in
+the initial state.
+
+76
+00:05:52,889 --> 00:05:57,418
+And we have an index t that tells us where
+in our planning graph we are.
+
+77
+00:05:57,418 --> 00:06:02,494
+And this is followed by a loop, that
+extends our planning graph with one action
+
+78
+00:06:02,494 --> 00:06:05,340
+layer, and one proposition layer at a
+time.
+
+79
+00:06:05,340 --> 00:06:07,463
+This is this loop.
+Loop here.
+
+80
+00:06:07,463 --> 00:06:12,131
+And the first thing we do in this loop is
+increase the index of the layer we're
+
+81
+00:06:12,131 --> 00:06:16,697
+currently working on, that's here.
+Then we compute the next action layer,
+
+82
+00:06:16,697 --> 00:06:21,593
+which consists of all the actions that
+have their preconditions satisfied in the
+
+83
+00:06:21,593 --> 00:06:25,697
+preceeding proposition layer or layer of
+fluence[INAUDIBLE].
+
+84
+00:06:25,698 --> 00:06:28,412
+F.
+So that gives us the next action layer A
+
+85
+00:06:28,412 --> 00:06:30,476
+t.
+And we need to compute the next
+
+86
+00:06:30,476 --> 00:06:34,527
+proposition layer F t.
+And we start by initializing that with the
+
+87
+00:06:34,527 --> 00:06:39,240
+propositions that were true in the
+previous proposition layer, F t minus.
+
+88
+00:06:39,240 --> 00:06:44,724
+And then we go through all the actions in
+our preceding action layer, and add the
+
+89
+00:06:44,724 --> 00:06:49,972
+positive effects that come with these
+actions to our layer of propositions,
+
+90
+00:06:49,972 --> 00:06:53,239
+giving us an extended layer of
+propositions.
+
+91
+00:06:53,239 --> 00:06:56,700
+Then there are two ways in which this can
+terminate.
+
+92
+00:06:56,700 --> 00:07:00,773
+The first one is given the condition in
+the while loop up here.
+
+93
+00:07:00,773 --> 00:07:05,693
+And that says, we terminate when all the
+goal conditions are part of our last
+
+94
+00:07:05,693 --> 00:07:10,751
+proposition layer that we generate here.
+And the other condition is down here.
+
+95
+00:07:10,751 --> 00:07:15,377
+That says when our proposition layer is no
+longer increasing then we can return
+
+96
+00:07:15,377 --> 00:07:18,417
+failure.
+Because that means we're still in the loop
+
+97
+00:07:18,417 --> 00:07:22,967
+so, our goal conditions are not part of
+the last proposition layer and we don't
+
+98
+00:07:22,967 --> 00:07:26,433
+increase that layer and therefore we can
+return failure.
+
+99
+00:07:26,434 --> 00:07:31,167
+But, if we terminate this loop normally,
+which is here, then we go to the next
+
+100
+00:07:31,167 --> 00:07:36,267
+statement after the loop which simply
+returns the relaxed planning graph we have
+
+101
+00:07:36,267 --> 00:07:39,885
+generated here.
+While this is somewhat similar to the
+
+102
+00:07:39,885 --> 00:07:45,345
+expansion of the planning graph, you will
+have noticed that we are not computing any
+
+103
+00:07:45,345 --> 00:07:50,571
+mutex relations here And that also means
+that our relaxed planning graph will be
+
+104
+00:07:50,571 --> 00:07:56,109
+smaller than the planning graph generated
+by graph plan, because this condition for
+
+105
+00:07:56,109 --> 00:08:00,590
+termination is actually much simpler, and
+we terminate sooner.
+
+106
+00:08:00,590 --> 00:08:05,618
+Now that you've seen how to compute the
+relaxed planning graph, here is the
+
+107
+00:08:05,618 --> 00:08:10,559
+function that extracts a plan from this
+graph, and returns its size as the
+
+108
+00:08:10,559 --> 00:08:14,607
+heuristic value.
+And the first input to this function then,
+
+109
+00:08:14,607 --> 00:08:19,293
+is the planning graph, all the layers
+including proposition layers and action
+
+110
+00:08:19,293 --> 00:08:23,733
+layers, and the goal that we're trying to
+achieve in this planning graph.
+
+111
+00:08:23,733 --> 00:08:28,496
+And the first thing we do in this function
+is test whether our goal is contained in
+
+112
+00:08:28,496 --> 00:08:32,809
+the final proposition layer.
+If it isn't, then of course, we can return
+
+113
+00:08:32,809 --> 00:08:37,335
+failure because there can be no plan in
+this graph that achieves the goal.
+
+114
+00:08:37,336 --> 00:08:42,910
+Otherwise, we continue by computing the
+last layer in this planning graph that we
+
+115
+00:08:42,910 --> 00:08:46,988
+still need to consider, and that's what
+the variable M has.
+
+116
+00:08:46,988 --> 00:08:52,242
+And the way we compute this is that we use
+a new function, first level, which we
+
+117
+00:08:52,242 --> 00:08:56,811
+haven't introduced that.
+So, this function takes here, a goal and
+
+118
+00:08:56,811 --> 00:09:01,977
+the layers in the planning graph, and
+tells us in which layer this goal first
+
+119
+00:09:01,977 --> 00:09:06,584
+appears in the planning graph.
+So it gives us the index of the first
+
+120
+00:09:06,584 --> 00:09:09,523
+layer.
+Of this goal in the planning graph.
+
+121
+00:09:09,523 --> 00:09:14,036
+And M, is then simply the maximum of all
+the values for all the goals.
+
+122
+00:09:14,036 --> 00:09:17,035
+Then we can start with the backward
+chaining.
+
+123
+00:09:17,035 --> 00:09:22,097
+And the way this function works, we don't
+simply start at the last layer but we
+
+124
+00:09:22,097 --> 00:09:27,232
+start in different layers and we don't
+just move one layer at a time towards the
+
+125
+00:09:27,232 --> 00:09:30,885
+initial state but we can actually skip
+several layers.
+
+126
+00:09:30,885 --> 00:09:35,707
+And here is how that, That works.
+We use the variable Gt to hold all the
+
+127
+00:09:35,707 --> 00:09:39,621
+goals that need to be achieved in
+proposition layer t.
+
+128
+00:09:39,621 --> 00:09:45,067
+And we initialize the different sets Gt
+with all the original goals that were
+
+129
+00:09:45,067 --> 00:09:49,494
+given to the function.
+And we do this by going forward through
+
+130
+00:09:49,494 --> 00:09:53,476
+the planning graph, which is what this
+loop here does.
+
+131
+00:09:53,476 --> 00:09:57,079
+And we add the goal component to GI to the
+set GT.
+
+132
+00:09:57,079 --> 00:10:00,495
+If it appears in the layer T for the first
+time.
+
+133
+00:10:00,495 --> 00:10:04,560
+So if the first level in which GI appears
+is, indeed, T.
+
+134
+00:10:04,560 --> 00:10:09,527
+And now that we've assigned all the goals
+to the different sets, GT.
+
+135
+00:10:09,527 --> 00:10:14,330
+We can go backwards through the graph,
+starting from layer M to 1.
+
+136
+00:10:14,330 --> 00:10:20,060
+And search for actions that achieve these
+goals in the corresponding layers.
+
+137
+00:10:20,061 --> 00:10:25,842
+And if we are in layer t, then the goals
+we need to achieve are stored in the
+
+138
+00:10:25,842 --> 00:10:31,922
+variable Gt, and what we have to do is,
+find actions for each component of that
+
+139
+00:10:31,922 --> 00:10:35,513
+layer Gt.
+So, for each Gt, we need to select an
+
+140
+00:10:35,513 --> 00:10:41,783
+action that achieves that goal component,
+and that means Gt has to be a positive
+
+141
+00:10:41,783 --> 00:10:47,668
+effect of that action, of course.
+But, we have a further restriction on the
+
+142
+00:10:47,668 --> 00:10:53,150
+set of actions we can choose from.
+Namely that the action also must appear
+
+143
+00:10:53,150 --> 00:10:58,609
+for the first time in this level T.
+So this is what this function computes.
+
+144
+00:10:58,609 --> 00:11:02,668
+The first level of A in all the action
+levels must be T.
+
+145
+00:11:02,669 --> 00:11:08,108
+And then once we have chosen an action of
+course we need to add all its
+
+146
+00:11:08,108 --> 00:11:12,056
+pre-conditions as sub-goals to our
+structure G.
+
+147
+00:11:12,056 --> 00:11:18,206
+And, what we do is we don't just add the
+pre-conditions to the preceding layer
+
+148
+00:11:18,206 --> 00:11:23,596
+which would be T minus 1 as new goals but
+we may skip several levels.
+
+149
+00:11:23,596 --> 00:11:28,990
+And the level where we add this
+precondition P, is simply the level in
+
+150
+00:11:28,990 --> 00:11:32,498
+which P first appears in our planning
+graph.
+
+151
+00:11:32,498 --> 00:11:37,801
+So this is the minimal index such that P
+is in the proposition layer.
+
+152
+00:11:37,801 --> 00:11:43,014
+That is the index where we add P as a new
+goal condition to our set G.
+
+153
+00:11:43,015 --> 00:11:48,408
+And of course this loop terminates when
+we've reached T equals 1 because F0 of
+
+154
+00:11:48,408 --> 00:11:53,938
+course responds to our initial state.
+And then after we've finished with this
+
+155
+00:11:53,938 --> 00:11:59,230
+loop all that remains is the final step
+and that is to count all the actions in
+
+156
+00:11:59,230 --> 00:12:03,558
+our extracted plan and return that as the
+heuristic value.
+
+157
+00:12:03,558 --> 00:12:10,562
+Now, you have seen the heuristic computed
+by the FF planner and used for it's
+
+158
+00:12:10,562 --> 00:12:14,260
+search.
+Here is a summary of the result.
+
+159
+00:12:14,260 --> 00:12:20,176
+The heuristic that we've computed is of
+course, not admissable.
+
+160
+00:12:20,176 --> 00:12:26,942
+That means FF is not guaranteed to return
+a minimal plan, but this heuristic is
+
+161
+00:12:26,942 --> 00:12:30,867
+quite accurate.
+And that means, FF finds the plan
+
+162
+00:12:30,867 --> 00:12:37,167
+reasonably fast because it has to explore
+a smaller portion of the search space than
+
+163
+00:12:37,167 --> 00:12:40,723
+planners that use a less accurate
+heuristic.
+
+164
+00:12:40,724 --> 00:12:43,968
+And also, the heuristic is efficient to
+compute.
+
+165
+00:12:43,968 --> 00:12:49,210
+Because, as you will have noticed, both
+the functions I've just introduced can be
+
+166
+00:12:49,210 --> 00:12:53,967
+computed in polynomial time.
+The overall result can be summarized quite
+
+167
+00:12:53,967 --> 00:12:59,357
+nicely with the following statement that
+I've taken from Urich's slides, that he's
+
+168
+00:12:59,357 --> 00:13:03,906
+using at his home university.
+And this reads almost all current
+
+169
+00:13:03,906 --> 00:13:09,486
+successful satisficing planners use
+variations of some of these ideas
+
+170
+00:13:09,486 --> 00:13:13,950
+introduced in FF.
+And here is a quick summary of what we've
+
+171
+00:13:13,950 --> 00:13:19,930
+learned about advanced heuristics, the
+first heuristics we've looked at are
+
+172
+00:13:19,930 --> 00:13:26,278
+simple planning graphs heuristics but can
+be extracted more or less directly from
+
+173
+00:13:26,278 --> 00:13:29,822
+the planning graph but are not very
+accurate.
+
+174
+00:13:29,822 --> 00:13:34,707
+Then we've looked at pattern database
+heuristics which are very accurate but
+
+175
+00:13:34,707 --> 00:13:39,507
+have significant overhead in their
+computation which can be done before the
+
+176
+00:13:39,507 --> 00:13:43,208
+search for a plan.
+But they're also not very flexible, in
+
+177
+00:13:43,208 --> 00:13:48,245
+that the database needs to be recomputed
+for different goals or different objects
+
+178
+00:13:48,245 --> 00:13:51,623
+in the domain.
+Then, we've had a look at the FF Planner,
+
+179
+00:13:51,623 --> 00:13:56,359
+and specifically, at the heuristic it
+uses, which is based on the idea that we
+
+180
+00:13:56,359 --> 00:14:01,243
+solve a relaxed problem in which all the
+delete lists have been removed from all
+
+181
+00:14:01,243 --> 00:14:06,355
+the operators.
+And this is really one of the state of the
+
+182
+00:14:06,355 --> 00:14:11,105
+art heuristics that is used in planning
+today.

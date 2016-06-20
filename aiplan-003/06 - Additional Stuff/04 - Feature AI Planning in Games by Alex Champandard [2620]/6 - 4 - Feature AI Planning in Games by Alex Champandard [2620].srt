@@ -1,0 +1,1779 @@
+1
+00:00:03,430 --> 00:00:05,410
+Hello, and welcome to the AI Game Dev 
+labs. 
+
+2
+00:00:05,410 --> 00:00:07,830
+My name is Alex Champandard. 
+And today we're going to talk about 
+
+3
+00:00:07,830 --> 00:00:11,211
+planning in games and in particular more 
+of the lessons we've learned applying 
+
+4
+00:00:11,211 --> 00:00:15,410
+planning into games over the past few 
+years. 
+
+5
+00:00:15,410 --> 00:00:19,253
+And the opportunities that lie ahead in 
+using more advanced AI techniques. 
+
+6
+00:00:19,253 --> 00:00:25,660
+And then some of the games that we've 
+actually applied planning to. 
+
+7
+00:00:25,660 --> 00:00:28,696
+So, if you're anything like me, you're 
+super excited about the idea of applying 
+
+8
+00:00:28,696 --> 00:00:32,128
+modern AI techniques into games. 
+And plannings is when it's particularly 
+
+9
+00:00:32,128 --> 00:00:35,252
+interesting. 
+we've been doing this for about eight to 
+
+10
+00:00:35,252 --> 00:00:38,705
+ten years now. 
+So, we've got quite a lot of experience 
+
+11
+00:00:38,705 --> 00:00:42,595
+from applying planning in games. 
+I'm going to talk about some of those 
+
+12
+00:00:42,595 --> 00:00:44,944
+games. 
+So, here's a, a non exhaustive list of 
+
+13
+00:00:44,944 --> 00:00:49,460
+games that use planning or techniques 
+related to planning. 
+
+14
+00:00:49,460 --> 00:00:51,928
+And I'm going to dig into them. 
+So, I've been lucky enough to, to work on 
+
+15
+00:00:51,928 --> 00:00:55,980
+a couple of games that use planning. 
+And I've also interviewed developers 
+
+16
+00:00:55,980 --> 00:00:59,400
+that, built planning into many other 
+games. 
+
+17
+00:00:59,400 --> 00:01:01,596
+So, I thought it would be interesting to 
+dig into some of the insights that 
+
+18
+00:01:01,596 --> 00:01:05,355
+they've shared. 
+And some of the lessons we've learned as, 
+
+19
+00:01:05,355 --> 00:01:10,185
+as the games industry when it comes to 
+applying planning into those types of 
+
+20
+00:01:10,185 --> 00:01:17,720
+situations. 
+So first let's look at games that use 
+
+21
+00:01:17,720 --> 00:01:20,369
+planners. 
+And they can be split roughly off into 
+
+22
+00:01:20,369 --> 00:01:24,255
+two categories, STRIPS style planning, 
+and HTN style planning. 
+
+23
+00:01:24,255 --> 00:01:29,423
+And, STRIPS, you can think of it as a 
+very non-hierarchical searching through 
+
+24
+00:01:29,423 --> 00:01:36,214
+actions that generate new states. 
+And then figuring out how to get from one 
+
+25
+00:01:36,214 --> 00:01:42,983
+state to another via a set of actions. 
+HTN is more hierarchical, and it tries to 
+
+26
+00:01:42,983 --> 00:01:50,450
+search through actions that break down 
+recursively using tastic composition. 
+
+27
+00:01:50,450 --> 00:01:54,104
+And so, with STRIPS based approach, you 
+need to, to have a good idea of the 
+
+28
+00:01:54,104 --> 00:01:57,756
+problem. 
+And to have an efficient implementation 
+
+29
+00:01:57,756 --> 00:02:02,940
+as well, because it requires a start to 
+search through all the different options. 
+
+30
+00:02:02,940 --> 00:02:06,290
+And the first game that really nailed 
+that down was Fear. 
+
+31
+00:02:06,290 --> 00:02:10,499
+And that's based on the work of Jeff 
+Orkin at Monolith, who applied STRIPS 
+
+32
+00:02:10,499 --> 00:02:15,842
+based planner into, into Fear. 
+And he did a lot of work to make this run 
+
+33
+00:02:15,842 --> 00:02:20,306
+fast enough and combined with the 
+particular type of game that this was 
+
+34
+00:02:20,306 --> 00:02:26,738
+with action oriented game. 
+Where you only really needed short action 
+
+35
+00:02:26,738 --> 00:02:32,095
+sequences for the characters in the game. 
+And this, this turned out to be feasible 
+
+36
+00:02:32,095 --> 00:02:35,308
+in 2005. 
+And this particular game spawned a whole 
+
+37
+00:02:35,308 --> 00:02:40,437
+bunch of sequels and expansion packs. 
+And derivatives of this kind of 
+
+38
+00:02:40,437 --> 00:02:44,480
+technology were used in, in all of those 
+games. 
+
+39
+00:02:44,480 --> 00:02:48,576
+And you can actually find original 
+implementation in the STK of the original 
+
+40
+00:02:48,576 --> 00:02:53,590
+Fear, so you can download that and find 
+the planner. 
+
+41
+00:02:53,590 --> 00:02:56,428
+It's actually there and you can read the 
+whole code for it, so I highly encourage 
+
+42
+00:02:56,428 --> 00:02:59,915
+you to do that. 
+You may need a copy of the original game, 
+
+43
+00:02:59,915 --> 00:03:05,334
+but it's worth it. 
+So, that particular implementation was 
+
+44
+00:03:05,334 --> 00:03:10,020
+well documented by Jeff Orkin and it 
+spawned a bunch of other games that were 
+
+45
+00:03:10,020 --> 00:03:14,343
+inspired by. 
+And two of those were internal to 
+
+46
+00:03:14,343 --> 00:03:19,307
+Monolith, Condemned and Condemned 2, 
+which I also believe used similar or the 
+
+47
+00:03:19,307 --> 00:03:26,221
+same code base, STRIPS base also. 
+Then there's a couple other titles 
+
+48
+00:03:26,221 --> 00:03:31,189
+including the Stalker games that were 
+also using planning and Stalker uses 
+
+49
+00:03:31,189 --> 00:03:37,040
+hierarchies of STRIPS planners to drive 
+character behavior. 
+
+50
+00:03:37,040 --> 00:03:41,792
+So, where as the behavior is potentially 
+complexive of the agents in Stalker or 
+
+51
+00:03:41,792 --> 00:03:47,624
+the Stalkers as they're called. 
+they breakdown this complex, long term 
+
+52
+00:03:47,624 --> 00:03:52,560
+behavior into a hierarchy of STRIPS style 
+planners. 
+
+53
+00:03:52,560 --> 00:03:56,144
+Just Cause is also a similar kind of 
+open-world environment, that also uses a 
+
+54
+00:03:56,144 --> 00:03:59,956
+STRIPS style planner. 
+And the civilians as well as the enemies 
+
+55
+00:03:59,956 --> 00:04:03,628
+use that planner for for dealing with 
+unexpected situations and the emergent 
+
+56
+00:04:03,628 --> 00:04:07,146
+behaviors that you get out of the 
+planner. 
+
+57
+00:04:07,146 --> 00:04:11,580
+more planning helps deal with those 
+particular types of situations. 
+
+58
+00:04:12,660 --> 00:04:17,490
+So, there's game shipped in 2007, 2008, 
+2010, War for Fall of Cybertron, the 
+
+59
+00:04:17,490 --> 00:04:22,151
+Transformers game, also used STRIPS style 
+planner. 
+
+60
+00:04:22,151 --> 00:04:26,141
+Which required lots of specific 
+optimizations and graph-based 
+
+61
+00:04:26,141 --> 00:04:31,740
+optimization of STRIPS planners. 
+And Deus Ex, the most recent addition of 
+
+62
+00:04:31,740 --> 00:04:36,840
+that franchise, in 2011, apparently used 
+a planner as well. 
+
+63
+00:04:38,720 --> 00:04:42,874
+So these are, this is a list of games, a 
+non-exhaustive list of games that uses 
+
+64
+00:04:42,874 --> 00:04:47,215
+STRIPS. 
+And, there are some other games that use 
+
+65
+00:04:47,215 --> 00:04:51,010
+STRIPS, but these are the primary ones 
+that try to, to capture all the the key 
+
+66
+00:04:51,010 --> 00:04:55,379
+franchises, the triple a games that use 
+planners. 
+
+67
+00:04:55,379 --> 00:04:58,844
+There are a few independent games that 
+also use planners, and strip style as 
+
+68
+00:04:58,844 --> 00:05:01,615
+well. 
+But the other major category is 
+
+69
+00:05:01,615 --> 00:05:05,360
+hierarchical task network. 
+I'm going to talk about those now. 
+
+70
+00:05:05,360 --> 00:05:08,777
+And those are inspired by particulary the 
+work of Gorilla Games on Kill Zone 2 and 
+
+71
+00:05:08,777 --> 00:05:13,130
+I was lucky enough to work on the 
+multiplayer box for Kill Zone 2. 
+
+72
+00:05:13,130 --> 00:05:17,552
+And initially when Gorilla did research 
+into hierarchical test networks, they 
+
+73
+00:05:17,552 --> 00:05:23,410
+studied STRIPS that was available based 
+on the insights from Jeff Orkin. 
+
+74
+00:05:23,410 --> 00:05:26,170
+And they thought that they needed a bit 
+more designer control over their 
+
+75
+00:05:26,170 --> 00:05:29,123
+behaviors. 
+So, they built a more hierarchical 
+
+76
+00:05:29,123 --> 00:05:33,029
+planner which helps the designers 
+essentially craft a specific tree of 
+
+77
+00:05:33,029 --> 00:05:37,720
+behaviors, that can also be searched by a 
+planner. 
+
+78
+00:05:37,720 --> 00:05:41,256
+And so, it seemed to them to combine the 
+best benefits of designer control with 
+
+79
+00:05:41,256 --> 00:05:44,034
+planning. 
+And it turned out to be extremely 
+
+80
+00:05:44,034 --> 00:05:46,986
+successful. 
+And the bots in the game are when was 
+
+81
+00:05:46,986 --> 00:05:52,490
+reviewed by the, the journalists that 
+that reviewed Kill Zone initially. 
+
+82
+00:05:52,490 --> 00:05:56,648
+And they often were surprised that the 
+bots were actually bots and they were not 
+
+83
+00:05:56,648 --> 00:06:01,730
+online, so they were often fooled by the, 
+by the AI in the game. 
+
+84
+00:06:02,750 --> 00:06:07,625
+So, obviously Kill Zone's AI was extended 
+and reused in Kill Zone 3, and 
+
+85
+00:06:07,625 --> 00:06:13,557
+Transformers War for Cybertron borrowed 
+that approach as well. 
+
+86
+00:06:13,557 --> 00:06:18,610
+And also implemented a hierarchical task 
+network style of AI. 
+
+87
+00:06:18,610 --> 00:06:24,160
+so, initially, all these implementations 
+were derived from SHOP, that stands for 
+
+88
+00:06:24,160 --> 00:06:30,960
+simple hierarchical orbit planner. 
+It has lots of advantages. 
+
+89
+00:06:30,960 --> 00:06:32,700
+It's a simple algorithm, but adds some 
+purpose. 
+
+90
+00:06:32,700 --> 00:06:37,190
+And the advantages that it has are 
+effectively because of design. 
+
+91
+00:06:37,190 --> 00:06:41,630
+And it allows designers to express nice 
+hierarchies, ordered hierarchies. 
+
+92
+00:06:41,630 --> 00:06:45,010
+They're plans that you can understand 
+exactly how those will get chosen in the 
+
+93
+00:06:45,010 --> 00:06:48,930
+game. 
+So, you have full control over specific 
+
+94
+00:06:48,930 --> 00:06:53,810
+type of behavior which makes them 
+particularly well suited for creating 
+
+95
+00:06:53,810 --> 00:07:00,450
+character alley. 
+Kill Zone too, uses subset of SHOP. 
+
+96
+00:07:00,450 --> 00:07:04,790
+It does not track exactly the, the side 
+effects of each action as they're applied 
+
+97
+00:07:04,790 --> 00:07:11,180
+to the current world state as it searches 
+forwards through the set of action rules. 
+
+98
+00:07:11,180 --> 00:07:14,010
+It searches forwards in time. 
+Whereas Transformers does that. 
+
+99
+00:07:14,010 --> 00:07:16,968
+So, it tracks the side effects of each 
+action. 
+
+100
+00:07:16,968 --> 00:07:20,912
+Kill Zone 2 on the other hand uses the 
+prepositional logic of SHOP that 
+
+101
+00:07:20,912 --> 00:07:25,489
+Transformers doesn't. 
+So, or, we found different games that use 
+
+102
+00:07:25,489 --> 00:07:29,332
+different subsets of the SHOP algorithm 
+and those proven to be useful in 
+
+103
+00:07:29,332 --> 00:07:33,582
+different practices. 
+But we haven't fully seen a full 
+
+104
+00:07:33,582 --> 00:07:36,750
+implementation of SHOP applied to games 
+yet. 
+
+105
+00:07:36,750 --> 00:07:42,690
+But we've found hierarchical planners to 
+be extremely useful, generally speaking. 
+
+106
+00:07:44,210 --> 00:07:50,340
+So there, those are the, the games use 
+HTN's officially and are well documented. 
+
+107
+00:07:50,340 --> 00:07:53,812
+And there are a couple other games that 
+use hierarchical test networks 
+
+108
+00:07:53,812 --> 00:07:58,558
+unofficially which I have discovered 
+based on my personal research. 
+
+109
+00:07:58,558 --> 00:08:02,198
+And gossip and so I'm guessing here I 
+believe Max Payne 3 uses hierarchical 
+
+110
+00:08:02,198 --> 00:08:06,092
+test network. 
+Planner, based on the work of Peter 
+
+111
+00:08:06,092 --> 00:08:09,925
+Gornak, as well as Demon Souls and Dark 
+Souls as well. 
+
+112
+00:08:09,925 --> 00:08:16,210
+Max Payne, I think uses some HTN concepts 
+within it's squads. 
+
+113
+00:08:16,210 --> 00:08:20,679
+So, that was a presentation at GDC 2009, 
+but it's not it's not official. 
+
+114
+00:08:23,580 --> 00:08:27,375
+[SOUND] And when the Total War series, 
+when Empire came out, there were some 
+
+115
+00:08:27,375 --> 00:08:32,171
+rumors that it also used a planner. 
+And we invited Creative Assembly to a 
+
+116
+00:08:32,171 --> 00:08:35,612
+gaming conference to give a presentation 
+about the AI. 
+
+117
+00:08:35,612 --> 00:08:38,291
+And it turns out it's more of a 
+hierarchical approach and not a strict 
+
+118
+00:08:38,291 --> 00:08:41,850
+style implementation. 
+And and it also turns out, it's a little 
+
+119
+00:08:41,850 --> 00:08:46,804
+bit more reactive. 
+It doesn't fully search everything a, a 
+
+120
+00:08:46,804 --> 00:08:52,064
+ahead like a, a fully featured HTN 
+planner. 
+
+121
+00:08:52,064 --> 00:08:56,215
+but this is important to emphasize. 
+it draws the line between planners and 
+
+122
+00:08:56,215 --> 00:09:01,240
+the more reactive techniques that are 
+used in industry like behavior trees. 
+
+123
+00:09:01,240 --> 00:09:05,134
+And it's hard to often find the, the, the 
+gap between the two, or where do you draw 
+
+124
+00:09:05,134 --> 00:09:08,900
+the line between a planner and not a 
+planner? 
+
+125
+00:09:08,900 --> 00:09:12,780
+And there are certain things that are 
+called reactive planners, in academia. 
+
+126
+00:09:12,780 --> 00:09:19,670
+And, the game developers have embraced 
+these types of technique. 
+
+127
+00:09:19,670 --> 00:09:22,798
+And, these techniques, you search, but 
+not searching ahead and I'm going to talk 
+
+128
+00:09:22,798 --> 00:09:26,255
+about those now. 
+And so, a behavior tree, for instance, 
+
+129
+00:09:26,255 --> 00:09:29,895
+will look exactly like an HTN, except it 
+does not search ahead in time, it stops 
+
+130
+00:09:29,895 --> 00:09:33,311
+at the current action and says, this is 
+likely to work out, I'm going to try it 
+
+131
+00:09:33,311 --> 00:09:39,247
+out. 
+So, behavior trees have been extremely 
+
+132
+00:09:39,247 --> 00:09:43,370
+popular in games and in particular since 
+Halo 2. 
+
+133
+00:09:43,370 --> 00:09:48,821
+there was a presentation gave that Damian 
+Gessler gave at GDC about the behavior 
+
+134
+00:09:48,821 --> 00:09:52,682
+trees in Halo 2. 
+And there were a couple of other titles 
+
+135
+00:09:52,682 --> 00:09:55,810
+at the time, but also gravitated around 
+similar ideas, and Swap Four was one of 
+
+136
+00:09:55,810 --> 00:10:00,184
+them, and Facade was another. 
+And this is inspired from, from a lot of 
+
+137
+00:10:00,184 --> 00:10:04,300
+work done in robotics or the virtual 
+agents community. 
+
+138
+00:10:04,300 --> 00:10:08,652
+And things have kind of crystallized 
+since then, and there have literally been 
+
+139
+00:10:08,652 --> 00:10:14,540
+hundreds of title based on behavior trees 
+and many, many different games. 
+
+140
+00:10:15,720 --> 00:10:18,736
+But I'm going to talk about, 
+specifically, some titles that have 
+
+141
+00:10:18,736 --> 00:10:24,280
+relations to, to planning or the, the, to 
+somehow bridge the gap between the two. 
+
+142
+00:10:24,280 --> 00:10:30,020
+And Metro 2033 was a stealth-action game 
+that and the developers had some 
+
+143
+00:10:30,020 --> 00:10:36,369
+experiences of playing, planning from the 
+Stalker games. 
+
+144
+00:10:36,369 --> 00:10:41,233
+And they initially used a planner but 
+then they switched to using more 
+
+145
+00:10:41,233 --> 00:10:47,830
+behavior-tree style AI not very 
+hierarchical, a quite flat tree. 
+
+146
+00:10:47,830 --> 00:10:51,250
+And, and that turned out to be better for 
+them to get more control over the 
+
+147
+00:10:51,250 --> 00:10:55,240
+behaviors and and the game has a lot of 
+similar functionality than, than the Fear 
+
+148
+00:10:55,240 --> 00:11:00,750
+franchise, for instance. 
+And it, it plays a lot in the same way. 
+
+149
+00:11:00,750 --> 00:11:06,032
+So, it shows that similar behaviors can 
+be implemented with different techniques. 
+
+150
+00:11:06,032 --> 00:11:10,124
+And that some of the strips the original 
+strips planning techniques didn't 
+
+151
+00:11:10,124 --> 00:11:14,830
+necessarily create different behavior. 
+It just demanded developers to create 
+
+152
+00:11:14,830 --> 00:11:19,679
+that behavior in a different way. 
+another studio that's worth mentioning is 
+
+153
+00:11:19,679 --> 00:11:25,341
+Avalanche Studios, who built the strips 
+planner in Just Cause II. 
+
+154
+00:11:25,341 --> 00:11:29,949
+now at the latest gaming [UNKNOWN] 
+conference we had the panel discussion 
+
+155
+00:11:29,949 --> 00:11:34,413
+about this and Avalanche has actually got 
+it's own internal behavior tree 
+
+156
+00:11:34,413 --> 00:11:40,260
+implementation now as well. 
+So it had a planner available, but it 
+
+157
+00:11:40,260 --> 00:11:44,320
+decided to use behavior trees for certain 
+projects despite having the planning 
+
+158
+00:11:44,320 --> 00:11:50,294
+technology available. 
+For many reasons that we've talked about 
+
+159
+00:11:50,294 --> 00:11:54,696
+including designer control. 
+And it seems well it may seem obvious but 
+
+160
+00:11:54,696 --> 00:11:59,149
+it's become obvious to the game developer 
+industry now that certain techniques are 
+
+161
+00:11:59,149 --> 00:12:03,269
+better suited to different types of 
+games. 
+
+162
+00:12:03,269 --> 00:12:07,045
+And in the more action combat oriented 
+games, you can get away with such 
+
+163
+00:12:07,045 --> 00:12:14,393
+reactive techniques like behavior trees. 
+So, we've talked about a lot of 
+
+164
+00:12:14,393 --> 00:12:20,950
+stealth-based games, and a lot of more 
+interesting, open-world games like Just 
+
+165
+00:12:20,950 --> 00:12:26,906
+Cause 2. 
+And planners, more justifiable in large, 
+
+166
+00:12:26,906 --> 00:12:32,814
+complex, open-world type games. 
+And in the the more linear scripted type 
+
+167
+00:12:32,814 --> 00:12:36,622
+games, obviously, you need less of a 
+planner in such a closed-off environment 
+
+168
+00:12:36,622 --> 00:12:40,915
+where there are fewer choices available 
+to the AI. 
+
+169
+00:12:40,915 --> 00:12:46,090
+so behavior trees remains a very, very 
+popular option in industry, another set 
+
+170
+00:12:46,090 --> 00:12:51,327
+of techniques that are used in games are 
+utilities systems. 
+
+171
+00:12:51,327 --> 00:12:55,605
+And utility systems tend to be used in 
+very specific systems of games, like 
+
+172
+00:12:55,605 --> 00:13:01,600
+weapon selection or selecting enemies or 
+in the action combat games. 
+
+173
+00:13:01,600 --> 00:13:05,520
+That are very used for these particular 
+decisions. 
+
+174
+00:13:05,520 --> 00:13:09,250
+You can think of a utility system as a, 
+kind of like a spreadsheet. 
+
+175
+00:13:09,250 --> 00:13:11,751
+Of all these different options that I 
+have, which one should I pick, which 
+
+176
+00:13:11,751 --> 00:13:14,375
+target should I pick, which weapon should 
+I pick, which smart object should I 
+
+177
+00:13:14,375 --> 00:13:18,635
+interact with? 
+and what's interesting about utility 
+
+178
+00:13:18,635 --> 00:13:23,605
+systems is that there is there is a gap 
+between or there's a bridge between them 
+
+179
+00:13:23,605 --> 00:13:29,038
+and planning systems. 
+And Demigod is one of those titles that 
+
+180
+00:13:29,038 --> 00:13:32,715
+bridges the gap between a utility system 
+and, and planners. 
+
+181
+00:13:32,715 --> 00:13:39,420
+so Demigod is a multi-player online 
+battle arena, a MOBA for short. 
+
+182
+00:13:39,420 --> 00:13:42,710
+And it has many challenges for the AI in 
+particular. 
+
+183
+00:13:42,710 --> 00:13:48,920
+And it uses planning style algorithms. 
+As we'll combine with utility. 
+
+184
+00:13:48,920 --> 00:13:52,365
+So, instead of searching for a specific 
+goal based on Boolean criteria, where 
+
+185
+00:13:52,365 --> 00:13:56,415
+each action has strict dependencies that 
+need to be satisfied. 
+
+186
+00:13:56,415 --> 00:14:01,470
+Demigod uses search, at that two depth 
+three of a set of actions. 
+
+187
+00:14:01,470 --> 00:14:04,620
+And it tries to calculate a score for 
+what it's done, 
+
+188
+00:14:04,620 --> 00:14:07,903
+And so it then, figures out if a specific 
+combination of actions have a higher 
+
+189
+00:14:07,903 --> 00:14:12,689
+score or a lower score. 
+Not necessarily looking to satisfy a 
+
+190
+00:14:12,689 --> 00:14:19,070
+Boolean goal, but using search to 
+maximize a specific utility. 
+
+191
+00:14:19,070 --> 00:14:24,028
+So, the application here is significantly 
+different, but it's still using search to 
+
+192
+00:14:24,028 --> 00:14:29,740
+automatically find sequences of actions 
+that are sensible for the AI. 
+
+193
+00:14:29,740 --> 00:14:33,315
+So that's why, it's got many aspects of 
+planning but it's also got many aspects 
+
+194
+00:14:33,315 --> 00:14:37,091
+of utility as well. 
+and I think that's a very promising area 
+
+195
+00:14:37,091 --> 00:14:40,171
+that is very under explored, and 
+certainly very suited to these 
+
+196
+00:14:40,171 --> 00:14:45,026
+multi-player online battle arenas. 
+And I presume we'll be seeing more of 
+
+197
+00:14:45,026 --> 00:14:49,870
+those types of AIs being built, as mobile 
+games become more, more popular. 
+
+198
+00:14:51,700 --> 00:14:56,390
+Another style or another type of game 
+that I'd like to talk about is the the 
+
+199
+00:14:56,390 --> 00:15:01,281
+multi-player box implemented in, for 
+example, section 8 prejudice, or section 
+
+200
+00:15:01,281 --> 00:15:05,554
+8. 
+Now, this is worth mentioning, because 
+
+201
+00:15:05,554 --> 00:15:10,398
+Timegate had experience working on the 
+expansion packs for the original Fear. 
+
+202
+00:15:10,398 --> 00:15:14,871
+And they built the AI, or they work with 
+the planner and the AI and the planner in 
+
+203
+00:15:14,871 --> 00:15:19,092
+the STRIPS style. 
+But for their own game, Section 8 
+
+204
+00:15:19,092 --> 00:15:23,880
+prejudice they chose to build a utility 
+system for the bots instead. 
+
+205
+00:15:23,880 --> 00:15:26,548
+So, this is another action combat game 
+where the bots have to make fast 
+
+206
+00:15:26,548 --> 00:15:29,722
+decisions, and they found that utility 
+worked perfectly well for this particular 
+
+207
+00:15:29,722 --> 00:15:32,974
+purpose. 
+And they did not need to implement the 
+
+208
+00:15:32,974 --> 00:15:36,650
+planning system. 
+despite having the experience with that 
+
+209
+00:15:36,650 --> 00:15:40,780
+and this emphasizes again the, the fast 
+pace action games. 
+
+210
+00:15:40,780 --> 00:15:44,170
+And not necessarily the best type of 
+games to implement planning in. 
+
+211
+00:15:44,170 --> 00:15:47,490
+over planning does have its advantages as 
+well. 
+
+212
+00:15:47,490 --> 00:15:53,300
+Which we'll talk about shortly. 
+And the third game, that I'd like to talk 
+
+213
+00:15:53,300 --> 00:15:58,820
+about that's utility-based is the, the 
+Sims, and the Sims 3 in particular. 
+
+214
+00:15:58,820 --> 00:16:02,103
+Now, earlier in the franchise, the Sims 
+1, the Sims 2, were almost entirely based 
+
+215
+00:16:02,103 --> 00:16:05,692
+on utility. 
+but the Sims 3 took that a bit further, 
+
+216
+00:16:05,692 --> 00:16:10,198
+and the characters were more purposeful. 
+They could interact with each other, and 
+
+217
+00:16:10,198 --> 00:16:14,538
+within a neighborhood, and there was not 
+just a single single household that was 
+
+218
+00:16:14,538 --> 00:16:19,275
+simulated at a time. 
+And to make this work, to pull this off, 
+
+219
+00:16:19,275 --> 00:16:23,118
+with sufficient performance, Richard 
+Evans had to build conceptually a 
+
+220
+00:16:23,118 --> 00:16:29,192
+hierarchical planner into the system 
+To partly isolate the utility system into 
+
+221
+00:16:29,192 --> 00:16:33,222
+sub-decisions, so that the whole thing 
+was not utility-based, but it was more 
+
+222
+00:16:33,222 --> 00:16:38,790
+like driven by the planner. 
+And then using utility at the base. 
+
+223
+00:16:38,790 --> 00:16:44,640
+So, in a sense, utility was relegated or, 
+or, isolated a little more and more 
+
+224
+00:16:44,640 --> 00:16:50,022
+responsibility was proportionately given 
+to the hierarchical planner to really 
+
+225
+00:16:50,022 --> 00:16:55,813
+pull this off. 
+And the Sims 3 is a very interesting case 
+
+226
+00:16:55,813 --> 00:17:00,097
+study, and looking forward, I hope to see 
+more games with purposeful characters, 
+
+227
+00:17:00,097 --> 00:17:05,174
+like those in the Sims 3. 
+And it certainly shows that there's a lot 
+
+228
+00:17:05,174 --> 00:17:08,540
+of potential in combining hierarchical 
+planners with other techniques, like 
+
+229
+00:17:08,540 --> 00:17:19,140
+utility to get really great behaviors. 
+So, what have we learned from all this, 
+
+230
+00:17:19,140 --> 00:17:23,220
+and we've basically been applying 
+planners in games since since Fear, 
+
+231
+00:17:23,220 --> 00:17:27,789
+that's the first documented use of 
+planning in games. 
+
+232
+00:17:27,789 --> 00:17:30,930
+And it's been almost eight years since 
+then. 
+
+233
+00:17:30,930 --> 00:17:34,518
+So, in that time, we've, we've learned 
+quite a lot about planning in video games 
+
+234
+00:17:34,518 --> 00:17:40,150
+certainly not as much as in robotics, 
+they've been doing it for, for decades. 
+
+235
+00:17:40,150 --> 00:17:45,180
+But we still have, a lot of insights. 
+So, one thing we've found as far as games 
+
+236
+00:17:45,180 --> 00:17:50,070
+are concerned, technology is really 
+rarely the problem. 
+
+237
+00:17:50,070 --> 00:17:54,210
+Now, initially to get the STRIPS style 
+planner, interfere, Jeff Orkin had to do 
+
+238
+00:17:54,210 --> 00:17:58,475
+a lot of work to, to get that running 
+fast enough. 
+
+239
+00:17:58,475 --> 00:18:01,661
+And he has a paper on the subject, 
+entitled, how to plan in real-time and 
+
+240
+00:18:01,661 --> 00:18:05,520
+keep your job. 
+So, it certainly was a performance 
+
+241
+00:18:05,520 --> 00:18:10,395
+problem initially, a lot of developers 
+have benefited from his insight since 
+
+242
+00:18:10,395 --> 00:18:15,146
+then. 
+And kind of optimization work is becoming 
+
+243
+00:18:15,146 --> 00:18:22,230
+less important now that we have more 
+processing power to throw at the problem. 
+
+244
+00:18:22,230 --> 00:18:25,821
+And so, it's fair to say that these 
+technical issues are secondary now to 
+
+245
+00:18:25,821 --> 00:18:29,422
+design issues, and that's my second point 
+here. 
+
+246
+00:18:29,422 --> 00:18:33,134
+That a lot of the questions that game 
+developers are raising about planning, 
+
+247
+00:18:33,134 --> 00:18:37,545
+it's hard to combine automated planning 
+with designer control. 
+
+248
+00:18:37,545 --> 00:18:41,373
+And that's a big open question about game 
+AI in general, how do you combine those 
+
+249
+00:18:41,373 --> 00:18:45,140
+two things? 
+And it turns out that hierarchical 
+
+250
+00:18:45,140 --> 00:18:48,660
+planning is our, currently our most 
+promising direction that we're heading 
+
+251
+00:18:48,660 --> 00:18:52,879
+down. 
+Hierarchy allows you to edit specifically 
+
+252
+00:18:52,879 --> 00:18:56,539
+what types of decisions you'd like to 
+constrain, and if you want to, very 
+
+253
+00:18:56,539 --> 00:19:02,733
+constrained decisions, you'll be able to 
+very narrow tree It goes more deeply. 
+
+254
+00:19:02,733 --> 00:19:06,887
+But if you want to give the, planning 
+more options, then you, will build a tree 
+
+255
+00:19:06,887 --> 00:19:12,104
+that is much more broad. 
+And that that leverages search more, as 
+
+256
+00:19:12,104 --> 00:19:16,270
+opposed to designers structuring of the 
+tree. 
+
+257
+00:19:16,270 --> 00:19:20,220
+so these are big open questions. 
+How do we balance those two things? 
+
+258
+00:19:20,220 --> 00:19:23,340
+But we've learned that hierarchies are a 
+very good way of doing that and that's 
+
+259
+00:19:23,340 --> 00:19:28,002
+why simple algorithms that look simple 
+from a research point of view like SHOP. 
+
+260
+00:19:28,002 --> 00:19:30,738
+Are very interesting from a game 
+developer's point of view, because 
+
+261
+00:19:30,738 --> 00:19:34,490
+they're simple and they provide that 
+simple specification. 
+
+262
+00:19:34,490 --> 00:19:37,550
+As a, as a kind of language for the 
+designers to use and to craft behaviors 
+
+263
+00:19:37,550 --> 00:19:41,670
+that they can control. 
+The third big lesson that we've learned 
+
+264
+00:19:41,670 --> 00:19:45,830
+is that when we're less sure about the 
+domain of how to build great AI, then 
+
+265
+00:19:45,830 --> 00:19:50,766
+planning has many benefits. 
+And Jeff Orking mentioned that the 
+
+266
+00:19:50,766 --> 00:19:54,078
+benefits of using planning on Fear, was 
+also during development, they could throw 
+
+267
+00:19:54,078 --> 00:19:57,908
+together parts type behaviors. 
+And quickly get results without 
+
+268
+00:19:57,908 --> 00:20:01,940
+necessarily understanding the impact of 
+the features that they were building. 
+
+269
+00:20:01,940 --> 00:20:05,477
+They could get great-looking behaviors 
+quickly. 
+
+270
+00:20:05,477 --> 00:20:09,479
+And, if you have larger, predictable open 
+worlds, I mean, maybe Stalker or Just 
+
+271
+00:20:09,479 --> 00:20:12,576
+Cause. 
+Planning could also help if you don't 
+
+272
+00:20:12,576 --> 00:20:17,080
+fully understand where things may end up 
+or how objects may interact. 
+
+273
+00:20:17,080 --> 00:20:20,408
+So, planning is potentially a good way to 
+get around these problems and still 
+
+274
+00:20:20,408 --> 00:20:25,362
+provide robust AI. 
+But conversely, in domains where we have 
+
+275
+00:20:25,362 --> 00:20:29,142
+ever clear understanding of what the 
+problem is and what the scope of the 
+
+276
+00:20:29,142 --> 00:20:33,894
+level is, or which objects may interact 
+with others. 
+
+277
+00:20:33,894 --> 00:20:37,014
+Like tightly scripted action games, 
+developers building such types of games 
+
+278
+00:20:37,014 --> 00:20:40,394
+have found themselves moving away from 
+planning techniques. 
+
+279
+00:20:40,394 --> 00:20:43,610
+Because, well, they can do the same thing 
+without searching ahead and using more 
+
+280
+00:20:43,610 --> 00:20:51,400
+reactive techniques instead. 
+the third important point and probably 
+
+281
+00:20:51,400 --> 00:20:54,940
+one of the biggest lessons that we've 
+learned here is that, goal-based 
+
+282
+00:20:54,940 --> 00:21:00,300
+architectures are very exciting from an 
+architectural point of view. 
+
+283
+00:21:00,300 --> 00:21:03,530
+Regardless of whether we use planners or 
+not. 
+
+284
+00:21:03,530 --> 00:21:06,806
+So, goal-based architecture is 
+conceptually separating what to do and 
+
+285
+00:21:06,806 --> 00:21:10,257
+how to do it. 
+So, if you separate those two things, it 
+
+286
+00:21:10,257 --> 00:21:15,485
+doesn't matter how you implement it. 
+You can implement that using a planner, 
+
+287
+00:21:15,485 --> 00:21:18,895
+behavior tree, utility system, and you 
+still have a lot of benefits in your 
+
+288
+00:21:18,895 --> 00:21:22,924
+architecture. 
+And it it turns out to be a very healthy 
+
+289
+00:21:22,924 --> 00:21:26,301
+architectural separation. 
+So, you can have the designers work on 
+
+290
+00:21:26,301 --> 00:21:28,966
+specifying what they want and have an 
+algorithm implement that in a different 
+
+291
+00:21:28,966 --> 00:21:32,174
+way. 
+Search is just one way to implement that, 
+
+292
+00:21:32,174 --> 00:21:35,040
+or planning is just one way to implement 
+that as well. 
+
+293
+00:21:38,400 --> 00:21:43,152
+Another thing we've found is that 
+planning hasn't yet really made or broken 
+
+294
+00:21:43,152 --> 00:21:47,774
+any particular game. 
+And like to see that, I'd like to see a 
+
+295
+00:21:47,774 --> 00:21:52,064
+game where a planner is absolutely 
+necessary, but currently, we've found 
+
+296
+00:21:52,064 --> 00:21:56,684
+that planners are just another technique 
+that can implement AI decision making for 
+
+297
+00:21:56,684 --> 00:22:02,139
+characters. 
+And the most games could use behavior 
+
+298
+00:22:02,139 --> 00:22:06,171
+tree utility systems relatively 
+interchangeably and you wouldn't really 
+
+299
+00:22:06,171 --> 00:22:10,410
+notice much difference. 
+But what I would like to see, is a game 
+
+300
+00:22:10,410 --> 00:22:13,738
+where planning is actually absolutely 
+required, you can not build up using a 
+
+301
+00:22:13,738 --> 00:22:17,468
+reactive technique. 
+And there's been very little 
+
+302
+00:22:17,468 --> 00:22:21,067
+investigation of that and that kind of 
+ties into my big opportunities for 
+
+303
+00:22:21,067 --> 00:22:26,160
+planning and for, for these techniques in 
+general. 
+
+304
+00:22:26,160 --> 00:22:29,562
+So, in the long term, I think the big 
+potential of planning is that we will 
+
+305
+00:22:29,562 --> 00:22:35,963
+have more intelligent characters. 
+And planning is super talented and super 
+
+306
+00:22:35,963 --> 00:22:42,190
+good at deliberation and logical 
+reasoning. 
+
+307
+00:22:42,190 --> 00:22:47,570
+Figuring out how to achieve a goal based 
+on actions that are combined together. 
+
+308
+00:22:47,570 --> 00:22:50,230
+And intelligence isn't the only thing 
+we're looking for in games. 
+
+309
+00:22:50,230 --> 00:22:53,210
+We want the characters to be believable 
+and entertaining. 
+
+310
+00:22:53,210 --> 00:22:56,762
+but intelligence helps a lot and will 
+help us make more believable characters 
+
+311
+00:22:56,762 --> 00:23:00,475
+certainly. 
+Second big long-term promise that 
+
+312
+00:23:00,475 --> 00:23:05,099
+planners can help us fulfill is the the 
+idea of a game master, or a game director 
+
+313
+00:23:05,099 --> 00:23:11,170
+that can custom-craft or tailor an 
+experience for us. 
+
+314
+00:23:11,170 --> 00:23:14,950
+So, if a designer has a plan for us, and 
+he cannot supervise every single game 
+
+315
+00:23:14,950 --> 00:23:18,910
+instance in the world, then potentially 
+he could build a planner into that game 
+
+316
+00:23:18,910 --> 00:23:23,359
+and 
+And have the planner help change, update 
+
+317
+00:23:23,359 --> 00:23:26,983
+the story, give new quests based on 
+what's going on. 
+
+318
+00:23:26,983 --> 00:23:31,253
+And really join in in the storytelling 
+to, to make each game experience fully 
+
+319
+00:23:31,253 --> 00:23:33,985
+unique. 
+And this is something we are barely 
+
+320
+00:23:33,985 --> 00:23:37,182
+scratching the surface of and there's a 
+lot of potential here. 
+
+321
+00:23:37,182 --> 00:23:44,343
+In short-term, there's, three big things 
+that that I think are, are promising 
+
+322
+00:23:44,343 --> 00:23:50,044
+avenues for planning. 
+The first is applying planning to other 
+
+323
+00:23:50,044 --> 00:23:54,720
+domains and not just characters and 
+specifically not just enemies. 
+
+324
+00:23:54,720 --> 00:23:59,740
+So, we've, we've done action combat games 
+and we've done them, too well. 
+
+325
+00:23:59,740 --> 00:24:03,100
+Now, let's try some different types of 
+games, and Sims 3 is pointing in an 
+
+326
+00:24:03,100 --> 00:24:06,516
+exciting new direction of how to 
+potentially use planning techniques in 
+
+327
+00:24:06,516 --> 00:24:11,824
+different kinds of environments. 
+But we haven't really scratched the 
+
+328
+00:24:11,824 --> 00:24:16,507
+surface of this either. 
+And, again, so not just exploring 
+
+329
+00:24:16,507 --> 00:24:25,094
+different types of game applications, but 
+also different types of, games. 
+
+330
+00:24:25,094 --> 00:24:29,310
+So, RPGs, or simulation games could also 
+benefit from planning. 
+
+331
+00:24:31,240 --> 00:24:33,680
+And also, I think, in the short term, we 
+have a lot of potential in applying 
+
+332
+00:24:33,680 --> 00:24:36,520
+planning techniques during the 
+development, as a tool. 
+
+333
+00:24:36,520 --> 00:24:39,868
+So, if you think of a planner as a way to 
+compile and create a more reactive AI 
+
+334
+00:24:39,868 --> 00:24:43,648
+that will run very efficiently, but we 
+can do all the computationally expensive 
+
+335
+00:24:43,648 --> 00:24:47,718
+calculations. 
+Once the designers have finished 
+
+336
+00:24:47,718 --> 00:24:51,336
+tweaking, tuning all their settings, we 
+should in theory know the domain fully, 
+
+337
+00:24:51,336 --> 00:24:56,637
+that we can bake that and send that to 
+the customer as a reactive AI. 
+
+338
+00:24:56,637 --> 00:25:00,201
+And that, that has everything it needs to 
+be able to make decisions effectively 
+
+339
+00:25:00,201 --> 00:25:04,917
+without having to do run-time search. 
+Not all games will work with this but I 
+
+340
+00:25:04,917 --> 00:25:07,737
+think there's a lot of potential in doing 
+that for many types of games, 
+
+341
+00:25:07,737 --> 00:25:17,900
+surprisingly many. 
+So, if you'd like to find out more about 
+
+342
+00:25:17,900 --> 00:25:25,230
+this, I've compiled a list of interviews 
+on all the games that we mentioned today. 
+
+343
+00:25:25,230 --> 00:25:27,474
+All of those interviews are available on 
+line so, I encourage you to go and watch 
+
+344
+00:25:27,474 --> 00:25:30,120
+them if you would like to get more 
+information about that. 
+
+345
+00:25:30,120 --> 00:25:32,110
+So I've composed all those things 
+together. 
+
+346
+00:25:32,110 --> 00:25:37,949
+Go to aigamedev.com/planning and you'll 
+be able to see that list of interviews. 
+
+347
+00:25:37,949 --> 00:25:42,548
+And for any further references, I will 
+update this page and put them there as 
+
+348
+00:25:42,548 --> 00:25:46,718
+well. 
+If you have any comments, of course you 
+
+349
+00:25:46,718 --> 00:25:52,845
+can write to us on Twitter @aigamedev. 
+So, that was a, an overview of, of 
+
+350
+00:25:52,845 --> 00:25:58,230
+planning in games, and I I hope you're as 
+excited about planning as I am. 
+
+351
+00:25:58,230 --> 00:26:00,936
+I think we've barely just scratched the 
+surface, so I look forward to the, to the 
+
+352
+00:26:00,936 --> 00:26:05,180
+next ten years of planning. 
+in games more so than than, almost any 
+
+353
+00:26:05,180 --> 00:26:10,680
+other technique and it'll be exciting to 
+see what people come up with. 
+
+354
+00:26:10,680 --> 00:26:14,649
+So, I hope you share that enthusiasm, and 
+until then, I will see you online at 
+
+355
+00:26:14,649 --> 00:26:16,650
+AiGameDev. 
+Take care. 
+
+356
+00:26:16,650 --> 00:26:17,040
+Bye. 
+

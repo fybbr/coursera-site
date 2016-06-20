@@ -1,0 +1,610 @@
+1
+00:00:00,012 --> 00:00:05,937
+In the previous segment, we have seen how 
+the planning problem can be solved by 
+
+2
+00:00:05,937 --> 00:00:12,127
+searching for solutions but we've set up 
+two completely different types of search 
+
+3
+00:00:12,127 --> 00:00:15,632
+spaces. 
+One was the state space and one was the 
+
+4
+00:00:15,632 --> 00:00:21,762
+plan space, but both approaches really 
+solved exactly the same problem. 
+
+5
+00:00:21,762 --> 00:00:27,112
+In the next segment, we will modify the 
+problem itself so the approaches we've 
+
+6
+00:00:27,112 --> 00:00:32,487
+seen so far are no longer applicable. 
+Previously, a planning problem contained 
+
+7
+00:00:32,487 --> 00:00:37,612
+a goal, and a goal was a condition on a 
+world state that we want to achieve. 
+
+8
+00:00:37,612 --> 00:00:41,391
+Now, we will look at tasks. 
+Tasks are things we want to do. 
+
+9
+00:00:41,391 --> 00:00:46,082
+You may remember the example from the 
+introduction going on a holiday, 
+
+10
+00:00:46,082 --> 00:00:50,724
+that would be a task, and I've already 
+mentioned then that this would be 
+
+11
+00:00:50,724 --> 00:00:55,737
+difficult to describe as a goal because 
+we want to end up in the same state in 
+
+12
+00:00:55,737 --> 00:00:59,692
+which we started. 
+So, we will now look at tasks and task 
+
+13
+00:00:59,692 --> 00:01:04,812
+networks, which are the essential 
+components we're dealing with in 
+
+14
+00:01:04,812 --> 00:01:10,662
+hierarchical task network planning. 
+So, we will start by defining simple task 
+
+15
+00:01:10,662 --> 00:01:14,007
+networks. 
+Simple task networks are really a 
+
+16
+00:01:14,007 --> 00:01:19,612
+simplification of the more general 
+approach which is called hierarchical 
+
+17
+00:01:19,612 --> 00:01:24,484
+task networks or short, HTN. 
+You've already heard about HTN planning 
+
+18
+00:01:24,484 --> 00:01:29,702
+in week 1 when my colleague, Austin Tade 
+was talking about planning in context. 
+
+19
+00:01:29,702 --> 00:01:34,482
+But let's start from scratch here. 
+A lot of what we've seen so far carries 
+
+20
+00:01:34,482 --> 00:01:39,164
+over into task network planning. 
+For example, we have terms that can be 
+
+21
+00:01:39,164 --> 00:01:44,307
+either variables or constants to describe 
+the objects in our domain that we're 
+
+22
+00:01:44,307 --> 00:01:49,596
+dealing with and we have literals that 
+express propositions that are either true 
+
+23
+00:01:49,596 --> 00:01:52,685
+or false. 
+We also have operators that describe 
+
+24
+00:01:52,685 --> 00:01:56,026
+types of actions that we can execute in 
+our domain. 
+
+25
+00:01:56,026 --> 00:02:00,781
+And, of course, we have their instances, 
+which are actions which we want to 
+
+26
+00:02:00,781 --> 00:02:03,853
+execute. 
+The semantics is still based on state 
+
+27
+00:02:03,853 --> 00:02:08,971
+transition systems so we also have a 
+state transition function that describes 
+
+28
+00:02:08,971 --> 00:02:12,082
+how the world evolves when we execute our 
+plan. 
+
+29
+00:02:12,082 --> 00:02:16,632
+And, of course, we still have plans which 
+are the solutions to our planning 
+
+30
+00:02:16,632 --> 00:02:19,822
+problems. 
+But there are a number of new components 
+
+31
+00:02:19,822 --> 00:02:23,012
+that we need to consider in task network 
+planning. 
+
+32
+00:02:23,012 --> 00:02:27,937
+And the first component are, of course, 
+the tasks themselves, the things that we 
+
+33
+00:02:27,937 --> 00:02:32,657
+want to do in our domain, like going on a 
+holiday or fixing a car or learning 
+
+34
+00:02:32,657 --> 00:02:37,306
+something on this course. 
+Simple tasks corresponding to actions 
+
+35
+00:02:37,306 --> 00:02:42,935
+directly but, of course, we often deal 
+with tasks that are more complex, like 
+
+36
+00:02:42,935 --> 00:02:48,813
+going on a holiday is rarely a task that 
+we can consider as directly executable. 
+
+37
+00:02:48,813 --> 00:02:54,525
+The next new component of the methods 
+that describe ways in which we can do our 
+
+38
+00:02:54,525 --> 00:02:57,937
+tasks. 
+And this description usually consists of 
+
+39
+00:02:57,937 --> 00:03:02,637
+a number of subtasks that, together, 
+achieve some more complex task. 
+
+40
+00:03:02,637 --> 00:03:05,987
+And these subtasks, in itself, can be 
+organized. 
+
+41
+00:03:05,987 --> 00:03:10,062
+They can be ordered with respect to each 
+other, for example, 
+
+42
+00:03:10,062 --> 00:03:14,722
+and thus, form a task network. 
+So, what we will do now is formalize 
+
+43
+00:03:14,722 --> 00:03:20,377
+tasks, methods, and task networks, and 
+then define planning problems based on 
+
+44
+00:03:20,377 --> 00:03:26,167
+these concepts and what solutions look 
+like and finally, algorithms that solve 
+
+45
+00:03:26,167 --> 00:03:30,469
+this type of problem. 
+Let me illustrate all these with another 
+
+46
+00:03:30,469 --> 00:03:33,802
+example taken from our Dock Worker Robots 
+domain. 
+
+47
+00:03:33,802 --> 00:03:38,099
+As you can see in this picture here, this 
+is a very simple problem. 
+
+48
+00:03:38,099 --> 00:03:43,013
+We have a single location at which we 
+have one crane and we have three piles 
+
+49
+00:03:43,013 --> 00:03:47,082
+and three containers. 
+Currently, all three containers are in 
+
+50
+00:03:47,082 --> 00:03:51,890
+the first pile and we want to move these 
+containers to the third pile. 
+
+51
+00:03:51,890 --> 00:03:56,723
+So, our task is to move a stack of 
+containers from pallet p1 to pallet p3. 
+
+52
+00:03:56,723 --> 00:04:02,315
+And we want to do this in such a way that 
+the order of the containers is preserved. 
+
+53
+00:04:02,315 --> 00:04:07,326
+Clearly, this is a task that we cannot 
+achieve with any of the actions we've 
+
+54
+00:04:07,326 --> 00:04:10,756
+previously described. 
+It is a more complex task. 
+
+55
+00:04:10,756 --> 00:04:15,572
+We could, of course, describe this as a 
+planning problem that we've seen so far, 
+
+56
+00:04:15,572 --> 00:04:20,206
+but here is a set of informal methods 
+that we can use this type of problem in 
+
+57
+00:04:20,206 --> 00:04:23,034
+general. 
+And I will start at the bottom here. 
+
+58
+00:04:23,034 --> 00:04:27,806
+So, the first method we can have is to 
+move a container from one pile to another 
+
+59
+00:04:27,806 --> 00:04:31,719
+pile and, of course, we can only ever 
+move the topmost container. 
+
+60
+00:04:31,719 --> 00:04:36,303
+So, we have a method for moving the 
+topmost container and we say this method 
+
+61
+00:04:36,303 --> 00:04:39,338
+is simply a take action followed by a put 
+action. 
+
+62
+00:04:39,338 --> 00:04:44,154
+So, we have two actions that are ordered 
+with respect to each other that make up 
+
+63
+00:04:44,154 --> 00:04:47,192
+this method of moving the topmost 
+container. 
+
+64
+00:04:47,192 --> 00:04:52,162
+So, this is a very simple method that 
+simply groups two actions together. 
+
+65
+00:04:52,162 --> 00:04:56,797
+A more complex method is to move the 
+whole stack and we can do that by 
+
+66
+00:04:56,797 --> 00:05:01,486
+repeatedly moving the top most container 
+from one stack to other. 
+
+67
+00:05:01,486 --> 00:05:06,606
+We must do this until the stack is empty 
+and if we do this, of course, a side 
+
+68
+00:05:06,606 --> 00:05:11,642
+effect is that we reverse the order of 
+the containers in our new pile. 
+
+69
+00:05:11,642 --> 00:05:16,617
+And we can fix that last problem by 
+having a third method which says we move 
+
+70
+00:05:16,617 --> 00:05:21,917
+via some intermediate stack so we first 
+move our stack to an intermediate stack 
+
+71
+00:05:21,917 --> 00:05:26,767
+and that reverses the order of the stack. 
+And then we move it to the final 
+
+72
+00:05:26,767 --> 00:05:29,832
+destination and we reverse the order 
+again. 
+
+73
+00:05:29,832 --> 00:05:35,130
+So, these three methods taken together, 
+describe a way in which we can move a 
+
+74
+00:05:35,130 --> 00:05:40,615
+pile of containers from one pallet to 
+another pallet, respecting the order of 
+
+75
+00:05:40,615 --> 00:05:44,405
+those containers. 
+I hope you can see that this approach is 
+
+76
+00:05:44,405 --> 00:05:49,127
+much more akin to the way humans solve 
+problems, and this is by hierarchical 
+
+77
+00:05:49,127 --> 00:05:52,407
+decomposition and identifying abstract 
+concepts. 
+
+78
+00:05:52,407 --> 00:05:57,499
+Here, we've identified the more abstract 
+concept of a stack that didn't exist in 
+
+79
+00:05:57,499 --> 00:06:02,801
+our previous domain description. 
+And now, we can formally define what we 
+
+80
+00:06:02,801 --> 00:06:07,250
+mean by a task. 
+And the first thing we need is a set of 
+
+81
+00:06:07,250 --> 00:06:12,037
+symbols that we can use to give unique 
+names to our task. 
+
+82
+00:06:12,037 --> 00:06:19,064
+And these are the task symbols given by 
+the set Ts, consisting of t1 through tn. 
+
+83
+00:06:19,064 --> 00:06:24,779
+Now, our operator names, which are the 
+name of the operators we are using, must 
+
+84
+00:06:24,779 --> 00:06:30,407
+be a subset of our set of task symbols. 
+And if, for a given task symbol, we also 
+
+85
+00:06:30,407 --> 00:06:34,732
+have an operator name that corresponds to 
+this task symbol. 
+
+86
+00:06:34,732 --> 00:06:37,822
+We call this task symbol a primitive 
+task. 
+
+87
+00:06:37,822 --> 00:06:43,313
+And then, we have the non-primitive task 
+symbols which are simply those task 
+
+88
+00:06:43,313 --> 00:06:47,909
+symbols for which we don't have 
+corresponding operator names. 
+
+89
+00:06:47,909 --> 00:06:52,145
+A task then is simply a syntactic 
+expression of this form. 
+
+90
+00:06:52,145 --> 00:06:57,818
+It consists of a task symbol ti, which 
+can be either a primitive task symbol or 
+
+91
+00:06:57,818 --> 00:07:03,006
+a non-primitive task symbol. 
+And it consists of a series of arguments, 
+
+92
+00:07:03,006 --> 00:07:08,682
+r1 through rk which are the terms 
+representing objects that are manipulated 
+
+93
+00:07:08,682 --> 00:07:10,782
+by this task. 
+This is, of course, 
+
+94
+00:07:10,782 --> 00:07:15,565
+very similar to the way we've defined 
+operator names and that is not a 
+
+95
+00:07:15,565 --> 00:07:19,058
+coincidence. 
+And similarly, we will define ground 
+
+96
+00:07:19,058 --> 00:07:24,398
+tasks as all those tasks for which all 
+the parameters are ground, which means 
+
+97
+00:07:24,398 --> 00:07:27,482
+they are actual objects and not 
+variables. 
+
+98
+00:07:27,482 --> 00:07:32,718
+A ground operator was called an action, 
+but we don't have a special name for 
+
+99
+00:07:32,718 --> 00:07:36,684
+ground tasks here. 
+This means we have four types of tasks 
+
+100
+00:07:36,684 --> 00:07:40,029
+here. 
+Tasks can be primitive or non-primitive, 
+
+101
+00:07:40,029 --> 00:07:45,305
+and they can be ground or unground. 
+And to relate tasks to actions, we can 
+
+102
+00:07:45,305 --> 00:07:50,335
+make the following definition. 
+Suppose we are given an action a which is 
+
+103
+00:07:50,335 --> 00:07:55,412
+described by the name op c1 through ck 
+where op is an operator name and c1 
+
+104
+00:07:55,412 --> 00:08:00,402
+through ck are constants representing the 
+parameters of this action. 
+
+105
+00:08:00,402 --> 00:08:03,997
+Remember, it's an action, so it's fully 
+ground. 
+
+106
+00:08:03,997 --> 00:08:07,376
+So, these must be constants and not 
+variables. 
+
+107
+00:08:07,376 --> 00:08:13,370
+We can say that this action accomplishes 
+a ground primitive task described by the 
+
+108
+00:08:13,370 --> 00:08:19,292
+expression, ti r1 through rk, in a state 
+s, if the following two conditions halt. 
+
+109
+00:08:19,292 --> 00:08:23,662
+The first condition states that the 
+syntactic expression that describes the 
+
+110
+00:08:23,662 --> 00:08:28,409
+action and the syntactic expression that 
+describe the task must be the same so the 
+
+111
+00:08:28,409 --> 00:08:32,815
+must have is that the name of the action, 
+as given here by op must be the same as 
+
+112
+00:08:32,815 --> 00:08:37,111
+the task symbol and, of course, it's 
+primitive tasks so we have an operator 
+
+113
+00:08:37,111 --> 00:08:41,020
+name that corresponds to it. 
+And we must have that all the arguments 
+
+114
+00:08:41,020 --> 00:08:44,135
+must be the same. 
+So, the first constant must be equal to 
+
+115
+00:08:44,135 --> 00:08:46,878
+r1 and so on. 
+And, of course, because these are all 
+
+116
+00:08:46,878 --> 00:08:51,072
+constants, r1 through r k must also be 
+constants otherwise they couldn't be 
+
+117
+00:08:51,072 --> 00:08:54,119
+equal. 
+So, the first condition is that the 
+
+118
+00:08:54,119 --> 00:08:59,198
+syntactic expressions for the two, action 
+and task, must be the same. 
+
+119
+00:08:59,198 --> 00:09:04,663
+And the second is that the action a must 
+also be applicable in the state s. 
+
+120
+00:09:04,663 --> 00:09:10,187
+So, what this gives us is a way of 
+accomplishing very simple tasks, namely 
+
+121
+00:09:10,187 --> 00:09:13,411
+those tasks that are ground and 
+primitive. 
+
+122
+00:09:13,411 --> 00:09:17,908
+But we can't accomplish unground or 
+non-primitive tasks yet. 
+

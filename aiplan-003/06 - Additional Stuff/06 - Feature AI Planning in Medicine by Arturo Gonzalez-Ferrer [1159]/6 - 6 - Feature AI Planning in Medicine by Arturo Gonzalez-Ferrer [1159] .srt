@@ -1,0 +1,568 @@
+1
+00:00:00,000 --> 00:00:04,129
+Hello everyone.
+This is a video lecture recorded for the
+
+2
+00:00:04,141 --> 00:00:10,390
+artificial intelligent planning course in
+the online learning community of Coursera.
+
+3
+00:00:10,509 --> 00:00:16,121
+The topic of this talk is how to use AI
+Planning in. Medicine. Okay, something
+
+4
+00:00:16,133 --> 00:00:21,420
+about me before starting. I got my PhD in
+Computer Science less than two years ago
+
+5
+00:00:21,432 --> 00:00:26,497
+in the University of Granada, Spain. I
+develop several knowledge engineering
+
+6
+00:00:26,509 --> 00:00:31,383
+techniques for modeling, planning and
+scheduling domains, using the HTN
+
+7
+00:00:31,974 --> 00:00:37,114
+paradigm. And I used these, techniques in
+three different domains, e-learning,
+
+8
+00:00:37,223 --> 00:00:41,869
+healthcare. And business process
+management. Now, I am doing a Postdoc
+
+9
+00:00:41,881 --> 00:00:46,800
+research and fellowship in the University
+of Haifa in Israel and I'm working in a
+
+10
+00:00:46,812 --> 00:00:51,681
+very interesting project called MobiGuide,
+which is aimed to create a clinical
+
+11
+00:00:51,693 --> 00:00:56,791
+decision support system for physicians and
+patients to manage the care process of two
+
+12
+00:00:56,803 --> 00:01:02,592
+different diseases, gestational diabetes
+and atrial fibrillation and the idea is to
+
+13
+00:01:02,604 --> 00:01:09,517
+use this system anytime and everywhere. So
+I will start showing several applications
+
+14
+00:01:09,529 --> 00:01:15,647
+in the real world of how to use a planning
+in the domain of medicine. So one example
+
+15
+00:01:15,659 --> 00:01:21,528
+is how to schedule the beds that are
+needed in a hospital for all the patients
+
+16
+00:01:21,540 --> 00:01:28,105
+that come here on a daily basis. Another
+example is how to use AI planning for
+
+17
+00:01:28,117 --> 00:01:35,100
+conducting clinical trial protocols and
+complying with all the requirements that
+
+18
+00:01:35,112 --> 00:01:41,811
+are specified in those protocols. AI
+planning has been used also, to control
+
+19
+00:01:41,823 --> 00:01:48,681
+the state Of patients in intensive-care
+units. It also has been used to evaluate
+
+20
+00:01:48,693 --> 00:01:55,022
+the risk and the consequences of a
+specific treatment, improving the shared
+
+21
+00:01:55,034 --> 00:02:02,488
+decision-making process between patients
+and physicians. Finally, it has been used
+
+22
+00:02:02,500 --> 00:02:09,667
+to prepare treatment plans for the actions
+that need to be carried out over a
+
+23
+00:02:09,679 --> 00:02:17,345
+patient. this topic is the center, the
+focus of this talk, as you will see in a
+
+24
+00:02:17,357 --> 00:02:24,691
+few slides. But before people may think
+that applying artificial intelligence to
+
+25
+00:02:24,703 --> 00:02:31,601
+medicine is not appropriate and many
+people don't trust computer that much. So
+
+26
+00:02:31,613 --> 00:02:38,139
+I could show you some n numbers and, about
+the estimation of medic al errors that are
+
+27
+00:02:38,151 --> 00:02:45,546
+commited by. Physicians. This is a report
+of the history for medicine where between
+
+28
+00:02:45,558 --> 00:02:52,424
+44,000 and 98,000 deaths were estimated
+each year inclusive U.S. Hospitals and 1
+
+29
+00:02:52,424 --> 00:02:59,444
+million injuries also are estimated each
+year in these hospitals. Then follow-up
+
+30
+00:02:59,456 --> 00:03:06,271
+study found that medication errors are
+among the most common medical Mistakes.
+
+31
+00:03:06,410 --> 00:03:13,426
+And they com, could harm at least 1.5
+million people every year. So, it is clear
+
+32
+00:03:13,438 --> 00:03:20,583
+that physicians need support for the
+actions, and medical scope. There is a
+
+33
+00:03:20,595 --> 00:03:28,015
+relevant movement known as evidence-based
+medicine. So this part, I'm try to collect
+
+34
+00:03:28,027 --> 00:03:33,855
+the best evidence em, for treating
+patients with specific conditions. Then a
+
+35
+00:03:33,867 --> 00:03:39,085
+set of experts collect all this
+information and put them in narrative
+
+36
+00:03:39,097 --> 00:03:45,095
+clinical guidelines and protocols. They
+use these guidelines and protocols. With
+
+37
+00:03:45,107 --> 00:03:52,055
+idea to, of improving equality of the,
+care process. And to also to reduce the
+
+38
+00:03:52,067 --> 00:03:58,100
+deviations in the clinical practice,
+according to this protocols, to guide the
+
+39
+00:03:58,112 --> 00:04:03,950
+collection of data, to interpret and
+manage much better the patient's status.
+
+40
+00:04:04,142 --> 00:04:11,491
+And to improve the decision support. Of
+course, if we are able to computerize this
+
+41
+00:04:11,503 --> 00:04:18,369
+knowledge, we can create system to out
+activate alerts and reminders for the
+
+42
+00:04:18,381 --> 00:04:25,640
+physicians and the patients. So if, if we
+Try to see how to use AI Planning for, for
+
+43
+00:04:25,652 --> 00:04:32,100
+planning the therapy of a patient. We'll
+see that the requirements in this domain
+
+44
+00:04:32,112 --> 00:04:38,585
+are higher than in typical toy-problems.
+and this is due to the unpredictable
+
+45
+00:04:38,597 --> 00:04:44,827
+nature of this domain. So in this domain
+we will need several specific
+
+46
+00:04:44,839 --> 00:04:51,166
+sub-processes, not only plan generation,
+but it's really, really important for the
+
+47
+00:04:51,178 --> 00:04:56,992
+safety of the patient to verify the plan.
+of course we'll need to provide a
+
+48
+00:04:57,004 --> 00:05:03,538
+visualization of the plan to execute the
+plan, to modify the plan And finally the
+
+49
+00:05:03,550 --> 00:05:11,364
+plan critiquing, which is to analyse if
+the plan being executed is, is, is
+
+50
+00:05:11,376 --> 00:05:18,954
+correct. So it has any problem regarding
+the original knowledge. So there are
+
+51
+00:05:18,966 --> 00:05:26,655
+several challenges of course related to
+these processes. one of the choices in
+
+52
+00:05:26,667 --> 00:05:32,316
+knowledge engineering, we need to, to
+accompl ish the acquisition of knowledge
+
+53
+00:05:32,328 --> 00:05:37,519
+and the verification and validation. then
+we have the temporary presentation of
+
+54
+00:05:37,531 --> 00:05:42,282
+management. Many different temporary
+constraints are usually found in these
+
+55
+00:05:42,294 --> 00:05:47,891
+guidelines. Then another problem using
+data integration we need to evaluate with
+
+56
+00:05:47,903 --> 00:05:52,963
+real data in the hospital data basis and
+we need to integrate this into the
+
+57
+00:05:52,975 --> 00:05:57,473
+planning domain and of course the
+exception handling due to this
+
+58
+00:05:57,485 --> 00:06:03,059
+unpredictable nature, there are many cases
+in which the human, the physician is to
+
+59
+00:06:03,592 --> 00:06:10,187
+Interact with the plan and needs to change
+the plan according to a specific event
+
+60
+00:06:10,199 --> 00:06:16,156
+that has happened. Another important, or
+one of the important issues is the
+
+61
+00:06:16,168 --> 00:06:22,375
+temporal monitoring. So this domain is
+states, events, Events, actions, plans
+
+62
+00:06:22,387 --> 00:06:28,805
+goals, and effects, all of them are
+constrained by temporal information. And
+
+63
+00:06:28,817 --> 00:06:34,915
+this makes monitoring and the states of an
+events, during execution and very
+
+64
+00:06:35,247 --> 00:06:41,870
+necessary. Also the states model of a plan
+engine may need to consider more than the
+
+65
+00:06:41,882 --> 00:06:48,040
+plan generation. So it could be needed to
+suspend the plan or to check if it's
+
+66
+00:06:48,052 --> 00:06:54,815
+completed. what are the conditions for
+aborting the plan and so, so it's not only
+
+67
+00:06:54,827 --> 00:07:01,745
+plan generation. It's more dynamic and of
+course the domain is not static and these
+
+68
+00:07:01,757 --> 00:07:08,354
+unpredictable events Can occur, and this
+depends really in, on your needs. Of
+
+69
+00:07:08,366 --> 00:07:15,716
+course in high frequency domains like
+intensive care, care unit this is more
+
+70
+00:07:15,728 --> 00:07:22,884
+relevant. but there are also low frequency
+domains where the physicians only want
+
+71
+00:07:23,112 --> 00:07:28,540
+Will have a plan of the treatment to
+follow in the next eh, days. Another
+
+72
+00:07:28,552 --> 00:07:34,415
+important requirement is the management of
+the care team view. So medicine is
+
+73
+00:07:34,427 --> 00:07:41,035
+supplied by the team of physicians nurses
+and so on. So we have different roles, and
+
+74
+00:07:41,047 --> 00:07:47,330
+they use a number of resources for
+accomplishing the treatment. For example,
+
+75
+00:07:47,455 --> 00:07:53,425
+x-ray machines. So the plans to be
+generated from the clinical protocols may
+
+76
+00:07:53,437 --> 00:07:59,332
+need to consider these institutional
+constraints and they should deliver a
+
+77
+00:07:59,344 --> 00:08:05,691
+personalized plan for patients, but also
+for physicians. So we will explain very
+
+78
+00:08:05,703 --> 00:08:12,823
+quickly. a real project was carried out in
+the so uth of Spain. It's called the
+
+79
+00:08:12,835 --> 00:08:20,467
+Oncotheraper. and here in this project,
+the oncologists were required to apply
+
+80
+00:08:20,479 --> 00:08:26,900
+clinical guidance for treating. several
+patients and this guy lands or protocols
+
+81
+00:08:26,912 --> 00:08:32,375
+in this case they have lot of temporary
+constraints and they have all this
+
+82
+00:08:32,387 --> 00:08:37,850
+requirements that we talk about. Doing
+what? To have a personalized care process
+
+83
+00:08:37,862 --> 00:08:43,978
+for patients and medical staff and they
+want to reduce the time that they expand
+
+84
+00:08:43,990 --> 00:08:48,776
+on preparing this treatment. This is an
+architecture that consider all the
+
+85
+00:08:48,788 --> 00:08:54,626
+requirements that we talked about. So if
+we start looking at the numbers of, inside
+
+86
+00:08:54,638 --> 00:08:59,553
+the boxes. we start on number one, on the
+left hand side of the screen on the
+
+87
+00:08:59,565 --> 00:09:04,802
+bottom, we can see that clinicians are
+responsible for the finding this narrative
+
+88
+00:09:04,814 --> 00:09:10,316
+guidance. Then, knowledge engineers
+formalize this knowledge using what is
+
+89
+00:09:10,328 --> 00:09:15,264
+known as computer interpretative
+algorithms, which are language to
+
+90
+00:09:15,276 --> 00:09:21,652
+computerize this, knowledge. Then we have
+a sic connector which is able to move from
+
+91
+00:09:21,664 --> 00:09:27,290
+this formal knowledge to a planning
+specification. For this, of course. We
+
+92
+00:09:27,302 --> 00:09:32,840
+need to include the connection with the
+electronic health record from the
+
+93
+00:09:32,852 --> 00:09:38,685
+hospital, and the hospital information
+system. Then, having this specification
+
+94
+00:09:38,697 --> 00:09:44,075
+created, and also considering all the
+temporary constraints, we use a plan
+
+95
+00:09:44,087 --> 00:09:49,754
+generation engine Planner, in this case we
+use Heirarchical Task Network planner, and
+
+96
+00:09:49,766 --> 00:09:56,001
+we generate a care pathway personalized
+for the patient. This care pathway can be
+
+97
+00:09:56,013 --> 00:10:02,437
+delivered in the form of a Gantt diagram
+today physician so they can see a, all the
+
+98
+00:10:02,449 --> 00:10:10,599
+actions following specific Time for
+recommendations and we can also deliver or
+
+99
+00:10:10,611 --> 00:10:17,512
+deploy, this care pathway using a business
+process management engine. And, this is a
+
+100
+00:10:17,524 --> 00:10:24,618
+software tool possibly for an execute a
+plan Remotely. And so each role is, is
+
+101
+00:10:24,630 --> 00:10:32,196
+each clinician or nurse can enter through
+this portal and follow the plan. Of course
+
+102
+00:10:32,208 --> 00:10:38,585
+in number six we have another module which
+is for repairing the plan and for
+
+103
+00:10:38,597 --> 00:10:44,445
+replanning. And this would be needed in
+the cases we want to include the
+
+104
+00:10:44,457 --> 00:10:50,745
+management of unexpected event. So, wha t
+do we get? Just a fragment of the care
+
+105
+00:10:50,757 --> 00:10:57,980
+pathway that, that we can have as a result
+of using this planning, technique, so we
+
+106
+00:10:57,992 --> 00:11:05,282
+have the start intended for each, step Eh,
+the duration if is part of a higher level
+
+107
+00:11:05,623 --> 00:11:12,428
+chemotherapy cycle. The oncologist that
+needs, needs to carry out the action. The
+
+108
+00:11:12,440 --> 00:11:18,544
+action itself, for example, the
+administration of Prednisone, which is a,
+
+109
+00:11:18,674 --> 00:11:25,197
+a drug. The patient and the dosage of the
+drug. On the bottom of the screen we can
+
+110
+00:11:25,209 --> 00:11:31,578
+see how to deploy this into a BPM engine
+so that the physicians can ubiquitously
+
+111
+00:11:31,590 --> 00:11:38,332
+execute this plan. So this is all. Here in
+the last slide you have a sound references
+
+112
+00:11:38,344 --> 00:11:44,747
+that who should have, ha , try to read in
+case that you have more interest in this
+
+113
+00:11:44,759 --> 00:11:52,901
+wonderful domain and I hope that you have
+enjoyed the talk. And to enjoy also the
+
+114
+00:11:52,913 --> 00:11:59,142
+rest of the course. Thank you very much.

@@ -1,0 +1,195 @@
+Hi I'm David Wilkins I'm a Senior 
+Computer Scientist at SRI International's 
+Artificial Intelligence Center. 
+SRI is a not for profit contract research 
+institute in Silicone Valley. 
+I got my PhD in Stanford in 1979. 
+My adviser was John McCarthy, who taught 
+my first list class. 
+Immediately after graduating I moved 
+across to El Camino, to SRI's AI center. 
+Primarily because Nils Nilson was here 
+and I wanted to work with him, My first 
+boss at SRI was Earl Sacerdoti the author 
+of NOAH before NOAH AI planning was 
+generally search in a space space and 
+NOAH introduced search in a planned space 
+AI planning. 
+Inspired by Earl and NOAHI became 
+interested in solving real world planning 
+problems and found that this regard of 
+more domain knowledge and more expressive 
+representations. 
+I divide past research in AI findings in 
+two camps. 
+The first are systems that take a 
+minimalist approach to main knowledge, 
+they use strip style descriptions of 
+primitive actions, I call them primitive 
+action planners. 
+The second are the systems that focus on 
+leveraging as much domain knowledge as 
+possible. 
+I use this approach in developing the 
+sight planning system. 
+System. 
+On the first slide we'll see an example 
+of one of the domains that site and coded 
+for planning it's the response to oil 
+spills. 
+And in this picture we see several boats 
+deploying boom around an island to 
+protect it from an oil spill. 
+The key point here is that there multiple 
+boats executing this plan and that it's 
+important to have a sufficient amount of 
+boom to go around the island. 
+On the next slide, we'll see a number of 
+techniques I've developed to address real 
+world problems. 
+This list was driven by client needs to 
+solve their problems, not by any research 
+attempts. 
+Some of these techniques are now called 
+hierarchical task network planning in 
+SIPE known as an HTN planner. 
+The first technique is multiple 
+abstraction levels. 
+Many real problems have distinct natural 
+attraction levels making them natural 
+fits for HTN planning. 
+These levels are a powerful way to 
+control the search and they're a great 
+way to interact with humans because a 
+primitive action strip style plan at the 
+lowest level of detail can be very 
+difficult to understand. 
+Next item is parallel actions. 
+Realistic domains generally have parallel 
+agents executing activities at the same 
+time and these agents must coordinate 
+their activities. 
+Parallelism can cause computational 
+problems in AI planners and some AI 
+Planning systems produce only sequential 
+plans. 
+Next is context dependent effects which 
+are ubiquitous in real world problems. 
+For example if you move an object to a 
+new location all the objects attached to 
+it are on top of or moved with it. 
+So I could deduce these context-dependent 
+effects where as an strip style planner, 
+you would generally need a different 
+operative for every possible combination 
+of things that might be attached to the 
+block. 
+The next two items constraints and 
+resources come from the fact that 
+reasoning about numbers are essential to 
+almost every realistic domain.Time is a, 
+is certainly a key element in most plans. 
+Resources also have a specific capacity 
+or must be accumulated in, in certain 
+quantities. 
+An example of a goal in accumulation is 
+obtaining the boom in the previous 
+example a planner had to plan to obtain 
+enough boom to surround the island and it 
+had to reason about numbers to do that. 
+SIPE developed heuristics and 
+representations to efficiently reason 
+about actions which we needn't go into 
+detail here and the real world problems 
+plans never executed as expected so you 
+wanted to re-plan during execution to fix 
+the plan. 
+Many AI planners never address that 
+problem. 
+And finally, we found a need to have an 
+interactive graphical user interface. 
+SIPE had perhaps the most advanced GUI 
+and AI planning in the 80s and 90s. 
+Interacting with people is a critical 
+aspect of real-world planning. 
+Realistic problems are embedded in the 
+world and aren't precisely defined. 
+They have fuzzy edges. 
+The person almost always knows 
+information the planner doesn't and can 
+use that to help make good choices. 
+Another important reason to have the 
+Gooey is that it helps the user 
+understand the plan. 
+A large plan full of primitive actions 
+can be very difficult to understand. 
+And the ability to use the abstraction 
+levels and the Gooey and trail down and 
+see network displays is very crucial. 
+So in the next slide, we actually see a 
+screenshot capturing part of an oil spill 
+response plan from the site, Gooey. 
+We'll look at the top three nodes of this 
+plan. 
+And and the top right you see a Blue 
+oval. 
+Blue ovals represent primitive actions 
+that are already in the plan. 
+In this case the action is to deploy 
+3,000 feet of boom to the Berkeley 
+eelgrass at Time 3. 
+This spill was in the San Francisco bay. 
+Right before that is a aqua hexagon. 
+They represent goals that need to be 
+expanded at the next level of details. 
+This particular goal was to get this 
+3,000 feet of boom located at Berkley. 
+So look at the goal immediately below 
+this. 
+It turns out that the higher level goal 
+was to get 9,000 feet of Boom to Berkley. 
+SIPE new of 3,000 feet of Boom in some 
+locations so it split the goal into two. 
+The first one was to get to 3.000 feet 
+Feet there. 
+And parallel I posted another goal to get 
+the additional 6,000 feet of boom to 
+Berkely. 
+The entire plan for this oil spill 
+response had a few hundred notes when it 
+was complete. 
+And the next light I'll show you a brief 
+overview of how sight produces plans. 
+It has a representation of the state of 
+the world which you see on the left side 
+of the slide. 
+And that's for example where it 
+represents the fact that it knows that 
+there's 3,000 feet of boom in some 
+warehouse somewhere. 
+It then has operators that represent 
+actions, these are multiple levels of 
+extraction they represent Things about 
+how to transport boom and how to deploy 
+it when you have goals and objectives 
+you're trying to achieve. 
+The plan generator then combines these 
+and on the right side you see a depiction 
+of how it applies these operators level 
+after level to expand down to the most 
+primitive plan. 
+And when it finally gets a Plan composed 
+of primitive actions then it's ready for 
+execution and the plan executed will then 
+take over, and if we plan in as needed it 
+will cycle back and give some new goals 
+and give the new beliefs and constraints 
+that represent the world. 
+This concludes my description of the 
+motivations behind sipe. 
+For more information on the last slide, 
+there is a URL to the site homepage and 
+to my publication's homepage. 
+Thanks very much for your attention. 
+[MUSIC] 
+

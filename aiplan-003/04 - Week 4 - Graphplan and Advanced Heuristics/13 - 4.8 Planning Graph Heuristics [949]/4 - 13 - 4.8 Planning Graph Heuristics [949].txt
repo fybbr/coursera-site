@@ -1,0 +1,247 @@
+In the second week of this course, I told
+you about heuristic search and the A-star
+algorithm.
+Then, I showed you how a strips planning
+problems can be solved using forward state
+space search, which implicitly assumed you
+could use the A-star algorithm for this.
+But of course, one of the things that
+A-star needs is a heuristic that tells us
+how far from the goal a current state is.
+And that's what we're going to look at in
+this segment.
+And we're going to start off by some
+simple heuristics that can be directly
+derived from the planning graph we've just
+seen.
+Here is a quick recap of one of the things
+we've already learned about A-star.
+Mainly, that A-star is optimally
+efficient.
+This means that for a given heuristic
+function, no other algorithm is guaranteed
+to expand fewer nodes than A-star.
+This means that if we are given a
+heuristic function and that function is
+fixed, we cannot change it.
+And we insist on having a minimal length
+solution plan.
+Then, there cannot be an algorithm better
+than A-star that we can use for search.
+But there are a few caveats.
+For example, the guarantee that A-star
+returns a minimal length solution relies
+on the fact that the given heuristic is
+admissible.
+Now, if we don't have a admissible
+heuristic, then the guarantee doesn't
+exist anymore.
+Or if we don't insist on having minimal
+length solutions, then we can imagine
+algorithms that ignore certain parts of
+the search space.
+Thereby missing certain solutions, but
+still come up with a non-optimal solution.
+And, you may remember that I told you,
+that A-star still uses exponential memory.
+So, depending on the size of our problem,
+this algorithm may simply run out of
+memory and we need to do something else
+then.
+So, A-star is not the answer to all
+questions, but is a very good algorithm
+for performing search.
+And, there is one way we can improve the
+algorithm, and that is simply by using a
+different heuristic function.
+If we can find a better heuristic
+function, then A-star will perform
+significantly better.
+And that is what we want to achieve.
+Now, when I showed you the planning graph,
+I talked a lot about what this graph is
+doing namely that it is doing a
+reachability analysis for our given goal
+from the initial state.
+And now, I want to see if we can use this
+reachability analysis to derive a
+heuristic that we can use during forward
+search.
+And the reachability analysis performed by
+a graph plan and encoded in the planning
+graph looks as follows.
+We're given a propositional planning
+problem and we construct the planning
+graph consisting of node and edges for
+this problem.
+Then, let us assume that our goal consists
+of subgoals, g1 through gn here.
+And then, the analysis showed us that for
+each of these goal components, this goal
+component is reachable from the initial
+state.
+If there's a proposition layer, Pg, such
+that the goal component that we're looking
+for is an element of this proposition
+layer.
+Or, we can look at this the other way
+around.
+Namely, if we look at a proposition layer
+Pm, then we can say that if our goal
+component that we're looking for is not in
+this proposition layer P, then that goal
+component can not be reachable in m steps.
+If it was reachable in m steps, then there
+would be an m step plan that makes that
+goal condition true.
+And that means that plan would have to be
+part of our planning graph and would add
+proposition, gk, to our planning graph in
+layer Pm.
+But we've seen it is not in that layer, so
+there can't plan with m steps.
+So, this gives us an idea how we can
+define a heuristic for our goal component
+gk and that's the heuristic that we find
+here.
+It's m and this m, what that is, is the
+first layer, first layer Pm, such that our
+goal component, gk, is in that layer.
+Note that we have to choose the first such
+layer here.
+So, we know that in Pm minus 1 gk is not
+contained so it cannot be reachable.
+But in Pm, it is contained.
+So, in theory, it may be possible to reach
+the goal condition, gk, in m steps.
+So, we can use that as a heuristic.
+And because this is minimal, because we've
+used the first layer, it is actually an
+admissible heuristic for this goal
+condition.
+Of course, this only works for a single
+goal condition, not a conjunction of
+goals.
+And we've already seen that in the
+planning graph, we can select multiple
+actions from one layer.
+So, m often underestimates the number of
+required actions quite significantly.
+But, it is the best heuristic we've seen
+so far.
+And, here is our familiar planning graph
+example, that we've used a couple of time
+now to illustrate this concept of using
+the planning graph to compute a heuristic.
+Remember, the original goal that we were
+looking at was to swap the 2 containers,
+so we went to container a at location 2
+and container b at location 1.
+So there's two goal components to this
+overall goal, and we can compute the
+heuristic function we've just looked at by
+looking at the planning graph, and seeing
+where those two goals first appear.
+And if we look at a2, it's already circled
+in red here.
+Because at first, that appears in
+proposition layer P3 and we can look at
+this as not in this layer, not in this
+layer P2 and it appears here for the first
+time and similarly b1 appears here for the
+first time.
+So, what we have is that the heuristic we
+have just defined.
+4a2 is 3, because it takes at least three
+actions to make that proposition true and
+we know that from looking at the planning
+graph.
+And the same applies for b1.
+It takes at least three actions to make
+this proposition true.
+But note that we have said nothing about
+which actions these are, so these actions
+will be from the three action layers.
+But for all we know, they might be the
+same three actions for both goals.
+So, that is a problem.
+How do we combine these two values into a
+single heuristic for a composite goal?
+So, the question is, how do we combine the
+information gained from the planning graph
+as a heuristic for individual goal
+conditions when we have multiple goal
+conditions?
+So, we are given a planning problem, but
+our goal consists of more than one goal.
+G1 through gn, and we need to combine the
+heuristic values for the individual goals
+into an overall heuristic value.
+And there are two obvious ways in which
+this can be done.
+The first option is we simply take the
+maximum.
+So, this option assumes that the actions
+that we need to achieve all the goals
+overlap significantly.
+And therefore, taking the maximum will
+tell us how long it will take, in the
+worst case, to achieve all the goals.
+The advantage of this approach is that the
+heuristic is still admissible.
+So, it was admissible for each individual
+goal.
+But now, taking the maximum gives us an
+admissible heuristic for all the goals.
+In practice, it turns out that this
+heuristic is very inaccurate, and the
+problem comes when we have independent
+goals.
+For independent goals, the actions we need
+to achieve these goals often don't overlap
+much, in which case, this heuristic badly
+underestimates what it takes to get to the
+goal.
+The second obvious option, instead of
+taking the maximum, would be simply to add
+all the values for the individual goal and
+combine them in this way.
+So, the first drawback of this is that
+this approach gives us no longer an
+admissible heuristic.
+This may well over estimate the distance
+to the goal because there are shared
+actions and they often are.
+And if we don't take this into account, we
+count these actions multiple times when we
+compute our heuristic.
+And that means, this heuristic becomes
+quite inaccurate for dependent goals.
+Now you could ask, are dependent goals
+very realistic?
+And in many domains, unfortunately, they
+are.
+Think back to what relations we've defined
+for the dockworker robot domain.
+There's the at relation that tells us
+where a robot is, and there's the occupied
+predicate that tells us whether a location
+is occupied or not.
+These two are always dependent.
+If they both appear in a goal, then just
+adding the values to achieve the two
+doubles the amount of effort that we
+estimate.
+But at least we now have two heuristics we
+can now use to apply a start to forward
+state space search.
+And one thing to note about for both of
+these heuristics, which is quite
+interesting, is they're based on the
+planning graph but neither of those really
+requires the computation of the mutex
+relations.
+So, we could use them in a planning graph
+with or without mutex relations, meaning
+we actually have four different heuristics
+already.

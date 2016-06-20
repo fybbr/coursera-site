@@ -1,0 +1,289 @@
+>> As you have just seen, there's nothing
+too difficult about the propositional
+representation.
+So, we can now turn to the data structure
+that is maintained by the graph plan
+algorithm and that is the so-called
+planning graph.
+I will first describe a basic version of
+this data structure which does not contain
+mutex relations.
+I will define those later as you can see
+here.
+To understand the properties that the
+planning graph represents, I want to
+remind you of a proposition we have seen
+earlier.
+And that was about solution existence to
+planning problems.
+And this was the proposition I want to
+remind you of.
+So if we are given a planning problem
+consisting of a state transition system,
+an initial state and a goal, we can say
+that this planning problem has a solution,
+if and only if the following condition
+holds.
+And the condition is that the set of all
+possible goal states, intersected with
+this set here must not be empty.
+And this set really represents all the
+states that are reachable from the initial
+state.
+We also had a similar proposition from the
+regression of states, but that's not what
+I wanted to remind you of here.
+It's the first proposition that I want to
+have a closer look at.
+This states that if a planning problem has
+a solution, then there must be a reachable
+goal state.
+Now our goal condition, g, actually
+consists of a set of subgoals that we're
+trying to achieve, let's call them g1
+through gn here.
+Now, a corollary of our original
+proposition is that each of these
+individual subgoals must be true in some
+reachable state.
+It is, of course, trivially true because
+they will all be true in the reachable
+goal state.
+But I can also turn this around now.
+Now, suppose I could show that there's one
+goal condition in here that cannot be
+achieved.
+So, one of the goal conditions is not
+reachable.
+If I can show that one of the goal
+conditions isn't reachable, then that
+means there can be no state in which this
+goal condition is true, which means there
+can be no state that constitutes a
+solution.
+So the planning problem does not have a
+solution.
+And that is exactly the kind of inside
+that the planning graph will give us.
+Of course, what we have done in our
+forward tree search algorithm is
+constructed effectively a reachability
+tree.
+In this tree, our root node was the
+initial state, si, that was given as part
+of the problem.
+And for each node, s, we have the children
+of the node, s, be gamma of s.
+So that's the immediate successors of that
+state s in this set here.
+And then, we have the arcs labelled with
+the actions that correspond to the state
+transitions.
+That is the tree we constructed in forward
+search.
+Now, in this tree, if we constructed the
+complete tree, are all the nodes that are
+reachable from our initial state.
+So this is a complete reachability tree
+for our planning problem.
+Or if we gave a depth limit to our tree,
+so suppose we only go to depth d, then we
+would have gamma d of si in this
+reachability tree.
+So, another complete tree but all the
+nodes that are reachable in d steps.
+And in this tree, of course, we can find
+all the solutions to problems that require
+up to d actions in their solution.
+Now, we could of course, use this tree to
+check whether each of the individual goal
+conditions is true in some state rather
+than all in the same.
+And then, use our criterion just
+introduced to see whether the planning
+problem has a solution.
+But that is, of course, not an efficient
+way of solving planning problems.
+As we know that even a tree of depth d has
+an expectational nodes in it.
+Here, k is the number of applicable
+actions per state, and d is the depth, so
+have k to the d nodes in general in such a
+tree.
+But there is a more clever solution to
+this reachability question as we will see
+next.
+I will now describe to you the planning
+graph which is the fundamental data
+structure maintained by the graph plan
+algorithm.
+And I will start by describing what nodes
+are contained in this graph.
+So, the planning graph is a layered
+directed graph, G, consisting of nodes and
+edges, and that means that the edges are
+directed.
+So they go from one node to another, only
+unidirectional.
+And the graph is layered, which means the
+nodes in the graph can be divided into
+disjoined sets and each of these sets is
+called a layer.
+So, if we look at the nodes, N, contained
+in the graph, they consist of the layers
+P0, A1, P1, A2 and so on.
+These are our layers in the graph
+containing the nodes.
+And we distinguish two types of layers we
+have in our graph.
+Firstly, there are the state proposition
+layers denoted by symbols with a P, P0,
+P1, etc.
+And then, we have the action layers
+denoted by the symbol A, A1, A2, etc.
+And these types of layers alternate in the
+graph.
+So, we start of with a proposition layer,
+P0, followed by an action layer, followed
+by a proposition layer, followed by an
+action layer, followed by proposition
+layer, etc.
+So, they alternate in the graph, and the
+first layer, P0, is a proposition layer.
+So, let's have a look at the nodes we find
+in the first proposition layer, P0.
+In the first proposition layer, we have a
+node for each proposition that was true in
+the initial state.
+So si, our initial state, is a set of
+proposition symbols, and in P0, we have a
+node for each of these proposition
+symbols.
+And given this definition of P0, we can
+now define what nodes we find in the
+action layer Aj.
+So that's not just the action layer A1,
+but in general the action layer Aj, which
+follows the proposition layer Pj minus 1.
+And effectively, we have in this action
+layer all the action symbols that
+represent actions that would be applicable
+in the preceding proposition layer.
+So, what we do is we look at our preceding
+proposition layer, Pj minus 1.
+And we interpret this as a state.
+Remember, the nodes in this layer will be
+proposition symbols.
+So we can simply form a set of all these
+nodes and interpret this as a state.
+Usually, this won't be a meaningful state
+as it may contain symbols that can never
+be true at the same time.
+For example, that the robot r is at
+location 1, and that the robot r is at
+location 2.
+But never mind that now.
+So, we interpret this proposition layer as
+a state, and then add to the successive
+action layer, all those actions whose
+preconditions are satisfied in that state.
+Now, we know what P0 contains, and what
+the j action layer contains.
+We can now define the proposition layer,
+Pj, where j, of course, has to be greater
+than zero because we've already defined
+P0.
+And in Pj, we find nodes for all those
+proposition symbols that were already in
+Pj minus 1.
+So, all the propositions that were in the
+previous proposition layer are also in
+this proposition layer.
+But there may also be additional nodes
+that were not in the previous proposition
+layers.
+And what we do to find these nodes is we
+take all the positive effects of all the
+actions in the preceding action layer.
+So Aj is the preceding action layer.
+We take all those actions and we look at
+their positive effect.
+And we add a proposition node for each
+proposition that is a positive effect to
+layer Pj.
+So in Pj, we have all the propositions
+from the previous proposition layer, plus
+all the positive effects from the previous
+action layer.
+Note that we ignore the negative effects
+of the action here, so we only look at the
+positive effects.
+We do not remove the negative effects from
+any layer ever.
+An interesting observation here is that
+the layers must be monotonically
+increasing from proposition layer to
+proposition layer, and from action layer
+to action layer.
+So, for proposition layers, this is quite
+easy to see.
+We always take over the propositions from
+one layer to the next, and possibly add
+new propositions to that next proposition
+layer.
+So, it must be monotonically increasing.
+The action layers must also monotonically
+increasing.
+Because if an action is applicable in one
+action layer, then it must also be
+applicable in the next action layer
+because all the pre-conditions that were
+true here must be true in the next
+proposition layer, so they must still be
+true for the next action layer.
+So, proposition layers and action layers
+are monotonically increasing.
+So, now that we have seen the nodes that
+exist in the planning graph, we can look
+at the edges between nodes, or because
+it's a directed graph, I like to call them
+arcs.
+So, the first set of arcs we have all go
+from proposition layer Pj to action layer
+Aj.
+That is, the action layer that follows it.
+And they go from a node in this layer,
+which is a proposition, to an action in
+the following layer, if the proposition P
+is a precondition of that action.
+Similarly, we have arcs from the action
+layer Aj, to the proposition layer Pj.
+That's the proposition layer that follows
+the action layer.
+And we have an arc from action A, in this
+layer, to a proposition P in the following
+layer, if either P is a positive effect of
+that action, or P is a negative effect of
+that action.
+In other words, each action in an action
+layer Aj is connected to its preconditions
+and its effects.
+And it's connected to the preconditions in
+the preceding proposition layer and to its
+effects in the following proposition
+layer.
+And these are all the arcs that exist
+between different layers.
+So, there are no arcs between other
+layers.
+Arcs only go from one proposition layer,
+to the following action layer.
+And one, from one action layer, to the
+following proposition layer.
+They don't go between other layers.
+Now, I should mention that these edges
+aren't all the edges that exist in the
+planning graph.
+There are other edges.
+But these edges are strictly internal to
+the layers and we will look at them later.

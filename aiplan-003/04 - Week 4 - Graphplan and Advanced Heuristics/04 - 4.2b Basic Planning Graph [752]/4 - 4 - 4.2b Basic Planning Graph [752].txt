@@ -1,0 +1,193 @@
+>> And here is part of the planning graph
+for the simple dock worker robot example
+you've seen earlier.
+You remember the initial state consisted
+of 6 proposition symbols and in our
+proposition layer P0, we find nodes for
+these six symbols.
+So, each of these proposition symbols,
+represent a node in our graph.
+Which means we have six nodes.
+And the blue background is simply to
+indicate the layer as a whole.
+So this is proposition layer p zero.
+And with this proposition layer fully
+defined we can see which nodes are in the
+following action layer and these are only
+those action symbols that would be
+applicable in this state.
+Again, these are four individual nodes
+here, all together making up the action
+layer A1.
+And before we look at the next position
+there, we can introduce those edges that
+connect these actions to their
+preconditions, and they are shown here.
+As black lines.
+Now given our proposition layer P0 and our
+actual layer A1 we can define our
+proposition layer P1 which contains all
+the notes from P0 plus all the positive
+effect of actions in A1 and these are all
+those propositions we see here.
+Again these are individual notes even if
+they are not shown as such, the blue
+background indicates what constitutes this
+proposition layer, and that is all that is
+in proposition layer P1.
+And we need to connect this layer to the
+preceding action layer on the one hand,
+through the positive effects of the
+actions, so these are the green lines
+here.
+And then, we also have the negative
+effects that are indicated as red lines
+here.
+And this is the planning graph up to and
+including proposition layer p1.
+And we can now continue with the action
+layer a2.
+Now we take proposition layer p1 and
+interpret it as a state and see which
+actions would be applicable in that state.
+And that's this list here.
+That's all the actions that are in action
+layer a2.
+And again we have to introduce edges or
+arcs from p1 to a2 representing all the
+pre-conditions of these actions, and they
+are given here.
+And with p1 and a2 defined, we can now see
+which nodes are in proposition layer two,
+p2 and these are given here.
+Again, they're individual nodes rather
+than just one set.
+But that is the whole set of nodes in
+proposition layer p2.
+They are all the nodes from P1, plus the
+positive effects of actions in A2.
+What's missing are of course still the
+edges.
+And we need edges that connect
+propositions in P2 to actions where they
+are positive and negative effects.
+And again, we have green lines for
+positive effects and red lines for
+negative effects here.
+And so on here come the propositions, that
+are in action layer A3, and they are
+connected through edges to their,
+preconditions.
+And we will do 1 more.
+Here come the propositions, in proposition
+layer P3.
+And again, we have to have edges that
+connect them to actions where they are
+positive or negative effects.
+And of course, I could be continuing with
+this graph here, but A, I'm running out of
+space, and B, I think you get the point
+now.
+Earlier, I talked about reachability,
+reachability of goals and reachability of
+individual propositions in a goal.
+Now, we will look at the planning graph,
+and see what the planning graph can tell
+us about reachability.
+So here is what we can say about the
+planning graph.
+Suppose we are given a planning problem,
+and construct the planning graph for this
+problem, then we have the following.
+If a goal, g, is reachable from the
+initial state si, then there must be a
+proposition layer Pg in our planning
+graph, such that all the goal conditions,
+all the nodes representing those
+propositions that are goals, are a subset
+of this proposition layer Pg.
+The proof of this is very simple, as you
+can see.
+If the goal G is reachable from si, then
+there must be a plan, which is an action
+sequence that achieves this goal.
+And if we construct a planning graph,
+consisting of 2n plus 1 layers, where n is
+the length of our solution plan.
+Then, this plan is contained in this
+planning graph.
+Where we select the first action in the
+first action layer, and so on.
+And that must achieve the goal.
+So that means, in our last proposition
+layer.
+All the gold proposition.
+Must be contained.
+One caveat here is that this only works in
+one direction.
+So if we have the first part true, then we
+can conclude that there must be such a
+layer in the planning graph.
+So, you can look at it the other way
+around.
+If there's a goal condition g.
+That is not contained in our final
+planning graph layer PG.
+Then this goal condition can't be acheived
+within this planning graph, and that of
+course means that the overall goal can't
+be acheived in the planning graph.
+So what this gives us is a neccasary
+condition for when a solution must exist
+but not a sufficient condition.
+So we can compare this to the reachability
+tree we have looked at earlier.
+The reachability tree was a sufficient
+condition for testing whether a goal state
+exists.
+And that is because all the nodes
+contained sets of propositions that must
+necessarily hold in that state, and all
+the propositions in those states, were
+consistent.
+Whereas the planning graph contains
+propositions in these proposition layers
+that may hold, but whether they hold or
+not depends on the action we select and
+the previous action layer.
+Also the proposition layers quickly
+contain sets of inconsistent propositions.
+That means, propositions that can never be
+true in the same state.
+As we've seen, a robot can never be at
+location one and at location two at the
+same time.
+Similarly, the actions in one action layer
+may never be applicable at the same time.
+So that where actions for moving a robot
+from one location to another and back in
+the same action layer Those two actions
+can of course never occur in parallel.
+So the planning graph only gives us a
+necessary condition for goal existence.
+We can look at the last proposition layer,
+and if our goal is not contained in the
+last proposition layer, then this planning
+graph does not contain a solution Plan.
+The big advantage of the planning graph is
+of course the low complexity.
+The planning graph is polynomial in size
+and it can be computed in polynomial time.
+And this can be seen quite easily because
+each action layer and each proposition
+layer can contain at most all the
+propositions we have.
+And that is a finite number.
+And we have n layers in our graph so we
+can have n times the number of symbols we
+have and that is polynomial.
+In other words, we have a criterion for
+plan existence that we can evaluate in
+polynomial time.
+But unfortunately it's only a necessary
+condition.

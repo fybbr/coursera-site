@@ -1,0 +1,211 @@
+We have now seen what Tasks and Task 
+Networks are and how we can use methods 
+to decompose these tasks into sub tasks 
+in a network. 
+That means we have the basics for our new 
+search space, task networks as search 
+nodes at methods with decomposition as 
+state transitions in this new search 
+space. 
+That means we can now define domains, 
+problems and solutions to planning 
+problems. 
+Let's start with STN planning domains. 
+These are the reusable components that we 
+can use to define many problems. 
+And an STN planning domain is simply a 
+pair consisting of a set of STRIPS 
+planning operators. 
+That's the set O, that's it here. 
+And it has also in addition a set of 
+methods STN methods. 
+That's the set M. 
+So, you can see, it's an extension of the 
+STRIPS planning we've seen before because 
+the operators still make up the domain. 
+but, in addition to operators, we now 
+have a set of methods. 
+That's really all there is to STN 
+planning domains. 
+Now, one special case are total-order STN 
+planning domain and we say that a domain, 
+D, is a total-order STN planning domain 
+if every method In its message said is 
+totally ordered. 
+And later when we look at STN planning 
+algorithms we will see that totally 
+ordered networks are slightly easier to 
+deal with. 
+So first we will have this as an 
+algorithm and secondly we'll introduce an 
+algorithm that solves partial order STN 
+planning problems. 
+Now that we have defined STN planning 
+domains we can turn to STN planning 
+problems. 
+And an STN planning problem is a 4-tuple 
+consisting of Si, Wi, O and M. 
+And I'll explain these four components. 
+The first component, Si, is the initial 
+state of the world from which we are 
+planning. 
+So, this is a set of ground atoms. 
+And that means, it's just like for a 
+Strips planning problem, which also had 
+an initial state consisting of a set of 
+ground atoms. 
+What is different here is that we don't 
+have a goal component as part of our 
+planning problem. 
+Instead, we are given an initial task 
+network. 
+And that is what Wi is. 
+So the problem, then, consists of 
+refining this initial task network into a 
+plan. 
+And you will see that this initial task 
+network often consists of just a single 
+task in which case this forms the route 
+of our decomposition tree. 
+The remaining two components, O and M 
+simply form an STN planning domain that 
+we also give as part of our planning 
+problem. 
+So you can see an STN planning problem is 
+not very different from a strips planning 
+problem. 
+We still have an initial state and we 
+still have a domain. 
+Of course, the domain is now a domain 
+consisting of operators and methods. 
+What's really different is that we don't 
+have a goal, but an initial task network. 
+And as for planning domains, we have a 
+slightly simpler version here namely, a 
+total-order STN planning problem. 
+A total-order planning problem is one 
+where both the initial network and the 
+domain are totally ordered. 
+So, in the domain, all the methods need 
+to be totally ordered and in the task 
+network, that we're initially given, all 
+the tasks must be totally ordered. 
+If this is the case, then our planning 
+problem is totally ordered. 
+Ordered. 
+STN domains and problems were quite 
+straightforward, and should be easy to 
+understand. 
+STN solutions are a little more complex. 
+And the reason for this is simply that, 
+the definition is the blueprint for the 
+algorithm that will follow. 
+So understanding this definition will 
+help you understand the algorithm. 
+Algorithm. 
+What we need to define here is the 
+following: we need to define for a given 
+planning problem consistent of initial 
+state, initial task network, operators 
+and methods. 
+When does a task pi consisting of actions 
+a1 through an constitute a solution for 
+this STN planning problem? And this is 
+the case, if one of the following 3 
+conditions holds. 
+And the first condition is quite trivial 
+here. 
+Namely, if our initial network, Wi, is 
+empty. 
+So there were no tasks in the network. 
+And our plan is also empty. 
+Then, this plan constitutes a solution 
+for this network in the planning problem. 
+So that's quite obvious. 
+If there's nothing to do, doing nothing 
+is a solution for the problem. 
+the next collision is a little more 
+complex. 
+So suppose there is a primitive task t in 
+our network and that task has no 
+predecessors in the network so it's one 
+of the first components in that network. 
+Also suppose that a1 the first action in 
+our plan is equal to t. So this action 
+accomplishes this first task in our 
+network and suppose it is applicable in 
+Si the initial state. 
+Then we can say our plan, consisting of a 
+1 through a n, is a solution to our 
+planning problem, including the network 
+Wi, if the following conditions hold. 
+If the modified plan, pi dash, consisting 
+of the actions a2 through an. 
+So that's all the actions apart from the 
+first one, is a solution for a modified 
+Planning problem and this modified 
+planning problem simply starts at a 
+different initial state and then the 
+states that we get after applying the 
+action a1 in our previous initial state. 
+So we take the successor of our initial 
+state given our action a1 given our new 
+initial state in our new Planning 
+problem. 
+And we remove the task t from our task 
+network and of course we also remove all 
+the edges connected to t. 
+The operators and methods remain the 
+same. 
+So, if our slightly shorter plan is a 
+solution for our modified planning 
+problem then we know that the longer plan 
+is also a solution to our original 
+planning problem. 
+And the third alternative in our 
+definition follows a similar pattern. 
+Now we assume there is a non-primitive 
+task t in our network. 
+Previously it was primitive task, now 
+we're looking for a non-primitive task 
+that has no predecessors in the network. 
+Take one of the first tasks, this time 
+it's non-primitive. 
+Now, suppose we have a method, M, that is 
+relevant for this task. 
+That is, there is a substitution, sigma, 
+such that sigma(t) is the task of the 
+method. 
+And suppose this applicable in our 
+initial state. 
+Then our plan pi is a solution for our 
+original planning problem if it is also a 
+solution for a modified planning problem. 
+And this modified planning problem 
+consists of the same initial state. 
+But then, we have to decompose the task 
+network, Wi, which contains the task t as 
+one of it's first task, using method m 
+and substitution sigma. 
+And this gives us a new task network that 
+we take as part of this modified problem. 
+And again, the operators and methods 
+remain the same. 
+So, if our plan pi is a solution to this 
+modified problem, then our plan pi is 
+also a solution to our original problem. 
+What we have here are 3 alternative 
+cases, namely the task network is empty 
+which means there is no first task in the 
+network or the task network has tasks 
+that are first in the network and they 
+can be either primitive or non-primitive. 
+One of these three cases must always 
+hold. 
+So one of these three branches in the 
+definition is always applicable. 
+And as I said before, the algorithm that 
+we will see for solving STN planning 
+problems will closely follow this 
+definition. 
+

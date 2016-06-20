@@ -1,0 +1,167 @@
+>> So now we have seen the base beta
+structure that we maintain including the
+Mutext relations, we have seen how Forward
+Planning Graph Expansion works, and we
+have seen how backwards search in the
+planning graph works, which means we now
+can put all this together and finally come
+out with the Graphplan Algorithm.
+And here is the function graphplan, that
+takes a propositional planning problem
+consisting of a set of actions, an initial
+state, and a goal description.
+And the high-level structure of this
+algorithm is as follows: we first expand
+the planning graph, until we get to a
+graph that may contain a solution.That's
+what happens here in this part, and then
+we try to extract the solution which
+happens here and again in this loop, and
+see If this fails, we've got to expand the
+planning graph again.
+So this loop continues to expand the
+planning graph.
+Now, also doing the backwards search in
+the planning graph.
+And now in more detail.
+So we start by initializing some
+variables.
+I is the layer we're currently looking at,
+searching at.
+Then we have the no good table.
+We have our proposition layer p-zero which
+is initially the initial state.
+And we have our planning graph which
+initially only contains the proposition
+layer p-zero.
+Then, in this loop, we increase our layer
+and we simply expand the planning graph to
+include the next action and proposition
+layer as we've seen earlier in the
+definition of the function expand.
+And, we have to continue expanding the
+planning graph until.
+All the propositions in the goal are
+contained in our proposition layer, in the
+last proposition layer, and none of them
+are Mutex that's what these last two
+conditions are.
+But we also need to stop this loop when
+we've reached a fixed point in our graph.
+Then this loop is followed by this if
+statement here, which simply tests the
+reason why we have stopped our algorithm.
+If we stopped because we found a
+proposition layer that contains all our
+goals and none of them are mutually
+exclusive.
+Then we can continue.
+Otherwise, we have to return failure.
+That means we basically stopped our loop.
+Because we found a fixed point, but not
+our goal yet.
+So now we have a planning graph that may
+contain a solution plan.
+And the first thing we do is we remember
+the size of the no good table here.
+And the reason why we do this is because
+this tells us when we have determinate in
+our algorithm as we will see shortly.
+So now we have reached the point where we
+can try to extract the plan from our
+planning graph and we do this here.
+Star is now variable big pi.
+And if this was failure so we can't find
+the plan in this planning graph, then of
+course one option is to expand the
+planning graph with another layer, set of
+layers.
+And then again we try to extract a plan
+from this planning graph that now contains
+an additional action proposition layer.
+And again, we store this in our variable
+big pi.Now, if the return value is an
+actual plan, that means we have won we can
+return this plan as a solution.
+So we test this in the next step we test
+whether this plan was failure, and if it's
+not, then we go to this loop if it's still
+not failure then we come to the point
+where we will return our solution Plan,
+but if it was failure and we have reached
+a fixed point in the plan, so an expansion
+of the plan will no longer give us more
+propositions or more actions in our action
+layers, then we have to test whether we
+need to terminate.
+And condition for termination is now this.
+If the size of the no-good table did not
+increase.
+So we still found exactly the same nodes,
+and failed at exactly the same nodes.
+Then an expansion of the graph will not do
+us any good.
+And that means we can return failure.
+Otherwise, we store the size of the
+no-good table, and remember that for the
+next iteration of the loop.
+So that was the detailed graph plan
+algorithm.
+And here are a few final words about
+properties of the graph plan algorithm.
+And in short, these properties are that
+the graph plan algorithm is sound,
+complete, and always terminates.
+So this means that the graph plan
+algorithm returns failure if and only if
+the given planning problem has no
+solution.
+Otherwise it will return a layered plan,
+the structure we've described before, that
+is a solution to the given planning
+problem.
+And this plan will consist of a minimal
+number of layers but that does not mean it
+will consist of a minimal number of
+actions of course.
+So in that sense, it's not guaranteed to
+be optimal.
+But we have seen that Graphplan works on
+the propositional STRIPS representation.
+But again, remember, the STRIPS
+representation can always be translated
+into the propositional representation, so
+that is not really a restriction.
+The important thing here is that
+Graphplan, when it came out, was really a
+lot faster than all the previous planning
+algorithms we've described so far.
+So it was really a step forward in
+performance.
+And a lot of that has to do with the basic
+data structure it maintains, the planning
+graph.
+The backwards search itself is of course
+rather inefficient.
+And still requires exponential time.
+But is the reachability analysis that is
+performed by the planning graph that gives
+the algorithm a lot of power.
+So, that was the Graphplan Algorithm.
+Graphplan solves the same planning problem
+as states based search or plan based
+search.
+But it does so in a very different way.
+Namely by first generating the planning
+graph, the basic data structure that
+underlies its search.
+And we have seen here the algorithm that
+can be used to generate the Planning
+Graph, which is Forward Planning Graph
+Expansion.
+And most importantly, this can be done in
+polynomial time, and tells us something
+about reachability of nodes.
+And this Forward Expansion, together with
+the Backwards Search, make up the Planning
+Graph Algorithm.

@@ -1,0 +1,24 @@
+This concludes the course on AI Planning. 
+You have seen that there are wide variety 
+of methods and techniques, 
+but that the basic technology for 
+representation and reasoning about plans 
+has some core principles, which are 
+broadly useful. 
+Practical applications of AI Planning are 
+in every day use and suitable problems 
+can be addressed by the methods taught on 
+this course. 
+You have now learned about the basic 
+techniques underlying most AI Planners. 
+This should allow you to read state of 
+the art research papers on planning and 
+you should be able to understand their 
+potential for problems you are working 
+on. 
+We hope you enjoyed the course and that 
+you will find the techniques useful and 
+relevant for your future activity. 
+Goodbye. 
+Bye. 
+

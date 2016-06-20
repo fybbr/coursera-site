@@ -1,0 +1,934 @@
+1
+00:00:04,740 --> 00:00:09,236
+This is the first segment of the 
+artificial intelligence planning course. 
+
+2
+00:00:09,236 --> 00:00:13,918
+In this segment I will give you an 
+introduction and overview to the problem 
+
+3
+00:00:13,918 --> 00:00:16,752
+we are addressing in the field of A.I. 
+planning. 
+
+4
+00:00:16,752 --> 00:00:21,434
+This will include some examples and 
+introduction to the basic techniques we 
+
+5
+00:00:21,434 --> 00:00:27,208
+will be using to solve planning problems. 
+So the first question I have to answer 
+
+6
+00:00:27,208 --> 00:00:31,423
+is, what is planning?" And more 
+specifically, what do we mean by planning 
+
+7
+00:00:31,423 --> 00:00:35,097
+in the context of artificial 
+intelligence?" I will answer this 
+
+8
+00:00:35,097 --> 00:00:39,794
+question by informally describing the 
+planning problem that is the problem we 
+
+9
+00:00:39,794 --> 00:00:44,130
+are trying to solve in this field. 
+I will then argue why this problem is 
+
+10
+00:00:44,130 --> 00:00:47,081
+important for artificial intelligence as 
+a whole. 
+
+11
+00:00:47,081 --> 00:00:51,477
+And then continue to describe some 
+techniques that will be used to solve 
+
+12
+00:00:51,477 --> 00:00:56,290
+this problem. 
+So let us start by looking at human 
+
+13
+00:00:56,290 --> 00:01:00,320
+planning and acting. 
+Humans rarely plan before acting in 
+
+14
+00:01:00,320 --> 00:01:04,493
+everyday situations. 
+Ask yourself, when was the last time I 
+
+15
+00:01:04,493 --> 00:01:10,322
+sat down and made a plan before acting? 
+Chances are this will have been some time 
+
+16
+00:01:10,322 --> 00:01:13,993
+ago. 
+This is because humans act without prior 
+
+17
+00:01:13,993 --> 00:01:19,204
+explicit planning quite often. 
+There's a number of situations where this 
+
+18
+00:01:19,204 --> 00:01:23,892
+is the case and here are some examples. 
+When the purpose of my action is 
+
+19
+00:01:23,892 --> 00:01:28,450
+immediate, I don't need to make an 
+explicit plan. For example, to record 
+
+20
+00:01:28,450 --> 00:01:33,399
+this lecture, I needed to switch on this 
+computer. I know how to do this, so I 
+
+21
+00:01:33,399 --> 00:01:36,720
+just did it. 
+I didn't need to make an explicit plan. 
+
+22
+00:01:36,720 --> 00:01:41,449
+The purpose of the action was immediate. 
+When performing well-trained behaviors, I 
+
+23
+00:01:41,449 --> 00:01:45,829
+also don't need to do explicit planning. 
+For me, this would be driving a car. 
+
+24
+00:01:45,829 --> 00:01:49,507
+I know how to drive a car. 
+I've done this many times, so I don't 
+
+25
+00:01:49,507 --> 00:01:54,062
+need to make a plan before I switch gears 
+or before I turn the steering wheel. 
+
+26
+00:01:54,062 --> 00:01:56,981
+It's a well-trained behavior, 
+I don't need to plan. 
+
+27
+00:01:56,981 --> 00:02:01,302
+When the course of action can be freely 
+adapted, I also don't need to plan. 
+
+28
+00:02:01,302 --> 00:02:04,222
+This would be when I go shopping in the 
+supermarket. 
+
+29
+00:02:04,222 --> 00:02:08,310
+I don't need to plan in which order I go 
+through the different aisles, 
+
+30
+00:02:08,310 --> 00:02:14,535
+because I can always adapt my my acting 
+to what I've missed in previous aisles 
+
+31
+00:02:14,535 --> 00:02:18,370
+and just go there again. 
+So the, the course of action can be 
+
+32
+00:02:18,370 --> 00:02:21,100
+freely adapted, means I don't need to 
+plan. 
+
+33
+00:02:22,340 --> 00:02:25,780
+A number of situations make it possible 
+to plan, though, 
+
+34
+00:02:25,780 --> 00:02:28,880
+and here are some examples where planning 
+is necessary, 
+
+35
+00:02:28,880 --> 00:02:32,543
+that is explicit planning. 
+So, when I'm addressing a new situation, 
+
+36
+00:02:32,543 --> 00:02:35,869
+something that I haven't done before or 
+haven't done often, 
+
+37
+00:02:35,869 --> 00:02:39,983
+then I need to do explicit planning. 
+An example of this would be moving a 
+
+38
+00:02:39,983 --> 00:02:42,520
+house. 
+Everybody who has done a big move with, 
+
+39
+00:02:42,520 --> 00:02:46,352
+with furniture will know what this means. 
+You need to organize a van. 
+
+40
+00:02:46,352 --> 00:02:50,016
+You need to organize people. 
+You need to have an explicit plan in 
+
+41
+00:02:50,016 --> 00:02:54,407
+place before you can successfully move 
+from one place to another. 
+
+42
+00:02:54,407 --> 00:03:00,240
+another situation is when the task you're 
+trying to achieve is very complex. 
+
+43
+00:03:00,240 --> 00:03:05,083
+So, for example, when I was planning this 
+course, I was doing explissive planning. 
+
+44
+00:03:05,083 --> 00:03:11,033
+This is quite a complex task, it involve 
+ten hours of lecturing and many other 
+
+45
+00:03:11,033 --> 00:03:13,940
+things, so explicit planning was 
+necessary. 
+
+46
+00:03:14,980 --> 00:03:20,113
+Another type of situation where acting 
+happens only after planning is when the 
+
+47
+00:03:20,113 --> 00:03:23,168
+environment imposes a high risk or a high 
+cost. 
+
+48
+00:03:23,168 --> 00:03:28,171
+So if I'm the manager of a nuclear power 
+station, I will do a lot of planning 
+
+49
+00:03:28,171 --> 00:03:33,500
+before I act, because it's very important 
+what I do and the potential damage I can 
+
+50
+00:03:33,500 --> 00:03:35,580
+do with wrong action is high. 
+So, 
+
+51
+00:03:35,580 --> 00:03:38,572
+I will do explicit planning to counteract 
+that. 
+
+52
+00:03:38,572 --> 00:03:43,348
+Also, when I'm collaborating with others, 
+explicit planning can be extremely 
+
+53
+00:03:43,348 --> 00:03:46,213
+helpful. 
+So, think of people who are trying to 
+
+54
+00:03:46,213 --> 00:03:49,397
+build a house. 
+That's the people who are trying to put 
+
+55
+00:03:49,397 --> 00:03:53,472
+up the walls, trying to put in the 
+plumbing, and of, the electricians. 
+
+56
+00:03:53,472 --> 00:03:58,248
+They all need to coordinate their 
+activity and that means they all need to 
+
+57
+00:03:58,248 --> 00:04:03,060
+have an explicit plan for when they do 
+what and in which order. 
+
+58
+00:04:03,060 --> 00:04:08,446
+So the main lesson here is that people 
+only plan when it's strictly necessary. 
+
+59
+00:04:08,446 --> 00:04:11,415
+We don't do planning when we don't have 
+to. 
+
+60
+00:04:11,415 --> 00:04:14,868
+We only plan when we feel there's a 
+benefit to it. 
+
+61
+00:04:14,868 --> 00:04:19,909
+And this is because planning is a 
+complicated and time-consuming process. 
+
+62
+00:04:19,909 --> 00:04:24,742
+There is a basic trade-off here. 
+If we plan, we normally come up with a 
+
+63
+00:04:24,742 --> 00:04:27,919
+course of action that leads to better 
+results, 
+
+64
+00:04:27,919 --> 00:04:32,062
+but there is a cost. 
+So, if there is no benefit to be had from 
+
+65
+00:04:32,062 --> 00:04:35,170
+planning, we're often better off not 
+planning. 
+
+66
+00:04:35,170 --> 00:04:42,388
+That is, often we seek only solutions or 
+plans that are good enough for what we 
+
+67
+00:04:42,388 --> 00:04:49,606
+are trying to achieve, not optimal plans. 
+So people only plan when it's strictly 
+
+68
+00:04:49,606 --> 00:04:54,914
+necessary. 
+Here is the definition for what we mean 
+
+69
+00:04:54,914 --> 00:04:59,896
+by artificial intelligence planning. 
+Let me read this out for you first. 
+
+70
+00:04:59,896 --> 00:05:05,250
+Planning is an explicit deliberation 
+process that chooses and organizes 
+
+71
+00:05:05,250 --> 00:05:10,222
+actions by anticipating their outcomes 
+and that aims at achieving some 
+
+72
+00:05:10,222 --> 00:05:14,304
+pre-stated objectives. 
+So I will try to take this apart for you 
+
+73
+00:05:14,304 --> 00:05:16,765
+now. 
+What this says is, planning is an 
+
+74
+00:05:16,765 --> 00:05:21,170
+explicit deliberation process. 
+What this means is, to plan, we need to 
+
+75
+00:05:21,170 --> 00:05:23,956
+think. 
+It's a mental process where we think 
+
+76
+00:05:23,956 --> 00:05:26,742
+about the actions that we are trying to 
+do. 
+
+77
+00:05:26,742 --> 00:05:30,952
+It also needs to be explicit thinking, 
+which means, it's conscious. 
+
+78
+00:05:30,952 --> 00:05:34,062
+It's not a subconscious process that's 
+going on, 
+
+79
+00:05:34,062 --> 00:05:38,596
+we are aware that we are doing this 
+planning so we are thinking about 
+
+80
+00:05:38,596 --> 00:05:41,895
+planning. 
+In this thought process, we choose and 
+
+81
+00:05:41,895 --> 00:05:45,896
+organize actions. 
+So, choosing means, we have some options 
+
+82
+00:05:45,896 --> 00:05:48,968
+available, things that we may be able to 
+do. 
+
+83
+00:05:48,968 --> 00:05:54,184
+And we choose some of these actions, and 
+we discard others, as part of the 
+
+84
+00:05:54,184 --> 00:05:58,113
+planning process. 
+We also organize these actions into a 
+
+85
+00:05:58,113 --> 00:05:59,400
+structure. 
+That is, 
+
+86
+00:05:59,400 --> 00:06:03,255
+we could choose which actions to do 
+before which other action, 
+
+87
+00:06:03,255 --> 00:06:07,795
+which actions to do in parallel, 
+what the outcomes of each action will be, 
+
+88
+00:06:07,795 --> 00:06:10,843
+etcetera. 
+So we organize them into some structure. 
+
+89
+00:06:10,843 --> 00:06:14,699
+And, the way we do this is by 
+anticipating the outcomes of the 
+
+90
+00:06:14,699 --> 00:06:17,933
+different actions that we have available 
+as options. 
+
+91
+00:06:17,933 --> 00:06:22,100
+So we think about, what will the world be 
+like if we do this action? 
+
+92
+00:06:22,100 --> 00:06:27,318
+And the result is either what we want or 
+don't want and that's what the next point 
+
+93
+00:06:27,318 --> 00:06:29,708
+is. 
+The process aims at achieving some 
+
+94
+00:06:29,708 --> 00:06:33,669
+pre-stated objectives. 
+So there are things that we want to have 
+
+95
+00:06:33,669 --> 00:06:36,373
+true in the world, 
+these are our objectives, 
+
+96
+00:06:36,373 --> 00:06:41,654
+and by anticipating the outcomes, we can 
+compare the world states as they will be 
+
+97
+00:06:41,654 --> 00:06:47,625
+when we execute an action to the ones in 
+which the objectives we try to achieve 
+
+98
+00:06:47,625 --> 00:06:51,358
+are satisfied. 
+So that is what we mean by planning. 
+
+99
+00:06:51,358 --> 00:06:56,732
+Planning is an explicit deliberation 
+process that chooses and organizes 
+
+100
+00:06:56,732 --> 00:07:02,032
+actions by anticipating their outcomes 
+and that aims at achieving some 
+
+101
+00:07:02,032 --> 00:07:06,471
+pre-stated objectives. 
+Artificial intelligence planning now is 
+
+102
+00:07:06,471 --> 00:07:09,931
+the computational study of this 
+deliberation process. 
+
+103
+00:07:09,931 --> 00:07:14,893
+So what we're interested in is the 
+thinking about plans, the reasoning about 
+
+104
+00:07:14,893 --> 00:07:19,789
+actions that takes place when we are 
+planning and we are trying to build a 
+
+105
+00:07:19,789 --> 00:07:25,491
+computational model of this process. 
+Now that I've defined what we mean by 
+
+106
+00:07:25,491 --> 00:07:28,622
+planning, 
+I want to explain to you why it is so 
+
+107
+00:07:28,622 --> 00:07:32,286
+important to study planning in artificial 
+intelligence. 
+
+108
+00:07:32,286 --> 00:07:35,883
+The goal of artificial intelligence is 
+really twofold, 
+
+109
+00:07:35,883 --> 00:07:39,214
+there's a scientific goal and an 
+engineering goal. 
+
+110
+00:07:39,214 --> 00:07:42,945
+The scientific goal of A.I. 
+is to understand intelligence, 
+
+111
+00:07:42,945 --> 00:07:47,741
+and the key observation here is, that 
+planning is an important aspect of 
+
+112
+00:07:47,741 --> 00:07:51,405
+intelligent behavior. 
+So, if we observe some intelligent 
+
+113
+00:07:51,405 --> 00:07:56,718
+behavior, we assume that there is an 
+underlying plan and we assume that this 
+
+114
+00:07:56,718 --> 00:08:02,147
+plan is the result of some planning. 
+So, to understand intelligence, we need 
+
+115
+00:08:02,147 --> 00:08:05,853
+to understand planning, which is part of 
+intelligence. 
+
+116
+00:08:05,853 --> 00:08:11,237
+In that sense, understanding planning 
+directly contributes to the scientific 
+
+117
+00:08:11,237 --> 00:08:13,684
+goal of A.I.. 
+The other goal of A.I. 
+
+118
+00:08:13,684 --> 00:08:18,090
+is the engineering goal, which is to 
+build intelligent entities, 
+
+119
+00:08:18,090 --> 00:08:23,075
+that is we want to build robots or other 
+entities that exhibit intelligent 
+
+120
+00:08:23,075 --> 00:08:26,265
+behavior. 
+And if this is to be intelligent to us, 
+
+121
+00:08:26,265 --> 00:08:31,516
+this needs to involve actions that are 
+carefully chosen and organized as we do 
+
+122
+00:08:31,516 --> 00:08:34,840
+in planning. 
+So what we do in planning is we build 
+
+123
+00:08:34,840 --> 00:08:39,958
+models of how this planning works and 
+these models are software models, so we 
+
+124
+00:08:39,958 --> 00:08:43,880
+can build them into our intelligent 
+entities as components. 
+
+125
+00:08:43,880 --> 00:08:48,820
+So planning directly also contributes to 
+the engineering goal of A.I. 
+
+126
+00:08:48,820 --> 00:08:53,663
+And just as a side remark, the robot you 
+see here is the Shakey robot that was 
+
+127
+00:08:53,663 --> 00:08:58,695
+built in the late 60s and that was one of 
+the first robots that used an actual 
+
+128
+00:08:58,695 --> 00:09:04,710
+planner to come up with its actions. 
+There are really two different types of 
+
+129
+00:09:04,710 --> 00:09:08,202
+planning, domain-specific and 
+domain-independent planning. 
+
+130
+00:09:08,202 --> 00:09:12,796
+In domain-specific planning, we use 
+specific representations and techniques 
+
+131
+00:09:12,796 --> 00:09:16,227
+that are adapted to each problem we are 
+trying to solve. 
+
+132
+00:09:16,227 --> 00:09:20,760
+There are a number of important examples 
+for this type of planning, 
+
+133
+00:09:20,760 --> 00:09:24,130
+domain-specific planning, 
+for example, path and motion planning. 
+
+134
+00:09:24,130 --> 00:09:27,930
+If we are trying to navigate a robot 
+through a two-dimensional or 
+
+135
+00:09:27,930 --> 00:09:31,784
+three-dimensional space, we need to come 
+up with a path through that space, that 
+
+136
+00:09:31,784 --> 00:09:34,107
+gets the robot from one location to 
+another. 
+
+137
+00:09:34,107 --> 00:09:38,224
+And to do so, a number of algorithms have 
+been developed to, to make sure that the 
+
+138
+00:09:38,224 --> 00:09:42,131
+robot doesn't bump into other objects or 
+will fit through narrow passages. 
+
+139
+00:09:42,131 --> 00:09:46,683
+All these algorithms are highly specific 
+and very efficient. 
+
+140
+00:09:46,683 --> 00:09:51,976
+Another example is perception planning. 
+If we try to understand a given situation 
+
+141
+00:09:51,976 --> 00:09:57,011
+a robot may have to wander around in a 
+scene and observe different aspects of 
+
+142
+00:09:57,011 --> 00:10:00,110
+different angles to understand what is 
+going on. 
+
+143
+00:10:00,110 --> 00:10:04,682
+And again, there are highly specific 
+algorithms that have been developed for 
+
+144
+00:10:04,682 --> 00:10:08,232
+this type of problem. 
+Manipulation planning is another such 
+
+145
+00:10:08,232 --> 00:10:12,443
+problem where we are trying to, for 
+example, assemble an object from 
+
+146
+00:10:12,443 --> 00:10:17,016
+different parts and that needs to happen 
+in a specific order for it to work. 
+
+147
+00:10:17,016 --> 00:10:21,889
+also, natural language generation uses 
+highly specific algorithms for planning, 
+
+148
+00:10:21,889 --> 00:10:25,740
+namely the planning of utterances that 
+lead to communicating, 
+
+149
+00:10:25,740 --> 00:10:30,525
+as given subject. The point is in all 
+these domains, we have specific 
+
+150
+00:10:30,525 --> 00:10:34,960
+algorithms that we use to efficiently 
+solve a specific problem. 
+
+151
+00:10:34,960 --> 00:10:38,517
+On the other hand, there's 
+domain-independent planning. 
+
+152
+00:10:38,517 --> 00:10:43,590
+And there, we use generic representations 
+and techniques to solve the generic 
+
+153
+00:10:43,590 --> 00:10:47,037
+planning problem. 
+The advantage of this is that it saves 
+
+154
+00:10:47,037 --> 00:10:49,723
+effort, 
+so we don't need to reinvent the same 
+
+155
+00:10:49,723 --> 00:10:52,528
+techniques for different problems all the 
+time. 
+
+156
+00:10:52,528 --> 00:10:55,453
+We can always reuse the same planning 
+algorithms. 
+
+157
+00:10:55,453 --> 00:10:59,870
+The disadvantage is that, this means 
+planning from first principles and is 
+
+158
+00:10:59,870 --> 00:11:03,033
+often relatively slow, 
+but it also leads to a general 
+
+159
+00:11:03,033 --> 00:11:07,510
+understanding of planning and as I've 
+just explained, that's the scientific 
+
+160
+00:11:07,510 --> 00:11:11,826
+goal of artificial intelligence. 
+The important lesson here is that 
+
+161
+00:11:11,826 --> 00:11:15,230
+domain-independent planning complements 
+domain-specific planning. 
+
+162
+00:11:15,230 --> 00:11:19,808
+Domain-specific planning is good for 
+specific problems where highly efficient 
+
+163
+00:11:19,808 --> 00:11:23,623
+solutions are required. 
+Domain-independent planning is good if we 
+
+164
+00:11:23,623 --> 00:11:28,084
+need to plan from first principles for 
+the type of situation I've explained 
+
+165
+00:11:28,084 --> 00:11:30,960
+earlier, 
+situations we have never seen before for 
+
+166
+00:11:30,960 --> 00:11:33,777
+example. 
+So the two types of planning complement 
+
+167
+00:11:33,777 --> 00:11:36,536
+each other. 
+But in this course, we will focus on 
+
+168
+00:11:36,536 --> 00:11:39,060
+techniques for domain-independent 
+planning. 
+
+169
+00:11:40,340 --> 00:11:43,911
+So here's a little quiz to test your 
+understanding so far. 
+
+170
+00:11:43,911 --> 00:11:47,298
+The following five statements are either 
+true or false. 
+
+171
+00:11:47,298 --> 00:11:50,500
+Please tick the box for the statements 
+that are true. 
+
+172
+00:11:51,660 --> 00:11:56,631
+The first statement, people only plan 
+when they have to because the benefit of 
+
+173
+00:11:56,631 --> 00:12:00,710
+an optimal plan does not justify the 
+effort of planning is true. 
+
+174
+00:12:00,710 --> 00:12:06,310
+The second statement for humans planning 
+as a subconscious process, which is why 
+
+175
+00:12:06,310 --> 00:12:11,624
+computational planning so hard is false. 
+The reason is that planning is not a 
+
+176
+00:12:11,624 --> 00:12:15,522
+subconscious process. 
+We have defined planning as the explicit 
+
+177
+00:12:15,522 --> 00:12:18,603
+deliberation process, so it needs to be 
+conscious. 
+
+178
+00:12:18,603 --> 00:12:23,381
+Third statement, planning involves a 
+mental simulation of actions to foresee 
+
+179
+00:12:23,381 --> 00:12:26,273
+future world states and compare them to 
+goals, 
+
+180
+00:12:26,273 --> 00:12:29,725
+that statement is true. 
+fourth statement, in artificial 
+
+181
+00:12:29,725 --> 00:12:34,252
+intelligence, planning is concerned with 
+the search for computationally optimal 
+
+182
+00:12:34,252 --> 00:12:35,971
+plans, 
+that statement is false. 
+
+183
+00:12:35,971 --> 00:12:40,153
+We're not only after optimal plans, 
+we also want to sometimes find out 
+
+184
+00:12:40,153 --> 00:12:43,420
+whether a plan exists at all, whether 
+it's optimal or not. 
+
+185
+00:12:43,420 --> 00:12:47,205
+Finally, domain-specific planning is used 
+when efficiency is vital, 
+
+186
+00:12:47,205 --> 00:12:51,736
+whereas domain-independent planning is 
+good for planning from first principles. 
+
+187
+00:12:51,736 --> 00:12:53,400
+That statement is true again. 
+

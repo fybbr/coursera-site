@@ -1,0 +1,83 @@
+This is demonstration of Nonlin running 
+in Poplog First, going to change the 
+directory where Nonlin is located, 
+and then load the source file. 
+We're offered the choice of loading a 
+critical path calculation package which 
+we're going to do. There's some errors in 
+it in certain versions of Poplog, we can 
+just ignore that. And then, we look at 
+the main menu which is called TF Info. 
+We'll load a new TF file, 
+in this case, it's going to be block 
+zero, block zero. 
+Which is a demonstration of the Sussman, 
+and normally block second problem. 
+And now, we'll give the goal schemer, 
+which is to plan for the goal on AB and 
+the goal on BC. 
+So, we're going to make a stack of 
+blocks. 
+And that's the plan already created. 
+There's some diagnostics that are showing 
+while the expansion was taking place. 
+So, we're going to look at the results 
+network. 
+We'll go through all of the different 
+options here. 
+So we're looking at the main results 
+network, 
+it's got a few dummy nodes and so on in 
+there and we can get a cleaner version 
+just with the actions only. 
+We're showing there the predecessors and 
+successors of each, each node. 
+And then, we're going to look at the 
+critical path data. 
+But in this case, the data is all zeroed 
+out because there is no data in it. 
+Then, we're looking at the goal structure 
+table and the table of multiple effects. 
+We'll look at any initial context in the 
+plan and the, the, initial state for the 
+plan. 
+And we can do a simulation of what the 
+state looks like at any point in the 
+plan. 
+In this case, we'll just look at it at 
+the end node. 
+So, this is the state at the end of the 
+plan having been executed. 
+We'll load a new domain now. 
+In this case, it's going to be a house 
+building task with some critical path 
+method data in it, 
+some durations and times. 
+So we'll set up a task for this one which 
+is just to build a house, to expand a 
+top-level action of building the house. 
+And again, that's plan created so we'll 
+just look at the results. 
+And again, we're going to through all the 
+options. 
+We'll just see the main results network 
+with all of the dummy nodes in, in place. 
+And we'll look at it just cleaned just 
+with the actions. 
+And then, we'll going to look at it with 
+the critical path method data which will 
+give us the durations, the early 
+finishes, and the late finishes for each 
+node. 
+And the start, the role starts means it's 
+on the critical path. 
+And again, we're looking at the gold 
+structure table, 
+and the table of multiple effects. 
+And again, the initial context there is 
+none in this case. 
+And then, we'll look at the context of a 
+particular node doing a node simulation. 
+In this case, again, we'll look at the 
+state at the end of the plan. 
+

@@ -1,0 +1,834 @@
+1
+00:00:00,012 --> 00:00:07,383
+>> You have now seen the basic planning
+graph, the nodes and the edges that make
+
+2
+00:00:07,383 --> 00:00:14,520
+up this graph, and you have seen how it
+can be understood as a reachability
+
+3
+00:00:14,520 --> 00:00:18,286
+analysis.
+The planning graph is a layered graph
+
+4
+00:00:18,286 --> 00:00:21,626
+consisting of proposition and action
+layers.
+
+5
+00:00:21,626 --> 00:00:27,200
+When we search for a plan in this graph,
+what we will get as a result is a layered
+
+6
+00:00:27,200 --> 00:00:31,441
+plan and we will look at those next in a
+little more detail.
+
+7
+00:00:31,441 --> 00:00:36,996
+In layered plans, we will have multiple
+actions, that come from the same action
+
+8
+00:00:36,996 --> 00:00:40,174
+layer.
+Which means we will effectively try to
+
+9
+00:00:40,174 --> 00:00:45,252
+execute these actions in parallel.
+Now, we've already seen that this may
+
+10
+00:00:45,252 --> 00:00:48,900
+cause problems.
+But this will not be the case, if all
+
+11
+00:00:48,900 --> 00:00:54,411
+these actions are independent.
+And here's an example of what independence
+
+12
+00:00:54,411 --> 00:00:59,236
+of actions means.
+Looking at the two actions in this action
+
+13
+00:00:59,236 --> 00:01:03,940
+layer a2 here.
+We have the actions of moving the robot r,
+
+14
+00:01:03,940 --> 00:01:09,633
+from location 1 to location 2.
+And we also have the action of loading
+
+15
+00:01:09,633 --> 00:01:13,341
+container a, onto the robot r at location
+1.
+
+16
+00:01:13,341 --> 00:01:19,491
+And what we see here is that m r one two,
+has a negative effect r one.
+
+17
+00:01:19,491 --> 00:01:24,646
+So it deletes the fact that the robot is
+at location one.
+
+18
+00:01:24,646 --> 00:01:28,671
+But if we look at the other action, l a r
+one.
+
+19
+00:01:28,671 --> 00:01:34,552
+That has a precondition r one.
+So what this means is, 1 action deletes a
+
+20
+00:01:34,552 --> 00:01:40,762
+pre-condition of the other action, which
+means these 2 actions cannot be executed
+
+21
+00:01:40,762 --> 00:01:44,216
+in parallel.
+These 2 actions are dependent.
+
+22
+00:01:44,216 --> 00:01:50,110
+Similarly, if we look at this action
+again, and now as another action MR21, so
+
+23
+00:01:50,110 --> 00:01:56,090
+1 is moving the robot from location 1 to 2
+and the other 1 is moving the same robot
+
+24
+00:01:56,090 --> 00:01:59,960
+from 2 to 1.
+What we see here is that the first action
+
+25
+00:01:59,960 --> 00:02:05,162
+Mr12, has a positive effect Lar1..
+Whereas, for the second action, this is
+
+26
+00:02:05,162 --> 00:02:09,667
+actually a negative effect.
+So one action is trying to assert the
+
+27
+00:02:09,667 --> 00:02:12,716
+effect r1 that the robot is in location
+one.
+
+28
+00:02:12,716 --> 00:02:15,941
+And the other is trying to delete the same
+fact.
+
+29
+00:02:15,941 --> 00:02:22,374
+Again, this means these two actions cannot
+occur together, they are dependent
+
+30
+00:02:22,374 --> 00:02:26,249
+actions.
+But to show you that not all actions in
+
+31
+00:02:26,249 --> 00:02:32,405
+this action layer are dependent, let us
+look at Mr12 and Mq21, for example.
+
+32
+00:02:32,405 --> 00:02:37,976
+These two actions are independent.
+There a fact and pre-conditions don't
+
+33
+00:02:37,976 --> 00:02:43,142
+interfere with each other so we can
+execute those two action together and in
+
+34
+00:02:43,142 --> 00:02:47,138
+parallel.
+And here is a general definition for what
+
+35
+00:02:47,138 --> 00:02:50,591
+it means for two actions to be
+independent.
+
+36
+00:02:50,591 --> 00:02:56,895
+We can say that two actions a1 and a2 are
+independent if the following conditions
+
+37
+00:02:56,895 --> 00:03:01,273
+hold and what these conditions express is
+very simply.
+
+38
+00:03:01,273 --> 00:03:06,673
+They say that the effects and
+preconditions of those actions must not
+
+39
+00:03:06,673 --> 00:03:10,562
+interfere.
+And that's exactly defined the way that
+
+40
+00:03:10,562 --> 00:03:15,497
+we've seen just in the example.
+So we've seen that the negative effects of
+
+41
+00:03:15,497 --> 00:03:19,691
+one action may interfere with the
+preconditions of the other.
+
+42
+00:03:19,691 --> 00:03:25,043
+So we have the negative effects of A1
+intersected with the preconditions of the
+
+43
+00:03:25,043 --> 00:03:27,563
+other.
+And that must be the empty set.
+
+44
+00:03:27,563 --> 00:03:30,380
+And the same goes for the positive
+effects.
+
+45
+00:03:30,380 --> 00:03:35,097
+So, we have the negative effects
+intersected with the positive effects.
+
+46
+00:03:35,097 --> 00:03:40,093
+That, again, must be the empty set.
+Or, in other words, the negative effects
+
+47
+00:03:40,093 --> 00:03:44,851
+of the first action must not be a
+precondition, or a positive effect of the
+
+48
+00:03:44,851 --> 00:03:46,060
+other.
+Action.
+
+49
+00:03:46,060 --> 00:03:50,442
+And the first condition states this for
+the negative effects of a 1.
+
+50
+00:03:50,442 --> 00:03:55,518
+And the second one is, is simply the
+symmetric case for the negative effects of
+
+51
+00:03:55,518 --> 00:03:58,393
+a 2.
+Which must not be preconditions of a 1 or
+
+52
+00:03:58,393 --> 00:04:02,628
+positive effects of a 1.
+That's what it means for two actions to be
+
+53
+00:04:02,628 --> 00:04:06,574
+independent.
+And we can easily generalize this
+
+54
+00:04:06,574 --> 00:04:12,231
+definition to a set of actions pi.
+We can say that a set of actions pi is
+
+55
+00:04:12,231 --> 00:04:17,623
+independent if every pair of actions in
+this set is independent.
+
+56
+00:04:17,623 --> 00:04:22,969
+So we must not have a single pair of
+actions that are dependent In the set,
+
+57
+00:04:22,969 --> 00:04:26,894
+then the whole set consists of independent
+actions.
+
+58
+00:04:26,894 --> 00:04:31,308
+And one important thing here you can see
+in this definition is that the
+
+59
+00:04:31,308 --> 00:04:35,542
+independence of actions does not depend on
+the planning problem.
+
+60
+00:04:35,542 --> 00:04:40,792
+Which means this can be computed before we
+start our planner, before we search for a
+
+61
+00:04:40,792 --> 00:04:45,562
+solution to our problem.
+And also you can see quite easily that the
+
+62
+00:04:45,562 --> 00:04:51,257
+independence relation that holds between
+actions is symmetric, because in the
+
+63
+00:04:51,257 --> 00:04:56,413
+definition we've seen that these two cases
+for A1 and A2 are symmetric.
+
+64
+00:04:56,414 --> 00:05:02,564
+And here is the definition we've just
+seen, expressed as an algorithm in pseudo
+
+65
+00:05:02,564 --> 00:05:06,256
+code.
+We define a function, independent, that
+
+66
+00:05:06,256 --> 00:05:12,904
+takes two action, and returns true, if and
+only if these two actions are indepenetns.
+
+67
+00:05:12,905 --> 00:05:18,486
+And what this function does is simply go
+through all the negative effects of the
+
+68
+00:05:18,486 --> 00:05:24,114
+first action and test whether they're also
+either a pre-condition or a positive
+
+69
+00:05:24,114 --> 00:05:28,830
+effect of the second action.
+If this is the case, then we can return
+
+70
+00:05:28,830 --> 00:05:33,192
+false because we know these two actions
+are not independent.
+
+71
+00:05:33,192 --> 00:05:37,862
+They are dependent in this case.
+And then we also need to do the same for
+
+72
+00:05:37,862 --> 00:05:42,650
+the symmetric case so we To all the
+negative effects of the second action and
+
+73
+00:05:42,650 --> 00:05:47,970
+test wether they are a precondition of the
+first action or the positive effect of the
+
+74
+00:05:47,970 --> 00:05:51,315
+first action.
+Again if this is the case we can return
+
+75
+00:05:51,315 --> 00:05:55,577
+false the two actions are dependent.
+If this is not the case but if we go
+
+76
+00:05:55,577 --> 00:06:00,176
+through both of these loops and don't
+return as false then we must have a case
+
+77
+00:06:00,176 --> 00:06:04,324
+where both of the actions are independent
+and we can return true.
+
+78
+00:06:04,325 --> 00:06:09,093
+In terms of time complexity, you can
+easily see that this algorithm has
+
+79
+00:06:09,093 --> 00:06:13,616
+ponilumial/g time complexity.
+In fact, it's linear in the number of
+
+80
+00:06:13,616 --> 00:06:17,240
+preconditions and effects that an action
+might have.
+
+81
+00:06:17,240 --> 00:06:22,286
+So if the number of preconditions and
+effects an action might have is b, this
+
+82
+00:06:22,286 --> 00:06:24,340
+algorithm runs in o of b.
+B.
+
+83
+00:06:24,340 --> 00:06:29,430
+This assumes that these elements tests
+here in the algorithm can be done in
+
+84
+00:06:29,430 --> 00:06:33,252
+constant time.
+And I've already told you, since action
+
+85
+00:06:33,252 --> 00:06:38,418
+independence is independent from a given
+planning problem, this can be all
+
+86
+00:06:38,418 --> 00:06:41,927
+precomputed.
+And I'll leave it up to you to work out
+
+87
+00:06:41,927 --> 00:06:46,254
+how much storage this will actually take
+in computer memory.
+
+88
+00:06:46,255 --> 00:06:52,402
+Now that we've seen what it means for a
+set of actions to be independent, we can
+
+89
+00:06:52,402 --> 00:06:58,767
+talk about the application of a set of
+independent actions in the given state and
+
+90
+00:06:58,767 --> 00:07:04,304
+this is quite straight forward.
+So we can say that a set of independent
+
+91
+00:07:04,304 --> 00:07:10,574
+actions is applicable in a state s if the
+following holds namely the union of all
+
+92
+00:07:10,574 --> 00:07:16,516
+the preconditions over all the actions.
+Must be propositions in our state s.
+
+93
+00:07:16,516 --> 00:07:22,418
+It should be obvious that if each of the
+actions has its precondition set aside in
+
+94
+00:07:22,418 --> 00:07:27,093
+this state s, then this individual action
+will be applicable.
+
+95
+00:07:27,093 --> 00:07:32,973
+And if this is true for all the actions'
+preconditions, then all the actions are
+
+96
+00:07:32,973 --> 00:07:36,890
+applicable.
+And then the result of applying a set of
+
+97
+00:07:36,890 --> 00:07:42,942
+independent actions so this is our set pi
+here, independent actions is defined as
+
+98
+00:07:42,942 --> 00:07:46,616
+follows.
+We extend the definition of our state
+
+99
+00:07:46,616 --> 00:07:52,688
+transition function gamma to now take A
+state s and a set of independent actions
+
+100
+00:07:52,688 --> 00:07:55,863
+pi.
+And the result will simply be all the
+
+101
+00:07:55,863 --> 00:08:02,067
+propositions that are true in s minus the
+negative effects of the set pi plus the
+
+102
+00:08:02,067 --> 00:08:04,656
+positive effects of the set.
+.
+
+103
+00:08:04,656 --> 00:08:10,962
+And when we talk about the preconditions
+if positive effects or negative effects of
+
+104
+00:08:10,962 --> 00:08:16,812
+a set of independent actions , we simply
+mean the union over all the actions in
+
+105
+00:08:16,812 --> 00:08:21,581
+that set preconditions positive effect or
+negative effect.
+
+106
+00:08:21,581 --> 00:08:27,377
+So this defines applicability and state
+transitions for sets of independent
+
+107
+00:08:27,377 --> 00:08:31,216
+actions.
+Going back to what I said earlier, what we
+
+108
+00:08:31,216 --> 00:08:37,495
+will be looking for is sets of independent
+actions in action layers in our planning
+
+109
+00:08:37,495 --> 00:08:40,638
+graph.
+And when we want to turn this into a
+
+110
+00:08:40,638 --> 00:08:46,250
+sequential plan, we need to be sure that
+we can do that and this is what this
+
+111
+00:08:46,250 --> 00:08:50,838
+proposition gives us.
+If we are given a set Pi of independent
+
+112
+00:08:50,838 --> 00:08:56,935
+actions that are applicable in a state s
+then we can take any permutation of those
+
+113
+00:08:56,935 --> 00:09:03,032
+actions, a 1 through a K, so those are the
+actions in pi, and this is a permutation,
+
+114
+00:09:03,032 --> 00:09:07,332
+any sequential order.
+Of those actions, and the following will
+
+115
+00:09:07,332 --> 00:09:10,436
+be true.
+This sequence of actions a one through a k
+
+116
+00:09:10,436 --> 00:09:15,064
+will be applicable in our state s.
+And the state that we get to when we apply
+
+117
+00:09:15,064 --> 00:09:19,516
+our set of independent actions.
+This is the extended defintion of the
+
+118
+00:09:19,516 --> 00:09:24,983
+state transition function that we've just
+introduced in the previous slide, will be
+
+119
+00:09:24,983 --> 00:09:29,988
+the same state As the one we get when we
+take the state S and apply the sequence of
+
+120
+00:09:29,988 --> 00:09:34,024
+actions A 1 through A K.
+And remember, this does not depend on
+
+121
+00:09:34,024 --> 00:09:38,493
+which sequence we've chosen.
+So we can take any permutation and the
+
+122
+00:09:38,493 --> 00:09:43,628
+resulting state will always be the same as
+when we apply the set of independent
+
+123
+00:09:43,628 --> 00:09:47,436
+actions.
+That simply means we can forget about the
+
+124
+00:09:47,436 --> 00:09:53,075
+execution order of independent actions
+because we can take any order we like.
+
+125
+00:09:53,075 --> 00:09:58,361
+Now, we can define what we mean by a
+layered plan, which is the type of plan
+
+126
+00:09:58,361 --> 00:10:01,551
+we'll be looking for in our planning
+graph.
+
+127
+00:10:01,551 --> 00:10:07,064
+So, suppose we are given a planning
+problem consisting of a set of actions.
+
+128
+00:10:07,065 --> 00:10:10,833
+An initial state and a goal.
+The set of actions here is the set of
+
+129
+00:10:10,833 --> 00:10:15,696
+propositional actions and we're dealing
+with a propositional planning problem.
+
+130
+00:10:15,696 --> 00:10:20,252
+Then we have a planning graph consisting
+of nodes and edges where the nodes are
+
+131
+00:10:20,252 --> 00:10:24,561
+given by the first proposition layer, the
+first action layer and so on.
+
+132
+00:10:24,561 --> 00:10:30,173
+One, always alternating action and
+proposition layers, as we've seen it
+
+133
+00:10:30,173 --> 00:10:33,535
+earlier.
+Then we can define what we mean by a
+
+134
+00:10:33,535 --> 00:10:38,836
+layered plan over this graph, and we
+define it as a sequence of sets of
+
+135
+00:10:38,836 --> 00:10:42,600
+actions.
+Denoted here by this big symbol pi.
+
+136
+00:10:42,600 --> 00:10:49,236
+And this is the sequence of actions, pi 1
+through pi k and for each of these sets,
+
+137
+00:10:49,236 --> 00:10:53,092
+we must have the following conditions
+true.
+
+138
+00:10:53,092 --> 00:10:59,896
+So the i set in the sequence, pi i, must
+be a subset of the actions in the[UNKNOWN]
+
+139
+00:10:59,896 --> 00:11:06,385
+action layer of the planning graph so that
+will be for a 1 this will be this one
+
+140
+00:11:06,385 --> 00:11:09,405
+here.
+For a2, this 1 here, an so on.
+
+141
+00:11:09,405 --> 00:11:14,004
+So pi i must be a subset of the actions in
+that action layer.
+
+142
+00:11:14,004 --> 00:11:19,420
+Which are, of course, a subset of all the
+actions that are available.
+
+143
+00:11:19,420 --> 00:11:25,316
+Then, this set, pi i, must also be
+applicable in the state represented by pi
+
+144
+00:11:25,316 --> 00:11:29,068
+minus 1.
+That is the proposition layer preceding
+
+145
+00:11:29,068 --> 00:11:34,601
+the action layer we're just looking at.
+Note that this is not necessarily a
+
+146
+00:11:34,601 --> 00:11:38,689
+consistent state.
+And then, of course, we want all our
+
+147
+00:11:38,689 --> 00:11:44,544
+actions in pi i to be independent.
+So the main thing here is that our layered
+
+148
+00:11:44,544 --> 00:11:50,868
+plan is a sequence of sets of independent
+actions, where each of these sets must be
+
+149
+00:11:50,868 --> 00:11:56,614
+from the corresponding action layer.
+Now that we know what a layered plan is,
+
+150
+00:11:56,614 --> 00:12:01,798
+it's fairly straightforward to define what
+it means for a layered plan to be a
+
+151
+00:12:01,798 --> 00:12:06,982
+solution to a given planning problem.
+So we have a layered plan consisting of
+
+152
+00:12:06,982 --> 00:12:12,191
+sets pi 1 through pi k of independent
+actions chosen from our planning graph.
+
+153
+00:12:12,191 --> 00:12:17,300
+And we have a planning problem given by
+the set of actions a initial state and
+
+154
+00:12:17,300 --> 00:12:20,692
+goal.
+Then, this sequence of sets of actions is
+
+155
+00:12:20,692 --> 00:12:25,541
+a solution for this planning problem if
+the following conditions hold.
+
+156
+00:12:25,541 --> 00:12:30,391
+Firstly, our first set, pi 1, must be
+applicable in our initial state.
+
+157
+00:12:30,391 --> 00:12:36,113
+Then for every subsequent set pi j, so j
+must be greater than one.
+
+158
+00:12:36,113 --> 00:12:42,839
+This must be applicable in the state that
+we get from first applying pi 1 in the
+
+159
+00:12:42,839 --> 00:12:48,806
+initial state, then applying.
+And pie 2 in the state that results from
+
+160
+00:12:48,806 --> 00:12:55,086
+this, and then applying the next set of
+fractions, and so on up to pie j minus 1.
+
+161
+00:12:55,086 --> 00:13:01,066
+Applied in the state that we get when we
+apply these other sets before that.
+
+162
+00:13:01,066 --> 00:13:06,962
+And in this state Pi J must be applicable.
+And the third and final condition is
+
+163
+00:13:06,962 --> 00:13:12,902
+simply if we look at the state that we get
+from applying all those sets of actions
+
+164
+00:13:12,902 --> 00:13:16,830
+and sequence.
+So starting from Pi 1 then Pi 2 and so on
+
+165
+00:13:16,830 --> 00:13:22,381
+until we get to the last set Pi k, we get
+a state and in this state all the goal
+
+166
+00:13:22,381 --> 00:13:28,936
+propositions must be in this state.
+So that is what a layered solution plan is
+
+167
+00:13:28,936 --> 00:13:35,120
+and that's the kind of plan we'll be
+looking for in our planning graph.

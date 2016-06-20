@@ -1,0 +1,868 @@
+1
+00:00:00,012 --> 00:00:06,886
+Hello, welcome, everybody to this brief
+lecture here. I'm a professor of Computer
+
+2
+00:00:06,898 --> 00:00:13,415
+Science at Saarland University, Zabuken,
+Germany and my background is mostly
+
+3
+00:00:13,427 --> 00:00:20,205
+academic research and planning. So, I'm
+essentially a basic research guy. Here's
+
+4
+00:00:20,217 --> 00:00:25,435
+what I'm going to talk about today;
+Heuristic Search Planning. Now, that is
+
+5
+00:00:25,447 --> 00:00:31,035
+one of the most prominent sub areas of
+planning, and obviously, I'm going to give
+
+6
+00:00:31,047 --> 00:00:36,685
+you only a very brief overview in the
+little time I have. So, here's the outline
+
+7
+00:00:36,697 --> 00:00:42,155
+of the overview, quite comprehensive, I
+would say. I'm going to start with why.
+
+8
+00:00:42,272 --> 00:00:47,490
+Why do we want to consider Houristic
+Search Planning? Well, one possible
+
+9
+00:00:47,502 --> 00:00:53,495
+motivation is the international planning
+competition, IPC. The first edition must
+
+10
+00:00:53,507 --> 00:00:59,362
+run in 1998, let me start with the second
+edition in the year 2000, where the clear
+
+11
+00:00:59,374 --> 00:01:05,209
+winner of your space on heuristic search.
+We follow then a 2 year cycle. So the next
+
+12
+00:01:05,221 --> 00:01:10,927
+competition is in 2002, same picture. 2
+years later, same picture except that as
+
+13
+00:01:10,939 --> 00:01:16,703
+of this time point we have a separating
+satisfying planners from optimal planners.
+
+14
+00:01:16,982 --> 00:01:21,830
+In optimal planning, you are forced to
+give a guarantee that the plan you return
+
+15
+00:01:21,842 --> 00:01:27,010
+is among the best possible plans. There is
+no such obligation satisficing planning.
+
+16
+00:01:27,116 --> 00:01:32,021
+Satisficing planning traditionally
+attracts the largest competition and that
+
+17
+00:01:32,033 --> 00:01:36,339
+was won by heuristic search. Next
+competition, same picture. Next
+
+18
+00:01:36,351 --> 00:01:41,610
+competition, same picture. Finally, the
+most recent competition was run in 2011.
+
+19
+00:01:41,719 --> 00:01:47,050
+So there was a three-year gap and at that
+competition heuristic search emerged best
+
+20
+00:01:47,062 --> 00:01:51,601
+in both tracks and actually not only the
+first places, but the first 12,
+
+21
+00:01:51,710 --> 00:01:57,487
+respectively nine places. Now, that might
+seem very impressive, and it is
+
+22
+00:01:57,499 --> 00:02:03,049
+impressive. However, you should not take
+this too seriously. Okay? First, it's only
+
+23
+00:02:03,061 --> 00:02:08,057
+one part of the IPC. Mainly, the fully
+automatic deterministic part. There are
+
+24
+00:02:08,069 --> 00:02:13,340
+other parts as well. Also, this one here
+is the biggest one. Second, winning the
+
+25
+00:02:13,352 --> 00:02:18,030
+competition doesn't mean you win life.
+You're just the best planner in one
+
+26
+00:02:18,042 --> 00:02:23,115
+particular setup and according to one
+winning particular criterion. If you have
+
+27
+00:02:23,127 --> 00:02:28,625
+an actual application, the winner might be
+different. Finally, saying the word winner
+
+28
+00:02:28,637 --> 00:02:33,950
+already is not really adequate, because
+these are usually complex. Events, very
+
+29
+00:02:33,962 --> 00:02:39,575
+complicated experiments, lots of data and
+giving you just a single bit somebody won
+
+30
+00:02:39,587 --> 00:02:45,100
+is not a very adequate summary. So really
+all I'm saying here is that these results
+
+31
+00:02:45,112 --> 00:02:50,625
+should give us multiplication to consider
+this approach for the 12 minutes of this
+
+32
+00:02:50,637 --> 00:02:56,067
+lecture. Next question I'm going to answer
+is what, more precisely What do I mean by
+
+33
+00:02:56,079 --> 00:03:00,769
+Heuristic Search Planning? What is the
+basic idea? You've already learned about
+
+34
+00:03:00,781 --> 00:03:05,557
+the Heuristic Search in a star, so let me
+just briefly remind you, what they do is a
+
+35
+00:03:05,569 --> 00:03:09,850
+forward search. You start at initial
+state, we keep applying application
+
+36
+00:03:09,862 --> 00:03:14,822
+actions, generating new reachable states
+until they've eventually reached the state
+
+37
+00:03:14,834 --> 00:03:19,726
+that satisfies the goal. The number of
+states to generate might be huge millions,
+
+38
+00:03:19,829 --> 00:03:24,475
+billions, you name it, so we need to veg
+direct to search we do this in terms of
+
+39
+00:03:24,487 --> 00:03:29,247
+heuristic function h which matches any
+given world state into an estimate to the
+
+40
+00:03:29,259 --> 00:03:33,912
+distance to the goal for that state and
+then we going to prefer states that appear
+
+41
+00:03:33,924 --> 00:03:38,627
+to be closer to the goal which our pause
+raises the question where do we get this
+
+42
+00:03:38,639 --> 00:03:43,294
+match to function form. Now here's the
+standard example, illustrating the
+
+43
+00:03:43,306 --> 00:03:48,361
+standard approach. Let's say the problem
+is to find the route from Saarbruecken to
+
+44
+00:03:48,373 --> 00:03:53,188
+Edinburgh. What we do is we simplify the
+problem. In this case, here, we might
+
+45
+00:03:53,200 --> 00:03:57,947
+choose to simplify it by just throwing
+away the map, okay? Now what we do is we
+
+46
+00:03:57,959 --> 00:04:03,321
+solve the simpler problem in order to get
+our estimate, which in this case here, may
+
+47
+00:04:03,333 --> 00:04:08,110
+be the straight line distance. So
+heuristic functions are computed as the
+
+48
+00:04:08,122 --> 00:04:13,500
+solutions to simplified versions of the
+problem you are interested in. That raises
+
+49
+00:04:13,512 --> 00:04:18,886
+the question, how are you going to do this
+in planning, where your input is not one
+
+50
+00:04:18,898 --> 00:04:24,371
+specific problem that you can think up the
+simplification for. Instead, your input
+
+51
+00:04:24,383 --> 00:04:29,443
+may be any problem. All y ou get as input
+is the declarative description of the
+
+52
+00:04:29,455 --> 00:04:34,782
+problem, and you need to automatically
+generate the heuristic function h. How do
+
+53
+00:04:34,794 --> 00:04:40,072
+we do that? Research has so far come up
+with 4 ways of doing this. So we got 4
+
+54
+00:04:40,084 --> 00:04:45,916
+different families of heuristic function
+estimating goal distance in planning. And
+
+55
+00:04:45,928 --> 00:04:51,244
+what follows, I'm going to very briefly
+give an intuition for each of them, and it
+
+56
+00:04:51,256 --> 00:04:56,895
+going to start with abstractions and then
+follow clockwise. Now before I actually
+
+57
+00:04:56,907 --> 00:05:02,550
+get into this just to mention that PDB
+stands for Python Database, and MNS stands
+
+58
+00:05:02,562 --> 00:05:08,365
+for Merge and Shrink. I'm not going to say
+anything about those, what the differences
+
+59
+00:05:08,377 --> 00:05:13,810
+are, what their specifics are. I'm just
+going to illustrate abstractions from a
+
+60
+00:05:13,822 --> 00:05:19,755
+generic point of view. So, the standard
+illustration where it's very easy to see
+
+61
+00:05:19,767 --> 00:05:25,008
+how this works is this puzzle here, the 15
+puzzle. The problem is transforming the
+
+62
+00:05:25,020 --> 00:05:29,806
+configuration on the left into the
+configuration on the right, then moving
+
+63
+00:05:29,818 --> 00:05:35,176
+around those tiles encrypted with the
+numbers from 1 to 15. How do we simplify
+
+64
+00:05:35,188 --> 00:05:40,195
+this problem? Well, what we can do is just
+ignore part of the description of the
+
+65
+00:05:40,207 --> 00:05:45,590
+problem. So in this case, I'm ignoring the
+part pertaining to the tiles numbered from
+
+66
+00:05:45,602 --> 00:05:50,660
+8 to 15, which is a simplified problem,
+namely, a much smaller and easier puzzle.
+
+67
+00:05:50,767 --> 00:05:55,095
+And then I'm just going to take the
+distances in the smaller puzzle as my
+
+68
+00:05:55,107 --> 00:05:59,907
+estimates of the distances in the real
+puzzle that I want to solve. That's
+
+69
+00:05:59,919 --> 00:06:04,530
+already all I'm going to say about
+fractions. Next one up, landmarks. For
+
+70
+00:06:04,542 --> 00:06:09,441
+this one, I've designed a very simple
+problem that is easy to understand and
+
+71
+00:06:09,453 --> 00:06:14,740
+illustrate. So, the problem here is for
+me, I'm currently in position 1 to go over
+
+72
+00:06:14,752 --> 00:06:19,366
+to position 7, and get the small key and
+then, carry it all the way back to
+
+73
+00:06:19,366 --> 00:06:23,137
+position one.
+Now what is a landmark? A landmark is
+
+74
+00:06:23,149 --> 00:06:28,478
+defined as something that has to be true
+at some point along any plan. In this case
+
+75
+00:06:28,490 --> 00:06:33,821
+here, for example at some point along any
+plan, I am going to be at any one of those
+
+76
+00:06:33,833 --> 00:06:39,649
+positions, simply because I gotta move
+across the entire grid. Anothe r thing is,
+
+77
+00:06:39,752 --> 00:06:44,505
+as you see here, position three slot. In
+order to move across that, I'm going to
+
+78
+00:06:44,517 --> 00:06:49,006
+have to open it. So this is another
+landmark. Now in order to open the lock I
+
+79
+00:06:49,018 --> 00:06:53,141
+need the key, which is the big key
+currently in position two. Another
+
+80
+00:06:53,141 --> 00:06:56,083
+landmark.
+Also, at some point, because I have to
+
+81
+00:06:56,095 --> 00:07:01,220
+transport the small key at some point, I'm
+going to have it in my hand. Now there's
+
+82
+00:07:01,232 --> 00:07:06,076
+quite a few more things we can do here let
+me stop it here. So the intuition is that
+
+83
+00:07:06,088 --> 00:07:10,616
+before planning starts we somehow
+automatically detect these landmarks and
+
+84
+00:07:10,628 --> 00:07:15,356
+then they reform the items on a to do
+list. And then during search, they're just
+
+85
+00:07:15,368 --> 00:07:19,782
+going to tick off those items, and the
+number of items that are still open is
+
+86
+00:07:19,794 --> 00:07:26,463
+going to be our estimate. The next one up,
+then, are critical path heuristics. You'll
+
+87
+00:07:26,475 --> 00:07:31,527
+see this is not just one heuristic, it's
+parameterized, 1, 2, 3, and so on. To
+
+88
+00:07:31,539 --> 00:07:36,341
+illustrate, I've chosen the traveling
+salesman problem, that I presume
+
+89
+00:07:36,353 --> 00:07:41,526
+everybody's familiar with. So you're on
+this continent here. Your truck is in
+
+90
+00:07:41,538 --> 00:07:46,283
+Sydney. You want to visit all major
+locations on the continent.
+
+91
+00:07:46,292 --> 00:07:50,871
+How do you simplify the problem while the
+critical path answer is to look at
+
+92
+00:07:50,883 --> 00:07:55,809
+subproblems of a fixed size. So if you fix
+the parameter to one, then what you're
+
+93
+00:07:55,821 --> 00:08:00,604
+looking at is the most expensive one
+sub-tour, which is saying that you picked
+
+94
+00:08:00,616 --> 00:08:05,585
+the most distant city and just, you know,
+account for the distance of going there
+
+95
+00:08:05,597 --> 00:08:10,726
+and back. Increasing the parameter to 2,
+what we're looking at is the most
+
+96
+00:08:10,738 --> 00:08:15,671
+expensive 2-sub-tour. So the most
+expensive pair of cities we've got to
+
+97
+00:08:15,683 --> 00:08:20,360
+visit and then you can scale this
+arbitrarily by just selecting some
+
+98
+00:08:20,372 --> 00:08:26,075
+m-sub-tour on the gifts give, that gives
+you the critical path heuristic parameter
+
+99
+00:08:26,087 --> 00:08:31,207
+n. Now obviously if you choose m to be
+high enough you'll actually solve the real
+
+100
+00:08:31,219 --> 00:08:36,027
+problem and get an exact estimate if we
+decrease m but to get this less accurate
+
+101
+00:08:36,039 --> 00:08:40,525
+estimates, but will cause too much less
+computation time. So that's how we
+
+102
+00:08:40,537 --> 00:08:45,852
+trade-off computation time against the
+accuracy of the lower bond we compute. And
+
+103
+00:08:45,864 --> 00:08:51,545
+that already brings me to the last class,
+called ignoring deletes. Now, if you're
+
+104
+00:08:51,557 --> 00:08:57,342
+not very familiar with planning, ignoring
+deletes as a word is not going to tell you
+
+105
+00:08:57,354 --> 00:09:02,956
+much. So let me translate, basically what
+we're doing is we are simplifying the
+
+106
+00:09:02,968 --> 00:09:08,617
+world by the assumption That anything that
+was ever true in the past will remain
+
+107
+00:09:08,629 --> 00:09:14,303
+forever true in the future. To illustrate,
+let's say I move my truck from Sydney to
+
+108
+00:09:14,315 --> 00:09:19,144
+Adelaide, then afterwards, I am at
+Adelaide, because I move the truck.
+
+109
+00:09:19,258 --> 00:09:24,574
+However, I am also still at Sydney,
+because that's where the truck was before.
+
+110
+00:09:24,802 --> 00:09:30,349
+And thanks to this I can actually move the
+same track in two locations in parallel.
+
+111
+00:09:30,463 --> 00:09:35,958
+So, in this example here, I'm moving it
+from Sydney to Adelaide, and from Sydney
+
+112
+00:09:35,970 --> 00:09:41,594
+to Brisbane, and as an effect afterwards
+my truck is at all three locations. Now
+
+113
+00:09:41,606 --> 00:09:46,620
+that might seem a little odd indeed.
+Remember, this is not the real world. It's
+
+114
+00:09:46,807 --> 00:09:52,170
+just simplified vert was only purpose is
+to compute an estimate of goal distance.
+
+115
+00:09:52,282 --> 00:09:57,395
+So I can keep playing the same game. I can
+go from Adelaide to the next to locations,
+
+116
+00:09:57,507 --> 00:10:02,970
+and as an effect of executing these moves,
+I'm done. I have solved the simplified
+
+117
+00:10:02,982 --> 00:10:08,770
+problem, I have visited all locations Now,
+it might take a little time to get used
+
+118
+00:10:08,782 --> 00:10:14,145
+to, but if you look at the structure I've
+built, that's actually kind of obvious.
+
+119
+00:10:14,257 --> 00:10:19,145
+It's the Minimum Spanning Tree
+approximation. So the way you should read
+
+120
+00:10:19,157 --> 00:10:24,070
+this is, you've got a generic
+simplification principle ignoring deletes.
+
+121
+00:10:24,282 --> 00:10:29,584
+We can apply the principle to any input
+problem. If we happen to apply it to the
+
+122
+00:10:29,596 --> 00:10:34,798
+TSP the outcome is the minimum spanning
+tree approximation that we can use to
+
+123
+00:10:34,810 --> 00:10:40,619
+estimate goal distance, but we could apply
+the same technique to any problem. That is
+
+124
+00:10:40,631 --> 00:10:46,077
+already all I'm going to say about the
+methods we are using And what follows, I'm
+
+125
+00:10:46,089 --> 00:10:51,063
+just going to briefly highlight some
+interesting theory and practice results.
+
+126
+00:10:51,174 --> 00:10:56,421
+For theory, I've chosen to present an
+overview of results that are published in
+
+127
+00:10:56,433 --> 00:11:02,200
+a wonderful paper by in 2009 . Now, no
+need to worry. I'm not going to take you
+
+128
+00:11:02,212 --> 00:11:06,744
+through this in de tail.
+And, definitely, I'm not going to show you
+
+129
+00:11:06,756 --> 00:11:12,285
+any of the proof of the properties that
+show here. Let me just very briefly give
+
+130
+00:11:12,297 --> 00:11:17,482
+you an idea of what it means. So if you
+look at this notation here, what it is
+
+131
+00:11:17,494 --> 00:11:23,118
+saying is that somehow landmarks are less
+equal than merge and shrink. What is the
+
+132
+00:11:23,130 --> 00:11:29,072
+meaning of less equal here? It's a kind of
+simulation property. The intuition is that
+
+133
+00:11:29,084 --> 00:11:33,160
+anything you can do using landmarks, you
+can just as well do using merge and
+
+134
+00:11:33,737 --> 00:11:38,936
+shrink. More precisely, both are ways of
+lower bounding goal distance. So, each of
+
+135
+00:11:38,948 --> 00:11:44,235
+those techniques returns a lower bond and
+goal distance. Now, what this property is
+
+136
+00:11:44,247 --> 00:11:49,779
+saying is that, if you take any example.
+And any lower bond computed using
+
+137
+00:11:49,791 --> 00:11:55,964
+landmarks, you can in polynomial time
+compute the same or a better lower bond
+
+138
+00:11:55,976 --> 00:12:02,366
+using merge and shrink. Skipping forward
+to the next notation, the obvious idea
+
+139
+00:12:02,378 --> 00:12:08,373
+here is that this is not so for pattern
+databases, as opposed to merge and shrink.
+
+140
+00:12:08,499 --> 00:12:14,461
+So what this property has said is that
+there are cases, families of planning
+
+141
+00:12:14,473 --> 00:12:20,271
+tasks, and lower bounds computed landmarks
+that are strictly better than any lower
+
+142
+00:12:20,283 --> 00:12:25,716
+bound you can compute in polynomial time
+using pattern databases. So much for
+
+143
+00:12:25,728 --> 00:12:31,365
+theory, so this is really just a brief
+appetizer. For practice, I have chosen to
+
+144
+00:12:31,377 --> 00:12:36,257
+show you 1 of my own results. So what we
+see on this slide is on the right hand,
+
+145
+00:12:36,366 --> 00:12:41,653
+you've got a big network. Okay? We have
+some sensitive data in it. And the network
+
+146
+00:12:41,665 --> 00:12:46,589
+is connected to the web. Which this little
+red devil here is going to exploit.
+
+147
+00:12:46,698 --> 00:12:51,863
+Namely, that the red devil is going to
+attack the network. It's going to execute
+
+148
+00:12:51,875 --> 00:12:57,385
+a sequence of exploits, leading it to the
+sensitive data. So, basically what we have
+
+149
+00:12:57,397 --> 00:13:02,157
+is a hacking situation. Why is that a
+problem, a practical problem we want to
+
+150
+00:13:02,169 --> 00:13:07,412
+solve? Well, imagine you're running this
+big internet company, and you want to make
+
+151
+00:13:07,424 --> 00:13:12,667
+sure this kind of stuff doesn't happen. So
+outside people who are not authorized, to
+
+152
+00:13:12,679 --> 00:13:18,060
+not manage to get at your sensitive data.
+So what you want, is want to run security
+
+153
+00:13:18,072 --> 00:13:23,270
+checks. One way of doi ng this is friendly
+attacks. So you hire some people who will
+
+154
+00:13:23,282 --> 00:13:28,455
+attack your network. If they get through
+to the sensitive data, you know where you
+
+155
+00:13:28,467 --> 00:13:33,140
+need to work in order to close that gap.
+The problem is, this is not scalable.
+
+156
+00:13:33,238 --> 00:13:37,652
+You've got thousands of computers, as you
+know, the domain changes all the time.
+
+157
+00:13:37,750 --> 00:13:42,236
+Every week you get new security patches in
+windows and that's because some people
+
+158
+00:13:42,248 --> 00:13:46,770
+invented new attached, and some other
+people invented new defenses against those
+
+159
+00:13:46,782 --> 00:13:50,744
+attacks. So you're going to be. You're
+going to have to run millions of those
+
+160
+00:13:50,756 --> 00:13:55,424
+attacks and ideally you want it to be
+automatic. And that's exactly what has
+
+161
+00:13:55,436 --> 00:14:00,909
+been achived with In-planning. So, at this
+American company called, Core Security,
+
+162
+00:14:01,019 --> 00:14:06,177
+and one of their main products, they've
+got my planner running. So, my planner
+
+163
+00:14:06,189 --> 00:14:11,395
+called, FF, controls this red devil that
+runs the friendly attacks all the time,
+
+164
+00:14:11,505 --> 00:14:17,147
+automatically. So as we speak, my planner
+is attacking the networks of some of those
+
+165
+00:14:17,159 --> 00:14:22,947
+big internet companies whose names you are
+certainly familiar with. And that already
+
+166
+00:14:22,959 --> 00:14:28,171
+brings me to the conclusion, which very
+simply, is if you found this interesting
+
+167
+00:14:28,183 --> 00:14:33,157
+at all, you might want to have a look at
+my lecture slides. I've just finished
+
+168
+00:14:33,169 --> 00:14:37,910
+teaching a planning course, which gives a
+lot more detail on all this, a
+
+169
+00:14:37,922 --> 00:14:42,864
+comprehensive overview of this sub area.
+What you can also do is Google the name
+
+170
+00:14:42,876 --> 00:14:46,984
+for some of the researchers who
+contributed to the area. And if your
+
+171
+00:14:46,996 --> 00:14:51,869
+really, deeply interested I just made a
+little list here which point us to the
+
+172
+00:14:51,881 --> 00:14:56,164
+literature. That's it.
+Thank you very much for your attention,
+
+173
+00:14:56,275 --> 00:15:01,325
+for having survived up to this point. I
+hope you found some of it interesting.
+
+174
+00:15:01,436 --> 00:00:00,000
+Enjoy the rest of the course. Bye.

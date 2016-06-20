@@ -1,0 +1,186 @@
+Another implicit assumption we have made
+so far, is that all the actions we execute
+are instantaneous.
+A more realistic approach is to assume
+that our actions are durative, which means
+they take time.
+So every action we consider takes a known
+amount of time and every action have a
+start time point and a finish time point.
+Now, we have already seen that the A*
+algorithm takes the action cost into
+account.
+So it can search actions that have a given
+cost and one approach is simply to assign
+the time they take as the cost of the
+action.
+And in fact, the FF planner we have seen
+last week has been extended in this way to
+take time into account.
+A different approach that is often used in
+conjunction with partial plans, and
+specifically, in conjunction with HTN
+planning, is to use a temporal constraint
+manager as a plug-in component to the
+planner.
+And there are two flavors of it that are
+quire well-known.
+The first one is called the time point
+network.
+A time point network simply associates all
+the time points in a given plan.
+So, we have a start and a finish time
+point for each action and we can assert
+relations that must hold between these
+different time points.
+What we get is a network like this one
+here, where we have six time points, and
+they are related by these different
+relations that we see on the edges in this
+network here.
+The good news is that the consistency of
+time point networks can be checked in
+polynomial time.
+A more complex approach that has been
+proposed is an interval algebra.
+So now, we're relating not time points to
+each other, but the intervals that
+correspond to the action execution.
+So, if we have an interval i1 and an
+interval i2, we can say that one interval
+must be before the other and we use this
+relation b here to express this.
+What this means is that the end time point
+of the first action must be genuinely
+before the beginning of the next action.
+Similarly, we have other relations like
+meets where these need to be at the same
+time point or overlaps where one comes
+after the other and start during and
+finish are three more relations we have
+here.
+As it turns out, the interval algebra is
+more expressive than time point networks.
+So there are constraints you can express
+in the interval algebra that you can't
+express in time point network.
+But on the downside, checking consistency
+in an interval network takes exponential
+time.
+One of the things that all the approaches
+we've looked at so far have in common is
+that they don't learn.
+So, if we give them a planning problem to
+solve, they search or use whatever
+technique to solve this problem and come
+up with a solution.
+If we give them the same problem again,
+it'll take exactly the same amount of time
+and resources to solve this problem.
+Or if we give it a similar problem, the
+planner cannot take anything from that
+similar problem to the new problem and try
+to solve it better.
+So one approach was to try to apply
+learning to planning to somehow improve
+the performance of the planner over time.
+So the general idea is, we let the planner
+solve a series of similar planning
+problems, then, we somehow analyse what
+the planner has been doing during the
+problem solving process.
+And the result of this analysis should be
+something that we can feed back into the
+planning process to make the plan more
+efficient on similar problems.
+That is the general idea and that is what
+you would expect from human planners when
+they start solving similar planning
+problems, they would get better over time.
+And there are a number of ways in which
+this learning can be done.
+Here are two of them.
+One is the learning of macro-operations.
+So, our planning problem contains already
+a set of operators that we can use to
+solve that problem, but we can increase
+that set with macro-operations that
+perform larger steps in our search space.
+Of course, this is somehow similar to HTN
+planning where we also had more abstract
+methods that summarize what needs to be
+done at a lower level.
+Another approach that has been tried is
+learning search control knowledge.
+So, during the search, we often encounter
+states that have the same f values, so the
+heuristic doesn't help us to distinguish
+the states from each other.
+And, search control knowledge helps us to
+decide which path to explore next in our
+search space.
+Another assumption we have made so far is
+that we're dealing with a single planner
+that has control over all the agents that
+are executing the plan.
+So in our dock-worker robot domain, when
+we were planning, we assumed that the
+robots on the cranes during plan execution
+would do as they are told by the single
+planner.
+However, in multi-agent planning, this is
+not the case.
+So we no longer assume that we have a
+single agent that is control of all the
+other agents.
+Of course, this complicates the problem
+significantly and there are a number of
+flavors in which this problem can be
+developed.
+For example, if the agents we're dealing
+with have different beliefs about the
+worlds state they are in, then, this
+becomes a quite different type of
+planning.
+Or, we can have planning problems where
+all the agents have all the capabilities
+can execute all the operators that are
+available.
+Or, agents have different capabilities.
+So, some operators can only be executed by
+certain agents.
+Again, we have seen this in the
+dock-worker robot domain, where the robots
+can transport the containers and the
+cranes can load the containers.
+And of course, cranes at different
+locations can only loan the containers
+that are at their locations.
+Another aspect of multi-agent planning are
+the goals.
+So we can have agents with joint goals,so
+that all the agents want to achieve the
+same goal or they can have individual
+goals.
+And, this becomes worse when the
+individual goals are actually conflicting
+or contradictory.
+In this case, the agents can be
+adversaries, like in a game of chess.
+So you can see, there is a whole range of
+multi-agent planning problems And another
+aspect that is somehow different is the
+problem of joint actions.
+So, suppose you have a table with some
+objects on top of it, and if you lift just
+one side of the table, the objects will
+fall off.
+But if there are two agents that lift both
+sides of the table at the same time, then,
+the objects will stay on the table because
+the table stays level.
+This is an example of what is called a
+joint action and requires multiple agents
+to coordinate to execute that action.
+And a single agent alone cannot achieve
+the outcome of that joint action alone.

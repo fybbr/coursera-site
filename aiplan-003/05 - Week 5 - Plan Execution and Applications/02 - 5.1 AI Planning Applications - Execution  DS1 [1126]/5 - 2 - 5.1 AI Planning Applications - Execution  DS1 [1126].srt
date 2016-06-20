@@ -1,0 +1,740 @@
+1
+00:00:04,620 --> 00:00:11,153
+This section of the course, we'll look at 
+practical applications of AI planning and 
+
+2
+00:00:11,153 --> 00:00:16,731
+the use of plans when executed. 
+It'll also describe some common themes 
+
+3
+00:00:16,731 --> 00:00:24,991
+found in many practical AI planners. 
+Plans only become useful when they're 
+
+4
+00:00:24,991 --> 00:00:29,428
+executed. 
+Even the earliest AI planners were linked 
+
+5
+00:00:29,428 --> 00:00:34,004
+with plan execution capabilities, as 
+shown by the use of the STRIPS planners 
+
+6
+00:00:34,004 --> 00:00:38,340
+alongside the PLANEX, plan execute over 
+40 years ago in the Shakey robot. 
+
+7
+00:00:39,600 --> 00:00:43,919
+Sacerdoti's NOAH planner was used to 
+follow along an apprentice engineer 
+
+8
+00:00:43,919 --> 00:00:48,132
+repaired a hydraulic pump and the system 
+maintained a model of the state of the 
+
+9
+00:00:48,132 --> 00:00:52,640
+pump to build, suggest fixes when the 
+apprentice ran into problems. 
+
+10
+00:00:52,640 --> 00:00:57,352
+Nonlin maintained the goal structure or 
+rationale behind plan elements and could 
+
+11
+00:00:57,352 --> 00:01:01,391
+use this as the basis for plan execution 
+monitoring to spot significant 
+
+12
+00:01:01,391 --> 00:01:05,655
+divergences during the required outcome 
+[INAUDIBLE] and their later uses to 
+
+13
+00:01:05,655 --> 00:01:09,638
+satisfy constraints in the plan. 
+In some cases, alternative contributors 
+
+14
+00:01:09,638 --> 00:01:14,126
+to satisfy those required constraints can 
+be found in the existing plan without 
+
+15
+00:01:14,126 --> 00:01:17,100
+changing it. 
+In other cases, problems could be spotted 
+
+16
+00:01:17,100 --> 00:01:22,420
+well in advance and suitable changes made 
+before the problem became critical. 
+
+17
+00:01:22,420 --> 00:01:28,557
+SRI International work on SIPE and PRS, 
+the Procedural Reasoning System, use rich 
+
+18
+00:01:28,557 --> 00:01:33,547
+representation of plans and processes, 
+support execution, and recovery from 
+
+19
+00:01:33,547 --> 00:01:37,900
+errors. 
+Work at the University of Essex, in the 
+
+20
+00:01:37,900 --> 00:01:39,858
+U.K. 
+Created a reactor planner, which 
+
+21
+00:01:39,858 --> 00:01:44,263
+maintained a representation of the flaws 
+in the plan whether those arose at plan 
+
+22
+00:01:44,263 --> 00:01:47,852
+time or during execution. 
+It could apply fixes to these flaws in a 
+
+23
+00:01:47,852 --> 00:01:51,876
+uniform manner, to provide an integrated 
+planning, execution, and monitoring 
+
+24
+00:01:51,876 --> 00:01:56,387
+framework. 
+Work in Chicago on RAP explored a 
+
+25
+00:01:56,387 --> 00:02:00,681
+reactive agent architecture for 
+representing plans that were suited for 
+
+26
+00:02:00,681 --> 00:02:04,660
+real-time plan execution monitoring in 
+robots, for example. 
+
+27
+00:02:04,660 --> 00:02:09,415
+Our own O-Plan system include algorithms 
+for plan repair and replanning in both 
+
+28
+00:02:09,415 --> 00:02:13,866
+high tempo and less time constraint 
+situations when execution monitoring 
+
+29
+00:02:13,866 --> 00:02:17,585
+indicated problems. 
+Was not at all surprising is that many of 
+
+30
+00:02:17,585 --> 00:02:22,218
+the AI planners which were created to 
+address practical applications also 
+
+31
+00:02:22,218 --> 00:02:26,730
+include technique support, execution, and 
+monitoring of the outcome of plan 
+
+32
+00:02:26,730 --> 00:02:32,930
+execution. 
+We'll now look in some depth, at a good 
+
+33
+00:02:32,930 --> 00:02:38,200
+example of our AI planning and plan 
+execution techniques we used in practice. 
+
+34
+00:02:38,200 --> 00:02:42,858
+We'll see the importance of integrating 
+planning into other key systems for 
+
+35
+00:02:42,858 --> 00:02:47,025
+real-time task assignment, system 
+diagnosis, condition monitoring, and 
+
+36
+00:02:47,025 --> 00:02:53,268
+execution time plan repair. 
+Deep Space 1 launched from Cape Canaveral 
+
+37
+00:02:53,268 --> 00:02:58,603
+in 1998 and tested twelve advanced high 
+risk technologies from space including 
+
+38
+00:02:58,603 --> 00:03:01,860
+ion thrusters and advanced on-board 
+automation. 
+
+39
+00:03:03,480 --> 00:03:08,873
+In a successful extended mission, it 
+operated through to 2001 and encountered 
+
+40
+00:03:08,873 --> 00:03:12,586
+Comet Borrelly. 
+Deep Space 1 included a remote agent 
+
+41
+00:03:12,586 --> 00:03:17,839
+experiment, RAX, to demonstrate both 
+ground-based and on-board AI remote plan 
+
+42
+00:03:17,839 --> 00:03:22,290
+execution. 
+The spacecraft control application domain 
+
+43
+00:03:22,290 --> 00:03:26,798
+posed some tough requirements. 
+High reliability was essential and issues 
+
+44
+00:03:26,798 --> 00:03:31,620
+could arrise from single point system 
+failures are for more complex multiple 
+
+45
+00:03:31,620 --> 00:03:34,858
+cause problems. 
+Deep space 1 operated under tight 
+
+46
+00:03:34,858 --> 00:03:39,331
+resource constraints for fuel and power, 
+and frequently there would be multiple 
+
+47
+00:03:39,331 --> 00:03:42,388
+goals, you could not all be satisfied at 
+the same time. 
+
+48
+00:03:42,388 --> 00:03:46,521
+Of course, given the nature of a very 
+high speed fly-by of a target comet, 
+
+49
+00:03:46,521 --> 00:03:50,768
+deadlines were fixed and very tight. 
+There's no second chance return if 
+
+50
+00:03:50,768 --> 00:03:54,901
+essential observations and scientific 
+goals are not achieved due to some 
+
+51
+00:03:54,901 --> 00:03:59,260
+precondition, not being satisfied, or 
+some systems not being fully prepared at 
+
+52
+00:03:59,260 --> 00:04:02,679
+the critical time. 
+Spacecraft did have sensors to report its 
+
+53
+00:04:02,679 --> 00:04:06,793
+status and the status of its instruments, 
+but these only provide limited 
+
+54
+00:04:06,793 --> 00:04:11,136
+observability of the many conditions 
+under which the spacecraft can operate. 
+
+55
+00:04:11,136 --> 00:04:14,278
+And of course. 
+many things can be happening at the same 
+
+56
+00:04:14,278 --> 00:04:17,821
+time on a spacecraft. 
+And some operations can take a long time 
+
+57
+00:04:17,821 --> 00:04:21,592
+to complete when started. 
+There's no possibility of fully ordering 
+
+58
+00:04:21,592 --> 00:04:24,677
+and completing one activity before 
+another must begin. 
+
+59
+00:04:24,677 --> 00:04:29,477
+So Deep Space 1 posed a very interesting 
+and realistic example of a remote device 
+
+60
+00:04:29,477 --> 00:04:33,420
+that we might wish to control via more 
+automated AI planning methods. 
+
+61
+00:04:36,060 --> 00:04:41,318
+The Deep Space 1 remote agent approach 
+was to used constraint based planning and 
+
+62
+00:04:41,318 --> 00:04:44,676
+scheduling. 
+It had to deal with robust multi-threaded 
+
+63
+00:04:44,676 --> 00:04:49,427
+execution of the activities and it had to 
+integrate with model-based fault 
+
+64
+00:04:49,427 --> 00:04:53,862
+diagnosis and reconfiguration. 
+Real time control and monitoring of the 
+
+65
+00:04:53,862 --> 00:05:00,061
+spacecraft was the key issue. 
+Deep Space 1 could operate at various 
+
+66
+00:05:00,061 --> 00:05:03,584
+levels of autonomy. 
+It could execute single commands or 
+
+67
+00:05:03,584 --> 00:05:08,323
+sequences of activities which are to be 
+executed at some particular times. 
+
+68
+00:05:08,323 --> 00:05:13,639
+It could seek to achieve some given goal. 
+It could maintain a model of the state of 
+
+69
+00:05:13,639 --> 00:05:17,866
+the spacecraft and detect errors from 
+incoming sensor information. 
+
+70
+00:05:17,866 --> 00:05:22,798
+It could deal with a scripted plan and 
+decompose that into greater levels of 
+
+71
+00:05:22,798 --> 00:05:27,793
+detail and it could deal with on-board 
+back-to-back plan generation, execution 
+
+72
+00:05:27,793 --> 00:05:30,740
+and plan recovery in its most autonomous 
+mode. 
+
+73
+00:05:32,700 --> 00:05:37,663
+This table provides a summary of the 
+levels of autonomy on-board Deep Space 1 
+
+74
+00:05:37,663 --> 00:05:42,255
+and shows what elements can be done on 
+the ground, on the on on-board planner 
+
+75
+00:05:42,255 --> 00:05:45,820
+and scheduler, and on the on-board 
+execution system. 
+
+76
+00:05:45,820 --> 00:05:50,454
+So this goes right through to the most 
+autonomous modes where plans can be 
+
+77
+00:05:50,454 --> 00:05:55,026
+prepared on the ground, they can be 
+completed on-board the spacecraft, then 
+
+78
+00:05:55,026 --> 00:05:58,980
+take into account the situation the 
+spacecraft is in and could be 
+
+79
+00:05:58,980 --> 00:06:05,167
+autonomously executed. 
+So Deep Space 1 systems cover everything 
+
+80
+00:06:05,167 --> 00:06:10,446
+from the ground control through what's 
+happening on the spacecraft itself. 
+
+81
+00:06:10,446 --> 00:06:15,440
+It involves planning, execution, and 
+monitoring of the outcome of plans. 
+
+82
+00:06:17,220 --> 00:06:21,528
+Deep Space 1 remote agent experiment 
+functionality includes the planner 
+
+83
+00:06:21,528 --> 00:06:25,545
+schedule and mission manager, 
+which deals with the on-board generation 
+
+84
+00:06:25,545 --> 00:06:29,387
+of plans dealing with replanning when 
+failures occur and so on. 
+
+85
+00:06:29,387 --> 00:06:33,812
+The Executor provides the low-level 
+commanding interface that links back to 
+
+86
+00:06:33,812 --> 00:06:37,188
+the planet to initiate on-board planning 
+when it's needed, 
+
+87
+00:06:37,188 --> 00:06:41,787
+and is linked to the mode identification 
+recovery or diagnosis system on the 
+
+88
+00:06:41,787 --> 00:06:45,979
+spacecraft to make sure that we can 
+confirm command execution meets its 
+
+89
+00:06:45,979 --> 00:06:52,237
+objectives. 
+Deep space 1 planning could deal with a 
+
+90
+00:06:52,237 --> 00:06:55,963
+diversity of goals. 
+Final state goals, such as turn off the 
+
+91
+00:06:55,963 --> 00:07:00,523
+camera once you're done using it, 
+schedule goals such as communicate to 
+
+92
+00:07:00,523 --> 00:07:04,762
+earth at pre-specified times. 
+Periodic goals such as ensuring you take 
+
+93
+00:07:04,762 --> 00:07:07,910
+a picture for navigation purposes every 
+two days. 
+
+94
+00:07:07,910 --> 00:07:12,557
+Information-seeking goals such as asking 
+the on-board navigation system to return 
+
+95
+00:07:12,557 --> 00:07:16,574
+its profile for the thrusters. 
+continues accumulation goals such as 
+
+96
+00:07:16,574 --> 00:07:21,336
+making sure that over a given period, you 
+make sure you accumulate enough thrust 
+
+97
+00:07:21,336 --> 00:07:24,722
+but it don't, these actions don't have to 
+be on at specific times. 
+
+98
+00:07:24,722 --> 00:07:29,083
+And then default goals such as when 
+you've got nothing else to do, point the 
+
+99
+00:07:29,083 --> 00:07:33,501
+high-gain antenna back to the earth to 
+maintain good communications with the 
+
+100
+00:07:33,501 --> 00:07:35,911
+earth. 
+And it can deal with a diversity of 
+
+101
+00:07:35,911 --> 00:07:39,387
+constraints, 
+state action constraints such as to take 
+
+102
+00:07:39,387 --> 00:07:44,146
+a picture, the camera must be on. 
+Dealing with finite resources such as 
+
+103
+00:07:44,146 --> 00:07:47,352
+power constraints. 
+Dealing with true parallelism, 
+
+104
+00:07:47,352 --> 00:07:52,703
+where for instance, the attitude control 
+system must work in parallel with the ion 
+
+105
+00:07:52,703 --> 00:07:56,934
+propulsion system controller. 
+Functional dependencies, 
+
+106
+00:07:56,934 --> 00:08:02,046
+example is the duration of a turn depends 
+on its source and its destination. 
+
+107
+00:08:02,046 --> 00:08:07,292
+Continuously varying parameters such as 
+counting the amount of accumulated 
+
+108
+00:08:07,292 --> 00:08:12,336
+thrust, under the constraints that come 
+from other kinds of specialized modules 
+
+109
+00:08:12,336 --> 00:08:19,604
+such as the on-board navigation system. 
+A Deep Space 1 plan is in the form of 
+
+110
+00:08:19,604 --> 00:08:23,941
+timelines of the different instruments 
+and when they're turned on and off, and 
+
+111
+00:08:23,941 --> 00:08:28,334
+various constraint, time constraints and 
+all kinds of constraints, apply between 
+
+112
+00:08:28,334 --> 00:08:35,562
+the elements of this plan. 
+This tool shows the stages of the exact 
+
+113
+00:08:35,562 --> 00:08:41,309
+system on-board the spacecraft. 
+A Java applet was provided to allow 
+
+114
+00:08:41,309 --> 00:08:46,040
+observers to watch the remote agent 
+experiments in real-time while it was 
+
+115
+00:08:46,040 --> 00:08:54,465
+operating. 
+The actual flight experiment for Deep 
+
+116
+00:08:54,465 --> 00:09:00,382
+Space 1 remote agent experiment took 
+place 17th and the 21st of May, 1999. 
+
+117
+00:09:00,382 --> 00:09:05,500
+RAX was activated and controlled the Deep 
+Space 1 Spacecraft autonomously, 
+
+118
+00:09:05,500 --> 00:09:10,201
+but some issues and alarms did arise. 
+There was a divergence of the predicted 
+
+119
+00:09:10,201 --> 00:09:14,919
+value of the state of the ion propulsion 
+system and the actual observed values. 
+
+120
+00:09:14,919 --> 00:09:19,579
+This was determined to be due to the 
+infrequency of real-time monitor updates 
+
+121
+00:09:19,579 --> 00:09:22,351
+on the spacecraft. 
+They EXEC deadlocked in use, 
+
+122
+00:09:22,351 --> 00:09:25,713
+the problem was diagnosed and a fix was 
+designed quickly, 
+
+123
+00:09:25,713 --> 00:09:30,432
+but it was not uploaded to Deep Space 1 
+for fears of the safety of the flight 
+
+124
+00:09:30,432 --> 00:09:32,909
+systems. 
+This condition hadn't appeared in 
+
+125
+00:09:32,909 --> 00:09:36,566
+thousands of ground tests, 
+which indicates the need for formal 
+
+126
+00:09:36,566 --> 00:09:40,990
+verification methods for this type of 
+safety and mission critical software. 
+
+127
+00:09:40,990 --> 00:09:46,028
+Following later experiments, RAX was 
+deemed to have achieve its aims and 
+
+128
+00:09:46,028 --> 00:09:51,991
+objectives. 
+RAX controlled the spacecraft 
+
+129
+00:09:51,991 --> 00:09:57,393
+autonomously for two days. 
+On the first day, typical operations took 
+
+130
+00:09:57,393 --> 00:10:00,709
+place. 
+The ion propulsion system was turned on 
+
+131
+00:10:00,709 --> 00:10:05,366
+and off at various times. 
+The attitude control system was operated 
+
+132
+00:10:05,366 --> 00:10:08,189
+when appropriate, 
+some images were taken, 
+
+133
+00:10:08,189 --> 00:10:14,167
+some on-board planning was performed. 
+The second day included the injection of 
+
+134
+00:10:14,167 --> 00:10:18,658
+some simulated failures of the 
+radiometric tracking and thruster systems 
+
+135
+00:10:18,658 --> 00:10:23,220
+in order to show how the planet could 
+cope with these events. 
+
+136
+00:10:23,220 --> 00:10:28,018
+The final report to the Deep Space 1 
+remote agent experiment concluded that 
+
+137
+00:10:28,018 --> 00:10:30,724
+the validation objectives had been 
+achieved. 
+
+138
+00:10:30,724 --> 00:10:35,338
+The system was able to do what both 
+ground-based and on-board autonomously 
+
+139
+00:10:35,338 --> 00:10:40,382
+generated plans and execute those plans 
+in the face of failures and re-plan where 
+
+140
+00:10:40,382 --> 00:10:43,211
+required. 
+And it did this through capabilities, 
+
+141
+00:10:43,211 --> 00:10:47,579
+which included robust goal-based 
+commanding, and integration with the 
+
+142
+00:10:47,579 --> 00:10:50,040
+on-board model-based fault recovery 
+system. 
+
+143
+00:10:52,740 --> 00:10:58,645
+So to summarize, Deep Space 1 remote 
+agent experiment featured an AI planner 
+
+144
+00:10:58,645 --> 00:11:04,702
+outer level with re-planning capability, 
+detailed constraint handling for time and 
+
+145
+00:11:04,702 --> 00:11:08,982
+resources, 
+integration with system diagnostics and 
+
+146
+00:11:08,982 --> 00:11:12,468
+analysis, 
+integration of plan exclusion and 
+
+147
+00:11:12,468 --> 00:11:18,440
+monitoring, 
+rich domain description languages, 
+
+148
+00:11:18,440 --> 00:11:22,060
+and involved comprehensive user 
+interfaces. 
+

@@ -1,0 +1,184 @@
+So far in this course we have looked at a
+number of ways of solving planning
+problems efficiently.
+That is, we have assumed that we were
+giving a planning problem.
+But a planning problem is a very specific
+artifact.
+And to get to this artifact requires a lot
+of work.
+So we have a lot of problems we need to
+solve before we can start planning and
+that's what we will look at now briefly.
+The first problem that we need to solve
+before we can do any planning is the
+knowledge engineering problem.
+One thing we have learned on this course
+is what the planner takes as input, namely
+a planning problem consisting of an
+initial state, a goal, and a set of
+operators that we can use to move through
+the state space.
+And for a planner to use this as input,
+all this needs to be represented in a
+formal language, such as PDDL.
+Knowledge engineering is really everything
+that we need to do to get from the first
+informal problem description to this
+formal representation that we can give to
+a planner.
+And this involves the problem of problem
+formulation that I've already talked about
+when I've introduced you to the
+missionaries and cannibals problem.
+And problem formulation is really vital
+for the efficiency with which we can do
+problem solving.
+If the operators we choose to represent
+contain too much detail then the state
+space can explode exponentially and we
+cannot solve problems anymore.
+But that is only one of the concerns
+during knowledge engineering.
+There are others like how adequate is the
+knowledge we have represented or how easy
+will it be to maintain in the future?
+There are now tools that we can use to
+perform the knowledge engineering for
+planning domains.
+And these tools support one or more phases
+of knowledge representation as shown here.
+The first phase that we need to go through
+is the requirements specification.
+This is where we talk to domain experts
+and try to find out what they expect from
+the system that we will build as a result
+of this process.
+Then the second phase is knowledge
+modelling where we take the knowledge that
+we have extracted from the experts in the
+first phase and built a formal model but a
+fomal model that the experts can still
+understand and critique.
+So it needs to be fairly high level.
+Then we can do a model analysis, which
+involves verification and validation,
+finding out whether the model is adequate
+and captures all the knowledge that we
+need.
+Then we can deploy the model, which means
+we have to export our domain specification
+in a language and formalism that a planner
+can understand.
+This is then followed by plan synthesis
+which is essentially what we've looked at
+in this course.
+And finally we can do plan analysis and
+post design which is we look at the
+generated plans, go back to the experts
+and show them is this really what you
+wanted.
+Are these plans useful to you?
+What criteria do we have to assess these
+plans?
+And overall this is an iterative process,
+so that means we can go back to any phase
+at any time and start over again to
+improve the model.
+As you can see, knowledge engineering for
+planning domains is anything but trivial.
+But there is an alternative approach to
+doing all this manually, and that is to
+try to learn planning domain model-[SOUND]
+The basic idea here is, that you build a
+system that can observe what is going on
+in a specific domain.
+And derive operator descriptions, that
+describe how the state of the world as
+changes, as the system sees it.
+This has been done recently for the game
+of Freecell, where a system observed the
+game playing for a while and then came up
+with a formal system of operators that
+described how to play this game.
+One of the problems that keeps coming up
+during knowledge engineering for reasoning
+about actions and change is The Frame
+Problem.
+An to explain this to you I need to go
+back in time a little.
+Back when people were first looking at
+planing problems in the '60, a very
+popular field in [UNKNOWN]AI and in which
+a lot of progress was being made was
+automated[UNKNOWN] imprving.
+So one of the earliest approaches to
+solving planning problems, then, was to
+transform a planning problem into a theory
+improving problem.
+And doing that involves writing a set of
+logical axioms that represent what changes
+in the world when an action happens.
+There were, of course, axioms expressing
+the preconditions of an operator, and
+there were axioms expressing the effects
+of an operator.
+But it turned out for a theorem improver
+to work you also have to write down
+explicitly what doesn't work when an
+action is executed.
+And in fact, the list of things that don't
+change when an action is executed, is much
+longer than the list of things that do
+change.
+So the problem was, that we needed to
+represent a long list of facts that are
+not changed by an action.
+And the frame problem in general, then, is
+to construct a formal framework for the
+reasoning about actions and change in
+which the non-effects of actions do not
+have to be enumerated explicitly.
+The formal framework that was used
+originally was first order logic, and
+using theorem proving as the problem
+solving technique.
+And the specific set of relations and
+functions that were used to represent
+operators in first order logic, are known
+as the situation calculus.
+Now, there are a number of ways in which
+the frame problem can be approached and
+the first one was to ask the question
+whether we can use a different style of
+representation so we don't use the
+situation calculus but we use a different
+way of encoding the same knowledge in
+first-order logic so we keep the
+formalism.
+And while there has been some progress
+with this approach.
+The problem of enumerating non effective
+actions explicitly did remain in some way
+or other.
+The second approach, then, was to use a
+different logical formalism.
+So, instead of first order logic.
+We may be able to use a more complicated
+formalism that can encode the knowledge
+better.
+And 1 good candidate was always non
+monotonic logic.
+And again there has been some progress in
+that area.
+But theory improves for non-monotonic
+logic are not very efficient.
+And the third approach was to simply write
+a procedure that generates the right
+conclusions, in our case plans, because
+its solution is built into the procedure.
+And that third approach is basically what
+we've been following on this course.
+But you should be aware of the frame
+problem which has to do with the
+representation of non-effects of actions.

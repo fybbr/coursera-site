@@ -1,0 +1,128 @@
+Welcome to Week 3 of the AI planning
+course. In week one we've already seen in
+informal introduction to the planning
+problem we're trying to address in this
+course. And we've seen some of the context
+in which planning takes place. In Week 2
+then, we've seen two main things. We've
+seen search algorithms, and we've seen the
+Strips Planner. For search algorithms, we
+first talked about heuristics, and how
+they encode knowledge that helps us guide
+the search. And then, we've used this
+knowledge in the a-star algorithm for
+graph search. Finally we've talked about
+how to find good heuristics, as good
+heuristics are vital for the performance
+of A star algorithm. Then we've moved over
+to the Strips system. The Strips system
+gave us the Strips' representation which
+describes operators as consisting of
+preconditions and effects and the effects
+are often divided into an add and a delete
+list. Then we've had a formal definition
+of the planning problem we are trying to
+solve in this course. And we've seen some
+algorithms that we can use to solve this,
+this problem. The first algorithm we've
+seen is forward state space search. And
+then we've described a variant of that,
+which is backwards states space search.
+Both searching the same state space. In
+addition to all this technical material,
+we've shown you some features. In Week 1,
+we had a feature on planning for robots.
+And in week 2, we've seen a feature by
+Nils Nilson on the X star algorithm and
+the Strips system they developed at SRI.
+And this week, we'll have another feature,
+and I hope you will enjoy this. So far in
+our search for solutions to planning
+problems, we have considered plans that
+were sequences of actions. They may not
+have achieved the goals, but they were
+plans in their own right. In the first
+half of the this week we're going to, to
+look at a different search space that
+consists of partial plans. Partial plans
+still consists of the same types of
+actions we've seen previously like the
+move action here or this move action or
+the load act ion so they're the same
+actions. What is new is that we explicitly
+record the rationale of why we have an
+action in a plan. For example here, we see
+that we have an effect of this action, and
+we're using this to achieve the
+precondition of another action and we've
+introduced this link here. To record this
+fact. Also we have explicit ordering
+constraints, something you see here and
+here, that tells us in which order we have
+to execute the actions. That makes it
+possible for us to have partial plans that
+include a partial order, so actions can be
+in paraelle. Finally, partial plans may
+not have fully instantiated actions. Some
+of the actions may contain variables. That
+is something I've already mentioned during
+lifted backward search, that is possible
+and impartial order planning that is
+usually done. The first planner that
+implemented this algorithm was the UCPOP
+planner in the early 1990s. And we will
+see the pseudo-code for this planning
+algorithm later in this segment. In the
+2nd half of this week we're going to do
+something completely different, namely,
+we're going to change the planning problem
+that we are trying to solve. So far, our
+planning problem consisted of, amongst
+other things, A goal which defines a set
+of goal states. In the new type of
+planning we're going to look at here.
+We're not trying to achieve goals. But
+we're trying to accomplish tasks. Tasks
+can be seen as high level disruptions of
+activity that we want to execute. But they
+are so high level that we don't know how
+to directly do them. So the approach we're
+taking, usually, is to break them down
+into smaller tasks. And we do this until
+we reach a level where tasks are so small
+that we have an operator in our planning
+domain, that directly accomplishes this
+task. For example, the first sub-task
+here, that we have in this decomposition
+tree, that decomposes our overall tasks
+into smaller tasks, would be to take
+something with a crane excetera. And we've
+already seen that our planning domains
+contain Operators that can directly
+accomplish these so called primitive
+tasks. And that is the approach we take in
+hierarchical task network planning, or
+short HTN. A lot of practical planning
+systems take this approach as you've
+already heard my colleague, Austin Tate,
+tell you in week 1. We will look at a
+slightly simplified version of this
+problem called STN planning. This will be
+described in detail, but then I'll
+describe what is different about HTN
+planning. And hopefully you will
+understand that the power of HTN planning
+largely comes from the fact that it
+handles constraints on world states
+explicitly. And since there are many
+different types of constraints that can be
+handled. HTN planners can be adapted to
+specific applications. So, now, before we
+start with the technical material for week
+3. I want to, again, remind you of the
+social platform that comes with this
+course. There is the discussion forum,
+which you can use to post questions and
+get help. And there's also the Course Wiki
+that you can use to collect useful
+information. Please make good use of them.

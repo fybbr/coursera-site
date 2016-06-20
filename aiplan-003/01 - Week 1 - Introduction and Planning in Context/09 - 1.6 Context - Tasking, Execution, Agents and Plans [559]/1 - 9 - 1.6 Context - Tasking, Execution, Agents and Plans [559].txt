@@ -1,0 +1,153 @@
+Planning usually occurs in a human 
+context where tasks or objectives are 
+assigned, where plan execution must take 
+place. 
+We introduced earlier a model for 
+planning and showed some simplifications 
+to it. 
+We explained that a richer model is 
+needed for realistic planning in dynamic 
+situations. 
+In such a context, we've got to observe 
+the performance of activity in the world, 
+and try to observe and interpret the 
+effects of our executed activities there. 
+This can allow for possible plan revision 
+and replanning where that's necessary. 
+O-Plan for example, could be configured 
+with three separate planning agents. 
+Which represented reasons about plans at 
+different levels. 
+The first was concerned with the human 
+level of task description, setting 
+objectives, giving guidance, or overall 
+constraints. 
+A second level is a more technical 
+planning level which could propose 
+options to meet the state's objectives, 
+and allow for choices between those 
+options. 
+And a third level supported plan 
+execution and monitoring. 
+And could facilitate local planned repair 
+where that was feasible. 
+However, note that in each case here, 
+each agent has a similar structure which 
+is supported by the open planning 
+architecture, in which the O-Plan planner 
+was built. 
+For example, the multi-agent planning 
+architecture platform is the basis for 
+the SRI International Side Planner. 
+The Open Planning Architecture is the 
+basis for O-Plan designed to handle 
+multiple plan roles and levels as you 
+just seen. 
+And the I-X platform is intended to port 
+multiple types of command, sense-making, 
+analysis in planning for instances to 
+build the I-plan · planner, as well as 
+decision making, execution, and 
+communication between agents even in 
+mixed agent frameworks. 
+Several practical AI planning systems 
+have been used in emergency response 
+applications. 
+Often working in the context of a wide 
+range of other agents and services. 
+They're often in an environment where 
+communication and collaboration is taking 
+place with some sort of infrastructural 
+layer. 
+And then the core might concer, be 
+concerned with command and control-type 
+issues in search-and-rescue or emergency 
+response situations, but also dealing 
+with people in the field. 
+And so they are also manipulated the 
+plans that they're given and adjusting 
+them to a local situation. 
+We may also be including the people who 
+are in trouble or are isolated or being 
+rescued as part of the framework of 
+collaboration and communication that's 
+taken place. 
+And again, they have to deal with 
+elements of the plan that are coming from 
+these different levels and different 
+centers. 
+And we perhaps have to deal upwards with 
+decision making authorities by giving 
+briefings of the options that we're 
+generating, explaining those, and looking 
+for decisions on, on which ones are going 
+to be executed and handled. 
+We'll show you a couple of examples of 
+I-X multiagent applications. 
+This is an I-X process panel which sports 
+a search and rescue coordinator and the 
+communications with various other 
+agencies and services in a coalition 
+peace keeping operations. 
+The second application called iGlobe 
+handles the tasking and coordination of 
+mobile ground and air vehicles in a 
+disaster response scenario. 
+Often, planning is just a small part of a 
+wider collaboration and communication 
+situation involved in a realistic 
+application. 
+The I-plan planner here sits in the lower 
+right, and it's quite a simple tool. 
+But it operates in a much broader context 
+of planned communication, messaging, map 
+views, sense making, and so on. 
+A paper written in 2001, was part of a 
+special issue in Mayhem Magazine on 
+Robocop, explored emergency response as a 
+grand challenge for multiagent and 
+intelligent systems. 
+It explored the very many areas involved 
+in effective emergency response, which 
+could be supported by intelligence 
+systems. 
+These included dealing with the 
+environment. 
+Supporting the people and organizations 
+involved, and of course, using 
+intelligence systems to assist in the 
+emergency itself. 
+The key element of this support in both 
+planning and activity management and the 
+sharing of plan related information 
+between agents. 
+Plenty used for communication and 
+collaboration between agents and systems. 
+So upon representation itself, is an 
+important area of research. 
+Plenty used in many areas beyond activity 
+planning. 
+Such as in, situation understanding 
+summarization, natural language 
+interpretation, and generation and so on. 
+Plents provide nontological informal 
+representation call for a wide range of 
+practical applications and uses. 
+A good representation of plans can be 
+used as a target for knowledge 
+acquisition, for user communication, for 
+system manipulation, and as a basis for 
+formal analysis. 
+AI planning work has influenced standard 
+related process and plan representations 
+used by many industries and fields. 
+For example, in the MIT process handbook, 
+its process interchange format or PIF. 
+In the NIST, The National Institute of 
+Standards and Technology in America. 
+the Process Specification Language, PSL. 
+And the DARPA, Shared Planning and 
+Activity Representation SPAR. 
+And has even become the basis for an ISO 
+standard. 
+

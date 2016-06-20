@@ -1,0 +1,809 @@
+1
+00:00:00,012 --> 00:00:06,268
+So now we have seen how the reachability
+analysis performed in the planning graph
+
+2
+00:00:06,268 --> 00:00:09,890
+can be used to compute some simple
+heuristics.
+
+3
+00:00:09,890 --> 00:00:15,705
+But the problem with a star that remains
+is that it uses exponential memory.
+
+4
+00:00:15,705 --> 00:00:21,312
+And to address this problem, another
+algorithm has been developed, which I
+
+5
+00:00:21,312 --> 00:00:26,459
+won't introduce here, which is called
+Iterative Deepening A star.
+
+6
+00:00:26,460 --> 00:00:32,875
+This algorithm is also very good, and
+specifically it uses only very little
+
+7
+00:00:32,875 --> 00:00:36,732
+memory.
+In fact, it uses so little memory that
+
+8
+00:00:36,732 --> 00:00:40,570
+most of the computers memory remains
+unused.
+
+9
+00:00:40,570 --> 00:00:47,285
+And that led to the question, can't we do
+anything useful with this memory that aids
+
+10
+00:00:47,285 --> 00:00:51,065
+our search?
+And the idea is to compute pattern
+
+11
+00:00:51,065 --> 00:00:57,117
+databases in advance of our search that we
+can use to compute heuristics.
+
+12
+00:00:57,117 --> 00:01:03,848
+I will now use the 8 puzzle to illustrate
+the basic idea behind pattern databases.
+
+13
+00:01:03,849 --> 00:01:08,593
+In the 8 puzzle, we were given a
+configuration of times on a 3 by 3 grid,
+
+14
+00:01:08,593 --> 00:01:13,822
+and we have to achieve a specific other
+configuration by shifting the tiles
+
+15
+00:01:13,822 --> 00:01:16,692
+around.
+There were eight tiles and they were
+
+16
+00:01:16,692 --> 00:01:21,942
+numbered one through eight, and one way to
+simplify this problem is simply to remove
+
+17
+00:01:21,942 --> 00:01:26,616
+the numbers from some of the tiles.
+So we see some of these tiles are marked
+
+18
+00:01:26,616 --> 00:01:30,159
+with a star now.
+And we've marked the same tiles with a
+
+19
+00:01:30,159 --> 00:01:34,040
+star in our solution.
+What this means is, we still have to get
+
+20
+00:01:34,040 --> 00:01:37,608
+the tiles one through four into the
+correct positions.
+
+21
+00:01:37,608 --> 00:01:42,619
+But, we can't tell where the other tiles
+are as long a there are tiles with a star
+
+22
+00:01:42,619 --> 00:01:46,541
+those are in a correct place and therefore
+form a solution.
+
+23
+00:01:46,542 --> 00:01:51,412
+It should be clear that this problem is
+simpler than the original problem.
+
+24
+00:01:51,412 --> 00:01:56,656
+In fact, it's a subproblem of the original
+problem because we only need to achieve a
+
+25
+00:01:56,656 --> 00:02:00,505
+subconfiguration.
+But, what is important here is that the
+
+26
+00:02:00,505 --> 00:02:05,664
+cost of solving the subproblem, the one
+where the tiles are marked with a star, is
+
+27
+00:02:05,664 --> 00:02:09,447
+less or equal to the cost of solving the
+complete problem.
+
+28
+00:02:09,447 --> 00:02:12,563
+So, the original problem we are trying to
+solve.
+
+29
+00:02:12,563 --> 00:02:17,923
+And if that is the case, that means we can
+use the cost of solving the subproblem as
+
+30
+00:02:17,923 --> 00:02:22,610
+an admissible heuristic for the cost of
+solving the overall problem.
+
+31
+00:02:22,610 --> 00:02:27,316
+The problem remains to solve the
+subproblem, we still need to do search.
+
+32
+00:02:27,316 --> 00:02:32,470
+It will be in a smaller search space, but
+in general, search is expensive, and we
+
+33
+00:02:32,470 --> 00:02:36,760
+want to avoid this.
+And here is the idea that helps us avoid
+
+34
+00:02:36,760 --> 00:02:40,668
+search during the computation of the
+heuristic.
+
+35
+00:02:40,668 --> 00:02:46,089
+What we want to do is we want to
+pre-compute and store in a database all
+
+36
+00:02:46,089 --> 00:02:51,893
+the solution costs for all possible
+subproblems that we may encounter.
+
+37
+00:02:51,893 --> 00:02:56,850
+Clearly, this will take up quite some
+memory but that was the idea that we want
+
+38
+00:02:56,850 --> 00:03:02,002
+to make use of the memory that we have.
+Once we have got this database, computing
+
+39
+00:03:02,002 --> 00:03:06,486
+the heuristic is simply a database
+look-up, so it should be possible in
+
+40
+00:03:06,486 --> 00:03:11,376
+constant time, very fast.
+Then, the only question that remains is,
+
+41
+00:03:11,376 --> 00:03:16,311
+how we can construct this database that we
+want to use as a heuristic?
+
+42
+00:03:16,311 --> 00:03:21,972
+And the basic idea is that we search
+backwards in a breadth-first fashion from
+
+43
+00:03:21,972 --> 00:03:27,676
+the goal state and record the costs of
+each of the states as we come across them.
+
+44
+00:03:27,676 --> 00:03:32,865
+So, because we've searched breadth-first,
+we know that the first time we encounter a
+
+45
+00:03:32,865 --> 00:03:37,344
+node we encounter a minimal depth.
+And we can just record the depth in our
+
+46
+00:03:37,344 --> 00:03:42,322
+database as its heuristic value.
+Now, what we've done is shifted the search
+
+47
+00:03:42,322 --> 00:03:47,602
+operation from the time when we need to
+compute the heuristic to before we try to
+
+48
+00:03:47,602 --> 00:03:52,722
+solve a problem, but the search we're
+doing is now a breadth first search, and
+
+49
+00:03:52,722 --> 00:03:58,242
+that is a very expensive operation because
+we need to search the whole search space
+
+50
+00:03:58,242 --> 00:04:04,244
+in this way, or generate the search space.
+The good news is we only need to compute
+
+51
+00:04:04,244 --> 00:04:10,341
+this once so we pre-compute our pattern
+database once, and then we can solve many
+
+52
+00:04:10,341 --> 00:04:15,962
+problems with the same database.
+The next question is, how do we choose the
+
+53
+00:04:15,962 --> 00:04:19,564
+patterns that we want to record in our
+database?
+
+54
+00:04:19,564 --> 00:04:25,349
+And the answer here is that we start from
+the available amount of memory that we
+
+55
+00:04:25,349 --> 00:04:28,131
+have.
+So, we take all of the memory.
+
+56
+00:04:28,131 --> 00:04:33,705
+We compute how much memory we will need
+for search, maybe very little, and the
+
+57
+00:04:33,705 --> 00:04:38,331
+remainder is how much memory we have for
+our pattern database.
+
+58
+00:04:38,331 --> 00:04:43,732
+And then, we know that if our original
+search space had the size, size of S, then
+
+59
+00:04:43,732 --> 00:04:49,127
+our new search space depends on how much
+tiles in the search space we mark with a
+
+60
+00:04:49,127 --> 00:04:54,356
+star, and that is, let's say, that's the
+number n, then we can say that the new
+
+61
+00:04:54,356 --> 00:04:59,336
+search space has the size of the old
+search space divided by n factorial,
+
+62
+00:04:59,336 --> 00:05:04,524
+because all the permutations of the tiles
+marked with a star do not matter.
+
+63
+00:05:04,524 --> 00:05:08,162
+So, that's roughly the size of the table
+we'll generate.
+
+64
+00:05:08,162 --> 00:05:13,455
+And for each element we need to store the
+state, plus a single number that gives us
+
+65
+00:05:13,455 --> 00:05:17,702
+our heuristic value.
+Of course, there is no point in doing this
+
+66
+00:05:17,702 --> 00:05:22,652
+for the 8 puzzle because the whole search
+space of the 8 puzzle already fits into
+
+67
+00:05:22,652 --> 00:05:25,410
+memory.
+So, we don't need to store a pattern
+
+68
+00:05:25,410 --> 00:05:28,875
+database, we can store the database of all
+solutions.
+
+69
+00:05:28,876 --> 00:05:34,277
+But, for bigger version of the same
+puzzle, for example, the 15 puzzle shown
+
+70
+00:05:34,277 --> 00:05:38,277
+here or even bigger the 24 puzzle, this
+does make sense.
+
+71
+00:05:38,277 --> 00:05:43,383
+So, what we see here is an approach to
+choosing the patterns of what we are
+
+72
+00:05:43,383 --> 00:05:48,908
+looking for and if we try to find a clever
+heuristic what we want to do is explore
+
+73
+00:05:48,908 --> 00:05:54,238
+it's symmetry in this space so.
+If we define the pattern consisting of
+
+74
+00:05:54,238 --> 00:06:00,376
+those tiles here, then we can also rotate
+the puzzle and use them here, and here,
+
+75
+00:06:00,376 --> 00:06:03,824
+and here.
+So, the same database can be used to
+
+76
+00:06:03,824 --> 00:06:07,259
+compute different values for the
+heuristic.
+
+77
+00:06:07,259 --> 00:06:10,888
+And we can simply take the maximum of all
+these.
+
+78
+00:06:10,888 --> 00:06:16,263
+Because we must get all the tiles that
+match our patterns into the right
+
+79
+00:06:16,263 --> 00:06:19,790
+positions.
+But you can easily see that the patterns
+
+80
+00:06:19,790 --> 00:06:23,168
+that we're now checking, are actually
+overlapping.
+
+81
+00:06:23,168 --> 00:06:28,256
+And that's one of the reasons why we have
+to take the maximum of all the heuristic
+
+82
+00:06:28,256 --> 00:06:33,261
+values here, because this pattern and the
+next count the same four tiles in the
+
+83
+00:06:33,261 --> 00:06:37,258
+heuristic value.
+And I've just given you the answer to the
+
+84
+00:06:37,258 --> 00:06:42,752
+first question on this slide which is, can
+we add the values instead of taking the
+
+85
+00:06:42,752 --> 00:06:45,700
+maximum?
+And the answer is, no, because the
+
+86
+00:06:45,700 --> 00:06:50,900
+patterns overlap and that would be
+counting the same moves twice in computing
+
+87
+00:06:50,900 --> 00:06:54,738
+the heuristic.
+But there is a way to avoid this problem.
+
+88
+00:06:54,738 --> 00:06:59,958
+And the first step toward the solution is
+to choose the pattern in such a way that
+
+89
+00:06:59,958 --> 00:07:05,093
+when we exploit the symmetry, we don't
+have overlapping patterns and we don't
+
+90
+00:07:05,093 --> 00:07:09,252
+count the same times twice.
+And an approach For this, for the
+
+91
+00:07:09,252 --> 00:07:13,632
+24-puzzle is shown here.
+You can see a pattern that we're choosing,
+
+92
+00:07:13,632 --> 00:07:18,344
+these six tiles and if we turn this
+pattern or the puzzle under it then we get
+
+93
+00:07:18,344 --> 00:07:23,453
+a different area of the puzzle that does
+not overlap with our original pattern.
+
+94
+00:07:23,454 --> 00:07:28,632
+So, that's half the solution and the other
+half is when we record a value in our
+
+95
+00:07:28,632 --> 00:07:32,421
+database all we have to count is the
+non-star tile moves.
+
+96
+00:07:32,421 --> 00:07:36,348
+So, we only count the ones in the pattern
+and not the stars.
+
+97
+00:07:36,348 --> 00:07:41,331
+Because the stars would appear in other
+patterns as well and we don't want to
+
+98
+00:07:41,331 --> 00:07:45,129
+count them twice.
+If we do that, if we choose the patterns
+
+99
+00:07:45,129 --> 00:07:50,422
+to exploit the symmetry non-overlapping
+and don't count the start tiles when we
+
+100
+00:07:50,422 --> 00:07:55,399
+compute our heuristic, then we can
+actually add the different values to get
+
+101
+00:07:55,399 --> 00:07:58,427
+an admissible heuristic out of our
+database.
+
+102
+00:07:58,427 --> 00:08:03,669
+And this approach is called a Disjoint
+Pattern Database because the patterns are
+
+103
+00:08:03,669 --> 00:08:07,147
+disjoint and we can add the values of the
+heuristic.
+
+104
+00:08:07,148 --> 00:08:13,176
+Unfortunately, it's not always possible to
+find disjoint pattern databases that work.
+
+105
+00:08:13,176 --> 00:08:17,551
+One example where this hasn't been found
+yet is the Rubik's Cube.
+
+106
+00:08:17,551 --> 00:08:23,017
+But where these heuristics exist, for
+example in the 24 puzzle, they seem to be
+
+107
+00:08:23,017 --> 00:08:28,943
+the best heuristics around at present.
+Now, we have seen how we can use pattern
+
+108
+00:08:28,943 --> 00:08:33,771
+databases to generate heuristics for a
+specific problem.
+
+109
+00:08:33,771 --> 00:08:40,343
+The question now is, can we generalize
+this approach to generate heuristics for
+
+110
+00:08:40,343 --> 00:08:46,291
+arbitrary planning problems?
+Remember, planning problems are given to
+
+111
+00:08:46,291 --> 00:08:50,298
+us as an initial state, a goal and a set
+of operators.
+
+112
+00:08:50,298 --> 00:08:55,231
+So, it's very hard to see what a generic
+pattern could look like.
+
+113
+00:08:55,231 --> 00:09:01,334
+But the key idea for generating pattern
+databases for the 8 puzzle or for generic
+
+114
+00:09:01,334 --> 00:09:06,640
+planning problems is the same.
+We need to construct abstract problem
+
+115
+00:09:06,640 --> 00:09:10,048
+spaces.
+For the eighth puzzle, we've abstracted
+
+116
+00:09:10,048 --> 00:09:14,474
+away the names of some tiles.
+And for generic planning problems, we're
+
+117
+00:09:14,474 --> 00:09:19,062
+going to do something similar, we're going
+to drop some of the detail from the
+
+118
+00:09:19,062 --> 00:09:22,687
+problem description to create a more
+abstract problem.
+
+119
+00:09:22,688 --> 00:09:28,006
+Then, we're going to solve this more
+abstract problem, and the solution length
+
+120
+00:09:28,006 --> 00:09:33,141
+for the solution to the more abstract
+problem, is a heuristic for our original
+
+121
+00:09:33,141 --> 00:09:36,603
+problem.
+So, the most important question then is,
+
+122
+00:09:36,603 --> 00:09:39,611
+how do we create this more abstract
+problem?
+
+123
+00:09:39,611 --> 00:09:44,172
+And the answer is actually quite simple.
+What we do is, we pick some of the
+
+124
+00:09:44,172 --> 00:09:48,901
+proposition symbols that we have in our
+propositional planning problem.
+
+125
+00:09:48,901 --> 00:09:53,281
+So, these are some of the symbols that
+describe aspects of the state.
+
+126
+00:09:53,281 --> 00:09:57,775
+And out of the complete set of state
+propositions that we have available, we
+
+127
+00:09:57,775 --> 00:10:01,049
+pick some and drop them from the problem
+description.
+
+128
+00:10:01,049 --> 00:10:06,023
+So we drop them from the goals, from the
+initial state, and from the pre-conditions
+
+129
+00:10:06,023 --> 00:10:10,862
+and the effects of all the operators.
+And this gives us a more abstract problem.
+
+130
+00:10:10,863 --> 00:10:14,862
+This is really all there is to our new
+abstract problem space.
+
+131
+00:10:14,862 --> 00:10:18,566
+We drop state propositions from the
+problem description.
+
+132
+00:10:18,566 --> 00:10:23,816
+Now, the question that remains is, which
+state proposition symbols should we drop
+
+133
+00:10:23,816 --> 00:10:28,127
+from our problem description.
+And the way we do this determines the
+
+134
+00:10:28,127 --> 00:10:33,135
+quality of our heuristic.
+And one way to do this, works as follows.
+
+135
+00:10:33,135 --> 00:10:38,593
+We divide the set of all state
+propositions that we have into mutually
+
+136
+00:10:38,593 --> 00:10:43,314
+exclusive, and therefore disjoined,
+groups, G 1 though G K.
+
+137
+00:10:43,314 --> 00:10:49,737
+So, in each group, we find symbols that
+are mutually exclusive, meaning they can't
+
+138
+00:10:49,737 --> 00:10:54,712
+be true in the same state.
+So, in our Dock Worker Robot example, the
+
+139
+00:10:54,712 --> 00:11:00,152
+symbols r1 and r2, the robots at location
+one and at location two are mutually
+
+140
+00:11:00,152 --> 00:11:03,886
+exclusive and therefore could be in the
+same group.
+
+141
+00:11:03,886 --> 00:11:09,564
+Now, we may have quite a lot of groups
+which means our abstract problem spaces
+
+142
+00:11:09,564 --> 00:11:13,468
+may be too abstract.
+They may be trivial to solve and the
+
+143
+00:11:13,468 --> 00:11:17,137
+heuristic information it reveals is almost
+nothing.
+
+144
+00:11:17,137 --> 00:11:22,651
+So, what we do is we divide this into just
+two sets of symbols, namely those that are
+
+145
+00:11:22,651 --> 00:11:27,305
+in even numbered groups, and those that
+are in odd numbered groups.
+
+146
+00:11:27,305 --> 00:11:30,815
+That effectively gives us two abstract
+problem spaces.
+
+147
+00:11:30,815 --> 00:11:35,956
+So, what we do is simply modify the goal
+by taking, on the one hand the goals from
+
+148
+00:11:35,956 --> 00:11:40,224
+the even groups, and on the other the
+goals from the odd groups.
+
+149
+00:11:40,225 --> 00:11:45,626
+And similarly, for the operators, we
+intersect their preconditions and effects
+
+150
+00:11:45,626 --> 00:11:50,567
+with the corresponding groups.
+This gives us our abstract problem spaces
+
+151
+00:11:50,567 --> 00:11:53,845
+and now, we can construct our pattern
+databases.
+
+152
+00:11:53,845 --> 00:11:59,065
+We pre-compute them as we did for the 8
+puzzle, that's how pattern databases can
+
+153
+00:11:59,065 --> 00:12:04,394
+be used for arbitrary planning problems.
+And the result that we get from this is a
+
+154
+00:12:04,394 --> 00:12:09,888
+heuristic that computes in constant time
+because it's just a hash table look-up.
+
+155
+00:12:09,888 --> 00:12:14,752
+And also the pattern database that we get
+with this approach is disjoint.
+
+156
+00:12:14,752 --> 00:12:19,356
+So, we can add the two values that we get
+from the even and odd groups.
+
+157
+00:12:19,357 --> 00:12:24,966
+The pattern database is, of course, still
+slow to compute, but reusable so we can
+
+158
+00:12:24,966 --> 00:12:28,437
+use the same database to solve multiple
+problems.
+
+159
+00:12:28,437 --> 00:12:32,871
+But again, the re-usability of this
+database is quite limited.
+
+160
+00:12:32,871 --> 00:12:38,841
+Because we can not change the goal, or for
+example, increase the number of containers
+
+161
+00:12:38,841 --> 00:12:42,023
+that we have in our Dock Worker Robot
+domain.
+
+162
+00:12:42,023 --> 00:12:46,061
+For that, we would have to generate a new
+pattern database.

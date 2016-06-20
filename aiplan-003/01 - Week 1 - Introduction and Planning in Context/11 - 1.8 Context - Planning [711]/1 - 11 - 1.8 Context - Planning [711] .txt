@@ -1,0 +1,203 @@
+We'll take a look at the very wide range 
+of planning research areas and 
+techniques. 
+There's been quite a lot of work in 
+domain modeling, domain description, and 
+domain analysis, prior to using these 
+descriptions, these domain descriptions 
+in planners themselves. 
+Then of course the core work in AI 
+planning is being in the search methods, 
+and algorithms for creating plans, 
+searching for plans. 
+People have looked up plan analysis 
+because if you can constrain the types of 
+plan you're interested in through 
+analysis, that can limit the search 
+spaces involved. 
+It could be useful to pause here and to 
+read through this list of areas and 
+techniques. 
+How many have you already heard of? 
+Check out or ask about any acronym you 
+don't know. 
+Continue on when you're ready. 
+Then people concerned with realistic and 
+practical planning problems have often 
+had to deal with the hue of repairing 
+plans when things go wrong or when the 
+circumstances change. 
+A number of people have looked at planned 
+generalization, 
+the reuse of generalized plan fragments. 
+The sport of the user involved in 
+planning via a suitable user interface 
+is, advice interfaces and the ability to 
+generate plans in a mixed issued fashion 
+between the automated system and the 
+human are important. 
+In recent years, planners have been made 
+available as web services in order that 
+they can be used as a component of larger 
+scale systems. 
+And plans can be used in a range of other 
+areas, such as natural language 
+generation, dialogue management, the 
+sharing of plans between humans and so 
+on. 
+Pause again, to look at the research 
+areas and techniques listed. 
+So as you can see here, we're dealing 
+with the whole life-cycle plans, right 
+through from, creating domain models, 
+to making use of those plans in 
+productive situations. 
+The problem is that we need to make sense 
+of all of this. 
+We need to find a way of fitting in the 
+very many techniques that are available 
+now and that will become available 
+through further research and development. 
+What's needed is more collaborative 
+planning framework. 
+At the alta level, we've got to be able 
+to relate to the humans involved in the 
+planning process, 
+where they can present their objectives, 
+their issues, 
+they can make sense of the situation. 
+They can give multiple options and 
+advice. 
+They can argue about those options, 
+discuss them, outline plans, and so on. 
+Then we want detailed planners, search 
+engines, constraints, all that analyzers 
+and simulators, that can act within that 
+outdoor frame, and work in an 
+understandable way, 
+and use it to provide feasibility checks, 
+detailed constraints, and guidance. 
+Want to be able to share processes and 
+information about process products 
+between humans and systems, 
+and want to look at the current status, 
+the context we're in, the environment 
+we're in, you know, to be sensitive to 
+that. 
+We need a link between informal and 
+unstructured planning and more structured 
+planning and methods for optimization. 
+And that's what we've been trying to do 
+with our I X I plan work, just as an 
+example of how some of this integration 
+is going on in practical A I planning 
+systems. 
+First of all, we base it on an 
+underlying, intelligible, easily 
+communicated, easily extended, conceptual 
+model for objectives, processes, 
+procedures and plans. 
+Just based on four components, a set of 
+issues to be addressed, a set of nodes, 
+which are activities to be included in 
+the plan, a set of constraints which have 
+got to be respected and a set of 
+annotations on the entities that are 
+involved there. 
+We call that model INCA. 
+Then we want to communicate the dynamic 
+status and presence of the agents 
+involved. 
+The collaborative processes that process 
+products, and what they, what they're 
+able to do in terms of their 
+capabilities. 
+Want to be sensitive to the current 
+context so the presentation of options 
+for action are those which are suitable 
+for the context we're in. 
+And we want to do intelligent activity 
+planning, execution and monitoring 
+repair, and plan repair, and we do that 
+via the iPlan planner and what we call 
+the IX process panels, which are the user 
+interface element in the IX technology. 
+So IXs aim is a planning workflow and 
+task messaging catch all. 
+We designed it in order that it can deal 
+with the wide range of problems that can 
+be addressed in planning and activity 
+management. 
+It's meant to be able to take any 
+requirement to handle an issue, 
+perform an activity, 
+respect a constraint, or note an 
+annotation. 
+So that's the underlying computational 
+model of the I-X platform. 
+They can deal with these by a manual 
+activity, 
+so you can basically, just take items 
+off, for instance, on checklist. 
+That's a perfectly good way of 
+representing the fact that you've 
+performed an activity in some systems. 
+But also, by inbuilt internal 
+capabilities in the system, 
+by external capabilities you know about, 
+or by rerouting or delegating to other 
+panels and agents, which is where 
+communication and collaboration and the 
+models of those, those other agents comes 
+in. 
+And all we can plan next year to 
+compensate to these capabilities and we 
+can use the planner inside the system 
+itself, to plan that kind of work flow. 
+And then the system receives reports and 
+interprets them to understand the current 
+state it's in, 
+and to be able to start to handle that 
+situation and help the user control the 
+situation. 
+And the idea is it can cope with just 
+partial knowledge of the process and 
+organization involved, 
+and be able to fit in to an environment 
+where it isn't the only agent that's 
+working on plans and processes within an 
+organization. 
+I-x, as we've said before, has been 
+applied to emerge in serious bonds, and 
+we've used this kind of process panel or 
+user interface that's what the task. 
+But it's in a context where there is a 
+lot of verbal tools. 
+The main editors, links to mapping tools, 
+the planner itself can have a pop up 
+window, its like you look at the options 
+its generating and guide them and give 
+them advice and so on and you can link to 
+messaging and communication tools to the 
+systems. 
+So that concludes this series of 
+presentations on AI planning and context. 
+We've been looking at the context of 
+practical systems, and we've shown you 
+some practical planners in use. 
+We've looked at the context of task 
+assignment, and execution, the fact that 
+we're often working with multiple agents, 
+multiple systems and multiple services, 
+and we've looked at the context of 
+planned representation itself, where rich 
+plan representations can be used for many 
+kinds of communication and collaboration 
+in activity and, and planning situations. 
+And finally, we looked at Planning++, to 
+try to make sense of the wide range of 
+techniques being developed in this field, 
+and looked at a model for bringing some 
+of these techniques together in a 
+productive way. 
+

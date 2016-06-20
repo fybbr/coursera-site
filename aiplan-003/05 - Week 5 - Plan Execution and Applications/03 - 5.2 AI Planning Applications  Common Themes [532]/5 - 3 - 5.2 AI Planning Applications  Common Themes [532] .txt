@@ -1,0 +1,151 @@
+We'll now look at a number of AI Planners 
+and the type of application in which 
+they've been used. 
+Earlier in the course we showed a table 
+with a number of practical planners 
+applied in realistic situations. 
+And we noted the long history of the 
+practical application of our planning 
+methods. 
+And during the course, we described some 
+the key techniques employed in search 
+planners. 
+We're going to now explore a number of 
+these systems, the features they include, 
+and their applications. 
+SIPE-2 System for Interactive Planning 
+and Execution was created in the 1980s 
+and has been developed since then to 
+provide a comprehensive approach to AI 
+planning. 
+It's been developed by David Wilkins and 
+his colleagues at SRI International in 
+California. 
+SIPE-2 is a domain independent planner 
+which supports interactive planning, 
+allowing humans and system to co-operate 
+in a mixed initiative planning fashion. 
+It can efficiently reason about actions 
+to generate the novel sequence of actions 
+that respond precisely, to the situation 
+at hand. 
+It supports the giving advice to the 
+planner. 
+It plans a hierarchical at different 
+levels of abstraction, 
+replans during exclusion, 
+can generate parallel plans, so it can 
+allow for multiple agent planning. 
+Post constraints and reasons about 
+resources within the plan and interacts 
+with users through a graphical interface. 
+SIPE-2 has been applied in applications 
+as diverse as, oil spill response, 
+military planning, and production line 
+planning in a brewery. 
+O-Plan was built by my own team at 
+University of Edinburgh through the 1980s 
+and 1990s. 
+It was based on the features in the 
+earlier nautaline hierarchical test 
+planner. 
+O-Plan supported the whole life cycle of 
+planning. 
+From domain modeling and knowledge of 
+list station tools. 
+Through planning, detail constraint 
+management, and plan execution. 
+He was able to repair plans, or replan as 
+necessary, when execution failures 
+occurred. 
+And O-Plan experimented with a wide range 
+of graphical user interfaces, including 
+support for multiple concurrent users 
+with different roles in the planning 
+process. 
+And the workflows involved in 
+coordinating between multiple users. 
+It supported a web interface to allow the 
+planner to be used as a web service. 
+O-Plan is being used in Edinburgh and 
+elsewhere for a wide range of 
+applications. 
+Some of which were introduced earlier in 
+the course. 
+And as noted previously, 
+O-Plan was used at the bases for the 
+design of the deployed optimum AIV 
+planner at the European Space Agency for 
+Ariane rocket launch and payload base, 
+sample integration and test. 
+Shop and it's successor Shop two were 
+created at University of Maryland by Dana 
+Now and his colleagues. 
+Shop two is hierarchical task network 
+planner. 
+But keeps the activities in the plan 
+fully ordered. 
+It selects activities to include in the 
+order they'll be executed from the start 
+of the plan. 
+Which eases reasoning about the state of 
+the world affected by the plan, at any 
+point. 
+Shop two does allow for interleaving of 
+the solutions more multiple goals and 
+subgoals in this ordered plan which is an 
+improvement over the original shop 
+planner. 
+Shop two can reason with a rich logical 
+model of the state, including quantifiers 
+and conditionals. 
+And can maintain and reason out temple 
+constraints as is required for most 
+practical planners. 
+And it allows for numeric computations 
+alongside the most symbolic will state 
+models. 
+Calls to external routines are possible 
+to incorporate constraints expressed in 
+program code. 
+And the rich domain model allows 
+preferences on choosing operators in 
+given situations, feature seen in other 
+practical planners, also. 
+Shop and Shop two have been applied to a 
+wide range of applications as diverse as 
+fighting forest fires, controlling 
+multiple unmanned autonomous vehicles, 
+UAVs, and creating business process 
+workflows. 
+The shop techniques have also been 
+incorporating some domains specific 
+planning applications embeded in 
+manufacturing automated systems and in 
+versions of the commercially available 
+Ridge Barren device which won the 
+Inaugural World Compute Bridge 
+Championships in 1997. 
+There are some common themes we can see 
+appearing in many of the practical 
+planners we've described. 
+The use of an outer hierarchical task 
+network approach which is friendly and 
+understandable to users. 
+An underlying detailed 
+constraint-handling layer to handle the 
+real needs of time and resource 
+constraints and plans. 
+Integration with simulation analysis 
+systems to prune or further constrain the 
+plans which about are useful. 
+Integration with plan execution and plan 
+monitoring to put plans into real use. 
+Rich knowledge modelling languages, and 
+ways to describe features of application 
+domains in ways which the planner can use 
+to constrain choices. 
+And availability of comprehensive and 
+useful user interfaces during planning 
+and execution. 
+

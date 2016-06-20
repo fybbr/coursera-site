@@ -1,0 +1,320 @@
+1
+00:00:00,012 --> 00:00:03,142
+Welcome to week 2 of the AI planning 
+course. 
+
+2
+00:00:03,142 --> 00:00:06,537
+We've already learned a lot of things in 
+week 1. 
+
+3
+00:00:06,537 --> 00:00:11,822
+For example I've introduced to you the 
+basic planning problem which is the 
+
+4
+00:00:11,822 --> 00:00:17,742
+problem we are addressing in this course. 
+I've also told you about a technique that 
+
+5
+00:00:17,742 --> 00:00:22,547
+is used in many places in AI but 
+specifically it's very important to 
+
+6
+00:00:22,547 --> 00:00:27,750
+planning and that technique is search. 
+Then we've met some of our friends the 
+
+7
+00:00:27,750 --> 00:00:32,019
+duck worker robots an example we will be 
+using throughout the course. 
+
+8
+00:00:32,019 --> 00:00:37,104
+This was followed by my colleague Austin 
+Tate telling you about practical planners 
+
+9
+00:00:37,104 --> 00:00:41,874
+and applications where these are used. 
+But planning is not just about finding 
+
+10
+00:00:41,874 --> 00:00:46,601
+plans there is also a context to planning 
+and this is for example what happens 
+
+11
+00:00:46,601 --> 00:00:50,508
+before a planning mainly the assignment 
+of tasks to Planners. 
+
+12
+00:00:50,508 --> 00:00:54,264
+And after planning, the plan execution 
+which is very important. 
+
+13
+00:00:54,264 --> 00:00:58,504
+Then, we've also seen that there is a 
+range of techniques that are used in 
+
+14
+00:00:58,504 --> 00:01:01,762
+planners today. 
+That was pretty much what we've learned 
+
+15
+00:01:01,762 --> 00:01:04,672
+in Week 1. 
+And now I want to talk a little bit about 
+
+16
+00:01:04,672 --> 00:01:07,724
+the website. 
+I've already seen a lot of you have used 
+
+17
+00:01:07,724 --> 00:01:11,939
+the social platform that comes with this 
+course, which you can see here. 
+
+18
+00:01:11,939 --> 00:01:15,612
+And I would like to encourage you to use 
+the discussion forums. 
+
+19
+00:01:15,612 --> 00:01:20,044
+To bring up any questions, any issues, 
+that you have with the course material 
+
+20
+00:01:20,044 --> 00:01:24,728
+and hopefully some of the the community 
+that uses this forum will answer those 
+
+21
+00:01:24,728 --> 00:01:28,322
+questions for you or we, the instructors, 
+can help as well. 
+
+22
+00:01:28,322 --> 00:01:34,767
+In this week's first segment we'll be 
+looking at informed search or more 
+
+23
+00:01:34,767 --> 00:01:41,645
+specifically the A* search algorithm. 
+A* is a search algorithm just like the 
+
+24
+00:01:41,645 --> 00:01:47,580
+ones we've seen last week. 
+It takes an implicit graph and searches 
+
+25
+00:01:47,580 --> 00:01:53,440
+it in its basic form as a tree. 
+Shown here is the search tree generated 
+
+26
+00:01:53,440 --> 00:01:59,457
+by the A* algorithm for the touring 
+Romania problem where the task is to get 
+
+27
+00:01:59,457 --> 00:02:04,539
+from Arad to Bucharest. 
+What is new here, is that the algorithm 
+
+28
+00:02:04,539 --> 00:02:10,672
+uses a number to guide its search, and 
+this number expresses how far from the 
+
+29
+00:02:10,672 --> 00:02:15,017
+search node the algorithm thinks the 
+current node is. 
+
+30
+00:02:15,017 --> 00:02:19,979
+This is called a heuristic. 
+And this heuristic is used to compute 
+
+31
+00:02:19,979 --> 00:02:25,634
+some evaluation function that tells the 
+algorithm which node to expand next. 
+
+32
+00:02:25,634 --> 00:02:31,200
+In this graph, we see the numbers here 
+which are the value of this evaluation 
+
+33
+00:02:31,200 --> 00:02:34,755
+function. 
+So, what this algorithm does is use an 
+
+34
+00:02:34,755 --> 00:02:40,631
+informed search strategy, as opposed to 
+the uninformed search strategies we've 
+
+35
+00:02:40,631 --> 00:02:44,599
+seen so far. 
+And probably the best known informed 
+
+36
+00:02:44,599 --> 00:02:50,567
+search strategy in the A start algorithm 
+which is what we will see in the first 
+
+37
+00:02:50,567 --> 00:02:55,130
+segment this week. 
+In this week's second segment we will be 
+
+38
+00:02:55,130 --> 00:03:00,752
+seeing our first planning algorithm which 
+is the forward state space. 
+
+39
+00:03:00,752 --> 00:03:04,577
+Search/g algorithm. 
+This uses the search technology we've 
+
+40
+00:03:04,577 --> 00:03:09,200
+seen in the previous segment. 
+As you will see in detail, this algorithm 
+
+41
+00:03:09,200 --> 00:03:13,269
+is actually very simple. 
+It takes a planning problem as input, 
+
+42
+00:03:13,269 --> 00:03:16,230
+which is these three components you see 
+here. 
+
+43
+00:03:16,230 --> 00:03:21,094
+And then starts a loop where it starts 
+from the initial state and builds up a 
+
+44
+00:03:21,094 --> 00:03:25,137
+plan starting from an empty plan. 
+That will satisfy the goal. 
+
+45
+00:03:25,137 --> 00:03:29,617
+The first thing it does is the goal test, 
+which is just what we've seen in our 
+
+46
+00:03:29,617 --> 00:03:32,492
+search algorithm. 
+So this is the goal test here. 
+
+47
+00:03:32,492 --> 00:03:36,497
+And then generates all the applicable 
+actions in the current state. 
+
+48
+00:03:36,497 --> 00:03:39,397
+If there are none, then of course we have 
+failed. 
+
+49
+00:03:39,397 --> 00:03:42,767
+Otherwise it just chooses one of the 
+applicable actions. 
+
+50
+00:03:42,767 --> 00:03:45,667
+That is our new action that we apply in 
+our state. 
+
+51
+00:03:45,667 --> 00:03:49,762
+Then we go to a new state by going 
+forward from our current state. 
+
+52
+00:03:49,762 --> 00:03:52,723
+And extend our plan with this current 
+action. 
+
+53
+00:03:52,723 --> 00:03:56,842
+And we go through this loop, until we 
+have reached a goal state. 
+
+54
+00:03:56,842 --> 00:04:00,598
+And therefore we have found a plan that 
+achieves our goal. 
+
+55
+00:04:00,598 --> 00:04:05,462
+But before we get to this algorithm, we 
+will see a formal definition of what 
+
+56
+00:04:05,462 --> 00:04:10,467
+constitutes a planning problem. 
+And most importantly we will see the 
+
+57
+00:04:10,467 --> 00:04:16,713
+scripts representation for operators, 
+which is the set O here, which describes 
+
+58
+00:04:16,713 --> 00:04:21,979
+an operator as something consisting of 
+preconditions and effects. 
+
+59
+00:04:21,979 --> 00:04:25,397
+That's what we will look at later this 
+week. 
+
+60
+00:04:25,397 --> 00:04:29,592
+So now it's time to get into the material 
+for week 2. 
+
+61
+00:04:29,592 --> 00:04:33,256
+Week 1 was fairly lightweight, and you've 
+seen an informal introduction to 
+
+62
+00:04:33,256 --> 00:04:35,754
+planning. 
+In Week 2, we will see the material a lot 
+
+63
+00:04:35,754 --> 00:04:38,442
+more technical. 
+We will introduce algorithms, and you 
+
+64
+00:04:38,442 --> 00:04:40,669
+will have something to implement, if you 
+want. 
+

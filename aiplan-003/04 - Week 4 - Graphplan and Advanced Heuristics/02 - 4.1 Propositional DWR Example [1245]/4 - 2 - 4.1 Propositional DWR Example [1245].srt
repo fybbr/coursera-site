@@ -1,0 +1,759 @@
+1
+00:00:00,012 --> 00:00:06,088
+>> Before we go into the details of the
+graph plan system, I want to start with a
+
+2
+00:00:06,088 --> 00:00:10,734
+simple example that we will use throughout
+the segment.
+
+3
+00:00:10,734 --> 00:00:17,404
+This example is again from the dock worker
+robot domain, so you should be familiar
+
+4
+00:00:17,404 --> 00:00:20,862
+with that.
+And it illustrates the propositional
+
+5
+00:00:20,862 --> 00:00:25,437
+representation, so it consists of a
+propositional planning domain and a
+
+6
+00:00:25,437 --> 00:00:30,486
+propositional planning problem.
+To put the propositional representation in
+
+7
+00:00:30,486 --> 00:00:35,578
+context, here's a quick reminder of
+classical representations, and I've shown
+
+8
+00:00:35,578 --> 00:00:39,638
+you this slide before.
+So far, we've seen planning domains and
+
+9
+00:00:39,638 --> 00:00:43,871
+planning problems represented in the
+STRIPS representation.
+
+10
+00:00:43,871 --> 00:00:49,792
+The STRIPS representation is exactly like
+the propositional representation we will
+
+11
+00:00:49,792 --> 00:00:53,227
+see next.
+But, it uses first order literals instead
+
+12
+00:00:53,227 --> 00:00:57,076
+of propositions.
+So, the atoms are relations that relate
+
+13
+00:00:57,076 --> 00:01:01,318
+objects to each other.
+We have also seen a specific syntax that
+
+14
+00:01:01,318 --> 00:01:06,976
+we can use to write STRIPS representation
+domains and planning problems, and that
+
+15
+00:01:06,976 --> 00:01:11,925
+was the PDDL language.
+Now, in the propositional representation,
+
+16
+00:01:11,925 --> 00:01:15,880
+a world state is simply a set of
+proposition symbols.
+
+17
+00:01:15,880 --> 00:01:22,128
+And as opposed to first-order literals,
+symbols don't have an internal structure.
+
+18
+00:01:22,128 --> 00:01:27,984
+And then, the actions in the propositional
+representation consists of precondition
+
+19
+00:01:27,984 --> 00:01:32,045
+propositions, propositions to be added and
+to be removed.
+
+20
+00:01:32,045 --> 00:01:37,491
+So the propositions to be added are the
+positive effects, and the propositions to
+
+21
+00:01:37,491 --> 00:01:42,538
+be removed are the negative effects.
+The precondition propositions correspond
+
+22
+00:01:42,538 --> 00:01:46,126
+to the positive preconditions in the
+STRIPS representation.
+
+23
+00:01:46,126 --> 00:01:51,100
+And this is another difference between the
+STRIPS representation, as we've seen it so
+
+24
+00:01:51,100 --> 00:01:55,881
+far, and the propositional representation.
+In the STRIPS representation, we had
+
+25
+00:01:55,881 --> 00:02:00,921
+positive and negative preconditions, and
+now we only have positive preconditions.
+
+26
+00:02:00,921 --> 00:02:05,694
+As it turns out, this isn't much of a
+restriction, as every STRIPS planning
+
+27
+00:02:05,694 --> 00:02:10,938
+domain, every STRIPS operator that has
+negative preconditions can be translated
+
+28
+00:02:10,938 --> 00:02:15,917
+into an equivalent domain and operator
+that has no negative preconditions.
+
+29
+00:02:15,917 --> 00:02:21,023
+So, any problem that can be represented in
+one of these two representations can be
+
+30
+00:02:21,023 --> 00:02:24,494
+translated into the other without much
+difficulty.
+
+31
+00:02:24,495 --> 00:02:28,912
+And just as a reminder, there was also a
+third flavor of this type of
+
+32
+00:02:28,912 --> 00:02:32,584
+representation, the state-variable
+representation.
+
+33
+00:02:32,584 --> 00:02:37,566
+But, I won't go into detail here as we're
+not going to use it in this segment.
+
+34
+00:02:37,566 --> 00:02:43,181
+But as a reminder, this representation is
+also essentially equivalent to the STRIPS
+
+35
+00:02:43,181 --> 00:02:46,871
+representation.
+So, nothing can be said in one of these
+
+36
+00:02:46,871 --> 00:02:50,666
+three representations that can't be said
+in the others.
+
+37
+00:02:50,666 --> 00:02:56,568
+And here is an example world state from
+our simplified dock worker robot problem
+
+38
+00:02:56,568 --> 00:03:02,530
+that we will be using in this segment.
+In this state, we have only two locations.
+
+39
+00:03:02,530 --> 00:03:07,634
+Location 1 and location 2.
+And they are connected by a path as you
+
+40
+00:03:07,634 --> 00:03:11,984
+can see in this image.
+The two robots are called r and q, or
+
+41
+00:03:11,984 --> 00:03:17,704
+robot r and robot q, and are at the two
+locations initially, r at location 1 and q
+
+42
+00:03:17,704 --> 00:03:21,792
+at location 2.
+Both robots are currently unloaded, but
+
+43
+00:03:21,792 --> 00:03:26,866
+there are also two containers in this
+state, and the two containers are
+
+44
+00:03:26,866 --> 00:03:31,684
+container a and container b, at the two
+locations as shown here.
+
+45
+00:03:31,685 --> 00:03:38,253
+What's new here is that robots can load
+and unload the containers autonomously.
+
+46
+00:03:38,253 --> 00:03:44,467
+So each robot has its own personal crane
+attached to the robot that is carries
+
+47
+00:03:44,467 --> 00:03:48,845
+around with it.
+Also, we will now think of locations as
+
+48
+00:03:48,845 --> 00:03:54,812
+being big enough for multiple robots.
+Otherwise, there wouldn't be much we could
+
+49
+00:03:54,812 --> 00:03:58,733
+do in this state because both locations
+are already occupied.
+
+50
+00:03:58,733 --> 00:04:03,811
+That really simplifies the problem a lot.
+And the problem is then give by a set of
+
+51
+00:04:03,811 --> 00:04:09,018
+actions which I will describe shortly.
+An initial state, which is shown here, and
+
+52
+00:04:09,018 --> 00:04:14,193
+a goal description which simply consists
+of a state in which the two containers are
+
+53
+00:04:14,193 --> 00:04:18,426
+swapped.
+So, in our goal state, we want container a
+
+54
+00:04:18,426 --> 00:04:22,085
+at location 2 and container b at location
+1.
+
+55
+00:04:22,085 --> 00:04:28,202
+And here are the operators in the STRIPS
+notation as we can use them for state
+
+56
+00:04:28,202 --> 00:04:34,402
+transitions in this simplified domain.
+The first operator we have defined here is
+
+57
+00:04:34,402 --> 00:04:39,249
+the move operator which moves robot r from
+location l to location l prime.
+
+58
+00:04:39,249 --> 00:04:44,637
+And since there can be multiple robots at
+the same location, the preconditions and
+
+59
+00:04:44,637 --> 00:04:49,317
+the effects of the move action are
+actually a lot simpler than what we've
+
+60
+00:04:49,317 --> 00:04:53,890
+seen previously.
+Similarly, we have simpler load and unload
+
+61
+00:04:53,890 --> 00:04:59,874
+operations that take fewer parameters and
+have fewer preconditions and effects
+
+62
+00:04:59,874 --> 00:05:03,344
+because the crane is now attached to the
+robot.
+
+63
+00:05:03,344 --> 00:05:08,330
+That also means we don't need a take and
+put action for the cranes.
+
+64
+00:05:08,331 --> 00:05:13,571
+One nice side effect of the simplified
+problem is that none of the operators have
+
+65
+00:05:13,571 --> 00:05:18,045
+negative preconditions.
+As I've just mentioned, that is one of the
+
+66
+00:05:18,045 --> 00:05:22,204
+features that we need for the
+propositional representation.
+
+67
+00:05:22,204 --> 00:05:27,523
+Another interesting observation is to do
+with the number of possible actions that
+
+68
+00:05:27,523 --> 00:05:32,267
+are instances of each operator.
+So, looking at the move action first, we
+
+69
+00:05:32,267 --> 00:05:37,621
+have two possible robots, and we have two
+possible locations that we can use for l.
+
+70
+00:05:37,621 --> 00:05:41,060
+And two possible locations that we can use
+for l prime.
+
+71
+00:05:41,060 --> 00:05:45,964
+So, in theory, that means there should be
+8 possible instances of this move
+
+72
+00:05:45,964 --> 00:05:49,240
+operator.
+But when we look at the preconditions of
+
+73
+00:05:49,240 --> 00:05:53,350
+this operator, we have one precondition in
+here that is static.
+
+74
+00:05:53,350 --> 00:05:58,055
+That is, this relation never changes from
+any world state to another.
+
+75
+00:05:58,055 --> 00:06:04,252
+So, when we translate our operators into
+actions, we can exploit that.
+
+76
+00:06:04,252 --> 00:06:09,271
+We now know that for this operator, there
+are two possible robots.
+
+77
+00:06:09,271 --> 00:06:15,577
+And for this pair, ll prime, there are two
+ways we can satisfy the adjacent relation,
+
+78
+00:06:15,577 --> 00:06:20,724
+as defined in our problem.
+That means we have to multiply this by 2.
+
+79
+00:06:20,724 --> 00:06:25,366
+Giving us 4 actions that are possible in
+this problem.
+
+80
+00:06:25,366 --> 00:06:32,197
+Now, let's have a look at the propositions
+symbols we will use in our example to
+
+81
+00:06:32,197 --> 00:06:39,151
+represent world states and actions.
+And since we'll have to handle quite a few
+
+82
+00:06:39,151 --> 00:06:44,893
+of these symbols in our actions, they are
+actually very concise.
+
+83
+00:06:44,894 --> 00:06:52,654
+For example, we have the symbol r1 that we
+use to denote that the robot with the name
+
+84
+00:06:52,654 --> 00:06:59,330
+r is at the location 1, r1 and r2.
+Meaning that the robot with the name r is
+
+85
+00:06:59,330 --> 00:07:03,882
+at location 2.
+The strips representation for these two
+
+86
+00:07:03,882 --> 00:07:09,642
+symbols will look something like this, r1
+is at robot r location 1, and r2 is at
+
+87
+00:07:09,642 --> 00:07:14,478
+robot r location 2.
+Similarly, we have equivalent symbols for
+
+88
+00:07:14,478 --> 00:07:19,328
+the other robot for robot q.
+This symbol means that robot q is at
+
+89
+00:07:19,328 --> 00:07:24,265
+location 1, and this symbol means that
+robot q is at location q.
+
+90
+00:07:24,266 --> 00:07:30,163
+And we also need symbols to express that
+the robot is not loaded with the
+
+91
+00:07:30,163 --> 00:07:36,499
+container, and we use the symbol ur,
+meaning that robot r is unloaded and uq to
+
+92
+00:07:36,499 --> 00:07:42,594
+indicate that robot q is unloaded.
+So, that means that we have 6 symbols to
+
+93
+00:07:42,594 --> 00:07:47,758
+talk about the two robots.
+But, we need more symbols to talk about
+
+94
+00:07:47,758 --> 00:07:52,333
+the containers.
+And here, we have the symbol a1, for
+
+95
+00:07:52,333 --> 00:07:57,296
+example, meaning that container a is at
+location 1.
+
+96
+00:07:57,296 --> 00:08:01,920
+Or more specifically, it means that this
+container is at the unique pile that is at
+
+97
+00:08:01,920 --> 00:08:05,336
+that location.
+So, it's not on a robot that is at
+
+98
+00:08:05,336 --> 00:08:09,219
+location 1, but really in that pile at
+location 1.
+
+99
+00:08:09,219 --> 00:08:15,363
+Similarly, we have a symbol representing
+that container a is at location 2 , in a
+
+100
+00:08:15,363 --> 00:08:19,468
+pile at location 2.
+Or we have a symbol that says that
+
+101
+00:08:19,468 --> 00:08:24,757
+container a is on robot r.
+Or the final location for the container it
+
+102
+00:08:24,757 --> 00:08:28,928
+can be on robot q.
+This is container a on loaded onto the
+
+103
+00:08:28,928 --> 00:08:32,874
+robot q.
+And we also need equivalent symbols for
+
+104
+00:08:32,874 --> 00:08:37,564
+our second container, container b.
+And we have those here.
+
+105
+00:08:37,564 --> 00:08:43,714
+B1 means container b is in the pile at
+location 1, b2, container b is in the pile
+
+106
+00:08:43,714 --> 00:08:48,026
+at location 2, br, container b is loaded
+onto robot r.
+
+107
+00:08:48,026 --> 00:08:52,207
+And finally, bq, container b is loaded
+onto robot q.
+
+108
+00:08:52,207 --> 00:08:57,767
+So that means we have altogether 8 more
+symbols to describe the state of the two
+
+109
+00:08:57,767 --> 00:09:01,537
+containers.
+And, of course, these symbols are already
+
+110
+00:09:01,537 --> 00:09:05,676
+sufficient to describe our initial state
+which is given here.
+
+111
+00:09:05,676 --> 00:09:11,442
+In our initial state, our robot r is at
+location 1, whereas our robot q is at the
+
+112
+00:09:11,442 --> 00:09:16,465
+other location, location 2.
+The container a is in the pilot location
+
+113
+00:09:16,465 --> 00:09:20,150
+1, and container b is in the other pilot
+location 2.
+
+114
+00:09:20,150 --> 00:09:25,042
+And both robots are unloaded.
+These are all the propositions that are
+
+115
+00:09:25,042 --> 00:09:30,551
+true in the initial state, and all the
+propositions not mentioned here are false.
+
+116
+00:09:30,551 --> 00:09:36,500
+And here are all the symbols we will use
+to represent actions in this domain.
+
+117
+00:09:36,500 --> 00:09:40,044
+Let's start with the available move
+actions.
+
+118
+00:09:40,044 --> 00:09:44,920
+And again, the symbols I'm using for
+actions are quite concise.
+
+119
+00:09:44,920 --> 00:09:51,090
+So, this symbol here Mr12 represents the
+action of moving robot r from location 1
+
+120
+00:09:51,090 --> 00:09:55,427
+to location 2.
+The first thing that you note here is that
+
+121
+00:09:55,427 --> 00:10:00,461
+the first letter representing the action
+is a capital letter.
+
+122
+00:10:00,462 --> 00:10:05,342
+I have used symbols with lower case
+letters for state propositions.
+
+123
+00:10:05,342 --> 00:10:11,099
+And I will use symbols starting with an
+upper case letter for action propositions.
+
+124
+00:10:11,099 --> 00:10:14,781
+And the first letter indicates which
+action this is.
+
+125
+00:10:14,781 --> 00:10:18,586
+M for move.
+Then, there are the parameters represented
+
+126
+00:10:18,586 --> 00:10:23,564
+by single letters here.
+Namely r, we're moving robot r, and we're
+
+127
+00:10:23,564 --> 00:10:30,790
+moving it from location 1 to location 2.
+Then similarly, we have Mr21 indicating
+
+128
+00:10:30,790 --> 00:10:38,794
+that we're moving robot r from location 2
+to location 1, representing this action,
+
+129
+00:10:38,794 --> 00:10:45,288
+this instance of an operator.
+Similar actions for robot q are Mq12.
+
+130
+00:10:45,288 --> 00:10:50,464
+Meaning, we're moving robot q from
+location 1 to location 2.
+
+131
+00:10:50,464 --> 00:10:57,490
+And here, we have Mq21, moving robot q in
+the other direction from location 2 to
+
+132
+00:10:57,490 --> 00:11:01,452
+location 1.
+So, these are the four possible move
+
+133
+00:11:01,452 --> 00:11:05,093
+actions that exist in this problem
+instance.
+
+134
+00:11:05,093 --> 00:11:11,773
+Similarly, we have actions representing
+loading of containers, and these all start
+
+135
+00:11:11,773 --> 00:11:17,789
+with the capital letter L, like Lar1,
+meaning we're loading container a onto
+
+136
+00:11:17,789 --> 00:11:22,767
+robot r at location 1.
+And here is what that was as an operator.
+
+137
+00:11:22,768 --> 00:11:27,536
+Then, we have Lar2.
+Meaning we're loading container a onto
+
+138
+00:11:27,536 --> 00:11:33,196
+robot r at location 2, and so on.
+We have symbols for loading container a
+
+139
+00:11:33,196 --> 00:11:37,581
+onto the different robots at the different
+locations.
+
+140
+00:11:37,581 --> 00:11:43,725
+And symbols for loading container b onto
+the different robots at the different
+
+141
+00:11:43,725 --> 00:11:48,259
+locations.
+And finally, we have the unload actions.
+
+142
+00:11:48,259 --> 00:11:55,685
+The unload actions start with the capital
+letter U like Uar1 here, which means we're
+
+143
+00:11:55,685 --> 00:12:00,133
+unloading container a from robot r at
+location 1.
+
+144
+00:12:00,133 --> 00:12:05,790
+And of course, the other unload actions
+follow all the same pattern.
+
+145
+00:12:05,790 --> 00:12:11,934
+We have the letter U, followed by the
+container we're unloading, the robot from
+
+146
+00:12:11,934 --> 00:12:18,537
+which we're unloading it, and the number
+Indicates which location this is happening
+
+147
+00:12:18,537 --> 00:12:21,486
+at.
+So, what we have here is 4 plus 8 plus 8.
+
+148
+00:12:21,486 --> 00:12:26,740
+All together 20 diffeent action symbols
+representing 20 different types of
+
+149
+00:12:26,740 --> 00:12:29,923
+actions.
+And we had 14 different proposition
+
+150
+00:12:29,923 --> 00:12:34,590
+symbols that we use in states.
+So, all together we have 34 different
+
+151
+00:12:34,590 --> 00:12:40,672
+symbols we need to deal with.
+And that concludes my simplified DWR
+
+152
+00:12:40,672 --> 00:12:45,876
+problem in the propositional
+representation.

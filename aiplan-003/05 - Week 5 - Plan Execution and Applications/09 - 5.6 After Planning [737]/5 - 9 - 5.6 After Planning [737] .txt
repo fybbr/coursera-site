@@ -1,0 +1,203 @@
+Assuming we have generated a plan, the
+next question is, what do we do with this
+plan?
+What happens after we have planned?
+Now you may think execution as the obvious
+answer, but there may be other things.
+For example, we may have generated
+multiple plans as options that we want to
+consider in which case the next step would
+be to evaluate these plans according to
+some different criteria, and then select
+the plan possibly for execution.
+But we may also have scenarios where we
+hope that we will never have to execute
+those plans, for example when we come up
+with emergency response plans.
+In this case the planning is really just
+for preparedness.
+But the most common thing we do after
+planning is probably plan execution.
+And my colleague, Austin Tate, talked
+about planning and plan execution, in the
+context of real applications earlier this
+week.
+So all I need to give you now, is probably
+a brief reminder.
+Here's a slide that I've used before and
+that describes our model of plan
+execution.
+This model starts with what we've seen a
+lot in this course, namely with a planning
+problem.
+This is described by an initial state, and
+by some objectives which can be either
+gold, or tasks depending on whether we do
+STRIPS like our HTN planning, and then we
+have a description of our state transition
+system which could be methods or strips
+operators as we've seen before.
+And then the planner is the planning
+algorithm we've looked at most of this
+course.
+And the output of that planner is, of
+course, a plan.
+This plan is then passed to the
+controller, which is responsible for the
+execution of the plan.
+The controller takes the actions from our
+plan, and somehow makes sure they get
+executed, which affects our real world
+system, that somehow changes its state.
+Of course, the system also changes its
+state due to events that may Occur.
+And to deal with those events and to
+ensure that the actions have the desirous
+effects on the state of the real world.
+The controller has some observations that
+it can use to monitor the state.
+Ideally then, everything goes according to
+plan.
+And the controller has nothing more to do.
+More realistically things will go wrong or
+the unexpected will happen.
+And that means the plan needs to be
+changed, and for the plan to change we
+need the planner again.
+But what we have to do is give the planner
+some additional input and that is the
+execution status of the plan so far.
+Then the planner hopefully can generate a
+new plan.
+The controller can start executing that
+new plan and so on.
+So what we really have here is a loop that
+starts with the initial planning problem
+then goes through the controller and the
+execution and returns to the planner and
+may go through this process several times
+before we end up with the desired
+objectives achieved in the real world.
+And to answer my question then what comes
+after we plan?
+Well the answer's simply more planning.
+Namely when things go wrong we need to do
+either plan revision which means we take
+our existing plan and change parts of it
+to deal with deviations between the
+description of our system and the actual
+system that we are manipulating.
+Or we can throw away the old plan and
+start replanning from scratch.
+One of the issue with the model I just
+showed you in the previous slide is, that
+there was just a single planner and a
+single controller.
+More realistically, however, is a scenario
+where we have multiple agents.
+That is, multiple agents which are
+executing the plan.
+Multiple agents which are controlling the
+execution.
+And even multiple agents that are
+generating the plan.
+And this of course, leads to a number of
+additional problem during plan execution.
+And one of the problems is that, if we
+have multiple agents execute the actions
+and the plan, then these actions need to
+be coordinated between the different
+agents.
+As a simple example, remember that our
+plans contained ordering constrains
+between different actions.
+Now, if we assign two actions that are
+ordered with respect to each other to two
+different agents.
+Then during plan execution, these two
+agents need to make sure that first, one
+action is executed.
+And then the other action is executed by
+the other agent.
+That means the second agent needs to know
+when the first agent has finished its
+activity.
+So ordering constraints leads to a
+coordination problem immediately.
+A similar problem arises when actions use
+shared resources that have limited
+capacity.
+Again, we need to coordinate the actions
+if they are assigned to different agents,
+such that they will never exhaust the
+capacity that is available.
+And, of course, we may have joint actions.
+You remember the example earlier from two
+agents lifting a table with objects on it.
+The lifting of the table needs to be
+started and finished together or the
+objects will fall off the table.
+And, again, this requires coordination
+between the two agents.
+And the most common way to solve
+coordination problems is, of course,
+communication between the different agents
+involved.
+And the way this is done is that we start
+with a plan as we've seen it so far.
+And then we assign the actions in that
+plan two different agents.
+And then, what we have to is, amend the
+plan with communication actions that are
+required for the coordination of the
+different activities in the plan.
+So we add more actions to the plan,
+communication actions to make sure the
+execution may go well.
+Another reason why we may need
+communication in a plan is that we may
+have observation actions.
+So one agent that is part of our plan has
+to look at the state of the world and
+recognize something in that state.
+And then it may need to communicate the
+result to other agents that may depend on
+it.
+But however well we prepare our plan it
+can always still go wrong and that means
+we have execution failure somewhere in our
+plan.
+And the question then is how can we
+recover from this failure if we have
+multiple agents executing the plan.
+And the easiest way to recover from
+failure would of course be local plan
+repair.
+So if we can modify the plan locally so
+that only the agent that experienced the
+failure can some how fix its part of the
+plan without effecting other parts of the
+plan assigned to other agents.
+Then we wouldn't have to talk to other
+agents before we continue the execution.
+But often a plan cannot be fixed locally
+and requires some global change to the
+plan.
+That is a change that effects other agents
+that have to execute actions in the plan.
+And then the problem is to propagate those
+changes through the plan and to other
+agents.
+And one important concept here is
+decommitment.
+So when we start the execution we have the
+agents commit to the actions.
+That they need to execute in the plan.
+And when things go wrong, they may need to
+de-commit from these actions, and we need
+to handle this somehow.
+So, as you can see, there are many
+problems that may arise during multi-agent
+plan execution, and all these need to be
+addressed if we successfully want to
+execute our plans with multiple agents.

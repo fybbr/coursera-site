@@ -1,0 +1,354 @@
+We have now seen a conceptual model for 
+planning, 
+namely, the state transition system. 
+This helped us formulize the problem we 
+are trying to solve in planning. 
+A technique that is used almost 
+everywhere in planning, and in many other 
+areas of AI is called search. 
+And this is what we will be looking at 
+next. 
+Before we go in to the details of search 
+algorithms, I briefly want to talk about 
+the types of problems we will see on this 
+course. 
+Namely, toy problems versus real-world 
+problems. 
+Toy problems are characterized by a 
+description that is concise and exact. 
+The description being concise allows me 
+to describe the problem in one slide 
+quickly. 
+The description being exact means there 
+shouldn't be too much ambiguity about 
+what the problem is trying to do. 
+Toy problems are often used for 
+illustration purposes, 
+for example, on this course. 
+They are also used to compare the 
+performance of different search 
+algorithms. 
+Toy problems have two interesting 
+properties. 
+Namely they are rich and simple. 
+By rich, we mean they're anything but 
+trivial to solve. 
+And by simple, I mean, they can be 
+described easily and precisely. 
+Real-world problems tend to be very 
+different. 
+To begin with, there is no single 
+agreed-upon description for most 
+real-world problems. 
+That means if we were to use real-world 
+problems in this course, I would spend a 
+lot of time describing what the actual 
+problems is and describing the details 
+that need to be addressed in each 
+problem. 
+However, toy problems are good as mental 
+exercises. 
+But real-world problems, people care 
+about the solutions of those. 
+The missionaries and cannibals problem we 
+have seen earlier clearly falls into the 
+category of toy problems. 
+Now, before we go into search algorithms, 
+we need to characterize what constitutes 
+a search problem, and here are the four 
+components that characterize a search 
+problem. 
+The first component is the initial state. 
+This is simply the state of the world 
+from which we start our search. 
+In the missionaries and cannibals 
+problem, this was the state where all the 
+missionaries and all the cannibals and 
+the boat were on the left-hand side of 
+the river. 
+Next, we need a set of possible actions. 
+Not every action will be applicable in 
+every state, 
+so we will also need to define the 
+applicability conditions for actions in 
+states. 
+We can define the actions through a 
+successor function. 
+A successor function maps a state into a 
+set of pairs of actions and state. 
+So, for each state of the world, the 
+successor function maps it to all those 
+actions that are applicable, 
+together with the states that result from 
+the action being applied in the original 
+state, 
+and leading us to this new state. 
+Together, the successor function and the 
+initial state span a state space which 
+corresponds roughly to the states 
+transition graph we have seen earlier. 
+The state space is a directed graph with 
+states as nodes and actions as labels on 
+arcs. 
+The third component of a search problem 
+is the goal. 
+This can be either an individual state, 
+in which case, we have just one unique 
+goal state, or in general, we can have a 
+function that tests whether a given state 
+is a goal state or not, which allows us 
+to have many different goal states. 
+A solution to a search problem is simply 
+a path in the state space from the 
+initial state to a gold state. 
+The final component of a search problem 
+is the path cost function. 
+This simply assigns a cost value to each 
+possible path in the state space. 
+we use this when we're doing optimal 
+search. 
+When we're looking for an optimal path, 
+we're looking for the path with the 
+lowest cost. 
+A simplification that is often used in 
+planning is that each action has a fixed 
+cost and that the cost of a path is 
+simply, the sum of the step cost, 
+the cost of each action. 
+Now, you will have noticed that there are 
+some similarities between what we've just 
+defined and stay transition systems, and 
+the next quiz will give you little time 
+to think about those similarities and 
+differences. 
+Going back to the missionaries and 
+cannibals example, let's try to define 
+this as a search problem. 
+So, we need to define the four 
+components, which were the initial state 
+which was given to us as part of the 
+problem. 
+And the third component was the goal 
+state which was also given to us as part 
+of the problem. 
+Then, the fourth component is the path 
+cost function. 
+And there, we simply assume that every 
+step has the same cost. 
+So, the only thing that is slightly more 
+complex is the successor function. 
+And we can define this as a table as 
+shown here. 
+So, what this table does is simply 
+enumerate all the mappings of states to 
+set of action state pairs. 
+What we have on the left-hand side is a 
+state. 
+So, this is the initial state as defined 
+in the problem. 
+And I'll decipher this for you quickly. 
+This has two components. 
+It says, what's on the left-hand side and 
+what's on the right-hand side. 
+On the left-hand side, we have the three 
+missionaries, we have the three 
+cannibals, and the boat. 
+And on the right-hand side, we have no 
+missionaries and no cannibals initially. 
+So, that is the initial state. 
+We describe everything that's on each 
+side of the river. 
+This is mapped to three pairs. 
+One, two, three. 
+each of which consists of an action and 
+another state. 
+So, let's look at the first one. 
+In the first case, we ship two cannibals 
+across the river. 
+And this gives us, on the left-hand side, 
+three missionaries, one cannibal, 
+because we ship two cannibals across. 
+On the right-hand side, zero 
+missionaries, and two cannibals, plus the 
+boat, which is also now on the right-hand 
+side. 
+Altogether, we see there are three 
+different pairs here because, there are 
+three applicable actions in the initial 
+state. 
+In the next row, we have a different 
+state. 
+And we, again, define what can be done in 
+this state, these are the two actions, 
+and the resulting states that we get if 
+we apply these actions. 
+This is actually, the same state that 
+we've looked at just now. 
+This state here became the state there. 
+So, we need to do this for the whole set 
+of states that are available for the 
+whole states base. 
+Which means we need to go through a whole 
+list of states and define where we can go 
+from these states. 
+And if we had completed this table, we 
+had defined the whole state-transition 
+function and this concludes the 
+definition of the surge problem. 
+In contrast to this toy problem, we will 
+now look at a real-world problem, 
+namely, touring in Romania. 
+What you see here is a rough map of the 
+country with some of its major cities. 
+To define touring Romania as a search 
+problem, 
+we again have to define the four 
+components of a search problem. 
+So, let's start with the initial state. 
+Suppose we are in the city of Arad, 
+that's where we start our tour of 
+Romania. 
+The next thing we need to define are the 
+possible actions that we can take in this 
+problem. 
+Since we are looking at a map, it 
+suggests that we can drive from one city 
+to another. 
+But presumably, when you're touring a 
+country, that's not all you want to do. 
+You probably also want to do some sight 
+seeing, or you need a hotel, so you need 
+to check into that hotel, 
+you need to book a hotel. 
+there are many different types of actions 
+that you want to do when you tour a 
+country and you can see, this is a real 
+world problem. 
+We already have the first problem, 
+deciding what the possible actions are. 
+The same applies for the goal. 
+When you're going on holiday somewhere, 
+to tour a country or a region, what is 
+your actual goal? 
+Well, presumably, you want to end up in 
+the same state that you started off, 
+namely, at home. 
+So, that can't really be the goal. 
+You want to have something else that you 
+need to describe as your goal, something 
+that happens along the way. 
+But it's very hard to describe because 
+this is a real-world problem. 
+What is the little bit easier is probably 
+the cost that is associated with each 
+action and that will mostly be time and 
+money. 
+As a side remark, the touring in Romania 
+problem is taken from a famous AI 
+textbook, by Russell and Norvig. And if 
+you want to learn more about search, I 
+recommend that you have a look at this 
+book. 
+The reference to this book will be given 
+on the course website. 
+So, what you have just seen is that 
+problem formulation is itself a complex 
+problem. 
+And its the problem of defining the four 
+components of a search problem. 
+In problem formulation, we have to decide 
+what actions we want to consider and what 
+states we want to consider in the world. 
+Probably the most difficult decision 
+there is, at what level of abstraction 
+are we looking at the world? 
+What detail do we want to take into 
+account and what detail do we want to 
+omit? 
+So, looking at the touring Romania 
+examples, we could define actions that 
+describe how we drive a car that, say, we 
+have to turn a steering wheel by one 
+degree left or right and we have to move 
+our foot from one pedal to the other. 
+But this would probably give us too much 
+irrelevant detail and there's a lot of 
+uncertainty involved in that, too. 
+So, we probably don't want to go to that 
+lower level of detail. 
+Also, if we try to solve our problem at 
+that level of detail, we would come up 
+with a solution plan that has many, many 
+steps. 
+If we define the problem at a higher 
+level of abstraction, 
+say, we consider actions that drive us 
+immediately to another big city. 
+Then, we have the problem that we need to 
+decide how to execute such an action when 
+we come to plan execution. 
+Also, if this is the level of abstraction 
+we consider driving to another city, 
+we can't really talk about things we do 
+in between, between two cities. 
+So, deciding at what level of abstraction 
+we model our actions and states is 
+probably the most important decision in 
+problem formulation. 
+But to help us with problem formulation, 
+there are number of assumptions that 
+search engines and planners often make 
+and if we take those in to account during 
+problem formulation, we may have a much 
+easier task. 
+The first assumption is that we have a 
+finite number of world states. 
+This implies that we cannot have 
+continuous variables in those states, as 
+this would automatically give us an 
+infinite number of states. 
+Then, we will assume that the world is 
+fully observable. 
+Which means everything that is relevant 
+to us in the state of the world can be 
+seen and will be known to the algorithm 
+to our planner that we're using. 
+The next assumption is that the actions 
+that were using are deterministic, which 
+means each action has one well-defined 
+outcome. 
+There's no uncertainty which state we'll 
+be in after we apply an action. 
+The final assumption is that the world is 
+static. 
+Which means, there are no events so 
+nothing happens that we don't do. 
+Only the actions that we do modify the 
+state of the world. 
+So, these are assumptions about the 
+environment, but we will also make some 
+other assumptions that are useful for 
+planning. 
+The first one is that we have restricted 
+goals. 
+And that means that our goals are either 
+given to us as a single state that we 
+want to be in or a set of states that are 
+all gold states. 
+The second assumption is that the 
+solution we are looking for is a 
+sequential plan, so a solution is a 
+linear list of actions. 
+There's no parallel activity in our plan. 
+We shall also not consider time 
+explicitly but only implicit, which means 
+activities will not have a duration for 
+the time being. 
+And the final assumption is that we're 
+doing offline planning, that is, the 
+state transition system which underlies 
+our planning process is not changing 
+while we're doing the planning. 
+Okay, time for another quick quiz to give 
+you time to think about this. 
+

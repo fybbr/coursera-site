@@ -1,0 +1,369 @@
+1
+00:00:00,012 --> 00:00:06,929
+So you have already seen that methods 
+share some properties with operators. 
+
+2
+00:00:06,929 --> 00:00:14,592
+And two of the properties they also share 
+are applicability and relevance, although 
+
+3
+00:00:14,592 --> 00:00:20,587
+they are defined different here. 
+Applicability is actually very similar. 
+
+4
+00:00:20,587 --> 00:00:25,530
+So we say a method instance is applicable 
+in a state s if all the positive 
+
+5
+00:00:25,530 --> 00:00:31,166
+conditions of the method are satisfied in 
+the state so they must be elements in the 
+
+6
+00:00:31,166 --> 00:00:35,880
+state and none of the negative 
+pre-conditions must be in that state. 
+
+7
+00:00:35,880 --> 00:00:41,664
+So the intersection of the state and the 
+negative pre-conditions must be empty. 
+
+8
+00:00:41,664 --> 00:00:47,250
+This is exactly the same way we've tested 
+whether the pre-conditions of an action 
+
+9
+00:00:47,250 --> 00:00:51,810
+are satisfied in a state. 
+But the definition of relevance is quite 
+
+10
+00:00:51,810 --> 00:00:57,011
+different from what we've seen previously 
+so we want to define when a method 
+
+11
+00:00:57,011 --> 00:01:01,663
+instance m is relevant for task t. 
+Since we don't have effects in methods 
+
+12
+00:01:01,663 --> 00:01:05,894
+and we don't have goals in planning 
+problems, the definition of relevance 
+
+13
+00:01:05,894 --> 00:01:09,168
+must be quite different from what we've 
+seen previously. 
+
+14
+00:01:09,168 --> 00:01:13,652
+And we define relevance here with respect 
+to tasks that we want to accomplish. 
+
+15
+00:01:13,652 --> 00:01:19,470
+And a method is relevant for a task if 
+there is a substitution sigma such that 
+
+16
+00:01:19,470 --> 00:01:25,546
+the task that we're trying to accomplish 
+is the same as the task described in the 
+
+17
+00:01:25,546 --> 00:01:28,938
+method. 
+Remember, the task of a method describes 
+
+18
+00:01:28,938 --> 00:01:33,878
+what we can accomplish with that method. 
+And if we have a task, t, in a task 
+
+19
+00:01:33,878 --> 00:01:39,138
+network, that we can make the same, with 
+the substitution sigma, as the task of 
+
+20
+00:01:39,138 --> 00:01:43,336
+the method, then we can use this method 
+to accomplish the task. 
+
+21
+00:01:43,336 --> 00:01:48,654
+And the method is relevant for the task. 
+And if we have a task network that 
+
+22
+00:01:48,654 --> 00:01:52,998
+contains a task, t. 
+And we have a method that is relevant for 
+
+23
+00:01:52,998 --> 00:01:58,289
+this task under some substitution sigma. 
+Then we can apply this method by 
+
+24
+00:01:58,289 --> 00:02:02,801
+decomposing the task. 
+So we define the decomposition of a task 
+
+25
+00:02:02,801 --> 00:02:06,559
+t, by a relevant method m under 
+substitution sigma. 
+
+26
+00:02:06,559 --> 00:02:11,039
+And we define it as follows. 
+We define a decomposition function, 
+
+27
+00:02:11,039 --> 00:02:15,794
+delta, that takes exactly those three 
+arguments, the task, the method and the 
+
+28
+00:02:15,794 --> 00:02:19,076
+substitution. 
+And it simply returns the instantiated 
+
+29
+00:02:19,076 --> 00:02:21,755
+network that is associated with the 
+method. 
+
+30
+00:02:21,755 --> 00:02:26,435
+So, every variable in this network is 
+replaced according to the substitution 
+
+31
+00:02:26,435 --> 00:02:31,349
+or, if the task was totally ordered, then 
+we can return the sequence of sub-tasks 
+
+32
+00:02:31,349 --> 00:02:34,070
+instantiated with the substitution, 
+sigma. 
+
+33
+00:02:34,070 --> 00:02:38,817
+That is what we call the decomposition 
+and delta is the decomposition function 
+
+34
+00:02:38,817 --> 00:02:41,872
+for a task given a method and a 
+substitution. 
+
+35
+00:02:41,872 --> 00:02:47,599
+And here is another quick example to 
+illustrate applicability and relevance in 
+
+36
+00:02:47,599 --> 00:02:52,591
+the dark worker robot domain. 
+The world state that we have is the same 
+
+37
+00:02:52,591 --> 00:02:56,586
+state we've seen earlier. 
+We have 1 crane, and 3 piles. 
+
+38
+00:02:56,586 --> 00:02:59,952
+And there are 3 containers on the first 
+pile. 
+
+39
+00:02:59,952 --> 00:03:04,099
+Now, suppose our task t is to move the 
+stack p1 to q. 
+
+40
+00:03:04,099 --> 00:03:10,069
+So we don't have a task that says in 
+[UNKNOWN] that way, we just have a task 
+
+41
+00:03:10,069 --> 00:03:14,425
+to move it at all. 
+And we want to move it from p1 to some 
+
+42
+00:03:14,425 --> 00:03:18,815
+other unspecified stack because q is a 
+variable here. 
+
+43
+00:03:18,815 --> 00:03:24,082
+The state s is as shown here so this is 
+our initial world state. 
+
+44
+00:03:24,082 --> 00:03:29,063
+In which we have this task to accomplish. 
+Then we can look at the following method 
+
+45
+00:03:29,063 --> 00:03:32,548
+instance, mi. 
+Which is recursive move, P1, P2, C1, C2. 
+
+46
+00:03:32,548 --> 00:03:37,418
+So remember, this is the pile from which 
+we're moving, this is the pile to which 
+
+47
+00:03:37,418 --> 00:03:40,660
+you're moving. 
+This is the container we're trying to 
+
+48
+00:03:40,660 --> 00:03:43,265
+move. 
+And this is the container from which 
+
+49
+00:03:43,265 --> 00:03:46,882
+we're taking it. 
+To check for applicability, we need to 
+
+50
+00:03:46,882 --> 00:03:51,782
+examine the pre-conditions of this method 
+and if you remember, there were two 
+
+51
+00:03:51,782 --> 00:03:57,002
+positive pre-conditions associated with 
+this method namely instantiated that the 
+
+52
+00:03:57,002 --> 00:04:00,102
+container, c1 must be the top of the 
+origin pile. 
+
+53
+00:04:00,102 --> 00:04:04,567
+And we can see in the state here, c1 is 
+the top of the origin pile so that 
+
+54
+00:04:04,567 --> 00:04:08,972
+pre-condition is satisfied. 
+And the other pre-condition was that the 
+
+55
+00:04:08,972 --> 00:04:12,250
+container, c1, that we're moving Is on 
+top of c2. 
+
+56
+00:04:12,250 --> 00:04:15,753
+And again, you can see, c2 is the second 
+container here, so the second 
+
+57
+00:04:15,753 --> 00:04:19,455
+precondition is also satisfied. 
+There were no negative preconditions, so 
+
+58
+00:04:19,455 --> 00:04:23,573
+we don't need to worry about those, which 
+means, our method, m i, is applicable in 
+
+59
+00:04:23,573 --> 00:04:27,627
+the state shown here. 
+And to test for relevance, we've got to 
+
+60
+00:04:27,627 --> 00:04:32,107
+see whether we can make the task 
+accomplished by this method the same as 
+
+61
+00:04:32,107 --> 00:04:34,782
+the task that we are trying to 
+accomplish. 
+
+62
+00:04:34,782 --> 00:04:39,077
+And indeed, this is the case. 
+Because the task symbol is already the 
+
+63
+00:04:39,077 --> 00:04:40,582
+same. 
+It is move stack, 
+
+64
+00:04:40,582 --> 00:04:43,442
+that is also accomplished by recursive 
+move. 
+
+65
+00:04:43,442 --> 00:04:47,263
+And the 2 parameters. 
+of the methods tasks are p1 and p2. 
+
+66
+00:04:47,263 --> 00:04:52,030
+And p1 is also the first parameter of the 
+task we're trying to accomplish. 
+
+67
+00:04:52,030 --> 00:04:55,886
+The second one is q, 
+so we can make these the same if we apply 
+
+68
+00:04:55,886 --> 00:04:58,631
+the substitution where we replace q by 
+p2. 
+
+69
+00:04:58,631 --> 00:05:03,132
+In which case the task would be 
+move-stack (p1,p2) and the same for the 
+
+70
+00:05:03,132 --> 00:05:08,331
+task we're trying to accomplish and the 
+task that is accomplished by the method. 
+
+71
+00:05:08,331 --> 00:05:13,352
+So, the method is indeed relevant for 
+this task under the substitution. 
+
+72
+00:05:13,352 --> 00:05:19,577
+This means you should now be familiar 
+with three new concepts that were 
+
+73
+00:05:19,577 --> 00:05:25,802
+introduced for task network planning. 
+Namely, tasks, task networks, and 
+
+74
+00:05:25,802 --> 00:05:25,802
+methods. 
+

@@ -1,0 +1,164 @@
+As you may have guessed, we will be using 
+search to solve STM planning problems. 
+The search nodes in the search space that 
+we'll be searching will be task networks. 
+and the methods we have just described 
+will be used as refinement operations in 
+our new search space. 
+Methods give us the safe transitions we 
+need to move from one task network to 
+another, and the way this is done is that 
+we use methods to decompose tasks and 
+that's what I'll be talking about next. 
+Here is an example how decomposition 
+works in the Dock Worker Robots domain. 
+And to do the decomposition I've already 
+introduced the decomposition function 
+delta that takes a task, a method 
+instance, and substitution sigma. 
+We can visualize the process of 
+decomposition by means of a decomposition 
+tree which is what you see here. 
+The decomposition tree has as it's root 
+the task t. 
+So this is the task t, that we're trying 
+to decompose and that is the root of our 
+decomposition tree. 
+In this case, the task was to move the 
+stack from p1 to some other pile q. 
+Then, we have a method instance that 
+we're using to decompose the task with. 
+And the method instance here is recursive 
+move, p1, p2, 
+c1, c2. 
+And the final component the substitution 
+sigma tells us how we have to replace the 
+variables so that's what we find here, we 
+have to replace the variable q with the 
+value p2. 
+Then the children that we have off the 
+node that represents the task that we are 
+trying to decompose are exactly those sub 
+tasks that we find in the method. 
+So here it is the first sub task 
+move-topmost and here the second one to 
+move the stack. 
+The only other thing worth noting is this 
+arrow here, that underlines the 
+substitution and the method, and that 
+simply gives us the order in which we 
+have to execute the sub-task. 
+And if we look at this tree we can 
+immediately see what the result is by 
+looking at the leaf nodes. 
+So, this is the result of this 
+decomposition here, namely to move the 
+top most container from pile p1 to p2 and 
+then move the remaining stack from pile 
+p1 to p2. 
+As you can see there's quite a lot of 
+redundant information in this tree. 
+For example, you can derive the 
+substitution you're looking at from the 
+values used in the task and the method, 
+or in the sub tasks. 
+That is why when you see this tree later 
+in another example, I will leave out some 
+of that information to save a little 
+space and be able to draw bigger trees. 
+Now that we understand how to decompose a 
+single task in isolation, we will look at 
+how to decompose tasks that are in a task 
+network. 
+So we start with a task network, w, 
+consisting of nodes and edges where the 
+nodes are tasks and the edges are 
+ordering constraints. 
+And we want to decompose one of the 
+tasks, t, that is in this network. 
+And this must be a task that has no 
+predecessors in w. 
+So, if this network is totally ordered, 
+then it will be the first task in the 
+list. 
+If it's a partial-order network, there 
+may several tasks that have no 
+predecessor. 
+Then we want to decompose this task using 
+a method and this method of course has to 
+be relevant for the task under some 
+substitution sigma, and this method 
+itself will have a network consisting of 
+notes and edges. 
+Then we can define the decomposition of 
+t, the task t in the network w by method 
+m under our substitution sigma as 
+follows. 
+The first thing we have to do is we 
+replace our task t by the instantiated 
+network task that come from our method. 
+So from our original network w consisting 
+of the tasks in u we remove the task t 
+and in its place we put all those tasks 
+that are in and instantiate those with 
+the substitution sigma. 
+That is how we modify the tasks in the 
+network and then we also have to modify 
+the edges in the network. 
+And the edges we have to replace are 
+exactly those edges in e that involve t, 
+because t is no longer available as an 
+endpoint to an edge. 
+We have to replace them by edges to 
+appropriate nodes. 
+In our new set of nodes that we've just 
+introduced sigma of 
+To illustrate this, let us look at a 
+simple network that consists of two 
+tasks, task nodes, that I illustrate 
+here, and just one edge that orders 
+these. 
+Let this be our network w. 
+Then the only task that has no 
+predecessors here is this task here, and 
+that's the one we can decompose now. 
+And suppose we have a method that is also 
+very simple and decomposes our task into 
+another very simple network just like the 
+one above consisting of nodes 1 and 2, 
+let's say. 
+Then, the first thing our decomposition 
+function does is replace the task t, 
+so we have to remove it from the network. 
+And we insert the subtasks defined by the 
+method. 
+And these are, of course the tasks 1 and 
+2 from our method. 
+And then we have to replace all the edges 
+that were connected to t which is this 
+edge here and we can replace this with 
+edges to all the newly introduced nodes, 
+so we have to have an edge here and an 
+edge here. 
+But because we already have this edge, 
+there's no need to have the second edge 
+so we can actually omit that if we 
+wanted. 
+And in this example, the resulting 
+network would be the sequence consisting 
+of the node 1, 2 and this final node 
+here, which I'll call 3. 
+And what we have done to get to this 
+network, is we have applied the 
+decomposition function, which is defined 
+here. 
+And the application consisted of two 
+steps. 
+We have replaced the node t that we're 
+decomposing by all the nodes in the 
+network of the method. 
+And we've replaced all the edges that are 
+connected to T by edges to the new node. 
+And this is how you decompose a task in a 
+task network. 
+

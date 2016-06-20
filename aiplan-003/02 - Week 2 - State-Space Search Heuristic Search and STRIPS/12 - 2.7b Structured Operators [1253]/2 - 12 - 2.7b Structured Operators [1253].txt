@@ -1,0 +1,375 @@
+What we still need to formally define is 
+when an action is applicable in a state, 
+and what the corresponding state 
+transition is. 
+To do this I will first introduce a 
+little notation. 
+Suppose we're given a set L of literals. 
+So, these are positive and negative 
+atoms. 
+Then I can use this here, this symbol L 
+plus to refer to those atoms that are 
+positive in L and I can use L L minus to 
+refer to those atoms whose negations are 
+in L. 
+So L plus and L minus are sets of atoms 
+namely those that are positive and 
+negative in L respectively. 
+Now, let A be an action, and S be a 
+state. 
+And when I say action here, I mean 
+action, a ground instance of an operator. 
+Then we can say that the action A is 
+applicable in the state S, if two 
+conditions hold. 
+Namely, all the positive preconditions of 
+A, preconditions plus, of A, must be a 
+subset of the state, S. 
+And we also want none of the negative 
+preconditions of A to be in S and this 
+can be expressed by this expression. 
+The intersection of the negative 
+preconditions and what is in the state S 
+must be empty. 
+In other words there can not be a 
+negative precondition that is also a true 
+in the state. 
+A is applicable in S if all the positive 
+preconditions hold in S and none of the 
+negative preconditions hold in S. 
+And now we can define the state 
+transition function gamma for a given 
+state. 
+That's the state in which we are 
+initially. 
+And the action A that we are applying in 
+this state. 
+And this can be defined as follows. 
+We start off with the state, and we 
+deduct all the negative effects. 
+As I told you earlier, this is the delete 
+list. 
+So we delete this from the state. 
+And then we add all the positive effects 
+so we add them to the state. 
+And again, I've already explained. 
+This is the add list. 
+So we start off with a set of ground 
+atoms. 
+We remove some ground atoms and we add 
+some ground atoms. 
+And this is the state that we get as a 
+result of applying the state transition 
+function, in state as using action A. 
+One minor point that is of quite a lot of 
+importance and some detail, is that we 
+first delete the negative effects and 
+then add the positive effects. 
+That means, if there is an atom that is a 
+negative effect and a positive effect. 
+It will be in the resulting state because 
+it is first removed and then added again. 
+You may wonder, why would you ever want 
+to have an action that has the same atom 
+as a negative and positive effect. 
+Well, maybe have look at the move action 
+that we've just introduced. 
+And see whether this would ever be 
+possible that an atom can occur as a 
+negative and a positive effect depending 
+on what values I choose for the 
+variables. 
+Finding the actions that are applicable 
+in a given state is actually a non 
+trivial problem. 
+You can see this quite easily when you 
+think about the number of possible 
+actions that may be applicable in a given 
+state. 
+Namely, all those operator instances 
+where you replace every parameter by 
+every possible value. 
+That would give you an exponential number 
+of actions. 
+In general there are way fewer actions 
+applicable in this state, though. 
+And here is an algorithm that you can use 
+to find the applicable instances of a 
+given operator in a given state. 
+This function, add applicables, takes 
+five parameters. 
+The first is A, the set of actions and 
+this is initially empty. 
+This is just the set in which we collect 
+the result of this functions for the 
+applicable actions. 
+Then we give it an operator of which we 
+seek instances that are applicable in our 
+state. 
+We have a set of remaining preconditions 
+of this operator so these are the 
+preconditions we still need to look at. 
+Initially these are all the preconditions 
+of the operator. 
+Then we have a substitution for the 
+variables that are parameters of the 
+operator. 
+Initially no variables are replaced by 
+values. 
+And then, of course, we have the state in 
+which we are trying to apply this 
+operator. 
+So, the algorithm will first deal with 
+all the positive pre-conditions. 
+So at first, tests whether there are 
+positive pre-conditions left. 
+And if there are none left, it goes to 
+the first part here. 
+And if there are positive pre-conditions 
+left, it will go to the second part here, 
+the second part of this if statement. 
+And the first thing we do is select the 
+next positive pre-condition that we are 
+trying to apply to restrict the actions 
+that we can apply in this state. 
+So PP is the positive precondition that 
+we look at next, and then we go through 
+all the propositions in our state here as 
+P, and try to match this against PB. 
+Of course, 
+if the predicate doesn't match it can 
+never be a match and therefore we can 
+ignore these. 
+We only look, need to look at those 
+propositions that have the same 
+predicate. 
+And then we extend the current 
+substitution that we were given as our 
+parameter such that the two SP and PP 
+match. 
+This gives us a new substitution and if 
+this substitution is valid it means we 
+were able to extend the substitution. 
+Then we can do a recursive call and the 
+recursive call goes as follows: We dont 
+change the set of actions in this case. 
+We simply use the same operator again. 
+We remove the precondition from the set 
+of preconditions that we've just dealt 
+with. 
+So PP is the one we've just exploited, we 
+no longer need to look at that. 
+We've changed the substitution by adding 
+more, values to variables. 
+And the state remains the same. 
+We go through this loop until there are 
+no more positive preconditions, and then 
+we end up in the first case of the if 
+statement. 
+So now we've dealt with all the positive 
+preconditions. 
+We now look at all the negative 
+preconditions. 
+So we loop over NP where NP is a negative 
+precondition and all we have to do is now 
+check whether our state falsifies this 
+negative precondition. 
+If this is the case then this cannot 
+result in an applicable action. 
+But if the state does not falsify the 
+negative preconditions then we have found 
+an instance of this operator up that we 
+were given that is an applicable action 
+in this state. 
+And that, what we have to do is simply 
+replace all the parameters of this 
+operator according to the substitution 
+that we've been building up. 
+Here is an example that should illustrate 
+this algorithm. 
+In this example, we are given our state 
+over here. 
+That's the set of ground atoms. 
+And we have our PDDL action defined here. 
+That is the move action we've seen 
+previously. 
+So these are the two parameters we've 
+seen in our algorithm. 
+that's the operator is the move action, 
+and s is the state we were just given. 
+The other parameters are an empty set. 
+The pre-conditions of the move operator. 
+And an empty substitution. 
+The algorithm then starts by testing 
+whether there are positive preconditions 
+left which is the case which means we 
+immediately go to the L parts of the 
+algorithm. 
+And the first thing there is we choose 
+the next positive precondition we want to 
+look at. 
+So let's go back to the example. 
+The first positive preconditions is 
+adjacent from two and this is the first 
+precondition we will pick here. 
+So that's PP, PP is this adjacency 
+relation. 
+Looking back at the algorithm we see that 
+the next step is to look for all those 
+state propositions that can match this 
+positive precondition. 
+So let's look at our state. 
+This is the adjacency relation and we 
+have two adjacency ground atoms in our 
+state, namely location one to location 
+two and location two to location one. 
+So these are the two cases here I've 
+listed for SP. 
+The loop will go through those two and 
+succeed there. 
+The next step in the algorithm, then, is 
+to extend the substitution, such that SP 
+and PP match. 
+And we can see that this has happened 
+here. 
+I'll go through the first case on the 
+left here. 
+we've extended the substitution, such 
+that the variable from, from our 
+precondition must be location one and 
+two, must be location two. 
+So that adjacent one or two matches what 
+we have here in our substitution. 
+The algorithm then continues with the 
+recursive call. 
+Because the substitution is still valid. 
+And it simply removes that positive 
+precondition from the preconditions that 
+we still need to do. 
+So again, we end up at the entry to the 
+algorithm. 
+See that there are positive preconditions 
+left. 
+End up in the else branch. 
+And select the next positive precondition 
+that we need to deal with in the 
+algorithm. 
+And as we can see here the next positive 
+preconditions at R from so that's the 
+next positive precondition we select and 
+we need to match that against the state, 
+let's look at the algorithm again. 
+So we're now here that we're going 
+through a loop over all of the 
+propositions in the state that match this 
+positive precondition. 
+And if we look at the at relations of the 
+state, there is only one option here. 
+So this loop is only one long. 
+And we choose this here. 
+So we try to extend the substitution such 
+that it matches this state proposition. 
+And what we see here is that we need to 
+match R to R1, and from to location two. 
+But in our substitution we have already 
+set that from must be location one. 
+So it can't be location one and location 
+two at the same time. 
+Which mean our substitution is not valid. 
+But if we go back to the algorithm. 
+We had a branch here previously in this 
+loop that we haven't explored yet. 
+And that is listed here. 
+Namely, where SP was adjacent, location 
+one to location two. 
+And again, what we do is extend our 
+substitution such that the state 
+proposition matches the positive 
+pre-condition. 
+And we can do that here. 
+So we have that our new substitution maps 
+from to location two, and two to location 
+one. 
+Again, this is followed by the recursive 
+call. 
+So we need to check whether there are 
+more positive preconditions, just like in 
+the other case. 
+And yes, there is another positive 
+precondition. 
+The same one we dealt with in the other 
+case, the at relation. 
+And again there is only one possible 
+instance in the state that can match 
+that. 
+And that's at r1, location two. 
+So, where are we now in our algorithm? 
+We are here. 
+We need to extend the substitution, such 
+that the state proposition matches the 
+positive precondition. 
+So let's go back to the example. 
+What we have here is we need to match R 
+to R1. 
+And again we can do that. 
+And we match from to location two. 
+And again, previously we have matched 
+from to location two. 
+So this is consistent with the way we 
+need to match from now. 
+Which means we can actually, in this 
+case, extend the substitution. 
+And have a new substitution in which 
+case, from. 
+Is location two, two is location one. 
+And R is R1. 
+So again this would be followed by the 
+recursive call here, and that means we 
+reach the algorithm with a set of empty. 
+Positive preconditions. 
+There are only negative preconditions 
+left. 
+Let's look at the example. 
+We've dealt with adjacent and we've dealt 
+with at. 
+So, there are only negative preconditions 
+we need to deal with. 
+And the negative preconditions, then, 
+that's this part here of the algorithm. 
+We go through every negative precondition 
+and check whether this is falsified in 
+the state. 
+Instantiated with our substitution sigma. 
+So, what does this look like in the 
+example? 
+So, there's only one negative 
+precondition in our example. 
+Namely, that. 
+We want the location we're moving to not 
+to be occupied. 
+And that is our MP now, which means it is 
+not occupied location one. 
+In the example the variable we are 
+instantiating is two and our substitution 
+tells us that two must be location one. 
+So this is the instantiated negative 
+precondition not occupied location one. 
+And as we can see in the state, the only 
+location that is occupied is location 
+two. 
+Which means, our negative precondition is 
+not falsified here. 
+So we can turn this into an action, that 
+we add to the set A. 
+That's the final step here. 
+So we add to A, the instance of this 
+operator, instantiated using our 
+substitution that we've defined here. 
+That was the last substitution that we 
+had. 
+And we get the operator, move R1, from 
+location two to location one. 
+And indeed this is the only applicable 
+action here, and that means we are done 
+with this algorithm. 
+

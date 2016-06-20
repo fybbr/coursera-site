@@ -1,0 +1,364 @@
+>> The problem with the planning graph
+heuristics we have looked at is that they
+are not very accurate.
+Especially where the goal consists of
+multiple conditions.
+Pattern databases can result in very
+accurate heuristics, but there's a lot of
+overhead involved in computing the
+database and they're usually only for one
+specific goal so if the goal changes we
+need a new database.
+Now we will take a closer look a the
+heuristic used by the FF planner.
+Ff was developed by Jor Kauffman who
+presented this week's feature, and the
+heuristic it uses is quite remarkable,
+because it is both efficient and accurate.
+So, let's have a look at the FF Planner.
+Planner.
+The first thing to note about FF is that
+it performs a forward state-space search.
+Which is the technique we've described in
+the second week of this course.
+That means that planner starts from the
+initial state and generates more states
+going forward into the search space until
+it encounters a gold state.
+And.
+The basic search strategy can be a star in
+f, f, but there is a second strategy
+implemented, and that is called enforced
+hill climbing.
+Enforced hill climbing is a kind of best
+first search, where we commit to the first
+state that looks better than all the
+previous states we have looked at.
+One advantage of this technique is that it
+copes well with search spaces that have
+large plateaus.
+That is, large sets of states that all
+have the same evaluation function value.
+And this is quite often the case in
+forward states based search.
+However, the early commitment, taken by
+enforced hill climbing can lead to degrees
+of sub-optimality.
+And in the worst case, it can not give us
+solutions at all.
+Namely, if the search space contains dead
+ends.
+But this segment is about advanced
+euristics, so let's take a look at the
+relaxed problem heuristic, which is the
+heuristic used by f, f.
+So, the first step is to construct a
+relaxed problem that we need to solve as
+part of our computation of the heuristic.
+And, the relaxed problem used by FF is one
+where we ignore the delete lists of all
+the operators.
+So we take our original problem, and
+remove the delete lists, the negative
+effects from all the operators.
+And this is our new problem that we use to
+compute the heuristic.
+And the important thing here is, to solve
+this relaxed problem, we only need
+polynomial time.
+That means the heuristic ids efficient to
+compute.
+And the solving of the relaxed problem
+works in two steps.
+The first step is a forward chaining step
+where we build something that is similar
+to the planning graph we've seen earlier.
+But this time it's a planning graph for
+the relaxed problem, that contains way
+fewer edges and information.
+Then in the second step we chain backward
+from the last layer on this graph to
+extract out relaxed plan from this graph.
+And while the forward chaining is quite
+similar to what graph plan does, the
+backward chaining is actually quite
+different.
+The result of backward chaining is a
+relaxed plan.
+And then to compute the heuristic, we
+simply take the length of the relaxed
+plan, that is the number of actions in
+that plan as our heuristic value.
+That is the relaxed problem heuristic or
+ignoring delete list heuristic used by FF.
+Another improvement implemented by FF is
+that it prunes its search using helpful
+actions, and in that way it uses
+information gained during the computation
+of the heuristic to improve the search.
+Another important technique, but not
+related to advanced heuristics, so we
+won't go into details here.
+And here is the idea of the relaxed
+planning problem applied to its, the
+example we have used earlier.
+What we see here are the 3 operators from
+our simplified dock worker robot domain,
+where the robots had cranes to load and
+unload.
+Containers and to compute the relaxed
+prime problem we simple remove all the
+delete list that is the negative effects
+from all the operators.
+So, we remove the not A (r,l) from first
+operator then not in (c,l) and not
+unloaded (r) from load and not loaded from
+the final operator.
+It's that simple.
+What this gives us is a planning problem
+that contains some magical objects, for
+example looking at the first operator when
+we move the robot r from location l to l
+prime, the precondition is that the robot
+is at location l.
+And as a result of this operator we will
+have the robot at location l prime.
+But because we've removed the negative
+effect, the robot would still be at
+location l.
+So it's now in both places.
+And the same goes for the containers in
+the other actions.
+The containers, after a load or an unload
+action, remain the place where they used
+to be but they are also in the new place
+where we just put them with this operator.
+And that's the problem we need to solve to
+compute the relaxed problem heuristic.
+And here is the pseudocode that performs
+the forward chaining, and computes the
+relaxed planning graph.
+And this is defined by a function
+computeRPG for a relaxed planning graph,
+takes as input, a planning problem, and
+this is already the relaxed planning
+problem.
+Then the first thing we do is some
+initialization.
+And we start off with a set of fluents.
+These are state propositions that hold in
+the initial state.
+And we have an index t that tells us where
+in our planning graph we are.
+And this is followed by a loop, that
+extends our planning graph with one action
+layer, and one proposition layer at a
+time.
+This is this loop.
+Loop here.
+And the first thing we do in this loop is
+increase the index of the layer we're
+currently working on, that's here.
+Then we compute the next action layer,
+which consists of all the actions that
+have their preconditions satisfied in the
+preceeding proposition layer or layer of
+fluence[INAUDIBLE].
+F.
+So that gives us the next action layer A
+t.
+And we need to compute the next
+proposition layer F t.
+And we start by initializing that with the
+propositions that were true in the
+previous proposition layer, F t minus.
+And then we go through all the actions in
+our preceding action layer, and add the
+positive effects that come with these
+actions to our layer of propositions,
+giving us an extended layer of
+propositions.
+Then there are two ways in which this can
+terminate.
+The first one is given the condition in
+the while loop up here.
+And that says, we terminate when all the
+goal conditions are part of our last
+proposition layer that we generate here.
+And the other condition is down here.
+That says when our proposition layer is no
+longer increasing then we can return
+failure.
+Because that means we're still in the loop
+so, our goal conditions are not part of
+the last proposition layer and we don't
+increase that layer and therefore we can
+return failure.
+But, if we terminate this loop normally,
+which is here, then we go to the next
+statement after the loop which simply
+returns the relaxed planning graph we have
+generated here.
+While this is somewhat similar to the
+expansion of the planning graph, you will
+have noticed that we are not computing any
+mutex relations here And that also means
+that our relaxed planning graph will be
+smaller than the planning graph generated
+by graph plan, because this condition for
+termination is actually much simpler, and
+we terminate sooner.
+Now that you've seen how to compute the
+relaxed planning graph, here is the
+function that extracts a plan from this
+graph, and returns its size as the
+heuristic value.
+And the first input to this function then,
+is the planning graph, all the layers
+including proposition layers and action
+layers, and the goal that we're trying to
+achieve in this planning graph.
+And the first thing we do in this function
+is test whether our goal is contained in
+the final proposition layer.
+If it isn't, then of course, we can return
+failure because there can be no plan in
+this graph that achieves the goal.
+Otherwise, we continue by computing the
+last layer in this planning graph that we
+still need to consider, and that's what
+the variable M has.
+And the way we compute this is that we use
+a new function, first level, which we
+haven't introduced that.
+So, this function takes here, a goal and
+the layers in the planning graph, and
+tells us in which layer this goal first
+appears in the planning graph.
+So it gives us the index of the first
+layer.
+Of this goal in the planning graph.
+And M, is then simply the maximum of all
+the values for all the goals.
+Then we can start with the backward
+chaining.
+And the way this function works, we don't
+simply start at the last layer but we
+start in different layers and we don't
+just move one layer at a time towards the
+initial state but we can actually skip
+several layers.
+And here is how that, That works.
+We use the variable Gt to hold all the
+goals that need to be achieved in
+proposition layer t.
+And we initialize the different sets Gt
+with all the original goals that were
+given to the function.
+And we do this by going forward through
+the planning graph, which is what this
+loop here does.
+And we add the goal component to GI to the
+set GT.
+If it appears in the layer T for the first
+time.
+So if the first level in which GI appears
+is, indeed, T.
+And now that we've assigned all the goals
+to the different sets, GT.
+We can go backwards through the graph,
+starting from layer M to 1.
+And search for actions that achieve these
+goals in the corresponding layers.
+And if we are in layer t, then the goals
+we need to achieve are stored in the
+variable Gt, and what we have to do is,
+find actions for each component of that
+layer Gt.
+So, for each Gt, we need to select an
+action that achieves that goal component,
+and that means Gt has to be a positive
+effect of that action, of course.
+But, we have a further restriction on the
+set of actions we can choose from.
+Namely that the action also must appear
+for the first time in this level T.
+So this is what this function computes.
+The first level of A in all the action
+levels must be T.
+And then once we have chosen an action of
+course we need to add all its
+pre-conditions as sub-goals to our
+structure G.
+And, what we do is we don't just add the
+pre-conditions to the preceding layer
+which would be T minus 1 as new goals but
+we may skip several levels.
+And the level where we add this
+precondition P, is simply the level in
+which P first appears in our planning
+graph.
+So this is the minimal index such that P
+is in the proposition layer.
+That is the index where we add P as a new
+goal condition to our set G.
+And of course this loop terminates when
+we've reached T equals 1 because F0 of
+course responds to our initial state.
+And then after we've finished with this
+loop all that remains is the final step
+and that is to count all the actions in
+our extracted plan and return that as the
+heuristic value.
+Now, you have seen the heuristic computed
+by the FF planner and used for it's
+search.
+Here is a summary of the result.
+The heuristic that we've computed is of
+course, not admissable.
+That means FF is not guaranteed to return
+a minimal plan, but this heuristic is
+quite accurate.
+And that means, FF finds the plan
+reasonably fast because it has to explore
+a smaller portion of the search space than
+planners that use a less accurate
+heuristic.
+And also, the heuristic is efficient to
+compute.
+Because, as you will have noticed, both
+the functions I've just introduced can be
+computed in polynomial time.
+The overall result can be summarized quite
+nicely with the following statement that
+I've taken from Urich's slides, that he's
+using at his home university.
+And this reads almost all current
+successful satisficing planners use
+variations of some of these ideas
+introduced in FF.
+And here is a quick summary of what we've
+learned about advanced heuristics, the
+first heuristics we've looked at are
+simple planning graphs heuristics but can
+be extracted more or less directly from
+the planning graph but are not very
+accurate.
+Then we've looked at pattern database
+heuristics which are very accurate but
+have significant overhead in their
+computation which can be done before the
+search for a plan.
+But they're also not very flexible, in
+that the database needs to be recomputed
+for different goals or different objects
+in the domain.
+Then, we've had a look at the FF Planner,
+and specifically, at the heuristic it
+uses, which is based on the idea that we
+solve a relaxed problem in which all the
+delete lists have been removed from all
+the operators.
+And this is really one of the state of the
+art heuristics that is used in planning
+today.

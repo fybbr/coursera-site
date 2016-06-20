@@ -1,0 +1,237 @@
+This is description of the Coalition 
+Search and Rescue Task Support Project. 
+Which is funded by the DARPA DAML Program 
+And it's conducted by AIAI [UNKNOWN] and 
+IHMC at University of West Florida. 
+So we're initially showing you the CoABS 
+grid manager. 
+And you can see that there's a number of 
+services which are running. 
+in particular, there'll be a JINI lookup 
+service. 
+And a number of other services running 
+directly on the CoABS grid. 
+Using KAoS for my IHMC and this provides 
+a directer service. 
+And we're running a domain manager named 
+dm1. 
+We then have two IX process panels 
+running. 
+CoSAR TS for the coalition search and 
+rescue panel. 
+And US-SAR for the US search and rescue 
+panel. 
+And we have two services running for 
+information lookup, called hospitals and 
+resources. 
+Four agent guides are running, which help 
+us to maintain policy across the use of 
+these agents. 
+Now we have, KAoS policy administration 
+tool, which is helping us set up and 
+maintain these policies. 
+So we have one domain which is running, 
+mini coalition, within this is the four 
+agency or previously, CoSAR, US-SAR and 
+then the two services, hospitals and 
+resources. 
+We're interested in limiting the kinds of 
+search and rescue resources which can be 
+chosen, depending on the flights that 
+these resources would have to make. 
+The countries that they will overfly. 
+So we're going to establish a new KPAT 
+policy, which we're going to call 
+gao-flight-restriction. 
+This is going to be a negative 
+authorization policy. 
+We'll choose from one of the available 
+actions available to us, and select that. 
+And within this slighted action we have 
+an available roll of has on country. 
+In this case, we're interested in placing 
+a restriction on a country, which is Gao 
+And then we can add that as part of the 
+policy specification. 
+That we have, we have home country Gao. 
+Then there's going to be a second part of 
+this policy. 
+Which is the country that we won't permit 
+overflights of Gaoen search and rescue 
+resources too. 
+So we'll say has rescue destination in 
+this case a limitation will be on the 
+contrary so basically Gaoen search and 
+rescue resources can not overfly arbelo 
+so you can see that we've got two parts 
+policy specification there. 
+And then we commit that policy and then 
+we want to distribute it. 
+So, we'll just show you now the four 
+agents once more within the KPAT tool. 
+And we can show you that for the 
+resources, agent we have that policy in 
+place. 
+So we're now going to move over to show 
+you the two process panels which are 
+available. 
+The coalition search and rescue 
+coordinator is going to be where most of 
+the action in the demonstration takes 
+place. 
+And then we're going to use a US-SAR 
+officer panel to initiate the action, 
+because they would have taken the initial 
+report about the downed airman because 
+he's a US national. 
+So in this case the US-SAR officer is 
+told to send any reports of downed airman 
+up to the coalition search and rescue 
+coordinator for their activity. 
+So, we'll take a look at the actions 
+available to us at the process panel can 
+support. 
+And we see there that's there's a way to 
+expand the description of this activity 
+is a particular built in standard 
+operating procedure. 
+And we get the expansion, which is five 
+substeps here. 
+We now look, take a look at the first 
+part. 
+And we see a way to break that down even 
+further. 
+You can see the indented sub process. 
+And we're going to look at the first part 
+of that, which is to establish the 
+medical capability. 
+Now, in this case, we know that we've got 
+a burned Ammon So we're going to use burn 
+care as the medical facility capabilities 
+we're looking up. 
+And then we're able to indicate that 
+we've done that manually. 
+Then we're going to use a service 
+available to us. 
+This is one of the services which is 
+registered. 
+So we can invoke the hospital service to 
+establish medical care, 
+establish the hospitals we have that can 
+deal with burn capabilities. 
+We're just showing you here that we know 
+about hospitals and indeed resources as a 
+service. 
+This is in the ice base two which 
+described services and in relationships 
+in that particular panel. 
+So we're going to invoke the hospital 
+service agent and it's going to now be 
+acting. 
+You can see it there it's already going 
+off and looking for, downloading 
+information from the, SONAT database 
+about Arabello and Binni in this case. 
+And it's checked, finding hospitals, and 
+that it's filtering those by the ones 
+that can provide burdened care. 
+We can take a look at that. 
+We can look at the details, look at the 
+kinds of hospitals available, where they 
+are and so on. 
+Find out that some can deal with a burn 
+carriage can see. 
+GahwadEl looks like a likely candidate. 
+We're going to, be interested in exactly 
+where the hospital is in relationship to 
+the downed hammond. 
+So we can perhaps best do that by looking 
+at a map of the facility. 
+This would be loaded from the information 
+known to the IX process panel. 
+You can see the pilot down in the sea 
+there. 
+And his condition report is in burns. 
+And you can also see the GahwardEl 
+Hospital. 
+which, as we noted before is, is, has 
+burned care facilities available. 
+So we're going to go ahead and slight 
+that hospital by binding the variable 
+appropriately. 
+And we can just tick that off as done. 
+And then we're going to look at the next 
+entry, which has established the country 
+that, that hospital is in. 
+You can imagine this being done more 
+automatically in future. 
+In this case we're going to indicate that 
+it's Arabello because that's what was 
+indicated in the information that came 
+back in the look up. 
+So now, that we've got our hospital 
+available, we're interested in selecting 
+the search and rescue results appropriate 
+to the task. 
+And we have a built in standard operating 
+procedure to remind us how to do this. 
+And in particular the first one is to, 
+look up the SAR resources available which 
+is going to invoke a resources agent. 
+This will use a soap connection over to a 
+CMU matchmaker, which finds these 
+appropriate search and rescue resources. 
+And we're finding some resources coming 
+back, and in fact only resources that are 
+allowed for all flights of arabello are 
+going to come back so chaos has already 
+been filtering the number of resources 
+found. 
+This case there are two that are 
+permitted and seem well to do the job and 
+we're going to choose the U.S. 
+Marine helicopter that's convenient. 
+It's in the right sort of location and 
+it's also helps us deal with the fact 
+this is a U.S. 
+Airman down. 
+So we're going to indicate that we 
+selected that resource. 
+By. 
+Oh. 
+We, we'll look at the map first just to 
+show you where that U.S. 
+Marine helicopter is. 
+So we're now going to show you we can. 
+Bind the variable for the SAR results 
+selected. 
+The US Marine helicopter. 
+And again we'll indicate we've done that. 
+Again you can imagine in the future much 
+of this could be done in a more automated 
+way. 
+And then we're going to notify the SAR 
+resource itself, this would best be done 
+by talking with the U.S. 
+SAR officer who would control that 
+resource so that it goes back onto the 
+process panel and when they themselves 
+have notified the helicopter pilot they 
+would indicate it's done and you would 
+see that the, 
+the, there's a cascade of done 
+information done to excess information 
+flying back up turning lue if we have not 
+find the hospital and we just going to 
+check what the outstanding issue was that 
+we're ask to just check it, as we went 
+along, and yes the country and SAR 
+resource chose nar allowed to get the, 
+and that was in fact constrained by the 
+KPAT policy. 
+So that concludes are demonstration. 
+Further information is available at some 
+of the URL's now being shown. 
+Thank you for watching the demonstration 
+of the course RTX project. 
+

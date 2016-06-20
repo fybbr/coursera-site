@@ -1,0 +1,1044 @@
+1
+00:00:05,220 --> 00:00:10,778
+You should now understand what we mean by 
+planning in AI. Next, we will formalise 
+
+2
+00:00:10,778 --> 00:00:16,336
+this understanding of planning by means 
+of a conceptual model for planning. This 
+
+3
+00:00:16,336 --> 00:00:20,480
+conceptual model will be a 
+state-transition system. 
+
+4
+00:00:20,480 --> 00:00:24,295
+Before I introduce the conceptual model 
+that underlies planning, 
+
+5
+00:00:24,295 --> 00:00:29,123
+I want to talk to you about conceptual 
+models in general and why they are a good 
+
+6
+00:00:29,123 --> 00:00:31,210
+idea. 
+So, what is a conceptual model? 
+
+7
+00:00:31,210 --> 00:00:36,482
+A conceptual model is a theoretical 
+device for describing the elements of a 
+
+8
+00:00:36,482 --> 00:00:39,397
+problem. 
+What this means is it helps us to 
+
+9
+00:00:39,397 --> 00:00:42,519
+formalize the problem we are trying to 
+solve. 
+
+10
+00:00:42,519 --> 00:00:47,584
+This is good for a number of things. 
+For example, we can explain the basic 
+
+11
+00:00:47,584 --> 00:00:53,065
+concepts with this model so it helps us 
+to define what the objects are that we 
+
+12
+00:00:53,065 --> 00:00:58,130
+are manipulating during problem solving. 
+It also helps us to clarify some 
+
+13
+00:00:58,130 --> 00:01:01,529
+assumptions. 
+What constraints are imposed by this 
+
+14
+00:01:01,529 --> 00:01:04,860
+model is clarified by writing down such a 
+model. 
+
+15
+00:01:04,860 --> 00:01:08,750
+We can also use it to analyze 
+requirements, so we can look at the 
+
+16
+00:01:08,750 --> 00:01:13,000
+representations we need to develop to 
+represent the objects that we're 
+
+17
+00:01:13,000 --> 00:01:17,429
+manipulating during problem solving. 
+Also, we can prove semantic properties 
+
+18
+00:01:17,429 --> 00:01:22,338
+with a theoretical device like this. The 
+most important properties for algortithms 
+
+19
+00:01:22,338 --> 00:01:27,066
+we're interested in our soundness and 
+completeness and they require a semantic 
+
+20
+00:01:27,066 --> 00:01:29,940
+foundation which is given by a conceptual 
+model. 
+
+21
+00:01:29,940 --> 00:01:34,987
+What a conceptional model isn't good for, 
+is developing efficient algorithms and 
+
+22
+00:01:34,987 --> 00:01:39,404
+other computational concerns. 
+So, we cannot immediately derive planners 
+
+23
+00:01:39,404 --> 00:01:43,862
+from the conceptual model. 
+But the conceptual model we are using and 
+
+24
+00:01:43,862 --> 00:01:46,825
+planning is called a state-transition 
+system. 
+
+25
+00:01:46,825 --> 00:01:51,962
+Formally, a state-transition system is 
+defined as a 4-tuple consisting of four 
+
+26
+00:01:51,962 --> 00:01:56,308
+components, S, A, E, and gamma. 
+I will now explain these components in 
+
+27
+00:01:56,308 --> 00:01:59,074
+turn. 
+The first component, S, is a finite or 
+
+28
+00:01:59,074 --> 00:02:04,276
+recursively innumerable set of states. 
+So, these are all the possible states the 
+
+29
+00:02:04,276 --> 00:02:07,447
+world can be in. 
+The set can be finite or recursively 
+
+30
+00:02:07,447 --> 00:02:11,452
+innumerable, which means infinite. 
+But in most of the examples we'll be 
+
+31
+00:02:11,452 --> 00:02:15,916
+looking at, we have only finite sets of 
+states so don't worry about the second 
+
+32
+00:02:15,916 --> 00:02:19,421
+part for now. 
+The second component is a set of actions. 
+
+33
+00:02:19,421 --> 00:02:24,270
+Actions are the things an agent can do to 
+change the state of the world. 
+
+34
+00:02:24,270 --> 00:02:29,208
+The third component is a set of events. 
+Events can happen in the world and are 
+
+35
+00:02:29,208 --> 00:02:34,083
+not under the control of an agent, but 
+events, too, can change the state of the 
+
+36
+00:02:34,083 --> 00:02:37,059
+world. 
+The fourth and most complex component of 
+
+37
+00:02:37,059 --> 00:02:41,174
+a state-transition system is the 
+state-transition function, gamma. 
+
+38
+00:02:41,174 --> 00:02:45,226
+Gamma takes two things. 
+It takes a state, a state of the world as 
+
+39
+00:02:45,226 --> 00:02:50,228
+input, and it takes an action or event. 
+So, this second component is the union of 
+
+40
+00:02:50,228 --> 00:02:54,913
+all the actions and events and one of 
+those is the second argument to the 
+
+41
+00:02:54,913 --> 00:02:58,253
+state-transition function. 
+The result of applying the 
+
+42
+00:02:58,253 --> 00:03:01,830
+state-transition functions then, is 
+another set of states. 
+
+43
+00:03:01,830 --> 00:03:06,723
+So, this notation here, 2 to the s, just 
+denotes the power set of all possible 
+
+44
+00:03:06,723 --> 00:03:09,484
+states. 
+Which means an element of the set is, 
+
+45
+00:03:09,484 --> 00:03:11,680
+itself, a set. 
+A set of world states. 
+
+46
+00:03:11,680 --> 00:03:16,233
+So, the state-transition function takes a 
+state, an action or event and gives us 
+
+47
+00:03:16,233 --> 00:03:20,787
+all the possible states that may be the 
+result of applying this action, or this 
+
+48
+00:03:20,787 --> 00:03:24,631
+event happening. 
+We can now use this definition to define 
+
+49
+00:03:24,631 --> 00:03:29,333
+some other concepts formally. 
+For example, applicability, we can say 
+
+50
+00:03:29,333 --> 00:03:35,247
+that an action A is applicable in a state 
+S, if gamma of S and A is not empty so if 
+
+51
+00:03:35,247 --> 00:03:40,805
+there is at least one state that is the 
+result of applying this action in the 
+
+52
+00:03:40,805 --> 00:03:44,581
+given state. 
+And when we apply an action A in a state 
+
+53
+00:03:44,581 --> 00:03:49,426
+S, this will take our state-transition 
+system to a new state S prime. 
+
+54
+00:03:49,426 --> 00:03:53,060
+And S prime must be an element of gamma 
+of S and A. 
+
+55
+00:03:54,420 --> 00:03:59,858
+Another way to look at a state-transition 
+system is to view it as a graph. 
+
+56
+00:03:59,858 --> 00:04:04,487
+Suppose we are given a state-transition 
+system S, A, E, and gamma, 
+
+57
+00:04:04,487 --> 00:04:10,293
+then we can define a directed labeled 
+graph G, that consists of nodes NG and 
+
+58
+00:04:10,293 --> 00:04:13,820
+edges EG. 
+The nodes of this graph are simply the 
+
+59
+00:04:13,820 --> 00:04:18,670
+world states that are possible in this 
+state-transition system. 
+
+60
+00:04:18,670 --> 00:04:22,553
+NG is equal to S. 
+And the edges in this graph correspond 
+
+61
+00:04:22,553 --> 00:04:27,346
+directly to state transitions defined by 
+the state-transition function. 
+
+62
+00:04:27,346 --> 00:04:31,127
+So, we have an arc from a node, s, to 
+another node, s prime. 
+
+63
+00:04:31,127 --> 00:04:36,259
+So, this is and edge in this graph and 
+that is labeled with label u, which is 
+
+64
+00:04:36,259 --> 00:04:39,230
+either an action or an event, if and only 
+if. 
+
+65
+00:04:39,230 --> 00:04:43,234
+The state s prime is the result of 
+applying u in s. 
+
+66
+00:04:43,234 --> 00:04:49,358
+u can be action or event so we have a 
+transition from here to here with label 
+
+67
+00:04:49,358 --> 00:04:52,656
+u. 
+So, a state-transition graph consists of 
+
+68
+00:04:52,656 --> 00:04:58,387
+nodes that correspond to world states and 
+edges that correspond to state 
+
+69
+00:04:58,387 --> 00:05:00,723
+transitions. 
+Let me illustrate a state-transition 
+
+70
+00:05:01,753 --> 00:05:05,812
+system with a very old problem that has 
+been used many times in AI, 
+
+71
+00:05:05,812 --> 00:05:10,296
+the missionaries and cannibals problem. 
+In this problem we have a river. 
+
+72
+00:05:10,296 --> 00:05:14,900
+And on one side of the river we have 
+three missionaries and three cannibals 
+
+73
+00:05:14,900 --> 00:05:17,990
+initially. 
+The missionaries are black triangles and 
+
+74
+00:05:17,990 --> 00:05:22,413
+the cannibals are red circles here. 
+There is also a boat available and in 
+
+75
+00:05:22,413 --> 00:05:26,836
+this boat, can be up to two people. 
+And they can use this boat to cross the 
+
+76
+00:05:26,836 --> 00:05:29,463
+river. 
+Now, the problem is, if the cannibals 
+
+77
+00:05:29,463 --> 00:05:34,304
+ever outnumber the missionaries on either 
+of the banks of the river, then the 
+
+78
+00:05:34,304 --> 00:05:37,133
+missionaries will get eaten by the 
+cannibals. 
+
+79
+00:05:37,133 --> 00:05:40,518
+And we don't want that. 
+So, you can see in the initial state, 
+
+80
+00:05:40,518 --> 00:05:44,448
+there's an equal number of missionaries 
+and cannibals on one side and no 
+
+81
+00:05:44,448 --> 00:05:48,001
+missionaries or cannibals on the other 
+side, so there's no problem. 
+
+82
+00:05:48,001 --> 00:05:52,254
+The planning problem now is to come up 
+with a sequence of actions that carries 
+
+83
+00:05:52,254 --> 00:05:56,400
+all the missionaries and cannibals safely 
+across the river, to the other side. 
+
+84
+00:05:56,400 --> 00:05:59,782
+This system can be described by a 
+state-transition system. 
+
+85
+00:05:59,782 --> 00:06:04,390
+And if you're not familiar with this type 
+of system, I would advise you to now try 
+
+86
+00:06:04,390 --> 00:06:06,956
+to define this as a state-transition 
+system. 
+
+87
+00:06:06,956 --> 00:06:10,922
+Specifically, you are trying to see what 
+are the world states that are possible 
+
+88
+00:06:10,922 --> 00:06:15,413
+here, what are the actions and what are 
+the events that can happen in this 
+
+89
+00:06:15,413 --> 00:06:17,936
+problem. 
+The state-transition function is best 
+
+90
+00:06:17,936 --> 00:06:21,020
+defined as a graph. 
+And, if you've sit down for about half an 
+
+91
+00:06:21,020 --> 00:06:25,186
+hour, I'm pretty sure you can come up, 
+come up with a graph that describes the 
+
+92
+00:06:25,186 --> 00:06:27,675
+whole state-transition graph for this 
+problem. 
+
+93
+00:06:27,675 --> 00:06:31,463
+So, if you want to do this little 
+exercise, you need to pause the video 
+
+94
+00:06:31,463 --> 00:06:35,451
+now. 
+So, here is my version of the 
+
+95
+00:06:35,451 --> 00:06:39,573
+state-transition graph for the 
+missionaries and cannibals problem. 
+
+96
+00:06:39,573 --> 00:06:44,007
+To define this as a state-transition 
+system, we have to define the four 
+
+97
+00:06:44,007 --> 00:06:47,255
+components. 
+The first component is the set of states 
+
+98
+00:06:47,255 --> 00:06:50,737
+S. 
+And that can be defined as the different 
+
+99
+00:06:50,737 --> 00:06:53,980
+world states we see here. 
+And these are all the squares, 
+
+100
+00:06:53,980 --> 00:06:58,498
+rectangle that are drawn here. 
+there are sixteen different world states 
+
+101
+00:06:58,498 --> 00:07:03,260
+and they are denoted by these rectangles. 
+So, this is the initial state, as we've 
+
+102
+00:07:03,260 --> 00:07:08,084
+seen in the previous slide, where all the 
+missionaries and cannibals are on the 
+
+103
+00:07:08,084 --> 00:07:12,174
+left-hand side of the river. 
+And over here on the right, we have the 
+
+104
+00:07:12,174 --> 00:07:14,739
+gold state. 
+And in this gold state, all the 
+
+105
+00:07:14,739 --> 00:07:18,830
+missionaries and cannibals are on the 
+right-hand side of the river. 
+
+106
+00:07:18,830 --> 00:07:23,165
+And the second component of a 
+state-transition systems are the actions 
+
+107
+00:07:23,165 --> 00:07:26,585
+that are possible. 
+In this case, there are five different 
+
+108
+00:07:26,585 --> 00:07:29,272
+actions. 
+And I've denoted them here with the 
+
+109
+00:07:29,272 --> 00:07:32,509
+labels that occur on the different state 
+transitions. 
+
+110
+00:07:32,509 --> 00:07:36,784
+So, there's two types of actions, 
+namely, actions with one person in the 
+
+111
+00:07:36,784 --> 00:07:39,532
+boat, and actions with two people in the 
+boat. 
+
+112
+00:07:39,532 --> 00:07:44,540
+The actions with one person in the boat 
+are the ones where we have one missionary 
+
+113
+00:07:44,540 --> 00:07:49,381
+or one cannibal in the boat, 
+or we can have two people in the boat. 
+
+114
+00:07:49,381 --> 00:07:55,068
+This can be two missionaries, two 
+cannibals or one missionary and one 
+
+115
+00:07:55,068 --> 00:07:57,207
+cannibal. 
+It's denoted here by 1m1c. 
+
+116
+00:07:57,207 --> 00:08:02,465
+So, these are the five possible actions 
+that we have to to do something in this 
+
+117
+00:08:02,465 --> 00:08:05,660
+system. 
+I don't need to denote where the boat is. 
+
+118
+00:08:05,660 --> 00:08:10,452
+Because the boat can only cross from one 
+side of the river to the other. 
+
+119
+00:08:10,452 --> 00:08:14,139
+The set of events is empty for the 
+state-transition system. 
+
+120
+00:08:14,139 --> 00:08:18,633
+And finally, the state-transition 
+function is defined by all the arcs that 
+
+121
+00:08:18,633 --> 00:08:21,973
+make up the, the lines between the 
+different state here. 
+
+122
+00:08:21,973 --> 00:08:25,677
+Note in this specific problem, all the 
+arcs are bidirectional. 
+
+123
+00:08:25,677 --> 00:08:30,353
+Which means, with the same action, we can 
+go to one state and then back to the 
+
+124
+00:08:30,353 --> 00:08:33,450
+original state. 
+So, this is one arc here, and this is 
+
+125
+00:08:33,450 --> 00:08:36,851
+one, this is one. 
+And all these arcs together make define 
+
+126
+00:08:36,851 --> 00:08:41,162
+the state-transition function. 
+And that concludes the definition of the 
+
+127
+00:08:41,162 --> 00:08:46,333
+state-transition system. 
+A state-transition system is useful 
+
+128
+00:08:46,333 --> 00:08:51,497
+because it describes all the possible 
+ways in which our system may evolve as a 
+
+129
+00:08:51,497 --> 00:08:54,570
+result of applying actions or events 
+happening. 
+
+130
+00:08:54,570 --> 00:08:59,683
+But what we want to do is solve planning 
+problems and the solution to a planning 
+
+131
+00:08:59,683 --> 00:09:03,281
+problem is a plan. 
+And by a plan, we mean a structure that 
+
+132
+00:09:03,281 --> 00:09:08,332
+gives appropriate actions that we can 
+apply in the initial state of our problem 
+
+133
+00:09:08,332 --> 00:09:13,572
+such that it gets us to a different state 
+in which our objective that we're trying 
+
+134
+00:09:13,572 --> 00:09:17,360
+to achieve, as part of the planning 
+problem, will be achieved. 
+
+135
+00:09:17,360 --> 00:09:22,096
+A simple example of such a structure 
+would be to have a sequential list of 
+
+136
+00:09:22,096 --> 00:09:27,149
+actions that we need to perform in order. 
+A more complex structure could be a 
+
+137
+00:09:27,149 --> 00:09:32,265
+function that maps states to actions so 
+that when we are in a given state, we can 
+
+138
+00:09:32,265 --> 00:09:35,360
+use that function to decide what action 
+to apply. 
+
+139
+00:09:35,360 --> 00:09:41,322
+A plan implicitly describes a path 
+through, through our state-transition 
+
+140
+00:09:41,322 --> 00:09:44,079
+graph. 
+So, when we execute a plan, we expect to 
+
+141
+00:09:44,079 --> 00:09:47,249
+end up in a state in which our objective 
+is satisfied. 
+
+142
+00:09:47,249 --> 00:09:51,886
+There are different types of objectives 
+that can be defined for planning, and I 
+
+143
+00:09:51,886 --> 00:09:56,113
+will give you some examples now. 
+The simplest way to define an objective 
+
+144
+00:09:56,113 --> 00:10:00,398
+is simply to have a gold state. 
+This can be an individual gold state that 
+
+145
+00:10:00,398 --> 00:10:03,275
+is named, 
+we've seen this in the missionaries and 
+
+146
+00:10:03,275 --> 00:10:06,621
+cannibals problem, 
+or it can be a set of gold states that 
+
+147
+00:10:06,621 --> 00:10:09,850
+means one of those states is one that we 
+want to reach. 
+
+148
+00:10:09,850 --> 00:10:14,180
+An objective can also include some 
+constrains on itermediate state through 
+
+149
+00:10:14,180 --> 00:10:18,453
+which we're passing on the way to the 
+goal, for example, we can have states 
+
+150
+00:10:18,453 --> 00:10:23,130
+that we don't want to go through that we 
+need to avoid as part of the objective. 
+
+151
+00:10:23,130 --> 00:10:28,337
+A more complex objective could also come 
+with a utility function for each state 
+
+152
+00:10:28,337 --> 00:10:33,090
+and tells us that we have to maximize the 
+utility on our way to the goal. 
+
+153
+00:10:33,090 --> 00:10:36,037
+As you can see, an objective can be quite 
+complex. 
+
+154
+00:10:36,037 --> 00:10:40,368
+A completely different view of an 
+objective would be to not try achieve 
+
+155
+00:10:40,368 --> 00:10:44,940
+something but to perform a given task. 
+So, a good example of this is when you 
+
+156
+00:10:44,940 --> 00:10:48,670
+are going on a holiday. 
+You're not really trying to change the 
+
+157
+00:10:48,670 --> 00:10:52,340
+state of the world. 
+You want to end up back in the same state 
+
+158
+00:10:52,340 --> 00:10:55,889
+where you started. 
+But you want to do something in the time 
+
+159
+00:10:55,889 --> 00:10:59,438
+where you go on holiday. 
+And that's a task that needs to be 
+
+160
+00:10:59,438 --> 00:11:02,182
+performed. 
+Probably, the most common reason for 
+
+161
+00:11:02,182 --> 00:11:06,587
+solving planning problems is that we want 
+to execute the resulting plans. 
+
+162
+00:11:06,587 --> 00:11:10,635
+And here is the model for how planned 
+execution might actually work. 
+
+163
+00:11:10,635 --> 00:11:14,980
+So, we have a planner that is given a 
+description of the state-transition 
+
+164
+00:11:14,980 --> 00:11:18,254
+system that tells the planner how the 
+world may evolve. 
+
+165
+00:11:18,254 --> 00:11:21,171
+We're also giving this planner the 
+initial state. 
+
+166
+00:11:21,171 --> 00:11:25,993
+That is, the state in which the world is 
+in and some objectives that tell the 
+
+167
+00:11:25,993 --> 00:11:30,204
+planner where we want to be. 
+The planner then solves this planning 
+
+168
+00:11:30,204 --> 00:11:35,360
+problem and generates a plan which is 
+passed to the controller for execution. 
+
+169
+00:11:35,360 --> 00:11:40,564
+The controller takes this plan and 
+executes the actions in this plan. 
+
+170
+00:11:40,564 --> 00:11:44,974
+So, it has to extract the next action to 
+be executed and passes this to the 
+
+171
+00:11:44,974 --> 00:11:47,797
+system. 
+The execution of the action then changes 
+
+172
+00:11:47,797 --> 00:11:51,502
+the state of the actual system that we're 
+trying to manipulate. 
+
+173
+00:11:51,502 --> 00:11:55,383
+For example, the real world. 
+And hopefully, our system is consistent 
+
+174
+00:11:55,383 --> 00:12:00,146
+with the description of the system that 
+was given to the planner to generate the 
+
+175
+00:12:00,146 --> 00:12:04,379
+plan that we're now executing. 
+But the system is not only changed by the 
+
+176
+00:12:04,379 --> 00:12:09,084
+actions we are taking that are controlled 
+by the controller, it is also changing 
+
+177
+00:12:09,084 --> 00:12:13,633
+because of events that are happening. 
+For the controller to take appropriate 
+
+178
+00:12:13,633 --> 00:12:18,503
+actions, it usually needs to know what 
+state the system is actually in and to do 
+
+179
+00:12:18,503 --> 00:12:22,946
+so it has observations which are going 
+from the system to the controller. 
+
+180
+00:12:22,946 --> 00:12:27,328
+We model observations through the 
+observation function eta which maps a 
+
+181
+00:12:27,328 --> 00:12:30,920
+state to set up observations that can be 
+made in the state. 
+
+182
+00:12:30,920 --> 00:12:35,802
+Quite often, the world is not fully 
+observable, and in this case, the set of 
+
+183
+00:12:35,802 --> 00:12:40,618
+observation does not allow us to 
+immediately infer which state we are in. 
+
+184
+00:12:40,618 --> 00:12:45,567
+So, a given set of observation makes it 
+possible that we are in a number of 
+
+185
+00:12:45,567 --> 00:12:50,780
+states, and this is what is called the 
+belief state of the controller. 
+
+186
+00:12:50,780 --> 00:12:55,427
+Now, the model we've just seen is not 
+very realistic, because the real world on 
+
+187
+00:12:55,427 --> 00:13:00,193
+which we are executing our plans is often 
+different from the description of the 
+
+188
+00:13:00,193 --> 00:13:03,649
+state-transition system that we are 
+giving to our planner. 
+
+189
+00:13:03,649 --> 00:13:07,998
+So, those two are not identical. 
+The reason is that this description we're 
+
+190
+00:13:07,998 --> 00:13:12,884
+giving to the planner is an abstraction. 
+It leaves out many details about the real 
+
+191
+00:13:12,884 --> 00:13:16,995
+world which make planning possible. 
+And then, when we execute the plan, 
+
+192
+00:13:16,995 --> 00:13:20,570
+things may go wrong because the two 
+models are not the same. 
+
+193
+00:13:20,570 --> 00:13:26,409
+A more realistic model is called dynamic 
+planning, in which planning and execution 
+
+194
+00:13:26,409 --> 00:13:30,628
+are actually interleaved. 
+What is different in this model is that 
+
+195
+00:13:30,628 --> 00:13:35,567
+the controller has to do something called 
+plan supervision and that means, it has 
+
+196
+00:13:35,567 --> 00:13:39,042
+to detect when observations differ from 
+expected results. 
+
+197
+00:13:39,042 --> 00:13:43,553
+So, it expects the world to be in a 
+certain state as a result of an action, 
+
+198
+00:13:43,553 --> 00:13:47,760
+but it can observe that it isn't. 
+What it can do, in this case, is plan 
+
+199
+00:13:47,760 --> 00:13:50,625
+revision. 
+That is, we take the existing plan and 
+
+200
+00:13:50,625 --> 00:13:54,527
+try to change it in some way to take into 
+account the new state. 
+
+201
+00:13:54,527 --> 00:13:59,466
+This can be done by the controller for 
+very simple cases or it has to be done by 
+
+202
+00:13:59,466 --> 00:14:03,962
+the planner for more complex cases. 
+In this case, the controller has to pass 
+
+203
+00:14:03,962 --> 00:14:08,628
+an execution status back to the planner, 
+so that the planner can generate a new 
+
+204
+00:14:08,628 --> 00:14:13,176
+plan that is passed to the controller. 
+And that takes into account the change 
+
+205
+00:14:13,176 --> 00:14:16,496
+that has happened. 
+In the worst case, the planner will have 
+
+206
+00:14:16,496 --> 00:14:20,839
+to re-plan that is, it will have to 
+create a completely new plan from scratch 
+
+207
+00:14:20,839 --> 00:14:24,779
+for the given problem. 
+Dynamic planning then, closes the loop 
+
+208
+00:14:24,779 --> 00:14:30,320
+between the planner and execution by 
+passing back the execution status to the 
+
+209
+00:14:30,320 --> 00:14:33,020
+planner for replanning or plan repair. 
+

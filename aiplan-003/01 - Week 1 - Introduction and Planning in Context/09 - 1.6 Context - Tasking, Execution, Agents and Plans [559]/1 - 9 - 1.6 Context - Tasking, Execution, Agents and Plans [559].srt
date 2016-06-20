@@ -1,0 +1,380 @@
+1
+00:00:09,680 --> 00:00:14,071
+Planning usually occurs in a human 
+context where tasks or objectives are 
+
+2
+00:00:14,071 --> 00:00:16,838
+assigned, where plan execution must take 
+place. 
+
+3
+00:00:16,838 --> 00:00:21,349
+We introduced earlier a model for 
+planning and showed some simplifications 
+
+4
+00:00:21,349 --> 00:00:23,875
+to it. 
+We explained that a richer model is 
+
+5
+00:00:23,875 --> 00:00:27,003
+needed for realistic planning in dynamic 
+situations. 
+
+6
+00:00:27,003 --> 00:00:31,815
+In such a context, we've got to observe 
+the performance of activity in the world, 
+
+7
+00:00:31,815 --> 00:00:36,507
+and try to observe and interpret the 
+effects of our executed activities there. 
+
+8
+00:00:36,507 --> 00:00:41,320
+This can allow for possible plan revision 
+and replanning where that's necessary. 
+
+9
+00:00:44,000 --> 00:00:48,804
+O-Plan for example, could be configured 
+with three separate planning agents. 
+
+10
+00:00:48,804 --> 00:00:52,082
+Which represented reasons about plans at 
+different levels. 
+
+11
+00:00:52,082 --> 00:00:56,208
+The first was concerned with the human 
+level of task description, setting 
+
+12
+00:00:56,208 --> 00:00:59,034
+objectives, giving guidance, or overall 
+constraints. 
+
+13
+00:00:59,034 --> 00:01:02,990
+A second level is a more technical 
+planning level which could propose 
+
+14
+00:01:02,990 --> 00:01:07,229
+options to meet the state's objectives, 
+and allow for choices between those 
+
+15
+00:01:07,229 --> 00:01:09,546
+options. 
+And a third level supported plan 
+
+16
+00:01:09,546 --> 00:01:13,333
+execution and monitoring. 
+And could facilitate local planned repair 
+
+17
+00:01:13,333 --> 00:01:16,759
+where that was feasible. 
+However, note that in each case here, 
+
+18
+00:01:16,759 --> 00:01:21,070
+each agent has a similar structure which 
+is supported by the open planning 
+
+19
+00:01:21,070 --> 00:01:24,060
+architecture, in which the O-Plan planner 
+was built. 
+
+20
+00:01:31,280 --> 00:01:36,565
+For example, the multi-agent planning 
+architecture platform is the basis for 
+
+21
+00:01:36,565 --> 00:01:42,047
+the SRI International Side Planner. 
+The Open Planning Architecture is the 
+
+22
+00:01:42,047 --> 00:01:46,470
+basis for O-Plan designed to handle 
+multiple plan roles and levels as you 
+
+23
+00:01:46,470 --> 00:01:49,585
+just seen. 
+And the I-X platform is intended to port 
+
+24
+00:01:49,585 --> 00:01:54,383
+multiple types of command, sense-making, 
+analysis in planning for instances to 
+
+25
+00:01:54,383 --> 00:01:58,681
+build the I-plan · planner, as well as 
+decision making, execution, and 
+
+26
+00:01:58,681 --> 00:02:02,420
+communication between agents even in 
+mixed agent frameworks. 
+
+27
+00:02:05,340 --> 00:02:09,808
+Several practical AI planning systems 
+have been used in emergency response 
+
+28
+00:02:09,808 --> 00:02:12,906
+applications. 
+Often working in the context of a wide 
+
+29
+00:02:12,906 --> 00:02:17,255
+range of other agents and services. 
+They're often in an environment where 
+
+30
+00:02:17,255 --> 00:02:22,141
+communication and collaboration is taking 
+place with some sort of infrastructural 
+
+31
+00:02:22,141 --> 00:02:24,524
+layer. 
+And then the core might concer, be 
+
+32
+00:02:24,524 --> 00:02:29,353
+concerned with command and control-type 
+issues in search-and-rescue or emergency 
+
+33
+00:02:29,353 --> 00:02:33,044
+response situations, but also dealing 
+with people in the field. 
+
+34
+00:02:33,044 --> 00:02:37,750
+And so they are also manipulated the 
+plans that they're given and adjusting 
+
+35
+00:02:37,750 --> 00:02:41,680
+them to a local situation. 
+We may also be including the people who 
+
+36
+00:02:41,680 --> 00:02:46,442
+are in trouble or are isolated or being 
+rescued as part of the framework of 
+
+37
+00:02:46,442 --> 00:02:49,477
+collaboration and communication that's 
+taken place. 
+
+38
+00:02:49,477 --> 00:02:53,941
+And again, they have to deal with 
+elements of the plan that are coming from 
+
+39
+00:02:53,941 --> 00:02:56,620
+these different levels and different 
+centers. 
+
+40
+00:02:56,620 --> 00:03:01,905
+And we perhaps have to deal upwards with 
+decision making authorities by giving 
+
+41
+00:03:01,905 --> 00:03:06,989
+briefings of the options that we're 
+generating, explaining those, and looking 
+
+42
+00:03:06,989 --> 00:03:11,940
+for decisions on, on which ones are going 
+to be executed and handled. 
+
+43
+00:03:13,460 --> 00:03:18,219
+We'll show you a couple of examples of 
+I-X multiagent applications. 
+
+44
+00:03:18,219 --> 00:03:23,737
+This is an I-X process panel which sports 
+a search and rescue coordinator and the 
+
+45
+00:03:23,737 --> 00:03:28,635
+communications with various other 
+agencies and services in a coalition 
+
+46
+00:03:28,635 --> 00:03:33,887
+peace keeping operations. 
+The second application called iGlobe 
+
+47
+00:03:33,887 --> 00:03:39,489
+handles the tasking and coordination of 
+mobile ground and air vehicles in a 
+
+48
+00:03:39,489 --> 00:03:47,211
+disaster response scenario. 
+Often, planning is just a small part of a 
+
+49
+00:03:47,211 --> 00:03:51,868
+wider collaboration and communication 
+situation involved in a realistic 
+
+50
+00:03:51,868 --> 00:03:55,361
+application. 
+The I-plan planner here sits in the lower 
+
+51
+00:03:55,361 --> 00:04:00,341
+right, and it's quite a simple tool. 
+But it operates in a much broader context 
+
+52
+00:04:00,341 --> 00:04:04,740
+of planned communication, messaging, map 
+views, sense making, and so on. 
+
+53
+00:04:08,520 --> 00:04:12,929
+A paper written in 2001, was part of a 
+special issue in Mayhem Magazine on 
+
+54
+00:04:12,929 --> 00:04:17,517
+Robocop, explored emergency response as a 
+grand challenge for multiagent and 
+
+55
+00:04:17,517 --> 00:04:21,151
+intelligent systems. 
+It explored the very many areas involved 
+
+56
+00:04:21,151 --> 00:04:25,501
+in effective emergency response, which 
+could be supported by intelligence 
+
+57
+00:04:25,501 --> 00:04:27,884
+systems. 
+These included dealing with the 
+
+58
+00:04:27,884 --> 00:04:31,500
+environment. 
+Supporting the people and organizations 
+
+59
+00:04:31,500 --> 00:04:35,855
+involved, and of course, using 
+intelligence systems to assist in the 
+
+60
+00:04:35,855 --> 00:04:40,947
+emergency itself. 
+The key element of this support in both 
+
+61
+00:04:40,947 --> 00:04:45,544
+planning and activity management and the 
+sharing of plan related information 
+
+62
+00:04:45,544 --> 00:04:51,384
+between agents. 
+Plenty used for communication and 
+
+63
+00:04:51,384 --> 00:04:56,332
+collaboration between agents and systems. 
+So upon representation itself, is an 
+
+64
+00:04:56,332 --> 00:05:00,766
+important area of research. 
+Plenty used in many areas beyond activity 
+
+65
+00:05:00,766 --> 00:05:03,593
+planning. 
+Such as in, situation understanding 
+
+66
+00:05:03,593 --> 00:05:08,155
+summarization, natural language 
+interpretation, and generation and so on. 
+
+67
+00:05:08,155 --> 00:05:13,103
+Plents provide nontological informal 
+representation call for a wide range of 
+
+68
+00:05:13,103 --> 00:05:18,120
+practical applications and uses. 
+A good representation of plans can be 
+
+69
+00:05:18,120 --> 00:05:23,574
+used as a target for knowledge 
+acquisition, for user communication, for 
+
+70
+00:05:23,574 --> 00:05:27,860
+system manipulation, and as a basis for 
+formal analysis. 
+
+71
+00:05:29,860 --> 00:05:34,682
+AI planning work has influenced standard 
+related process and plan representations 
+
+72
+00:05:34,682 --> 00:05:39,093
+used by many industries and fields. 
+For example, in the MIT process handbook, 
+
+73
+00:05:39,093 --> 00:05:43,562
+its process interchange format or PIF. 
+In the NIST, The National Institute of 
+
+74
+00:05:43,562 --> 00:05:48,149
+Standards and Technology in America. 
+the Process Specification Language, PSL. 
+
+75
+00:05:48,149 --> 00:05:52,619
+And the DARPA, Shared Planning and 
+Activity Representation SPAR. 
+
+76
+00:05:52,619 --> 00:05:55,560
+And has even become the basis for an ISO 
+standard. 
+

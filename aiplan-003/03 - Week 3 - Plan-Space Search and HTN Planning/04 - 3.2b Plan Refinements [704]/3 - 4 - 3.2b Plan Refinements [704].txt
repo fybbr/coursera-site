@@ -1,0 +1,191 @@
+The next component of a partial plan to 
+consider are the variable bindings. 
+We've already seen that, every time we 
+add a new instance of an operator to our 
+plan, 
+we introduce a new copy of the variables 
+of that operator into our plan. 
+But, of course, our solution plan must 
+contain actions which are fully ground 
+instances of operators. 
+The variable bindings simply help us to 
+keep track of the possible values for all 
+these variables that we're introducing 
+into our plan with the new actions. 
+But, they can do more than that. 
+They can also contain co-designation 
+constraints which says, a variable of one 
+operator must have the same value as the 
+variable of another operator but we don't 
+know what that value is yet. 
+So, we can have constraints on the 
+equality or inequality of variables in 
+our plan. 
+Again, when we add variable bindings as a 
+planned refinement operation to our 
+partial plan, we want to stick to the 
+least commitment principle. 
+So, we only want to add variable binding 
+constraints when we have a good reason 
+for doing so. 
+And the most important reason for adding 
+variable constraints is, of course, that 
+we need to turn all the operators 
+instances the partial actions in our 
+plan, into fully ground actions. 
+But, this is not the only reason. 
+In fact, we've already seen that when we 
+introduce a causal link to use an effect 
+to support a precondition, then the 
+effect may have variables, but the 
+preconditions may have specific values in 
+there. 
+So, we need to unify these to make sure 
+that the effect and the precondition 
+match, and that is the second reason for 
+introducing variable binding constraints. 
+And here is our example again. 
+I've dropped the second action simply to 
+save some space. 
+So, you remember we introduced this 
+causal link here from the effect to the 
+goal condition to record that we've 
+introduced this action to support this 
+goal condition. 
+Now, with this action, of course, we've 
+also introduced a new set of variables, 
+r1, l1, and m1, moving the robot r1 from 
+location l1 to location m1. 
+And initially, our variable bindings were 
+all empty so this is the table of 
+variable bindings we maintain, and it 
+contains the three variables we've just 
+introduced, r1, l1, and m1, and there's 
+no constraints on these variables. 
+Note that I've shown the variables in the 
+operator as red because there's no 
+indication what values these might have. 
+But, of course, they need to have 
+specific values to support the goal 
+conditions we want to support. 
+And adding variable binding constraints 
+ensures that this unification will 
+succeed. 
+So here is how this works. 
+We add variable bindings, we say that r1 
+must become the value robot at m1 must 
+become the location, loc2. 
+Also, the two variables, r1 and m1, in 
+the operator are now black because we 
+have values for these variables. 
+L1, on the other hand, remains undefined. 
+Now, one thing that can happen is that 
+the other effect of this operator 
+interferes with the goal. 
+So, we have the effect not at r1, l1 
+which can ofcourse also unify with the 
+goal we are looking at. 
+This would be a problem because one of 
+the effect is positive and the other is 
+negative. 
+So, what we can do is introduce a new 
+variable binding constraint that says the 
+value of l1 cannot be location 2. 
+In that case, the unification can never 
+happen and we're done. 
+The threat is gone. 
+We have also introduced another causal 
+link from the initial state to our new 
+move operator to support one of its 
+preconditions. 
+Again, we need variable binding 
+constraints to make sure the unification 
+succeeds. 
+In this case, we would add a variable 
+binding constraint that says the value of 
+l1 must be loc1, and that is consistent 
+with it not being loc2. 
+While this looks quite simple note that 
+the maintenance of consistency between 
+the variable binding constraints is 
+actually a complex problem. 
+The final plan refinement operation we 
+have is to add ordering constraints to 
+our plan. 
+Ordering constraints, the final component 
+of a partial plan, are simply binary 
+relations that specify the temporal order 
+between actions in our plan. 
+And there are quite a few reasons we may 
+consider for ardering, ordering 
+constraints to our plan, some of which 
+we've already seen. 
+So, the first reason for an ordering 
+constraints is quite trivial. 
+Namely, that all actions must come after 
+the initial state, and similarly all 
+action must come before the goal. 
+We never add actions before the initial 
+state and we never add actions after the 
+goal. 
+And this can be enforced with ordering 
+constraints. 
+Then, we've already seen that a causal 
+link, implies an ordering constraint. 
+The final reason is a little more 
+complex, and that is to avoid possible 
+interference between the actions in our 
+plan. 
+Remember, that I told you, that an action 
+can interfere with a causal link if it 
+has a negative effect that interferes 
+with a positive condition on a causal 
+link. 
+Adding ordering constraints is one way to 
+get rid of this possible interference. 
+Returning to our example, the first thing 
+that you may note is that the second 
+action has reappeared. 
+This is simply because I am not showing 
+you the variable binding constraints 
+anymore but they are, of course, still 
+there. 
+You can see this in the color of the 
+variables of the different operators. 
+The red variables are the ones that still 
+need a value, whereas the black ones are 
+fully ground by the variable bindings. 
+What this diagram still shows are the 
+dotted arrows represnting causal links, 
+and I've already told you earlier that 
+each causal link implies an ordering 
+constraint. 
+So, I will add those here. For the three 
+causal links, we need three corresponding 
+ordering constraints. 
+Then, I wanted to add constraints for all 
+actions that have to come after the 
+initial state and for all actions coming 
+before the goals state. 
+So, this will be four new constraints. 
+But, in fact, I only have to add one 
+because three of those were already 
+implied by the causal links, and there is 
+no need to represent the same constraint 
+twice. 
+Finally, you may notice that the values 
+of these variables, the value of r1 and 
+r2, must actually be the same value, 
+because this has to unify with robot and 
+this has to unify with robot. 
+So, that means we're loading and moving 
+the robot in parellel here which will not 
+work. 
+And, this can be resolved by adding yet 
+another ordering constraint to this plan, 
+namely doing the loading before we move 
+the robot. 
+And that's it. 
+Adding ordering constraints was our final 
+plan refinement operation. 
+

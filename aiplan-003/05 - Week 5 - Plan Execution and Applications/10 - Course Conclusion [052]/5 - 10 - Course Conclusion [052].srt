@@ -1,0 +1,59 @@
+1
+00:00:06,080 --> 00:00:10,895
+This concludes the course on AI Planning. 
+You have seen that there are wide variety 
+
+2
+00:00:10,895 --> 00:00:14,376
+of methods and techniques, 
+but that the basic technology for 
+
+3
+00:00:14,376 --> 00:00:18,786
+representation and reasoning about plans 
+has some core principles, which are 
+
+4
+00:00:18,786 --> 00:00:22,093
+broadly useful. 
+Practical applications of AI Planning are 
+
+5
+00:00:22,093 --> 00:00:26,793
+in every day use and suitable problems 
+can be addressed by the methods taught on 
+
+6
+00:00:26,793 --> 00:00:29,636
+this course. 
+You have now learned about the basic 
+
+7
+00:00:29,636 --> 00:00:34,393
+techniques underlying most AI Planners. 
+This should allow you to read state of 
+
+8
+00:00:34,393 --> 00:00:38,745
+the art research papers on planning and 
+you should be able to understand their 
+
+9
+00:00:38,745 --> 00:00:41,825
+potential for problems you are working 
+on. 
+
+10
+00:00:41,825 --> 00:00:48,173
+We hope you enjoyed the course and that 
+you will find the techniques useful and 
+
+11
+00:00:48,173 --> 00:00:51,743
+relevant for your future activity. 
+Goodbye. 
+
+12
+00:00:51,743 --> 00:00:52,061
+Bye. 
+

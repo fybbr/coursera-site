@@ -1,0 +1,220 @@
+>> What I still owe you is a definition
+for mutual exclusivity, or mutex, between
+actions, and again, I will start by
+illustrating this with an example.
+We are looking at the same planning graph
+as before here but now, our first layer,
+we're looking at is the proposition layer
+p1, that was on the right-hand side on the
+previous graph.
+So, we have p1, a2, and p2 in this graph
+here.
+And I'm sure you will remember from the
+previous example that in proposition layer
+p1, the propositions r1 and r2 were
+incompatible.
+So, they were mutex.
+Now, we know that our proposition r1 is a
+precondition for the action Lar1 in our
+action layer A2.
+And the proposition r2 is a precondition
+for Mr21 in the same action layer.
+And it should be clear to you that if
+these two propositions that are
+preconditions for these two actions are
+mutually exclusive, so they cannot be true
+in this proposition layer together.
+Then, the two actions cannot occur in the
+following action layer.
+So, these two actions must be mutually
+exclusive here.
+So, what we've seen now, is that mutual
+exclusivity between actions can lead to
+mutual exclusivity between propositions,
+in the following proposition layer and the
+other way around.
+Mutual exclusivity between propositions
+can lead to mutual exclusivity in the
+following action layer.
+And now, we can formally define what it
+means for two actions in the same action
+layer to be mutually exclusive.
+And this definition is quite simple.
+We can say that two actions, a1 and a2,
+that are in the same action layer, Aj, are
+mutex if one of the following two
+conditions holds.
+Firstly, if a1 and a2 are dependent.
+So, if the dependency we've defined
+earlier holds between these two actions,
+then they're also mutex.
+Or a precondition of a1 is mutex with a
+precondition of a2.
+If there are preconditions that are
+mutually exclusive, then the two actions
+are also mutually exclusive.
+And these are the only two reasons why two
+actions in the same action layer are maybe
+mutually exclusive.
+Note that the first of these two
+conditions is problem-independent, so
+dependency does not need to be recomputed
+for each action layer Aj, it's always the
+same whether two actions are dependent or
+not.
+Whereas, the second condition does depend
+on the action layer in which the two
+actions are because we're referring to
+preconditions which are propositions in
+the preceding proposition layer.
+And now, again, a bit of notation.
+I want to introduce the set mu Aj which
+we've already used in the previous
+algorithm, which is the set of all pairs,
+a1, a2, in an action layer Aj that are
+mutex.
+So, these are all the mutex pairs of
+actions in a given action layer, namely
+the action layer Aj.
+And I can now tell you that in the example
+we've just looked at, in the action layer
+a2, there were actually 24 mutex pairs of
+actions that may help you to understand
+why I'm not drawing these mutex links into
+the graph every time I draw the graph.
+And a final remark about the mutex
+relation and this applies to propositions
+as well as actions, this relation is
+symmetric.
+So, if a1 is mutex to a2, then a2 must
+also be mutex to a1 and again, the same
+goes for propositions.
+And again, for those of you who prefer an
+algorithm to a definition, here comes an
+algorithm is pseudo code defining the
+function mutex for a given pair of actions
+and the set of mutex proposition pairs in
+the preceding propositions there.
+And in this algorithm, we simply were,
+test what we've just defined, namely, the
+first thing we do is we test whether the
+two actions are not independent, so if
+these two actions are dependent, then they
+are also mutex, which means we return,
+true.
+Otherwise, we have to look for a pair of
+preconditions of a1 and a2 respectively.
+And these are the preconditions p1 and p2
+and see whether these preconditions are
+mutually exclusive.
+So, if we find such a pair of
+preconditions for these two actions that
+are mutually exclusive, then we know these
+two actions are also mutually exclusive.
+If we cannot find such a pair and the two
+actions are independent, then we return
+false, meaning, a1 and a2 are not mutually
+exclusive.
+As for the time complexity of the
+algorithm, you can see it consists of two
+parts.
+So, we have the time complexity of the
+first part plus the complexity of the
+second part.
+And this is simply O of b squared, where b
+is the maximum number of preconditions and
+the fact we have per action.
+Now, that we understand what mutex
+relations are and how to compute them, I
+want to see how mutex relations propagate
+through the planning graph and that is
+quite important.
+So, we have two propositions here that
+tell us how mutex relations propagate
+through the planning graph.
+And the first one says that if we have a
+pair, p,q that is in our proposition
+layer, Pj minus 1, and they are not
+mutually exclusive in that layer, then,
+this same pair of propositions will also
+be not mutually exclusive in the next
+proposition there.
+This means, once a pair of propositions
+that has appeared as mutex in the planning
+graph, once this pair has become
+non-mutex, it can never become mutex again
+in a later layer.
+So, the mutex relations are, in some
+sense, decreasing the further down the
+planning graph we go.
+And to see that this is true is actually
+quite simple.
+So, we assume that p and q are in our
+proposition layer Pj minus 1.
+And, of course, that we means we have the
+no-op operations for these two
+propositions in the following action
+layer.
+And we have assumed that the propositions,
+p and q, are not mutex in that proposition
+layer.
+So, that means the two no-op operations
+are also not mutex in their action layer.
+And that, of course, means we have a
+non-mutex pair of actions that produce p
+and q in the next proposition layer and
+that means they can't be mutually
+exclusive.
+And we have a similar proposition from the
+mutex relation between actions.
+Namely, that if two actions are in one
+action layer and they are not mutex in
+that action layer, then they are also not
+mutex in the following action layer.
+And again, the reason for this is quite
+simple.
+So, if we are given that a1 and a2 are not
+mutex in this action layer Aj minus 1,
+then by definition, that means a1 and a2
+must be independent, and the preconditions
+cannot be mutex in Pj minus 1.
+Now, I've already told you in the previous
+proposition that because mutual
+exclusivity between the preconditions
+carries forward, the preconditions for the
+actions in the next layer must also not be
+mutex and, of course, action independence
+is constant.
+So, what this means is both of these
+properties remain true for the next
+proposition there, and hence, our two
+actions remain independent and therefore,
+mutex.
+So, this is a very important property of
+the mutex relation that it's decreasing
+with increasing layer.
+That's true for propositions and for
+actions, and we will get back to that
+later.
+Now, before we move on with the graph plan
+system, there is one further refinement to
+the planning graph that I want to
+introduce to you.
+And this is actually quite simple, now
+that you understand the mutex relations
+between propositions.
+So, suppose we have two propositions, p
+and q, that are mutex, and that are
+preconditions for the same action.
+In this example here, we have the action
+Uar2, and it has two preconditions, r2 and
+ar, and they are mutually exclusive.
+That, of course, means that we can never
+execute that action Uar2 in that action
+layer.
+And what we do in this case is simply
+remove the node that represents that
+action and all its edges from our planning
+graph.
+We remove Uar2 from A2.
+It's as simple as that.

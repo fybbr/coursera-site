@@ -1,0 +1,680 @@
+1
+00:00:01,140 --> 00:00:06,672
+So, we have now seen what the search 
+state look like in our new search-space, 
+
+2
+00:00:06,672 --> 00:00:11,309
+and we have seen what the state 
+transitions in this new search-space. 
+
+3
+00:00:11,309 --> 00:00:14,281
+look like. 
+And there were four such transitions 
+
+4
+00:00:14,281 --> 00:00:19,403
+according to the four components of a 
+partial plan, we could add an action, we 
+
+5
+00:00:19,403 --> 00:00:24,853
+could add an ordering constraint, we 
+could add variable bindings, and we could 
+
+6
+00:00:24,853 --> 00:00:29,488
+add causal links to the partial plan. 
+This means we're very close to the 
+
+7
+00:00:29,488 --> 00:00:33,075
+definition of plan-space search as a 
+search problem. 
+
+8
+00:00:33,075 --> 00:00:36,472
+So, we will look at the missing bits and 
+pieces next. 
+
+9
+00:00:36,472 --> 00:00:42,788
+The first thing that is missing to define 
+our problem is the initial search state. 
+
+10
+00:00:42,788 --> 00:00:48,731
+Our initial search state is the empty 
+plan that contains only the goal and the 
+
+11
+00:00:48,731 --> 00:00:54,895
+initial state, and we will add the goal 
+and the initial state as dummy actions to 
+
+12
+00:00:54,895 --> 00:00:57,884
+our plan. 
+To do this, we have one action, init, 
+
+13
+00:00:57,884 --> 00:01:02,288
+that has no preconditions and has 
+everything in the initial state as 
+
+14
+00:01:02,288 --> 00:01:06,479
+effects of the dummy action. 
+So, if this is the first action in our 
+
+15
+00:01:06,479 --> 00:01:09,706
+plan, the result is that the initial 
+state holds. 
+
+16
+00:01:09,706 --> 00:01:14,739
+And then, we have another action in our 
+plan goal, which contains all the goal 
+
+17
+00:01:14,739 --> 00:01:17,819
+conditions as preconditions and has no 
+effect. 
+
+18
+00:01:17,819 --> 00:01:22,457
+And if this is the last action in our 
+plan, that means before we can execute 
+
+19
+00:01:22,457 --> 00:01:27,320
+this goal action, all the preconditions 
+must hold, which means the goal has been 
+
+20
+00:01:27,320 --> 00:01:30,197
+achieved. 
+Our initial search state is then the 
+
+21
+00:01:30,197 --> 00:01:33,915
+empty plan, pi 0, consisting of the 
+following component. 
+
+22
+00:01:33,915 --> 00:01:38,717
+First, we have the two dummy actions, 
+init and goal, which we just described. 
+
+23
+00:01:38,717 --> 00:01:43,612
+Then, we have one ordering constraint, 
+namely that init must be before goal. 
+
+24
+00:01:43,612 --> 00:01:47,922
+We have no variable binding initially 
+because there will be no variables in the 
+
+25
+00:01:47,922 --> 00:01:50,982
+initial state or in the goal. 
+They're all fully ground. 
+
+26
+00:01:50,982 --> 00:01:55,427
+And finally, there will be no causal 
+links between any of the propositions in 
+
+27
+00:01:55,427 --> 00:01:59,042
+the initial state or the goal. 
+That is the empty plan, the initial 
+
+28
+00:01:59,042 --> 00:02:01,932
+search state we'll be using to start our 
+search. 
+
+29
+00:02:01,932 --> 00:02:05,759
+And here is our empty plan in a pictorial 
+representation. 
+
+30
+00:02:05,759 --> 00:02:08,772
+We have the two dummy actions, init and 
+zero. 
+
+31
+00:02:08,772 --> 00:02:13,858
+These are two actions in this plan. 
+So, each action consists of preconditions 
+
+32
+00:02:13,858 --> 00:02:17,290
+and effects. 
+The preconditions of init are here and 
+
+33
+00:02:17,290 --> 00:02:21,315
+they're of course empty, 
+and the effects of goal are here and 
+
+34
+00:02:21,315 --> 00:02:25,310
+again they're empty. 
+Otherwise, what we see are the initial 
+
+35
+00:02:25,310 --> 00:02:29,209
+propositions from our initial state in 
+the planning problem and the goal 
+
+36
+00:02:29,209 --> 00:02:33,428
+conditions from our planning problem. 
+Also, we have this ordering constraint 
+
+37
+00:02:33,428 --> 00:02:35,920
+here saying that init has to come before 
+goal. 
+
+38
+00:02:35,920 --> 00:02:37,962
+That's it. 
+That's the empty plan. 
+
+39
+00:02:37,962 --> 00:02:42,223
+And I hope you're not getting confused 
+with the initial search state here. 
+
+40
+00:02:42,223 --> 00:02:46,918
+So, we distinguish the initial state that 
+is part of our planning problem which is 
+
+41
+00:02:46,918 --> 00:02:49,920
+a world state consisting of all these 
+ground atoms. 
+
+42
+00:02:49,920 --> 00:02:54,199
+And we have the initial search state 
+which is the state from which we start 
+
+43
+00:02:54,199 --> 00:02:56,647
+our search, in this case the partial 
+plan. 
+
+44
+00:02:56,647 --> 00:03:00,829
+The two have nothing to do with each 
+other, although, they are both initial 
+
+45
+00:03:00,829 --> 00:03:04,404
+states in some way. 
+One is the initial state in the world 
+
+46
+00:03:04,404 --> 00:03:08,180
+state space, 
+and the other is the initial state in our 
+
+47
+00:03:08,180 --> 00:03:11,644
+search. 
+The successor function we need to define 
+
+48
+00:03:11,644 --> 00:03:17,129
+our search problem is, of course, given 
+by the plan refinement operation we've 
+
+49
+00:03:17,129 --> 00:03:21,067
+seen previously. 
+So, we generate successors by applying 
+
+50
+00:03:21,067 --> 00:03:25,683
+our plan refinement operators. 
+And we can apply one or more of these 
+
+51
+00:03:25,683 --> 00:03:31,092
+operators at the same time to constitute 
+one step in our successor function. 
+
+52
+00:03:31,092 --> 00:03:35,931
+And the reason why we want several 
+operators at the same time is simply that 
+
+53
+00:03:35,931 --> 00:03:38,892
+we need to keep our partial plans 
+consistent. 
+
+54
+00:03:38,892 --> 00:03:43,878
+So, we've already seen examples of that, 
+namely when we add a causal link, we 
+
+55
+00:03:43,878 --> 00:03:48,670
+should also add an ordering constraint at 
+the same time in the same step. 
+
+56
+00:03:48,670 --> 00:03:51,742
+This is necessary to keep our plan 
+consistent. 
+
+57
+00:03:51,742 --> 00:03:55,641
+So, our plan refinement operators are 
+combined to give us the successor 
+
+58
+00:03:55,641 --> 00:03:58,234
+function. 
+We use one or more of the following, 
+
+59
+00:03:58,234 --> 00:04:02,671
+adding an action, adding an ordering 
+constraint, adding a binding constraint, 
+
+60
+00:04:02,671 --> 00:04:07,229
+or adding a causal link to the partial 
+plan we're currently observing. 
+
+61
+00:04:07,229 --> 00:04:12,062
+And we want to do this in such a way that 
+our partial plan remains valid. 
+
+62
+00:04:12,062 --> 00:04:17,478
+So that means that all the constraints we 
+add as part of our plan refinement must 
+
+63
+00:04:17,478 --> 00:04:22,059
+be satisfiable in some way. 
+You can see that what plan-space search 
+
+64
+00:04:22,059 --> 00:04:27,142
+is doing is decoupling two problems that 
+we need to solve as part of planning. 
+
+65
+00:04:27,142 --> 00:04:31,257
+The first problem is, which actions to 
+execute as part of our plan. 
+
+66
+00:04:31,257 --> 00:04:34,821
+And the second problem is, how to 
+organize these actions. 
+
+67
+00:04:34,821 --> 00:04:38,932
+What is the organizational structure that 
+underlies our plan? 
+
+68
+00:04:38,932 --> 00:04:44,650
+Another view of plan-space search is that 
+we view a partial plan as really 
+
+69
+00:04:44,650 --> 00:04:50,946
+representing a set of plans, namely all 
+those plans that we can achieve from this 
+
+70
+00:04:50,946 --> 00:04:54,930
+partial plan by these plan refinement 
+operations. 
+
+71
+00:04:54,930 --> 00:05:00,402
+So, every time we apply refinement 
+operation as part of our planning 
+
+72
+00:05:00,402 --> 00:05:06,387
+process, we reduce the set of possible 
+plans into which the partial plan can be 
+
+73
+00:05:06,387 --> 00:05:09,892
+refined. 
+And we do this until the plan is fully 
+
+74
+00:05:09,892 --> 00:05:15,757
+ground and there is only one plan left. 
+Now, what remains to be defined here for 
+
+75
+00:05:15,757 --> 00:05:19,372
+our plan-space search problem is the goal 
+test. 
+
+76
+00:05:19,372 --> 00:05:24,557
+But before we define the goal test for 
+our search problem, we need to reconsider 
+
+77
+00:05:24,557 --> 00:05:28,705
+what we understand by a solution for a 
+given planning problem. 
+
+78
+00:05:28,705 --> 00:05:33,643
+Just a quick recap, a planning problem 
+was defined by a state transmission 
+
+79
+00:05:33,643 --> 00:05:36,705
+system, initial state, and a goal 
+condition. 
+
+80
+00:05:36,705 --> 00:05:41,495
+And the plan pi is considered a solution 
+for this planning problem if the 
+
+81
+00:05:41,495 --> 00:05:46,705
+application of the plan in the initial 
+state gives us a new state and that state 
+
+82
+00:05:46,705 --> 00:05:50,871
+satisfies our goal. 
+That is how we have defined a solution 
+
+83
+00:05:50,871 --> 00:05:55,274
+for a planning problem. 
+And here is the problem that we have now. 
+
+84
+00:05:55,274 --> 00:06:00,892
+This term, gamma si pi, was only defined 
+for a sequence of ground actions because 
+
+85
+00:06:00,892 --> 00:06:04,334
+those were the only plans we've 
+considered so far. 
+
+86
+00:06:04,334 --> 00:06:07,942
+The plans we are considering now are only 
+partially ordered. 
+
+87
+00:06:07,942 --> 00:06:13,292
+Of course, we can turn this partial order 
+into total order by respecting all the 
+
+88
+00:06:13,292 --> 00:06:17,142
+partial order constraints. 
+But then the question is, in our 
+
+89
+00:06:17,142 --> 00:06:21,967
+definition of gamma si pi, which of these 
+total orderings should we use? 
+
+90
+00:06:21,967 --> 00:06:27,642
+In general, there could be an exponential 
+number of total orderings that correspond 
+
+91
+00:06:27,642 --> 00:06:31,528
+to one partial order. 
+Similarly, our partial plan may only 
+
+92
+00:06:31,528 --> 00:06:36,493
+contain a partial instantiation of the 
+variables which we will need to bind in 
+
+93
+00:06:36,493 --> 00:06:39,491
+our plan. 
+So, there may be a large number of ways 
+
+94
+00:06:39,491 --> 00:06:44,385
+to turn our partially instantiated 
+variables into a fully ground plan and we 
+
+95
+00:06:44,385 --> 00:06:49,272
+need to decide which ones of those to use 
+for our definition of a solution. 
+
+96
+00:06:49,272 --> 00:06:54,876
+The simplest way to address this problem 
+is to consider a new definition of a 
+
+97
+00:06:54,876 --> 00:06:59,409
+partial order solution. 
+And here is our new definition when a 
+
+98
+00:06:59,409 --> 00:07:04,402
+partial order plan constitutes a solution 
+to a planning problem. 
+
+99
+00:07:04,402 --> 00:07:09,356
+A planning problem, of course, consists 
+of the same component as before. Which 
+
+100
+00:07:09,356 --> 00:07:13,871
+means it's a state transition system, an 
+initial world state, and a goal 
+
+101
+00:07:13,871 --> 00:07:16,862
+condition. 
+And we consider a plan that may be a 
+
+102
+00:07:16,862 --> 00:07:22,293
+solution consisting of actions, ordering 
+constraints, variable bindings and causal 
+
+103
+00:07:22,293 --> 00:07:25,216
+links. 
+That may be a partial order solution for 
+
+104
+00:07:25,216 --> 00:07:28,000
+our planning problem if two conditions 
+hold. 
+
+105
+00:07:28,000 --> 00:07:32,856
+Firstly, the ordering constraints and the 
+variable binding constraints in our 
+
+106
+00:07:32,856 --> 00:07:37,415
+partial plan must be consistent. 
+The ordering constraints are consistent 
+
+107
+00:07:37,415 --> 00:07:42,185
+if there's no loop in the orderings. 
+And the variable binding constraints are 
+
+108
+00:07:42,185 --> 00:07:46,547
+consistent if we can find values for all 
+the variables such that all the 
+
+109
+00:07:46,547 --> 00:07:50,862
+constraints which are equalities or 
+inequalities are respected. 
+
+110
+00:07:50,862 --> 00:07:55,924
+So, in our partial order solution, all 
+the variable bindings and ordering 
+
+111
+00:07:55,924 --> 00:08:01,366
+constraints must be consistent. And, we 
+have another condition. Namely, that for 
+
+112
+00:08:01,366 --> 00:08:06,807
+every total order sequence of a1 through 
+ak, which are the actions in a minus the 
+
+113
+00:08:06,807 --> 00:08:11,818
+init and goal actions, these were the 
+dummy actions we've only used in our 
+
+114
+00:08:11,818 --> 00:08:16,697
+empty plan, the other actions were the 
+ones that were added through plan 
+
+115
+00:08:16,697 --> 00:08:21,022
+deployment operations of the first type, 
+namely adding actions. 
+
+116
+00:08:21,022 --> 00:08:26,247
+So, every such totally ordered sequence 
+that is fully ground and respects the 
+
+117
+00:08:26,247 --> 00:08:30,972
+orderings and variable binding 
+constraints must satisfy the following 
+
+118
+00:08:30,972 --> 00:08:36,012
+condition. That is, if we apply this 
+total order plan in the initial state, 
+
+119
+00:08:36,012 --> 00:08:41,337
+then the state transition function gives 
+us a new state which must satisfy our 
+
+120
+00:08:41,337 --> 00:08:44,187
+goal. 
+So, there is an exponential number of 
+
+121
+00:08:44,187 --> 00:08:49,462
+ways to turn our partial order plan into 
+a total order plan, and our definition 
+
+122
+00:08:49,462 --> 00:08:54,687
+for a partial order solution now requires 
+us to have every such total ordering 
+
+123
+00:08:54,687 --> 00:08:58,000
+satisfy our goal. 
+There are a few things to note here. 
+
+124
+00:08:58,000 --> 00:09:02,706
+And the first interesting thing is, that 
+the causal links apparently don't play a 
+
+125
+00:09:02,706 --> 00:09:05,241
+role in the definition of a solution 
+plan. 
+
+126
+00:09:05,241 --> 00:09:09,799
+The second is, if we want to turn this 
+into a computational procedure that we 
+
+127
+00:09:09,799 --> 00:09:12,698
+can use as a goal test, it is not very 
+practical. 
+
+128
+00:09:12,698 --> 00:09:17,008
+If we have to test every total order 
+sequence and there is an exponential 
+
+129
+00:09:17,008 --> 00:09:21,484
+number of such sequences, then we have a 
+lot of work to do to verify our goal 
+
+130
+00:09:21,484 --> 00:09:24,697
+test. 
+But, of course, in the construction of 
+
+131
+00:09:24,697 --> 00:09:29,436
+our plan, we pay careful attention to the 
+the way we combine the action. 
+
+132
+00:09:29,436 --> 00:09:34,508
+And, in fact, if every precondition of 
+every action is supported by a causal 
+
+133
+00:09:34,508 --> 00:09:39,682
+link, then we know that our plan will 
+satisfy the goal because the goal is the 
+
+134
+00:09:39,682 --> 00:09:44,027
+final step in our plan. 
+The problem is, this condition that every 
+
+135
+00:09:44,027 --> 00:09:49,377
+precondition is supported by a causal 
+link is not quite strong enough as a goal 
+
+136
+00:09:49,377 --> 00:09:52,240
+test yet. 
+But, we will get there soon enough. 
+

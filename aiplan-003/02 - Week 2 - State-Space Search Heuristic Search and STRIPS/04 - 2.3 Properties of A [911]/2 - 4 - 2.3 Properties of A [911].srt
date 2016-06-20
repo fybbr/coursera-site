@@ -1,0 +1,570 @@
+1
+00:00:04,500 --> 00:00:09,353
+So now that you know how the A* algorithm 
+works, I want to go a bit in to the 
+
+2
+00:00:09,353 --> 00:00:12,528
+theory, and give you some properties of 
+the algorithm. 
+
+3
+00:00:12,528 --> 00:00:16,362
+These all rely on the fact that the 
+heuristic use is admissible. 
+
+4
+00:00:16,362 --> 00:00:22,900
+And we will talk about that first. 
+A heuristic is called admissible if it 
+
+5
+00:00:22,900 --> 00:00:29,183
+never overestimates the distance from a 
+node to the nearest goal node. 
+
+6
+00:00:29,183 --> 00:00:36,633
+So what this means is that the value of 
+the function h(n) must always be less or 
+
+7
+00:00:36,633 --> 00:00:41,660
+equal than the actual distance to the 
+nearest goal node. 
+
+8
+00:00:41,660 --> 00:00:46,725
+The equality is actually quite important. 
+For example, the heuristic value of a 
+
+9
+00:00:46,725 --> 00:00:51,401
+goal node is equal to zero and therefore, 
+it's equal to the actual distance to the 
+
+10
+00:00:51,401 --> 00:00:54,713
+goal node. 
+So any heuristic must have that property. 
+
+11
+00:00:54,713 --> 00:00:59,779
+In other words, there's usually at least 
+one node for which the equality holds 
+
+12
+00:00:59,779 --> 00:01:03,545
+namely, the goal node. 
+Unfortunately, this is often the only 
+
+13
+00:01:03,545 --> 00:01:07,442
+node for which this holds. 
+Otherwise, we would have a perfect 
+
+14
+00:01:07,442 --> 00:01:10,170
+heuristic, and that is too good to be 
+true. 
+
+15
+00:01:10,170 --> 00:01:15,262
+Admissible heuristics usually think the 
+nearest goal node is closer than it 
+
+16
+00:01:15,262 --> 00:01:18,746
+actually is. 
+They tend to underestimate the distance 
+
+17
+00:01:18,746 --> 00:01:22,080
+to the goal. 
+An example of an admissible heuristics is 
+
+18
+00:01:22,080 --> 00:01:26,537
+one we have seen for the touring Romania 
+problem, namely the straight line 
+
+19
+00:01:26,537 --> 00:01:29,549
+distance. 
+The shortest distance between two points 
+
+20
+00:01:29,549 --> 00:01:33,826
+on a map is usually the straight line. 
+Hence the straight line distance 
+
+21
+00:01:33,826 --> 00:01:37,561
+heuristic must underestimate the actual 
+distance along a road. 
+
+22
+00:01:37,561 --> 00:01:42,705
+Thus, it is an admissible heuristic. 
+For A* search, here's what that means. 
+
+23
+00:01:42,705 --> 00:01:48,702
+We set that the evaluation function f(n) 
+represents the cost over the shortest 
+
+24
+00:01:48,702 --> 00:01:54,403
+path through node n to a goal node. 
+So if the uristic never overestimates the 
+
+25
+00:01:54,403 --> 00:02:00,697
+distance from n to the nearest goal node, 
+then the evaluation function used by A* 
+
+26
+00:02:00,697 --> 00:02:06,560
+never overestimates the true cost of a 
+lu, solution through the node n. 
+
+27
+00:02:06,560 --> 00:02:12,851
+This brings me to the most important 
+property of A* namely that it is optimal. 
+
+28
+00:02:12,851 --> 00:02:18,758
+We can prove the following theory. 
+A* using tree search is optimal if the 
+
+29
+00:02:18,758 --> 00:02:23,668
+heuristic h is admissible. 
+Just as a reminder, optimal here means 
+
+30
+00:02:23,668 --> 00:02:29,960
+that the algorithm is guaranteed to find 
+the shortest path from the initial state 
+
+31
+00:02:29,960 --> 00:02:34,026
+to a goal node. 
+And this theorem tells us that if our 
+
+32
+00:02:34,026 --> 00:02:39,320
+heuristic is admissible, then A* will 
+return with an optimal path. 
+
+33
+00:02:39,320 --> 00:02:43,874
+That is of course a very useful property 
+for a search algorithm to have. 
+
+34
+00:02:43,874 --> 00:02:49,378
+By the way a similar theorem can be shown 
+for A* using graph search but I won't go 
+
+35
+00:02:49,378 --> 00:02:54,427
+into this here now. 
+Another property of A* is that it is 
+
+36
+00:02:54,427 --> 00:02:59,578
+complete which means that if there is a 
+solution, A* can find the solution. 
+
+37
+00:02:59,578 --> 00:03:02,881
+This can be shown using something called 
+contours. 
+
+38
+00:03:02,881 --> 00:03:07,966
+And since this is quite an interesting 
+concept, I want to introduce this here. 
+
+39
+00:03:07,966 --> 00:03:12,787
+So contours are sets of states that can 
+be reached within a certain cost. 
+
+40
+00:03:12,787 --> 00:03:17,080
+This is a bit like a topographic map that 
+you've all seen, I hope. 
+
+41
+00:03:17,080 --> 00:03:23,090
+In a topographic map, you see lines 
+indicating points of equal altitude. 
+
+42
+00:03:23,090 --> 00:03:29,777
+Here the contour is a line indicating 
+nodes of equal F value, and all the nodes 
+
+43
+00:03:29,777 --> 00:03:35,859
+within the contour belong to the set. 
+A prerequisite for being able to draw 
+
+44
+00:03:35,859 --> 00:03:40,672
+contours is that the f values along a 
+path are non-decreasing. 
+
+45
+00:03:40,672 --> 00:03:46,804
+So what this means is that as we move 
+away from the initial state the f values 
+
+46
+00:03:46,804 --> 00:03:51,724
+are usually increasing. 
+Now the way A* works fundamentally is 
+
+47
+00:03:51,724 --> 00:03:57,471
+that it starts from the initial state and 
+then adds nodes according to these 
+
+48
+00:03:57,471 --> 00:04:01,128
+contours. 
+It always starts with a smaller set and 
+
+49
+00:04:01,128 --> 00:04:04,412
+then increases the F value as it goes 
+along. 
+
+50
+00:04:04,412 --> 00:04:09,934
+But it will always explore nodes with 
+lower F values before it moves to a 
+
+51
+00:04:09,934 --> 00:04:14,756
+higher plateau, so to speak. 
+If our heuristic function always had the 
+
+52
+00:04:14,756 --> 00:04:18,316
+value zero, 
+what A* would do is essentially draw 
+
+53
+00:04:18,316 --> 00:04:23,176
+circles around the initial state. 
+If the heuristic always had the value 
+
+54
+00:04:23,176 --> 00:04:26,393
+zero, this would, of course, be 
+uninformed search. 
+
+55
+00:04:26,393 --> 00:04:31,390
+And, in fact, this algorithm has a name. 
+It's called uniform cost search, or 
+
+56
+00:04:31,390 --> 00:04:35,693
+Dijkstra's Algorithm. 
+But with the heuristic that provides some 
+
+57
+00:04:35,693 --> 00:04:40,826
+information what happens is that the 
+contours become ellipses that are drawn 
+
+58
+00:04:40,826 --> 00:04:45,026
+towards a goal state, so they try to get 
+closer to a goal state. 
+
+59
+00:04:45,026 --> 00:04:50,426
+And the more accurate our heuristic is 
+the more these ellipses stretch towards a 
+
+60
+00:04:50,426 --> 00:04:53,595
+goal. 
+A completeness of A* simply follows from 
+
+61
+00:04:53,595 --> 00:04:58,446
+this, because as it explores more and 
+more nodes the contours are growing and 
+
+62
+00:04:58,446 --> 00:05:01,470
+growing. 
+And eventually this must include a goal 
+
+63
+00:05:01,470 --> 00:05:04,180
+node. 
+This is true, because each contour can 
+
+64
+00:05:04,180 --> 00:05:09,409
+only contain a finite number of states. 
+And once these are all explored, A* will 
+
+65
+00:05:09,409 --> 00:05:12,560
+go to the next higher altitude for bigger 
+contour. 
+
+66
+00:05:14,520 --> 00:05:19,150
+And here is what this looks like visually 
+for our touring in Romania example. 
+
+67
+00:05:19,150 --> 00:05:24,123
+We start off in Irat. 
+And the F value there was 366, so that's 
+
+68
+00:05:24,123 --> 00:05:29,750
+the smallest control from which we start 
+that contains A node at all. 
+
+69
+00:05:29,750 --> 00:05:33,177
+Then, A* will continue to grow this 
+contour. 
+
+70
+00:05:33,177 --> 00:05:38,500
+Initially, as a small set, but then we 
+have a slightly bigger set, that for 
+
+71
+00:05:38,500 --> 00:05:43,313
+example, has the value 400. 
+And as you can see this node here is 
+
+72
+00:05:43,313 --> 00:05:47,615
+almost on the edge. 
+And if you go back to the tree you will 
+
+73
+00:05:47,615 --> 00:05:51,991
+see it's F value is above 400, so it must 
+be outside the set. 
+
+74
+00:05:51,991 --> 00:05:55,710
+And so on. 
+So, A* continues to grow this contour 
+
+75
+00:05:55,710 --> 00:06:01,738
+until it includes the Bucharest node. 
+In this example, you can see nicely how 
+
+76
+00:06:01,738 --> 00:06:05,634
+the ellipsis it draws stretch toward the 
+goal node. 
+
+77
+00:06:05,634 --> 00:06:09,071
+But you can also see it the other way 
+around. 
+
+78
+00:06:09,071 --> 00:06:15,640
+What this means is that A* must explore 
+all those nodes that are within a contour 
+
+79
+00:06:15,640 --> 00:06:20,300
+that has a value just less than the cost 
+of the optimal path. 
+
+80
+00:06:20,300 --> 00:06:26,600
+A* needs to include all those nodes that 
+are within this contour that almost leads 
+
+81
+00:06:26,600 --> 00:06:30,584
+to the goal node. 
+And often, that is still quite a large 
+
+82
+00:06:30,584 --> 00:06:33,988
+number. 
+So in this example, you see that most of 
+
+83
+00:06:33,988 --> 00:06:39,492
+the contours contain different nodes. 
+But think about the eight puzzle for a 
+
+84
+00:06:39,492 --> 00:06:44,924
+second, and what that looks like there. 
+In the eight puzzle the maximum goal 
+
+85
+00:06:44,924 --> 00:06:49,776
+distance you have is 31 steps. 
+Yet, you have just over 180,000 nodes. 
+
+86
+00:06:49,776 --> 00:06:53,760
+So there must be many nodes that have the 
+same F value. 
+
+87
+00:06:55,120 --> 00:07:00,870
+Here is another property of A* namely A* 
+is optimally efficient. 
+
+88
+00:07:00,870 --> 00:07:06,861
+What this means is, that no other, 
+optimal algorithm is guaranteed to expand 
+
+89
+00:07:06,861 --> 00:07:11,573
+fewer nodes than A*. 
+This is of course true for a given 
+
+90
+00:07:11,573 --> 00:07:16,765
+specific heuristic function. 
+What this gives us is that, any other 
+
+91
+00:07:16,765 --> 00:07:22,995
+algorithm that guarantees us an optimal 
+solution must expand at least as many 
+
+92
+00:07:22,995 --> 00:07:26,750
+nodes as A* for a given heuristic 
+function. 
+
+93
+00:07:26,750 --> 00:07:31,348
+Of course, there can still be a more 
+efficient way of finding a solution to a 
+
+94
+00:07:31,348 --> 00:07:35,470
+given problem namely if we have a 
+different, more efficient heuristic. 
+
+95
+00:07:35,470 --> 00:07:39,105
+But for a fixed juristic, A* is optimally 
+efficient. 
+
+96
+00:07:39,105 --> 00:07:44,392
+Notice that efficiency here is counted in 
+the number of nodes that are expanded, 
+
+97
+00:07:44,392 --> 00:07:49,283
+but of course that's not the only thing 
+that makes an algorithm efficient. 
+
+98
+00:07:49,283 --> 00:07:54,306
+For example, computing the juristic 
+function has a computational cost but it 
+
+99
+00:07:54,306 --> 00:07:58,140
+does not count towards the number of 
+nodes that we expand. 
+
+100
+00:07:58,140 --> 00:08:03,810
+So A* is only optimally efficient with 
+respect to number of nodes it expands. 
+
+101
+00:08:03,810 --> 00:08:09,340
+To be more specific, it's not only the 
+number of nodes that any other algorithm 
+
+102
+00:08:09,340 --> 00:08:12,000
+must expand. 
+It is exactly those nodes. 
+
+103
+00:08:12,000 --> 00:08:17,033
+Suppose there is another algorithm that 
+is optimal, which means it returns an 
+
+104
+00:08:17,033 --> 00:08:20,497
+optimal path. 
+But it does not expand one of the nodes 
+
+105
+00:08:20,497 --> 00:08:23,570
+that is expanded by A*. 
+What does this mean? 
+
+106
+00:08:23,570 --> 00:08:30,876
+A* expands all those nodes with an F 
+value that is less than C* where C* is 
+
+107
+00:08:30,876 --> 00:08:36,220
+the value of the optimal power. 
+So, if another algorithm did not expand 
+
+108
+00:08:36,220 --> 00:08:40,269
+one of these nodes. 
+That means, in the search space of the 
+
+109
+00:08:40,269 --> 00:08:45,738
+algorithm, there's an unexplored node 
+that has an F value of less than C*. 
+
+110
+00:08:45,738 --> 00:08:51,066
+So that means the most promising path 
+through that node that the algorithm 
+
+111
+00:08:51,066 --> 00:08:54,121
+ignores, looks better than the optimal 
+path. 
+
+112
+00:08:54,121 --> 00:08:59,945
+So if we don't explore that path, we can 
+never find out that it actually turns out 
+
+113
+00:08:59,945 --> 00:09:05,479
+to be something worse in the end. 
+So in the end, A* expands a minimal 
+
+114
+00:09:05,479 --> 00:09:10,140
+number of nodes that still guarantee an 
+optimal solution. 
+

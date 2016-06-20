@@ -1,0 +1,126 @@
+>> As I have told you before, the graph
+plan planner performs two types of
+operations.
+The first is forward planning graph
+expansion, which is what we've looked at
+so far.
+And the second is, a backward search
+through the planning graph.
+This backward search is what we're going
+to look at next, although I probably don't
+have to describe this to you.
+I could just say that this is a depth
+first graph search, where the search nodes
+are subsets of nodes from the different
+layers.
+But, for those of you that find that a
+little superficial, here comes the detail.
+And here is an overview of the search
+procedure followed by graph plan.
+We start by searching backwards from the
+last proposition layer in our planning
+graph.
+Of course, this layer Pk, must contain all
+the goal propositions, and none of these
+goal propositions must be mutex.
+Otherwise, the planning graph cannot
+contain a solution plan.
+So, this is where we start the search and
+the remaining three steps describe how we
+proceed with the search from any
+proposition layer.
+So, we assume that g are the current set
+of goal propositions that we're trying to
+achieve in a given proposition layer Pj.
+Initially, this is the last layer.
+But, during the course of the algorithm,
+this will move backwards through the
+graph.
+And what we do to achieve these
+propositions in layer Pj is to look for a
+set of actions, pi j, that are a subset of
+the actions in layer Aj.
+So that's the layer before Pj.
+And, of course, the actions that we're
+looking for must together achieve all the
+conditions in g, and they must not be
+mutex.
+Then, we can simply take the preconditions
+of all these actions as our new subgoal,
+the new propositions that we try to
+achieve in proposition layer Pj minus 1.
+And, of course, the search ends when we've
+reached the layer P0.
+And here is an example of how this works
+in the planning graph we've seen before.
+We start with our original goal consisting
+of two goal propositions in the last
+proposition layer which is P3 in this
+graph, and this layer does indeed contain
+the two goal propositions and they are not
+mutex here.
+Then, we have to chose a set of non-mutex
+actions in our action layer A3 that
+together achieve all the goals in
+proposition layer P3.
+And the positive effect links tell us what
+options we have here.
+And in this case, it's quite simple.
+We choose these two actions here.
+Then, we can follow the preconditioned
+links to identify the subgoals in our
+proposition layer P2.
+And these are those four subgoals as you
+can see here.
+So far, this corresponds to one iteration
+in our search algorithm.
+And now, we can continue as before, we use
+the positive effect links to identify
+actions in the next action layer which is
+A2.
+And we see here each of these propositions
+can be achieved by one action.
+But, remember this graph does not show the
+no-op operations that should be in this
+layer.
+I just left them out to save some space.
+So technically, there are two more ways of
+achieving these two propositions here.
+Namely using the no-op operations.
+Taking them straight from the preceding
+layer.
+And that's what we will do here.
+So, from the actions shown here, we select
+those two and we also take the two no-op
+operations to achieve our goal
+propositions in layer P2.
+Then, we can use the precondition links to
+identify the next subgoal in layer P1.
+So, these are the preconditions of all the
+actions we have chosen, including the
+no-op operations here for subgoals.
+And that concludes the second iteration
+through our search.
+So now, we proceed as before.
+We use the positive effect links to
+identify the actions in action layer A1,
+and we can also use some no-op operations
+as shown here.
+But in addition to the no-op operations,
+we also need two of the actions listed
+here, namely those two.
+And again, we use the precondition links
+to identify those propositions in layer P0
+that we need to be true.
+And, in fact, as you can see here, all six
+of the propositions in layer P0 are
+required for this problem.
+So that means we have found a solution
+plan in our planning graph.
+And it is a layer plan consisting of those
+two actions in action layer 1, those two
+actions in action layer 2, and those two
+actions in action layer 3.
+That's the plan we have come up with, the
+plan we have found through backwards
+search in our planning graph.

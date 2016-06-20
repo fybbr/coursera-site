@@ -1,0 +1,208 @@
+Welcome to week four of the AI planning
+course.
+We've already seen a lot of material.
+In week 1 we've seen the basic planning
+problem and the context in which planning
+takes place.
+In week two we've learned about the A-star
+search algorithm that is the foundation
+for state space forward search, the
+algorithm we have seen to solve planning
+problems.
+In Week 3, we've had two main topics, plan
+space search, and HTM planning.
+In plan space search, we have described a
+completely new and different search space,
+which we can also search.
+And this was the space of partial plans.
+Then we've seen how plan refinement
+operations can be used to define steps in
+this new plan space that we are searching.
+And finally we've seen an algorithm that
+is basically the UCPOP planner which is
+the partial order planner that performs a
+plan space search.
+Then, we've gone over to HTN planning.
+Htn planning is a completely different way
+of looking at planning problems.
+So really solves a problem that is
+different from the one we've solved with
+strips like systems.
+In this problem, we're not trying to
+achieve goals, but we're trying to
+accomplish tasks.
+So we're using methods to decompose tasks
+into finer grained tasks until we reach
+the level of actions that we can use to
+form a plan.
+So that's what we've learned in week
+three.
+And now I want to encourage you again to
+use the social platform that we provide.
+And this time I briefly want to talk about
+a virtual world meeting space that we
+provide in Second Life.
+And I hope you will have a look at this
+and send your avatar there and talk to
+other people in this space and I'll
+quickly go there now.
+Just to see whats going on there.
+And see who's their that's Austin's
+avatar.
+Hello Austin, hello.
+The graph plan planner addresses the same
+planning problem as the strips planner.
+Or UC pop.
+That is the planning problem consists of a
+set of operators constituting a domain, an
+initial state, and a set of goals that
+need to be achieved.
+One major difference to the planning
+algorithms we've seen so far, is that
+graph plan works on a propositional
+representation.
+That means the atoms that make up a world
+state are no longer structured.
+They don't consist of objects that are
+related to each other, but of individual
+symbols.
+Where each symbol represents a fact about
+the world that can be true or false.
+The same goes for actions.
+They are now individual symbols not
+parameterized actions.
+But as it turns out, this isn't such a
+major difference as every strips planning
+problem, as we have seen it so far, can be
+translated into an equivalent
+propositional problem.
+So, for simplicity we will now think of
+the planning problem as given in its
+propositional form.
+And here is now an overview of how the
+graph plan algorithm works.
+The details of this will follow in the
+remainder of this segment.
+Essentially what the algorithm does is
+create a data structure called the
+Planning Graph.
+An example of which you see here.
+The algorithm then, consists of two major
+steps.
+The first step expands this planning graph
+with two new layers.
+An action layer and a proposition layer.
+The second step of the algorithm searches
+this graph for a plan.
+And here is how the first step works.
+The algorithm starts with a single layer
+of nodes in it's planning graph and that
+is the proposition layer P0.
+In this layer we have all those
+propositions that were true in the initial
+state as nodes.
+So in this layer we have six nodes holding
+one proposition each that were true in the
+initial state.
+That's the initial planning graph.
+The graph expansion step then adds exactly
+one action layer and one proposition layer
+to this graph.
+The first action layer contains all those
+action symbols, those 4 here.
+That would be applicable in a state
+consisting of all those symbols contained
+in the preceding proposition there.
+So these actions are applicable in a state
+that would consist of all these symbols.
+And then in the proposition layer P1 that
+we are adding in this expansion set we
+have all the effects that were asserted by
+the actions in the preceeding action layer
+plus all the propositions that were true
+already.
+So this is the proposition layer P1,
+consisting of all the positive effects of
+these actions, and all those elements that
+were already in P0.
+The edges you see here simply represent
+the preconditions and effects of the
+actions.
+When we look at the detail of the
+algorithm, we will see that there are
+actually a few more action nodes in the
+action layer representing noops, no
+operations, which were intruduced to carry
+propositions forward frmo one proposition
+layrr to the next.
+And there are also some additional edges
+not shown in this graph, and these are
+edges that are internal to proposition and
+action layers and represent mutual
+exclusivity of these symbols being true.
+One important feature of this expansion
+step that comes first, is that it runs in
+polynomial time.
+So it is fast.
+The expansion step is then followed by the
+second step in this algorithm which is the
+backwards search.
+So what we do in the backwards search is
+search for our plan from the last
+proposition layer.
+Are in the plan.
+So we are searching from this layer here
+and we're going backwards towards the
+initial state, until we reach the initial
+state and search for sets of actions that
+may constitute our plan.
+And this was a standard search following
+the type of search we have seen before,
+that can be done with something like the
+A-star app.
+[inaudible] Algorithm.
+Unfortunately, this means that the
+backwards surge may have exponential time
+complexity.
+If the backwards surge finds a plan, then
+we're done, because we've solved the
+problem.
+If it doesn't find the plan, then the
+algorithm returns to the expansion step.
+So it generates a new action layer, which
+is shown here.
+And a new proposition layer shown here.
+And this is again followed by a backward
+search, starting from the last proposition
+layer, and going backwards towards the
+initial state.
+All the way to the initial state.
+Selecting actions from both action layers.
+And that's essentially all there is to
+graph plan.
+When Graphplan came out in the mid-1990s,
+it was significantly faster than all the
+previous planners.
+And there are a number of contributing
+factors why this is the case.
+And I shall point them out to you while we
+go through the technical details of the
+planning an algorithm.
+In the second part of this week we'll be
+looking at advanced heuristics that can be
+used for state space forward search.
+A technique that we've seen in week two.
+And in this context we'll take a closer
+look at the FF Planner, which was
+developed by Joerg Hoffman.
+And one of the distinguishing features of
+the FF Planner is that it uses the relaxed
+problem heuristic, which is on the one
+hand efficient to compute and on the
+other, accurate.
+And that will end this week.
+And now let's step into the technical
+material for week two.
+At the end of this, you should be able to
+implement an almost state of the art
+planning system.

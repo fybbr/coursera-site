@@ -1,0 +1,45 @@
+1
+00:00:00,000 --> 00:00:09,517
+This is a demonstration of O plan. 
+Running on a simple single shot planning 
+
+2
+00:00:09,517 --> 00:00:15,020
+example. 
+We call it Unix volume groups. 
+
+3
+00:00:15,020 --> 00:00:20,070
+What we're doing here is selecting a 
+number of logical volumes to map against 
+
+4
+00:00:20,070 --> 00:00:24,992
+a number of physical volumes in the UNIX 
+systems administration environment. 
+
+5
+00:00:24,992 --> 00:00:29,460
+And the planner which we are just going 
+to run, that's it already run, is 
+
+6
+00:00:29,460 --> 00:00:33,540
+producing a script which can safely 
+remove the volume mappings. 
+
+7
+00:00:35,620 --> 00:00:40,599
+This a good example of generative AI 
+planner being used in an appropriate 
+
+8
+00:00:40,599 --> 00:00:45,713
+application area, previously a complex 
+deeply nested script was used and its 
+
+9
+00:00:45,713 --> 00:00:48,540
+maintenance was difficult and error 
+prone. 
+

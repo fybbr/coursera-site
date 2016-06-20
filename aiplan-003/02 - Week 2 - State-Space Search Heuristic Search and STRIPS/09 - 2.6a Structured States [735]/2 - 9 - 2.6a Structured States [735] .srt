@@ -1,0 +1,554 @@
+1
+00:00:04,140 --> 00:00:09,129
+In previous segments, we have looked at a 
+general technique used in Artificial 
+
+2
+00:00:09,129 --> 00:00:12,007
+Intelligence to solve problems, namely 
+search. 
+
+3
+00:00:12,007 --> 00:00:17,316
+We have seen how the efficiency of search 
+can be greatly increased through the use 
+
+4
+00:00:17,316 --> 00:00:20,706
+of heuristics. 
+In this segment, we will look at one of 
+
+5
+00:00:20,706 --> 00:00:23,712
+the early systems developed in AI for 
+planning, 
+
+6
+00:00:23,712 --> 00:00:28,716
+that is the Strips planner. 
+One of the advances made by the Strips 
+
+7
+00:00:28,716 --> 00:00:31,211
+planner, was the representation used by 
+it. 
+
+8
+00:00:31,211 --> 00:00:35,666
+The Strips representation still under 
+lies much of the research done in AI 
+
+9
+00:00:35,666 --> 00:00:40,358
+planning today, and the first three parts 
+of the segment, will be concerned with 
+
+10
+00:00:40,358 --> 00:00:43,922
+the representation. 
+Once we understand the representation, we 
+
+11
+00:00:43,922 --> 00:00:48,377
+can see how search algorithms as we've 
+seen them previously, can be used to 
+
+12
+00:00:48,377 --> 00:00:52,297
+solve planning problems, and that is the 
+remainder of this segment. 
+
+13
+00:00:52,297 --> 00:00:57,109
+The first thing we will look at now, is 
+how states were represented in the Strips 
+
+14
+00:00:57,109 --> 00:01:03,369
+representation. 
+The way we have looked at search so far 
+
+15
+00:01:03,369 --> 00:01:10,028
+is we have treated states as black boxes. 
+That is we have very limited access to 
+
+16
+00:01:10,028 --> 00:01:13,940
+the internal structure of a state or an 
+action. 
+
+17
+00:01:13,940 --> 00:01:17,130
+Of course, there are some things we can 
+do with states. 
+
+18
+00:01:17,130 --> 00:01:20,498
+For example, we can see whether it is a 
+goal state or not, 
+
+19
+00:01:20,498 --> 00:01:23,216
+and this is necessary to terminate the 
+search. 
+
+20
+00:01:23,216 --> 00:01:26,347
+We can also find out what the applicable 
+actions are, 
+
+21
+00:01:26,347 --> 00:01:28,947
+and this is related to the successor 
+states. 
+
+22
+00:01:28,947 --> 00:01:33,673
+Remember, we have defined the successor 
+function to return an empty set if there 
+
+23
+00:01:33,673 --> 00:01:37,817
+are no applicable actions. 
+So, these two are related to each other, 
+
+24
+00:01:37,817 --> 00:01:42,298
+and give us information about what can be 
+achieved from this state. 
+
+25
+00:01:42,298 --> 00:01:47,714
+More simple functions about states would 
+be an equality test and a hash function. 
+
+26
+00:01:47,714 --> 00:01:51,459
+We need those two to turn tree search 
+into graph search. 
+
+27
+00:01:51,459 --> 00:01:56,809
+And finally, we've seen how a heuristic 
+estimate gives us some information about 
+
+28
+00:01:56,809 --> 00:02:00,420
+a state that we can use to guide the 
+search algorithm. 
+
+29
+00:02:00,420 --> 00:02:06,073
+But we had no other access functions to 
+look into the states and actions, so they 
+
+30
+00:02:06,073 --> 00:02:09,295
+are black boxes. 
+But our aim in planning is to reason 
+
+31
+00:02:09,295 --> 00:02:13,960
+about these states and actions and that 
+is very difficult if we don't have access 
+
+32
+00:02:13,960 --> 00:02:17,713
+to the internal structure. 
+Just think about what we have learned at 
+
+33
+00:02:17,713 --> 00:02:21,872
+the end of the last segment, mainly that 
+it is possible to, to automatically 
+
+34
+00:02:21,872 --> 00:02:26,309
+derive good heuristics but this is only 
+possible if we know something about the 
+
+35
+00:02:26,309 --> 00:02:30,745
+states and actions in our search problem, 
+so we need to know the internal search 
+
+36
+00:02:30,745 --> 00:02:33,537
+structure. 
+The strips representation gives us a 
+
+37
+00:02:33,537 --> 00:02:37,650
+standardized ways of looking at the 
+internals of states, and actions. 
+
+38
+00:02:37,650 --> 00:02:42,367
+Now this is not as pretty as it here 
+shown in the picture, but there will be a 
+
+39
+00:02:42,367 --> 00:02:47,266
+formal language that we will define, that 
+describes what is going on in the state 
+
+40
+00:02:47,266 --> 00:02:51,439
+and what actions do to the state. 
+And that is the fundamentals of the 
+
+41
+00:02:51,439 --> 00:02:53,980
+strips representation we will look at 
+now. 
+
+42
+00:02:53,980 --> 00:02:58,570
+The strips representation is based on 
+first order predicate logic. 
+
+43
+00:02:58,570 --> 00:03:04,273
+This means we have objects in our domain 
+and these objects are somehow related to 
+
+44
+00:03:04,273 --> 00:03:07,403
+each other. 
+Lets look at our dock worker robot 
+
+45
+00:03:07,403 --> 00:03:10,436
+example. 
+In the dock worker robot domain we have 
+
+46
+00:03:10,436 --> 00:03:13,407
+several types of objects that we are 
+looking at. 
+
+47
+00:03:13,407 --> 00:03:16,378
+The first type we are looking at are the 
+robots. 
+
+48
+00:03:16,378 --> 00:03:21,269
+We will introduce symbols like these, 
+robot one and robot two to refer to these 
+
+49
+00:03:21,269 --> 00:03:24,983
+robots in our logic. 
+So we can use this symbol to denote the 
+
+50
+00:03:24,983 --> 00:03:29,316
+robot with the number one and the robot 
+with the number two and so on. 
+
+51
+00:03:29,316 --> 00:03:33,216
+And we can have an arbitrary number of 
+symbols denoting robots. 
+
+52
+00:03:33,216 --> 00:03:37,240
+They are of the type robot, that means 
+they all represent a robot. 
+
+53
+00:03:37,240 --> 00:03:42,315
+Robots are of course, the objects that 
+carry a container from one location to 
+
+54
+00:03:42,315 --> 00:03:46,467
+another adjacent location. 
+The next type of objects we have are 
+
+55
+00:03:46,467 --> 00:03:49,565
+cranes. 
+And again, we have symbols to denote the 
+
+56
+00:03:49,565 --> 00:03:54,772
+different cranes that are in our domain. 
+Cranes can be used to stack or unstack 
+
+57
+00:03:54,772 --> 00:03:58,660
+containers from a pile. 
+Or load or unload containers onto a 
+
+58
+00:03:58,660 --> 00:04:01,758
+robot. 
+As opposed to robots, cranes have a fixed 
+
+59
+00:04:01,758 --> 00:04:06,130
+location, so they cannot move. 
+And then we have of course containers. 
+
+60
+00:04:06,130 --> 00:04:11,245
+Containers are denoted by these symbols 
+here, these can be arbitrary symbols of 
+
+61
+00:04:11,245 --> 00:04:15,519
+course and they are the things we are 
+moving around in our domain. 
+
+62
+00:04:15,519 --> 00:04:20,764
+Containers can be in some pile or they 
+can be loaded onto a robot or they can be 
+
+63
+00:04:20,764 --> 00:04:23,882
+held by a crane. 
+Robots, cranes, and containers are 
+
+64
+00:04:23,882 --> 00:04:28,742
+physical objects that means they're 
+tangible and we can see these objects in 
+
+65
+00:04:28,742 --> 00:04:31,961
+the real world. 
+The next two types, do not have that 
+
+66
+00:04:31,961 --> 00:04:35,053
+property. 
+The first one is locations, which denote 
+
+67
+00:04:35,053 --> 00:04:40,039
+places that we have in our world, again 
+we introduce symbols, to represent these 
+
+68
+00:04:40,039 --> 00:04:43,573
+different places. 
+These could be a storage area, a dock, a 
+
+69
+00:04:43,573 --> 00:04:47,550
+ship, or some parking or passing area in 
+our domain of interest. 
+
+70
+00:04:47,550 --> 00:04:52,046
+And then we have piles of containers 
+again we have symbols for these, pile 
+
+71
+00:04:52,046 --> 00:04:55,448
+one, pile two here. 
+And a pile can be empty in which case 
+
+72
+00:04:55,448 --> 00:04:59,640
+there's no mass to it, it's not a 
+tangible object or it contains some 
+
+73
+00:04:59,640 --> 00:05:04,380
+containers in which case we can actually 
+see the pile and the containers that 
+
+74
+00:05:04,380 --> 00:05:07,150
+belong to it. 
+Each pile is attached to a single 
+
+75
+00:05:07,150 --> 00:05:09,713
+location so we cannot move the piles 
+around. 
+
+76
+00:05:09,713 --> 00:05:12,508
+And at the bottom of each pile we have a 
+pallet. 
+
+77
+00:05:12,508 --> 00:05:17,110
+This is denoted by the symbol pallet and 
+despite the fact that we have several 
+
+78
+00:05:17,110 --> 00:05:21,653
+piles and therefore several pallets at 
+the bottom of these piles we only need 
+
+79
+00:05:21,653 --> 00:05:26,021
+one symbol to denote all these pallets as 
+we don't need to distinguish the 
+
+80
+00:05:26,021 --> 00:05:30,088
+different pallets. 
+So, in a state we have objects and these 
+
+81
+00:05:30,088 --> 00:05:33,861
+objects are grouped into types as we've 
+seen here. 
+
+82
+00:05:33,861 --> 00:05:39,220
+And each individual object is denoted by 
+a unique symbol in our domain. 
+
+83
+00:05:40,340 --> 00:05:45,579
+Once we have identified the objects and 
+types that exist in a domain, we need to 
+
+84
+00:05:45,579 --> 00:05:49,311
+specify them in a way that the planner 
+can take as input. 
+
+85
+00:05:49,311 --> 00:05:54,420
+Which means we have to write a text file 
+that defines these objects and types. 
+
+86
+00:05:54,420 --> 00:05:59,012
+In this file we need to adhere to a 
+specific syntax, such that the planet 
+
+87
+00:05:59,012 --> 00:06:01,970
+will understand what we're trying to say 
+to it. 
+
+88
+00:06:01,970 --> 00:06:06,391
+The syntax understood by most planners 
+these days is the PDDL syntax. 
+
+89
+00:06:06,391 --> 00:06:09,980
+And PDDL stands for Planning Domain 
+Definition Language. 
+
+90
+00:06:09,980 --> 00:06:15,170
+Here is an example of how we can specify 
+a domain in PDDL that defines the types 
+
+91
+00:06:15,170 --> 00:06:20,104
+we have just seen in the previous slide. 
+The first thing we do is we tell the 
+
+92
+00:06:20,104 --> 00:06:23,052
+system that we are trying to define 
+something. 
+
+93
+00:06:23,052 --> 00:06:25,936
+And what we are trying to define is a 
+domain. 
+
+94
+00:06:25,936 --> 00:06:30,165
+And this domain has a name. 
+This is an arbitrary name, and does not 
+
+95
+00:06:30,165 --> 00:06:35,262
+really matter at this stage. 
+But the keywords define on domain are 
+
+96
+00:06:35,262 --> 00:06:38,367
+always there. 
+Next, PDDL allows us to specify 
+
+97
+00:06:38,367 --> 00:06:43,661
+requirements for a specific domain. 
+In this case we specify that our domain 
+
+98
+00:06:43,661 --> 00:06:48,249
+requires strips and typing. 
+Strips is actually always assumed and 
+
+99
+00:06:48,249 --> 00:06:53,825
+typing is a very simple extension, but 
+there are many other extensions that you 
+
+100
+00:06:53,825 --> 00:06:56,417
+can use. 
+The typing extension is, of course, 
+
+101
+00:06:56,417 --> 00:07:01,187
+required for the types, we will see next. 
+The types are introduced by the keyword, 
+
+102
+00:07:01,187 --> 00:07:04,705
+types, I've seen here. 
+And then we simply name the different 
+
+103
+00:07:04,705 --> 00:07:09,058
+types, the symbols that identify them. 
+Location, pile, robot, crane, container. 
+
+104
+00:07:09,058 --> 00:07:12,218
+These are the types we've seen in the 
+previous slide. 
+
+105
+00:07:12,218 --> 00:07:15,855
+Pddl also allows you to insert comments 
+into your input file. 
+
+106
+00:07:15,855 --> 00:07:18,777
+And these are introduced by the semicolon 
+symbol. 
+
+107
+00:07:18,777 --> 00:07:23,606
+Everything from the semicolon to the end 
+of the line is considered a comment, and 
+
+108
+00:07:23,606 --> 00:07:26,290
+is therefore not part of the formal 
+language. 
+
+109
+00:07:26,290 --> 00:07:29,800
+It will simply be ignored by the planning 
+system. 
+
+110
+00:07:29,800 --> 00:07:34,402
+Of course, there is a lot more to 
+planning domains than just the types and 
+
+111
+00:07:34,402 --> 00:07:36,019
+we will look at that next. 
+

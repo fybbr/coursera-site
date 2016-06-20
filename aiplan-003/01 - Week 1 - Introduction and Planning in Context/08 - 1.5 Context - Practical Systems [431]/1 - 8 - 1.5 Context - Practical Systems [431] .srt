@@ -1,0 +1,294 @@
+1
+00:00:06,900 --> 00:00:11,111
+This section of the course will look at 
+the very wide range of research and 
+
+2
+00:00:11,111 --> 00:00:14,270
+development areas that have been explored 
+in AI Planning. 
+
+3
+00:00:14,270 --> 00:00:18,482
+It'll put AI Planning techniques in the 
+context of domain modeling and plan 
+
+4
+00:00:18,482 --> 00:00:21,308
+representation. 
+Consider engagement with users, task 
+
+5
+00:00:21,308 --> 00:00:25,021
+assigners, and decision makers, who must 
+select between plan options. 
+
+6
+00:00:25,021 --> 00:00:29,400
+And would include the important aspect of 
+plan execution for practical systems. 
+
+7
+00:00:35,960 --> 00:00:40,253
+The cost logo shows a number of 
+applications of [INAUDIBLE] AI planners 
+
+8
+00:00:40,253 --> 00:00:43,533
+over the years. 
+The [INAUDIBLE] planner was used in the 
+
+9
+00:00:43,533 --> 00:00:48,065
+mid 1970s to generate project plans for 
+electricity to [INAUDIBLE] overhaul. 
+
+10
+00:00:48,065 --> 00:00:52,478
+The project plans in this case were 
+prepared well in advance, because it's 
+
+11
+00:00:52,478 --> 00:00:55,877
+costly to have these machines out for any 
+length of time. 
+
+12
+00:00:55,877 --> 00:00:59,753
+But while the repair's taking place 
+typically problems are found, 
+
+13
+00:00:59,753 --> 00:01:02,675
+extra maintenance operations need to be 
+injected. 
+
+14
+00:01:02,675 --> 00:01:06,373
+so the plans had to be adjusted as you 
+went along. 
+
+15
+00:01:06,373 --> 00:01:12,277
+And [INAUDIBLE] was able to do that. 
+In the late 1970's, Steve [INAUDIBLE] at 
+
+16
+00:01:12,277 --> 00:01:17,250
+NASA's jet propulsion laboratory created 
+the divisor planner, which was used to 
+
+17
+00:01:17,250 --> 00:01:20,586
+generate action sequences for the Voyager 
+spacecraft. 
+
+18
+00:01:20,586 --> 00:01:24,930
+Though it wasn't used for uploading live 
+action sequences to voyages. 
+
+19
+00:01:24,930 --> 00:01:27,951
+Divisor was based on the [INAUDIBLE] 
+design. 
+
+20
+00:01:27,951 --> 00:01:32,106
+But added the ability to represent time 
+windows on the activities. 
+
+21
+00:01:32,106 --> 00:01:35,820
+Which is important for this kind of 
+robotic application. 
+
+22
+00:01:37,480 --> 00:01:42,340
+Nonlins hierarchical task network 
+approach was also used in some of the 
+
+23
+00:01:42,340 --> 00:01:49,065
+earlier research on the robots in Japan. 
+Assembly, integration and tests of the 
+
+24
+00:01:49,065 --> 00:01:54,316
+payload bay for the European Ariane 
+rockets was carried out using a planner 
+
+25
+00:01:54,316 --> 00:01:59,496
+based on the O-Plan design. 
+O-Plan has also been used in a wide range 
+
+26
+00:01:59,496 --> 00:02:03,120
+of applications in emergency response and 
+search and rescue. 
+
+27
+00:02:04,240 --> 00:02:09,422
+Edinburgh, AI planners have also been 
+used in applications as diverse as help 
+
+28
+00:02:09,422 --> 00:02:19,313
+desks, tanker delivery, and many others. 
+Even the earliest AI planners were used 
+
+29
+00:02:19,313 --> 00:02:24,592
+in realistic and practical applications. 
+The STRIPS planner from the early 1970s 
+
+30
+00:02:24,592 --> 00:02:29,054
+was used to control the shaky robot. 
+And, as you can see from this table, 
+
+31
+00:02:29,054 --> 00:02:34,018
+there's a range of planners over the 
+decades which have been applied to a wide 
+
+32
+00:02:34,018 --> 00:02:38,354
+range of application areas. 
+And we're going to cover some of those in 
+
+33
+00:02:38,354 --> 00:02:43,678
+a later module of this course. 
+As part of this cause, we're going to 
+
+34
+00:02:43,678 --> 00:02:46,376
+encorage you to look at a number of 
+readings. 
+
+35
+00:02:46,376 --> 00:02:50,873
+In particular, there's two reviews of AI 
+planning, which we hope you'll find 
+
+36
+00:02:50,873 --> 00:02:55,609
+useful. One is from the 1990's, so it's 
+quite dated, but it does include a lot of 
+
+37
+00:02:55,609 --> 00:03:00,466
+the work on those early planners and some 
+of the formative techniques as used in 
+
+38
+00:03:00,466 --> 00:03:05,262
+them and that you'll learn about in this 
+course. And that's the Hendler, Tate in 
+
+39
+00:03:05,262 --> 00:03:09,280
+Drummond paper in AI magazine, on AI 
+planning, systems and techniques. 
+
+40
+00:03:09,280 --> 00:03:14,177
+Is also a review, a decade later, by 
+Wilkins and desJardins, on a call for 
+
+41
+00:03:14,177 --> 00:03:18,871
+knowledge-based planning, where 
+techniques of knowledge-based systems, 
+
+42
+00:03:18,871 --> 00:03:24,232
+and planning were being brought together. 
+Full details of these readings and the 
+
+43
+00:03:24,232 --> 00:03:28,720
+locations where you can find the PDF 
+copies of them will be available in the 
+
+44
+00:03:28,720 --> 00:03:32,050
+cource wiki. 
+Then there's a number of readings, 
+
+45
+00:03:32,050 --> 00:03:36,171
+some of them very short readings. 
+on specific planners and their 
+
+46
+00:03:36,171 --> 00:03:39,246
+applications. 
+And we hope you might dip into these 
+
+47
+00:03:39,246 --> 00:03:42,874
+during the course. 
+If you've got time to read just a couple 
+
+48
+00:03:42,874 --> 00:03:45,396
+of these, these are the ones we'd 
+suggest. 
+
+49
+00:03:45,396 --> 00:03:47,979
+The initial review of AI Planners to 
+1990. 
+
+50
+00:03:47,979 --> 00:03:52,591
+And a very short paper on O-Plan one of 
+the Edinburgh planners, 
+
+51
+00:03:52,591 --> 00:03:57,450
+which looks at a wide range of techniques 
+and applications that were in use in 
+
+52
+00:03:57,450 --> 00:04:01,578
+that, in that system. 
+There's a diagram in the 1990 review 
+
+53
+00:04:01,578 --> 00:04:06,015
+paper which tries to trace some of the 
+historical connections between the 
+
+54
+00:04:06,015 --> 00:04:09,612
+different planners. 
+The techniques they drew on and how they 
+
+55
+00:04:09,612 --> 00:04:13,090
+build on one another. 
+It's worth looking at that in detail. 
+
+56
+00:04:13,090 --> 00:04:18,126
+Perhaps you could pause the video at this 
+point and take a good look at some of the 
+
+57
+00:04:18,126 --> 00:04:22,443
+techniques and areas in there. 
+There's an online version of this diagram 
+
+58
+00:04:22,443 --> 00:04:27,180
+also available at high resolution if you 
+can't see it in the video that you're 
+
+59
+00:04:27,180 --> 00:04:27,540
+using. 
+

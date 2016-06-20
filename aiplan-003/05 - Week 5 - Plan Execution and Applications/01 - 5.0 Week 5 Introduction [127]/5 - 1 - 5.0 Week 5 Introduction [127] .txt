@@ -1,0 +1,41 @@
+>> Welcome to the final week of the AI
+planning course.
+I am glad you are still with us.
+On this course, you have already learned a
+lot of things.
+I have described to you the planning
+problem, and we have seen several
+algorithms for solving this problem,
+including an algorithm that is behind one
+of the state-of-the-art planners, one of
+the fastest plan-generating systems today.
+In this week, we're going to turn to less
+technical material and go a lot broader.
+First, my colleague Austin Tate will
+describe to you some practical planners
+and applications to which they have been
+applied.
+People describe some of the inside
+technology which hopefully you will
+recognize from what you have learned
+previously.
+Then, in this week's feature, we will look
+at planning for missions in space.
+Finally, I will describe to you some
+topics that surround the planning problem
+we've looked at so far.
+For example, what happens before we can
+plan, how we can come up with planning
+domains?
+Or what happens after planning?
+How do we do planned execution?
+And that will conclude the lectures for
+this week and for the whole course.
+Then you still have to do the exams.
+There is the awareness-level exam.
+There is the foundation-level exam.
+And for those who want to pass the course
+at the performance level, you will also
+have to do the final programming
+assignment.
+And that's it.

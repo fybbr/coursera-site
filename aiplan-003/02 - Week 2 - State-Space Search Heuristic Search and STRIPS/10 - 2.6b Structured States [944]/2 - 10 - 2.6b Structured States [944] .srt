@@ -1,0 +1,670 @@
+1
+00:00:04,060 --> 00:00:09,025
+The strips representation is based on the 
+idea that in a world state, we have 
+
+2
+00:00:09,025 --> 00:00:12,136
+objects that are somehow related to each 
+other. 
+
+3
+00:00:12,136 --> 00:00:17,035
+That means we need to define some 
+relations that we can use to relate the 
+
+4
+00:00:17,035 --> 00:00:21,074
+objects to each other. 
+Relations are also known as predicates. 
+
+5
+00:00:21,074 --> 00:00:26,039
+For a given world state, a relation 
+between several objects can either hold 
+
+6
+00:00:26,039 --> 00:00:29,151
+or not hold. 
+That is, it is either true or false. 
+
+7
+00:00:29,151 --> 00:00:34,116
+Here are the relation defined for the 
+dock worker robot domain in the PDDL 
+
+8
+00:00:34,116 --> 00:00:36,947
+syntax. 
+The first predicate mentioned here is the 
+
+9
+00:00:36,947 --> 00:00:40,385
+adjacent predicate. 
+Which defines when two locations are next 
+
+10
+00:00:40,385 --> 00:00:43,542
+to each other. 
+So the way this works is that we name the 
+
+11
+00:00:43,542 --> 00:00:47,600
+relation that we want to define. 
+And then we give the parameters to this 
+
+12
+00:00:47,600 --> 00:00:50,137
+relation. 
+In this case, they are two locations. 
+
+13
+00:00:50,137 --> 00:00:54,195
+They are denoted by variables here. 
+You can recognize a variable in this 
+
+14
+00:00:54,195 --> 00:00:56,788
+syntax because it starts with a question 
+mark. 
+
+15
+00:00:56,788 --> 00:01:00,960
+So this is not a specific location that 
+we've defined, but just a variable. 
+
+16
+00:01:00,960 --> 00:01:06,355
+And this is followed by the minus symbol 
+with the type of those variables. 
+
+17
+00:01:06,355 --> 00:01:12,261
+So what this is defining is that adjacent 
+is a relation that is defined over two 
+
+18
+00:01:12,261 --> 00:01:13,720
+locations. 
+L1 and L2. 
+
+19
+00:01:13,720 --> 00:01:18,546
+And again, there's a comment here that 
+explains this more readable. 
+
+20
+00:01:18,546 --> 00:01:23,682
+Location L1 is adjacent to L2. 
+Then we have a relation attached, which 
+
+21
+00:01:23,682 --> 00:01:27,045
+defines where a pile, P, is. 
+Namely at some location, L. 
+
+22
+00:01:27,045 --> 00:01:31,961
+And the relation, belong, which defines 
+where the crane is also at some other 
+
+23
+00:01:31,961 --> 00:01:35,194
+location. 
+Note that these variables, despite having 
+
+24
+00:01:35,194 --> 00:01:38,105
+the same name, have no relation to each 
+other. 
+
+25
+00:01:38,105 --> 00:01:42,880
+They're just used locally in this 
+definition of this predicate. 
+
+26
+00:01:42,880 --> 00:01:47,078
+Together, these three relations define 
+the topology of the domain. 
+
+27
+00:01:47,078 --> 00:01:51,729
+One thing that is special about these 
+relations is that they are static. 
+
+28
+00:01:51,729 --> 00:01:56,509
+That is, once they are defined for a 
+specific state, they will never change 
+
+29
+00:01:56,509 --> 00:02:00,384
+from state to state. 
+Locations are adjacent, they will always 
+
+30
+00:02:00,384 --> 00:02:03,679
+be adjacent. 
+There's no action that can change that. 
+
+31
+00:02:03,679 --> 00:02:08,717
+The other relations here are known as 
+dynamic or fluid relations, because they 
+
+32
+00:02:08,717 --> 00:02:13,075
+can change from state to state. 
+For example, the at relation tells us 
+
+33
+00:02:13,075 --> 00:02:18,231
+where a robot is currently, it tells us 
+at which location this robot is currently 
+
+34
+00:02:18,231 --> 00:02:21,286
+located. 
+Then we have an occupied location, which 
+
+35
+00:02:21,286 --> 00:02:26,124
+is a unary relation, it takes only one 
+argument, and tells us whether a given 
+
+36
+00:02:26,124 --> 00:02:29,243
+location is occupied by a robot at that 
+location. 
+
+37
+00:02:29,243 --> 00:02:34,144
+Then we have the loaded relation which 
+tells us whether there is a container 
+
+38
+00:02:34,144 --> 00:02:38,090
+loaded onto a robot, or which container 
+is loaded onto a robot. 
+
+39
+00:02:38,090 --> 00:02:41,910
+An unloaded is true if robot is not 
+loaded with a container. 
+
+40
+00:02:41,910 --> 00:02:46,068
+Then we have a holding relation, which 
+tells us which container is held by a 
+
+41
+00:02:46,068 --> 00:02:48,531
+crane. 
+And we have an empty relation, which is 
+
+42
+00:02:48,531 --> 00:02:51,650
+true, if and only if the crane is not 
+holding a container. 
+
+43
+00:02:51,650 --> 00:02:55,995
+You can see here that these relations are 
+not independent of each other. 
+
+44
+00:02:55,995 --> 00:02:59,013
+For example, holding and empty are 
+closely related. 
+
+45
+00:02:59,013 --> 00:03:02,091
+If the crane is empty, it cannot hold the 
+container. 
+
+46
+00:03:02,091 --> 00:03:05,894
+And vice versa, if it is holding a 
+container, it cannot be empty. 
+
+47
+00:03:05,894 --> 00:03:09,515
+The same goes for loaded and unloaded, 
+and at and unoccupied. 
+
+48
+00:03:09,515 --> 00:03:12,276
+These two relations depend on each other. 
+Okay. 
+
+49
+00:03:12,276 --> 00:03:15,601
+Remaining relations. 
+We have an IN relation, which tells us 
+
+50
+00:03:15,601 --> 00:03:19,498
+where a container is, in which pile a 
+container is currently located. 
+
+51
+00:03:19,498 --> 00:03:23,969
+Then we have a TOP relation, which tells 
+us which container is at the top of a 
+
+52
+00:03:23,969 --> 00:03:26,606
+given pile. 
+And, finally, we have an ON relation, 
+
+53
+00:03:26,606 --> 00:03:29,930
+which tells us which container's on which 
+other container. 
+
+54
+00:03:29,930 --> 00:03:34,688
+The second container here can also be the 
+pallet, which is technically defined as a 
+
+55
+00:03:34,688 --> 00:03:39,294
+type of container. 
+So these are the predicates used in the 
+
+56
+00:03:39,294 --> 00:03:43,240
+dock worker robot domain, defined in the 
+PDDL syntax. 
+
+57
+00:03:45,320 --> 00:03:50,455
+Now, here is a formal definition of what 
+a state in the strips representation 
+
+58
+00:03:50,455 --> 00:03:53,471
+actually is. 
+So we start off with a first order 
+
+59
+00:03:53,471 --> 00:03:56,617
+language, L. 
+And in this language, we have finitely 
+
+60
+00:03:56,617 --> 00:04:00,789
+many predicate symbols. 
+These are the symbols we've just seen how 
+
+61
+00:04:00,789 --> 00:04:04,576
+to define them in PDDL. 
+We also have finitely many constant 
+
+62
+00:04:04,576 --> 00:04:07,593
+symbols. 
+These are the symbols representing the 
+
+63
+00:04:07,593 --> 00:04:11,765
+individual objects in our domain. 
+And we have no function symbols. 
+
+64
+00:04:11,765 --> 00:04:14,590
+And we haven't defined any function 
+symbols. 
+
+65
+00:04:14,590 --> 00:04:20,666
+A state in a strips planning domain then 
+is a set of ground atoms over this 
+
+66
+00:04:20,666 --> 00:04:25,064
+language L that we've just defined. 
+Let me go into this. 
+
+67
+00:04:25,064 --> 00:04:31,221
+By an atom we mean a predicate with an 
+appropriate number of objects that we 
+
+68
+00:04:31,221 --> 00:04:38,040
+have just defined in the previous slide. 
+An atom is considered ground when all its 
+
+69
+00:04:38,040 --> 00:04:44,020
+arguments all the objects it relates are 
+real objects as opposed to variables so 
+
+70
+00:04:44,020 --> 00:04:48,154
+there must not be variables in the atoms 
+we define here. 
+
+71
+00:04:48,154 --> 00:04:53,470
+Then a state is simply a set of these 
+ground atoms over this language L. 
+
+72
+00:04:53,470 --> 00:04:59,170
+Logically, we interpret this as a cun 
+junction that means each and everyone of 
+
+73
+00:04:59,170 --> 00:05:04,360
+the atoms in a state holds in that state, 
+it must be true in that state. 
+
+74
+00:05:04,360 --> 00:05:10,776
+So we can say that a ground atom p holds 
+in a state s, if and only if p is an 
+
+75
+00:05:10,776 --> 00:05:15,610
+element of this set s. 
+So a state is a set of ground atoms. 
+
+76
+00:05:15,610 --> 00:05:21,776
+And if p is an element of that set. 
+Then we say that p holds in that state. 
+
+77
+00:05:21,776 --> 00:05:25,943
+And vice versa, if p is not an element of 
+that set. 
+
+78
+00:05:25,943 --> 00:05:29,443
+We say that p does not hold in that 
+state. 
+
+79
+00:05:29,443 --> 00:05:35,761
+We call that the closed world assumption. 
+And this is quite an important assumption 
+
+80
+00:05:35,761 --> 00:05:39,768
+made by the strips representation, as we 
+define it here. 
+
+81
+00:05:39,768 --> 00:05:44,742
+We can also define what it means for a 
+state to satisfy a set of ground 
+
+82
+00:05:44,742 --> 00:05:47,090
+literals, G. 
+I need to explain this. 
+
+83
+00:05:47,090 --> 00:05:51,995
+A literal is basically an atom that is 
+either a positive or a negative. 
+
+84
+00:05:51,995 --> 00:05:57,903
+So it can be an atom or a negated atom. 
+G is our set of ground literals, and I've 
+
+85
+00:05:57,903 --> 00:06:04,173
+used the letter G because eventually this 
+is how we will represent goals in our 
+
+86
+00:06:04,173 --> 00:06:08,719
+planning problems. 
+And this is simply the symbol we use to 
+
+87
+00:06:08,719 --> 00:06:13,813
+denote that S satisfies G. 
+And we consider this the case if every 
+
+88
+00:06:13,813 --> 00:06:19,691
+positive literal in G is also in S. 
+So every positive literal in G holds in 
+
+89
+00:06:19,691 --> 00:06:23,845
+S, and every negative literal in G does 
+not hold in S. 
+
+90
+00:06:23,845 --> 00:06:28,900
+So it's not an element of S. 
+Let's illustrate this with an example. 
+
+91
+00:06:29,920 --> 00:06:34,520
+Depicted here is a state in the Dock 
+Walker robot domain. 
+
+92
+00:06:34,520 --> 00:06:38,800
+I hope you all intuitively understand 
+what's going on in this picture. 
+
+93
+00:06:38,800 --> 00:06:43,876
+But for our planner we need to translate 
+this state into our formal representation 
+
+94
+00:06:43,876 --> 00:06:48,656
+in the strips representation. 
+This means we need to define the set of 
+
+95
+00:06:48,656 --> 00:06:54,142
+ground atoms that hold in this state. 
+We can do this by going through the 
+
+96
+00:06:54,142 --> 00:06:57,600
+relations individually or in some other 
+order. 
+
+97
+00:06:57,600 --> 00:07:02,364
+The first relation we defined earlier is 
+the adjacent relation and that tells us 
+
+98
+00:07:02,364 --> 00:07:05,717
+which locations are reachable from which 
+other locations. 
+
+99
+00:07:05,717 --> 00:07:09,247
+So we have two locations here, location 
+one and location two. 
+
+100
+00:07:09,247 --> 00:07:13,717
+And they are connected by this path. 
+So what we have is that location one is 
+
+101
+00:07:13,717 --> 00:07:17,894
+adjacent to location two, and vice versa. 
+And that's what we've got here. 
+
+102
+00:07:17,894 --> 00:07:21,306
+We need to actually write down both ways 
+of this relation. 
+
+103
+00:07:21,306 --> 00:07:25,306
+The symmetry of this relation is of 
+course not known to the planner 
+
+104
+00:07:25,306 --> 00:07:28,504
+automatically. 
+Then we have two piles, p1 and p2. 
+
+105
+00:07:28,504 --> 00:07:33,972
+And they are both at location one. 
+And that's what we express with these two 
+
+106
+00:07:33,972 --> 00:07:37,210
+ground atoms here. 
+That p1 is at location one. 
+
+107
+00:07:37,210 --> 00:07:42,174
+And p2 is also at location one. 
+And then we have one crane, denoted by 
+
+108
+00:07:42,174 --> 00:07:46,491
+the symbol, crane one. 
+And again, we write down that the crane 
+
+109
+00:07:46,491 --> 00:07:51,096
+one belongs to location one. 
+So this defines the topology of the 
+
+110
+00:07:51,096 --> 00:07:54,361
+domain. 
+What we also have in this example is this 
+
+111
+00:07:54,361 --> 00:07:57,648
+robot, R1. 
+And we can see here that the robot is at 
+
+112
+00:07:57,648 --> 00:08:00,344
+location two, which is this relation 
+here. 
+
+113
+00:08:00,344 --> 00:08:04,223
+And that means that location two is 
+occupied by this robot. 
+
+114
+00:08:04,223 --> 00:08:08,826
+And we can also see that the robot is 
+unloaded, which means there's no 
+
+115
+00:08:08,826 --> 00:08:13,034
+container on the robot. 
+Also the crane isn't holding a container, 
+
+116
+00:08:13,034 --> 00:08:16,190
+so empty crane one must also hold in this 
+state. 
+
+117
+00:08:16,190 --> 00:08:22,274
+Now, what remains to be described is the 
+two stacks of containers we see here. 
+
+118
+00:08:22,274 --> 00:08:28,358
+The first stack consist of this container 
+C1 at the bottom, and C3 at the top. 
+
+119
+00:08:28,358 --> 00:08:34,127
+And we have got here that these two 
+containers, C1 and C3 are both in the 
+
+120
+00:08:34,127 --> 00:08:37,999
+pile P1. 
+Then we have C3 on top of C1, you can see 
+
+121
+00:08:37,999 --> 00:08:41,239
+that here, and C1 is on top of the 
+pallet. 
+
+122
+00:08:41,239 --> 00:08:47,560
+The top of the pile is the container C3 
+which defines this pile at location one 
+
+123
+00:08:47,560 --> 00:08:51,635
+and that is pile one. 
+The second pile only contains one 
+
+124
+00:08:51,635 --> 00:08:55,117
+container C2, and that container's in the 
+pile P2. 
+
+125
+00:08:55,117 --> 00:09:01,060
+And it is immediately on the pallet and 
+also constitutes the top of this pile. 
+
+126
+00:09:01,060 --> 00:09:06,036
+These are all the ground atoms that hold 
+in the state depicted here. 
+
+127
+00:09:06,036 --> 00:09:11,671
+And what this means is, according to the 
+closed world assumption, that all the 
+
+128
+00:09:11,671 --> 00:09:15,622
+atoms that are not mentioned in the state 
+do not hold. 
+
+129
+00:09:15,622 --> 00:09:20,132
+They are not true. 
+For example the ground atom at our one 
+
+130
+00:09:20,132 --> 00:09:26,516
+location one, does not hold, because at 
+the location one there is not the robot 
+
+131
+00:09:26,516 --> 00:09:28,235
+R-1. 
+So this is false. 
+
+132
+00:09:28,235 --> 00:09:34,946
+It is not part of our state, it is not in 
+that set, and the closed world assumption 
+
+133
+00:09:34,946 --> 00:09:39,554
+means it is false. 
+So this is what a state looks like in the 
+
+134
+00:09:39,554 --> 00:09:43,360
+strips representation. 
+It is subset of ground atoms. 
+

@@ -1,0 +1,257 @@
+>> I've mentioned earlier that the
+backwards search is actually a graph
+search.
+And here is how that works.
+Suppose we are given our planning graph
+with the ultimate goal in proposition
+layer pk.
+Then we go backwards through the graph and
+somehow find some sub goals in this layer
+pj.
+And then we continue the search and this
+may lead to a different set of sub goals
+in our proposition layer pi.
+Now suppose somewhere between pi and p0
+the search fails.
+So we come across and action layer where
+we try to identify actions that achieve
+all the sub goals.
+But these actions are mutex, and therefore
+we cannot find an appropriate set of
+actions.
+So the search has failed.
+Then what we can do is, we remember that
+in layer pi, we had these 3 nodes here
+that together were not achievable.
+So we continue with our backtracking
+process, and we go back to layer pj, but
+then from there we need to find different
+actions, we go through different
+combinations and we may end in our layer,
+p i, again, choosing in a different way
+the same combinations of preconditions or
+sub-goals in this layer.
+But since have seen the combination of
+sub-goals in this layer before, and it was
+previously not achievable in the planning
+graph, we know that it still can't be
+achievable so we don't need to do the
+search again.
+So effectively, what we do is remember the
+search states we have encountered and
+where we have failed.
+That is, each search state is a set of
+sub-goals in a specific proposition layer,
+and by remembering these search nodes we
+effectively do a graph search.
+And we could just throw all these nodes
+that we want to remember into a big hash
+table.
+But here's a more efficient data structure
+that helps us remember what we've seen
+before, the so-called nogood table.
+The nogood table denoted by this symbol
+here that looks like an upside down
+triangle or as the Greek letter nebula is
+For a planning graph up to layer k
+consisting of an array of k sets of sets
+of goal propositions.
+So, we have k layers in our planning graph
+and our array also have length k which
+means each of the elements of the array is
+for a specific layer, and then In each
+layer we have a set of set of goal
+propositions.
+The inner set is one combination of
+propositions that cannot be achieved.
+So that effectively is a sub goal.
+One surge node that we've looked at
+before.
+The outer set are all the combinations
+that cannot be achieved at that specific
+layer.
+And there are really only two types of
+operations we need to do on this data
+structure.
+Namely, before we are searching for
+sub-goal, g, in our proposition layer, pj.
+What we do is look in our no good table to
+see whether we've encountered the sub-goal
+before.
+And remember we only star those sub-goals
+where we have failed.
+So we have to check whether our new
+sub-goal, the sub-goal that we're
+currently looking for is enabler of j, so
+whether it Is in the jth layer and we
+failed here before.
+If it wasn't in that layer then we have to
+search for the set g in this layer Pj and
+this will either succeed in which case we
+have found the plan, or it will fail and
+then we have to add our sub goal to nabla
+of j.
+Remembering that this is a sub-goal at
+which we have failed before in the j
+proposition layer.
+So, the mutex relation for each
+proposition there, gives us pairs of
+propositions that cannot be achieved
+together.
+The nogood table goes farther, as it gives
+us sets of propositions that cannot be
+achieved together in this proposition
+layer.
+Okay, now it's time to put all this into
+pseudo code.
+And this is the first of 2 functions that
+we will define to perform the backward
+search.
+The function extract takes three
+parameters.
+The first parameter, capital G, is the
+planning graph that we've generated
+through our forward expansion mechanism.
+The second parameter is the goal that
+we're currently looking for.
+This is originally the overall goal of the
+planning problem.
+And finally, the parameter I tells us
+where in the planning graph we're looking
+for this goal.
+And we're looking for it in the I
+proposition later.
+Then the first thing we do is we check
+whether the layer we're looking at is our
+proposition layer P0, Because that means
+we have reached pour goal so to speak, and
+we can return the empty plan If this is
+not the case, then we have to use the no
+good table and we check whether our
+current sub-goal is in the no good table
+at layer I.
+If this is the case, we failed here
+before, and we can return failure again.
+If we haven't seen this sub-goal g in
+layer i before, then we call our function
+gpSearch, that I'll explain to you in a
+minute, which extracts a plan up to layer
+i from our planning graph, and returns
+that plan.
+So this can be either a layered plan, or
+it can be failure.
+If it's unequal to failure.
+So if we found a plan, then we simply pass
+this plan through, we return this plan.
+Otherwise, this is the case where we've
+seen our sub-goal g for the first time.
+We've tried to search for it, and we've
+failed.
+So that means, we need to update our noga
+table, and we add our subgoal, g.
+To the no good table at layer i.
+And then, we simply return failure,
+because we haven't found a plan at this
+point.
+So, as you can see, most of the work is
+done in this function gpSearch, and that's
+what we will look at now.
+The function gpSearch takes four
+arguments, the first argument is the
+planning graph, the second argument is the
+goal we are trying to achieve in layer pi.
+So i identifies the layer in which we try
+to achieve the set of goals, and Pi, are
+the actions from layer AI, the action
+layer AI, that we have chosen to add to
+the plan.
+And as we have just seen, in the
+definition of the function extract, what
+we actually pass in here are, the planning
+graph, then the original set of goals in
+that layer.
+So that's all the goals in that layer.
+The empty set, so we start with no chosen
+actions.
+And of course the layer I in which we're
+doing all this.
+Then the first thing we do in this
+function is test whether the set g was
+empty.
+That is the trivial case and we will deal
+with that later.
+First I will look at the case where g
+contains subgoals that we need to achieve
+in layer pi.
+And if this is the case then we select one
+of those goals and this is denoted by the
+proposition p here.
+And then the next step is we use the
+positive effect links to choose a provider
+for this proposition.
+And a provider must be as I just said a
+positive effect, but it also cannot be
+mutually exclusive with an action that
+we've already chosen in our set, pi.
+So this says there must not exist an
+action a-prime in our set, pi such that a
+and a-prime are mutually exclusive in
+action layer a,i.
+So this is the set of all actions in Ai
+that we could use to achieve P, and we
+call this set the providers.
+Now, if the set of providers is empty,
+then we can return failure.
+So that means all the actions we found in
+the action layer Ai were mutually
+exclusive with action we already selected,
+so we can't choose an additional actions
+that would give us the proposition p.
+In that case, we return failure.
+But, if we have one or more actions that
+can provide p, we need to choose one of
+them and this is actually the choice point
+where our search branches that means we
+may need to come back here later when we
+do backtracking and try out a different
+action to provide.
+So this is our backtrack point, but now we
+have chosen a and that means we can
+recursively call gpSearch.
+We keep the same planning graph of course
+but now all the positive effects of our
+chosen action are no longer goals that we
+need to achieve.
+Of course, p will be one of them, but
+there may be multiple positive effects
+that can now be removed from our goal.
+Then, we add the chosen action a to our
+currently chosen actions in the set pi.
+And we continue to search in layer i.
+That means, every time we go through this
+part of the algorithm, we reduce the set
+g.
+And eventually, we will come to the point
+where this jet.
+G is empty.
+We have no more sub-goals to satisfy in
+this layer, and we have chosen some
+actions accumulated in the variable pi.
+Then what we can do is what we call
+Extract, as shown here.
+So we give it the same planning graph, and
+as the same sub-goal, we give it the union
+over all the preconditions of the actions
+in our set, pi, and we search for those in
+layer i minus one, in the preceding
+proposition layer, and this will return
+either a plan or a failure.
+If it did return failure, then we simply
+pass this through.
+And if it returned a plan, then we need to
+concatenate this new layer, this new
+action layer, the chosen actions in this
+action layer To this plan, and return this
+as the result of the function.
+And that concludes the backwards search
+through our planning graph.

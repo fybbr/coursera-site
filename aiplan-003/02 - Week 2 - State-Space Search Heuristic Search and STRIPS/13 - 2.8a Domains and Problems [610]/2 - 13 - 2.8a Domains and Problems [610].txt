@@ -1,0 +1,182 @@
+Now that we have seen how the internal 
+structure of operators and states can be 
+represented in the strips representation, 
+it is time to turn to the bigger picture. 
+And by that I mean planning domains and 
+planning problems. 
+Planning domains implicitly define the 
+graph in which we are doing search. 
+Planning problems also define the states 
+from which we are going and to which we 
+want to go. 
+Plans are solutions to planning problems. 
+And we will now define all this formally. 
+Here's a quick overview of the concepts 
+we need to define for classical planning. 
+Most of modern planning, can be achieved 
+by simply extending this classical 
+representation. 
+So, in classical planning. 
+The task is to find a solution for a 
+planning problem. 
+So we need to define, what is a solution? 
+And what is a planning problem? 
+A solution, and a planning problem. 
+The planning problem consists essentially 
+of three things. 
+And those are given to the planner to 
+come up with solutions. 
+The first component of a planning problem 
+is the initial state which is a set of 
+atoms which relate the object in our 
+planning problem to each other. 
+This is exactly the type of state we've 
+just seen in the strip star presentation. 
+The next component is the planning domain 
+and the planning domain consists, in 
+essence, of operators which are described 
+by names, preconditions, and effects. 
+And the final component of a planning 
+problem is the goal. 
+Note that the planning domain is 
+essentially a reusable component. 
+We will often see many planning problems 
+that refer to the same domain, but have a 
+different initial state and different 
+goal. 
+But domain is reusable. 
+Finally when the planner has solved the 
+planning problem, it will return a 
+solution to that planning problem, which 
+is a plan. 
+Here is how we can define a strips 
+planning domain. 
+We start with a function free first oral 
+language L, as we've seen before. 
+A strips planning domain over this 
+language L, is then a restricted state 
+transition system, consisting of these 
+components S, A and gamma, as we've seen 
+before. 
+You may wonder what happened to the set 
+of events, that can happen in this state 
+transition system and that's exactly what 
+we mean by restricted here. 
+In the restricted state transition 
+system, we do not have events. 
+We only have the states S, the actions A, 
+and the state transition function gamma. 
+The set S of possible world states is 
+then defined as the set of all possible 
+strip's states. 
+So, all sets of ground atoms that you can 
+possible define are an individual state. 
+The set of actions that we need is then 
+the set of all ground instances of some 
+strips planning operators. 
+And these are the operators that are 
+defined in the planning domain. 
+And finally, we define the state 
+transition function. 
+Which is, in this case, a deterministic 
+function. 
+Because it maps to exactly one state. 
+Again, this is to do with the restricted 
+state transition system. 
+So the state transition function takes a 
+state s, and an action a. 
+And maps that to a new state. 
+Which is defined by taking all the ground 
+atoms that are true in this state. 
+Removing the negative effects of the 
+actions. 
+And adding the positive effects of the 
+actions. 
+That is true for an action that is 
+applicable in the state. 
+If the action is not applicable. 
+Then, gamma SA is undefined. 
+So, there is no resulting state if we try 
+to apply an action that is not 
+applicable. 
+This definition of a state transition 
+function is, of course, what we've seen 
+before, full of strips, actions, defined 
+earlier. 
+Finally, the set S is closed under gamma, 
+which means there are no states that 
+cannot be reached through the stationary 
+illusion function that are in our set S. 
+So, that defines a strip's planning 
+domain, and I hope that none of this 
+comes as a surprise to you, given what 
+we've seen earlier. 
+Here is an example of a planning domain 
+in the PDDL syntax. 
+The core of the representation, are of 
+course the planning operators, and that's 
+what we have here on the right. 
+These are the five actions defined, or 
+the five operators, defined for the doc 
+worker robot domain, and again, they're 
+called actions in pdl, but these are 
+operators. 
+As you can see, they are perimeterized 
+and have variables whereas actions would 
+be ground. 
+So, we have the move action, the load 
+action, the unload action, the take 
+action, and the put action. 
+That is the complete set of operators 
+defined for the doc worker robot domain. 
+In addition to the operators, the PDDL 
+language allows us to define a few other 
+things. 
+And that's what we've got over here. 
+So we can, for example, say that a domain 
+has a name. 
+So that we can refer to this domain, in 
+planning problems, as we will see later, 
+by name. 
+Then we can specify requirements, which 
+allows the language to extensible. 
+We can specify types. 
+These are the five types we've seen 
+earlier. 
+Locations, piles, robots, cranes, and 
+containers. 
+Then, in this domain specification, we 
+also have one constant defined, which is 
+the pallet. 
+This is defined as part of the domain 
+here, as it will occur in every planning 
+problem. 
+And then we have the predicates, which 
+where are exactly the predicates we've 
+seen earlier defined for the dock worker 
+robot domain. 
+You can see the complete set here defined 
+with the types of the arguments. 
+And that is the definition of this 
+domain. 
+If you find this a little hard to read 
+here, or want to download it. 
+You can always go to the book website. 
+So this is all based on the automated 
+planning book, that you see here. 
+And there's a website for this book. 
+And you can see here at the bottom is the 
+PDDL specification of the dock worker 
+robot domain. 
+And so if you click this link, you will 
+get a PDL file which is almost exactly 
+what you've seen in this slide. 
+And since the URL is a little hard to 
+read here. 
+It isn't bigger. 
+So it's 
+http://projects.laas.fr/planning/. 
+If you go to that URL you get to this 
+website, and you will be able to download 
+the PDDL domain. 
+

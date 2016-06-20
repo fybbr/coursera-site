@@ -1,0 +1,245 @@
+In the previous segment, we have seen how 
+the planning problem can be solved by 
+searching for solutions but we've set up 
+two completely different types of search 
+spaces. 
+One was the state space and one was the 
+plan space, but both approaches really 
+solved exactly the same problem. 
+In the next segment, we will modify the 
+problem itself so the approaches we've 
+seen so far are no longer applicable. 
+Previously, a planning problem contained 
+a goal, and a goal was a condition on a 
+world state that we want to achieve. 
+Now, we will look at tasks. 
+Tasks are things we want to do. 
+You may remember the example from the 
+introduction going on a holiday, 
+that would be a task, and I've already 
+mentioned then that this would be 
+difficult to describe as a goal because 
+we want to end up in the same state in 
+which we started. 
+So, we will now look at tasks and task 
+networks, which are the essential 
+components we're dealing with in 
+hierarchical task network planning. 
+So, we will start by defining simple task 
+networks. 
+Simple task networks are really a 
+simplification of the more general 
+approach which is called hierarchical 
+task networks or short, HTN. 
+You've already heard about HTN planning 
+in week 1 when my colleague, Austin Tade 
+was talking about planning in context. 
+But let's start from scratch here. 
+A lot of what we've seen so far carries 
+over into task network planning. 
+For example, we have terms that can be 
+either variables or constants to describe 
+the objects in our domain that we're 
+dealing with and we have literals that 
+express propositions that are either true 
+or false. 
+We also have operators that describe 
+types of actions that we can execute in 
+our domain. 
+And, of course, we have their instances, 
+which are actions which we want to 
+execute. 
+The semantics is still based on state 
+transition systems so we also have a 
+state transition function that describes 
+how the world evolves when we execute our 
+plan. 
+And, of course, we still have plans which 
+are the solutions to our planning 
+problems. 
+But there are a number of new components 
+that we need to consider in task network 
+planning. 
+And the first component are, of course, 
+the tasks themselves, the things that we 
+want to do in our domain, like going on a 
+holiday or fixing a car or learning 
+something on this course. 
+Simple tasks corresponding to actions 
+directly but, of course, we often deal 
+with tasks that are more complex, like 
+going on a holiday is rarely a task that 
+we can consider as directly executable. 
+The next new component of the methods 
+that describe ways in which we can do our 
+tasks. 
+And this description usually consists of 
+a number of subtasks that, together, 
+achieve some more complex task. 
+And these subtasks, in itself, can be 
+organized. 
+They can be ordered with respect to each 
+other, for example, 
+and thus, form a task network. 
+So, what we will do now is formalize 
+tasks, methods, and task networks, and 
+then define planning problems based on 
+these concepts and what solutions look 
+like and finally, algorithms that solve 
+this type of problem. 
+Let me illustrate all these with another 
+example taken from our Dock Worker Robots 
+domain. 
+As you can see in this picture here, this 
+is a very simple problem. 
+We have a single location at which we 
+have one crane and we have three piles 
+and three containers. 
+Currently, all three containers are in 
+the first pile and we want to move these 
+containers to the third pile. 
+So, our task is to move a stack of 
+containers from pallet p1 to pallet p3. 
+And we want to do this in such a way that 
+the order of the containers is preserved. 
+Clearly, this is a task that we cannot 
+achieve with any of the actions we've 
+previously described. 
+It is a more complex task. 
+We could, of course, describe this as a 
+planning problem that we've seen so far, 
+but here is a set of informal methods 
+that we can use this type of problem in 
+general. 
+And I will start at the bottom here. 
+So, the first method we can have is to 
+move a container from one pile to another 
+pile and, of course, we can only ever 
+move the topmost container. 
+So, we have a method for moving the 
+topmost container and we say this method 
+is simply a take action followed by a put 
+action. 
+So, we have two actions that are ordered 
+with respect to each other that make up 
+this method of moving the topmost 
+container. 
+So, this is a very simple method that 
+simply groups two actions together. 
+A more complex method is to move the 
+whole stack and we can do that by 
+repeatedly moving the top most container 
+from one stack to other. 
+We must do this until the stack is empty 
+and if we do this, of course, a side 
+effect is that we reverse the order of 
+the containers in our new pile. 
+And we can fix that last problem by 
+having a third method which says we move 
+via some intermediate stack so we first 
+move our stack to an intermediate stack 
+and that reverses the order of the stack. 
+And then we move it to the final 
+destination and we reverse the order 
+again. 
+So, these three methods taken together, 
+describe a way in which we can move a 
+pile of containers from one pallet to 
+another pallet, respecting the order of 
+those containers. 
+I hope you can see that this approach is 
+much more akin to the way humans solve 
+problems, and this is by hierarchical 
+decomposition and identifying abstract 
+concepts. 
+Here, we've identified the more abstract 
+concept of a stack that didn't exist in 
+our previous domain description. 
+And now, we can formally define what we 
+mean by a task. 
+And the first thing we need is a set of 
+symbols that we can use to give unique 
+names to our task. 
+And these are the task symbols given by 
+the set Ts, consisting of t1 through tn. 
+Now, our operator names, which are the 
+name of the operators we are using, must 
+be a subset of our set of task symbols. 
+And if, for a given task symbol, we also 
+have an operator name that corresponds to 
+this task symbol. 
+We call this task symbol a primitive 
+task. 
+And then, we have the non-primitive task 
+symbols which are simply those task 
+symbols for which we don't have 
+corresponding operator names. 
+A task then is simply a syntactic 
+expression of this form. 
+It consists of a task symbol ti, which 
+can be either a primitive task symbol or 
+a non-primitive task symbol. 
+And it consists of a series of arguments, 
+r1 through rk which are the terms 
+representing objects that are manipulated 
+by this task. 
+This is, of course, 
+very similar to the way we've defined 
+operator names and that is not a 
+coincidence. 
+And similarly, we will define ground 
+tasks as all those tasks for which all 
+the parameters are ground, which means 
+they are actual objects and not 
+variables. 
+A ground operator was called an action, 
+but we don't have a special name for 
+ground tasks here. 
+This means we have four types of tasks 
+here. 
+Tasks can be primitive or non-primitive, 
+and they can be ground or unground. 
+And to relate tasks to actions, we can 
+make the following definition. 
+Suppose we are given an action a which is 
+described by the name op c1 through ck 
+where op is an operator name and c1 
+through ck are constants representing the 
+parameters of this action. 
+Remember, it's an action, so it's fully 
+ground. 
+So, these must be constants and not 
+variables. 
+We can say that this action accomplishes 
+a ground primitive task described by the 
+expression, ti r1 through rk, in a state 
+s, if the following two conditions halt. 
+The first condition states that the 
+syntactic expression that describes the 
+action and the syntactic expression that 
+describe the task must be the same so the 
+must have is that the name of the action, 
+as given here by op must be the same as 
+the task symbol and, of course, it's 
+primitive tasks so we have an operator 
+name that corresponds to it. 
+And we must have that all the arguments 
+must be the same. 
+So, the first constant must be equal to 
+r1 and so on. 
+And, of course, because these are all 
+constants, r1 through r k must also be 
+constants otherwise they couldn't be 
+equal. 
+So, the first condition is that the 
+syntactic expressions for the two, action 
+and task, must be the same. 
+And the second is that the action a must 
+also be applicable in the state s. 
+So, what this gives us is a way of 
+accomplishing very simple tasks, namely 
+those tasks that are ground and 
+primitive. 
+But we can't accomplish unground or 
+non-primitive tasks yet. 
+

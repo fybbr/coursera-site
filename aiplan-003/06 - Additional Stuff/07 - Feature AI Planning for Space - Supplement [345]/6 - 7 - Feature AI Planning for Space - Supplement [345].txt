@@ -1,0 +1,87 @@
+Space missions and related areas have 
+been a fruitful source of applications 
+for AI planning over a long period of 
+time. 
+One of the earliest AI planners applied 
+to spacecraft missions was Steve Veers De 
+Visa planner created at NASA's Jet 
+Propulsion Lab in the early 1980's. 
+Optimum-AIV is a deployed planner used 
+for Ariane rocket assembly, integration 
+and test based on the old plan design. 
+Applications have also included ground 
+segment planning and control. 
+Telecommand of meteorological satellites. 
+Experiments in technology proving that in 
+the control of autonomous space craft 
+that a wide range of planners built at 
+the European Space Agency and in NASA and 
+we'll cover some of those in this 
+feature. 
+And the remote agent experiment within 
+deep space one. 
+Divisor created at NASA's jet propulsion 
+laboratory by Steve Vair was the first 
+NASA AI planner. 
+As based on the nominally design, but 
+added time window handling. 
+It could produce Voyager mission plans. 
+As part of our own work with the British 
+National Space Centre on the TSat 
+Technology Proving Satellite design The T 
+sched-, scheduler was able to generate 
+plans on the ground that were suitable 
+for controlling the spacecraft. 
+A 24-hour plan was created, uploaded and 
+executed live onboard the UoSat-2 
+spacecraft. 
+In early work at the European Space 
+Agency, an AI planner for ERS one 
+operation planning was created, and later 
+modified to become the optimum AIV 
+planner for assembly integration and test 
+of the paid load bay of Arian rockets. 
+There are quite a range of projects in 
+the European Space Agency that you AI 
+planning methods, and a few of them are 
+listed here. 
+You can find more details on the European 
+Space Agency's space craft operation 
+websites. 
+Esa's project for on-board autonomy, 
+Prober, has had a series of spacecraft 
+which have demonstrated potential and 
+feasibility small satellites with Van 
+Syke scientific and Earth observation 
+missions and some have been controlled by 
+automated ground systems. 
+Nasa also had a wide range of spacecraft 
+with AI planning embedded in them over 
+the years. 
+And some examples listed here, which is 
+Aspen and Casper. 
+More details of these projects are 
+available at the NASA JPL, and NASARange 
+websites. 
+The NASA Mars exploration laboratory 
+Curiosity has been a target for a range 
+of a I methods during its development 
+stages and now in its operation. 
+This has not only included the rover 
+itself, but also the communications with 
+it, spacecraft to support it, the 
+operation centers which are used to 
+control and communicate with the robot, 
+and even some of the proprietary work 
+which has gone into the design simulation 
+of the rovers and other equipment that's 
+relevant to these missions. 
+Take a moment to think about the 
+curiosity mission. 
+Imagine the opportunities for AI methods 
+from its design and inception as a 
+mission right through to the launching of 
+the spacecraft. 
+The landing of the spacecraft on Mars. 
+And then its operations. 
+

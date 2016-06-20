@@ -1,0 +1,269 @@
+The strips representation is based on the 
+idea that in a world state, we have 
+objects that are somehow related to each 
+other. 
+That means we need to define some 
+relations that we can use to relate the 
+objects to each other. 
+Relations are also known as predicates. 
+For a given world state, a relation 
+between several objects can either hold 
+or not hold. 
+That is, it is either true or false. 
+Here are the relation defined for the 
+dock worker robot domain in the PDDL 
+syntax. 
+The first predicate mentioned here is the 
+adjacent predicate. 
+Which defines when two locations are next 
+to each other. 
+So the way this works is that we name the 
+relation that we want to define. 
+And then we give the parameters to this 
+relation. 
+In this case, they are two locations. 
+They are denoted by variables here. 
+You can recognize a variable in this 
+syntax because it starts with a question 
+mark. 
+So this is not a specific location that 
+we've defined, but just a variable. 
+And this is followed by the minus symbol 
+with the type of those variables. 
+So what this is defining is that adjacent 
+is a relation that is defined over two 
+locations. 
+L1 and L2. 
+And again, there's a comment here that 
+explains this more readable. 
+Location L1 is adjacent to L2. 
+Then we have a relation attached, which 
+defines where a pile, P, is. 
+Namely at some location, L. 
+And the relation, belong, which defines 
+where the crane is also at some other 
+location. 
+Note that these variables, despite having 
+the same name, have no relation to each 
+other. 
+They're just used locally in this 
+definition of this predicate. 
+Together, these three relations define 
+the topology of the domain. 
+One thing that is special about these 
+relations is that they are static. 
+That is, once they are defined for a 
+specific state, they will never change 
+from state to state. 
+Locations are adjacent, they will always 
+be adjacent. 
+There's no action that can change that. 
+The other relations here are known as 
+dynamic or fluid relations, because they 
+can change from state to state. 
+For example, the at relation tells us 
+where a robot is currently, it tells us 
+at which location this robot is currently 
+located. 
+Then we have an occupied location, which 
+is a unary relation, it takes only one 
+argument, and tells us whether a given 
+location is occupied by a robot at that 
+location. 
+Then we have the loaded relation which 
+tells us whether there is a container 
+loaded onto a robot, or which container 
+is loaded onto a robot. 
+An unloaded is true if robot is not 
+loaded with a container. 
+Then we have a holding relation, which 
+tells us which container is held by a 
+crane. 
+And we have an empty relation, which is 
+true, if and only if the crane is not 
+holding a container. 
+You can see here that these relations are 
+not independent of each other. 
+For example, holding and empty are 
+closely related. 
+If the crane is empty, it cannot hold the 
+container. 
+And vice versa, if it is holding a 
+container, it cannot be empty. 
+The same goes for loaded and unloaded, 
+and at and unoccupied. 
+These two relations depend on each other. 
+Okay. 
+Remaining relations. 
+We have an IN relation, which tells us 
+where a container is, in which pile a 
+container is currently located. 
+Then we have a TOP relation, which tells 
+us which container is at the top of a 
+given pile. 
+And, finally, we have an ON relation, 
+which tells us which container's on which 
+other container. 
+The second container here can also be the 
+pallet, which is technically defined as a 
+type of container. 
+So these are the predicates used in the 
+dock worker robot domain, defined in the 
+PDDL syntax. 
+Now, here is a formal definition of what 
+a state in the strips representation 
+actually is. 
+So we start off with a first order 
+language, L. 
+And in this language, we have finitely 
+many predicate symbols. 
+These are the symbols we've just seen how 
+to define them in PDDL. 
+We also have finitely many constant 
+symbols. 
+These are the symbols representing the 
+individual objects in our domain. 
+And we have no function symbols. 
+And we haven't defined any function 
+symbols. 
+A state in a strips planning domain then 
+is a set of ground atoms over this 
+language L that we've just defined. 
+Let me go into this. 
+By an atom we mean a predicate with an 
+appropriate number of objects that we 
+have just defined in the previous slide. 
+An atom is considered ground when all its 
+arguments all the objects it relates are 
+real objects as opposed to variables so 
+there must not be variables in the atoms 
+we define here. 
+Then a state is simply a set of these 
+ground atoms over this language L. 
+Logically, we interpret this as a cun 
+junction that means each and everyone of 
+the atoms in a state holds in that state, 
+it must be true in that state. 
+So we can say that a ground atom p holds 
+in a state s, if and only if p is an 
+element of this set s. 
+So a state is a set of ground atoms. 
+And if p is an element of that set. 
+Then we say that p holds in that state. 
+And vice versa, if p is not an element of 
+that set. 
+We say that p does not hold in that 
+state. 
+We call that the closed world assumption. 
+And this is quite an important assumption 
+made by the strips representation, as we 
+define it here. 
+We can also define what it means for a 
+state to satisfy a set of ground 
+literals, G. 
+I need to explain this. 
+A literal is basically an atom that is 
+either a positive or a negative. 
+So it can be an atom or a negated atom. 
+G is our set of ground literals, and I've 
+used the letter G because eventually this 
+is how we will represent goals in our 
+planning problems. 
+And this is simply the symbol we use to 
+denote that S satisfies G. 
+And we consider this the case if every 
+positive literal in G is also in S. 
+So every positive literal in G holds in 
+S, and every negative literal in G does 
+not hold in S. 
+So it's not an element of S. 
+Let's illustrate this with an example. 
+Depicted here is a state in the Dock 
+Walker robot domain. 
+I hope you all intuitively understand 
+what's going on in this picture. 
+But for our planner we need to translate 
+this state into our formal representation 
+in the strips representation. 
+This means we need to define the set of 
+ground atoms that hold in this state. 
+We can do this by going through the 
+relations individually or in some other 
+order. 
+The first relation we defined earlier is 
+the adjacent relation and that tells us 
+which locations are reachable from which 
+other locations. 
+So we have two locations here, location 
+one and location two. 
+And they are connected by this path. 
+So what we have is that location one is 
+adjacent to location two, and vice versa. 
+And that's what we've got here. 
+We need to actually write down both ways 
+of this relation. 
+The symmetry of this relation is of 
+course not known to the planner 
+automatically. 
+Then we have two piles, p1 and p2. 
+And they are both at location one. 
+And that's what we express with these two 
+ground atoms here. 
+That p1 is at location one. 
+And p2 is also at location one. 
+And then we have one crane, denoted by 
+the symbol, crane one. 
+And again, we write down that the crane 
+one belongs to location one. 
+So this defines the topology of the 
+domain. 
+What we also have in this example is this 
+robot, R1. 
+And we can see here that the robot is at 
+location two, which is this relation 
+here. 
+And that means that location two is 
+occupied by this robot. 
+And we can also see that the robot is 
+unloaded, which means there's no 
+container on the robot. 
+Also the crane isn't holding a container, 
+so empty crane one must also hold in this 
+state. 
+Now, what remains to be described is the 
+two stacks of containers we see here. 
+The first stack consist of this container 
+C1 at the bottom, and C3 at the top. 
+And we have got here that these two 
+containers, C1 and C3 are both in the 
+pile P1. 
+Then we have C3 on top of C1, you can see 
+that here, and C1 is on top of the 
+pallet. 
+The top of the pile is the container C3 
+which defines this pile at location one 
+and that is pile one. 
+The second pile only contains one 
+container C2, and that container's in the 
+pile P2. 
+And it is immediately on the pallet and 
+also constitutes the top of this pile. 
+These are all the ground atoms that hold 
+in the state depicted here. 
+And what this means is, according to the 
+closed world assumption, that all the 
+atoms that are not mentioned in the state 
+do not hold. 
+They are not true. 
+For example the ground atom at our one 
+location one, does not hold, because at 
+the location one there is not the robot 
+R-1. 
+So this is false. 
+It is not part of our state, it is not in 
+that set, and the closed world assumption 
+means it is false. 
+So this is what a state looks like in the 
+strips representation. 
+It is subset of ground atoms. 
+

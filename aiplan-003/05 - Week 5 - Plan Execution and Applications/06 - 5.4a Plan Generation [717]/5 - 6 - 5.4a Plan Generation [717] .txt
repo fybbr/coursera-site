@@ -1,0 +1,187 @@
+After the knowledge engineering process,
+we should have a planning domain and maybe
+planning problems that we can give to a
+planner as input.
+The planner then does the plan generation,
+and that's what we've looked at so far in
+this course, algorithms that synthesize
+plans.
+But the algorithms we have looked at make
+some assumptions which may not hold in the
+planning problems we are trying to solve.
+I will now try to give you an overview of
+some other issues and problems that may
+come up during plan generation and how
+those can be addressed.
+Before we talk about different types of
+planning problems, here's another approach
+to the planning problem as we've described
+it so far.
+Up to now, we have looked at planning
+algorithms that take a planning problem,
+apply some algorithm, and the result is
+some plan that is a solution to the
+planning problem.
+Another way to solve planning problems,
+the same planning problems, is to
+transform the problem into a different
+type of problem as a first solution step.
+And in this approach here, the problem we
+transform it to is a SAT problem, a
+satisfiability problem.
+I'm not going to describe the details how
+this is done here, but SAT problems have
+been for around a long time, and in fact,
+three SAT was the first problem to be
+proved and be complete.
+So, there are a number of efficient
+solvers that we can use to solve SAT
+problems and what they give us is the SAT
+solution, which is an assignment of truth
+values to propositional variables in the
+SAT problem.
+And given such a SAT solution, it is
+fairly easy to extract a plan from this
+solution.
+So you can see, this approach is quite
+different from everything we've seen
+previously, because it doesn't tackle the
+problem head on, but transforms it into a
+different problem, solves that problem,
+and extracts the solution from the other
+solution.
+And the main reason why this approach
+works so well is, of course, that we have
+efficient SAT solvers.
+This approach was quite successful in the
+mid to late '90s, and the planner that
+implemented it was called blackbox.
+All the planning algorithms we've looked
+at so far deal with planning problems
+where the actions are deterministic.
+That means, if we apply an applicable
+action in a given state, we end up in
+exactly one other state and that state is
+known.
+However, there are many problems where the
+outcome of actions is uncertain, and if
+the outcome of an action is uncertain,
+that means, after we apply this action, we
+don't know exactly which state we are in.
+So, the state we are in is also uncertain.
+Now, there are at least two different ways
+in which this type of uncertainty can be
+dealt with.
+The first approach is called belief state
+search, and our search space in this
+approach is a state of belief states,
+where each belief state is really a set of
+world states.
+And we know that only one of these states
+is the actual states, but we don't know
+which one, but we know it as one of them.
+So that's what we call a belief state,
+it's a set of world states.
+Then, when we apply an action in a belief
+state, of course, the outcome is the union
+of all the successors of the individual
+states.
+So again, it's a belief state, a set of
+world states.
+So this gives us a search space, as we've
+seen it before, and the result then is a
+solution plan, which is a sequence of
+actions as we have before.
+Another approach to dealing with
+uncertainty is called contingency
+planning.
+In contingency planning, what we have is
+actions that have multiple possible
+outcomes and these action outcomes are
+known as contingencies.
+Usually, the number of contingencies is
+fairly small and not every action must
+have contingencies.
+So that means, when we search through our
+search space, we can still deal with
+individual world sets.
+But now, our solution plan has a tree
+structure that branches where we have take
+into account the different contingencies.
+And also, our solution plan will contain
+observation actions at the branching
+points Where we, during execution, observe
+which of the branches is actually
+happening.
+Of course, both these approaches are a lot
+more complex than what we've seen so far.
+In belief state search, we have sets of
+world states as our notes so an
+exponential increase in the size of the
+search space.
+And in contingency planning, we look at
+plans that are trees, so they are also a
+lot larger than the plans we've looked at
+so far.
+Sometimes, the degree of uncertainty that
+we have in a planning problem can be
+quantified.
+That is, we know with which probabilities
+the different outcomes of an action can
+occur.
+This approach is called probabilistic
+planning and is based on a different
+conceptual model.
+So we're no longer looking at simple state
+transition systems, as we have so far, but
+the new conceptual model is called a
+Partially Observable Markov Decision
+Process.
+This one here.
+And in this model, we have a lot of
+familiar things.
+So firstly, we have a set of world states
+through which we are searching, and then,
+we have a set of actions that give us our
+state transitions.
+And of course, in some sets, certain
+actions are applicable and they must be a
+subset of all the actions that are
+available.
+What we also have is a cost function that
+gives the cost of an action applied in a
+given state and this cost must be greater
+than 0.
+So far, this should all look familiar.
+But then, in addition to all this, we have
+the transition probabilities.
+That is we have a function that gives us
+the probability for each action that we
+end up in state as prime given that we
+started in state s.
+So this is the probability that we get
+from s to s prime when we execute the
+action a.
+Then, our planning problem also must
+include an initial belief state, that is,
+a probability distribution over all the
+states in s.
+So we don't know exactly which state we
+start in, but we have a probability
+distribution that tells us how likely it
+is that we are in a given state.
+And, we have a final belief state, which
+corresponds to our goal.
+Now, the solutions to our probabilistic
+planning problems look quite different
+from what we've seen so far.
+They are no longer action sequences, but
+they are something known as a policy.
+A policy is effectively a function that
+maps states into actions.
+Namely, if we are in a given state, that's
+the action we should execute.
+That most likely leads us to a goal state.
+And often, the policy we're looking for is
+an optimal policy, which is simply one
+that has a minimal expected cost.

@@ -1,0 +1,712 @@
+Hello, and welcome to the AI Game Dev 
+labs. 
+My name is Alex Champandard. 
+And today we're going to talk about 
+planning in games and in particular more 
+of the lessons we've learned applying 
+planning into games over the past few 
+years. 
+And the opportunities that lie ahead in 
+using more advanced AI techniques. 
+And then some of the games that we've 
+actually applied planning to. 
+So, if you're anything like me, you're 
+super excited about the idea of applying 
+modern AI techniques into games. 
+And plannings is when it's particularly 
+interesting. 
+we've been doing this for about eight to 
+ten years now. 
+So, we've got quite a lot of experience 
+from applying planning in games. 
+I'm going to talk about some of those 
+games. 
+So, here's a, a non exhaustive list of 
+games that use planning or techniques 
+related to planning. 
+And I'm going to dig into them. 
+So, I've been lucky enough to, to work on 
+a couple of games that use planning. 
+And I've also interviewed developers 
+that, built planning into many other 
+games. 
+So, I thought it would be interesting to 
+dig into some of the insights that 
+they've shared. 
+And some of the lessons we've learned as, 
+as the games industry when it comes to 
+applying planning into those types of 
+situations. 
+So first let's look at games that use 
+planners. 
+And they can be split roughly off into 
+two categories, STRIPS style planning, 
+and HTN style planning. 
+And, STRIPS, you can think of it as a 
+very non-hierarchical searching through 
+actions that generate new states. 
+And then figuring out how to get from one 
+state to another via a set of actions. 
+HTN is more hierarchical, and it tries to 
+search through actions that break down 
+recursively using tastic composition. 
+And so, with STRIPS based approach, you 
+need to, to have a good idea of the 
+problem. 
+And to have an efficient implementation 
+as well, because it requires a start to 
+search through all the different options. 
+And the first game that really nailed 
+that down was Fear. 
+And that's based on the work of Jeff 
+Orkin at Monolith, who applied STRIPS 
+based planner into, into Fear. 
+And he did a lot of work to make this run 
+fast enough and combined with the 
+particular type of game that this was 
+with action oriented game. 
+Where you only really needed short action 
+sequences for the characters in the game. 
+And this, this turned out to be feasible 
+in 2005. 
+And this particular game spawned a whole 
+bunch of sequels and expansion packs. 
+And derivatives of this kind of 
+technology were used in, in all of those 
+games. 
+And you can actually find original 
+implementation in the STK of the original 
+Fear, so you can download that and find 
+the planner. 
+It's actually there and you can read the 
+whole code for it, so I highly encourage 
+you to do that. 
+You may need a copy of the original game, 
+but it's worth it. 
+So, that particular implementation was 
+well documented by Jeff Orkin and it 
+spawned a bunch of other games that were 
+inspired by. 
+And two of those were internal to 
+Monolith, Condemned and Condemned 2, 
+which I also believe used similar or the 
+same code base, STRIPS base also. 
+Then there's a couple other titles 
+including the Stalker games that were 
+also using planning and Stalker uses 
+hierarchies of STRIPS planners to drive 
+character behavior. 
+So, where as the behavior is potentially 
+complexive of the agents in Stalker or 
+the Stalkers as they're called. 
+they breakdown this complex, long term 
+behavior into a hierarchy of STRIPS style 
+planners. 
+Just Cause is also a similar kind of 
+open-world environment, that also uses a 
+STRIPS style planner. 
+And the civilians as well as the enemies 
+use that planner for for dealing with 
+unexpected situations and the emergent 
+behaviors that you get out of the 
+planner. 
+more planning helps deal with those 
+particular types of situations. 
+So, there's game shipped in 2007, 2008, 
+2010, War for Fall of Cybertron, the 
+Transformers game, also used STRIPS style 
+planner. 
+Which required lots of specific 
+optimizations and graph-based 
+optimization of STRIPS planners. 
+And Deus Ex, the most recent addition of 
+that franchise, in 2011, apparently used 
+a planner as well. 
+So these are, this is a list of games, a 
+non-exhaustive list of games that uses 
+STRIPS. 
+And, there are some other games that use 
+STRIPS, but these are the primary ones 
+that try to, to capture all the the key 
+franchises, the triple a games that use 
+planners. 
+There are a few independent games that 
+also use planners, and strip style as 
+well. 
+But the other major category is 
+hierarchical task network. 
+I'm going to talk about those now. 
+And those are inspired by particulary the 
+work of Gorilla Games on Kill Zone 2 and 
+I was lucky enough to work on the 
+multiplayer box for Kill Zone 2. 
+And initially when Gorilla did research 
+into hierarchical test networks, they 
+studied STRIPS that was available based 
+on the insights from Jeff Orkin. 
+And they thought that they needed a bit 
+more designer control over their 
+behaviors. 
+So, they built a more hierarchical 
+planner which helps the designers 
+essentially craft a specific tree of 
+behaviors, that can also be searched by a 
+planner. 
+And so, it seemed to them to combine the 
+best benefits of designer control with 
+planning. 
+And it turned out to be extremely 
+successful. 
+And the bots in the game are when was 
+reviewed by the, the journalists that 
+that reviewed Kill Zone initially. 
+And they often were surprised that the 
+bots were actually bots and they were not 
+online, so they were often fooled by the, 
+by the AI in the game. 
+So, obviously Kill Zone's AI was extended 
+and reused in Kill Zone 3, and 
+Transformers War for Cybertron borrowed 
+that approach as well. 
+And also implemented a hierarchical task 
+network style of AI. 
+so, initially, all these implementations 
+were derived from SHOP, that stands for 
+simple hierarchical orbit planner. 
+It has lots of advantages. 
+It's a simple algorithm, but adds some 
+purpose. 
+And the advantages that it has are 
+effectively because of design. 
+And it allows designers to express nice 
+hierarchies, ordered hierarchies. 
+They're plans that you can understand 
+exactly how those will get chosen in the 
+game. 
+So, you have full control over specific 
+type of behavior which makes them 
+particularly well suited for creating 
+character alley. 
+Kill Zone too, uses subset of SHOP. 
+It does not track exactly the, the side 
+effects of each action as they're applied 
+to the current world state as it searches 
+forwards through the set of action rules. 
+It searches forwards in time. 
+Whereas Transformers does that. 
+So, it tracks the side effects of each 
+action. 
+Kill Zone 2 on the other hand uses the 
+prepositional logic of SHOP that 
+Transformers doesn't. 
+So, or, we found different games that use 
+different subsets of the SHOP algorithm 
+and those proven to be useful in 
+different practices. 
+But we haven't fully seen a full 
+implementation of SHOP applied to games 
+yet. 
+But we've found hierarchical planners to 
+be extremely useful, generally speaking. 
+So there, those are the, the games use 
+HTN's officially and are well documented. 
+And there are a couple other games that 
+use hierarchical test networks 
+unofficially which I have discovered 
+based on my personal research. 
+And gossip and so I'm guessing here I 
+believe Max Payne 3 uses hierarchical 
+test network. 
+Planner, based on the work of Peter 
+Gornak, as well as Demon Souls and Dark 
+Souls as well. 
+Max Payne, I think uses some HTN concepts 
+within it's squads. 
+So, that was a presentation at GDC 2009, 
+but it's not it's not official. 
+[SOUND] And when the Total War series, 
+when Empire came out, there were some 
+rumors that it also used a planner. 
+And we invited Creative Assembly to a 
+gaming conference to give a presentation 
+about the AI. 
+And it turns out it's more of a 
+hierarchical approach and not a strict 
+style implementation. 
+And and it also turns out, it's a little 
+bit more reactive. 
+It doesn't fully search everything a, a 
+ahead like a, a fully featured HTN 
+planner. 
+but this is important to emphasize. 
+it draws the line between planners and 
+the more reactive techniques that are 
+used in industry like behavior trees. 
+And it's hard to often find the, the, the 
+gap between the two, or where do you draw 
+the line between a planner and not a 
+planner? 
+And there are certain things that are 
+called reactive planners, in academia. 
+And, the game developers have embraced 
+these types of technique. 
+And, these techniques, you search, but 
+not searching ahead and I'm going to talk 
+about those now. 
+And so, a behavior tree, for instance, 
+will look exactly like an HTN, except it 
+does not search ahead in time, it stops 
+at the current action and says, this is 
+likely to work out, I'm going to try it 
+out. 
+So, behavior trees have been extremely 
+popular in games and in particular since 
+Halo 2. 
+there was a presentation gave that Damian 
+Gessler gave at GDC about the behavior 
+trees in Halo 2. 
+And there were a couple of other titles 
+at the time, but also gravitated around 
+similar ideas, and Swap Four was one of 
+them, and Facade was another. 
+And this is inspired from, from a lot of 
+work done in robotics or the virtual 
+agents community. 
+And things have kind of crystallized 
+since then, and there have literally been 
+hundreds of title based on behavior trees 
+and many, many different games. 
+But I'm going to talk about, 
+specifically, some titles that have 
+relations to, to planning or the, the, to 
+somehow bridge the gap between the two. 
+And Metro 2033 was a stealth-action game 
+that and the developers had some 
+experiences of playing, planning from the 
+Stalker games. 
+And they initially used a planner but 
+then they switched to using more 
+behavior-tree style AI not very 
+hierarchical, a quite flat tree. 
+And, and that turned out to be better for 
+them to get more control over the 
+behaviors and and the game has a lot of 
+similar functionality than, than the Fear 
+franchise, for instance. 
+And it, it plays a lot in the same way. 
+So, it shows that similar behaviors can 
+be implemented with different techniques. 
+And that some of the strips the original 
+strips planning techniques didn't 
+necessarily create different behavior. 
+It just demanded developers to create 
+that behavior in a different way. 
+another studio that's worth mentioning is 
+Avalanche Studios, who built the strips 
+planner in Just Cause II. 
+now at the latest gaming [UNKNOWN] 
+conference we had the panel discussion 
+about this and Avalanche has actually got 
+it's own internal behavior tree 
+implementation now as well. 
+So it had a planner available, but it 
+decided to use behavior trees for certain 
+projects despite having the planning 
+technology available. 
+For many reasons that we've talked about 
+including designer control. 
+And it seems well it may seem obvious but 
+it's become obvious to the game developer 
+industry now that certain techniques are 
+better suited to different types of 
+games. 
+And in the more action combat oriented 
+games, you can get away with such 
+reactive techniques like behavior trees. 
+So, we've talked about a lot of 
+stealth-based games, and a lot of more 
+interesting, open-world games like Just 
+Cause 2. 
+And planners, more justifiable in large, 
+complex, open-world type games. 
+And in the the more linear scripted type 
+games, obviously, you need less of a 
+planner in such a closed-off environment 
+where there are fewer choices available 
+to the AI. 
+so behavior trees remains a very, very 
+popular option in industry, another set 
+of techniques that are used in games are 
+utilities systems. 
+And utility systems tend to be used in 
+very specific systems of games, like 
+weapon selection or selecting enemies or 
+in the action combat games. 
+That are very used for these particular 
+decisions. 
+You can think of a utility system as a, 
+kind of like a spreadsheet. 
+Of all these different options that I 
+have, which one should I pick, which 
+target should I pick, which weapon should 
+I pick, which smart object should I 
+interact with? 
+and what's interesting about utility 
+systems is that there is there is a gap 
+between or there's a bridge between them 
+and planning systems. 
+And Demigod is one of those titles that 
+bridges the gap between a utility system 
+and, and planners. 
+so Demigod is a multi-player online 
+battle arena, a MOBA for short. 
+And it has many challenges for the AI in 
+particular. 
+And it uses planning style algorithms. 
+As we'll combine with utility. 
+So, instead of searching for a specific 
+goal based on Boolean criteria, where 
+each action has strict dependencies that 
+need to be satisfied. 
+Demigod uses search, at that two depth 
+three of a set of actions. 
+And it tries to calculate a score for 
+what it's done, 
+And so it then, figures out if a specific 
+combination of actions have a higher 
+score or a lower score. 
+Not necessarily looking to satisfy a 
+Boolean goal, but using search to 
+maximize a specific utility. 
+So, the application here is significantly 
+different, but it's still using search to 
+automatically find sequences of actions 
+that are sensible for the AI. 
+So that's why, it's got many aspects of 
+planning but it's also got many aspects 
+of utility as well. 
+and I think that's a very promising area 
+that is very under explored, and 
+certainly very suited to these 
+multi-player online battle arenas. 
+And I presume we'll be seeing more of 
+those types of AIs being built, as mobile 
+games become more, more popular. 
+Another style or another type of game 
+that I'd like to talk about is the the 
+multi-player box implemented in, for 
+example, section 8 prejudice, or section 
+8. 
+Now, this is worth mentioning, because 
+Timegate had experience working on the 
+expansion packs for the original Fear. 
+And they built the AI, or they work with 
+the planner and the AI and the planner in 
+the STRIPS style. 
+But for their own game, Section 8 
+prejudice they chose to build a utility 
+system for the bots instead. 
+So, this is another action combat game 
+where the bots have to make fast 
+decisions, and they found that utility 
+worked perfectly well for this particular 
+purpose. 
+And they did not need to implement the 
+planning system. 
+despite having the experience with that 
+and this emphasizes again the, the fast 
+pace action games. 
+And not necessarily the best type of 
+games to implement planning in. 
+over planning does have its advantages as 
+well. 
+Which we'll talk about shortly. 
+And the third game, that I'd like to talk 
+about that's utility-based is the, the 
+Sims, and the Sims 3 in particular. 
+Now, earlier in the franchise, the Sims 
+1, the Sims 2, were almost entirely based 
+on utility. 
+but the Sims 3 took that a bit further, 
+and the characters were more purposeful. 
+They could interact with each other, and 
+within a neighborhood, and there was not 
+just a single single household that was 
+simulated at a time. 
+And to make this work, to pull this off, 
+with sufficient performance, Richard 
+Evans had to build conceptually a 
+hierarchical planner into the system 
+To partly isolate the utility system into 
+sub-decisions, so that the whole thing 
+was not utility-based, but it was more 
+like driven by the planner. 
+And then using utility at the base. 
+So, in a sense, utility was relegated or, 
+or, isolated a little more and more 
+responsibility was proportionately given 
+to the hierarchical planner to really 
+pull this off. 
+And the Sims 3 is a very interesting case 
+study, and looking forward, I hope to see 
+more games with purposeful characters, 
+like those in the Sims 3. 
+And it certainly shows that there's a lot 
+of potential in combining hierarchical 
+planners with other techniques, like 
+utility to get really great behaviors. 
+So, what have we learned from all this, 
+and we've basically been applying 
+planners in games since since Fear, 
+that's the first documented use of 
+planning in games. 
+And it's been almost eight years since 
+then. 
+So, in that time, we've, we've learned 
+quite a lot about planning in video games 
+certainly not as much as in robotics, 
+they've been doing it for, for decades. 
+But we still have, a lot of insights. 
+So, one thing we've found as far as games 
+are concerned, technology is really 
+rarely the problem. 
+Now, initially to get the STRIPS style 
+planner, interfere, Jeff Orkin had to do 
+a lot of work to, to get that running 
+fast enough. 
+And he has a paper on the subject, 
+entitled, how to plan in real-time and 
+keep your job. 
+So, it certainly was a performance 
+problem initially, a lot of developers 
+have benefited from his insight since 
+then. 
+And kind of optimization work is becoming 
+less important now that we have more 
+processing power to throw at the problem. 
+And so, it's fair to say that these 
+technical issues are secondary now to 
+design issues, and that's my second point 
+here. 
+That a lot of the questions that game 
+developers are raising about planning, 
+it's hard to combine automated planning 
+with designer control. 
+And that's a big open question about game 
+AI in general, how do you combine those 
+two things? 
+And it turns out that hierarchical 
+planning is our, currently our most 
+promising direction that we're heading 
+down. 
+Hierarchy allows you to edit specifically 
+what types of decisions you'd like to 
+constrain, and if you want to, very 
+constrained decisions, you'll be able to 
+very narrow tree It goes more deeply. 
+But if you want to give the, planning 
+more options, then you, will build a tree 
+that is much more broad. 
+And that that leverages search more, as 
+opposed to designers structuring of the 
+tree. 
+so these are big open questions. 
+How do we balance those two things? 
+But we've learned that hierarchies are a 
+very good way of doing that and that's 
+why simple algorithms that look simple 
+from a research point of view like SHOP. 
+Are very interesting from a game 
+developer's point of view, because 
+they're simple and they provide that 
+simple specification. 
+As a, as a kind of language for the 
+designers to use and to craft behaviors 
+that they can control. 
+The third big lesson that we've learned 
+is that when we're less sure about the 
+domain of how to build great AI, then 
+planning has many benefits. 
+And Jeff Orking mentioned that the 
+benefits of using planning on Fear, was 
+also during development, they could throw 
+together parts type behaviors. 
+And quickly get results without 
+necessarily understanding the impact of 
+the features that they were building. 
+They could get great-looking behaviors 
+quickly. 
+And, if you have larger, predictable open 
+worlds, I mean, maybe Stalker or Just 
+Cause. 
+Planning could also help if you don't 
+fully understand where things may end up 
+or how objects may interact. 
+So, planning is potentially a good way to 
+get around these problems and still 
+provide robust AI. 
+But conversely, in domains where we have 
+ever clear understanding of what the 
+problem is and what the scope of the 
+level is, or which objects may interact 
+with others. 
+Like tightly scripted action games, 
+developers building such types of games 
+have found themselves moving away from 
+planning techniques. 
+Because, well, they can do the same thing 
+without searching ahead and using more 
+reactive techniques instead. 
+the third important point and probably 
+one of the biggest lessons that we've 
+learned here is that, goal-based 
+architectures are very exciting from an 
+architectural point of view. 
+Regardless of whether we use planners or 
+not. 
+So, goal-based architecture is 
+conceptually separating what to do and 
+how to do it. 
+So, if you separate those two things, it 
+doesn't matter how you implement it. 
+You can implement that using a planner, 
+behavior tree, utility system, and you 
+still have a lot of benefits in your 
+architecture. 
+And it it turns out to be a very healthy 
+architectural separation. 
+So, you can have the designers work on 
+specifying what they want and have an 
+algorithm implement that in a different 
+way. 
+Search is just one way to implement that, 
+or planning is just one way to implement 
+that as well. 
+Another thing we've found is that 
+planning hasn't yet really made or broken 
+any particular game. 
+And like to see that, I'd like to see a 
+game where a planner is absolutely 
+necessary, but currently, we've found 
+that planners are just another technique 
+that can implement AI decision making for 
+characters. 
+And the most games could use behavior 
+tree utility systems relatively 
+interchangeably and you wouldn't really 
+notice much difference. 
+But what I would like to see, is a game 
+where planning is actually absolutely 
+required, you can not build up using a 
+reactive technique. 
+And there's been very little 
+investigation of that and that kind of 
+ties into my big opportunities for 
+planning and for, for these techniques in 
+general. 
+So, in the long term, I think the big 
+potential of planning is that we will 
+have more intelligent characters. 
+And planning is super talented and super 
+good at deliberation and logical 
+reasoning. 
+Figuring out how to achieve a goal based 
+on actions that are combined together. 
+And intelligence isn't the only thing 
+we're looking for in games. 
+We want the characters to be believable 
+and entertaining. 
+but intelligence helps a lot and will 
+help us make more believable characters 
+certainly. 
+Second big long-term promise that 
+planners can help us fulfill is the the 
+idea of a game master, or a game director 
+that can custom-craft or tailor an 
+experience for us. 
+So, if a designer has a plan for us, and 
+he cannot supervise every single game 
+instance in the world, then potentially 
+he could build a planner into that game 
+and 
+And have the planner help change, update 
+the story, give new quests based on 
+what's going on. 
+And really join in in the storytelling 
+to, to make each game experience fully 
+unique. 
+And this is something we are barely 
+scratching the surface of and there's a 
+lot of potential here. 
+In short-term, there's, three big things 
+that that I think are, are promising 
+avenues for planning. 
+The first is applying planning to other 
+domains and not just characters and 
+specifically not just enemies. 
+So, we've, we've done action combat games 
+and we've done them, too well. 
+Now, let's try some different types of 
+games, and Sims 3 is pointing in an 
+exciting new direction of how to 
+potentially use planning techniques in 
+different kinds of environments. 
+But we haven't really scratched the 
+surface of this either. 
+And, again, so not just exploring 
+different types of game applications, but 
+also different types of, games. 
+So, RPGs, or simulation games could also 
+benefit from planning. 
+And also, I think, in the short term, we 
+have a lot of potential in applying 
+planning techniques during the 
+development, as a tool. 
+So, if you think of a planner as a way to 
+compile and create a more reactive AI 
+that will run very efficiently, but we 
+can do all the computationally expensive 
+calculations. 
+Once the designers have finished 
+tweaking, tuning all their settings, we 
+should in theory know the domain fully, 
+that we can bake that and send that to 
+the customer as a reactive AI. 
+And that, that has everything it needs to 
+be able to make decisions effectively 
+without having to do run-time search. 
+Not all games will work with this but I 
+think there's a lot of potential in doing 
+that for many types of games, 
+surprisingly many. 
+So, if you'd like to find out more about 
+this, I've compiled a list of interviews 
+on all the games that we mentioned today. 
+All of those interviews are available on 
+line so, I encourage you to go and watch 
+them if you would like to get more 
+information about that. 
+So I've composed all those things 
+together. 
+Go to aigamedev.com/planning and you'll 
+be able to see that list of interviews. 
+And for any further references, I will 
+update this page and put them there as 
+well. 
+If you have any comments, of course you 
+can write to us on Twitter @aigamedev. 
+So, that was a, an overview of, of 
+planning in games, and I I hope you're as 
+excited about planning as I am. 
+I think we've barely just scratched the 
+surface, so I look forward to the, to the 
+next ten years of planning. 
+in games more so than than, almost any 
+other technique and it'll be exciting to 
+see what people come up with. 
+So, I hope you share that enthusiasm, and 
+until then, I will see you online at 
+AiGameDev. 
+Take care. 
+Bye. 
+

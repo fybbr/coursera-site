@@ -1,0 +1,301 @@
+Previously we have seen how the general 
+tree search algorithm uses a strategy to 
+determine which node on the fringe to 
+explore next. 
+An example of such a strategy was a first 
+in first out queue. 
+We call this an uninformed source 
+strategy because it does not use any 
+information about the state itself, it 
+only uses information about when the 
+state was queued but nothing that is 
+internal to the state. 
+We will now look at heuristic search 
+strategies which use information about 
+the state on the fringe to determine 
+which note to explore next. 
+Information about a state that can be 
+used in a search strategy can be encoded 
+using a heuristic function. 
+In general, a heuristic function H, maps 
+a node in the search space to a real 
+number, R. 
+Or sometimes, you also find it maps it to 
+a natural number. 
+What a heuristic function encodes is the 
+estimated cost of the cheapest path from 
+the given node to a goal node. 
+So the heuristic function tells us how 
+close is the nearest goal node. 
+Obviously if the node N given to the 
+heuristic function is a goal node, then 
+the value must be zero. 
+That is, we are already had a goal node 
+so that nearest goal node is in distance 
+zero. 
+As you can see, a heuristic function 
+encodes problem specific knowledge in a 
+problem independent way. 
+For each problem we are looking at, we 
+can define a different heuristic 
+function. 
+Which is why the heuristic function is 
+problem specific. 
+But whatever search space we're looking 
+at, whatever problem we're looking at, 
+the heuristic function will always give 
+us a numeric value for each state. 
+And the fact that it is a number is 
+problem independent. 
+A perfect heuristic function would always 
+give us the correct distance to the goal 
+node. 
+But if we had such a function the search 
+wouldn't be very hard in fact it would be 
+trivial. 
+Unfortunately perfect heuristic functions 
+are very hard to find for most of the 
+problems we'll be looking at. 
+Best-First search is an instance of the 
+general tree search algorithm, where we 
+use the knowledge provided by the 
+heuristic function to decide which of the 
+nodes on the fringe looks best for 
+expansion. 
+In fact, Best-First search is a whole 
+group of algorithms, as we can use the 
+heuristic in various ways to decide which 
+node looks best. 
+And Best-first search can be used as a 
+tree search or graph search or algorithm, 
+depending on whether we use the test for 
+repeated nodes, or not. 
+In Best-First search, we use the 
+strategy, that uses an evaluation 
+function F, to decide which node in the 
+state space to explore next. 
+and again, the evaluation function maps a 
+node in the states space, to real number 
+R. 
+In general we will choose that node from 
+the fringe which has the lowest value F. 
+So the evaluation function determines the 
+search strategy in Best-First search. 
+Again, if we had a perfect evaluation 
+function we could use the search to lead 
+us straight to the goal node. 
+Note that the evaluate function is not 
+problem specific. 
+It is specific to the algorithm. 
+But the evaluation function may use the 
+heuristic function, which is problem 
+specific. 
+What we mean by best in Best-First search 
+is simply defined by the evaluation 
+function. 
+The node that is best has the lowest F 
+value. 
+Now, a quick word about the 
+implementation. 
+There are really two operations that we 
+need to support, when we look at our 
+fringe. 
+When we generate the successors of a 
+node, we need to add those to the fringe. 
+And when we select a node from the fringe 
+for expansion, we need to select the node 
+with the lowest F value. 
+Since we will do both of these operations 
+quite often during the search it is 
+important that these are cheap 
+operations. 
+The good way to implement this is by 
+means of a priority queue. 
+A priority queue maintains all the nodes 
+in the fringe, in ascending order of 
+their F values. 
+A priority queue can be implemented as a 
+binary tree, which means O adding a node 
+and retreading the node with a lowest F 
+value has a algorithmic time complexity. 
+The simplest Best-First search algorithm 
+is probably Greedy Best-First Search. 
+This algorithm simply uses the heuristic 
+function defined for the problem as the 
+evaluation function used by the 
+algorithm. 
+Remember that the heuristic function is 
+problem specific and encodes the distance 
+to the nearest goal node. Whereas the 
+evaluation function is not problem 
+specific and is used by the algorithm to 
+determine which node to expand next. 
+So the meaning of these two functions is 
+really completely different. 
+But Greedy Best-First search simply 
+equates the two and uses the heuristic 
+function to give us a search strategy 
+immediately. 
+The result is an algorithm that always 
+expands the node that is closest to the 
+goal node next. 
+The algorithm is called greedy because it 
+always tries to take the largest chunk 
+out of the remaining distance to the 
+nearest goal node. 
+It tries to get to the goal node in as 
+few steps as possible, but since the 
+number of steps isn't necessarily the 
+cost of a path, this is not necessarily 
+the optimal strategy. 
+In fact, Greedy Best-First search often 
+gives us solutions that are far longer 
+than the optimal path, and also far more 
+costly. 
+So let's look at our touring Romania 
+problem to see how Greedy Best-First 
+search works. 
+To remind you, the initial state was that 
+we are in Arad. 
+Now suppose our goal state is to be in 
+Bucharest, the capital. 
+The actions we have available are to 
+drive along the arcs shown in this graph. 
+And each arc has an associated cost, and 
+that is shown as a number next to the 
+arc. 
+So from Arad, I could drive to these 
+three towns and the costs would be 
+respectively this, this. 
+And this number. 
+What we also need for greedy best first 
+search is a heuristic. 
+And that's what we've got here. 
+The heuristic needs to estimate the 
+distance to the nearest goal node. 
+And our goal node is to be in Bucharest. 
+So we only have one goal node. 
+And on a map, we can use the straight 
+line distance to estimate the distance to 
+the, to a different point on the map. 
+So we will use the Euclidean distance 
+between two points on a two dimensional 
+map. 
+The table you are looking at simply gives 
+us the values of our heuristic function 
+for different nodes N. 
+So, if the node N is Arad, the distance 
+would be 366 rounded. 
+and so on. 
+For each city in our map, we have a 
+straight line distance in this table. 
+And this is the value we will use as our 
+heuristic value. 
+As is to be expected, the heuristic value 
+for the goal note is zero. 
+Another feature of this heuristic is that 
+it always underestimates the distance to 
+the goal. 
+Let's look at a simple example here. 
+For example, we have figure S. 
+Which, according to the heuristic, is 176 
+from the nearest goal node, Bucharest. 
+But, going back to the map. 
+You can see that from Arad, it really 211 
+from the goal node. 
+That is because roads don't tend to be 
+straight lines. 
+In reality, it is probably something like 
+this. 
+And that's a longer distance than what 
+the heuristic gives us. 
+So the real distance is 211. 
+But, going to the next slide again. 
+The estimated distance according to the, 
+the heuristic, is 176, which is lower. 
+Another important observation here is 
+that the heuristic presents us with 
+additional information to what we had in 
+the original problem description given by 
+the map. 
+There is no way you can compute the 
+values in this table from the information 
+given in the map. 
+And of course this table presents 
+problem-specific information. 
+Now, let us have a look at greedy first 
+search in action. 
+What we see here is the initial state of 
+the algorithm. 
+All the nodes you see are the fringe 
+nodes, and there's only one node, of 
+course initially. 
+Fringe nodes are shown in blue here. 
+That's the legend. 
+And the node we select to expand next is 
+shown in red. 
+So currently, there is no node selected. 
+Within each node, you see the name of the 
+city, plus the heuristic value for that 
+node. 
+Also, on the right hand side, you see 
+information about the depth of the 
+different nodes in the search tree. 
+So the first thing the algorithm does is 
+select a node from the fringe. 
+And since there is only one node, this is 
+the one that's going to be selected. 
+Then the algorithm performs the goal test 
+on this node. 
+Which will fail in this case, because 
+this is not goal node.The next step then 
+is to generate the successors of this 
+node. 
+So now, our initial state, Arad is no 
+longer on the fringe. 
+But its three successors are now the new 
+fringe. 
+This means we have to go through another 
+iteration of our loop. 
+And the first step is to select a node 
+from the fringe. 
+We do this according to the strategy. 
+Which tells us we've got to select the 
+node with the lowest f value. 
+So here, we have three nodes. 
+And the lowest f value is this one. 
+So this is the one we will select next. 
+Again, there's no, it doesn't not pass 
+the goal test, so we have to continue. 
+We generate the successors, and add these 
+to the fringe. 
+You can see what we are doing here is 
+tree search. 
+Because we've generated Arad again. 
+So this node is the original node. 
+And we could go back there immediately. 
+For most search problems, applying an 
+action, and then the reverse action 
+immediately afterwards is not a good 
+idea. 
+But let's continue with the algorithm. 
+So the next thing we have to do is select 
+another node. 
+And we select the node with the lowest f 
+value. 
+And here, that is Fagaras. 
+Again this is not a goal node so we have 
+to expand it and add its two successors 
+to the fringe. 
+Now we select a node from the fringe and 
+the node with the lowest F value is 
+Bucharest and this time the goal test 
+will toss so we finished with our search. 
+We can now extract the path to the goal 
+node simply by going up from our goal 
+node, the one that we found through the 
+tree, to the initial state and this is 
+our solution path. 
+That's it, that's how a greedy best first 
+search works. 
+

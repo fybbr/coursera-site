@@ -1,0 +1,194 @@
+Now, before I explain to you how the 
+partial order version of this algorithm 
+works I want to discuss some of the 
+properties of this algorithm. 
+Let's first look at how the algorithm 
+chooses its actions as part of the plan 
+refinement for Primitive tasks. 
+The algorithm TFD only considers actions 
+that are applicable in the current state. 
+And that is very much like forward 
+search. 
+Forward search only looked at actions 
+that were applicable in the current 
+state. 
+And then, TFD also only considers actions 
+that are relevant. 
+In that sense, it's a bit like backward 
+search. 
+So it combines relevance and 
+applicability, from those two algorithms, 
+into the same algorithm. 
+That should help it focus its search 
+significantly. 
+Then, when we look at the plan 
+generation, how the algorithm assembles 
+its plan, what we see is that the actions 
+are added to the plan in the same order 
+in which they will be executed later, 
+when we try to execute the plan. 
+That means the current world state is 
+always know while we are planning. 
+So we're going forward through our state 
+space, adding more actions. 
+And we always know what the current wurld 
+state is like in which we need to apply 
+more actions add more actions to our 
+plan. 
+And again, this is a good thing because 
+that means we know where we are, and we 
+can apply good euristics to get to the 
+goal as quickly as possible. 
+Finally, the version of the algorithm 
+I've described to you is the Ground 
+version. So it does not follow exactly 
+the least commitment principle because it 
+uses actions where partially and 
+stantiated actions might be more 
+appropriate and reduce search. 
+And one way to deal with this problem is 
+lifting. 
+That means, we keep the variables in the 
+plan, and try to avoid unnecessary 
+commitments to the values of those 
+variables as long as possible. 
+This version of the algorithm is then 
+called Lifted-TFD. 
+And results in the same advantages that 
+would be seen for lifted backwards 
+search. 
+Namely, a reduced search space with a 
+lower branching. 
+factor. 
+OK and here is the psuedo code for the 
+ground TFD algorithm. 
+TFD, FD is still for forward 
+decomposition but P because it's partial 
+order. 
+The given network can be partial order 
+and the given methods can be partial 
+order. 
+The function, Ground-TFD, takes as input 
+a planning problem consisting of an 
+initial state, an initial task network, a 
+set of operators, and a set of methods. 
+So it is different from TFD because it 
+takes a task network as input, not just a 
+sequence of tasks. 
+But other than that, the structure of the 
+algorithm is very similar to what we've 
+seen before. 
+So we look at the first task in the 
+network, and again, the first case is 
+that there is no such task in the 
+network. 
+Then, if there is such a task, it can be 
+either primitive, this is the case here, 
+or it can be non primitive, which is the 
+final part of this algorithm. 
+So the first case is again the one where 
+the network is empty, so there is no 
+first task in the network. 
+And that means the empty plan is a 
+solution for this task network. 
+Then we get to the part where our first 
+task is either primitive or 
+non-primitive, but since this task 
+network is partial order, there may be 
+multiple tasks that are first in this 
+network. 
+First meaning it has no predecessors in 
+the network. 
+So what we have to do is choose one of 
+the set of all such tasks that have no 
+predecessors and make that the task that 
+we want to refine next. 
+So this task here is our chosen task, for 
+which we either want to find an action or 
+a method to deal with this task next in 
+our algorithm. 
+If our chosen task is primitive, then we 
+proceed pretty much as we've done in the 
+previous TFD version of the algorithm. 
+The first thing we have to do is compute 
+the set of all those actions that match 
+the task. 
+And are applicatble in our given state. 
+So this is the set of all actions that 
+fulfill these properties. 
+If this set is emtpy, than again we can 
+return failure, as this branch of the 
+search tree does not contain a solution 
+plan. 
+Otherwise, we can choose one of those 
+actions together with the substitution 
+that makes it the same as the task. 
+And we can apply the definition of a 
+solution here by inserting a recursive 
+call into our procedure. 
+So what we have to do is test whether a 
+modified version of the plan constitutes 
+a solution to a modified planning 
+problem. 
+And the way we modify the planning 
+problem is as before, we apply the action 
+in our current state and take that 
+successor as our new initial state. 
+Then, we give it a new network and that 
+new network consists of our original 
+network minus the task we are dealing 
+with here. 
+Actually, we're not only removing the 
+task here. 
+But also, all the edges connecting to 
+this task. 
+And then what we have to do is 
+instanciate the task network with the 
+substitution sigma. 
+So all the variables that we replaced to 
+match it to our action are now replaced 
+in this network. 
+The operators and methods are, of course, 
+the same as before. 
+They don't change. 
+And again, we assign the result of this 
+function call to our variable plan. 
+And if this plan, then, is failure. 
+That means we can return failure, because 
+there is no solution here. 
+Otherwise, we can pre-pend our action A 
+to this plan, and return that as a 
+solution plan for. 
+For our planning problem. 
+And finally, we get to the part, where 
+our chosen task, task, is non-primitive. 
+And in that case what we have to do is 
+again, compute the set of all methods 
+that are relevant for our insentient 
+task, and that are applicable in our 
+given state, s. 
+And if this set of methods is empty, then 
+again we can return failure otherwise you 
+have to choose one of those methods 
+together with the substitution, and we 
+apply the definition again by modifying 
+our problem and passing that into our 
+Ground-TFD procedure. 
+So in this case the state remains the 
+same, operators, methods remain the same 
+and all we have to modify is the network 
+and we do that by applying. 
+The decomposition function delta to our 
+network, where we decompose our task, 
+task, with the method, M, under the 
+substitution sigma. 
+And whatever this procedure returns will 
+be the result of our Ground-TFD 
+procedure. 
+So you can see the partial order version 
+of this algorithm is not much more 
+complicated than the total order version. 
+It still consists of the three branches 
+that are given by the definition of a 
+solution for a STN planning problem. 
+

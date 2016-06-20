@@ -1,0 +1,770 @@
+1
+00:00:04,020 --> 00:00:08,916
+So, now we have seen what search problems 
+look like, we can turn towards search 
+
+2
+00:00:08,916 --> 00:00:12,055
+algorithms. 
+But before we describe the algorithm, I 
+
+3
+00:00:12,055 --> 00:00:16,638
+need to describe the data structure that 
+we manipulate during the search. 
+
+4
+00:00:16,638 --> 00:00:21,125
+And this is called a search node. 
+A search node is really a bookkeeping 
+
+5
+00:00:21,125 --> 00:00:26,019
+structure that encapsulates a state. 
+Note that I say search tree here because 
+
+6
+00:00:26,019 --> 00:00:29,260
+we will be using the search graph as a 
+search tree. 
+
+7
+00:00:29,260 --> 00:00:33,391
+This is simply to make the algorithms 
+slightly easier to explain. 
+
+8
+00:00:33,391 --> 00:00:38,603
+but there is a simple extension that you 
+can come up with that turns this back 
+
+9
+00:00:38,603 --> 00:00:40,726
+into a graph search algorithm. 
+So, 
+
+10
+00:00:40,726 --> 00:00:43,906
+here is the data structure we're looking 
+at. 
+
+11
+00:00:43,906 --> 00:00:49,688
+Each search node consists of five things. 
+The first thing is the state, the state 
+
+12
+00:00:49,688 --> 00:00:55,614
+that is encapsulated in the search node. 
+So a state corresponds to a configuration 
+
+13
+00:00:55,614 --> 00:00:59,517
+of our world, and a node is a place in 
+our search tree. 
+
+14
+00:00:59,517 --> 00:01:03,420
+Note that two search nodes may contain 
+the same state. 
+
+15
+00:01:03,420 --> 00:01:08,791
+The next component of a search node, is 
+the parent node, that we store in each 
+
+16
+00:01:08,791 --> 00:01:12,000
+node. 
+That is the immediate predecessor in the 
+
+17
+00:01:12,000 --> 00:01:17,301
+search tree, the parent in the tree. 
+The only node that doesn't have a parent 
+
+18
+00:01:17,301 --> 00:01:22,463
+is, of course, the root node in a tree. 
+Then we have to store an action in a 
+
+19
+00:01:22,463 --> 00:01:26,160
+search node. 
+That is the action that gets us from the 
+
+20
+00:01:26,160 --> 00:01:29,160
+parent node to this node. 
+Or, more precisely. 
+
+21
+00:01:29,160 --> 00:01:32,930
+From the parents nodes state to this 
+state. 
+
+22
+00:01:32,930 --> 00:01:36,671
+Then we also want to store the path cost, 
+in a search node. 
+
+23
+00:01:36,671 --> 00:01:41,058
+That is the total cost of the path 
+leading to this node in the tree. 
+
+24
+00:01:41,058 --> 00:01:45,380
+And finally, we can store the depth in 
+the tree as part of the node, 
+
+25
+00:01:45,380 --> 00:01:50,412
+which allows us to do for example, 
+a simple cutoff, if we go too deep in the 
+
+26
+00:01:50,412 --> 00:01:53,637
+search tree. 
+So these are the five components, that 
+
+27
+00:01:53,637 --> 00:01:55,701
+make up a search node. 
+The state. 
+
+28
+00:01:55,701 --> 00:01:57,443
+The parent node. 
+The action. 
+
+29
+00:01:57,443 --> 00:02:01,699
+The path cost, and the depth. 
+So now, we get to the first algorithm 
+
+30
+00:02:01,699 --> 00:02:06,001
+that you will see in this course. 
+This is the general tree search 
+
+31
+00:02:06,001 --> 00:02:08,914
+algorithm. 
+The algorithm is implemented as a 
+
+32
+00:02:08,914 --> 00:02:14,209
+function tree search, that takes a search 
+problem as input, and a search strategy. 
+
+33
+00:02:14,209 --> 00:02:17,254
+I will get to the search strategy in a 
+minute. 
+
+34
+00:02:17,254 --> 00:02:20,696
+The search problem is simply what we've 
+seen before, 
+
+35
+00:02:20,696 --> 00:02:23,543
+the thing that consists of four 
+components. 
+
+36
+00:02:23,543 --> 00:02:28,044
+The initial state, the successor 
+function, the goal, and the path cost 
+
+37
+00:02:28,044 --> 00:02:31,332
+function. 
+The algorithm starts by creating a new 
+
+38
+00:02:31,332 --> 00:02:35,060
+search node. 
+So that's the structure we've seen in the 
+
+39
+00:02:35,060 --> 00:02:38,650
+previous slide, 
+from the initial state of our search 
+
+40
+00:02:38,650 --> 00:02:41,757
+problem. 
+And this is stored in a set of nodes. 
+
+41
+00:02:41,757 --> 00:02:45,692
+These are set braces. 
+and the set is called the fringe. 
+
+42
+00:02:45,692 --> 00:02:48,868
+It is often also called the set of open 
+nodes, 
+
+43
+00:02:48,868 --> 00:02:54,252
+as opposed to the set of closed nodes. 
+What this means is, these are all the 
+
+44
+00:02:54,252 --> 00:02:58,050
+nodes in our search tree that we have not 
+yet explored. 
+
+45
+00:02:58,050 --> 00:03:01,224
+And initially, we have not explored the 
+initial state, 
+
+46
+00:03:01,224 --> 00:03:04,220
+and that's the only state we know about 
+initially. 
+
+47
+00:03:04,220 --> 00:03:08,365
+So what we do then is we go through a 
+potentially infinite loop. 
+
+48
+00:03:08,365 --> 00:03:13,547
+And the first thing we do in this loop, 
+is, we test whether there are still nodes 
+
+49
+00:03:13,547 --> 00:03:18,404
+in our fringe that we can examine. 
+If there are no more nodes on the fringe, 
+
+50
+00:03:18,404 --> 00:03:21,125
+that means we've explored the whole 
+graph, 
+
+51
+00:03:21,125 --> 00:03:24,622
+and we haven't come across a node that is 
+a goal node. 
+
+52
+00:03:24,622 --> 00:03:29,351
+So, in that case, we can return failure. 
+There is no solution to the search 
+
+53
+00:03:29,351 --> 00:03:34,662
+problem if we have explored all the nodes 
+in the graph, and have not come across a 
+
+54
+00:03:34,662 --> 00:03:37,967
+goal node. 
+But initially, there will, of course, be 
+
+55
+00:03:37,967 --> 00:03:42,723
+at least one node, namely the node we 
+created from the initial state. 
+
+56
+00:03:42,723 --> 00:03:48,179
+So what we do in the next step, then, is 
+we, we take our set of fringe nodes, and 
+
+57
+00:03:48,179 --> 00:03:53,774
+we select one node from the fringe, and 
+we use the strategy to decide which node 
+
+58
+00:03:53,774 --> 00:03:57,831
+we will select first. 
+So this node is the next one we will 
+
+59
+00:03:57,831 --> 00:04:01,912
+explore in our search. 
+And by explore, I mean two things. 
+
+60
+00:04:01,912 --> 00:04:07,690
+The first thing is, we apply the goal 
+test to the state that corresponds to 
+
+61
+00:04:07,690 --> 00:04:11,465
+this node. 
+If this node is a goal node, that means 
+
+62
+00:04:11,465 --> 00:04:16,550
+we found a solution to our planning 
+problem, to our search problem. 
+
+63
+00:04:16,550 --> 00:04:21,327
+And we can stop the search here. 
+Note that this catches the case where out 
+
+64
+00:04:21,327 --> 00:04:26,478
+initial state was actually a goal state, 
+because the first thing we do is we apply 
+
+65
+00:04:26,478 --> 00:04:29,870
+the goal test before we do anything else 
+to this node. 
+
+66
+00:04:29,870 --> 00:04:35,307
+If the gold task test has succeeded, we 
+can simply return the path to this node, 
+
+67
+00:04:35,307 --> 00:04:38,680
+as this must be a solution to our search 
+problem. 
+
+68
+00:04:38,680 --> 00:04:43,964
+If our current node we are looking at is 
+not a goal node, then what we have to do 
+
+69
+00:04:43,964 --> 00:04:49,249
+is we generate all the successors and we 
+use the function expand here to do this. 
+
+70
+00:04:49,249 --> 00:04:54,142
+So what we do is, we take the problem, 
+and we take the node, and we apply the 
+
+71
+00:04:54,142 --> 00:04:59,166
+successor function that is defined as 
+part of the problem to this node which 
+
+72
+00:04:59,166 --> 00:05:04,386
+gives us a set of actions and new states. 
+And each of these states can be turned 
+
+73
+00:05:04,386 --> 00:05:08,407
+into a new node. 
+Together with the action that led to that 
+
+74
+00:05:08,407 --> 00:05:11,739
+state. 
+And we expand the fringe so we add these 
+
+75
+00:05:11,739 --> 00:05:15,780
+new nodes to the fringe. 
+And this gives us our new fringe. 
+
+76
+00:05:15,780 --> 00:05:20,095
+And, at that point, we go back to the 
+beginning of the loop, and start again. 
+
+77
+00:05:20,095 --> 00:05:22,486
+We look at the fringe, whether it's 
+empty. 
+
+78
+00:05:22,486 --> 00:05:25,460
+If it's not empty, we select a node from 
+the fringe. 
+
+79
+00:05:25,460 --> 00:05:27,910
+So this will be now a, a node at depth 
+one. 
+
+80
+00:05:27,910 --> 00:05:32,750
+Then we apply the goal test to that node. 
+If it's not a solution, then we have to 
+
+81
+00:05:32,750 --> 00:05:37,182
+do the same for that node, expand it, 
+generate its successors, and so on, until 
+
+82
+00:05:37,182 --> 00:05:41,440
+we finally come to the point where either 
+we've explored the whole graph, 
+
+83
+00:05:41,440 --> 00:05:47,155
+which means the fringe is empty, or we 
+come to the point where a node is a goal 
+
+84
+00:05:47,155 --> 00:05:51,930
+node and passes the goal test and in that 
+case our search is done. 
+
+85
+00:05:51,930 --> 00:05:58,213
+Now there are a few subtleties, with this 
+algorithm that I briefly want to go into. 
+
+86
+00:05:58,213 --> 00:06:03,239
+The first one is that a tree 
+corresponding to a finite search graph 
+
+87
+00:06:03,239 --> 00:06:06,639
+may be infinite. 
+Look at this very simple tree. 
+
+88
+00:06:06,639 --> 00:06:10,596
+We have two nodes here. 
+And we can go from one to the other. 
+
+89
+00:06:10,596 --> 00:06:14,608
+And then we can go back. 
+If neither of those two nodes is a goal 
+
+90
+00:06:14,608 --> 00:06:17,178
+node, that would give us an infinite 
+loop. 
+
+91
+00:06:17,178 --> 00:06:21,253
+We can always start here. 
+Then we add its successor to the fringe, 
+
+92
+00:06:21,253 --> 00:06:25,014
+which is this node. 
+Then we have only one node on the fringe. 
+
+93
+00:06:25,014 --> 00:06:28,525
+But then we go back to this node, add 
+this to the fringe. 
+
+94
+00:06:28,525 --> 00:06:32,098
+We go here and here. 
+And our search tree will be infinite. 
+
+95
+00:06:32,098 --> 00:06:36,859
+So, that means that this loop here. 
+May never terminate even if the search 
+
+96
+00:06:36,859 --> 00:06:40,568
+graph is finite. 
+And the second subtlety has to do with 
+
+97
+00:06:40,568 --> 00:06:43,940
+the strategy and that's what we will look 
+at next. 
+
+98
+00:06:45,260 --> 00:06:50,853
+The search control strategy is an 
+effective method for scheduling the 
+
+99
+00:06:50,853 --> 00:06:56,310
+application of the successor function. 
+We have seen this in the algorithm. 
+
+100
+00:06:56,310 --> 00:07:01,981
+The strategy tells us which node from the 
+fringe we will select next to apply the 
+
+101
+00:07:01,981 --> 00:07:05,577
+successive function to, and generates its 
+successors. 
+
+102
+00:07:05,577 --> 00:07:10,832
+Now, the first thing to note here is that 
+it's got to be an effective method. 
+
+103
+00:07:10,832 --> 00:07:16,434
+So what we mean by that here is that the 
+strategy must not take up too much time 
+
+104
+00:07:16,434 --> 00:07:20,030
+to decide which node from the fringe to 
+expand next. 
+
+105
+00:07:20,030 --> 00:07:25,555
+Ideally, it would take constant time. 
+What the strategy then does is determine 
+
+106
+00:07:25,555 --> 00:07:31,255
+the order in which we expand nodes, or 
+the order in which we explore nodes in 
+
+107
+00:07:31,255 --> 00:07:36,437
+our tree, the order in which we go 
+through our tree to look for a gold 
+
+108
+00:07:36,437 --> 00:07:39,769
+state. 
+Our aim, of course, is to produce a gold 
+
+109
+00:07:39,769 --> 00:07:45,765
+state as quickly as possible, so we want 
+to descend down our tree to a gold state 
+
+110
+00:07:45,765 --> 00:07:50,430
+that is relatively close, and we come 
+across that quite quickly. 
+
+111
+00:07:50,430 --> 00:07:54,772
+So a perfect strategy would know where 
+that gold state is an r tree. 
+
+112
+00:07:54,772 --> 00:07:59,944
+But then, if we knew where the gold state 
+is, we wouldn't have to search for it in 
+
+113
+00:07:59,944 --> 00:08:03,393
+the first place. 
+In general, a strategy that produces a 
+
+114
+00:08:03,393 --> 00:08:07,480
+gold state quicker than another is 
+considered a better strategy. 
+
+115
+00:08:07,480 --> 00:08:11,876
+And the way we have described the 
+previous algorithm in the previous slide, 
+
+116
+00:08:11,876 --> 00:08:15,101
+with the strategy as an argument to the 
+node selection. 
+
+117
+00:08:15,101 --> 00:08:19,850
+This makes it a deterministic algorithm, 
+as long as the strategy is deterministic. 
+
+118
+00:08:19,850 --> 00:08:24,622
+Otherwise, without the strategy, you can 
+read this as a non-deterministic 
+
+119
+00:08:24,622 --> 00:08:28,003
+algorithm. 
+The way a strategy can be implemented is 
+
+120
+00:08:28,003 --> 00:08:31,781
+by keeping the fringe nodes in a specific 
+data structure. 
+
+121
+00:08:31,781 --> 00:08:37,084
+A queue could be either a last in first 
+out queue, or a first in first out queue, 
+
+122
+00:08:37,084 --> 00:08:40,265
+and that results in different search 
+algorithms. 
+
+123
+00:08:40,265 --> 00:08:43,580
+For example, the LIFO queue, is 
+effectively a stack, 
+
+124
+00:08:43,580 --> 00:08:49,022
+which means our search proceeds by always 
+exploring the node that has, that has 
+
+125
+00:08:49,022 --> 00:08:53,913
+been last been added to the queue, 
+which means it does a depth first search. 
+
+126
+00:08:53,913 --> 00:08:59,286
+It goes deeper into the tree before it 
+examines the neighbors of a given node. 
+
+127
+00:08:59,286 --> 00:09:04,660
+Feefo would give you a breadth first 
+search by going to one level of the tree 
+
+128
+00:09:04,660 --> 00:09:08,702
+before it goes to the next. 
+But there are many, many more ways you 
+
+129
+00:09:08,702 --> 00:09:13,355
+can think of how to search and we will 
+look at something called a heuristic in 
+
+130
+00:09:13,355 --> 00:09:16,687
+the next week. 
+just another example, you could also take 
+
+131
+00:09:16,687 --> 00:09:21,225
+an alphabetical ordering of the nodes, if 
+you can't find some ordering relation 
+
+132
+00:09:21,225 --> 00:09:24,916
+between the nodes. 
+Another thing that is quite important is 
+
+133
+00:09:24,916 --> 00:09:29,904
+that in many search problems the complete 
+tree is far too large to fit into a 
+
+134
+00:09:29,904 --> 00:09:33,856
+computer's memory, even with the kind of 
+memory we have today. 
+
+135
+00:09:33,856 --> 00:09:39,103
+So the search strategy determines which 
+part of the search tree will be explored 
+
+136
+00:09:39,103 --> 00:09:44,221
+and will be in memory, and therefore it 
+may determine whether we are successful 
+
+137
+00:09:44,221 --> 00:09:47,266
+at all. 
+Because if the search tree is too large 
+
+138
+00:09:47,266 --> 00:09:50,700
+for memory, we may not come across a goal 
+node at all. 
+
+139
+00:09:50,700 --> 00:09:55,586
+Now for those of you who are not familiar 
+with search I recommend that you either 
+
+140
+00:09:55,586 --> 00:10:00,413
+go to the Russel and Norvik textbook that 
+is mentioned on the website and have a 
+
+141
+00:10:00,413 --> 00:10:04,943
+look at the corresponding chapters or you 
+should go through the programming 
+
+142
+00:10:04,943 --> 00:10:09,353
+exercise and implement the missionaries 
+and cannibals problem as a search 
+
+143
+00:10:09,353 --> 00:10:12,332
+problem. 
+You can use either of those two queueing 
+
+144
+00:10:12,332 --> 00:10:16,299
+strategies mentioned there. 
+Lost and first out, or first and first 
+
+145
+00:10:16,299 --> 00:10:19,046
+out, 
+and just see what happens when you apply 
+
+146
+00:10:19,046 --> 00:10:22,647
+these two strategies. 
+Also, a hint regarding repeated states. 
+
+147
+00:10:22,647 --> 00:10:25,332
+To turn the tree search into a graph 
+search, 
+
+148
+00:10:25,332 --> 00:10:28,628
+you have to remember all the nodes you've 
+seen so far. 
+
+149
+00:10:28,628 --> 00:10:32,840
+And the most effective way to do this is 
+to add them to a hash table. 
+
+150
+00:10:32,840 --> 00:10:38,610
+And before you add a note to the fringe 
+again you check whether it is already in 
+
+151
+00:10:38,610 --> 00:10:41,898
+that hash table. 
+You should be able to do this in the 
+
+152
+00:10:41,898 --> 00:10:46,486
+programming language of your choice. the 
+missionaries and cannibals search space, 
+
+153
+00:10:46,486 --> 00:10:51,015
+as you have seen is very small, so the 
+search should be instantaneous whatever 
+
+154
+00:10:51,015 --> 00:10:53,620
+you use. 
+So, have fun with that. 
+

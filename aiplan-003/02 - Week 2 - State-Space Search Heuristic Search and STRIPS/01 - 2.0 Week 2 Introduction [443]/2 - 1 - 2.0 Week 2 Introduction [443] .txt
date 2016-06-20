@@ -1,0 +1,129 @@
+Welcome to week 2 of the AI planning 
+course. 
+We've already learned a lot of things in 
+week 1. 
+For example I've introduced to you the 
+basic planning problem which is the 
+problem we are addressing in this course. 
+I've also told you about a technique that 
+is used in many places in AI but 
+specifically it's very important to 
+planning and that technique is search. 
+Then we've met some of our friends the 
+duck worker robots an example we will be 
+using throughout the course. 
+This was followed by my colleague Austin 
+Tate telling you about practical planners 
+and applications where these are used. 
+But planning is not just about finding 
+plans there is also a context to planning 
+and this is for example what happens 
+before a planning mainly the assignment 
+of tasks to Planners. 
+And after planning, the plan execution 
+which is very important. 
+Then, we've also seen that there is a 
+range of techniques that are used in 
+planners today. 
+That was pretty much what we've learned 
+in Week 1. 
+And now I want to talk a little bit about 
+the website. 
+I've already seen a lot of you have used 
+the social platform that comes with this 
+course, which you can see here. 
+And I would like to encourage you to use 
+the discussion forums. 
+To bring up any questions, any issues, 
+that you have with the course material 
+and hopefully some of the the community 
+that uses this forum will answer those 
+questions for you or we, the instructors, 
+can help as well. 
+In this week's first segment we'll be 
+looking at informed search or more 
+specifically the A* search algorithm. 
+A* is a search algorithm just like the 
+ones we've seen last week. 
+It takes an implicit graph and searches 
+it in its basic form as a tree. 
+Shown here is the search tree generated 
+by the A* algorithm for the touring 
+Romania problem where the task is to get 
+from Arad to Bucharest. 
+What is new here, is that the algorithm 
+uses a number to guide its search, and 
+this number expresses how far from the 
+search node the algorithm thinks the 
+current node is. 
+This is called a heuristic. 
+And this heuristic is used to compute 
+some evaluation function that tells the 
+algorithm which node to expand next. 
+In this graph, we see the numbers here 
+which are the value of this evaluation 
+function. 
+So, what this algorithm does is use an 
+informed search strategy, as opposed to 
+the uninformed search strategies we've 
+seen so far. 
+And probably the best known informed 
+search strategy in the A start algorithm 
+which is what we will see in the first 
+segment this week. 
+In this week's second segment we will be 
+seeing our first planning algorithm which 
+is the forward state space. 
+Search/g algorithm. 
+This uses the search technology we've 
+seen in the previous segment. 
+As you will see in detail, this algorithm 
+is actually very simple. 
+It takes a planning problem as input, 
+which is these three components you see 
+here. 
+And then starts a loop where it starts 
+from the initial state and builds up a 
+plan starting from an empty plan. 
+That will satisfy the goal. 
+The first thing it does is the goal test, 
+which is just what we've seen in our 
+search algorithm. 
+So this is the goal test here. 
+And then generates all the applicable 
+actions in the current state. 
+If there are none, then of course we have 
+failed. 
+Otherwise it just chooses one of the 
+applicable actions. 
+That is our new action that we apply in 
+our state. 
+Then we go to a new state by going 
+forward from our current state. 
+And extend our plan with this current 
+action. 
+And we go through this loop, until we 
+have reached a goal state. 
+And therefore we have found a plan that 
+achieves our goal. 
+But before we get to this algorithm, we 
+will see a formal definition of what 
+constitutes a planning problem. 
+And most importantly we will see the 
+scripts representation for operators, 
+which is the set O here, which describes 
+an operator as something consisting of 
+preconditions and effects. 
+That's what we will look at later this 
+week. 
+So now it's time to get into the material 
+for week 2. 
+Week 1 was fairly lightweight, and you've 
+seen an informal introduction to 
+planning. 
+In Week 2, we will see the material a lot 
+more technical. 
+We will introduce algorithms, and you 
+will have something to implement, if you 
+want. 
+

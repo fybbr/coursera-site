@@ -1,0 +1,519 @@
+1
+00:00:00,012 --> 00:00:03,688
+Welcome to week four of the AI planning
+course.
+
+2
+00:00:03,688 --> 00:00:09,598
+We've already seen a lot of material.
+In week 1 we've seen the basic planning
+
+3
+00:00:09,598 --> 00:00:13,930
+problem and the context in which planning
+takes place.
+
+4
+00:00:13,930 --> 00:00:19,732
+In week two we've learned about the A-star
+search algorithm that is the foundation
+
+5
+00:00:19,732 --> 00:00:25,108
+for state space forward search, the
+algorithm we have seen to solve planning
+
+6
+00:00:25,108 --> 00:00:28,610
+problems.
+In Week 3, we've had two main topics, plan
+
+7
+00:00:28,610 --> 00:00:33,262
+space search, and HTM planning.
+In plan space search, we have described a
+
+8
+00:00:33,262 --> 00:00:37,716
+completely new and different search space,
+which we can also search.
+
+9
+00:00:37,716 --> 00:00:43,283
+And this was the space of partial plans.
+Then we've seen how plan refinement
+
+10
+00:00:43,283 --> 00:00:49,360
+operations can be used to define steps in
+this new plan space that we are searching.
+
+11
+00:00:49,360 --> 00:00:54,994
+And finally we've seen an algorithm that
+is basically the UCPOP planner which is
+
+12
+00:00:54,994 --> 00:00:59,384
+the partial order planner that performs a
+plan space search.
+
+13
+00:00:59,384 --> 00:01:04,383
+Then, we've gone over to HTN planning.
+Htn planning is a completely different way
+
+14
+00:01:04,383 --> 00:01:08,512
+of looking at planning problems.
+So really solves a problem that is
+
+15
+00:01:08,512 --> 00:01:12,352
+different from the one we've solved with
+strips like systems.
+
+16
+00:01:12,352 --> 00:01:17,373
+In this problem, we're not trying to
+achieve goals, but we're trying to
+
+17
+00:01:17,373 --> 00:01:21,827
+accomplish tasks.
+So we're using methods to decompose tasks
+
+18
+00:01:21,827 --> 00:01:27,656
+into finer grained tasks until we reach
+the level of actions that we can use to
+
+19
+00:01:27,656 --> 00:01:30,742
+form a plan.
+So that's what we've learned in week
+
+20
+00:01:30,742 --> 00:01:33,365
+three.
+And now I want to encourage you again to
+
+21
+00:01:33,365 --> 00:01:37,917
+use the social platform that we provide.
+And this time I briefly want to talk about
+
+22
+00:01:37,917 --> 00:01:41,408
+a virtual world meeting space that we
+provide in Second Life.
+
+23
+00:01:41,408 --> 00:01:45,623
+And I hope you will have a look at this
+and send your avatar there and talk to
+
+24
+00:01:45,623 --> 00:01:48,943
+other people in this space and I'll
+quickly go there now.
+
+25
+00:01:48,944 --> 00:01:54,853
+Just to see whats going on there.
+And see who's their that's Austin's
+
+26
+00:01:54,853 --> 00:01:57,381
+avatar.
+Hello Austin, hello.
+
+27
+00:01:57,381 --> 00:02:04,286
+The graph plan planner addresses the same
+planning problem as the strips planner.
+
+28
+00:02:04,286 --> 00:02:08,687
+Or UC pop.
+That is the planning problem consists of a
+
+29
+00:02:08,687 --> 00:02:15,454
+set of operators constituting a domain, an
+initial state, and a set of goals that
+
+30
+00:02:15,454 --> 00:02:19,784
+need to be achieved.
+One major difference to the planning
+
+31
+00:02:19,784 --> 00:02:24,786
+algorithms we've seen so far, is that
+graph plan works on a propositional
+
+32
+00:02:24,786 --> 00:02:28,770
+representation.
+That means the atoms that make up a world
+
+33
+00:02:28,770 --> 00:02:33,650
+state are no longer structured.
+They don't consist of objects that are
+
+34
+00:02:33,650 --> 00:02:37,244
+related to each other, but of individual
+symbols.
+
+35
+00:02:37,245 --> 00:02:42,802
+Where each symbol represents a fact about
+the world that can be true or false.
+
+36
+00:02:42,802 --> 00:02:47,186
+The same goes for actions.
+They are now individual symbols not
+
+37
+00:02:47,186 --> 00:02:51,680
+parameterized actions.
+But as it turns out, this isn't such a
+
+38
+00:02:51,680 --> 00:02:57,959
+major difference as every strips planning
+problem, as we have seen it so far, can be
+
+39
+00:02:57,959 --> 00:03:02,295
+translated into an equivalent
+propositional problem.
+
+40
+00:03:02,295 --> 00:03:07,323
+So, for simplicity we will now think of
+the planning problem as given in its
+
+41
+00:03:07,323 --> 00:03:11,316
+propositional form.
+And here is now an overview of how the
+
+42
+00:03:11,316 --> 00:03:15,821
+graph plan algorithm works.
+The details of this will follow in the
+
+43
+00:03:15,821 --> 00:03:20,379
+remainder of this segment.
+Essentially what the algorithm does is
+
+44
+00:03:20,379 --> 00:03:23,884
+create a data structure called the
+Planning Graph.
+
+45
+00:03:23,884 --> 00:03:29,607
+An example of which you see here.
+The algorithm then, consists of two major
+
+46
+00:03:29,607 --> 00:03:33,558
+steps.
+The first step expands this planning graph
+
+47
+00:03:33,558 --> 00:03:38,360
+with two new layers.
+An action layer and a proposition layer.
+
+48
+00:03:38,360 --> 00:03:43,402
+The second step of the algorithm searches
+this graph for a plan.
+
+49
+00:03:43,403 --> 00:03:48,785
+And here is how the first step works.
+The algorithm starts with a single layer
+
+50
+00:03:48,785 --> 00:03:53,523
+of nodes in it's planning graph and that
+is the proposition layer P0.
+
+51
+00:03:53,523 --> 00:03:58,531
+In this layer we have all those
+propositions that were true in the initial
+
+52
+00:03:58,531 --> 00:04:02,465
+state as nodes.
+So in this layer we have six nodes holding
+
+53
+00:04:02,465 --> 00:04:06,515
+one proposition each that were true in the
+initial state.
+
+54
+00:04:06,516 --> 00:04:13,350
+That's the initial planning graph.
+The graph expansion step then adds exactly
+
+55
+00:04:13,350 --> 00:04:18,318
+one action layer and one proposition layer
+to this graph.
+
+56
+00:04:18,318 --> 00:04:24,582
+The first action layer contains all those
+action symbols, those 4 here.
+
+57
+00:04:24,582 --> 00:04:30,732
+That would be applicable in a state
+consisting of all those symbols contained
+
+58
+00:04:30,732 --> 00:04:37,062
+in the preceding proposition there.
+So these actions are applicable in a state
+
+59
+00:04:37,062 --> 00:04:43,434
+that would consist of all these symbols.
+And then in the proposition layer P1 that
+
+60
+00:04:43,434 --> 00:04:49,242
+we are adding in this expansion set we
+have all the effects that were asserted by
+
+61
+00:04:49,242 --> 00:04:55,402
+the actions in the preceeding action layer
+plus all the propositions that were true
+
+62
+00:04:55,402 --> 00:04:58,672
+already.
+So this is the proposition layer P1,
+
+63
+00:04:58,672 --> 00:05:04,352
+consisting of all the positive effects of
+these actions, and all those elements that
+
+64
+00:05:04,352 --> 00:05:08,387
+were already in P0.
+The edges you see here simply represent
+
+65
+00:05:08,387 --> 00:05:11,566
+the preconditions and effects of the
+actions.
+
+66
+00:05:11,566 --> 00:05:16,011
+When we look at the detail of the
+algorithm, we will see that there are
+
+67
+00:05:16,011 --> 00:05:20,862
+actually a few more action nodes in the
+action layer representing noops, no
+
+68
+00:05:20,862 --> 00:05:26,560
+operations, which were intruduced to carry
+propositions forward frmo one proposition
+
+69
+00:05:26,560 --> 00:05:30,994
+layrr to the next.
+And there are also some additional edges
+
+70
+00:05:30,994 --> 00:05:36,890
+not shown in this graph, and these are
+edges that are internal to proposition and
+
+71
+00:05:36,890 --> 00:05:42,649
+action layers and represent mutual
+exclusivity of these symbols being true.
+
+72
+00:05:42,649 --> 00:05:48,551
+One important feature of this expansion
+step that comes first, is that it runs in
+
+73
+00:05:48,551 --> 00:05:51,100
+polynomial time.
+So it is fast.
+
+74
+00:05:51,100 --> 00:05:56,986
+The expansion step is then followed by the
+second step in this algorithm which is the
+
+75
+00:05:56,986 --> 00:06:01,095
+backwards search.
+So what we do in the backwards search is
+
+76
+00:06:01,095 --> 00:06:04,897
+search for our plan from the last
+proposition layer.
+
+77
+00:06:04,897 --> 00:06:08,324
+Are in the plan.
+So we are searching from this layer here
+
+78
+00:06:08,324 --> 00:06:13,148
+and we're going backwards towards the
+initial state, until we reach the initial
+
+79
+00:06:13,148 --> 00:06:17,202
+state and search for sets of actions that
+may constitute our plan.
+
+80
+00:06:17,202 --> 00:06:22,026
+And this was a standard search following
+the type of search we have seen before,
+
+81
+00:06:22,026 --> 00:06:25,233
+that can be done with something like the
+A-star app.
+
+82
+00:06:25,233 --> 00:06:29,210
+[inaudible] Algorithm.
+Unfortunately, this means that the
+
+83
+00:06:29,210 --> 00:06:32,865
+backwards surge may have exponential time
+complexity.
+
+84
+00:06:32,865 --> 00:06:38,006
+If the backwards surge finds a plan, then
+we're done, because we've solved the
+
+85
+00:06:38,006 --> 00:06:40,990
+problem.
+If it doesn't find the plan, then the
+
+86
+00:06:40,990 --> 00:06:46,481
+algorithm returns to the expansion step.
+So it generates a new action layer, which
+
+87
+00:06:46,481 --> 00:06:50,083
+is shown here.
+And a new proposition layer shown here.
+
+88
+00:06:50,084 --> 00:06:55,762
+And this is again followed by a backward
+search, starting from the last proposition
+
+89
+00:06:55,762 --> 00:06:59,527
+layer, and going backwards towards the
+initial state.
+
+90
+00:06:59,527 --> 00:07:04,766
+All the way to the initial state.
+Selecting actions from both action layers.
+
+91
+00:07:04,766 --> 00:07:08,312
+And that's essentially all there is to
+graph plan.
+
+92
+00:07:08,312 --> 00:07:13,597
+When Graphplan came out in the mid-1990s,
+it was significantly faster than all the
+
+93
+00:07:13,597 --> 00:07:17,324
+previous planners.
+And there are a number of contributing
+
+94
+00:07:17,324 --> 00:07:21,802
+factors why this is the case.
+And I shall point them out to you while we
+
+95
+00:07:21,802 --> 00:07:26,059
+go through the technical details of the
+planning an algorithm.
+
+96
+00:07:26,059 --> 00:07:32,525
+In the second part of this week we'll be
+looking at advanced heuristics that can be
+
+97
+00:07:32,525 --> 00:07:38,339
+used for state space forward search.
+A technique that we've seen in week two.
+
+98
+00:07:38,339 --> 00:07:43,301
+And in this context we'll take a closer
+look at the FF Planner, which was
+
+99
+00:07:43,301 --> 00:07:48,672
+developed by Joerg Hoffman.
+And one of the distinguishing features of
+
+100
+00:07:48,672 --> 00:07:54,612
+the FF Planner is that it uses the relaxed
+problem heuristic, which is on the one
+
+101
+00:07:54,612 --> 00:07:58,801
+hand efficient to compute and on the
+other, accurate.
+
+102
+00:07:58,801 --> 00:08:03,727
+And that will end this week.
+And now let's step into the technical
+
+103
+00:08:03,727 --> 00:08:08,399
+material for week two.
+At the end of this, you should be able to
+
+104
+00:08:08,399 --> 00:08:12,545
+implement an almost state of the art
+planning system.

@@ -1,0 +1,325 @@
+>> I think you will all understand the
+structure of the planning graph now.
+You know what types of node exist in the
+planning graph, proposition nodes and
+action nodes, and you know what types of
+edges exist between these different types
+of nodes and the different layers.
+And in the example graphs we've looked at,
+you should have seen that we can grow this
+planning graph in my illustrations left to
+right, starting from the proposition layer
+P0, which contains those propositions that
+are true in the initial state.
+The process of growing the planning graph
+is what I call Forward Planning Graph
+Expansion and that's what we will be
+looking at next.
+One of the issues with the planning graph
+is that it is really an infinite graph,
+because I've never told you where we need
+to stop generating action and proposition
+layers.
+So, in theory, this sequence could just go
+on and on.
+This proposition here tells us when we can
+stop expanding the planning graph and do
+something else instead.
+Suppose we are given a propositional
+planning problem consisting of the usual
+components and we start generating our
+planning graph consisting of nodes and
+edges, nodes being the usual proposition
+of action layers, then the following must
+be true.
+If our goal that is part of the given
+planning problem, the goal g, is reachable
+from our initial state, then there must be
+a proposition layer, that's called the
+proposition layer, Pg, for which the
+following holds.
+The first is that all of the goal
+conditions must be a subset of this
+proposition layer, Pg.
+So, if Pg was a state, then our goal would
+be satisfied in that state.
+And the second thing that must be true, is
+that there does not exist a pair of goal
+conditions that are part of our goal.
+There does not exist such a pair, g1, g2,
+that is mutually exclusive in this
+proposition layer.
+So, not only are all the goal propositions
+in this layer, but they can also be
+achieved together, at least, as far as we
+know.
+One caveat here is that this only works in
+one direction.
+So, this direction, that means we still
+only have a necessary condition for when a
+planning graph my contain a solution.
+But we can exploit that and we will look
+at how to do that next.
+And here is the basic idea that underlies
+the Graphplan algorithm.
+We start by expanding the planning graph
+just as we've seen it so far.
+So, we start off with the initial
+proposition layer and we know what this
+contains and then, we expand to the graph
+in each step by one action layer and one
+proposition layer at a time.
+So, this is our first loop that we go
+through to expand the planning graph.
+But we don't want to go through this loop
+forever.
+So, here is the condition when we have to
+stop.
+Namely, from the first graph which
+contains a layer, Pg, for which the
+proposition we've just seen, gives us a
+criterion that the goal maybe satisfied
+and the plan maybe contained in the graph.
+So, we have to check whether all the goal
+propositions are true in the last
+proposition layer that we've just
+generated and whether any of the pairs of
+goal conditions are mutex in that
+proposition there.
+If and when we find such a layer that
+contains all the goal conditions none of
+which are mutexs, then we can stop or at
+least interrupt our planning graph
+expansion and do something else.
+And that something else is a backward
+surge in our planning graph.
+So, we start from our last proposition
+layer and search backwards towards the
+layer P0 to try to extract a plan.
+And how exactly that is done, is something
+I will explain to you later.
+All you need to know now is that this
+search can't fail.
+So, that means, we haven't found a
+solution plan in our planning graph.
+And in that case, what we do is we go back
+to our first step and we continue to
+expand the planning graph, again, we add
+another action and proposition layer.
+This will, of course, contain our goal
+propositions and there can't be mutex any
+more.
+And then, it can search backwards again in
+our graph that contains those additional
+two layers now, and so on, until we find a
+solution plan.
+And for those of you interested in the
+implementation details, here is the data
+structure that can be used to hold the
+planning graph.
+Specifically, we're talking about the
+structure that can hold the kth planning
+graph we're generating, which consists of
+the proposition layers, P0 through Pk, and
+the action layers, A1 through Ak.
+And the first graph we generate is, of
+course, G0, which contains just the
+proposition layer, P0, at no other layers.
+For quick access, the proposition layers
+and the action layers can be stored into
+arrays and the symbols within these layers
+should be stored in sets, sets of
+proposition symbols and sets of action
+symbols.
+They should be represented as sets,
+because we don't want the same symbol
+appearing twice in the same layer.
+In fact, since we know that proposition
+and action layers are monotonically
+growing, we can store each symbol in only
+exactly one layer.
+And we know that the symbol must also be
+contained in all the following layers of
+the same type.
+And then, we have the edges of the
+planning graph.
+In fact, we have five different types of
+edges, all the ones we've seen before.
+So, there are preconditioned edges, going
+from proposition layer Pj minus 1 to
+action layer Aj, to the following action
+layer.
+We have positive and negative effect
+links, which connect the action layer, Aj,
+to the following proposition layer, Pj.
+And then, we have mutex relations that are
+the proposition mutex links that are
+within each proposition layer, and we have
+action mutex links that are within each
+action layer.
+The only thing that is remarkable here is
+that our mutex proposition links start
+from index 1.
+That is because in our proposition layer,
+P0, we don't have any mutex relations, of
+course.
+That is an initial state.
+It's consistent.
+And therefore, nothing in it can be
+mutually exclusive.
+So, that's the data structure.
+And here is the pseudo code that describes
+how we can expand a given planning graph
+with a new action and proposition layer
+and all the links we need.
+So, we assume that we're given the
+planning graph Gk minus 1, and we want to
+generate the planning graph Gk.
+Then, we start by generating all the
+actions we need in our new action layer,
+which is Ak.
+And in this action layer, we find all
+those actions that have their
+preconditions in the preceding proposition
+layer and that don't have a pair of
+preconditions, P1 and P2, that are
+mutually exclusive in the preceding
+proposition layer.
+And when we've got our new actions, we can
+compute the mutex relations between our
+new actions.
+And we can do that by going through all
+the pairs of actions that are in our new
+action layer.
+They must be different actions.
+And use the mutex function that we've
+described earlier to compute whether they
+are mutex in our new action layer.
+Then, we can compute the next proposition
+layer, Pk, and that simply consists of all
+the positive effects of all the actions in
+our preceding action layer.
+Note that we don't have to explicitly
+carry forward the propositions from layer
+Pk minus 1, because we have the no-op
+operations doing that for us.
+Next, we compute mutual exclusivity
+between the propositions in our new layer.
+And again, we have to go through all the
+pairs that are different and use the mutex
+function for propositions that we've
+defined earlier.
+And now, all that's missing are the
+precondition and effect links.
+And what we do is simply go through all
+the actions in our new action layer and
+add the corresponding links between the
+correct nodes.
+And these are all listed here.
+Preconditions, positive effects, and links
+for negative effects.
+And that's it.
+And here is a proposition that states what
+I've already mentioned a couple of times,
+namely, that the complexity of expanding
+the planning graph is polynomial and
+therefore, it can be done reasonably fast.
+And what the proposition states is that
+the size planning graph up to level k and
+the time required to expand it to that
+level are polynomial in the size of the
+planning problem.
+The size of this propositional planning
+problem can be described by the number of
+propositions and the number of actions we
+have in this problem.
+So, we assume we have n proposition
+symbols and m action symbols.
+Then, we know each proposition layer is a
+set of symbols so each proposition symbol
+can be contained at most once, which means
+the size of each proposition layer can
+never be more than n.
+Similarly, for the action layers, they
+contain at most all the action symbols
+plus all the no-op actions, and no-op
+actions, of course, we have n for n
+proposition symbols.
+So, the size of an action layer can never
+be more than n plus m.
+And when you go back to the slides, where
+I explained the different algorithms for
+expanding the planning graph, I've always
+explained to you that they run in
+polynomial time.
+And that means, each layer can be
+generated in polynomial time.
+And, of course, we only have a linear
+number of layers in our graph, Gk, or a
+fixed number k.
+So, the whole algorithm for expanding the
+planning graphs, runs in polynomial time.
+Now, another important property of
+planning graphs, is that they will
+eventually reach a fixed-point level.
+And here is what a fixed-point level is.
+A fixed-point level in a planning graph is
+the kth level in that graph such that for
+all i that are greater than K, so for all
+the following levels, they must be
+identical.
+So, for all the following layers, we have
+that the propositions in the following
+layer, has the same propositions as layer
+K.
+The mutex relations are the same for all
+the following layers.
+The action symbols are the same, and the
+mutex between the actions are also all the
+same.
+And this holds for all the layers
+following the fixed-point layer, not just
+for one.
+And the important thing is, of course,
+that every planning graph must have a
+fixed-point level K, that is the smallest
+k, for which the proposition symbols in
+one layer are the same as the ones in the
+next, and the mutex relations that hold in
+that layer are also the same as the next.
+Note that these two proposition layers
+must be the same if the two sizes are the
+same.
+Because proposition layers are
+monotonically increasing, if they have the
+same size, they must also contain the same
+symbols.
+And the same goes for the mutex relations
+which must be the same if they have the
+same size in subsequent layer.
+Now, if the to proposition layers Pk and
+Pk plus 1 are the same and the mutex
+relations are also the same, that means,
+the actions that are applicable in Pk are
+exactly the same actions that are
+applicable in Pk plus 1.
+So, that means the same actions exist in
+action layer Ak and Ak plus 1.
+And if they didn't add any proposition
+symbols from Pk to Pk plus 1, then there's
+no reason why they should add any more
+from Pk plus 1 to Pk plus 2, and so on.
+And the same argument can be made for the
+mutex relation in this action layer
+because this only depends on the preceding
+proposition layer, and on the independence
+between actions, which never changes, of
+course.
+So, once we have reached a level, where
+the number of proposition symbols is no
+longer growing and the number of mutex
+relations that are holding is no longer
+shrinking, that means, we have reached a
+fixed-point level.
+And, every planning graph, must have such
+a fixed-point level.

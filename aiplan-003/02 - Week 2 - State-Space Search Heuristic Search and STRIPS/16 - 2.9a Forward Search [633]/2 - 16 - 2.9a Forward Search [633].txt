@@ -1,0 +1,184 @@
+So far, we have laid a lot of groundwork 
+before we can describe our first planner. 
+We have seen how a planning domain has 
+described a states space. 
+We have seen how to define a planning 
+problem, what constitutes a solution to 
+the problem, and previously, we have seen 
+how to search through a search space. 
+If we put all this together, we end up 
+with a forward state-space search planner 
+and that is what we will look at next. 
+So here is the basic idea how state space 
+search works, 
+namely, we want to apply standard search 
+algorithms that we've seen before like 
+breadth-first search, depth-first search, 
+or A*, you may remember, to a planning 
+problem. 
+And to do this, we need to define the 
+search space which may be different from 
+the state space. 
+But in this case, our search space is 
+simply a subset of the state-space that 
+we define for the planning problem. 
+The nodes in our search space correspond 
+simply to world states. 
+So the states that we have in our 
+planning problem are nodes in our search 
+tree. 
+The arcs in the search space correspond 
+to state transitions as defined by the 
+operators and the actions that we execute 
+as part of the plan. 
+And a path in the search space 
+corresponds to a plan, which is the 
+solution we are looking for. 
+More specifically, here is how we can 
+define a planning problem as a search 
+problem. 
+So we are given a planning problem as a 
+set of operators which implicitly define 
+a state transition system. 
+We are given an initial state and a goal 
+description. 
+These three components make up our 
+planning problem, 
+then we can define the search problem as 
+follows. 
+For the search problem, we need an 
+initial state and we simply take the 
+initial state from our planning problem. 
+Then, we need a go for our search problem 
+and we define a goal test here naming the 
+test that s satisfies g, 
+so the state that we're curently 
+searching must satisfy the goal. 
+Then we can define a path cost function 
+for our search and that is simply the 
+length of the plan we're currently 
+looking at. 
+Implicitly, this means that all actions 
+have equal cost here and that is why the 
+path cost function as the length of the 
+plan works. 
+And the final component we need is a 
+successor function and the successor 
+function, denoted gamma of s here, is 
+what we will define next. 
+The successor function gamma of s for 
+single state is defined here. 
+It is the set of all states gamma s,a for 
+all actions a that are applicable in the 
+state s. 
+So this set consist of all those states 
+that can be reached by an applicable 
+action from our state s. 
+If I wanted to compute this, I would have 
+to, I have to go through all the 
+operators and find all the ground 
+instances of these operators that are 
+applicable in the state, 
+then I could apply those actions in the 
+state and I would get all the successor 
+states here. 
+This is how gamma of s is defined. 
+We can extend this definition slightly. 
+Suppose we are not in one state but we 
+are in a set of states. 
+We know that we are in one of these 
+states and we, we want to define what 
+states are reachable from any of these 
+states. 
+Then, this is simply the union over any 
+of these states of gamma sk. 
+So we compute the successors for each of 
+the individual states and build the set 
+union, which is the result of gamma s, s1 
+through sn. 
+This gives us the states that are 
+reachable from any of those states that 
+are the input to the function in one 
+step. 
+We can make this definition yet more 
+general by naming the number of steps we 
+want to allow. 
+In the simplest case, we have gamma zero 
+which means we allow zero steps. 
+So if we're in any of these states, s1 
+through sn, and want to compute the 
+states that we can be in after zero 
+steps. 
+Well, that's exactly the states we start 
+in. If we don't do anything, we can't go 
+to any other states. 
+But, in general, we want to allow m steps 
+here and we want to say, initially, we 
+are in one of these states s1 through sn. 
+And then we can apply a recursive 
+definition of the function gamma by 
+saying we apply this to gamma m minus 
+one, so we take the set of states we 
+start from. 
+We can go m minus one steps from these 
+states, 
+that this, that is the input to this 
+here, 
+and then, we can go one more step here. 
+And that is then the set of all states 
+that are reachable from s1 through sn in 
+m steps. 
+So that is what we've defined here, we've 
+defined the function gamma m, which maps 
+a set of states to another set of states. 
+Mainly, exactly those states which are 
+reachable in m steps from anyone of the 
+states given in the input. 
+The transitive closure of this function, 
+then simply defines the set of all 
+reachable states, 
+so this is defined here. 
+All the reachable states are simply the 
+union of k from zero to infinity of gamma 
+k of s. 
+So we start in our initial state and we 
+apply k steps from there. 
+This is this set and we can apply zero, 
+one, two, three, and so on, up to 
+infinity steps. 
+And if we take the union of all that, 
+that is all the states that are reachable 
+from our initial state s. 
+And that is the function gamma forward of 
+s. 
+And here is why I've given you such a 
+complex definition, 
+because, with this definition, I can very 
+simply state when a planning problem has 
+a solution. 
+So we can state that a STRIPS planning 
+problem defined by a state transition 
+system initial stating goal or a 
+statement defined by the operators and 
+the initial state in the goal, has a 
+solution if and only if the following 
+holds. 
+Namely, if we take the set of all goal 
+states and we take the set of all 
+reachable states and we build the 
+intersection between these two sets, 
+then, this must not be the empty set or 
+you can see it the other way around, too. 
+If this set actually contains an element, 
+let's say a state Sg, then this state is 
+in both these sets, which means it is a 
+goal state and it is reachable from the 
+initial state. 
+And if there's a reachable state from the 
+initial state that is a goal state, that 
+means we have a solution to our planning 
+problem. 
+Now, this is all great. 
+But you may wonder, when are we actually 
+going to see a planning algorithm? 
+

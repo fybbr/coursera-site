@@ -1,0 +1,529 @@
+1
+00:00:00,012 --> 00:00:06,218
+Once we have computed the potential 
+resolvers for a given flaw in our plan, 
+
+2
+00:00:06,218 --> 00:00:12,065
+we need to select one of these and apply 
+it to the current partial plan. 
+
+3
+00:00:12,065 --> 00:00:19,002
+So, we'll refine our current partial plan 
+using the resolver we've just computed. 
+
+4
+00:00:19,002 --> 00:00:23,503
+And the way this is done is very simple. 
+We have to add elements to the plan, 
+
+5
+00:00:23,503 --> 00:00:26,987
+namely those elements that are specified 
+in our resolver. 
+
+6
+00:00:26,987 --> 00:00:31,124
+So, this could be an ordering constraint, 
+it could be one or more binding 
+
+7
+00:00:31,124 --> 00:00:34,972
+constraints in our variables, 
+it could be a new causal link, or it 
+
+8
+00:00:34,972 --> 00:00:38,292
+could be a new action. 
+Or a combination of any of those, 
+
+9
+00:00:38,292 --> 00:00:43,195
+whatever our resolver specified. 
+In general, we have to make sure that our 
+
+10
+00:00:43,195 --> 00:00:47,066
+constraints that are maintained in the 
+plan are consistent. 
+
+11
+00:00:47,066 --> 00:00:51,392
+But this is not required here. 
+This is the case because our function 
+
+12
+00:00:51,392 --> 00:00:55,931
+that computes the resolvers for a given 
+flaw already took care of that. 
+
+13
+00:00:55,931 --> 00:01:00,420
+So, we never consider resolvers that 
+would make our variable binding or 
+
+14
+00:01:00,420 --> 00:01:05,297
+ordering constraints inconsistent. 
+But when we resolve a flaw and when we 
+
+15
+00:01:05,297 --> 00:01:09,183
+introduce new causal links or new 
+actions, what we can do is we can 
+
+16
+00:01:09,183 --> 00:01:11,924
+introduce new flaws into the plan by 
+doing so. 
+
+17
+00:01:11,924 --> 00:01:16,540
+And that means we simply have to update 
+the flaws that know about in our plan, 
+
+18
+00:01:16,540 --> 00:01:21,421
+and these are unachieved preconditions, 
+and we've seen that earlier how this can 
+
+19
+00:01:21,421 --> 00:01:24,570
+be done with open goals computation, or 
+the threats. 
+
+20
+00:01:24,570 --> 00:01:28,015
+And again, we had a function earlier that 
+does that incrementally. 
+
+21
+00:01:28,015 --> 00:01:33,647
+During our plans based search, we 
+maintain a set of ordering constraints. 
+
+22
+00:01:33,647 --> 00:01:39,192
+And here are a few words on the 
+implementation of ordering constraints. 
+
+23
+00:01:39,192 --> 00:01:45,197
+In fact, you could see the ordering 
+constraints as an independent module that 
+
+24
+00:01:45,197 --> 00:01:50,987
+can be plugged into our planner and that 
+has two access operations that we need to 
+
+25
+00:01:50,987 --> 00:01:53,651
+support. 
+The first one is, we need to query 
+
+26
+00:01:53,651 --> 00:01:57,572
+whether an action in our plan must come 
+before another action. 
+
+27
+00:01:57,572 --> 00:02:02,136
+So, we need to be able to find out 
+whether two actions are already ordered 
+
+28
+00:02:02,136 --> 00:02:06,174
+with respect to each other. 
+And then, of course at some stage, we 
+
+29
+00:02:06,174 --> 00:02:09,460
+want to add new orderings to our 
+constraint network. 
+
+30
+00:02:09,460 --> 00:02:13,705
+So, we want to assert that an action ai 
+must come before an action aj. 
+
+31
+00:02:13,705 --> 00:02:18,452
+And let us assume that we don't have to 
+do consistency checking when we add an 
+
+32
+00:02:18,452 --> 00:02:21,548
+ordering constraint to our constraint 
+network. 
+
+33
+00:02:21,548 --> 00:02:24,501
+The first internal representation is this 
+one here. 
+
+34
+00:02:24,501 --> 00:02:28,248
+Where we maintain the sets of 
+predecessors and successors for each 
+
+35
+00:02:28,248 --> 00:02:31,710
+action, simply as they were given to the 
+constraint network. 
+
+36
+00:02:31,710 --> 00:02:35,644
+So, if we have an action, we say this 
+ordered with respect to some other 
+
+37
+00:02:35,644 --> 00:02:38,275
+action. 
+And then, we add more orderings as we go 
+
+38
+00:02:38,275 --> 00:02:40,906
+along. 
+Then, we would just store these as we 
+
+39
+00:02:40,906 --> 00:02:44,490
+were given these. 
+So now we're starting a third, fourth 
+
+40
+00:02:44,490 --> 00:02:48,602
+ordering, here that says this action has 
+to come before this action. 
+
+41
+00:02:48,602 --> 00:02:52,937
+So, the first option is to store the 
+orderings as given, which would store 
+
+42
+00:02:52,937 --> 00:02:58,016
+four ordering constraints in this case. 
+This means we have a polynomial number of 
+
+43
+00:02:58,016 --> 00:03:01,971
+orderings that we need to store, 
+polynomial in the number of nodes. 
+
+44
+00:03:01,971 --> 00:03:06,215
+And every time we query this constraint 
+network, we have to compute the 
+
+45
+00:03:06,215 --> 00:03:09,394
+transitive closure. 
+For example, if we want to query whether 
+
+46
+00:03:09,394 --> 00:03:14,208
+this node comes before this node, we have 
+to compute the transitive closure. 
+
+47
+00:03:14,208 --> 00:03:18,880
+The second option would be to store only 
+direct predecessor-successor relations. 
+
+48
+00:03:18,880 --> 00:03:22,040
+So in this case, we would not store this 
+relation here. 
+
+49
+00:03:22,040 --> 00:03:25,276
+This would not be a part of our internal 
+representation. 
+
+50
+00:03:25,276 --> 00:03:29,242
+That would save some storage. 
+But the problem is, if we query the order 
+
+51
+00:03:29,242 --> 00:03:33,642
+between these two nodes, again we have to 
+compute the transitive closure. 
+
+52
+00:03:33,642 --> 00:03:38,344
+The final option would be to maintain the 
+transitive closure explicitly. 
+
+53
+00:03:38,344 --> 00:03:43,029
+So, in this case, every time we assert a 
+new ordering we have to compute the 
+
+54
+00:03:43,029 --> 00:03:48,065
+transitive closure with respect to all 
+other actions in our plan and maintain 
+
+55
+00:03:48,065 --> 00:03:51,872
+every link explicitly. 
+That means when we query, we're very 
+
+56
+00:03:51,872 --> 00:03:54,047
+fast. 
+But the problem is now that the 
+
+57
+00:03:54,047 --> 00:03:58,467
+assertion, the adding of an ordering, 
+becomes a relatively slow operation. 
+
+58
+00:03:58,467 --> 00:04:03,212
+In general, there's a trade-off between 
+space and time complexity between these 
+
+59
+00:04:03,212 --> 00:04:07,152
+different representations. 
+But in the planner, we can assume that 
+
+60
+00:04:07,152 --> 00:04:11,452
+the query is probably the most common 
+operation so we want this to be the 
+
+61
+00:04:11,452 --> 00:04:16,267
+fastest, and therefore the third 
+representation is most likely to be the 
+
+62
+00:04:16,267 --> 00:04:19,055
+best. 
+Similar to the ordering constraints, we 
+
+63
+00:04:19,055 --> 00:04:23,333
+can think of the variable binding 
+constraints as the module that we can 
+
+64
+00:04:23,333 --> 00:04:26,807
+plug into the planner. 
+And then, we have several types of 
+
+65
+00:04:26,807 --> 00:04:32,073
+constraints that we've already looked at. 
+Firstly, there are unary constraints that 
+
+66
+00:04:32,073 --> 00:04:34,944
+say that a variable x has to be of a give 
+domain. 
+
+67
+00:04:34,944 --> 00:04:39,816
+This domain is a set of values, including 
+the case where it can be just one single 
+
+68
+00:04:39,816 --> 00:04:42,997
+value, so we have a specific value for 
+our variable. 
+
+69
+00:04:42,997 --> 00:04:47,928
+Then, we have equality constraints that 
+assert that two variables must have the 
+
+70
+00:04:47,928 --> 00:04:50,950
+same value. 
+So, we don't know what values they will 
+
+71
+00:04:50,950 --> 00:04:55,361
+take, but we know that eventually in our 
+final plan, they must have the same 
+
+72
+00:04:55,361 --> 00:04:58,153
+value. 
+And finally, we have inequalities where 
+
+73
+00:04:58,153 --> 00:05:01,062
+we say the two variables must have 
+different values. 
+
+74
+00:05:01,062 --> 00:05:05,252
+The unary constraints and the equality 
+constraints, they are quite easy. 
+
+75
+00:05:05,252 --> 00:05:09,524
+So these can be dealt with, in linear 
+time and don't cause any problems. 
+
+76
+00:05:09,524 --> 00:05:13,428
+This, however, the inequality causes a 
+lot trouble because inequality 
+
+77
+00:05:13,428 --> 00:05:17,884
+constraints cause exponential complexity 
+in this type of constraint network. 
+
+78
+00:05:17,884 --> 00:05:22,584
+So with the inequalities, this becomes a 
+general constraint satisfaction problem 
+
+79
+00:05:22,584 --> 00:05:26,582
+and a general constraint satisfaction 
+problem is NP-complete. 
+
+80
+00:05:26,582 --> 00:05:32,372
+In some sense, this is really bad news. 
+Introducing variable inequalities was one 
+
+81
+00:05:32,372 --> 00:05:37,042
+of the ways we had to resolve flaws, 
+namely flaws that are threats. 
+
+82
+00:05:37,042 --> 00:05:40,282
+So, we have to deal with variable 
+inequalities. 
+
+83
+00:05:40,282 --> 00:05:44,607
+But, that means that every step in out 
+plan refinement gives rise to an 
+
+84
+00:05:44,607 --> 00:05:49,627
+NP-complete problem that we need to 
+solve, namely to maintaining the 
+
+85
+00:05:49,627 --> 00:05:55,075
+consistancy of the variable binding 
+constraints. Finally, our generic plan 
+
+86
+00:05:55,075 --> 00:06:00,989
+space search planner has the same two 
+properties that our states based planner 
+
+87
+00:06:00,989 --> 00:06:03,831
+had, 
+namely it is sound and complete. 
+
+88
+00:06:03,831 --> 00:06:09,010
+And that means whenever our planner is 
+given by zero or initial plan, 
+
+89
+00:06:09,010 --> 00:06:12,257
+and that can be refined into a solution 
+plan, 
+
+90
+00:06:12,257 --> 00:06:16,742
+then our function PSP of pi zero will 
+return a solution plan. 
+
+91
+00:06:16,742 --> 00:06:22,317
+Or more explicitly, soundness means that 
+if the planner returns a result, then 
+
+92
+00:06:22,317 --> 00:06:27,147
+this is indeed a solution plan. 
+And completeness means if there is a 
+
+93
+00:06:27,147 --> 00:06:32,182
+solution plan, then our planner will be 
+able to find the solution plan. 
+
+94
+00:06:32,182 --> 00:06:37,093
+The proof of this type of proposition is 
+similar to what we've seen earlier. 
+
+95
+00:06:37,093 --> 00:06:42,007
+So, we do it by induction, and as our 
+loop invariant, we use that the ordering 
+
+96
+00:06:42,007 --> 00:06:46,530
+and variable binding constraints are 
+consistent at every stage of the 
+
+97
+00:06:46,530 --> 00:06:49,757
+algorithm. 
+So, we maintain this as part of the main 
+
+98
+00:06:49,757 --> 00:06:53,353
+loop in the algorithm. 
+Then, we know that the planner only 
+
+99
+00:06:53,353 --> 00:06:58,292
+returns a plan if this plan is flawless. 
+So, the plan is flawless and the ordering 
+
+100
+00:06:58,292 --> 00:07:02,930
+and variables bindings are consistent, 
+therefore, it must be a solution plan. 
+
+101
+00:07:02,930 --> 00:07:07,501
+And completeness can also be shown by 
+induction, this time induction on the 
+
+102
+00:07:07,501 --> 00:07:12,122
+number of actions in our solution plan. 
+So, we start off with our initial plan 
+
+103
+00:07:12,122 --> 00:07:15,186
+that contains two actions, the two dummy 
+actions. 
+
+104
+00:07:15,186 --> 00:07:19,630
+And then, we show that for every plan 
+that is one action bigger. 
+
+105
+00:07:19,630 --> 00:07:25,642
+There exists an execution trace of our 
+non-deterministic algorithm that can find 
+
+106
+00:07:25,642 --> 00:07:27,049
+that solution plan. 
+

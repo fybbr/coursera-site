@@ -1,0 +1,590 @@
+1
+00:00:04,080 --> 00:00:09,136
+This is description of the Coalition 
+Search and Rescue Task Support Project. 
+
+2
+00:00:09,136 --> 00:00:14,508
+Which is funded by the DARPA DAML Program 
+And it's conducted by AIAI [UNKNOWN] and 
+
+3
+00:00:14,508 --> 00:00:20,205
+IHMC at University of West Florida. 
+So we're initially showing you the CoABS 
+
+4
+00:00:20,205 --> 00:00:24,096
+grid manager. 
+And you can see that there's a number of 
+
+5
+00:00:24,096 --> 00:00:29,211
+services which are running. 
+in particular, there'll be a JINI lookup 
+
+6
+00:00:29,211 --> 00:00:32,597
+service. 
+And a number of other services running 
+
+7
+00:00:32,597 --> 00:00:37,569
+directly on the CoABS grid. 
+Using KAoS for my IHMC and this provides 
+
+8
+00:00:37,569 --> 00:00:41,891
+a directer service. 
+And we're running a domain manager named 
+
+9
+00:00:41,891 --> 00:00:44,801
+dm1. 
+We then have two IX process panels 
+
+10
+00:00:44,801 --> 00:00:47,995
+running. 
+CoSAR TS for the coalition search and 
+
+11
+00:00:47,995 --> 00:00:51,255
+rescue panel. 
+And US-SAR for the US search and rescue 
+
+12
+00:00:51,255 --> 00:00:54,058
+panel. 
+And we have two services running for 
+
+13
+00:00:54,058 --> 00:00:57,317
+information lookup, called hospitals and 
+resources. 
+
+14
+00:00:57,317 --> 00:01:02,532
+Four agent guides are running, which help 
+us to maintain policy across the use of 
+
+15
+00:01:02,532 --> 00:01:06,770
+these agents. 
+Now we have, KAoS policy administration 
+
+16
+00:01:06,770 --> 00:01:11,502
+tool, which is helping us set up and 
+maintain these policies. 
+
+17
+00:01:11,502 --> 00:01:17,652
+So we have one domain which is running, 
+mini coalition, within this is the four 
+
+18
+00:01:17,652 --> 00:01:23,251
+agency or previously, CoSAR, US-SAR and 
+then the two services, hospitals and 
+
+19
+00:01:23,251 --> 00:01:28,224
+resources. 
+We're interested in limiting the kinds of 
+
+20
+00:01:28,224 --> 00:01:33,394
+search and rescue resources which can be 
+chosen, depending on the flights that 
+
+21
+00:01:33,394 --> 00:01:38,167
+these resources would have to make. 
+The countries that they will overfly. 
+
+22
+00:01:38,167 --> 00:01:43,205
+So we're going to establish a new KPAT 
+policy, which we're going to call 
+
+23
+00:01:43,205 --> 00:01:48,545
+gao-flight-restriction. 
+This is going to be a negative 
+
+24
+00:01:48,545 --> 00:01:54,287
+authorization policy. 
+We'll choose from one of the available 
+
+25
+00:01:54,287 --> 00:02:03,045
+actions available to us, and select that. 
+And within this slighted action we have 
+
+26
+00:02:03,045 --> 00:02:09,754
+an available roll of has on country. 
+In this case, we're interested in placing 
+
+27
+00:02:09,754 --> 00:02:19,691
+a restriction on a country, which is Gao 
+And then we can add that as part of the 
+
+28
+00:02:19,691 --> 00:02:24,969
+policy specification. 
+That we have, we have home country Gao. 
+
+29
+00:02:24,969 --> 00:02:29,224
+Then there's going to be a second part of 
+this policy. 
+
+30
+00:02:29,224 --> 00:02:35,605
+Which is the country that we won't permit 
+overflights of Gaoen search and rescue 
+
+31
+00:02:35,605 --> 00:02:39,684
+resources too. 
+So we'll say has rescue destination in 
+
+32
+00:02:39,684 --> 00:02:45,715
+this case a limitation will be on the 
+contrary so basically Gaoen search and 
+
+33
+00:02:45,715 --> 00:02:51,981
+rescue resources can not overfly arbelo 
+so you can see that we've got two parts 
+
+34
+00:02:51,981 --> 00:03:06,148
+policy specification there. 
+And then we commit that policy and then 
+
+35
+00:03:06,148 --> 00:03:24,435
+we want to distribute it. 
+So, we'll just show you now the four 
+
+36
+00:03:24,435 --> 00:03:31,078
+agents once more within the KPAT tool. 
+And we can show you that for the 
+
+37
+00:03:31,078 --> 00:03:34,260
+resources, agent we have that policy in 
+place. 
+
+38
+00:03:36,140 --> 00:03:40,709
+So we're now going to move over to show 
+you the two process panels which are 
+
+39
+00:03:40,709 --> 00:03:43,201
+available. 
+The coalition search and rescue 
+
+40
+00:03:43,201 --> 00:03:47,890
+coordinator is going to be where most of 
+the action in the demonstration takes 
+
+41
+00:03:47,890 --> 00:03:50,916
+place. 
+And then we're going to use a US-SAR 
+
+42
+00:03:50,916 --> 00:03:55,782
+officer panel to initiate the action, 
+because they would have taken the initial 
+
+43
+00:03:55,782 --> 00:03:59,224
+report about the downed airman because 
+he's a US national. 
+
+44
+00:03:59,224 --> 00:04:04,447
+So in this case the US-SAR officer is 
+told to send any reports of downed airman 
+
+45
+00:04:04,447 --> 00:04:08,720
+up to the coalition search and rescue 
+coordinator for their activity. 
+
+46
+00:04:11,560 --> 00:04:15,758
+So, we'll take a look at the actions 
+available to us at the process panel can 
+
+47
+00:04:15,758 --> 00:04:18,429
+support. 
+And we see there that's there's a way to 
+
+48
+00:04:18,429 --> 00:04:22,845
+expand the description of this activity 
+is a particular built in standard 
+
+49
+00:04:22,845 --> 00:04:26,062
+operating procedure. 
+And we get the expansion, which is five 
+
+50
+00:04:26,062 --> 00:04:28,842
+substeps here. 
+We now look, take a look at the first 
+
+51
+00:04:28,842 --> 00:04:31,350
+part. 
+And we see a way to break that down even 
+
+52
+00:04:31,350 --> 00:04:33,804
+further. 
+You can see the indented sub process. 
+
+53
+00:04:33,804 --> 00:04:37,784
+And we're going to look at the first part 
+of that, which is to establish the 
+
+54
+00:04:37,784 --> 00:04:44,726
+medical capability. 
+Now, in this case, we know that we've got 
+
+55
+00:04:44,726 --> 00:04:50,404
+a burned Ammon So we're going to use burn 
+care as the medical facility capabilities 
+
+56
+00:04:50,404 --> 00:04:53,410
+we're looking up. 
+And then we're able to indicate that 
+
+57
+00:04:53,410 --> 00:04:56,694
+we've done that manually. 
+Then we're going to use a service 
+
+58
+00:04:56,694 --> 00:04:59,644
+available to us. 
+This is one of the services which is 
+
+59
+00:04:59,644 --> 00:05:02,538
+registered. 
+So we can invoke the hospital service to 
+
+60
+00:05:02,538 --> 00:05:06,101
+establish medical care, 
+establish the hospitals we have that can 
+
+61
+00:05:06,101 --> 00:05:11,133
+deal with burn capabilities. 
+We're just showing you here that we know 
+
+62
+00:05:11,133 --> 00:05:14,247
+about hospitals and indeed resources as a 
+service. 
+
+63
+00:05:14,247 --> 00:05:19,603
+This is in the ice base two which 
+described services and in relationships 
+
+64
+00:05:19,603 --> 00:05:26,094
+in that particular panel. 
+So we're going to invoke the hospital 
+
+65
+00:05:26,094 --> 00:05:29,115
+service agent and it's going to now be 
+acting. 
+
+66
+00:05:29,115 --> 00:05:33,842
+You can see it there it's already going 
+off and looking for, downloading 
+
+67
+00:05:33,842 --> 00:05:38,569
+information from the, SONAT database 
+about Arabello and Binni in this case. 
+
+68
+00:05:38,569 --> 00:05:43,624
+And it's checked, finding hospitals, and 
+that it's filtering those by the ones 
+
+69
+00:05:43,624 --> 00:05:48,407
+that can provide burdened care. 
+We can take a look at that. 
+
+70
+00:05:48,407 --> 00:05:52,701
+We can look at the details, look at the 
+kinds of hospitals available, where they 
+
+71
+00:05:52,701 --> 00:05:55,636
+are and so on. 
+Find out that some can deal with a burn 
+
+72
+00:05:55,636 --> 00:06:00,760
+carriage can see. 
+GahwadEl looks like a likely candidate. 
+
+73
+00:06:01,860 --> 00:06:06,493
+We're going to, be interested in exactly 
+where the hospital is in relationship to 
+
+74
+00:06:06,493 --> 00:06:12,321
+the downed hammond. 
+So we can perhaps best do that by looking 
+
+75
+00:06:12,321 --> 00:06:16,217
+at a map of the facility. 
+This would be loaded from the information 
+
+76
+00:06:16,217 --> 00:06:20,170
+known to the IX process panel. 
+You can see the pilot down in the sea 
+
+77
+00:06:20,170 --> 00:06:23,193
+there. 
+And his condition report is in burns. 
+
+78
+00:06:23,193 --> 00:06:25,868
+And you can also see the GahwardEl 
+Hospital. 
+
+79
+00:06:25,868 --> 00:06:29,880
+which, as we noted before is, is, has 
+burned care facilities available. 
+
+80
+00:06:37,820 --> 00:06:42,640
+So we're going to go ahead and slight 
+that hospital by binding the variable 
+
+81
+00:06:42,640 --> 00:06:54,020
+appropriately. 
+And we can just tick that off as done. 
+
+82
+00:06:54,020 --> 00:06:57,607
+And then we're going to look at the next 
+entry, which has established the country 
+
+83
+00:06:57,607 --> 00:07:00,308
+that, that hospital is in. 
+You can imagine this being done more 
+
+84
+00:07:00,308 --> 00:07:03,231
+automatically in future. 
+In this case we're going to indicate that 
+
+85
+00:07:03,231 --> 00:07:06,774
+it's Arabello because that's what was 
+indicated in the information that came 
+
+86
+00:07:06,774 --> 00:07:11,130
+back in the look up. 
+So now, that we've got our hospital 
+
+87
+00:07:11,130 --> 00:07:15,158
+available, we're interested in selecting 
+the search and rescue results appropriate 
+
+88
+00:07:15,158 --> 00:07:19,567
+to the task. 
+And we have a built in standard operating 
+
+89
+00:07:19,567 --> 00:07:24,141
+procedure to remind us how to do this. 
+And in particular the first one is to, 
+
+90
+00:07:24,141 --> 00:07:29,738
+look up the SAR resources available which 
+is going to invoke a resources agent. 
+
+91
+00:07:29,738 --> 00:07:34,672
+This will use a soap connection over to a 
+CMU matchmaker, which finds these 
+
+92
+00:07:34,672 --> 00:07:42,761
+appropriate search and rescue resources. 
+And we're finding some resources coming 
+
+93
+00:07:42,761 --> 00:07:47,461
+back, and in fact only resources that are 
+allowed for all flights of arabello are 
+
+94
+00:07:47,461 --> 00:07:52,046
+going to come back so chaos has already 
+been filtering the number of resources 
+
+95
+00:07:52,046 --> 00:07:54,309
+found. 
+This case there are two that are 
+
+96
+00:07:54,309 --> 00:07:58,487
+permitted and seem well to do the job and 
+we're going to choose the U.S. 
+
+97
+00:07:58,487 --> 00:08:02,840
+Marine helicopter that's convenient. 
+It's in the right sort of location and 
+
+98
+00:08:02,840 --> 00:08:05,857
+it's also helps us deal with the fact 
+this is a U.S. 
+
+99
+00:08:05,857 --> 00:08:08,585
+Airman down. 
+So we're going to indicate that we 
+
+100
+00:08:08,585 --> 00:08:10,618
+selected that resource. 
+By. 
+
+101
+00:08:10,618 --> 00:08:13,670
+Oh. 
+We, we'll look at the map first just to 
+
+102
+00:08:13,670 --> 00:08:16,940
+show you where that U.S. 
+Marine helicopter is. 
+
+103
+00:08:23,320 --> 00:08:29,303
+So we're now going to show you we can. 
+Bind the variable for the SAR results 
+
+104
+00:08:29,303 --> 00:08:32,570
+selected. 
+The US Marine helicopter. 
+
+105
+00:08:32,570 --> 00:08:37,002
+And again we'll indicate we've done that. 
+Again you can imagine in the future much 
+
+106
+00:08:37,002 --> 00:08:39,489
+of this could be done in a more automated 
+way. 
+
+107
+00:08:39,489 --> 00:08:43,760
+And then we're going to notify the SAR 
+resource itself, this would best be done 
+
+108
+00:08:43,760 --> 00:08:46,949
+by talking with the U.S. 
+SAR officer who would control that 
+
+109
+00:08:46,949 --> 00:08:51,166
+resource so that it goes back onto the 
+process panel and when they themselves 
+
+110
+00:08:51,166 --> 00:08:55,437
+have notified the helicopter pilot they 
+would indicate it's done and you would 
+
+111
+00:08:55,437 --> 00:08:58,037
+see that the, 
+the, there's a cascade of done 
+
+112
+00:08:58,037 --> 00:09:02,779
+information done to excess information 
+flying back up turning lue if we have not 
+
+113
+00:09:02,779 --> 00:09:08,091
+find the hospital and we just going to 
+check what the outstanding issue was that 
+
+114
+00:09:08,091 --> 00:09:12,392
+we're ask to just check it, as we went 
+along, and yes the country and SAR 
+
+115
+00:09:12,392 --> 00:09:17,198
+resource chose nar allowed to get the, 
+and that was in fact constrained by the 
+
+116
+00:09:17,198 --> 00:09:20,360
+KPAT policy. 
+So that concludes are demonstration. 
+
+117
+00:09:20,360 --> 00:09:25,520
+Further information is available at some 
+of the URL's now being shown. 
+
+118
+00:09:25,520 --> 00:09:29,100
+Thank you for watching the demonstration 
+of the course RTX project. 
+

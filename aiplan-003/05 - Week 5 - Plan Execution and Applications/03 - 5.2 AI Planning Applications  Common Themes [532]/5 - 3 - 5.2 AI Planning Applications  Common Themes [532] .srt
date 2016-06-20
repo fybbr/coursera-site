@@ -1,0 +1,375 @@
+1
+00:00:08,460 --> 00:00:13,362
+We'll now look at a number of AI Planners 
+and the type of application in which 
+
+2
+00:00:13,362 --> 00:00:18,298
+they've been used. 
+Earlier in the course we showed a table 
+
+3
+00:00:18,298 --> 00:00:21,799
+with a number of practical planners 
+applied in realistic situations. 
+
+4
+00:00:21,799 --> 00:00:25,659
+And we noted the long history of the 
+practical application of our planning 
+
+5
+00:00:25,659 --> 00:00:28,130
+methods. 
+And during the course, we described some 
+
+6
+00:00:28,130 --> 00:00:30,549
+the key techniques employed in search 
+planners. 
+
+7
+00:00:30,549 --> 00:00:34,616
+We're going to now explore a number of 
+these systems, the features they include, 
+
+8
+00:00:34,616 --> 00:00:39,966
+and their applications. 
+SIPE-2 System for Interactive Planning 
+
+9
+00:00:39,966 --> 00:00:44,503
+and Execution was created in the 1980s 
+and has been developed since then to 
+
+10
+00:00:44,503 --> 00:00:47,368
+provide a comprehensive approach to AI 
+planning. 
+
+11
+00:00:47,368 --> 00:00:52,143
+It's been developed by David Wilkins and 
+his colleagues at SRI International in 
+
+12
+00:00:52,143 --> 00:00:55,400
+California. 
+SIPE-2 is a domain independent planner 
+
+13
+00:00:55,400 --> 00:01:00,285
+which supports interactive planning, 
+allowing humans and system to co-operate 
+
+14
+00:01:00,285 --> 00:01:05,296
+in a mixed initiative planning fashion. 
+It can efficiently reason about actions 
+
+15
+00:01:05,296 --> 00:01:10,498
+to generate the novel sequence of actions 
+that respond precisely, to the situation 
+
+16
+00:01:10,498 --> 00:01:13,352
+at hand. 
+It supports the giving advice to the 
+
+17
+00:01:13,352 --> 00:01:16,265
+planner. 
+It plans a hierarchical at different 
+
+18
+00:01:16,265 --> 00:01:19,320
+levels of abstraction, 
+replans during exclusion, 
+
+19
+00:01:19,320 --> 00:01:24,000
+can generate parallel plans, so it can 
+allow for multiple agent planning. 
+
+20
+00:01:24,000 --> 00:01:28,875
+Post constraints and reasons about 
+resources within the plan and interacts 
+
+21
+00:01:28,875 --> 00:01:36,010
+with users through a graphical interface. 
+SIPE-2 has been applied in applications 
+
+22
+00:01:36,010 --> 00:01:40,491
+as diverse as, oil spill response, 
+military planning, and production line 
+
+23
+00:01:40,491 --> 00:01:46,710
+planning in a brewery. 
+O-Plan was built by my own team at 
+
+24
+00:01:46,710 --> 00:01:50,367
+University of Edinburgh through the 1980s 
+and 1990s. 
+
+25
+00:01:50,367 --> 00:01:55,378
+It was based on the features in the 
+earlier nautaline hierarchical test 
+
+26
+00:01:55,378 --> 00:01:59,188
+planner. 
+O-Plan supported the whole life cycle of 
+
+27
+00:01:59,188 --> 00:02:01,880
+planning. 
+From domain modeling and knowledge of 
+
+28
+00:02:01,880 --> 00:02:04,972
+list station tools. 
+Through planning, detail constraint 
+
+29
+00:02:04,972 --> 00:02:09,039
+management, and plan execution. 
+He was able to repair plans, or replan as 
+
+30
+00:02:09,039 --> 00:02:11,501
+necessary, when execution failures 
+occurred. 
+
+31
+00:02:11,501 --> 00:02:16,140
+And O-Plan experimented with a wide range 
+of graphical user interfaces, including 
+
+32
+00:02:16,140 --> 00:02:20,894
+support for multiple concurrent users 
+with different roles in the planning 
+
+33
+00:02:20,894 --> 00:02:23,070
+process. 
+And the workflows involved in 
+
+34
+00:02:23,070 --> 00:02:27,538
+coordinating between multiple users. 
+It supported a web interface to allow the 
+
+35
+00:02:27,538 --> 00:02:37,303
+planner to be used as a web service. 
+O-Plan is being used in Edinburgh and 
+
+36
+00:02:37,303 --> 00:02:39,639
+elsewhere for a wide range of 
+applications. 
+
+37
+00:02:39,639 --> 00:02:42,463
+Some of which were introduced earlier in 
+the course. 
+
+38
+00:02:42,463 --> 00:02:45,776
+And as noted previously, 
+O-Plan was used at the bases for the 
+
+39
+00:02:45,776 --> 00:02:49,903
+design of the deployed optimum AIV 
+planner at the European Space Agency for 
+
+40
+00:02:49,903 --> 00:02:53,760
+Ariane rocket launch and payload base, 
+sample integration and test. 
+
+41
+00:02:56,640 --> 00:03:02,154
+Shop and it's successor Shop two were 
+created at University of Maryland by Dana 
+
+42
+00:03:02,154 --> 00:03:06,118
+Now and his colleagues. 
+Shop two is hierarchical task network 
+
+43
+00:03:06,118 --> 00:03:08,627
+planner. 
+But keeps the activities in the plan 
+
+44
+00:03:08,627 --> 00:03:11,638
+fully ordered. 
+It selects activities to include in the 
+
+45
+00:03:11,638 --> 00:03:14,593
+order they'll be executed from the start 
+of the plan. 
+
+46
+00:03:14,593 --> 00:03:18,997
+Which eases reasoning about the state of 
+the world affected by the plan, at any 
+
+47
+00:03:18,997 --> 00:03:21,562
+point. 
+Shop two does allow for interleaving of 
+
+48
+00:03:21,562 --> 00:03:26,022
+the solutions more multiple goals and 
+subgoals in this ordered plan which is an 
+
+49
+00:03:26,022 --> 00:03:28,420
+improvement over the original shop 
+planner. 
+
+50
+00:03:29,580 --> 00:03:34,407
+Shop two can reason with a rich logical 
+model of the state, including quantifiers 
+
+51
+00:03:34,407 --> 00:03:37,745
+and conditionals. 
+And can maintain and reason out temple 
+
+52
+00:03:37,745 --> 00:03:41,023
+constraints as is required for most 
+practical planners. 
+
+53
+00:03:41,023 --> 00:03:45,672
+And it allows for numeric computations 
+alongside the most symbolic will state 
+
+54
+00:03:45,672 --> 00:03:48,473
+models. 
+Calls to external routines are possible 
+
+55
+00:03:48,473 --> 00:03:51,632
+to incorporate constraints expressed in 
+program code. 
+
+56
+00:03:51,632 --> 00:03:55,805
+And the rich domain model allows 
+preferences on choosing operators in 
+
+57
+00:03:55,805 --> 00:03:59,560
+given situations, feature seen in other 
+practical planners, also. 
+
+58
+00:04:01,680 --> 00:04:07,374
+Shop and Shop two have been applied to a 
+wide range of applications as diverse as 
+
+59
+00:04:07,374 --> 00:04:12,374
+fighting forest fires, controlling 
+multiple unmanned autonomous vehicles, 
+
+60
+00:04:12,374 --> 00:04:16,000
+UAVs, and creating business process 
+workflows. 
+
+61
+00:04:16,000 --> 00:04:20,091
+The shop techniques have also been 
+incorporating some domains specific 
+
+62
+00:04:20,091 --> 00:04:24,239
+planning applications embeded in 
+manufacturing automated systems and in 
+
+63
+00:04:24,239 --> 00:04:28,446
+versions of the commercially available 
+Ridge Barren device which won the 
+
+64
+00:04:28,446 --> 00:04:31,500
+Inaugural World Compute Bridge 
+Championships in 1997. 
+
+65
+00:04:36,300 --> 00:04:40,920
+There are some common themes we can see 
+appearing in many of the practical 
+
+66
+00:04:40,920 --> 00:04:46,590
+planners we've described. 
+The use of an outer hierarchical task 
+
+67
+00:04:46,590 --> 00:04:50,554
+network approach which is friendly and 
+understandable to users. 
+
+68
+00:04:50,554 --> 00:04:54,518
+An underlying detailed 
+constraint-handling layer to handle the 
+
+69
+00:04:54,518 --> 00:04:57,916
+real needs of time and resource 
+constraints and plans. 
+
+70
+00:04:57,916 --> 00:05:02,887
+Integration with simulation analysis 
+systems to prune or further constrain the 
+
+71
+00:05:02,887 --> 00:05:07,669
+plans which about are useful. 
+Integration with plan execution and plan 
+
+72
+00:05:07,669 --> 00:05:12,723
+monitoring to put plans into real use. 
+Rich knowledge modelling languages, and 
+
+73
+00:05:12,723 --> 00:05:17,582
+ways to describe features of application 
+domains in ways which the planner can use 
+
+74
+00:05:17,582 --> 00:05:21,037
+to constrain choices. 
+And availability of comprehensive and 
+
+75
+00:05:21,037 --> 00:05:24,140
+useful user interfaces during planning 
+and execution. 
+

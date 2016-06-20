@@ -1,0 +1,215 @@
+1
+00:00:04,120 --> 00:00:10,101
+Space missions and related areas have 
+been a fruitful source of applications 
+
+2
+00:00:10,101 --> 00:00:13,441
+for AI planning over a long period of 
+time. 
+
+3
+00:00:13,441 --> 00:00:19,811
+One of the earliest AI planners applied 
+to spacecraft missions was Steve Veers De 
+
+4
+00:00:19,811 --> 00:00:25,249
+Visa planner created at NASA's Jet 
+Propulsion Lab in the early 1980's. 
+
+5
+00:00:25,249 --> 00:00:31,308
+Optimum-AIV is a deployed planner used 
+for Ariane rocket assembly, integration 
+
+6
+00:00:31,308 --> 00:00:37,556
+and test based on the old plan design. 
+Applications have also included ground 
+
+7
+00:00:37,556 --> 00:00:43,120
+segment planning and control. 
+Telecommand of meteorological satellites. 
+
+8
+00:00:43,120 --> 00:00:48,211
+Experiments in technology proving that in 
+the control of autonomous space craft 
+
+9
+00:00:48,211 --> 00:00:53,366
+that a wide range of planners built at 
+the European Space Agency and in NASA and 
+
+10
+00:00:53,366 --> 00:00:56,800
+we'll cover some of those in this 
+feature. 
+
+11
+00:00:56,800 --> 00:01:00,540
+And the remote agent experiment within 
+deep space one. 
+
+12
+00:01:02,860 --> 00:01:08,279
+Divisor created at NASA's jet propulsion 
+laboratory by Steve Vair was the first 
+
+13
+00:01:08,279 --> 00:01:11,869
+NASA AI planner. 
+As based on the nominally design, but 
+
+14
+00:01:11,869 --> 00:01:16,340
+added time window handling. 
+It could produce Voyager mission plans. 
+
+15
+00:01:19,000 --> 00:01:23,650
+As part of our own work with the British 
+National Space Centre on the TSat 
+
+16
+00:01:23,650 --> 00:01:28,610
+Technology Proving Satellite design The T 
+sched-, scheduler was able to generate 
+
+17
+00:01:28,610 --> 00:01:32,950
+plans on the ground that were suitable 
+for controlling the spacecraft. 
+
+18
+00:01:32,950 --> 00:01:37,538
+A 24-hour plan was created, uploaded and 
+executed live onboard the UoSat-2 
+
+19
+00:01:37,538 --> 00:01:43,405
+spacecraft. 
+In early work at the European Space 
+
+20
+00:01:43,405 --> 00:01:48,720
+Agency, an AI planner for ERS one 
+operation planning was created, and later 
+
+21
+00:01:48,720 --> 00:01:54,250
+modified to become the optimum AIV 
+planner for assembly integration and test 
+
+22
+00:01:54,250 --> 00:02:02,194
+of the paid load bay of Arian rockets. 
+There are quite a range of projects in 
+
+23
+00:02:02,194 --> 00:02:06,921
+the European Space Agency that you AI 
+planning methods, and a few of them are 
+
+24
+00:02:06,921 --> 00:02:10,236
+listed here. 
+You can find more details on the European 
+
+25
+00:02:10,236 --> 00:02:13,060
+Space Agency's space craft operation 
+websites. 
+
+26
+00:02:15,980 --> 00:02:20,280
+Esa's project for on-board autonomy, 
+Prober, has had a series of spacecraft 
+
+27
+00:02:20,280 --> 00:02:24,697
+which have demonstrated potential and 
+feasibility small satellites with Van 
+
+28
+00:02:24,697 --> 00:02:29,347
+Syke scientific and Earth observation 
+missions and some have been controlled by 
+
+29
+00:02:29,347 --> 00:02:35,673
+automated ground systems. 
+Nasa also had a wide range of spacecraft 
+
+30
+00:02:35,673 --> 00:02:39,036
+with AI planning embedded in them over 
+the years. 
+
+31
+00:02:39,036 --> 00:02:42,880
+And some examples listed here, which is 
+Aspen and Casper. 
+
+32
+00:02:44,500 --> 00:02:49,053
+More details of these projects are 
+available at the NASA JPL, and NASARange 
+
+33
+00:02:49,053 --> 00:02:55,084
+websites. 
+The NASA Mars exploration laboratory 
+
+34
+00:02:55,084 --> 00:03:00,236
+Curiosity has been a target for a range 
+of a I methods during its development 
+
+35
+00:03:00,236 --> 00:03:04,793
+stages and now in its operation. 
+This has not only included the rover 
+
+36
+00:03:04,793 --> 00:03:09,549
+itself, but also the communications with 
+it, spacecraft to support it, the 
+
+37
+00:03:09,549 --> 00:03:14,503
+operation centers which are used to 
+control and communicate with the robot, 
+
+38
+00:03:14,503 --> 00:03:19,788
+and even some of the proprietary work 
+which has gone into the design simulation 
+
+39
+00:03:19,788 --> 00:03:24,280
+of the rovers and other equipment that's 
+relevant to these missions. 
+
+40
+00:03:25,380 --> 00:03:28,738
+Take a moment to think about the 
+curiosity mission. 
+
+41
+00:03:28,738 --> 00:03:33,743
+Imagine the opportunities for AI methods 
+from its design and inception as a 
+
+42
+00:03:33,743 --> 00:03:37,497
+mission right through to the launching of 
+the spacecraft. 
+
+43
+00:03:37,497 --> 00:03:41,580
+The landing of the spacecraft on Mars. 
+And then its operations. 
+

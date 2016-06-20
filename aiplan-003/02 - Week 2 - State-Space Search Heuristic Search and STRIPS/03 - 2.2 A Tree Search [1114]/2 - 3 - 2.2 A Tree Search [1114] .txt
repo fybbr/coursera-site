@@ -1,0 +1,302 @@
+The problem with Greedy Best-First search 
+is that it often finds sub optimal 
+solutions, often very badly sub optimal 
+solutions. 
+But the idea of using a juristic 
+function, to determine the search 
+strategy is a good one. 
+We will see this next when we define the 
+A* algorithm which always gives us 
+optimal solutions. 
+A* is probably, the best known algorithm 
+in all of artificial intelligence and as 
+far as I know it is described in every 
+single AI textbook. 
+A star is simply refinement of the best 
+first search algorithm we have seen 
+earlier. 
+The only difference to Greedy Best-First 
+search is that it uses a different 
+evaluation function. 
+So remember f, the evaluation function, 
+tells us in which order we explore nodes 
+on the fringe. 
+The heuristic h tells us the distance to 
+the nearest goal node. 
+So far it is nothing new, what is new is 
+this component g that we add to the 
+uristic to get our evaluation function 
+and this function g simply gives us the 
+cost to reach the note end so that's the 
+cost we already had to get from our 
+initial state to this note end and to 
+this we add a uristic which is the 
+estimate to the nearest goal note from 
+this note end. 
+So if we have an initial state I and we 
+somehow to get our note N. 
+Then the distance between those two. 
+Is g of n. 
+Whereas from here, we somehow get to a 
+goal node, and this is our nearest goal 
+node g. 
+Then this distance is estimated by the 
+heuristic function H, of N. 
+One way to look at this is that greedy 
+best first search behaves a little bit 
+like depth first search. 
+It tries to go deep into the search base, 
+as quickly as it can to a goal node. 
+It always tries to eat at much as 
+possible out of the distance to the goal. 
+By adding g to h, and using that as our 
+evaluation function. 
+We sort of add a breadth first component 
+to this depth first search. 
+In fact, the evaluation function we're 
+using gives us the estimated cost of the 
+cheapest solution through the node N. 
+Why is that? 
+Well, very simple. 
+The cheapest solution though N surely 
+must consist of the path that goes from 
+the initial state to N. 
+And the cost of that is given by G of N. 
+And it consists of the cost of getting 
+from N to the goal Node. 
+And we can estimate that, using the 
+function H, the uristic function. 
+So when we use this evaluation function 
+to select the next node from the French 
+we are selecting that node N. 
+Which looks to be on the cheapest path to 
+A goal node. 
+And we can show that A* search is optimal 
+if our heuristic function is admissible. 
+And that means that it always 
+underestimates the distance to the goal. 
+But I will get back to properties of A* 
+later. 
+So let's look at the same touring Romania 
+example we've had before. 
+Our initial state is that we are in Irat, 
+and we want to get to Bucharest. 
+Note that the number in brackets in each 
+node is the F value, not the H value. 
+So this includes the G component. 
+The amount of path we've already covered. 
+For the initial node, G is zero, because 
+we haven't gone anywhere yet. 
+So the initial, for the initial node, 
+the, H value is equal to the F value. 
+So again, the first thing we do is select 
+the node from the fringe. 
+And since there is only one node, we 
+select that node. 
+And then we expand that node and add the 
+successors to the fringe. 
+Whereas, a rod disappears from the 
+fringe. 
+So if you go back you will see that the 
+numbers and the different nodes are 
+different from what we have seen 
+previously. 
+Which is what I've just explained. 
+They contain the G component as well as 
+the H component. 
+So again the algorithm proceeds by 
+selecting the node from the fringe that 
+has the lowest F value which is 393 in 
+this example. 
+We continue by testing whether this is a 
+goal state, which it is not so we have to 
+expand it and generate its successors. 
+There are four successors again as 
+before. 
+Arot is one of the successors so we're 
+doing tree search. 
+But now, one big differences is that the 
+number that we see with Arot is very 
+different. 
+It's a much higher number because it 
+includes the path that we've already gone 
+through. 
+So this is not the same as for the 
+initial state, because we've already gone 
+through the loop through that other city, 
+before we returned to Arot. 
+So we continue with our loop, and we have 
+to select another note from the fringe. 
+Which will be the note with the lowest F 
+value, in this case 413. 
+This is not a goal note, so we have to 
+expand it. 
+And there are three more successors we 
+add to the fringe. 
+Now something interesting has happened. 
+Previously this was our lowest value so 
+we estimated that a path through this 
+node could cost as little as 413. 
+We have expanded this node and seen that 
+its best successor has a value of 417. 
+This is because the heuristic 
+underestimates. 
+The distance to the goal, now we are 
+closer to the goal the heuristic has 
+become more accurate and we know the 
+power is in fact a little more expensive. 
+What that also means is that there is a 
+note higher up in the tree this one here 
+that now has the lowest f value on the 
+fringe so this is the one we will select 
+next. 
+We will perform the goal test as before. 
+And since this is not a goal node, we 
+have to expand this node. 
+Generating two more successors. 
+Including as you will see, one that is 
+the goal node. 
+But, having generated to go on node does 
+not mean that we are finished. 
+We will finish when we select to go on 
+node, and try to perform to goal test on 
+this node. 
+So let's select the next node from the 
+fringe. 
+And the node with the lowest F value is 
+now over here, with a value of 417. 
+That's the successor we previously 
+ignored. 
+And since this is not a goal note we will 
+proceed by expanding this note. 
+Generating three more successors and once 
+again of, of those is the goal. 
+So our goal note appears twice on the 
+fringe now but these have two different 
+paths to the goal note. 
+Notice that the one further up is the one 
+that Greedy Best-First search found 
+earlier. 
+Now lets proceed with A star. 
+A star goes through the loop again and 
+selects the note with the lowest f value, 
+which in this case is the bookarest note 
+at depth four. 
+It performs the goal test and finds 
+indeed Bucharest is the goal node and 
+hence we have found a path to the goal 
+node and it is the optimal path. 
+We can go again back through the tree, 
+tracing the way we came, to get the 
+optimal path to this goal node. 
+So a star gave us an optimal path to the 
+goal node, better than what Greedy 
+Best-First search found. 
+However you can also see that this tree 
+contains quite a few more nodes than the 
+tree that was generated by Greedy 
+Best-First search. 
+And that means A star search is generally 
+a little bit slower than Greedy 
+Best-First search and unfortunately this 
+is often the case. 
+The touring Romania example is not very 
+interesting, because it is a relatively 
+small search space. 
+So here's something that has a slightly 
+bigger search space. 
+The 8 puzzle. 
+Again, to remind you, the 8 puzzle's 
+character is by an initial state, there 
+is one state that is given here, and one 
+goal state, exactly, that is given here. 
+The actions for this puzzle were that we 
+can move the tiles around the grid, and a 
+good way to think about this is that we 
+are moving the empty tile rather than the 
+tiles themselves, which means there are, 
+at most, four possible actions we can 
+move the empty tile. 
+In the four different directions, which 
+reduces the branching factor of the tree 
+we are generating. 
+Also, it might be a good idea to test for 
+reverse action, because undoing what 
+we've just done immediately never leads 
+to anything good in this search space. 
+Finally, we need to define the cost of 
+the different actions, and we use a unit 
+cost here. 
+Moving a tile is, same cost for every 
+tile. 
+What is missing to apply best first 
+search or Greedy Best-First search or a 
+star search here is a heuristic function, 
+and we will look at that next. 
+In fact I will give you two symbol 
+heuristics for the eight puzzle. 
+The first one simply counts the number of 
+misplaced tiles. 
+So we go through all the eight tiles in 
+the puzzle, and check whether it is 
+already at the right position. 
+If it is not, then we add one to our 
+heuristic. 
+Because we know if it is not at the right 
+position, we have to move the style at 
+some point. 
+And since every action moves just one 
+tile, that's a good heuristic to start 
+with. 
+So let's look at this in this example. 
+This is our heuristic H1 number of 
+misplaced tiles, well this is wrong, this 
+is wrong, they're all wrong. 
+So we see that in this example the value 
+of our heuristic is eight that means all 
+eight tiles are in the wrong position. 
+The second heuristic H2, uses the 
+manhattan block distance as an estimate 
+to how far we need to go. 
+So again, we go through all the eight 
+tiles in the puzzle, and compute the 
+manhattan block distance, and add those 
+distances together. 
+What I mean by Manhattan block distance 
+is simply that all the moves we are 
+allowed, are to go somewhere along the 
+grid. 
+So there are only four possible ways in 
+which one can move a tile. 
+So lets start with the first time, that's 
+the number seven. 
+And the way, where we want the number 
+seven to be is here so the Manhattan 
+block distance is one, two, three. 
+And this is the first value we'll choose. 
+Then we have the two here. 
+And where should the two be? 
+The two should be here. 
+So the distance is one and so on. 
+If we continue like this for all eight 
+tiles, we will see that the Manhattan 
+block distance heuristic for this state 
+is eighteen. 
+It is easy enough to see that both of 
+these heuristics never overestimate the 
+distance to the nearest goal. 
+It should also be easy to see that the 
+second heuristic, H2, always gives us a 
+much more accurate estimate of how far 
+the goal node is away, but it is not a 
+perfect heuristic. 
+The actual distance to the goal node from 
+the state shown here is 26. 
+So if you feel like a little programming 
+now why don't you go ahead and implement 
+the eight puzzle using the a star 
+algorithm and solve a few puzzles. 
+Use different heuristics. 
+Play around with it. 
+See what happens. 
+

@@ -1,0 +1,103 @@
+1
+00:00:00,012 --> 00:00:05,699
+>> Welcome to the final week of the AI
+planning course.
+
+2
+00:00:05,699 --> 00:00:13,545
+I am glad you are still with us.
+On this course, you have already learned a
+
+3
+00:00:13,545 --> 00:00:17,162
+lot of things.
+I have described to you the planning
+
+4
+00:00:17,162 --> 00:00:21,182
+problem, and we have seen several
+algorithms for solving this problem,
+
+5
+00:00:21,182 --> 00:00:25,872
+including an algorithm that is behind one
+of the state-of-the-art planners, one of
+
+6
+00:00:25,872 --> 00:00:30,644
+the fastest plan-generating systems today.
+In this week, we're going to turn to less
+
+7
+00:00:30,644 --> 00:00:35,514
+technical material and go a lot broader.
+First, my colleague Austin Tate will
+
+8
+00:00:35,514 --> 00:00:40,410
+describe to you some practical planners
+and applications to which they have been
+
+9
+00:00:40,410 --> 00:00:42,817
+applied.
+People describe some of the inside
+
+10
+00:00:42,817 --> 00:00:46,661
+technology which hopefully you will
+recognize from what you have learned
+
+11
+00:00:46,661 --> 00:00:49,619
+previously.
+Then, in this week's feature, we will look
+
+12
+00:00:49,619 --> 00:00:53,802
+at planning for missions in space.
+Finally, I will describe to you some
+
+13
+00:00:53,802 --> 00:00:57,721
+topics that surround the planning problem
+we've looked at so far.
+
+14
+00:00:57,721 --> 00:01:02,271
+For example, what happens before we can
+plan, how we can come up with planning
+
+15
+00:01:02,271 --> 00:01:04,781
+domains?
+Or what happens after planning?
+
+16
+00:01:04,781 --> 00:01:09,028
+How do we do planned execution?
+And that will conclude the lectures for
+
+17
+00:01:09,028 --> 00:01:13,353
+this week and for the whole course.
+Then you still have to do the exams.
+
+18
+00:01:13,354 --> 00:01:18,038
+There is the awareness-level exam.
+There is the foundation-level exam.
+
+19
+00:01:18,038 --> 00:01:23,384
+And for those who want to pass the course
+at the performance level, you will also
+
+20
+00:01:23,384 --> 00:01:26,566
+have to do the final programming
+assignment.
+
+21
+00:01:26,566 --> 00:01:27,560
+And that's it.

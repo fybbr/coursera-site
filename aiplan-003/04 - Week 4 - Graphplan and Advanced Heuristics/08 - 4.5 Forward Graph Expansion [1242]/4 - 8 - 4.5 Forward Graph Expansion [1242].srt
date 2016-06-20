@@ -1,0 +1,813 @@
+1
+00:00:00,012 --> 00:00:05,017
+>> I think you will all understand the
+structure of the planning graph now.
+
+2
+00:00:05,017 --> 00:00:10,418
+You know what types of node exist in the
+planning graph, proposition nodes and
+
+3
+00:00:10,418 --> 00:00:16,145
+action nodes, and you know what types of
+edges exist between these different types
+
+4
+00:00:16,145 --> 00:00:21,332
+of nodes and the different layers.
+And in the example graphs we've looked at,
+
+5
+00:00:21,332 --> 00:00:26,512
+you should have seen that we can grow this
+planning graph in my illustrations left to
+
+6
+00:00:26,512 --> 00:00:31,988
+right, starting from the proposition layer
+P0, which contains those propositions that
+
+7
+00:00:31,988 --> 00:00:36,583
+are true in the initial state.
+The process of growing the planning graph
+
+8
+00:00:36,583 --> 00:00:41,097
+is what I call Forward Planning Graph
+Expansion and that's what we will be
+
+9
+00:00:41,097 --> 00:00:45,468
+looking at next.
+One of the issues with the planning graph
+
+10
+00:00:45,468 --> 00:00:51,342
+is that it is really an infinite graph,
+because I've never told you where we need
+
+11
+00:00:51,342 --> 00:00:55,273
+to stop generating action and proposition
+layers.
+
+12
+00:00:55,273 --> 00:00:59,101
+So, in theory, this sequence could just go
+on and on.
+
+13
+00:00:59,102 --> 00:01:04,298
+This proposition here tells us when we can
+stop expanding the planning graph and do
+
+14
+00:01:04,298 --> 00:01:08,295
+something else instead.
+Suppose we are given a propositional
+
+15
+00:01:08,295 --> 00:01:13,599
+planning problem consisting of the usual
+components and we start generating our
+
+16
+00:01:13,599 --> 00:01:18,903
+planning graph consisting of nodes and
+edges, nodes being the usual proposition
+
+17
+00:01:18,903 --> 00:01:22,206
+of action layers, then the following must
+be true.
+
+18
+00:01:22,206 --> 00:01:27,536
+If our goal that is part of the given
+planning problem, the goal g, is reachable
+
+19
+00:01:27,536 --> 00:01:33,112
+from our initial state, then there must be
+a proposition layer, that's called the
+
+20
+00:01:33,112 --> 00:01:36,900
+proposition layer, Pg, for which the
+following holds.
+
+21
+00:01:36,900 --> 00:01:41,526
+The first is that all of the goal
+conditions must be a subset of this
+
+22
+00:01:41,526 --> 00:01:45,905
+proposition layer, Pg.
+So, if Pg was a state, then our goal would
+
+23
+00:01:45,905 --> 00:01:50,536
+be satisfied in that state.
+And the second thing that must be true, is
+
+24
+00:01:50,536 --> 00:01:55,726
+that there does not exist a pair of goal
+conditions that are part of our goal.
+
+25
+00:01:55,726 --> 00:02:01,002
+There does not exist such a pair, g1, g2,
+that is mutually exclusive in this
+
+26
+00:02:01,002 --> 00:02:05,867
+proposition layer.
+So, not only are all the goal propositions
+
+27
+00:02:05,867 --> 00:02:11,509
+in this layer, but they can also be
+achieved together, at least, as far as we
+
+28
+00:02:11,509 --> 00:02:14,595
+know.
+One caveat here is that this only works in
+
+29
+00:02:14,595 --> 00:02:18,286
+one direction.
+So, this direction, that means we still
+
+30
+00:02:18,286 --> 00:02:23,921
+only have a necessary condition for when a
+planning graph my contain a solution.
+
+31
+00:02:23,922 --> 00:02:29,663
+But we can exploit that and we will look
+at how to do that next.
+
+32
+00:02:29,663 --> 00:02:35,680
+And here is the basic idea that underlies
+the Graphplan algorithm.
+
+33
+00:02:35,681 --> 00:02:40,279
+We start by expanding the planning graph
+just as we've seen it so far.
+
+34
+00:02:40,279 --> 00:02:45,025
+So, we start off with the initial
+proposition layer and we know what this
+
+35
+00:02:45,025 --> 00:02:50,239
+contains and then, we expand to the graph
+in each step by one action layer and one
+
+36
+00:02:50,239 --> 00:02:54,569
+proposition layer at a time.
+So, this is our first loop that we go
+
+37
+00:02:54,569 --> 00:02:59,830
+through to expand the planning graph.
+But we don't want to go through this loop
+
+38
+00:02:59,830 --> 00:03:02,983
+forever.
+So, here is the condition when we have to
+
+39
+00:03:02,983 --> 00:03:05,581
+stop.
+Namely, from the first graph which
+
+40
+00:03:05,581 --> 00:03:10,293
+contains a layer, Pg, for which the
+proposition we've just seen, gives us a
+
+41
+00:03:10,293 --> 00:03:15,589
+criterion that the goal maybe satisfied
+and the plan maybe contained in the graph.
+
+42
+00:03:15,589 --> 00:03:20,170
+So, we have to check whether all the goal
+propositions are true in the last
+
+43
+00:03:20,170 --> 00:03:24,895
+proposition layer that we've just
+generated and whether any of the pairs of
+
+44
+00:03:24,895 --> 00:03:28,559
+goal conditions are mutex in that
+proposition there.
+
+45
+00:03:28,559 --> 00:03:33,596
+If and when we find such a layer that
+contains all the goal conditions none of
+
+46
+00:03:33,596 --> 00:03:38,432
+which are mutexs, then we can stop or at
+least interrupt our planning graph
+
+47
+00:03:38,432 --> 00:03:44,004
+expansion and do something else.
+And that something else is a backward
+
+48
+00:03:44,004 --> 00:03:49,142
+surge in our planning graph.
+So, we start from our last proposition
+
+49
+00:03:49,142 --> 00:03:54,199
+layer and search backwards towards the
+layer P0 to try to extract a plan.
+
+50
+00:03:54,199 --> 00:03:59,101
+And how exactly that is done, is something
+I will explain to you later.
+
+51
+00:03:59,102 --> 00:04:02,273
+All you need to know now is that this
+search can't fail.
+
+52
+00:04:02,273 --> 00:04:06,271
+So, that means, we haven't found a
+solution plan in our planning graph.
+
+53
+00:04:06,271 --> 00:04:10,547
+And in that case, what we do is we go back
+to our first step and we continue to
+
+54
+00:04:10,547 --> 00:04:15,249
+expand the planning graph, again, we add
+another action and proposition layer.
+
+55
+00:04:15,249 --> 00:04:20,883
+This will, of course, contain our goal
+propositions and there can't be mutex any
+
+56
+00:04:20,883 --> 00:04:24,280
+more.
+And then, it can search backwards again in
+
+57
+00:04:24,280 --> 00:04:29,992
+our graph that contains those additional
+two layers now, and so on, until we find a
+
+58
+00:04:29,992 --> 00:04:33,446
+solution plan.
+And for those of you interested in the
+
+59
+00:04:33,446 --> 00:04:38,330
+implementation details, here is the data
+structure that can be used to hold the
+
+60
+00:04:38,330 --> 00:04:41,969
+planning graph.
+Specifically, we're talking about the
+
+61
+00:04:41,969 --> 00:04:47,289
+structure that can hold the kth planning
+graph we're generating, which consists of
+
+62
+00:04:47,289 --> 00:04:52,235
+the proposition layers, P0 through Pk, and
+the action layers, A1 through Ak.
+
+63
+00:04:52,235 --> 00:04:57,030
+And the first graph we generate is, of
+course, G0, which contains just the
+
+64
+00:04:57,030 --> 00:05:02,741
+proposition layer, P0, at no other layers.
+For quick access, the proposition layers
+
+65
+00:05:02,741 --> 00:05:08,330
+and the action layers can be stored into
+arrays and the symbols within these layers
+
+66
+00:05:08,330 --> 00:05:13,190
+should be stored in sets, sets of
+proposition symbols and sets of action
+
+67
+00:05:13,190 --> 00:05:16,582
+symbols.
+They should be represented as sets,
+
+68
+00:05:16,582 --> 00:05:21,391
+because we don't want the same symbol
+appearing twice in the same layer.
+
+69
+00:05:21,391 --> 00:05:26,453
+In fact, since we know that proposition
+and action layers are monotonically
+
+70
+00:05:26,453 --> 00:05:30,477
+growing, we can store each symbol in only
+exactly one layer.
+
+71
+00:05:30,477 --> 00:05:35,763
+And we know that the symbol must also be
+contained in all the following layers of
+
+72
+00:05:35,763 --> 00:05:38,685
+the same type.
+And then, we have the edges of the
+
+73
+00:05:38,685 --> 00:05:42,007
+planning graph.
+In fact, we have five different types of
+
+74
+00:05:42,007 --> 00:05:46,694
+edges, all the ones we've seen before.
+So, there are preconditioned edges, going
+
+75
+00:05:46,694 --> 00:05:50,982
+from proposition layer Pj minus 1 to
+action layer Aj, to the following action
+
+76
+00:05:50,982 --> 00:05:53,540
+layer.
+We have positive and negative effect
+
+77
+00:05:53,540 --> 00:05:58,483
+links, which connect the action layer, Aj,
+to the following proposition layer, Pj.
+
+78
+00:05:58,484 --> 00:06:04,014
+And then, we have mutex relations that are
+the proposition mutex links that are
+
+79
+00:06:04,014 --> 00:06:09,672
+within each proposition layer, and we have
+action mutex links that are within each
+
+80
+00:06:09,672 --> 00:06:13,612
+action layer.
+The only thing that is remarkable here is
+
+81
+00:06:13,612 --> 00:06:17,337
+that our mutex proposition links start
+from index 1.
+
+82
+00:06:17,337 --> 00:06:22,449
+That is because in our proposition layer,
+P0, we don't have any mutex relations, of
+
+83
+00:06:22,449 --> 00:06:24,682
+course.
+That is an initial state.
+
+84
+00:06:24,682 --> 00:06:27,974
+It's consistent.
+And therefore, nothing in it can be
+
+85
+00:06:27,974 --> 00:06:32,515
+mutually exclusive.
+So, that's the data structure.
+
+86
+00:06:32,515 --> 00:06:38,641
+And here is the pseudo code that describes
+how we can expand a given planning graph
+
+87
+00:06:38,641 --> 00:06:43,524
+with a new action and proposition layer
+and all the links we need.
+
+88
+00:06:43,525 --> 00:06:49,398
+So, we assume that we're given the
+planning graph Gk minus 1, and we want to
+
+89
+00:06:49,398 --> 00:06:54,914
+generate the planning graph Gk.
+Then, we start by generating all the
+
+90
+00:06:54,914 --> 00:06:59,098
+actions we need in our new action layer,
+which is Ak.
+
+91
+00:06:59,098 --> 00:07:03,247
+And in this action layer, we find all
+those actions that have their
+
+92
+00:07:03,247 --> 00:07:08,197
+preconditions in the preceding proposition
+layer and that don't have a pair of
+
+93
+00:07:08,197 --> 00:07:12,697
+preconditions, P1 and P2, that are
+mutually exclusive in the preceding
+
+94
+00:07:12,697 --> 00:07:16,780
+proposition layer.
+And when we've got our new actions, we can
+
+95
+00:07:16,780 --> 00:07:20,352
+compute the mutex relations between our
+new actions.
+
+96
+00:07:20,353 --> 00:07:25,243
+And we can do that by going through all
+the pairs of actions that are in our new
+
+97
+00:07:25,243 --> 00:07:28,151
+action layer.
+They must be different actions.
+
+98
+00:07:28,151 --> 00:07:33,182
+And use the mutex function that we've
+described earlier to compute whether they
+
+99
+00:07:33,182 --> 00:07:37,922
+are mutex in our new action layer.
+Then, we can compute the next proposition
+
+100
+00:07:37,922 --> 00:07:43,102
+layer, Pk, and that simply consists of all
+the positive effects of all the actions in
+
+101
+00:07:43,102 --> 00:07:47,389
+our preceding action layer.
+Note that we don't have to explicitly
+
+102
+00:07:47,389 --> 00:07:52,471
+carry forward the propositions from layer
+Pk minus 1, because we have the no-op
+
+103
+00:07:52,471 --> 00:07:56,708
+operations doing that for us.
+Next, we compute mutual exclusivity
+
+104
+00:07:56,708 --> 00:08:01,857
+between the propositions in our new layer.
+And again, we have to go through all the
+
+105
+00:08:01,857 --> 00:08:06,949
+pairs that are different and use the mutex
+function for propositions that we've
+
+106
+00:08:06,949 --> 00:08:10,331
+defined earlier.
+And now, all that's missing are the
+
+107
+00:08:10,331 --> 00:08:14,514
+precondition and effect links.
+And what we do is simply go through all
+
+108
+00:08:14,514 --> 00:08:19,266
+the actions in our new action layer and
+add the corresponding links between the
+
+109
+00:08:19,266 --> 00:08:22,146
+correct nodes.
+And these are all listed here.
+
+110
+00:08:22,146 --> 00:08:26,265
+Preconditions, positive effects, and links
+for negative effects.
+
+111
+00:08:26,265 --> 00:08:30,597
+And that's it.
+And here is a proposition that states what
+
+112
+00:08:30,597 --> 00:08:36,967
+I've already mentioned a couple of times,
+namely, that the complexity of expanding
+
+113
+00:08:36,967 --> 00:08:43,227
+the planning graph is polynomial and
+therefore, it can be done reasonably fast.
+
+114
+00:08:43,228 --> 00:08:50,060
+And what the proposition states is that
+the size planning graph up to level k and
+
+115
+00:08:50,060 --> 00:08:56,549
+the time required to expand it to that
+level are polynomial in the size of the
+
+116
+00:08:56,549 --> 00:09:01,114
+planning problem.
+The size of this propositional planning
+
+117
+00:09:01,114 --> 00:09:06,496
+problem can be described by the number of
+propositions and the number of actions we
+
+118
+00:09:06,496 --> 00:09:10,236
+have in this problem.
+So, we assume we have n proposition
+
+119
+00:09:10,236 --> 00:09:15,106
+symbols and m action symbols.
+Then, we know each proposition layer is a
+
+120
+00:09:15,106 --> 00:09:20,776
+set of symbols so each proposition symbol
+can be contained at most once, which means
+
+121
+00:09:20,776 --> 00:09:24,823
+the size of each proposition layer can
+never be more than n.
+
+122
+00:09:24,823 --> 00:09:30,029
+Similarly, for the action layers, they
+contain at most all the action symbols
+
+123
+00:09:30,029 --> 00:09:34,749
+plus all the no-op actions, and no-op
+actions, of course, we have n for n
+
+124
+00:09:34,749 --> 00:09:39,002
+proposition symbols.
+So, the size of an action layer can never
+
+125
+00:09:39,002 --> 00:09:42,792
+be more than n plus m.
+And when you go back to the slides, where
+
+126
+00:09:42,792 --> 00:09:47,975
+I explained the different algorithms for
+expanding the planning graph, I've always
+
+127
+00:09:47,975 --> 00:09:51,183
+explained to you that they run in
+polynomial time.
+
+128
+00:09:51,183 --> 00:09:55,436
+And that means, each layer can be
+generated in polynomial time.
+
+129
+00:09:55,436 --> 00:10:00,261
+And, of course, we only have a linear
+number of layers in our graph, Gk, or a
+
+130
+00:10:00,261 --> 00:10:04,107
+fixed number k.
+So, the whole algorithm for expanding the
+
+131
+00:10:04,107 --> 00:10:09,337
+planning graphs, runs in polynomial time.
+Now, another important property of
+
+132
+00:10:09,337 --> 00:10:14,286
+planning graphs, is that they will
+eventually reach a fixed-point level.
+
+133
+00:10:14,286 --> 00:10:20,287
+And here is what a fixed-point level is.
+A fixed-point level in a planning graph is
+
+134
+00:10:20,287 --> 00:10:26,332
+the kth level in that graph such that for
+all i that are greater than K, so for all
+
+135
+00:10:26,332 --> 00:10:30,009
+the following levels, they must be
+identical.
+
+136
+00:10:30,009 --> 00:10:36,039
+So, for all the following layers, we have
+that the propositions in the following
+
+137
+00:10:36,039 --> 00:10:39,446
+layer, has the same propositions as layer
+K.
+
+138
+00:10:39,446 --> 00:10:43,386
+The mutex relations are the same for all
+the following layers.
+
+139
+00:10:43,386 --> 00:10:48,560
+The action symbols are the same, and the
+mutex between the actions are also all the
+
+140
+00:10:48,560 --> 00:10:51,002
+same.
+And this holds for all the layers
+
+141
+00:10:51,002 --> 00:10:54,333
+following the fixed-point layer, not just
+for one.
+
+142
+00:10:54,334 --> 00:10:59,525
+And the important thing is, of course,
+that every planning graph must have a
+
+143
+00:10:59,525 --> 00:11:05,033
+fixed-point level K, that is the smallest
+k, for which the proposition symbols in
+
+144
+00:11:05,033 --> 00:11:10,460
+one layer are the same as the ones in the
+next, and the mutex relations that hold in
+
+145
+00:11:10,460 --> 00:11:15,884
+that layer are also the same as the next.
+Note that these two proposition layers
+
+146
+00:11:15,884 --> 00:11:18,646
+must be the same if the two sizes are the
+same.
+
+147
+00:11:18,646 --> 00:11:23,388
+Because proposition layers are
+monotonically increasing, if they have the
+
+148
+00:11:23,388 --> 00:11:26,676
+same size, they must also contain the same
+symbols.
+
+149
+00:11:26,676 --> 00:11:31,492
+And the same goes for the mutex relations
+which must be the same if they have the
+
+150
+00:11:31,492 --> 00:11:36,760
+same size in subsequent layer.
+Now, if the to proposition layers Pk and
+
+151
+00:11:36,760 --> 00:11:42,712
+Pk plus 1 are the same and the mutex
+relations are also the same, that means,
+
+152
+00:11:42,712 --> 00:11:48,664
+the actions that are applicable in Pk are
+exactly the same actions that are
+
+153
+00:11:48,664 --> 00:11:53,955
+applicable in Pk plus 1.
+So, that means the same actions exist in
+
+154
+00:11:53,955 --> 00:11:59,407
+action layer Ak and Ak plus 1.
+And if they didn't add any proposition
+
+155
+00:11:59,407 --> 00:12:05,517
+symbols from Pk to Pk plus 1, then there's
+no reason why they should add any more
+
+156
+00:12:05,517 --> 00:12:10,477
+from Pk plus 1 to Pk plus 2, and so on.
+And the same argument can be made for the
+
+157
+00:12:10,477 --> 00:12:14,767
+mutex relation in this action layer
+because this only depends on the preceding
+
+158
+00:12:14,767 --> 00:12:19,447
+proposition layer, and on the independence
+between actions, which never changes, of
+
+159
+00:12:19,447 --> 00:12:23,150
+course.
+So, once we have reached a level, where
+
+160
+00:12:23,150 --> 00:12:29,260
+the number of proposition symbols is no
+longer growing and the number of mutex
+
+161
+00:12:29,260 --> 00:12:35,558
+relations that are holding is no longer
+shrinking, that means, we have reached a
+
+162
+00:12:35,558 --> 00:12:40,382
+fixed-point level.
+And, every planning graph, must have such
+
+163
+00:12:40,382 --> 00:12:42,008
+a fixed-point level.

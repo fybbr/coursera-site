@@ -1,0 +1,495 @@
+1
+00:00:04,600 --> 00:00:10,260
+What we've seen so far is the complete 
+input that must be given to a planner. 
+
+2
+00:00:10,260 --> 00:00:14,942
+Now we will turn to the output of the 
+planner which is, of course, a plan. 
+
+3
+00:00:14,942 --> 00:00:18,194
+And a plan is a sequence of actions, A1 
+through AK. 
+
+4
+00:00:18,194 --> 00:00:23,528
+We're using the pi symbol here to denote 
+the plan and the sequence consists first 
+
+5
+00:00:23,528 --> 00:00:28,601
+of the action A1 then of the action A2 
+and so on until we reach the action AK. 
+
+6
+00:00:28,601 --> 00:00:33,739
+And K must be greater or equal to zero so 
+the plan can be empty and contain no 
+
+7
+00:00:33,739 --> 00:00:37,152
+actions. 
+The length of a plan then, is simply the 
+
+8
+00:00:37,152 --> 00:00:41,851
+number of actions it contains. 
+So it is K, where K is zero or more 
+
+9
+00:00:41,851 --> 00:00:44,903
+actions. 
+Given this definition of plans, there's a 
+
+10
+00:00:44,903 --> 00:00:47,558
+number of things we can do with those 
+plans. 
+
+11
+00:00:47,558 --> 00:00:52,083
+For example, we can concatenate plans. 
+That means, if we're given a plan that 
+
+12
+00:00:52,083 --> 00:00:56,729
+consists of actions A1 through AK, and 
+another plan consisting of A prime one 
+
+13
+00:00:56,729 --> 00:01:01,375
+through A prime J, then we can define the 
+concatenation of those two plans, as 
+
+14
+00:01:01,375 --> 00:01:05,658
+simply the sequence of actions 
+consisting, first, all those actions from 
+
+15
+00:01:05,658 --> 00:01:08,735
+the first plan. 
+And then, all those actions from the 
+
+16
+00:01:08,735 --> 00:01:11,946
+second plan. 
+We can also extend our state transition 
+
+17
+00:01:11,946 --> 00:01:15,800
+function as follows. 
+We can define a state transition function 
+
+18
+00:01:15,800 --> 00:01:19,591
+for a state and a plan. 
+By defining that it is the state from 
+
+19
+00:01:19,591 --> 00:01:24,377
+which we start, if our plan was empty. 
+So if there were no actions in the plan, 
+
+20
+00:01:24,377 --> 00:01:28,915
+we simply remain in the same state. 
+But if there were actions in the plan. 
+
+21
+00:01:28,915 --> 00:01:33,080
+So k was greater than zero. 
+Then what we do is we first execute the 
+
+22
+00:01:33,080 --> 00:01:35,504
+first action. 
+That gives us a new state. 
+
+23
+00:01:35,504 --> 00:01:39,171
+And then what we do. 
+We apply the state transition function, 
+
+24
+00:01:39,171 --> 00:01:42,120
+recursively, to the remainder of our 
+plan. 
+
+25
+00:01:42,120 --> 00:01:46,352
+For this to be well defined, of course 
+our action, A1, the first action in our 
+
+26
+00:01:46,352 --> 00:01:50,920
+plan, must be applicable in the state in 
+which we're trying to apply the plan. 
+
+27
+00:01:50,920 --> 00:01:55,835
+In any other case the state transition 
+function applied to the state and the 
+
+28
+00:01:55,835 --> 00:01:59,538
+plan is undefined. 
+So the most important thing to remember 
+
+29
+00:01:59,538 --> 00:02:03,050
+here is we define plans simply as 
+sequences of actions. 
+
+30
+00:02:03,050 --> 00:02:08,285
+Of course there are more complex types of 
+plans but this is what we're looking at 
+
+31
+00:02:08,285 --> 00:02:12,586
+here now. 
+The output of a planner is a plan. 
+
+32
+00:02:12,586 --> 00:02:17,360
+But of course, not every plan is a 
+solution to a planning problem. 
+
+33
+00:02:17,360 --> 00:02:21,062
+And here is how we can define what 
+constitutes a solution. 
+
+34
+00:02:21,062 --> 00:02:25,657
+We are given a planning problem 
+consisting of a state transition system 
+
+35
+00:02:25,657 --> 00:02:29,615
+or a set of operators. 
+An initial state, and a goal description 
+
+36
+00:02:29,615 --> 00:02:33,955
+then we can say that a plan pi, is a 
+solution for a planning problem. 
+
+37
+00:02:33,955 --> 00:02:37,082
+For this planning problem that we are 
+given here. 
+
+38
+00:02:37,082 --> 00:02:42,061
+If the state transition function applied 
+to the initial state of the planning 
+
+39
+00:02:42,061 --> 00:02:45,252
+problem. 
+And the plan that we're trying to execute 
+
+40
+00:02:45,252 --> 00:02:50,360
+in that problem gives us a new state. 
+And that state satisfies the goal. 
+
+41
+00:02:50,360 --> 00:02:55,835
+So, a plan is a solution, if the 
+execution of the plan leads us to a state 
+
+42
+00:02:55,835 --> 00:03:00,505
+in which the goal is satisfied. 
+Since there may be many plans that are 
+
+43
+00:03:00,505 --> 00:03:04,174
+solutions for planning problems, we want 
+to distinguish those. 
+
+44
+00:03:04,174 --> 00:03:08,324
+And we can do that by defining some 
+properties of the solution plans. 
+
+45
+00:03:08,324 --> 00:03:12,955
+So we can say that the solution is 
+redundant if there's a proper subsequence 
+
+46
+00:03:12,955 --> 00:03:15,541
+of this plan, that is also a solution for 
+P. 
+
+47
+00:03:15,541 --> 00:03:19,992
+So if we can take our plan pi, remove 
+some of the actions, and still have a 
+
+48
+00:03:19,992 --> 00:03:23,300
+solution plan, then we call the original 
+plan redundant. 
+
+49
+00:03:23,300 --> 00:03:28,026
+And we can say that the plan pi is 
+minimal if no other solution for our 
+
+50
+00:03:28,026 --> 00:03:33,278
+planning problems contains fewer actions. 
+So it is minimal if it has the minimal 
+
+51
+00:03:33,278 --> 00:03:38,807
+number of actions. 
+Now all the definitions you've seen so 
+
+52
+00:03:38,807 --> 00:03:43,838
+far apply to classical planning. 
+But in fact, there are variations of what 
+
+53
+00:03:43,838 --> 00:03:48,523
+is exactly classical planning. 
+Most of what we've seen so far is the 
+
+54
+00:03:48,523 --> 00:03:52,584
+strips representation. 
+Here, I want to give you a quick overview 
+
+55
+00:03:52,584 --> 00:03:56,121
+of what other flavors of classical 
+representations exist. 
+
+56
+00:03:56,121 --> 00:04:00,092
+The simplest representation is the 
+propositional representation. 
+
+57
+00:04:00,092 --> 00:04:04,746
+In the propositional representation, a 
+world state is described by a set of 
+
+58
+00:04:04,746 --> 00:04:07,786
+propositions. 
+So, a proposition is a simple symbol. 
+
+59
+00:04:07,786 --> 00:04:10,455
+It does not contain any internal 
+structure. 
+
+60
+00:04:10,455 --> 00:04:14,674
+In the strips representation, in the 
+state, we have first order atoms, 
+
+61
+00:04:14,674 --> 00:04:19,142
+ground atoms, to be more specific. 
+And these relate objects to each other. 
+
+62
+00:04:19,142 --> 00:04:23,610
+In the propositional representation, 
+there are only propositions, symbols. 
+
+63
+00:04:23,610 --> 00:04:28,699
+Actions in the propositional 
+representation consist of preconditions, 
+
+64
+00:04:28,699 --> 00:04:32,440
+post-conditions to be added and to be 
+removed. 
+
+65
+00:04:32,440 --> 00:04:36,711
+The first thing to note here is there are 
+only actions, there are no operators 
+
+66
+00:04:36,711 --> 00:04:41,037
+because we don't have parameters and 
+that's because we have symbols that have 
+
+67
+00:04:41,037 --> 00:04:45,087
+no objects they relate to each other. 
+So there's no variables which means 
+
+68
+00:04:45,087 --> 00:04:47,583
+everything is ground, everything is in 
+action. 
+
+69
+00:04:47,583 --> 00:04:52,115
+Then we have preconditioned propositions 
+which means we don't have positive and 
+
+70
+00:04:52,115 --> 00:04:54,812
+negative propositions in the 
+preconditions. 
+
+71
+00:04:54,812 --> 00:04:58,764
+Only positive propositions exist in this 
+simple representation. 
+
+72
+00:04:58,764 --> 00:05:03,720
+And then we have negative and positive 
+effects, as before these are symbols not 
+
+73
+00:05:03,720 --> 00:05:06,982
+ground atoms. 
+And I've also mentioned they are often 
+
+74
+00:05:06,982 --> 00:05:10,370
+called the add list and the delete list 
+to be removed. 
+
+75
+00:05:10,370 --> 00:05:15,699
+The strips representation then is simply 
+the same, but instead of propositions 
+
+76
+00:05:15,699 --> 00:05:19,320
+we're dealing with first auto-literals, 
+in most cases. 
+
+77
+00:05:19,320 --> 00:05:24,926
+Specifically this means the preconditions 
+of an operator can be positive or 
+
+78
+00:05:24,926 --> 00:05:28,563
+negative. 
+The final variant is the state variable 
+
+79
+00:05:28,563 --> 00:05:32,799
+representation where a state. 
+Consists of a set of state variables. 
+
+80
+00:05:32,799 --> 00:05:36,227
+A state variable is simply a variable 
+that must have a value. 
+
+81
+00:05:36,227 --> 00:05:40,554
+It's usually described by a function. 
+So, for example, we could have a function 
+
+82
+00:05:40,554 --> 00:05:45,443
+that describes the location of the robot. 
+RLook that takes a robot as an argument, 
+
+83
+00:05:45,443 --> 00:05:48,085
+and tells us where that robot is at 
+location L. 
+
+84
+00:05:48,085 --> 00:05:52,243
+The advantage of this representation is, 
+that it represents the functional 
+
+85
+00:05:52,243 --> 00:05:55,503
+property of this. 
+The robot can only be at one location at 
+
+86
+00:05:55,503 --> 00:05:58,706
+any one time. 
+So in the strips presentation, at least, 
+
+87
+00:05:58,706 --> 00:06:01,572
+in theory. 
+You can have several assertions of where 
+
+88
+00:06:01,572 --> 00:06:04,720
+the robot might be. 
+In the state variable representation. 
+
+89
+00:06:04,720 --> 00:06:09,379
+And, the functional property, namely that 
+the robot can only be at one location at 
+
+90
+00:06:09,379 --> 00:06:13,299
+a time is exploited. 
+Actions in this representation are simply 
+
+91
+00:06:13,299 --> 00:06:18,640
+undescribed by sets of preconditions that 
+look like expressions like this and 
+
+92
+00:06:18,640 --> 00:06:22,860
+assignment of new values to these state 
+variables like this one. 
+
+93
+00:06:22,860 --> 00:06:27,022
+So what you need to remember here is that 
+there are different flavors of the 
+
+94
+00:06:27,022 --> 00:06:31,023
+classical representation, there's not 
+just the stripser presentation we've 
+
+95
+00:06:31,023 --> 00:06:33,132
+looked at. 
+There's also these other two. 
+
+96
+00:06:33,132 --> 00:06:37,240
+But, and this is the important point, 
+these representations can be translated 
+
+97
+00:06:37,240 --> 00:06:40,809
+into each other so essentially they're 
+all equivalent in terms of 
+
+98
+00:06:40,809 --> 00:06:44,210
+expressiveness. 
+There's nothing that you can say in one 
+
+99
+00:06:44,210 --> 00:06:47,660
+of these three representations that you 
+can't say in the other. 
+

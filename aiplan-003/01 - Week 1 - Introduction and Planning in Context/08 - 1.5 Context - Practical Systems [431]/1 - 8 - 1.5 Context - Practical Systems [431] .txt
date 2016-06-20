@@ -1,0 +1,118 @@
+This section of the course will look at 
+the very wide range of research and 
+development areas that have been explored 
+in AI Planning. 
+It'll put AI Planning techniques in the 
+context of domain modeling and plan 
+representation. 
+Consider engagement with users, task 
+assigners, and decision makers, who must 
+select between plan options. 
+And would include the important aspect of 
+plan execution for practical systems. 
+The cost logo shows a number of 
+applications of [INAUDIBLE] AI planners 
+over the years. 
+The [INAUDIBLE] planner was used in the 
+mid 1970s to generate project plans for 
+electricity to [INAUDIBLE] overhaul. 
+The project plans in this case were 
+prepared well in advance, because it's 
+costly to have these machines out for any 
+length of time. 
+But while the repair's taking place 
+typically problems are found, 
+extra maintenance operations need to be 
+injected. 
+so the plans had to be adjusted as you 
+went along. 
+And [INAUDIBLE] was able to do that. 
+In the late 1970's, Steve [INAUDIBLE] at 
+NASA's jet propulsion laboratory created 
+the divisor planner, which was used to 
+generate action sequences for the Voyager 
+spacecraft. 
+Though it wasn't used for uploading live 
+action sequences to voyages. 
+Divisor was based on the [INAUDIBLE] 
+design. 
+But added the ability to represent time 
+windows on the activities. 
+Which is important for this kind of 
+robotic application. 
+Nonlins hierarchical task network 
+approach was also used in some of the 
+earlier research on the robots in Japan. 
+Assembly, integration and tests of the 
+payload bay for the European Ariane 
+rockets was carried out using a planner 
+based on the O-Plan design. 
+O-Plan has also been used in a wide range 
+of applications in emergency response and 
+search and rescue. 
+Edinburgh, AI planners have also been 
+used in applications as diverse as help 
+desks, tanker delivery, and many others. 
+Even the earliest AI planners were used 
+in realistic and practical applications. 
+The STRIPS planner from the early 1970s 
+was used to control the shaky robot. 
+And, as you can see from this table, 
+there's a range of planners over the 
+decades which have been applied to a wide 
+range of application areas. 
+And we're going to cover some of those in 
+a later module of this course. 
+As part of this cause, we're going to 
+encorage you to look at a number of 
+readings. 
+In particular, there's two reviews of AI 
+planning, which we hope you'll find 
+useful. One is from the 1990's, so it's 
+quite dated, but it does include a lot of 
+the work on those early planners and some 
+of the formative techniques as used in 
+them and that you'll learn about in this 
+course. And that's the Hendler, Tate in 
+Drummond paper in AI magazine, on AI 
+planning, systems and techniques. 
+Is also a review, a decade later, by 
+Wilkins and desJardins, on a call for 
+knowledge-based planning, where 
+techniques of knowledge-based systems, 
+and planning were being brought together. 
+Full details of these readings and the 
+locations where you can find the PDF 
+copies of them will be available in the 
+cource wiki. 
+Then there's a number of readings, 
+some of them very short readings. 
+on specific planners and their 
+applications. 
+And we hope you might dip into these 
+during the course. 
+If you've got time to read just a couple 
+of these, these are the ones we'd 
+suggest. 
+The initial review of AI Planners to 
+1990. 
+And a very short paper on O-Plan one of 
+the Edinburgh planners, 
+which looks at a wide range of techniques 
+and applications that were in use in 
+that, in that system. 
+There's a diagram in the 1990 review 
+paper which tries to trace some of the 
+historical connections between the 
+different planners. 
+The techniques they drew on and how they 
+build on one another. 
+It's worth looking at that in detail. 
+Perhaps you could pause the video at this 
+point and take a good look at some of the 
+techniques and areas in there. 
+There's an online version of this diagram 
+also available at high resolution if you 
+can't see it in the video that you're 
+using. 
+

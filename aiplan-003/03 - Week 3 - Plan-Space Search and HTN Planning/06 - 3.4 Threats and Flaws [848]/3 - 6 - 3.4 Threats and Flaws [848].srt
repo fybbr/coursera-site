@@ -1,0 +1,609 @@
+1
+00:00:00,012 --> 00:00:06,894
+A partial plan is a solution for a given 
+planning problem if it contains no more 
+
+2
+00:00:06,894 --> 00:00:10,337
+flaws. 
+So, our goal test will be to check 
+
+3
+00:00:10,337 --> 00:00:14,811
+whether our partial plan is a flawless 
+partial plan. 
+
+4
+00:00:14,811 --> 00:00:21,072
+Of course, we haven't defined a flaw yet 
+so that's what we will do next. 
+
+5
+00:00:21,072 --> 00:00:24,985
+And when we have done this, the search 
+problem will be complete. 
+
+6
+00:00:24,985 --> 00:00:29,588
+We have defined the initial state. 
+We have defined the successor function, 
+
+7
+00:00:29,588 --> 00:00:34,178
+and we will now look at the goal test. 
+I will now introduce the concept of a 
+
+8
+00:00:34,178 --> 00:00:38,562
+threat in a partial plan and I will use 
+an example to illustrate this. 
+
+9
+00:00:38,562 --> 00:00:43,286
+What we see here is a partial plan to 
+which I've already added two actions to 
+
+10
+00:00:43,286 --> 00:00:47,348
+support the two goal conditions. 
+We also the dummy action for the goal 
+
+11
+00:00:47,348 --> 00:00:50,375
+over here. 
+And there should be a second dummy action 
+
+12
+00:00:50,375 --> 00:00:53,836
+for the initial state. 
+But since we're not going to use that in 
+
+13
+00:00:53,836 --> 00:00:57,462
+this example, I've left it out here to 
+save a little space. 
+
+14
+00:00:57,462 --> 00:01:00,933
+Now, what we do is apply more plan 
+refinement operations. 
+
+15
+00:01:00,933 --> 00:01:03,545
+In this case, we add an action to the 
+plan, 
+
+16
+00:01:03,545 --> 00:01:07,982
+this new move action over here. 
+And the reason why we do this is because 
+
+17
+00:01:07,982 --> 00:01:12,183
+we want to support the precondition at 
+robot location one with this new 
+
+18
+00:01:12,183 --> 00:01:14,627
+operator. 
+So, we haven't started a cause link for 
+
+19
+00:01:14,627 --> 00:01:19,558
+this, and we insert an ordering 
+constraint because the action that is the 
+
+20
+00:01:19,558 --> 00:01:24,853
+provider must come before the consumer. 
+Now, let us also look at the condition 
+
+21
+00:01:24,853 --> 00:01:29,836
+that are protected by the cause links. 
+These are at robot location two here the 
+
+22
+00:01:29,836 --> 00:01:34,337
+not unloaded robot here the two goal 
+condition that we want to support. 
+
+23
+00:01:34,337 --> 00:01:39,703
+And over here, it is the precondition of 
+the load operator that the robot must be 
+
+24
+00:01:39,703 --> 00:01:43,603
+at location one that we're protecting 
+with this causal link. 
+
+25
+00:01:43,603 --> 00:01:48,627
+Now, the problem is the following. 
+Our first operator, the move action, has 
+
+26
+00:01:48,627 --> 00:01:53,576
+a negative effect at robot location one, 
+which is exactly the condition we're 
+
+27
+00:01:53,576 --> 00:01:57,875
+trying to protect down here. 
+This means if we first executed action 
+
+28
+00:01:57,875 --> 00:02:01,094
+number three, the move robot location to 
+location one. 
+
+29
+00:02:01,094 --> 00:02:05,629
+Then, action number one moving the robot 
+from location one to location two, and 
+
+30
+00:02:05,629 --> 00:02:10,075
+finally action number two loading the 
+container onto the robot with a crane, 
+
+31
+00:02:10,075 --> 00:02:12,904
+etc. 
+Then, this plan would not be valid 
+
+32
+00:02:12,904 --> 00:02:18,120
+because the second action in our totally 
+ordered plan will destroy the protected 
+
+33
+00:02:18,120 --> 00:02:22,314
+condition that we need to execute the 
+final action in that plan. 
+
+34
+00:02:22,314 --> 00:02:25,630
+So, the final action would no longer be 
+executable. 
+
+35
+00:02:25,630 --> 00:02:30,537
+This is what is called the threat. 
+We have an action that may possibly occur 
+
+36
+00:02:30,537 --> 00:02:35,328
+in parallel with a causal link and that 
+has an effect that is complementary to 
+
+37
+00:02:35,328 --> 00:02:38,940
+the condition we're trying to protect in 
+the causal link. 
+
+38
+00:02:38,940 --> 00:02:43,323
+That is what is called a threat. 
+And in this case, there is a simple way 
+
+39
+00:02:43,323 --> 00:02:47,995
+to get rid of this threat, namely to 
+introduce another ordering constraint 
+
+40
+00:02:47,995 --> 00:02:53,142
+that says, action number one must come 
+after action number two. In which case, 
+
+41
+00:02:53,142 --> 00:02:57,691
+the action with the effect that is 
+potentially harmful cannot be in parallel 
+
+42
+00:02:57,691 --> 00:03:00,622
+to the causal link that protects this 
+condition. 
+
+43
+00:03:00,622 --> 00:03:05,130
+So, the insertion of the ordering 
+constraint removes the threat and that is 
+
+44
+00:03:05,130 --> 00:03:07,692
+what is called a resolver for this 
+threat. 
+
+45
+00:03:07,692 --> 00:03:13,044
+Now that you've seen an example of a 
+threat, here's the formal definition of 
+
+46
+00:03:13,044 --> 00:03:17,739
+what constitutes a threat. 
+We start of with a plan pi consisting of 
+
+47
+00:03:17,739 --> 00:03:22,384
+the four usual components. 
+We have actions, orderings, variable 
+
+48
+00:03:22,384 --> 00:03:27,129
+bindings, and causal links. 
+In this plan, we have an action ak that 
+
+49
+00:03:27,129 --> 00:03:32,398
+may cause a threat for a causal link, 
+That links an action ai to an action aj 
+
+50
+00:03:32,398 --> 00:03:37,287
+protecting condition p. 
+And we say that the action ak threatens 
+
+51
+00:03:37,287 --> 00:03:41,217
+our causal link if the following 
+preconditions hold. 
+
+52
+00:03:41,217 --> 00:03:46,947
+Firstly, ak must have an effect, not q, 
+that is possibly inconsistent with p, the 
+
+53
+00:03:46,947 --> 00:03:52,197
+condition we're trying to protect. 
+If p and q are ground, then of course, 
+
+54
+00:03:52,197 --> 00:03:56,072
+they are possibly inconsistent if they 
+are the same. 
+
+55
+00:03:56,072 --> 00:04:01,937
+But, if they contain variables, then they 
+are possibly inconsistent if p and q are 
+
+56
+00:04:01,937 --> 00:04:06,402
+unfiable. 
+That means, they can be made the same if 
+
+57
+00:04:06,402 --> 00:04:11,226
+we substitute values for variables. 
+The second condition is that the 
+
+58
+00:04:11,226 --> 00:04:16,936
+following ordering constraints must be 
+consistent with the ordering constraints 
+
+59
+00:04:16,936 --> 00:04:20,384
+in our plan. 
+And the ordering constraints that we 
+
+60
+00:04:20,384 --> 00:04:24,219
+consider are ai could come before ak, and 
+ak before aj. 
+
+61
+00:04:24,219 --> 00:04:29,611
+What this means is that our action ak can 
+possible be in parallel to the causal 
+
+62
+00:04:29,611 --> 00:04:35,052
+link because the provider comes before ak 
+and the consumer comes after ak. 
+
+63
+00:04:35,052 --> 00:04:39,792
+But, the condition here is, that this is 
+possible, not that it is necessarily so. 
+
+64
+00:04:39,792 --> 00:04:44,432
+So, these orderings, constraints must be 
+consistent with our orderings in the 
+
+65
+00:04:44,432 --> 00:04:48,927
+plan, but they need not be in the plan. 
+Similarly, the third condition states 
+
+66
+00:04:48,927 --> 00:04:53,152
+that if we introduce new variable 
+bindings as part of our unification up 
+
+67
+00:04:53,152 --> 00:04:57,857
+here, then, these new variable binding 
+constraints must be consistent with the 
+
+68
+00:04:57,857 --> 00:05:01,892
+binding constraints that we currently 
+have in our Plan. 
+
+69
+00:05:01,892 --> 00:05:07,048
+So, ak can threaten our causal link if it 
+has an effect that is possibly 
+
+70
+00:05:07,048 --> 00:05:11,373
+inconsistent with the proposition we're 
+trying to protect. 
+
+71
+00:05:11,373 --> 00:05:15,420
+And it may possibly occur in parallel to 
+our causal link. 
+
+72
+00:05:15,420 --> 00:05:20,683
+And finally, the bindings that we need 
+for making p and w the same are 
+
+73
+00:05:20,683 --> 00:05:27,173
+consistent with the bindings used in the 
+plan, that is the definition of a threat. 
+
+74
+00:05:27,173 --> 00:05:32,824
+Threats however, are not the only types 
+of flaws that can occur in a plan. 
+
+75
+00:05:32,824 --> 00:05:38,233
+The good news is there are only two types 
+of flaws we need to look out for. 
+
+76
+00:05:38,233 --> 00:05:43,439
+So, in a plan pi, that consists of the 
+usual four components, we can have two 
+
+77
+00:05:43,439 --> 00:05:47,694
+types of flaws. 
+The first is an unsatisfied sub-goal in 
+
+78
+00:05:47,694 --> 00:05:50,790
+that plan. 
+And an unsatisfied sub-goal is a 
+
+79
+00:05:50,790 --> 00:05:55,629
+precondition of an action that does not 
+have an incoming causal link that 
+
+80
+00:05:55,629 --> 00:05:59,111
+supports it. 
+So, this could be the goal dummy action 
+
+81
+00:05:59,111 --> 00:06:03,234
+which, of course, has all the goal 
+conditions as preconditions. 
+
+82
+00:06:03,234 --> 00:06:08,198
+All of those need to be supported for the 
+plan not to have this type of flaw. 
+
+83
+00:06:08,198 --> 00:06:13,136
+And then, every action that we have added 
+to the plan also must have all of its 
+
+84
+00:06:13,136 --> 00:06:17,959
+preconditions supported by causal link 
+for the plan not to have this type of 
+
+85
+00:06:17,959 --> 00:06:20,886
+flaw. 
+And the second type of flaw is a threat, 
+
+86
+00:06:20,886 --> 00:06:25,592
+so that's what we have just seen in 
+action that may interfere with a causal 
+
+87
+00:06:25,592 --> 00:06:28,565
+link. 
+And that's it. That's all the type flaws 
+
+88
+00:06:28,565 --> 00:06:32,579
+we need to consider. 
+And here is the proposition that gives us 
+
+89
+00:06:32,579 --> 00:06:35,861
+our goal test. 
+Suppose we are given a partial plan, 
+
+90
+00:06:35,861 --> 00:06:40,329
+consisting of actions, orderings, 
+bindings, and links and we can say that 
+
+91
+00:06:40,329 --> 00:06:45,269
+this solution to a planning problem 
+consisting of a state transition system, 
+
+92
+00:06:45,269 --> 00:06:48,342
+initial state and goal, if three 
+conditions hold. 
+
+93
+00:06:48,342 --> 00:06:51,198
+The first one is that the plan pi has no 
+flaw. 
+
+94
+00:06:51,198 --> 00:06:54,359
+That's the two types of flaws we've just 
+described. 
+
+95
+00:06:54,359 --> 00:06:59,491
+Then, the ordering constraints must not 
+be circular, so they must be consistent. 
+
+96
+00:06:59,491 --> 00:07:03,572
+And the variable binding constraints must 
+also be consistent. 
+
+97
+00:07:03,572 --> 00:07:08,245
+So, while we are doing our search for a 
+plan, we have these three conditions to 
+
+98
+00:07:08,245 --> 00:07:11,425
+maintain. 
+The first one that a plan must have no 
+
+99
+00:07:11,425 --> 00:07:16,505
+flaws, well, we cannot really have that 
+because initially our plan has flaws. 
+
+100
+00:07:16,505 --> 00:07:21,486
+The goal has unsatisfied preconditions. 
+But, the other two conditions That we 
+
+101
+00:07:21,486 --> 00:07:26,547
+keep up our ordering constraints and our 
+variable binding constraints consist in 
+
+102
+00:07:26,547 --> 00:07:30,736
+these two conditions, 
+we maintain this consistency during the 
+
+103
+00:07:30,736 --> 00:07:34,486
+planning process. 
+Why is that? Because once we introduce an 
+
+104
+00:07:34,486 --> 00:07:38,995
+inconsistency into either set of 
+constraints, this can never be removed. 
+
+105
+00:07:38,995 --> 00:07:43,761
+So, we maintain the consistency of the 
+constraints and try to remove the flaws 
+
+106
+00:07:43,761 --> 00:07:46,882
+from the plan. 
+And once for all the flaws are gone, 
+
+107
+00:07:46,882 --> 00:07:49,857
+we're done. 
+I won't go into the proof of this 
+
+108
+00:07:49,857 --> 00:07:54,007
+proposition in detail, 
+but just tell you that this can be done 
+
+109
+00:07:54,007 --> 00:07:58,407
+by induction quite easily. 
+So, we start off with the base case, that 
+
+110
+00:07:58,407 --> 00:08:02,207
+is the empty plan. 
+And in the empty plan, the only causal 
+
+111
+00:08:02,207 --> 00:08:06,850
+links can go from the innate action to 
+the goal action, the two dummy actions 
+
+112
+00:08:06,850 --> 00:08:10,091
+that we have in this plan. 
+And if all the goal conditions are 
+
+113
+00:08:10,091 --> 00:08:14,469
+supported from the initial state, that 
+must be a solution plan to our problem in 
+
+114
+00:08:14,469 --> 00:08:17,912
+which case the goal was already satisfied 
+in our initial state. 
+
+115
+00:08:17,912 --> 00:08:22,682
+And the induction step simply consist of 
+removing one action from the plan and 
+
+116
+00:08:22,682 --> 00:08:27,570
+showing that the shorter plan now still 
+is a solution to a planning problem, the 
+
+117
+00:08:27,570 --> 00:08:31,474
+modified planning problem. 
+And the action we pick here, as you can 
+
+118
+00:08:31,474 --> 00:08:35,321
+see, is one of the actions in the plan 
+that has no predecessors. 
+
+119
+00:08:35,321 --> 00:08:39,226
+So, this is it. 
+This is our goal test that completes the 
+
+120
+00:08:39,226 --> 00:08:43,106
+planning problem. 
+And now, a goal test is that our plan 
+
+121
+00:08:43,106 --> 00:08:47,036
+must not have flaws. 
+If it has no flaws, it is a solution 
+
+122
+00:08:47,036 --> 00:08:47,365
+plan. 
+

@@ -1,0 +1,222 @@
+In previous segments, we have looked at a 
+general technique used in Artificial 
+Intelligence to solve problems, namely 
+search. 
+We have seen how the efficiency of search 
+can be greatly increased through the use 
+of heuristics. 
+In this segment, we will look at one of 
+the early systems developed in AI for 
+planning, 
+that is the Strips planner. 
+One of the advances made by the Strips 
+planner, was the representation used by 
+it. 
+The Strips representation still under 
+lies much of the research done in AI 
+planning today, and the first three parts 
+of the segment, will be concerned with 
+the representation. 
+Once we understand the representation, we 
+can see how search algorithms as we've 
+seen them previously, can be used to 
+solve planning problems, and that is the 
+remainder of this segment. 
+The first thing we will look at now, is 
+how states were represented in the Strips 
+representation. 
+The way we have looked at search so far 
+is we have treated states as black boxes. 
+That is we have very limited access to 
+the internal structure of a state or an 
+action. 
+Of course, there are some things we can 
+do with states. 
+For example, we can see whether it is a 
+goal state or not, 
+and this is necessary to terminate the 
+search. 
+We can also find out what the applicable 
+actions are, 
+and this is related to the successor 
+states. 
+Remember, we have defined the successor 
+function to return an empty set if there 
+are no applicable actions. 
+So, these two are related to each other, 
+and give us information about what can be 
+achieved from this state. 
+More simple functions about states would 
+be an equality test and a hash function. 
+We need those two to turn tree search 
+into graph search. 
+And finally, we've seen how a heuristic 
+estimate gives us some information about 
+a state that we can use to guide the 
+search algorithm. 
+But we had no other access functions to 
+look into the states and actions, so they 
+are black boxes. 
+But our aim in planning is to reason 
+about these states and actions and that 
+is very difficult if we don't have access 
+to the internal structure. 
+Just think about what we have learned at 
+the end of the last segment, mainly that 
+it is possible to, to automatically 
+derive good heuristics but this is only 
+possible if we know something about the 
+states and actions in our search problem, 
+so we need to know the internal search 
+structure. 
+The strips representation gives us a 
+standardized ways of looking at the 
+internals of states, and actions. 
+Now this is not as pretty as it here 
+shown in the picture, but there will be a 
+formal language that we will define, that 
+describes what is going on in the state 
+and what actions do to the state. 
+And that is the fundamentals of the 
+strips representation we will look at 
+now. 
+The strips representation is based on 
+first order predicate logic. 
+This means we have objects in our domain 
+and these objects are somehow related to 
+each other. 
+Lets look at our dock worker robot 
+example. 
+In the dock worker robot domain we have 
+several types of objects that we are 
+looking at. 
+The first type we are looking at are the 
+robots. 
+We will introduce symbols like these, 
+robot one and robot two to refer to these 
+robots in our logic. 
+So we can use this symbol to denote the 
+robot with the number one and the robot 
+with the number two and so on. 
+And we can have an arbitrary number of 
+symbols denoting robots. 
+They are of the type robot, that means 
+they all represent a robot. 
+Robots are of course, the objects that 
+carry a container from one location to 
+another adjacent location. 
+The next type of objects we have are 
+cranes. 
+And again, we have symbols to denote the 
+different cranes that are in our domain. 
+Cranes can be used to stack or unstack 
+containers from a pile. 
+Or load or unload containers onto a 
+robot. 
+As opposed to robots, cranes have a fixed 
+location, so they cannot move. 
+And then we have of course containers. 
+Containers are denoted by these symbols 
+here, these can be arbitrary symbols of 
+course and they are the things we are 
+moving around in our domain. 
+Containers can be in some pile or they 
+can be loaded onto a robot or they can be 
+held by a crane. 
+Robots, cranes, and containers are 
+physical objects that means they're 
+tangible and we can see these objects in 
+the real world. 
+The next two types, do not have that 
+property. 
+The first one is locations, which denote 
+places that we have in our world, again 
+we introduce symbols, to represent these 
+different places. 
+These could be a storage area, a dock, a 
+ship, or some parking or passing area in 
+our domain of interest. 
+And then we have piles of containers 
+again we have symbols for these, pile 
+one, pile two here. 
+And a pile can be empty in which case 
+there's no mass to it, it's not a 
+tangible object or it contains some 
+containers in which case we can actually 
+see the pile and the containers that 
+belong to it. 
+Each pile is attached to a single 
+location so we cannot move the piles 
+around. 
+And at the bottom of each pile we have a 
+pallet. 
+This is denoted by the symbol pallet and 
+despite the fact that we have several 
+piles and therefore several pallets at 
+the bottom of these piles we only need 
+one symbol to denote all these pallets as 
+we don't need to distinguish the 
+different pallets. 
+So, in a state we have objects and these 
+objects are grouped into types as we've 
+seen here. 
+And each individual object is denoted by 
+a unique symbol in our domain. 
+Once we have identified the objects and 
+types that exist in a domain, we need to 
+specify them in a way that the planner 
+can take as input. 
+Which means we have to write a text file 
+that defines these objects and types. 
+In this file we need to adhere to a 
+specific syntax, such that the planet 
+will understand what we're trying to say 
+to it. 
+The syntax understood by most planners 
+these days is the PDDL syntax. 
+And PDDL stands for Planning Domain 
+Definition Language. 
+Here is an example of how we can specify 
+a domain in PDDL that defines the types 
+we have just seen in the previous slide. 
+The first thing we do is we tell the 
+system that we are trying to define 
+something. 
+And what we are trying to define is a 
+domain. 
+And this domain has a name. 
+This is an arbitrary name, and does not 
+really matter at this stage. 
+But the keywords define on domain are 
+always there. 
+Next, PDDL allows us to specify 
+requirements for a specific domain. 
+In this case we specify that our domain 
+requires strips and typing. 
+Strips is actually always assumed and 
+typing is a very simple extension, but 
+there are many other extensions that you 
+can use. 
+The typing extension is, of course, 
+required for the types, we will see next. 
+The types are introduced by the keyword, 
+types, I've seen here. 
+And then we simply name the different 
+types, the symbols that identify them. 
+Location, pile, robot, crane, container. 
+These are the types we've seen in the 
+previous slide. 
+Pddl also allows you to insert comments 
+into your input file. 
+And these are introduced by the semicolon 
+symbol. 
+Everything from the semicolon to the end 
+of the line is considered a comment, and 
+is therefore not part of the formal 
+language. 
+It will simply be ignored by the planning 
+system. 
+Of course, there is a lot more to 
+planning domains than just the types and 
+we will look at that next. 
+

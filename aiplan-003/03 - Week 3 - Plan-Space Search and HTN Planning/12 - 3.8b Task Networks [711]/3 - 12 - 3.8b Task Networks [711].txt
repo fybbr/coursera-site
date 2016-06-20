@@ -1,0 +1,173 @@
+The next thing we can do then is to group 
+the tasks we have just defined into 
+simple task networks. 
+And such a task network is really just an 
+acyclic directed graph. 
+And this graph consists of some nodes, 
+denoted by the set U and some edges given 
+by the set E. 
+And the nodes in a task network are 
+simply a set of tasks, t1 through tn, 
+where each of the elements in the set, t1 
+through tn, is a task. 
+So, it's a syntactic expression of the 
+form given a task symbol and some 
+arguments not just a task symbol. 
+And then, we have the edges in the task 
+network which simply define a partial 
+ordering of those tasks in the set U. 
+And then, what follows, I will use the 
+same notation we've seen previously so 
+that I can say that a task ti comes 
+before a task tj by using this symbol. 
+And that's it. 
+That's the task network consisiting of a 
+set of tasks, and a set of edges that 
+form a acyclic directed graph. 
+Note that the graph has to be acyclic. 
+And task networks, like tasks, can be 
+ground or primative, or both. 
+And a task network is considered to be 
+ground if all the tasks in it are ground. 
+Not just one, but all of them. 
+And it's considered primitive if all the 
+tasks in our network are primitive. 
+And it's ground and primitive if both the 
+properties hold for all the tasks in the 
+network. 
+But if only one task in the network is 
+unground, then we consider the whole 
+network unground. 
+And if only one task in the network is 
+non-primitive, then we will say that the 
+whole network is non-primitive. 
+Apart from being ground and or primitive. 
+a task network can also be totally 
+ordered or partially ordered. 
+To define the ordering of a task network, 
+we say that tu comes before tv in the 
+network w consisting of nodes U and edges 
+E if there is a path from tu to tv. Then, 
+we can say that our simple task network, 
+w, is totally ordered if the set of edges 
+in this network defines a total order on 
+our nodes. 
+And a total order here means that every 
+node is ordered with respect to every 
+other node by this network. 
+So, there are no two nodes in this 
+network that are not ordered with respect 
+to each other. 
+And if this is the case, then we can take 
+our network w and simply represent it as 
+a sequence of tasks written like this. 
+Here, just like we've written the 
+sequence of actions earlier. 
+This is a sequence of tasks starting with 
+tn and ending in t1, 
+which are all totally ordered with 
+respect to each other. 
+So, this gives us a third property that a 
+task network might have. 
+A task network can be totally ordered, 
+ground, and primitive. 
+And if we are given such a network 
+described by the sequence t1 through tn, 
+then we can define the plan that 
+accomplishes this task network by this 
+function pi of w, and is simply defined 
+as the sequence of actions a1 through an. 
+So, it's the same length in the sequence, 
+where each ai is the same as the ti. 
+So, the name is same as the name of the 
+task. In other words, each action 
+accomplishes the task that is at the same 
+position in the sequence of task in the 
+task network. 
+And to make sure you understood all this 
+correctly, here are a few examples from 
+our dock worker robot domain as an STN 
+domain. 
+The first we have given here is a set of 
+tasks, and the first task is t1 described 
+by taking with crane application 
+container, one from container two in pile 
+one. 
+This task is primitive. 
+It is primitive because we have an 
+operator that has the same name, namely 
+take. 
+And this task is ground because all the 
+arguments that are given to this task are 
+all objects and not variables. 
+Similarly, we have a task t2 which 
+consists of the same task symbol, take, 
+and it takes, with the crane at the same 
+location, container 2 from container 3 in 
+pile 1. 
+And again, this task is primitive because 
+we still have an operator with the same 
+name, take. 
+And it is ground because all the 
+arguments are constants and not 
+variables. 
+And then, we are given a third task here, 
+t3, which is move stack p1, q. 
+And this task, of course, is 
+non-primitive. 
+It is non-primitive because move stack is 
+not the name of an operator we've defined 
+in the dock worker robot domain, and is 
+un-ground, because q here is a variable. 
+We're not specifying the stack to which 
+we're trying to move our containers. 
+So, given these three tasks, we can now 
+form task networks. 
+And the first network we have is w1, and 
+it consists of all three tasks defined 
+above, t1, 2, and 3. 
+And just two ordering constraints, namely 
+t1 before t2, and t1 before t3. 
+So, this task network is partially 
+ordered because t2 and t3 are not ordered 
+with respect to each other. 
+It is non-primitive because it does 
+contain at least one non-primitive task, 
+in this case t3. 
+And it is unground because it also 
+contains one unground task, again this is 
+t3. 
+And then, we have a second example of a 
+task network, w2. This consists only of 
+the first two tasks, t1 and t2, and it 
+has only one ordering constraint, t1 
+before t2. 
+This network is totally ordered and we 
+can write it as a sequence t1, t2, 
+because all the tasks are ordered with 
+respect to each other. 
+And then, we can say that this network is 
+ground because, again, all the tasks in 
+it are ground, t1 and t2, these are the 
+two tasks here, were ground and 
+primitive. 
+And again, since these are the only tasks 
+we have here, this whole network is 
+ground and primitive. 
+So, this is a totally ordered, ground 
+primitive task network. 
+And that means we can immediately derive 
+the plan that accomplishes this task 
+network. 
+And this is pi of w2, as defined earlier. 
+Simply consisting of the two actions that 
+have the same name, the syntactic 
+expression describing this action, as the 
+two tasks in the task network. 
+So now, we know what tasks are and we 
+know how to form networks out of these 
+tasks. 
+And for some of these networks, we even 
+know how to form plans that accomplish 
+these task networks. 
+

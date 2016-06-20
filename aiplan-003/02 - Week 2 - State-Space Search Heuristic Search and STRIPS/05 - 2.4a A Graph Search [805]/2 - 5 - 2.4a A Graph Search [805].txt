@@ -1,0 +1,216 @@
+You have now seen the A* algorithm for 
+heuristic search and you should 
+understand how it works. 
+A* is a pretty good algorithm. 
+It always finds optimal solutions and it 
+is optimally efficient. 
+So you may wonder, why would we ever need 
+another search algorithm? Well, there are 
+a few more problems, and I will go into 
+those next. 
+Some of these problems are related to the 
+fact that we're usually searching a 
+graph, not a tree, so we will look at a 
+star as a graph search algorithm next. 
+And here is the pseudocode for the A* 
+tree and graph search algorithms. 
+The basic version of this algorithm is 
+the tree search algorithm, and there is 
+an extension that I've also included on 
+this slide which consists of three 
+additional lines of code, that performs 
+the graph search. 
+And the three additional lines of code 
+are, these. 
+Three lines here shown in gray. 
+But let's have a look at the tree search 
+algorithm first. 
+So we define a function A* tree search 
+that takes two parameters. 
+The first is our search problem, and the 
+second is the heuristic that we're using 
+This may or may not be an admissible 
+heuristic. 
+The first thing we do then, is initialize 
+our set of fringe nodes. 
+And we initialize the fringe, from our 
+initial state that was given in the 
+problem. 
+And what we do is, we put this initial 
+state. 
+Into a queue, into a priority queue that 
+sorts the node by their f value. 
+That means we always have quick access to 
+the node in that queue that has the 
+lowest f value and that is how we 
+initialize our fringe. 
+Then we go through the loop that does the 
+note expansion and generates the search 
+tree. 
+The first thing we do is we test whether 
+the fringe is empty. 
+That would mean that there would be no 
+more nodes to explore and that means we 
+can return failure because it means we 
+have generated the whole search tree and 
+haven't come across a solution node, so 
+there is no solution node. 
+So, we can return with failure. 
+[UNKNOWN]. 
+But if there are nodes on the fringe, 
+then we have to select one of these 
+nodes, for expansion. 
+Note, that the select function here, does 
+not take a second argument, as it did 
+earlier, because our strategy here is 
+fixed. 
+We select the node with the lowest f 
+value. 
+Having said that I should point out that 
+this selection is not quite deterministic 
+as there may be many nodes with the same 
+f value that are currently on the fringe. 
+So our node is only 1 of the nodes with 
+the lowest f value. 
+And what we do next, is we perform our 
+goal test. 
+The goal test on the state contained in 
+that node. 
+And if this goal test succeeds, that 
+means we have found a solution, and then 
+we can simply return, the path, to this 
+node in the search tree. 
+If our chosen node is not a goal node, 
+then we have to add it's successors to 
+the fringe and I've shown this here as a 
+loop because we add each successor in 
+turn, and we use the function expand to 
+generate all the successors. 
+Of the selected node and our loop 
+variable successor here is the next 
+successor in that loop and then for the 
+tree search version of this algorithm, we 
+simply have to add that new successor to 
+the fringe. 
+So, we extend our current fringe with the 
+new successor and the place where we 
+queue this new successor in our priority 
+queue is of course the f value of that 
+node. 
+And for those of you who have been 
+wondering where we use the parameter h, 
+that is the second parameter of this 
+function, remember that f is defines as g 
++ h, so that's where we use our heuristic 
+function, and that is all the pseudocode 
+we need for the tree search version of 
+this algorithm. 
+Algorithm. 
+But the graph search version isn't much 
+more complicated. 
+What we need to do in addition is first, 
+we need to initialize the set of all 
+nodes that we have seen so far. 
+And one way to do this is to initialize 
+this as a hash table. 
+of nodes. 
+And intially this will contain only the 
+inital state, that we can take from the 
+fringe or from the problem. 
+Then the algorithm proceeds as before, 
+going through the loop, trying to take a 
+node off the fringe if there is one. 
+Performing the goal test on that node. 
+If it's a goal node then we've found the 
+solution. 
+And if not we go to the loop where we 
+expand the current node and generate it's 
+successors, and that's where the 
+algorithm for graph search differs. 
+Namely for each successor that we're 
+generating we have to test whether this 
+is a node that we've already seen and if 
+we have already seen that node then we 
+don't need to add it to our fringe, if we 
+haven't seen the node then we continue as 
+before we add it to the fringe as our new 
+successor at its current f value and we 
+also have to add it to the set of all the 
+nodes we've seen before. 
+So that we don't explore this note again. 
+So this is a working version of the graph 
+search algorithm. 
+However, there is one problem with it. 
+If the given heuristic is admissable, the 
+graph search version, as shown here, no 
+longer guarantees an optimal solution. 
+And the reason for this occurs here. 
+Namely if we generate the successors of a 
+node, we may generate a new node that we 
+have seen before. 
+But the second time we generate the node, 
+we actually discover a shorter path than 
+the first time we generated it. 
+So what we really want to do here is keep 
+the node that has the shorter path and 
+doesn't matter whether we discovered that 
+first or later. 
+So what we could do is simply add a piece 
+of code here that tests whether our new 
+path is shorter than the old path. 
+But for many problems the heuristic that 
+we'll be using is not admissible, and 
+then A* doesn't guarantee as an optimal 
+path anyway. 
+So, we don't have to worry about this 
+shortcut question necessarily. 
+And here is the first problem with A* as 
+it stands, and that is it still uses 
+exponential space unless the euristics 
+are perfect. 
+In fact, in the worst case, the time and 
+space complexity of A*, are both an 
+O(b^l). 
+Where B is the branching factor, so 
+that's the number of successes we have 
+per node on average. 
+An L is the length of the path we're 
+looking for. 
+b^l is exponential, which means we have 
+exponential time and space complexity, 
+And in reality, we will see that this is 
+true most of the time the fringe grows 
+exponentially. 
+Now let's look at this. 
+What does this really mean? So 
+exponential time complexity. 
+That means when the problem grows by one 
+step, the size of the problem, the time 
+it takes to solve this problem, doubles. 
+Or in general, it grows by a factor of B. 
+This may or may not be acceptable, 
+depending on how much time you actually 
+have. 
+When it grows into the region of years 
+and centuries, this will no no, longer be 
+acceptable, of course. 
+But quite often we have another hour we 
+can give our. 
+But what about exponential space 
+comlexity? Well, what this means is that 
+a star will eventually exhaust the 
+computer's memory. 
+So first, it will eat up all the RAM, 
+then it'll eat up all the virtual memory. 
+And eventually, it'll just have no more 
+memory left. 
+And what happens then? Well A* simply 
+fails. 
+The algorithm terminates because it's out 
+of memory, and we don't even know whether 
+there is a solution or not. 
+As an example, the 8 puzzle will still 
+fit into memory, but the bigger version, 
+on the 4 by 4 grid, the 15 puzzle, 
+usually does not fit into memory. 
+

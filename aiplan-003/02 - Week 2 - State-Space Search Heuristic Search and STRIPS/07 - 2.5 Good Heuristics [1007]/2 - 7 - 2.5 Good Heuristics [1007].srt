@@ -1,0 +1,714 @@
+1
+00:00:04,100 --> 00:00:08,392
+Before we move on to the planning 
+algorithms, I want to tell you a little 
+
+2
+00:00:08,392 --> 00:00:12,449
+bit more about heuristics and 
+specifically, what makes a good heuristic 
+
+3
+00:00:12,449 --> 00:00:17,504
+and how do we find these. 
+We have defined a heuristic in a 
+
+4
+00:00:17,504 --> 00:00:22,601
+technical sense, as a function that 
+estimates the distance to the nearest 
+
+5
+00:00:22,601 --> 00:00:25,995
+goal node. 
+But a heuristic obviously has colloquial 
+
+6
+00:00:25,995 --> 00:00:28,875
+meaning as well and that's what's defined 
+here. 
+
+7
+00:00:28,875 --> 00:00:33,654
+So it's, it's heuristics are criteria, 
+methods, or principles for deciding which 
+
+8
+00:00:33,654 --> 00:00:38,432
+among several alternative courses of 
+action promises to be the most effective. 
+
+9
+00:00:38,432 --> 00:00:43,579
+So the alternatives that we're looking at 
+are of course the successor nodes that we 
+
+10
+00:00:43,579 --> 00:00:47,132
+want to evaluate. 
+We want to see which one of those is the 
+
+11
+00:00:47,132 --> 00:00:50,318
+most promising. 
+And what we need to do is we need to 
+
+12
+00:00:50,318 --> 00:00:55,035
+decide which one to follow first. 
+Of course we keep in mind the others and 
+
+13
+00:00:55,035 --> 00:00:58,372
+follow those later. 
+We use heuristics in everyday life. 
+
+14
+00:00:58,372 --> 00:01:02,457
+For example, here you see a heuristic for 
+deciding whether a pineapple is ripe. 
+
+15
+00:01:02,457 --> 00:01:06,541
+If you ever go into a shop and want to 
+buy a ripe pineapple, this may work for 
+
+16
+00:01:06,541 --> 00:01:09,526
+you, or it may not. 
+So, if you can rip out the inner leaves 
+
+17
+00:01:09,526 --> 00:01:13,191
+easily and the fruit smells like a 
+pineapple should smell, then you're 
+
+18
+00:01:13,191 --> 00:01:17,275
+looking at a ripe pineapple and this is 
+one you can buy, assuming the price is 
+
+19
+00:01:17,275 --> 00:01:20,136
+right. 
+If there are no pineapples where you are, 
+
+20
+00:01:20,136 --> 00:01:23,199
+tough luck. 
+The reason why I've circled the word, 
+
+21
+00:01:23,199 --> 00:01:28,216
+deciding, here, is because this gives us 
+a different idea of what heuristic can 
+
+22
+00:01:28,216 --> 00:01:30,917
+be. 
+All we need from a heuristic is just a 
+
+23
+00:01:30,917 --> 00:01:33,361
+decision. 
+Which alternative looks best. 
+
+24
+00:01:33,361 --> 00:01:38,184
+So it doesn't really need to be related 
+to the distance, to the goal, at all. 
+
+25
+00:01:38,184 --> 00:01:42,429
+All we need is a function that decides 
+which one is the best node. 
+
+26
+00:01:42,429 --> 00:01:47,445
+If we have that function, that would 
+constitute a perfect heuristic because it 
+
+27
+00:01:47,445 --> 00:01:52,526
+would tell us which successor to follow. 
+And which path we should explore first. 
+
+28
+00:01:52,526 --> 00:01:54,990
+If that deciding. 
+Is correct. 
+
+29
+00:01:54,990 --> 00:02:00,615
+Then we have a perfect heuristic. 
+Another example of a heuristic you've 
+
+30
+00:02:00,615 --> 00:02:04,298
+applied probably not too long ago, is in 
+choosing this course. 
+
+31
+00:02:04,298 --> 00:02:07,618
+You looked at the introductory material 
+to this course. 
+
+32
+00:02:07,618 --> 00:02:12,447
+And used this as information to decide 
+which of the courses that were available 
+
+33
+00:02:12,447 --> 00:02:15,888
+you want to take. 
+So you used heuristic information about 
+
+34
+00:02:15,888 --> 00:02:21,116
+the course to make this choice. 
+Okay, assuming you understand what a 
+
+35
+00:02:21,116 --> 00:02:25,581
+heuristic is, now the question is when is 
+a heuristic a good heuristic? 
+
+36
+00:02:25,581 --> 00:02:30,748
+And if we have a given search problem and 
+a given heuristic we can evaluate that 
+
+37
+00:02:30,748 --> 00:02:35,787
+heuristic by looking at the number of 
+states that are generated for a specific 
+
+38
+00:02:35,787 --> 00:02:40,061
+problem with that heuristic. 
+And if we have two heuristics, we could 
+
+39
+00:02:40,061 --> 00:02:44,717
+compare them by using the number of 
+states they generate to see which is 
+
+40
+00:02:44,717 --> 00:02:47,843
+better. 
+The better heuristic would generate fewer 
+
+41
+00:02:47,843 --> 00:02:51,081
+states. 
+But that is only heuristic for deciding 
+
+42
+00:02:51,081 --> 00:02:55,826
+which heuristic is better. 
+because what we are really after is, we 
+
+43
+00:02:55,826 --> 00:03:00,990
+want solutions as fast as possible, so we 
+have time constraints to respect. 
+
+44
+00:03:00,990 --> 00:03:04,960
+And computing a good heuristic also takes 
+time. 
+
+45
+00:03:04,960 --> 00:03:08,743
+Unfortunately, this means we are dealing 
+with a trade-off here. 
+
+46
+00:03:08,743 --> 00:03:11,969
+And this is the trade-off. 
+Some heuristics are simple. 
+
+47
+00:03:11,969 --> 00:03:16,435
+So they provide a simple way of 
+discriminating between the successes we 
+
+48
+00:03:16,435 --> 00:03:19,412
+generate. 
+And since we opt-, want to optimize the 
+
+49
+00:03:19,412 --> 00:03:23,320
+time we take to research. 
+Simplicity here means easy to compute. 
+
+50
+00:03:23,320 --> 00:03:28,034
+We want to have a fast way to compute the 
+heuristic value for a given state. 
+
+51
+00:03:28,034 --> 00:03:32,066
+But heuristics that are simple to compute 
+are often not accurate. 
+
+52
+00:03:32,066 --> 00:03:35,540
+And accurate is the other property in our 
+trade-off here. 
+
+53
+00:03:35,540 --> 00:03:40,211
+A heuristic, unless it is perfect, does 
+not provide a guarantee that it tells us 
+
+54
+00:03:40,211 --> 00:03:42,813
+which the best successor is to explore 
+next. 
+
+55
+00:03:42,813 --> 00:03:46,894
+So, there's no guarantee that it 
+identifies the best course of action. 
+
+56
+00:03:46,894 --> 00:03:51,684
+But if it's a good heuristic, it will do 
+this more often than a heuristic that is 
+
+57
+00:03:51,684 --> 00:03:54,168
+not as good. 
+So, a good heuristic does this 
+
+58
+00:03:54,168 --> 00:03:56,120
+sufficiently often. 
+It's accurate. 
+
+59
+00:03:56,120 --> 00:04:01,942
+It tells us which is the best course of 
+action, or in the technical sense, it 
+
+60
+00:04:01,942 --> 00:04:05,160
+tells us how far the goal state really 
+is. 
+
+61
+00:04:06,400 --> 00:04:11,541
+So now we know what a good heuristic is 
+the important question than is how can we 
+
+62
+00:04:11,541 --> 00:04:16,368
+find good heuristics for a given problem? 
+And this is somewhat similar to the 
+
+63
+00:04:16,368 --> 00:04:20,067
+problem of problem formulation it's a 
+matter level problem. 
+
+64
+00:04:20,067 --> 00:04:23,140
+We have to find good heuristic to do good 
+search. 
+
+65
+00:04:23,140 --> 00:04:26,320
+Just as a good problem formulation will 
+ease search. 
+
+66
+00:04:26,320 --> 00:04:29,072
+That means this is a very important 
+question. 
+
+67
+00:04:29,072 --> 00:04:33,720
+And the answer is, there are methods for 
+doing this and we will look at some 
+
+68
+00:04:33,720 --> 00:04:37,390
+general methods next. 
+But then there is a different question 
+
+69
+00:04:37,390 --> 00:04:41,487
+that is just as important. 
+If we have a method, can we automate this 
+
+70
+00:04:41,487 --> 00:04:44,423
+method? 
+And the answer again is yes, but that's a 
+
+71
+00:04:44,423 --> 00:04:48,740
+very complex process and we will get to 
+that later in this course. 
+
+72
+00:04:48,740 --> 00:04:54,390
+In fact, automatically finding good 
+euristics has probably been one of the 
+
+73
+00:04:54,390 --> 00:04:59,581
+most hot topics in the AI planning 
+research over the last ten, fifteen 
+
+74
+00:04:59,581 --> 00:05:03,817
+years. 
+So here's a general method for finding 
+
+75
+00:05:03,817 --> 00:05:07,760
+good heuristic. 
+The idea is based on a simplified problem 
+
+76
+00:05:07,760 --> 00:05:12,049
+or a relaxed problem. 
+Usually a problem is defined in terms of 
+
+77
+00:05:12,049 --> 00:05:17,375
+states, and actions that are applicable 
+in states, and achieves certain things 
+
+78
+00:05:17,375 --> 00:05:21,802
+in, successor states. 
+So what we have is restrictions on these 
+
+79
+00:05:21,802 --> 00:05:27,335
+actions when they are applicable, when we 
+can use them, and which states they are 
+
+80
+00:05:27,335 --> 00:05:30,036
+useful. 
+What we can do is relax those 
+
+81
+00:05:30,036 --> 00:05:33,582
+restrictions. 
+So we can look at the restrictions 
+
+82
+00:05:33,582 --> 00:05:39,271
+defined in the original problem, and drop 
+some of them or make them less hard. 
+
+83
+00:05:39,271 --> 00:05:43,630
+And that gives us a new problem, which is 
+the relax problem. 
+
+84
+00:05:43,630 --> 00:05:47,346
+And then the following should be fairly 
+obvious to see. 
+
+85
+00:05:47,346 --> 00:05:52,211
+Namely that the cost of an optimal 
+solution for a relaxed problem is an 
+
+86
+00:05:52,211 --> 00:05:55,660
+admissible heuristic for the original 
+problem. 
+
+87
+00:05:55,660 --> 00:06:00,126
+In fact it's admissible and consistent, 
+but since we haven't defined consistent 
+
+88
+00:06:00,126 --> 00:06:04,175
+yet, I won't go into that. 
+So you just, you should see why it is 
+
+89
+00:06:04,175 --> 00:06:07,522
+admissible. 
+It's very simple to see because the 
+
+90
+00:06:07,522 --> 00:06:13,148
+optimal solution for our original problem 
+is of course also a solution for our 
+
+91
+00:06:13,148 --> 00:06:17,065
+relaxed problem. 
+We've only relaxed the restrictions on 
+
+92
+00:06:17,065 --> 00:06:20,556
+the actions. 
+So, an optimal solution for the relaxed 
+
+93
+00:06:20,556 --> 00:06:25,963
+problem can have, at most, as many steps 
+as the optimal solution for our original 
+
+94
+00:06:25,963 --> 00:06:29,951
+problem, because that is a solution for 
+the relaxed problem. 
+
+95
+00:06:29,951 --> 00:06:35,359
+In general, what we have is that in our 
+relaxed problem, we allow shortcuts to be 
+
+96
+00:06:35,359 --> 00:06:40,901
+taken with these relaxed actions that are 
+not possible in our original problem, so 
+
+97
+00:06:40,901 --> 00:06:45,160
+if we take out these shortcuts, we end up 
+with longer solutions. 
+
+98
+00:06:46,700 --> 00:06:51,033
+And since this method is quite abstract I 
+want to illustrate this with an example 
+
+99
+00:06:51,033 --> 00:06:55,314
+and we will use the 8 puzzle that we've 
+seen before and the actions that are 
+
+100
+00:06:55,314 --> 00:07:00,063
+defined for this 8 puzzle. 
+So here is the original condition that we 
+
+101
+00:07:00,063 --> 00:07:05,862
+had for the applicability of actions. 
+Namely a tile can move from square a to 
+
+102
+00:07:05,862 --> 00:07:11,359
+square b if a is horizontally or 
+vertically adjacent to b and b is blank. 
+
+103
+00:07:11,359 --> 00:07:16,857
+So the condition we have here is a 
+conjunction of two sub-conditions and 
+
+104
+00:07:16,857 --> 00:07:22,129
+that should tell us how we can build a 
+relaxed condition quite easily. 
+
+105
+00:07:22,129 --> 00:07:26,346
+Namely by dropping one of the two parts 
+or both of them. 
+
+106
+00:07:26,346 --> 00:07:30,312
+And this is how this works. 
+If we drop the second part. 
+
+107
+00:07:30,312 --> 00:07:33,963
+Then B is blank. 
+We end up with this heuristic here. 
+
+108
+00:07:33,963 --> 00:07:38,330
+And that tells us that a tile can move 
+from square A to B if. 
+
+109
+00:07:38,330 --> 00:07:41,523
+A is adjacent to B. 
+I've dropped the horizontally or 
+
+110
+00:07:41,523 --> 00:07:44,655
+vertically. 
+And what we get there, of course then, is 
+
+111
+00:07:44,655 --> 00:07:49,507
+the Manhatten block distance heuristic. 
+Because we now allow a tile to be moved, 
+
+112
+00:07:49,507 --> 00:07:54,297
+no matter where it is moving to, which 
+gives us exactly the block distance for 
+
+113
+00:07:54,297 --> 00:07:57,245
+this tile. 
+And if we add all those up, that's the 
+
+114
+00:07:57,245 --> 00:08:01,851
+Manhatten block distance we've seen. 
+The second one is, if we drop the first 
+
+115
+00:08:01,851 --> 00:08:06,396
+part of this definition, so that the 
+adjacency distance is dropped, then we 
+
+116
+00:08:06,396 --> 00:08:10,327
+end up with a heuristic. 
+That's a tile can move from A to B, if B 
+
+117
+00:08:10,327 --> 00:08:13,307
+is blank. 
+And finally we can have a heuristic if we 
+
+118
+00:08:13,307 --> 00:08:17,699
+drop both conditions that says a tile can 
+move from a to b and there are no 
+
+119
+00:08:17,699 --> 00:08:20,473
+conditions. 
+And of course this then gives us the 
+
+120
+00:08:20,473 --> 00:08:24,404
+misplaced tiles heuristic. 
+We simply count those tiles that can move 
+
+121
+00:08:24,404 --> 00:08:28,969
+to where they need to be in one step 
+because there's no conditions on how they 
+
+122
+00:08:28,969 --> 00:08:32,416
+can move. 
+So what you see here is we've derived two 
+
+123
+00:08:32,416 --> 00:08:38,409
+of the heuristics that we've already used 
+for the 8 puzzle using the method we've 
+
+124
+00:08:38,409 --> 00:08:43,148
+just introduced by using relaxed 
+conditions of the actions that are 
+
+125
+00:08:43,148 --> 00:08:49,452
+applicable in our problem. 
+So this concludes this section of the 
+
+126
+00:08:49,452 --> 00:08:53,640
+course on AI search technology and the A* 
+algorithm. 
+
+127
+00:08:53,640 --> 00:08:58,048
+You should understand now that a 
+heuristic function encodes 
+
+128
+00:08:58,048 --> 00:09:03,118
+problem-specific knowledge in a 
+problem-independent way by mapping a 
+
+129
+00:09:03,118 --> 00:09:07,820
+state to a real number. 
+This information about search states can 
+
+130
+00:09:07,820 --> 00:09:10,906
+be used to make the search more 
+efficient. 
+
+131
+00:09:10,906 --> 00:09:16,343
+In general, this is done by using an 
+evaluation function that tells us how 
+
+132
+00:09:16,343 --> 00:09:20,805
+good a search node is. 
+Greedy best first search simply uses the 
+
+133
+00:09:20,805 --> 00:09:25,374
+heuristic function as the evaluation 
+function but the better solution is 
+
+134
+00:09:25,374 --> 00:09:30,068
+provided by the A* algorithm. 
+The evaluation function used by A* is 
+
+135
+00:09:30,068 --> 00:09:35,075
+simply the sum of the heuristic function 
+for a node plus the cost of getting to 
+
+136
+00:09:35,075 --> 00:09:39,117
+that node in the first place. 
+We've also seen that A* is optimal. 
+
+137
+00:09:39,117 --> 00:09:43,702
+It will always find an optimal solution. 
+And it is optimally efficient. 
+
+138
+00:09:43,702 --> 00:09:47,370
+It does not expand more nodes than 
+absolutely necessary. 
+
+139
+00:09:47,370 --> 00:09:52,545
+But I've also shown you that A* is not 
+the answer to all questions, specifically 
+
+140
+00:09:52,545 --> 00:09:56,868
+when it comes to graph surge. 
+Finally, since good heuristics are so 
+
+141
+00:09:56,868 --> 00:10:01,912
+important for A*, I've also talked a 
+little bit about what good heuristics are 
+
+142
+00:10:01,912 --> 00:10:05,973
+and how to find them. 
+So now a big tick because you understand 
+
+143
+00:10:05,973 --> 00:10:06,760
+all of that. 
+

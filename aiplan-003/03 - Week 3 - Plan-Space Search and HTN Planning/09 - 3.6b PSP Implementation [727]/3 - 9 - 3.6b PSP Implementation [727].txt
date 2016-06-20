@@ -1,0 +1,212 @@
+Once we have computed the potential 
+resolvers for a given flaw in our plan, 
+we need to select one of these and apply 
+it to the current partial plan. 
+So, we'll refine our current partial plan 
+using the resolver we've just computed. 
+And the way this is done is very simple. 
+We have to add elements to the plan, 
+namely those elements that are specified 
+in our resolver. 
+So, this could be an ordering constraint, 
+it could be one or more binding 
+constraints in our variables, 
+it could be a new causal link, or it 
+could be a new action. 
+Or a combination of any of those, 
+whatever our resolver specified. 
+In general, we have to make sure that our 
+constraints that are maintained in the 
+plan are consistent. 
+But this is not required here. 
+This is the case because our function 
+that computes the resolvers for a given 
+flaw already took care of that. 
+So, we never consider resolvers that 
+would make our variable binding or 
+ordering constraints inconsistent. 
+But when we resolve a flaw and when we 
+introduce new causal links or new 
+actions, what we can do is we can 
+introduce new flaws into the plan by 
+doing so. 
+And that means we simply have to update 
+the flaws that know about in our plan, 
+and these are unachieved preconditions, 
+and we've seen that earlier how this can 
+be done with open goals computation, or 
+the threats. 
+And again, we had a function earlier that 
+does that incrementally. 
+During our plans based search, we 
+maintain a set of ordering constraints. 
+And here are a few words on the 
+implementation of ordering constraints. 
+In fact, you could see the ordering 
+constraints as an independent module that 
+can be plugged into our planner and that 
+has two access operations that we need to 
+support. 
+The first one is, we need to query 
+whether an action in our plan must come 
+before another action. 
+So, we need to be able to find out 
+whether two actions are already ordered 
+with respect to each other. 
+And then, of course at some stage, we 
+want to add new orderings to our 
+constraint network. 
+So, we want to assert that an action ai 
+must come before an action aj. 
+And let us assume that we don't have to 
+do consistency checking when we add an 
+ordering constraint to our constraint 
+network. 
+The first internal representation is this 
+one here. 
+Where we maintain the sets of 
+predecessors and successors for each 
+action, simply as they were given to the 
+constraint network. 
+So, if we have an action, we say this 
+ordered with respect to some other 
+action. 
+And then, we add more orderings as we go 
+along. 
+Then, we would just store these as we 
+were given these. 
+So now we're starting a third, fourth 
+ordering, here that says this action has 
+to come before this action. 
+So, the first option is to store the 
+orderings as given, which would store 
+four ordering constraints in this case. 
+This means we have a polynomial number of 
+orderings that we need to store, 
+polynomial in the number of nodes. 
+And every time we query this constraint 
+network, we have to compute the 
+transitive closure. 
+For example, if we want to query whether 
+this node comes before this node, we have 
+to compute the transitive closure. 
+The second option would be to store only 
+direct predecessor-successor relations. 
+So in this case, we would not store this 
+relation here. 
+This would not be a part of our internal 
+representation. 
+That would save some storage. 
+But the problem is, if we query the order 
+between these two nodes, again we have to 
+compute the transitive closure. 
+The final option would be to maintain the 
+transitive closure explicitly. 
+So, in this case, every time we assert a 
+new ordering we have to compute the 
+transitive closure with respect to all 
+other actions in our plan and maintain 
+every link explicitly. 
+That means when we query, we're very 
+fast. 
+But the problem is now that the 
+assertion, the adding of an ordering, 
+becomes a relatively slow operation. 
+In general, there's a trade-off between 
+space and time complexity between these 
+different representations. 
+But in the planner, we can assume that 
+the query is probably the most common 
+operation so we want this to be the 
+fastest, and therefore the third 
+representation is most likely to be the 
+best. 
+Similar to the ordering constraints, we 
+can think of the variable binding 
+constraints as the module that we can 
+plug into the planner. 
+And then, we have several types of 
+constraints that we've already looked at. 
+Firstly, there are unary constraints that 
+say that a variable x has to be of a give 
+domain. 
+This domain is a set of values, including 
+the case where it can be just one single 
+value, so we have a specific value for 
+our variable. 
+Then, we have equality constraints that 
+assert that two variables must have the 
+same value. 
+So, we don't know what values they will 
+take, but we know that eventually in our 
+final plan, they must have the same 
+value. 
+And finally, we have inequalities where 
+we say the two variables must have 
+different values. 
+The unary constraints and the equality 
+constraints, they are quite easy. 
+So these can be dealt with, in linear 
+time and don't cause any problems. 
+This, however, the inequality causes a 
+lot trouble because inequality 
+constraints cause exponential complexity 
+in this type of constraint network. 
+So with the inequalities, this becomes a 
+general constraint satisfaction problem 
+and a general constraint satisfaction 
+problem is NP-complete. 
+In some sense, this is really bad news. 
+Introducing variable inequalities was one 
+of the ways we had to resolve flaws, 
+namely flaws that are threats. 
+So, we have to deal with variable 
+inequalities. 
+But, that means that every step in out 
+plan refinement gives rise to an 
+NP-complete problem that we need to 
+solve, namely to maintaining the 
+consistancy of the variable binding 
+constraints. Finally, our generic plan 
+space search planner has the same two 
+properties that our states based planner 
+had, 
+namely it is sound and complete. 
+And that means whenever our planner is 
+given by zero or initial plan, 
+and that can be refined into a solution 
+plan, 
+then our function PSP of pi zero will 
+return a solution plan. 
+Or more explicitly, soundness means that 
+if the planner returns a result, then 
+this is indeed a solution plan. 
+And completeness means if there is a 
+solution plan, then our planner will be 
+able to find the solution plan. 
+The proof of this type of proposition is 
+similar to what we've seen earlier. 
+So, we do it by induction, and as our 
+loop invariant, we use that the ordering 
+and variable binding constraints are 
+consistent at every stage of the 
+algorithm. 
+So, we maintain this as part of the main 
+loop in the algorithm. 
+Then, we know that the planner only 
+returns a plan if this plan is flawless. 
+So, the plan is flawless and the ordering 
+and variables bindings are consistent, 
+therefore, it must be a solution plan. 
+And completeness can also be shown by 
+induction, this time induction on the 
+number of actions in our solution plan. 
+So, we start off with our initial plan 
+that contains two actions, the two dummy 
+actions. 
+And then, we show that for every plan 
+that is one action bigger. 
+There exists an execution trace of our 
+non-deterministic algorithm that can find 
+that solution plan. 
+

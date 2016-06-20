@@ -1,0 +1,148 @@
+So you have already seen that methods 
+share some properties with operators. 
+And two of the properties they also share 
+are applicability and relevance, although 
+they are defined different here. 
+Applicability is actually very similar. 
+So we say a method instance is applicable 
+in a state s if all the positive 
+conditions of the method are satisfied in 
+the state so they must be elements in the 
+state and none of the negative 
+pre-conditions must be in that state. 
+So the intersection of the state and the 
+negative pre-conditions must be empty. 
+This is exactly the same way we've tested 
+whether the pre-conditions of an action 
+are satisfied in a state. 
+But the definition of relevance is quite 
+different from what we've seen previously 
+so we want to define when a method 
+instance m is relevant for task t. 
+Since we don't have effects in methods 
+and we don't have goals in planning 
+problems, the definition of relevance 
+must be quite different from what we've 
+seen previously. 
+And we define relevance here with respect 
+to tasks that we want to accomplish. 
+And a method is relevant for a task if 
+there is a substitution sigma such that 
+the task that we're trying to accomplish 
+is the same as the task described in the 
+method. 
+Remember, the task of a method describes 
+what we can accomplish with that method. 
+And if we have a task, t, in a task 
+network, that we can make the same, with 
+the substitution sigma, as the task of 
+the method, then we can use this method 
+to accomplish the task. 
+And the method is relevant for the task. 
+And if we have a task network that 
+contains a task, t. 
+And we have a method that is relevant for 
+this task under some substitution sigma. 
+Then we can apply this method by 
+decomposing the task. 
+So we define the decomposition of a task 
+t, by a relevant method m under 
+substitution sigma. 
+And we define it as follows. 
+We define a decomposition function, 
+delta, that takes exactly those three 
+arguments, the task, the method and the 
+substitution. 
+And it simply returns the instantiated 
+network that is associated with the 
+method. 
+So, every variable in this network is 
+replaced according to the substitution 
+or, if the task was totally ordered, then 
+we can return the sequence of sub-tasks 
+instantiated with the substitution, 
+sigma. 
+That is what we call the decomposition 
+and delta is the decomposition function 
+for a task given a method and a 
+substitution. 
+And here is another quick example to 
+illustrate applicability and relevance in 
+the dark worker robot domain. 
+The world state that we have is the same 
+state we've seen earlier. 
+We have 1 crane, and 3 piles. 
+And there are 3 containers on the first 
+pile. 
+Now, suppose our task t is to move the 
+stack p1 to q. 
+So we don't have a task that says in 
+[UNKNOWN] that way, we just have a task 
+to move it at all. 
+And we want to move it from p1 to some 
+other unspecified stack because q is a 
+variable here. 
+The state s is as shown here so this is 
+our initial world state. 
+In which we have this task to accomplish. 
+Then we can look at the following method 
+instance, mi. 
+Which is recursive move, P1, P2, C1, C2. 
+So remember, this is the pile from which 
+we're moving, this is the pile to which 
+you're moving. 
+This is the container we're trying to 
+move. 
+And this is the container from which 
+we're taking it. 
+To check for applicability, we need to 
+examine the pre-conditions of this method 
+and if you remember, there were two 
+positive pre-conditions associated with 
+this method namely instantiated that the 
+container, c1 must be the top of the 
+origin pile. 
+And we can see in the state here, c1 is 
+the top of the origin pile so that 
+pre-condition is satisfied. 
+And the other pre-condition was that the 
+container, c1, that we're moving Is on 
+top of c2. 
+And again, you can see, c2 is the second 
+container here, so the second 
+precondition is also satisfied. 
+There were no negative preconditions, so 
+we don't need to worry about those, which 
+means, our method, m i, is applicable in 
+the state shown here. 
+And to test for relevance, we've got to 
+see whether we can make the task 
+accomplished by this method the same as 
+the task that we are trying to 
+accomplish. 
+And indeed, this is the case. 
+Because the task symbol is already the 
+same. 
+It is move stack, 
+that is also accomplished by recursive 
+move. 
+And the 2 parameters. 
+of the methods tasks are p1 and p2. 
+And p1 is also the first parameter of the 
+task we're trying to accomplish. 
+The second one is q, 
+so we can make these the same if we apply 
+the substitution where we replace q by 
+p2. 
+In which case the task would be 
+move-stack (p1,p2) and the same for the 
+task we're trying to accomplish and the 
+task that is accomplished by the method. 
+So, the method is indeed relevant for 
+this task under the substitution. 
+This means you should now be familiar 
+with three new concepts that were 
+introduced for task network planning. 
+Namely, tasks, task networks, and 
+methods. 
+

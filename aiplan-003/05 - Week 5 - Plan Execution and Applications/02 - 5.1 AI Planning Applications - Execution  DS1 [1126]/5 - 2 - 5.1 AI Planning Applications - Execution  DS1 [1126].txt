@@ -1,0 +1,297 @@
+This section of the course, we'll look at 
+practical applications of AI planning and 
+the use of plans when executed. 
+It'll also describe some common themes 
+found in many practical AI planners. 
+Plans only become useful when they're 
+executed. 
+Even the earliest AI planners were linked 
+with plan execution capabilities, as 
+shown by the use of the STRIPS planners 
+alongside the PLANEX, plan execute over 
+40 years ago in the Shakey robot. 
+Sacerdoti's NOAH planner was used to 
+follow along an apprentice engineer 
+repaired a hydraulic pump and the system 
+maintained a model of the state of the 
+pump to build, suggest fixes when the 
+apprentice ran into problems. 
+Nonlin maintained the goal structure or 
+rationale behind plan elements and could 
+use this as the basis for plan execution 
+monitoring to spot significant 
+divergences during the required outcome 
+[INAUDIBLE] and their later uses to 
+satisfy constraints in the plan. 
+In some cases, alternative contributors 
+to satisfy those required constraints can 
+be found in the existing plan without 
+changing it. 
+In other cases, problems could be spotted 
+well in advance and suitable changes made 
+before the problem became critical. 
+SRI International work on SIPE and PRS, 
+the Procedural Reasoning System, use rich 
+representation of plans and processes, 
+support execution, and recovery from 
+errors. 
+Work at the University of Essex, in the 
+U.K. 
+Created a reactor planner, which 
+maintained a representation of the flaws 
+in the plan whether those arose at plan 
+time or during execution. 
+It could apply fixes to these flaws in a 
+uniform manner, to provide an integrated 
+planning, execution, and monitoring 
+framework. 
+Work in Chicago on RAP explored a 
+reactive agent architecture for 
+representing plans that were suited for 
+real-time plan execution monitoring in 
+robots, for example. 
+Our own O-Plan system include algorithms 
+for plan repair and replanning in both 
+high tempo and less time constraint 
+situations when execution monitoring 
+indicated problems. 
+Was not at all surprising is that many of 
+the AI planners which were created to 
+address practical applications also 
+include technique support, execution, and 
+monitoring of the outcome of plan 
+execution. 
+We'll now look in some depth, at a good 
+example of our AI planning and plan 
+execution techniques we used in practice. 
+We'll see the importance of integrating 
+planning into other key systems for 
+real-time task assignment, system 
+diagnosis, condition monitoring, and 
+execution time plan repair. 
+Deep Space 1 launched from Cape Canaveral 
+in 1998 and tested twelve advanced high 
+risk technologies from space including 
+ion thrusters and advanced on-board 
+automation. 
+In a successful extended mission, it 
+operated through to 2001 and encountered 
+Comet Borrelly. 
+Deep Space 1 included a remote agent 
+experiment, RAX, to demonstrate both 
+ground-based and on-board AI remote plan 
+execution. 
+The spacecraft control application domain 
+posed some tough requirements. 
+High reliability was essential and issues 
+could arrise from single point system 
+failures are for more complex multiple 
+cause problems. 
+Deep space 1 operated under tight 
+resource constraints for fuel and power, 
+and frequently there would be multiple 
+goals, you could not all be satisfied at 
+the same time. 
+Of course, given the nature of a very 
+high speed fly-by of a target comet, 
+deadlines were fixed and very tight. 
+There's no second chance return if 
+essential observations and scientific 
+goals are not achieved due to some 
+precondition, not being satisfied, or 
+some systems not being fully prepared at 
+the critical time. 
+Spacecraft did have sensors to report its 
+status and the status of its instruments, 
+but these only provide limited 
+observability of the many conditions 
+under which the spacecraft can operate. 
+And of course. 
+many things can be happening at the same 
+time on a spacecraft. 
+And some operations can take a long time 
+to complete when started. 
+There's no possibility of fully ordering 
+and completing one activity before 
+another must begin. 
+So Deep Space 1 posed a very interesting 
+and realistic example of a remote device 
+that we might wish to control via more 
+automated AI planning methods. 
+The Deep Space 1 remote agent approach 
+was to used constraint based planning and 
+scheduling. 
+It had to deal with robust multi-threaded 
+execution of the activities and it had to 
+integrate with model-based fault 
+diagnosis and reconfiguration. 
+Real time control and monitoring of the 
+spacecraft was the key issue. 
+Deep Space 1 could operate at various 
+levels of autonomy. 
+It could execute single commands or 
+sequences of activities which are to be 
+executed at some particular times. 
+It could seek to achieve some given goal. 
+It could maintain a model of the state of 
+the spacecraft and detect errors from 
+incoming sensor information. 
+It could deal with a scripted plan and 
+decompose that into greater levels of 
+detail and it could deal with on-board 
+back-to-back plan generation, execution 
+and plan recovery in its most autonomous 
+mode. 
+This table provides a summary of the 
+levels of autonomy on-board Deep Space 1 
+and shows what elements can be done on 
+the ground, on the on on-board planner 
+and scheduler, and on the on-board 
+execution system. 
+So this goes right through to the most 
+autonomous modes where plans can be 
+prepared on the ground, they can be 
+completed on-board the spacecraft, then 
+take into account the situation the 
+spacecraft is in and could be 
+autonomously executed. 
+So Deep Space 1 systems cover everything 
+from the ground control through what's 
+happening on the spacecraft itself. 
+It involves planning, execution, and 
+monitoring of the outcome of plans. 
+Deep Space 1 remote agent experiment 
+functionality includes the planner 
+schedule and mission manager, 
+which deals with the on-board generation 
+of plans dealing with replanning when 
+failures occur and so on. 
+The Executor provides the low-level 
+commanding interface that links back to 
+the planet to initiate on-board planning 
+when it's needed, 
+and is linked to the mode identification 
+recovery or diagnosis system on the 
+spacecraft to make sure that we can 
+confirm command execution meets its 
+objectives. 
+Deep space 1 planning could deal with a 
+diversity of goals. 
+Final state goals, such as turn off the 
+camera once you're done using it, 
+schedule goals such as communicate to 
+earth at pre-specified times. 
+Periodic goals such as ensuring you take 
+a picture for navigation purposes every 
+two days. 
+Information-seeking goals such as asking 
+the on-board navigation system to return 
+its profile for the thrusters. 
+continues accumulation goals such as 
+making sure that over a given period, you 
+make sure you accumulate enough thrust 
+but it don't, these actions don't have to 
+be on at specific times. 
+And then default goals such as when 
+you've got nothing else to do, point the 
+high-gain antenna back to the earth to 
+maintain good communications with the 
+earth. 
+And it can deal with a diversity of 
+constraints, 
+state action constraints such as to take 
+a picture, the camera must be on. 
+Dealing with finite resources such as 
+power constraints. 
+Dealing with true parallelism, 
+where for instance, the attitude control 
+system must work in parallel with the ion 
+propulsion system controller. 
+Functional dependencies, 
+example is the duration of a turn depends 
+on its source and its destination. 
+Continuously varying parameters such as 
+counting the amount of accumulated 
+thrust, under the constraints that come 
+from other kinds of specialized modules 
+such as the on-board navigation system. 
+A Deep Space 1 plan is in the form of 
+timelines of the different instruments 
+and when they're turned on and off, and 
+various constraint, time constraints and 
+all kinds of constraints, apply between 
+the elements of this plan. 
+This tool shows the stages of the exact 
+system on-board the spacecraft. 
+A Java applet was provided to allow 
+observers to watch the remote agent 
+experiments in real-time while it was 
+operating. 
+The actual flight experiment for Deep 
+Space 1 remote agent experiment took 
+place 17th and the 21st of May, 1999. 
+RAX was activated and controlled the Deep 
+Space 1 Spacecraft autonomously, 
+but some issues and alarms did arise. 
+There was a divergence of the predicted 
+value of the state of the ion propulsion 
+system and the actual observed values. 
+This was determined to be due to the 
+infrequency of real-time monitor updates 
+on the spacecraft. 
+They EXEC deadlocked in use, 
+the problem was diagnosed and a fix was 
+designed quickly, 
+but it was not uploaded to Deep Space 1 
+for fears of the safety of the flight 
+systems. 
+This condition hadn't appeared in 
+thousands of ground tests, 
+which indicates the need for formal 
+verification methods for this type of 
+safety and mission critical software. 
+Following later experiments, RAX was 
+deemed to have achieve its aims and 
+objectives. 
+RAX controlled the spacecraft 
+autonomously for two days. 
+On the first day, typical operations took 
+place. 
+The ion propulsion system was turned on 
+and off at various times. 
+The attitude control system was operated 
+when appropriate, 
+some images were taken, 
+some on-board planning was performed. 
+The second day included the injection of 
+some simulated failures of the 
+radiometric tracking and thruster systems 
+in order to show how the planet could 
+cope with these events. 
+The final report to the Deep Space 1 
+remote agent experiment concluded that 
+the validation objectives had been 
+achieved. 
+The system was able to do what both 
+ground-based and on-board autonomously 
+generated plans and execute those plans 
+in the face of failures and re-plan where 
+required. 
+And it did this through capabilities, 
+which included robust goal-based 
+commanding, and integration with the 
+on-board model-based fault recovery 
+system. 
+So to summarize, Deep Space 1 remote 
+agent experiment featured an AI planner 
+outer level with re-planning capability, 
+detailed constraint handling for time and 
+resources, 
+integration with system diagnostics and 
+analysis, 
+integration of plan exclusion and 
+monitoring, 
+rich domain description languages, 
+and involved comprehensive user 
+interfaces. 
+

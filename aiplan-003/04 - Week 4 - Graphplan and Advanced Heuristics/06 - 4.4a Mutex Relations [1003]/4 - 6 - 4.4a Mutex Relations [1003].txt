@@ -1,0 +1,237 @@
+>> Earlier, when we looked at the planning
+graph, I already mentioned that there is
+something missing in this graph.
+There are certain nodes missing, and there
+were certain edges missing.
+And that's what I said earlier, that there
+were no mutex relations included.
+So what we will do now is look at these
+missing nodes, and we will also look at
+the missing edges, which define mutual
+exclusivity between propositions and
+actions.
+So that's what we'll be looking at next,
+the mutex relation between propositions
+and actions.
+Earlier we have looked at independence
+between actions in the same action layer.
+We have seen that 2 actions in the same
+action layer that are dependent cannot be
+included in our final layer plan.
+Now we will have a look at how this effect
+propagates through the planning graph.
+And first we will look at dependent
+propositions, and here is an example.
+This is part of the planning graph we have
+looked at earlier, and you will note that
+in the proposition layer p1, we have the
+propositions r2 and ar.
+That is the robot r is at location 2, and
+container a is loaded on to the robot r.
+The proposition r2 is present in that
+proposition layer, because it is a
+positive effect of the action Mr12.
+The proposition ar is in that layer,
+because it is a positive effect of the
+action Lar1.
+Now you may remember these 2 actions from
+an example we have looked at earlier and
+that showed that Mr12 and Lar1 are not
+independent.
+So these are dependent actions, which
+means they cannot be selected from this
+action layer for our final plan.
+But of course if these actions are the
+only reason why these propositions are in
+this proposition layer, and these actions
+cannot possibly occur together, that
+means, the 2 propositions also can't
+possibly occur together, at least not in
+this proposition layer.
+So that means, r2 and ar are incompatible,
+in proposition layer p1.
+Another example would be to look at the
+propositions r1 and r2 in proposition
+layer b1.
+Clearly these 2 propositions are a
+positive and negative effect of the same
+action.
+So if we include this action in our plan
+we can't have r1 and r2 both be true in
+p1.
+So again they are incompatible in this
+proposition they are, r1, and r2 are
+incompatible in proposition layer p1.
+So we have seen 2 reasons here why 2
+propositions in a proposition layer may be
+incompatible.
+The first one shown by this example was
+that we have 2 dependent actions that are
+the only producers of the 2 propositions.
+Then the 2 propositions must also be
+dependent.
+And the second reason was, that we had an
+action, that had the two propositions we
+were looking at, has positive and negative
+effects, and that again means, they are
+incompatible in that proposition layer.
+Now, we will look at how we can simplify
+this, by dropping two of the two cases,
+namely the second case.
+And we can achieve this by looking at the
+things that were currently missing from
+the planning graph and those are the no-op
+actions.
+So introduced no-op operations for a
+proposition P and we give those the name
+AP and the purpose of these is that they
+carry forward the proposition P from one
+proposition there To the next, so they
+have only one precondition.
+Namely that the proposition P is true in
+the first proposition there.
+And then, they have one effect that makes
+the proposition true in the next
+proposition layer.
+They are, that means in this example we
+would actually need 6 additional actions
+in the action layer A1, 1 for each of
+these proposition symbols that we carry
+forward.
+So, we have a No-Op operation for each one
+of those.
+I want to look at only one specific No-Op
+operation though, namely the one for Ar1
+that carries the symbol r1 forward.
+And now let's look at the same example we
+just looked at, in the second case of the
+previous slide, where we looked at the
+propositions r1 and r2, that were
+positive, and the negative effects of
+Mr12.
+Now, we can see that, r1 is also a
+positive effect, of Ar1, and r2 is a
+positive effect of Mr12.
+But when you think about it for a second,
+you will see that these two actions are
+not independent so they cannot occur
+together in our final plan.
+And that of course means that the two
+propositions are incompatible in layer p1,
+but this time for a different reason.
+Namely because the two actions that add
+them are incompatible.
+So the introduction of the No-Op
+operations means we don't have to
+explicitly carry for or what proposition
+Limbels from one layer to the next,
+because the No-Op actions do that for us.
+And they simplify our incompatibility test
+for propositions in the same proposition.
+Layer.
+Now that you've seen these examples, it
+should be fairly easy to understand the
+definition, of what it means for 2
+propositions to be mutually exclusive.
+So 2 propositions, p and q, that are in
+the same proposition layer pj are, mutex,
+which stands for mutually exclusive, if
+the following two conditions hold.
+Firstly, every action in the preceding
+action layer, tha'st Aj, that has P as a
+positive effect, including the noop
+operations, is mutex with every action in
+Aj, that has Q a positive effect.
+So if we find a pair of actions.
+In the action layer aj that have p and q
+as a factor respectively and these two
+actions are independent, then we know that
+we can also have p and q as propositions
+in the following proposition layer.
+And the other way in which we can have p
+and q compatible in the following
+proposition layer is if there is a single
+action in Aj, that has both p and q as
+positive effects or the other way around.
+If there's no such action, then the two
+propositions may be mutually exclusive.
+In other words p and q are not mutex if
+they are produced by a pair of independent
+actions or by a single action.
+I hope you understood this so far because
+now I am going to confuse matters
+slightly.
+So, when I talk, I talk about independent
+actions, but what's actually written here
+in the definition is that we require the
+two actions and the same action layer to
+be mutex with each other, and that we
+haven't defined here, but we will get to
+the mutex relation between actions
+shortly.
+Now before I continue here comes a little
+bit of notation and I want to introduce
+the symbol mu Pj for the set of all pairs
+of propositions p and q, all those pairs
+that are in proposition their Pj and that
+are mutex.
+So mu Pj are old mutex pairs in
+proposition layer Pj.
+And for those of you who prefer algorithms
+to formal definitions, here's the
+pseudocode that defines mutex for
+proposition.
+Here we define the function mutex that
+takes 3 arguments.
+The first 2 are the 2 prepositions in a
+preposition layer that we're trying to
+test for mutual exclusivity.
+And the third component is something that
+we haven't seen, but as before this is
+something we will see shortly.
+This is simply the set of all mutex
+actions in action layer aj.
+Then we simply go through two Nestas loops
+here.
+The outer loop tests all the producers of
+proposition p1.
+So there should be an action a one that
+produces this proposition.
+And the inner loop simply takes the
+actions that produce proposition p2.
+So we test all possible combinations of
+producers for the two propositions.
+And if we find a single pair, a1, a2 that
+is not mutex, that is not in our given
+mutex relation between the actions, then
+we can return false because we know these
+two propositions can't be mutex.
+We found a pair of actions that can
+produce them and these two actions are not
+mutually exclusive.
+Otherwise, if we can't find such a pair,
+then we return true, and we know that
+these 2 propositions in their proposition
+layer must be mutually exclusive.
+Now you may ask, what happened to the
+second part in the definition where we can
+have a single action that produces both?
+Well, this is actually covered by this
+algorithm, when you select a1 and a2 to be
+the same action, then it produces both the
+propositions we're looking at, and of
+course an action is never mutually
+exclusive to itself.
+So this case is covered with this simple
+algorithm.
+Now a quick word about the time complexity
+of this algorithm and we see here that we
+have two loops over all possible actions.
+So if we assume that we have a maximum of
+m possible actions including the no-op
+operations, then this algorithm will run
+in o of m squared because we're going
+through two loops over all possible
+actions and those are of course limited to
+all the actions we might have.
+So, it's polynomial.

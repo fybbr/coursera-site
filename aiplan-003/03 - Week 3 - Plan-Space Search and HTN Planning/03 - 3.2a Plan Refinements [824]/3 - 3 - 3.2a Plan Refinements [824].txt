@@ -1,0 +1,229 @@
+We have now seen what the search states 
+in our new search space look like, 
+they are partial plans. 
+And each partial plan consists of the 
+four components just described. 
+Next, we will look at the state 
+transitions in our new search space. 
+These state transitions can be understood 
+as Plan Refinement Operations as they 
+take partial plan and refine it into 
+different partial plan. 
+And since there are four components to a 
+partial plan, there are also four 
+principle Plan Refinement Operations that 
+we will look at next. 
+The first component of a partial plan 
+where the actions or to be more precise, 
+partially instantiated operators. 
+In general, the partial plans will be 
+considering containing the following 
+actions. 
+The first thing they contain is a 
+representation of the initial state, and 
+then they will also hold the 
+representation of the goal conditions. 
+Having initial state and goal conditions 
+as part of the actions in our partial 
+plan simplifies the representation. 
+Normally, most of the actions in our plan 
+will be partially instantiated operators 
+from our domain. 
+One thing that is important here is that 
+when an operator is added to our plan as 
+a partially instantiated deduction, it 
+gets a new set of variables that is 
+different than all the variables we 
+previously used. 
+So, the actions in our plan don't share 
+variables. 
+Adding an action to a plan is a plan 
+refinement operation. 
+But, I've already talked about the least 
+commitment principle in planning, and 
+that means we only want to introduce new 
+actions into our plan for a good reason. 
+And the two reasons we have for adding 
+new actions to a plan can be that we have 
+an unsatisfied pre-condition in our plan 
+that we still need to achieve. 
+So, there's is another action that has a 
+pre-condition that is not supported 
+anywhere, then we may add an action that 
+has a pre-condition as an effect. 
+Or the second case is, that we an 
+unsatisfied goal condition that we still 
+need to satisfy. 
+and we may use an effect of the newly 
+added action to satisfy that goal 
+condition. 
+One important distinction to the type of 
+planning we've done previously is that we 
+can add an action anywhere in the plan. 
+In forward search, we've always added an 
+action to the end of the plan we're 
+currently building up. And in backward 
+search, we've added it to the beginning. 
+Here, we have no such restriction. 
+We can add new actions anywhere in the 
+plan. 
+Here is pictorial representation of what 
+this could look like. 
+We start with the empty plan. 
+The empty plan consists of the initial 
+state and the goal. 
+The initial state contains all of those 
+things that are initially true. 
+So, all the propositions that are true in 
+the initial state are added here as 
+assertions. 
+The goal contains all the goal conditions 
+we want to be true. 
+I've used different colors for the 
+different propositions here to indicate 
+what is already true and what still needs 
+to be achieved. 
+So, all the propositions in the initial 
+state are true, and we don't need to 
+achieve them anymore. 
+Whereas the propositions in the goal, 
+still need to be achieved in someway, so 
+they are red. 
+Now, adding an action simply takes a 
+partially instantiated operator and adds 
+it to this plan as shown here. 
+When I add a partially instantiated 
+operator to a plan, I add this number to 
+give a unique reference to this action. 
+So, if I add another instance of the same 
+operator, I can distinguish them by this 
+reference. 
+I also use this reference as an index to 
+the variables of this operator, such that 
+I can distinguish the different 
+variables. 
+Remember, I told you each new operator 
+instance gets a new set of variables. 
+And according to the least commitment 
+principle, I keep these as variables and 
+don't assign values to them immediately. 
+And when I add a new operator, of course 
+it comes with its own set of 
+preconditions and effects over its 
+variables. 
+The preconditions are in red here because 
+I still need to achieve these conditions 
+if I want to be able to execute this 
+operator. 
+The effects are given as green because if 
+I execute this action, then these things 
+will necessarily become true. 
+There's other activity I need to do to 
+make these conditions true. 
+And, of course, I can add any number of 
+actions to this plan. 
+As shown here, I've added a second action 
+this has the index the reference 2 with a 
+new set of variables. 
+Its own preconditions and effect. 
+The next component of a partial plan 
+we'll be looking at are the Causal Links. 
+If we only add actions to a plan when we 
+have a good reason for doing so, then 
+perhaps it's a good idea to record that 
+reason, the rational for adding this 
+action in the causal link. 
+So, adding causal links is our next plan 
+refinement operation. 
+And the causal link always goes from a 
+provider to a consumer. In the partial 
+plans we've looked at so far, there are 
+two possible providers. 
+Namely, an effect of an action that we've 
+just added to the plan, or an atom that 
+holds in the initial state. 
+Both these can be used as a provider for 
+a causal link. 
+The consumer of a causal link can also be 
+one of two things. 
+The first is a precondition of an action 
+that we've added to the plan, or a goal 
+condition that we need to satisfy to 
+achieve our overall goal. 
+Note that implicit in this, we also have 
+an ordering constraint. 
+The provider must, of course, come before 
+the consumer. 
+But, we will deal with ordering 
+constraints seperately and later. 
+Also, while the provider must come before 
+the consumer, it doesn't necessarily have 
+to come directly before the consumer. 
+So, there may be other actions in between 
+those two. 
+The main reason for adding causal links 
+to a plan is to prevent interference 
+between different actions in a plan. 
+So, for example, if we add a new action 
+to the plan after we have inserted a 
+causal link and the new action could 
+become between the provider and the 
+consumer. 
+Then, we have to make sure that none of 
+the effects of that action interfere with 
+the condition that is protected in the 
+causal link. 
+Also, causal links help us to keep track 
+of preconditions that we have already 
+achieved. 
+If we have an incoming link to a 
+precondition, that means this 
+precondition is somehow achieved in the 
+plan and we no longer need to worry about 
+it. 
+Going back to our example, here is what 
+adding causal links looked like. 
+A causal link is denoted by this type of 
+dotted arrow in this diagram. 
+And when we added the move action, we did 
+this to achieve a goal, so we also can 
+add a causal link that represents that. 
+We used the move action to use the effect 
+at r1, m1 to support the goal at robot 
+location 2. 
+Clearly, these variables can be 
+instantiated such that the goal is 
+satisfied. 
+Note that with the addition of this 
+causal link, I've changed the color of 
+this goal to green. 
+Because this goal is now supported by a 
+causal link, which means it is achieved 
+by an action that is in our current 
+partial plan. 
+Similarly, when I added the second action 
+this has an effect not unloaded that can 
+be used to support the other goal and I 
+can simply add a causal link to support 
+this goal. 
+Again, the color changes to green because 
+it's now supported. 
+This looks like the addition of actions 
+and causal links should always go hand in 
+hand. 
+But, there is a good reason for 
+considering the addition of causal links 
+as an independent plan refinement 
+operation. 
+And here is an example of a causal link 
+that was not introduced together with an 
+action. 
+We use a condition from the initial state 
+to support a precondition of an action 
+that we've just introduced. 
+Of course, we could also have causal 
+links going directly from the initial 
+state to the goal. But, in this example, 
+only one of the goal conditions was true 
+in the initial state. 
+

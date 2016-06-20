@@ -1,0 +1,286 @@
+Before we move on to the planning 
+algorithms, I want to tell you a little 
+bit more about heuristics and 
+specifically, what makes a good heuristic 
+and how do we find these. 
+We have defined a heuristic in a 
+technical sense, as a function that 
+estimates the distance to the nearest 
+goal node. 
+But a heuristic obviously has colloquial 
+meaning as well and that's what's defined 
+here. 
+So it's, it's heuristics are criteria, 
+methods, or principles for deciding which 
+among several alternative courses of 
+action promises to be the most effective. 
+So the alternatives that we're looking at 
+are of course the successor nodes that we 
+want to evaluate. 
+We want to see which one of those is the 
+most promising. 
+And what we need to do is we need to 
+decide which one to follow first. 
+Of course we keep in mind the others and 
+follow those later. 
+We use heuristics in everyday life. 
+For example, here you see a heuristic for 
+deciding whether a pineapple is ripe. 
+If you ever go into a shop and want to 
+buy a ripe pineapple, this may work for 
+you, or it may not. 
+So, if you can rip out the inner leaves 
+easily and the fruit smells like a 
+pineapple should smell, then you're 
+looking at a ripe pineapple and this is 
+one you can buy, assuming the price is 
+right. 
+If there are no pineapples where you are, 
+tough luck. 
+The reason why I've circled the word, 
+deciding, here, is because this gives us 
+a different idea of what heuristic can 
+be. 
+All we need from a heuristic is just a 
+decision. 
+Which alternative looks best. 
+So it doesn't really need to be related 
+to the distance, to the goal, at all. 
+All we need is a function that decides 
+which one is the best node. 
+If we have that function, that would 
+constitute a perfect heuristic because it 
+would tell us which successor to follow. 
+And which path we should explore first. 
+If that deciding. 
+Is correct. 
+Then we have a perfect heuristic. 
+Another example of a heuristic you've 
+applied probably not too long ago, is in 
+choosing this course. 
+You looked at the introductory material 
+to this course. 
+And used this as information to decide 
+which of the courses that were available 
+you want to take. 
+So you used heuristic information about 
+the course to make this choice. 
+Okay, assuming you understand what a 
+heuristic is, now the question is when is 
+a heuristic a good heuristic? 
+And if we have a given search problem and 
+a given heuristic we can evaluate that 
+heuristic by looking at the number of 
+states that are generated for a specific 
+problem with that heuristic. 
+And if we have two heuristics, we could 
+compare them by using the number of 
+states they generate to see which is 
+better. 
+The better heuristic would generate fewer 
+states. 
+But that is only heuristic for deciding 
+which heuristic is better. 
+because what we are really after is, we 
+want solutions as fast as possible, so we 
+have time constraints to respect. 
+And computing a good heuristic also takes 
+time. 
+Unfortunately, this means we are dealing 
+with a trade-off here. 
+And this is the trade-off. 
+Some heuristics are simple. 
+So they provide a simple way of 
+discriminating between the successes we 
+generate. 
+And since we opt-, want to optimize the 
+time we take to research. 
+Simplicity here means easy to compute. 
+We want to have a fast way to compute the 
+heuristic value for a given state. 
+But heuristics that are simple to compute 
+are often not accurate. 
+And accurate is the other property in our 
+trade-off here. 
+A heuristic, unless it is perfect, does 
+not provide a guarantee that it tells us 
+which the best successor is to explore 
+next. 
+So, there's no guarantee that it 
+identifies the best course of action. 
+But if it's a good heuristic, it will do 
+this more often than a heuristic that is 
+not as good. 
+So, a good heuristic does this 
+sufficiently often. 
+It's accurate. 
+It tells us which is the best course of 
+action, or in the technical sense, it 
+tells us how far the goal state really 
+is. 
+So now we know what a good heuristic is 
+the important question than is how can we 
+find good heuristics for a given problem? 
+And this is somewhat similar to the 
+problem of problem formulation it's a 
+matter level problem. 
+We have to find good heuristic to do good 
+search. 
+Just as a good problem formulation will 
+ease search. 
+That means this is a very important 
+question. 
+And the answer is, there are methods for 
+doing this and we will look at some 
+general methods next. 
+But then there is a different question 
+that is just as important. 
+If we have a method, can we automate this 
+method? 
+And the answer again is yes, but that's a 
+very complex process and we will get to 
+that later in this course. 
+In fact, automatically finding good 
+euristics has probably been one of the 
+most hot topics in the AI planning 
+research over the last ten, fifteen 
+years. 
+So here's a general method for finding 
+good heuristic. 
+The idea is based on a simplified problem 
+or a relaxed problem. 
+Usually a problem is defined in terms of 
+states, and actions that are applicable 
+in states, and achieves certain things 
+in, successor states. 
+So what we have is restrictions on these 
+actions when they are applicable, when we 
+can use them, and which states they are 
+useful. 
+What we can do is relax those 
+restrictions. 
+So we can look at the restrictions 
+defined in the original problem, and drop 
+some of them or make them less hard. 
+And that gives us a new problem, which is 
+the relax problem. 
+And then the following should be fairly 
+obvious to see. 
+Namely that the cost of an optimal 
+solution for a relaxed problem is an 
+admissible heuristic for the original 
+problem. 
+In fact it's admissible and consistent, 
+but since we haven't defined consistent 
+yet, I won't go into that. 
+So you just, you should see why it is 
+admissible. 
+It's very simple to see because the 
+optimal solution for our original problem 
+is of course also a solution for our 
+relaxed problem. 
+We've only relaxed the restrictions on 
+the actions. 
+So, an optimal solution for the relaxed 
+problem can have, at most, as many steps 
+as the optimal solution for our original 
+problem, because that is a solution for 
+the relaxed problem. 
+In general, what we have is that in our 
+relaxed problem, we allow shortcuts to be 
+taken with these relaxed actions that are 
+not possible in our original problem, so 
+if we take out these shortcuts, we end up 
+with longer solutions. 
+And since this method is quite abstract I 
+want to illustrate this with an example 
+and we will use the 8 puzzle that we've 
+seen before and the actions that are 
+defined for this 8 puzzle. 
+So here is the original condition that we 
+had for the applicability of actions. 
+Namely a tile can move from square a to 
+square b if a is horizontally or 
+vertically adjacent to b and b is blank. 
+So the condition we have here is a 
+conjunction of two sub-conditions and 
+that should tell us how we can build a 
+relaxed condition quite easily. 
+Namely by dropping one of the two parts 
+or both of them. 
+And this is how this works. 
+If we drop the second part. 
+Then B is blank. 
+We end up with this heuristic here. 
+And that tells us that a tile can move 
+from square A to B if. 
+A is adjacent to B. 
+I've dropped the horizontally or 
+vertically. 
+And what we get there, of course then, is 
+the Manhatten block distance heuristic. 
+Because we now allow a tile to be moved, 
+no matter where it is moving to, which 
+gives us exactly the block distance for 
+this tile. 
+And if we add all those up, that's the 
+Manhatten block distance we've seen. 
+The second one is, if we drop the first 
+part of this definition, so that the 
+adjacency distance is dropped, then we 
+end up with a heuristic. 
+That's a tile can move from A to B, if B 
+is blank. 
+And finally we can have a heuristic if we 
+drop both conditions that says a tile can 
+move from a to b and there are no 
+conditions. 
+And of course this then gives us the 
+misplaced tiles heuristic. 
+We simply count those tiles that can move 
+to where they need to be in one step 
+because there's no conditions on how they 
+can move. 
+So what you see here is we've derived two 
+of the heuristics that we've already used 
+for the 8 puzzle using the method we've 
+just introduced by using relaxed 
+conditions of the actions that are 
+applicable in our problem. 
+So this concludes this section of the 
+course on AI search technology and the A* 
+algorithm. 
+You should understand now that a 
+heuristic function encodes 
+problem-specific knowledge in a 
+problem-independent way by mapping a 
+state to a real number. 
+This information about search states can 
+be used to make the search more 
+efficient. 
+In general, this is done by using an 
+evaluation function that tells us how 
+good a search node is. 
+Greedy best first search simply uses the 
+heuristic function as the evaluation 
+function but the better solution is 
+provided by the A* algorithm. 
+The evaluation function used by A* is 
+simply the sum of the heuristic function 
+for a node plus the cost of getting to 
+that node in the first place. 
+We've also seen that A* is optimal. 
+It will always find an optimal solution. 
+And it is optimally efficient. 
+It does not expand more nodes than 
+absolutely necessary. 
+But I've also shown you that A* is not 
+the answer to all questions, specifically 
+when it comes to graph surge. 
+Finally, since good heuristics are so 
+important for A*, I've also talked a 
+little bit about what good heuristics are 
+and how to find them. 
+So now a big tick because you understand 
+all of that. 
+

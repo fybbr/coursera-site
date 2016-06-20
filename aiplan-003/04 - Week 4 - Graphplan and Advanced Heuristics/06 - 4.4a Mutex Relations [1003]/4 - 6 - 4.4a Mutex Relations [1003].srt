@@ -1,0 +1,593 @@
+1
+00:00:00,012 --> 00:00:07,382
+>> Earlier, when we looked at the planning
+graph, I already mentioned that there is
+
+2
+00:00:07,382 --> 00:00:13,040
+something missing in this graph.
+There are certain nodes missing, and there
+
+3
+00:00:13,040 --> 00:00:17,077
+were certain edges missing.
+And that's what I said earlier, that there
+
+4
+00:00:17,077 --> 00:00:21,144
+were no mutex relations included.
+So what we will do now is look at these
+
+5
+00:00:21,144 --> 00:00:25,564
+missing nodes, and we will also look at
+the missing edges, which define mutual
+
+6
+00:00:25,564 --> 00:00:28,466
+exclusivity between propositions and
+actions.
+
+7
+00:00:28,466 --> 00:00:33,096
+So that's what we'll be looking at next,
+the mutex relation between propositions
+
+8
+00:00:33,096 --> 00:00:37,457
+and actions.
+Earlier we have looked at independence
+
+9
+00:00:37,457 --> 00:00:44,496
+between actions in the same action layer.
+We have seen that 2 actions in the same
+
+10
+00:00:44,496 --> 00:00:51,284
+action layer that are dependent cannot be
+included in our final layer plan.
+
+11
+00:00:51,285 --> 00:00:57,123
+Now we will have a look at how this effect
+propagates through the planning graph.
+
+12
+00:00:57,123 --> 00:01:02,439
+And first we will look at dependent
+propositions, and here is an example.
+
+13
+00:01:02,439 --> 00:01:08,429
+This is part of the planning graph we have
+looked at earlier, and you will note that
+
+14
+00:01:08,429 --> 00:01:13,115
+in the proposition layer p1, we have the
+propositions r2 and ar.
+
+15
+00:01:13,115 --> 00:01:18,870
+That is the robot r is at location 2, and
+container a is loaded on to the robot r.
+
+16
+00:01:18,870 --> 00:01:24,742
+The proposition r2 is present in that
+proposition layer, because it is a
+
+17
+00:01:24,742 --> 00:01:30,667
+positive effect of the action Mr12.
+The proposition ar is in that layer,
+
+18
+00:01:30,667 --> 00:01:34,823
+because it is a positive effect of the
+action Lar1.
+
+19
+00:01:34,823 --> 00:01:40,728
+Now you may remember these 2 actions from
+an example we have looked at earlier and
+
+20
+00:01:40,728 --> 00:01:44,606
+that showed that Mr12 and Lar1 are not
+independent.
+
+21
+00:01:44,606 --> 00:01:50,332
+So these are dependent actions, which
+means they cannot be selected from this
+
+22
+00:01:50,332 --> 00:01:55,486
+action layer for our final plan.
+But of course if these actions are the
+
+23
+00:01:55,486 --> 00:02:01,450
+only reason why these propositions are in
+this proposition layer, and these actions
+
+24
+00:02:01,450 --> 00:02:06,742
+cannot possibly occur together, that
+means, the 2 propositions also can't
+
+25
+00:02:06,742 --> 00:02:11,431
+possibly occur together, at least not in
+this proposition layer.
+
+26
+00:02:11,431 --> 00:02:16,427
+So that means, r2 and ar are incompatible,
+in proposition layer p1.
+
+27
+00:02:16,428 --> 00:02:23,492
+Another example would be to look at the
+propositions r1 and r2 in proposition
+
+28
+00:02:23,492 --> 00:02:27,627
+layer b1.
+Clearly these 2 propositions are a
+
+29
+00:02:27,627 --> 00:02:32,156
+positive and negative effect of the same
+action.
+
+30
+00:02:32,156 --> 00:02:39,106
+So if we include this action in our plan
+we can't have r1 and r2 both be true in
+
+31
+00:02:39,106 --> 00:02:42,550
+p1.
+So again they are incompatible in this
+
+32
+00:02:42,550 --> 00:02:48,206
+proposition they are, r1, and r2 are
+incompatible in proposition layer p1.
+
+33
+00:02:48,206 --> 00:02:53,844
+So we have seen 2 reasons here why 2
+propositions in a proposition layer may be
+
+34
+00:02:53,844 --> 00:02:57,869
+incompatible.
+The first one shown by this example was
+
+35
+00:02:57,869 --> 00:03:04,030
+that we have 2 dependent actions that are
+the only producers of the 2 propositions.
+
+36
+00:03:04,030 --> 00:03:07,636
+Then the 2 propositions must also be
+dependent.
+
+37
+00:03:07,636 --> 00:03:12,868
+And the second reason was, that we had an
+action, that had the two propositions we
+
+38
+00:03:12,868 --> 00:03:18,250
+were looking at, has positive and negative
+effects, and that again means, they are
+
+39
+00:03:18,250 --> 00:03:23,710
+incompatible in that proposition layer.
+Now, we will look at how we can simplify
+
+40
+00:03:23,710 --> 00:03:28,018
+this, by dropping two of the two cases,
+namely the second case.
+
+41
+00:03:28,019 --> 00:03:33,837
+And we can achieve this by looking at the
+things that were currently missing from
+
+42
+00:03:33,837 --> 00:03:37,561
+the planning graph and those are the no-op
+actions.
+
+43
+00:03:37,561 --> 00:03:42,815
+So introduced no-op operations for a
+proposition P and we give those the name
+
+44
+00:03:42,815 --> 00:03:48,227
+AP and the purpose of these is that they
+carry forward the proposition P from one
+
+45
+00:03:48,227 --> 00:03:52,981
+proposition there To the next, so they
+have only one precondition.
+
+46
+00:03:52,981 --> 00:03:57,076
+Namely that the proposition P is true in
+the first proposition there.
+
+47
+00:03:57,076 --> 00:04:01,352
+And then, they have one effect that makes
+the proposition true in the next
+
+48
+00:04:01,352 --> 00:04:05,300
+proposition layer.
+They are, that means in this example we
+
+49
+00:04:05,300 --> 00:04:10,676
+would actually need 6 additional actions
+in the action layer A1, 1 for each of
+
+50
+00:04:10,676 --> 00:04:14,333
+these proposition symbols that we carry
+forward.
+
+51
+00:04:14,333 --> 00:04:17,976
+So, we have a No-Op operation for each one
+of those.
+
+52
+00:04:17,976 --> 00:04:23,275
+I want to look at only one specific No-Op
+operation though, namely the one for Ar1
+
+53
+00:04:23,275 --> 00:04:28,882
+that carries the symbol r1 forward.
+And now let's look at the same example we
+
+54
+00:04:28,882 --> 00:04:34,732
+just looked at, in the second case of the
+previous slide, where we looked at the
+
+55
+00:04:34,732 --> 00:04:40,132
+propositions r1 and r2, that were
+positive, and the negative effects of
+
+56
+00:04:40,132 --> 00:04:43,123
+Mr12.
+Now, we can see that, r1 is also a
+
+57
+00:04:43,123 --> 00:04:47,883
+positive effect, of Ar1, and r2 is a
+positive effect of Mr12.
+
+58
+00:04:47,883 --> 00:04:53,999
+But when you think about it for a second,
+you will see that these two actions are
+
+59
+00:04:53,999 --> 00:04:59,105
+not independent so they cannot occur
+together in our final plan.
+
+60
+00:04:59,105 --> 00:05:05,342
+And that of course means that the two
+propositions are incompatible in layer p1,
+
+61
+00:05:05,342 --> 00:05:11,053
+but this time for a different reason.
+Namely because the two actions that add
+
+62
+00:05:11,053 --> 00:05:14,762
+them are incompatible.
+So the introduction of the No-Op
+
+63
+00:05:14,762 --> 00:05:19,676
+operations means we don't have to
+explicitly carry for or what proposition
+
+64
+00:05:19,676 --> 00:05:24,694
+Limbels from one layer to the next,
+because the No-Op actions do that for us.
+
+65
+00:05:24,694 --> 00:05:30,362
+And they simplify our incompatibility test
+for propositions in the same proposition.
+
+66
+00:05:30,362 --> 00:05:33,951
+Layer.
+Now that you've seen these examples, it
+
+67
+00:05:33,951 --> 00:05:39,502
+should be fairly easy to understand the
+definition, of what it means for 2
+
+68
+00:05:39,502 --> 00:05:45,564
+propositions to be mutually exclusive.
+So 2 propositions, p and q, that are in
+
+69
+00:05:45,564 --> 00:05:51,981
+the same proposition layer pj are, mutex,
+which stands for mutually exclusive, if
+
+70
+00:05:51,981 --> 00:05:57,887
+the following two conditions hold.
+Firstly, every action in the preceding
+
+71
+00:05:57,887 --> 00:06:03,683
+action layer, tha'st Aj, that has P as a
+positive effect, including the noop
+
+72
+00:06:03,683 --> 00:06:09,458
+operations, is mutex with every action in
+Aj, that has Q a positive effect.
+
+73
+00:06:09,458 --> 00:06:14,422
+So if we find a pair of actions.
+In the action layer aj that have p and q
+
+74
+00:06:14,422 --> 00:06:19,862
+as a factor respectively and these two
+actions are independent, then we know that
+
+75
+00:06:19,862 --> 00:06:24,935
+we can also have p and q as propositions
+in the following proposition layer.
+
+76
+00:06:24,935 --> 00:06:29,967
+And the other way in which we can have p
+and q compatible in the following
+
+77
+00:06:29,967 --> 00:06:35,322
+proposition layer is if there is a single
+action in Aj, that has both p and q as
+
+78
+00:06:35,322 --> 00:06:41,057
+positive effects or the other way around.
+If there's no such action, then the two
+
+79
+00:06:41,057 --> 00:06:46,712
+propositions may be mutually exclusive.
+In other words p and q are not mutex if
+
+80
+00:06:46,712 --> 00:06:51,951
+they are produced by a pair of independent
+actions or by a single action.
+
+81
+00:06:51,951 --> 00:06:57,142
+I hope you understood this so far because
+now I am going to confuse matters
+
+82
+00:06:57,142 --> 00:07:00,974
+slightly.
+So, when I talk, I talk about independent
+
+83
+00:07:00,974 --> 00:07:07,046
+actions, but what's actually written here
+in the definition is that we require the
+
+84
+00:07:07,046 --> 00:07:12,590
+two actions and the same action layer to
+be mutex with each other, and that we
+
+85
+00:07:12,590 --> 00:07:18,134
+haven't defined here, but we will get to
+the mutex relation between actions
+
+86
+00:07:18,134 --> 00:07:21,947
+shortly.
+Now before I continue here comes a little
+
+87
+00:07:21,947 --> 00:07:27,707
+bit of notation and I want to introduce
+the symbol mu Pj for the set of all pairs
+
+88
+00:07:27,707 --> 00:07:33,737
+of propositions p and q, all those pairs
+that are in proposition their Pj and that
+
+89
+00:07:33,737 --> 00:07:36,853
+are mutex.
+So mu Pj are old mutex pairs in
+
+90
+00:07:36,853 --> 00:07:42,267
+proposition layer Pj.
+And for those of you who prefer algorithms
+
+91
+00:07:42,267 --> 00:07:48,125
+to formal definitions, here's the
+pseudocode that defines mutex for
+
+92
+00:07:48,125 --> 00:07:52,076
+proposition.
+Here we define the function mutex that
+
+93
+00:07:52,076 --> 00:07:55,965
+takes 3 arguments.
+The first 2 are the 2 prepositions in a
+
+94
+00:07:55,965 --> 00:08:00,770
+preposition layer that we're trying to
+test for mutual exclusivity.
+
+95
+00:08:00,770 --> 00:08:06,188
+And the third component is something that
+we haven't seen, but as before this is
+
+96
+00:08:06,188 --> 00:08:10,734
+something we will see shortly.
+This is simply the set of all mutex
+
+97
+00:08:10,734 --> 00:08:15,812
+actions in action layer aj.
+Then we simply go through two Nestas loops
+
+98
+00:08:15,812 --> 00:08:19,380
+here.
+The outer loop tests all the producers of
+
+99
+00:08:19,381 --> 00:08:23,414
+proposition p1.
+So there should be an action a one that
+
+100
+00:08:23,414 --> 00:08:28,022
+produces this proposition.
+And the inner loop simply takes the
+
+101
+00:08:28,022 --> 00:08:33,800
+actions that produce proposition p2.
+So we test all possible combinations of
+
+102
+00:08:33,800 --> 00:08:39,383
+producers for the two propositions.
+And if we find a single pair, a1, a2 that
+
+103
+00:08:39,383 --> 00:08:45,168
+is not mutex, that is not in our given
+mutex relation between the actions, then
+
+104
+00:08:45,168 --> 00:08:50,756
+we can return false because we know these
+two propositions can't be mutex.
+
+105
+00:08:50,756 --> 00:08:56,306
+We found a pair of actions that can
+produce them and these two actions are not
+
+106
+00:08:56,306 --> 00:09:00,450
+mutually exclusive.
+Otherwise, if we can't find such a pair,
+
+107
+00:09:00,450 --> 00:09:05,466
+then we return true, and we know that
+these 2 propositions in their proposition
+
+108
+00:09:05,466 --> 00:09:10,115
+layer must be mutually exclusive.
+Now you may ask, what happened to the
+
+109
+00:09:10,115 --> 00:09:15,453
+second part in the definition where we can
+have a single action that produces both?
+
+110
+00:09:15,453 --> 00:09:20,871
+Well, this is actually covered by this
+algorithm, when you select a1 and a2 to be
+
+111
+00:09:20,871 --> 00:09:26,365
+the same action, then it produces both the
+propositions we're looking at, and of
+
+112
+00:09:26,365 --> 00:09:30,266
+course an action is never mutually
+exclusive to itself.
+
+113
+00:09:30,266 --> 00:09:33,675
+So this case is covered with this simple
+algorithm.
+
+114
+00:09:33,675 --> 00:09:38,985
+Now a quick word about the time complexity
+of this algorithm and we see here that we
+
+115
+00:09:38,985 --> 00:09:44,545
+have two loops over all possible actions.
+So if we assume that we have a maximum of
+
+116
+00:09:44,545 --> 00:09:50,325
+m possible actions including the no-op
+operations, then this algorithm will run
+
+117
+00:09:50,325 --> 00:09:55,425
+in o of m squared because we're going
+through two loops over all possible
+
+118
+00:09:55,425 --> 00:10:00,695
+actions and those are of course limited to
+all the actions we might have.
+
+119
+00:10:00,695 --> 00:10:03,262
+So, it's polynomial.

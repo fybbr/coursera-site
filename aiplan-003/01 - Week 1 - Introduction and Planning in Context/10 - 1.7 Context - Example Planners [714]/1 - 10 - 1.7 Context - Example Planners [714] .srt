@@ -1,0 +1,454 @@
+1
+00:00:10,240 --> 00:00:15,100
+[SOUND] We're now going to look at a 
+couple practical planners in operation. 
+
+2
+00:00:15,100 --> 00:00:19,022
+You'll find some excellent online 
+resources for some of the well-known 
+
+3
+00:00:19,022 --> 00:00:22,559
+planners listed in our table. 
+The course readings have also been 
+
+4
+00:00:22,559 --> 00:00:27,089
+designed to introduce some of these and 
+we provide screen captures of a number of 
+
+5
+00:00:27,089 --> 00:00:36,529
+our own Edinburgh planners in operation. 
+Nonlin was created in the mid-1970s, and 
+
+6
+00:00:36,529 --> 00:00:40,699
+as mentioned earlier was applied in a 
+project using mixture of A.I. 
+
+7
+00:00:40,699 --> 00:00:44,620
+and Operation Research, O.R. 
+methods, to create project plans for 
+
+8
+00:00:44,620 --> 00:00:48,976
+electricity turbine overhaul. 
+It allowed for user-driven modifications 
+
+9
+00:00:48,976 --> 00:00:53,768
+to the plans as maintenance inspection 
+took place and plans up to be updated. 
+
+10
+00:00:53,768 --> 00:00:58,498
+Nonlin brought together range of A.I. 
+planning techniques, which were novel at 
+
+11
+00:00:58,498 --> 00:01:01,548
+the time. 
+In this slide, I'm using the terminology 
+
+12
+00:01:01,548 --> 00:01:07,470
+now commonly applied to these techniques. 
+Nonlin was a hierarchical task network 
+
+13
+00:01:07,470 --> 00:01:12,313
+planner. 
+It could generate plans in which the 
+
+14
+00:01:12,313 --> 00:01:16,901
+activities were not fully ordered. 
+It had been common up until that time for 
+
+15
+00:01:16,901 --> 00:01:19,376
+A.I. 
+planners to generate plans which were 
+
+16
+00:01:19,376 --> 00:01:23,421
+fully linear in order. 
+Nonlin searches in the space of planned 
+
+17
+00:01:23,421 --> 00:01:26,319
+descriptions rather than in the 
+application state base, 
+
+18
+00:01:26,319 --> 00:01:29,639
+a subject which we're going to cover in 
+the later module. 
+
+19
+00:01:29,639 --> 00:01:34,287
+Nonlin uses the goal structure of the 
+plan in considering the different 
+
+20
+00:01:34,287 --> 00:01:37,004
+alternatives. 
+So it always looks at different 
+
+21
+00:01:37,004 --> 00:01:42,648
+approaches based on that plan rationale. 
+Nonlin as a mechanism for answering the 
+
+22
+00:01:42,648 --> 00:01:48,204
+question of whether a proposition has a 
+certain truth value at a certain point in 
+
+23
+00:01:48,204 --> 00:01:51,253
+the plan. 
+We call that the QA module, question 
+
+24
+00:01:51,253 --> 00:01:55,250
+answering module, 
+is more often, nowadays, called the Modal 
+
+25
+00:01:55,250 --> 00:01:59,500
+Truth Criterion that use condition types 
+to limit search. 
+
+26
+00:01:59,500 --> 00:02:04,687
+It allowed for multiple contributors to 
+condition achievement in order to achieve 
+
+27
+00:02:04,687 --> 00:02:08,464
+plan robustness. 
+It included compute conditions for links 
+
+28
+00:02:08,464 --> 00:02:12,710
+to external databases and systems because 
+it was built as a practical planning 
+
+29
+00:02:12,710 --> 00:02:15,344
+system. 
+These are similar to attach procedures in 
+
+30
+00:02:15,344 --> 00:02:19,976
+some other planners. 
+And as mentioned earlier, is a mixture of 
+
+31
+00:02:19,976 --> 00:02:22,185
+A.I. 
+and operational research methods, 
+
+32
+00:02:22,185 --> 00:02:26,543
+so OR algorithms were used for time and 
+resource constrained reasoning. 
+
+33
+00:02:26,543 --> 00:02:31,269
+Nonlin has been used as a basis for 
+textbook descriptions of hierarchical 
+
+34
+00:02:31,269 --> 00:02:37,475
+task network planning. 
+O-Plan followed on from Nonlin and used 
+
+35
+00:02:37,475 --> 00:02:42,500
+some of the same techniques. 
+It included domain knowledge elicitation 
+
+36
+00:02:42,500 --> 00:02:47,340
+and modeling tools and supported a rich 
+plan representation. 
+
+37
+00:02:47,340 --> 00:02:52,046
+It also was a hierarchical task network 
+planner and had detailed constraint 
+
+38
+00:02:52,046 --> 00:02:54,971
+management. 
+It allowed for plugging constraint 
+
+39
+00:02:54,971 --> 00:02:58,342
+managers, so that that that aspect could 
+be extended. 
+
+40
+00:02:58,342 --> 00:03:03,302
+Gold structure-based planned monitoring 
+during execution was supported and it 
+
+41
+00:03:03,302 --> 00:03:08,199
+supported dynamic domains in which new 
+objectives or tasks could arise while 
+
+42
+00:03:08,199 --> 00:03:14,132
+planning an execution was taking place. 
+Plan repair when time was available or 
+
+43
+00:03:14,132 --> 00:03:19,820
+when the situation demanded rapid 
+response was supported. 
+
+44
+00:03:19,820 --> 00:03:24,589
+Interfaces for users with different roles 
+were provided in order that several 
+
+45
+00:03:24,589 --> 00:03:29,053
+different users could be refining the 
+plan simultaneously and sharing 
+
+46
+00:03:29,053 --> 00:03:34,772
+information about the plan between them. 
+And explicit management of the planning 
+
+47
+00:03:34,772 --> 00:03:39,469
+and execution workflow was supported, 
+so the planner itself could be used in, 
+
+48
+00:03:39,469 --> 00:03:44,881
+in these aspects. 
+There is a simple example of O-Plan 
+
+49
+00:03:44,881 --> 00:03:48,232
+acting as a Unix system administrator's 
+aid. 
+
+50
+00:03:48,232 --> 00:03:53,486
+The aim is to create a shell script that 
+reliably removes a volume group. 
+
+51
+00:03:53,486 --> 00:03:59,425
+This is an application which a lot of 
+people have found difficult and can lead 
+
+52
+00:03:59,425 --> 00:04:05,619
+to loss of files. 
+Once the current mapping between logical 
+
+53
+00:04:05,619 --> 00:04:10,831
+volumes and physical volumes are, are 
+given by the drop-down numeric boxes, you 
+
+54
+00:04:10,831 --> 00:04:15,909
+can just hit the plan button and the 
+planner goes off, and produces the plan, 
+
+55
+00:04:15,909 --> 00:04:20,520
+and it prints it out as the script ready 
+to cut, and paste, and use. 
+
+56
+00:04:25,780 --> 00:04:30,538
+Here's a more comprehensive example of 
+O-Plan running on a military operations 
+
+57
+00:04:30,538 --> 00:04:34,573
+in urban terrain and where task 
+description planning and execution 
+
+58
+00:04:34,573 --> 00:04:39,030
+workflow are all able to be supported 
+with multiple users acting over the 
+
+59
+00:04:39,030 --> 00:04:43,707
+internet and all sharing a common plan. 
+so typically, there will be a task 
+
+60
+00:04:43,707 --> 00:04:48,298
+assigner who will set up the problem. 
+It would go in and define this with 
+
+61
+00:04:48,298 --> 00:04:53,204
+simple web form with drop-down lists of 
+the kind of tasks that can be carried 
+
+62
+00:04:53,204 --> 00:04:55,720
+out. 
+And then, a planner can be called to 
+
+63
+00:04:55,720 --> 00:05:00,500
+generate specific operations and, and 
+make suggestions of how to respond to the 
+
+64
+00:05:00,500 --> 00:05:04,400
+particular emergency, 
+the particular disaster that's occurring. 
+
+65
+00:05:04,400 --> 00:05:07,938
+And the idea is, that between the planner 
+and the task assigner, 
+
+66
+00:05:07,938 --> 00:05:10,858
+they can talk and look at these options, 
+refine them, 
+
+67
+00:05:10,858 --> 00:05:14,452
+throw away some replan when things are 
+being added, and so on. 
+
+68
+00:05:14,452 --> 00:05:18,889
+And all this is occurring through these 
+user interfaces talking to the planner 
+
+69
+00:05:18,889 --> 00:05:27,644
+behind the scenes. 
+O-Plan was used as the basis for 
+
+70
+00:05:27,644 --> 00:05:30,807
+Optimum-AIV, 
+a planner for assembly, integration, and 
+
+71
+00:05:30,807 --> 00:05:36,299
+verification of the payload bay of 
+Europe's Ariane rocket launcher. 
+
+72
+00:05:36,299 --> 00:05:42,956
+It was originally designed as plan ERS-1 
+for assembly integration test of the 
+
+73
+00:05:42,956 --> 00:05:48,532
+European Space Agency's ERS-1 spacecraft 
+shown here, on the left. 
+
+74
+00:05:48,532 --> 00:05:54,440
+Optimum-AIV also used the rich plan 
+representation, hierarchical test network 
+
+75
+00:05:54,440 --> 00:06:00,580
+planning, detailed constraint management, 
+plan and user rationale recorded. 
+
+76
+00:06:00,580 --> 00:06:05,637
+It could handle issues arising during 
+planned execution and deal with it, these 
+
+77
+00:06:05,637 --> 00:06:09,430
+through plan repair using test failure 
+recovery plans. 
+
+78
+00:06:09,430 --> 00:06:14,354
+It was integrated with European Space 
+Agency's Artemis Project Management 
+
+79
+00:06:14,354 --> 00:06:20,367
+System. 
+Let me draw your attention to a number of 
+
+80
+00:06:20,367 --> 00:06:23,160
+features which are typical of practical 
+A.I. 
+
+81
+00:06:23,160 --> 00:06:26,082
+planners. 
+Often, these are based on hierarchical 
+
+82
+00:06:26,082 --> 00:06:31,570
+task network planning at an outer layer. 
+They often also allow for partial order 
+
+83
+00:06:31,570 --> 00:06:36,200
+of the resulting plans rather than 
+insisting the plans are fully ordered. 
+
+84
+00:06:36,200 --> 00:06:43,220
+They often include a rich domain model 
+that can manage many types of constraints 
+
+85
+00:06:43,220 --> 00:06:47,420
+and include links to simulations, 
+analyses to refine then restrict the 
+
+86
+00:06:47,420 --> 00:06:49,640
+plans. 
+These planners often allow for 
+
+87
+00:06:49,640 --> 00:06:53,840
+integration with other systems, 
+user interfaces, databases, spreadsheets, 
+
+88
+00:06:53,840 --> 00:06:57,080
+project management, 
+corporate systems of various kinds. 
+
+89
+00:06:57,080 --> 00:07:01,820
+And this is very typical of practical 
+planners and often, much of the effort 
+
+90
+00:07:01,820 --> 00:07:06,200
+that goes into a practical planning 
+application can go into this kind of 
+
+91
+00:07:06,200 --> 00:07:06,920
+integration. 
+

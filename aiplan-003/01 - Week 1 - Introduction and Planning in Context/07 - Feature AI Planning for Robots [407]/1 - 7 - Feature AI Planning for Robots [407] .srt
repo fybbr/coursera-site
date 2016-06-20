@@ -1,0 +1,254 @@
+1
+00:00:07,200 --> 00:00:13,122
+[SOUND] AI Planners, using a generation 
+of action sequences in robots such as the 
+
+2
+00:00:13,122 --> 00:00:18,167
+Freddy 2, Hand/Eye Assembly Robot 
+displayed here in the National Museum of 
+
+3
+00:00:18,167 --> 00:00:22,993
+Scotland in Edinburgh. 
+This version of Freddy from four decades 
+
+4
+00:00:22,993 --> 00:00:28,696
+ago had a large, fixed mounted arm with 
+sophisticated touch sensitive grippers, 
+
+5
+00:00:28,696 --> 00:00:32,133
+and a side mounted camera to look at its 
+world. 
+
+6
+00:00:32,133 --> 00:00:37,470
+Instead of the robot moving to reach 
+objects, the platform underneath the 
+
+7
+00:00:37,470 --> 00:00:40,249
+robot was shifted instead. 
+Freddy was demonstrated on flexible 
+
+8
+00:00:40,249 --> 00:00:46,760
+assembly tasks involving simple toy, 
+cars, and boats. 
+
+9
+00:00:48,640 --> 00:00:53,310
+The video playing is taken from a 16 
+millimeter film of a Freddy project 
+
+10
+00:00:53,310 --> 00:00:57,322
+demonstration made in 1973. 
+Freddy had to identify jumbled up parts 
+
+11
+00:00:57,322 --> 00:01:01,573
+via vision, unscrambled the parts, and 
+then assembled them to create the 
+
+12
+00:01:01,573 --> 00:01:04,987
+required product. 
+Some parts in the area didn't belong to 
+
+13
+00:01:04,987 --> 00:01:07,322
+the target assembly. 
+In one project, the Edinburgh, normally 
+
+14
+00:01:07,322 --> 00:01:12,771
+an AI Planner, was used to generate 
+object construction and arm movement 
+
+15
+00:01:12,771 --> 00:01:16,364
+sequences for Freddy. 
+In its time, Freddy was one of the most 
+
+16
+00:01:16,364 --> 00:01:25,702
+sophisticated robots in the world. 
+The Stanford Research Institute Problem 
+
+17
+00:01:25,702 --> 00:01:30,346
+Solver Strips is one of the best known a 
+most influential AI Planners, and you'll 
+
+18
+00:01:30,346 --> 00:01:34,584
+learn about it on this course. 
+Despite of being created over 40 years 
+
+19
+00:01:34,584 --> 00:01:37,196
+ago, 
+it was already news control the activity 
+
+20
+00:01:37,196 --> 00:01:41,666
+of a robot called Shakey at the Stanford 
+Research Institute, which is now call SRI 
+
+21
+00:01:41,666 --> 00:01:44,569
+International. 
+Strips had may interesting features 
+
+22
+00:01:44,569 --> 00:01:48,401
+including use in theorem proving 
+techniques to reason about the state of 
+
+23
+00:01:48,401 --> 00:01:51,535
+points in the plan. 
+Strips gave us a representation of 
+
+24
+00:01:51,535 --> 00:01:56,295
+actions with preconditions and effects. 
+It's got a mechanism called macrobes, for 
+
+25
+00:01:56,295 --> 00:02:00,740
+generalization of its operators. 
+It included execution support facilities 
+
+26
+00:02:00,740 --> 00:02:05,062
+to deal with partial failures. 
+Shakey is now on display at the Computer 
+
+27
+00:02:05,062 --> 00:02:07,680
+History Museum in Mountain View, 
+California. 
+
+28
+00:02:09,140 --> 00:02:14,293
+As we saw, Freddy included an early robot 
+arm, but as you can see here, technology 
+
+29
+00:02:14,293 --> 00:02:18,222
+has come a long way. 
+For example, this modern research robotic 
+
+30
+00:02:18,222 --> 00:02:22,860
+arm has many more capabilities. 
+Obviously, there's a lot more to robotics 
+
+31
+00:02:22,860 --> 00:02:27,820
+than just activity planning and there are 
+significant challenges in terms of 
+
+32
+00:02:27,820 --> 00:02:32,716
+vision, mechanical issues, and spatial 
+reasoning including locating the robot, 
+
+33
+00:02:32,716 --> 00:02:36,517
+and tracking other objects. 
+But planning is a key aspect of 
+
+34
+00:02:36,517 --> 00:02:40,440
+intelligent behavior. 
+Not every robot has the kind of activity 
+
+35
+00:02:40,440 --> 00:02:43,137
+plan that we are describing on this 
+course. 
+
+36
+00:02:43,137 --> 00:02:46,209
+That is, one which can plan from first 
+principles. 
+
+37
+00:02:46,209 --> 00:02:50,849
+But robots typically do have plans, 
+perhaps precompiled ones, that they use 
+
+38
+00:02:50,849 --> 00:02:56,786
+to control their behavior. 
+AI Planners have been used in much more 
+
+39
+00:02:56,786 --> 00:03:01,856
+recent robots also, of course, such as in 
+some humanoid robots and the robots used 
+
+40
+00:03:01,856 --> 00:03:04,485
+in the Annual RoboCup Soccer League 
+Teams. 
+
+41
+00:03:04,485 --> 00:03:09,117
+Here, planning may have to cover the 
+coordination of different robots with 
+
+42
+00:03:09,117 --> 00:03:13,436
+different roles, and the robots 
+themselves can have planners on board 
+
+43
+00:03:13,436 --> 00:03:21,134
+that adjust their behaviors dynamically. 
+The planners have been used in different 
+
+44
+00:03:21,134 --> 00:03:24,419
+kind of robots, too. 
+For example, an on board planner and 
+
+45
+00:03:24,419 --> 00:03:28,920
+reactive execution agent was used to 
+autonomously control the NASA Deep Space 
+
+46
+00:03:28,920 --> 00:03:32,510
+1 spacecraft prepared in its flight 
+rounding over the comet. 
+
+47
+00:03:32,510 --> 00:03:37,133
+AI Planners have been used to provide 
+adaptability and flexibility robots in 
+
+48
+00:03:37,133 --> 00:03:41,148
+the past and in the present, 
+in the factory, in the home, and in the 
+
+49
+00:03:41,148 --> 00:03:44,433
+outer space. 
+And it's nearing which to put good use 
+
+50
+00:03:44,433 --> 00:03:47,414
+tomorrow. 
+We hope you'll be part in creating this 
+
+51
+00:03:47,414 --> 00:03:47,840
+future. 
+

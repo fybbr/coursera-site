@@ -1,0 +1,310 @@
+You should now understand what tasks and 
+task networks are. 
+But I explained to you earlier that for 
+this approach to planning, we really need 
+3 new things. 
+Tasks, task networks and methods. 
+So that's what we will be looking at 
+next. 
+And while we look at methods, keep the 
+following in mind. 
+We again try to set up our planning 
+problem as a search problem and methods 
+describe ways in which we can transform 
+task networks. 
+They are plan refinements, and therefore 
+correspond to state transitions in our 
+search space. 
+I will start with the formal definition 
+of an STN method. 
+And the first thing we need to define 
+methods is a set of symbols that we can 
+use to denote these methods, 
+to name these methods uniquely. 
+These symbols will be disjoined from all 
+the others symbols we've used so unlike 
+task symbols which overlap with the 
+operators. 
+They will not intersect with the other 
+type of symbols. 
+Then an STN method is a 4-tuple which 
+means it consists of 4 things, 
+and these 4 things are the name, the 
+task, the preconditions, and the network, 
+and I'll explain those in entire now. 
+The first component is the name of the 
+method, and the name is a way to refer to 
+this method. 
+And again, we will use a syntactic 
+expression, which looks very similar to 
+the type of syntactic expression we've 
+seen for tasks and operators. 
+It's a symbol n, which must be one of our 
+unique method symbols, 
+followed by a set of parameters x1 
+through xk here, which are variable 
+symbols that occur in m. 
+And again these parameters describe the 
+objects that are manipulated by this 
+method. 
+The next component is the task of this 
+method and that is simply one of the 
+non-primitive tasks that we've described 
+earlier. 
+The task of a method describes what can 
+be accomplished with this method. 
+And, of course, it must be non-primitive, 
+as all primitive tasks can be 
+accomplished by an operator. 
+But if we have a task network that 
+contains a primitive task, that is, the 
+task of a method, then we can use this 
+method to accomplish the task in the 
+network. 
+The third component of a method are the 
+preconditions associated with that method 
+and again like for an operator this is 
+simply a set of literals that we need to 
+achieve before we can apply this method. 
+So when we apply a method these 
+preconditions need to be true. 
+They need to hold in the state where we 
+apply the method. 
+So they are very much like the 
+preconditions of an operator. 
+Note that there's no effect associated 
+with the method, so that distinguishes a 
+operator from a method quite 
+significantly. 
+And the reason for this is that in this 
+approach to planning we are trying to 
+accomplish tasks, rather then achieve 
+goals. 
+So we don't need the effects, we need the 
+task of the method to do planning. 
+The forth and final component associated 
+with a method is the network of the 
+method. 
+This is simply a task network consisting 
+simply of tasks and edges which are 
+ordering constaints. 
+And the tasks in the set U are called the 
+subtasks of this method and you can think 
+of this method as breaking down the task, 
+the second component of the method into 
+subtasks that make up the network of the 
+method. 
+So the task of the method describes what 
+we can accomplish, this is what we 
+accomplish and the sub tasks or the 
+network describe how we can accomplish 
+that task. 
+And there may be different methods for 
+the same task, but achieving the task in 
+different ways by having a different 
+network, 
+and usually also different preconditions. 
+Methods, like task networks, can be 
+totally ordered or partially ordered, and 
+that is simply a property of the network 
+associated with the method. 
+So, if this network is totally ordered, 
+then we say the method is totally 
+ordered. 
+If this network is partially ordered, 
+then we say the method is partially 
+ordered. 
+So, essentially, you can think of a 
+method as breaking down a task. 
+The task the method accomplishes into 
+subtasks represented by the network. 
+In the next few slides, I'll simply show 
+you some examples of STN methods, and 
+these are the same methods I've described 
+informally earlier for moving a stack of 
+containers to another pile respecting the 
+order. 
+And I'll start with the simplest method 
+from that example, namely moving the 
+topmost container, and that was simply a 
+take action followed by a put action. 
+And the first thing we have here is the 
+name of the method, which consists of a 
+method symbol, take and put here, 
+and the parameters of which there are 
+quite a few. 
+And these parameters are of course all 
+the objects that we need to perform the 
+two actions. 
+So I'll go through this. 
+C is the container that we're trying to 
+move, K is the krane with which we pick 
+it up and put it down. 
+This all happens at location L. 
+And then we have the pile in which the 
+container is originally. 
+And the pile to which it is being moved. 
+Then we have Xo and Xd. 
+These are two containers. 
+Xo is the container from which we are 
+taking the container that we're moving, 
+that's c. 
+And Xd is the destination container onto 
+which we're putting this container. 
+So these are all the objects involved in 
+the take and put method. 
+The task we accomplish with this method 
+is simply described here, and that's the 
+task as we described earlier. 
+So we've got a task symbol followed by 
+the parameters of the task. 
+And these are only the two piles from 
+which moving and to which we're moving. 
+And to be able to apply this method we 
+have a number of preconditions that need 
+to be satisfied. 
+And you should be familiar with this 
+notation from the way preconditions were 
+described for operators. 
+So the first precondition was that the 
+container that we're moving is on top of 
+the the origin pile, then it needs to be 
+on the container from which we're taking 
+it. 
+The pile needs to be at that location. 
+And a crane also needs to be at that 
+location. 
+Also the destination pile needs to be at 
+the location, and the container onto 
+which we're putting it, our container C, 
+must be the top of the destination pile. 
+And then finally we have the sub tasks of 
+the network associated with this method 
+simply consisting of the two primitive 
+tasks, take and put. 
+So we're taking with crane k at location 
+l, container c, from the origin 
+container, in the origin pile. 
+And then we need to put the container 
+with the same crane at the same location 
+the same container we just picked up onto 
+the destination container in the 
+destination pile. 
+These are the two sub-tasks of this 
+method, and as you can see I've described 
+them as a sequence, so they are totally 
+ordered which means this method is 
+totally ordered. 
+Next I will describe two methods for 
+accomplishing the task of moving the 
+whole stack. 
+Remember this moving the stack reverses 
+the order in the containers. 
+And the informal description said that 
+moving a stack can be accomplished by 
+repeatedly moving the topmost container 
+until the stack is empty. 
+And as you know, repetition can be 
+achieved through recursion, so I first 
+define a method, recursive-move, which 
+takes four parameters, namely the origin 
+pile, the destination pile, the container 
+we're trying to move, and the container 
+from which we're moving Moving it. 
+And the task that we accomplish with this 
+method is to move a stack from the origin 
+pile to the destination pile. 
+Remember, for the previous method, our 
+task was to move only the top most 
+container. 
+Here we move the whole stack. 
+And there are only two preconditions 
+associated with this method, namely that 
+the container, that we're trying to move, 
+must be at the top of the origin pile, 
+and it must be on top of the container, x 
+o, from which we're trying to take it. 
+Then we have 2 subtasks that we need to 
+accomplish, to accomplish the task of 
+moving the stack. 
+And the first subtask is that we need to 
+move the top most container. 
+And then, we have a recursive call, so to 
+speak. 
+Namely, we have the task that this method 
+achieves as a subtask. 
+So we need to move the remainder of the 
+stack from the origin pile to the 
+destination pile after we've moved the 
+top-most container from the origin pile 
+to the destination pile. 
+And again, the sub tasks here are totally 
+ordered so this is the total order 
+method. 
+But we have a 2nd method described here, 
+and that is the no move method. 
+And let me start with the task this time. 
+The task for this method is the same task 
+as before, so here have move stack from 
+P0 to PD. 
+and here we have move stack from PO to 
+PD. 
+These two methods Accomplish the same 
+task. 
+But the 2 methods have different names. 
+And they have different preconditions. 
+So, previously, we needed a container 
+that is on top of the origin pile. 
+And now, our only precondition is that 
+the pallet is the top of the origin pile. 
+Which is another way of saying that the 
+pile from which we are trying to move the 
+containers is empty. 
+And if the pile that we're trying to move 
+the stack of containers is empty than the 
+sub tasks are also empty. 
+That means there's nothing that needs to 
+be done to move zero containers from one 
+pile to another. 
+So the first method we've described here 
+implements the loop of moving the 
+containers repeatedly through recursion 
+and the second method makes sure the 
+recursion bottoms out. 
+The final example, then, is for moving a 
+stack via an intermediate pile, to make 
+sure that we maintain the original order. 
+So, the first move reverses the order. 
+And then the second moving of the stack 
+reverses it again. 
+It means we have the original order back. 
+And to accomplish this, we have a method 
+very cleverly named move stack twice. 
+Which takes 3 parameters. 
+The origin pile, the intermediate pile, 
+and the destination pile. 
+And the task that we accomplish with this 
+method is to move the stack in an ordered 
+fashion. 
+Move ordered stack from the origin pile 
+to the destination pile. 
+And this method is always applicable, 
+which we can see here. 
+It has no preconditions, so as long as we 
+can find values for the 3 parameters, we 
+can apply this method. 
+And the network associated with this 
+method, is again, totally ordered. 
+It has 2 subtasks. 
+And the first subtask is to move the 
+stack from the origin pile to the 
+intermediate pile. 
+And then, we move it from the 
+intermediate pile to the destination 
+pile. 
+So it's again, a totally ordered network. 
+Which means we have a totally ordered 
+method. 
+Which means all our methods were totally 
+ordered. 
+

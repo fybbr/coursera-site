@@ -1,0 +1,570 @@
+1
+00:00:00,012 --> 00:00:06,352
+We have now seen what the search states 
+in our new search space look like, 
+
+2
+00:00:06,352 --> 00:00:11,577
+they are partial plans. 
+And each partial plan consists of the 
+
+3
+00:00:11,577 --> 00:00:17,025
+four components just described. 
+Next, we will look at the state 
+
+4
+00:00:17,025 --> 00:00:23,124
+transitions in our new search space. 
+These state transitions can be understood 
+
+5
+00:00:23,124 --> 00:00:28,037
+as Plan Refinement Operations as they 
+take partial plan and refine it into 
+
+6
+00:00:28,037 --> 00:00:32,234
+different partial plan. 
+And since there are four components to a 
+
+7
+00:00:32,234 --> 00:00:37,245
+partial plan, there are also four 
+principle Plan Refinement Operations that 
+
+8
+00:00:37,245 --> 00:00:41,096
+we will look at next. 
+The first component of a partial plan 
+
+9
+00:00:41,096 --> 00:00:45,906
+where the actions or to be more precise, 
+partially instantiated operators. 
+
+10
+00:00:45,906 --> 00:00:50,622
+In general, the partial plans will be 
+considering containing the following 
+
+11
+00:00:50,622 --> 00:00:53,262
+actions. 
+The first thing they contain is a 
+
+12
+00:00:53,262 --> 00:00:57,288
+representation of the initial state, and 
+then they will also hold the 
+
+13
+00:00:57,288 --> 00:01:02,847
+representation of the goal conditions. 
+Having initial state and goal conditions 
+
+14
+00:01:02,847 --> 00:01:07,946
+as part of the actions in our partial 
+plan simplifies the representation. 
+
+15
+00:01:07,946 --> 00:01:13,840
+Normally, most of the actions in our plan 
+will be partially instantiated operators 
+
+16
+00:01:13,840 --> 00:01:17,717
+from our domain. 
+One thing that is important here is that 
+
+17
+00:01:17,717 --> 00:01:22,967
+when an operator is added to our plan as 
+a partially instantiated deduction, it 
+
+18
+00:01:22,967 --> 00:01:27,667
+gets a new set of variables that is 
+different than all the variables we 
+
+19
+00:01:27,667 --> 00:01:31,490
+previously used. 
+So, the actions in our plan don't share 
+
+20
+00:01:31,490 --> 00:01:34,729
+variables. 
+Adding an action to a plan is a plan 
+
+21
+00:01:34,729 --> 00:01:39,113
+refinement operation. 
+But, I've already talked about the least 
+
+22
+00:01:39,113 --> 00:01:44,611
+commitment principle in planning, and 
+that means we only want to introduce new 
+
+23
+00:01:44,611 --> 00:01:49,713
+actions into our plan for a good reason. 
+And the two reasons we have for adding 
+
+24
+00:01:49,713 --> 00:01:54,736
+new actions to a plan can be that we have 
+an unsatisfied pre-condition in our plan 
+
+25
+00:01:54,736 --> 00:01:58,812
+that we still need to achieve. 
+So, there's is another action that has a 
+
+26
+00:01:58,812 --> 00:02:03,484
+pre-condition that is not supported 
+anywhere, then we may add an action that 
+
+27
+00:02:03,484 --> 00:02:07,422
+has a pre-condition as an effect. 
+Or the second case is, that we an 
+
+28
+00:02:07,422 --> 00:02:11,182
+unsatisfied goal condition that we still 
+need to satisfy. 
+
+29
+00:02:11,182 --> 00:02:15,433
+and we may use an effect of the newly 
+added action to satisfy that goal 
+
+30
+00:02:15,433 --> 00:02:18,650
+condition. 
+One important distinction to the type of 
+
+31
+00:02:18,650 --> 00:02:23,606
+planning we've done previously is that we 
+can add an action anywhere in the plan. 
+
+32
+00:02:23,606 --> 00:02:28,222
+In forward search, we've always added an 
+action to the end of the plan we're 
+
+33
+00:02:28,222 --> 00:02:33,362
+currently building up. And in backward 
+search, we've added it to the beginning. 
+
+34
+00:02:33,362 --> 00:02:39,283
+Here, we have no such restriction. 
+We can add new actions anywhere in the 
+
+35
+00:02:39,283 --> 00:02:43,243
+plan. 
+Here is pictorial representation of what 
+
+36
+00:02:43,243 --> 00:02:47,055
+this could look like. 
+We start with the empty plan. 
+
+37
+00:02:47,055 --> 00:02:50,908
+The empty plan consists of the initial 
+state and the goal. 
+
+38
+00:02:50,908 --> 00:02:55,528
+The initial state contains all of those 
+things that are initially true. 
+
+39
+00:02:55,528 --> 00:03:00,367
+So, all the propositions that are true in 
+the initial state are added here as 
+
+40
+00:03:00,367 --> 00:03:03,904
+assertions. 
+The goal contains all the goal conditions 
+
+41
+00:03:03,904 --> 00:03:07,139
+we want to be true. 
+I've used different colors for the 
+
+42
+00:03:07,139 --> 00:03:11,899
+different propositions here to indicate 
+what is already true and what still needs 
+
+43
+00:03:11,899 --> 00:03:15,009
+to be achieved. 
+So, all the propositions in the initial 
+
+44
+00:03:15,009 --> 00:03:18,358
+state are true, and we don't need to 
+achieve them anymore. 
+
+45
+00:03:18,358 --> 00:03:22,878
+Whereas the propositions in the goal, 
+still need to be achieved in someway, so 
+
+46
+00:03:22,878 --> 00:03:26,672
+they are red. 
+Now, adding an action simply takes a 
+
+47
+00:03:26,672 --> 00:03:32,207
+partially instantiated operator and adds 
+it to this plan as shown here. 
+
+48
+00:03:32,207 --> 00:03:37,877
+When I add a partially instantiated 
+operator to a plan, I add this number to 
+
+49
+00:03:37,877 --> 00:03:43,511
+give a unique reference to this action. 
+So, if I add another instance of the same 
+
+50
+00:03:43,511 --> 00:03:46,929
+operator, I can distinguish them by this 
+reference. 
+
+51
+00:03:46,929 --> 00:03:52,178
+I also use this reference as an index to 
+the variables of this operator, such that 
+
+52
+00:03:52,178 --> 00:03:55,017
+I can distinguish the different 
+variables. 
+
+53
+00:03:55,017 --> 00:04:00,012
+Remember, I told you each new operator 
+instance gets a new set of variables. 
+
+54
+00:04:00,012 --> 00:04:04,757
+And according to the least commitment 
+principle, I keep these as variables and 
+
+55
+00:04:04,757 --> 00:04:09,738
+don't assign values to them immediately. 
+And when I add a new operator, of course 
+
+56
+00:04:09,738 --> 00:04:13,574
+it comes with its own set of 
+preconditions and effects over its 
+
+57
+00:04:13,574 --> 00:04:16,952
+variables. 
+The preconditions are in red here because 
+
+58
+00:04:16,952 --> 00:04:21,568
+I still need to achieve these conditions 
+if I want to be able to execute this 
+
+59
+00:04:21,568 --> 00:04:24,995
+operator. 
+The effects are given as green because if 
+
+60
+00:04:24,995 --> 00:04:29,366
+I execute this action, then these things 
+will necessarily become true. 
+
+61
+00:04:29,366 --> 00:04:33,743
+There's other activity I need to do to 
+make these conditions true. 
+
+62
+00:04:33,743 --> 00:04:37,311
+And, of course, I can add any number of 
+actions to this plan. 
+
+63
+00:04:37,311 --> 00:04:42,735
+As shown here, I've added a second action 
+this has the index the reference 2 with a 
+
+64
+00:04:42,735 --> 00:04:46,144
+new set of variables. 
+Its own preconditions and effect. 
+
+65
+00:04:46,144 --> 00:04:51,647
+The next component of a partial plan 
+we'll be looking at are the Causal Links. 
+
+66
+00:04:51,647 --> 00:04:57,063
+If we only add actions to a plan when we 
+have a good reason for doing so, then 
+
+67
+00:04:57,063 --> 00:05:02,435
+perhaps it's a good idea to record that 
+reason, the rational for adding this 
+
+68
+00:05:02,435 --> 00:05:07,558
+action in the causal link. 
+So, adding causal links is our next plan 
+
+69
+00:05:07,558 --> 00:05:11,630
+refinement operation. 
+And the causal link always goes from a 
+
+70
+00:05:11,630 --> 00:05:17,125
+provider to a consumer. In the partial 
+plans we've looked at so far, there are 
+
+71
+00:05:17,125 --> 00:05:21,637
+two possible providers. 
+Namely, an effect of an action that we've 
+
+72
+00:05:21,637 --> 00:05:26,171
+just added to the plan, or an atom that 
+holds in the initial state. 
+
+73
+00:05:26,171 --> 00:05:30,012
+Both these can be used as a provider for 
+a causal link. 
+
+74
+00:05:30,012 --> 00:05:33,818
+The consumer of a causal link can also be 
+one of two things. 
+
+75
+00:05:33,818 --> 00:05:38,779
+The first is a precondition of an action 
+that we've added to the plan, or a goal 
+
+76
+00:05:38,779 --> 00:05:42,823
+condition that we need to satisfy to 
+achieve our overall goal. 
+
+77
+00:05:42,823 --> 00:05:47,036
+Note that implicit in this, we also have 
+an ordering constraint. 
+
+78
+00:05:47,036 --> 00:05:50,526
+The provider must, of course, come before 
+the consumer. 
+
+79
+00:05:50,526 --> 00:05:54,922
+But, we will deal with ordering 
+constraints seperately and later. 
+
+80
+00:05:54,922 --> 00:06:00,622
+Also, while the provider must come before 
+the consumer, it doesn't necessarily have 
+
+81
+00:06:00,622 --> 00:06:05,697
+to come directly before the consumer. 
+So, there may be other actions in between 
+
+82
+00:06:05,697 --> 00:06:09,097
+those two. 
+The main reason for adding causal links 
+
+83
+00:06:09,097 --> 00:06:14,272
+to a plan is to prevent interference 
+between different actions in a plan. 
+
+84
+00:06:14,272 --> 00:06:18,947
+So, for example, if we add a new action 
+to the plan after we have inserted a 
+
+85
+00:06:18,947 --> 00:06:23,567
+causal link and the new action could 
+become between the provider and the 
+
+86
+00:06:23,567 --> 00:06:26,572
+consumer. 
+Then, we have to make sure that none of 
+
+87
+00:06:26,572 --> 00:06:31,612
+the effects of that action interfere with 
+the condition that is protected in the 
+
+88
+00:06:31,612 --> 00:06:35,264
+causal link. 
+Also, causal links help us to keep track 
+
+89
+00:06:35,264 --> 00:06:38,580
+of preconditions that we have already 
+achieved. 
+
+90
+00:06:38,580 --> 00:06:42,680
+If we have an incoming link to a 
+precondition, that means this 
+
+91
+00:06:42,680 --> 00:06:48,292
+precondition is somehow achieved in the 
+plan and we no longer need to worry about 
+
+92
+00:06:48,292 --> 00:06:51,402
+it. 
+Going back to our example, here is what 
+
+93
+00:06:51,402 --> 00:06:56,637
+adding causal links looked like. 
+A causal link is denoted by this type of 
+
+94
+00:06:56,637 --> 00:07:01,735
+dotted arrow in this diagram. 
+And when we added the move action, we did 
+
+95
+00:07:01,735 --> 00:07:07,288
+this to achieve a goal, so we also can 
+add a causal link that represents that. 
+
+96
+00:07:07,288 --> 00:07:12,866
+We used the move action to use the effect 
+at r1, m1 to support the goal at robot 
+
+97
+00:07:12,866 --> 00:07:15,982
+location 2. 
+Clearly, these variables can be 
+
+98
+00:07:15,982 --> 00:07:19,322
+instantiated such that the goal is 
+satisfied. 
+
+99
+00:07:19,322 --> 00:07:24,028
+Note that with the addition of this 
+causal link, I've changed the color of 
+
+100
+00:07:24,028 --> 00:07:27,761
+this goal to green. 
+Because this goal is now supported by a 
+
+101
+00:07:27,761 --> 00:07:32,396
+causal link, which means it is achieved 
+by an action that is in our current 
+
+102
+00:07:32,396 --> 00:07:36,172
+partial plan. 
+Similarly, when I added the second action 
+
+103
+00:07:36,172 --> 00:07:41,205
+this has an effect not unloaded that can 
+be used to support the other goal and I 
+
+104
+00:07:41,205 --> 00:07:44,432
+can simply add a causal link to support 
+this goal. 
+
+105
+00:07:44,432 --> 00:07:48,379
+Again, the color changes to green because 
+it's now supported. 
+
+106
+00:07:48,379 --> 00:07:53,578
+This looks like the addition of actions 
+and causal links should always go hand in 
+
+107
+00:07:53,578 --> 00:07:55,767
+hand. 
+But, there is a good reason for 
+
+108
+00:07:55,767 --> 00:08:00,202
+considering the addition of causal links 
+as an independent plan refinement 
+
+109
+00:08:00,202 --> 00:08:03,142
+operation. 
+And here is an example of a causal link 
+
+110
+00:08:03,142 --> 00:08:06,032
+that was not introduced together with an 
+action. 
+
+111
+00:08:06,032 --> 00:08:10,697
+We use a condition from the initial state 
+to support a precondition of an action 
+
+112
+00:08:10,697 --> 00:08:14,592
+that we've just introduced. 
+Of course, we could also have causal 
+
+113
+00:08:14,592 --> 00:08:19,088
+links going directly from the initial 
+state to the goal. But, in this example, 
+
+114
+00:08:19,088 --> 00:08:22,576
+only one of the goal conditions was true 
+in the initial state. 
+

@@ -1,0 +1,454 @@
+1
+00:00:04,340 --> 00:00:09,569
+Now that we have seen how the internal 
+structure of operators and states can be 
+
+2
+00:00:09,569 --> 00:00:14,928
+represented in the strips representation, 
+it is time to turn to the bigger picture. 
+
+3
+00:00:14,928 --> 00:00:18,980
+And by that I mean planning domains and 
+planning problems. 
+
+4
+00:00:18,980 --> 00:00:23,855
+Planning domains implicitly define the 
+graph in which we are doing search. 
+
+5
+00:00:23,855 --> 00:00:29,192
+Planning problems also define the states 
+from which we are going and to which we 
+
+6
+00:00:29,192 --> 00:00:32,618
+want to go. 
+Plans are solutions to planning problems. 
+
+7
+00:00:32,618 --> 00:00:39,005
+And we will now define all this formally. 
+Here's a quick overview of the concepts 
+
+8
+00:00:39,005 --> 00:00:44,037
+we need to define for classical planning. 
+Most of modern planning, can be achieved 
+
+9
+00:00:44,037 --> 00:00:47,144
+by simply extending this classical 
+representation. 
+
+10
+00:00:47,144 --> 00:00:50,996
+So, in classical planning. 
+The task is to find a solution for a 
+
+11
+00:00:50,996 --> 00:00:54,537
+planning problem. 
+So we need to define, what is a solution? 
+
+12
+00:00:54,537 --> 00:00:58,576
+And what is a planning problem? 
+A solution, and a planning problem. 
+
+13
+00:00:58,576 --> 00:01:02,180
+The planning problem consists essentially 
+of three things. 
+
+14
+00:01:02,180 --> 00:01:05,970
+And those are given to the planner to 
+come up with solutions. 
+
+15
+00:01:05,970 --> 00:01:11,002
+The first component of a planning problem 
+is the initial state which is a set of 
+
+16
+00:01:11,002 --> 00:01:15,226
+atoms which relate the object in our 
+planning problem to each other. 
+
+17
+00:01:15,226 --> 00:01:20,259
+This is exactly the type of state we've 
+just seen in the strip star presentation. 
+
+18
+00:01:20,259 --> 00:01:25,105
+The next component is the planning domain 
+and the planning domain consists, in 
+
+19
+00:01:25,105 --> 00:01:29,826
+essence, of operators which are described 
+by names, preconditions, and effects. 
+
+20
+00:01:29,826 --> 00:01:33,430
+And the final component of a planning 
+problem is the goal. 
+
+21
+00:01:33,430 --> 00:01:37,454
+Note that the planning domain is 
+essentially a reusable component. 
+
+22
+00:01:37,454 --> 00:01:42,455
+We will often see many planning problems 
+that refer to the same domain, but have a 
+
+23
+00:01:42,455 --> 00:01:45,077
+different initial state and different 
+goal. 
+
+24
+00:01:45,077 --> 00:01:49,225
+But domain is reusable. 
+Finally when the planner has solved the 
+
+25
+00:01:49,225 --> 00:01:53,713
+planning problem, it will return a 
+solution to that planning problem, which 
+
+26
+00:01:53,713 --> 00:01:58,492
+is a plan. 
+Here is how we can define a strips 
+
+27
+00:01:58,492 --> 00:02:02,192
+planning domain. 
+We start with a function free first oral 
+
+28
+00:02:02,192 --> 00:02:06,542
+language L, as we've seen before. 
+A strips planning domain over this 
+
+29
+00:02:06,542 --> 00:02:11,475
+language L, is then a restricted state 
+transition system, consisting of these 
+
+30
+00:02:11,475 --> 00:02:14,462
+components S, A and gamma, as we've seen 
+before. 
+
+31
+00:02:14,462 --> 00:02:19,655
+You may wonder what happened to the set 
+of events, that can happen in this state 
+
+32
+00:02:19,655 --> 00:02:24,135
+transition system and that's exactly what 
+we mean by restricted here. 
+
+33
+00:02:24,135 --> 00:02:28,290
+In the restricted state transition 
+system, we do not have events. 
+
+34
+00:02:28,290 --> 00:02:33,610
+We only have the states S, the actions A, 
+and the state transition function gamma. 
+
+35
+00:02:33,610 --> 00:02:38,797
+The set S of possible world states is 
+then defined as the set of all possible 
+
+36
+00:02:38,797 --> 00:02:42,521
+strip's states. 
+So, all sets of ground atoms that you can 
+
+37
+00:02:42,521 --> 00:02:47,842
+possible define are an individual state. 
+The set of actions that we need is then 
+
+38
+00:02:47,842 --> 00:02:52,297
+the set of all ground instances of some 
+strips planning operators. 
+
+39
+00:02:52,297 --> 00:02:56,820
+And these are the operators that are 
+defined in the planning domain. 
+
+40
+00:02:56,820 --> 00:02:59,808
+And finally, we define the state 
+transition function. 
+
+41
+00:02:59,808 --> 00:03:02,509
+Which is, in this case, a deterministic 
+function. 
+
+42
+00:03:02,509 --> 00:03:06,934
+Because it maps to exactly one state. 
+Again, this is to do with the restricted 
+
+43
+00:03:06,934 --> 00:03:10,669
+state transition system. 
+So the state transition function takes a 
+
+44
+00:03:10,669 --> 00:03:13,715
+state s, and an action a. 
+And maps that to a new state. 
+
+45
+00:03:13,715 --> 00:03:18,083
+Which is defined by taking all the ground 
+atoms that are true in this state. 
+
+46
+00:03:18,083 --> 00:03:20,669
+Removing the negative effects of the 
+actions. 
+
+47
+00:03:20,669 --> 00:03:23,370
+And adding the positive effects of the 
+actions. 
+
+48
+00:03:23,370 --> 00:03:26,761
+That is true for an action that is 
+applicable in the state. 
+
+49
+00:03:26,761 --> 00:03:30,136
+If the action is not applicable. 
+Then, gamma SA is undefined. 
+
+50
+00:03:30,136 --> 00:03:34,232
+So, there is no resulting state if we try 
+to apply an action that is not 
+
+51
+00:03:34,232 --> 00:03:37,020
+applicable. 
+This definition of a state transition 
+
+52
+00:03:37,020 --> 00:03:41,344
+function is, of course, what we've seen 
+before, full of strips, actions, defined 
+
+53
+00:03:41,344 --> 00:03:44,187
+earlier. 
+Finally, the set S is closed under gamma, 
+
+54
+00:03:44,187 --> 00:03:48,842
+which means there are no states that 
+cannot be reached through the stationary 
+
+55
+00:03:48,842 --> 00:03:53,174
+illusion function that are in our set S. 
+So, that defines a strip's planning 
+
+56
+00:03:53,174 --> 00:03:57,284
+domain, and I hope that none of this 
+comes as a surprise to you, given what 
+
+57
+00:03:57,284 --> 00:04:03,286
+we've seen earlier. 
+Here is an example of a planning domain 
+
+58
+00:04:03,286 --> 00:04:07,376
+in the PDDL syntax. 
+The core of the representation, are of 
+
+59
+00:04:07,376 --> 00:04:11,880
+course the planning operators, and that's 
+what we have here on the right. 
+
+60
+00:04:11,880 --> 00:04:16,696
+These are the five actions defined, or 
+the five operators, defined for the doc 
+
+61
+00:04:16,696 --> 00:04:21,324
+worker robot domain, and again, they're 
+called actions in pdl, but these are 
+
+62
+00:04:21,324 --> 00:04:24,326
+operators. 
+As you can see, they are perimeterized 
+
+63
+00:04:24,326 --> 00:04:27,516
+and have variables whereas actions would 
+be ground. 
+
+64
+00:04:27,516 --> 00:04:31,895
+So, we have the move action, the load 
+action, the unload action, the take 
+
+65
+00:04:31,895 --> 00:04:35,898
+action, and the put action. 
+That is the complete set of operators 
+
+66
+00:04:35,898 --> 00:04:40,651
+defined for the doc worker robot domain. 
+In addition to the operators, the PDDL 
+
+67
+00:04:40,651 --> 00:04:43,495
+language allows us to define a few other 
+things. 
+
+68
+00:04:43,495 --> 00:04:47,997
+And that's what we've got over here. 
+So we can, for example, say that a domain 
+
+69
+00:04:47,997 --> 00:04:50,960
+has a name. 
+So that we can refer to this domain, in 
+
+70
+00:04:50,960 --> 00:04:53,744
+planning problems, as we will see later, 
+by name. 
+
+71
+00:04:53,744 --> 00:04:58,069
+Then we can specify requirements, which 
+allows the language to extensible. 
+
+72
+00:04:58,069 --> 00:05:01,446
+We can specify types. 
+These are the five types we've seen 
+
+73
+00:05:01,446 --> 00:05:03,934
+earlier. 
+Locations, piles, robots, cranes, and 
+
+74
+00:05:03,934 --> 00:05:06,778
+containers. 
+Then, in this domain specification, we 
+
+75
+00:05:06,778 --> 00:05:09,800
+also have one constant defined, which is 
+the pallet. 
+
+76
+00:05:09,800 --> 00:05:15,006
+This is defined as part of the domain 
+here, as it will occur in every planning 
+
+77
+00:05:15,006 --> 00:05:18,068
+problem. 
+And then we have the predicates, which 
+
+78
+00:05:18,068 --> 00:05:22,254
+where are exactly the predicates we've 
+seen earlier defined for the dock worker 
+
+79
+00:05:22,254 --> 00:05:25,707
+robot domain. 
+You can see the complete set here defined 
+
+80
+00:05:25,707 --> 00:05:29,213
+with the types of the arguments. 
+And that is the definition of this 
+
+81
+00:05:29,213 --> 00:05:32,130
+domain. 
+If you find this a little hard to read 
+
+82
+00:05:32,130 --> 00:05:35,836
+here, or want to download it. 
+You can always go to the book website. 
+
+83
+00:05:35,836 --> 00:05:39,935
+So this is all based on the automated 
+planning book, that you see here. 
+
+84
+00:05:39,935 --> 00:05:44,315
+And there's a website for this book. 
+And you can see here at the bottom is the 
+
+85
+00:05:44,315 --> 00:05:47,179
+PDDL specification of the dock worker 
+robot domain. 
+
+86
+00:05:47,179 --> 00:05:51,559
+And so if you click this link, you will 
+get a PDL file which is almost exactly 
+
+87
+00:05:51,559 --> 00:05:56,832
+what you've seen in this slide. 
+And since the URL is a little hard to 
+
+88
+00:05:56,832 --> 00:05:58,908
+read here. 
+It isn't bigger. 
+
+89
+00:05:58,908 --> 00:05:59,945
+So it's 
+http://projects.laas.fr/planning/. 
+
+90
+00:06:02,840 --> 00:06:07,912
+If you go to that URL you get to this 
+website, and you will be able to download 
+
+91
+00:06:07,912 --> 00:06:08,940
+the PDDL domain. 
+

@@ -1,0 +1,700 @@
+1
+00:00:00,012 --> 00:00:06,101
+Now, that you understand what it means 
+for a plan to be a solution to an HTN 
+
+2
+00:00:06,101 --> 00:00:12,499
+planning problem, we can turn to the 
+algorithm that finds these solutions. 
+
+3
+00:00:12,499 --> 00:00:18,584
+So we will now look at the planning 
+procedures that refine task networks 
+
+4
+00:00:18,584 --> 00:00:22,922
+until we have solutions to our planning 
+problems. 
+
+5
+00:00:22,922 --> 00:00:27,264
+And here is the pseudo code for the 
+Ground-TFD procedure. 
+
+6
+00:00:27,264 --> 00:00:31,531
+TFD here stands for Total order Forward 
+Decomposition. 
+
+7
+00:00:31,531 --> 00:00:36,536
+This procedure deals with total order 
+problems and domains only. 
+
+8
+00:00:36,536 --> 00:00:42,623
+It does a forward decomposition meaning 
+it always starts from the initial state 
+
+9
+00:00:42,623 --> 00:00:45,883
+and tries to build the plan out from 
+there. 
+
+10
+00:00:45,883 --> 00:00:51,762
+And the D is simply for decomposition so 
+it uses methods to solve HTN planning 
+
+11
+00:00:51,762 --> 00:00:55,534
+problems. 
+And the input to this records of function 
+
+12
+00:00:55,534 --> 00:00:59,731
+is a planning problem. 
+So, we have an initial state, a total 
+
+13
+00:00:59,731 --> 00:01:03,903
+order task network, a set of operators 
+and a set of methods. 
+
+14
+00:01:03,903 --> 00:01:09,635
+The outline of the procedure then follows 
+exactly the definition we've just seen. 
+
+15
+00:01:09,635 --> 00:01:15,062
+So, first we have the case where we deal 
+with an empty task network as input. 
+
+16
+00:01:15,062 --> 00:01:20,054
+Then we have the case where the first 
+task in the given task network is 
+
+17
+00:01:20,054 --> 00:01:23,731
+primitive. 
+And finally, we have the case where the 
+
+18
+00:01:23,731 --> 00:01:27,651
+first task in the given task network is 
+non primitive. 
+
+19
+00:01:27,651 --> 00:01:32,799
+The simplest case where k is = to zero. 
+That means we have no tasks in our 
+
+20
+00:01:32,799 --> 00:01:35,812
+initial task network. 
+And that means. 
+
+21
+00:01:35,812 --> 00:01:41,140
+The empty plan is a solution for this 
+task network as given in the definition. 
+
+22
+00:01:41,140 --> 00:01:45,059
+Then, we're dealing with the case where 
+T1 is primitive. 
+
+23
+00:01:45,059 --> 00:01:50,002
+That means there must be an operator that 
+has the same name as this task. 
+
+24
+00:01:50,002 --> 00:01:55,151
+And that means, there must be actions 
+that are instances of this operator. 
+
+25
+00:01:55,151 --> 00:02:00,327
+And that have the same name as the task 
+instantiated with some substitution 
+
+26
+00:02:00,327 --> 00:02:01,362
+sigma. 
+And. 
+
+27
+00:02:01,362 --> 00:02:04,264
+These actions may be applicable in our 
+state S. 
+
+28
+00:02:04,264 --> 00:02:08,422
+So we're only looking at actions that are 
+applicable in our state S. 
+
+29
+00:02:08,422 --> 00:02:12,401
+And that's what we do here. 
+We compute the set of actions that are 
+
+30
+00:02:12,401 --> 00:02:16,083
+unifiable with our first task, t1, and 
+are applicable in S. 
+
+31
+00:02:16,083 --> 00:02:21,082
+And that's the set actions here. 
+If this set is empty, then there is no 
+
+32
+00:02:21,082 --> 00:02:26,174
+way to accomplish this primitive task and 
+that means we can return failure or we go 
+
+33
+00:02:26,174 --> 00:02:30,827
+back to the nearest backtrack point. 
+Otherwise, we can choose one of these 
+
+34
+00:02:30,827 --> 00:02:34,765
+actions from our set of actions and 
+refine our plan in that way. 
+
+35
+00:02:34,765 --> 00:02:39,274
+Note that this choosing here is a 
+non-deterministic choice point, so that 
+
+36
+00:02:39,274 --> 00:02:43,977
+means we may have to backtrack here and 
+try a different path, if we fail in the 
+
+37
+00:02:43,977 --> 00:02:47,240
+current branch. 
+Then we apply the definition of a 
+
+38
+00:02:47,240 --> 00:02:51,736
+solution here. That said, a plan is a 
+solution to a planning problem, if a 
+
+39
+00:02:51,736 --> 00:02:55,555
+modified plan, is a solution to a 
+modified planning problem. 
+
+40
+00:02:55,555 --> 00:03:00,045
+And we do this by recursively calling 
+ground TFD here, with the modified 
+
+41
+00:03:00,045 --> 00:03:04,021
+planning problem. 
+Problem is modified as follows; we first 
+
+42
+00:03:04,021 --> 00:03:09,286
+compute the successor of the initial 
+state given our chosen action and that's 
+
+43
+00:03:09,286 --> 00:03:13,411
+our new initial state. 
+Then we take the remainder of our task 
+
+44
+00:03:13,411 --> 00:03:18,221
+network consisting of the tasks t2 
+through tk, and instantiate those with 
+
+45
+00:03:18,221 --> 00:03:22,371
+our new substitution σ. 
+Note that t1 is no longer in this task 
+
+46
+00:03:22,371 --> 00:03:26,752
+network and the set of operators and 
+methods remains the same. 
+
+47
+00:03:26,752 --> 00:03:29,707
+Of course, this procedure may return 
+failure. 
+
+48
+00:03:29,707 --> 00:03:33,632
+And in that case, all we have to do is 
+pass the failure back up. 
+
+49
+00:03:33,632 --> 00:03:37,527
+Because this branch in our search does 
+not give us a solution. 
+
+50
+00:03:37,527 --> 00:03:40,952
+Otherwise, the returned plan is part of 
+our solution. 
+
+51
+00:03:40,952 --> 00:03:45,787
+But our action that we've just chosen to 
+refine the plan, must be added to the 
+
+52
+00:03:45,787 --> 00:03:48,702
+plan. 
+And in this case, it must be added at the 
+
+53
+00:03:48,702 --> 00:03:50,402
+beginning. 
+Of the plan. 
+
+54
+00:03:50,402 --> 00:03:56,020
+And then there's the third alternative 
+path in this algorithm where our initial 
+
+55
+00:03:56,020 --> 00:03:59,796
+task T1 is not primitive and that's what 
+we have here. 
+
+56
+00:03:59,796 --> 00:04:04,803
+And in this case what we have to do is 
+compute the set of methods that are 
+
+57
+00:04:04,803 --> 00:04:10,288
+relevant for this given task under some 
+substitution sigma, and that are also 
+
+58
+00:04:10,288 --> 00:04:14,882
+applicable in our initial state Given as 
+part of the planning problem. 
+
+59
+00:04:14,882 --> 00:04:18,662
+And this is the set of methods that we 
+can use to refine our plan. 
+
+60
+00:04:18,662 --> 00:04:22,882
+And again, if this set of methods is 
+empty, that means there is no way to 
+
+61
+00:04:22,882 --> 00:04:27,222
+refine the first task in the network and 
+that means we can return failure. 
+
+62
+00:04:27,222 --> 00:04:30,447
+There is no solution in this branch of 
+the search tree. 
+
+63
+00:04:30,447 --> 00:04:35,152
+Otherwise, we choose one of the methods 
+which means we have a non-deterministic 
+
+64
+00:04:35,152 --> 00:04:38,557
+choice point again. 
+We have to come back here if we fail in 
+
+65
+00:04:38,557 --> 00:04:42,237
+the current branch and choose a different 
+method from our set. 
+
+66
+00:04:42,237 --> 00:04:48,319
+So, we choose a method and substitution. 
+And we try to refine our plan with that 
+
+67
+00:04:48,319 --> 00:04:51,332
+method. 
+And in a total order network, this is 
+
+68
+00:04:51,332 --> 00:04:54,888
+quite simple. 
+We take the set of tasks minus the first 
+
+69
+00:04:54,888 --> 00:04:57,629
+task. 
+We remove that from our sequence of 
+
+70
+00:04:57,629 --> 00:05:00,937
+tasks. 
+Instantiate those with our substitution. 
+
+71
+00:05:00,937 --> 00:05:04,492
+And pre-pend this with the subtasks of 
+our method. 
+
+72
+00:05:04,492 --> 00:05:09,567
+That gives us a modified network that we 
+can now test to see whether this is a 
+
+73
+00:05:09,567 --> 00:05:14,717
+solution to our planning problem and we 
+do this by again calling the function 
+
+74
+00:05:14,717 --> 00:05:19,692
+grant TFD recursively given the same 
+initial state our new plan that we've 
+
+75
+00:05:19,692 --> 00:05:23,982
+just created and the operators and 
+methods from the original. 
+
+76
+00:05:23,982 --> 00:05:27,883
+Planning problem. 
+So what this procedure does is take this 
+
+77
+00:05:27,883 --> 00:05:31,365
+task network, look at the first task in 
+the network. 
+
+78
+00:05:31,365 --> 00:05:36,452
+If this is a non-primitive task, it will 
+go in that final branch here where it 
+
+79
+00:05:36,452 --> 00:05:41,291
+replaces the first task with the 
+sub-tasks in a method that is applicable 
+
+80
+00:05:41,291 --> 00:05:44,759
+and relevant here. 
+And then, eventually, this will get to 
+
+81
+00:05:44,759 --> 00:05:48,195
+finer ground tasks. 
+We will get to the second part here. 
+
+82
+00:05:48,195 --> 00:05:51,545
+Where the first subtask in 1 of these 
+methods was primitive. 
+
+83
+00:05:51,545 --> 00:05:55,422
+And then we get to this part. 
+And we remove that task, and recursively 
+
+84
+00:05:55,422 --> 00:05:58,822
+call this function. 
+And hopefully, finally, we end up in the 
+
+85
+00:05:58,822 --> 00:06:02,502
+first branch, where we've removed all the 
+tasks from our network. 
+
+86
+00:06:02,502 --> 00:06:05,292
+And have a plan that is a solution to our 
+plan. 
+
+87
+00:06:05,292 --> 00:06:11,431
+And here is an example from the DWR 
+domain that shall illustrate this 
+
+88
+00:06:11,431 --> 00:06:15,863
+algorithm. 
+We start with the same task we've seen 
+
+89
+00:06:15,863 --> 00:06:22,764
+before we want to move the stack that is 
+in pile p1 to another stack q where q is 
+
+90
+00:06:22,764 --> 00:06:28,331
+a variable so it is unspecified. 
+So the algorithm first takes the first 
+
+91
+00:06:28,331 --> 00:06:32,882
+task in the sequence of tasks and tests 
+whether it is a primitive or non 
+
+92
+00:06:32,882 --> 00:06:36,616
+primitive task. 
+In this case, it is a non primitive task. 
+
+93
+00:06:36,616 --> 00:06:41,912
+Which means we have to compute the set of 
+all relevant and applicable methods, and 
+
+94
+00:06:41,912 --> 00:06:45,549
+choose one of those. 
+And that's what I'm doing here, I'm 
+
+95
+00:06:45,549 --> 00:06:48,732
+choosing the method recursive-move from 
+pile 1. 
+
+96
+00:06:48,732 --> 00:06:53,982
+1 2 pile 2, where we're moving container 
+1 from container 2 as the first part of 
+
+97
+00:06:53,982 --> 00:06:57,157
+this method. 
+Note that I'm making all the right 
+
+98
+00:06:57,157 --> 00:07:01,257
+choices here that will not require me to 
+backtrack anywhere. 
+
+99
+00:07:01,257 --> 00:07:06,532
+Now we can apply this method to decompose 
+the first task in our task network and 
+
+100
+00:07:06,532 --> 00:07:11,907
+that gives us 2 new subtasks, namely, 
+moving the first, the topmost container, 
+
+101
+00:07:11,907 --> 00:07:16,082
+from pile 1 to pile 2 and moving the 
+stack from pile 1 to pile 2. 
+
+102
+00:07:16,082 --> 00:07:20,341
+So that's recursive. 
+Notice that it's ground here, in this 
+
+103
+00:07:20,341 --> 00:07:23,015
+method. 
+p2 is instantiated, and it is 
+
+104
+00:07:23,015 --> 00:07:28,471
+instantiated in our sub-task as well. 
+Then, the procedure, again, takes the 
+
+105
+00:07:28,471 --> 00:07:33,422
+first sub-task in this new network, which 
+is the move-topmost task. 
+
+106
+00:07:33,422 --> 00:07:37,812
+And because this is a non-primitive task, 
+we end up in the third part of the 
+
+107
+00:07:37,812 --> 00:07:40,727
+algorithm again, which means we choose a 
+method. 
+
+108
+00:07:40,727 --> 00:07:45,447
+And here I'm choosing the take-and-put 
+method with some appropriate arguments. 
+
+109
+00:07:45,447 --> 00:07:50,554
+And I'm using that to refine this task, 
+giving me 2 new subtasks and they're grey 
+
+110
+00:07:50,554 --> 00:07:53,859
+here, because they are now primitive 
+subtasks. 
+
+111
+00:07:53,859 --> 00:07:57,984
+So again the procedure would go through 
+the recursive call. 
+
+112
+00:07:57,984 --> 00:08:03,389
+Take the first subtask in this network, 
+which is now the take crane at location 
+
+113
+00:08:03,389 --> 00:08:07,383
+and so on subtask. 
+And I'll have to find an action that 
+
+114
+00:08:07,383 --> 00:08:11,162
+matches this task. 
+And of course there is an action that 
+
+115
+00:08:11,162 --> 00:08:14,844
+immediately matches this task, so I can 
+add this to my plan. 
+
+116
+00:08:14,844 --> 00:08:19,510
+Then I go to the next first sub task, 
+remember we have removed this task now. 
+
+117
+00:08:19,510 --> 00:08:22,462
+So the next first sub task is this put 
+task here. 
+
+118
+00:08:22,462 --> 00:08:26,323
+And again, there is an action that 
+directly matches this task. 
+
+119
+00:08:26,323 --> 00:08:30,993
+So I can remove this from the task 
+network and Look at the next first task. 
+
+120
+00:08:30,993 --> 00:08:36,270
+Which now, is this move stack task here. 
+And again, we end up in the branch, where 
+
+121
+00:08:36,270 --> 00:08:41,134
+we have to choose a method that refines 
+this task, this non primitive task. 
+
+122
+00:08:41,134 --> 00:08:46,562
+And now, we're choosing recursive move 
+here again with different containers. 
+
+123
+00:08:46,562 --> 00:08:51,872
+And if we refine this task, we get as the 
+first sub task, move top-most, and then 
+
+124
+00:08:51,872 --> 00:08:55,527
+move stack again. 
+And we go through the loop again, the 
+
+125
+00:08:55,527 --> 00:09:00,170
+first sub task is now move top-most. 
+And we use a take and put method to 
+
+126
+00:09:00,170 --> 00:09:03,207
+refine this task giving us 2 primitive 
+tasks. 
+
+127
+00:09:03,207 --> 00:09:08,244
+So we go through the primitive tasks 
+again, trying to find actions for those 
+
+128
+00:09:08,244 --> 00:09:11,306
+tasks. 
+And we find an action that matches this 
+
+129
+00:09:11,306 --> 00:09:14,982
+task and we also find an action that 
+matches this task. 
+
+130
+00:09:14,982 --> 00:09:20,591
+Task and that leaves us with this task 
+here as the new first task in our network 
+
+131
+00:09:20,591 --> 00:09:26,119
+and again this is non primitive task so 
+we've got to find a method and use this 
+
+132
+00:09:26,119 --> 00:09:32,239
+method to refine task into two sub tasks. 
+where move-topmost is not the first one 
+
+133
+00:09:32,239 --> 00:09:37,871
+so we go again into the recursive call We 
+find a take and put method that matches 
+
+134
+00:09:37,871 --> 00:09:40,807
+this task refines it to two primitive 
+tasks. 
+
+135
+00:09:40,807 --> 00:09:43,945
+And again, there are actions for both of 
+those. 
+
+136
+00:09:43,945 --> 00:09:48,752
+So we turn to the final task here, which 
+is moving a stack from P1 to P2. 
+
+137
+00:09:48,752 --> 00:09:53,990
+But now, if I'd shown you the state, 
+you'd see that there are no containers in 
+
+138
+00:09:53,990 --> 00:09:57,026
+here. 
+So we can apply the no move method, and 
+
+139
+00:09:57,026 --> 00:10:00,182
+that gives us the empty plan as the 
+result. 
+
+140
+00:10:00,182 --> 00:10:05,820
+And this is essentially how our 
+Ground-TFD Algorithm works. 
+

@@ -1,0 +1,539 @@
+1
+00:00:00,012 --> 00:00:06,195
+You have now seen the A* algorithm for 
+heuristic search and you should 
+
+2
+00:00:06,195 --> 00:00:11,166
+understand how it works. 
+A* is a pretty good algorithm. 
+
+3
+00:00:11,166 --> 00:00:17,122
+It always finds optimal solutions and it 
+is optimally efficient. 
+
+4
+00:00:17,122 --> 00:00:22,057
+So you may wonder, why would we ever need 
+another search algorithm? Well, there are 
+
+5
+00:00:22,057 --> 00:00:25,047
+a few more problems, and I will go into 
+those next. 
+
+6
+00:00:25,047 --> 00:00:29,557
+Some of these problems are related to the 
+fact that we're usually searching a 
+
+7
+00:00:29,557 --> 00:00:34,122
+graph, not a tree, so we will look at a 
+star as a graph search algorithm next. 
+
+8
+00:00:34,122 --> 00:00:39,159
+And here is the pseudocode for the A* 
+tree and graph search algorithms. 
+
+9
+00:00:39,159 --> 00:00:44,344
+The basic version of this algorithm is 
+the tree search algorithm, and there is 
+
+10
+00:00:44,344 --> 00:00:49,257
+an extension that I've also included on 
+this slide which consists of three 
+
+11
+00:00:49,257 --> 00:00:53,158
+additional lines of code, that performs 
+the graph search. 
+
+12
+00:00:53,158 --> 00:00:56,602
+And the three additional lines of code 
+are, these. 
+
+13
+00:00:56,602 --> 00:01:01,468
+Three lines here shown in gray. 
+But let's have a look at the tree search 
+
+14
+00:01:01,468 --> 00:01:05,541
+algorithm first. 
+So we define a function A* tree search 
+
+15
+00:01:05,541 --> 00:01:10,203
+that takes two parameters. 
+The first is our search problem, and the 
+
+16
+00:01:10,203 --> 00:01:15,574
+second is the heuristic that we're using 
+This may or may not be an admissible 
+
+17
+00:01:15,574 --> 00:01:19,281
+heuristic. 
+The first thing we do then, is initialize 
+
+18
+00:01:19,281 --> 00:01:23,687
+our set of fringe nodes. 
+And we initialize the fringe, from our 
+
+19
+00:01:23,687 --> 00:01:26,798
+initial state that was given in the 
+problem. 
+
+20
+00:01:26,798 --> 00:01:30,062
+And what we do is, we put this initial 
+state. 
+
+21
+00:01:30,062 --> 00:01:34,853
+Into a queue, into a priority queue that 
+sorts the node by their f value. 
+
+22
+00:01:34,853 --> 00:01:39,841
+That means we always have quick access to 
+the node in that queue that has the 
+
+23
+00:01:39,841 --> 00:01:43,545
+lowest f value and that is how we 
+initialize our fringe. 
+
+24
+00:01:43,545 --> 00:01:48,878
+Then we go through the loop that does the 
+note expansion and generates the search 
+
+25
+00:01:48,878 --> 00:01:51,819
+tree. 
+The first thing we do is we test whether 
+
+26
+00:01:51,819 --> 00:01:55,312
+the fringe is empty. 
+That would mean that there would be no 
+
+27
+00:01:55,312 --> 00:01:59,911
+more nodes to explore and that means we 
+can return failure because it means we 
+
+28
+00:01:59,911 --> 00:02:04,708
+have generated the whole search tree and 
+haven't come across a solution node, so 
+
+29
+00:02:04,708 --> 00:02:08,362
+there is no solution node. 
+So, we can return with failure. 
+
+30
+00:02:08,362 --> 00:02:11,517
+[UNKNOWN]. 
+But if there are nodes on the fringe, 
+
+31
+00:02:11,517 --> 00:02:15,226
+then we have to select one of these 
+nodes, for expansion. 
+
+32
+00:02:15,226 --> 00:02:20,356
+Note, that the select function here, does 
+not take a second argument, as it did 
+
+33
+00:02:20,356 --> 00:02:23,317
+earlier, because our strategy here is 
+fixed. 
+
+34
+00:02:23,317 --> 00:02:26,202
+We select the node with the lowest f 
+value. 
+
+35
+00:02:26,202 --> 00:02:31,520
+Having said that I should point out that 
+this selection is not quite deterministic 
+
+36
+00:02:31,520 --> 00:02:36,782
+as there may be many nodes with the same 
+f value that are currently on the fringe. 
+
+37
+00:02:36,782 --> 00:02:40,561
+So our node is only 1 of the nodes with 
+the lowest f value. 
+
+38
+00:02:40,561 --> 00:02:43,772
+And what we do next, is we perform our 
+goal test. 
+
+39
+00:02:43,772 --> 00:02:47,081
+The goal test on the state contained in 
+that node. 
+
+40
+00:02:47,081 --> 00:02:52,168
+And if this goal test succeeds, that 
+means we have found a solution, and then 
+
+41
+00:02:52,168 --> 00:02:56,422
+we can simply return, the path, to this 
+node in the search tree. 
+
+42
+00:02:56,422 --> 00:03:02,118
+If our chosen node is not a goal node, 
+then we have to add it's successors to 
+
+43
+00:03:02,118 --> 00:03:07,936
+the fringe and I've shown this here as a 
+loop because we add each successor in 
+
+44
+00:03:07,936 --> 00:03:13,322
+turn, and we use the function expand to 
+generate all the successors. 
+
+45
+00:03:13,322 --> 00:03:18,093
+Of the selected node and our loop 
+variable successor here is the next 
+
+46
+00:03:18,093 --> 00:03:23,719
+successor in that loop and then for the 
+tree search version of this algorithm, we 
+
+47
+00:03:23,719 --> 00:03:27,348
+simply have to add that new successor to 
+the fringe. 
+
+48
+00:03:27,348 --> 00:03:32,740
+So, we extend our current fringe with the 
+new successor and the place where we 
+
+49
+00:03:32,740 --> 00:03:38,132
+queue this new successor in our priority 
+queue is of course the f value of that 
+
+50
+00:03:38,132 --> 00:03:40,956
+node. 
+And for those of you who have been 
+
+51
+00:03:40,956 --> 00:03:45,867
+wondering where we use the parameter h, 
+that is the second parameter of this 
+
+52
+00:03:45,867 --> 00:03:51,166
+function, remember that f is defines as g 
++ h, so that's where we use our heuristic 
+
+53
+00:03:51,166 --> 00:03:56,318
+function, and that is all the pseudocode 
+we need for the tree search version of 
+
+54
+00:03:56,318 --> 00:03:58,332
+this algorithm. 
+Algorithm. 
+
+55
+00:03:58,332 --> 00:04:02,404
+But the graph search version isn't much 
+more complicated. 
+
+56
+00:04:02,404 --> 00:04:07,612
+What we need to do in addition is first, 
+we need to initialize the set of all 
+
+57
+00:04:07,612 --> 00:04:12,405
+nodes that we have seen so far. 
+And one way to do this is to initialize 
+
+58
+00:04:12,405 --> 00:04:14,625
+this as a hash table. 
+of nodes. 
+
+59
+00:04:14,625 --> 00:04:19,315
+And intially this will contain only the 
+inital state, that we can take from the 
+
+60
+00:04:19,315 --> 00:04:23,336
+fringe or from the problem. 
+Then the algorithm proceeds as before, 
+
+61
+00:04:23,336 --> 00:04:27,878
+going through the loop, trying to take a 
+node off the fringe if there is one. 
+
+62
+00:04:27,878 --> 00:04:32,527
+Performing the goal test on that node. 
+If it's a goal node then we've found the 
+
+63
+00:04:32,527 --> 00:04:35,269
+solution. 
+And if not we go to the loop where we 
+
+64
+00:04:35,269 --> 00:04:39,752
+expand the current node and generate it's 
+successors, and that's where the 
+
+65
+00:04:39,752 --> 00:04:44,708
+algorithm for graph search differs. 
+Namely for each successor that we're 
+
+66
+00:04:44,708 --> 00:04:50,048
+generating we have to test whether this 
+is a node that we've already seen and if 
+
+67
+00:04:50,048 --> 00:04:55,311
+we have already seen that node then we 
+don't need to add it to our fringe, if we 
+
+68
+00:04:55,311 --> 00:05:00,777
+haven't seen the node then we continue as 
+before we add it to the fringe as our new 
+
+69
+00:05:00,777 --> 00:05:06,040
+successor at its current f value and we 
+also have to add it to the set of all the 
+
+70
+00:05:06,040 --> 00:05:10,891
+nodes we've seen before. 
+So that we don't explore this note again. 
+
+71
+00:05:10,891 --> 00:05:15,160
+So this is a working version of the graph 
+search algorithm. 
+
+72
+00:05:15,160 --> 00:05:21,012
+However, there is one problem with it. 
+If the given heuristic is admissable, the 
+
+73
+00:05:21,012 --> 00:05:26,842
+graph search version, as shown here, no 
+longer guarantees an optimal solution. 
+
+74
+00:05:26,842 --> 00:05:32,554
+And the reason for this occurs here. 
+Namely if we generate the successors of a 
+
+75
+00:05:32,554 --> 00:05:36,805
+node, we may generate a new node that we 
+have seen before. 
+
+76
+00:05:36,805 --> 00:05:42,849
+But the second time we generate the node, 
+we actually discover a shorter path than 
+
+77
+00:05:42,849 --> 00:05:48,306
+the first time we generated it. 
+So what we really want to do here is keep 
+
+78
+00:05:48,306 --> 00:05:54,485
+the node that has the shorter path and 
+doesn't matter whether we discovered that 
+
+79
+00:05:54,485 --> 00:05:58,750
+first or later. 
+So what we could do is simply add a piece 
+
+80
+00:05:58,750 --> 00:06:04,392
+of code here that tests whether our new 
+path is shorter than the old path. 
+
+81
+00:06:04,392 --> 00:06:09,642
+But for many problems the heuristic that 
+we'll be using is not admissible, and 
+
+82
+00:06:09,642 --> 00:06:13,192
+then A* doesn't guarantee as an optimal 
+path anyway. 
+
+83
+00:06:13,192 --> 00:06:17,932
+So, we don't have to worry about this 
+shortcut question necessarily. 
+
+84
+00:06:17,932 --> 00:06:23,384
+And here is the first problem with A* as 
+it stands, and that is it still uses 
+
+85
+00:06:23,384 --> 00:06:27,274
+exponential space unless the euristics 
+are perfect. 
+
+86
+00:06:27,274 --> 00:06:32,751
+In fact, in the worst case, the time and 
+space complexity of A*, are both an 
+
+87
+00:06:32,751 --> 00:06:35,953
+O(b^l). 
+Where B is the branching factor, so 
+
+88
+00:06:35,953 --> 00:06:40,271
+that's the number of successes we have 
+per node on average. 
+
+89
+00:06:40,271 --> 00:06:43,769
+An L is the length of the path we're 
+looking for. 
+
+90
+00:06:43,769 --> 00:06:49,792
+b^l is exponential, which means we have 
+exponential time and space complexity, 
+
+91
+00:06:49,792 --> 00:06:55,156
+And in reality, we will see that this is 
+true most of the time the fringe grows 
+
+92
+00:06:55,156 --> 00:06:57,930
+exponentially. 
+Now let's look at this. 
+
+93
+00:06:57,930 --> 00:07:02,183
+What does this really mean? So 
+exponential time complexity. 
+
+94
+00:07:02,183 --> 00:07:07,703
+That means when the problem grows by one 
+step, the size of the problem, the time 
+
+95
+00:07:07,703 --> 00:07:13,024
+it takes to solve this problem, doubles. 
+Or in general, it grows by a factor of B. 
+
+96
+00:07:13,024 --> 00:07:17,425
+This may or may not be acceptable, 
+depending on how much time you actually 
+
+97
+00:07:17,425 --> 00:07:20,051
+have. 
+When it grows into the region of years 
+
+98
+00:07:20,051 --> 00:07:23,990
+and centuries, this will no no, longer be 
+acceptable, of course. 
+
+99
+00:07:23,990 --> 00:07:27,352
+But quite often we have another hour we 
+can give our. 
+
+100
+00:07:27,352 --> 00:07:32,042
+But what about exponential space 
+comlexity? Well, what this means is that 
+
+101
+00:07:32,042 --> 00:07:35,487
+a star will eventually exhaust the 
+computer's memory. 
+
+102
+00:07:35,487 --> 00:07:40,397
+So first, it will eat up all the RAM, 
+then it'll eat up all the virtual memory. 
+
+103
+00:07:40,397 --> 00:07:43,752
+And eventually, it'll just have no more 
+memory left. 
+
+104
+00:07:43,752 --> 00:07:46,920
+And what happens then? Well A* simply 
+fails. 
+
+105
+00:07:46,920 --> 00:07:52,685
+The algorithm terminates because it's out 
+of memory, and we don't even know whether 
+
+106
+00:07:52,685 --> 00:07:57,166
+there is a solution or not. 
+As an example, the 8 puzzle will still 
+
+107
+00:07:57,166 --> 00:08:02,286
+fit into memory, but the bigger version, 
+on the 4 by 4 grid, the 15 puzzle, 
+
+108
+00:08:02,286 --> 00:08:04,503
+usually does not fit into memory. 
+

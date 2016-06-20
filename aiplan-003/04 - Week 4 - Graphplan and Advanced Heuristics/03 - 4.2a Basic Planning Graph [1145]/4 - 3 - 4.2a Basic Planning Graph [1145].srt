@@ -1,0 +1,723 @@
+1
+00:00:00,012 --> 00:00:06,317
+>> As you have just seen, there's nothing
+too difficult about the propositional
+
+2
+00:00:06,317 --> 00:00:11,028
+representation.
+So, we can now turn to the data structure
+
+3
+00:00:11,028 --> 00:00:16,848
+that is maintained by the graph plan
+algorithm and that is the so-called
+
+4
+00:00:16,848 --> 00:00:21,544
+planning graph.
+I will first describe a basic version of
+
+5
+00:00:21,544 --> 00:00:26,671
+this data structure which does not contain
+mutex relations.
+
+6
+00:00:26,671 --> 00:00:30,418
+I will define those later as you can see
+here.
+
+7
+00:00:30,418 --> 00:00:36,472
+To understand the properties that the
+planning graph represents, I want to
+
+8
+00:00:36,472 --> 00:00:40,457
+remind you of a proposition we have seen
+earlier.
+
+9
+00:00:40,457 --> 00:00:45,352
+And that was about solution existence to
+planning problems.
+
+10
+00:00:45,352 --> 00:00:48,924
+And this was the proposition I want to
+remind you of.
+
+11
+00:00:48,924 --> 00:00:54,260
+So if we are given a planning problem
+consisting of a state transition system,
+
+12
+00:00:54,260 --> 00:00:59,754
+an initial state and a goal, we can say
+that this planning problem has a solution,
+
+13
+00:00:59,754 --> 00:01:02,940
+if and only if the following condition
+holds.
+
+14
+00:01:02,940 --> 00:01:08,866
+And the condition is that the set of all
+possible goal states, intersected with
+
+15
+00:01:08,866 --> 00:01:14,019
+this set here must not be empty.
+And this set really represents all the
+
+16
+00:01:14,019 --> 00:01:17,739
+states that are reachable from the initial
+state.
+
+17
+00:01:17,739 --> 00:01:23,975
+We also had a similar proposition from the
+regression of states, but that's not what
+
+18
+00:01:23,975 --> 00:01:29,190
+I wanted to remind you of here.
+It's the first proposition that I want to
+
+19
+00:01:29,190 --> 00:01:33,839
+have a closer look at.
+This states that if a planning problem has
+
+20
+00:01:33,839 --> 00:01:37,768
+a solution, then there must be a reachable
+goal state.
+
+21
+00:01:37,768 --> 00:01:43,318
+Now our goal condition, g, actually
+consists of a set of subgoals that we're
+
+22
+00:01:43,318 --> 00:01:47,393
+trying to achieve, let's call them g1
+through gn here.
+
+23
+00:01:47,394 --> 00:01:53,112
+Now, a corollary of our original
+proposition is that each of these
+
+24
+00:01:53,112 --> 00:01:58,134
+individual subgoals must be true in some
+reachable state.
+
+25
+00:01:58,134 --> 00:02:04,640
+It is, of course, trivially true because
+they will all be true in the reachable
+
+26
+00:02:04,640 --> 00:02:08,371
+goal state.
+But I can also turn this around now.
+
+27
+00:02:08,371 --> 00:02:13,987
+Now, suppose I could show that there's one
+goal condition in here that cannot be
+
+28
+00:02:13,987 --> 00:02:17,317
+achieved.
+So, one of the goal conditions is not
+
+29
+00:02:17,317 --> 00:02:20,147
+reachable.
+If I can show that one of the goal
+
+30
+00:02:20,147 --> 00:02:25,097
+conditions isn't reachable, then that
+means there can be no state in which this
+
+31
+00:02:25,097 --> 00:02:29,822
+goal condition is true, which means there
+can be no state that constitutes a
+
+32
+00:02:29,822 --> 00:02:32,767
+solution.
+So the planning problem does not have a
+
+33
+00:02:32,767 --> 00:02:35,563
+solution.
+And that is exactly the kind of inside
+
+34
+00:02:35,563 --> 00:02:40,448
+that the planning graph will give us.
+Of course, what we have done in our
+
+35
+00:02:40,448 --> 00:02:46,559
+forward tree search algorithm is
+constructed effectively a reachability
+
+36
+00:02:46,559 --> 00:02:49,965
+tree.
+In this tree, our root node was the
+
+37
+00:02:49,965 --> 00:02:54,756
+initial state, si, that was given as part
+of the problem.
+
+38
+00:02:54,756 --> 00:03:00,664
+And for each node, s, we have the children
+of the node, s, be gamma of s.
+
+39
+00:03:00,664 --> 00:03:06,621
+So that's the immediate successors of that
+state s in this set here.
+
+40
+00:03:06,621 --> 00:03:12,427
+And then, we have the arcs labelled with
+the actions that correspond to the state
+
+41
+00:03:12,427 --> 00:03:16,485
+transitions.
+That is the tree we constructed in forward
+
+42
+00:03:16,485 --> 00:03:19,998
+search.
+Now, in this tree, if we constructed the
+
+43
+00:03:19,998 --> 00:03:25,522
+complete tree, are all the nodes that are
+reachable from our initial state.
+
+44
+00:03:25,522 --> 00:03:30,371
+So this is a complete reachability tree
+for our planning problem.
+
+45
+00:03:30,372 --> 00:03:36,394
+Or if we gave a depth limit to our tree,
+so suppose we only go to depth d, then we
+
+46
+00:03:36,394 --> 00:03:40,413
+would have gamma d of si in this
+reachability tree.
+
+47
+00:03:40,413 --> 00:03:45,648
+So, another complete tree but all the
+nodes that are reachable in d steps.
+
+48
+00:03:45,648 --> 00:03:51,434
+And in this tree, of course, we can find
+all the solutions to problems that require
+
+49
+00:03:51,434 --> 00:03:56,747
+up to d actions in their solution.
+Now, we could of course, use this tree to
+
+50
+00:03:56,747 --> 00:04:02,527
+check whether each of the individual goal
+conditions is true in some state rather
+
+51
+00:04:02,527 --> 00:04:06,175
+than all in the same.
+And then, use our criterion just
+
+52
+00:04:06,175 --> 00:04:10,569
+introduced to see whether the planning
+problem has a solution.
+
+53
+00:04:10,569 --> 00:04:16,436
+But that is, of course, not an efficient
+way of solving planning problems.
+
+54
+00:04:16,436 --> 00:04:22,048
+As we know that even a tree of depth d has
+an expectational nodes in it.
+
+55
+00:04:22,048 --> 00:04:27,944
+Here, k is the number of applicable
+actions per state, and d is the depth, so
+
+56
+00:04:27,944 --> 00:04:31,522
+have k to the d nodes in general in such a
+tree.
+
+57
+00:04:31,523 --> 00:04:37,746
+But there is a more clever solution to
+this reachability question as we will see
+
+58
+00:04:37,746 --> 00:04:41,294
+next.
+I will now describe to you the planning
+
+59
+00:04:41,294 --> 00:04:47,216
+graph which is the fundamental data
+structure maintained by the graph plan
+
+60
+00:04:47,216 --> 00:04:51,377
+algorithm.
+And I will start by describing what nodes
+
+61
+00:04:51,377 --> 00:04:56,216
+are contained in this graph.
+So, the planning graph is a layered
+
+62
+00:04:56,216 --> 00:05:02,219
+directed graph, G, consisting of nodes and
+edges, and that means that the edges are
+
+63
+00:05:02,219 --> 00:05:05,975
+directed.
+So they go from one node to another, only
+
+64
+00:05:05,975 --> 00:05:10,348
+unidirectional.
+And the graph is layered, which means the
+
+65
+00:05:10,348 --> 00:05:16,044
+nodes in the graph can be divided into
+disjoined sets and each of these sets is
+
+66
+00:05:16,044 --> 00:05:20,867
+called a layer.
+So, if we look at the nodes, N, contained
+
+67
+00:05:20,867 --> 00:05:26,358
+in the graph, they consist of the layers
+P0, A1, P1, A2 and so on.
+
+68
+00:05:26,358 --> 00:05:31,340
+These are our layers in the graph
+containing the nodes.
+
+69
+00:05:31,341 --> 00:05:35,748
+And we distinguish two types of layers we
+have in our graph.
+
+70
+00:05:35,748 --> 00:05:41,717
+Firstly, there are the state proposition
+layers denoted by symbols with a P, P0,
+
+71
+00:05:41,717 --> 00:05:45,002
+P1, etc.
+And then, we have the action layers
+
+72
+00:05:45,002 --> 00:05:50,682
+denoted by the symbol A, A1, A2, etc.
+And these types of layers alternate in the
+
+73
+00:05:50,682 --> 00:05:53,995
+graph.
+So, we start of with a proposition layer,
+
+74
+00:05:53,995 --> 00:05:59,489
+P0, followed by an action layer, followed
+by a proposition layer, followed by an
+
+75
+00:05:59,489 --> 00:06:03,151
+action layer, followed by proposition
+layer, etc.
+
+76
+00:06:03,151 --> 00:06:08,926
+So, they alternate in the graph, and the
+first layer, P0, is a proposition layer.
+
+77
+00:06:08,926 --> 00:06:15,782
+So, let's have a look at the nodes we find
+in the first proposition layer, P0.
+
+78
+00:06:15,782 --> 00:06:22,550
+In the first proposition layer, we have a
+node for each proposition that was true in
+
+79
+00:06:22,550 --> 00:06:27,004
+the initial state.
+So si, our initial state, is a set of
+
+80
+00:06:27,004 --> 00:06:33,241
+proposition symbols, and in P0, we have a
+node for each of these proposition
+
+81
+00:06:33,241 --> 00:06:37,016
+symbols.
+And given this definition of P0, we can
+
+82
+00:06:37,016 --> 00:06:41,041
+now define what nodes we find in the
+action layer Aj.
+
+83
+00:06:41,041 --> 00:06:47,119
+So that's not just the action layer A1,
+but in general the action layer Aj, which
+
+84
+00:06:47,119 --> 00:06:53,462
+follows the proposition layer Pj minus 1.
+And effectively, we have in this action
+
+85
+00:06:53,462 --> 00:06:59,312
+layer all the action symbols that
+represent actions that would be applicable
+
+86
+00:06:59,312 --> 00:07:05,299
+in the preceding proposition layer.
+So, what we do is we look at our preceding
+
+87
+00:07:05,299 --> 00:07:10,083
+proposition layer, Pj minus 1.
+And we interpret this as a state.
+
+88
+00:07:10,083 --> 00:07:14,729
+Remember, the nodes in this layer will be
+proposition symbols.
+
+89
+00:07:14,729 --> 00:07:20,357
+So we can simply form a set of all these
+nodes and interpret this as a state.
+
+90
+00:07:20,357 --> 00:07:25,600
+Usually, this won't be a meaningful state
+as it may contain symbols that can never
+
+91
+00:07:25,600 --> 00:07:29,463
+be true at the same time.
+For example, that the robot r is at
+
+92
+00:07:29,463 --> 00:07:32,751
+location 1, and that the robot r is at
+location 2.
+
+93
+00:07:32,751 --> 00:07:37,902
+But never mind that now.
+So, we interpret this proposition layer as
+
+94
+00:07:37,902 --> 00:07:43,982
+a state, and then add to the successive
+action layer, all those actions whose
+
+95
+00:07:43,982 --> 00:07:50,246
+preconditions are satisfied in that state.
+Now, we know what P0 contains, and what
+
+96
+00:07:50,246 --> 00:07:55,375
+the j action layer contains.
+We can now define the proposition layer,
+
+97
+00:07:55,375 --> 00:08:01,539
+Pj, where j, of course, has to be greater
+than zero because we've already defined
+
+98
+00:08:01,539 --> 00:08:05,042
+P0.
+And in Pj, we find nodes for all those
+
+99
+00:08:05,042 --> 00:08:09,512
+proposition symbols that were already in
+Pj minus 1.
+
+100
+00:08:09,512 --> 00:08:16,017
+So, all the propositions that were in the
+previous proposition layer are also in
+
+101
+00:08:16,017 --> 00:08:20,972
+this proposition layer.
+But there may also be additional nodes
+
+102
+00:08:20,972 --> 00:08:24,616
+that were not in the previous proposition
+layers.
+
+103
+00:08:24,616 --> 00:08:29,742
+And what we do to find these nodes is we
+take all the positive effects of all the
+
+104
+00:08:29,742 --> 00:08:34,839
+actions in the preceding action layer.
+So Aj is the preceding action layer.
+
+105
+00:08:34,839 --> 00:08:39,074
+We take all those actions and we look at
+their positive effect.
+
+106
+00:08:39,074 --> 00:08:44,342
+And we add a proposition node for each
+proposition that is a positive effect to
+
+107
+00:08:44,342 --> 00:08:47,468
+layer Pj.
+So in Pj, we have all the propositions
+
+108
+00:08:47,468 --> 00:08:53,156
+from the previous proposition layer, plus
+all the positive effects from the previous
+
+109
+00:08:53,156 --> 00:08:56,924
+action layer.
+Note that we ignore the negative effects
+
+110
+00:08:56,924 --> 00:09:00,865
+of the action here, so we only look at the
+positive effects.
+
+111
+00:09:00,865 --> 00:09:04,881
+We do not remove the negative effects from
+any layer ever.
+
+112
+00:09:04,881 --> 00:09:09,599
+An interesting observation here is that
+the layers must be monotonically
+
+113
+00:09:09,599 --> 00:09:14,691
+increasing from proposition layer to
+proposition layer, and from action layer
+
+114
+00:09:14,691 --> 00:09:18,668
+to action layer.
+So, for proposition layers, this is quite
+
+115
+00:09:18,668 --> 00:09:22,278
+easy to see.
+We always take over the propositions from
+
+116
+00:09:22,278 --> 00:09:27,650
+one layer to the next, and possibly add
+new propositions to that next proposition
+
+117
+00:09:27,650 --> 00:09:30,935
+layer.
+So, it must be monotonically increasing.
+
+118
+00:09:30,935 --> 00:09:34,613
+The action layers must also monotonically
+increasing.
+
+119
+00:09:34,613 --> 00:09:39,579
+Because if an action is applicable in one
+action layer, then it must also be
+
+120
+00:09:39,579 --> 00:09:44,779
+applicable in the next action layer
+because all the pre-conditions that were
+
+121
+00:09:44,779 --> 00:09:49,659
+true here must be true in the next
+proposition layer, so they must still be
+
+122
+00:09:49,659 --> 00:09:54,502
+true for the next action layer.
+So, proposition layers and action layers
+
+123
+00:09:54,502 --> 00:09:59,198
+are monotonically increasing.
+So, now that we have seen the nodes that
+
+124
+00:09:59,198 --> 00:10:04,463
+exist in the planning graph, we can look
+at the edges between nodes, or because
+
+125
+00:10:04,463 --> 00:10:07,677
+it's a directed graph, I like to call them
+arcs.
+
+126
+00:10:07,678 --> 00:10:13,728
+So, the first set of arcs we have all go
+from proposition layer Pj to action layer
+
+127
+00:10:13,728 --> 00:10:17,299
+Aj.
+That is, the action layer that follows it.
+
+128
+00:10:17,299 --> 00:10:23,009
+And they go from a node in this layer,
+which is a proposition, to an action in
+
+129
+00:10:23,009 --> 00:10:28,927
+the following layer, if the proposition P
+is a precondition of that action.
+
+130
+00:10:28,928 --> 00:10:34,807
+Similarly, we have arcs from the action
+layer Aj, to the proposition layer Pj.
+
+131
+00:10:34,807 --> 00:10:39,341
+That's the proposition layer that follows
+the action layer.
+
+132
+00:10:39,341 --> 00:10:45,377
+And we have an arc from action A, in this
+layer, to a proposition P in the following
+
+133
+00:10:45,377 --> 00:10:51,407
+layer, if either P is a positive effect of
+that action, or P is a negative effect of
+
+134
+00:10:51,407 --> 00:10:55,470
+that action.
+In other words, each action in an action
+
+135
+00:10:55,470 --> 00:10:59,999
+layer Aj is connected to its preconditions
+and its effects.
+
+136
+00:10:59,999 --> 00:11:06,053
+And it's connected to the preconditions in
+the preceding proposition layer and to its
+
+137
+00:11:06,053 --> 00:11:09,372
+effects in the following proposition
+layer.
+
+138
+00:11:09,373 --> 00:11:14,327
+And these are all the arcs that exist
+between different layers.
+
+139
+00:11:14,327 --> 00:11:17,205
+So, there are no arcs between other
+layers.
+
+140
+00:11:17,205 --> 00:11:21,935
+Arcs only go from one proposition layer,
+to the following action layer.
+
+141
+00:11:21,935 --> 00:11:26,446
+And one, from one action layer, to the
+following proposition layer.
+
+142
+00:11:26,446 --> 00:11:32,124
+They don't go between other layers.
+Now, I should mention that these edges
+
+143
+00:11:32,124 --> 00:11:36,718
+aren't all the edges that exist in the
+planning graph.
+
+144
+00:11:36,718 --> 00:11:42,035
+There are other edges.
+But these edges are strictly internal to
+
+145
+00:11:42,035 --> 00:11:45,440
+the layers and we will look at them later.

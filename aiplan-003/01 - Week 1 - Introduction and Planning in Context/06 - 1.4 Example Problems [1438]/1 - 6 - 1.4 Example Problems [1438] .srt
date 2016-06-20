@@ -1,0 +1,1034 @@
+1
+00:00:04,200 --> 00:00:09,156
+We have now seen how planning problems 
+can be formulated as search problems. 
+
+2
+00:00:09,156 --> 00:00:13,914
+And we have also seen a basic algorithm 
+that can be used to solve search 
+
+3
+00:00:13,914 --> 00:00:17,152
+problems. 
+We have also already seen some examples 
+
+4
+00:00:17,152 --> 00:00:21,447
+of search problems such as the 
+missionaries and cannibals problem. 
+
+5
+00:00:21,447 --> 00:00:25,200
+Now we shall look at some more example 
+problems. 
+
+6
+00:00:25,200 --> 00:00:28,581
+The first problem we will look at is a 
+toy problem. 
+
+7
+00:00:28,581 --> 00:00:32,294
+And it's a problem that has been around 
+for a long time. 
+
+8
+00:00:32,294 --> 00:00:37,334
+The sliding tile puzzle or sliding block 
+puzzle looks essentially like this. 
+
+9
+00:00:37,334 --> 00:00:40,980
+What we have is a grid. 
+Here, it's a three by three grid. 
+
+10
+00:00:40,980 --> 00:00:45,622
+And in this grid, we have eight tiles. 
+That is, one square remains empty. 
+
+11
+00:00:45,622 --> 00:00:50,727
+We can then shift the tiles in the grid. 
+But, of course, we can only shift them 
+
+12
+00:00:50,727 --> 00:00:54,640
+into the empty slot. 
+Leaving another slot empty as a result. 
+
+13
+00:00:54,640 --> 00:00:59,253
+The tiles themselves are numbered one 
+through eight, and our task is to bring 
+
+14
+00:00:59,253 --> 00:01:03,986
+them into the right order, and the right 
+order is showing here on the right, and 
+
+15
+00:01:03,986 --> 00:01:07,161
+this could be some initial state from 
+which we start. 
+
+16
+00:01:07,161 --> 00:01:11,715
+So to formulate this as a search problem, 
+we have to ask, what is the initial 
+
+17
+00:01:11,715 --> 00:01:14,411
+state? 
+And the initial state for this problem 
+
+18
+00:01:14,411 --> 00:01:19,144
+could be any configuration of the tiles. 
+So not just this one here shown on the 
+
+19
+00:01:19,144 --> 00:01:22,200
+left, but really any configuration you 
+can think of. 
+
+20
+00:01:22,200 --> 00:01:26,766
+The goal state is usually fixed depending 
+on where you look there are different 
+
+21
+00:01:26,766 --> 00:01:29,406
+varieties of what the goal state should 
+be like. 
+
+22
+00:01:29,406 --> 00:01:33,862
+This is just one possible state that you 
+see on the right where the tiles are in 
+
+23
+00:01:33,862 --> 00:01:36,998
+the correct order. 
+Sometimes, you'll see the middle square 
+
+24
+00:01:36,998 --> 00:01:40,684
+should be empty, sometimes it's another 
+square that should be empty. 
+
+25
+00:01:40,684 --> 00:01:45,340
+But there's usually one fixed goal state 
+that much be reached in this puzzle. 
+
+26
+00:01:45,340 --> 00:01:49,002
+The actions that are possible, and I've 
+already told you this. 
+
+27
+00:01:49,002 --> 00:01:53,324
+Are to move, a tile that is next to the 
+empty space into the empty space. 
+
+28
+00:01:53,324 --> 00:01:56,506
+So I could either move the eight here or 
+the four up. 
+
+29
+00:01:56,506 --> 00:02:00,888
+Or the six into the empty space. 
+In this case, for this puzzle there would 
+
+30
+00:02:00,888 --> 00:02:06,130
+be three possible actions in this state. 
+For the path cost, we simply assume that 
+
+31
+00:02:06,130 --> 00:02:10,461
+moving a tile has a unit cost, so all 
+actions have equal cost. 
+
+32
+00:02:10,461 --> 00:02:13,869
+So, that's it. 
+That's the definition of the eight 
+
+33
+00:02:13,869 --> 00:02:17,136
+puzzle. 
+There are also larger versions of this 
+
+34
+00:02:17,136 --> 00:02:22,106
+puzzle on a four by four grid, with 
+fifteen tiles, known as the fifteen 
+
+35
+00:02:22,106 --> 00:02:25,656
+puzzle. 
+Or on a five by five grid with 24 tiles, 
+
+36
+00:02:25,656 --> 00:02:31,676
+known as the 24 puzzle, and so on. 
+The next problem is also a toy problem. 
+
+37
+00:02:31,676 --> 00:02:37,290
+And it's known as the N queens problem in 
+general, but we will look at the eight 
+
+38
+00:02:37,290 --> 00:02:40,729
+queens problem here. 
+And the problem, is to find a 
+
+39
+00:02:40,729 --> 00:02:45,922
+configuration for eight queens on an 
+eight by eight chess board, such that 
+
+40
+00:02:45,922 --> 00:02:49,080
+none of the queens attacks any of the 
+others. 
+
+41
+00:02:49,080 --> 00:02:55,397
+For those of you who don't know chess, a 
+queen is simply a chess piece that can be 
+
+42
+00:02:55,397 --> 00:03:00,173
+somewhere on the board. 
+And it can move along any diagonal, any 
+
+43
+00:03:00,173 --> 00:03:03,856
+column, or any row. 
+So, if we look, for example, at this 
+
+44
+00:03:03,856 --> 00:03:07,369
+queen here. 
+It can move anywhere along this diagonal, 
+
+45
+00:03:07,369 --> 00:03:11,085
+or this diagonal. 
+Or it can move anywhere in its row, or 
+
+46
+00:03:11,085 --> 00:03:15,341
+anywhere in this column. 
+So you can see, this queen attacks none 
+
+47
+00:03:15,341 --> 00:03:19,664
+of the other queens, and is attacked by 
+none of the other queens. 
+
+48
+00:03:19,664 --> 00:03:24,528
+If we look at this queen, however, 
+we can see that if we move all the way 
+
+49
+00:03:24,528 --> 00:03:28,311
+along the diagonal. 
+This queen is attacked by this queen. 
+
+50
+00:03:28,311 --> 00:03:32,770
+So this configuration shown here is not a 
+solution to the problem. 
+
+51
+00:03:32,770 --> 00:03:38,086
+Now you may wonder how this can be seen 
+as a planning problem because what we're 
+
+52
+00:03:38,086 --> 00:03:41,302
+looking for is a configuration, so a 
+static state. 
+
+53
+00:03:41,302 --> 00:03:46,225
+And the answer is that we can look at 
+this as a problem of reasoning about 
+
+54
+00:03:46,225 --> 00:03:49,113
+action. 
+When we look at this here, it says we 
+
+55
+00:03:49,113 --> 00:03:52,001
+have to place the queens on the chess 
+board. 
+
+56
+00:03:52,001 --> 00:03:54,758
+And we place the queens, one after 
+another. 
+
+57
+00:03:54,758 --> 00:03:57,777
+So the initial state is the empty chess 
+board. 
+
+58
+00:03:57,777 --> 00:04:01,978
+The actions we have available are placing 
+queens onto the board. 
+
+59
+00:04:01,978 --> 00:04:06,770
+And the goal state is any state where the 
+queens don't attack each other. 
+
+60
+00:04:06,770 --> 00:04:12,117
+Again we can assume a unit cost for the 
+actions, so all actions are equally 
+
+61
+00:04:12,117 --> 00:04:15,454
+expensive. 
+And I'll give you a hint how this can be 
+
+62
+00:04:15,454 --> 00:04:20,446
+formulated a little more efficiently 
+because, if we allow a queen to be placed 
+
+63
+00:04:20,446 --> 00:04:23,838
+on any board position, we have 64 
+different positions. 
+
+64
+00:04:23,838 --> 00:04:26,782
+And this would create a pretty big search 
+tree. 
+
+65
+00:04:26,782 --> 00:04:31,646
+So what we can do is we say that the 
+first action can only place a queen in 
+
+66
+00:04:31,646 --> 00:04:34,910
+the first column. 
+So we can only place a queen here. 
+
+67
+00:04:34,910 --> 00:04:39,390
+The second action in our plan must place 
+a queen in the second column. 
+
+68
+00:04:39,390 --> 00:04:42,913
+And so on. 
+So our plan will definitely be eight 
+
+69
+00:04:42,913 --> 00:04:48,680
+steps long and we only have eight 
+possibilities for each step in the plan. 
+
+70
+00:04:48,680 --> 00:04:54,014
+So this defines the N queen's problem as 
+a general search problem, or as a 
+
+71
+00:04:54,014 --> 00:04:58,584
+planning problem. 
+The next problem is more like a real 
+
+72
+00:04:58,584 --> 00:05:04,145
+world problem, and it is the dockworker 
+robots problem that is also used in the 
+
+73
+00:05:04,145 --> 00:05:09,566
+book this, course is based on, so you 
+will see this problem occur again and 
+
+74
+00:05:09,566 --> 00:05:12,874
+again. 
+The aim with this problem is to have one 
+
+75
+00:05:12,874 --> 00:05:18,224
+example that we can use to illustrate 
+many of the techniques and algorithms 
+
+76
+00:05:18,224 --> 00:05:23,689
+that will be introduced in this course. 
+The advantage of this problem is that it 
+
+77
+00:05:23,689 --> 00:05:28,200
+is not trivial to solve, but it also can 
+be described fairly quickly. 
+
+78
+00:05:28,200 --> 00:05:33,312
+the informal description of this problem 
+is this, we have a harbor in which we 
+
+79
+00:05:33,312 --> 00:05:36,973
+have several locations which may be docks 
+or other places. 
+
+80
+00:05:36,973 --> 00:05:42,212
+at these docks there may be ships, and we 
+have storage areas for containers that 
+
+81
+00:05:42,212 --> 00:05:45,873
+need to be moved around at the docks or 
+loaded onto ships. 
+
+82
+00:05:45,873 --> 00:05:49,913
+We also have parking areas for trucks 
+that can carry containers. 
+
+83
+00:05:49,913 --> 00:05:54,900
+And they will be robots, in our cases, or 
+trains that arrive with the containers. 
+
+84
+00:05:54,900 --> 00:05:59,233
+There will also be cranes to move the 
+different containers around. 
+
+85
+00:05:59,233 --> 00:06:04,617
+They can load containers on to ships or 
+robots or they can unload them from ships 
+
+86
+00:06:04,617 --> 00:06:08,024
+and robots. 
+And what we will be interested in is 
+
+87
+00:06:08,024 --> 00:06:13,263
+generating plans for the cranes and the 
+robots that achieve certain configuration 
+
+88
+00:06:13,263 --> 00:06:15,947
+of containers that we give as goal 
+states. 
+
+89
+00:06:15,947 --> 00:06:20,804
+Now there are some people who say that 
+block stacking or container stacking, 
+
+90
+00:06:20,804 --> 00:06:24,893
+which is essentially the same thing, is 
+not a real-world problem. 
+
+91
+00:06:24,893 --> 00:06:29,685
+So this is why I've included this picture 
+here, so this proves that it is a 
+
+92
+00:06:29,685 --> 00:06:34,602
+real-world problem. 
+Now let's look at the state of the world 
+
+93
+00:06:34,602 --> 00:06:40,137
+in the dock worker robot example. 
+What we have in each state are locations 
+
+94
+00:06:40,137 --> 00:06:45,853
+and in this example there are two 
+locations L1 and L2 and these locations 
+
+95
+00:06:45,853 --> 00:06:50,951
+are connected by paths along which the 
+robot for example can move. 
+
+96
+00:06:50,951 --> 00:06:56,590
+So these two locations are adjacent 
+because they are connected by a path. 
+
+97
+00:06:56,590 --> 00:07:01,947
+At each location we have cranes which can 
+be used to move the containers around. 
+
+98
+00:07:01,947 --> 00:07:07,037
+They can move the containers between the 
+different piles that are available. 
+
+99
+00:07:07,037 --> 00:07:11,458
+And here at this location L2, we see 
+there are two piles, P2 and Q2. 
+
+100
+00:07:11,458 --> 00:07:16,146
+In this case they are both empty. 
+There's no containers on these piles. 
+
+101
+00:07:16,146 --> 00:07:21,437
+But at the bottom of every pile we will 
+always have a pallet onto which we can 
+
+102
+00:07:21,437 --> 00:07:25,455
+stack the container. 
+So the pallet tells us where the bottom 
+
+103
+00:07:25,455 --> 00:07:28,681
+of the pile is. 
+A pile itself is an abstract object. 
+
+104
+00:07:28,681 --> 00:07:31,828
+It doesn't necessarily need to have 
+anything in it. 
+
+105
+00:07:31,828 --> 00:07:34,913
+An empty pile isn't really something we 
+can touch. 
+
+106
+00:07:34,913 --> 00:07:39,543
+But it can have containers in it. 
+And containers are, of course, what we 
+
+107
+00:07:39,543 --> 00:07:44,309
+have the most of in most states. 
+So here in this example, we have six 
+
+108
+00:07:44,309 --> 00:07:48,164
+different containers. 
+They're called CA, CB, CC, CD, CE, and 
+
+109
+00:07:48,164 --> 00:07:51,108
+CF. 
+And they can be stacked on top of each 
+
+110
+00:07:51,108 --> 00:07:54,052
+other in a pile, as I've already 
+explained. 
+
+111
+00:07:54,052 --> 00:07:59,659
+There's no limit to how high a pile can 
+be, despite the fact that it looks in 
+
+112
+00:07:59,659 --> 00:08:04,706
+this picture like the crane can only 
+reach so high, but we will consider 
+
+113
+00:08:04,706 --> 00:08:09,909
+arbitrarily high stacks of containers. 
+Finally, what we have in these states are 
+
+114
+00:08:09,909 --> 00:08:12,882
+robots. 
+This is one robot here, though so there's 
+
+115
+00:08:12,882 --> 00:08:16,412
+only one robot. 
+That is an object that can be loaded with 
+
+116
+00:08:16,412 --> 00:08:20,377
+a container by the crane. 
+And then once it has a container on it, 
+
+117
+00:08:20,377 --> 00:08:24,898
+it can move to a different location. 
+It, of course, can also move, when it's 
+
+118
+00:08:24,898 --> 00:08:29,296
+empty, to a different location. 
+But there can only be one container on a 
+
+119
+00:08:29,296 --> 00:08:32,826
+robot at one time. 
+Also, at each location, we can only have 
+
+120
+00:08:32,826 --> 00:08:36,480
+one robot at a time. 
+We consider a location occupied when a 
+
+121
+00:08:36,480 --> 00:08:40,024
+robot is there. 
+So, I think that's pretty much all you 
+
+122
+00:08:40,024 --> 00:08:44,840
+need to know about the world states and 
+the dock worker robot example. 
+
+123
+00:08:44,840 --> 00:08:49,511
+But just to clarify this, not all states 
+will have two locations, and six 
+
+124
+00:08:49,511 --> 00:08:53,729
+containers, and one robot. 
+We will consider a different world with 
+
+125
+00:08:53,729 --> 00:08:58,400
+many different numbers of robots, 
+containers, or locations and cranes and 
+
+126
+00:08:58,400 --> 00:09:02,160
+they will give us more complexity to the 
+problem. 
+
+127
+00:09:02,160 --> 00:09:07,003
+You can probably guess what the different 
+action types in this domain are, but here 
+
+128
+00:09:07,003 --> 00:09:11,672
+they are just to make sure that we are 
+all on the same page and understand what 
+
+129
+00:09:11,672 --> 00:09:13,190
+they are. 
+The first action. 
+
+130
+00:09:13,190 --> 00:09:18,390
+Is the move action and the move action 
+moves a robot, that's the first argument 
+
+131
+00:09:18,390 --> 00:09:23,262
+in this action, from one location, the 
+second argument, to some adjacent and 
+
+132
+00:09:23,262 --> 00:09:28,002
+unoccupied other location, L prime. 
+So as result of this action, the robot 
+
+133
+00:09:28,002 --> 00:09:32,939
+will be now in a different location. 
+That other location must be unoccupied 
+
+134
+00:09:32,939 --> 00:09:37,876
+and it must be adjacent, which means 
+there must be a path that connects the 
+
+135
+00:09:37,876 --> 00:09:42,576
+two locations, L and L prime. 
+That was the only action that is to be 
+
+136
+00:09:42,576 --> 00:09:46,678
+done by the robot. 
+The other actions are all done by the 
+
+137
+00:09:46,678 --> 00:09:50,047
+crane. 
+So, the first one of those actions is to 
+
+138
+00:09:50,047 --> 00:09:55,907
+take action and we can take a container 
+C, with an empty crane K, from the top of 
+
+139
+00:09:55,907 --> 00:09:59,208
+a pile. 
+And they must all be located at the same 
+
+140
+00:09:59,208 --> 00:10:02,744
+location L. 
+So this action as a result will have the 
+
+141
+00:10:02,744 --> 00:10:07,980
+crane holding the container and all these 
+objects must have been at the same 
+
+142
+00:10:07,980 --> 00:10:11,856
+location obviously. 
+The river's action is to put down the 
+
+143
+00:10:11,856 --> 00:10:15,596
+container C that is held by the crane on 
+top of a pile. 
+
+144
+00:10:15,596 --> 00:10:19,540
+And they must again all be located at the 
+same location L. 
+
+145
+00:10:19,540 --> 00:10:22,985
+Two more actions, again, both to be done 
+by the crane. 
+
+146
+00:10:22,985 --> 00:10:27,291
+The one is loading a container. 
+But this will involve a robot, too. 
+
+147
+00:10:27,291 --> 00:10:32,458
+So what we do is we load a container C, 
+that is held by the crane K onto an 
+
+148
+00:10:32,458 --> 00:10:36,036
+unloaded robot R. 
+So the robot must not already have a 
+
+149
+00:10:36,036 --> 00:10:39,680
+container on it. 
+And, again, this must all be at the same 
+
+150
+00:10:39,680 --> 00:10:42,926
+location. 
+And the reverse action is to unload the 
+
+151
+00:10:42,926 --> 00:10:44,541
+container from. 
+The robot. 
+
+152
+00:10:44,541 --> 00:10:47,899
+That's the robot. 
+And, again, the crane must be empty so 
+
+153
+00:10:47,899 --> 00:10:52,375
+that we can do this, and all of the 
+objects must be at the same location. 
+
+154
+00:10:52,375 --> 00:10:57,224
+So, these are the five action types that 
+are available in the doc worker robot 
+
+155
+00:10:57,224 --> 00:11:00,003
+domain. 
+Notice that I said action types, because 
+
+156
+00:11:00,003 --> 00:11:04,457
+there can be many instances of these 
+actions, depending on how I instantiate 
+
+157
+00:11:04,457 --> 00:11:07,738
+these parameters. 
+So if there's only one robot, then this 
+
+158
+00:11:07,738 --> 00:11:12,074
+robot may be the only one that can move, 
+but it can move between different 
+
+159
+00:11:12,074 --> 00:11:14,769
+locations, and these are all different 
+actions. 
+
+160
+00:11:14,769 --> 00:11:19,047
+We will specify all this more formally 
+when we have introduced an action 
+
+161
+00:11:19,047 --> 00:11:22,200
+description language, and that will be 
+next week. 
+
+162
+00:11:22,200 --> 00:11:26,705
+And here is a very simple example of what 
+the state transition system that 
+
+163
+00:11:26,705 --> 00:11:30,430
+corresponds to the dark work or robot 
+problem could look like. 
+
+164
+00:11:30,430 --> 00:11:36,121
+You can see this is a very simple 
+problem, because a large state space 
+
+165
+00:11:36,121 --> 00:11:42,219
+wouldn't fit onto one slide, so I had to 
+reduce everything to one robot, one 
+
+166
+00:11:42,219 --> 00:11:48,643
+crane, one container, and two locations, 
+which gives us six possible world states, 
+
+167
+00:11:48,643 --> 00:11:52,302
+and they're named here S0, S1, S2, S3, 
+and so on, 
+
+168
+00:11:52,302 --> 00:11:55,381
+S4, S5. 
+The objects you see in these states are 
+
+169
+00:11:55,381 --> 00:11:58,232
+exactly the things I have just talked 
+about. 
+
+170
+00:11:58,232 --> 00:12:00,824
+So we have a robot here. 
+We have a crane. 
+
+171
+00:12:00,824 --> 00:12:05,748
+And we have a container, a palette, and 
+the two locations I just talked about. 
+
+172
+00:12:05,748 --> 00:12:09,960
+And the actions are in principals. 
+Also, those I've just mentioned. 
+
+173
+00:12:09,960 --> 00:12:14,949
+And they give us the state transitions. 
+And we've labeled them here, the state 
+
+174
+00:12:14,949 --> 00:12:18,318
+transitions. 
+So the take action gets us from state s 
+
+175
+00:12:18,318 --> 00:12:22,103
+zero to state s1. 
+And so on, put action would get us back 
+
+176
+00:12:22,103 --> 00:12:27,606
+to that state, we have move one action 
+which moves the robot to location one and 
+
+177
+00:12:27,606 --> 00:12:32,010
+we have a move two action which moves the 
+robot to location two. 
+
+178
+00:12:32,010 --> 00:12:36,298
+As you can see from the state 
+transitions, the system is static. 
+
+179
+00:12:36,298 --> 00:12:39,156
+Which means there are no events 
+happening. 
+
+180
+00:12:39,156 --> 00:12:43,989
+All the actions are under our control. 
+Also, the system is deterministic. 
+
+181
+00:12:43,989 --> 00:12:47,937
+Which means, every action leads to 
+exactly one other state. 
+
+182
+00:12:47,937 --> 00:12:53,586
+So there are no two transitions from one 
+state that lead to different states given 
+
+183
+00:12:53,586 --> 00:12:57,057
+the same action. 
+If we do move one in this state, we 
+
+184
+00:12:57,057 --> 00:13:00,392
+always get to this state. 
+There's no other option. 
+
+185
+00:13:00,392 --> 00:13:03,660
+This is a deterministic state transition 
+system. 
+
+186
+00:13:03,660 --> 00:13:08,256
+Like I said before you will see a lot 
+more about the dock worker robot problem 
+
+187
+00:13:08,256 --> 00:13:13,385
+so I will stop here. 
+So this concludes this first segment of 
+
+188
+00:13:13,385 --> 00:13:17,288
+the course. 
+And here is a quick summary of what we've 
+
+189
+00:13:17,288 --> 00:13:20,970
+learned so far. 
+The first question we've looked at 
+
+190
+00:13:20,970 --> 00:13:25,536
+is'What is planning?'. 
+And more specifically'what is planning in 
+
+191
+00:13:25,536 --> 00:13:28,629
+AI?'. 
+And the answer we have come up with is 
+
+192
+00:13:28,629 --> 00:13:34,299
+that planning is an explicit deliberation 
+process that chooses and organizes 
+
+193
+00:13:34,299 --> 00:13:40,264
+actions by anticipating their outcomes. 
+Planning in AI is the computational study 
+
+194
+00:13:40,264 --> 00:13:44,881
+of this deliberation process. 
+Next, we have looked at a conceptual 
+
+195
+00:13:44,881 --> 00:13:50,120
+model for planning, which helps us define 
+the semantics of planning problems. 
+
+196
+00:13:50,120 --> 00:13:55,567
+To this end, we have defined the state 
+transition system, which consists of four 
+
+197
+00:13:55,567 --> 00:13:58,738
+things. 
+A set of states, a set of actions, and a 
+
+198
+00:13:58,738 --> 00:14:01,909
+set of events were the first three 
+components. 
+
+199
+00:14:01,909 --> 00:14:07,217
+And the most complex one is the state 
+transition function, which maps a given 
+
+200
+00:14:07,217 --> 00:14:10,940
+state and an action or event, to another 
+set of states. 
+
+201
+00:14:10,940 --> 00:14:15,045
+Then we have looked at the connection 
+between planning and search. 
+
+202
+00:14:15,045 --> 00:14:19,400
+We have seen that planning problems can 
+be phrased as search problems. 
+
+203
+00:14:19,400 --> 00:14:24,189
+Search problems can be defined by an 
+initial state, a set of actions that are 
+
+204
+00:14:24,189 --> 00:14:28,917
+possible in different states, a set of 
+goal states, and a path cost functions 
+
+205
+00:14:28,917 --> 00:14:32,090
+that tells us how much the individual 
+actions cost. 
+
+206
+00:14:32,090 --> 00:14:37,042
+And finally, we've seen a number of 
+example problems that can all be phrased 
+
+207
+00:14:37,042 --> 00:14:38,280
+as search problems. 
+

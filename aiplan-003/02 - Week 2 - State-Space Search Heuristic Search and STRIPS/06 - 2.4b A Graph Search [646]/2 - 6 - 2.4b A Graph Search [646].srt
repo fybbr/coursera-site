@@ -1,0 +1,465 @@
+1
+00:00:00,012 --> 00:00:05,980
+The fact that the 8 puzzle, the search 
+space usually fits into memory means we 
+
+2
+00:00:05,980 --> 00:00:12,470
+can do some interesting analysis on this. 
+So here's the example we've seen earlier. 
+
+3
+00:00:12,470 --> 00:00:16,412
+This is the same initial state we've seen 
+before. 
+
+4
+00:00:16,412 --> 00:00:20,806
+What we have for this initial state is 
+that we can move in all 4 directions and 
+
+5
+00:00:20,806 --> 00:00:24,734
+so we have 4 successors for this state 
+and they are shown here as the 4 
+
+6
+00:00:24,734 --> 00:00:28,058
+successors of this node. 
+Note that all the arrows here are 
+
+7
+00:00:28,058 --> 00:00:32,654
+bi-directional because, in this search 
+problem, as in many others, actions are 
+
+8
+00:00:32,654 --> 00:00:37,111
+reversible, which means I can always go 
+back and forth between 1 state and 1 of 
+
+9
+00:00:37,111 --> 00:00:40,522
+its successors. 
+So there's already a little optimization 
+
+10
+00:00:40,522 --> 00:00:44,598
+potential for our search algorithm. 
+We can avoid reversible actions. 
+
+11
+00:00:44,598 --> 00:00:48,187
+So, looking at the successes we have 3 
+possible actions here. 
+
+12
+00:00:48,187 --> 00:00:51,851
+But of course, 1 of them would us get 
+back to the initial state. 
+
+13
+00:00:51,851 --> 00:00:55,746
+So, in fact, there's only 2 successes 
+that we would generate here. 
+
+14
+00:00:55,746 --> 00:00:58,670
+For this, again, we have 3 possible 
+actions here. 
+
+15
+00:00:58,670 --> 00:01:01,697
+3 possible actions. 
+And there, 3 possible actions. 
+
+16
+00:01:01,697 --> 00:01:06,522
+Which means, for each of those. 
+Successors we generate 2 more successors 
+
+17
+00:01:06,522 --> 00:01:10,226
+as shown here. 
+So we look at 1 example here where we 
+
+18
+00:01:10,226 --> 00:01:15,228
+have moved the empty tile up and this 
+gives us those 2 successors and in this 
+
+19
+00:01:15,228 --> 00:01:20,205
+case there are 2 actions here and 2 
+actions there which means for each of 
+
+20
+00:01:20,205 --> 00:01:23,791
+those as only 1. 
+Possible, real successor, but again note, 
+
+21
+00:01:23,791 --> 00:01:28,076
+it's a by directional arrow, so, we can 
+go back and forth between these states. 
+
+22
+00:01:28,076 --> 00:01:31,662
+And so on I can follow this path, and 
+generate more successors. 
+
+23
+00:01:31,662 --> 00:01:35,947
+You can see there, I've ignored some, 
+that I didn't generate, or didn't look at 
+
+24
+00:01:35,947 --> 00:01:39,213
+in detail, and so on. 
+Here is where I'm simply running out of 
+
+25
+00:01:39,213 --> 00:01:42,242
+slide, otherwise I would have gone a 
+little further. 
+
+26
+00:01:42,242 --> 00:01:46,570
+And then you would see what I'm 
+effectively doing here, is the moves I'm 
+
+27
+00:01:46,570 --> 00:01:50,262
+following are simply shifting the empty 
+tile in this circle. 
+
+28
+00:01:50,262 --> 00:01:54,548
+And, what this means is eventually, this 
+path will lead up here again. 
+
+29
+00:01:54,548 --> 00:01:58,951
+We're back at our initial space. 
+So, this shows that as a graph, and it's 
+
+30
+00:01:58,951 --> 00:02:02,436
+a graph that contains quite some long 
+loops. 
+
+31
+00:02:02,436 --> 00:02:06,715
+And as I said before we can actually 
+create the whole search space and then 
+
+32
+00:02:06,715 --> 00:02:09,411
+analyze how deep the different solutions 
+are. 
+
+33
+00:02:09,411 --> 00:02:13,804
+And this is what this graph shows us. 
+We have here the depth of the different 
+
+34
+00:02:13,804 --> 00:02:18,147
+solution nodes, so what we did is we 
+started a generation from the solution 
+
+35
+00:02:18,147 --> 00:02:22,504
+node and generated all the different 
+nodes that are availible in the search 
+
+36
+00:02:22,504 --> 00:02:26,374
+space and these are the depth at which 
+they are from the solutions. 
+
+37
+00:02:26,374 --> 00:02:30,877
+And here we've the number of different 
+states that are at that depth. 
+
+38
+00:02:30,877 --> 00:02:36,398
+Altogether there's about 180,000 
+different states in the search space. 
+
+39
+00:02:36,398 --> 00:02:42,069
+And we can see that most of the states 
+are actually at around depth, what is 
+
+40
+00:02:42,069 --> 00:02:45,178
+this, 24. 
+So, as I have said before the number of 
+
+41
+00:02:45,178 --> 00:02:49,372
+states we generate in both tree and graph 
+search grows exponentially. 
+
+42
+00:02:49,372 --> 00:02:54,062
+So what we can expect is that this will 
+initially more or less follow the states 
+
+43
+00:02:54,062 --> 00:02:57,530
+base here that we generate the No's as 
+they are available. 
+
+44
+00:02:57,530 --> 00:03:02,261
+But then, then for tree search this will 
+continue to grow exponentially so this 
+
+45
+00:03:02,261 --> 00:03:05,829
+goes up here somewhere, and out of the 
+slide. 
+
+46
+00:03:05,829 --> 00:03:11,363
+But then we see for the worst case here, 
+at depth 31, there's really only two 
+
+47
+00:03:11,363 --> 00:03:14,977
+different states. 
+And if we wanted to use tree search to 
+
+48
+00:03:14,977 --> 00:03:19,754
+search for those states, we would have to 
+generate all those states up here where, 
+
+49
+00:03:19,754 --> 00:03:23,507
+in fact, there are only 2. 
+So what this would lead us to expect is 
+
+50
+00:03:23,507 --> 00:03:27,953
+that tree search is reasonably efficient 
+up to about this depth here and then 
+
+51
+00:03:27,953 --> 00:03:32,477
+becomes incredibly inefficient and we 
+should use graph search for these worst 
+
+52
+00:03:32,477 --> 00:03:35,550
+case scenarios. 
+But then graph search also has some 
+
+53
+00:03:35,550 --> 00:03:38,586
+additional costs. 
+We need to maintain that hash table, as 
+
+54
+00:03:38,586 --> 00:03:41,312
+we've seen. 
+And comparing states in the hash table, 
+
+55
+00:03:41,312 --> 00:03:45,588
+well depending on the complexity of these 
+states, this can take up quite some time 
+
+56
+00:03:45,588 --> 00:03:47,832
+too. 
+So there's a basic trade off here. 
+
+57
+00:03:47,832 --> 00:03:52,026
+Another problem is related to 
+permutations of solutions. 
+
+58
+00:03:52,026 --> 00:03:57,392
+By that I mean, if we are given one 
+solution part from the initaial state to 
+
+59
+00:03:57,392 --> 00:04:03,213
+a goal node, if we can swap some of the 
+states and some of the actions on that 
+
+60
+00:04:03,213 --> 00:04:08,772
+path to obtain a different solution path, 
+then this is a permutations of that 
+
+61
+00:04:08,772 --> 00:04:12,642
+solution, and this creates problems for 
+that star. 
+
+62
+00:04:12,642 --> 00:04:18,427
+Often permutations are allowed if we have 
+independent actions in our domain. 
+
+63
+00:04:18,427 --> 00:04:23,858
+So if for all states, if we first apply 
+one action and then another, we get one 
+
+64
+00:04:23,858 --> 00:04:28,462
+state and that is the same state as 
+applying the actions in the reverse 
+
+65
+00:04:28,462 --> 00:04:31,446
+order, then we say these 2 actions are 
+independent. 
+
+66
+00:04:31,446 --> 00:04:35,903
+We could, in principle, execute those 2 
+actions in parallel, but isnce we are 
+
+67
+00:04:35,903 --> 00:04:39,806
+only looking at action sequences so far, 
+we have to choose an order. 
+
+68
+00:04:39,806 --> 00:04:44,522
+And since the order doesn't matter, we 
+have a permutation in our solution here. 
+
+69
+00:04:44,522 --> 00:04:49,637
+The state that is the result of applying 
+these two actions, in which ever order we 
+
+70
+00:04:49,637 --> 00:04:53,702
+choose them is the same. 
+Now why is this a problem for a star? And 
+
+71
+00:04:53,702 --> 00:04:58,207
+here is the worst case scenario. 
+This is unrealistic but it is the worst 
+
+72
+00:04:58,207 --> 00:05:01,187
+case. 
+Suppose we are given a the search problem 
+
+73
+00:05:01,187 --> 00:05:05,717
+where we have an intiatial state and we 
+found a path to our goal state and 
+
+74
+00:05:05,717 --> 00:05:10,667
+they're many intermediate notes here. 
+And our optimal path has a lenth of n, 
+
+75
+00:05:10,667 --> 00:05:15,153
+and the worst case is that All these n 
+actions are independent. 
+
+76
+00:05:15,153 --> 00:05:20,568
+It is easy to show that if all the pairs 
+of actions are pair wise independent, 
+
+77
+00:05:20,568 --> 00:05:25,579
+then we can basically permute those 
+actions into any order we like, and it 
+
+78
+00:05:25,579 --> 00:05:31,435
+doesn't change the outcome of the plan. 
+Now remember what I said earlier about 
+
+79
+00:05:31,435 --> 00:05:37,175
+contours, namely that a star, if the 
+optimal solution length is n in this 
+
+80
+00:05:37,175 --> 00:05:42,776
+example, will need to generate all the 
+nodes within a smaller contour. 
+
+81
+00:05:42,776 --> 00:05:49,295
+So, if the F value is n-1 then this is 
+the contour that a star will generate 
+
+82
+00:05:49,295 --> 00:05:55,713
+with the FLU being equal to n-1. 
+What this means is that it will generate 
+
+83
+00:05:55,713 --> 00:05:59,687
+all those permutations that have n-1 
+nodes. 
+
+84
+00:05:59,687 --> 00:06:05,111
+So what this means is in this part 
+there's n-1 factorial, different 
+
+85
+00:06:05,111 --> 00:06:09,305
+combinations of solutions. 
+And, we'll explore all these paths before 
+
+86
+00:06:09,305 --> 00:06:13,756
+it moves on to the first solution. 
+Of course, then it will find n factorial 
+
+87
+00:06:13,756 --> 00:06:17,133
+solutions for this problem which are a 
+lot of solutions. 
+
+88
+00:06:17,133 --> 00:06:22,209
+And, you should now understand that there 
+is no way around this, of course. 
+
+89
+00:06:22,209 --> 00:06:27,264
+So you can now go and experiment with 
+this by programming all this in your 
+
+90
+00:06:27,264 --> 00:06:31,127
+language of choice. 
+Specifically, why don't you try to 
+
+91
+00:06:31,127 --> 00:06:36,600
+generate this graph here that tells us 
+how many different states exactly there 
+
+92
+00:06:36,600 --> 00:06:41,499
+are at the different depths. 
+So for example, how many states would you 
+
+93
+00:06:41,499 --> 00:06:44,311
+find here at depth 27? That is a 
+question. 
+

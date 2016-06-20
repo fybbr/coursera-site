@@ -1,0 +1,334 @@
+>> You have now seen the basic planning
+graph, the nodes and the edges that make
+up this graph, and you have seen how it
+can be understood as a reachability
+analysis.
+The planning graph is a layered graph
+consisting of proposition and action
+layers.
+When we search for a plan in this graph,
+what we will get as a result is a layered
+plan and we will look at those next in a
+little more detail.
+In layered plans, we will have multiple
+actions, that come from the same action
+layer.
+Which means we will effectively try to
+execute these actions in parallel.
+Now, we've already seen that this may
+cause problems.
+But this will not be the case, if all
+these actions are independent.
+And here's an example of what independence
+of actions means.
+Looking at the two actions in this action
+layer a2 here.
+We have the actions of moving the robot r,
+from location 1 to location 2.
+And we also have the action of loading
+container a, onto the robot r at location
+1.
+And what we see here is that m r one two,
+has a negative effect r one.
+So it deletes the fact that the robot is
+at location one.
+But if we look at the other action, l a r
+one.
+That has a precondition r one.
+So what this means is, 1 action deletes a
+pre-condition of the other action, which
+means these 2 actions cannot be executed
+in parallel.
+These 2 actions are dependent.
+Similarly, if we look at this action
+again, and now as another action MR21, so
+1 is moving the robot from location 1 to 2
+and the other 1 is moving the same robot
+from 2 to 1.
+What we see here is that the first action
+Mr12, has a positive effect Lar1..
+Whereas, for the second action, this is
+actually a negative effect.
+So one action is trying to assert the
+effect r1 that the robot is in location
+one.
+And the other is trying to delete the same
+fact.
+Again, this means these two actions cannot
+occur together, they are dependent
+actions.
+But to show you that not all actions in
+this action layer are dependent, let us
+look at Mr12 and Mq21, for example.
+These two actions are independent.
+There a fact and pre-conditions don't
+interfere with each other so we can
+execute those two action together and in
+parallel.
+And here is a general definition for what
+it means for two actions to be
+independent.
+We can say that two actions a1 and a2 are
+independent if the following conditions
+hold and what these conditions express is
+very simply.
+They say that the effects and
+preconditions of those actions must not
+interfere.
+And that's exactly defined the way that
+we've seen just in the example.
+So we've seen that the negative effects of
+one action may interfere with the
+preconditions of the other.
+So we have the negative effects of A1
+intersected with the preconditions of the
+other.
+And that must be the empty set.
+And the same goes for the positive
+effects.
+So, we have the negative effects
+intersected with the positive effects.
+That, again, must be the empty set.
+Or, in other words, the negative effects
+of the first action must not be a
+precondition, or a positive effect of the
+other.
+Action.
+And the first condition states this for
+the negative effects of a 1.
+And the second one is, is simply the
+symmetric case for the negative effects of
+a 2.
+Which must not be preconditions of a 1 or
+positive effects of a 1.
+That's what it means for two actions to be
+independent.
+And we can easily generalize this
+definition to a set of actions pi.
+We can say that a set of actions pi is
+independent if every pair of actions in
+this set is independent.
+So we must not have a single pair of
+actions that are dependent In the set,
+then the whole set consists of independent
+actions.
+And one important thing here you can see
+in this definition is that the
+independence of actions does not depend on
+the planning problem.
+Which means this can be computed before we
+start our planner, before we search for a
+solution to our problem.
+And also you can see quite easily that the
+independence relation that holds between
+actions is symmetric, because in the
+definition we've seen that these two cases
+for A1 and A2 are symmetric.
+And here is the definition we've just
+seen, expressed as an algorithm in pseudo
+code.
+We define a function, independent, that
+takes two action, and returns true, if and
+only if these two actions are indepenetns.
+And what this function does is simply go
+through all the negative effects of the
+first action and test whether they're also
+either a pre-condition or a positive
+effect of the second action.
+If this is the case, then we can return
+false because we know these two actions
+are not independent.
+They are dependent in this case.
+And then we also need to do the same for
+the symmetric case so we To all the
+negative effects of the second action and
+test wether they are a precondition of the
+first action or the positive effect of the
+first action.
+Again if this is the case we can return
+false the two actions are dependent.
+If this is not the case but if we go
+through both of these loops and don't
+return as false then we must have a case
+where both of the actions are independent
+and we can return true.
+In terms of time complexity, you can
+easily see that this algorithm has
+ponilumial/g time complexity.
+In fact, it's linear in the number of
+preconditions and effects that an action
+might have.
+So if the number of preconditions and
+effects an action might have is b, this
+algorithm runs in o of b.
+B.
+This assumes that these elements tests
+here in the algorithm can be done in
+constant time.
+And I've already told you, since action
+independence is independent from a given
+planning problem, this can be all
+precomputed.
+And I'll leave it up to you to work out
+how much storage this will actually take
+in computer memory.
+Now that we've seen what it means for a
+set of actions to be independent, we can
+talk about the application of a set of
+independent actions in the given state and
+this is quite straight forward.
+So we can say that a set of independent
+actions is applicable in a state s if the
+following holds namely the union of all
+the preconditions over all the actions.
+Must be propositions in our state s.
+It should be obvious that if each of the
+actions has its precondition set aside in
+this state s, then this individual action
+will be applicable.
+And if this is true for all the actions'
+preconditions, then all the actions are
+applicable.
+And then the result of applying a set of
+independent actions so this is our set pi
+here, independent actions is defined as
+follows.
+We extend the definition of our state
+transition function gamma to now take A
+state s and a set of independent actions
+pi.
+And the result will simply be all the
+propositions that are true in s minus the
+negative effects of the set pi plus the
+positive effects of the set.
+.
+And when we talk about the preconditions
+if positive effects or negative effects of
+a set of independent actions , we simply
+mean the union over all the actions in
+that set preconditions positive effect or
+negative effect.
+So this defines applicability and state
+transitions for sets of independent
+actions.
+Going back to what I said earlier, what we
+will be looking for is sets of independent
+actions in action layers in our planning
+graph.
+And when we want to turn this into a
+sequential plan, we need to be sure that
+we can do that and this is what this
+proposition gives us.
+If we are given a set Pi of independent
+actions that are applicable in a state s
+then we can take any permutation of those
+actions, a 1 through a K, so those are the
+actions in pi, and this is a permutation,
+any sequential order.
+Of those actions, and the following will
+be true.
+This sequence of actions a one through a k
+will be applicable in our state s.
+And the state that we get to when we apply
+our set of independent actions.
+This is the extended defintion of the
+state transition function that we've just
+introduced in the previous slide, will be
+the same state As the one we get when we
+take the state S and apply the sequence of
+actions A 1 through A K.
+And remember, this does not depend on
+which sequence we've chosen.
+So we can take any permutation and the
+resulting state will always be the same as
+when we apply the set of independent
+actions.
+That simply means we can forget about the
+execution order of independent actions
+because we can take any order we like.
+Now, we can define what we mean by a
+layered plan, which is the type of plan
+we'll be looking for in our planning
+graph.
+So, suppose we are given a planning
+problem consisting of a set of actions.
+An initial state and a goal.
+The set of actions here is the set of
+propositional actions and we're dealing
+with a propositional planning problem.
+Then we have a planning graph consisting
+of nodes and edges where the nodes are
+given by the first proposition layer, the
+first action layer and so on.
+One, always alternating action and
+proposition layers, as we've seen it
+earlier.
+Then we can define what we mean by a
+layered plan over this graph, and we
+define it as a sequence of sets of
+actions.
+Denoted here by this big symbol pi.
+And this is the sequence of actions, pi 1
+through pi k and for each of these sets,
+we must have the following conditions
+true.
+So the i set in the sequence, pi i, must
+be a subset of the actions in the[UNKNOWN]
+action layer of the planning graph so that
+will be for a 1 this will be this one
+here.
+For a2, this 1 here, an so on.
+So pi i must be a subset of the actions in
+that action layer.
+Which are, of course, a subset of all the
+actions that are available.
+Then, this set, pi i, must also be
+applicable in the state represented by pi
+minus 1.
+That is the proposition layer preceding
+the action layer we're just looking at.
+Note that this is not necessarily a
+consistent state.
+And then, of course, we want all our
+actions in pi i to be independent.
+So the main thing here is that our layered
+plan is a sequence of sets of independent
+actions, where each of these sets must be
+from the corresponding action layer.
+Now that we know what a layered plan is,
+it's fairly straightforward to define what
+it means for a layered plan to be a
+solution to a given planning problem.
+So we have a layered plan consisting of
+sets pi 1 through pi k of independent
+actions chosen from our planning graph.
+And we have a planning problem given by
+the set of actions a initial state and
+goal.
+Then, this sequence of sets of actions is
+a solution for this planning problem if
+the following conditions hold.
+Firstly, our first set, pi 1, must be
+applicable in our initial state.
+Then for every subsequent set pi j, so j
+must be greater than one.
+This must be applicable in the state that
+we get from first applying pi 1 in the
+initial state, then applying.
+And pie 2 in the state that results from
+this, and then applying the next set of
+fractions, and so on up to pie j minus 1.
+Applied in the state that we get when we
+apply these other sets before that.
+And in this state Pi J must be applicable.
+And the third and final condition is
+simply if we look at the state that we get
+from applying all those sets of actions
+and sequence.
+So starting from Pi 1 then Pi 2 and so on
+until we get to the last set Pi k, we get
+a state and in this state all the goal
+propositions must be in this state.
+So that is what a layered solution plan is
+and that's the kind of plan we'll be
+looking for in our planning graph.

@@ -1,0 +1,314 @@
+1
+00:00:00,012 --> 00:00:06,160
+>> As I have told you before, the graph
+plan planner performs two types of
+
+2
+00:00:06,160 --> 00:00:10,072
+operations.
+The first is forward planning graph
+
+3
+00:00:10,072 --> 00:00:13,781
+expansion, which is what we've looked at
+so far.
+
+4
+00:00:13,781 --> 00:00:18,750
+And the second is, a backward search
+through the planning graph.
+
+5
+00:00:18,750 --> 00:00:25,242
+This backward search is what we're going
+to look at next, although I probably don't
+
+6
+00:00:25,242 --> 00:00:29,930
+have to describe this to you.
+I could just say that this is a depth
+
+7
+00:00:29,930 --> 00:00:35,588
+first graph search, where the search nodes
+are subsets of nodes from the different
+
+8
+00:00:35,588 --> 00:00:38,552
+layers.
+But, for those of you that find that a
+
+9
+00:00:38,552 --> 00:00:44,522
+little superficial, here comes the detail.
+And here is an overview of the search
+
+10
+00:00:44,522 --> 00:00:50,465
+procedure followed by graph plan.
+We start by searching backwards from the
+
+11
+00:00:50,465 --> 00:00:54,169
+last proposition layer in our planning
+graph.
+
+12
+00:00:54,169 --> 00:01:00,730
+Of course, this layer Pk, must contain all
+the goal propositions, and none of these
+
+13
+00:01:00,730 --> 00:01:06,224
+goal propositions must be mutex.
+Otherwise, the planning graph cannot
+
+14
+00:01:06,224 --> 00:01:10,545
+contain a solution plan.
+So, this is where we start the search and
+
+15
+00:01:10,545 --> 00:01:15,443
+the remaining three steps describe how we
+proceed with the search from any
+
+16
+00:01:15,443 --> 00:01:19,565
+proposition layer.
+So, we assume that g are the current set
+
+17
+00:01:19,565 --> 00:01:25,314
+of goal propositions that we're trying to
+achieve in a given proposition layer Pj.
+
+18
+00:01:25,315 --> 00:01:30,486
+Initially, this is the last layer.
+But, during the course of the algorithm,
+
+19
+00:01:30,486 --> 00:01:33,549
+this will move backwards through the
+graph.
+
+20
+00:01:33,549 --> 00:01:38,427
+And what we do to achieve these
+propositions in layer Pj is to look for a
+
+21
+00:01:38,427 --> 00:01:42,946
+set of actions, pi j, that are a subset of
+the actions in layer Aj.
+
+22
+00:01:42,946 --> 00:01:48,130
+So that's the layer before Pj.
+And, of course, the actions that we're
+
+23
+00:01:48,130 --> 00:01:53,720
+looking for must together achieve all the
+conditions in g, and they must not be
+
+24
+00:01:53,720 --> 00:01:57,453
+mutex.
+Then, we can simply take the preconditions
+
+25
+00:01:57,453 --> 00:02:02,909
+of all these actions as our new subgoal,
+the new propositions that we try to
+
+26
+00:02:02,909 --> 00:02:10,002
+achieve in proposition layer Pj minus 1.
+And, of course, the search ends when we've
+
+27
+00:02:10,002 --> 00:02:15,659
+reached the layer P0.
+And here is an example of how this works
+
+28
+00:02:15,659 --> 00:02:22,510
+in the planning graph we've seen before.
+We start with our original goal consisting
+
+29
+00:02:22,510 --> 00:02:27,573
+of two goal propositions in the last
+proposition layer which is P3 in this
+
+30
+00:02:27,573 --> 00:02:33,383
+graph, and this layer does indeed contain
+the two goal propositions and they are not
+
+31
+00:02:33,383 --> 00:02:37,062
+mutex here.
+Then, we have to chose a set of non-mutex
+
+32
+00:02:37,062 --> 00:02:41,907
+actions in our action layer A3 that
+together achieve all the goals in
+
+33
+00:02:41,907 --> 00:02:46,717
+proposition layer P3.
+And the positive effect links tell us what
+
+34
+00:02:46,717 --> 00:02:50,655
+options we have here.
+And in this case, it's quite simple.
+
+35
+00:02:50,655 --> 00:02:55,365
+We choose these two actions here.
+Then, we can follow the preconditioned
+
+36
+00:02:55,365 --> 00:02:59,303
+links to identify the subgoals in our
+proposition layer P2.
+
+37
+00:02:59,303 --> 00:03:02,812
+And these are those four subgoals as you
+can see here.
+
+38
+00:03:02,812 --> 00:03:07,855
+So far, this corresponds to one iteration
+in our search algorithm.
+
+39
+00:03:07,855 --> 00:03:13,735
+And now, we can continue as before, we use
+the positive effect links to identify
+
+40
+00:03:13,735 --> 00:03:17,073
+actions in the next action layer which is
+A2.
+
+41
+00:03:17,073 --> 00:03:22,572
+And we see here each of these propositions
+can be achieved by one action.
+
+42
+00:03:22,572 --> 00:03:27,694
+But, remember this graph does not show the
+no-op operations that should be in this
+
+43
+00:03:27,694 --> 00:03:30,670
+layer.
+I just left them out to save some space.
+
+44
+00:03:30,670 --> 00:03:35,806
+So technically, there are two more ways of
+achieving these two propositions here.
+
+45
+00:03:35,806 --> 00:03:40,514
+Namely using the no-op operations.
+Taking them straight from the preceding
+
+46
+00:03:40,514 --> 00:03:43,084
+layer.
+And that's what we will do here.
+
+47
+00:03:43,084 --> 00:03:48,651
+So, from the actions shown here, we select
+those two and we also take the two no-op
+
+48
+00:03:48,651 --> 00:03:52,715
+operations to achieve our goal
+propositions in layer P2.
+
+49
+00:03:52,715 --> 00:03:58,159
+Then, we can use the precondition links to
+identify the next subgoal in layer P1.
+
+50
+00:03:58,159 --> 00:04:03,592
+So, these are the preconditions of all the
+actions we have chosen, including the
+
+51
+00:04:03,592 --> 00:04:08,825
+no-op operations here for subgoals.
+And that concludes the second iteration
+
+52
+00:04:08,825 --> 00:04:12,187
+through our search.
+So now, we proceed as before.
+
+53
+00:04:12,187 --> 00:04:17,542
+We use the positive effect links to
+identify the actions in action layer A1,
+
+54
+00:04:17,542 --> 00:04:21,592
+and we can also use some no-op operations
+as shown here.
+
+55
+00:04:21,592 --> 00:04:26,842
+But in addition to the no-op operations,
+we also need two of the actions listed
+
+56
+00:04:26,842 --> 00:04:31,181
+here, namely those two.
+And again, we use the precondition links
+
+57
+00:04:31,181 --> 00:04:35,606
+to identify those propositions in layer P0
+that we need to be true.
+
+58
+00:04:35,606 --> 00:04:41,820
+And, in fact, as you can see here, all six
+of the propositions in layer P0 are
+
+59
+00:04:41,820 --> 00:04:47,169
+required for this problem.
+So that means we have found a solution
+
+60
+00:04:47,169 --> 00:04:52,306
+plan in our planning graph.
+And it is a layer plan consisting of those
+
+61
+00:04:52,306 --> 00:04:57,850
+two actions in action layer 1, those two
+actions in action layer 2, and those two
+
+62
+00:04:57,850 --> 00:05:02,563
+actions in action layer 3.
+That's the plan we have come up with, the
+
+63
+00:05:02,563 --> 00:05:07,271
+plan we have found through backwards
+search in our planning graph.

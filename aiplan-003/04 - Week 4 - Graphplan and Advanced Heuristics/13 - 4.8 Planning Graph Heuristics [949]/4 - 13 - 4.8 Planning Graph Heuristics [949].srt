@@ -1,0 +1,618 @@
+1
+00:00:00,012 --> 00:00:07,084
+In the second week of this course, I told
+you about heuristic search and the A-star
+
+2
+00:00:07,084 --> 00:00:11,628
+algorithm.
+Then, I showed you how a strips planning
+
+3
+00:00:11,628 --> 00:00:19,293
+problems can be solved using forward state
+space search, which implicitly assumed you
+
+4
+00:00:19,293 --> 00:00:25,362
+could use the A-star algorithm for this.
+But of course, one of the things that
+
+5
+00:00:25,362 --> 00:00:30,892
+A-star needs is a heuristic that tells us
+how far from the goal a current state is.
+
+6
+00:00:30,892 --> 00:00:34,435
+And that's what we're going to look at in
+this segment.
+
+7
+00:00:34,435 --> 00:00:39,339
+And we're going to start off by some
+simple heuristics that can be directly
+
+8
+00:00:39,339 --> 00:00:42,713
+derived from the planning graph we've just
+seen.
+
+9
+00:00:42,714 --> 00:00:49,617
+Here is a quick recap of one of the things
+we've already learned about A-star.
+
+10
+00:00:49,617 --> 00:00:53,616
+Mainly, that A-star is optimally
+efficient.
+
+11
+00:00:53,616 --> 00:01:00,830
+This means that for a given heuristic
+function, no other algorithm is guaranteed
+
+12
+00:01:00,830 --> 00:01:06,351
+to expand fewer nodes than A-star.
+This means that if we are given a
+
+13
+00:01:06,351 --> 00:01:11,217
+heuristic function and that function is
+fixed, we cannot change it.
+
+14
+00:01:11,217 --> 00:01:15,126
+And we insist on having a minimal length
+solution plan.
+
+15
+00:01:15,126 --> 00:01:20,726
+Then, there cannot be an algorithm better
+than A-star that we can use for search.
+
+16
+00:01:20,726 --> 00:01:25,279
+But there are a few caveats.
+For example, the guarantee that A-star
+
+17
+00:01:25,279 --> 00:01:30,572
+returns a minimal length solution relies
+on the fact that the given heuristic is
+
+18
+00:01:30,572 --> 00:01:33,734
+admissible.
+Now, if we don't have a admissible
+
+19
+00:01:33,734 --> 00:01:37,453
+heuristic, then the guarantee doesn't
+exist anymore.
+
+20
+00:01:37,454 --> 00:01:42,642
+Or if we don't insist on having minimal
+length solutions, then we can imagine
+
+21
+00:01:42,642 --> 00:01:46,602
+algorithms that ignore certain parts of
+the search space.
+
+22
+00:01:46,602 --> 00:01:52,104
+Thereby missing certain solutions, but
+still come up with a non-optimal solution.
+
+23
+00:01:52,105 --> 00:01:57,333
+And, you may remember that I told you,
+that A-star still uses exponential memory.
+
+24
+00:01:57,333 --> 00:02:02,267
+So, depending on the size of our problem,
+this algorithm may simply run out of
+
+25
+00:02:02,267 --> 00:02:05,160
+memory and we need to do something else
+then.
+
+26
+00:02:05,160 --> 00:02:10,113
+So, A-star is not the answer to all
+questions, but is a very good algorithm
+
+27
+00:02:10,113 --> 00:02:14,281
+for performing search.
+And, there is one way we can improve the
+
+28
+00:02:14,281 --> 00:02:18,913
+algorithm, and that is simply by using a
+different heuristic function.
+
+29
+00:02:18,913 --> 00:02:23,080
+If we can find a better heuristic
+function, then A-star will perform
+
+30
+00:02:23,080 --> 00:02:27,392
+significantly better.
+And that is what we want to achieve.
+
+31
+00:02:27,392 --> 00:02:33,602
+Now, when I showed you the planning graph,
+I talked a lot about what this graph is
+
+32
+00:02:33,602 --> 00:02:39,242
+doing namely that it is doing a
+reachability analysis for our given goal
+
+33
+00:02:39,242 --> 00:02:44,148
+from the initial state.
+And now, I want to see if we can use this
+
+34
+00:02:44,148 --> 00:02:50,133
+reachability analysis to derive a
+heuristic that we can use during forward
+
+35
+00:02:50,133 --> 00:02:53,929
+search.
+And the reachability analysis performed by
+
+36
+00:02:53,929 --> 00:02:58,251
+a graph plan and encoded in the planning
+graph looks as follows.
+
+37
+00:02:58,251 --> 00:03:03,313
+We're given a propositional planning
+problem and we construct the planning
+
+38
+00:03:03,313 --> 00:03:06,876
+graph consisting of node and edges for
+this problem.
+
+39
+00:03:06,876 --> 00:03:12,075
+Then, let us assume that our goal consists
+of subgoals, g1 through gn here.
+
+40
+00:03:12,075 --> 00:03:17,453
+And then, the analysis showed us that for
+each of these goal components, this goal
+
+41
+00:03:17,453 --> 00:03:20,692
+component is reachable from the initial
+state.
+
+42
+00:03:20,692 --> 00:03:26,508
+If there's a proposition layer, Pg, such
+that the goal component that we're looking
+
+43
+00:03:26,508 --> 00:03:29,592
+for is an element of this proposition
+layer.
+
+44
+00:03:29,592 --> 00:03:32,988
+Or, we can look at this the other way
+around.
+
+45
+00:03:32,988 --> 00:03:38,698
+Namely, if we look at a proposition layer
+Pm, then we can say that if our goal
+
+46
+00:03:38,698 --> 00:03:45,046
+component that we're looking for is not in
+this proposition layer P, then that goal
+
+47
+00:03:45,046 --> 00:03:51,362
+component can not be reachable in m steps.
+If it was reachable in m steps, then there
+
+48
+00:03:51,362 --> 00:03:55,598
+would be an m step plan that makes that
+goal condition true.
+
+49
+00:03:55,598 --> 00:04:01,280
+And that means that plan would have to be
+part of our planning graph and would add
+
+50
+00:04:01,280 --> 00:04:04,984
+proposition, gk, to our planning graph in
+layer Pm.
+
+51
+00:04:04,984 --> 00:04:10,071
+But we've seen it is not in that layer, so
+there can't plan with m steps.
+
+52
+00:04:10,071 --> 00:04:17,629
+So, this gives us an idea how we can
+define a heuristic for our goal component
+
+53
+00:04:17,629 --> 00:04:22,176
+gk and that's the heuristic that we find
+here.
+
+54
+00:04:22,176 --> 00:04:30,112
+It's m and this m, what that is, is the
+first layer, first layer Pm, such that our
+
+55
+00:04:30,112 --> 00:04:37,024
+goal component, gk, is in that layer.
+Note that we have to choose the first such
+
+56
+00:04:37,024 --> 00:04:40,657
+layer here.
+So, we know that in Pm minus 1 gk is not
+
+57
+00:04:40,657 --> 00:04:45,426
+contained so it cannot be reachable.
+But in Pm, it is contained.
+
+58
+00:04:45,426 --> 00:04:50,781
+So, in theory, it may be possible to reach
+the goal condition, gk, in m steps.
+
+59
+00:04:50,781 --> 00:04:55,911
+So, we can use that as a heuristic.
+And because this is minimal, because we've
+
+60
+00:04:55,911 --> 00:05:00,747
+used the first layer, it is actually an
+admissible heuristic for this goal
+
+61
+00:05:00,747 --> 00:05:04,114
+condition.
+Of course, this only works for a single
+
+62
+00:05:04,114 --> 00:05:07,067
+goal condition, not a conjunction of
+goals.
+
+63
+00:05:07,067 --> 00:05:11,892
+And we've already seen that in the
+planning graph, we can select multiple
+
+64
+00:05:11,892 --> 00:05:16,109
+actions from one layer.
+So, m often underestimates the number of
+
+65
+00:05:16,109 --> 00:05:21,707
+required actions quite significantly.
+But, it is the best heuristic we've seen
+
+66
+00:05:21,707 --> 00:05:25,179
+so far.
+And, here is our familiar planning graph
+
+67
+00:05:25,179 --> 00:05:30,941
+example, that we've used a couple of time
+now to illustrate this concept of using
+
+68
+00:05:30,941 --> 00:05:37,110
+the planning graph to compute a heuristic.
+Remember, the original goal that we were
+
+69
+00:05:37,110 --> 00:05:42,678
+looking at was to swap the 2 containers,
+so we went to container a at location 2
+
+70
+00:05:42,678 --> 00:05:47,378
+and container b at location 1.
+So there's two goal components to this
+
+71
+00:05:47,378 --> 00:05:52,196
+overall goal, and we can compute the
+heuristic function we've just looked at by
+
+72
+00:05:52,196 --> 00:05:56,986
+looking at the planning graph, and seeing
+where those two goals first appear.
+
+73
+00:05:56,986 --> 00:06:00,338
+And if we look at a2, it's already circled
+in red here.
+
+74
+00:06:00,338 --> 00:06:04,898
+Because at first, that appears in
+proposition layer P3 and we can look at
+
+75
+00:06:04,898 --> 00:06:09,762
+this as not in this layer, not in this
+layer P2 and it appears here for the first
+
+76
+00:06:09,762 --> 00:06:13,201
+time and similarly b1 appears here for the
+first time.
+
+77
+00:06:13,201 --> 00:06:16,896
+So, what we have is that the heuristic we
+have just defined.
+
+78
+00:06:16,896 --> 00:06:22,488
+4a2 is 3, because it takes at least three
+actions to make that proposition true and
+
+79
+00:06:22,488 --> 00:06:25,797
+we know that from looking at the planning
+graph.
+
+80
+00:06:25,797 --> 00:06:30,291
+And the same applies for b1.
+It takes at least three actions to make
+
+81
+00:06:30,291 --> 00:06:34,741
+this proposition true.
+But note that we have said nothing about
+
+82
+00:06:34,741 --> 00:06:40,260
+which actions these are, so these actions
+will be from the three action layers.
+
+83
+00:06:40,260 --> 00:06:45,289
+But for all we know, they might be the
+same three actions for both goals.
+
+84
+00:06:45,289 --> 00:06:49,562
+So, that is a problem.
+How do we combine these two values into a
+
+85
+00:06:49,562 --> 00:06:55,666
+single heuristic for a composite goal?
+So, the question is, how do we combine the
+
+86
+00:06:55,666 --> 00:07:01,672
+information gained from the planning graph
+as a heuristic for individual goal
+
+87
+00:07:01,672 --> 00:07:05,639
+conditions when we have multiple goal
+conditions?
+
+88
+00:07:05,639 --> 00:07:11,828
+So, we are given a planning problem, but
+our goal consists of more than one goal.
+
+89
+00:07:11,828 --> 00:07:17,806
+G1 through gn, and we need to combine the
+heuristic values for the individual goals
+
+90
+00:07:17,806 --> 00:07:23,013
+into an overall heuristic value.
+And there are two obvious ways in which
+
+91
+00:07:23,013 --> 00:07:26,887
+this can be done.
+The first option is we simply take the
+
+92
+00:07:26,887 --> 00:07:30,269
+maximum.
+So, this option assumes that the actions
+
+93
+00:07:30,269 --> 00:07:34,329
+that we need to achieve all the goals
+overlap significantly.
+
+94
+00:07:34,329 --> 00:07:38,613
+And therefore, taking the maximum will
+tell us how long it will take, in the
+
+95
+00:07:38,613 --> 00:07:43,294
+worst case, to achieve all the goals.
+The advantage of this approach is that the
+
+96
+00:07:43,294 --> 00:07:47,561
+heuristic is still admissible.
+So, it was admissible for each individual
+
+97
+00:07:47,561 --> 00:07:50,109
+goal.
+But now, taking the maximum gives us an
+
+98
+00:07:50,109 --> 00:07:54,967
+admissible heuristic for all the goals.
+In practice, it turns out that this
+
+99
+00:07:54,967 --> 00:08:00,492
+heuristic is very inaccurate, and the
+problem comes when we have independent
+
+100
+00:08:00,492 --> 00:08:04,137
+goals.
+For independent goals, the actions we need
+
+101
+00:08:04,137 --> 00:08:10,172
+to achieve these goals often don't overlap
+much, in which case, this heuristic badly
+
+102
+00:08:10,172 --> 00:08:13,763
+underestimates what it takes to get to the
+goal.
+
+103
+00:08:13,764 --> 00:08:19,011
+The second obvious option, instead of
+taking the maximum, would be simply to add
+
+104
+00:08:19,011 --> 00:08:23,379
+all the values for the individual goal and
+combine them in this way.
+
+105
+00:08:23,379 --> 00:08:28,005
+So, the first drawback of this is that
+this approach gives us no longer an
+
+106
+00:08:28,005 --> 00:08:32,220
+admissible heuristic.
+This may well over estimate the distance
+
+107
+00:08:32,220 --> 00:08:36,379
+to the goal because there are shared
+actions and they often are.
+
+108
+00:08:36,379 --> 00:08:41,425
+And if we don't take this into account, we
+count these actions multiple times when we
+
+109
+00:08:41,425 --> 00:08:45,283
+compute our heuristic.
+And that means, this heuristic becomes
+
+110
+00:08:45,283 --> 00:08:50,184
+quite inaccurate for dependent goals.
+Now you could ask, are dependent goals
+
+111
+00:08:50,184 --> 00:08:53,902
+very realistic?
+And in many domains, unfortunately, they
+
+112
+00:08:53,902 --> 00:08:56,891
+are.
+Think back to what relations we've defined
+
+113
+00:08:56,891 --> 00:09:01,357
+for the dockworker robot domain.
+There's the at relation that tells us
+
+114
+00:09:01,357 --> 00:09:06,682
+where a robot is, and there's the occupied
+predicate that tells us whether a location
+
+115
+00:09:06,682 --> 00:09:10,244
+is occupied or not.
+These two are always dependent.
+
+116
+00:09:10,244 --> 00:09:15,706
+If they both appear in a goal, then just
+adding the values to achieve the two
+
+117
+00:09:15,706 --> 00:09:19,176
+doubles the amount of effort that we
+estimate.
+
+118
+00:09:19,176 --> 00:09:24,577
+But at least we now have two heuristics we
+can now use to apply a start to forward
+
+119
+00:09:24,577 --> 00:09:28,767
+state space search.
+And one thing to note about for both of
+
+120
+00:09:28,767 --> 00:09:33,782
+these heuristics, which is quite
+interesting, is they're based on the
+
+121
+00:09:33,782 --> 00:09:39,562
+planning graph but neither of those really
+requires the computation of the mutex
+
+122
+00:09:39,562 --> 00:09:43,164
+relations.
+So, we could use them in a planning graph
+
+123
+00:09:43,164 --> 00:09:48,852
+with or without mutex relations, meaning
+we actually have four different heuristics
+
+124
+00:09:48,852 --> 00:09:49,538
+already.

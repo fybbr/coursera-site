@@ -1,0 +1,102 @@
+[SOUND] AI Planners, using a generation 
+of action sequences in robots such as the 
+Freddy 2, Hand/Eye Assembly Robot 
+displayed here in the National Museum of 
+Scotland in Edinburgh. 
+This version of Freddy from four decades 
+ago had a large, fixed mounted arm with 
+sophisticated touch sensitive grippers, 
+and a side mounted camera to look at its 
+world. 
+Instead of the robot moving to reach 
+objects, the platform underneath the 
+robot was shifted instead. 
+Freddy was demonstrated on flexible 
+assembly tasks involving simple toy, 
+cars, and boats. 
+The video playing is taken from a 16 
+millimeter film of a Freddy project 
+demonstration made in 1973. 
+Freddy had to identify jumbled up parts 
+via vision, unscrambled the parts, and 
+then assembled them to create the 
+required product. 
+Some parts in the area didn't belong to 
+the target assembly. 
+In one project, the Edinburgh, normally 
+an AI Planner, was used to generate 
+object construction and arm movement 
+sequences for Freddy. 
+In its time, Freddy was one of the most 
+sophisticated robots in the world. 
+The Stanford Research Institute Problem 
+Solver Strips is one of the best known a 
+most influential AI Planners, and you'll 
+learn about it on this course. 
+Despite of being created over 40 years 
+ago, 
+it was already news control the activity 
+of a robot called Shakey at the Stanford 
+Research Institute, which is now call SRI 
+International. 
+Strips had may interesting features 
+including use in theorem proving 
+techniques to reason about the state of 
+points in the plan. 
+Strips gave us a representation of 
+actions with preconditions and effects. 
+It's got a mechanism called macrobes, for 
+generalization of its operators. 
+It included execution support facilities 
+to deal with partial failures. 
+Shakey is now on display at the Computer 
+History Museum in Mountain View, 
+California. 
+As we saw, Freddy included an early robot 
+arm, but as you can see here, technology 
+has come a long way. 
+For example, this modern research robotic 
+arm has many more capabilities. 
+Obviously, there's a lot more to robotics 
+than just activity planning and there are 
+significant challenges in terms of 
+vision, mechanical issues, and spatial 
+reasoning including locating the robot, 
+and tracking other objects. 
+But planning is a key aspect of 
+intelligent behavior. 
+Not every robot has the kind of activity 
+plan that we are describing on this 
+course. 
+That is, one which can plan from first 
+principles. 
+But robots typically do have plans, 
+perhaps precompiled ones, that they use 
+to control their behavior. 
+AI Planners have been used in much more 
+recent robots also, of course, such as in 
+some humanoid robots and the robots used 
+in the Annual RoboCup Soccer League 
+Teams. 
+Here, planning may have to cover the 
+coordination of different robots with 
+different roles, and the robots 
+themselves can have planners on board 
+that adjust their behaviors dynamically. 
+The planners have been used in different 
+kind of robots, too. 
+For example, an on board planner and 
+reactive execution agent was used to 
+autonomously control the NASA Deep Space 
+1 spacecraft prepared in its flight 
+rounding over the comet. 
+AI Planners have been used to provide 
+adaptability and flexibility robots in 
+the past and in the present, 
+in the factory, in the home, and in the 
+outer space. 
+And it's nearing which to put good use 
+tomorrow. 
+We hope you'll be part in creating this 
+future. 
+

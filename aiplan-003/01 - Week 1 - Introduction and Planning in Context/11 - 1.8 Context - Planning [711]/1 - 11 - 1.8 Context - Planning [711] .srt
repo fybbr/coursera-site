@@ -1,0 +1,505 @@
+1
+00:00:11,620 --> 00:00:16,141
+We'll take a look at the very wide range 
+of planning research areas and 
+
+2
+00:00:16,141 --> 00:00:19,092
+techniques. 
+There's been quite a lot of work in 
+
+3
+00:00:19,092 --> 00:00:23,865
+domain modeling, domain description, and 
+domain analysis, prior to using these 
+
+4
+00:00:23,865 --> 00:00:27,759
+descriptions, these domain descriptions 
+in planners themselves. 
+
+5
+00:00:27,759 --> 00:00:32,468
+Then of course the core work in AI 
+planning is being in the search methods, 
+
+6
+00:00:32,468 --> 00:00:35,860
+and algorithms for creating plans, 
+searching for plans. 
+
+7
+00:00:35,860 --> 00:00:41,085
+People have looked up plan analysis 
+because if you can constrain the types of 
+
+8
+00:00:41,085 --> 00:00:45,708
+plan you're interested in through 
+analysis, that can limit the search 
+
+9
+00:00:45,708 --> 00:00:49,112
+spaces involved. 
+It could be useful to pause here and to 
+
+10
+00:00:49,112 --> 00:00:51,853
+read through this list of areas and 
+techniques. 
+
+11
+00:00:51,853 --> 00:00:56,169
+How many have you already heard of? 
+Check out or ask about any acronym you 
+
+12
+00:00:56,169 --> 00:00:58,560
+don't know. 
+Continue on when you're ready. 
+
+13
+00:01:02,280 --> 00:01:07,429
+Then people concerned with realistic and 
+practical planning problems have often 
+
+14
+00:01:07,429 --> 00:01:12,385
+had to deal with the hue of repairing 
+plans when things go wrong or when the 
+
+15
+00:01:12,385 --> 00:01:16,440
+circumstances change. 
+A number of people have looked at planned 
+
+16
+00:01:16,440 --> 00:01:19,980
+generalization, 
+the reuse of generalized plan fragments. 
+
+17
+00:01:22,120 --> 00:01:26,655
+The sport of the user involved in 
+planning via a suitable user interface 
+
+18
+00:01:26,655 --> 00:01:31,688
+is, advice interfaces and the ability to 
+generate plans in a mixed issued fashion 
+
+19
+00:01:31,688 --> 00:01:35,229
+between the automated system and the 
+human are important. 
+
+20
+00:01:35,229 --> 00:01:40,200
+In recent years, planners have been made 
+available as web services in order that 
+
+21
+00:01:40,200 --> 00:01:44,200
+they can be used as a component of larger 
+scale systems. 
+
+22
+00:01:44,200 --> 00:01:48,450
+And plans can be used in a range of other 
+areas, such as natural language 
+
+23
+00:01:48,450 --> 00:01:52,758
+generation, dialogue management, the 
+sharing of plans between humans and so 
+
+24
+00:01:52,758 --> 00:01:55,029
+on. 
+Pause again, to look at the research 
+
+25
+00:01:55,029 --> 00:02:01,585
+areas and techniques listed. 
+So as you can see here, we're dealing 
+
+26
+00:02:01,585 --> 00:02:06,195
+with the whole life-cycle plans, right 
+through from, creating domain models, 
+
+27
+00:02:06,195 --> 00:02:10,100
+to making use of those plans in 
+productive situations. 
+
+28
+00:02:10,100 --> 00:02:12,893
+The problem is that we need to make sense 
+of all of this. 
+
+29
+00:02:12,893 --> 00:02:16,814
+We need to find a way of fitting in the 
+very many techniques that are available 
+
+30
+00:02:16,814 --> 00:02:21,380
+now and that will become available 
+through further research and development. 
+
+31
+00:02:21,380 --> 00:02:25,800
+What's needed is more collaborative 
+planning framework. 
+
+32
+00:02:25,800 --> 00:02:30,137
+At the alta level, we've got to be able 
+to relate to the humans involved in the 
+
+33
+00:02:30,137 --> 00:02:33,267
+planning process, 
+where they can present their objectives, 
+
+34
+00:02:33,267 --> 00:02:36,012
+their issues, 
+they can make sense of the situation. 
+
+35
+00:02:36,012 --> 00:02:38,318
+They can give multiple options and 
+advice. 
+
+36
+00:02:38,318 --> 00:02:42,272
+They can argue about those options, 
+discuss them, outline plans, and so on. 
+
+37
+00:02:42,272 --> 00:02:46,555
+Then we want detailed planners, search 
+engines, constraints, all that analyzers 
+
+38
+00:02:46,555 --> 00:02:50,288
+and simulators, that can act within that 
+outdoor frame, and work in an 
+
+39
+00:02:50,288 --> 00:02:53,583
+understandable way, 
+and use it to provide feasibility checks, 
+
+40
+00:02:53,583 --> 00:02:57,656
+detailed constraints, and guidance. 
+Want to be able to share processes and 
+
+41
+00:02:57,656 --> 00:03:01,164
+information about process products 
+between humans and systems, 
+
+42
+00:03:01,164 --> 00:03:05,463
+and want to look at the current status, 
+the context we're in, the environment 
+
+43
+00:03:05,463 --> 00:03:08,340
+we're in, you know, to be sensitive to 
+that. 
+
+44
+00:03:08,340 --> 00:03:12,554
+We need a link between informal and 
+unstructured planning and more structured 
+
+45
+00:03:12,554 --> 00:03:16,768
+planning and methods for optimization. 
+And that's what we've been trying to do 
+
+46
+00:03:16,768 --> 00:03:20,874
+with our I X I plan work, just as an 
+example of how some of this integration 
+
+47
+00:03:20,874 --> 00:03:23,360
+is going on in practical A I planning 
+systems. 
+
+48
+00:03:24,800 --> 00:03:29,062
+First of all, we base it on an 
+underlying, intelligible, easily 
+
+49
+00:03:29,062 --> 00:03:34,024
+communicated, easily extended, conceptual 
+model for objectives, processes, 
+
+50
+00:03:34,024 --> 00:03:38,217
+procedures and plans. 
+Just based on four components, a set of 
+
+51
+00:03:38,217 --> 00:03:43,597
+issues to be addressed, a set of nodes, 
+which are activities to be included in 
+
+52
+00:03:43,597 --> 00:03:48,769
+the plan, a set of constraints which have 
+got to be respected and a set of 
+
+53
+00:03:48,769 --> 00:03:52,402
+annotations on the entities that are 
+involved there. 
+
+54
+00:03:52,402 --> 00:03:57,215
+We call that model INCA. 
+Then we want to communicate the dynamic 
+
+55
+00:03:57,215 --> 00:03:59,684
+status and presence of the agents 
+involved. 
+
+56
+00:03:59,684 --> 00:04:04,103
+The collaborative processes that process 
+products, and what they, what they're 
+
+57
+00:04:04,103 --> 00:04:06,514
+able to do in terms of their 
+capabilities. 
+
+58
+00:04:06,514 --> 00:04:10,819
+Want to be sensitive to the current 
+context so the presentation of options 
+
+59
+00:04:10,819 --> 00:04:14,550
+for action are those which are suitable 
+for the context we're in. 
+
+60
+00:04:14,550 --> 00:04:19,117
+And we want to do intelligent activity 
+planning, execution and monitoring 
+
+61
+00:04:19,117 --> 00:04:23,934
+repair, and plan repair, and we do that 
+via the iPlan planner and what we call 
+
+62
+00:04:23,934 --> 00:04:28,940
+the IX process panels, which are the user 
+interface element in the IX technology. 
+
+63
+00:04:30,580 --> 00:04:34,279
+So IXs aim is a planning workflow and 
+task messaging catch all. 
+
+64
+00:04:34,279 --> 00:04:39,095
+We designed it in order that it can deal 
+with the wide range of problems that can 
+
+65
+00:04:39,095 --> 00:04:41,972
+be addressed in planning and activity 
+management. 
+
+66
+00:04:41,972 --> 00:04:45,789
+It's meant to be able to take any 
+requirement to handle an issue, 
+
+67
+00:04:45,789 --> 00:04:48,843
+perform an activity, 
+respect a constraint, or note an 
+
+68
+00:04:48,843 --> 00:04:51,838
+annotation. 
+So that's the underlying computational 
+
+69
+00:04:51,838 --> 00:04:56,461
+model of the I-X platform. 
+They can deal with these by a manual 
+
+70
+00:04:56,461 --> 00:04:59,248
+activity, 
+so you can basically, just take items 
+
+71
+00:04:59,248 --> 00:05:02,520
+off, for instance, on checklist. 
+That's a perfectly good way of 
+
+72
+00:05:02,520 --> 00:05:06,883
+representing the fact that you've 
+performed an activity in some systems. 
+
+73
+00:05:06,883 --> 00:05:10,276
+But also, by inbuilt internal 
+capabilities in the system, 
+
+74
+00:05:10,276 --> 00:05:14,980
+by external capabilities you know about, 
+or by rerouting or delegating to other 
+
+75
+00:05:14,980 --> 00:05:19,247
+panels and agents, which is where 
+communication and collaboration and the 
+
+76
+00:05:19,247 --> 00:05:21,469
+models of those, those other agents comes 
+in. 
+
+77
+00:05:21,469 --> 00:05:25,736
+And all we can plan next year to 
+compensate to these capabilities and we 
+
+78
+00:05:25,736 --> 00:05:30,180
+can use the planner inside the system 
+itself, to plan that kind of work flow. 
+
+79
+00:05:31,780 --> 00:05:36,723
+And then the system receives reports and 
+interprets them to understand the current 
+
+80
+00:05:36,723 --> 00:05:39,880
+state it's in, 
+and to be able to start to handle that 
+
+81
+00:05:39,880 --> 00:05:42,859
+situation and help the user control the 
+situation. 
+
+82
+00:05:42,859 --> 00:05:47,326
+And the idea is it can cope with just 
+partial knowledge of the process and 
+
+83
+00:05:47,326 --> 00:05:51,019
+organization involved, 
+and be able to fit in to an environment 
+
+84
+00:05:51,019 --> 00:05:55,665
+where it isn't the only agent that's 
+working on plans and processes within an 
+
+85
+00:05:55,665 --> 00:05:59,774
+organization. 
+I-x, as we've said before, has been 
+
+86
+00:05:59,774 --> 00:06:04,018
+applied to emerge in serious bonds, and 
+we've used this kind of process panel or 
+
+87
+00:06:04,018 --> 00:06:07,481
+user interface that's what the task. 
+But it's in a context where there is a 
+
+88
+00:06:07,481 --> 00:06:10,832
+lot of verbal tools. 
+The main editors, links to mapping tools, 
+
+89
+00:06:10,832 --> 00:06:15,132
+the planner itself can have a pop up 
+window, its like you look at the options 
+
+90
+00:06:15,132 --> 00:06:19,823
+its generating and guide them and give 
+them advice and so on and you can link to 
+
+91
+00:06:19,823 --> 00:06:22,560
+messaging and communication tools to the 
+systems. 
+
+92
+00:06:23,900 --> 00:06:28,235
+So that concludes this series of 
+presentations on AI planning and context. 
+
+93
+00:06:28,235 --> 00:06:32,629
+We've been looking at the context of 
+practical systems, and we've shown you 
+
+94
+00:06:32,629 --> 00:06:36,554
+some practical planners in use. 
+We've looked at the context of task 
+
+95
+00:06:36,554 --> 00:06:41,241
+assignment, and execution, the fact that 
+we're often working with multiple agents, 
+
+96
+00:06:41,241 --> 00:06:45,577
+multiple systems and multiple services, 
+and we've looked at the context of 
+
+97
+00:06:45,577 --> 00:06:50,264
+planned representation itself, where rich 
+plan representations can be used for many 
+
+98
+00:06:50,264 --> 00:06:55,010
+kinds of communication and collaboration 
+in activity and, and planning situations. 
+
+99
+00:06:55,010 --> 00:06:59,616
+And finally, we looked at Planning++, to 
+try to make sense of the wide range of 
+
+100
+00:06:59,616 --> 00:07:03,955
+techniques being developed in this field, 
+and looked at a model for bringing some 
+
+101
+00:07:03,955 --> 00:07:06,580
+of these techniques together in a 
+productive way. 
+

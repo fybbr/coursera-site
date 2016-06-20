@@ -1,0 +1,365 @@
+1
+00:00:05,829 --> 00:00:10,851
+Hello, my name is Nils Nilsson. 
+I helped in the development of A Star and 
+
+2
+00:00:10,851 --> 00:00:13,920
+STRIPS, 
+and I'd like to explain a little bit 
+
+3
+00:00:13,920 --> 00:00:19,291
+about the history of those programs. 
+In the mid 1960's at SRI, then called the 
+
+4
+00:00:19,291 --> 00:00:23,894
+Stanford Research Institute, I was 
+working on a robot called Shakey. 
+
+5
+00:00:23,894 --> 00:00:29,125
+Shakey had several programs, some for 
+dealing with perception. We had machine 
+
+6
+00:00:29,125 --> 00:00:34,426
+vision programs, for example, and some 
+controlled Shakey's actions as it moved 
+
+7
+00:00:34,426 --> 00:00:38,867
+around in it's environment. 
+There were two problems in developing 
+
+8
+00:00:38,867 --> 00:00:44,926
+these programs for controlling Shakey's 
+actions. One problem was how Shakey should 
+
+9
+00:00:44,926 --> 00:00:50,311
+navigate throughout a, a room strewn with 
+obstacles without bumping in to any of 
+
+10
+00:00:50,311 --> 00:00:53,474
+them. 
+Another problem concerned how Shakey 
+
+11
+00:00:53,474 --> 00:00:58,456
+should put together its high level 
+actions in order to achieve high level 
+
+12
+00:00:58,456 --> 00:01:01,884
+goals. 
+With regard to the navigation problem, we 
+
+13
+00:01:01,884 --> 00:01:07,178
+set up waypoints that were adjacent to 
+and somewhat standing off of various 
+
+14
+00:01:07,178 --> 00:01:11,646
+obstacles in the room. 
+These waypoints could be considered nodes 
+
+15
+00:01:11,646 --> 00:01:14,877
+in a graph. 
+The edges of the graph would be the 
+
+16
+00:01:14,877 --> 00:01:19,758
+straight line distances between way 
+points that Shakey would be able to 
+
+17
+00:01:19,758 --> 00:01:22,814
+travel. 
+So the problem of navigating from one 
+
+18
+00:01:22,814 --> 00:01:28,235
+point in the room to another is the same 
+as the problem of finding the shortest 
+
+19
+00:01:28,235 --> 00:01:31,983
+path in a graph. 
+Edgar Dykstra had an algorithm for doing 
+
+20
+00:01:31,983 --> 00:01:37,309
+just that, but the problem with the 
+Dykstra algorithm was that it searched 
+
+21
+00:01:37,309 --> 00:01:41,543
+outward from the start node toward the 
+goal in all directions. 
+
+22
+00:01:41,543 --> 00:01:46,870
+What we wanted was an algorithm that 
+focused its search more in the direction 
+
+23
+00:01:46,870 --> 00:01:50,766
+of the goal. 
+Now I was aware of a program developed at 
+
+24
+00:01:50,766 --> 00:01:56,235
+Edinburgh University, a graph traverser 
+program, by Jim Dorin and Donald Rickey 
+
+25
+00:01:56,235 --> 00:02:01,226
+that did focus toward the goal. 
+Their algorithm assigned numbers to nodes 
+
+26
+00:02:01,226 --> 00:02:06,764
+in the graph that were purported to be 
+the difficulty of achieving the goal from 
+
+27
+00:02:06,764 --> 00:02:11,153
+that particular node. 
+I suggested that, that number ought to be 
+
+28
+00:02:11,153 --> 00:02:17,059
+an estimate of the distance from the node 
+to the goal, ignoring any obstacles that 
+
+29
+00:02:17,059 --> 00:02:21,460
+might be in the way. 
+A colleague at SRI, Burt Brofel, 
+
+30
+00:02:21,460 --> 00:02:25,840
+suggested that the number ought to 
+involve, also. 
+
+31
+00:02:25,840 --> 00:02:31,198
+The distance from the start node to the 
+node in question and that would prevent 
+
+32
+00:02:31,198 --> 00:02:35,551
+Shakey from being led down promising but 
+ultimately futile paths. 
+
+33
+00:02:35,551 --> 00:02:40,976
+Another colleague, Peter Hart, suggested 
+that if the estimate from the node to the 
+
+34
+00:02:40,976 --> 00:02:46,066
+goal was a lower bound on the true 
+distance Shakey would have to travel from 
+
+35
+00:02:46,066 --> 00:02:50,687
+that node to the goal. Then the 
+algorithm, which we named A Star, would 
+
+36
+00:02:50,687 --> 00:02:54,170
+in fact achieve the shortest path that 
+was possible. 
+
+37
+00:02:54,170 --> 00:02:59,525
+Then Peter Hart and Burt Rayfield /g and 
+I together set about to prove Peter's 
+
+38
+00:02:59,525 --> 00:03:05,169
+conjecture and that was the development 
+of the A star algoritm which involved 
+
+39
+00:03:05,169 --> 00:03:10,741
+this number associated with each node 
+that in, that was a sum of the distance 
+
+40
+00:03:10,741 --> 00:03:15,734
+from the start node to the node in 
+question plus the estimate of the 
+
+41
+00:03:15,734 --> 00:03:20,913
+distance from that node to the goal. 
+With regard to the second problem, the 
+
+42
+00:03:20,913 --> 00:03:26,467
+one I'm stringing together, Shakey's high 
+level actions to achieve higher level 
+
+43
+00:03:26,467 --> 00:03:31,818
+goals, Richard Fikes and I, another 
+colleague at SRI, developed a system we 
+
+44
+00:03:31,818 --> 00:03:36,176
+called STRIPS for Stanford Research 
+Institute Problem Solver. 
+
+45
+00:03:36,176 --> 00:03:41,914
+STRIPS used high-level models of Shakey's 
+world, that is instead of just the 
+
+46
+00:03:41,914 --> 00:03:47,577
+coordinates, the positions in Shakey's 
+room, we used a database of facts that 
+
+47
+00:03:47,577 --> 00:03:52,711
+were true of particular situations that 
+Shakey could get itself into. 
+
+48
+00:03:52,711 --> 00:03:58,826
+So we still wanted to be able to solve 
+the problem of achieving these high-level 
+
+49
+00:03:58,826 --> 00:04:02,300
+goals by some sort of graph searching 
+program. 
+
+50
+00:04:02,300 --> 00:04:07,333
+And so the starting node of the graph 
+would be a list of all the facts that 
+
+51
+00:04:07,333 --> 00:04:13,522
+were true in Shakey's present situation. 
+The goal then was also described by some 
+
+52
+00:04:13,522 --> 00:04:19,237
+statements of facts that we wanted Shakey 
+to make true by achieving, by applying, 
+
+53
+00:04:19,237 --> 00:04:24,445
+actually, these high-level actions. 
+So what we needed in order to convert 
+
+54
+00:04:24,445 --> 00:04:30,377
+this into a search problem in the graph 
+would be a computational way of producing 
+
+55
+00:04:30,377 --> 00:04:35,657
+states of the world, that is, other 
+databases describing what a particular 
+
+56
+00:04:35,657 --> 00:04:41,300
+state of the world would be when Shakey 
+applied one of it's high-level actions. 
+
+57
+00:04:41,300 --> 00:04:46,232
+To perform that computation, we invented 
+something called STRIPS rules. 
+
+58
+00:04:46,232 --> 00:04:51,657
+Now, a STRIPS rule would consist of a 
+pre-condition, that is to say all of the 
+
+59
+00:04:51,657 --> 00:04:57,153
+facts that had to be in a particular 
+world, in order for Shakey to apply one of 
+
+60
+00:04:57,153 --> 00:05:01,592
+it's high-level actions. 
+A delete list, that is to say a list of 
+
+61
+00:05:01,592 --> 00:05:07,511
+facts which could no longer be guaranteed 
+to be true if Shakey did apply one of it's 
+
+62
+00:05:07,511 --> 00:05:12,584
+high-level actions, and an add list, 
+which would be those facts which the 
+
+63
+00:05:12,584 --> 00:05:18,722
+high-level action would make true. 
+And so what we did is use these strips 
+
+64
+00:05:18,722 --> 00:05:24,834
+rules to go from one state, that is one 
+database describing Shakey's current 
+
+65
+00:05:24,834 --> 00:05:28,501
+situation, to successor states in the 
+graph. 
+
+66
+00:05:28,501 --> 00:05:35,427
+So we could even use the A Star algorithm 
+if we had a good way of, estimating what 
+
+67
+00:05:35,427 --> 00:05:41,946
+the distance would be from one of these 
+databases, to one which had Shakey's goal 
+
+68
+00:05:41,946 --> 00:05:45,564
+achieved. 
+So we could use A Star, if we had that 
+
+69
+00:05:45,564 --> 00:05:49,965
+particular system. 
+Actually, in the system that we employed 
+
+70
+00:05:49,965 --> 00:05:56,037
+at program, the STRIPS system, we worked 
+backwards from the goal by applying these 
+
+71
+00:05:56,037 --> 00:05:59,908
+STRIPS operators in a somewhat backward 
+direction. 
+
+72
+00:05:59,908 --> 00:06:05,296
+Those of us who were involved in the 
+development, A star and STRIPS, are 
+
+73
+00:06:05,296 --> 00:06:11,520
+gratified to know that these systems are 
+used in many present day AI applications. 
+

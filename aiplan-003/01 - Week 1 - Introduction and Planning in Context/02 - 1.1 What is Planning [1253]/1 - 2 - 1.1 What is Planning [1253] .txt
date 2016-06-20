@@ -1,0 +1,374 @@
+This is the first segment of the 
+artificial intelligence planning course. 
+In this segment I will give you an 
+introduction and overview to the problem 
+we are addressing in the field of A.I. 
+planning. 
+This will include some examples and 
+introduction to the basic techniques we 
+will be using to solve planning problems. 
+So the first question I have to answer 
+is, what is planning?" And more 
+specifically, what do we mean by planning 
+in the context of artificial 
+intelligence?" I will answer this 
+question by informally describing the 
+planning problem that is the problem we 
+are trying to solve in this field. 
+I will then argue why this problem is 
+important for artificial intelligence as 
+a whole. 
+And then continue to describe some 
+techniques that will be used to solve 
+this problem. 
+So let us start by looking at human 
+planning and acting. 
+Humans rarely plan before acting in 
+everyday situations. 
+Ask yourself, when was the last time I 
+sat down and made a plan before acting? 
+Chances are this will have been some time 
+ago. 
+This is because humans act without prior 
+explicit planning quite often. 
+There's a number of situations where this 
+is the case and here are some examples. 
+When the purpose of my action is 
+immediate, I don't need to make an 
+explicit plan. For example, to record 
+this lecture, I needed to switch on this 
+computer. I know how to do this, so I 
+just did it. 
+I didn't need to make an explicit plan. 
+The purpose of the action was immediate. 
+When performing well-trained behaviors, I 
+also don't need to do explicit planning. 
+For me, this would be driving a car. 
+I know how to drive a car. 
+I've done this many times, so I don't 
+need to make a plan before I switch gears 
+or before I turn the steering wheel. 
+It's a well-trained behavior, 
+I don't need to plan. 
+When the course of action can be freely 
+adapted, I also don't need to plan. 
+This would be when I go shopping in the 
+supermarket. 
+I don't need to plan in which order I go 
+through the different aisles, 
+because I can always adapt my my acting 
+to what I've missed in previous aisles 
+and just go there again. 
+So the, the course of action can be 
+freely adapted, means I don't need to 
+plan. 
+A number of situations make it possible 
+to plan, though, 
+and here are some examples where planning 
+is necessary, 
+that is explicit planning. 
+So, when I'm addressing a new situation, 
+something that I haven't done before or 
+haven't done often, 
+then I need to do explicit planning. 
+An example of this would be moving a 
+house. 
+Everybody who has done a big move with, 
+with furniture will know what this means. 
+You need to organize a van. 
+You need to organize people. 
+You need to have an explicit plan in 
+place before you can successfully move 
+from one place to another. 
+another situation is when the task you're 
+trying to achieve is very complex. 
+So, for example, when I was planning this 
+course, I was doing explissive planning. 
+This is quite a complex task, it involve 
+ten hours of lecturing and many other 
+things, so explicit planning was 
+necessary. 
+Another type of situation where acting 
+happens only after planning is when the 
+environment imposes a high risk or a high 
+cost. 
+So if I'm the manager of a nuclear power 
+station, I will do a lot of planning 
+before I act, because it's very important 
+what I do and the potential damage I can 
+do with wrong action is high. 
+So, 
+I will do explicit planning to counteract 
+that. 
+Also, when I'm collaborating with others, 
+explicit planning can be extremely 
+helpful. 
+So, think of people who are trying to 
+build a house. 
+That's the people who are trying to put 
+up the walls, trying to put in the 
+plumbing, and of, the electricians. 
+They all need to coordinate their 
+activity and that means they all need to 
+have an explicit plan for when they do 
+what and in which order. 
+So the main lesson here is that people 
+only plan when it's strictly necessary. 
+We don't do planning when we don't have 
+to. 
+We only plan when we feel there's a 
+benefit to it. 
+And this is because planning is a 
+complicated and time-consuming process. 
+There is a basic trade-off here. 
+If we plan, we normally come up with a 
+course of action that leads to better 
+results, 
+but there is a cost. 
+So, if there is no benefit to be had from 
+planning, we're often better off not 
+planning. 
+That is, often we seek only solutions or 
+plans that are good enough for what we 
+are trying to achieve, not optimal plans. 
+So people only plan when it's strictly 
+necessary. 
+Here is the definition for what we mean 
+by artificial intelligence planning. 
+Let me read this out for you first. 
+Planning is an explicit deliberation 
+process that chooses and organizes 
+actions by anticipating their outcomes 
+and that aims at achieving some 
+pre-stated objectives. 
+So I will try to take this apart for you 
+now. 
+What this says is, planning is an 
+explicit deliberation process. 
+What this means is, to plan, we need to 
+think. 
+It's a mental process where we think 
+about the actions that we are trying to 
+do. 
+It also needs to be explicit thinking, 
+which means, it's conscious. 
+It's not a subconscious process that's 
+going on, 
+we are aware that we are doing this 
+planning so we are thinking about 
+planning. 
+In this thought process, we choose and 
+organize actions. 
+So, choosing means, we have some options 
+available, things that we may be able to 
+do. 
+And we choose some of these actions, and 
+we discard others, as part of the 
+planning process. 
+We also organize these actions into a 
+structure. 
+That is, 
+we could choose which actions to do 
+before which other action, 
+which actions to do in parallel, 
+what the outcomes of each action will be, 
+etcetera. 
+So we organize them into some structure. 
+And, the way we do this is by 
+anticipating the outcomes of the 
+different actions that we have available 
+as options. 
+So we think about, what will the world be 
+like if we do this action? 
+And the result is either what we want or 
+don't want and that's what the next point 
+is. 
+The process aims at achieving some 
+pre-stated objectives. 
+So there are things that we want to have 
+true in the world, 
+these are our objectives, 
+and by anticipating the outcomes, we can 
+compare the world states as they will be 
+when we execute an action to the ones in 
+which the objectives we try to achieve 
+are satisfied. 
+So that is what we mean by planning. 
+Planning is an explicit deliberation 
+process that chooses and organizes 
+actions by anticipating their outcomes 
+and that aims at achieving some 
+pre-stated objectives. 
+Artificial intelligence planning now is 
+the computational study of this 
+deliberation process. 
+So what we're interested in is the 
+thinking about plans, the reasoning about 
+actions that takes place when we are 
+planning and we are trying to build a 
+computational model of this process. 
+Now that I've defined what we mean by 
+planning, 
+I want to explain to you why it is so 
+important to study planning in artificial 
+intelligence. 
+The goal of artificial intelligence is 
+really twofold, 
+there's a scientific goal and an 
+engineering goal. 
+The scientific goal of A.I. 
+is to understand intelligence, 
+and the key observation here is, that 
+planning is an important aspect of 
+intelligent behavior. 
+So, if we observe some intelligent 
+behavior, we assume that there is an 
+underlying plan and we assume that this 
+plan is the result of some planning. 
+So, to understand intelligence, we need 
+to understand planning, which is part of 
+intelligence. 
+In that sense, understanding planning 
+directly contributes to the scientific 
+goal of A.I.. 
+The other goal of A.I. 
+is the engineering goal, which is to 
+build intelligent entities, 
+that is we want to build robots or other 
+entities that exhibit intelligent 
+behavior. 
+And if this is to be intelligent to us, 
+this needs to involve actions that are 
+carefully chosen and organized as we do 
+in planning. 
+So what we do in planning is we build 
+models of how this planning works and 
+these models are software models, so we 
+can build them into our intelligent 
+entities as components. 
+So planning directly also contributes to 
+the engineering goal of A.I. 
+And just as a side remark, the robot you 
+see here is the Shakey robot that was 
+built in the late 60s and that was one of 
+the first robots that used an actual 
+planner to come up with its actions. 
+There are really two different types of 
+planning, domain-specific and 
+domain-independent planning. 
+In domain-specific planning, we use 
+specific representations and techniques 
+that are adapted to each problem we are 
+trying to solve. 
+There are a number of important examples 
+for this type of planning, 
+domain-specific planning, 
+for example, path and motion planning. 
+If we are trying to navigate a robot 
+through a two-dimensional or 
+three-dimensional space, we need to come 
+up with a path through that space, that 
+gets the robot from one location to 
+another. 
+And to do so, a number of algorithms have 
+been developed to, to make sure that the 
+robot doesn't bump into other objects or 
+will fit through narrow passages. 
+All these algorithms are highly specific 
+and very efficient. 
+Another example is perception planning. 
+If we try to understand a given situation 
+a robot may have to wander around in a 
+scene and observe different aspects of 
+different angles to understand what is 
+going on. 
+And again, there are highly specific 
+algorithms that have been developed for 
+this type of problem. 
+Manipulation planning is another such 
+problem where we are trying to, for 
+example, assemble an object from 
+different parts and that needs to happen 
+in a specific order for it to work. 
+also, natural language generation uses 
+highly specific algorithms for planning, 
+namely the planning of utterances that 
+lead to communicating, 
+as given subject. The point is in all 
+these domains, we have specific 
+algorithms that we use to efficiently 
+solve a specific problem. 
+On the other hand, there's 
+domain-independent planning. 
+And there, we use generic representations 
+and techniques to solve the generic 
+planning problem. 
+The advantage of this is that it saves 
+effort, 
+so we don't need to reinvent the same 
+techniques for different problems all the 
+time. 
+We can always reuse the same planning 
+algorithms. 
+The disadvantage is that, this means 
+planning from first principles and is 
+often relatively slow, 
+but it also leads to a general 
+understanding of planning and as I've 
+just explained, that's the scientific 
+goal of artificial intelligence. 
+The important lesson here is that 
+domain-independent planning complements 
+domain-specific planning. 
+Domain-specific planning is good for 
+specific problems where highly efficient 
+solutions are required. 
+Domain-independent planning is good if we 
+need to plan from first principles for 
+the type of situation I've explained 
+earlier, 
+situations we have never seen before for 
+example. 
+So the two types of planning complement 
+each other. 
+But in this course, we will focus on 
+techniques for domain-independent 
+planning. 
+So here's a little quiz to test your 
+understanding so far. 
+The following five statements are either 
+true or false. 
+Please tick the box for the statements 
+that are true. 
+The first statement, people only plan 
+when they have to because the benefit of 
+an optimal plan does not justify the 
+effort of planning is true. 
+The second statement for humans planning 
+as a subconscious process, which is why 
+computational planning so hard is false. 
+The reason is that planning is not a 
+subconscious process. 
+We have defined planning as the explicit 
+deliberation process, so it needs to be 
+conscious. 
+Third statement, planning involves a 
+mental simulation of actions to foresee 
+future world states and compare them to 
+goals, 
+that statement is true. 
+fourth statement, in artificial 
+intelligence, planning is concerned with 
+the search for computationally optimal 
+plans, 
+that statement is false. 
+We're not only after optimal plans, 
+we also want to sometimes find out 
+whether a plan exists at all, whether 
+it's optimal or not. 
+Finally, domain-specific planning is used 
+when efficiency is vital, 
+whereas domain-independent planning is 
+good for planning from first principles. 
+That statement is true again. 
+

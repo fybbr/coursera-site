@@ -1,0 +1,474 @@
+1
+00:00:00,012 --> 00:00:06,377
+>> We have started this course by defining
+a planning problem, and then I have spent
+
+2
+00:00:06,377 --> 00:00:12,784
+quite some time describing some algorithms
+for solving this planning problem.
+
+3
+00:00:12,784 --> 00:00:19,182
+But you should now understand, that the
+planning problem could have been defined
+
+4
+00:00:19,182 --> 00:00:23,188
+quite differently.
+And, this is because we've made quite a
+
+5
+00:00:23,188 --> 00:00:27,136
+number of simplifying assumptions in our
+original definition.
+
+6
+00:00:27,136 --> 00:00:32,252
+Dropping these assumptions would lead to
+different problems, which would require
+
+7
+00:00:32,252 --> 00:00:35,107
+different algorithms to generate
+solutions.
+
+8
+00:00:35,107 --> 00:00:39,775
+Now, we're going to briefly look at
+another issue that we've ignored so far,
+
+9
+00:00:39,775 --> 00:00:44,622
+namely that actions need resources.
+And in fact, time can also be seen as a
+
+10
+00:00:44,622 --> 00:00:48,040
+resource.
+The approach that deals with planning with
+
+11
+00:00:48,040 --> 00:00:52,889
+resources, is known as scheduling .
+Scheduling is a field that is really much
+
+12
+00:00:52,889 --> 00:00:57,829
+larger than artificial intelligence
+planning, with lots of sub problems and
+
+13
+00:00:57,829 --> 00:01:00,710
+lots of algorithms to solve these
+problems.
+
+14
+00:01:00,711 --> 00:01:05,932
+So what I'm going to do here is only
+briefly talk about different types of
+
+15
+00:01:05,932 --> 00:01:11,350
+resources there are, and then talk about
+how planning and scheduling can be
+
+16
+00:01:11,350 --> 00:01:15,153
+integrated.
+Scheduling, deals with the problem of
+
+17
+00:01:15,153 --> 00:01:20,331
+assigning resources to actions.
+This assumes that we've already decided
+
+18
+00:01:20,331 --> 00:01:25,839
+which actions we want to execute, so it
+assumes that the planning process as we've
+
+19
+00:01:25,839 --> 00:01:30,892
+described it so far, has been done.
+Now, the first question I need to answer
+
+20
+00:01:30,892 --> 00:01:35,070
+is, what is a resource?
+And we can informally describe a resource
+
+21
+00:01:35,070 --> 00:01:39,767
+as an entity needed to perform an action.
+This can be any type of entity.
+
+22
+00:01:39,767 --> 00:01:45,423
+And one way to integrate this into our
+planning formalism, would be to extend the
+
+23
+00:01:45,423 --> 00:01:50,984
+operator definitions, by adding more
+parameters, that describe the resources
+
+24
+00:01:50,984 --> 00:01:54,581
+that we need to execute instances of this
+operator.
+
+25
+00:01:54,581 --> 00:01:59,480
+The parameters of an operator are of
+course described by variables.
+
+26
+00:01:59,480 --> 00:02:03,052
+But not every parameter describes a
+resource.
+
+27
+00:02:03,052 --> 00:02:08,778
+In fact, we can distinguish state
+variables, and resource variables that are
+
+28
+00:02:08,778 --> 00:02:13,852
+parameters to an action.
+State variables are usually those that are
+
+29
+00:02:13,852 --> 00:02:17,093
+modified by an action in some absolute
+way.
+
+30
+00:02:17,093 --> 00:02:21,806
+For example, if we look at our move
+operator that moves the robot r to
+
+31
+00:02:21,806 --> 00:02:27,182
+location l to location l prime, that
+modifies the location where the robot is
+
+32
+00:02:27,182 --> 00:02:31,107
+in an absolute way.
+We have the old location and the new
+
+33
+00:02:31,107 --> 00:02:34,712
+location.
+So the location that is modified by the
+
+34
+00:02:34,712 --> 00:02:40,392
+move operator would be a state variable.
+If we also wanted to model the fact that
+
+35
+00:02:40,392 --> 00:02:45,747
+the robot consumes fuel while it is
+moving, we would use a resource variable
+
+36
+00:02:45,747 --> 00:02:49,359
+to do that.
+And our modified operator description
+
+37
+00:02:49,359 --> 00:02:54,735
+would then say that moving the robot from
+location l to l prime, uses the given
+
+38
+00:02:54,735 --> 00:02:58,474
+amount of fuel.
+This would modify the overall amount of
+
+39
+00:02:58,474 --> 00:03:03,210
+fuel available to the robot in some
+relative way, and that's why this would be
+
+40
+00:03:03,210 --> 00:03:06,862
+a resource variable.
+Now, there are a number of different
+
+41
+00:03:06,862 --> 00:03:11,598
+resource types that we can distinguish,
+and often the algorithm for solving
+
+42
+00:03:11,598 --> 00:03:15,670
+scheduling problems is associated with a
+given resource type.
+
+43
+00:03:15,670 --> 00:03:20,750
+The most common distinction we most often
+see, is of reusable versus consumable
+
+44
+00:03:20,750 --> 00:03:23,813
+resources.
+Reusable resources, are as the name
+
+45
+00:03:23,813 --> 00:03:28,838
+suggests reusable, so they are available
+to another action after one action has
+
+46
+00:03:28,838 --> 00:03:32,213
+completed.
+This could be for example a truck that we
+
+47
+00:03:32,213 --> 00:03:36,581
+use to transport something from one
+location to another, after the
+
+48
+00:03:36,581 --> 00:03:40,760
+transporting is done the truck is
+available to another action.
+
+49
+00:03:40,760 --> 00:03:44,973
+Consumable resources, on the other hand,
+are used up by the action.
+
+50
+00:03:44,973 --> 00:03:48,466
+An example of that would be the fuel used
+by the robot.
+
+51
+00:03:48,466 --> 00:03:53,640
+Another important distinction especially
+from an algorithmic point of view, is
+
+52
+00:03:53,640 --> 00:03:57,052
+whether our resources are discreet or
+continuous.
+
+53
+00:03:57,052 --> 00:04:01,363
+Discrete resources, usually come in a
+countable number of units.
+
+54
+00:04:01,363 --> 00:04:06,741
+So, for example, the cranes that we had
+available in the dock worker robot domain,
+
+55
+00:04:06,741 --> 00:04:10,412
+or if we have screws and bolts that we use
+in our domain.
+
+56
+00:04:10,412 --> 00:04:15,808
+Continuous resources usually have a real
+valued amount, so that would be something
+
+57
+00:04:15,808 --> 00:04:19,618
+like bandwidth or electricity that our
+actions consume.
+
+58
+00:04:19,619 --> 00:04:23,436
+Another important special case are uniary
+resources.
+
+59
+00:04:23,436 --> 00:04:27,871
+These are resources where we have exactly
+only one available.
+
+60
+00:04:27,871 --> 00:04:32,879
+Uniary resources are particularly
+interesting when the resource is not
+
+61
+00:04:32,879 --> 00:04:38,455
+sharable, because in that case, only one
+action that needs this uniary resource,
+
+62
+00:04:38,455 --> 00:04:42,818
+can be executed at a time.
+If resources are sharable, the problem
+
+63
+00:04:42,818 --> 00:04:47,570
+usually becomes easier, but there's
+usually some kind of capacity constraint
+
+64
+00:04:47,570 --> 00:04:51,956
+on the share rebel resource.
+An example of a share rebel resource would
+
+65
+00:04:51,956 --> 00:04:55,098
+be a generator that generates electricity
+for us.
+
+66
+00:04:55,098 --> 00:04:58,685
+Another complication is that resources can
+have states.
+
+67
+00:04:58,686 --> 00:05:03,986
+For example, if we have a generator that
+can produce different voltages as output,
+
+68
+00:05:03,986 --> 00:05:08,850
+but only one voltage at a time, that means
+it is in a specific state producing a
+
+69
+00:05:08,850 --> 00:05:12,211
+specific output.
+Now, all the actions that need the
+
+70
+00:05:12,211 --> 00:05:16,969
+resource in that state can use it in
+parallel, but actions that need it in a
+
+71
+00:05:16,969 --> 00:05:20,174
+different state can't use it at the same
+In time.
+
+72
+00:05:20,174 --> 00:05:25,280
+So as you can see, there are many
+different types of resources that we may
+
+73
+00:05:25,280 --> 00:05:28,814
+have to use.
+And often we require a combination of
+
+74
+00:05:28,814 --> 00:05:34,133
+resources to execute and action.
+And all this has to be taken in to account
+
+75
+00:05:34,133 --> 00:05:38,737
+by scheduling algorithm that assigns
+resources to actions.
+
+76
+00:05:38,737 --> 00:05:44,413
+One way to look at planning and scheduling
+together, is that we decide to first solve
+
+77
+00:05:44,413 --> 00:05:48,592
+the planning problem.
+Then what we can do, given this action
+
+78
+00:05:48,592 --> 00:05:54,236
+sequence that it produces as output, is we
+can assign time points to the beginning
+
+79
+00:05:54,236 --> 00:05:58,619
+and end of each action.
+And then finally we could say, we go from
+
+80
+00:05:58,619 --> 00:06:03,887
+there to the resources and assign
+resources to the actions at given times.
+
+81
+00:06:03,888 --> 00:06:06,546
+But this may not be a very clever
+approach.
+
+82
+00:06:06,546 --> 00:06:11,376
+For example, if we are given a deadline,
+then, first choosing an action sequence
+
+83
+00:06:11,376 --> 00:06:16,056
+and assigning time to the actions in it,
+may lead to inconsistent plans that we
+
+84
+00:06:16,056 --> 00:06:18,643
+want to rule out at the, the planning
+stage.
+
+85
+00:06:18,643 --> 00:06:21,944
+So we have a feedback from time to the
+planning itself.
+
+86
+00:06:21,945 --> 00:06:26,583
+Similarly the planning is influenced by
+the resources and vice versa.
+
+87
+00:06:26,583 --> 00:06:31,979
+If we don't have the resources for certain
+actions available, then there's no point
+
+88
+00:06:31,979 --> 00:06:36,376
+in including them in our plan.
+And of course, time and resources also
+
+89
+00:06:36,376 --> 00:06:41,551
+interact, especially when we have things
+like shareable resources with a limited
+
+90
+00:06:41,551 --> 00:06:46,608
+capacity or uniary resources.
+So, what I'm trying to say here, is, these
+
+91
+00:06:46,608 --> 00:06:52,471
+problems really interfere with each other.
+And an optimal approach is probably one
+
+92
+00:06:52,471 --> 00:06:57,719
+that interleaves the working on the
+different types of problems we see here,
+
+93
+00:06:57,719 --> 00:07:00,833
+as part of the solution generation
+process.
+
+94
+00:07:00,833 --> 00:07:06,151
+So, such a process would work on action
+selection, timing these actions, and
+
+95
+00:07:06,151 --> 00:07:10,057
+assigning resources to these actions at
+the same time.

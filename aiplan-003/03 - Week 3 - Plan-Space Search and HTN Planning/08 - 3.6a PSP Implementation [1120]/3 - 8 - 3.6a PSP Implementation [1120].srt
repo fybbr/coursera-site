@@ -1,0 +1,769 @@
+1
+00:00:00,012 --> 00:00:06,197
+What you have just seen is the overview 
+of a generic plan space search planner. 
+
+2
+00:00:06,197 --> 00:00:11,531
+The reason why we've looked for the 
+overview first is so that you can 
+
+3
+00:00:11,531 --> 00:00:18,262
+recognize the generic search structure 
+that underlies this algorithm. 
+
+4
+00:00:18,262 --> 00:00:22,862
+Now, we will look at some of the 
+implementation details that come with 
+
+5
+00:00:22,862 --> 00:00:27,687
+this algorithm and that were hidden and 
+the function used by the generic 
+
+6
+00:00:27,687 --> 00:00:31,237
+algorithm. 
+The first function used by the plan space 
+
+7
+00:00:31,237 --> 00:00:36,112
+planner is the function that extracts the 
+Opengoals from a given plan. 
+
+8
+00:00:36,112 --> 00:00:40,492
+And instead of computing these open 
+goals, afresh every time we go through 
+
+9
+00:00:40,492 --> 00:00:45,257
+the loop, we will do this incrementally. 
+We start off with out initial plan pi 0, 
+
+10
+00:00:45,257 --> 00:00:48,092
+that has just the 2 dummy actions in it 
+and goal. 
+
+11
+00:00:48,092 --> 00:00:52,432
+And the question now is, what are the 
+unachieved sub goals in this initial 
+
+12
+00:00:52,432 --> 00:00:56,992
+plan? And the answer is simply that these 
+are the gold conditions that are the 
+
+13
+00:00:56,992 --> 00:01:02,419
+pre-conditions of the goal dummy act. 
+So our goal conditions from our planning 
+
+14
+00:01:02,419 --> 00:01:05,914
+problem are our initial unachieved 
+sub-goals. 
+
+15
+00:01:05,914 --> 00:01:10,190
+Then we have to modify the set when we do 
+one of two things. 
+
+16
+00:01:10,190 --> 00:01:15,902
+When we add an action to the plan we have 
+add all the action's preconditions as 
+
+17
+00:01:15,902 --> 00:01:20,937
+unachieved sub-goals to our set. 
+So we increase the set of unachieved 
+
+18
+00:01:20,937 --> 00:01:25,029
+sub-goals every time we add an action to 
+our partial plan. 
+
+19
+00:01:25,029 --> 00:01:30,223
+And when we add a causal link we decrease 
+the set of unachieved sub-goals. 
+
+20
+00:01:30,223 --> 00:01:35,733
+And we decrease it by the preposition 
+that is now protected in this causal link 
+
+21
+00:01:35,733 --> 00:01:40,602
+and is no longer unachieved. 
+This precondition of an action is not 
+
+22
+00:01:40,602 --> 00:01:46,137
+supported by a casual link and is no 
+longer an unachieved sub goal.Next we 
+
+23
+00:01:46,137 --> 00:01:51,927
+have to complete the threats that exist 
+in our current partial plan and again 
+
+24
+00:01:51,927 --> 00:01:58,092
+we'll do this incrementally rather than 
+compute them every time we go Through the 
+
+25
+00:01:58,092 --> 00:02:01,366
+loop. 
+And we start with our initial plan pi 0 
+
+26
+00:02:01,366 --> 00:02:05,532
+that simply contains no threat. 
+So that is very easy to compute. 
+
+27
+00:02:05,532 --> 00:02:08,277
+The other cases are a little more 
+complex. 
+
+28
+00:02:08,277 --> 00:02:13,213
+New threats can be introduced into our 
+plan every time we add an action to our 
+
+29
+00:02:13,213 --> 00:02:16,199
+plan. 
+So suppose we're adding our action A new 
+
+30
+00:02:16,199 --> 00:02:19,016
+to our plan consisting of the usual 
+things. 
+
+31
+00:02:19,016 --> 00:02:23,382
+Then what we have to do is follow this 
+procedure to check whether. 
+
+32
+00:02:23,382 --> 00:02:26,320
+A new threat has been introduced with 
+this action. 
+
+33
+00:02:26,320 --> 00:02:30,713
+The way we do this is we go through every 
+causal link that is currently in our 
+
+34
+00:02:30,713 --> 00:02:35,337
+plan, and we have a loop variable here 
+that represents this causal link as going 
+
+35
+00:02:35,337 --> 00:02:40,011
+from AI to AJ, protecting proposition P, 
+and for every such link we have to check 
+
+36
+00:02:40,011 --> 00:02:43,507
+the following. 
+The first one is, we check whether our 
+
+37
+00:02:43,507 --> 00:02:46,982
+new action is already ordered, before ai, 
+or after aj. 
+
+38
+00:02:46,982 --> 00:02:51,607
+So if the new action, is before the 
+provider, or after the consumer, that 
+
+39
+00:02:51,607 --> 00:02:54,752
+means it cannot be imparital, to our 
+causal link. 
+
+40
+00:02:54,752 --> 00:02:59,422
+Which means, it cannot threaten that 
+causal link, and we can just simply, 
+
+41
+00:02:59,422 --> 00:03:02,217
+continue with the loop, go to the next 
+link. 
+
+42
+00:03:02,217 --> 00:03:07,357
+Otherwise that means the action can be in 
+parallel to our link. 
+
+43
+00:03:07,357 --> 00:03:13,482
+It need necessarily but it can be. 
+And then we have to check every effect q 
+
+44
+00:03:13,482 --> 00:03:18,322
+of our new action. 
+And if there is such an effect q that can 
+
+45
+00:03:18,322 --> 00:03:22,137
+be unified with p such that q and ~p are 
+equal. 
+
+46
+00:03:22,137 --> 00:03:28,667
+q and p are complimentary then and only 
+then is q of anew a threat for our causal 
+
+47
+00:03:28,667 --> 00:03:31,754
+link. 
+Of course, this only applies if the 
+
+48
+00:03:31,754 --> 00:03:36,503
+substitution is actually consistent with 
+out binding constraints. 
+
+49
+00:03:36,503 --> 00:03:41,196
+So this was the case where a newly 
+introduced action may threaten an 
+
+50
+00:03:41,196 --> 00:03:46,246
+existing causal link in our partial plan. 
+The other way where we can add new 
+
+51
+00:03:46,246 --> 00:03:50,699
+threats to our partial plan is when we 
+add a causal link, from ai, to aj, 
+
+52
+00:03:50,699 --> 00:03:54,098
+protecting proposition p, to our current 
+partial plan. 
+
+53
+00:03:54,098 --> 00:03:57,011
+And when we add this new causal link to 
+the plan, 
+
+54
+00:03:57,011 --> 00:04:00,912
+this may be threatened by any action that 
+is already in the plan. 
+
+55
+00:04:00,912 --> 00:04:05,700
+So what we've got to do is, we've got to 
+loop over all the old actions in our plan 
+
+56
+00:04:05,700 --> 00:04:10,220
+that already existed in our plan. 
+And check whether they pose of threat. 
+
+57
+00:04:10,220 --> 00:04:14,657
+Again, if this existing action is either 
+before the provider or after the 
+
+58
+00:04:14,657 --> 00:04:17,520
+consumer, then this action cannot be a 
+threat. 
+
+59
+00:04:17,520 --> 00:04:22,024
+And there's a third condition here, 
+namely that our existing action is the 
+
+60
+00:04:22,024 --> 00:04:26,218
+consumer in our causal link. 
+Of course, the consumer of a causal link 
+
+61
+00:04:26,218 --> 00:04:30,521
+cannot threaten that causal link. 
+So, if one of these three conditions 
+
+62
+00:04:30,521 --> 00:04:35,041
+hold, we can go on to the next action 
+because this Existing action we're 
+
+63
+00:04:35,041 --> 00:04:39,763
+currently observing cannot possibly be a 
+threat to the newly introduced causal 
+
+64
+00:04:39,763 --> 00:04:42,389
+link. 
+Otherwise, we have to observe all the 
+
+65
+00:04:42,389 --> 00:04:45,882
+effects of our existing action, and do 
+what we did before. 
+
+66
+00:04:45,882 --> 00:04:50,340
+We've got to see whether this is 
+unifiable with our protected proposition, 
+
+67
+00:04:50,340 --> 00:04:54,502
+and if this is the case, if these two can 
+be made complimentary by some 
+
+68
+00:04:54,502 --> 00:04:59,249
+substitution that is consistent with our 
+binding constraints, then we have the 
+
+69
+00:04:59,249 --> 00:05:04,497
+case where we effect q of our existing 
+action a old threatens are newly 
+
+70
+00:05:04,497 --> 00:05:09,012
+introduced causal link from ai to aj 
+protecting proposition p. 
+
+71
+00:05:09,012 --> 00:05:14,557
+In summary, we have no threats initially 
+but every time we add an action to the 
+
+72
+00:05:14,557 --> 00:05:19,947
+plan that means we can threaten an 
+existing causal link with this new action 
+
+73
+00:05:19,947 --> 00:05:25,129
+and every time we add a causal link to 
+this plan to the partial plan then this 
+
+74
+00:05:25,129 --> 00:05:29,343
+may be threatened by an existing action 
+that is already in the plan. 
+
+75
+00:05:29,343 --> 00:05:34,090
+Now that we have detected the two types 
+of potential flaws that can exist in a 
+
+76
+00:05:34,090 --> 00:05:38,743
+partial plan we need to look at the 
+function that can remove these flaws and 
+
+77
+00:05:38,743 --> 00:05:43,972
+this is this function here getResolvers, 
+the Resolver is a way of removing a flaw 
+
+78
+00:05:43,972 --> 00:05:47,167
+from a plan. 
+And we will first look at the flaw that 
+
+79
+00:05:47,167 --> 00:05:50,402
+is an unachieved precondition in our 
+partial plan. 
+
+80
+00:05:50,402 --> 00:05:53,852
+And we will consider the precondition p 
+of action ag. 
+
+81
+00:05:53,852 --> 00:05:58,498
+And there are two principal ways in which 
+this type of flaw can be removed from the 
+
+82
+00:05:58,498 --> 00:06:02,678
+plan and in which way can be resolved 
+namely by adding a causal link and by 
+
+83
+00:06:02,678 --> 00:06:07,135
+adding a new action and a causal link. 
+Let's start with the causal link along. 
+
+84
+00:06:07,135 --> 00:06:11,000
+This is a causal link to an existing 
+action so what we going to do is see 
+
+85
+00:06:11,000 --> 00:06:15,142
+whether there is an existing action in 
+our plan , so we go through all our 
+
+86
+00:06:15,142 --> 00:06:19,549
+existing actions in the plan to check 
+whether there can be a provider for this 
+
+87
+00:06:19,549 --> 00:06:23,607
+unsupported pre-condition. 
+The first condition then is that we have 
+
+88
+00:06:23,607 --> 00:06:28,362
+to make sure that our existing action can 
+be ordered before the consumer, and the 
+
+89
+00:06:28,362 --> 00:06:32,737
+consumer, of course, is ag in this case. 
+So, if our existing action is the 
+
+90
+00:06:32,737 --> 00:06:37,477
+consumer, or it is already ordered after 
+the consumer, then we cannot use it as a 
+
+91
+00:06:37,477 --> 00:06:42,297
+provider, because it cannot come before 
+the consumer, so we can just consider the 
+
+92
+00:06:42,297 --> 00:06:46,304
+next action. 
+Otherwise, if it may come before the 
+
+93
+00:06:46,304 --> 00:06:51,110
+consumer, then we've got to check every 
+effect q, of our existing action, to see 
+
+94
+00:06:51,110 --> 00:06:55,793
+whether this can be used as a provider. 
+And again, what we do, is we try to find 
+
+95
+00:06:55,793 --> 00:07:00,999
+the substitution, consistent with our 
+variable binding constraints such that p 
+
+96
+00:07:00,999 --> 00:07:04,937
+and q are equal. 
+If we can find such a substitution, then 
+
+97
+00:07:04,937 --> 00:07:09,368
+adding a causal link to our plan, is a 
+resolver for this thread. 
+
+98
+00:07:09,368 --> 00:07:14,707
+And the causal link we need to add is, 
+from our currently existing action, to 
+
+99
+00:07:14,707 --> 00:07:17,921
+our consumer, protecting the link sigma 
+of p. 
+
+100
+00:07:17,921 --> 00:07:22,982
+So we instantiate our proposition with 
+the substitution we just found. 
+
+101
+00:07:22,982 --> 00:07:27,428
+This was the case where we used an 
+existing action in our plan to provide 
+
+102
+00:07:27,428 --> 00:07:32,426
+support for an unachieved precondition. 
+The alternative is, of course, that we 
+
+103
+00:07:32,426 --> 00:07:37,443
+introduce a new action into our plan that 
+supports our unachieved precondition. 
+
+104
+00:07:37,443 --> 00:07:42,328
+And to check whether this is possible, 
+we've got to loop over all the operators 
+
+105
+00:07:42,328 --> 00:07:47,257
+in our planning domain and check every 
+effect q of every operator to see whether 
+
+106
+00:07:47,257 --> 00:07:52,083
+this can be used as a provider The first 
+step is, that we look for a substitution 
+
+107
+00:07:52,083 --> 00:07:56,270
+sigma, that makes p and q equal. 
+Note that we don't have to worry about 
+
+108
+00:07:56,270 --> 00:08:01,001
+the variable binding constraints in this 
+case, because all the variables in q, 
+
+109
+00:08:01,001 --> 00:08:05,732
+that we've just introduced with the new 
+operator, are of course new variables, 
+
+110
+00:08:05,732 --> 00:08:09,852
+and have no bindings yet. 
+If we find such an operator, then we use 
+
+111
+00:08:09,852 --> 00:08:13,397
+an instance of this operator as a new 
+action in our plan. 
+
+112
+00:08:13,397 --> 00:08:16,617
+So this is the new action we need to add 
+to the plan. 
+
+113
+00:08:16,617 --> 00:08:21,452
+And we also need to add a causal link to 
+the plan and this causal link consists 
+
+114
+00:08:21,452 --> 00:08:24,266
+of. 
+The link from a new, the provider, the 
+
+115
+00:08:24,266 --> 00:08:27,526
+action we just introduced, to our 
+consumer, ag. 
+
+116
+00:08:27,526 --> 00:08:33,007
+And again we protect the condition sigma 
+of p, the instantiated proposition, that 
+
+117
+00:08:33,007 --> 00:08:38,192
+is an unachieved pre-condition of a g. 
+And these two things together, provide 
+
+118
+00:08:38,192 --> 00:08:41,337
+our result for. 
+So if our flaw is an unachieved 
+
+119
+00:08:41,337 --> 00:08:44,807
+precondition. 
+we can remove this flaw by either adding 
+
+120
+00:08:44,807 --> 00:08:49,502
+a cause link from an existing action or 
+we add a new action and a causal link 
+
+121
+00:08:49,502 --> 00:08:53,042
+from that new action to our unachieved 
+precondition. 
+
+122
+00:08:53,042 --> 00:08:58,702
+Now lets look at the case, where we have 
+an action at, that is threatening a 
+
+123
+00:08:58,702 --> 00:09:02,462
+causal link ai to aj, protecting 
+proposition p. 
+
+124
+00:09:02,462 --> 00:09:08,132
+And lets see how we can getResolvers, 
+that remove this type of flaw from our 
+
+125
+00:09:08,132 --> 00:09:11,942
+partial plan. 
+For an action to be a threat to a cause 
+
+126
+00:09:11,942 --> 00:09:17,567
+link it must be at least potentially in 
+parallel to that cause link so one way to 
+
+127
+00:09:17,567 --> 00:09:22,982
+remove this type of flaw is to simply 
+order the action either before or after 
+
+128
+00:09:22,982 --> 00:09:28,491
+the cause link, And we can order the 
+action before the threatened link under 2 
+
+129
+00:09:28,491 --> 00:09:32,109
+conditions. 
+The 1st 1 is that the threat must not be 
+
+130
+00:09:32,109 --> 00:09:37,328
+the provider and the 2nd is that it must 
+not be already after the consumer. 
+
+131
+00:09:37,328 --> 00:09:42,909
+If neither of these 2 holds, then we can 
+add an ordering at before ai and that is 
+
+132
+00:09:42,909 --> 00:09:47,585
+a resolver for our threat. 
+The other ordering that resolves this 
+
+133
+00:09:47,585 --> 00:09:52,591
+threat, is to have the action come after 
+the causal link or the causal link before 
+
+134
+00:09:52,591 --> 00:09:55,881
+the action. 
+However, if our threatening action is the 
+
+135
+00:09:55,881 --> 00:09:58,995
+provider in our causal link, then we 
+cannot use it. 
+
+136
+00:09:58,995 --> 00:10:03,591
+Or similarly, if the action is already 
+ordered before the provider, then we 
+
+137
+00:10:03,591 --> 00:10:07,342
+cannot order it after the causal link. 
+In all other cases, 
+
+138
+00:10:07,342 --> 00:10:12,784
+ordering or threatening action after the 
+consumer is a resolver for this type of 
+
+139
+00:10:12,784 --> 00:10:15,871
+flaw. 
+The other way in which this type of flaw 
+
+140
+00:10:15,871 --> 00:10:20,984
+can be resolved is to add variable 
+bindings such that the unifications that 
+
+141
+00:10:20,984 --> 00:10:25,205
+we computed earlier will fail. 
+And here is how we can do that. 
+
+142
+00:10:25,205 --> 00:10:30,277
+Remember it is the effect q that 
+threatens our proposition p here, so what 
+
+143
+00:10:30,277 --> 00:10:35,551
+we do is we go through every variable v 
+that occurs in p or q and try to make the 
+
+144
+00:10:35,551 --> 00:10:40,009
+unification fail on that variable. 
+So if we computed earlier our 
+
+145
+00:10:40,009 --> 00:10:44,412
+substitution of v must be a specific 
+value, sigma of v, then. 
+
+146
+00:10:44,412 --> 00:10:48,814
+Asserting that our variable v must not 
+have this value is, of course, a 
+
+147
+00:10:48,814 --> 00:10:53,536
+potential resolver, but it is only a 
+resolver if this is consistent with the 
+
+148
+00:10:53,536 --> 00:10:56,634
+variable bindings currently in our 
+partial plan. 
+
+149
+00:10:56,634 --> 00:10:59,462
+If it is consistent, then this is a 
+resolver. 
+
+150
+00:10:59,462 --> 00:11:03,912
+Adding this variable binding constraint 
+is a resolver for our flaw. 
+
+151
+00:11:03,912 --> 00:11:08,684
+In summary threads can be removed from a 
+plan by either ordering the threatening 
+
+152
+00:11:08,684 --> 00:11:13,390
+action before or after the cause of the 
+link or extending the variable bindings 
+
+153
+00:11:13,390 --> 00:11:17,493
+such such that unification of the 
+offending effect and the protected 
+
+154
+00:11:17,493 --> 00:11:17,493
+proposition fail. 
+

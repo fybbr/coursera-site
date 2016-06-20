@@ -1,0 +1,210 @@
+In this next segment you will learn about 
+a completely different approach to the 
+planning problem. 
+We will still use search to solve 
+planning problems, but we will consider a 
+completely different search space. 
+In this new search space we will be 
+looking at, the search states will be 
+partial plans. 
+Partial plans simply consist of part of 
+what we finally have in the solution 
+plan. 
+The components of the solution plan will 
+be our partial plans. 
+So let's have a look at what these 
+partial plans, the search states in our 
+new problem will look like,. 
+Just as a reminder, let's look at 
+state-space search. 
+What we did in state-space search is we 
+searched through a graph of nodes 
+representing world states. 
+So the nodes were world states in our 
+search. 
+What this means is that if we were doing 
+graph-search, the graph we were 
+generating while we're doing search looks 
+exactly like the graph of the state 
+transition system. 
+This is not the case for plan-space 
+search, which is what we'll be looking at 
+here. 
+Here, we are searching through a graph of 
+partial plans as I've already mentioned. 
+In this graph, the nodes are partially 
+specified plans, 
+so they're not complete plans that we can 
+execute yet. 
+And then we have arcs in our search space 
+and these are plan refinement operations. 
+They tell us how we can move between 
+partially specified plans usually by 
+refining them and adding more content to 
+these plans. 
+And finally we have a new concept of 
+solution to planning problems namely 
+partial-order plans in which the actions 
+are not in a total order as we've seen 
+previously. 
+So remember, previously we have seen 
+plans that consist of actions that are 
+only in sequence after one another, 
+but now we will also be looking at plans 
+where actions can be in parallel, so they 
+are partially ordered. 
+If our goal was somewhere over here and 
+we hadn't gotten there yet, this could 
+actually be a partial plan that we 
+encounter as a search node on our way to 
+the goal state. 
+So what is a partial plan? I'll now try 
+to answer this question informally before 
+I give you the formal definition. 
+In the introduction to this course, I 
+told you that the plan in general is a 
+set of actions organized into some 
+structure. 
+In the kind of planning we've looked at 
+so far, the structure was always a 
+sequence, 
+but this characterization of plans 
+already gives us the first idea of what 
+could be a partial plan. 
+If a complete plan is a set of actions, 
+then a partial plan could simply be a 
+subset of those actions that are part of 
+the complete plan, 
+so not all the actions are in our plan. 
+Also if in, our complete plan, the 
+actions are organized into some 
+structure, then we could have a subset of 
+the structure for our partial plan. 
+In a sequence of actions, all actions are 
+ordered with respect to each other. 
+So again, we could drop some of the 
+ordering constraints and have this as a 
+partial set, a partial plan that does not 
+contain all of the ordering constraints 
+of the original plan. 
+Also, in the planning algorithms we've 
+looked at so far, we always had a reason 
+for introducing actions into a plan, that 
+is the rationale of introducing that 
+action to the plan. 
+In forward search we have considered 
+those actions that were applicable and 
+then in backward search we have 
+considered those actions that are 
+relevant. 
+An action being relevant or applicable is 
+the rationale for considering that action 
+in a plan. 
+If we had recorded that rationale as part 
+of the plan, then we could drop it again 
+here and have a partial rationale as part 
+of a partial plan. 
+And finally, as part of the planning 
+process, we have used operators and 
+turned them into actions. 
+That means we've introduced variable 
+bindings. 
+We've assigned values to the parameters 
+of the operators to turn them into 
+actions. 
+Now, we can use a subset of these 
+variable bindings to create a partial 
+plan. 
+So this tells us there are four different 
+ways of making a plan partial, namely by 
+including only a subset of the actions, a 
+subset of the temporal constraints, a 
+subset of the rationale, or a subset of 
+the variable bindings. 
+Now, here is the formal definition of 
+what constitutes a partial plan, and a 
+partial plan is defined here as a four 
+tuple consisting of four components. 
+It consists of actions, it consists of 
+ordering constraints, variable bindings, 
+and causal links representing the 
+rationale why actions are in the plan. 
+So let's start with the first component, 
+that's the set A of actions in the plan. 
+In fact, these are partially instantiated 
+planning operators, 
+so we take planning operators. 
+We may bind some of the variables with 
+values and those are our partial actions 
+that we consider part of our plan. 
+We have a set of these actions, not a 
+sequence, 
+so they are not necessarily ordered with 
+respect to each other as part of this 
+set. 
+The ordering relations are maintained 
+explicitly in this ordering relation, 
+that is the second component of a partial 
+plan. 
+And the ordering relation consists of 
+pairs of this form, ai before aj, simply 
+saying that the action ai, which must be 
+a member of our set A comes before the 
+action aj in our plan that we're building 
+up here. 
+The third component of a variable 
+bindings for the actions in our set A and 
+these variable bindings tell us what 
+values the variables can take. 
+Variable binding constraints can be more 
+general than just assigning a specific 
+value to a variable. 
+In fact, we will allow three different 
+forms here, 
+namely x=y saying that two variable must 
+have the same value or x unequals y, 
+meaning that the two variables must have 
+a different value, 
+or we can specify a domain for variable 
+saying this variable must have a value 
+from a given set of values. 
+,, the fourth component are the causal 
+links that are part of this plan and they 
+are of the syntactic form here. 
+They connect actions ai and action aj 
+through this proposition p. 
+And here's what this all means. 
+So ai and aj must be actions in our 
+current partial plan. 
+Also, the action ai, the first component 
+must come before the second component, 
+so we must have an ordering relation in 
+our ordering constraints of this type ai 
+before aj. 
+Then, the proposition p must be an effect 
+of ai, so it is produced by ai and is a 
+precondition of aj, which mean aj is 
+consuming this proposition. 
+That is why ai is called the producer in 
+this causal link and aj the consumer of 
+this proposition. 
+The proposition p is the protected 
+proposition as we are not trying to 
+interfere with this proposition before aj 
+can consume it. And finally, since these 
+expressions all contain variables we've 
+got to make sure that the binding 
+constraints for variables that we are 
+using in ai, in aj and also appearing in 
+p are consistent and are also appearing 
+in our binding constraints the set B. 
+So, in short, remember this, a partial 
+plan is a four tuple consisting of 
+actions, ordering constraints, variable 
+bindings and causal links where a causal 
+link connects a producer to a consumer 
+via a protected proposition p. 
+So that's what a partial plan looks like 
+and the search nodes in our search space 
+will be partial plans. 
+

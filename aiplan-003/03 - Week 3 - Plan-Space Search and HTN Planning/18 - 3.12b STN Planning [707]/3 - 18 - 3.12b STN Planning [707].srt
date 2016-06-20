@@ -1,0 +1,484 @@
+1
+00:00:00,012 --> 00:00:06,500
+Now, before I explain to you how the 
+partial order version of this algorithm 
+
+2
+00:00:06,500 --> 00:00:12,171
+works I want to discuss some of the 
+properties of this algorithm. 
+
+3
+00:00:12,171 --> 00:00:18,783
+Let's first look at how the algorithm 
+chooses its actions as part of the plan 
+
+4
+00:00:18,783 --> 00:00:23,817
+refinement for Primitive tasks. 
+The algorithm TFD only considers actions 
+
+5
+00:00:23,817 --> 00:00:28,476
+that are applicable in the current state. 
+And that is very much like forward 
+
+6
+00:00:28,476 --> 00:00:31,328
+search. 
+Forward search only looked at actions 
+
+7
+00:00:31,328 --> 00:00:33,976
+that were applicable in the current 
+state. 
+
+8
+00:00:33,976 --> 00:00:37,772
+And then, TFD also only considers actions 
+that are relevant. 
+
+9
+00:00:37,772 --> 00:00:41,089
+In that sense, it's a bit like backward 
+search. 
+
+10
+00:00:41,089 --> 00:00:46,147
+So it combines relevance and 
+applicability, from those two algorithms, 
+
+11
+00:00:46,147 --> 00:00:50,425
+into the same algorithm. 
+That should help it focus its search 
+
+12
+00:00:50,425 --> 00:00:53,690
+significantly. 
+Then, when we look at the plan 
+
+13
+00:00:53,690 --> 00:00:59,326
+generation, how the algorithm assembles 
+its plan, what we see is that the actions 
+
+14
+00:00:59,326 --> 00:01:04,525
+are added to the plan in the same order 
+in which they will be executed later, 
+
+15
+00:01:04,525 --> 00:01:09,270
+when we try to execute the plan. 
+That means the current world state is 
+
+16
+00:01:09,270 --> 00:01:14,219
+always know while we are planning. 
+So we're going forward through our state 
+
+17
+00:01:14,219 --> 00:01:18,705
+space, adding more actions. 
+And we always know what the current wurld 
+
+18
+00:01:18,705 --> 00:01:23,143
+state is like in which we need to apply 
+more actions add more actions to our 
+
+19
+00:01:23,143 --> 00:01:26,085
+plan. 
+And again, this is a good thing because 
+
+20
+00:01:26,085 --> 00:01:31,433
+that means we know where we are, and we 
+can apply good euristics to get to the 
+
+21
+00:01:31,433 --> 00:01:36,078
+goal as quickly as possible. 
+Finally, the version of the algorithm 
+
+22
+00:01:36,078 --> 00:01:41,272
+I've described to you is the Ground 
+version. So it does not follow exactly 
+
+23
+00:01:41,272 --> 00:01:46,603
+the least commitment principle because it 
+uses actions where partially and 
+
+24
+00:01:46,603 --> 00:01:50,096
+stantiated actions might be more 
+appropriate and reduce search. 
+
+25
+00:01:51,532 --> 00:01:54,163
+And one way to deal with this problem is 
+lifting. 
+
+26
+00:01:54,163 --> 00:01:58,407
+That means, we keep the variables in the 
+plan, and try to avoid unnecessary 
+
+27
+00:01:58,407 --> 00:02:02,117
+commitments to the values of those 
+variables as long as possible. 
+
+28
+00:02:02,117 --> 00:02:05,306
+This version of the algorithm is then 
+called Lifted-TFD. 
+
+29
+00:02:05,306 --> 00:02:09,475
+And results in the same advantages that 
+would be seen for lifted backwards 
+
+30
+00:02:09,475 --> 00:02:12,081
+search. 
+Namely, a reduced search space with a 
+
+31
+00:02:12,081 --> 00:02:14,117
+lower branching. 
+factor. 
+
+32
+00:02:14,117 --> 00:02:19,097
+OK and here is the psuedo code for the 
+ground TFD algorithm. 
+
+33
+00:02:19,097 --> 00:02:24,932
+TFD, FD is still for forward 
+decomposition but P because it's partial 
+
+34
+00:02:24,932 --> 00:02:28,767
+order. 
+The given network can be partial order 
+
+35
+00:02:28,767 --> 00:02:32,412
+and the given methods can be partial 
+order. 
+
+36
+00:02:32,412 --> 00:02:37,185
+The function, Ground-TFD, takes as input 
+a planning problem consisting of an 
+
+37
+00:02:37,185 --> 00:02:42,417
+initial state, an initial task network, a 
+set of operators, and a set of methods. 
+
+38
+00:02:42,417 --> 00:02:47,411
+So it is different from TFD because it 
+takes a task network as input, not just a 
+
+39
+00:02:47,411 --> 00:02:51,488
+sequence of tasks. 
+But other than that, the structure of the 
+
+40
+00:02:51,488 --> 00:02:54,730
+algorithm is very similar to what we've 
+seen before. 
+
+41
+00:02:54,730 --> 00:02:59,124
+So we look at the first task in the 
+network, and again, the first case is 
+
+42
+00:02:59,124 --> 00:03:01,686
+that there is no such task in the 
+network. 
+
+43
+00:03:01,686 --> 00:03:06,652
+Then, if there is such a task, it can be 
+either primitive, this is the case here, 
+
+44
+00:03:06,652 --> 00:03:11,612
+or it can be non primitive, which is the 
+final part of this algorithm. 
+
+45
+00:03:11,612 --> 00:03:16,782
+So the first case is again the one where 
+the network is empty, so there is no 
+
+46
+00:03:16,782 --> 00:03:21,052
+first task in the network. 
+And that means the empty plan is a 
+
+47
+00:03:21,052 --> 00:03:26,275
+solution for this task network. 
+Then we get to the part where our first 
+
+48
+00:03:26,275 --> 00:03:30,419
+task is either primitive or 
+non-primitive, but since this task 
+
+49
+00:03:30,419 --> 00:03:35,393
+network is partial order, there may be 
+multiple tasks that are first in this 
+
+50
+00:03:35,393 --> 00:03:38,611
+network. 
+First meaning it has no predecessors in 
+
+51
+00:03:38,611 --> 00:03:41,856
+the network. 
+So what we have to do is choose one of 
+
+52
+00:03:41,856 --> 00:03:46,928
+the set of all such tasks that have no 
+predecessors and make that the task that 
+
+53
+00:03:46,928 --> 00:03:51,628
+we want to refine next. 
+So this task here is our chosen task, for 
+
+54
+00:03:51,628 --> 00:03:57,326
+which we either want to find an action or 
+a method to deal with this task next in 
+
+55
+00:03:57,326 --> 00:04:01,398
+our algorithm. 
+If our chosen task is primitive, then we 
+
+56
+00:04:01,398 --> 00:04:07,185
+proceed pretty much as we've done in the 
+previous TFD version of the algorithm. 
+
+57
+00:04:07,185 --> 00:04:12,858
+The first thing we have to do is compute 
+the set of all those actions that match 
+
+58
+00:04:12,858 --> 00:04:16,398
+the task. 
+And are applicatble in our given state. 
+
+59
+00:04:16,398 --> 00:04:20,539
+So this is the set of all actions that 
+fulfill these properties. 
+
+60
+00:04:20,539 --> 00:04:25,453
+If this set is emtpy, than again we can 
+return failure, as this branch of the 
+
+61
+00:04:25,453 --> 00:04:28,414
+search tree does not contain a solution 
+plan. 
+
+62
+00:04:28,414 --> 00:04:33,322
+Otherwise, we can choose one of those 
+actions together with the substitution 
+
+63
+00:04:33,322 --> 00:04:38,245
+that makes it the same as the task. 
+And we can apply the definition of a 
+
+64
+00:04:38,245 --> 00:04:42,678
+solution here by inserting a recursive 
+call into our procedure. 
+
+65
+00:04:42,678 --> 00:04:48,083
+So what we have to do is test whether a 
+modified version of the plan constitutes 
+
+66
+00:04:48,083 --> 00:04:51,055
+a solution to a modified planning 
+problem. 
+
+67
+00:04:51,055 --> 00:04:56,229
+And the way we modify the planning 
+problem is as before, we apply the action 
+
+68
+00:04:56,229 --> 00:05:01,045
+in our current state and take that 
+successor as our new initial state. 
+
+69
+00:05:01,045 --> 00:05:06,219
+Then, we give it a new network and that 
+new network consists of our original 
+
+70
+00:05:06,219 --> 00:05:09,602
+network minus the task we are dealing 
+with here. 
+
+71
+00:05:09,602 --> 00:05:12,231
+Actually, we're not only removing the 
+task here. 
+
+72
+00:05:12,231 --> 00:05:14,860
+But also, all the edges connecting to 
+this task. 
+
+73
+00:05:14,860 --> 00:05:18,651
+And then what we have to do is 
+instanciate the task network with the 
+
+74
+00:05:18,651 --> 00:05:22,037
+substitution sigma. 
+So all the variables that we replaced to 
+
+75
+00:05:22,037 --> 00:05:25,143
+match it to our action are now replaced 
+in this network. 
+
+76
+00:05:25,143 --> 00:05:28,604
+The operators and methods are, of course, 
+the same as before. 
+
+77
+00:05:28,604 --> 00:05:32,585
+They don't change. 
+And again, we assign the result of this 
+
+78
+00:05:32,585 --> 00:05:37,671
+function call to our variable plan. 
+And if this plan, then, is failure. 
+
+79
+00:05:37,671 --> 00:05:42,524
+That means we can return failure, because 
+there is no solution here. 
+
+80
+00:05:42,524 --> 00:05:47,689
+Otherwise, we can pre-pend our action A 
+to this plan, and return that as a 
+
+81
+00:05:47,689 --> 00:05:51,081
+solution plan for. 
+For our planning problem. 
+
+82
+00:05:51,081 --> 00:05:56,638
+And finally, we get to the part, where 
+our chosen task, task, is non-primitive. 
+
+83
+00:05:56,638 --> 00:06:01,810
+And in that case what we have to do is 
+again, compute the set of all methods 
+
+84
+00:06:01,810 --> 00:06:06,959
+that are relevant for our insentient 
+task, and that are applicable in our 
+
+85
+00:06:06,959 --> 00:06:10,628
+given state, s. 
+And if this set of methods is empty, then 
+
+86
+00:06:10,628 --> 00:06:15,586
+again we can return failure otherwise you 
+have to choose one of those methods 
+
+87
+00:06:15,586 --> 00:06:20,638
+together with the substitution, and we 
+apply the definition again by modifying 
+
+88
+00:06:20,638 --> 00:06:24,488
+our problem and passing that into our 
+Ground-TFD procedure. 
+
+89
+00:06:24,488 --> 00:06:29,568
+So in this case the state remains the 
+same, operators, methods remain the same 
+
+90
+00:06:29,568 --> 00:06:34,639
+and all we have to modify is the network 
+and we do that by applying. 
+
+91
+00:06:34,639 --> 00:06:40,071
+The decomposition function delta to our 
+network, where we decompose our task, 
+
+92
+00:06:40,071 --> 00:06:43,973
+task, with the method, M, under the 
+substitution sigma. 
+
+93
+00:06:43,973 --> 00:06:48,787
+And whatever this procedure returns will 
+be the result of our Ground-TFD 
+
+94
+00:06:48,787 --> 00:06:52,446
+procedure. 
+So you can see the partial order version 
+
+95
+00:06:52,446 --> 00:06:57,788
+of this algorithm is not much more 
+complicated than the total order version. 
+
+96
+00:06:57,788 --> 00:07:03,077
+It still consists of the three branches 
+that are given by the definition of a 
+
+97
+00:07:03,077 --> 00:07:04,347
+solution for a STN planning problem. 
+

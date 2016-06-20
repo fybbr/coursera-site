@@ -1,0 +1,147 @@
+Hello, my name is Nils Nilsson. 
+I helped in the development of A Star and 
+STRIPS, 
+and I'd like to explain a little bit 
+about the history of those programs. 
+In the mid 1960's at SRI, then called the 
+Stanford Research Institute, I was 
+working on a robot called Shakey. 
+Shakey had several programs, some for 
+dealing with perception. We had machine 
+vision programs, for example, and some 
+controlled Shakey's actions as it moved 
+around in it's environment. 
+There were two problems in developing 
+these programs for controlling Shakey's 
+actions. One problem was how Shakey should 
+navigate throughout a, a room strewn with 
+obstacles without bumping in to any of 
+them. 
+Another problem concerned how Shakey 
+should put together its high level 
+actions in order to achieve high level 
+goals. 
+With regard to the navigation problem, we 
+set up waypoints that were adjacent to 
+and somewhat standing off of various 
+obstacles in the room. 
+These waypoints could be considered nodes 
+in a graph. 
+The edges of the graph would be the 
+straight line distances between way 
+points that Shakey would be able to 
+travel. 
+So the problem of navigating from one 
+point in the room to another is the same 
+as the problem of finding the shortest 
+path in a graph. 
+Edgar Dykstra had an algorithm for doing 
+just that, but the problem with the 
+Dykstra algorithm was that it searched 
+outward from the start node toward the 
+goal in all directions. 
+What we wanted was an algorithm that 
+focused its search more in the direction 
+of the goal. 
+Now I was aware of a program developed at 
+Edinburgh University, a graph traverser 
+program, by Jim Dorin and Donald Rickey 
+that did focus toward the goal. 
+Their algorithm assigned numbers to nodes 
+in the graph that were purported to be 
+the difficulty of achieving the goal from 
+that particular node. 
+I suggested that, that number ought to be 
+an estimate of the distance from the node 
+to the goal, ignoring any obstacles that 
+might be in the way. 
+A colleague at SRI, Burt Brofel, 
+suggested that the number ought to 
+involve, also. 
+The distance from the start node to the 
+node in question and that would prevent 
+Shakey from being led down promising but 
+ultimately futile paths. 
+Another colleague, Peter Hart, suggested 
+that if the estimate from the node to the 
+goal was a lower bound on the true 
+distance Shakey would have to travel from 
+that node to the goal. Then the 
+algorithm, which we named A Star, would 
+in fact achieve the shortest path that 
+was possible. 
+Then Peter Hart and Burt Rayfield /g and 
+I together set about to prove Peter's 
+conjecture and that was the development 
+of the A star algoritm which involved 
+this number associated with each node 
+that in, that was a sum of the distance 
+from the start node to the node in 
+question plus the estimate of the 
+distance from that node to the goal. 
+With regard to the second problem, the 
+one I'm stringing together, Shakey's high 
+level actions to achieve higher level 
+goals, Richard Fikes and I, another 
+colleague at SRI, developed a system we 
+called STRIPS for Stanford Research 
+Institute Problem Solver. 
+STRIPS used high-level models of Shakey's 
+world, that is instead of just the 
+coordinates, the positions in Shakey's 
+room, we used a database of facts that 
+were true of particular situations that 
+Shakey could get itself into. 
+So we still wanted to be able to solve 
+the problem of achieving these high-level 
+goals by some sort of graph searching 
+program. 
+And so the starting node of the graph 
+would be a list of all the facts that 
+were true in Shakey's present situation. 
+The goal then was also described by some 
+statements of facts that we wanted Shakey 
+to make true by achieving, by applying, 
+actually, these high-level actions. 
+So what we needed in order to convert 
+this into a search problem in the graph 
+would be a computational way of producing 
+states of the world, that is, other 
+databases describing what a particular 
+state of the world would be when Shakey 
+applied one of it's high-level actions. 
+To perform that computation, we invented 
+something called STRIPS rules. 
+Now, a STRIPS rule would consist of a 
+pre-condition, that is to say all of the 
+facts that had to be in a particular 
+world, in order for Shakey to apply one of 
+it's high-level actions. 
+A delete list, that is to say a list of 
+facts which could no longer be guaranteed 
+to be true if Shakey did apply one of it's 
+high-level actions, and an add list, 
+which would be those facts which the 
+high-level action would make true. 
+And so what we did is use these strips 
+rules to go from one state, that is one 
+database describing Shakey's current 
+situation, to successor states in the 
+graph. 
+So we could even use the A Star algorithm 
+if we had a good way of, estimating what 
+the distance would be from one of these 
+databases, to one which had Shakey's goal 
+achieved. 
+So we could use A Star, if we had that 
+particular system. 
+Actually, in the system that we employed 
+at program, the STRIPS system, we worked 
+backwards from the goal by applying these 
+STRIPS operators in a somewhat backward 
+direction. 
+Those of us who were involved in the 
+development, A star and STRIPS, are 
+gratified to know that these systems are 
+used in many present day AI applications. 
+

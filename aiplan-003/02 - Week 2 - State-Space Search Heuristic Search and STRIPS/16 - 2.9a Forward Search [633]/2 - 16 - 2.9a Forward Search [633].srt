@@ -1,0 +1,459 @@
+1
+00:00:04,680 --> 00:00:09,825
+So far, we have laid a lot of groundwork 
+before we can describe our first planner. 
+
+2
+00:00:09,825 --> 00:00:13,841
+We have seen how a planning domain has 
+described a states space. 
+
+3
+00:00:13,841 --> 00:00:18,672
+We have seen how to define a planning 
+problem, what constitutes a solution to 
+
+4
+00:00:18,672 --> 00:00:23,504
+the problem, and previously, we have seen 
+how to search through a search space. 
+
+5
+00:00:23,504 --> 00:00:28,335
+If we put all this together, we end up 
+with a forward state-space search planner 
+
+6
+00:00:28,335 --> 00:00:34,814
+and that is what we will look at next. 
+So here is the basic idea how state space 
+
+7
+00:00:34,814 --> 00:00:38,493
+search works, 
+namely, we want to apply standard search 
+
+8
+00:00:38,493 --> 00:00:43,975
+algorithms that we've seen before like 
+breadth-first search, depth-first search, 
+
+9
+00:00:43,975 --> 00:00:47,085
+or A*, you may remember, to a planning 
+problem. 
+
+10
+00:00:47,085 --> 00:00:51,915
+And to do this, we need to define the 
+search space which may be different from 
+
+11
+00:00:51,915 --> 00:00:55,197
+the state space. 
+But in this case, our search space is 
+
+12
+00:00:55,197 --> 00:00:59,842
+simply a subset of the state-space that 
+we define for the planning problem. 
+
+13
+00:00:59,842 --> 00:01:03,805
+The nodes in our search space correspond 
+simply to world states. 
+
+14
+00:01:03,805 --> 00:01:08,450
+So the states that we have in our 
+planning problem are nodes in our search 
+
+15
+00:01:08,450 --> 00:01:11,406
+tree. 
+The arcs in the search space correspond 
+
+16
+00:01:11,406 --> 00:01:16,766
+to state transitions as defined by the 
+operators and the actions that we execute 
+
+17
+00:01:16,766 --> 00:01:20,283
+as part of the plan. 
+And a path in the search space 
+
+18
+00:01:20,283 --> 00:01:24,740
+corresponds to a plan, which is the 
+solution we are looking for. 
+
+19
+00:01:26,580 --> 00:01:31,147
+More specifically, here is how we can 
+define a planning problem as a search 
+
+20
+00:01:31,147 --> 00:01:34,071
+problem. 
+So we are given a planning problem as a 
+
+21
+00:01:34,071 --> 00:01:38,152
+set of operators which implicitly define 
+a state transition system. 
+
+22
+00:01:38,152 --> 00:01:41,660
+We are given an initial state and a goal 
+description. 
+
+23
+00:01:41,660 --> 00:01:45,005
+These three components make up our 
+planning problem, 
+
+24
+00:01:45,005 --> 00:01:48,157
+then we can define the search problem as 
+follows. 
+
+25
+00:01:48,157 --> 00:01:52,725
+For the search problem, we need an 
+initial state and we simply take the 
+
+26
+00:01:52,725 --> 00:01:57,872
+initial state from our planning problem. 
+Then, we need a go for our search problem 
+
+27
+00:01:57,872 --> 00:02:02,118
+and we define a goal test here naming the 
+test that s satisfies g, 
+
+28
+00:02:02,118 --> 00:02:06,680
+so the state that we're curently 
+searching must satisfy the goal. 
+
+29
+00:02:06,680 --> 00:02:11,388
+Then we can define a path cost function 
+for our search and that is simply the 
+
+30
+00:02:11,388 --> 00:02:14,164
+length of the plan we're currently 
+looking at. 
+
+31
+00:02:14,164 --> 00:02:18,993
+Implicitly, this means that all actions 
+have equal cost here and that is why the 
+
+32
+00:02:18,993 --> 00:02:22,071
+path cost function as the length of the 
+plan works. 
+
+33
+00:02:22,071 --> 00:02:26,538
+And the final component we need is a 
+successor function and the successor 
+
+34
+00:02:26,538 --> 00:02:30,220
+function, denoted gamma of s here, is 
+what we will define next. 
+
+35
+00:02:32,160 --> 00:02:37,347
+The successor function gamma of s for 
+single state is defined here. 
+
+36
+00:02:37,347 --> 00:02:43,713
+It is the set of all states gamma s,a for 
+all actions a that are applicable in the 
+
+37
+00:02:43,713 --> 00:02:47,485
+state s. 
+So this set consist of all those states 
+
+38
+00:02:47,485 --> 00:02:52,620
+that can be reached by an applicable 
+action from our state s. 
+
+39
+00:02:52,620 --> 00:02:56,741
+If I wanted to compute this, I would have 
+to, I have to go through all the 
+
+40
+00:02:56,741 --> 00:03:00,921
+operators and find all the ground 
+instances of these operators that are 
+
+41
+00:03:00,921 --> 00:03:04,637
+applicable in the state, 
+then I could apply those actions in the 
+
+42
+00:03:04,637 --> 00:03:07,656
+state and I would get all the successor 
+states here. 
+
+43
+00:03:07,656 --> 00:03:12,164
+This is how gamma of s is defined. 
+We can extend this definition slightly. 
+
+44
+00:03:12,164 --> 00:03:16,192
+Suppose we are not in one state but we 
+are in a set of states. 
+
+45
+00:03:16,192 --> 00:03:20,740
+We know that we are in one of these 
+states and we, we want to define what 
+
+46
+00:03:20,740 --> 00:03:23,729
+states are reachable from any of these 
+states. 
+
+47
+00:03:23,729 --> 00:03:28,083
+Then, this is simply the union over any 
+of these states of gamma sk. 
+
+48
+00:03:28,083 --> 00:03:33,346
+So we compute the successors for each of 
+the individual states and build the set 
+
+49
+00:03:33,346 --> 00:03:36,660
+union, which is the result of gamma s, s1 
+through sn. 
+
+50
+00:03:36,660 --> 00:03:41,061
+This gives us the states that are 
+reachable from any of those states that 
+
+51
+00:03:41,061 --> 00:03:43,560
+are the input to the function in one 
+step. 
+
+52
+00:03:43,560 --> 00:03:48,884
+We can make this definition yet more 
+general by naming the number of steps we 
+
+53
+00:03:48,884 --> 00:03:52,046
+want to allow. 
+In the simplest case, we have gamma zero 
+
+54
+00:03:52,046 --> 00:03:56,127
+which means we allow zero steps. 
+So if we're in any of these states, s1 
+
+55
+00:03:56,127 --> 00:03:59,988
+through sn, and want to compute the 
+states that we can be in after zero 
+
+56
+00:03:59,988 --> 00:04:02,525
+steps. 
+Well, that's exactly the states we start 
+
+57
+00:04:02,525 --> 00:04:05,780
+in. If we don't do anything, we can't go 
+to any other states. 
+
+58
+00:04:05,780 --> 00:04:10,398
+But, in general, we want to allow m steps 
+here and we want to say, initially, we 
+
+59
+00:04:10,398 --> 00:04:15,135
+are in one of these states s1 through sn. 
+And then we can apply a recursive 
+
+60
+00:04:15,135 --> 00:04:19,094
+definition of the function gamma by 
+saying we apply this to gamma m minus 
+
+61
+00:04:19,094 --> 00:04:21,913
+one, so we take the set of states we 
+start from. 
+
+62
+00:04:21,913 --> 00:04:24,192
+We can go m minus one steps from these 
+states, 
+
+63
+00:04:24,192 --> 00:04:26,650
+that this, that is the input to this 
+here, 
+
+64
+00:04:26,650 --> 00:04:31,992
+and then, we can go one more step here. 
+And that is then the set of all states 
+
+65
+00:04:31,992 --> 00:04:35,840
+that are reachable from s1 through sn in 
+m steps. 
+
+66
+00:04:35,840 --> 00:04:40,786
+So that is what we've defined here, we've 
+defined the function gamma m, which maps 
+
+67
+00:04:40,786 --> 00:04:45,609
+a set of states to another set of states. 
+Mainly, exactly those states which are 
+
+68
+00:04:45,609 --> 00:04:49,640
+reachable in m steps from anyone of the 
+states given in the input. 
+
+69
+00:04:49,640 --> 00:04:54,898
+The transitive closure of this function, 
+then simply defines the set of all 
+
+70
+00:04:54,898 --> 00:04:57,772
+reachable states, 
+so this is defined here. 
+
+71
+00:04:57,772 --> 00:05:03,521
+All the reachable states are simply the 
+union of k from zero to infinity of gamma 
+
+72
+00:05:03,521 --> 00:05:06,886
+k of s. 
+So we start in our initial state and we 
+
+73
+00:05:06,886 --> 00:05:11,373
+apply k steps from there. 
+This is this set and we can apply zero, 
+
+74
+00:05:11,373 --> 00:05:14,528
+one, two, three, and so on, up to 
+infinity steps. 
+
+75
+00:05:14,528 --> 00:05:20,067
+And if we take the union of all that, 
+that is all the states that are reachable 
+
+76
+00:05:20,067 --> 00:05:25,447
+from our initial state s. 
+And that is the function gamma forward of 
+
+77
+00:05:25,447 --> 00:05:29,893
+s. 
+And here is why I've given you such a 
+
+78
+00:05:29,893 --> 00:05:33,575
+complex definition, 
+because, with this definition, I can very 
+
+79
+00:05:33,575 --> 00:05:36,301
+simply state when a planning problem has 
+a solution. 
+
+80
+00:05:36,301 --> 00:05:41,563
+So we can state that a STRIPS planning 
+problem defined by a state transition 
+
+81
+00:05:41,563 --> 00:05:46,772
+system initial stating goal or a 
+statement defined by the operators and 
+
+82
+00:05:46,772 --> 00:05:52,020
+the initial state in the goal, has a 
+solution if and only if the following 
+
+83
+00:05:52,020 --> 00:05:55,140
+holds. 
+Namely, if we take the set of all goal 
+
+84
+00:05:55,140 --> 00:05:59,963
+states and we take the set of all 
+reachable states and we build the 
+
+85
+00:05:59,963 --> 00:06:05,260
+intersection between these two sets, 
+then, this must not be the empty set or 
+
+86
+00:06:05,260 --> 00:06:10,392
+you can see it the other way around, too. 
+If this set actually contains an element, 
+
+87
+00:06:10,392 --> 00:06:15,398
+let's say a state Sg, then this state is 
+in both these sets, which means it is a 
+
+88
+00:06:15,398 --> 00:06:18,819
+goal state and it is reachable from the 
+initial state. 
+
+89
+00:06:18,819 --> 00:06:24,015
+And if there's a reachable state from the 
+initial state that is a goal state, that 
+
+90
+00:06:24,015 --> 00:06:27,380
+means we have a solution to our planning 
+problem. 
+
+91
+00:06:27,380 --> 00:06:31,100
+Now, this is all great. 
+But you may wonder, when are we actually 
+
+92
+00:06:31,100 --> 00:06:33,140
+going to see a planning algorithm? 
+

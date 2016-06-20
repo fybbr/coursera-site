@@ -1,0 +1,380 @@
+>> Hi, I'm Brad Clement.
+I'm going to talk about Artificial
+Intelligence for Space Applications.
+I worked for the NASA Jet Propulsion
+Laboratory.
+Jpl was a lead US center for robotic space
+exploration and has space-based programs
+in the earth sciences and astronomy.
+Jpl Spacecraft have visited every planet
+of the solar system.
+This is an aerial view of JPL.
+You can visit JPL's mission control room
+where you can see missions uploading
+commands to their spacecraft using the
+Deep Space Network.
+You can also go to the MarsYard and try to
+scare the rover with loud noises.
+>> So why would a space mission want
+automated planning?
+There's several reasons.
+Spacecraft are complex and expensive.
+Part of that expense is rocket fuel, the
+launch.
+The bigger the spacecraft, the more rocket
+fuel.
+So cost limits mass.
+Well, mass limits power, because of the
+size of solar rays and if you limit power,
+you limit communication signal strength
+which restricts bandwidth.
+And bandwidth is critical resource for
+spacecraft because oftentimes, it collect
+data a lot more quickly than you can send
+it back to earth.
+So, these limitations and the complexity
+of the spacecraft subsystems, will capture
+many rules and constraints for operating
+the spacecraft safely.
+This complexity can be overwhelming for
+science and operation staff, thus
+operations are also expensive.
+And spacecraft have a limited lifetime, so
+inefficient use of the spacecraft can
+reduce the value of the entire mission.
+Also, mistakes can be disastrous.
+Automation promises to reduce complexity
+of operation, avoid human error, thus
+reducing mission cost and risk.
+That's not the only reason for planning.
+For a space mission, everything needs to
+be thought out in advance, because, once
+the spacecraft is launched, you can't
+replace the battery or add more memory.
+In addition, communication signals can
+take minutes to hours to reach the
+spacecraft And communication is not always
+available.
+So, the spacecraft needs to be able to
+receive a batch of commands and be able to
+operate on its own.
+You can't joystick the spacecraft.
+This requires predicting what's going to
+happen.
+Well, if the environment is unpredictable,
+then the spacecraft should be able to
+operate on their own and be able to do
+their own prediction, their own plan.
+So, automate planning not only helps
+scientists in operations planning, but
+also enable spacecraft to operate on their
+own in a predictable environment.
+For these reasons, automated planning has
+been used by science and operations
+planning to figure out what to do and when
+to do it.
+And it has been used for autonomously
+commanding a spacecraft.
+Planning has been used to figure out how
+to manipulate solar rays from an
+International Space Station.
+It's even been used for project management
+for the construction of rockets.
+So what's challenging about, about space
+applications?
+Scale is one of them.
+You could have a schedule with tens of
+thousands of activities, tens of hundreds
+of statement resource variables.
+And model [unknown] resources can be
+complex too.
+There's a conflex interaction between
+solar rays and the battery in power
+availability.
+Temperature is difficult to model and how
+would you model a fall system.
+Well, you might be able to model how the
+spacecraft works, but can you produce
+schedules that the user really wants?
+Sometimes the user can't tell you what
+they want.
+Also, can you gurantee every plan that
+comes out of your playing system is going
+to be saved properly and won't crash the
+spacecraft?
+On board the spacecraft, the CPU is about
+a thousand times slower than your desktop.
+I'll briefly describe the history of AI
+planning in space applications, some of
+the planners and their deployments
+spanning 30 years.
+In the early '70s, JPL began designing the
+Mars Rover and recognize that the rover
+would need planning capabilities.
+That's about the time JPL began
+researching planning.
+In the early 1980s, the DEVISER planner
+was used for activity planning for the
+Voyager mission and its encounter with
+Uranus.
+But many of the planners from the 80s and
+90s is written in the functional
+programming language Lisp and inherited
+traits from the Nonlin planner, such as
+partial order planning, subgoaling, and
+backward chaining.
+This is done by starting out with the
+goals and the plans, which is the one at
+the bottom of the page, and then
+establishing those goals with the effects
+from other actions.
+And then establishing the preconditions of
+those actions through the effects of other
+actions, thus building the plan from the
+initial state to the goals.
+The new thing the DEVISER brought was time
+windows.
+The reason about metric time, concurrency
+in the form of simple temporal
+constraints, where time points vary within
+some ranging or constrained to be within
+some range of each other.
+Plan-it has been built as an improvement
+on DEVISER.
+As you can see, it's been used in a wide
+variety of applications over the years.
+One thing that it did differently is it
+started to model resources explicitly in
+the language, and, it also took a local
+search approach called heuristic,
+iterative repair.
+The problem with building up a plan like a
+partial order is that you can spend a long
+time trying to figure out the solution and
+then be left with just a partial plan.
+The great thing about local search
+approach is you always have some schedule
+that you're working with.
+It may have conflict and flaws on it, but
+you're iteratively working on the same
+schedule, that way you don't have, have
+problems with growing memory and you have
+a best effort solution or in any type of
+solution.
+A couple of years after planning was
+scheduled for the Deep Space Network,
+British National Space Centre launched a
+technology-proven satellite project under
+which the T-SCHED scheduler generated a 24
+hour plan that was uploaded and executed
+live on board UoSAT-II satellite.
+You'll hear me mix the words planning and
+scheduling.
+Scheduling is implicitly a part of
+planning.
+Planning is about figuring out what to do,
+scheduling is about figuring out when to
+do it and what resources to use.
+A Spike scheduler is in use by several
+missions, most notably the great
+observatories, like the Hubble Space
+Telescope.
+Spike takes a different approach than the
+other planes we were talked about.
+It represents a schedule and problems
+constraint optimization, like a system of
+equations that needs to solve for.
+Then it has three main stages, a trial
+assignment, repair where it tries to
+resolve complex observations.
+You're going to [unknown] stage, where it
+removes the activities or it relaxes
+constraints of something.
+With the Hubble Space Telescope, Spike
+schedules an entire year at the resolution
+of a minute.
+That's between 10,000 and 30,000
+observations.
+And its user-authorizing, because it has
+constraints which span several months,
+such as you can't take an observation of
+the same target within 2 months of
+another.
+The Optimum-AIV planner was developed by
+the European Space Agency for the Assembly
+Integration and Verification of the
+vehicle equipment bays for the Ariane 4
+rockets.
+Like Spike, it treats the plane
+[inaudible] problem with resource in
+temporal constraints.
+However, it's [inaudible] is similar to
+DEVISERS and planets.
+The Remote Agent Experiment was the first
+to demonstrate planning and executions on
+board a spacecraft.
+There are three main list components that
+autonomously operate at the Deep Space 1
+mission for 2 days.
+Nasa Ames Research Center is responsible
+for the planner[SOUND]cheduler and the
+mode identification reconfiguration called
+Livingstone.
+Jpl will develop the EXEC, smart
+executive.
+In simulation it also demonstrated the
+response to unexpected events while on
+board.
+This is a common integration of
+components.
+The planner[SOUND]cheduler is at the top
+with the Liberty player, underneath is
+monitoring and execution, at the bottom is
+the actual actuators, and the hardware or
+robot.
+Sensor and state information typically
+flow up the layers and commands flow down.
+The Earth Observing-1 spacecraft has been
+operated by autonomous planning since
+2004.
+Eo1 participates in main space networks
+through the aqua spacecraft is downlinking
+images as usual, and one of them is
+detected to have changed since the last
+time it was finished by software on the
+ground.
+This software signals EO1 to span a high
+resolution image goal for its schedule the
+time, it's planner reschedules its
+activities, so then it can smooth the
+spacecraft and get the image on its next
+pass enabling a quicker response to this
+forest fire.
+That was CASPER on board EO1.
+This is this continual version of ASPEN
+JPL stochastic iterative repair planner.
+It's the first planner we talked about
+that's not written in Lisp, but instead,
+C++.
+Casper is also part of the Autonomous
+Sciencecraft Experiment that's on board
+EO1.
+This also includes machine learning
+algorithms that were used for detecting
+different kinds of phenomena in the
+images.
+In this case, screening out images that
+recorded clouds instead of the actual
+target.
+Here, it notices that there's a difference
+in images, triggering it to take another
+high resolution image of the target on
+which they discovered volcanic activity.
+That's going to save the MAMM, EO1, and
+DARPA Orbital Express missions millions of
+dollars.
+It's currently being used to schedule
+ground antennas for the Deep Space
+Network.
+Proba-1, the first in a series of several
+autonomy missions demonstrated on board
+scheduling resource management.
+That saying, this Europa planner is
+evolved from the planner[SOUND]cheduler
+used in the Remote Agent Experiment now
+written in C++.
+Its constraint programming approach to
+planning and scheduling and, as before, it
+does not differentiate between action and
+states.
+Treat them both as variables with temporal
+extent, and like most other planar, it's
+language is object oriented, this is very
+convenient for representing large problem
+domains.
+And it has its own CLIP-based interactive
+development environments and is integrated
+with SPIFe, the human centered planing
+tool which that used for many NASA
+missions.
+This part of MAPGEN built to help the Mars
+Exploration Rover mission pack more
+activities into their plans increasing
+their efficiency.
+It's also been used to plan out the
+movement and orientation of solar arrays
+for the space station.
+European Space Agency, MEXAR and RAXEM
+planners were used for uplink and downlink
+planning for the Mars Express mission
+where they reduce planning effort and
+increase science return.
+So what does the future hold for AI
+planning for space?
+Well, how about making rovers autonomous?
+Turns out that the rovers already use AI
+style path planning.
+As you'll see, rover navigation is very
+sophisticated.
+[music].
+[music].
+Class, today's lesson is autonomous way
+point navigation in natural terrain.
+This is your designated goal location.
+First, watch this video to learn how it's
+done.
+There are ongoing efforts at JPL to make
+rovers autonomous in different ways.
+One effort, AEGIS, integrates planning,
+machine learning, and science knowledge.
+But rovers do not yet use autonomous
+planning.
+Other parts of AEGIS in use by MER so are
+constantly discovering and investigate
+high valued science targets during one
+traverse.
+There are wide variety of other
+applications and challenges that require
+research and planning like human robot
+exploration teams.
+Tele-operated robots, mission and vehicle
+design, robotic instruction habitats.
+Other than the rover, there are other
+kinds of planetary exploration vehicles
+that [inaudible] need to handle
+uncertainty brought by weather or ocean
+currents, like aerobots or hydrobots.
+Planning is also apart of research in
+related fields, such as testing,
+verification, and validation.
+For example, what are good scenarios to
+test?
+What are good test cases?
+And how should they be ordered to more
+quickly find bugs or other problems?
+Over the past 30 years, AI planning has
+shown its value in many ways.
+But still, very few missions actually take
+advantage of it.
+There are unlimited number of applications
+and opportunities where AI planning can
+make a big impact.
+There are many demonstrations of automated
+planning, but few are operational.
+In order for AI planning to gain
+widespread acceptance, we need to make it
+easier to hand off automated planning
+systems to the domain experts and take the
+algorithm experts out of the, the loop.
+User interface design is key for solving
+this problem.
+Farther in the future, there are many
+mission concepts that will need
+capabilities that deployed planners do not
+have today including reasoning about
+uncertainty.
+There are many areas of planning research
+that can have a great impact on a wide
+range of applications.
+I hope you found this information helpful.
+Thank you for your attention.

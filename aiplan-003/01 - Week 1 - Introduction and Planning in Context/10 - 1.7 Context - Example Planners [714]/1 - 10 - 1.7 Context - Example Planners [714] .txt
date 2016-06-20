@@ -1,0 +1,182 @@
+[SOUND] We're now going to look at a 
+couple practical planners in operation. 
+You'll find some excellent online 
+resources for some of the well-known 
+planners listed in our table. 
+The course readings have also been 
+designed to introduce some of these and 
+we provide screen captures of a number of 
+our own Edinburgh planners in operation. 
+Nonlin was created in the mid-1970s, and 
+as mentioned earlier was applied in a 
+project using mixture of A.I. 
+and Operation Research, O.R. 
+methods, to create project plans for 
+electricity turbine overhaul. 
+It allowed for user-driven modifications 
+to the plans as maintenance inspection 
+took place and plans up to be updated. 
+Nonlin brought together range of A.I. 
+planning techniques, which were novel at 
+the time. 
+In this slide, I'm using the terminology 
+now commonly applied to these techniques. 
+Nonlin was a hierarchical task network 
+planner. 
+It could generate plans in which the 
+activities were not fully ordered. 
+It had been common up until that time for 
+A.I. 
+planners to generate plans which were 
+fully linear in order. 
+Nonlin searches in the space of planned 
+descriptions rather than in the 
+application state base, 
+a subject which we're going to cover in 
+the later module. 
+Nonlin uses the goal structure of the 
+plan in considering the different 
+alternatives. 
+So it always looks at different 
+approaches based on that plan rationale. 
+Nonlin as a mechanism for answering the 
+question of whether a proposition has a 
+certain truth value at a certain point in 
+the plan. 
+We call that the QA module, question 
+answering module, 
+is more often, nowadays, called the Modal 
+Truth Criterion that use condition types 
+to limit search. 
+It allowed for multiple contributors to 
+condition achievement in order to achieve 
+plan robustness. 
+It included compute conditions for links 
+to external databases and systems because 
+it was built as a practical planning 
+system. 
+These are similar to attach procedures in 
+some other planners. 
+And as mentioned earlier, is a mixture of 
+A.I. 
+and operational research methods, 
+so OR algorithms were used for time and 
+resource constrained reasoning. 
+Nonlin has been used as a basis for 
+textbook descriptions of hierarchical 
+task network planning. 
+O-Plan followed on from Nonlin and used 
+some of the same techniques. 
+It included domain knowledge elicitation 
+and modeling tools and supported a rich 
+plan representation. 
+It also was a hierarchical task network 
+planner and had detailed constraint 
+management. 
+It allowed for plugging constraint 
+managers, so that that that aspect could 
+be extended. 
+Gold structure-based planned monitoring 
+during execution was supported and it 
+supported dynamic domains in which new 
+objectives or tasks could arise while 
+planning an execution was taking place. 
+Plan repair when time was available or 
+when the situation demanded rapid 
+response was supported. 
+Interfaces for users with different roles 
+were provided in order that several 
+different users could be refining the 
+plan simultaneously and sharing 
+information about the plan between them. 
+And explicit management of the planning 
+and execution workflow was supported, 
+so the planner itself could be used in, 
+in these aspects. 
+There is a simple example of O-Plan 
+acting as a Unix system administrator's 
+aid. 
+The aim is to create a shell script that 
+reliably removes a volume group. 
+This is an application which a lot of 
+people have found difficult and can lead 
+to loss of files. 
+Once the current mapping between logical 
+volumes and physical volumes are, are 
+given by the drop-down numeric boxes, you 
+can just hit the plan button and the 
+planner goes off, and produces the plan, 
+and it prints it out as the script ready 
+to cut, and paste, and use. 
+Here's a more comprehensive example of 
+O-Plan running on a military operations 
+in urban terrain and where task 
+description planning and execution 
+workflow are all able to be supported 
+with multiple users acting over the 
+internet and all sharing a common plan. 
+so typically, there will be a task 
+assigner who will set up the problem. 
+It would go in and define this with 
+simple web form with drop-down lists of 
+the kind of tasks that can be carried 
+out. 
+And then, a planner can be called to 
+generate specific operations and, and 
+make suggestions of how to respond to the 
+particular emergency, 
+the particular disaster that's occurring. 
+And the idea is, that between the planner 
+and the task assigner, 
+they can talk and look at these options, 
+refine them, 
+throw away some replan when things are 
+being added, and so on. 
+And all this is occurring through these 
+user interfaces talking to the planner 
+behind the scenes. 
+O-Plan was used as the basis for 
+Optimum-AIV, 
+a planner for assembly, integration, and 
+verification of the payload bay of 
+Europe's Ariane rocket launcher. 
+It was originally designed as plan ERS-1 
+for assembly integration test of the 
+European Space Agency's ERS-1 spacecraft 
+shown here, on the left. 
+Optimum-AIV also used the rich plan 
+representation, hierarchical test network 
+planning, detailed constraint management, 
+plan and user rationale recorded. 
+It could handle issues arising during 
+planned execution and deal with it, these 
+through plan repair using test failure 
+recovery plans. 
+It was integrated with European Space 
+Agency's Artemis Project Management 
+System. 
+Let me draw your attention to a number of 
+features which are typical of practical 
+A.I. 
+planners. 
+Often, these are based on hierarchical 
+task network planning at an outer layer. 
+They often also allow for partial order 
+of the resulting plans rather than 
+insisting the plans are fully ordered. 
+They often include a rich domain model 
+that can manage many types of constraints 
+and include links to simulations, 
+analyses to refine then restrict the 
+plans. 
+These planners often allow for 
+integration with other systems, 
+user interfaces, databases, spreadsheets, 
+project management, 
+corporate systems of various kinds. 
+And this is very typical of practical 
+planners and often, much of the effort 
+that goes into a practical planning 
+application can go into this kind of 
+integration. 
+

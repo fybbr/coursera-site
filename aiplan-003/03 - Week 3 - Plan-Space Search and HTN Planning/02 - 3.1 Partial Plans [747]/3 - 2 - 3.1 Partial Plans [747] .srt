@@ -1,0 +1,524 @@
+1
+00:00:00,012 --> 00:00:06,124
+In this next segment you will learn about 
+a completely different approach to the 
+
+2
+00:00:06,124 --> 00:00:10,072
+planning problem. 
+We will still use search to solve 
+
+3
+00:00:10,072 --> 00:00:16,073
+planning problems, but we will consider a 
+completely different search space. 
+
+4
+00:00:16,073 --> 00:00:21,547
+In this new search space we will be 
+looking at, the search states will be 
+
+5
+00:00:21,547 --> 00:00:25,270
+partial plans. 
+Partial plans simply consist of part of 
+
+6
+00:00:25,270 --> 00:00:27,980
+what we finally have in the solution 
+plan. 
+
+7
+00:00:27,980 --> 00:00:31,972
+The components of the solution plan will 
+be our partial plans. 
+
+8
+00:00:31,972 --> 00:00:36,632
+So let's have a look at what these 
+partial plans, the search states in our 
+
+9
+00:00:36,632 --> 00:00:40,771
+new problem will look like,. 
+Just as a reminder, let's look at 
+
+10
+00:00:40,771 --> 00:00:44,896
+state-space search. 
+What we did in state-space search is we 
+
+11
+00:00:44,896 --> 00:00:49,150
+searched through a graph of nodes 
+representing world states. 
+
+12
+00:00:49,150 --> 00:00:52,249
+So the nodes were world states in our 
+search. 
+
+13
+00:00:52,249 --> 00:00:57,167
+What this means is that if we were doing 
+graph-search, the graph we were 
+
+14
+00:00:57,167 --> 00:01:02,087
+generating while we're doing search looks 
+exactly like the graph of the state 
+
+15
+00:01:02,087 --> 00:01:06,368
+transition system. 
+This is not the case for plan-space 
+
+16
+00:01:06,368 --> 00:01:09,295
+search, which is what we'll be looking at 
+here. 
+
+17
+00:01:09,295 --> 00:01:14,294
+Here, we are searching through a graph of 
+partial plans as I've already mentioned. 
+
+18
+00:01:14,294 --> 00:01:17,672
+In this graph, the nodes are partially 
+specified plans, 
+
+19
+00:01:17,672 --> 00:01:21,212
+so they're not complete plans that we can 
+execute yet. 
+
+20
+00:01:21,212 --> 00:01:26,511
+And then we have arcs in our search space 
+and these are plan refinement operations. 
+
+21
+00:01:26,511 --> 00:01:31,167
+They tell us how we can move between 
+partially specified plans usually by 
+
+22
+00:01:31,167 --> 00:01:34,612
+refining them and adding more content to 
+these plans. 
+
+23
+00:01:34,612 --> 00:01:39,268
+And finally we have a new concept of 
+solution to planning problems namely 
+
+24
+00:01:39,268 --> 00:01:44,258
+partial-order plans in which the actions 
+are not in a total order as we've seen 
+
+25
+00:01:44,258 --> 00:01:47,811
+previously. 
+So remember, previously we have seen 
+
+26
+00:01:47,811 --> 00:01:52,749
+plans that consist of actions that are 
+only in sequence after one another, 
+
+27
+00:01:52,749 --> 00:01:58,083
+but now we will also be looking at plans 
+where actions can be in parallel, so they 
+
+28
+00:01:58,083 --> 00:02:02,948
+are partially ordered. 
+If our goal was somewhere over here and 
+
+29
+00:02:02,948 --> 00:02:08,903
+we hadn't gotten there yet, this could 
+actually be a partial plan that we 
+
+30
+00:02:08,903 --> 00:02:13,413
+encounter as a search node on our way to 
+the goal state. 
+
+31
+00:02:13,413 --> 00:02:19,083
+So what is a partial plan? I'll now try 
+to answer this question informally before 
+
+32
+00:02:19,083 --> 00:02:23,647
+I give you the formal definition. 
+In the introduction to this course, I 
+
+33
+00:02:23,647 --> 00:02:28,211
+told you that the plan in general is a 
+set of actions organized into some 
+
+34
+00:02:28,211 --> 00:02:31,702
+structure. 
+In the kind of planning we've looked at 
+
+35
+00:02:31,702 --> 00:02:34,727
+so far, the structure was always a 
+sequence, 
+
+36
+00:02:34,727 --> 00:02:39,702
+but this characterization of plans 
+already gives us the first idea of what 
+
+37
+00:02:39,702 --> 00:02:43,752
+could be a partial plan. 
+If a complete plan is a set of actions, 
+
+38
+00:02:43,752 --> 00:02:48,877
+then a partial plan could simply be a 
+subset of those actions that are part of 
+
+39
+00:02:48,877 --> 00:02:52,762
+the complete plan, 
+so not all the actions are in our plan. 
+
+40
+00:02:52,762 --> 00:02:57,017
+Also if in, our complete plan, the 
+actions are organized into some 
+
+41
+00:02:57,017 --> 00:03:01,961
+structure, then we could have a subset of 
+the structure for our partial plan. 
+
+42
+00:03:01,961 --> 00:03:06,905
+In a sequence of actions, all actions are 
+ordered with respect to each other. 
+
+43
+00:03:06,905 --> 00:03:11,636
+So again, we could drop some of the 
+ordering constraints and have this as a 
+
+44
+00:03:11,636 --> 00:03:16,935
+partial set, a partial plan that does not 
+contain all of the ordering constraints 
+
+45
+00:03:16,935 --> 00:03:20,811
+of the original plan. 
+Also, in the planning algorithms we've 
+
+46
+00:03:20,811 --> 00:03:25,371
+looked at so far, we always had a reason 
+for introducing actions into a plan, that 
+
+47
+00:03:25,371 --> 00:03:28,590
+is the rationale of introducing that 
+action to the plan. 
+
+48
+00:03:28,590 --> 00:03:32,986
+In forward search we have considered 
+those actions that were applicable and 
+
+49
+00:03:32,986 --> 00:03:36,781
+then in backward search we have 
+considered those actions that are 
+
+50
+00:03:36,781 --> 00:03:39,797
+relevant. 
+An action being relevant or applicable is 
+
+51
+00:03:39,797 --> 00:03:42,962
+the rationale for considering that action 
+in a plan. 
+
+52
+00:03:42,962 --> 00:03:47,872
+If we had recorded that rationale as part 
+of the plan, then we could drop it again 
+
+53
+00:03:47,872 --> 00:03:51,578
+here and have a partial rationale as part 
+of a partial plan. 
+
+54
+00:03:51,578 --> 00:03:56,093
+And finally, as part of the planning 
+process, we have used operators and 
+
+55
+00:03:56,093 --> 00:04:00,069
+turned them into actions. 
+That means we've introduced variable 
+
+56
+00:04:00,069 --> 00:04:03,236
+bindings. 
+We've assigned values to the parameters 
+
+57
+00:04:03,236 --> 00:04:05,945
+of the operators to turn them into 
+actions. 
+
+58
+00:04:05,945 --> 00:04:10,462
+Now, we can use a subset of these 
+variable bindings to create a partial 
+
+59
+00:04:10,462 --> 00:04:13,442
+plan. 
+So this tells us there are four different 
+
+60
+00:04:13,442 --> 00:04:18,582
+ways of making a plan partial, namely by 
+including only a subset of the actions, a 
+
+61
+00:04:18,582 --> 00:04:23,462
+subset of the temporal constraints, a 
+subset of the rationale, or a subset of 
+
+62
+00:04:23,462 --> 00:04:27,558
+the variable bindings. 
+Now, here is the formal definition of 
+
+63
+00:04:27,558 --> 00:04:32,518
+what constitutes a partial plan, and a 
+partial plan is defined here as a four 
+
+64
+00:04:32,518 --> 00:04:37,504
+tuple consisting of four components. 
+It consists of actions, it consists of 
+
+65
+00:04:37,504 --> 00:04:42,795
+ordering constraints, variable bindings, 
+and causal links representing the 
+
+66
+00:04:42,795 --> 00:04:47,987
+rationale why actions are in the plan. 
+So let's start with the first component, 
+
+67
+00:04:47,987 --> 00:04:52,832
+that's the set A of actions in the plan. 
+In fact, these are partially instantiated 
+
+68
+00:04:52,832 --> 00:04:55,917
+planning operators, 
+so we take planning operators. 
+
+69
+00:04:55,917 --> 00:05:00,607
+We may bind some of the variables with 
+values and those are our partial actions 
+
+70
+00:05:00,607 --> 00:05:04,762
+that we consider part of our plan. 
+We have a set of these actions, not a 
+
+71
+00:05:04,762 --> 00:05:07,782
+sequence, 
+so they are not necessarily ordered with 
+
+72
+00:05:07,782 --> 00:05:10,252
+respect to each other as part of this 
+set. 
+
+73
+00:05:10,252 --> 00:05:15,609
+The ordering relations are maintained 
+explicitly in this ordering relation, 
+
+74
+00:05:15,609 --> 00:05:18,631
+that is the second component of a partial 
+plan. 
+
+75
+00:05:18,631 --> 00:05:24,036
+And the ordering relation consists of 
+pairs of this form, ai before aj, simply 
+
+76
+00:05:24,036 --> 00:05:29,399
+saying that the action ai, which must be 
+a member of our set A comes before the 
+
+77
+00:05:29,399 --> 00:05:32,667
+action aj in our plan that we're building 
+up here. 
+
+78
+00:05:32,667 --> 00:05:37,593
+The third component of a variable 
+bindings for the actions in our set A and 
+
+79
+00:05:37,593 --> 00:05:42,192
+these variable bindings tell us what 
+values the variables can take. 
+
+80
+00:05:42,192 --> 00:05:46,980
+Variable binding constraints can be more 
+general than just assigning a specific 
+
+81
+00:05:46,980 --> 00:05:50,539
+value to a variable. 
+In fact, we will allow three different 
+
+82
+00:05:50,539 --> 00:05:53,784
+forms here, 
+namely x=y saying that two variable must 
+
+83
+00:05:53,784 --> 00:05:58,433
+have the same value or x unequals y, 
+meaning that the two variables must have 
+
+84
+00:05:58,433 --> 00:06:01,992
+a different value, 
+or we can specify a domain for variable 
+
+85
+00:06:01,992 --> 00:06:06,430
+saying this variable must have a value 
+from a given set of values. 
+
+86
+00:06:06,430 --> 00:06:12,398
+,, the fourth component are the causal 
+links that are part of this plan and they 
+
+87
+00:06:12,398 --> 00:06:17,707
+are of the syntactic form here. 
+They connect actions ai and action aj 
+
+88
+00:06:17,707 --> 00:06:22,093
+through this proposition p. 
+And here's what this all means. 
+
+89
+00:06:22,093 --> 00:06:25,964
+So ai and aj must be actions in our 
+current partial plan. 
+
+90
+00:06:25,964 --> 00:06:31,380
+Also, the action ai, the first component 
+must come before the second component, 
+
+91
+00:06:31,380 --> 00:06:36,796
+so we must have an ordering relation in 
+our ordering constraints of this type ai 
+
+92
+00:06:36,796 --> 00:06:41,237
+before aj. 
+Then, the proposition p must be an effect 
+
+93
+00:06:41,237 --> 00:06:47,317
+of ai, so it is produced by ai and is a 
+precondition of aj, which mean aj is 
+
+94
+00:06:47,317 --> 00:06:53,057
+consuming this proposition. 
+That is why ai is called the producer in 
+
+95
+00:06:53,057 --> 00:06:57,952
+this causal link and aj the consumer of 
+this proposition. 
+
+96
+00:06:57,952 --> 00:07:02,279
+The proposition p is the protected 
+proposition as we are not trying to 
+
+97
+00:07:02,279 --> 00:07:07,390
+interfere with this proposition before aj 
+can consume it. And finally, since these 
+
+98
+00:07:07,390 --> 00:07:11,968
+expressions all contain variables we've 
+got to make sure that the binding 
+
+99
+00:07:11,968 --> 00:07:16,784
+constraints for variables that we are 
+using in ai, in aj and also appearing in 
+
+100
+00:07:16,784 --> 00:07:21,672
+p are consistent and are also appearing 
+in our binding constraints the set B. 
+
+101
+00:07:21,672 --> 00:07:26,927
+So, in short, remember this, a partial 
+plan is a four tuple consisting of 
+
+102
+00:07:26,927 --> 00:07:32,852
+actions, ordering constraints, variable 
+bindings and causal links where a causal 
+
+103
+00:07:32,852 --> 00:07:37,817
+link connects a producer to a consumer 
+via a protected proposition p. 
+
+104
+00:07:37,817 --> 00:07:43,497
+So that's what a partial plan looks like 
+and the search nodes in our search space 
+
+105
+00:07:43,497 --> 00:07:45,025
+will be partial plans. 
+

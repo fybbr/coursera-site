@@ -1,0 +1,774 @@
+1
+00:00:00,012 --> 00:00:04,837
+You should now understand what tasks and 
+task networks are. 
+
+2
+00:00:04,837 --> 00:00:11,334
+But I explained to you earlier that for 
+this approach to planning, we really need 
+
+3
+00:00:11,334 --> 00:00:15,224
+3 new things. 
+Tasks, task networks and methods. 
+
+4
+00:00:15,224 --> 00:00:18,712
+So that's what we will be looking at 
+next. 
+
+5
+00:00:18,712 --> 00:00:22,609
+And while we look at methods, keep the 
+following in mind. 
+
+6
+00:00:22,609 --> 00:00:27,721
+We again try to set up our planning 
+problem as a search problem and methods 
+
+7
+00:00:27,721 --> 00:00:31,467
+describe ways in which we can transform 
+task networks. 
+
+8
+00:00:31,467 --> 00:00:36,960
+They are plan refinements, and therefore 
+correspond to state transitions in our 
+
+9
+00:00:36,960 --> 00:00:40,560
+search space. 
+I will start with the formal definition 
+
+10
+00:00:40,560 --> 00:00:44,009
+of an STN method. 
+And the first thing we need to define 
+
+11
+00:00:44,009 --> 00:00:48,289
+methods is a set of symbols that we can 
+use to denote these methods, 
+
+12
+00:00:48,289 --> 00:00:52,945
+to name these methods uniquely. 
+These symbols will be disjoined from all 
+
+13
+00:00:52,945 --> 00:00:57,935
+the others symbols we've used so unlike 
+task symbols which overlap with the 
+
+14
+00:00:57,935 --> 00:01:01,142
+operators. 
+They will not intersect with the other 
+
+15
+00:01:01,142 --> 00:01:04,864
+type of symbols. 
+Then an STN method is a 4-tuple which 
+
+16
+00:01:04,864 --> 00:01:09,422
+means it consists of 4 things, 
+and these 4 things are the name, the 
+
+17
+00:01:09,422 --> 00:01:14,728
+task, the preconditions, and the network, 
+and I'll explain those in entire now. 
+
+18
+00:01:14,728 --> 00:01:19,550
+The first component is the name of the 
+method, and the name is a way to refer to 
+
+19
+00:01:19,550 --> 00:01:22,516
+this method. 
+And again, we will use a syntactic 
+
+20
+00:01:22,516 --> 00:01:27,464
+expression, which looks very similar to 
+the type of syntactic expression we've 
+
+21
+00:01:27,464 --> 00:01:31,916
+seen for tasks and operators. 
+It's a symbol n, which must be one of our 
+
+22
+00:01:31,916 --> 00:01:35,884
+unique method symbols, 
+followed by a set of parameters x1 
+
+23
+00:01:35,884 --> 00:01:39,934
+through xk here, which are variable 
+symbols that occur in m. 
+
+24
+00:01:39,934 --> 00:01:45,044
+And again these parameters describe the 
+objects that are manipulated by this 
+
+25
+00:01:45,044 --> 00:01:48,106
+method. 
+The next component is the task of this 
+
+26
+00:01:48,106 --> 00:01:53,241
+method and that is simply one of the 
+non-primitive tasks that we've described 
+
+27
+00:01:53,241 --> 00:01:56,946
+earlier. 
+The task of a method describes what can 
+
+28
+00:01:56,946 --> 00:02:02,594
+be accomplished with this method. 
+And, of course, it must be non-primitive, 
+
+29
+00:02:02,594 --> 00:02:06,887
+as all primitive tasks can be 
+accomplished by an operator. 
+
+30
+00:02:06,887 --> 00:02:12,232
+But if we have a task network that 
+contains a primitive task, that is, the 
+
+31
+00:02:12,232 --> 00:02:17,577
+task of a method, then we can use this 
+method to accomplish the task in the 
+
+32
+00:02:17,577 --> 00:02:21,322
+network. 
+The third component of a method are the 
+
+33
+00:02:21,322 --> 00:02:26,339
+preconditions associated with that method 
+and again like for an operator this is 
+
+34
+00:02:26,339 --> 00:02:31,318
+simply a set of literals that we need to 
+achieve before we can apply this method. 
+
+35
+00:02:31,318 --> 00:02:35,162
+So when we apply a method these 
+preconditions need to be true. 
+
+36
+00:02:35,162 --> 00:02:38,742
+They need to hold in the state where we 
+apply the method. 
+
+37
+00:02:38,742 --> 00:02:42,292
+So they are very much like the 
+preconditions of an operator. 
+
+38
+00:02:42,292 --> 00:02:46,997
+Note that there's no effect associated 
+with the method, so that distinguishes a 
+
+39
+00:02:46,997 --> 00:02:49,642
+operator from a method quite 
+significantly. 
+
+40
+00:02:49,642 --> 00:02:54,072
+And the reason for this is that in this 
+approach to planning we are trying to 
+
+41
+00:02:54,072 --> 00:02:56,807
+accomplish tasks, rather then achieve 
+goals. 
+
+42
+00:02:56,807 --> 00:03:01,312
+So we don't need the effects, we need the 
+task of the method to do planning. 
+
+43
+00:03:01,312 --> 00:03:06,198
+The forth and final component associated 
+with a method is the network of the 
+
+44
+00:03:06,198 --> 00:03:09,375
+method. 
+This is simply a task network consisting 
+
+45
+00:03:09,375 --> 00:03:13,851
+simply of tasks and edges which are 
+ordering constaints. 
+
+46
+00:03:13,851 --> 00:03:19,053
+And the tasks in the set U are called the 
+subtasks of this method and you can think 
+
+47
+00:03:19,053 --> 00:03:24,277
+of this method as breaking down the task, 
+the second component of the method into 
+
+48
+00:03:24,277 --> 00:03:28,057
+subtasks that make up the network of the 
+method. 
+
+49
+00:03:28,057 --> 00:03:32,860
+So the task of the method describes what 
+we can accomplish, this is what we 
+
+50
+00:03:32,860 --> 00:03:37,711
+accomplish and the sub tasks or the 
+network describe how we can accomplish 
+
+51
+00:03:37,711 --> 00:03:40,856
+that task. 
+And there may be different methods for 
+
+52
+00:03:40,856 --> 00:03:45,903
+the same task, but achieving the task in 
+different ways by having a different 
+
+53
+00:03:45,903 --> 00:03:49,701
+network, 
+and usually also different preconditions. 
+
+54
+00:03:49,701 --> 00:03:55,158
+Methods, like task networks, can be 
+totally ordered or partially ordered, and 
+
+55
+00:03:55,158 --> 00:03:59,872
+that is simply a property of the network 
+associated with the method. 
+
+56
+00:03:59,872 --> 00:04:04,786
+So, if this network is totally ordered, 
+then we say the method is totally 
+
+57
+00:04:04,786 --> 00:04:07,971
+ordered. 
+If this network is partially ordered, 
+
+58
+00:04:07,971 --> 00:04:10,934
+then we say the method is partially 
+ordered. 
+
+59
+00:04:10,934 --> 00:04:15,404
+So, essentially, you can think of a 
+method as breaking down a task. 
+
+60
+00:04:15,404 --> 00:04:20,661
+The task the method accomplishes into 
+subtasks represented by the network. 
+
+61
+00:04:20,661 --> 00:04:25,822
+In the next few slides, I'll simply show 
+you some examples of STN methods, and 
+
+62
+00:04:25,822 --> 00:04:31,278
+these are the same methods I've described 
+informally earlier for moving a stack of 
+
+63
+00:04:31,278 --> 00:04:34,586
+containers to another pile respecting the 
+order. 
+
+64
+00:04:34,586 --> 00:04:39,672
+And I'll start with the simplest method 
+from that example, namely moving the 
+
+65
+00:04:39,672 --> 00:04:45,182
+topmost container, and that was simply a 
+take action followed by a put action. 
+
+66
+00:04:45,182 --> 00:04:50,168
+And the first thing we have here is the 
+name of the method, which consists of a 
+
+67
+00:04:50,168 --> 00:04:54,791
+method symbol, take and put here, 
+and the parameters of which there are 
+
+68
+00:04:54,791 --> 00:04:58,090
+quite a few. 
+And these parameters are of course all 
+
+69
+00:04:58,090 --> 00:05:01,317
+the objects that we need to perform the 
+two actions. 
+
+70
+00:05:01,317 --> 00:05:05,411
+So I'll go through this. 
+C is the container that we're trying to 
+
+71
+00:05:05,411 --> 00:05:09,292
+move, K is the krane with which we pick 
+it up and put it down. 
+
+72
+00:05:09,292 --> 00:05:13,767
+This all happens at location L. 
+And then we have the pile in which the 
+
+73
+00:05:13,767 --> 00:05:17,882
+container is originally. 
+And the pile to which it is being moved. 
+
+74
+00:05:17,882 --> 00:05:20,766
+Then we have Xo and Xd. 
+These are two containers. 
+
+75
+00:05:20,766 --> 00:05:25,493
+Xo is the container from which we are 
+taking the container that we're moving, 
+
+76
+00:05:25,493 --> 00:05:28,599
+that's c. 
+And Xd is the destination container onto 
+
+77
+00:05:28,599 --> 00:05:33,301
+which we're putting this container. 
+So these are all the objects involved in 
+
+78
+00:05:33,301 --> 00:05:37,329
+the take and put method. 
+The task we accomplish with this method 
+
+79
+00:05:37,329 --> 00:05:41,455
+is simply described here, and that's the 
+task as we described earlier. 
+
+80
+00:05:41,455 --> 00:05:45,261
+So we've got a task symbol followed by 
+the parameters of the task. 
+
+81
+00:05:45,261 --> 00:05:49,937
+And these are only the two piles from 
+which moving and to which we're moving. 
+
+82
+00:05:49,937 --> 00:05:54,177
+And to be able to apply this method we 
+have a number of preconditions that need 
+
+83
+00:05:54,177 --> 00:05:57,092
+to be satisfied. 
+And you should be familiar with this 
+
+84
+00:05:57,092 --> 00:06:00,762
+notation from the way preconditions were 
+described for operators. 
+
+85
+00:06:00,762 --> 00:06:05,037
+So the first precondition was that the 
+container that we're moving is on top of 
+
+86
+00:06:05,037 --> 00:06:09,652
+the the origin pile, then it needs to be 
+on the container from which we're taking 
+
+87
+00:06:09,652 --> 00:06:12,152
+it. 
+The pile needs to be at that location. 
+
+88
+00:06:12,152 --> 00:06:14,980
+And a crane also needs to be at that 
+location. 
+
+89
+00:06:14,980 --> 00:06:19,771
+Also the destination pile needs to be at 
+the location, and the container onto 
+
+90
+00:06:19,771 --> 00:06:24,844
+which we're putting it, our container C, 
+must be the top of the destination pile. 
+
+91
+00:06:24,844 --> 00:06:29,842
+And then finally we have the sub tasks of 
+the network associated with this method 
+
+92
+00:06:29,842 --> 00:06:33,661
+simply consisting of the two primitive 
+tasks, take and put. 
+
+93
+00:06:33,661 --> 00:06:38,132
+So we're taking with crane k at location 
+l, container c, from the origin 
+
+94
+00:06:38,132 --> 00:06:42,522
+container, in the origin pile. 
+And then we need to put the container 
+
+95
+00:06:42,522 --> 00:06:47,143
+with the same crane at the same location 
+the same container we just picked up onto 
+
+96
+00:06:47,143 --> 00:06:50,115
+the destination container in the 
+destination pile. 
+
+97
+00:06:50,115 --> 00:06:54,484
+These are the two sub-tasks of this 
+method, and as you can see I've described 
+
+98
+00:06:54,484 --> 00:06:58,702
+them as a sequence, so they are totally 
+ordered which means this method is 
+
+99
+00:06:58,702 --> 00:07:02,297
+totally ordered. 
+Next I will describe two methods for 
+
+100
+00:07:02,297 --> 00:07:05,630
+accomplishing the task of moving the 
+whole stack. 
+
+101
+00:07:05,630 --> 00:07:10,222
+Remember this moving the stack reverses 
+the order in the containers. 
+
+102
+00:07:10,222 --> 00:07:15,283
+And the informal description said that 
+moving a stack can be accomplished by 
+
+103
+00:07:15,283 --> 00:07:19,882
+repeatedly moving the topmost container 
+until the stack is empty. 
+
+104
+00:07:19,882 --> 00:07:24,588
+And as you know, repetition can be 
+achieved through recursion, so I first 
+
+105
+00:07:24,588 --> 00:07:29,837
+define a method, recursive-move, which 
+takes four parameters, namely the origin 
+
+106
+00:07:29,837 --> 00:07:35,136
+pile, the destination pile, the container 
+we're trying to move, and the container 
+
+107
+00:07:35,136 --> 00:07:39,905
+from which we're moving Moving it. 
+And the task that we accomplish with this 
+
+108
+00:07:39,905 --> 00:07:44,108
+method is to move a stack from the origin 
+pile to the destination pile. 
+
+109
+00:07:44,108 --> 00:07:48,468
+Remember, for the previous method, our 
+task was to move only the top most 
+
+110
+00:07:48,468 --> 00:07:50,962
+container. 
+Here we move the whole stack. 
+
+111
+00:07:50,962 --> 00:07:55,445
+And there are only two preconditions 
+associated with this method, namely that 
+
+112
+00:07:55,445 --> 00:08:00,015
+the container, that we're trying to move, 
+must be at the top of the origin pile, 
+
+113
+00:08:00,015 --> 00:08:04,702
+and it must be on top of the container, x 
+o, from which we're trying to take it. 
+
+114
+00:08:04,702 --> 00:08:09,575
+Then we have 2 subtasks that we need to 
+accomplish, to accomplish the task of 
+
+115
+00:08:09,575 --> 00:08:13,237
+moving the stack. 
+And the first subtask is that we need to 
+
+116
+00:08:13,237 --> 00:08:17,709
+move the top most container. 
+And then, we have a recursive call, so to 
+
+117
+00:08:17,709 --> 00:08:20,824
+speak. 
+Namely, we have the task that this method 
+
+118
+00:08:20,824 --> 00:08:24,724
+achieves as a subtask. 
+So we need to move the remainder of the 
+
+119
+00:08:24,724 --> 00:08:29,708
+stack from the origin pile to the 
+destination pile after we've moved the 
+
+120
+00:08:29,708 --> 00:08:33,943
+top-most container from the origin pile 
+to the destination pile. 
+
+121
+00:08:33,943 --> 00:08:38,807
+And again, the sub tasks here are totally 
+ordered so this is the total order 
+
+122
+00:08:38,807 --> 00:08:41,962
+method. 
+But we have a 2nd method described here, 
+
+123
+00:08:41,962 --> 00:08:46,588
+and that is the no move method. 
+And let me start with the task this time. 
+
+124
+00:08:46,588 --> 00:08:51,718
+The task for this method is the same task 
+as before, so here have move stack from 
+
+125
+00:08:51,718 --> 00:08:54,707
+P0 to PD. 
+and here we have move stack from PO to 
+
+126
+00:08:54,707 --> 00:08:57,375
+PD. 
+These two methods Accomplish the same 
+
+127
+00:08:57,375 --> 00:09:00,057
+task. 
+But the 2 methods have different names. 
+
+128
+00:09:00,057 --> 00:09:04,631
+And they have different preconditions. 
+So, previously, we needed a container 
+
+129
+00:09:04,631 --> 00:09:08,832
+that is on top of the origin pile. 
+And now, our only precondition is that 
+
+130
+00:09:08,832 --> 00:09:13,442
+the pallet is the top of the origin pile. 
+Which is another way of saying that the 
+
+131
+00:09:13,442 --> 00:09:17,272
+pile from which we are trying to move the 
+containers is empty. 
+
+132
+00:09:17,272 --> 00:09:22,588
+And if the pile that we're trying to move 
+the stack of containers is empty than the 
+
+133
+00:09:22,588 --> 00:09:26,928
+sub tasks are also empty. 
+That means there's nothing that needs to 
+
+134
+00:09:26,928 --> 00:09:30,659
+be done to move zero containers from one 
+pile to another. 
+
+135
+00:09:30,659 --> 00:09:35,510
+So the first method we've described here 
+implements the loop of moving the 
+
+136
+00:09:35,510 --> 00:09:40,603
+containers repeatedly through recursion 
+and the second method makes sure the 
+
+137
+00:09:40,603 --> 00:09:44,918
+recursion bottoms out. 
+The final example, then, is for moving a 
+
+138
+00:09:44,918 --> 00:09:50,214
+stack via an intermediate pile, to make 
+sure that we maintain the original order. 
+
+139
+00:09:50,214 --> 00:09:55,247
+So, the first move reverses the order. 
+And then the second moving of the stack 
+
+140
+00:09:55,247 --> 00:09:59,182
+reverses it again. 
+It means we have the original order back. 
+
+141
+00:09:59,182 --> 00:10:04,327
+And to accomplish this, we have a method 
+very cleverly named move stack twice. 
+
+142
+00:10:04,327 --> 00:10:08,740
+Which takes 3 parameters. 
+The origin pile, the intermediate pile, 
+
+143
+00:10:08,740 --> 00:10:13,153
+and the destination pile. 
+And the task that we accomplish with this 
+
+144
+00:10:13,153 --> 00:10:16,421
+method is to move the stack in an ordered 
+fashion. 
+
+145
+00:10:16,421 --> 00:10:21,112
+Move ordered stack from the origin pile 
+to the destination pile. 
+
+146
+00:10:21,112 --> 00:10:25,037
+And this method is always applicable, 
+which we can see here. 
+
+147
+00:10:25,037 --> 00:10:30,264
+It has no preconditions, so as long as we 
+can find values for the 3 parameters, we 
+
+148
+00:10:30,264 --> 00:10:34,088
+can apply this method. 
+And the network associated with this 
+
+149
+00:10:34,088 --> 00:10:37,383
+method, is again, totally ordered. 
+It has 2 subtasks. 
+
+150
+00:10:37,383 --> 00:10:41,454
+And the first subtask is to move the 
+stack from the origin pile to the 
+
+151
+00:10:41,454 --> 00:10:44,369
+intermediate pile. 
+And then, we move it from the 
+
+152
+00:10:44,369 --> 00:10:46,986
+intermediate pile to the destination 
+pile. 
+
+153
+00:10:46,986 --> 00:10:51,833
+So it's again, a totally ordered network. 
+Which means we have a totally ordered 
+
+154
+00:10:51,833 --> 00:10:54,764
+method. 
+Which means all our methods were totally 
+
+155
+00:10:54,764 --> 00:10:55,239
+ordered. 
+

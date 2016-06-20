@@ -1,0 +1,350 @@
+So far I've talked about STN which stands 
+for simple task network. 
+The more general approach is known as 
+hierarchical type planning and that's 
+what we'll be looking at next. 
+HTN planning is more general than STN 
+planning, but that also means there isn't 
+a single algorithm that implements HTN 
+planning. 
+So I can't show you any pseudo-code here. 
+Instead, I will just give you an overview 
+of the general approach. 
+In STN planning, as I have just described 
+it. 
+There were 2 types of constraints that 
+were part of the representation and the 
+procedure. 
+The first type of constraint we've seen 
+are the ordering constraints. 
+And if you remember the definition of a 
+task network, consisting of nodes and 
+edges. 
+These edges represented the ordering 
+constraints. 
+So. 
+They were built into the representation 
+of a task network. 
+This means there was exactly one way in 
+which ordering constraints between tasks 
+could be handled. 
+The other type of constraints we've seen 
+are the preconditions. 
+Preconditions are constraints on the 
+state before a method or an action is 
+applied. 
+And what we have done in STN planning is 
+that we have written it in to a planning 
+procedure that preconditions must hold. 
+So preconditions were enforced by the 
+procedure. 
+And to be able to enforce preconditions 
+the planning procedure have to rely on 
+knowledge of the state before a method or 
+an action is applied.So you must know 
+what exactly that state is to be able to 
+test for applicability. 
+And that means we must perform forward 
+search, because of the way we represented 
+preconditions are part of methods in our 
+Approach. 
+In HTN planning, we try to take a more 
+general approach. 
+HTN planning does not deal with a 
+specific type of ordering constraints, or 
+of specific representation for 
+preconditions. 
+But maintains general constrains 
+explicitly as part of the representation. 
+So of course this will require additional 
+bookkeeping, but it means we are much 
+more flexible. 
+If we want to have a different type for 
+ordering our network, then we can plug a 
+different constraint management system 
+into our HTN planner. 
+Similarly for other types of constraints 
+we want to handle, they can be included 
+in our representation as part of a 
+general constraint network having 
+different types of constraints. 
+Although I won't go into as much detail 
+as before, I at least wanted to give you 
+a flavor of HTN methods look like by 
+presenting you with a formal definition 
+here. 
+This will allow you to at least contrast 
+STN and HTN methods. 
+So we start off with a set of method 
+symbols that we use to uniquely name our 
+methods, just as for STN planning. 
+Then we say an HTN method is a 4 tuple 
+consisting of 4 things. 
+And these 4 things are, firstly, there is 
+the name of the method. 
+And that name is. 
+Just like for STN method, consisting of a 
+method symbol, and then has a syntactic 
+expression of the form n of x1 through 
+xk, where n is a method symbol, and so 
+element of our set ms. 
+And x1 through xk are the variables 
+representing the objects that are 
+manipulated by this method. 
+So this is exactly as for STN methods. 
+And then, also, like for STN methods. 
+is the task of the method the second 
+component? This must be a non primitive 
+task that is accomplished. 
+By this method. 
+And then again as for STN methods, we 
+have a set of sub task, these are the 
+tasks into which the method breaks down. 
+So, so far there's nothing new. 
+What's really new is that we have a set 
+of constraints associated with an HTN 
+method and we're not going to be specific 
+here about what types of constraints 
+these are. 
+These can be simple ordering constraints 
+of the type we seen them or they can be 
+preconditioned constraints of the type 
+That we've also had an HTN methods or 
+there could be more complex things like 
+we could of time-point network if we want 
+to do a more elaborate temporal planing 
+or we could have constraints on the 
+resources that are consumed by the 
+different tasks in our method. 
+The HTN approach is not specific as to 
+what necessarily must be involved here. 
+So let's look at an example of an HTN 
+method. 
+And again, we'll use an example from our 
+Dock Worker domain the example we seen 
+previously as an STN method. 
+We want to move the top-most container 
+from one pile to another and this is 
+again a take action followed by a put 
+action. 
+So as I've said before the first three 
+parts are actually the same as before, so 
+we have A method name, describing this 
+method. 
+Then, we have a task that is accomplished 
+by this method, and the method name 
+contains the same variables, representing 
+the same objects, as before. 
+Also, the task is the same as before, so 
+I won't go into this in In detail. 
+What is new is the network of sub tasks 
+here, consisting of sub tasks as before, 
+but what I've also done, is I've given 
+the sub task names that allow me to refer 
+to them in the constraints. 
+So the first sub task is called, t1 here, 
+that's a local name for the sub task, and 
+the 2nd one is called T2 other than that 
+the sub tasks are the same. 
+But then I add general constraints to 
+this network to complete this HTN method. 
+And the first constraint I have is that 
+T1 must be before T2 so that's an 
+ordering constraint I have here. 
+Then I have other constraints 
+representing the preconditions. 
+Looking at this example I say here that 
+before the set T1 so this is a set Of 
+tasks, there could be more than one here, 
+we must have the condition that the 
+container, c, is on top of the origin 
+pile, true. 
+So that's a before constraint, applied to 
+a set of tasks, and a condition, and we 
+have several other constraints Of this 
+type here that effectively represent the 
+pre-conditions of the STN method as we've 
+seen it previously. 
+But one thing that is different here is 
+if you look at this constraint here, here 
+we don't have a t1 but a t2. 
+We have the same here for the second 
+pre-condition. 
+What this is saying is that these two 
+conditions must only be True before the 
+second task in the network, so can, we 
+can be more specific here, about where we 
+want preconditions to be true. 
+And looking at the second one, we only 
+need the fact that Xd, the destination 
+container onto which we are putting our 
+container, needs to be at the top of the 
+destination pile, before we put it down 
+there and when you think about it that 
+makes a lot of sense. 
+There's no need for this to be the case 
+before task 1. 
+But instead, before we put down the 
+container, we must have this true. 
+So, this approach of handling constraints 
+like this can be more explicit as to 
+where those constraints must be. 
+True. 
+But sometimes, a more general approach 
+can also come with difficulties, and 
+that's what this 2nd example of HTN 
+methods illustrates. 
+This is again taken from our dock worker 
+robot domain, and this is the example of 
+moving a stack by repeatedly moving the 
+top-most container until the stack is 
+empty. 
+And again, we have 2 methods that 
+accomplish this, and these are the 
+recursive move method we've seen earlier, 
+from Po to Pd, moving container C from 
+container Xo, and it accomplishes the 
+task of moving the stack from Po to Pd. 
+And it has the following network of 
+subtasks. 
+The tasks themselves haven't changed. 
+So, again, we have, moving the top most 
+container and then, moving the stack. 
+We've introduced names for those tasks so 
+that we confer to them in the 
+constraints. 
+the first contsraint is the ordering 
+constraint and the pre-conditions are 
+attatched to the first task. 
+So there's nothing different about this 
+first HTN method from the STN version we 
+have seen earlier. 
+But the second method shown here, move 1, 
+is very different from no move, what 
+we've seen earlier in the STN methods. 
+And the reason for this is that 
+constrains are always attached to the 
+tasks in our network. 
+So If our network consist of no tasks, 
+then we really can't attach any 
+constraints to this. 
+method. 
+And that is of course what we had in the 
+no move method. 
+There were no tasks so in this approach 
+we couldn't attach any constraints. 
+What we've got to do to solve this 
+problem is simply introduce a method that 
+moves the last container in the network. 
+And that means we only have one sub-task, 
+moving the topmost container which is the 
+last here, and we add constraints to this 
+sub-task that ensure that this is the 
+last container. 
+So it needs to be on top of the pile, but 
+more importantly The container that we 
+are trying to move here must be on the 
+pallet and if it's on the pallet it's the 
+last container in the stack. 
+So you can see it's not all that 
+different from an STN method. 
+I want to take a step back now, and 
+compare HTN planning to the STRIPS 
+planning we've seen previously. 
+And the first thing I want you to 
+understand is that HTN planning is far 
+more expressive than STRIPS planning. 
+So you can encode problems in HTN that 
+you can't encode in STRIPS planning. 
+And this applies to HTN and STN planning 
+alike. 
+So I will argue here that this holds for 
+STN planning. 
+And since HTN planning is a genealization 
+of STN planning, it will also hold for 
+HTN. 
+Planning. 
+And the way you can see that STN planning 
+must be a more powerful approach is by 
+seeing that STN problems can be 
+undecidable. 
+So, thinking back to STRIPS planning, 
+what we did was we encoded a finite 
+search space, we had a finite number of 
+objects, a finite number of predicates. 
+Which means, we have a finite number of 
+combinations, how we can build our world 
+states and we can do a graph search in 
+the state. 
+So, it cannot possibly be undecibale 
+whether there is a plan. 
+Or there isn't a plan. 
+STRIPS planning may be hard but it is 
+decidable. 
+To see that STN planning is undecidable 
+requires a little more background. 
+Ground. 
+But when you compare the STN formalism, 
+to programming langueages, you will see 
+that they are quite similar. 
+In fact, the basic conststructs you find 
+in any programming language, are also in 
+STN planning. 
+You have branching by having alternative 
+methods that have different 
+pre-conditions. 
+Just think back to the second example 
+we've just seen. 
+And we also have methods that accomplish 
+a given task, but have the same type of 
+task as a sub-task, so these methods are 
+effectively recursive. 
+And with recursion, and branching, we 
+have the power of a general programming 
+language. 
+And that is why STN Planning is so 
+powerful. 
+The STN and therefore the HTN formalism 
+is more expressive than STRIPS planning. 
+That's what you need to remember here. 
+But, if you leave out the recursive 
+aspect from STN Planning so if you have 
+no methods that are effectively 
+recursive, then you can translate these 
+domain into equivalent STRIPS problems 
+that solve the same problem. 
+Unfortunately this translation process 
+may lead to an exponential blow up in the 
+size of the problem. 
+As a final point there is also a set of 
+STN domains called regular STN domains 
+and that also is equivalent to STRIPS 
+planning. 
+Regular STN domains contain some degree 
+of recursiveness but not much. 
+So this is the end of this segment about 
+STN or HTN planning. 
+I've told you all about tasks and task 
+networks which were the new nodes in our 
+search space. 
+We've seen what methods are. 
+They refine task networks to give us 
+state transitions in our search space and 
+they way they do that is through 
+Decomposition of tasks in the networks. 
+Then we've seen the usual definitions of 
+problems and solutions. 
+And we have seen how we can do planning 
+with the TFD and PFD algorithms. 
+This whole approach can be generalized to 
+HTN planning, where we explicitly handle 
+constrains of unknown types. 
+And although I've just compared HTN and 
+STRIPS planning. 
+Keep in mind that these two approaches 
+really solve two different types of 
+problem. 
+The one is goal-based planning, and the 
+other is task-based planning. 
+And that concludes this segment. 
+

@@ -1,0 +1,211 @@
+Here is the four one state space search 
+algorithm. 
+This algorithm is defined as a function 
+forward search that takes three arguments 
+namely the three components that make up 
+a planning problem. 
+The first component is the set of 
+operators defined for the planning 
+problem. 
+Then we have an initial state and a goal 
+description. 
+The algorithm works by starting from the 
+initial state and searching from here. 
+And it also builds up a solution plan why 
+we go through this loop. 
+As for the previous search algorithms, 
+the first thing in the loop we do is test 
+whether we have reached a goal state. 
+The goal test, now, is whether the state 
+that we're currently looking at, 
+initially the initial state, is a goal 
+state. 
+We test this by testing whether it 
+satisfies the goal. 
+If this is the case, then we can return 
+our plan, initially, the empty plan. 
+So, if our initial state was the goal 
+state, then we return the empty plan, and 
+we are done. 
+If not, then we have to continue. 
+And what we have to do next is compute 
+the state transition function. 
+We do this as described earlier by 
+computing all the ground instances from 
+all the operators defined in our planning 
+problem that are applicable in our state. 
+So this gives us the set of applicable 
+actions in our current state. 
+Now if this set was empty, if there are 
+no applicable actions in the current 
+state, then we can return failure. 
+That means we, we have exhausted our 
+search space and haven't come across a 
+solution. 
+The next step is simply choose one of the 
+applicable actions that we have just 
+computed. 
+What I've done here is simply made my 
+life a little simpler by describing the 
+algorithm as a non-deterministic 
+algorithm. 
+This is a non-deterministic choice point. 
+What this means, in the actual 
+implementation, would have to do search 
+here. 
+It would have to back track to this 
+point, to try out the different action. 
+If the one we've chosen previously fails. 
+So this would build up a search tree, 
+branching at exactly this point. 
+In a non-deterministic algorithm we can, 
+of course, assume that we have chosen the 
+right action here. 
+Then what we do is we simply update our 
+current state by applying the state 
+transition function of the previous 
+state, this is the previous state, and 
+the action that we apply in this state. 
+And of course we have to add this action 
+to the plan, so we concatenate new plan 
+consisting of just one action to our old 
+plan, and get the new plan as a result 
+and that's it. 
+We simply go through our loop again until 
+we either come to this point where we can 
+return a plan to a solution state. 
+Or we come to this point where we return 
+failure meaning we have exhausted the 
+search space and didn't find a solution. 
+And here is a very simple example to 
+illustrate this algorithm. 
+We start off in a initial state, which is 
+the trivial problem we've seen earlier. 
+And we have defined the goal also from 
+the example we've seen earlier to give us 
+just one state as a goal state. 
+But the algorithm doesn't know that 
+there's only one goal state, or where it 
+is. 
+So we will remove this, here. 
+So, the first thing the algorithm does is 
+test whether this is a goal state. 
+And I can assure you it is not. 
+So the algorithm will continue by 
+computing the applicable actions. 
+And then selecting one of these 
+applicable actions. 
+And in this case, what the algorithm does 
+is select this action, here. 
+We're taking, with the crane, there's 
+only one, at location one, the container, 
+which is on this pile here. 
+from the pallet in the pile. 
+That is the action that the algorithm 
+chooses. 
+Then what happens is it applies the state 
+transition function to get a new state, 
+which is the state we see here. 
+And it also updates its plan, which is 
+what we have here. 
+And it continues like this through the 
+loops so it checks whether this is a goal 
+state. 
+It isn't a goal state, it computes the 
+applicable actions, picks one of those, 
+in this case that's the move action, and 
+accordingly has to compute a new state, 
+that's the new state we generate with 
+this move action. 
+And so on we continue through the loop 
+and see this is not a goal state, so we 
+compute the applicable actions again, now 
+we try to load the container with the 
+crane at the location. 
+And, we get a new state. 
+As a result, now you can see the 
+container is on the robot. 
+And, this is not a goal state so we go 
+through the loop. 
+And we find there's a final action that 
+we need to execute. 
+We need to move the robot to the other 
+location. 
+And then we get a new state. 
+And this is now our goal state so at the 
+beginning of the loop, the algorithm will 
+terminate. 
+And it will return at this stage this 
+plan here consisting of those four 
+actions that, gave us the path through 
+this state space. 
+So you have seen that the algorithm was 
+only a very small step given all the 
+definitions we had before. 
+But now we want to say a little bit more 
+about the algorithm and what we want to 
+say is that the algorithm possesses two 
+properties that are very important. 
+Forward search is sound and forward 
+search is complete. 
+Soundness means that if the function 
+returns a plan as a solution, then this 
+plan is indeed a solution. 
+This is, of course, a very useful 
+property of such an algorithm. 
+If the algorithm was not sound, that 
+means it could return a plan that isn't a 
+solution. 
+So we would still not know what the 
+solution is but the algorithm is sound. 
+And the proof of this is very simple. 
+We can show this by induction. 
+And we show that, at the beginning of the 
+loop, this statement here always holds. 
+So we have the two loop variables, state 
+and plan. 
+And we show that the state is always 
+equals to gamma of si, and the plan we're 
+currently looking at. 
+This is true, initially, of course 
+because the initial value of state is the 
+initial state. 
+And the initial plan is empty. 
+So gamma applied to SI with the empty 
+plan means we still are in the initial 
+state. 
+And those two are equal. 
+And then we can show that this condition 
+is maintained through the loop. 
+Each iteration of the loop keeps this 
+condition true. 
+Which means that it is also true for the 
+final iteration before we return the 
+plan. 
+And that means the state is the result of 
+applying the state transition function, 
+NSI, with the plan. 
+And we return from the function when 
+state satisfies the goal. 
+So, therefore, this plan must reach the 
+state. 
+And our algorithm is sound. 
+The second property that the algorithm is 
+complete means that if there is a 
+solution to our problem, the algorithm 
+can find the solution. 
+And since this is a non-deterministic 
+algorithm, we talk about an execution 
+trace. 
+So there is a set of choices that we can 
+make at the non-deterministic choice 
+points, such that the algorithm will 
+return the solution plan. 
+And again, the proof can be done by 
+induction. 
+And this time, we show that our plan is 
+always a prefix of the plan we're looking 
+for. 
+What you need to remember is only that 
+our algorithm is sound and complete. 
+

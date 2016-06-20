@@ -1,0 +1,324 @@
+We have now, almost reached the end of 
+week two, and we have just seen our first 
+planning algorithm. 
+Some of you may be a little disappointed 
+that it took so long to get to the first 
+planning algorithm, and for those people 
+here comes the next planning algorithm. 
+In the algorithm we've just seen, search 
+states are exactly those states that are 
+world states in the planning problem. 
+States are sets of ground atoms. 
+The algorithm then searched forward from 
+the initial state through all the 
+reachable states, until it comes across a 
+goal state. 
+The algorithm we will look at next is 
+Backwards State-Space Search. 
+In this algorithm we'll start form the 
+goal, and search backwards through the 
+state space, until we reach the initial 
+state. 
+This is quite straight forward, and very 
+similar to forward search, as you will 
+see. 
+We will start by defining two concepts, 
+namely, relevance and regression sets. 
+Relevance is really the equivalent 
+concept to applicability, as it tells us 
+which actions we can use to move through 
+our search base. 
+Again, we start with a planning problem 
+consisting of the usual things. 
+Namely, a state transition system that 
+tells us how the world can evolve, a 
+initial state from which we're moving 
+away, and a goal description which tells 
+us which states are goal states. 
+Then we can say an action, A, of our 
+action set, is relevant for goal, G, if 
+the following two conditions hold. 
+Firstly the goal in intersected with the 
+affect of the action must not be empty. 
+This means they must be an element that 
+is in both sets, so there must be element 
+there is on the one hand go, and on the 
+other hand an infect of the action. 
+This means the action must contribute to 
+the goal in some way. 
+Secondly the positive goals of the goal 
+description and the negative effect of 
+the action must not intersect and the 
+negative goals and the positive effects 
+must also not intersect. 
+This means the goal must not conflict 
+with the effects of the action. 
+Looking at the first case, if we had a 
+negative effect of the action, that was 
+also a positive goal, that means this 
+action would delete this goal from our 
+state. 
+So it would no longer hold. 
+The second case is just the other way 
+around. 
+We have a positive effect that adds a 
+negative goal to the state, which we 
+don't want. 
+So, an action is relevant for a goal, if 
+it contributes to the goal, 
+that's the first condition. 
+And if it does not interfere with the 
+goal in a negative way. 
+That's the second condition. 
+Now we can define the regression set of a 
+goal G for a relevant action A. 
+And as you can see this is meant to be 
+the inverse of the state transition 
+function gamma and it is computed as 
+follows. 
+We start off with the original goal which 
+is a set of ground literals and we remove 
+all the effects of the action from that 
+goal and then we add all the 
+preconditions of the action to the goal. 
+Effectively, this computes from a given 
+goal G. 
+We remove all the effects, meaning we 
+remove all those things that have been 
+achieved by the action that we have 
+selected. 
+So we no longer need to achieve these if 
+we execute this action as the last step 
+before the goal. 
+But then, we need to have all the 
+preconditions true, so that we can 
+actually execute this action. 
+So what this gives us, is a new sub-goal. 
+And if we can somehow achieve this 
+sub-goal, then we know that through the 
+action A, we can achieve our original 
+goal. 
+Relevance and regression sets tell us how 
+we can move through our state base 
+backward. 
+They tell us how we can, given a goal and 
+a relevant action for this goal, compute 
+a new sub goal that constitutes a new 
+search state for our backward search. 
+So here is how we can define the 
+successor function for the backwards 
+search, which is equivalent to the 
+reachability analysis we did for forward 
+search. 
+We start with regression through a single 
+step from a given goal. 
+This is defined as the set of all those 
+sub-goals, gamma minus one GA, so the 
+regression sets, for a relevant action 
+for G, our original goal. 
+To compute this we start with our 
+original goal, then compute all the 
+relevant actions for this goal, and 
+regress through these actions two new sub 
+goals. 
+So this is a set of sub goals that we get 
+as a result. 
+The next step is that we extend this 
+function to take multiple goals as input, 
+so the input is now a set of goals rather 
+than a single goal. 
+And if we regress through zero states 
+that means simply the set of goals stays 
+the same. 
+There's no change. 
+If we can go one step backwards in our 
+search from a given set of goals, this is 
+simply the union over all the individual 
+goals and we regress those through our 
+regression function defined earlier. 
+And then we can apply this for M steps 
+backwards from a given set of goals by 
+simply doing a recursive definition as we 
+did for reachability. 
+So we apply it for one step after we've 
+applied it to M minus one steps for the 
+same set of goals. 
+What this means is that, from any of the 
+sub-goals that we've computed in this 
+way, we can reach the original goals in 
+exactly M steps. 
+M actions are necessary to go from the 
+sub-goals to one of the original goals. 
+And we can define the transitive closure 
+for this function, which is the set of 
+all regression sets that are possibly. 
+So these are all the possible sub goals, 
+that we can compute from our original 
+goal. 
+This is, pronounced gamma backwards, is 
+simply the union over all lengths of 
+plans that we can implement here, where K 
+is the length of the plan, and we compute 
+gamma minus K, of our original goal. 
+So for any K from zero to infinity, this 
+gives us all the sub goals that are 
+possibly reachable in our search base 
+from our original goal. 
+Now, given these definitions we can 
+define a search space for backwards 
+search planning. 
+The input to the algorithm is again a 
+statement of planning problem consisting 
+of a set of operators in a initial state, 
+and the goal to description as before. 
+Then the search problem can be defined by 
+the following four components. 
+We start with the initial state for a 
+search. 
+That is not the initial state not a state 
+base but the goal. 
+So we're searching backwards from the 
+goal. 
+And in our search space the goal is the 
+initial state. 
+And if the goal is our initial state that 
+means we need a new goal test for the 
+search space. 
+And this goal test is that the intitial 
+state in our problem specification 
+satisfies our sub-goal S. 
+Remember, we move through the search 
+space, or that is the idea, from the goal 
+backwards by computing sub-goals and S is 
+meant to be one of these sub-goals. 
+Now if we come across a sub-goal that is 
+satisfied the, in the initial state, that 
+means we can reach the goal state from 
+the sub-goal according to our regression 
+function just defined. 
+So, if our initial state satisfies the 
+sub-goal, we have reached a goal state in 
+a our search space. 
+The path cost function remains unchanged, 
+it is simply the length of the plan. 
+And the successor function, will be using 
+is simply the regression function we've 
+defined in the previous slide. 
+In general this function takes a sub-goal 
+that we've come across, and computes its 
+successors in the search space. 
+So, this concludes the definition of the 
+search space for backward search 
+planning. 
+Next I could show you the backward search 
+planning algorithm and pseudo code, but I 
+won't. 
+The pseudo code would look almost 
+identical to the code defined for forward 
+search and I'll leave that to you as an 
+exercise to modify that algorithm so that 
+it performs backward search. 
+Now that you understand how two planning 
+algorithms work, I'll even given you the 
+idea for a third one. 
+And to introduce this, I'll give you an 
+example. 
+Suppose our goal, our original goal we 
+start from is that we want the robot to 
+be at location one. 
+There is one operator in the dock loc 
+robot domain, that can achieve this goal, 
+and that is the move operator for moving 
+a robot r from location l to location M. 
+And we can see that this operator is 
+relevant because it has an effect at r m 
+which we can use to achieve our goal at 
+robot location one. 
+So all the actions that can be relevant 
+for this goal must be of this form that 
+we want to move the robot from some 
+location L to location one. 
+But, l remains a variable here. 
+So we don't know what this value of l 
+should be. 
+In fact, if you choose the wrong value 
+for ,, it may even interfere with the 
+goal. 
+Because we also have a negative effect, 
+not at rl. 
+In the backwards search we've considered 
+so far, we've only looked at actions for 
+regressing goals to sub-goals. 
+So what we could do in our algorithm is 
+simply replace this value L through all 
+possible constants that are of the right 
+type. 
+But if there are many places from which 
+we can move to location one that means 
+there are many options and that increases 
+the branching factor in our search 
+unnecessarily. 
+So what we can do is simply keep this 
+variable as a variable and that is what 
+is called lifted backwards search, which 
+can also deal with partially instantiated 
+operators where not all the parameters of 
+the operators are replaced by actual 
+values. 
+This does reduce the branching factor but 
+unfortunately it also makes the algorithm 
+a lot more complicated. 
+Keeping variables in a plan is an example 
+of what is sometimes called least 
+commitment planning where we try to make 
+as few commitments as possible during the 
+planning process unless we have a good 
+reason for making a specific commitment. 
+We will see a lot more of this type of 
+planning next week. 
+So this concludes the segment on 
+states-based search planning. 
+In this segment we've learned a lot about 
+the STRIPS representation for planning. 
+In the STRIPS representation we have seen 
+a standardized way of representing the 
+internal structure of states, namely a 
+sets of ground atoms. 
+So we have objects that are related by 
+some relations, and sets of these atoms 
+describe what the world state looks like. 
+And then we have defined what the 
+internal structure of operators looks 
+like. 
+Namely, an operator consists of a name 
+with parameters, a set of preconditions, 
+and a set of effects. 
+The effects are often divided into 
+positive and negative effects or the add 
+list and the delete list. 
+Based on this we can define strips 
+planning domains which are simply sets of 
+operators, and we can define strips 
+planning problems and consisting of a 
+domain, an initial state, and a goal 
+description. 
+And all this we've learned together with 
+a new syntax, the PDDL syntax, for 
+describing planning domains and problems. 
+Pbdl is probably the most commonly 
+understood language by planners today. 
+And next we have seen how forward states 
+space search can be used to solve 
+planning problems. 
+And there is a variant of that we have 
+also seen how we can search this space 
+backwards from the goal to the initial 
+state. 
+Unfortunately this planning algorithms as 
+of described them here are very 
+inefficient. 
+But as we will see later on the course it 
+doesn't take all that much to turn them 
+in to the state of our planning 
+algorithms. 
+

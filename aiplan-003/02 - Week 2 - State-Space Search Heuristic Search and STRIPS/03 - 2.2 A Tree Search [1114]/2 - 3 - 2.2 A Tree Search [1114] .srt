@@ -1,0 +1,754 @@
+1
+00:00:04,440 --> 00:00:09,779
+The problem with Greedy Best-First search 
+is that it often finds sub optimal 
+
+2
+00:00:09,779 --> 00:00:13,177
+solutions, often very badly sub optimal 
+solutions. 
+
+3
+00:00:13,177 --> 00:00:17,753
+But the idea of using a juristic 
+function, to determine the search 
+
+4
+00:00:17,753 --> 00:00:22,191
+strategy is a good one. 
+We will see this next when we define the 
+
+5
+00:00:22,191 --> 00:00:26,144
+A* algorithm which always gives us 
+optimal solutions. 
+
+6
+00:00:26,144 --> 00:00:32,038
+A* is probably, the best known algorithm 
+in all of artificial intelligence and as 
+
+7
+00:00:32,038 --> 00:00:36,060
+far as I know it is described in every 
+single AI textbook. 
+
+8
+00:00:37,220 --> 00:00:43,173
+A star is simply refinement of the best 
+first search algorithm we have seen 
+
+9
+00:00:43,173 --> 00:00:46,332
+earlier. 
+The only difference to Greedy Best-First 
+
+10
+00:00:46,332 --> 00:00:49,730
+search is that it uses a different 
+evaluation function. 
+
+11
+00:00:49,730 --> 00:00:56,171
+So remember f, the evaluation function, 
+tells us in which order we explore nodes 
+
+12
+00:00:56,171 --> 00:01:00,656
+on the fringe. 
+The heuristic h tells us the distance to 
+
+13
+00:01:00,656 --> 00:01:05,549
+the nearest goal node. 
+So far it is nothing new, what is new is 
+
+14
+00:01:05,549 --> 00:01:11,359
+this component g that we add to the 
+uristic to get our evaluation function 
+
+15
+00:01:11,359 --> 00:01:17,635
+and this function g simply gives us the 
+cost to reach the note end so that's the 
+
+16
+00:01:17,635 --> 00:01:23,368
+cost we already had to get from our 
+initial state to this note end and to 
+
+17
+00:01:23,368 --> 00:01:29,101
+this we add a uristic which is the 
+estimate to the nearest goal note from 
+
+18
+00:01:29,101 --> 00:01:33,285
+this note end. 
+So if we have an initial state I and we 
+
+19
+00:01:33,285 --> 00:01:39,900
+somehow to get our note N. 
+Then the distance between those two. 
+
+20
+00:01:39,900 --> 00:01:47,227
+Is g of n. 
+Whereas from here, we somehow get to a 
+
+21
+00:01:47,227 --> 00:01:54,250
+goal node, and this is our nearest goal 
+node g. 
+
+22
+00:01:54,250 --> 00:02:02,050
+Then this distance is estimated by the 
+heuristic function H, of N. 
+
+23
+00:02:02,050 --> 00:02:07,559
+One way to look at this is that greedy 
+best first search behaves a little bit 
+
+24
+00:02:07,559 --> 00:02:12,150
+like depth first search. 
+It tries to go deep into the search base, 
+
+25
+00:02:12,150 --> 00:02:17,094
+as quickly as it can to a goal node. 
+It always tries to eat at much as 
+
+26
+00:02:17,094 --> 00:02:22,744
+possible out of the distance to the goal. 
+By adding g to h, and using that as our 
+
+27
+00:02:22,744 --> 00:02:27,052
+evaluation function. 
+We sort of add a breadth first component 
+
+28
+00:02:27,052 --> 00:02:31,718
+to this depth first search. 
+In fact, the evaluation function we're 
+
+29
+00:02:31,718 --> 00:02:37,381
+using gives us the estimated cost of the 
+cheapest solution through the node N. 
+
+30
+00:02:37,381 --> 00:02:39,486
+Why is that? 
+Well, very simple. 
+
+31
+00:02:39,486 --> 00:02:45,148
+The cheapest solution though N surely 
+must consist of the path that goes from 
+
+32
+00:02:45,148 --> 00:02:49,722
+the initial state to N. 
+And the cost of that is given by G of N. 
+
+33
+00:02:49,722 --> 00:02:54,296
+And it consists of the cost of getting 
+from N to the goal Node. 
+
+34
+00:02:54,296 --> 00:02:59,160
+And we can estimate that, using the 
+function H, the uristic function. 
+
+35
+00:02:59,160 --> 00:03:05,501
+So when we use this evaluation function 
+to select the next node from the French 
+
+36
+00:03:05,501 --> 00:03:11,128
+we are selecting that node N. 
+Which looks to be on the cheapest path to 
+
+37
+00:03:11,128 --> 00:03:15,362
+A goal node. 
+And we can show that A* search is optimal 
+
+38
+00:03:15,362 --> 00:03:20,357
+if our heuristic function is admissible. 
+And that means that it always 
+
+39
+00:03:20,357 --> 00:03:26,351
+underestimates the distance to the goal. 
+But I will get back to properties of A* 
+
+40
+00:03:26,351 --> 00:03:30,163
+later. 
+So let's look at the same touring Romania 
+
+41
+00:03:30,163 --> 00:03:34,316
+example we've had before. 
+Our initial state is that we are in Irat, 
+
+42
+00:03:34,316 --> 00:03:38,817
+and we want to get to Bucharest. 
+Note that the number in brackets in each 
+
+43
+00:03:38,817 --> 00:03:43,003
+node is the F value, not the H value. 
+So this includes the G component. 
+
+44
+00:03:43,003 --> 00:03:48,038
+The amount of path we've already covered. 
+For the initial node, G is zero, because 
+
+45
+00:03:48,038 --> 00:03:51,981
+we haven't gone anywhere yet. 
+So the initial, for the initial node, 
+
+46
+00:03:51,981 --> 00:03:56,652
+the, H value is equal to the F value. 
+So again, the first thing we do is select 
+
+47
+00:03:56,652 --> 00:04:00,353
+the node from the fringe. 
+And since there is only one node, we 
+
+48
+00:04:00,353 --> 00:04:03,872
+select that node. 
+And then we expand that node and add the 
+
+49
+00:04:03,872 --> 00:04:07,815
+successors to the fringe. 
+Whereas, a rod disappears from the 
+
+50
+00:04:07,815 --> 00:04:10,335
+fringe. 
+So if you go back you will see that the 
+
+51
+00:04:10,335 --> 00:04:13,949
+numbers and the different nodes are 
+different from what we have seen 
+
+52
+00:04:13,949 --> 00:04:16,306
+previously. 
+Which is what I've just explained. 
+
+53
+00:04:16,306 --> 00:04:19,240
+They contain the G component as well as 
+the H component. 
+
+54
+00:04:19,240 --> 00:04:24,152
+So again the algorithm proceeds by 
+selecting the node from the fringe that 
+
+55
+00:04:24,152 --> 00:04:27,559
+has the lowest F value which is 393 in 
+this example. 
+
+56
+00:04:27,559 --> 00:04:32,930
+We continue by testing whether this is a 
+goal state, which it is not so we have to 
+
+57
+00:04:32,930 --> 00:04:37,459
+expand it and generate its successors. 
+There are four successors again as 
+
+58
+00:04:37,459 --> 00:04:40,139
+before. 
+Arot is one of the successors so we're 
+
+59
+00:04:40,139 --> 00:04:43,518
+doing tree search. 
+But now, one big differences is that the 
+
+60
+00:04:43,518 --> 00:04:46,256
+number that we see with Arot is very 
+different. 
+
+61
+00:04:46,256 --> 00:04:50,859
+It's a much higher number because it 
+includes the path that we've already gone 
+
+62
+00:04:50,859 --> 00:04:53,364
+through. 
+So this is not the same as for the 
+
+63
+00:04:53,364 --> 00:04:58,316
+initial state, because we've already gone 
+through the loop through that other city, 
+
+64
+00:04:58,316 --> 00:05:02,676
+before we returned to Arot. 
+So we continue with our loop, and we have 
+
+65
+00:05:02,676 --> 00:05:08,112
+to select another note from the fringe. 
+Which will be the note with the lowest F 
+
+66
+00:05:08,112 --> 00:05:12,257
+value, in this case 413. 
+This is not a goal note, so we have to 
+
+67
+00:05:12,257 --> 00:05:15,586
+expand it. 
+And there are three more successors we 
+
+68
+00:05:15,586 --> 00:05:19,840
+add to the fringe. 
+Now something interesting has happened. 
+
+69
+00:05:19,840 --> 00:05:26,378
+Previously this was our lowest value so 
+we estimated that a path through this 
+
+70
+00:05:26,378 --> 00:05:32,582
+node could cost as little as 413. 
+We have expanded this node and seen that 
+
+71
+00:05:32,582 --> 00:05:38,282
+its best successor has a value of 417. 
+This is because the heuristic 
+
+72
+00:05:38,282 --> 00:05:41,802
+underestimates. 
+The distance to the goal, now we are 
+
+73
+00:05:41,802 --> 00:05:46,327
+closer to the goal the heuristic has 
+become more accurate and we know the 
+
+74
+00:05:46,327 --> 00:05:51,417
+power is in fact a little more expensive. 
+What that also means is that there is a 
+
+75
+00:05:51,417 --> 00:05:56,445
+note higher up in the tree this one here 
+that now has the lowest f value on the 
+
+76
+00:05:56,445 --> 00:05:59,336
+fringe so this is the one we will select 
+next. 
+
+77
+00:05:59,336 --> 00:06:03,962
+We will perform the goal test as before. 
+And since this is not a goal node, we 
+
+78
+00:06:03,962 --> 00:06:07,623
+have to expand this node. 
+Generating two more successors. 
+
+79
+00:06:07,623 --> 00:06:11,370
+Including as you will see, one that is 
+the goal node. 
+
+80
+00:06:11,370 --> 00:06:16,300
+But, having generated to go on node does 
+not mean that we are finished. 
+
+81
+00:06:16,300 --> 00:06:21,864
+We will finish when we select to go on 
+node, and try to perform to goal test on 
+
+82
+00:06:21,864 --> 00:06:25,315
+this node. 
+So let's select the next node from the 
+
+83
+00:06:25,315 --> 00:06:28,625
+fringe. 
+And the node with the lowest F value is 
+
+84
+00:06:28,625 --> 00:06:33,696
+now over here, with a value of 417. 
+That's the successor we previously 
+
+85
+00:06:33,696 --> 00:06:36,874
+ignored. 
+And since this is not a goal note we will 
+
+86
+00:06:36,874 --> 00:06:41,418
+proceed by expanding this note. 
+Generating three more successors and once 
+
+87
+00:06:41,418 --> 00:06:45,650
+again of, of those is the goal. 
+So our goal note appears twice on the 
+
+88
+00:06:45,650 --> 00:06:49,572
+fringe now but these have two different 
+paths to the goal note. 
+
+89
+00:06:49,572 --> 00:06:54,053
+Notice that the one further up is the one 
+that Greedy Best-First search found 
+
+90
+00:06:54,053 --> 00:06:56,356
+earlier. 
+Now lets proceed with A star. 
+
+91
+00:06:56,356 --> 00:07:01,336
+A star goes through the loop again and 
+selects the note with the lowest f value, 
+
+92
+00:07:01,336 --> 00:07:04,760
+which in this case is the bookarest note 
+at depth four. 
+
+93
+00:07:04,760 --> 00:07:10,016
+It performs the goal test and finds 
+indeed Bucharest is the goal node and 
+
+94
+00:07:10,016 --> 00:07:15,060
+hence we have found a path to the goal 
+node and it is the optimal path. 
+
+95
+00:07:15,060 --> 00:07:20,245
+We can go again back through the tree, 
+tracing the way we came, to get the 
+
+96
+00:07:20,245 --> 00:07:25,360
+optimal path to this goal node. 
+So a star gave us an optimal path to the 
+
+97
+00:07:25,360 --> 00:07:29,480
+goal node, better than what Greedy 
+Best-First search found. 
+
+98
+00:07:29,480 --> 00:07:34,894
+However you can also see that this tree 
+contains quite a few more nodes than the 
+
+99
+00:07:34,894 --> 00:07:38,370
+tree that was generated by Greedy 
+Best-First search. 
+
+100
+00:07:38,370 --> 00:07:43,316
+And that means A star search is generally 
+a little bit slower than Greedy 
+
+101
+00:07:43,316 --> 00:07:47,260
+Best-First search and unfortunately this 
+is often the case. 
+
+102
+00:07:48,660 --> 00:07:52,926
+The touring Romania example is not very 
+interesting, because it is a relatively 
+
+103
+00:07:52,926 --> 00:07:56,112
+small search space. 
+So here's something that has a slightly 
+
+104
+00:07:56,112 --> 00:07:58,110
+bigger search space. 
+The 8 puzzle. 
+
+105
+00:07:58,110 --> 00:08:02,747
+Again, to remind you, the 8 puzzle's 
+character is by an initial state, there 
+
+106
+00:08:02,747 --> 00:08:07,384
+is one state that is given here, and one 
+goal state, exactly, that is given here. 
+
+107
+00:08:07,384 --> 00:08:12,437
+The actions for this puzzle were that we 
+can move the tiles around the grid, and a 
+
+108
+00:08:12,437 --> 00:08:17,312
+good way to think about this is that we 
+are moving the empty tile rather than the 
+
+109
+00:08:17,312 --> 00:08:21,830
+tiles themselves, which means there are, 
+at most, four possible actions we can 
+
+110
+00:08:21,830 --> 00:08:25,427
+move the empty tile. 
+In the four different directions, which 
+
+111
+00:08:25,427 --> 00:08:29,069
+reduces the branching factor of the tree 
+we are generating. 
+
+112
+00:08:29,069 --> 00:08:33,822
+Also, it might be a good idea to test for 
+reverse action, because undoing what 
+
+113
+00:08:33,822 --> 00:08:38,636
+we've just done immediately never leads 
+to anything good in this search space. 
+
+114
+00:08:38,636 --> 00:08:43,636
+Finally, we need to define the cost of 
+the different actions, and we use a unit 
+
+115
+00:08:43,636 --> 00:08:46,537
+cost here. 
+Moving a tile is, same cost for every 
+
+116
+00:08:46,537 --> 00:08:49,068
+tile. 
+What is missing to apply best first 
+
+117
+00:08:49,068 --> 00:08:54,068
+search or Greedy Best-First search or a 
+star search here is a heuristic function, 
+
+118
+00:08:54,068 --> 00:08:58,671
+and we will look at that next. 
+In fact I will give you two symbol 
+
+119
+00:08:58,671 --> 00:09:03,427
+heuristics for the eight puzzle. 
+The first one simply counts the number of 
+
+120
+00:09:03,427 --> 00:09:07,024
+misplaced tiles. 
+So we go through all the eight tiles in 
+
+121
+00:09:07,024 --> 00:09:11,198
+the puzzle, and check whether it is 
+already at the right position. 
+
+122
+00:09:11,198 --> 00:09:14,153
+If it is not, then we add one to our 
+heuristic. 
+
+123
+00:09:14,153 --> 00:09:19,291
+Because we know if it is not at the right 
+position, we have to move the style at 
+
+124
+00:09:19,291 --> 00:09:22,438
+some point. 
+And since every action moves just one 
+
+125
+00:09:22,438 --> 00:09:25,200
+tile, that's a good heuristic to start 
+with. 
+
+126
+00:09:25,200 --> 00:09:29,936
+So let's look at this in this example. 
+This is our heuristic H1 number of 
+
+127
+00:09:29,936 --> 00:09:34,283
+misplaced tiles, well this is wrong, this 
+is wrong, they're all wrong. 
+
+128
+00:09:34,283 --> 00:09:39,604
+So we see that in this example the value 
+of our heuristic is eight that means all 
+
+129
+00:09:39,604 --> 00:09:44,123
+eight tiles are in the wrong position. 
+The second heuristic H2, uses the 
+
+130
+00:09:44,123 --> 00:09:48,293
+manhattan block distance as an estimate 
+to how far we need to go. 
+
+131
+00:09:48,293 --> 00:09:52,977
+So again, we go through all the eight 
+tiles in the puzzle, and compute the 
+
+132
+00:09:52,977 --> 00:09:56,699
+manhattan block distance, and add those 
+distances together. 
+
+133
+00:09:56,699 --> 00:10:01,576
+What I mean by Manhattan block distance 
+is simply that all the moves we are 
+
+134
+00:10:01,576 --> 00:10:04,335
+allowed, are to go somewhere along the 
+grid. 
+
+135
+00:10:04,335 --> 00:10:08,570
+So there are only four possible ways in 
+which one can move a tile. 
+
+136
+00:10:08,570 --> 00:10:12,449
+So lets start with the first time, that's 
+the number seven. 
+
+137
+00:10:12,449 --> 00:10:17,399
+And the way, where we want the number 
+seven to be is here so the Manhattan 
+
+138
+00:10:17,399 --> 00:10:22,176
+block distance is one, two, three. 
+And this is the first value we'll choose. 
+
+139
+00:10:22,176 --> 00:10:25,648
+Then we have the two here. 
+And where should the two be? 
+
+140
+00:10:25,648 --> 00:10:29,249
+The two should be here. 
+So the distance is one and so on. 
+
+141
+00:10:29,249 --> 00:10:34,136
+If we continue like this for all eight 
+tiles, we will see that the Manhattan 
+
+142
+00:10:34,136 --> 00:10:37,480
+block distance heuristic for this state 
+is eighteen. 
+
+143
+00:10:37,480 --> 00:10:42,857
+It is easy enough to see that both of 
+these heuristics never overestimate the 
+
+144
+00:10:42,857 --> 00:10:47,544
+distance to the nearest goal. 
+It should also be easy to see that the 
+
+145
+00:10:47,544 --> 00:10:52,852
+second heuristic, H2, always gives us a 
+much more accurate estimate of how far 
+
+146
+00:10:52,852 --> 00:10:56,713
+the goal node is away, but it is not a 
+perfect heuristic. 
+
+147
+00:10:56,713 --> 00:11:01,470
+The actual distance to the goal node from 
+the state shown here is 26. 
+
+148
+00:11:01,470 --> 00:11:06,172
+So if you feel like a little programming 
+now why don't you go ahead and implement 
+
+149
+00:11:06,172 --> 00:11:10,244
+the eight puzzle using the a star 
+algorithm and solve a few puzzles. 
+
+150
+00:11:10,244 --> 00:11:12,825
+Use different heuristics. 
+Play around with it. 
+
+151
+00:11:12,825 --> 00:11:13,800
+See what happens. 
+

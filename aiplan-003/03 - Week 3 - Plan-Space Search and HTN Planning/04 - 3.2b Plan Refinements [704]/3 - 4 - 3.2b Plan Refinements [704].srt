@@ -1,0 +1,475 @@
+1
+00:00:01,308 --> 00:00:07,265
+The next component of a partial plan to 
+consider are the variable bindings. 
+
+2
+00:00:07,265 --> 00:00:13,386
+We've already seen that, every time we 
+add a new instance of an operator to our 
+
+3
+00:00:13,386 --> 00:00:17,018
+plan, 
+we introduce a new copy of the variables 
+
+4
+00:00:17,018 --> 00:00:22,103
+of that operator into our plan. 
+But, of course, our solution plan must 
+
+5
+00:00:22,103 --> 00:00:26,295
+contain actions which are fully ground 
+instances of operators. 
+
+6
+00:00:26,295 --> 00:00:31,561
+The variable bindings simply help us to 
+keep track of the possible values for all 
+
+7
+00:00:31,561 --> 00:00:36,660
+these variables that we're introducing 
+into our plan with the new actions. 
+
+8
+00:00:36,660 --> 00:00:41,032
+But, they can do more than that. 
+They can also contain co-designation 
+
+9
+00:00:41,032 --> 00:00:46,164
+constraints which says, a variable of one 
+operator must have the same value as the 
+
+10
+00:00:46,164 --> 00:00:50,632
+variable of another operator but we don't 
+know what that value is yet. 
+
+11
+00:00:50,632 --> 00:00:55,217
+So, we can have constraints on the 
+equality or inequality of variables in 
+
+12
+00:00:55,217 --> 00:00:58,831
+our plan. 
+Again, when we add variable bindings as a 
+
+13
+00:00:58,831 --> 00:01:03,817
+planned refinement operation to our 
+partial plan, we want to stick to the 
+
+14
+00:01:03,817 --> 00:01:08,449
+least commitment principle. 
+So, we only want to add variable binding 
+
+15
+00:01:08,449 --> 00:01:12,082
+constraints when we have a good reason 
+for doing so. 
+
+16
+00:01:12,082 --> 00:01:17,167
+And the most important reason for adding 
+variable constraints is, of course, that 
+
+17
+00:01:17,167 --> 00:01:21,552
+we need to turn all the operators 
+instances the partial actions in our 
+
+18
+00:01:21,552 --> 00:01:25,642
+plan, into fully ground actions. 
+But, this is not the only reason. 
+
+19
+00:01:25,642 --> 00:01:30,555
+In fact, we've already seen that when we 
+introduce a causal link to use an effect 
+
+20
+00:01:30,555 --> 00:01:34,917
+to support a precondition, then the 
+effect may have variables, but the 
+
+21
+00:01:34,917 --> 00:01:37,973
+preconditions may have specific values in 
+there. 
+
+22
+00:01:37,973 --> 00:01:42,496
+So, we need to unify these to make sure 
+that the effect and the precondition 
+
+23
+00:01:42,496 --> 00:01:47,702
+match, and that is the second reason for 
+introducing variable binding constraints. 
+
+24
+00:01:47,702 --> 00:01:53,764
+And here is our example again. 
+I've dropped the second action simply to 
+
+25
+00:01:53,764 --> 00:01:58,400
+save some space. 
+So, you remember we introduced this 
+
+26
+00:01:58,400 --> 00:02:05,201
+causal link here from the effect to the 
+goal condition to record that we've 
+
+27
+00:02:05,201 --> 00:02:09,502
+introduced this action to support this 
+goal condition. 
+
+28
+00:02:09,502 --> 00:02:14,477
+Now, with this action, of course, we've 
+also introduced a new set of variables, 
+
+29
+00:02:14,477 --> 00:02:18,777
+r1, l1, and m1, moving the robot r1 from 
+location l1 to location m1. 
+
+30
+00:02:18,777 --> 00:02:23,492
+And initially, our variable bindings were 
+all empty so this is the table of 
+
+31
+00:02:23,492 --> 00:02:28,157
+variable bindings we maintain, and it 
+contains the three variables we've just 
+
+32
+00:02:28,157 --> 00:02:33,062
+introduced, r1, l1, and m1, and there's 
+no constraints on these variables. 
+
+33
+00:02:33,062 --> 00:02:37,822
+Note that I've shown the variables in the 
+operator as red because there's no 
+
+34
+00:02:37,822 --> 00:02:42,372
+indication what values these might have. 
+But, of course, they need to have 
+
+35
+00:02:42,372 --> 00:02:46,592
+specific values to support the goal 
+conditions we want to support. 
+
+36
+00:02:46,592 --> 00:02:51,392
+And adding variable binding constraints 
+ensures that this unification will 
+
+37
+00:02:51,392 --> 00:02:53,647
+succeed. 
+So here is how this works. 
+
+38
+00:02:53,647 --> 00:02:58,552
+We add variable bindings, we say that r1 
+must become the value robot at m1 must 
+
+39
+00:02:58,552 --> 00:03:02,824
+become the location, loc2. 
+Also, the two variables, r1 and m1, in 
+
+40
+00:03:02,824 --> 00:03:07,883
+the operator are now black because we 
+have values for these variables. 
+
+41
+00:03:07,883 --> 00:03:13,503
+L1, on the other hand, remains undefined. 
+Now, one thing that can happen is that 
+
+42
+00:03:13,503 --> 00:03:17,784
+the other effect of this operator 
+interferes with the goal. 
+
+43
+00:03:17,784 --> 00:03:23,091
+So, we have the effect not at r1, l1 
+which can ofcourse also unify with the 
+
+44
+00:03:23,091 --> 00:03:27,467
+goal we are looking at. 
+This would be a problem because one of 
+
+45
+00:03:27,467 --> 00:03:30,833
+the effect is positive and the other is 
+negative. 
+
+46
+00:03:30,833 --> 00:03:36,173
+So, what we can do is introduce a new 
+variable binding constraint that says the 
+
+47
+00:03:36,173 --> 00:03:41,032
+value of l1 cannot be location 2. 
+In that case, the unification can never 
+
+48
+00:03:41,032 --> 00:03:44,045
+happen and we're done. 
+The threat is gone. 
+
+49
+00:03:44,045 --> 00:03:49,067
+We have also introduced another causal 
+link from the initial state to our new 
+
+50
+00:03:49,067 --> 00:03:52,431
+move operator to support one of its 
+preconditions. 
+
+51
+00:03:52,431 --> 00:03:57,257
+Again, we need variable binding 
+constraints to make sure the unification 
+
+52
+00:03:57,257 --> 00:04:00,379
+succeeds. 
+In this case, we would add a variable 
+
+53
+00:04:00,379 --> 00:04:05,670
+binding constraint that says the value of 
+l1 must be loc1, and that is consistent 
+
+54
+00:04:05,670 --> 00:04:10,322
+with it not being loc2. 
+While this looks quite simple note that 
+
+55
+00:04:10,322 --> 00:04:16,097
+the maintenance of consistency between 
+the variable binding constraints is 
+
+56
+00:04:16,097 --> 00:04:21,217
+actually a complex problem. 
+The final plan refinement operation we 
+
+57
+00:04:21,217 --> 00:04:24,952
+have is to add ordering constraints to 
+our plan. 
+
+58
+00:04:24,952 --> 00:04:30,059
+Ordering constraints, the final component 
+of a partial plan, are simply binary 
+
+59
+00:04:30,059 --> 00:04:34,642
+relations that specify the temporal order 
+between actions in our plan. 
+
+60
+00:04:34,642 --> 00:04:39,012
+And there are quite a few reasons we may 
+consider for ardering, ordering 
+
+61
+00:04:39,012 --> 00:04:42,595
+constraints to our plan, some of which 
+we've already seen. 
+
+62
+00:04:42,595 --> 00:04:46,488
+So, the first reason for an ordering 
+constraints is quite trivial. 
+
+63
+00:04:46,488 --> 00:04:51,034
+Namely, that all actions must come after 
+the initial state, and similarly all 
+
+64
+00:04:51,034 --> 00:04:55,379
+action must come before the goal. 
+We never add actions before the initial 
+
+65
+00:04:55,379 --> 00:04:58,332
+state and we never add actions after the 
+goal. 
+
+66
+00:04:58,332 --> 00:05:01,531
+And this can be enforced with ordering 
+constraints. 
+
+67
+00:05:01,531 --> 00:05:06,326
+Then, we've already seen that a causal 
+link, implies an ordering constraint. 
+
+68
+00:05:06,326 --> 00:05:10,899
+The final reason is a little more 
+complex, and that is to avoid possible 
+
+69
+00:05:10,899 --> 00:05:13,844
+interference between the actions in our 
+plan. 
+
+70
+00:05:13,844 --> 00:05:18,714
+Remember, that I told you, that an action 
+can interfere with a causal link if it 
+
+71
+00:05:18,714 --> 00:05:23,509
+has a negative effect that interferes 
+with a positive condition on a causal 
+
+72
+00:05:23,509 --> 00:05:26,587
+link. 
+Adding ordering constraints is one way to 
+
+73
+00:05:26,587 --> 00:05:31,722
+get rid of this possible interference. 
+Returning to our example, the first thing 
+
+74
+00:05:31,722 --> 00:05:35,452
+that you may note is that the second 
+action has reappeared. 
+
+75
+00:05:35,452 --> 00:05:40,257
+This is simply because I am not showing 
+you the variable binding constraints 
+
+76
+00:05:40,257 --> 00:05:43,192
+anymore but they are, of course, still 
+there. 
+
+77
+00:05:43,192 --> 00:05:48,012
+You can see this in the color of the 
+variables of the different operators. 
+
+78
+00:05:48,012 --> 00:05:52,997
+The red variables are the ones that still 
+need a value, whereas the black ones are 
+
+79
+00:05:52,997 --> 00:05:57,597
+fully ground by the variable bindings. 
+What this diagram still shows are the 
+
+80
+00:05:57,597 --> 00:06:02,367
+dotted arrows represnting causal links, 
+and I've already told you earlier that 
+
+81
+00:06:02,367 --> 00:06:05,387
+each causal link implies an ordering 
+constraint. 
+
+82
+00:06:05,387 --> 00:06:09,647
+So, I will add those here. For the three 
+causal links, we need three corresponding 
+
+83
+00:06:09,647 --> 00:06:13,682
+ordering constraints. 
+Then, I wanted to add constraints for all 
+
+84
+00:06:13,682 --> 00:06:18,442
+actions that have to come after the 
+initial state and for all actions coming 
+
+85
+00:06:18,442 --> 00:06:22,032
+before the goals state. 
+So, this will be four new constraints. 
+
+86
+00:06:22,032 --> 00:06:26,047
+But, in fact, I only have to add one 
+because three of those were already 
+
+87
+00:06:26,047 --> 00:06:30,972
+implied by the causal links, and there is 
+no need to represent the same constraint 
+
+88
+00:06:30,972 --> 00:06:33,913
+twice. 
+Finally, you may notice that the values 
+
+89
+00:06:33,913 --> 00:06:38,486
+of these variables, the value of r1 and 
+r2, must actually be the same value, 
+
+90
+00:06:38,486 --> 00:06:42,737
+because this has to unify with robot and 
+this has to unify with robot. 
+
+91
+00:06:42,737 --> 00:06:47,625
+So, that means we're loading and moving 
+the robot in parellel here which will not 
+
+92
+00:06:47,625 --> 00:06:50,230
+work. 
+And, this can be resolved by adding yet 
+
+93
+00:06:50,230 --> 00:06:55,272
+another ordering constraint to this plan, 
+namely doing the loading before we move 
+
+94
+00:06:55,272 --> 00:06:57,544
+the robot. 
+And that's it. 
+
+95
+00:06:57,544 --> 00:07:03,716
+Adding ordering constraints was our final 
+plan refinement operation. 
+

@@ -1,0 +1,242 @@
+In the next few slides, I will give you 
+an overview of the plan-space planning 
+algorithm, PSP. 
+This will be a generic version of the 
+algorithm and I'll follow this with some 
+implementation detail that will make 
+things more specific. 
+So, here's a quick recap of the search 
+problem as we've defined it so far. 
+We have given the statement of a planning 
+problem, consisting of a set of 
+operators, an initial state, and a goal 
+condition. 
+Then, we need to define a search problem 
+which consists of an initial state, and 
+our initial state was the empty plan, 
+which isn't quite empty. 
+It consists of the init action and the 
+goal action. 
+These were the two dummy actions we've 
+introduced to encode our initial state 
+and the goal condition into the plan. 
+And then, we have one ordering 
+constraint, namely that the init dummy 
+action must come before the goal dummy 
+action. 
+And we have no variable bindings and no 
+causal links initially. 
+The goal test, as we have just seen, is 
+simply to check whether a plan has flaws. 
+If it has no flaws, then our plan is a 
+solution state. 
+What I haven't mentioned so far is the 
+path cost function. 
+That's simply because the path cost 
+function is not very relevant here. 
+You can choose pretty much anything you 
+like. 
+For example, the length of the plan as 
+usual. 
+Note that this path cost function would 
+not be related to the cost of the plan 
+refinement operations, 
+but to the cost of the plan that we're 
+searching for. 
+And the final component of our search 
+problem is the successor function. 
+And here, we will consider all those 
+refinements of our current plan that 
+maintain the ordering and the binding 
+constraints in a consistent fashion. 
+So, our successor function will allow the 
+application of more than one plan 
+refinement operation at a time. 
+And here is an informal overview of the 
+basic operations that we need to perform 
+during our plan-space search. 
+The basic idea, the main principle behind 
+the algorithm is that we always refine 
+our partial plan while maintaining the 
+order and binding constraint, in a 
+consistent fashion, until the plan has no 
+more flaws. 
+In some sense, this is the main loop of 
+our algorithm. 
+Then, within this main loop, what we have 
+to do is first, find the flaws that are 
+currently in our plan. 
+So, these flaws can be either sub-goals 
+or threats. 
+We need to identify them, so that we can 
+remove them from the plan. 
+And we will deal with these flaws one at 
+a time. 
+So, the next step is to select one of 
+those flaws. 
+Once we've selected a flaw, we need to 
+find all those ways in which the flaw can 
+be removed from our plan and which it can 
+be resolved. 
+And again, we need to choose one of the 
+resolvers for the selected flaw. 
+And finally, we refine our plan according 
+to the chosen resolver. 
+So we've selected a flaw, we've chosen a 
+way to get rid of this flaw, and now we 
+apply this to our partial plan. 
+This is the step that corresponds to a 
+state transition in our search space. 
+And, of course, while we are refining our 
+plan with our chosen resolver, we've got 
+to make sure that we maintain our 
+ordering and binding constraints so these 
+two are connected. 
+And we need to make sure that our 
+constraints are consistent. 
+If our constraints are no longer 
+consistent after we've applied a 
+resolver, then this node is a dead-end in 
+our search space. 
+And here is what I've just told you in 
+pseudo code. 
+We define the function PSP that takes a 
+partial plan as input. 
+The procedure then refines this plan into 
+a solution plan. 
+Note that there is no planning problem 
+given as input. 
+That is because, initially the plan that 
+is given to this procedure is the empty 
+plan which encodes the planning problem 
+as it has the dummy steps in it and goal 
+having the initial state and the goal. 
+Then, the first thing we do is we compute 
+all the flaws that are currently in the 
+plan, and there are two types of flaws of 
+course, namely the openGoals, the 
+preconditions that are currently 
+unsatisfied, and the threats that exist 
+within the current plan. 
+And if the set of flaws is empty that 
+means we have reached a solution plan 
+because as you told you before, no flaws 
+means a solution. 
+But if there were flaws left in the plan, 
+then we can now choose a flaw which is 
+the flaw we want to remove from the plan 
+next. 
+And once we have selected one of the 
+flaws, we can compute all possible 
+resolvers for this flaw in the current 
+plan. 
+If the set of resolvers is empty, that 
+means there is no way to remove this flaw 
+from the plan, and that means we can 
+return failure because this partial plan 
+can never be refined into a solution 
+plan. 
+But if there were resolvers in the set, 
+then we have to choose one to remove the 
+flaw from our plan. 
+The next step then is to generate a new 
+plan, which consists of applying the 
+resolver to our current plan. 
+This is the step that generates a new 
+search node in our search space. 
+And this time, I haven't defined the 
+search procedure as an iterative 
+procedure but as a recursive procedure 
+where the recursive call comes here. 
+So, we've generated a new node and we've 
+simply applied the PSP procedure to that 
+new node. 
+Now, there are a few things to say about 
+this algorithm. 
+Firstly, it contains a number of 
+functions that I still have to define. 
+For example, how to compute the open 
+goals in a plan, 
+or how to find the threats that exist in 
+a given plan. 
+Also, I need to be able to compute the 
+resolvers that are available for a given 
+flaw in the plan, 
+and I need to define how I can apply 
+these resolvers to a current plan. 
+These are implementation details that I 
+will look at, in the next section. 
+But before I get here, there are two more 
+functions that look quite trivial but are 
+actually different. 
+As you can see, I've chosen different 
+names for this. 
+Firstly, we need to select a flaw. And 
+secondly, we need choose a resolver. 
+And there's a good reason why I've chosen 
+two different words for these two 
+different functions. 
+The two functions, chooseOne and 
+selectOne, represent choice points in our 
+algorithm. 
+Let me first describe the choice point 
+where we select a resolver. 
+So, we have a function called 
+Resolvers.chooseOne that selects one of 
+the resolvers for the chosen flaw. 
+This is a non-deterministic choice point. 
+So, the way the algorithm is described, 
+is as a non-deterministic algorithm which 
+means we need to turn this into a 
+deterministic algorithm for the 
+implementation. And this choice point is 
+one that we need to backtrack over. 
+That means, it's a non-deterministic 
+choice point. 
+We need to come back here if we fail in 
+one branch and try a different branch in 
+our search. 
+The other choice point where we select 
+one of the flaws, that we try to resolve 
+next, is a deterministic selection. 
+That means, we don't need to backtrack 
+over this choice. 
+That means, we can choose one of the 
+available options and then don't need to 
+explore the other options at this point. 
+And the reason for this is very simple. 
+If a plan contains multiple flaws, we 
+need to resolve all these flaws before it 
+becomes a solution plan. But the order in 
+which we do this is not important. 
+Since flaws really dont interfere with 
+each other, we can deal with one flaw 
+after an other and whichever flaw we 
+choose first does not prevent another 
+flaw from being resolved. 
+So, the order in which we choose the 
+flaws is not important, at least not for 
+completeness. 
+Our algorithm will still work in 
+whichever order we choose the flaws. 
+But, of course, the order is very 
+important for the efficiency of our 
+planning algorithm. For example, consider 
+a plan that has one flaw for which we 
+have no resolver and several flaws for 
+which we have resolvers. 
+If we first choose those flaws that we 
+can resolve and then deal with the flaw 
+that has no resolvers lost, we create a 
+search tree that has no solution node, of 
+course. Whereas, if we first choose the 
+one that has no resolvers, we immediately 
+terminate our search. 
+So, important. 
+Flaw selection is a deterministic 
+selection and we don't need to backtrack 
+over the selection in our implementation. 
+Selecting a resolver is a 
+non-deterministic choice and we need to 
+implement this as a backtrack point. 
+

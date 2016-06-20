@@ -1,0 +1,298 @@
+Now, we have seen what the strips 
+representation for world states looks 
+like. 
+The internal structure is represented as 
+a set of ground atoms. 
+Where each atom expresses a relation that 
+must hold between objects in the domain. 
+The next step, then, is to look at 
+operators with internal structure. 
+And actions that are instances of these 
+operators. 
+Remember that actions are what give us 
+the state transitions in our state 
+transition system. 
+For states I started with some examples 
+and some informal definitions and 
+followed this with the formal dentition 
+of what a strips representation state is. 
+For operators I'll do it the other way 
+around. 
+I will start with the formal definition 
+of what a strips operator is. 
+A planning operator in the strips 
+representation is simply a triple, so 
+means it consists of three different 
+things. 
+A name, the name of the operator, the 
+preconditions of the operator, and the 
+effects of the operator. 
+The name of the operator, the name that 
+we can use to refer to this operator, is 
+simply given by this syntactic 
+expression. 
+So it consists of a unique name symbol 
+that we can use to refer to this 
+operator. 
+It must be unique to this operator, 
+meaning no other operator can have the 
+same symbol. 
+And it consists of some parameters which 
+characterize the objects that are 
+manipulated by this operator. 
+These objects are defined as variables 
+for an operator as an operator is 
+generic. 
+They may also be typed if we are using 
+the types extension in PDDL. 
+The components that define the internal 
+structure of an operator are the 
+preconditions, and the effects of the 
+operator. 
+And both of these are sets of literals. 
+Remember that a literal is either a 
+positive or a negative atom. 
+So, a relation between objects. 
+Where the objects are named by the 
+variable given in the operator name. 
+X1 through xk here. 
+The preconditions are simply those 
+literals that we want to be satisfied in 
+the state before we execute an action. 
+The effects are the things that are true 
+after we've executed an action. 
+Again, the effects can be literals, which 
+means they can be positive or negative, 
+and traditionally the positive literals 
+that are effects are often referred to as 
+the ad list, as this is something that is 
+asserted in the new state after an action 
+is applied, and the negative literals are 
+referred to as the delete list as these 
+are removed from the state. 
+An operator is generic in the sense that 
+it only specifies what is manipulated by 
+the operator, as variables. 
+An action, on the other hand, is specific 
+because there's a ground instance of a 
+planning operator. 
+So if we take all the variables and 
+choose values, objects in our domain, for 
+these variables, then our operator 
+becomes an action. 
+And of course, there can be many actions 
+that are instances of the same operator 
+in our planning domain. 
+Now, here are some examples of operators 
+defined for the dock worker robot domain. 
+The first example we will look at is the 
+move operator. 
+Move is the symbol that identifies this 
+operator, and the name of the operator is 
+given by all of this. 
+This expression here. 
+Namely, the symbol that identifies it 
+plus the three variables that are used to 
+identify its parameters. 
+And these are a robot and two locations. 
+The location we are moving from and the, 
+the location we are moving to. 
+Then, the internal structure is defined 
+by preconditions and effects. 
+There are two positive pre-conditions in 
+this example. 
+Namely that the two locations when moving 
+between must be adjacent. 
+The location when moving from must be 
+adjacent to the location we are moving 
+to. 
+And the robot R, the robot that we are 
+moving must be at the location we are 
+starting from. 
+And then we have one negative 
+precondition and that is given here. 
+This is simply the symbol for negation, 
+that's the NOT symbol in logic. 
+the negative precondition here says the 
+location m we are moving to must not be 
+occupied by a robot when we move there. 
+So three preconditions. 
+Two positive one negative. 
+And then we have the effects. 
+Again two positive effects, and two 
+negative effects here. 
+Let's look at the positive effects first. 
+When we move robot R from location L to 
+location M as a result the robot will be 
+at location M. 
+And the location M will be occupied as a 
+result of this action. 
+These are the effects that are added by 
+this operator. 
+Hence, this is known as the add list. 
+the delete list, or the negative effects 
+of this operator, are that the location L 
+is no longer occupied. 
+We've just moved the robot away from this 
+location. 
+And the robot is no longer at this 
+location, L, that we've just moved away 
+from. 
+There are a few things that are quite 
+common about this operator. 
+But they are not part of the definition 
+of a strips operator. 
+And those are, all the parameters are 
+actually mentioned in the preconditions. 
+R, l, and m. 
+All of those are mentioned in these three 
+conditions. 
+Also very common is that we have the 
+negative effects of the operator, the 
+delete list, as part of the 
+preconditions, only negated. 
+For the second negative effect, this is 
+explicit here. 
+And for the first one, it is implicit. 
+Of course, the location l was occupied 
+before the robot moved away from that. 
+But because we have this precondition, it 
+was not necessary to mention that. 
+Quickly, the two other examples. 
+The second one is that we're loading. 
+With crane K at location L. 
+We're loading container C onto robot R. 
+These are the four arguments to this 
+operator. 
+And all this is the name of the operator. 
+Again, we have preconditions and effects. 
+And they are divided into positive and 
+negative preconditions and effects. 
+In fact, we have no negative 
+preconditions for this operator. 
+So the positive preconditions are that 
+the crane must belong to that location. 
+It must be at that location. 
+the crane must be holding the container. 
+So it can load it onto the robot, which 
+must also be at that location. 
+And must be un-. 
+Loaded so it cannot have a container on 
+it. 
+The effects are. 
+That now the crane will be empty after 
+we've loaded the container onto the 
+robot. 
+So it will no longer hold the container, 
+but the container will be loaded onto the 
+robot, and the robot will no longer be 
+unloaded. 
+Similarly there's the put action which 
+has as parameters a crane, a location, a 
+container, another container and a pile 
+into which we're putting the container C. 
+The crane must be at that location and 
+also the pile must be at that location 
+and of course we want the crane to hold 
+to the container. 
+And this precondition here tells us the 
+meaning of this second container D that 
+is a parameter that to put action, namely 
+it is the container that is on top of the 
+pile before we execute our action. 
+And the reason why we need to know this 
+is simply such that we can withdraw this 
+from our state. 
+So the container D is, after we've 
+executed the action, no longer on top of 
+the pile because we have the container C 
+on top of D and now C is the new top of 
+the pile. 
+So C will also be in our pile, the crane 
+will be empty, and the crane will no 
+longer hold container C. 
+there's also an unload and a take action 
+that reverse the load and the put action 
+but I won't go through those in detail 
+here. 
+In the previous slide, we have seen some 
+examples of operators, of what they look 
+like logically. 
+Now I will introduce the PDDL syntax, for 
+defining an operator in a planning 
+domain. 
+This example, again, starts with a 
+comment, introduced by the semicolon, 
+that tells us what this action will 
+actually do. 
+And here is the first slightly confusing 
+thing about the PDDL definition. 
+Namely, the operator is called an action 
+in PDDL. 
+So, in the strips representation, we 
+consider an action to be an instance of 
+an operator. 
+In PDDL, this is what is called an 
+action. 
+This is actually not uncommon in the 
+planning literature, that terminology is 
+not agreed. 
+So you always have to make sure that you 
+understand what authors mean by the 
+different terms like action or action 
+type or operator, et cetera. 
+So in PDDL, this action has the unique 
+name, move, that can be used to identify 
+this, action, this operator. 
+And it has several parameters that are 
+defined here. 
+And there is one parameter which is this 
+one, a variable. 
+Remember, variables start with the 
+question mark R, which is of type robot. 
+And then it has two more variables, both 
+of the type location. 
+This is what we call the name of the 
+operator. 
+In the definition of a strips planning 
+operator two slides ago. 
+Next we have the preconditions and 
+effects. 
+So the preconditions are introduced by 
+the preconditions symbol, and then are 
+just listed. 
+It is also exclusively stated in PDDL 
+that this is a conjunction. 
+Of pre-conditions. 
+So they all must hold. 
+And that's what we introduce with the an 
+symbol. 
+PDDL also allows other pre-conditions, 
+dis-disjunctive pre-conditions. 
+But we will not look at those here. 
+So what we have is that, the first 
+pre-condition is that two locations must 
+be adjacent. 
+The robot must be at the first of those 
+two locations we're starting from. 
+And this location must not be occupied. 
+Slightly different syntax, but exactly 
+the three pre-conditions we've seen in 
+the previous slide. 
+Similarly for the effects, they're listed 
+here. 
+They are a conjunction of effects. 
+And it's the same four effects we've seem 
+previously. 
+Namely that the robot must be at the two 
+location, as a result of the action. 
+And this location will be occupied. 
+The robot is no longer at the from 
+location, which is not, no longer 
+occupied. 
+You should now be able to express the 
+other two operators introduced in the 
+previous slide, in the PDDL presentation. 
+So why don't you do that as a little 
+exercise here. 
+

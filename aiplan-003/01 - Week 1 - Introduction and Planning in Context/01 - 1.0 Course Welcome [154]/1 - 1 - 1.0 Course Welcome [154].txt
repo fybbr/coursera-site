@@ -1,0 +1,54 @@
+Welcome to the course on AI planning. 
+Planning is one of the most important 
+aspects of intelligent behavior. 
+The ability to identify and select 
+appropriate activity, and to project 
+forward the consequences of executing 
+that activity, is fundamental to humans 
+and intelligent robots alike. 
+The planning course lasts five weeks. 
+In the first week of this course, we will 
+formally define the problem solved by 
+planning algorithms and talk about the 
+context in which planning is used. 
+After that in week two, we will describe 
+some basic AI techniques used for problem 
+solving in general, and planning problems 
+in particular. 
+This will leave you with a good 
+understanding of the STRIPS planning 
+system. 
+In week three, we will look at different, 
+a different approach to the same problem, 
+namely, plan space search. 
+In addition, we will cover hierarchical 
+planning, which addresses a similar 
+problem and has been used in many real 
+world applications. 
+Week four gets us closer to the 
+state-of-the-art in planning research, 
+introducing some of the techniques used 
+in the fastest planners available today. 
+Finally, in week five, we will talk more 
+about application areas in which they AI 
+planning has been used, and some more 
+advanced topics. 
+The course is going to make use of 
+lectures on video, supplementary material 
+on a wiki, and we'll give you some links 
+to some AI planners to try, along with 
+relevant online resources, and some 
+recommended quite short readings. 
+There'll be a number of quizzes and 
+online assessments to monitor your 
+progress. 
+We're going to encourage you to use the 
+course social platform, which includes 
+the discussion forums in the wiki. 
+There's going to be a course Twitter tag 
+and there's also a virtual world meeting 
+space for you to try. 
+Full details of all aspects of the social 
+platform are on the course website. 
+We hope you will enjoy the course and 
+will learn something useful. 
